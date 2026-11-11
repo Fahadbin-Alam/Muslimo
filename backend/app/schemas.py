@@ -164,20 +164,25 @@ class LessonDetailRead(BaseModel):
 
 
 class LessonCompletionInput(BaseModel):
-    status: str = "completed"
-    mastery_score: int = Field(default=100, alias="masteryScore")
-    xp_earned: int = Field(default=0, alias="xpEarned")
-    best_score: int = Field(default=100, alias="bestScore")
+    # Bounded so a request can't store a value the Postgres columns reject (String(40), INTEGER) or a negative score.
+    status: str = Field(default="completed", min_length=1, max_length=40)
+    mastery_score: int = Field(default=100, ge=0, le=100, alias="masteryScore")
+    # 0 means "the lesson's own reward". More than the lesson's reward is never paid (see routes/learning.py).
+    xp_earned: int = Field(default=0, ge=0, le=100_000, alias="xpEarned")
+    best_score: int = Field(default=100, ge=0, le=100, alias="bestScore")
 
     model_config = ConfigDict(populate_by_name=True)
 
 
 class QuestionAttemptInput(BaseModel):
-    lesson_id: int = Field(alias="lessonId")
+    # lessonId, topicId and branchId are accepted for older builds but ignored: the server reads them from the
+    # question itself (routes/learning.py).
+    lesson_id: Optional[int] = Field(default=None, alias="lessonId")
     selected_answer_json: Dict[str, Any] = Field(default_factory=dict, alias="selectedAnswerJson")
     is_correct: bool = Field(alias="isCorrect")
-    response_time_ms: Optional[int] = Field(default=None, alias="responseTimeMs")
-    confidence_rating: Optional[int] = Field(default=None, alias="confidenceRating")
+    # At most a day in milliseconds, well inside a Postgres INTEGER.
+    response_time_ms: Optional[int] = Field(default=None, ge=0, le=86_400_000, alias="responseTimeMs")
+    confidence_rating: Optional[int] = Field(default=None, ge=0, le=100, alias="confidenceRating")
     topic_id: Optional[int] = Field(default=None, alias="topicId")
     branch_id: Optional[int] = Field(default=None, alias="branchId")
 
