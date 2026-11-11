@@ -15,14 +15,17 @@ router = APIRouter(tags=["catalog"])
 @router.get("/topics", response_model=list[TopicRead])
 def list_topics(db: DbSession):
     topics = db.scalars(select(Topic).order_by(Topic.order_index.asc())).all()
-    result = []
-    for topic in topics:
-        branch_count = db.scalar(select(func.count(Branch.id)).where(Branch.topic_id == topic.id)) or 0
-        lesson_count = db.scalar(
-            select(func.count(Lesson.id)).select_from(Lesson).join(Branch, Lesson.branch_id == Branch.id).where(Branch.topic_id == topic.id)
-        ) or 0
-        result.append(TopicRead(id=topic.id, title=topic.title, slug=topic.slug, description=topic.description, icon=topic.icon, colorTheme=topic.color_theme, orderIndex=topic.order_index, branchCount=branch_count, lessonCount=lesson_count))
-    return result
+    # Two GROUP BY queries for every topic at once, instead of two COUNT queries per topic (an N+1 pattern).
+    branch_counts = dict(db.execute(select(Branch.topic_id, func.count(Branch.id)).group_by(Branch.topic_id)).all())
+    lesson_counts = dict(
+        db.execute(
+            select(Branch.topic_id, func.count(Lesson.id)).select_from(Branch).join(Lesson, Lesson.branch_id == Branch.id).group_by(Branch.topic_id)
+        ).all()
+    )
+    return [
+        TopicRead(id=topic.id, title=topic.title, slug=topic.slug, description=topic.description, icon=topic.icon, colorTheme=topic.color_theme, orderIndex=topic.order_index, branchCount=branch_counts.get(topic.id, 0), lessonCount=lesson_counts.get(topic.id, 0))
+        for topic in topics
+    ]
 
 
 @router.get("/topics/{topic_slug}/branches", response_model=list[BranchRead])
@@ -31,6 +34,12 @@ def list_branches(topic_slug: str, db: DbSession):
     if not topic:
         raise HTTPException(status_code=404, detail="Topic not found.")
     branches = db.scalars(select(Branch).where(Branch.topic_id == topic.id).order_by(Branch.order_index.asc())).all()
+    # One grouped count for the topic's branches instead of one query per branch.
+    lesson_counts = dict(
+        db.execute(
+            select(Lesson.branch_id, func.count(Lesson.id)).join(Branch, Lesson.branch_id == Branch.id).where(Branch.topic_id == topic.id).group_by(Lesson.branch_id)
+        ).all()
+    )
     return [
         BranchRead(
             id=branch.id,
@@ -41,7 +50,7 @@ def list_branches(topic_slug: str, db: DbSession):
             orderIndex=branch.order_index,
             difficultyStart=branch.difficulty_start,
             difficultyEnd=branch.difficulty_end,
-            lessonCount=db.scalar(select(func.count(Lesson.id)).where(Lesson.branch_id == branch.id)) or 0,
+            lessonCount=lesson_counts.get(branch.id, 0),
             sourceReferences=branch.source_references_json or [],
         )
         for branch in branches
