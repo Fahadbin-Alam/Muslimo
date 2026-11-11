@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hmac
+import logging
 from datetime import datetime, timezone
 from typing import Annotated, Any, Dict, Optional
 
@@ -16,6 +17,7 @@ from backend.app.schemas import EntitlementRead, SubscriptionPlanRead, Subscript
 
 
 router = APIRouter(tags=["subscriptions"])
+logger = logging.getLogger(__name__)
 
 # The only environments where the app may report its own purchases (see sync_entitlement).
 CLIENT_SYNC_ENVIRONMENTS = {"development", "test"}
@@ -137,7 +139,15 @@ def revenuecat_webhook(
     if event.get("period_type") == "TRIAL" and next_status == "active":
         next_status = "trialing"
 
-    plan_type = plan_for_store_product(event.get("new_product_id") or event.get("product_id"))
+    product_id = event.get("new_product_id") or event.get("product_id")
+    plan_type = plan_for_store_product(product_id)
+    if plan_type is None:
+        # A product missing from STORE_PRODUCT_PLANS (a new one in the store dashboard, a typo) grants nothing until
+        # it's added there. It used to fall back to Premium. Acknowledged so RevenueCat stops retrying, and logged.
+        logger.warning("RevenueCat %s for unknown product %r (user %s) ignored", event_type, product_id, user.id)
+        db.add(EventLog(user_id=user.id, event_type="revenuecat.unknown_product", payload_json={"productId": product_id, "type": event_type, "store": event.get("store")}))
+        db.commit()
+        return {"ok": True, "applied": False}
     # Premium products also carry the no_ads entitlement, so the plan, not the event's first entitlement, decides.
     entitlement_name = entitlement_for_plan(plan_type)
     entitlement = db.scalar(
