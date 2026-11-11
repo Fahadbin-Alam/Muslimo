@@ -1,10 +1,10 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, Optional
 
 from fastapi import APIRouter, Depends
 from pydantic import BaseModel
-from sqlalchemy import select
+from sqlalchemy import and_, func, or_, select, true
 
 from backend.app.api.deps import DbSession, current_user
 from backend.app.models import User
@@ -20,14 +20,10 @@ class RankingsInput(BaseModel):
     ummah: Optional[Dict[str, Any]] = None
 
 
-def trophies_of(user: User) -> int:
-    return int((user.ummah_json or {}).get("trophies") or 0)
-
-
 def row(user: User, rank: int, me: User) -> Dict[str, Any]:
     """A ranking row: the nickname, the icon and trophies only. Never a name, email or photo."""
     ummah = user.ummah_json or {}
-    payload: Dict[str, Any] = {"rank": rank, "nickname": ummah.get("nickname"), "trophies": trophies_of(user)}
+    payload: Dict[str, Any] = {"rank": rank, "nickname": ummah.get("nickname"), "trophies": user.ummah_trophies}
     if ummah.get("icon"):
         payload["icon"] = ummah["icon"]
     if user.id == me.id:
@@ -44,15 +40,35 @@ def rankings(body: RankingsInput, db: DbSession, user: User = Depends(current_us
         db.commit()
         db.refresh(user)
 
-    # JSON fields can't be filtered the same way on every database, so the joined learners are picked here.
-    joined: List[User] = [member for member in db.scalars(select(User)).all() if (member.ummah_json or {}).get("joined") and (member.ummah_json or {}).get("nickname")]
+    # ummah_ranked and ummah_trophies mirror ummah_json (see User._copy_ummah_rank_fields), so the database sorts,
+    # cuts to the top rows and counts on ix_users_ummah_ranking; no user rows are loaded beyond those shown.
     # Ties go to the one who got there first (the older account).
-    joined.sort(key=lambda member: (-trophies_of(member), member.id))
+    top_members = db.scalars(
+        select(User)
+        .where(User.ummah_ranked == true())
+        .order_by(User.ummah_trophies.desc(), User.id.asc())
+        .limit(RANKING_SIZE)
+    ).all()
+    total = db.scalar(select(func.count()).select_from(User).where(User.ummah_ranked == true())) or 0
 
-    top = [row(member, index + 1, user) for index, member in enumerate(joined[:RANKING_SIZE])]
-    my_index = next((index for index, member in enumerate(joined) if member.id == user.id), None)
+    me = None
+    if user.ummah_ranked:
+        # Everyone ahead of the caller: more trophies, or the same and an older account.
+        ahead = db.scalar(
+            select(func.count())
+            .select_from(User)
+            .where(
+                User.ummah_ranked == true(),
+                or_(
+                    User.ummah_trophies > user.ummah_trophies,
+                    and_(User.ummah_trophies == user.ummah_trophies, User.id < user.id),
+                ),
+            )
+        ) or 0
+        me = row(user, ahead + 1, user)
+
     return {
-        "top": top,
-        "me": row(user, my_index + 1, user) if my_index is not None else None,
-        "total": len(joined),
+        "top": [row(member, index + 1, user) for index, member in enumerate(top_members)],
+        "me": me,
+        "total": total,
     }

@@ -51,3 +51,60 @@ def test_ummah_follows_the_learner_through_user_sync(client):
 
 def test_ranking_needs_a_session(client):
     assert client.post("/api/ummah/rankings", json={"ummah": ummah()}).status_code == 401
+
+
+def test_ranking_order_ties_and_total_come_from_sql(client):
+    """Rank, ties and total are counted by the database now; they must match the old sort-everything-in-Python rule."""
+    _, older = register(client, "Older")
+    _, newer = register(client, "Newer")
+    _, leader = register(client, "Leader")
+    first = client.post("/api/ummah/rankings", headers=older, json={"ummah": ummah(4321, "Kind Dove 15")}).json()
+    second = client.post("/api/ummah/rankings", headers=newer, json={"ummah": ummah(4321, "Wise Owl 77")}).json()
+
+    # Same trophies: the older account stays ahead, and one more learner joined.
+    assert second["me"]["rank"] == first["me"]["rank"] + 1
+    assert second["total"] == first["total"] + 1
+
+    ahead = client.post("/api/ummah/rankings", headers=leader, json={"ummah": ummah(4322, "Swift Eagle 31")}).json()
+    after = client.post("/api/ummah/rankings", headers=older, json={}).json()
+    assert ahead["me"]["rank"] == first["me"]["rank"]
+    assert after["me"]["rank"] == first["me"]["rank"] + 1
+    # The top list is in rank order with no gaps, and agrees with "me" when the caller is on it.
+    ranks = [row["rank"] for row in after["top"]]
+    assert ranks == list(range(1, len(ranks) + 1))
+    trophies = [row["trophies"] for row in after["top"]]
+    assert trophies == sorted(trophies, reverse=True)
+    mine = [row for row in after["top"] if row.get("you")]
+    assert not mine or mine[0]["rank"] == after["me"]["rank"]
+
+
+def test_leaving_the_ranking_takes_the_learner_off_it(client):
+    _, headers = register(client, "Leaver")
+    joined = client.post("/api/ummah/rankings", headers=headers, json={"ummah": ummah(77, "Gentle Gazelle 18")}).json()
+
+    left = client.post("/api/ummah/rankings", headers=headers, json={"ummah": ummah(77, "Gentle Gazelle 18", joined=False)}).json()
+
+    assert joined["me"] is not None
+    assert left["me"] is None
+    assert left["total"] == joined["total"] - 1
+
+
+def test_user_sync_also_updates_the_ranking_columns(client):
+    _, headers = register(client, "Synced")
+    sync(client, headers, ummah=ummah(345, "Brave Falcon 42"))
+
+    body = client.post("/api/ummah/rankings", headers=headers, json={}).json()
+
+    assert body["me"] is not None and body["me"]["trophies"] == 345
+
+
+def test_ranking_columns_follow_every_ummah_json_assignment():
+    from backend.app.models import User, ummah_rank_fields
+
+    user = User(ummah_json={"trophies": 12, "joined": True, "nickname": "Kind Dove 15"})
+    assert (user.ummah_trophies, user.ummah_ranked) == (12, True)
+    user.ummah_json = {"trophies": 12, "joined": True}
+    assert (user.ummah_trophies, user.ummah_ranked) == (12, False)
+    assert ummah_rank_fields(None) == (0, False)
+    assert ummah_rank_fields({"trophies": True, "joined": True, "nickname": "x"}) == (0, True)
+    assert ummah_rank_fields({"trophies": -5}) == (0, False)
