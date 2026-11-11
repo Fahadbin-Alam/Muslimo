@@ -59,7 +59,3 @@ For production:
 - move secret config to environment variables or a secrets manager
 - replace placeholder social-login stubs with real provider verification
 - wire subscription sync to RevenueCat or direct store webhooks
-
-## Legacy Note
-
-- [server.js](server.js) is still in the repo as the old lightweight backend, but it is now a legacy fallback, not the main direction.

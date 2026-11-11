@@ -62,12 +62,6 @@ Seed catalog content only:
 npm run backend:seed
 ```
 
-Legacy JSON backend, if you need it temporarily:
-
-```bash
-npm run backend:legacy
-```
-
 ## Testing
 
 App typecheck and unit tests (XP, streaks, hearts, lesson flow):
