@@ -1,152 +1,128 @@
 # Muslimo
 
-Muslimo is an Islamic learning platform with a Duolingo-style path UI and a production-minded backend foundation for web today and Expo/iOS/Android next.
+A gamified, Duolingo-style app for learning Islam. Learners walk a path of short lessons (Qur'an, Seerah, the
+Sahabah, prayer, manners, du'as and more) and earn XP, keep streaks, spend hearts on mistakes, climb weekly leagues,
+battle friends, and let a parent follow a child's progress.
 
-## What Changed
+- **App:** Expo / React Native, one TypeScript codebase for Android, iOS and the web.
+- **API (optional):** FastAPI + SQLAlchemy over SQLite (local) or PostgreSQL (production), for accounts, cloud
+  backup of progress, and the social features.
+- **Status:** in active development since April 2026; not yet deployed or in the stores.
 
-This repo is no longer just a frontend demo plus a JSON file backend.
+## Screenshots
 
-It now includes:
-- Expo/React Native frontend for web, iOS, and Android direction
-- FastAPI backend in [backend/app/main.py](backend/app/main.py)
-- SQLAlchemy models for users, topics, branches, lessons, questions, resources, progress, review queue, subscriptions, and analytics
-- Alembic migrations in [backend/migrations](backend/migrations)
-- SQLite for local development
-- PostgreSQL-ready database configuration through `SIRA_DATABASE_URL`
-- content seeding for large topic trees, including `Sahabi`, `Prayer`, `Quran`, and more
+> Placeholder: add 3-4 phone screenshots (learning path, a lesson question, lesson complete, Crew), for example
+> under `docs/screenshots/`, and link them here.
 
-## Project Layout
+## How it works, in one minute
 
-- [src](src): current app UI, shared learning logic, client sync layer
-- [backend/app](backend/app): FastAPI app, models, config, routes, seeding
-- [backend/migrations](backend/migrations): Alembic migration environment and revision history
-- [backend/scripts](backend/scripts): bootstrap and seed helpers
-- [backend/data](backend/data): local SQLite database lives here in development
-- [api/islamic-learning.swagger.yaml](api/islamic-learning.swagger.yaml): API contract starter
+1. **Lessons ship inside the app** (`src/data/`), so the whole learning loop works with no internet and no server.
+   Tapping a circle on the path builds a lesson session on the device (`learningApi.getLessonSession` in
+   `src/api/islamicLearningApi.ts`), and answers are checked on the device.
+2. **Progress is saved on the device first** (AsyncStorage, which is `localStorage` on the web;
+   `src/services/appStorage.ts`).
+3. **With an account and a server**, the app sends the learner's whole profile a few seconds after the last change
+   (`queueRemoteSync` in `src/services/backendSync.ts`) to `PUT /api/me/user`. The server *merges* it into the
+   `users` row instead of overwriting it (`apply_frontend_state` in `backend/app/service_layer.py`), so two phones,
+   or one that was offline for a week, never lose finished lessons or XP.
+4. **Social features** (Crew, Family links, friend battles, invite codes, the Ummah ranking) are server routes over
+   their own tables.
 
-## Local Development
+The full walkthrough, with a diagram, the SQL schema and the deployment plan, is in
+[docs/architecture.md](docs/architecture.md).
 
-Install frontend dependencies:
+## Tech stack
+
+| Layer | Technology |
+| --- | --- |
+| App | Expo SDK 55, React Native 0.83, React 19, TypeScript; `react-native-web` for the browser build |
+| On-device storage | `@react-native-async-storage/async-storage` behind a synchronous in-memory cache |
+| API | FastAPI, Pydantic v2, Uvicorn |
+| Database | SQLAlchemy 2.0 ORM, Alembic migrations; SQLite in development, PostgreSQL (psycopg 3) in production |
+| Auth | Email + password (PBKDF2-SHA256 via passlib); random bearer tokens stored only as SHA-256 hashes; Google and Apple sign-in by verifying their RS256 ID tokens (PyJWT) |
+| Payments and ads | RevenueCat (server learns of purchases through a webhook), AdMob |
+| Tests | Jest + React Native Testing Library (app); pytest + FastAPI `TestClient` on a throwaway SQLite file (API) |
+| CI / delivery | GitHub Actions; Docker image for Render with Neon Postgres; Expo EAS for store builds |
+
+## Run it locally
+
+Needs Node 22 and Python 3.12 or newer.
+
+### The app
 
 ```bash
 npm install
+npm run web          # quickest: opens the app in a browser
 ```
 
-Run the Expo app:
+On a phone or emulator, use a development build (`npm run android` / `npm run ios`, or an EAS development build):
+the app uses native modules (AdMob, RevenueCat, Google Sign-In) that Expo Go doesn't include.
+
+In development the app calls the API at `http://localhost:8000` (`src/config/backend.ts`); set
+`EXPO_PUBLIC_API_BASE_URL` to use another address. If no API is running, the app keeps working offline.
+App settings are listed in [.env.example](.env.example).
+
+### The API
 
 ```bash
-npm run start
+python -m pip install -r backend/requirements-dev.txt
+npm run backend:bootstrap   # alembic upgrade head, then seed the lesson catalog into backend/data/sira_path.db
+npm run backend             # uvicorn with auto-reload on http://localhost:8000
 ```
 
-Run the backend API:
+Interactive API docs are at http://localhost:8000/docs (generated by FastAPI from the route code, so they are
+always current). Backend settings, all prefixed `SIRA_`, are listed in [backend/.env.example](backend/.env.example);
+put them in a `.env` at the repository root, which is where the npm scripts start the API.
+
+To use Postgres locally instead of SQLite:
 
 ```bash
-npm run backend
+SIRA_DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/muslimo npm run backend:bootstrap
 ```
 
-Bootstrap the database from scratch:
+## Tests
 
 ```bash
-npm run backend:bootstrap
+npm run typecheck        # TypeScript
+npm test                 # Jest: XP, streaks, hearts, lesson flow, screens
+npm run test:backend     # pytest: every API route, on a throwaway SQLite database
 ```
 
-Run migrations only:
+GitHub Actions ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs all three, bundles the Android and iOS
+apps, and opens the web build in a headless browser on every pull request and every push to `main`.
 
-```bash
-npm run backend:migrate
-```
+## Deploying
 
-Seed catalog content only:
+- **API:** Docker image from [backend/Dockerfile](backend/Dockerfile) on Render ([render.yaml](render.yaml)), with
+  a Neon Postgres database. Migrations and the catalog seed run on every start. Steps: [docs/hosting.md](docs/hosting.md).
+- **App:** Expo EAS builds for Google Play and the App Store. Steps: [docs/release.md](docs/release.md).
 
-```bash
-npm run backend:seed
-```
+## Project layout
 
-## Testing
+| Path | What's there |
+| --- | --- |
+| [src/TopicApp.tsx](src/TopicApp.tsx) | The app shell: screens, lesson flow and state |
+| [src/data](src/data) | Course content bundled with the app |
+| [src/api/islamicLearningApi.ts](src/api/islamicLearningApi.ts) | On-device "API": path, lesson sessions, XP, hearts, streaks |
+| [src/services](src/services) | Storage, server sync, leagues, quests, notifications, purchases |
+| [src/ui](src/ui) | Components and screens |
+| [backend/app](backend/app) | FastAPI app: `main.py`, `api/routes/`, `models.py`, `schemas.py`, `service_layer.py`, `core/` |
+| [backend/migrations](backend/migrations) | Alembic migrations |
+| [backend/tests](backend/tests) | API tests |
+| [scripts](scripts) | Obsidian notes importer, asset and store tooling, CI helpers |
+| [store](store), [site](site) | Store listings and the GitHub Pages site (privacy policy, terms, stats page) |
 
-App typecheck and unit tests (XP, streaks, hearts, lesson flow):
+## Writing lessons from Obsidian notes
 
-```bash
-npm run typecheck
-npm test
-```
+`npm run import:notes -- "<vault folder>"` turns each note into a branch and each `##` heading into a lesson with
+its questions. See [docs/obsidian-import.md](docs/obsidian-import.md).
 
-Backend API tests (use a throwaway SQLite database):
+## More docs
 
-```bash
-pip install -r backend/requirements-dev.txt
-npm run test:backend
-```
-
-GitHub Actions runs all three on every pull request and on pushes to `main`.
-
-## Database
-
-Local development uses SQLite by default:
-
-- [backend/data/sira_path.db](backend/data/sira_path.db)
-
-To switch to PostgreSQL, set:
-
-```bash
-SIRA_DATABASE_URL=postgresql+psycopg://user:password@localhost:5432/sira_path
-```
-
-and run:
-
-```bash
-npm run backend:migrate
-```
-
-## Current Backend Surface
-
-Main routes now include:
-- `/api/auth/register`
-- `/api/auth/login`
-- `/api/auth/logout`
-- `/api/session`
-- `/api/profile/me` (`DELETE` removes the account and its data)
-- `/api/topics`
-- `/api/topics/{topic_slug}/branches`
-- `/api/branches/{branch_slug}/lessons`
-- `/api/lessons/{lesson_slug}`
-- `/api/lessons/{lesson_slug}/completion`
-- `/api/questions/{question_id}/attempts`
-- `/api/review-queue`
-- `/api/subscriptions/plans`
-- `/api/subscriptions/entitlements`
-- `/api/subscriptions/sync` (blocked in production)
-- `/api/subscriptions/revenuecat/webhook`
-- `/api/analytics/events`
-
-## Content Scaling
-
-The content model now supports:
-- many branches per topic
-- many lessons per branch
-- free vs premium lessons
-- review and mastery lessons
-- surah-based Quran organization
-- deep `Sahabi` branches
-- deep `Prayer` branches including `Wudu`
-
-The current seed data intentionally creates large trees so the app stops behaving like a tiny prototype.
-
-Lessons can also come straight from Obsidian notes: `npm run import:notes -- "<vault folder>"` turns each note into a branch and each `##` heading into a lesson with its questions. See [docs/obsidian-import.md](docs/obsidian-import.md).
-
-## Important Notes
-
-- The frontend still carries local lesson presentation and path rendering logic while the backend catalog foundation is brought online.
-- User accounts, synced profile state, entitlement tables, review queue, and analytics-ready event logging now have a real backend home.
-- Social login still needs provider credentials and secure verification, so its buttons stay hidden for now.
-- The app runs fully offline when `EXPO_PUBLIC_API_BASE_URL` is not set. To ship to the stores, follow [docs/release.md](docs/release.md).
-- Purchases run through RevenueCat and ads through AdMob. See [docs/monetization.md](docs/monetization.md) for setup.
-
-## More Docs
-
-- [backend/README.md](backend/README.md)
-- [docs/architecture.md](docs/architecture.md)
+- [docs/architecture.md](docs/architecture.md): end-to-end data flow, schema, deployment plan
+- [docs/INTERVIEW-QA.md](docs/INTERVIEW-QA.md): design questions about this codebase, with answers
+- [docs/hosting.md](docs/hosting.md): running the API on Render + Neon
 - [docs/release.md](docs/release.md): building and submitting to Google Play and the App Store
-- [docs/monetization.md](docs/monetization.md)
+- [docs/monetization.md](docs/monetization.md): RevenueCat and AdMob setup
 - [docs/privacy-policy.md](docs/privacy-policy.md)
-- [docs/obsidian-import.md](docs/obsidian-import.md)
+- [backend/README.md](backend/README.md)
