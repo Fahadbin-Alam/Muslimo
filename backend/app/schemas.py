@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime
 from typing import Any, Dict, List, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
 
 
 class AuthRegisterInput(BaseModel):
@@ -240,8 +241,20 @@ class SubscriptionSyncInput(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
 
+# An analytics event is a name and a few fields; this keeps one request from storing megabytes in event_logs.
+EVENT_PAYLOAD_MAX_BYTES = 16 * 1024
+
+
 class EventLogInput(BaseModel):
-    event_type: str = Field(alias="eventType")
+    # event_logs.event_type is String(120).
+    event_type: str = Field(alias="eventType", min_length=1, max_length=120)
     payload_json: Dict[str, Any] = Field(default_factory=dict, alias="payloadJson")
 
     model_config = ConfigDict(populate_by_name=True)
+
+    @field_validator("payload_json")
+    @classmethod
+    def payload_is_small(cls, value: Dict[str, Any]) -> Dict[str, Any]:
+        if len(json.dumps(value, default=str)) > EVENT_PAYLOAD_MAX_BYTES:
+            raise ValueError(f"payloadJson is larger than {EVENT_PAYLOAD_MAX_BYTES} bytes")
+        return value

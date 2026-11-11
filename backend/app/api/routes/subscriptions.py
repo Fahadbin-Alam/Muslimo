@@ -17,6 +17,9 @@ from backend.app.schemas import EntitlementRead, SubscriptionPlanRead, Subscript
 
 router = APIRouter(tags=["subscriptions"])
 
+# The only environments where the app may report its own purchases (see sync_entitlement).
+CLIENT_SYNC_ENVIRONMENTS = {"development", "test"}
+
 
 @router.get("/subscriptions/plans", response_model=list[SubscriptionPlanRead])
 def get_plans():
@@ -42,8 +45,9 @@ def get_entitlements(user: User = Depends(current_user)):
 
 @router.post("/subscriptions/sync", response_model=EntitlementRead)
 def sync_entitlement(payload: SubscriptionSyncInput, db: DbSession, user: User = Depends(current_user)):
-    # Clients could grant themselves premium through this route, so production only trusts the store webhook.
-    if settings.environment == "production":
+    # Clients could grant themselves premium through this route, so it only runs on a developer's machine or in
+    # tests. Any other environment name (production, staging, a typo) trusts only the store webhook: fail closed.
+    if settings.environment not in CLIENT_SYNC_ENVIRONMENTS:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Subscriptions are synced by the store webhook")
 
     entitlement = db.scalar(
