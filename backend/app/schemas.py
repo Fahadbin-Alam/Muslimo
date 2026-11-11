@@ -2,9 +2,32 @@ from __future__ import annotations
 
 import json
 from datetime import datetime
-from typing import Any, Dict, List, Literal, Optional
+from typing import Annotated, Any, Dict, List, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field, field_validator
+from pydantic import AfterValidator, BaseModel, ConfigDict, EmailStr, Field, field_validator
+
+
+# socialHub is the app's old on-device crew (SocialHubState in src/types.ts: two lists), stored as sent in
+# users.social_hub_json. The crew now lives in the friendships table and the app sends both lists empty, so these
+# limits only stop one account from storing megabytes of arbitrary JSON.
+SOCIAL_HUB_KEYS = ("connections", "battleHistory")
+SOCIAL_HUB_MAX_ITEMS = 200
+SOCIAL_HUB_MAX_BYTES = 64 * 1024
+
+
+def check_social_hub(value: Dict[str, Any]) -> Dict[str, Any]:
+    unknown = set(value) - set(SOCIAL_HUB_KEYS)
+    if unknown:
+        raise ValueError(f"socialHub takes only {', '.join(SOCIAL_HUB_KEYS)}")
+    for key, items in value.items():
+        if not isinstance(items, list) or len(items) > SOCIAL_HUB_MAX_ITEMS or not all(isinstance(item, dict) for item in items):
+            raise ValueError(f"socialHub.{key} must be a list of at most {SOCIAL_HUB_MAX_ITEMS} objects")
+    if len(json.dumps(value, default=str)) > SOCIAL_HUB_MAX_BYTES:
+        raise ValueError(f"socialHub is larger than {SOCIAL_HUB_MAX_BYTES} bytes")
+    return value
+
+
+SocialHubInput = Annotated[Dict[str, Any], AfterValidator(check_social_hub)]
 
 
 class AuthRegisterInput(BaseModel):
@@ -14,7 +37,7 @@ class AuthRegisterInput(BaseModel):
     role: Optional[Literal["child", "parent"]] = None
     reminder_preferences: Dict[str, Any] = Field(default_factory=dict, alias="reminderPreferences")
     user: Dict[str, Any]
-    social_hub: Dict[str, Any] = Field(default_factory=dict, alias="socialHub")
+    social_hub: SocialHubInput = Field(default_factory=dict, alias="socialHub")
 
 
 class AuthLoginInput(BaseModel):
@@ -32,7 +55,7 @@ class SocialLoginInput(BaseModel):
     role: Optional[Literal["child", "parent"]] = None
     reminder_preferences: Dict[str, Any] = Field(default_factory=dict, alias="reminderPreferences")
     user: Dict[str, Any]
-    social_hub: Dict[str, Any] = Field(default_factory=dict, alias="socialHub")
+    social_hub: SocialHubInput = Field(default_factory=dict, alias="socialHub")
 
 
 class RemoteAccountRead(BaseModel):
@@ -60,7 +83,7 @@ class ProfileUpdateInput(BaseModel):
 
 
 class SocialUpdateInput(BaseModel):
-    social_hub: Dict[str, Any] = Field(default_factory=dict, alias="socialHub")
+    social_hub: SocialHubInput = Field(default_factory=dict, alias="socialHub")
 
 
 class TopicRead(BaseModel):
