@@ -535,9 +535,10 @@ SELECT * FROM friendships WHERE user_id = :other AND friend_id = :me;
 | Guessing | 10 logins per email / 15 min; 10 family or invite codes per account / 15 min; 30 friend adds per hour | `core/rate_limit.py` (in memory, one process) |
 | Social login | RS256 only, `aud`, `iss`, `exp` and verified email checked against Google/Apple JWKS | `core/social_tokens.py` |
 | Takeover of an unverified email sign-up | a later verified Google/Apple sign-in for that email clears the password and signs out every session | `routes/auth.py`, `social_login` |
-| Premium | only the RevenueCat webhook (shared secret, constant-time compare) grants it in production | `routes/subscriptions.py` |
+| Premium | only the RevenueCat webhook (shared secret, constant-time compare) grants it in production; a product missing from `STORE_PRODUCT_PLANS` grants nothing and is logged | `routes/subscriptions.py`, `core/subscriptions.py` |
 | Children's privacy | nothing is shared until both sides add each other; the ranking shows a generated nickname only | `routes/friends.py`, `service_layer.clean_ummah` |
 | SQL injection | every query is built with SQLAlchemy expressions and bound parameters; no string-built SQL | `backend/app/**` |
+| Oversized requests | bodies over `SIRA_MAX_REQUEST_BODY_BYTES` (1 MiB) get 413 before any route parses them; stored JSON has per-field caps (`progress_extra_json` 256 KB, `socialHub` 64 KB, analytics 16 KB) | `core/body_limit.py`, `schemas.py`, `service_layer.py` |
 | CORS | explicit allow-list (`SIRA_CORS_ORIGINS_RAW` + the GitHub Pages stats page); the phone apps don't use CORS | `main.py` |
 
 ## Deployment plan
@@ -592,6 +593,8 @@ Fly.io or Railway would work the same way: both run the same Docker image and ta
   reach 256 KB, so that's write amplification on Postgres; a delta sync or splitting hot fields out would help.
 
 ## What I'd change next
+
+The full, prioritized list with effort estimates is [ROADMAP.md](ROADMAP.md).
 
 1. Serve lessons from the API (the catalog tables and routes exist), so content can change without an app release,
    and grade answers on the server for anything that affects rankings.

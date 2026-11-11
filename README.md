@@ -121,6 +121,7 @@ its questions. See [docs/obsidian-import.md](docs/obsidian-import.md).
 
 - [docs/architecture.md](docs/architecture.md): end-to-end data flow, schema, deployment plan
 - [docs/INTERVIEW-QA.md](docs/INTERVIEW-QA.md): design questions about this codebase, with answers
+- [docs/ROADMAP.md](docs/ROADMAP.md): what's left before launch, prioritized, with effort estimates
 - [docs/hosting.md](docs/hosting.md): running the API on Render + Neon
 - [docs/release.md](docs/release.md): building and submitting to Google Play and the App Store
 - [docs/monetization.md](docs/monetization.md): RevenueCat and AdMob setup
