@@ -976,6 +976,12 @@ const STATES: State[] = [
   { id: "scene-adhan", render: () => <SceneQuestionDemo lessonId="lesson-deep-bilal-first-adhan" ask="Whom did the Prophet" /> },
   { id: "scene-wet-grain", render: () => <SceneQuestionDemo lessonId="lesson-deep-mutaffifin1-whoever-cheats" ask="Where should the wet part have been" /> },
   { id: "scene-rumah", render: () => <SceneQuestionDemo lessonId="lesson-deep-uthman-rumah" ask="Which army did Uthman equip" /> },
+  // The Companions' stories and the river at the door: the plain truth Ka'b told, the three nights in the cave of
+  // Thawr, Umar's answer from decree to decree, and bathing in the river five times a day.
+  { id: "scene-tabuk", render: () => <SceneQuestionDemo lessonId="lesson-deep-kab-truth" ask="What did Ka'b decide to tell" /> },
+  { id: "scene-thawr", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-cave-of-thawr" ask="How many nights did they stay" /> },
+  { id: "scene-plague", render: () => <SceneQuestionDemo lessonId="lesson-deep-abuubaydah-decree" ask="What was Umar's answer" /> },
+  { id: "scene-river-at-the-door", render: () => <SceneQuestionDemo lessonId="lesson-intro-five-prayers" ask="How many times a day do Muslims pray" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

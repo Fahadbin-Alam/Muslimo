@@ -948,6 +948,65 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did Uthman buy for the Muslims?", "The well of Rumah", "Whoever digs the well of Rumah", "Its water for all the Muslims"],
     ["Which army did Uthman equip?", "The army of hardship", "Whoever equips the army of hardship", "And Uthman equipped it"],
     ["What did the Prophet ﷺ promise for these deeds?", "Jannah", "Both were promised Paradise"]
+  ],
+  // Ka'b ibn Malik, who stayed behind from Tabuk, told the plain truth and was forgiven (Sahih al-Bukhari 4418, 9:118).
+  "sign-tabuk": [
+    ["How many she-camels did Ka'b own before Tabuk?", "Two", "Never stronger, never richer"],
+    ["How many she-camels did Ka'b have then?", "Two", "Never stronger, never richer"],
+    ["Ka'b stayed behind because he was too poor to go.", "False", "Never stronger, never richer"],
+    ["How was Ka'b when he stayed behind?", "Stronger and richer than ever", "Never stronger, never richer"],
+    ["What was the weather when the army left for Tabuk?", "Very hot", "Never stronger, never richer", "He kept delaying, and the army left"],
+    ["Why did Ka'b miss the army leaving for Tabuk?", "He kept putting it off", "He kept delaying, and the army left"],
+    ["What does Ka'b's delay teach us?", "Do a good deed now, not later", "He kept delaying, and the army left"],
+    ["The lesson is not to delay good deeds.", "True", "He kept delaying, and the army left"],
+    ["What did Ka'b decide to tell the Prophet ﷺ?", "The plain truth", "He told the plain truth"],
+    ["What did the Prophet ﷺ say about Ka'b?", "He has told the truth", "He told the plain truth"],
+    ["Ka'b said he had a good excuse for staying behind.", "False", "He told the plain truth"],
+    ["What saved Ka'b in the end?", "Telling the truth", "He told the plain truth"],
+    ["What saved Ka'b ibn Malik after Tabuk?", "Telling the truth", "He told the plain truth"],
+    ["Why was Ka'b saved, in his own words?", "He told the truth", "He told the plain truth"],
+    ["How long did people not speak to the three?", "Fifty nights", "Fifty nights, no one spoke to him"],
+    ["How long did the three wait, per Ka'b?", "Fifty nights", "Fifty nights, no one spoke to him"],
+    ["How did the earth feel to the three?", "Narrow, wide as it was", "Fifty nights, no one spoke to him"],
+    ["9:118 says the earth felt narrow to them.", "True", "Fifty nights, no one spoke to him"],
+    ["Who sent Ka'b the letter?", "The king of Ghassan", "A king's letter went into the oven"],
+    ["What did Ka'b do with the letter?", "Burned it in the oven", "A king's letter went into the oven"],
+    ["Ka'b left Madinah to join the king.", "False", "A king's letter went into the oven"]
+  ],
+  // The cave of Thawr on the Hijrah: the camels fed four months, Asma's belt, three nights in the cave, and "two, the
+  // third of whom is Allah" (Sahih al-Bukhari 3905, 3653).
+  "sign-thawr": [
+    ["How long did Abu Bakr feed the two camels?", "Four months", "Two camels, fed for four months"],
+    ["What did Asma use to tie the food bag?", "Part of her waist belt", "Asma cut her belt to tie the food"],
+    ["What did Asma use to tie the food?", "Her waist belt, cut in two", "Asma cut her belt to tie the food"],
+    ["What does Dhat an-Nitaqayn mean?", "The one with two belts", "Asma cut her belt to tie the food"],
+    ["Asma helped the Hijrah journey.", "True", "Asma cut her belt to tie the food"],
+    ["How many nights did they stay in the cave?", "Three", "Three nights in the cave of Thawr"],
+    ["How long did they stay in the cave?", "Three days", "Three nights in the cave of Thawr"],
+    ["What did Abu Bakr fear in the cave?", "The enemy would see them", "Two, the third of whom is Allah"],
+    ["Abu Bakr feared they could be seen if the enemy looked down.", "True", "Two, the third of whom is Allah"],
+    ["What did the Prophet ﷺ say to calm him?", "Two, and Allah is the third", "Two, the third of whom is Allah"],
+    ["What did the Prophet ﷺ say about the two in the cave?", "Allah is their third", "Two, the third of whom is Allah"],
+    ["What did the Prophet ﷺ say about the two of them?", "The third of them is Allah", "Two, the third of whom is Allah"],
+    ["What sums up the answer in the cave?", "Trust that Allah is with you", "Two, the third of whom is Allah"]
+  ],
+  // The plague in Sham: Umar at Sargh asks counsel and goes back, from Allah's decree to Allah's decree (Sahih
+  // al-Bukhari 5729).
+  "sign-plague": [
+    ["Why did Umar decide not to enter Sham?", "A sickness had spread there", "Plague had broken out in Sham"],
+    ["What did Umar do before deciding?", "He asked the companions' advice", "He asked them all for counsel"],
+    ["Abu Ubaydah asked: are you running from Allah's decree? What did Umar say?", "From His decree to His decree", "From Allah's decree to Allah's decree"],
+    ["What was Umar's answer?", "From Allah's decree to Allah's decree", "From Allah's decree to Allah's decree"],
+    ["What did the Prophet ﷺ say about a land with plague?", "Do not go into it", "Do not go to it, nor flee from it"]
+  ],
+  // A river at the door, bathed in five times a day, like the five prayers (Sahih al-Bukhari 528).
+  "sign-river-at-the-door": [
+    ["What did he compare the five prayers to?", "Bathing in a river five times a day", "If a river ran by your door", "And you bathed in it five times a day"],
+    ["What are the five prayers like, per the hadith?", "Bathing in a river", "If a river ran by your door", "And you bathed in it five times a day"],
+    ["The Prophet ﷺ compared the five prayers to bathing in a river.", "True", "If a river ran by your door", "And you bathed in it five times a day"],
+    ["How many times a day do Muslims pray?", "Five", "And you bathed in it five times a day"],
+    ["What do the prayers wash away?", "Sins", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"],
+    ["What do good deeds do, in 11:114?", "Remove bad deeds", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"]
   ]
 };
 

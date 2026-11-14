@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(680);
+    expect(asks.length).toBe(725);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,7 +97,7 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(963);
+    expect(places).toBe(1023);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -1203,6 +1203,177 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, -18]
     ]);
+  });
+
+  it("waits on the scenes of the Companions' stories and the river at the door before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-tabuk", "sign-thawr", "sign-plague", "sign-river-at-the-door"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(45);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Ka'b at Tabuk: no camels and no dates yet; then his two she-camels, ripe dates and shade: never richer.
+    for (const prompt of ["How many she-camels did Ka'b own before Tabuk?", "How many she-camels did Ka'b have then?", "Ka'b stayed behind because he was too poor to go.", "How was Ka'b when he stayed behind?"]) {
+      expect([prompt, shown(prompt, ["his first she-camel", "his second she-camel", "ripe dates on the palms", "the pleasant shade"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // The weather: no sun and no heat yet; then the sun in great heat, and the army's ways leave in it.
+    expect(shown("What was the weather when the army left for Tabuk?", ["the sun, in great heat", "heat in the air", "the army's way to Tabuk 1, part 3", "the army's way to Tabuk 2, part 3"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    // His camels at home, and no army leaving yet; then the army's ways go to Tabuk, and his camels are still at home.
+    for (const prompt of ["Why did Ka'b miss the army leaving for Tabuk?", "What does Ka'b's delay teach us?", "The lesson is not to delay good deeds."]) {
+      expect([prompt, shown(prompt, ["his first she-camel", "his second she-camel", "the army's way to Tabuk 1, part 1", "the army's way to Tabuk 2, part 3"])]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // The army gone, and no truth told yet; then the army comes back, his way goes to the masjid, and the truth is told.
+    for (const prompt of [
+      "What did Ka'b decide to tell the Prophet ﷺ?",
+      "What did the Prophet ﷺ say about Ka'b?",
+      "Ka'b said he had a good excuse for staying behind.",
+      "What saved Ka'b in the end?",
+      "What saved Ka'b ibn Malik after Tabuk?",
+      "Why was Ka'b saved, in his own words?"
+    ]) {
+      expect([prompt, shown(prompt, ["the army's way to Tabuk 1, part 3", "the army's way back from Tabuk 1, part 1", "his way to the masjid, part 2", "the truth, told"])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [0, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Day, and the earth open; then the nights, and the earth closing in on him.
+    for (const prompt of ["How long did people not speak to the three?", "How long did the three wait, per Ka'b?", "How did the earth feel to the three?", "9:118 says the earth felt narrow to them."]) {
+      expect([prompt, shown(prompt, ["the sun, in great heat", "the moon and stars of the nights", "the earth, closing in"]), moved(prompt, "the earth, closing in", "scale")]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [0, 1, 1]
+        ],
+        [1.6, 1]
+      ]);
+    }
+    // No letter yet; then a way from Sham brings it, and it is in the oven's fire.
+    for (const prompt of ["Who sent Ka'b the letter?", "What did Ka'b do with the letter?", "Ka'b left Madinah to join the king."]) {
+      expect([prompt, shown(prompt, ["a way from Sham, with a letter, part 2", "a letter from Ghassan", "the oven's fire, burning it"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 0, 1]
+        ]
+      ]);
+    }
+    // The cave of Thawr: no camels and no months yet; then two she-camels fed and ready, and four months gone.
+    expect(shown("How long did Abu Bakr feed the two camels?", ["two she-camels, fed and ready", "a month gone, 1", "a month gone, 4"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The news at noon, and no bag yet; then the bag of food for the way, tied with one half of the belt.
+    for (const prompt of ["What did Asma use to tie the food bag?", "What did Asma use to tie the food?", "What does Dhat an-Nitaqayn mean?", "Asma helped the Hijrah journey."]) {
+      expect([prompt, shown(prompt, ["the news at the door: it is time", "a bag of food for the way", "a belt, one half", "the belt's other half, tying the bag", "the bag, tied"]), moved(prompt, "the belt's other half, tying the bag", "x")]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [0, 1, 1, 1, 1]
+        ],
+        [0, -18.5]
+      ]);
+    }
+    // Day, no way up and no night counted; then by night two ways go up to the cave, and three nights are counted.
+    for (const prompt of ["How many nights did they stay in the cave?", "How long did they stay in the cave?"]) {
+      expect([prompt, shown(prompt, ["night", "a way up to the cave 1, part 3", "a way up to the cave 2, part 3", "a night in the cave, 1", "a night in the cave, 3"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // In the cave, and no one chasing yet; then the ways of those chasing them come up above the cave.
+    for (const prompt of [
+      "What did Abu Bakr fear in the cave?",
+      "Abu Bakr feared they could be seen if the enemy looked down.",
+      "What did the Prophet ﷺ say to calm him?",
+      "What did the Prophet ﷺ say about the two in the cave?",
+      "What did the Prophet ﷺ say about the two of them?",
+      "What sums up the answer in the cave?"
+    ]) {
+      expect([prompt, shown(prompt, ["a way up to the cave 1, part 3", "the way of those chasing them 1, part 4", "the way of those chasing them 2, part 4"])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // The plague: ways at Sargh, and no sickness yet; then the sickness over Sham, and the news told at Sargh.
+    expect(shown("Why did Umar decide not to enter Sham?", ["a way from Sham to Sargh 2", "the sickness over Sham", "the news, told at Sargh"])).toEqual([
+      [1, 0, 0],
+      [1, 1, 1]
+    ]);
+    // No counsel asked yet; then the counsels, the last of them saying: go back.
+    expect(shown("What did Umar do before deciding?", ["the sickness over Sham", "the counsel of the elders of Quraysh: go back"])).toEqual([
+      [1, 0],
+      [1, 1]
+    ]);
+    // The way back to Madinah, and no valley yet; then a valley's green and dry sides, with camels grazing on the green.
+    for (const prompt of ["Abu Ubaydah asked: are you running from Allah's decree? What did Umar say?", "What was Umar's answer?"]) {
+      expect([prompt, shown(prompt, ["the way back to Madinah, part 2", "a valley's green side", "a valley's dry side", "a camel grazing on the green side 3"])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // No land ringed yet; then a way to the land of the plague stops outside it, and the ways inside it stay.
+    expect(shown("What did the Prophet ﷺ say about a land with plague?", ["a camel grazing on the green side 3", "the land of the plague, ringed", "a way toward it, stopping outside", "where it stops", "a way inside it, staying 2"])).toEqual([
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // A river at the door: no river yet; then the river, bathed in five times through one day, each time counted.
+    const bathed = ["first", "second", "third", "fourth", "fifth"].map((each) => `bathed, the ${each} time`);
+    for (const prompt of ["What did he compare the five prayers to?", "What are the five prayers like, per the hadith?", "The Prophet ﷺ compared the five prayers to bathing in a river."]) {
+      expect([prompt, shown(prompt, ["a river at its door", "five rings, to count the baths", ...bathed])]).toEqual([prompt, [bathed.map(() => 0).concat([0, 0]), bathed.map(() => 1).concat([1, 1])]]);
+    }
+    // The river, and nothing counted yet; then five times a day.
+    expect(shown("How many times a day do Muslims pray?", ["a river at its door", "five rings, to count the baths", ...bathed])).toEqual([
+      [1, 0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1, 1]
+    ]);
+    // Going down to it once more, the water not yet clean; then not a trace of dirt is left, and the five prayers glow.
+    const prayers = [1, 2, 3, 4, 5].map((i) => `the five prayers, ${i} lit`);
+    for (const prompt of ["What do the prayers wash away?", "What do good deeds do, in 11:114?"]) {
+      expect([prompt, shown(prompt, ["the water, clean and sparkling", ...prayers])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
