@@ -1,20 +1,20 @@
-import { animalAt, cloud, glow, n, palm, peaks, rainStreaks, sky, tuft, type SignArt, type SignPart } from "./signDraw";
-import { madinahMasjid, ring, sack, showWhile, way } from "./giveArt";
+import { animalAt, cloud, glow, n, palm, peaks, rainStreaks, sky, stars, tuft, type SignArt, type SignPart } from "./signDraw";
+import { madinahMasjid, ring, sack, showWhile, sparkle, way } from "./giveArt";
 import { comeIn, risingSparks } from "./charityArt";
 import { at3, showFrom } from "./storyArt";
-import { home } from "./trialArt";
+import { crescent, home } from "./trialArt";
 
 /**
  * Manners and worship, drawn as the stories of charity are (charityArt.ts): asking permission three times at a door
  * and going back, the first call to prayer in Madinah and walking calmly to the prayer, the wet grain hidden in a heap
- * of food, and the well of Rumah and the army of hardship. Only the land, the sky, homes, the masjid, things and
- * animals are drawn. No Prophet, no Companion and no person is ever drawn: where someone went, a dashed way shows it,
- * and a voice is arcs or rings in the air. No bell and no horn is drawn. A deed's reward is sparks rising from where
- * it was done, never light coming down.
+ * of food, the well of Rumah and the army of hardship, and the river at the door, five times a day. Only the land, the
+ * sky, homes, the masjid, a river, things and animals are drawn. No Prophet, no Companion and no person is ever drawn:
+ * where someone went, a dashed way shows it, and a voice is arcs or rings in the air. No bell and no horn is drawn. A
+ * deed's reward is sparks rising from where it was done, never light coming down.
  */
 
-const BROWN = "#8A6440";
-const CREAM = "#FFF6DC";
+export const BROWN = "#8A6440";
+export const CREAM = "#FFF6DC";
 
 const hillsOfMadinah = () =>
   peaks(
@@ -29,11 +29,11 @@ const hillsOfMadinah = () =>
   );
 
 /** The land from y 61 down, with a few tufts of dry grass. */
-const landOf = (tufts: [number, number][], fill = "#E2CB9C") =>
+export const landOf = (tufts: [number, number][], fill = "#E2CB9C") =>
   `<rect y="61" width="160" height="59" fill="${fill}"/><path d="M0 61 L160 61" stroke="#CDB283" stroke-width="0.7"/>` + tufts.map(([x, y]) => tuft(x, y, "#A99A5A", 3.4)).join("");
 
 /** A voice's three arcs, from (x, y), facing right. */
-const arcs = (x: number, y: number, color = "#FFFFFF") =>
+export const arcs = (x: number, y: number, color = "#FFFFFF") =>
   [0, 1, 2]
     .map((i) => {
       const ax = n(x + i * 2.2);
@@ -471,4 +471,150 @@ function rumah(): SignArt {
   };
 }
 
-export const MANNERS_ART = { permission, adhan, "wet-grain": wetGrain, rumah };
+// The river at the door. The Prophet ﷺ said: if there were a river at the door of one of you, and he bathed in it five
+// times a day, would any dirt be left on him? They said: not a trace of dirt would be left. He said: that is the
+// likeness of the five prayers, by which Allah wipes out sins (Sahih al-Bukhari 528). No one is drawn: a river comes to
+// flow by a home's door; five times through one day, from dawn to night, a dashed way goes from the door to the river,
+// the day's dirt is carried off downstream, and one more of five rings over the home is counted; then the way goes once
+// more and nothing is carried off; the water sparkles, clean; and the five rings light up, as the five prayers.
+function riverAtTheDoor(): SignArt {
+  const hills = peaks(
+    [
+      [26, 10, 26],
+      [92, 14, 32],
+      [148, 10, 24]
+    ],
+    62,
+    "#A9907A",
+    false
+  );
+  const bank = (y: number) => `C30 ${n(y - 2)} 60 ${n(y + 2)} 90 ${n(y + 1)} C120 ${y} 140 ${n(y + 2.6)} 162 ${n(y + 1.6)}`;
+  const river =
+    `<path d="M-2 92 ${bank(92)} L162 106 C140 107 120 104.6 90 105.6 C60 106.6 30 103 -2 105 Z" fill="#5DA9D6"/>` +
+    `<path d="M-2 92 ${bank(92)}" stroke="#3E86B8" stroke-width="0.8" fill="none"/>` +
+    `<path d="M-2 105 C30 103 60 106.6 90 105.6 C120 104.6 140 107 162 106" stroke="#3E86B8" stroke-width="0.8" fill="none"/>`;
+  const ripples = [
+    [6, 97],
+    [26, 101.4],
+    [46, 98],
+    [66, 102],
+    [86, 97.6],
+    [106, 101.6],
+    [126, 97.8],
+    [146, 101.8]
+  ]
+    .map(([x, y]) => `<path d="M${x} ${y} q2 -1.2 4 0 q2 1.2 4 0" stroke="#FFFFFF" stroke-width="0.6" fill="none" opacity="0.75"/>`)
+    .join("");
+  const reeds = tuft(30, 92, "#6E9A44", 4) + tuft(36, 92.6, "#7FA650", 3.4) + tuft(96, 93, "#6E9A44", 4) + tuft(134, 94, "#7FA650", 3.6);
+  const toRiver = "M58.2 86.8 C58.4 88.6 58.8 90.4 59.4 92.6";
+  const dirt = [
+    [57.4, 94.4],
+    [60.2, 95.4],
+    [62.4, 94.2],
+    [58.6, 96.4],
+    [61.6, 96.8]
+  ]
+    .map(([x, y]) => `<circle cx="${x}" cy="${y}" r="0.75" fill="#6E5034"/>`)
+    .join("");
+  const pipsAt = [48, 54, 60, 66, 72];
+  // Five times through one day: at dawn, at noon, in the afternoon, at sunset and at night.
+  const baths = [0.205, 0.237, 0.269, 0.301, 0.333];
+  const times = ["first", "second", "third", "fourth", "fifth"];
+  return {
+    kind: "river-at-the-door",
+    ms: 12000,
+    parts: [
+      { name: "sky", svg: sky("#BFE3FA", "#DDF1FC", 58) },
+      {
+        name: "the sun, through the day",
+        svg: `${glow(80, 34, 11, "#FFF0C0", 0.12)}<circle cx="80" cy="34" r="5" fill="#FFE07A"/>`,
+        // At dawn, at noon (below the words, so a small phone still shows it), in the afternoon, at sunset; gone at
+        // night; back with the morning.
+        keys: { at: [0, 0.204, 0.236, 0.268, 0.3, 0.326, 0.336, 0.34, 0.42, 0.44], opacity: [1, 1, 1, 1, 1, 1, 0, 0, 0, 1], x: [-62, -62, 0, 38, 64, 64, 64, 0, 0, 0], y: [18, 18, 0, 4, 18, 18, 18, 0, 0, 0] }
+      },
+      { name: "the light of dawn", svg: `<rect width="160" height="62" fill="#F7B98A" opacity="0.45"/>`, keys: { at: [0, 0.198, 0.206, 0.222, 0.232], opacity: [0, 0, 1, 1, 0] } },
+      { name: "the light of sunset", svg: `<rect width="160" height="62" fill="#F08A5D" opacity="0.45"/>`, keys: { at: [0, 0.29, 0.298, 0.316, 0.326], opacity: [0, 0, 1, 1, 0] } },
+      { name: "clouds", svg: cloud(40, 36, 0.6, "#FFFFFF", 0.9) + cloud(122, 30, 0.7, "#FFFFFF", 0.85), loop: { move: "slide", ms: 12000 } },
+      { name: "hills", svg: hills },
+      {
+        name: "the land",
+        svg: landOf(
+          [
+            [20, 70],
+            [104, 72],
+            [146, 76],
+            [20, 114],
+            [70, 116],
+            [120, 113],
+            [146, 116]
+          ],
+          "#DCCB98"
+        )
+      },
+      { name: "palms", svg: palm(24, 86, 18) + palm(136, 84, 16) + palm(150, 89, 12), origin: { x: 80, y: 86 }, loop: { move: "sway", ms: 3600, angle: 0.6 } },
+      { name: "a home", svg: home(60, 86, 36, 22) },
+      { name: "a river at its door", svg: river, keys: { at: [0, 0.03, 0.09], opacity: [0, 0, 1], scaleY: [0.2, 0.2, 1] }, origin: { x: 80, y: 98.6 } },
+      { name: "the river flowing", svg: ripples, clip: { x: 0, y: 92, w: 160, h: 14 }, keys: showFrom(0.06, 0.1), loop: { move: "slide", ms: 5200 } },
+      { name: "reeds by the river", svg: reeds, keys: showFrom(0.07, 0.1) },
+      ...baths.flatMap((t, i): SignPart[] => [
+        { name: `the way to the river, the ${times[i]} time`, svg: way(toRiver, BROWN, 1.3), keys: showWhile(at3(t), at3(t + 0.004), at3(t + 0.022), at3(t + 0.026)) },
+        {
+          name: `the day's dirt, carried off, the ${times[i]} time`,
+          svg: dirt,
+          keys: { at: [0, at3(t + 0.006), at3(t + 0.01), at3(t + 0.026), at3(t + 0.03)], opacity: [0, 0, 1, 0.5, 0], x: [0, 0, 0, 14, 18], y: [0, 0, 0, 0.6, 0.8] }
+        }
+      ]),
+      { name: "the way to the river, once more", svg: way(toRiver, BROWN, 1.3), keys: showWhile(0.46, 0.466, 0.604, 0.614) },
+      { name: "night", svg: `<rect width="160" height="120" fill="#0F1C3A" opacity="0.66"/>`, keys: showWhile(0.322, 0.332, 0.42, 0.44) },
+      {
+        name: "the moon and stars of the night",
+        svg: `${glow(118, 30, 8, "#FFF6D0", 0.1)}${crescent(118, 30, 4, 1.6, "#FFF6D0")}${stars([
+          [30, 30],
+          [52, 40],
+          [76, 28],
+          [98, 44],
+          [140, 38],
+          [150, 50]
+        ])}`,
+        keys: showWhile(0.326, 0.336, 0.42, 0.44),
+        loop: { move: "twinkle", ms: 2400, low: 0.7 }
+      },
+      { name: "five rings, to count the baths", svg: pipsAt.map((x) => `<circle cx="${x}" cy="58" r="2.2" fill="${CREAM}" stroke="${BROWN}" stroke-width="0.6"/>`).join(""), keys: showFrom(0.2, 0.21) },
+      ...baths.map((t, i) => ({
+        name: `bathed, the ${times[i]} time`,
+        svg: `<circle cx="${pipsAt[i]}" cy="58" r="1.4" fill="#5DA9D6"/>`,
+        keys: { at: [0, at3(t + 0.012), at3(t + 0.02)], opacity: [0, 0, 1], scale: [0.4, 0.4, 1] },
+        origin: { x: pipsAt[i], y: 58 }
+      })),
+      {
+        name: "the water, clean and sparkling",
+        svg: [
+          [40, 97.4],
+          [70, 99.6],
+          [102, 96.6],
+          [128, 99.4]
+        ]
+          .map(([x, y], i) => sparkle(x, y, i % 2 ? 1.6 : 2, "#FFFFFF"))
+          .join(""),
+        keys: showFrom(0.63, 0.65),
+        loop: { move: "twinkle", ms: 1200, low: 0.3 }
+      },
+      ...pipsAt.map((x, i) => ({
+        name: `the five prayers, ${i + 1} lit`,
+        svg: `${glow(x, 58, 5, "#FFE7A0", 0.22)}<circle cx="${x}" cy="58" r="1.6" fill="#E8A33A"/>`,
+        keys: { at: [0, at3(0.83 + i * 0.012), at3(0.84 + i * 0.012)], opacity: [0, 0, 1], scale: [0.5, 0.5, 1] },
+        origin: { x, y: 58 },
+        loop: { move: "twinkle" as const, ms: 1600, low: 0.7, phase: i / 5 }
+      }))
+    ],
+    words: [
+      { text: "If a river ran by your door", from: 0.02, to: 0.18 },
+      { text: "And you bathed in it five times a day", from: 0.2, to: 0.4 },
+      { text: "Would any dirt be left on you?", from: 0.42, to: 0.6 },
+      { text: "Not a trace of dirt would be left", from: 0.62, to: 0.8 },
+      { text: "By the five prayers, Allah wipes out sins", from: 0.82, to: 1 }
+    ]
+  };
+}
+
+export const MANNERS_ART = { permission, adhan, "wet-grain": wetGrain, rumah, "river-at-the-door": riverAtTheDoor };

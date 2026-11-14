@@ -178,7 +178,22 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  * - the wet grain hidden under the dry in a heap of food: why not on top, for people to see? Whoever cheats is not of
  *   me (Sahih Muslim 102);
  * - the well of Rumah that Uthman dug, its water for all, and the army of hardship he equipped, both promised Paradise
- *   (Sahih al-Bukhari 2778).
+ *   (Sahih al-Bukhari 2778);
+ * - a river at the door, bathed in five times a day, leaving no trace of dirt: so Allah wipes out sins by the five
+ *   prayers (Sahih al-Bukhari 528);
+ *
+ * and stories of the Companions (companionArt.ts draws them):
+ *
+ * - Ka'b ibn Malik, never stronger or richer than when he stayed behind from Tabuk, putting it off until the army had
+ *   gone; the plain truth he told, the fifty nights no one spoke to him while the earth closed in on him, the king's
+ *   letter he put in the oven, and the call from the mountain of Sala': O Ka'b ibn Malik, be happy! (Sahih al-Bukhari
+ *   4418; Quran 9:118);
+ * - the cave of Thawr: two camels fed for four months, the news at noon that it was time, the food bag tied with
+ *   Asma's belt, three nights in the cave, those chasing them standing above it: two, the third of whom is Allah; and
+ *   the guide who brought the camels (Sahih al-Bukhari 3905, 3653);
+ * - the plague in Sham: Umar at Sargh, asking counsel and going back in the morning, from Allah's decree to Allah's
+ *   decree like camels grazing the green side of a valley; and the hadith: do not go to a land of plague, nor flee from
+ *   it (Sahih al-Bukhari 5729).
  *
  * Each scene shows only what its ayahs say. Nothing in a scene is a person or an angel: only the land, the sky, the
  * sea, plants, animals and things; the people of a parable are never drawn, only their gardens, and no Prophet and no
@@ -191,7 +206,9 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  * one who kindled the fire is not drawn, only his fire; and no one who gives or receives is drawn, only what is given,
  * going along a dashed way: the one who watered the dog, moved the branch or planted the tree is only his dashed way;
  * the one who asked permission, his witness, Bilal and Uthman are only their dashed ways and their voices, the hand in
- * the heap of food is not drawn, and no bell or horn is drawn for the call to prayer.
+ * the heap of food is not drawn, and no bell or horn is drawn for the call to prayer; Ka'b, Abu Bakr, Asma, Umar and
+ * those with them are only their dashed ways and their voices, nothing is drawn for Allah in the cave, and the plague
+ * is only a haze over the land.
  */
 
 export type SignKind =
@@ -275,7 +292,11 @@ export type SignKind =
   | "permission"
   | "adhan"
   | "wet-grain"
-  | "rumah";
+  | "rumah"
+  | "river-at-the-door"
+  | "tabuk"
+  | "thawr"
+  | "plague";
 
 export type SignScene = {
   id: string;
@@ -829,6 +850,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: whoever digs the well of Rumah will have Paradise, and Uthman dug it, and its water was for all the Muslims. And he ﷺ said: whoever equips the army of hardship will have Paradise, and Uthman equipped it.",
     sources: [bukhari("2778")]
+  },
+  {
+    id: "sign-river-at-the-door",
+    kind: "river-at-the-door",
+    caption:
+      "The Prophet ﷺ said: if a river ran by the door of one of you, and he bathed in it five times a day, would any dirt be left on him? They said: not a trace of dirt would be left. He said: that is the likeness of the five prayers, by which Allah wipes out sins.",
+    sources: [bukhari("528")]
+  },
+  {
+    id: "sign-tabuk",
+    kind: "tabuk",
+    caption:
+      "Ka'b ibn Malik was never stronger or richer than when he stayed behind from Tabuk: he kept putting off getting ready until the army had gone. When the Prophet ﷺ came back, Ka'b told him the plain truth: he had no excuse. For fifty nights no one spoke to him, and the earth closed in on him, wide as it was; and he put a king's letter into the oven. Then a voice called from the mountain of Sala': O Ka'b ibn Malik, be happy! Allah had accepted his repentance.",
+    sources: [bukhari("4418"), quran(9, 118)]
+  },
+  {
+    id: "sign-thawr",
+    kind: "thawr",
+    caption:
+      "Abu Bakr fed two camels for four months, waiting to make the Hijrah with the Prophet ﷺ, who came to him one day at noon: it was time. Asma tied their food bag with half of her belt. They stayed three nights in a cave on the mountain of Thawr. When those chasing them stood above it, Abu Bakr said: if one of them looked down, he would see us. He ﷺ said: what do you think of two, the third of whom is Allah? Then their guide brought the camels.",
+    sources: [bukhari("3905"), bukhari("3653")]
+  },
+  {
+    id: "sign-plague",
+    kind: "plague",
+    caption:
+      "Umar set out for Sham, and at Sargh he heard that plague had broken out there. He asked counsel, and said: we go back in the morning. Abu Ubaydah said: running from Allah's decree? Umar said: yes, from Allah's decree to Allah's decree, as camels may graze the green side of a valley or its dry side. Then Abd ar-Rahman ibn Awf told him the Prophet ﷺ said: if you hear of it in a land, do not go to it; and if it breaks out where you are, do not leave it, fleeing from it.",
+    sources: [bukhari("5729")]
   }
 ];
 
@@ -1494,7 +1543,42 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The well of Rumah and the army of hardship.
   "sahabi-uthman-ibn-affan-sacrifice-for-islam": "sign-rumah",
   "sahabi-uthman-ibn-affan-public-service-and-counsel": "sign-rumah",
-  "deep-uthman-rumah": "sign-rumah"
+  "deep-uthman-rumah": "sign-rumah",
+  // A river at the door, five times a day: the five prayers (Sahih al-Bukhari 528).
+  "deep-prayerlive-river": "sign-river-at-the-door",
+  "deep-hud6-good-deeds-remove-bad": "sign-river-at-the-door",
+  "intro-five-prayers": "sign-river-at-the-door",
+  // Ka'b ibn Malik and Tabuk (Sahih al-Bukhari 4418; Quran 9:118). The night of Al-Aqabah, before the Hijrah, keeps its
+  // photo.
+  "deep-kab-strongest": "sign-tabuk",
+  "deep-kab-delay": "sign-tabuk",
+  "deep-kab-at-tabuk": "sign-tabuk",
+  "deep-kab-truth": "sign-tabuk",
+  "deep-kab-three": "sign-tabuk",
+  "deep-kab-fifty-nights": "sign-tabuk",
+  "deep-kab-kings-letter": "sign-tabuk",
+  "deep-kab-be-happy": "sign-tabuk",
+  "deep-kab-best-day": "sign-tabuk",
+  "deep-kab-allah-forgave": "sign-tabuk",
+  "deep-kab-truth-forever": "sign-tabuk",
+  "deep-tawbah5-never-stronger": "sign-tabuk",
+  "deep-tawbah5-saved-by-the-truth": "sign-tabuk",
+  "notes-sahabah-companions-from-your-notes-5-kaab-ibn-malik": "sign-tabuk",
+  "surah-meaning-9-111-122": "sign-tabuk",
+  // The cave of Thawr on the Hijrah (Sahih al-Bukhari 3905, 3653).
+  "deep-abubakr-waiting-for-hijrah": "sign-thawr",
+  "deep-abubakr-cave-of-thawr": "sign-thawr",
+  "deep-abubakr-hijrah-helpers": "sign-thawr",
+  "deep-abubakr-do-not-grieve": "sign-thawr",
+  "deep-asma-two-belts": "sign-thawr",
+  "deep-tawbah2-second-of-two": "sign-thawr",
+  "deep-tawbah2-allah-the-third": "sign-thawr",
+  "deep-shuara1-the-third-is-allah": "sign-thawr",
+  "surah-meaning-9-38-42": "sign-thawr",
+  "sahabi-abu-bakr-hijrah-and-turning-points": "sign-thawr",
+  // The plague in Sham, and Umar at Sargh (Sahih al-Bukhari 5729).
+  "deep-umar-plague": "sign-plague",
+  "deep-abuubaydah-decree": "sign-plague"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
