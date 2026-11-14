@@ -894,6 +894,60 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Umar's land could be sold later.", "False", "Never sold, gifted or inherited"],
     ["What could the keeper do?", "Eat from it and feed a friend", "Its keeper may eat and feed a friend"],
     ["What could he not do?", "Store things for himself", "Storing nothing for himself"]
+  ],
+  // Asking permission three times at Umar's door, going back, and the youngest as the witness (Sahih al-Bukhari 6245).
+  "sign-permission": [
+    ["How many times should you ask to come in?", "Three", "He asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to come in?", "Three times", "He asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to enter?", "Three times", "He asked permission once", "A third time: no permission given"],
+    ["Why did Abu Musa leave Umar's door?", "He asked three times, no answer", "He asked permission once", "A third time: no permission given"],
+    ["Whose door did Abu Musa knock on?", "Umar's", "At Umar's door"],
+    ["If no one answers after three times, what do you do?", "Go back", "So he went back"],
+    ["What should you do if no one lets you in?", "Go back home", "So he went back"],
+    ["What should you do if you ask to come in three times with no answer?", "Go back home", "So he went back"],
+    ["What should you do if no one allows you in?", "Go back politely", "So he went back"],
+    ["What should you do after three unanswered asks?", "Return home", "So he went back"],
+    ["Abu Musa went back after asking Umar three times.", "True", "So he went back"],
+    ["What did Umar ask Abu Musa to bring?", "A witness to the hadith", "The youngest went with him as witness"],
+    ["Who did Ubayy send as the witness?", "The youngest of them", "The youngest went with him as witness"],
+    ["Who went as Abu Musa's witness?", "Abu Sa'id, the youngest", "The youngest went with him as witness"]
+  ],
+  // The first call to prayer in Madinah, and walking calmly to the prayer (Sahih al-Bukhari 604, 636).
+  "sign-adhan": [
+    ["Before the adhan, how did Muslims know the prayer time?", "They guessed it", "They used to guess the prayer time"],
+    ["Before the adhan, people had to guess the prayer time.", "True", "They used to guess the prayer time"],
+    ["Who was told to call the first adhan?", "Bilal", "O Bilal, stand and call to prayer"],
+    ["Whom did the Prophet ﷺ tell to call the adhan?", "Bilal", "O Bilal, stand and call to prayer"],
+    ["Bilal was the first ____, who calls the adhan.", "mu'adhdhin", "O Bilal, stand and call to prayer"],
+    ["The Muslims chose a bell like a church bell.", "False", "O Bilal, stand and call to prayer"],
+    ["The ____ is the call to prayer.", "adhan", "O Bilal, stand and call to prayer", "Calling the people to prayer"],
+    ["The ____ is the second call, just before salah starts.", "iqamah", "When you hear the iqamah"],
+    ["Walk to salah ____; don't run, even if late.", "calmly", "Walk to it calmly, do not rush"],
+    ["How should we go to prayer after the iqamah?", "Calmly, without rushing", "Walk to it calmly, do not rush"],
+    ["How should we walk to the prayer?", "With calmness", "Walk to it calmly, do not rush"],
+    ["Running to catch the start of prayer is better.", "False", "Walk to it calmly, do not rush"]
+  ],
+  // The wet grain hidden under the dry in a heap of food (Sahih Muslim 102).
+  "sign-wet-grain": [
+    ["What did the Prophet ﷺ find inside the heap of food?", "Wet grain", "Rain fell on a heap of food", "Inside, it was wet"],
+    ["What did he ﷺ find in the heap, per Muslim 102?", "Wet grain hidden inside", "Rain fell on a heap of food", "Inside, it was wet"],
+    ["What did the Prophet ﷺ find in the heap?", "Wet grain hidden under dry", "Rain fell on a heap of food", "Inside, it was wet"],
+    ["What did the seller hide, per the hadith?", "Wet grain under dry grain", "Rain fell on a heap of food", "The wet part hidden under dry"],
+    ["What should the seller have done with the wet part?", "Put it on top to be seen", "Why not on top, for people to see?"],
+    ["Where should the wet part have been?", "On top, for people to see", "Why not on top, for people to see?"],
+    ["The Prophet ﷺ told the seller to put the wet part where people could see.", "True", "Why not on top, for people to see?"],
+    ["What did the Prophet ﷺ say about one who deceives?", "He is not of me", "Whoever cheats is not of me"],
+    ["What did he ﷺ say about one who deceives?", "He is not of me", "Whoever cheats is not of me"],
+    ["Hiding a fault in what you sell is fine if no one asks.", "False", "Whoever cheats is not of me"],
+    ["Hiding a fault in what we sell is cheating.", "True", "Whoever cheats is not of me"],
+    ["Hiding a flaw in goods is fine if no one notices.", "False", "Whoever cheats is not of me"]
+  ],
+  // The well of Rumah that Uthman dug, and the army of hardship he equipped (Sahih al-Bukhari 2778).
+  "sign-rumah": [
+    ["Uthman bought a ____ and gave its water to everyone.", "well", "Whoever digs the well of Rumah", "Its water for all the Muslims"],
+    ["What did Uthman buy for the Muslims?", "The well of Rumah", "Whoever digs the well of Rumah", "Its water for all the Muslims"],
+    ["Which army did Uthman equip?", "The army of hardship", "Whoever equips the army of hardship", "And Uthman equipped it"],
+    ["What did the Prophet ﷺ promise for these deeds?", "Jannah", "Both were promised Paradise"]
   ]
 };
 

@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(638);
+    expect(asks.length).toBe(680);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,7 +97,7 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(898);
+    expect(places).toBe(963);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -999,6 +999,209 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1]
       ],
       [0, -91]
+    ]);
+  });
+
+  it("waits on the scenes of manners and worship before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const manners = ["sign-permission", "sign-adhan", "sign-wet-grain", "sign-rumah"];
+    const asks = sceneAsks().filter((each) => manners.includes(each.sceneId));
+    expect(asks.length).toBe(42);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Asking permission: the way at the shut door, and nothing asked yet; then three askings, each one counted.
+    for (const [prompt, answer] of [
+      ["How many times should you ask to come in?", "Three"],
+      ["How many times should you ask to come in?", "Three times"],
+      ["How many times should you ask to enter?", "Three times"],
+      ["Why did Abu Musa leave Umar's door?", "He asked three times, no answer"]
+    ]) {
+      expect([prompt, shown(prompt, ["the way to the door, part 3", "three rings, to count the askings", "asked once", "asked a second time", "asked a third time"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Whose door: no way yet; then the way comes to it.
+    expect(shown("Whose door did Abu Musa knock on?", ["the way to the door, part 1", "the way to the door, part 3"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // Asked three times, the way still at the door; then it goes, and the way back is drawn from the door.
+    for (const [prompt, answer] of [
+      ["If no one answers after three times, what do you do?", "Go back"],
+      ["What should you do if no one lets you in?", "Go back home"],
+      ["What should you do if you ask to come in three times with no answer?", "Go back home"],
+      ["What should you do if no one allows you in?", "Go back politely"],
+      ["What should you do after three unanswered asks?", "Return home"],
+      ["Abu Musa went back after asking Umar three times.", "True"]
+    ]) {
+      expect([prompt, shown(prompt, ["asked a third time", "the way to the door, part 3", "the way back, part 1", "the way back, part 3"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0],
+          [1, 0, 1, 1]
+        ]
+      ]);
+    }
+    // Gone back; then two ways come to the door from the gathering place, one of them the youngest's, the witness.
+    for (const [prompt, answer] of [
+      ["What did Umar ask Abu Musa to bring?", "A witness to the hadith"],
+      ["Who did Ubayy send as the witness?", "The youngest of them"],
+      ["Who went as Abu Musa's witness?", "Abu Sa'id, the youngest"]
+    ]) {
+      expect([prompt, shown(prompt, ["the way back, part 3", "the way to the door again, part 3", "the way of the youngest, the witness, part 3", "the witness tells it at the door"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [0, 1, 1, 1]
+        ]
+      ]);
+    }
+    // The first call to prayer: nothing yet; then ways reach the masjid one at a time, each at its own guess.
+    const guessed = ["a way to the prayer at a guess 1, part 3", "a way to the prayer at a guess 2, part 3", "a way to the prayer at a guess 3, part 3"];
+    for (const [prompt, answer] of [
+      ["Before the adhan, how did Muslims know the prayer time?", "They guessed it"],
+      ["Before the adhan, people had to guess the prayer time.", "True"]
+    ]) {
+      expect([prompt, shown(prompt, guessed, answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // The guesses, and no call yet; then the call rises from the masjid in rings.
+    for (const [prompt, answer] of [
+      ["Who was told to call the first adhan?", "Bilal"],
+      ["Whom did the Prophet ﷺ tell to call the adhan?", "Bilal"],
+      ["Bilal was the first ____, who calls the adhan.", "mu'adhdhin"],
+      ["The Muslims chose a bell like a church bell.", "False"]
+    ]) {
+      expect([prompt, shown(prompt, ["a way to the prayer at a guess 3, part 3", "the call to prayer, ring 1", "the call to prayer, ring 3", "the call over Madinah, ring 1"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [0, 1, 1, 0]
+        ]
+      ]);
+    }
+    // The call to prayer: no call yet; then it rises and spreads over Madinah, and the homes' doors light up.
+    expect(shown("The ____ is the call to prayer.", ["the call to prayer, ring 1", "the call over Madinah, ring 3", "the doors of the homes, hearing the call"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The call over Madinah, and no iqamah yet; then its rings at the masjid's door.
+    expect(shown("The ____ is the second call, just before salah starts.", ["the call over Madinah, ring 3", "the iqamah, ring 1", "the iqamah, ring 3"])).toEqual([
+      [1, 0, 0],
+      [0, 1, 1]
+    ]);
+    // The iqamah, and no one coming yet; then calm ways come to the masjid from every home.
+    for (const [prompt, answer] of [
+      ["Walk to salah ____; don't run, even if late.", "calmly"],
+      ["How should we go to prayer after the iqamah?", "Calmly, without rushing"],
+      ["How should we walk to the prayer?", "With calmness"],
+      ["Running to catch the start of prayer is better.", "False"]
+    ]) {
+      expect([prompt, shown(prompt, ["the iqamah, ring 3", "a calm way to the prayer 1, part 3", "a calm way to the prayer 4, part 3"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // The wet grain: a dry heap; then the rain wets it, dry grain is heaped over the wet, and inside it is wet.
+    for (const [prompt, answer] of [
+      ["What did the Prophet ﷺ find inside the heap of food?", "Wet grain"],
+      ["What did he ﷺ find in the heap, per Muslim 102?", "Wet grain hidden inside"],
+      ["What did the Prophet ﷺ find in the heap?", "Wet grain hidden under dry"]
+    ]) {
+      expect([prompt, shown(prompt, ["the heap, wet with rain", "dry grain heaped over the wet", "inside, wet", "water inside"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Hidden: a dry heap; then the rain wets it, and dry grain is heaped over the wet, and nothing is opened yet.
+    expect(shown("What did the seller hide, per the hadith?", ["the heap, wet with rain", "dry grain heaped over the wet", "inside, wet"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 0]
+    ]);
+    // The wet inside, and nothing on top yet; then the wet part comes up on top.
+    for (const [prompt, answer] of [
+      ["What should the seller have done with the wet part?", "Put it on top to be seen"],
+      ["Where should the wet part have been?", "On top, for people to see"],
+      ["The Prophet ﷺ told the seller to put the wet part where people could see.", "True"]
+    ]) {
+      expect([prompt, shown(prompt, ["inside, wet", "the wet part, on top"], answer), moved(prompt, "the wet part, on top", "y")]).toEqual([
+        prompt,
+        [
+          [1, 0],
+          [0, 1]
+        ],
+        [8, 0]
+      ]);
+    }
+    // On top, and no buyers yet; then buyers' ways come to the heap, where the wet part is seen by all.
+    for (const [prompt, answer] of [
+      ["What did the Prophet ﷺ say about one who deceives?", "He is not of me"],
+      ["What did he ﷺ say about one who deceives?", "He is not of me"],
+      ["Hiding a fault in what you sell is fine if no one asks.", "False"],
+      ["Hiding a fault in what we sell is cheating.", "True"],
+      ["Hiding a flaw in goods is fine if no one notices.", "False"]
+    ]) {
+      expect([prompt, shown(prompt, ["the wet part, on top", "a buyer's way 1, part 2", "a buyer's way 2, part 2", "the wet part, seen by all"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // The well of Rumah: no well yet; then it is dug and fills, and ways and buckets come to its water.
+    for (const [prompt, answer] of [
+      ["Uthman bought a ____ and gave its water to everyone.", "well"],
+      ["What did Uthman buy for the Muslims?", "The well of Rumah"]
+    ]) {
+      expect([prompt, shown(prompt, ["the place of the well", "the well of Rumah, dug", "its water", "a way to the water 1", "a bucket, full, for all who come 3"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // No camels yet; then camels for the army come in, and saddles, packs and provisions are on them.
+    expect([shown("Which army did Uthman equip?", ["a camel for the army 1", "a camel for the army 3", "saddle and packs 3", "provisions for the army"]), moved("Which army did Uthman equip?", "a camel for the army 3", "x")]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [64, 0]
+    ]);
+    // Equipped, and no sparks yet; then sparks rise from the well and from the camels.
+    expect([shown("What did the Prophet ﷺ promise for these deeds?", ["saddle and packs 3", "a spark of the good deed, rising 1", "a spark of the good deed, rising 6"]), moved("What did the Prophet ﷺ promise for these deeds?", "a spark of the good deed, rising 6", "y")]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -18]
     ]);
   });
 

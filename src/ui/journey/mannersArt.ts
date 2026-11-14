@@ -411,7 +411,7 @@ function rumah(): SignArt {
       },
       { name: "palms of Madinah", svg: palm(76, 78, 13) + palm(4, 82, 12) + palm(156, 70, 10), origin: { x: 80, y: 78 }, loop: { move: "sway", ms: 3600, angle: 0.6 } },
       { name: "homes of Madinah", svg: homes },
-      { name: "the place of the well", svg: place },
+      { name: "the place of the well", svg: place, keys: showFrom(0.006, 0.03) },
       { name: "where the well would be", svg: glow(58, 90, 14, "#FFF4D0", 0.1), keys: showWhile(0.04, 0.09, 0.2, 0.24), loop: { move: "twinkle", ms: 1600, low: 0.6 } },
       ...toWell.map((d, i) => ({ name: `the way to the well, part ${i + 1}`, svg: way(d, BROWN, 1.1), keys: showFrom(at3(0.166 + i * 0.014), at3(0.18 + i * 0.014)) })),
       { name: "the well of Rumah, dug", svg: well, keys: { at: [0, 0.2, 0.24], opacity: [0, 0, 1], scaleY: [0.1, 0.1, 1] }, origin: { x: 58, y: 95 } },
