@@ -100,7 +100,9 @@ function tabuk(): SignArt {
       {
         name: "the sun, in great heat",
         svg: `${glow(136, 30, 20, "#FFF4C8", 0.14)}<circle cx="136" cy="30" r="6.5" fill="#FFF0B0"/>`,
-        keys: { at: [0, 0.5, 0.51, 0.86, 0.9], opacity: [1, 1, 0, 0, 1] },
+        // It comes with the heat (so a question on the weather does not show it before it is answered), and goes with
+        // the nights.
+        keys: { at: [0, 0.03, 0.07, 0.5, 0.51, 0.86, 0.9], opacity: [0, 0, 1, 1, 0, 0, 1] },
         loop: { move: "twinkle", ms: 1800, low: 0.85 }
       },
       { name: "clouds", svg: cloud(70, 36, 0.5, "#FFFFFF", 0.8), loop: { move: "slide", ms: 12000 } },
