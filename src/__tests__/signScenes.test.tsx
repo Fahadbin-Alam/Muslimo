@@ -139,7 +139,11 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-thirsty-dog": [/\bdog\b/i, /thirst|water|shoe|well/i],
   "sign-thorny-branch": [/thorn|harm/i, /road|path|way/i],
   "sign-planting": [/plant|sows?\b|seed/i, /eats?\b|bird|animal/i],
-  "sign-waqf": [/waqf|endowment|Khaybar/i, /land|fruit|keeper|sold|store/i]
+  "sign-waqf": [/waqf|endowment|Khaybar/i, /land|fruit|keeper|sold|store/i],
+  "sign-permission": [/permission|three times|knock|Abu Musa/i, /go back|went back|\bleft\b|witness|door|answer/i],
+  "sign-adhan": [/adhan|iqamah|call to prayer|walk (calmly )?to (the )?prayer/i, /Bilal|guess|calm|rush|walk|bell|horn|mu'adhdhin|call/i],
+  "sign-wet-grain": [/wet|cheat|deceiv/i, /grain|heap|food|rain|top|sell/i],
+  "sign-rumah": [/Rumah|\bwells?\b|army|Tabuk/i, /Uthman/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -219,7 +223,11 @@ const SOURCES: Record<string, string[]> = {
   "sign-thirsty-dog": ["Sahih al-Bukhari 2363", "Sahih al-Bukhari 2466"],
   "sign-thorny-branch": ["Sahih al-Bukhari 652", "Sahih al-Bukhari 2989"],
   "sign-planting": ["Sahih al-Bukhari 2320", "Sahih al-Bukhari 6012"],
-  "sign-waqf": ["Sahih al-Bukhari 2737", "Sahih al-Bukhari 2777"]
+  "sign-waqf": ["Sahih al-Bukhari 2737", "Sahih al-Bukhari 2777"],
+  "sign-permission": ["Sahih al-Bukhari 6245"],
+  "sign-adhan": ["Sahih al-Bukhari 604", "Sahih al-Bukhari 636"],
+  "sign-wet-grain": ["Sahih Muslim 102"],
+  "sign-rumah": ["Sahih al-Bukhari 2778"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -243,7 +251,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(549);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(569);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -1253,6 +1261,120 @@ describe("the signs in creation, alive", () => {
     ]);
     // Nothing is ever put in the storeroom: it has no basket and no dates in it.
     expect(part("waqf", "the keeper's storeroom, empty").svg.includes("<ellipse")).toBe(false);
+  });
+
+  test("the scenes of manners and worship show each moment in its order, and draw no Prophet, no Companion and no person", () => {
+    const manners: SignKind[] = ["permission", "adhan", "wet-grain", "rumah"];
+    for (const kind of manners) {
+      for (const each of signArt(kind).parts) {
+        const person = /\b(prophet|man|men|woman|women|person|people|king|queen|helper|servant|angels?|guests?|wife|child|children|boy|girl|baby|mother|father|son|face|hands?|fingers?|feet|foot|Umar|Uthman|Bilal|Musa|Ubayy|Sa'id|teeth|mouth)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // A good deed's reward is sparks rising from where it was done: nothing comes down from the sky. And no bell or
+      // horn is drawn for the call to prayer.
+      expect([kind, signArt(kind).parts.filter((each) => /\b(rays?|beams?)\b|coming down|from the sky|\b(bells?|horns?|trumpets?)\b/i.test(each.name)).map((each) => each.name)]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const order = (kind: SignKind, name: string) => signArt(kind).parts.findIndex((each) => each.name === name);
+    // Asking permission three times: a dashed way comes to a shut door; each asking is a voice's arcs toward the door,
+    // and one more of three rings is counted; the door stays shut. The way to the door goes, and a way back is drawn
+    // from it; then two ways, one of them the youngest's, come from the gathering place to the door, and the witness's
+    // voice is heard there.
+    expect(words("permission")).toEqual(["At Umar's door", "He asked permission once", "Then a second time", "A third time: no permission given", "So he went back", "The youngest went with him as witness"]);
+    const toDoor = names("permission", /^the way to the door, part \d$/);
+    const askings = ["asking, the first time", "asking, the second time", "asking, the third time"];
+    const counted = ["asked once", "asked a second time", "asked a third time"];
+    expect([toDoor.map((name) => shown("permission", name, 0)), toDoor.map((name) => shown("permission", name, 0.16)), shown("permission", "three rings, to count the askings", 0.16), askings.map((name) => shown("permission", name, 0.16)), counted.map((name) => shown("permission", name, 0.16))]).toEqual([
+      [0, 0, 0],
+      [1, 1, 1],
+      0,
+      [0, 0, 0],
+      [0, 0, 0]
+    ]);
+    expect([0.22, 0.38, 0.54, 0.64].map((t) => askings.map((name) => shown("permission", name, t)))).toEqual([
+      [1, 0, 0],
+      [0, 1, 0],
+      [0, 0, 1],
+      [0, 0, 0]
+    ]);
+    expect([0.32, 0.48, 0.64].map((t) => counted.map((name) => shown("permission", name, t)))).toEqual([
+      [1, 0, 0],
+      [1, 1, 0],
+      [1, 1, 1]
+    ]);
+    expect(part("permission", "its door, shut").keys).toBeUndefined();
+    const back = names("permission", /^the way back, part \d$/);
+    expect([toDoor.map((name) => shown("permission", name, 0.82)), back.map((name) => shown("permission", name, 0.64)), back.map((name) => shown("permission", name, 0.82))]).toEqual([
+      [0, 0, 0],
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    const again = names("permission", /^the way to the door again, part \d$/);
+    const youngest = names("permission", /^the way of the youngest, the witness, part \d$/);
+    expect([back.map((name) => shown("permission", name, 1)), again.map((name) => shown("permission", name, 1)), youngest.map((name) => shown("permission", name, 1)), shown("permission", "the witness tells it at the door", 0.82), shown("permission", "the witness tells it at the door", 1)]).toEqual([
+      [0, 0, 0],
+      [1, 1, 1],
+      [1, 1, 1],
+      0,
+      1
+    ]);
+    // The first call to prayer: before it, three ways reach the masjid one at a time, each at its own guess; then the
+    // call rises from the masjid and spreads over Madinah, and the homes' doors light up; the iqamah is rings at the
+    // masjid's door; and calm ways come to it from every home, slowly, part by part.
+    expect(words("adhan")).toEqual(["They used to guess the prayer time", "O Bilal, stand and call to prayer", "Calling the people to prayer", "When you hear the iqamah", "Walk to it calmly, do not rush"]);
+    const guesses = [1, 2, 3].map((i) => names("adhan", new RegExp(`^a way to the prayer at a guess ${i}, part \\d$`)));
+    expect([0.005, 0.04, 0.09, 0.18].map((t) => guesses.map((list) => shown("adhan", list[list.length - 1], t)))).toEqual([
+      [0, 0, 0],
+      [1, 0, 0],
+      [1, 1, 0],
+      [1, 1, 1]
+    ]);
+    const call = names("adhan", /^the call to prayer, ring \d$/);
+    const over = names("adhan", /^the call over Madinah, ring \d$/);
+    const iqamah = names("adhan", /^the iqamah, ring \d$/);
+    const calm = names("adhan", /^a calm way to the prayer \d, part \d$/);
+    expect([guesses.flat().map((name) => shown("adhan", name, 0.4)), call.map((name) => shown("adhan", name, 0.18)), call.map((name) => shown("adhan", name, 0.4)), over.map((name) => shown("adhan", name, 0.4))]).toEqual([guesses.flat().map(() => 0), [0, 0, 0], [1, 1, 1], [0, 0, 0]]);
+    expect([over.map((name) => [shown("adhan", name, 0.6), value("adhan", name, "scale", 0.6)]), shown("adhan", "the doors of the homes, hearing the call", 0.4), shown("adhan", "the doors of the homes, hearing the call", 0.6), iqamah.map((name) => shown("adhan", name, 0.6))]).toEqual([over.map(() => [1, 1]), 0, 1, [0, 0, 0]]);
+    expect([call.map((name) => shown("adhan", name, 0.8)), over.map((name) => shown("adhan", name, 0.8)), iqamah.map((name) => shown("adhan", name, 0.8)), calm.map((name) => shown("adhan", name, 0.8))]).toEqual([[0, 0, 0], [0, 0, 0], [1, 1, 1], calm.map(() => 0)]);
+    expect([calm.length, calm.filter((name) => name.endsWith("part 3")).map((name) => shown("adhan", name, 0.88)), calm.map((name) => shown("adhan", name, 1))]).toEqual([12, [0, 0, 0, 0], calm.map(() => 1)]);
+    // The wet grain: rain from a cloud wets the heap; dry grain is heaped over the wet, covering it; a dashed way comes
+    // to the heap and an opening shows the wet inside; the wet part comes up on top; and buyers' ways come to see it.
+    expect(words("wet-grain")).toEqual(["Rain fell on a heap of food", "The wet part hidden under dry", "Inside, it was wet", "Why not on top, for people to see?", "Whoever cheats is not of me"]);
+    expect([shown("wet-grain", "the heap, wet with rain", 0), shown("wet-grain", "rain on the heap", 0.08), shown("wet-grain", "the heap, wet with rain", 0.18), shown("wet-grain", "rain on the heap", 0.18), shown("wet-grain", "a rain cloud", 0.18), shown("wet-grain", "dry grain heaped over the wet", 0.18)]).toEqual([0, 1, 1, 0, 0, 0]);
+    expect([shown("wet-grain", "dry grain heaped over the wet", 0.4), value("wet-grain", "dry grain heaped over the wet", "scale", 0.4), shown("wet-grain", "inside, wet", 0.4), shown("wet-grain", "the wet part, on top", 0.4)]).toEqual([1, 1, 0, 0]);
+    expect([order("wet-grain", "the heap, wet with rain") < order("wet-grain", "dry grain heaped over the wet"), order("wet-grain", "dry grain heaped over the wet") < order("wet-grain", "the wet part, on top")]).toEqual([true, true]);
+    const passing = names("wet-grain", /^the way of one passing by, part \d$/);
+    expect([passing.map((name) => shown("wet-grain", name, 0.6)), shown("wet-grain", "inside, wet", 0.6), shown("wet-grain", "water inside", 0.6), shown("wet-grain", "the wet part, on top", 0.6)]).toEqual([[1, 1], 1, 1, 0]);
+    expect([passing.map((name) => shown("wet-grain", name, 0.8)), shown("wet-grain", "inside, wet", 0.8), [shown("wet-grain", "the wet part, on top", 0.8), value("wet-grain", "the wet part, on top", "y", 0.8)], shown("wet-grain", "the wet part, seen by all", 0.8)]).toEqual([[0, 0], 0, [1, 0], 0]);
+    const buyers = names("wet-grain", /^a buyer's way \d, part \d$/);
+    expect([buyers.length, buyers.map((name) => shown("wet-grain", name, 0.8)), buyers.map((name) => shown("wet-grain", name, 1)), shown("wet-grain", "the wet part, seen by all", 1)]).toEqual([4, [0, 0, 0, 0], [1, 1, 1, 1], 1]);
+    // The well of Rumah: a dashed way comes to the place of the well, and the well is dug and fills with water; ways
+    // come to it and buckets come up full; camels for the army come in, a dashed way comes to them, and saddles, packs
+    // and provisions are on them; then sparks rise from the well and from the camels.
+    expect(words("rumah")).toEqual(["Whoever digs the well of Rumah", "And Uthman dug it", "Its water for all the Muslims", "Whoever equips the army of hardship", "And Uthman equipped it", "Both were promised Paradise"]);
+    const toWell = names("rumah", /^the way to the well, part \d$/);
+    expect([shown("rumah", "the place of the well", 0.16), shown("rumah", "where the well would be", 0.16), toWell.map((name) => shown("rumah", name, 0.16)), shown("rumah", "the well of Rumah, dug", 0.16), shown("rumah", "its water", 0.16)]).toEqual([1, 1, [0, 0], 0, 0]);
+    expect([toWell.map((name) => shown("rumah", name, 0.32)), [shown("rumah", "the well of Rumah, dug", 0.32), value("rumah", "the well of Rumah, dug", "scaleY", 0.32)], shown("rumah", "its water", 0.32), shown("rumah", "where the well would be", 0.32)]).toEqual([[1, 1], [1, 1], 1, 0]);
+    const comers = names("rumah", /^a way to the water \d$/);
+    const buckets = names("rumah", /^a bucket, full, for all who come \d$/);
+    expect([comers.map((name) => shown("rumah", name, 0.32)), buckets.map((name) => shown("rumah", name, 0.32)), comers.map((name) => shown("rumah", name, 0.48)), buckets.map((name) => [shown("rumah", name, 0.48), value("rumah", name, "y", 0.48)])]).toEqual([
+      [0, 0, 0],
+      [0, 0, 0],
+      [1, 1, 1],
+      buckets.map(() => [1, 0])
+    ]);
+    const camels = names("rumah", /^a camel for the army \d$/);
+    const packs = names("rumah", /^saddle and packs \d$/);
+    expect([camels.map((name) => shown("rumah", name, 0.48)), camels.map((name) => [shown("rumah", name, 0.64), value("rumah", name, "x", 0.64)]), packs.map((name) => shown("rumah", name, 0.64)), shown("rumah", "the way to the camels", 0.64)]).toEqual([
+      [0, 0, 0],
+      camels.map(() => [1, 0]),
+      [0, 0, 0],
+      0
+    ]);
+    expect([shown("rumah", "the way to the camels", 0.82), packs.map((name) => [shown("rumah", name, 0.82), value("rumah", name, "scale", 0.82)]), shown("rumah", "provisions for the army", 0.82)]).toEqual([1, packs.map(() => [1, 1]), 1]);
+    const sparks = names("rumah", /^a spark of the good deed, rising \d$/);
+    expect([sparks.length, sparks.map((name) => shown("rumah", name, 0.82)), sparks.map((name) => [shown("rumah", name, 1), value("rumah", name, "y", 1)])]).toEqual([6, sparks.map(() => 0), sparks.map(() => [1, -18])]);
   });
 
   test("every word and caption is translated in every language", () => {

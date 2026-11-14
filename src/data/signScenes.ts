@@ -167,7 +167,18 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  *   it (Sahih al-Bukhari 2320, 6012);
  * - Umar's land at Khaybar, the best he had: the land itself kept, its fruit given in charity, never sold, given away
  *   or inherited; its keeper may eat from it and feed a friend, storing nothing for himself (Sahih al-Bukhari 2737,
- *   2777).
+ *   2777);
+ *
+ * and manners and worship (mannersArt.ts draws them):
+ *
+ * - asking permission three times at Umar's door and going back when it was not given, and the youngest who went as
+ *   the witness (Sahih al-Bukhari 6245);
+ * - the first call to prayer: they used to guess the prayer time, until Bilal was told to stand and call to prayer;
+ *   and when you hear the iqamah, walk to the prayer calmly, without rushing (Sahih al-Bukhari 604, 636);
+ * - the wet grain hidden under the dry in a heap of food: why not on top, for people to see? Whoever cheats is not of
+ *   me (Sahih Muslim 102);
+ * - the well of Rumah that Uthman dug, its water for all, and the army of hardship he equipped, both promised Paradise
+ *   (Sahih al-Bukhari 2778).
  *
  * Each scene shows only what its ayahs say. Nothing in a scene is a person or an angel: only the land, the sky, the
  * sea, plants, animals and things; the people of a parable are never drawn, only their gardens, and no Prophet and no
@@ -178,7 +189,9 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  * neither drawn nor named, and four birds are never drawn cut apart; Ibrahim's guests are only their greeting and the
  * meal they did not touch, those who worked for Sulayman are not drawn, nothing is drawn for Pharaoh's stakes, and the
  * one who kindled the fire is not drawn, only his fire; and no one who gives or receives is drawn, only what is given,
- * going along a dashed way: the one who watered the dog, moved the branch or planted the tree is only his dashed way.
+ * going along a dashed way: the one who watered the dog, moved the branch or planted the tree is only his dashed way;
+ * the one who asked permission, his witness, Bilal and Uthman are only their dashed ways and their voices, the hand in
+ * the heap of food is not drawn, and no bell or horn is drawn for the call to prayer.
  */
 
 export type SignKind =
@@ -258,7 +271,11 @@ export type SignKind =
   | "thirsty-dog"
   | "thorny-branch"
   | "planting"
-  | "waqf";
+  | "waqf"
+  | "permission"
+  | "adhan"
+  | "wet-grain"
+  | "rumah";
 
 export type SignScene = {
   id: string;
@@ -784,6 +801,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Umar got land at Khaybar, the best he ever had. The Prophet ﷺ said: if you wish, keep the land itself and give its fruit in charity. So Umar gave it, on condition that it is never sold, given away or inherited; and whoever keeps it may eat from it fairly and feed a friend, storing nothing for himself.",
     sources: [bukhari("2737"), bukhari("2777")]
+  },
+  {
+    id: "sign-permission",
+    kind: "permission",
+    caption:
+      "Abu Musa asked permission three times to come in to Umar, and it was not given, so he went back, for the Prophet ﷺ said: if one of you asks permission three times and it is not given, let him go back. Umar asked him for a witness, and the youngest of the gathering, Abu Sa'id, went with him and told Umar that the Prophet ﷺ had said so.",
+    sources: [bukhari("6245")]
+  },
+  {
+    id: "sign-adhan",
+    kind: "adhan",
+    caption:
+      "When the Muslims came to Madinah, they used to gather for the prayer, guessing its time. Then the Prophet ﷺ said: O Bilal, stand and call to prayer. And he ﷺ said: when you hear the iqamah, walk to the prayer with calm and dignity, and do not rush.",
+    sources: [bukhari("604"), bukhari("636")]
+  },
+  {
+    id: "sign-wet-grain",
+    kind: "wet-grain",
+    caption:
+      "The Prophet ﷺ passed by a heap of food and put his hand into it, and his fingers came out wet. Its owner said: rain fell on it. He ﷺ said: why did you not put it on top of the food, so that people could see it? Whoever cheats is not of me.",
+    sources: [muslim("102")]
+  },
+  {
+    id: "sign-rumah",
+    kind: "rumah",
+    caption:
+      "The Prophet ﷺ said: whoever digs the well of Rumah will have Paradise, and Uthman dug it, and its water was for all the Muslims. And he ﷺ said: whoever equips the army of hardship will have Paradise, and Uthman equipped it.",
+    sources: [bukhari("2778")]
   }
 ];
 
@@ -1424,7 +1469,32 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-mercy-plant-a-tree": "sign-planting",
   // Umar's land at Khaybar, kept for charity.
   "deep-zakat-everyday-umar-land": "sign-waqf",
-  "deep-book-wills-the-keeper-of-a-waqf": "sign-waqf"
+  "deep-book-wills-the-keeper-of-a-waqf": "sign-waqf",
+  // Asking permission three times, then going back; the youngest went as the witness.
+  "deep-adab-knock-three-times": "sign-permission",
+  "deep-manners-permission-three-times": "sign-permission",
+  "deep-umar-three-knocks": "sign-permission",
+  "deep-ubayy-witness": "sign-permission",
+  "deep-abu-musa-three-knocks": "sign-permission",
+  "deep-nur1-abu-musa-at-umars-door": "sign-permission",
+  // The first call to prayer, and walking calmly to the prayer. Left out: joining the prayer late, which is about
+  // finishing what you missed.
+  "prayer-adhan-and-iqamah-what-the-adhan-is": "sign-adhan",
+  "sahabi-bilal-ibn-rabah-service-to-revelation": "sign-adhan",
+  "deep-pray-adhan-reward-first-adhan": "sign-adhan",
+  "deep-bilal-first-adhan": "sign-adhan",
+  "prayer-adhan-and-iqamah-masjid-readiness": "sign-adhan",
+  "deep-furqan2-walk-calmly-to-prayer": "sign-adhan",
+  "deep-jumuah3-come-with-calm": "sign-adhan",
+  // The wet grain hidden in the heap: whoever cheats is not of me.
+  "deep-honesty-the-wet-grain": "sign-wet-grain",
+  "deep-hud5-whoever-cheats": "sign-wet-grain",
+  "deep-rahman1-he-who-cheats": "sign-wet-grain",
+  "deep-mutaffifin1-whoever-cheats": "sign-wet-grain",
+  // The well of Rumah and the army of hardship.
+  "sahabi-uthman-ibn-affan-sacrifice-for-islam": "sign-rumah",
+  "sahabi-uthman-ibn-affan-public-service-and-counsel": "sign-rumah",
+  "deep-uthman-rumah": "sign-rumah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

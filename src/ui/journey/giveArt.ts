@@ -22,13 +22,13 @@ export const sparkle = (x: number, y: number, r: number, fill: string) => {
 };
 
 /** Rings of a voice about (x, y), each wider than tall. */
-const ring = (x: number, y: number, r: number, color = "#FFF3CF") => `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${n(r * 0.55)}" stroke="${color}" stroke-width="0.9" fill="none"/>`;
+export const ring = (x: number, y: number, r: number, color = "#FFF3CF") => `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${n(r * 0.55)}" stroke="${color}" stroke-width="0.9" fill="none"/>`;
 
 /** A dashed way along `d` (an SVG path). */
 export const way = (d: string, color = "#FFF0C4", width = 1.2) => `<path d="${d}" stroke="${color}" stroke-width="${width}" stroke-dasharray="2 2.2" fill="none" stroke-linecap="round"/>`;
 
 /** A sack of grain tied at its neck, its foot's middle at (x, y), `s` times its size (6.4 wide). */
-const sack = (x: number, y: number, s = 1, fill = "#C9A66B") =>
+export const sack = (x: number, y: number, s = 1, fill = "#C9A66B") =>
   `<path d="M${n(x - 3.2 * s)} ${y} C${n(x - 4 * s)} ${n(y - 3.4 * s)} ${n(x - 2.6 * s)} ${n(y - 5.6 * s)} ${n(x - 1.2 * s)} ${n(y - 6.2 * s)} L${n(x + 1.2 * s)} ${n(y - 6.2 * s)} C${n(x + 2.6 * s)} ${n(y - 5.6 * s)} ${n(x + 4 * s)} ${n(y - 3.4 * s)} ${n(x + 3.2 * s)} ${y} Z" fill="${fill}"/>` +
   `<path d="M${n(x - 1.2 * s)} ${n(y - 6.2 * s)} L${n(x - 1.8 * s)} ${n(y - 7.6 * s)} M${n(x + 1.2 * s)} ${n(y - 6.2 * s)} L${n(x + 1.8 * s)} ${n(y - 7.6 * s)}" stroke="${fill}" stroke-width="${n(0.9 * s)}" stroke-linecap="round"/>` +
   `<path d="M${n(x - 1.4 * s)} ${n(y - 6 * s)} L${n(x + 1.4 * s)} ${n(y - 6 * s)}" stroke="#7A5A30" stroke-width="${n(0.6 * s)}"/>` +
@@ -317,7 +317,7 @@ function yemen(): SignArt {
 
 /** The masjid in Madinah as it was built: walls of mud brick, a roof of palm leaves on palm trunks; its foot's left at
  * (x, y), `s` times its size (48 wide). */
-const madinahMasjid = (x: number, y: number, s: number) =>
+export const madinahMasjid = (x: number, y: number, s: number) =>
   `<g transform="translate(${x} ${y}) scale(${s})">` +
   `<rect x="0" y="-15.6" width="48" height="10" fill="#7E6447"/>` +
   [4, 12, 20, 28, 36, 44].map((px) => `<rect x="${n(px - 0.8)}" y="-15.6" width="1.6" height="10" fill="#A9895C"/>`).join("") +

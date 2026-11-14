@@ -15,7 +15,7 @@ import { home } from "./trialArt";
  * Sparks rising from each of `list`, one after another from `start`, `step` apart, each rising `rise`; gone once risen,
  * or, with `stay`, staying where it rose, twinkling.
  */
-function risingSparks(label: string, list: [number, number][], start: number, step: number, { color = "#FFE7A0", rise = 30, stay = false } = {}): SignPart[] {
+export function risingSparks(label: string, list: [number, number][], start: number, step: number, { color = "#FFE7A0", rise = 30, stay = false } = {}): SignPart[] {
   return list.map(([x, y], i) => {
     const from = at3(start + i * step);
     const keys: SignKeys = stay
@@ -26,7 +26,7 @@ function risingSparks(label: string, list: [number, number][], start: number, st
 }
 
 /** Keys that hold a part out of sight and away by (x, y), then bring it in, fading in at once, by `to`. */
-const comeIn = (from: number, to: number, x: number, y = 0): SignKeys => ({
+export const comeIn = (from: number, to: number, x: number, y = 0): SignKeys => ({
   at: [0, from, at3(from + 0.006), to],
   opacity: [0, 0, 1, 1],
   x: [x, x, n(x * (1 - 0.006 / (to - from))), 0],
