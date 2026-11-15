@@ -1099,6 +1099,59 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A traveler does not get too attached to a road stop.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
     ["A traveler does not cling to the road.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
     ["Ibn Umar taught to expect a long life ahead.", "False", "At evening, do not wait for the morning"]
+  ],
+  // A believer who recites the Quran is like a citron, and one who does not like a date (Sahih al-Bukhari 5020).
+  "sign-citron": [
+    ["Reciting the Quran adds a good scent to a believer.", "True", "Is like a citron", "It smells good, and it tastes good"],
+    ["A believer who does not recite is like what?", "A date with no smell", "Is like a date", "It tastes good, but has no smell"]
+  ],
+  // The trader who let off those in hardship, so that Allah might let him off; and Allah forgave him (Sahih al-Bukhari
+  // 2078). ("What did Allah do for him?", "Forgave him" is also asked of the thorny branch, so it stays as it is.)
+  "sign-forgiving-trader": [
+    ["What did the trader do when a debtor could not pay?", "He forgave him", "He told his helpers: let him off", "So that Allah may let us off"],
+    ["What did the lender do for poor debtors?", "Let them off", "He told his helpers: let him off", "So that Allah may let us off"],
+    ["What did Allah do for the trader?", "Allah forgave him", "And Allah forgave him"],
+    ["Being easy on people in debt is loved by Allah.", "True", "And Allah forgave him"],
+    ["Being gentle with people in debt is loved by Allah.", "True", "And Allah forgave him"]
+  ],
+  // Provided for like the birds, which go out in the morning hungry and come back in the evening full (Jami
+  // at-Tirmidhi 2344).
+  "sign-hungry-birds": [
+    ["What does true reliance on Allah bring?", "Allah's provision", "He would provide for you, as for the birds"],
+    ["How do the birds leave in the morning?", "Empty", "They go out in the morning hungry"],
+    ["How do the birds leave in the morning, in the hadith?", "Empty", "They go out in the morning hungry"],
+    ["How does a bird go out, in the hadith?", "Hungry in the morning", "They go out in the morning hungry"],
+    ["In the hadith, birds leave in the morning how?", "Hungry", "They go out in the morning hungry"],
+    ["The birds stay in their nests and wait for food.", "False", "They go out in the morning hungry"],
+    ["The bird still flies out to look for food.", "True", "They go out in the morning hungry"],
+    ["The birds still go out to seek food, in the hadith.", "True", "They go out in the morning hungry"],
+    ["How do they come back, in the hadith?", "Full", "And come back in the evening full"]
+  ],
+  // A hypocrite like a sheep wandering between two flocks, to this one once and to that one once (Sahih Muslim 2784).
+  "sign-two-flocks": [
+    ["How many flocks does the sheep wander between?", "Two", "Wandering between two flocks"],
+    ["The sheep settles firmly with one flock.", "False", "Then to that one", "Never settling with either"]
+  ],
+  // The believer like a fresh plant the wind bends, which stands straight again when it is still, and the wicked like a
+  // pine, until it is broken (Sahih al-Bukhari 5644).
+  "sign-bending-plant": [
+    ["What is the believer like, he ﷺ said?", "A fresh, soft plant", "A believer is like a fresh, soft plant"],
+    ["Being bent by trials means a believer has lost his faith.", "False", "From wherever the wind comes, it bends it", "When the wind is still, it stands straight again"],
+    ["What does the plant do when the wind stops?", "Stands straight again", "When the wind is still, it stands straight again"]
+  ],
+  // One who remembers his Lord and one who does not, like the living and the dead (Sahih al-Bukhari 6407).
+  "sign-remember": [
+    ["What does dhikr mean?", "Remembering Allah", "One who remembers his Lord"],
+    ["Who is like the living, in the hadith?", "One who remembers his Lord", "Are like the living"],
+    ["Who is like the living, in the hadith?", "One who remembers Allah", "Are like the living"],
+    ["Whom is the one who remembers Allah like?", "Someone alive", "Are like the living"],
+    ["The one who remembers Allah is like what?", "A living person", "Are like the living"],
+    ["One who remembers Allah is like what?", "A living creature", "Are like the living"],
+    ["Remembering Allah keeps the heart alive.", "True", "Are like the living"],
+    ["Dhikr keeps the heart alive.", "True", "Are like the living"],
+    ["And the one who never remembers Him?", "Like the dead", "And the dead"],
+    ["Who is like the dead, in the hadith?", "One who does not remember Allah", "And the dead"],
+    ["One who does not remember Allah is like what?", "A dead one", "And the dead"]
   ]
 };
 
