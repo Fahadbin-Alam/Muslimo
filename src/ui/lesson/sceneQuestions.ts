@@ -2054,6 +2054,94 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who may pick up a lost item there?", "One who announces it", "Its fallen things should not be picked up", "Except by one who would announce it"],
     ["Until when will it stay sacred?", "The Day of Resurrection", "Till the Day of Resurrection"],
     ["In Makkah, people may chase its animals for sport.", "False", "Its game should not be chased"]
+  ],
+  // When people argued too much about his rebuilding the masjid, Uthman said: whoever built a mosque, intending Allah's
+  // pleasure, Allah would build for him a similar place in Paradise (Sahih al-Bukhari 450). (Who narrated it and Ibn
+  // Kathir are not in the scene.)
+  "sign-house-in-paradise": [
+    ["What does Allah build for one who builds a masjid?", "A place in Paradise", "Allah would build for him", "A similar place in Paradise"],
+    ["What does Allah build for one who builds a masjid?", "A similar place in Paradise", "Allah would build for him", "A similar place in Paradise"],
+    ["What was being rebuilt when the hadith was told?", "The Prophet's ﷺ masjid", "Whoever built a mosque"],
+    ["Which masjid did Uthman rebuild?", "The Prophet's ﷺ masjid", "Whoever built a mosque"],
+    ["The masjid should be built for Allah's pleasure.", "True", "Intending Allah's Pleasure"],
+    ["The builder should intend Allah's pleasure.", "True", "Intending Allah's Pleasure"]
+  ],
+  // The son of Adam claims: my wealth, my wealth; yet nothing is his but what he consumed, what he wore out, and what he
+  // gave as charity and sent forward (Sahih Muslim 2958). (Which surah he was reciting, and the wealth left to other
+  // people, are not in the scene.)
+  "sign-my-wealth": [
+    ["What does the son of Adam claim?", "My wealth, my wealth", "The son of Adam claims: My wealth, my wealth"],
+    ["What does the son of Adam keep saying?", "My wealth, my wealth", "The son of Adam claims: My wealth, my wealth"],
+    ["Which of these is truly ours, per the hadith?", "What we consumed or wore", "Except that which you consumed", "Or which you wore and then it was worn out"],
+    ["What happens to wealth given in charity?", "It is sent forward for us", "Or you gave as charity and sent it forward"],
+    ["Charity is like saving for the Hereafter.", "True", "Or you gave as charity and sent it forward"],
+    ["Charity is wealth sent ahead for us.", "True", "Or you gave as charity and sent it forward"]
+  ],
+  // There is an hour on Friday: if a Muslim gets it while praying and asks something from Allah, Allah will definitely
+  // meet his demand; and he pointed out the shortness of that time (Sahih al-Bukhari 935). (Ibn Kathir is not in the
+  // scene.)
+  "sign-hour-on-friday": [
+    ["What is special about this hour on Friday?", "Du'a is answered", "And asks something from Allah", "Allah will definitely meet his demand"],
+    ["What is special about an hour on Friday?", "Dua is answered", "And asks something from Allah", "Allah will definitely meet his demand"],
+    ["What is special about Friday, per the hadith?", "An hour when duas are answered", "There is an hour on Friday", "Allah will definitely meet his demand"],
+    ["How long is that hour?", "Short", "He pointed out the shortness of that time"],
+    ["How long is the hour?", "Short", "He pointed out the shortness of that time"],
+    ["Make many du'as on Fridays.", "True", "And asks something from Allah", "Allah will definitely meet his demand"],
+    ["Making dua on Friday is a good habit.", "True", "And asks something from Allah", "Allah will definitely meet his demand"]
+  ],
+  // An announcer calls: you will be healthy and never fall ill, live and never die, stay young and never grow old, live
+  // in plenty and never be destitute (Sahih Muslim 2837). (11:108, 15:48 and the gift without end are not in the
+  // scene.)
+  "sign-never-old": [
+    ["Will people in Jannah grow old?", "No, they stay young", "You would remain young and never grow old"],
+    ["Will they grow old, in the hadith?", "No, they stay young", "You would remain young and never grow old"],
+    ["What will the caller in Paradise say, per the hadith?", "You will never grow old", "You would remain young and never grow old"],
+    ["What else is promised in Muslim 2837?", "Staying young forever", "You would remain young and never grow old"],
+    ["Will anyone die in Jannah?", "No, never", "That you live and do not die at all"],
+    ["Life in Jannah has no sickness.", "True", "There is in store for you health", "And that you should never fall ill"],
+    ["Will people of Paradise fall ill, in the hadith?", "Never", "There is in store for you health", "And that you should never fall ill"],
+    ["What will never happen in Paradise, per Muslim 2837?", "Falling ill", "There is in store for you health", "And that you should never fall ill"],
+    ["The people of Paradise will never become poor.", "True", "Always live in affluent circumstances", "And never become destitute"]
+  ],
+  // Beware of suspicion, for it is the worst of false tales; do not look for the others' faults, do not spy, do not be
+  // jealous, do not desert and do not hate one another; O Allah's worshipers, be brothers (Sahih al-Bukhari 6064).
+  // (Ibn Kathir on 53:28 is not in the scene.)
+  "sign-beware-of-suspicion": [
+    ["What did the Prophet ﷺ call suspicion?", "The most false of talk", "For suspicion is the worst of false tales"],
+    ["What did he ﷺ call suspicion, per Bukhari 6064?", "The worst of false tales", "For suspicion is the worst of false tales"],
+    ["What is suspicion, per Bukhari 6064?", "The worst of false tales", "For suspicion is the worst of false tales"],
+    ["Looking for others' faults is forbidden, per Bukhari 6064.", "True", "Do not look for the others' faults"],
+    ["Which of these does the hadith forbid?", "Spying on others", "And do not spy"],
+    ["What does the hadith tell us to be instead?", "Brothers", "O Allah's worshipers! Be brothers"],
+    ["What did he ﷺ tell the servants of Allah to be?", "Brothers", "O Allah's worshipers! Be brothers"],
+    ["What does Bukhari 6064 tell us to be?", "Brothers", "O Allah's worshipers! Be brothers"]
+  ],
+  // Some poor people came: the wealthy will get higher grades; they pray and fast as we do and have more money to give.
+  // He said: catch up by saying Subhan Allah, Al hamdu lillah and Allahu Akbar thirty three times each after every
+  // prayer (Sahih al-Bukhari 843). (What the poor wanted most, and that rich and poor can both do it, are not shown.)
+  "sign-thirty-three": [
+    ["Who came worried, per Bukhari 843?", "Some poor people", "Some poor people came"],
+    ["What did the poor people worry about?", "The rich getting higher grades", "The wealthy people will get higher grades"],
+    ["Why were the poor worried, per Bukhari 843?", "The rich could give charity", "They have more money"],
+    ["What could the rich do that the poor could not?", "Give charity and do Hajj", "They have more money"],
+    ["How many times each, per Bukhari 843?", "Thirty-three", "Thirty three times each after every prayer"],
+    ["How many times is each phrase said?", "Thirty-three", "Thirty three times each after every prayer"],
+    ["When is this dhikr said?", "After every prayer", "Thirty three times each after every prayer"]
+  ],
+  // I have been given five things: victory by awe a month's journey away; the earth a place for praying and a thing for
+  // Tayammum; every Prophet was sent to his nation only, but I to all mankind (Sahih al-Bukhari 335). (Who narrated it,
+  // 7:158, 34:28 and Ibn Kathir are not in the scene.)
+  "sign-five-gifts": [
+    ["How many special gifts does Bukhari 335 list?", "Five", "I have been given five things"],
+    ["How many things was the Prophet ﷺ given that no one had before?", "Five", "I have been given five things"],
+    ["How many special things, in the hadith?", "Five", "I have been given five things"],
+    ["How far did the awe reach?", "A month's journey", "For a distance of one month's journey"],
+    ["The whole earth was made a place to pray.", "True", "The earth has been made for me", "A place for praying"],
+    ["Where may his followers pray, per the hadith?", "Wherever the prayer time comes", "The earth has been made for me", "A place for praying"],
+    ["Who were earlier prophets sent to?", "Their own people", "Every Prophet used to be sent to his nation only"],
+    ["Earlier prophets were sent only to their own nation.", "True", "Every Prophet used to be sent to his nation only"],
+    ["Who was he ﷺ sent to?", "All people", "Every Prophet used to be sent to his nation only", "But I have been sent to all mankind"],
+    ["To whom was the Prophet ﷺ sent?", "All mankind", "Every Prophet used to be sent to his nation only", "But I have been sent to all mankind"]
   ]
 };
 

@@ -1089,6 +1089,14 @@ const STATES: State[] = [
   { id: "scene-hundred-levels", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf4-ask-allah-for-al-firdaws" ask="What flows from Al-Firdaws" /> },
   { id: "scene-faith-at-the-pleiades", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah1-faith-at-the-pleiades" ask="say faith might be" /> },
   { id: "scene-sacred-city", render: () => <SceneQuestionDemo lessonId="lesson-deep-naml6-sacred-since-creation" ask="pick up a lost item" /> },
+  // A question on each scene of what lasts (round 81).
+  { id: "scene-house-in-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-nur2-build-a-masjid" ask="What does Allah build" /> },
+  { id: "scene-my-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid2-what-you-send-forward" ask="given in charity" /> },
+  { id: "scene-hour-on-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-jumuah-hour" ask="How long is that hour" /> },
+  { id: "scene-never-old", render: () => <SceneQuestionDemo lessonId="lesson-deep-jannah-never-old" ask="grow old" /> },
+  { id: "scene-beware-of-suspicion", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-suspicion" ask="call suspicion" /> },
+  { id: "scene-thirty-three", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid3-the-poor-who-worried" ask="poor people worry" /> },
+  { id: "scene-five-gifts", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-rusul-all-people" ask="Who was he" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
