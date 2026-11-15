@@ -1,7 +1,7 @@
 import { quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// Two more Duas units, every dua word for word from the Quran: the duas of the prophets, and the duas of the
-// believers that Allah praised. Each card is one ayah, with who said it and when.
+// Three more Duas units, every dua word for word from the Quran: the duas of the prophets, the duas of the
+// believers that Allah praised, and the duas for the Last Day. Each card is one ayah, with who said it and when.
 
 const PROPHETS: DeepUnit = {
   key: "dua-prophets",
@@ -163,6 +163,34 @@ const PROPHETS: DeepUnit = {
         { q: "What did Nuh seek refuge from?", a: "Asking what he did not know", wrong: ["Asking for more gold", "Asking for a long rest", "Asking for a big house"], why: "My Lord, I seek refuge in You from asking that of which I have no knowledge." },
         { q: "Without Allah's forgiveness and mercy, Nuh said he would be among whom?", a: "The losers", wrong: ["The kings", "The rich", "The strong"], why: "Unless You forgive me and have mercy upon me, I will be among the losers." },
         { q: "Nuh asked Allah to forgive him and have mercy on him.", tf: true, why: "Unless You forgive me and have mercy upon me, I will be among the losers, Nuh said." }
+      ]
+    },
+    {
+      slug: "nuh-help-me",
+      title: "Nuh asks for help",
+      line: "When his people denied him, Nuh asked his Lord for help.",
+      facts: ["Quran 23:26", "Rabbin-surni bima kadhdhabun", "Then Allah told him to build the ship"],
+      quote: quranQuote(23, 26),
+      source: quran(23, 26, "Nuh said: my Lord, help me, because they have denied me."),
+      difficulty: 1,
+      questions: [
+        { q: "What did Nuh say his people had done to him?", a: "Denied him", wrong: ["Crowned him", "Paid him", "Honored him"], why: "My Lord, help me, because they have denied me, Nuh said." },
+        { q: "Which words begin Nuh's du'a in Quran 23:26?", a: "Rabbin-surni", wrong: ["Rabbi zidni", "Rabbi hab li", "Rabbana atina"], why: "Rabbin-surni bima kadhdhabun: my Lord, help me, for they denied me." },
+        { q: "Nuh turned to his Lord when his people denied him.", tf: true, why: "He said: my Lord, help me, because they have denied me." }
+      ]
+    },
+    {
+      slug: "nuh-judge-between",
+      title: "Judge between me and them",
+      line: "Nuh asked Allah to judge, and to save him and the believers.",
+      facts: ["Quran 26:117 to 26:118", "Faftah bayni wa baynahum fathan", "Allah saved them in the loaded ship"],
+      quote: quranQuote(26, 118),
+      source: quran(26, 118, "Nuh said: my Lord, my people have denied me. So judge between me and them decisively, and save me and the believers with me."),
+      difficulty: 2,
+      questions: [
+        { q: "Along with himself, whom did Nuh ask Allah to save?", a: "The believers with him", wrong: ["The chiefs of his people", "The rich of his people", "The strong of his people"], why: "Save me and those with me of the believers, Nuh asked." },
+        { q: "How did Nuh ask Allah to judge between him and them?", a: "Decisively", wrong: ["Slowly", "Secretly", "Gently"], why: "So judge between me and them with decisive judgement, he said." },
+        { q: "Nuh made this du'a after saying that his people denied him.", tf: true, why: "My Lord, indeed my people have denied me, Nuh said first." }
       ]
     }
   ]
@@ -334,4 +362,86 @@ const BELIEVERS: DeepUnit = {
   ]
 };
 
-export const DUA_MORE_UNITS: DeepUnit[] = [PROPHETS, BELIEVERS];
+const LAST_DAY: DeepUnit = {
+  key: "dua-last-day",
+  topicId: "duas",
+  branchId: "duas-last-day",
+  branch: { title: "Duas for the Last Day", description: "What the believers and Ibrahim asked Allah for the Day all people are gathered." },
+  name: "the duas for the Last Day",
+  kind: "skill",
+  lessonType: "skill",
+  lessons: [
+    {
+      slug: "gather-for-the-day",
+      title: "A Day with no doubt",
+      line: "All people will be gathered for a Day of no doubt.",
+      facts: ["Quran 3:9", "Rabbana innaka jami'un-nasi", "It follows Rabbana la tuzigh, Quran 3:8"],
+      quote: quranQuote(3, 9),
+      source: quran(3, 9, "Our Lord, You will surely gather all the people for a Day about which there is no doubt. Allah does not fail in His promise."),
+      difficulty: 1,
+      questions: [
+        { q: "Whom will Allah gather for that Day, says Quran 3:9?", a: "All people", wrong: ["Only the kings", "Only the prophets", "Only the scholars"], why: "Our Lord, You will surely gather the people for a Day, the du'a says." },
+        { q: "What does the du'a say about that Day?", a: "There is no doubt about it", wrong: ["It may never come", "It is only a dream", "It is far away"], why: "La rayba fih: a Day about which there is no doubt." },
+        { q: "This du'a says that Allah never breaks His promise.", tf: true, why: "Indeed, Allah does not fail in His promise." }
+      ]
+    },
+    {
+      slug: "no-helpers",
+      title: "No helpers for the wrongdoers",
+      line: "The Fire disgraces, and the wrongdoers will have no helpers.",
+      facts: ["Quran 3:192", "Rabbana innaka man tudkhilin-nar", "Part of one du'a, Quran 3:191 to 3:194"],
+      quote: quranQuote(3, 192),
+      source: quran(3, 192, "Our Lord, whoever You put into the Fire, You have disgraced him, and the wrongdoers will have no helpers."),
+      difficulty: 2,
+      questions: [
+        { q: "What happens to those Allah puts in the Fire, says Quran 3:192?", a: "They are disgraced", wrong: ["They are honored", "They are rewarded", "They are thanked"], why: "Whoever You admit to the Fire, You have disgraced him, the du'a says." },
+        { q: "Who will have no helpers, says the du'a?", a: "The wrongdoers", wrong: ["The God-fearing", "The righteous", "The humble"], why: "Wa ma liz-zalimina min ansar: the wrongdoers have no helpers." },
+        { q: "Just before this du'a, they ask Allah to protect them from the Fire.", tf: true, why: "Quran 3:191 ends: protect us from the punishment of the Fire." }
+      ]
+    },
+    {
+      slug: "caller-to-faith",
+      title: "The call to faith",
+      line: "We heard the call to believe in our Lord, and we believed.",
+      facts: ["Quran 3:193", "Rabbana innana sami'na munadiyan", "They ask to die with the righteous"],
+      quote: quranQuote(3, 193),
+      source: quran(3, 193, "Our Lord, we have heard a caller calling to faith: believe in your Lord, and we believed. Our Lord, forgive us our sins, remove from us our misdeeds and let us die with the righteous."),
+      difficulty: 2,
+      questions: [
+        { q: "What did the caller say, in Quran 3:193?", a: "Believe in your Lord", wrong: ["Gather your wealth", "Build your houses", "Rest in your homes"], why: "We heard a caller calling to faith, saying: believe in your Lord." },
+        { q: "What did they ask Allah to remove from them?", a: "Their misdeeds", wrong: ["Their hunger", "Their debts", "Their poverty"], why: "Forgive us our sins and remove from us our misdeeds, they asked." },
+        { q: "When they heard the call to faith, they believed.", tf: true, why: "Believe in your Lord, the caller said, and we have believed." }
+      ]
+    },
+    {
+      slug: "not-with-wrongdoers",
+      title: "Not with the wrongdoing people",
+      line: "Looking at the Fire, they ask not to join the wrongdoers.",
+      facts: ["Quran 7:47", "Rabbana la taj'alna ma'al-qawmiz-zalimin", "Said while looking at the people of the Fire"],
+      quote: quranQuote(7, 47),
+      source: quran(7, 47, "When their eyes are turned toward the people of the Fire, they say: our Lord, do not place us with the wrongdoing people."),
+      difficulty: 2,
+      questions: [
+        { q: "When is the du'a of Quran 7:47 said?", a: "When they see the people of the Fire", wrong: ["When they see the new moon", "When they see the rain", "When they see the sea"], why: "When their eyes are turned toward the people of the Fire, they say it." },
+        { q: "Which words begin the du'a of Quran 7:47?", a: "Rabbana la taj'alna", wrong: ["Rabbana atina", "Rabbi zidni", "Rabbi hab li"], why: "Rabbana la taj'alna ma'al-qawmiz-zalimin: do not place us with the wrongdoers." },
+        { q: "They ask Allah not to place them with the wrongdoing people.", tf: true, why: "Our Lord, do not place us with the wrongdoing people, they say." }
+      ]
+    },
+    {
+      slug: "ibrahim-not-disgraced",
+      title: "Not disgraced on that Day",
+      line: "Ibrahim asked not to be disgraced on the Day all are raised.",
+      facts: ["Quran 26:87", "Wa la tukhzini yawma yub'athun", "Part of his du'a, Quran 26:83 to 26:87"],
+      quote: quranQuote(26, 87),
+      source: quran(26, 87, "Ibrahim said: and do not disgrace me on the Day all are resurrected."),
+      difficulty: 2,
+      questions: [
+        { q: "Who made the du'a of Quran 26:87?", a: "Ibrahim", wrong: ["Nuh", "Musa", "Yunus"], why: "Do not disgrace me on the Day they are resurrected, Ibrahim asked." },
+        { q: "What did Ibrahim ask to be kept from on that Day?", a: "Disgrace", wrong: ["Hunger", "Thirst", "Cold"], why: "Wa la tukhzini: and do not disgrace me on the Day they are resurrected." },
+        { q: "Ibrahim asked this for the Day when all people are resurrected.", tf: true, why: "Wa la tukhzini yawma yub'athun: the Day they are resurrected." }
+      ]
+    }
+  ]
+};
+
+export const DUA_MORE_UNITS: DeepUnit[] = [PROPHETS, BELIEVERS, LAST_DAY];
