@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Manners unit: making peace, from the Book of Peacemaking and the Book of Wrongs in Sahih al-Bukhari.
-// Going out to make peace between people who fought, the man who swore not to do a kindness, half a debt let go,
-// the most quarrelsome person, putting a wrong right before the Day comes, and a case won unfairly. Every card is one
-// sahih hadith with its number and narrator, and its exact English words to highlight, and none of them is taught
-// anywhere else in the app.
+// One more Manners unit: making peace, from the Book of Peacemaking and the Book of Wrongs in Sahih al-Bukhari, and
+// Sahih Muslim. Going out to make peace between people who fought, the man who swore not to do a kindness, half a debt
+// let go, the most quarrelsome person, putting a wrong right before the Day comes, a case won unfairly, and two who
+// hold a grudge left waiting until they make peace. Every card is one sahih hadith with its number and narrator, and
+// its exact English words to highlight, and none of them is taught anywhere else in the app.
 
 const PEACE: DeepUnit = {
   key: "manners-making-peace",
   topicId: "manners",
   branchId: "manners-making-peace",
-  branch: { title: "Making peace", description: "Going out to make peace, the man who swore, half a debt let go, the most quarrelsome, putting wrongs right before that Day, and a case won unfairly." },
+  branch: { title: "Making peace", description: "Going out to make peace, the man who swore, half a debt let go, the most quarrelsome, putting wrongs right before that Day, a case won unfairly, and two who wait until they make peace." },
   name: "making peace between people",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const PEACE: DeepUnit = {
         { q: "Why might someone win a case that is not his?", a: "He puts his case better", wrong: ["He is much older", "He is very rich", "He came first"], why: "Maybe someone amongst you can present his case more eloquently than the other." },
         { q: "What is a right taken unfairly, he ﷺ said?", a: "A piece of the Fire", wrong: ["A just reward", "A small mistake", "A lucky win"], why: "Then it is really a portion of the Fire, so take it or leave it." },
         { q: "If you win a case unfairly, the thing becomes truly yours.", tf: false, why: "No. A thing won unfairly is a portion of the Fire, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "until-they-make-peace",
+      title: "Until they make peace",
+      line: "Two with a grudge are left waiting until they make peace.",
+      facts: ["Told by Abu Hurairah", "The gates of Paradise open on Monday and Thursday", "Three times it is said: wait for these two"],
+      source: hadith("muslim", "2565a", "Abu Hurairah", "Sahih", "The Messenger of Allah ﷺ said: the gates of Paradise are opened on Monday and Thursday, and every servant who does not associate anything with Allah is forgiven, except a man who has rancour against his brother. It is said: wait for these two until they make peace.", "Look towards both of them until there is reconciliation"),
+      difficulty: 2,
+      questions: [
+        { q: "Whose forgiveness waits until they make peace, he ﷺ said?", a: "Two who hold a grudge", wrong: ["Two who travel far", "Two who trade goods", "Two who study together"], why: "Except the person in whose heart there is rancour against his brother, he ﷺ said." },
+        { q: "On which two days are the gates of Paradise opened, he ﷺ said?", a: "Monday and Thursday", wrong: ["Saturday and Sunday", "Tuesday and Wednesday", "Sunday and Tuesday"], why: "Tuftahu abwabul-jannati yawmal-ithnayni wa yawmal-khamis, he ﷺ said." },
+        { q: "Two Muslims at odds are given time to make peace before they are forgiven.", tf: true, why: "Look towards both of them until there is reconciliation, it is said three times." }
       ]
     }
   ]
