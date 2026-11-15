@@ -48,7 +48,7 @@ const waves = (x: number, y: number, gap: number, color: string) => {
 };
 
 /** A shallow dish, empty, its middle at (x, y). */
-const dish = (x: number, y: number) =>
+export const dish = (x: number, y: number) =>
   `<path d="M${n(x - 3.6)} ${n(y - 1)} Q${x} ${n(y + 1.6)} ${n(x + 3.6)} ${n(y - 1)} Z" fill="#B8864A"/><path d="M${n(x - 3.6)} ${n(y - 1)} L${n(x + 3.6)} ${n(y - 1)}" stroke="#946A34" stroke-width="0.4"/>`;
 
 /** A needle, upright, its point at (x, y) and its eye at the top. */
@@ -57,7 +57,7 @@ const needle = (x: number, y: number) =>
   `<ellipse cx="${x}" cy="${n(y - 15.6)}" rx="0.3" ry="1.1" fill="#FFFFFF"/><path d="M${n(x + 0.25)} ${n(y - 3)} L${n(x + 0.25)} ${n(y - 13.6)}" stroke="#C9D0D6" stroke-width="0.25"/>`;
 
 /** A heap of gold coins, its foot's middle at (x, y). */
-const goldHeap = (x: number, y: number, s = 1) =>
+export const goldHeap = (x: number, y: number, s = 1) =>
   [
     [-4, 0],
     [-1.4, 0.2],
@@ -74,7 +74,7 @@ const goldHeap = (x: number, y: number, s = 1) =>
     .join("");
 
 /** A small round tree, its foot at (x, y), `h` high. */
-const roundTree = (x: number, y: number, h: number, leaves = "#4F9A3C") =>
+export const roundTree = (x: number, y: number, h: number, leaves = "#4F9A3C") =>
   `<path d="M${x} ${y} L${x} ${n(y - h * 0.55)}" stroke="#8A5A33" stroke-width="${n(h * 0.12)}"/><circle cx="${x}" cy="${n(y - h * 0.7)}" r="${n(h * 0.34)}" fill="${leaves}"/>`;
 
 /** A grade of Paradise: a garden ledge about (x, y), `w` from its middle to its ends. */

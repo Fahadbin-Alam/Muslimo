@@ -1211,7 +1211,7 @@ const HADID_THREE: DeepUnit = {
       slug: "the-poor-who-worried",
       title: "The poor who worried",
       line: "Poor Muslims worried the rich would get all the high ranks.",
-      facts: ["The rich could give charity and free slaves", "The poor wanted the same reward"],
+      facts: ["The rich could give charity and do Hajj", "The poor wanted the same reward"],
       quote: q57(21),
       source: hadith("bukhari", "843", "Abu Hurairah", "Sahih", "Some poor people told the Prophet ﷺ the wealthy will get higher grades and permanent enjoyment, because they pray and fast like us and also give charity.", "The wealthy people will get higher grades and will have permanent enjoyment"),
       difficulty: 2,

@@ -541,7 +541,14 @@ export type SignKind =
   | "treasure-of-paradise"
   | "hundred-levels"
   | "faith-at-the-pleiades"
-  | "sacred-city";
+  | "sacred-city"
+  | "house-in-paradise"
+  | "my-wealth"
+  | "hour-on-friday"
+  | "never-old"
+  | "beware-of-suspicion"
+  | "thirty-three"
+  | "five-gifts";
 
 export type SignScene = {
   id: string;
@@ -1728,6 +1735,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "On the day Makkah was opened, the Prophet ﷺ said: Allah has made this place a sanctuary since the creation of the heavens and the earth, and it will remain a sanctuary till the Day of Resurrection. Its thorns should not be uprooted, its game should not be chased, and its fallen things should not be picked up except by one who would announce it publicly.",
     sources: [bukhari("1834")]
+  },
+  {
+    id: "sign-house-in-paradise",
+    kind: "house-in-paradise",
+    caption:
+      "When people argued too much about Uthman rebuilding the masjid of the Prophet ﷺ, he said: you have talked too much. I heard the Prophet ﷺ say: whoever built a mosque, Allah would build for him a similar place in Paradise. A narrator thought he ﷺ also said: intending Allah's pleasure.",
+    sources: [bukhari("450")]
+  },
+  {
+    id: "sign-my-wealth",
+    kind: "my-wealth",
+    caption:
+      "As the Prophet ﷺ was reciting Surat at-Takathur, he said: the son of Adam claims: my wealth, my wealth. O son of Adam, is there anything as your belonging except that which you consumed, which you utilised, or which you wore and then it was worn out, or you gave as charity and sent it forward?",
+    sources: [muslim("2958")]
+  },
+  {
+    id: "sign-hour-on-friday",
+    kind: "hour-on-friday",
+    caption:
+      "The Prophet ﷺ talked about Friday and said: there is an hour on Friday, and if a Muslim gets it while praying and asks something from Allah, then Allah will definitely meet his demand. And he ﷺ pointed out the shortness of that time with his hands.",
+    sources: [bukhari("935")]
+  },
+  {
+    id: "sign-never-old",
+    kind: "never-old",
+    caption:
+      "The Prophet ﷺ said: there would be an announcer in Paradise who would announce: there is in store for you health, and that you should never fall ill; that you live and do not die at all; that you would remain young and never grow old; and that you would always live in affluent circumstances and never become destitute.",
+    sources: [muslim("2837")]
+  },
+  {
+    id: "sign-beware-of-suspicion",
+    kind: "beware-of-suspicion",
+    caption:
+      "The Prophet ﷺ said: beware of suspicion, for suspicion is the worst of false tales. Do not look for the others' faults and do not spy, do not be jealous of one another, do not desert one another, and do not hate one another. O Allah's worshipers, be brothers.",
+    sources: [bukhari("6064")]
+  },
+  {
+    id: "sign-thirty-three",
+    kind: "thirty-three",
+    caption:
+      "Some poor people came to the Prophet ﷺ and said: the wealthy people will get higher grades and permanent enjoyment. They pray like us and fast as we do, and they have more money, by which they perform Hajj and Umrah, struggle in Allah's cause and give in charity. He ﷺ said: shall I not tell you a thing which, if you acted on it, you would catch up with those who have surpassed you, and nobody would overtake you except those who do the same? Say Subhan Allah, Al hamdu lillah and Allahu Akbar thirty three times each after every prayer.",
+    sources: [bukhari("843")]
+  },
+  {
+    id: "sign-five-gifts",
+    kind: "five-gifts",
+    caption:
+      "The Prophet ﷺ said: I have been given five things which were not given to anyone else before me. Allah made me victorious by awe for a distance of one month's journey. The earth has been made for me a place for praying and a thing to perform Tayammum, so anyone of my followers can pray wherever the time of a prayer is due. The booty has been made lawful for me. I have been given the right of intercession. And every Prophet used to be sent to his nation only, but I have been sent to all mankind.",
+    sources: [bukhari("335")]
   }
 ];
 
@@ -2847,7 +2903,42 @@ export const SIGN_LESSONS: Record<string, string> = {
   // (Sahih al-Bukhari 1834).
   "deep-hajj-house-sanctuary": "sign-sacred-city",
   "deep-naml6-sacred-since-creation": "sign-sacred-city",
-  "deep-balad1-a-sacred-city": "sign-sacred-city"
+  "deep-balad1-a-sacred-city": "sign-sacred-city",
+  // Whoever builds a masjid for Allah, Allah builds for him a place like it in Paradise; said by Uthman while he
+  // rebuilt the Prophet's masjid ﷺ (Sahih al-Bukhari 450).
+  "deep-tawbah1-build-a-masjid": "sign-house-in-paradise",
+  "deep-nur2-build-a-masjid": "sign-house-in-paradise",
+  "deep-mujadila2-a-house-in-paradise": "sign-house-in-paradise",
+  // My wealth, my wealth: only what we ate, wore or gave in charity is truly ours (Sahih Muslim 2958).
+  "deep-hadid2-my-wealth-my-wealth": "sign-my-wealth",
+  "deep-hadid2-what-you-send-forward": "sign-my-wealth",
+  "deep-takathur1-my-wealth-my-wealth": "sign-my-wealth",
+  // The short hour on Friday when a Muslim praying who asks Allah is given (Sahih al-Bukhari 935).
+  "deep-pray-jumuah-hour": "sign-hour-on-friday",
+  "deep-jumuah3-an-hour-of-answered-dua": "sign-hour-on-friday",
+  "deep-buruj1-the-special-hour-of-friday": "sign-hour-on-friday",
+  // In Paradise: health and never ill, life and never death, young and never old, ease and never want (Sahih Muslim
+  // 2837).
+  "deep-jannah-never-old": "sign-never-old",
+  "deep-hud6-a-gift-without-end": "sign-never-old",
+  "deep-hijr2-young-forever": "sign-never-old",
+  "deep-dukhan3-never-ill-never-old": "sign-never-old",
+  // Beware of suspicion; do not spy, envy, desert or hate one another; be brothers (Sahih al-Bukhari 6064).
+  "deep-speech-suspicion": "sign-beware-of-suspicion",
+  "deep-hujurat2-beware-of-suspicion": "sign-beware-of-suspicion",
+  "deep-najm2-beware-of-suspicion": "sign-beware-of-suspicion",
+  // The poor who worried the wealthy would get the higher grades, and the dhikr after every prayer by which they catch
+  // up (Sahih al-Bukhari 843).
+  "deep-qaf3-thirty-three-each": "sign-thirty-three",
+  "deep-hadid3-the-poor-who-worried": "sign-thirty-three",
+  "deep-hadid3-thirty-three-each": "sign-thirty-three",
+  // Five things he ﷺ was given: awe for a month's journey, the earth a place of prayer and purity, and sent to all
+  // mankind (Sahih al-Bukhari 335).
+  "deep-aq-rusul-all-people": "sign-five-gifts",
+  "deep-araf5-to-all-mankind": "sign-five-gifts",
+  "deep-ibrahim1-sent-to-all-mankind": "sign-five-gifts",
+  "deep-saba2-sent-to-all-mankind": "sign-five-gifts",
+  "deep-hashr1-awe-for-a-month": "sign-five-gifts"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
