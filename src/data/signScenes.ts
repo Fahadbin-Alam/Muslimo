@@ -520,7 +520,14 @@ export type SignKind =
   | "call-to-good"
   | "praise-each-bite"
   | "good-or-quiet"
-  | "then-steadfast";
+  | "then-steadfast"
+  | "dearest-deeds"
+  | "truth-leads"
+  | "ease-a-hardship"
+  | "saved-by-mercy"
+  | "give-while-healthy"
+  | "strong-believer"
+  | "forgotten-prayer";
 
 export type SignScene = {
   id: string;
@@ -1566,6 +1573,54 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sufyan ibn Abdullah ath-Thaqafi said: I asked the Messenger of Allah ﷺ to tell me something about Islam that I need ask no one other than him about. He said: say, I affirm my faith in Allah, and then remain steadfast to it.",
     sources: [muslim("38")]
+  },
+  {
+    id: "sign-dearest-deeds",
+    kind: "dearest-deeds",
+    caption:
+      "Abdullah ibn Mas'ud said: I asked the Prophet ﷺ: which deed is the dearest to Allah? He said: to offer the prayers at their early fixed times. I asked: then what? He said: to be good and dutiful to your parents. I asked: then what? He said: to strive in Allah's cause.",
+    sources: [bukhari("527")]
+  },
+  {
+    id: "sign-truth-leads",
+    kind: "truth-leads",
+    caption:
+      "The Prophet ﷺ said: truthfulness leads to righteousness, and righteousness leads to Paradise, and a man keeps on telling the truth until he becomes a truthful person. Falsehood leads to wickedness, and wickedness leads to the Fire, and a man may keep on telling lies until he is written before Allah a liar.",
+    sources: [bukhari("6094")]
+  },
+  {
+    id: "sign-ease-a-hardship",
+    kind: "ease-a-hardship",
+    caption:
+      "The Prophet ﷺ said: he who relieves the suffering of a brother out of the sufferings of the world, Allah will relieve his suffering from the sufferings of the Day of Resurrection; he who makes things easy for one who is hard-pressed, Allah will make things easy for him in the Hereafter; and he who conceals the faults of a Muslim, Allah will conceal his faults in this world and in the Hereafter. Allah helps a servant as long as the servant helps his brother; and he who treads a path in search of knowledge, Allah makes that path easy for him, leading to Paradise.",
+    sources: [muslim("2699a")]
+  },
+  {
+    id: "sign-saved-by-mercy",
+    kind: "saved-by-mercy",
+    caption:
+      "The Prophet ﷺ said: the deeds of anyone of you will not save you. They said: not even you, O Messenger of Allah? He said: not even I, unless Allah bestows His mercy on me. So do good deeds properly, sincerely and moderately, and worship Allah in the forenoon and in the afternoon and during a part of the night, and always keep to a moderate course, and you will reach your target.",
+    sources: [bukhari("6463")]
+  },
+  {
+    id: "sign-give-while-healthy",
+    kind: "give-while-healthy",
+    caption:
+      "A man asked the Prophet ﷺ: which charity is the most superior in reward? He said: the charity you give while you are healthy, afraid of poverty and wishing to become wealthy. Do not delay it until death is near and then say: give so much to such and such, and so much to such and such, when it already belongs to such and such.",
+    sources: [bukhari("1419")]
+  },
+  {
+    id: "sign-strong-believer",
+    kind: "strong-believer",
+    caption:
+      "The Prophet ﷺ said: a strong believer is better and more lovable to Allah than a weak believer, and there is good in everyone. Cherish what benefits you, seek help from Allah and do not lose heart. If trouble comes to you, do not say: if I had not done that, it would not have happened so; but say: Allah did what He had ordained, for your 'if' opens the gate for Satan.",
+    sources: [muslim("2664")]
+  },
+  {
+    id: "sign-forgotten-prayer",
+    kind: "forgotten-prayer",
+    caption: "The Prophet ﷺ said: if anyone forgets a prayer, he should pray it when he remembers it. There is no expiation for it except to pray it.",
+    sources: [bukhari("597")]
   }
 ];
 
@@ -2568,7 +2623,44 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-hadith-famous-steadfast": "sign-then-steadfast",
   "deep-hud6-stand-firm-as-commanded": "sign-then-steadfast",
   "deep-fussilat2-our-lord-is-allah-then-stand-firm": "sign-then-steadfast",
-  "deep-ahqaf1-believe-then-be-steadfast": "sign-then-steadfast"
+  "deep-ahqaf1-believe-then-be-steadfast": "sign-then-steadfast",
+  // The dearest deeds: the prayer at its time, then being dutiful to one's parents (Sahih al-Bukhari 527). The lesson on
+  // 6:151, kindness to parents right after tawhid, keeps its photo.
+  "prayer-times-guarding-the-first-part": "sign-dearest-deeds",
+  "deep-parents-dearest-deeds": "sign-dearest-deeds",
+  "deep-muminun1-guard-the-prayers": "sign-dearest-deeds",
+  "deep-maun2-the-dearest-deed": "sign-dearest-deeds",
+  // Truthfulness leads to righteousness and Paradise, and falsehood to wickedness (Sahih al-Bukhari 6094). The lessons
+  // on honesty in general and on 33:35 keep their photo.
+  "deep-speech-truth": "sign-truth-leads",
+  "deep-tawbah5-with-the-truthful": "sign-truth-leads",
+  // Relieving a hardship, hiding a fault, helping, and the path of knowledge made easy (Sahih Muslim 2699a). The lesson
+  // on those who gather in a masjid to study the Quran, which the scene does not show, keeps its photo.
+  "deep-hadith-heart-relieve": "sign-ease-a-hardship",
+  "deep-kids-small-deeds-help-and-be-helped": "sign-ease-a-hardship",
+  "deep-hadith-knowledge-path-to-jannah": "sign-ease-a-hardship",
+  // No one is saved by his deeds alone, only by Allah's mercy (Sahih al-Bukhari 6463).
+  "deep-ready-mercy-saves": "sign-saved-by-mercy",
+  "deep-zukhruf4-even-i-need-mercy": "sign-saved-by-mercy",
+  "deep-haqqah3-by-allahs-mercy": "sign-saved-by-mercy",
+  "deep-fatir2-no-toil-no-weariness": "sign-saved-by-mercy",
+  // The charity given while healthy, not delayed until death is near (Sahih al-Bukhari 1419).
+  "deep-zakat-everyday-give-now": "sign-give-while-healthy",
+  "deep-nahl1-give-while-healthy": "sign-give-while-healthy",
+  "deep-munafiqun3-best-charity": "sign-give-while-healthy",
+  "deep-munafiqun3-do-not-delay": "sign-give-while-healthy",
+  "deep-insan2-the-best-charity": "sign-give-while-healthy",
+  // The strong believer, who seeks Allah's help and does not say "if" (Sahih Muslim 2664).
+  "deep-aq-qadar-if-only": "sign-strong-believer",
+  "deep-aq-iman-strong": "sign-strong-believer",
+  "deep-patience-do-not-say-if-only": "sign-strong-believer",
+  "deep-qamar3-seek-help-do-not-say-if": "sign-strong-believer",
+  "deep-hadid2-strong-and-weak-believers": "sign-strong-believer",
+  "deep-taghabun3-do-not-say-if-only": "sign-strong-believer",
+  // A forgotten prayer, prayed when it is remembered (Sahih al-Bukhari 597).
+  "deep-taha1-a-missed-prayer": "sign-forgotten-prayer",
+  "prayer-missed-prayers-returning-after-a-miss": "sign-forgotten-prayer",
+  "prayer-times-late-prayer-scenarios": "sign-forgotten-prayer"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
