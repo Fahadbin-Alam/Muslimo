@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(918);
+    expect(asks.length).toBe(973);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -103,7 +103,7 @@ describe("which questions are asked on a scene", () => {
     // "Zakat in Islam" now has seven lessons, so it gets a review card, which asks two of its scene questions, and its
     // final quiz draws one more. "A fresh start" gained its lesson on 3:136, so its final quiz asks one scene question
     // fewer (that question is still asked in its lesson).
-    expect(places).toBe(1303);
+    expect(places).toBe(1387);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -2579,6 +2579,257 @@ describe("where the scene waits and where it stops", () => {
       [0, 0, 0],
       [1, 1, 1]
     ]);
+  });
+
+  it("waits on the scenes of what he ﷺ told and lived, from the shepherds to the deeds that stay, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-shepherds", "sign-date-mountain", "sign-deeds-continue", "sign-good-intentions", "sign-safa-call", "sign-jabir-dates", "sign-three-follow"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(55);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // No flock yet; then a flock far off comes into sight on each of three hills, a way among each.
+    for (const prompt of ["What work did every prophet do, the Prophet ﷺ said?", "What job did every Prophet do, in the hadith?", "What work did every Prophet do?"]) {
+      expect([prompt, shown(prompt, ["a flock far off, on the first hill", "another flock far off", "a third flock far off", "a way among them", "a way among the third"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Asked, and no answer yet; then the homes of Makkah and the Ka'bah come into sight, and its sheep come out.
+    for (const [prompt, answer] of [
+      ["Whose sheep did the Prophet ﷺ look after?", "The people of Makkah's"],
+      ["Whose sheep did the Prophet ﷺ tend?", "The people of Makkah's"],
+      ["Whose sheep did the Prophet ﷺ tend?", "The people of Makkah"]
+    ]) {
+      expect([prompt, answer, shown(prompt, ["homes of Makkah", "the Ka'bah", "a sheep of Makkah, coming out 1", "a sheep of Makkah, coming out 4", "a way, out with the sheep"], answer)]).toEqual([
+        prompt,
+        answer,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // The sheep out, and nothing paid yet; then a few small coins shine.
+    expect(shown("What was he ﷺ paid for it?", ["a qirat, a small coin 1", "a qirat, a small coin 2", "a qirat, a small coin 3"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // No date in sight; then the palm and its basket, and one date goes to the home in need.
+    for (const prompt of ["How small is the charity, in the hadith?", "How small can the charity be?"]) {
+      expect([prompt, shown(prompt, ["its own date palm", "a basket of its dates", "one date, given"]), moved(prompt, "one date, given", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, 77]
+      ]);
+    }
+    // Nothing given yet; then the date is given, a glow comes on it, accepted, and its reward rises.
+    for (const prompt of ["Which charity does Allah accept, per the hadith?", "What money does Allah accept, in the hadith?", "Allah accepts only honestly earned money."]) {
+      expect([prompt, shown(prompt, ["one date, given", "a glow on the date, accepted", "its reward, rising 1"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // The reward grown with the foal, and no mountain yet; then the mountain rises, and light comes on it.
+    for (const prompt of ["How big can one date of charity grow, per the hadith?", "How big does it grow, in the hadith?", "How big does its reward grow?"]) {
+      expect([prompt, shown(prompt, ["the reward, as big as a mountain", "light on the mountain"]), moved(prompt, "the reward, as big as a mountain", "scale")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [0.08, 1]
+      ]);
+    }
+    // The way of deeds ended; then the well's water flows, those who drink come, the charity rises, and the glow grows.
+    for (const prompt of [
+      "How many deeds keep going after death?",
+      "Planting a tree people use, or building a well, is...",
+      "How many deeds continue after death in this hadith?",
+      "How many deeds continue after death, per Muslim 1631?",
+      "How many deeds continue after death?"
+    ]) {
+      expect([prompt, shown(prompt, ["water, flowing to the trough", "someone, coming to drink 1", "the charity, still rising 1", "a soft glow on the place"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0.3],
+          [1, 1, 1, 0.55]
+        ]
+      ]);
+    }
+    // The charity going on; then those who learned, voices passing it on, and the knowledge rising.
+    for (const [prompt, answer] of [
+      ["Which is one of them?", "Knowledge that benefits people"],
+      ["Useful knowledge someone left keeps rewarding him.", "True"]
+    ]) {
+      expect([prompt, shown(prompt, ["someone, who learned 1", "a voice, passing it on 1", "the knowledge, still rising 1", "a soft glow on the place"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0.55],
+          [1, 1, 1, 0.8]
+        ]
+      ]);
+    }
+    // The knowledge going on; then a little one by the place prays, the prayer rises, and the glow is full.
+    for (const [prompt, answer] of [
+      ["Which of these keeps helping a person after death?", "A righteous child's dua"],
+      ["Which is one of the three, per Muslim 1631?", "A pious child who prays"],
+      ["Which is one of them?", "A child who prays for him"],
+      ["Dua for parents stops helping them after they die.", "False"]
+    ]) {
+      expect([prompt, answer, shown(prompt, ["a little one, by the place", "a voice, praying for him", "the prayer, rising 1", "a soft glow on the place"], answer)]).toEqual([
+        prompt,
+        answer,
+        [
+          [0, 0, 0, 0.8],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Nothing yet; then a good intention glows, and one full good deed rises.
+    for (const prompt of [
+      "What is written if you plan a good deed but cannot do it?",
+      "What if one only intends a good deed?",
+      "What is written for a good intention not done, per Bukhari 6491?",
+      "What is written for intending good, per Bukhari 6491?",
+      "What if you intend good but do not do it?"
+    ]) {
+      expect([prompt, shown(prompt, ["a good intention, glowing", "a full good deed, rising 1"]), moved(prompt, "a full good deed, rising 1", "y")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [0, -16]
+      ]);
+    }
+    // One good deed risen; then the deed is done, ten rise, and many more.
+    for (const prompt of [
+      "How many times can a good deed done be multiplied?",
+      "How high can a good deed go, per Bukhari 6491?",
+      "How is a done good deed written?",
+      "How much is a done good deed multiplied?",
+      "A good deed done is multiplied up to?",
+      "How much for a good deed you do?"
+    ]) {
+      expect([prompt, shown(prompt, ["a way to the home in need", "ten good deeds, rising 1", "ten good deeds, rising 10", "many more, rising"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // No dark dot yet; then a bad intention comes and is left, and a full good deed rises in its place.
+    for (const prompt of ["Per Bukhari 6491, a bad deed you meant but left is...", "What is written if one drops a bad intention?", "A bad deed you hold back from is written as a good deed."]) {
+      expect([prompt, shown(prompt, ["a bad intention, a dark dot", "a full good deed, rising in its place 1"]), moved(prompt, "a full good deed, rising in its place 1", "y")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [0, 1]
+        ],
+        [0, -16]
+      ]);
+    }
+    // Then another bad intention, done, rises as one dark dot only.
+    for (const prompt of ["A bad deed done is written as ten bad deeds.", "How is a bad deed that is done written?"]) {
+      expect([prompt, shown(prompt, ["a way to another, the deed done", "another bad intention, done: one bad deed"]), moved(prompt, "another bad intention, done: one bad deed", "y")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [0, -14]
+      ]);
+    }
+    // Makkah, and no one on the hill; then a way climbs as-Safa, and a voice calls from a ring on its top.
+    expect(shown("Where did the Prophet ﷺ call his people from?", ["a way, climbing as-Safa", "a golden ring on the top, his place", "a voice from the top, calling"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The question asked, its voice gone; then voices answer from below.
+    for (const prompt of ["What did Quraysh say about his honesty?", "Why did Quraysh say they would believe him?"]) {
+      expect([prompt, shown(prompt, ["a voice from the top, asking", "voices from below, answering"])]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [0, 1]
+        ]
+      ]);
+    }
+    // The answer given, its voices gone; then a voice warns from the top.
+    expect(shown("What did he call himself to them?", ["voices from below, answering", "a voice from the top, warning"])).toEqual([
+      [0, 0],
+      [0, 1]
+    ]);
+    // One of them still among the rest; then a harsh voice, and that one goes away.
+    const lahab = "Abu Lahab thanked him for the warning.";
+    expect([shown(lahab, ["one of them, gathering too", "the way that one went away"]), moved(lahab, "one of them, gathering too", "x")]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      [0, 22]
+    ]);
+    // Nothing yet; then the heap of dates, and the lenders come.
+    expect(shown("What did Jabir's father leave behind?", ["the heap of dates", "a lender, waiting 1", "a lender, waiting 5"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The lenders doubting; then three ways come to the dates, a ring sits on them, a voice prays and blessing rises.
+    expect(shown("What did the Prophet ﷺ do with the dates?", ["a way, coming to the dates", "two more ways, with it", "a golden ring on the dates, his place", "a voice, praying for blessing", "blessing, rising from the dates 1"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Every lender paid; then thirteen wasqs stand left over, and praise rises.
+    expect(shown("How many loads were left after paying everyone?", ["a full sack, by the lender 1", "a full sack, by the lender 5", "thirteen wasqs, left over 1", "thirteen wasqs, left over 13", "praise, rising 1"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Nothing yet; then the open grave and the way to it (no one follows yet: the words say how many).
+    expect(shown("How many things follow the dead to the grave?", ["the grave, open", "a way, to the grave", "his family, following 1", "his wealth, a laden camel, following"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 0, 0]
+    ]);
+    // All three at the grave; then it is closed, and the family and the camel turn round and go back.
+    const back = "Which two go back home?";
+    expect([shown(back, ["his family, following 1", "his family, following 3", "his wealth, a laden camel, following", "his deeds, a soft light, following", "the grave, closed"]), moved(back, "his wealth, a laden camel, following", "x"), moved(back, "his wealth, a laden camel, following", "scaleX")]).toEqual([
+      [
+        [1, 1, 1, 1, 0],
+        [0, 0, 0, 1, 1]
+      ],
+      [0, -80],
+      [1, -1]
+    ]);
+    // All three at the grave, so nothing shows which stays; then two go back, and the light stays on the grave and rises.
+    for (const prompt of ["What stays with you in the grave?", "What stays with him?", "Good deeds are the only friends that stay."]) {
+      expect([prompt, shown(prompt, ["his family, following 1", "his wealth, a laden camel, following", "his deeds, a soft light, following", "a glow, staying on the grave", "light, rising from his deeds 1"])]).toEqual([
+        prompt,
+        [
+          [1, 1, 1, 0, 0],
+          [0, 0, 1, 1, 1]
+        ]
+      ]);
+    }
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {

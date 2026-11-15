@@ -1034,6 +1034,13 @@ const STATES: State[] = [
   { id: "scene-greeting-stone", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fadail-the-stone-that-greeted-him" ask="use to do" /> },
   { id: "scene-around-us", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-rain-and-wind-around-us" ask="rain had to stop" /> },
   { id: "scene-blessed-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-isra2-the-food-glorified-allah" ask="Companions hear" /> },
+  { id: "scene-shepherds", render: () => <SceneQuestionDemo lessonId="lesson-deep-humility-shepherds" ask="Whose sheep" /> },
+  { id: "scene-date-mountain", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-a-date-like-a-mountain" ask="How big can one date" /> },
+  { id: "scene-deeds-continue", render: () => <SceneQuestionDemo lessonId="lesson-deep-grave-continue" ask="Which is one of them" /> },
+  { id: "scene-good-intentions", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-qudsi-good-intentions" ask="multiplied" /> },
+  { id: "scene-safa-call", render: () => <SceneQuestionDemo lessonId="lesson-deep-masad1-never-heard-a-lie" ask="about his honesty" /> },
+  { id: "scene-jabir-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-jabir-fathers-debt" ask="do with the dates" /> },
+  { id: "scene-three-follow", render: () => <SceneQuestionDemo lessonId="lesson-deep-grave-three-follow" ask="go back home" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
