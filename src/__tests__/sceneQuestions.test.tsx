@@ -97,7 +97,8 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(1182);
+    // 1183: the Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons.
+    expect(places).toBe(1183);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
