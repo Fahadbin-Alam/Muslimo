@@ -57,6 +57,20 @@ const LAST_DAY: DeepUnit = {
       ]
     },
     {
+      slug: "all-authority",
+      title: "All authority that Day",
+      line: "On that Day all authority is Allah's, and He will judge.",
+      facts: ["Quran 22:56", "Al-mulk: the authority", "Gardens for believers who do good"],
+      quote: quranQuote(22, 56),
+      source: quran(22, 56, "All sovereignty that Day is for Allah; He will judge between them. So those who believed and did righteous deeds will be in the Gardens of Pleasure."),
+      difficulty: 2,
+      questions: [
+        { q: "Who has all authority on that Day, in Quran 22:56?", a: "Allah alone", wrong: ["The kings", "The rich", "The strong"], why: "All sovereignty that Day is for Allah, and He will judge between them." },
+        { q: "Quran 22:56 says Allah will judge between people on that Day.", tf: true, why: "He will judge between them, and those who believed will be in gardens." },
+        { q: "Who will be in the gardens, in Quran 22:56?", a: "Those who believe and do good", wrong: ["Those who are rich", "Those who are strong", "Those who are famous"], why: "So those who believed and did righteous deeds will be in the Gardens." }
+      ]
+    },
+    {
       slug: "jibril-hour",
       title: "Jibril asked about the Hour",
       line: "Asked by Jibril, he ﷺ said: I know no more than you.",
@@ -1452,6 +1466,20 @@ const READY: DeepUnit = {
         { q: "How should we live in this world?", a: "Like a traveler", wrong: ["Like we stay forever", "Like a king", "Like it's all that matters"], why: "Bukhari 6416." },
         { q: "What did Ibn Umar say to use your health for?", a: "Getting ready for sickness", wrong: ["Only playing", "Nothing", "Showing off"], why: "Take from your health for your sickness." },
         { q: "A traveler packs what he needs for the road. What is ours?", a: "Good deeds", wrong: ["Wealth", "Our family name", "Many friends"], why: "The best provision is taqwa (2:197)." }
+      ]
+    },
+    {
+      slug: "day-of-return",
+      title: "The Day we return to Allah",
+      line: "Be ready for the Day when we all return to Allah.",
+      facts: ["Quran 2:281", "Every soul repaid", "No one is wronged"],
+      quote: quranQuote(2, 281),
+      source: quran(2, 281, "And fear a Day when you will be returned to Allah. Then every soul will be paid in full for what it earned, and they will not be wronged."),
+      difficulty: 2,
+      questions: [
+        { q: "Who will we all be returned to, in Quran 2:281?", a: "Allah", wrong: ["Our families", "Our tribes", "Our homelands"], why: "Be mindful of the Day when you will be returned to Allah." },
+        { q: "For what will every soul be repaid, in Quran 2:281?", a: "For what it did", wrong: ["For what its parents did", "For what its friends did", "For what its neighbors did"], why: "Then every soul will be paid back for what it earned." },
+        { q: "Quran 2:281 says no one will be wronged on that Day.", tf: true, why: "They will not be treated unjustly, when every soul is paid for its deeds." }
       ]
     },
     {
