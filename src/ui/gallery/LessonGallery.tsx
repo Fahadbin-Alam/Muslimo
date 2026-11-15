@@ -982,6 +982,15 @@ const STATES: State[] = [
   { id: "scene-thawr", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-cave-of-thawr" ask="How many nights did they stay" /> },
   { id: "scene-plague", render: () => <SceneQuestionDemo lessonId="lesson-deep-abuubaydah-decree" ask="What was Umar's answer" /> },
   { id: "scene-river-at-the-door", render: () => <SceneQuestionDemo lessonId="lesson-intro-five-prayers" ask="How many times a day do Muslims pray" /> },
+  // The likenesses he ﷺ gave, and the day of Ashura: believers like bricks of one wall, the mare lifting her hoof from
+  // her foal, what avoiding doubtful things keeps safe, the bellows burning clothes, the hole in the shared ship, and
+  // the sea split on the day of Ashura.
+  { id: "scene-building", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah3-like-a-wall" ask="What are believers like, per Abu Musa" /> },
+  { id: "scene-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-qudsi-hundred-parts" ask="What does the mare do" /> },
+  { id: "scene-sanctuary", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-famous-clear-and-doubtful" ask="What do you protect by avoiding" /> },
+  { id: "scene-musk", render: () => <SceneQuestionDemo lessonId="lesson-deep-furqan1-musk-seller-and-blacksmith" ask="What might a bad friend do" /> },
+  { id: "scene-shared-ship", render: () => <SceneQuestionDemo lessonId="lesson-deep-numan-the-ship" ask="What did the people below want" /> },
+  { id: "scene-ashura", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-musa-ashura" ask="What happened on the day of Ashura" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

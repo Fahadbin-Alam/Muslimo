@@ -45,12 +45,20 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did Allah tell Nuh to build?", "A ship", "Build the ark"],
     ["What did Nuh build?", "The Ark", "Build the ark"]
   ],
-  // The sea split for Musa, each side like a great mountain (26:63).
+  // The sea split for Musa, each side like a great mountain (26:63). It was the day of Ashura, the day Allah saved Musa
+  // and his people from their enemy (Sahih al-Bukhari 2004).
   "sign-sea": [
     ["What did each part of the split sea look like?", "A great mountain", "The sea split", "Each side like a great mountain"],
     ["How did Allah save them from Pharaoh?", "He parted the sea", "The sea split"],
     ["Ayahs 53-69: what are they about?", "The sea splits", "The sea split"],
-    ["Ayah 63: what was each part of the split sea like?", "A great mountain", "The sea split", "Each side like a great mountain"]
+    ["Ayah 63: what was each part of the split sea like?", "A great mountain", "The sea split", "Each side like a great mountain"],
+    ["What happened on the day of Ashura?", "Allah saved Musa", "The sea split"],
+    ["What happened on the day of Ashura?", "Allah saved Musa and his people", "The sea split"],
+    ["What happened on the day of Ashura?", "Allah saved the Children of Israel", "The sea split"],
+    ["What happened on Ashura, per the hadith?", "Allah saved Musa's people", "The sea split"],
+    ["What happened on Ashura, per the hadith?", "Allah rescued Bani Israel", "The sea split"],
+    ["What happened on Ashura, per Bukhari 2004?", "Allah rescued Bani Israel from their enemy", "The sea split"],
+    ["Why did the Jews fast Ashura, in the hadith?", "Allah saved Musa that day", "The sea split"]
   ],
   // The clouds' shade, the manna and quails, the twelve springs (2:57, 2:60, 7:160).
   "sign-springs": [
@@ -1007,6 +1015,53 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many times a day do Muslims pray?", "Five", "And you bathed in it five times a day"],
     ["What do the prayers wash away?", "Sins", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"],
     ["What do good deeds do, in 11:114?", "Remove bad deeds", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"]
+  ],
+  // Believers like a building, each part holding up the other; a man came asking, and he ﷺ said: speak up for him, and
+  // be rewarded (Sahih al-Bukhari 481, 6026). His laced fingers are only told, never drawn, so they are not asked here.
+  "sign-building": [
+    ["A believer to a believer is like what?", "A building", "The believer to the believer", "Is like a building"],
+    ["What are believers like, per Abu Musa's hadith?", "Bricks of one wall", "The believer to the believer", "Is like a building"],
+    ["What are believers like, per Bukhari 481?", "Bricks of a wall", "The believer to the believer", "Is like a building"],
+    ["What are believers like, in the hadith?", "Bricks of a wall", "The believer to the believer", "Is like a building"],
+    ["In a wall, each brick supports the others.", "True", "Each part holding up the other"],
+    ["Believers should support one another.", "True", "Each part holding up the other"],
+    ["Believers should hold each other up.", "True", "Each part holding up the other"],
+    ["When a man came asking, the Prophet ﷺ told them to help him.", "True", "Speak up for him, and be rewarded"]
+  ],
+  // Mercy in a hundred parts: one part among all creation, by which they are kind to each other, so that a mare lifts
+  // her hoof from her foal, and ninety-nine kept back (Sahih al-Bukhari 6000, 6469).
+  "sign-mercy": [
+    ["Into how many parts did Allah make mercy?", "One hundred", "Allah made mercy in a hundred parts"],
+    ["How many parts did He send to all creatures?", "One", "One part among all creation"],
+    ["How many parts of mercy came to earth, in Bukhari 6000?", "One part of a hundred", "One part among all creation"],
+    ["All the mercy among creatures comes from just one part.", "True", "One part among all creation", "By it, creatures are kind to each other"],
+    ["What is the one part used for?", "All creatures' mercy to each other", "By it, creatures are kind to each other"],
+    ["What does the mare do because of the one part of mercy?", "Lifts her hoof off her foal", "A mare lifts her hoof from her foal"],
+    ["How many parts of mercy did Allah keep with Him?", "Ninety-nine", "He kept ninety-nine parts with Him"],
+    ["How many parts of mercy did Allah keep for that Day?", "Ninety-nine", "He kept ninety-nine parts with Him"]
+  ],
+  // The halal is clear and the haram is clear, and between them are doubtful things; avoiding them keeps one's
+  // religion and honour safe, like one grazing around a sanctuary (Sahih al-Bukhari 52).
+  "sign-sanctuary": [
+    ["What lies between clear halal and clear haram?", "Doubtful things", "Between them are doubtful things"],
+    ["What lies between halal and haram?", "Doubtful things", "Between them are doubtful things"],
+    ["What lies between the halal and the haram?", "Doubtful things", "Between them are doubtful things"],
+    ["What do you protect by avoiding doubtful things?", "Your religion and honor", "Avoid them: your religion and honour stay safe"],
+    ["What does avoiding doubtful things protect?", "Religion and honor", "Avoid them: your religion and honour stay safe"],
+    ["What does staying away from doubtful things protect?", "Your faith and honour", "Avoid them: your religion and honour stay safe"],
+    ["When unsure if something is halal, it's safer to leave it.", "True", "Avoid them: your religion and honour stay safe"]
+  ],
+  // A good friend like one who carries musk, and a bad friend like one who blows the bellows (Sahih al-Bukhari 5534).
+  "sign-musk": [
+    ["What is a good friend like, in the hadith?", "One carrying musk", "Like one who carries musk"],
+    ["Even if he gives you nothing, a good friend leaves a good smell.", "True", "Or you find a sweet smell from him"],
+    ["What might a bad friend do, like the bellows?", "Burn your clothes", "He burns your clothes, or you find a bad smell"]
+  ],
+  // The people who shared a ship: those below would make a hole in their part; stopped, all are saved (Sahih
+  // al-Bukhari 2493).
+  "sign-shared-ship": [
+    ["What did the people below want to do?", "Make a hole for water", "Let us make a hole in our part"],
+    ["Stopping wrong protects the whole community.", "True", "Stop them, and all of them are saved"]
   ]
 };
 
