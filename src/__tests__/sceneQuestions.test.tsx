@@ -113,8 +113,9 @@ describe("which questions are asked on a scene", () => {
     // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). "The reward of dhikr"
     // gained a lesson too: its final quiz now asks whether he also said Allah is not deaf or far away, and no longer
     // asks which pair are the two words or where la hawla wa la quwwata illa billah is a treasure of (both still asked in
-    // their lessons).
-    expect(places).toBe(2175);
+    // their lessons). "The intercession and the Pool" gained a lesson, so its final quiz asks how wide the Pool is in
+    // place of how many cups it has (both still asked in their lesson).
+    expect(places).toBe(2245);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
