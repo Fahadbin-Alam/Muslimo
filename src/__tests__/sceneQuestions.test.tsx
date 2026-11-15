@@ -97,14 +97,24 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    // The Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons. The
-    // "Spending, the Quran's way" unit's first review and final quiz now also draw on its lessons on 2:265, 2:272 and
-    // 2:274, so three of its scene questions are each asked in one place fewer (they are still asked in their lessons).
-    // "Zakat in Islam" now has seven lessons, so it gets a review card, which asks two of its scene questions, and its
-    // final quiz draws one more. "A fresh start" gained its lesson on 3:136, so its final quiz asks one scene question
-    // fewer (that question is still asked in its lesson). "Neighbors and guests" now has seven lessons, so it gets a
-    // review card, which asks one of its scene questions.
-    expect(places).toBe(2014);
+    // "The reward of the adhan" unit's final quiz asks one of its scene questions: with five lessons it asked who was
+    // told to call the first adhan, and with seven it asks whether people had to guess the prayer time before the
+    // adhan (both are still asked in their lesson). The "Spending, the Quran's way" unit's first review and final
+    // quiz now also draw on its lessons on 2:265, 2:272 and 2:274, so three of its scene questions are each asked in
+    // one place fewer (they are still asked in their lessons). "Zakat in Islam" now has seven lessons, so it gets a
+    // review card, which asks two of its scene questions, and its final quiz draws one more. "A fresh start" gained
+    // its lesson on 3:136, so its final quiz asks one scene question fewer (that question is still asked in its
+    // lesson). "Neighbors and guests" now has seven lessons, so it gets a review card, which asks one of its scene
+    // questions. "The reward of dhikr" and "Patience and thanks" each gained a lesson, so their final quizzes each ask
+    // one scene question fewer: the first no longer asks about the one who remembers Allah, and the second asks what to
+    // say after something goes wrong in place of what a believer does when something hard happens and whether saying
+    // if only opens a door to Shaytan. The final quiz of "Jahannam" swaps two of its scene questions for two others.
+    // Every one of them is still asked in its own lesson. "The Book of the Virtues of the Quran" gained a lesson, so its
+    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). "The reward of dhikr"
+    // gained a lesson too: its final quiz now asks whether he also said Allah is not deaf or far away, and no longer
+    // asks which pair are the two words or where la hawla wa la quwwata illa billah is a treasure of (both still asked in
+    // their lessons).
+    expect(places).toBe(2010);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {

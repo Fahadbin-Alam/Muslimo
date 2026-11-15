@@ -531,6 +531,19 @@ const PATIENCE: DeepUnit = {
       ]
     },
     {
+      slug: "the-thankful-eater",
+      title: "The thankful eater",
+      line: "One who eats and thanks Allah is like one who fasts patiently.",
+      facts: ["Told by Abu Hurairah", "Grateful: thankful for a blessing", "Patient: steady when things are hard"],
+      source: hadith("tirmidhi", "2486", "Abu Hurairah", "Hasan (Darussalam)", "Abu Hurairah said: the Prophet ﷺ said: the one who eats and is grateful is like the patient fasting person.", "The one who eats and is grateful is like the status of the patient fasting person"),
+      difficulty: 2,
+      questions: [
+        { q: "Who is the grateful eater like, he ﷺ said?", a: "A patient fasting person", wrong: ["A busy trader", "A tired traveler", "A strong builder"], why: "He ﷺ said: the one who eats and is grateful is like the patient fasting person." },
+        { q: "What makes the eater like the patient faster?", a: "Being grateful", wrong: ["Eating quickly", "Eating alone", "Eating early"], why: "The one who eats and is grateful is like the status of the patient fasting person." },
+        { q: "A grateful eater is like a person who fasts with patience.", tf: true, why: "Eating with thanks has the status of patient fasting, he ﷺ said." }
+      ]
+    },
+    {
       slug: "do-not-say-if-only",
       title: "Do not say: if only",
       line: "A strong believer seeks Allah's help and never gives up.",
