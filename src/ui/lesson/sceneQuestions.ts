@@ -1358,6 +1358,94 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-blessed-water": [
     ["What did the Companions hear, in the hadith?", "The food glorifying Allah", "And we heard the food glorify Allah"],
     ["Whom did he ﷺ say the blessing was from?", "Allah", "Come to the water: the blessing is from Allah"]
+  ],
+  // Every prophet tended sheep, and he ﷺ tended the sheep of the people of Makkah for a few qirats (Sahih al-Bukhari
+  // 2262). (The far flocks come into sight with the first words. What Ibn Kathir says of Dawud, and Musa hired to tend
+  // sheep, are not in the scene.)
+  "sign-shepherds": [
+    ["What work did every prophet do, the Prophet ﷺ said?", "Looking after sheep", "Allah sent no prophet who did not tend sheep"],
+    ["What job did every Prophet do, in the hadith?", "Tending sheep", "Allah sent no prophet who did not tend sheep"],
+    ["What work did every Prophet do?", "Tending sheep", "Allah sent no prophet who did not tend sheep"],
+    ["Whose sheep did the Prophet ﷺ look after?", "The people of Makkah's", "Yes, I tended the sheep of the people of Makkah"],
+    ["Whose sheep did the Prophet ﷺ tend?", "The people of Makkah's", "Yes, I tended the sheep of the people of Makkah"],
+    ["Whose sheep did the Prophet ﷺ tend?", "The people of Makkah", "Yes, I tended the sheep of the people of Makkah"],
+    ["What was he ﷺ paid for it?", "A few qirats", "For a few qirats"]
+  ],
+  // One date given from honest earnings, and Allah grows its reward as one raises a foal, until it is as big as a
+  // mountain (Sahih al-Bukhari 1410). (The palm and its dates come into sight with the first words; which charity Allah
+  // accepts plays on to "Allah accepts only what is honestly earned". What 9:104 says is not in the scene.)
+  "sign-date-mountain": [
+    ["How big can one date of charity grow, per the hadith?", "As big as a mountain", "Until it becomes as big as a mountain"],
+    ["Which charity does Allah accept, per the hadith?", "From honest earnings", "A date in charity, from honest earnings", "Allah accepts only what is honestly earned"],
+    ["How small is the charity, in the hadith?", "One date", "A date in charity, from honest earnings"],
+    ["What money does Allah accept, in the hadith?", "Honestly earned money", "A date in charity, from honest earnings", "Allah accepts only what is honestly earned"],
+    ["How big does it grow, in the hadith?", "As big as a mountain", "Until it becomes as big as a mountain"],
+    ["How small can the charity be?", "One date", "A date in charity, from honest earnings"],
+    ["How big does its reward grow?", "As big as a mountain", "Until it becomes as big as a mountain"],
+    ["Allah accepts only honestly earned money.", "True", "A date in charity, from honest earnings", "Allah accepts only what is honestly earned"]
+  ],
+  // When a person dies his deeds end, except three: a charity that keeps going, knowledge that benefits, and a
+  // righteous child who prays for him (Sahih Muslim 1631). (Where Ibn Kathir cites it is not in the scene.)
+  "sign-deeds-continue": [
+    ["How many deeds keep going after death?", "Three", "Except three: a charity that keeps going"],
+    ["Which is one of them?", "Knowledge that benefits people", "Or knowledge that people benefit from"],
+    ["Planting a tree people use, or building a well, is...", "Ongoing charity", "Except three: a charity that keeps going"],
+    ["Which of these keeps helping a person after death?", "A righteous child's dua", "Or a righteous child who prays for him"],
+    ["How many deeds continue after death in this hadith?", "Three", "Except three: a charity that keeps going"],
+    ["Useful knowledge someone left keeps rewarding him.", "True", "Or knowledge that people benefit from"],
+    ["How many deeds continue after death, per Muslim 1631?", "Three", "Except three: a charity that keeps going"],
+    ["Which is one of the three, per Muslim 1631?", "A pious child who prays", "Or a righteous child who prays for him"],
+    ["How many deeds continue after death?", "Three", "Except three: a charity that keeps going"],
+    ["Which is one of them?", "A child who prays for him", "Or a righteous child who prays for him"],
+    ["Dua for parents stops helping them after they die.", "False", "Or a righteous child who prays for him"]
+  ],
+  // A good deed intended is written as a full one; done, as ten to seven hundred times or more; a bad deed intended and
+  // left, as a full good deed; done, as one bad deed (Sahih al-Bukhari 6491). (What 6:160 counts, and the order that
+  // deeds be written, are not in the scene: it draws no writing.)
+  "sign-good-intentions": [
+    ["What is written if you plan a good deed but cannot do it?", "A full good deed", "A good deed intended but not done: a full one"],
+    ["How many times can a good deed done be multiplied?", "Ten to seven hundred times, or more", "Done: ten to seven hundred times, or more"],
+    ["A bad deed done is written as ten bad deeds.", "False", "A bad deed done is written as one bad deed"],
+    ["Per Bukhari 6491, a bad deed you meant but left is...", "Written as a good deed", "A bad deed intended and left: a full good deed"],
+    ["How high can a good deed go, per Bukhari 6491?", "700 times and more", "Done: ten to seven hundred times, or more"],
+    ["How is a done good deed written?", "Ten to seven hundred times", "Done: ten to seven hundred times, or more"],
+    ["What if one only intends a good deed?", "A full good deed", "A good deed intended but not done: a full one"],
+    ["How is a bad deed that is done written?", "As one bad deed", "A bad deed done is written as one bad deed"],
+    ["What is written for a good intention not done, per Bukhari 6491?", "A full good deed", "A good deed intended but not done: a full one"],
+    ["How much is a done good deed multiplied?", "Ten to seven hundred times or more", "Done: ten to seven hundred times, or more"],
+    ["What is written if one drops a bad intention?", "A full good deed", "A bad deed intended and left: a full good deed"],
+    ["What is written for intending good, per Bukhari 6491?", "A full good deed", "A good deed intended but not done: a full one"],
+    ["A good deed done is multiplied up to?", "Seven hundred times or more", "Done: ten to seven hundred times, or more"],
+    ["What if you intend good but do not do it?", "A full good deed is written", "A good deed intended but not done: a full one"],
+    ["How much for a good deed you do?", "Ten to seven hundred times or more", "Done: ten to seven hundred times, or more"],
+    ["A bad deed you hold back from is written as a good deed.", "True", "A bad deed intended and left: a full good deed"]
+  ],
+  // The call from as-Safa: would you believe me? We have never heard you tell a lie. I am a plain warner. And Abu Lahab
+  // went away (Sahih al-Bukhari 4770, 4971). (Whom 26:214 says to warn, and the ayahs of al-Masad, are not in the scene;
+  // on which mountain he stood is asked on the map.)
+  "sign-safa-call": [
+    ["What did Quraysh say about his honesty?", "They never heard him lie", "We have never heard you tell a lie"],
+    ["What did he call himself to them?", "A plain warner", "I am a plain warner of a severe punishment"],
+    ["Abu Lahab thanked him for the warning.", "False", "Abu Lahab: only for this? And he went away"],
+    ["Where did the Prophet ﷺ call his people from?", "As-Safa", "He climbed as-Safa and called out to Quraysh"],
+    ["Why did Quraysh say they would believe him?", "He always told the truth", "We have never heard you tell a lie"]
+  ],
+  // Jabir's father died in debt; he ﷺ sat on the dates and prayed for blessing, every lender was paid in full, and
+  // thirteen wasqs were left over (Sahih al-Bukhari 2709).
+  "sign-jabir-dates": [
+    ["What did Jabir's father leave behind?", "Debts", "Jabir's father died, and he was in debt"],
+    ["What did the Prophet ﷺ do with the dates?", "Sat on them and made dua", "He sat on the dates and prayed for blessing"],
+    ["How many loads were left after paying everyone?", "Thirteen", "And thirteen wasqs of dates were left over"]
+  ],
+  // Three follow the dead: his family, his wealth and his deeds; two go back, and his deeds stay (Sahih al-Bukhari
+  // 6514). (What stays plays on from before the two go back, so it is not seen before it is asked; how many follow is
+  // asked on the words alone, as the family are three small circles. What to collect most is not a moment.)
+  "sign-three-follow": [
+    ["What stays with you in the grave?", "Your deeds", "Two go back: his family and his wealth", "And his deeds stay with him"],
+    ["Which two go back home?", "Family and wealth", "Two go back: his family and his wealth"],
+    ["How many things follow the dead to the grave?", "Three", "Three follow the dead to his grave"],
+    ["What stays with him?", "His deeds", "Two go back: his family and his wealth", "And his deeds stay with him"],
+    ["Good deeds are the only friends that stay.", "True", "Two go back: his family and his wealth", "And his deeds stay with him"]
   ]
 };
 

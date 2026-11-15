@@ -207,9 +207,11 @@ function dateMountain(): SignArt {
         })
       },
       { name: "light on the mountain", svg: shine, keys: showFrom(0.9, 0.92), loop: { move: "twinkle", ms: 1400, low: 0.4 } },
-      { name: "its own date palm", svg: palm(12, 98, 36) + dateBunch(12, 64) + dateBunch(17, 66), origin: { x: 12, y: 98 }, loop: { move: "sway", ms: 4600, angle: 1 } },
+      // The palm and its dates come into sight with the first words, so a question on how small the charity is does
+      // not show a date before it is asked.
+      { name: "its own date palm", svg: palm(12, 98, 36) + dateBunch(12, 64) + dateBunch(17, 66), origin: { x: 12, y: 98 }, keys: showFrom(0.02, 0.04), loop: { move: "sway", ms: 4600, angle: 1 } },
       { name: "the home that gives", svg: home(30, 102, 24, 18) },
-      { name: "a basket of its dates", svg: basketOfDates(47, 106) },
+      { name: "a basket of its dates", svg: basketOfDates(47, 106), keys: showFrom(0.02, 0.04) },
       { name: "a home in need", svg: home(136, 100, 22, 16, "#C9A777", "#AF9064") + `<path d="M141 87 L139.6 90 L141.4 92.6" stroke="#9A7C52" stroke-width="0.6" fill="none"/>` },
       { name: "a way to the home in need", svg: way("M50 106.6 C70 109 100 109 124 104.6", BROWN), keys: showFrom(0.06, 0.18) },
       {
@@ -565,7 +567,7 @@ function safaCall(): SignArt {
         keys: showWhile(0.1, 0.11, 0.18, 0.2),
         loop: { move: "twinkle", ms: 900, low: 0.5 }
       },
-      ...gather.map(([x, y, from], i): SignPart => ({ name: `someone, gathering ${i + 1}`, svg: someone(x, y), keys: comeIn(0.11 + (i % 4) * 0.008, 0.17, from) })),
+      ...gather.map(([x, y, from], i): SignPart => ({ name: `someone, gathering ${i + 1}`, svg: someone(x, y), keys: comeIn(0.11 + (i % 4) * 0.008, 0.165, from) })),
       {
         name: "one of them, gathering too",
         svg: someone(136, 102.2),
@@ -578,7 +580,7 @@ function safaCall(): SignArt {
           ],
           xy: [
             [0.12, 34, 0],
-            [0.17, 0, 0],
+            [0.165, 0, 0],
             [0.88, 0, 0],
             [0.95, 22, -3]
           ]
@@ -588,13 +590,13 @@ function safaCall(): SignArt {
       {
         name: "voices from below, answering",
         svg: arcsLeft(101, 97, VOICE) + arcsLeft(117, 97.6, VOICE) + arcsLeft(133, 97, VOICE),
-        keys: showWhile(0.44, 0.46, 0.52, 0.54),
+        keys: showWhile(0.44, 0.46, 0.56, 0.58),
         loop: { move: "twinkle", ms: 1000, low: 0.5 }
       },
       {
         name: "a voice from the top, warning",
         svg: arcs(54.6, 76, "#7A2E1C") + arcsLeft(45.4, 76, "#7A2E1C") + arcs(57.6, 76, "#7A2E1C"),
-        keys: showWhile(0.62, 0.64, 0.72, 0.74),
+        keys: showWhile(0.62, 0.64, 0.76, 0.78),
         loop: { move: "twinkle", ms: 800, low: 0.55 }
       },
       {
@@ -706,7 +708,7 @@ function jabirDates(): SignArt {
       { name: "a way, coming to the dates", svg: way("M2 80 C22 82 42 84 60 90 C67 93 72 92 77 91", GOLD), keys: showFrom(0.41, 0.47) },
       { name: "two more ways, with it", svg: way("M2 85 C20 87 40 89 58 95", BROWN) + way("M2 75 C22 76 44 78 62 85", BROWN), keys: showFrom(0.42, 0.48) },
       { name: "a golden ring on the dates, his place", svg: ring(80, 89, 3, GOLD), keys: showFrom(0.47, 0.48) },
-      { name: "a voice, praying for blessing", svg: arcs(84, 86, VOICE), keys: showWhile(0.48, 0.5, 0.54, 0.56), loop: { move: "twinkle", ms: 1200, low: 0.5 } },
+      { name: "a voice, praying for blessing", svg: arcs(84, 86, VOICE), keys: showWhile(0.48, 0.5, 0.58, 0.6), loop: { move: "twinkle", ms: 1200, low: 0.5 } },
       ...risingSparks(
         "blessing, rising from the dates",
         [
