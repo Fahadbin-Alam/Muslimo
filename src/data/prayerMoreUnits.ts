@@ -102,7 +102,7 @@ const ADHAN: DeepUnit = {
   key: "pray-adhan-reward",
   topicId: "prayer",
   branchId: "prayer-adhan-reward",
-  branch: { title: "The reward of the adhan", description: "How the adhan began with Bilal, what to say when you hear it, and its reward." },
+  branch: { title: "The reward of the adhan", description: "How the adhan began with Bilal, what to say when you hear it, its reward, and how Shaytan runs from it." },
   name: "the reward of the adhan",
   kind: "skill",
   lessonType: "skill",
@@ -171,6 +171,32 @@ const ADHAN: DeepUnit = {
         { q: "Which row has a great reward?", a: "The first row", wrong: ["The last row", "No row at all", "Outside the masjid"], why: "Standing in the first row." },
         { q: "What would people do to win the adhan?", a: "Draw lots", wrong: ["Stay home", "Give up", "Sleep in"], why: "They would draw lots." },
         { q: "For Isha and Fajr together, people would come even crawling.", tf: true, why: "They would come even if they had to crawl." }
+      ]
+    },
+    {
+      slug: "as-far-as-his-voice",
+      title: "As far as his voice reaches",
+      line: "The mu'adhdhin is forgiven as far as his voice reaches.",
+      facts: ["Told by Abu Hurairah", "Mu'adhdhin: the one who calls the adhan", "A loud adhan reaches far"],
+      source: hadith("abudawud", "515", "Abu Hurairah", "Sahih (Al-Albani)", "Abu Hurairah said: the Prophet ﷺ said: the mu'adhdhin will be forgiven as far as his voice reaches.", "will receive forgiveness to the extent to which his voice reaches"),
+      difficulty: 2,
+      questions: [
+        { q: "How far does the mu'adhdhin's forgiveness reach, he ﷺ said?", a: "As far as his voice reaches", wrong: ["As far as his eyes can see", "As far as his feet can walk", "As far as his hands can reach"], why: "The mu'adhdhin will receive forgiveness to the extent to which his voice reaches." },
+        { q: "Who is forgiven as far as his voice reaches, he ﷺ said?", a: "The one who calls the adhan", wrong: ["The one who leads the prayer", "The one who gives the khutbah", "The one who teaches the Quran"], why: "The mu'adhdhin, the one who calls the adhan, is forgiven as far as his voice reaches." },
+        { q: "The farther the mu'adhdhin's voice reaches, the wider his forgiveness.", tf: true, why: "He will receive forgiveness to the extent to which his voice reaches, the Prophet ﷺ said." }
+      ]
+    },
+    {
+      slug: "shaytan-flees-the-adhan",
+      title: "Shaytan flees the adhan",
+      line: "When Shaytan hears the adhan, he runs far away, he ﷺ said.",
+      facts: ["Told by Jabir ibn Abdullah", "Adhan: the call to prayer", "Ar-Rawha: about 36 miles from Madinah"],
+      source: hadith("muslim", "388a", "Jabir ibn Abdullah", "Sahih", "Jabir ibn Abdullah said: I heard the Prophet ﷺ say: when Shaytan hears the call to prayer, he runs away as far as ar-Rawha. A narrator said ar-Rawha is about thirty-six miles from Madinah.", "When Satan hears the call to prayer, he runs away to a distance like that of Rauha"),
+      difficulty: 2,
+      questions: [
+        { q: "What does Shaytan do when he hears the adhan, he ﷺ said?", a: "He runs far away", wrong: ["He comes nearer", "He stands still", "He falls asleep"], why: "When Satan hears the call to prayer, he runs away to a distance like that of ar-Rawha." },
+        { q: "How far does Shaytan run when he hears the adhan?", a: "As far as ar-Rawha", wrong: ["As far as the door", "As far as the market", "As far as the next street"], why: "He runs to a distance like that of ar-Rawha, about thirty-six miles from Madinah." },
+        { q: "The call to prayer drives Shaytan far away.", tf: true, why: "When Satan hears the call to prayer, he runs away, he ﷺ said." }
       ]
     }
   ]

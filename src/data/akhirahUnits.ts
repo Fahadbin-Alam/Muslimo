@@ -291,6 +291,19 @@ const MINOR_SIGNS: DeepUnit = {
         { q: "What will its light fall on at Busra?", a: "The necks of the camels", wrong: ["The walls of the houses", "The tops of the palms", "The faces of the people"], why: "The fire will throw light on the necks of the camels at Busra, he ﷺ said." },
         { q: "The fire's light will reach as far as Busra.", tf: true, why: "The fire from Hijaz will light up the necks of the camels at Busra, he ﷺ said." }
       ]
+    },
+    {
+      slug: "the-righteous-pass-away",
+      title: "The righteous pass away",
+      line: "The righteous will pass away one after the other, he ﷺ said.",
+      facts: ["Told by Mirdas al-Aslami", "Husk: the dry skin left from grain", "Barley: a grain like wheat"],
+      source: hadith("bukhari", "6434", "Mirdas al-Aslami", "Sahih", "Mirdas al-Aslami said: the Prophet ﷺ said: the righteous will pass away one after the other, and there will remain useless people, like the useless husk of barley or of dates.", "useless people like the useless husk of barley seeds or bad dates"),
+      difficulty: 3,
+      questions: [
+        { q: "Who will pass away one after the other, he ﷺ said?", a: "The righteous", wrong: ["The kings", "The rich", "The strong"], why: "The righteous will depart in succession one after the other, he ﷺ said." },
+        { q: "What did he ﷺ liken the people left behind to?", a: "Useless husk", wrong: ["Ripe fruit", "Sweet honey", "Fresh milk"], why: "There will remain useless people like the useless husk of barley seeds or bad dates." },
+        { q: "After the righteous pass away, useless people will remain.", tf: true, why: "The righteous will depart one after the other, and useless people will remain, he ﷺ said." }
+      ]
     }
   ]
 };
@@ -1350,6 +1363,19 @@ const JAHANNAM: DeepUnit = {
         { q: "How many gates does Jahannam have?", a: "Seven", wrong: ["Eight", "One", "Ten"], why: "Quran 15:44." },
         { q: "How many gates does Jannah have?", a: "Eight", wrong: ["Seven", "Two", "Twelve"], why: "Bukhari 3257: one more than the Fire." },
         { q: "Allah's mercy is greater than His anger.", tf: true, why: "Bukhari 3194." }
+      ]
+    },
+    {
+      slug: "the-falling-stone",
+      title: "A stone falling seventy years",
+      line: "A stone fell seventy years in Jahannam before reaching its base.",
+      facts: ["Told by Abu Hurairah", "They heard a loud sound", "Jahannam is very deep"],
+      source: hadith("muslim", "2844a", "Abu Hurairah", "Sahih", "Abu Hurairah said: we were with the Messenger of Allah ﷺ when we heard a loud sound. He said: do you know what this is? We said: Allah and His Messenger know best. He said: that is a stone thrown into the Fire seventy years ago; it has been falling ever since and has now reached its bottom.", "That is a stone which was thrown seventy years before in Hell"),
+      difficulty: 3,
+      questions: [
+        { q: "What made the loud sound they heard, he ﷺ said?", a: "A stone falling in the Fire", wrong: ["A tree falling in a storm", "A wave hitting the shore", "Thunder in the clouds"], why: "That is a stone which was thrown seventy years before in Hell, he ﷺ said." },
+        { q: "How long had the stone been falling?", a: "Seventy years", wrong: ["Seven days", "Seventy days", "Seven months"], why: "That stone was thrown seventy years before and has now reached its base." },
+        { q: "Jahannam is so deep that a stone falls in it for many years.", tf: true, why: "A stone thrown seventy years before has only now reached its base, he ﷺ said." }
       ]
     },
     {
