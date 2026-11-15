@@ -48,7 +48,7 @@ const tear = (x: number, y: number) =>
   `<path d="M${x} ${n(y - 1.3)} Q${n(x + 0.9)} ${n(y + 0.1)} ${x} ${n(y + 0.8)} Q${n(x - 0.9)} ${n(y + 0.1)} ${x} ${n(y - 1.3)} Z" fill="${COOL}"/>`;
 
 /** A soft, cool shade on the ground about (x, y), `rx` across and `ry` high, darkest in the middle. */
-const shadeOf = (x: number, y: number, rx: number, ry: number) =>
+export const shadeOf = (x: number, y: number, rx: number, ry: number) =>
   [1, 0.9, 0.8, 0.7, 0.6, 0.5].map((k) => `<ellipse cx="${x}" cy="${y}" rx="${n(rx * k)}" ry="${n(ry * k)}" fill="#5C6F7A" opacity="0.07"/>`).join("") +
   `<ellipse cx="${x}" cy="${y}" rx="${n(rx * 0.85)}" ry="${n(ry * 0.7)}" fill="#CFE6F0" opacity="0.12"/>`;
 
@@ -66,11 +66,11 @@ const littleMasjid = (x: number, y: number) =>
   `<path d="M${n(x - 1.2)} ${y} L${n(x - 1.2)} ${n(y - 2.8)} Q${x} ${n(y - 4)} ${n(x + 1.2)} ${n(y - 2.8)} L${n(x + 1.2)} ${y} Z" fill="#6B4A2E"/>`;
 
 /** A cup, its foot's middle at (x, y). */
-const cup = (x: number, y: number) =>
+export const cup = (x: number, y: number) =>
   `<path d="M${n(x - 1.6)} ${n(y - 3.4)} L${n(x + 1.6)} ${n(y - 3.4)} L${n(x + 1.1)} ${y} L${n(x - 1.1)} ${y} Z" fill="#8FB8D6"/><path d="M${n(x - 1.4)} ${n(y - 2.8)} L${n(x + 1.4)} ${n(y - 2.8)}" stroke="#D8ECF8" stroke-width="0.4"/>`;
 
 /** Food on a dish whose middle is at (x, y): a round loaf and a few dates. */
-const food = (x: number, y: number) =>
+export const food = (x: number, y: number) =>
   dish(x, y) +
   `<ellipse cx="${n(x - 0.8)}" cy="${n(y - 2.2)}" rx="2.2" ry="1.2" fill="#D9A35E" stroke="#B57E3E" stroke-width="0.3"/>` +
   [
@@ -82,12 +82,12 @@ const food = (x: number, y: number) =>
     .join("");
 
 /** A small jar of musk, its foot's middle at (x, y). */
-const muskJar = (x: number, y: number) =>
+export const muskJar = (x: number, y: number) =>
   `<path d="M${n(x - 2.4)} ${y} L${n(x - 2.4)} ${n(y - 4.4)} Q${n(x - 2.4)} ${n(y - 5.8)} ${n(x - 1)} ${n(y - 6.2)} L${n(x - 1)} ${n(y - 7.4)} L${n(x + 1)} ${n(y - 7.4)} L${n(x + 1)} ${n(y - 6.2)} Q${n(x + 2.4)} ${n(y - 5.8)} ${n(x + 2.4)} ${n(y - 4.4)} L${n(x + 2.4)} ${y} Z" fill="#7A4E2E"/>` +
   `<rect x="${n(x - 1.3)}" y="${n(y - 8.6)}" width="2.6" height="1.4" rx="0.4" fill="#D9B26A"/><path d="M${n(x - 1.4)} ${n(y - 4.4)} L${n(x - 1.4)} ${n(y - 1.2)}" stroke="#FFFFFF" stroke-width="0.5" opacity="0.45"/>`;
 
 /** A sweet smell rising: a curl going up from (x, y), `h` high. */
-const curl = (x: number, y: number, color: string, h = 6) =>
+export const curl = (x: number, y: number, color: string, h = 6) =>
   `<path d="M${x} ${y} c-1.4 ${n(-h / 6)} 1.4 ${n(-h / 3)} 0 ${n(-h / 2)} c-1.4 ${n(-h / 6)} 1.4 ${n(-h / 3)} 0 ${n(-h / 2)}" stroke="${color}" stroke-width="0.8" fill="none" stroke-linecap="round"/>`;
 
 /** A boat with one mast and its sail, the middle of its deck at (x, y). */
@@ -135,7 +135,7 @@ const mansion = (x: number, y: number, s = 1) =>
   );
 
 /** A garden ledge of Paradise about (x, y), `w` from its middle to its ends. */
-const ledge = (x: number, y: number, w: number, top = "#9FD487", face = "#E6D7AE") =>
+export const ledge = (x: number, y: number, w: number, top = "#9FD487", face = "#E6D7AE") =>
   `<ellipse cx="${x}" cy="${n(y + 1.8)}" rx="${w}" ry="2.4" fill="${face}"/><ellipse cx="${x}" cy="${y}" rx="${w}" ry="2.4" fill="${top}"/>`;
 
 /** A small round sun-disc for a day of the month, its middle at (x, y). */
