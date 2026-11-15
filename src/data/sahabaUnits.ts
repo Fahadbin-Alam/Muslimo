@@ -2,8 +2,8 @@ import { COMPANION_UNITS } from "./companionUnits";
 import { hadith, type DeepUnit } from "./deepKit";
 
 // Deeper lessons for ten more companions, each joining the companion's own unit in the Sahabah topic after its
-// starter circles. Every lesson rests on a sahih hadith (Bukhari or Muslim, or Tirmidhi graded sahih); stories
-// from weak chains are left out.
+// starter circles. Every lesson rests on a sahih hadith (Bukhari or Muslim), or a hadith of the Sunan graded sahih or
+// hasan; stories from weak chains are left out.
 
 const KHALID: DeepUnit = {
   key: "khalid",
@@ -132,6 +132,19 @@ const BILAL: DeepUnit = {
         { q: "Bilal called an adhan at night. What were people told?", a: "Keep eating until the second adhan", wrong: ["Stop eating at once", "Pray Fajr now", "Go back to sleep"], why: "The second caller marked true Fajr." },
         { q: "Who called the adhan at true Fajr?", a: "Ibn Umm Maktum", wrong: ["Bilal", "Abu Mahdhurah", "Umar"], why: "His adhan meant the fast had begun." },
         { q: "How many callers to prayer did Madinah have, by Bukhari 617?", a: "Two", wrong: ["One", "Four", "Ten"], why: "Bilal and Ibn Umm Maktum." }
+      ]
+    },
+    {
+      slug: "under-his-arm",
+      title: "Food under Bilal's arm",
+      line: "He ﷺ and Bilal had only what Bilal could hide under his arm.",
+      facts: ["Told by Anas ibn Malik", "No one was harmed for Allah as he ﷺ was", "Bilal was with him in those hungry days"],
+      source: hadith("ibnmajah", "151", "Anas ibn Malik", "Hasan (Darussalam)", "Anas ibn Malik said: the Messenger of Allah ﷺ said: I have been harmed for the sake of Allah as no one else has, and I have feared for the sake of Allah as no one else has. There were days when Bilal and I had no food that any living being could eat, except what could be hidden under the armpit of Bilal.", "could be concealed in the armpit of Bilal"),
+      difficulty: 3,
+      questions: [
+        { q: "Where did Bilal carry the little food they had?", a: "Under his arm", wrong: ["In a clay jar", "In a leather bag", "In his sandal"], why: "No food but what could be hidden under the armpit of Bilal, he ﷺ said." },
+        { q: "What did he ﷺ say he went through for Allah, as no one else had?", a: "Harm and fear", wrong: ["Wealth and ease", "Rest and comfort", "Feasts and gifts"], why: "I have been harmed and made to fear for Allah as no one else has, he ﷺ said." },
+        { q: "Bilal shared hard, hungry days with him ﷺ.", tf: true, why: "Bilal and I had no food that any living being could eat, he ﷺ said." }
       ]
     }
   ]
@@ -309,6 +322,19 @@ const ZUBAYR: DeepUnit = {
         { q: "At which battle did Az-Zubayr pierce the enemy lines?", a: "Yarmuk", wrong: ["Mu'tah", "Qadisiyyah", "Nahawand"], why: "On the day of Yarmuk, Az-Zubayr charged at the enemy and broke through, Urwah said." },
         { q: "When he turned back, what did the enemy take hold of?", a: "His horse's bridle", wrong: ["His spear", "His helmet", "His turban"], why: "Then he returned, and the enemy got hold of the bridle of his horse, Urwah said." },
         { q: "Az-Zubayr bore an old scar from the day of Badr.", tf: true, why: "Between his two new wounds was a scar from a blow he had received at Badr, Urwah said." }
+      ]
+    },
+    {
+      slug: "your-two-fathers",
+      title: "Your two fathers",
+      line: "Wounded, Abu Bakr and Az-Zubayr still answered Allah's call.",
+      facts: ["Told by Urwah, son of Az-Zubayr", "Aishah said it to him", "His two fathers: Az-Zubayr and Abu Bakr"],
+      source: hadith("ibnmajah", "124", "Aishah", "Sahih (Darussalam)", "Urwah said: Aishah said to me: O Urwah, your two fathers were of those who answered the call of Allah and the Messenger ﷺ after being wounded: Abu Bakr and Az-Zubayr.", "your two fathers were of those who answered"),
+      difficulty: 3,
+      questions: [
+        { q: "Whom did Aishah call Urwah's two fathers?", a: "Abu Bakr and Az-Zubayr", wrong: ["Umar and Uthman", "Bilal and Ammar", "Anas and Abu Hurairah"], why: "Your two fathers were of those who answered, she told Urwah: Abu Bakr and Az-Zubayr." },
+        { q: "When did they answer the call of Allah and the Messenger ﷺ?", a: "After being wounded", wrong: ["After they had healed", "After a long rest", "After a year had passed"], why: "Even after being wounded they answered the call, Aishah told Urwah." },
+        { q: "Aishah told Urwah that his two fathers answered the call after being wounded.", tf: true, why: "O Urwah, your two fathers were of those who answered, Aishah said." }
       ]
     }
   ]
@@ -577,6 +603,19 @@ const IBN_MASUD: DeepUnit = {
         { q: "What did Abu Musa first think about Ibn Mas'ud?", a: "He was from the Prophet's ﷺ family", wrong: ["He was a trader", "He was from Yemen", "He was a guard"], why: "He was in the house so often." },
         { q: "Who came into the house with Ibn Mas'ud?", a: "His mother", wrong: ["His son", "His teacher", "His wife"], why: "He and his mother came in often." },
         { q: "Ibn Mas'ud was very close to the Prophet ﷺ.", tf: true, why: "He was always around him." }
+      ]
+    },
+    {
+      slug: "fresh-as-revealed",
+      title: "As fresh as it came down",
+      line: "He ﷺ said Ibn Mas'ud recited as fresh as when it came down.",
+      facts: ["Ibn Umm Abd: Ibn Mas'ud, son of Umm Abd", "Abu Bakr and Umar gave him the good news", "Fresh: just as it was first revealed"],
+      source: hadith("ibnmajah", "138", "Abdullah ibn Mas'ud", "Sahih (Darussalam)", "Abdullah ibn Mas'ud said that Abu Bakr and Umar gave him the good news that the Messenger of Allah ﷺ had said: whoever would like to recite the Quran as fresh as when it was revealed, let him recite it like Ibn Umm Abd.", "as fresh as when it was revealed"),
+      difficulty: 3,
+      questions: [
+        { q: "Who was Ibn Umm Abd?", a: "Abdullah ibn Mas'ud", wrong: ["Abdullah ibn Umar", "Abdullah ibn Abbas", "Abdullah ibn Amr"], why: "His mother was Umm Abd, so he was called Ibn Umm Abd." },
+        { q: "Who brought Ibn Mas'ud the good news?", a: "Abu Bakr and Umar", wrong: ["Bilal and Salman", "Anas and Abu Hurairah", "Khalid and Abu Ubaydah"], why: "Abu Bakr and Umar gave him the glad tidings of what he ﷺ had said." },
+        { q: "Ibn Mas'ud recited the Quran as fresh as when it was revealed.", tf: true, why: "Whoever would like to recite it fresh, let him recite like Ibn Umm Abd, he ﷺ said." }
       ]
     }
   ]

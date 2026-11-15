@@ -414,6 +414,19 @@ const MISTAKES: DeepUnit = {
         { q: "Whom does a man who does this really wrong?", a: "Himself", wrong: ["No one", "Only her family", "The neighbours"], why: "Whoever does that has wronged himself." },
         { q: "The Quran says: keep kindly or part kindly.", tf: true, why: "Keep them in kindness or release them in kindness." }
       ]
+    },
+    {
+      slug: "turning-her-against-him",
+      title: "Mistake: turning a wife against him",
+      line: "Whoever turns a wife against her husband is not one of us.",
+      facts: ["Stirring a wife up against her husband harms the home.", "He ﷺ said the same of a slave turned against his master.", "Abu Hurairah narrated it."],
+      source: hadith("abudawud", "2175", "Abu Hurairah", "Sahih (Al-Albani)", "Abu Hurairah said: the Prophet ﷺ said: anyone who incites a woman against her husband, or a slave against his master, is not one of us.", "Anyone who incites a woman against her husband"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ say of one who turns a wife against her husband?", a: "He is not one of us", wrong: ["He is a true friend", "He has done no wrong", "He is only joking"], why: "He is not one of us, he ﷺ said of anyone who incites a woman against her husband." },
+        { q: "A friend stirs a wife up against her husband. What is that?", a: "Turning her against him", wrong: ["Giving good advice", "Keeping family ties", "Being a loyal friend"], why: "Anyone who incites a woman against her husband is not one of us, he ﷺ said." },
+        { q: "He ﷺ said the same of turning a slave against his master.", tf: true, why: "He ﷺ named one who incites a slave against his master in the same words." }
+      ]
     }
   ]
 };
