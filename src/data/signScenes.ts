@@ -562,7 +562,14 @@ export type SignKind =
   | "gold-like-uhud"
   | "respite-then-seized"
   | "convey-one-ayah"
-  | "the-hidden-poor";
+  | "the-hidden-poor"
+  | "came-to-teach"
+  | "keep-ties"
+  | "fast-of-dawud"
+  | "one-religion"
+  | "who-refuses"
+  | "guided-at-the-door"
+  | "prayer-made-short";
 
 export type SignScene = {
   id: string;
@@ -1892,6 +1899,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: the poor one is not the one who goes around to people and is turned away with a bite or two, or a date or two. The poor one is the one who does not have enough for his needs, whom no one notices so as to give him charity, and who does not stand up to ask people.",
     sources: [bukhari("1479")]
+  },
+  {
+    id: "sign-came-to-teach",
+    kind: "came-to-teach",
+    caption:
+      "One day, as the Prophet ﷺ sat with the people, a man came to them in very white clothes, with no trace of travel on him, and none of them knew him. He asked about Islam, iman and ihsan, and the Prophet ﷺ said of ihsan: to worship Allah as if you see Him, and if you do not see Him, He sees you. He asked when the Hour will be, and he ﷺ said: the one asked about it knows no more than the one asking; and he told him of its signs, among them herders competing in tall buildings. Then the man turned away, and he ﷺ said: bring him back; but they saw nothing. He ﷺ said: that was Jibril, who came to teach you your religion.",
+    sources: [bukhari("50"), muslim("8a")]
+  },
+  {
+    id: "sign-keep-ties",
+    kind: "keep-ties",
+    caption:
+      "Asma bint Abi Bakr said: my mother came to me, hoping for my kindness, in the time of the Messenger of Allah ﷺ, and she was a polytheist. I asked the Messenger of Allah ﷺ: shall I keep ties with my mother? He ﷺ said: yes, keep ties with your mother. Ibn Uyaynah said: then Allah revealed about her ayah 8 of Surat al-Mumtahanah.",
+    sources: [bukhari("2620"), bukhari("5978"), bukhari("3183")]
+  },
+  {
+    id: "sign-fast-of-dawud",
+    kind: "fast-of-dawud",
+    caption:
+      "Abdullah ibn Amr said that he would fast every day and pray all night as long as he lived. The Prophet ﷺ said: you cannot do that; so fast and break your fast, pray and sleep. When he said he could do more, he ﷺ told him at last: fast one day and break your fast one day; that is the fast of Dawud, and it is the best fast. He ﷺ also said: the prayer most beloved to Allah is the prayer of Dawud, and the fast most beloved to Allah is the fast of Dawud: he slept half the night, prayed a third of it and slept a sixth of it, and he fasted one day and broke his fast the next.",
+    sources: [bukhari("1976"), bukhari("1131")]
+  },
+  {
+    id: "sign-one-religion",
+    kind: "one-religion",
+    caption: "The Prophet ﷺ said: I am the nearest of all people to Isa son of Maryam, in this world and in the Hereafter. The prophets are brothers of one father: their mothers are different, and their religion is one.",
+    sources: [bukhari("3443")]
+  },
+  {
+    id: "sign-who-refuses",
+    kind: "who-refuses",
+    caption: "The Prophet ﷺ said: all my ummah will enter Paradise, except whoever refuses. They asked: O Messenger of Allah, and who would refuse? He ﷺ said: whoever obeys me enters Paradise, and whoever disobeys me has refused.",
+    sources: [bukhari("7280")]
+  },
+  {
+    id: "sign-guided-at-the-door",
+    kind: "guided-at-the-door",
+    caption:
+      "Abu Hurairah said: I used to invite my mother to Islam, and she was a polytheist. One day I invited her, and she said to me about the Messenger of Allah ﷺ what I hated. I came to him weeping and asked him to pray for her, and he ﷺ said: O Allah, guide the mother of Abu Hurairah. I went out glad at his du'a, and when I reached the door it was shut. My mother heard my steps and said: stay where you are, Abu Hurairah; and I heard the sound of water. She washed, dressed and opened the door, and said: Abu Hurairah, I bear witness that there is no god but Allah, and I bear witness that Muhammad is His servant and His Messenger. I went back to the Messenger of Allah ﷺ weeping for joy, and he praised Allah. I asked him to pray that the believers would love us, and he ﷺ said: O Allah, make this servant of Yours and his mother beloved to Your believing servants, and make the believers beloved to them.",
+    sources: [muslim("2491")]
+  },
+  {
+    id: "sign-prayer-made-short",
+    kind: "prayer-made-short",
+    caption: "The Prophet ﷺ said: I stand in prayer meaning to make it long, then I hear a child crying, so I make my prayer short, disliking to make it hard for his mother.",
+    sources: [bukhari("707")]
   }
 ];
 
@@ -3110,7 +3163,47 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-jinn4-convey-even-one-ayah": "sign-convey-one-ayah",
   // The poor one who has not enough, whom no one notices, and who does not ask (Sahih al-Bukhari 1479).
   "deep-tawbah3-the-hidden-poor": "sign-the-hidden-poor",
-  "deep-dhariyat1-the-hidden-poor": "sign-the-hidden-poor"
+  "deep-dhariyat1-the-hidden-poor": "sign-the-hidden-poor",
+  // Jibril came in very white clothes to ask about Islam, iman, ihsan and the Hour, and to teach the religion (Sahih
+  // al-Bukhari 50, Sahih Muslim 8a). Left out: the lesson on believing in the Last Day as a pillar of iman.
+  "deep-lastday-jibril-hour": "sign-came-to-teach",
+  "deep-minorsigns-buildings": "sign-came-to-teach",
+  "deep-fussilat3-the-knowledge-of-the-hour": "sign-came-to-teach",
+  "deep-rahman3-what-is-ihsan": "sign-came-to-teach",
+  "deep-hadid1-ihsan-worship-as-if-you-see": "sign-came-to-teach",
+  "deep-mulk4-jibril-asked-about-the-hour": "sign-came-to-teach",
+  "deep-jinn4-answerer-knows-no-more": "sign-came-to-teach",
+  "deep-naziat4-jibril-asks-about-the-hour": "sign-came-to-teach",
+  "deep-bayyinah2-ihsan": "sign-came-to-teach",
+  "deep-hadith-famous-ihsan": "sign-came-to-teach",
+  "deep-tree-umar-jibril-came": "sign-came-to-teach",
+  // Asma keeping ties with her mother, who was a polytheist (Sahih al-Bukhari 2620, 5978 and 3183).
+  "deep-mumtahanah3-be-good-to-your-mother": "sign-keep-ties",
+  "deep-daily-life-family-not-muslim": "sign-keep-ties",
+  "deep-parents-her-mother": "sign-keep-ties",
+  "deep-mumtahanah3-then-allah-revealed": "sign-keep-ties",
+  "deep-asma-her-mother": "sign-keep-ties",
+  // The fast of Dawud, the best fast, and his night prayer (Sahih al-Bukhari 1976, 1131).
+  "deep-fast-extra-dawud": "sign-fast-of-dawud",
+  "deep-prophet-dawud-fast-of-dawud": "sign-fast-of-dawud",
+  "deep-fast-ease-balance": "sign-fast-of-dawud",
+  "deep-ibn-amr-fast-of-dawud": "sign-fast-of-dawud",
+  // The prophets are brothers of one father, and their religion is one (Sahih al-Bukhari 3443).
+  "deep-aq-rusul-brothers": "sign-one-religion",
+  "deep-anam3-one-religion": "sign-one-religion",
+  "deep-yunus4-one-religion": "sign-one-religion",
+  "deep-anbiya3-prophets-one-religion": "sign-one-religion",
+  "deep-shura1-one-religion-all-messengers": "sign-one-religion",
+  // All my ummah will enter Paradise, except whoever refuses (Sahih al-Bukhari 7280).
+  "deep-imran1-who-refuses": "sign-who-refuses",
+  "deep-taghabun3-who-refuses": "sign-who-refuses",
+  "deep-layl3-all-enter-but-who-refuses": "sign-who-refuses",
+  // The mother of Abu Hurairah, guided at her door, and the du'a that the believers love them (Sahih Muslim 2491).
+  "deep-abu-hurairah-his-mother": "sign-guided-at-the-door",
+  "deep-abu-hurairah-loved": "sign-guided-at-the-door",
+  // He made the prayer short when he heard a child crying (Sahih al-Bukhari 707).
+  "deep-mercy-shortened-prayer": "sign-prayer-made-short",
+  "deep-book-prayer-shorter-for-a-crying-child": "sign-prayer-made-short"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
