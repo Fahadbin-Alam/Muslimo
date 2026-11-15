@@ -345,7 +345,7 @@ function sanctuary(): SignArt {
       { text: "The halal is clear", from: 0.02, to: 0.16 },
       { text: "And the haram is clear", from: 0.18, to: 0.32 },
       { text: "Between them are doubtful things", from: 0.34, to: 0.48 },
-      { text: "Avoid them: your religion stays safe", from: 0.5, to: 0.64 },
+      { text: "Avoid them: your religion and honour stay safe", from: 0.5, to: 0.64 },
       { text: "Like one grazing around a sanctuary", from: 0.66, to: 0.82 },
       { text: "Soon he grazes inside it", from: 0.84, to: 1 }
     ]

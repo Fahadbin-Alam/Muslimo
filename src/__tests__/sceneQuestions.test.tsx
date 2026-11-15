@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(725);
+    expect(asks.length).toBe(760);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,7 +97,7 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(1023);
+    expect(places).toBe(1072);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -1371,6 +1371,186 @@ describe("where the scene waits and where it stops", () => {
         [
           [0, 0, 0, 0, 0, 0],
           [1, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+  });
+
+  it("waits on the scenes of the likenesses he ﷺ gave, and on the parted sea for Ashura, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-building", "sign-mercy", "sign-sanctuary", "sign-musk", "sign-shared-ship"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId) || (each.sceneId === "sign-sea" && /Ashura/.test(each.prompt)));
+    expect(asks.length).toBe(35);
+    for (const ask of sceneAsks().filter((each) => scenes.includes(each.sceneId) || each.sceneId === "sign-sea")) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Believers like a building: nothing built yet; then two bricks come together, and the building rises row by row.
+    for (const prompt of ["A believer to a believer is like what?", "What are believers like, per Abu Musa's hadith?", "What are believers like, per Bukhari 481?", "What are believers like, in the hadith?"]) {
+      expect([prompt, shown(prompt, ["a brick, coming to the other", "the other brick, coming to it", "a row of bricks, 1 from the ground", "a row of bricks, 9 from the ground", "its roof", "its door and windows"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // The building stands; then the wind topples a lone brick, while each part of the building holds up the other.
+    for (const prompt of ["In a wall, each brick supports the others.", "Believers should support one another.", "Believers should hold each other up."]) {
+      expect([prompt, shown(prompt, ["a row of bricks, 9 from the ground", "a lone brick, standing by itself", "each part holding up the other"]), moved(prompt, "a lone brick, standing by itself", "rotate")]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, 90]
+      ]);
+    }
+    // A way asking at the door, and no one speaking yet; then voices from the building speak up, and rewards rise.
+    expect(
+      shown("When a man came asking, the Prophet ﷺ told them to help him.", ["the way that came asking, part 2", "asking, at the door", "a voice from the building, speaking up 1", "a voice from the building, speaking up 3", "a reward, rising 5"])
+    ).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 0, 1, 1, 1]
+    ]);
+    // Mercy in a hundred parts: no rings yet; then a hundred rings, none lit.
+    const rings = [1, 2, 3, 4, 5].map((row) => `a hundred rings, to count the parts of mercy, row ${row}`);
+    const kept = [1, 2, 3, 4, 5].map((row) => `the ninety-nine parts, kept back, row ${row}`);
+    expect(shown("Into how many parts did Allah make mercy?", [...rings, "the one part, among all creation"])).toEqual([
+      [0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 0]
+    ]);
+    // A hundred rings, none lit; then one lights, and warmth spreads over all creation; none of the ninety-nine yet.
+    for (const prompt of ["How many parts did He send to all creatures?", "How many parts of mercy came to earth, in Bukhari 6000?"]) {
+      expect([prompt, shown(prompt, [rings[4], "the one part, among all creation", "warmth over all creation", kept[0]])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // None lit; then the one part, and by it the camel and the ewe are kind to their young.
+    const kindness = ["her calf, coming to the camel", "its lamb, coming to the ewe", "the camel's kindness to her calf", "the ewe's kindness to its lamb"];
+    expect(shown("All the mercy among creatures comes from just one part.", ["the one part, among all creation", "warmth over all creation", ...kindness])).toEqual([
+      [0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1]
+    ]);
+    // The one part, and no young yet; then the calf and the lamb come, and their mothers are kind to them.
+    expect(shown("What is the one part used for?", ["the one part, among all creation", ...kindness])).toEqual([
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // No mare yet; then the mare comes with her foal and lifts her hooves from it.
+    expect([
+      shown("What does the mare do because of the one part of mercy?", ["a mare, lifting her hooves from her foal", "her foal, beside her hooves", "the mare's care for her foal"]),
+      moved("What does the mare do because of the one part of mercy?", "a mare, lifting her hooves from her foal", "rotate")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -12]
+    ]);
+    // One part lit; then the ninety-nine kept back light.
+    for (const prompt of ["How many parts of mercy did Allah keep with Him?", "How many parts of mercy did Allah keep for that Day?"]) {
+      expect([prompt, shown(prompt, ["the one part, among all creation", ...kept])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Grazing around a sanctuary: the clear pasture and the marked sanctuary, nothing between; then the haze between.
+    for (const prompt of ["What lies between clear halal and clear haram?", "What lies between halal and haram?", "What lies between the halal and the haram?"]) {
+      expect([prompt, shown(prompt, ["the halal, a clear green pasture", "the border of the sanctuary", "doubtful things, a haze between them"])]).toEqual([
+        prompt,
+        [
+          [1, 1, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // The haze, and no flock yet; then a way brings a flock up to the haze and turns back, and it is kept safe.
+    for (const prompt of [
+      "What do you protect by avoiding doubtful things?",
+      "What does avoiding doubtful things protect?",
+      "What does staying away from doubtful things protect?",
+      "When unsure if something is halal, it's safer to leave it."
+    ]) {
+      expect([
+        prompt,
+        shown(prompt, [
+          "doubtful things, a haze between them",
+          "the first flock's way, up to the haze",
+          "the first flock's way, turning back",
+          "a sheep of the first flock 1",
+          "a sheep of the first flock 3",
+          "kept safe, in the clear pasture",
+          "a sheep of the second flock, straying inside"
+        ])
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // The musk and the bellows: an empty stall; then jars of musk on it, and their sweet smell.
+    expect(shown("What is a good friend like, in the hadith?", ["a jar of musk 1", "a jar of musk 4", "the musk's sweet smell"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // A way at the stall, a little musk given; then a sweet smell from him, on the way.
+    expect(shown("Even if he gives you nothing, a good friend leaves a good smell.", ["a way to the one with musk, part 2", "a little musk, given", "a sweet smell from him, on the way"])).toEqual([
+      [1, 1, 0],
+      [1, 1, 1]
+    ]);
+    // The forge's fire, and no cloak yet; then a way to the forge, a cloak by it, burned, and a bad smell rising.
+    expect(
+      shown("What might a bad friend do, like the bellows?", ["the fire in the forge", "a way to the one who blows the bellows", "a cloak, set down by the forge", "the cloak, burned", "a bad smell, rising as smoke 1"])
+    ).toEqual([
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // The shared ship: ways below, and no hole yet; then a drill, a hole begun in the lower deck, the sea spurting in.
+    expect(shown("What did the people below want to do?", ["a way on the lower deck 1", "a drill, in the lower deck", "a hole, begun in the lower deck", "the sea, spurting in"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    // The sea spurting in; then a way from above goes down, the hole is stopped, and sparks rise: all are saved.
+    expect(
+      shown("Stopping wrong protects the whole community.", ["a hole, begun in the lower deck", "the sea, spurting in", "a way from above, going down to stop it, part 2", "the hole, stopped", "all of them saved, a spark rising 1"])
+    ).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 0, 1, 1, 1]
+    ]);
+    // The day of Ashura: the sea before them; then it splits, its walls stand, and a dry path runs through it.
+    for (const [prompt, answer] of [
+      ["What happened on the day of Ashura?", "Allah saved Musa"],
+      ["What happened on the day of Ashura?", "Allah saved Musa and his people"],
+      ["What happened on the day of Ashura?", "Allah saved the Children of Israel"],
+      ["What happened on Ashura, per the hadith?", "Allah saved Musa's people"],
+      ["What happened on Ashura, per the hadith?", "Allah rescued Bani Israel"],
+      ["What happened on Ashura, per Bukhari 2004?", "Allah rescued Bani Israel from their enemy"],
+      ["Why did the Jews fast Ashura, in the hadith?", "Allah saved Musa that day"]
+    ]) {
+      expect([prompt, answer, shown(prompt, ["dry path", "left wall of water", "right wall of water"], answer)]).toEqual([
+        prompt,
+        answer,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
         ]
       ]);
     }

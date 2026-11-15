@@ -1547,7 +1547,7 @@ describe("the signs in creation, alive", () => {
     // Grazing around a sanctuary: a clear green pasture; the sanctuary, marked out with red markers along its border; a
     // haze over the land between; a way brings a flock up to the haze and turns back, and the flock is safe in the green;
     // then another way grazes its flock along the border, and a sheep strays across it inside.
-    expect(words("sanctuary")).toEqual(["The halal is clear", "And the haram is clear", "Between them are doubtful things", "Avoid them: your religion stays safe", "Like one grazing around a sanctuary", "Soon he grazes inside it"]);
+    expect(words("sanctuary")).toEqual(["The halal is clear", "And the haram is clear", "Between them are doubtful things", "Avoid them: your religion and honour stay safe", "Like one grazing around a sanctuary", "Soon he grazes inside it"]);
     const markers = names("sanctuary", /^a marker of the sanctuary \d$/);
     expect([shown("sanctuary", "the halal, a clear green pasture", 0.02), shown("sanctuary", "the halal, a clear green pasture", 0.16), shown("sanctuary", "the sanctuary, its grass untouched", 0.16), all("sanctuary", markers, 0.16)]).toEqual([0, 1, 0, markers.map(() => 0)]);
     expect([markers.length, shown("sanctuary", "the sanctuary, its grass untouched", 0.32), all("sanctuary", markers, 0.32), shown("sanctuary", "the border of the sanctuary", 0.32), shown("sanctuary", "doubtful things, a haze between them", 0.32), shown("sanctuary", "doubtful things, a haze between them", 0.48)]).toEqual([6, 1, markers.map(() => 1), 1, 0, 1]);
