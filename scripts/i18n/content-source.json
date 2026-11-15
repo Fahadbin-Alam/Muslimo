@@ -2037,7 +2037,7 @@
   },
   {
     "kind": "course",
-    "text": "A parable of the path, a plant that bends, the hardest illness, hidden showing off, hope with fear, and bad whispers in the heart."
+    "text": "A parable of the path, a plant that bends, the hardest illness, hidden showing off, shirk more hidden than ants, hope with fear, and bad whispers in the heart."
   },
   {
     "kind": "arabic",
@@ -2634,6 +2634,10 @@
   {
     "kind": "course",
     "text": "The hidden shirk"
+  },
+  {
+    "kind": "course",
+    "text": "More hidden than ants"
   },
   {
     "kind": "course",
@@ -29065,7 +29069,7 @@
   },
   {
     "kind": "course",
-    "text": "Unjust talk called a kind of riba, nails of copper, no hunting for faults, an honor more sacred than the Ka'bah, and an angel who answered for Abu Bakr."
+    "text": "Unjust talk called a kind of riba, nails of copper, no hunting for faults, an honor more sacred than the Ka'bah, an angel who answered for Abu Bakr, and the smell of backbiting."
   },
   {
     "kind": "course",
@@ -29073,7 +29077,7 @@
   },
   {
     "kind": "course",
-    "text": "The thing he ﷺ feared most, the show-off with words, they claim as a bad riding-beast, putting Allah's will first, a gentler word for a low mood, and the most ruined man."
+    "text": "The thing he ﷺ feared most, the show-off with words, they claim as a bad riding-beast, putting Allah's will first, a gentler word for a low mood, the most ruined man, and two who revile."
   },
   {
     "kind": "arabic",
@@ -29109,7 +29113,7 @@
   },
   {
     "kind": "course",
-    "text": "Salam when asking to come in, standing to one side, being sent for, a sign to enter, the right words of salam, and honoring a visitor."
+    "text": "Salam when asking to come in, standing to one side, being sent for, a sign to enter, the right words of salam, salam as a Name of Allah, a soft salam at night, and honoring a visitor."
   },
   {
     "kind": "arabic",
@@ -29145,7 +29149,7 @@
   },
   {
     "kind": "course",
-    "text": "A soul held by debt, the evil of bad blood, a year apart, what a son owes his father, orphans and women, and charity mixed with trade."
+    "text": "A soul held by debt, the evil of bad blood, a year apart, what a son owes his father, orphans and women, charity mixed with trade, and never misleading the blind."
   },
   {
     "kind": "arabic",
@@ -29341,6 +29345,10 @@
   },
   {
     "kind": "course",
+    "text": "Full while a neighbor is hungry"
+  },
+  {
+    "kind": "course",
     "text": "The nearest door"
   },
   {
@@ -29382,6 +29390,10 @@
   {
     "kind": "course",
     "text": "Sit down, then lie down"
+  },
+  {
+    "kind": "course",
+    "text": "Silent when angry"
   },
   {
     "kind": "course",
@@ -29542,6 +29554,10 @@
   {
     "kind": "course",
     "text": "A visit for Allah's sake"
+  },
+  {
+    "kind": "course",
+    "text": "The one who loves more"
   },
   {
     "kind": "course",
@@ -29801,6 +29817,10 @@
   },
   {
     "kind": "course",
+    "text": "The smell of backbiting"
+  },
+  {
+    "kind": "course",
     "text": "What he feared most"
   },
   {
@@ -29822,6 +29842,10 @@
   {
     "kind": "course",
     "text": "The most ruined one"
+  },
+  {
+    "kind": "course",
+    "text": "Two who revile each other"
   },
   {
     "kind": "course",
@@ -29890,6 +29914,14 @@
   {
     "kind": "course",
     "text": "The right words of salam"
+  },
+  {
+    "kind": "course",
+    "text": "As-Salam, a Name of Allah"
+  },
+  {
+    "kind": "course",
+    "text": "A soft salam at night"
   },
   {
     "kind": "course",
@@ -29966,6 +29998,10 @@
   {
     "kind": "course",
     "text": "Charity mixed with trade"
+  },
+  {
+    "kind": "course",
+    "text": "Never mislead the blind"
   },
   {
     "kind": "course",
@@ -84369,6 +84405,66 @@
   },
   {
     "kind": "lesson",
+    "text": "Shirk is more hidden than crawling ants; he ﷺ taught a du'a."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by Ma'qil ibn Yasar"
+  },
+  {
+    "kind": "lesson",
+    "text": "He ﷺ said it to Abu Bakr"
+  },
+  {
+    "kind": "lesson",
+    "text": "The du'a is for shirk, little and much"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 716"
+  },
+  {
+    "kind": "question",
+    "text": "Shirk is more hidden than what, he ﷺ told Abu Bakr?"
+  },
+  {
+    "kind": "question",
+    "text": "The stars by day"
+  },
+  {
+    "kind": "question",
+    "text": "The movement of ants"
+  },
+  {
+    "kind": "question",
+    "text": "The roots of a tree"
+  },
+  {
+    "kind": "question",
+    "text": "The fish in the sea"
+  },
+  {
+    "kind": "question",
+    "text": "Lash-shirku akhfa min dabibin-naml: shirk is more hidden than the crawling of ants."
+  },
+  {
+    "kind": "question",
+    "text": "To whom did he ﷺ say shirk is more hidden than ants?"
+  },
+  {
+    "kind": "question",
+    "text": "O Abu Bakr, polytheism enters your people more quietly than the movement of ants."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ taught Abu Bakr a du'a to keep away shirk."
+  },
+  {
+    "kind": "question",
+    "text": "Say: O Allah, I seek refuge in You lest I associate anything with You while I know it."
+  },
+  {
+    "kind": "lesson",
     "text": "Hope in Allah, and fear your sins, right to the end."
   },
   {
@@ -84430,6 +84526,10 @@
   {
     "kind": "question",
     "text": "The Prophet ﷺ entered upon a young man while he was dying, Anas said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about steady on the straight path?"
   },
   {
     "kind": "lesson",
@@ -89797,6 +89897,62 @@
   },
   {
     "kind": "lesson",
+    "text": "No true believer is full while his neighbor goes hungry."
+  },
+  {
+    "kind": "lesson",
+    "text": "He told it to Ibn az-Zubayr"
+  },
+  {
+    "kind": "lesson",
+    "text": "From Imam al-Bukhari's book of manners"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 112"
+  },
+  {
+    "kind": "question",
+    "text": "Which man did he ﷺ say is not a true believer?"
+  },
+  {
+    "kind": "question",
+    "text": "One new to his town"
+  },
+  {
+    "kind": "question",
+    "text": "One late for his work"
+  },
+  {
+    "kind": "question",
+    "text": "One full while his neighbor is hungry"
+  },
+  {
+    "kind": "question",
+    "text": "One far from his family"
+  },
+  {
+    "kind": "question",
+    "text": "He is not a believer whose stomach is filled while his neighbor goes hungry."
+  },
+  {
+    "kind": "question",
+    "text": "To whom did Ibn Abbas tell the hadith of the hungry neighbor?"
+  },
+  {
+    "kind": "question",
+    "text": "Ibn Abbas told it to Ibn az-Zubayr, saying he heard it from the Prophet ﷺ."
+  },
+  {
+    "kind": "question",
+    "text": "Eating your fill while a neighbor goes hungry is fine."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about neighbors and guests?"
+  },
+  {
+    "kind": "lesson",
     "text": "Two neighbors? Give your gift first to the nearest door."
   },
   {
@@ -89842,10 +89998,6 @@
   {
     "kind": "question",
     "text": "All neighbors have rights; the nearest come first."
-  },
-  {
-    "kind": "lesson",
-    "text": "Can you still remember these about neighbors and guests?"
   },
   {
     "kind": "lesson",
@@ -90137,6 +90289,62 @@
   },
   {
     "kind": "lesson",
+    "text": "When one of you is angry, let him be silent."
+  },
+  {
+    "kind": "lesson",
+    "text": "Said with: teach, and make things easy"
+  },
+  {
+    "kind": "lesson",
+    "text": "In Arabic: fal-yaskut, let him be silent"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 245"
+  },
+  {
+    "kind": "question",
+    "text": "What did he ﷺ tell an angry person to do, as Ibn Abbas reported?"
+  },
+  {
+    "kind": "question",
+    "text": "Eat something"
+  },
+  {
+    "kind": "question",
+    "text": "Write a letter"
+  },
+  {
+    "kind": "question",
+    "text": "Keep silent"
+  },
+  {
+    "kind": "question",
+    "text": "Go for a walk"
+  },
+  {
+    "kind": "question",
+    "text": "Wa idha ghadiba ahadukum fal-yaskut, he ﷺ said, meaning let the angry one be silent."
+  },
+  {
+    "kind": "question",
+    "text": "Who narrated: when one of you is angry, let him be silent?"
+  },
+  {
+    "kind": "question",
+    "text": "Ibn Abbas reported that the Messenger of Allah ﷺ said it, in Al-Adab al-Mufrad 245."
+  },
+  {
+    "kind": "question",
+    "text": "When angry, it is best to say whatever comes to mind."
+  },
+  {
+    "kind": "question",
+    "text": "When one of you is angry, he should be silent, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
     "text": "Gentleness makes everything beautiful; without it, things spoil."
   },
   {
@@ -90198,6 +90406,10 @@
   {
     "kind": "question",
     "text": "Aishah, Mother of the Believers."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about anger?"
   },
   {
     "kind": "lesson",
@@ -93406,6 +93618,54 @@
   {
     "kind": "question",
     "text": "Allah loves you as you love him"
+  },
+  {
+    "kind": "lesson",
+    "text": "Of two who love each other, the better loves more strongly."
+  },
+  {
+    "kind": "lesson",
+    "text": "About two who love each other"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 544"
+  },
+  {
+    "kind": "question",
+    "text": "Of two who love each other, who is the better one?"
+  },
+  {
+    "kind": "question",
+    "text": "The one who is older"
+  },
+  {
+    "kind": "question",
+    "text": "The one who is richer"
+  },
+  {
+    "kind": "question",
+    "text": "The one who is taller"
+  },
+  {
+    "kind": "question",
+    "text": "Ma tahabba ar-rajulan illa kana afdaluhuma ashaddahuma hubban li-sahibihi."
+  },
+  {
+    "kind": "question",
+    "text": "Who narrated the hadith on the one who loves more?"
+  },
+  {
+    "kind": "question",
+    "text": "Anas reported that the Prophet ﷺ said it, in Al-Adab al-Mufrad 544."
+  },
+  {
+    "kind": "question",
+    "text": "Loving your companion more strongly makes you the better of the two."
+  },
+  {
+    "kind": "question",
+    "text": "Anas reported that he ﷺ said the better of two friends is the one with the strongest love."
   },
   {
     "kind": "lesson",
@@ -97585,6 +97845,78 @@
   },
   {
     "kind": "lesson",
+    "text": "Can you still remember these about guarding people's honor?"
+  },
+  {
+    "kind": "lesson",
+    "text": "He ﷺ said a foul wind was the smell of those who backbite."
+  },
+  {
+    "kind": "lesson",
+    "text": "He ﷺ first asked if they knew what it was"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 732"
+  },
+  {
+    "kind": "question",
+    "text": "What did he ﷺ say the foul wind was, as Jabir reported?"
+  },
+  {
+    "kind": "question",
+    "text": "The smell of those who backbite"
+  },
+  {
+    "kind": "question",
+    "text": "The smell of a cooking fire"
+  },
+  {
+    "kind": "question",
+    "text": "The smell of the sea"
+  },
+  {
+    "kind": "question",
+    "text": "The smell of burnt bread"
+  },
+  {
+    "kind": "question",
+    "text": "Hadhihi rihul-ladhina yaghtabunal-mu'minin, he ﷺ said, in Al-Adab al-Mufrad 732."
+  },
+  {
+    "kind": "question",
+    "text": "What did he ﷺ ask his Companions when the foul wind blew?"
+  },
+  {
+    "kind": "question",
+    "text": "If they had eaten yet"
+  },
+  {
+    "kind": "question",
+    "text": "If the road was safe"
+  },
+  {
+    "kind": "question",
+    "text": "If the rain had come"
+  },
+  {
+    "kind": "question",
+    "text": "If they knew what it was"
+  },
+  {
+    "kind": "question",
+    "text": "Atadruna ma hadhihi, he ﷺ asked, and then he told them whose smell it was."
+  },
+  {
+    "kind": "question",
+    "text": "Backbiting the believers is an ugly, foul thing."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ called the stinking wind the smell of those who backbite the believers."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about guarding people's honor!"
   },
   {
@@ -98006,6 +98338,82 @@
   {
     "kind": "question",
     "text": "Whoever says the people have perished is the most ruined of them, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about choosing your words?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Two who revile each other are two shaytans, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by Iyad ibn Himar"
+  },
+  {
+    "kind": "lesson",
+    "text": "In Arabic: al-mustabban shaytanan"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 427"
+  },
+  {
+    "kind": "question",
+    "text": "What did he ﷺ call two who revile each other, as Iyad ibn Himar reported?"
+  },
+  {
+    "kind": "question",
+    "text": "Two friends"
+  },
+  {
+    "kind": "question",
+    "text": "Two farmers"
+  },
+  {
+    "kind": "question",
+    "text": "Two kings"
+  },
+  {
+    "kind": "question",
+    "text": "Two shaytans"
+  },
+  {
+    "kind": "question",
+    "text": "Al-mustabban shaytanan, he ﷺ said, in Al-Adab al-Mufrad 427."
+  },
+  {
+    "kind": "question",
+    "text": "What do two who revile each other do, he ﷺ said?"
+  },
+  {
+    "kind": "question",
+    "text": "Visit and love each other"
+  },
+  {
+    "kind": "question",
+    "text": "Advise and forgive each other"
+  },
+  {
+    "kind": "question",
+    "text": "Accuse and deny each other"
+  },
+  {
+    "kind": "question",
+    "text": "Thank and help each other"
+  },
+  {
+    "kind": "question",
+    "text": "Two shaytans who accuse one another and deny one another, he ﷺ said."
+  },
+  {
+    "kind": "question",
+    "text": "Two people who revile one another show good manners."
+  },
+  {
+    "kind": "question",
+    "text": "Those who revile one another are two shaytans, he ﷺ said."
   },
   {
     "kind": "lesson",
@@ -99142,6 +99550,138 @@
   {
     "kind": "question",
     "text": "Do not say: Upon you be peace, for that is the greeting of the dead, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
+    "text": "As-Salam is a Name of Allah placed on earth: spread salam."
+  },
+  {
+    "kind": "lesson",
+    "text": "As-Salam means peace"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah has placed it in the earth"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 989"
+  },
+  {
+    "kind": "question",
+    "text": "What did he ﷺ say As-Salam is?"
+  },
+  {
+    "kind": "question",
+    "text": "A name of an angel"
+  },
+  {
+    "kind": "question",
+    "text": "A Name of Allah"
+  },
+  {
+    "kind": "question",
+    "text": "A name of a month"
+  },
+  {
+    "kind": "question",
+    "text": "A name of a star"
+  },
+  {
+    "kind": "question",
+    "text": "As-Salam is one of the Names of Allah Almighty which Allah has placed in the earth."
+  },
+  {
+    "kind": "question",
+    "text": "Since As-Salam is placed in the earth, what should we do?"
+  },
+  {
+    "kind": "question",
+    "text": "Keep it to ourselves"
+  },
+  {
+    "kind": "question",
+    "text": "Write it on our doors"
+  },
+  {
+    "kind": "question",
+    "text": "Say it only on Fridays"
+  },
+  {
+    "kind": "question",
+    "text": "Fa-afshus-salama baynakum: so spread the greeting among yourselves."
+  },
+  {
+    "kind": "question",
+    "text": "Allah has placed the Name As-Salam in the earth."
+  },
+  {
+    "kind": "question",
+    "text": "Inna as-salama ismun min asma'illah, wada'ahu Allahu fil-ard."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about salam and visitors?"
+  },
+  {
+    "kind": "lesson",
+    "text": "At night he ﷺ said salam softly, not waking those asleep."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by al-Miqdad ibn al-Aswad"
+  },
+  {
+    "kind": "lesson",
+    "text": "Those awake still heard him"
+  },
+  {
+    "kind": "lesson",
+    "text": "Sleepers were not woken"
+  },
+  {
+    "kind": "source",
+    "text": "Sahih Muslim 2055a"
+  },
+  {
+    "kind": "question",
+    "text": "Who would hear his ﷺ salam at night?"
+  },
+  {
+    "kind": "question",
+    "text": "Those who were awake"
+  },
+  {
+    "kind": "question",
+    "text": "Those far away"
+  },
+  {
+    "kind": "question",
+    "text": "Those in the market"
+  },
+  {
+    "kind": "question",
+    "text": "Those on the road"
+  },
+  {
+    "kind": "question",
+    "text": "The person who was awake would hear it, al-Miqdad said."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ said salam at night in a way that would not wake the sleeping."
+  },
+  {
+    "kind": "question",
+    "text": "Fa-yusallimu tasliman la yuqizu na'iman, wa yusmi'u al-yaqzan."
+  },
+  {
+    "kind": "question",
+    "text": "Who told us how he ﷺ said salam at night?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Miqdad ibn al-Aswad said it, in Sahih Muslim 2055."
   },
   {
     "kind": "lesson",
@@ -100478,6 +101018,78 @@
   {
     "kind": "question",
     "text": "Selling involves false oaths and idle talk, so mix some charity with it, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about the rights of others?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah curses one who leads a blind person off the path."
+  },
+  {
+    "kind": "lesson",
+    "text": "Help a blind person find the way"
+  },
+  {
+    "kind": "source",
+    "text": "Al-Adab Al-Mufrad 892"
+  },
+  {
+    "kind": "question",
+    "text": "Whom did he ﷺ say Allah curses, as Ibn Abbas reported?"
+  },
+  {
+    "kind": "question",
+    "text": "One who rides a camel"
+  },
+  {
+    "kind": "question",
+    "text": "One who misleads a blind person"
+  },
+  {
+    "kind": "question",
+    "text": "One who plants a tree"
+  },
+  {
+    "kind": "question",
+    "text": "One who sells bread"
+  },
+  {
+    "kind": "question",
+    "text": "La'ana Allahu man kammaha a'ma 'anis-sabil, he ﷺ said, in Al-Adab al-Mufrad 892."
+  },
+  {
+    "kind": "question",
+    "text": "What does the one whom Allah curses do to a blind person, he ﷺ said?"
+  },
+  {
+    "kind": "question",
+    "text": "Walks him to his home"
+  },
+  {
+    "kind": "question",
+    "text": "Reads him a story"
+  },
+  {
+    "kind": "question",
+    "text": "Leads him away from the path"
+  },
+  {
+    "kind": "question",
+    "text": "Gives him some water"
+  },
+  {
+    "kind": "question",
+    "text": "Misguiding a blind person and leading him off the path brings Allah's curse."
+  },
+  {
+    "kind": "question",
+    "text": "Tricking a blind person into the wrong way is a serious sin."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ said Allah curses anyone who leads a blind person away from the path."
   },
   {
     "kind": "lesson",
@@ -103690,10 +104302,6 @@
   {
     "kind": "question",
     "text": "Come forward"
-  },
-  {
-    "kind": "question",
-    "text": "Keep silent"
   },
   {
     "kind": "question",
@@ -197574,10 +198182,6 @@
   {
     "kind": "lesson",
     "text": "Worship when there is bloodshed is like emigrating to him ﷺ."
-  },
-  {
-    "kind": "lesson",
-    "text": "Told by Ma'qil ibn Yasar"
   },
   {
     "kind": "lesson",
@@ -327089,10 +327693,6 @@
   },
   {
     "kind": "question",
-    "text": "Two kings"
-  },
-  {
-    "kind": "question",
     "text": "Two angels"
   },
   {
@@ -328374,10 +328974,6 @@
   {
     "kind": "question",
     "text": "Two soldiers"
-  },
-  {
-    "kind": "question",
-    "text": "Two farmers"
   },
   {
     "kind": "question",
@@ -346222,10 +346818,6 @@
   {
     "kind": "question",
     "text": "What did the Prophet ﷺ ask Ibn Masud, in the hadith?"
-  },
-  {
-    "kind": "question",
-    "text": "Write a letter"
   },
   {
     "kind": "question",
@@ -476117,10 +476709,6 @@
   },
   {
     "kind": "question",
-    "text": "Two friends"
-  },
-  {
-    "kind": "question",
     "text": "In reference to the two angels who receive and record the deeds of mankind."
   },
   {
@@ -583566,10 +584154,6 @@
   {
     "kind": "question",
     "text": "A name of a city"
-  },
-  {
-    "kind": "question",
-    "text": "A name of a star"
   },
   {
     "kind": "question",

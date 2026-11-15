@@ -115,11 +115,15 @@ describe("which questions are asked on a scene", () => {
     // asks which pair are the two words or where la hawla wa la quwwata illa billah is a treasure of (both still asked in
     // their lessons). "The intercession and the Pool" gained a lesson, so its final quiz asks how wide the Pool is in
     // place of how many cups it has (both still asked in their lesson). "This world and the next" now has seven
-    // lessons, so it gets a review card, which asks what he compared greed for wealth and honor to, and its final quiz
-    // asks what that greed harms in its place. "The Book of the Virtues of the Quran" now has thirteen lessons, so it
-    // gets a second review card, which asks what a believer who does not recite is like. Both are still asked in their
-    // lessons.
-    expect(places).toBe(2247);
+    // lessons, so it gets a review card, which asks what he compared greed for wealth and honor to, and its final
+    // quiz asks what that greed harms in its place. "The Book of the Virtues of the Quran" now has thirteen lessons,
+    // so it gets a second review card, which asks what a believer who does not recite is like. Both are still asked
+    // in their lessons. "Real strength" and "Steady on the straight path" now have seven lessons, so each gets a
+    // review card, which asks what was happening when he said who is truly strong, and what the believer is like;
+    // their final quizzes now ask who is truly strong, and what the plant does when the wind stops, in their place.
+    // The final quizzes of "Brothers and sisters in faith" and "Jibril kept advising" each swap one scene question
+    // for another. Every one of them is still asked in its own lesson.
+    expect(places).toBe(2249);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {

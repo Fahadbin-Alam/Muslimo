@@ -1,16 +1,17 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Manners unit: choosing your words, from Sunan Abi Dawud and Jami at-Tirmidhi. The thing he ﷺ feared most for
-// a man, the show-off who rolls his tongue, "they claim" as a bad riding-beast, "what Allah wills, then", a gentler word
-// for a low mood, and the man who says the people are ruined. Every card is one sahih or hasan hadith with its number,
-// narrator and grade, and its exact English words to highlight, and none of them is taught anywhere else in the app.
+// One more Manners unit: choosing your words, from Sunan Abi Dawud, Jami at-Tirmidhi and Al-Adab al-Mufrad. The thing
+// he ﷺ feared most for a man, the show-off who rolls his tongue, "they claim" as a bad riding-beast, "what Allah wills,
+// then", a gentler word for a low mood, the man who says the people are ruined, and two who revile each other. Every
+// card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight, and
+// none of them is taught anywhere else in the app.
 // How clearly he ﷺ spoke (Abu Dawud 4839) is left out, as the kids' path already teaches it from Bukhari 3567.
 
 const WORDS: DeepUnit = {
   key: "manners-choosing-words",
   topicId: "manners",
   branchId: "manners-choosing-words",
-  branch: { title: "Choosing your words", description: "The thing he ﷺ feared most, the show-off with words, they claim as a bad riding-beast, putting Allah's will first, a gentler word for a low mood, and the most ruined man." },
+  branch: { title: "Choosing your words", description: "The thing he ﷺ feared most, the show-off with words, they claim as a bad riding-beast, putting Allah's will first, a gentler word for a low mood, the most ruined man, and two who revile." },
   name: "choosing your words",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +92,19 @@ const WORDS: DeepUnit = {
         { q: "Who is most ruined, he ﷺ said?", a: "The one who says people are ruined", wrong: ["The one who is poor", "The one who is sick", "The one who travels"], why: "When a man says people have perished, he has suffered that fate most." },
         { q: "When is saying it wrong, as Imam Malik explained?", a: "When said out of pride", wrong: ["When said in sadness for faith", "When said with a smile", "When said at night"], why: "In sadness for the religion there is no harm, Malik said; in pride it is forbidden." },
         { q: "Looking down on everyone else is a sign of humility.", tf: false, why: "No. Whoever says the people have perished is the most ruined of them, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "two-who-revile",
+      title: "Two who revile each other",
+      line: "Two who revile each other are two shaytans, he ﷺ said.",
+      facts: ["Told by Iyad ibn Himar", "In Arabic: al-mustabban shaytanan", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "427", "Iyad ibn Himar", "Sahih (Al-Albani)", "Iyad ibn Himar said: I said: O Messenger of Allah, a man reviles me. The Prophet ﷺ said: those who revile one another are two shaytans who accuse one another and deny one another.", "Those who revile one another are two shaytans who accuse one another and deny one another"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ call two who revile each other, as Iyad ibn Himar reported?", a: "Two shaytans", wrong: ["Two friends", "Two farmers", "Two kings"], why: "Al-mustabban shaytanan, he ﷺ said, in Al-Adab al-Mufrad 427." },
+        { q: "What do two who revile each other do, he ﷺ said?", a: "Accuse and deny each other", wrong: ["Thank and help each other", "Visit and love each other", "Advise and forgive each other"], why: "Two shaytans who accuse one another and deny one another, he ﷺ said." },
+        { q: "Two people who revile one another show good manners.", tf: false, why: "No. Those who revile one another are two shaytans, he ﷺ said." }
       ]
     }
   ]
