@@ -2142,6 +2142,108 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Earlier prophets were sent only to their own nation.", "True", "Every Prophet used to be sent to his nation only"],
     ["Who was he ﷺ sent to?", "All people", "Every Prophet used to be sent to his nation only", "But I have been sent to all mankind"],
     ["To whom was the Prophet ﷺ sent?", "All mankind", "Every Prophet used to be sent to his nation only", "But I have been sent to all mankind"]
+  ],
+  // Allah will give shade to seven on the Day when there will be no shade but His: a just ruler, a youth brought up in
+  // worship, one whose heart is attached to the mosques, two who love each other for His sake, one who refuses, saying:
+  // I am afraid of Allah, one who gives in secret, and one who remembers Allah alone, with tears (Sahih al-Bukhari 660).
+  // (Ibn Kathir on Yusuf is not in the scene.)
+  "sign-seven-in-the-shade": [
+    ["How many people get Allah's shade in this hadith?", "Seven", "Allah will give shade to seven"],
+    ["How many people get Allah's shade in the hadith?", "Seven", "Allah will give shade to seven"],
+    ["How many will Allah shade, per the hadith?", "Seven", "Allah will give shade to seven"],
+    ["How many are shaded, per Bukhari 660?", "Seven", "Allah will give shade to seven"],
+    ["Which young person is among them?", "A youth raised worshipping Allah", "A just ruler, a youth brought up in worship"],
+    ["Which youth is shaded, per the hadith?", "One raised in worship of Allah", "A just ruler, a youth brought up in worship"],
+    ["Which other one is shaded, per Bukhari 660?", "A just ruler", "A just ruler, a youth brought up in worship"],
+    ["How does one of them give charity?", "So secretly the left hand doesn't know", "His left hand knows not what his right gave"],
+    ["How secretly does the man give charity?", "His left hand does not know", "His left hand knows not what his right gave"],
+    ["Charity counts only if people see it.", "False", "His left hand knows not what his right gave"],
+    ["Who weeps among the seven, per Bukhari 660?", "One who remembers Allah alone", "Remembering Allah alone, his tears flow"]
+  ],
+  // Fasting is a shield; if someone fights him, he says: I am fasting; the smell of his mouth is better with Allah than
+  // musk; he has left his food and drink for My sake, the fast is for Me; and the fasting person has two joys, at
+  // breaking his fast and when he meets his Lord (Sahih al-Bukhari 1894, 1904). (What a hadith qudsi is, and that it is
+  // not part of the Quran, are not in the scene.)
+  "sign-two-joys": [
+    ["What did the Prophet ﷺ call fasting?", "A shield", "Fasting is a shield"],
+    ["Someone insults you while fasting. What do you say?", "I am fasting", "If someone fights him, he says: I am fasting"],
+    ["A fasting person should stay calm and avoid fights.", "True", "If someone fights him, he says: I am fasting"],
+    ["Why does Allah love the fasting person?", "He left food and drink for Allah", "He has left his food and drink for My sake"],
+    ["Which deed did Allah say is for Him?", "Fasting", "The fast is for Me, and I will reward it"],
+    ["To Allah, a fasting mouth smells better than what?", "Musk", "Better with Allah than the smell of musk"],
+    ["Musk is a famous sweet perfume.", "True", "Better with Allah than the smell of musk"],
+    ["How many joys does a fasting person have?", "Two", "The fasting person has two joys"],
+    ["When is the fasting person's first joy?", "When breaking the fast", "One at the time of breaking his fast"],
+    ["When is the first joy?", "When breaking the fast", "One at the time of breaking his fast"],
+    ["Feeling happy at iftar is part of the reward.", "True", "One at the time of breaking his fast"],
+    ["When is the second joy?", "When meeting his Lord", "And the other when he will meet his Lord"]
+  ],
+  // When he passed by al-Hijr, he said: do not enter the dwellings of those who wronged themselves unless you enter
+  // weeping, lest what befell them befall you; if you do not weep, do not enter. Then he covered his head and hurried
+  // till he crossed the valley (Sahih al-Bukhari 4419, 433). (7:78, that Thamud lived there, their wells and dough, and
+  // who narrated it are not in the scene, and which place he passed has its own map.)
+  "sign-ruins-of-al-hijr": [
+    ["How did the Prophet ﷺ say to enter Al-Hijr's homes?", "Only weeping", "Unless you enter weeping"],
+    ["How did he ﷺ say to enter those homes?", "Only while weeping", "Unless you enter weeping"],
+    ["How should one pass the ruins of the punished, per the hadith?", "Weeping", "Unless you enter weeping"],
+    ["How should one enter such places, in the hadith?", "Weeping", "Unless you enter weeping"],
+    ["How should we pass places punished by Allah?", "Weeping and humble", "Unless you enter weeping"],
+    ["What if one cannot weep, in the hadith?", "Do not enter", "If you do not weep, do not enter"],
+    ["What did he do in the valley, in Bukhari 4419?", "Covered his head and hurried", "Then he covered his head and hurried"],
+    ["What did the Prophet ﷺ do in that valley?", "Hurried through it", "Then he covered his head and hurried", "Till he crossed the valley"],
+    ["He ﷺ covered his head and crossed the valley fast.", "True", "Then he covered his head and hurried", "Till he crossed the valley"]
+  ],
+  // Every child is born on the fitrah, and his parents shape him into another religion, as an animal gives birth to a
+  // whole young one: do you find any part of it cut off? (Sahih al-Bukhari 1385). (11:17, 30:30 and what Ibn Kathir
+  // says of the fitrah are not in the scene.)
+  "sign-born-on-the-fitrah": [
+    ["What is every child born upon?", "The fitrah", "Every child is born on the fitrah"],
+    ["What is every child born upon, per the hadith?", "The fitrah", "Every child is born on the fitrah"],
+    ["How is every child born?", "On the Fitrah", "Every child is born on the fitrah"],
+    ["How is every child born, in the hadith?", "On the true faith", "Every child is born on the fitrah"],
+    ["Children are born already sinful.", "False", "Every child is born on the fitrah"],
+    ["Children are born carrying the sins of others.", "False", "Every child is born on the fitrah"],
+    ["Who shapes a child after that?", "The parents", "His parents shape him into another religion"],
+    ["Who can change the child, in the hadith?", "His parents", "His parents shape him into another religion"],
+    ["What example did he give?", "An animal born whole", "As an animal gives birth to a whole young one"]
+  ],
+  // No good deeds done on other days are better than those done on these, the first ten days of Dhul-Hijjah; not even
+  // jihad, except one who went out risking himself and his wealth and did not return with anything (Sahih al-Bukhari
+  // 969). (Eid al-Adha, the month of Hajj, what to do at home, Ibn Abbas and the takbir are not in the scene.)
+  "sign-best-ten-days": [
+    ["Which days did he call the best for good deeds?", "The first ten of Dhul-Hijjah", "Are better than those done on these days"],
+    ["Which ten days are the best for good deeds?", "The first ten of Dhul Hijjah", "Are better than those done on these days"],
+    ["Which days are best for good deeds, per the hadith?", "First ten of Dhul-Hijjah", "Are better than those done on these days"],
+    ["Which days are best for good deeds?", "The first ten of Dhul-Hijjah", "Are better than those done on these days"],
+    ["We should do extra good in these ten days.", "True", "Are better than those done on these days"],
+    ["The companions asked: not even what?", "Jihad", "They asked: not even jihad?"],
+    ["What one exception did he mention?", "A man who gave his life and wealth", "Not even jihad, except one who went out", "And did not return with anything"]
+  ],
+  // Musa was asked who is the most learned and said: I am, not leaving knowledge to Allah; at the two seas was one
+  // more learned. A boat carried them without fare, and a sparrow dipped its beak in the sea: their knowledge had not
+  // decreased Allah's but as this sparrow decreased the sea. If only Musa had been more patient, more of their story
+  // would be told (Sahih al-Bukhari 122). (What to say of knowledge, why the crew carried them, and the prayer of mercy
+  // are not in the scene; which bird came has its own picture.)
+  "sign-sparrow-and-the-sea": [
+    ["What was Musa asked, in the hadith?", "Who is the most learned?", "Musa was asked: who is the most learned?"],
+    ["Why was Musa corrected, in the hadith?", "He did not leave knowledge to Allah", "He said: I am the most learned", "At the two seas is one more learned than you"],
+    ["What did the sparrow's sip stand for?", "How little we know next to Allah", "Our knowledge has not decreased Allah's", "Except as this sparrow decreased the sea"],
+    ["What did the Prophet ﷺ wish for Musa?", "That he had been more patient", "If only Musa had been more patient"],
+    ["What would more patience have brought, in the hadith?", "More of the story told to us", "If only Musa had been more patient"]
+  ],
+  // The people of Paradise will see the lofty mansions above them like a brilliant star far away on the horizon, in
+  // the East or the West, because of their ranks. Asked if these are only for the prophets, he said: no, by Him in
+  // whose Hand my soul is, they are for those who believed in Allah and the messengers (Sahih al-Bukhari 3256). (Who
+  // narrated it is not in the scene.)
+  "sign-lofty-mansions": [
+    ["How are the lofty mansions seen, in the hadith?", "Like a bright star on the horizon", "Like a brilliant star far away on the horizon"],
+    ["What are the lofty mansions compared to?", "A brilliant faraway star", "Like a brilliant star far away on the horizon"],
+    ["Why are some mansions so high?", "Superiority in reward", "Because of the ranks between them"],
+    ["Everyone in Paradise is happy, but levels differ.", "True", "Because of the ranks between them"],
+    ["What did the people first ask?", "Are they only for the prophets?", "They asked: are these only for the prophets?"],
+    ["The Prophet ﷺ swore by Allah when answering.", "True", "No: by Him in whose Hand my soul is"],
+    ["Are they only for the Prophets, in the hadith?", "No, for those who believed", "No: by Him in whose Hand my soul is", "Believers in Allah and in the messengers"],
+    ["Are the lofty mansions only for prophets?", "No, for true believers too", "No: by Him in whose Hand my soul is", "Believers in Allah and in the messengers"]
   ]
 };
 

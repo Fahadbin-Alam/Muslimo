@@ -1097,6 +1097,14 @@ const STATES: State[] = [
   { id: "scene-beware-of-suspicion", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-suspicion" ask="call suspicion" /> },
   { id: "scene-thirty-three", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid3-the-poor-who-worried" ask="poor people worry" /> },
   { id: "scene-five-gifts", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-rusul-all-people" ask="Who was he" /> },
+  // A question on each scene of hope and warning (round 83).
+  { id: "scene-seven-in-the-shade", render: () => <SceneQuestionDemo lessonId="lesson-deep-gathering-shade" ask="How many people get" /> },
+  { id: "scene-two-joys", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-reward-two-joys" ask="first joy" /> },
+  { id: "scene-ruins-of-al-hijr", render: () => <SceneQuestionDemo lessonId="lesson-deep-hijr4-pass-ruins-weeping" ask="cannot weep" /> },
+  { id: "scene-born-on-the-fitrah", render: () => <SceneQuestionDemo lessonId="lesson-deep-shams2-born-on-the-fitrah" ask="What example" /> },
+  { id: "scene-best-ten-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-best-ten-days" ask="Which days did he call" /> },
+  { id: "scene-sparrow-and-the-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf3-the-sparrow-and-the-sea" ask="sparrow's sip" /> },
+  { id: "scene-lofty-mansions", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid3-the-lofty-mansions" ask="compared to" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
