@@ -1005,6 +1005,12 @@ const STATES: State[] = [
   { id: "scene-two-flocks", render: () => <SceneQuestionDemo lessonId="lesson-deep-munafiqun1-sheep-between-flocks" ask="How many flocks" /> },
   { id: "scene-bending-plant", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-steady-on-the-path-a-plant-that-bends" ask="What does the plant do when" /> },
   { id: "scene-remember", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-dhikr-living-dead" ask="And the one who never remembers" /> },
+  { id: "scene-lost-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-shura2-he-accepts-repentance" ask="What did the man lose" /> },
+  { id: "scene-stung-twice", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-not-stung-twice" ask="A believer is not stung twice" /> },
+  { id: "scene-doors-of-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-pillar-puts-out-sin" ask="What does charity do to sins" /> },
+  { id: "scene-square-and-line", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-the-square-and-the-line" ask="What was the line going outside" /> },
+  { id: "scene-more-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-more-water" ask="Why add it" /> },
+  { id: "scene-joint-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-good-word" ask="Which of these is also charity" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

@@ -1152,6 +1152,54 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["And the one who never remembers Him?", "Like the dead", "And the dead"],
     ["Who is like the dead, in the hadith?", "One who does not remember Allah", "And the dead"],
     ["One who does not remember Allah is like what?", "A dead one", "And the dead"]
+  ],
+  // Allah more pleased with His servant's repentance than one who lost his camel in the desert, with his food and
+  // drink, and found it standing by him (Sahih Muslim 2747). (The lesson's question on 42:25 is about the ayah, so it
+  // stays as it is.)
+  "sign-lost-camel": [
+    ["What did the man lose, per Muslim 2747?", "His camel with food and drink", "A man in a desert, with his camel", "It ran off, with his food and drink"],
+    ["How does Allah feel when we repent, per Muslim 2747?", "More pleased than that man", "Then there it was, standing by him", "Allah is more pleased when we repent"]
+  ],
+  // A believer is not stung from the same hole twice (Sahih al-Bukhari 6133).
+  "sign-stung-twice": [
+    ["A believer is not stung twice from...?", "The same hole", "A believer is not stung", "From the same hole twice"],
+    ["What does this teach?", "Learn from what hurt you", "From the same hole twice", "He learns, and keeps away from it"],
+    ["A believer keeps making the same mistake.", "False", "A believer is not stung", "He learns, and keeps away from it"]
+  ],
+  // The doors of good: fasting is a shield, charity puts out sins as water puts out fire, and prayer deep in the night
+  // (Jami at-Tirmidhi 2616).
+  "sign-doors-of-good": [
+    ["What did he ﷺ call fasting in the same hadith?", "A shield", "Fasting is a shield"],
+    ["What is fasting, in the hadith?", "A shield", "Fasting is a shield"],
+    ["What does charity do to sins?", "Puts them out like water on fire", "Charity puts out sins", "As water puts out fire"],
+    ["What does charity do, in the hadith?", "Puts out sins", "Charity puts out sins", "As water puts out fire"],
+    ["Night prayer is also among the doors of good.", "True", "And prayer deep in the night"],
+    ["Which prayer is a door of good, in the hadith?", "Prayer deep in the night", "And prayer deep in the night"]
+  ],
+  // The square he ﷺ drew: a person's lifetime all around him, his hope a line going out of it, and troubles the small
+  // lines beside it (Sahih al-Bukhari 6417).
+  "sign-square-and-line": [
+    ["In the drawing, what did the square stand for?", "A person's lifetime", "The square is our lifetime"],
+    ["What was the line going outside the square?", "His hope", "The line going out is our hope"],
+    ["Our hopes often reach further than our lifetime.", "True", "The square is our lifetime", "The line going out is our hope"]
+  ],
+  // When you cook a soup, add more water to it, then look to your neighbors and give them some of it kindly (Sahih
+  // Muslim 2625b). (The lesson's question on zakat and sadaqah is not about the soup, so it stays as it is.)
+  "sign-more-water": [
+    ["What did the Prophet ﷺ tell Abu Dharr to add to his soup?", "More water", "Add more water to it"],
+    ["Why add it?", "To share with neighbors", "Then look to your neighbors' homes", "And give them some of it, kindly"],
+    ["Sharing food with neighbors is part of good manners.", "True", "Then look to your neighbors' homes", "And give them some of it, kindly"],
+    ["Who did the Prophet ﷺ say to share soup with?", "Your neighbors", "Then look to your neighbors' homes", "And give them some of it, kindly"]
+  ],
+  // A charity owed for every joint each day the sun rises: judging fairly, helping someone with his ride, a good word,
+  // every step to the prayer, and removing harm from the road (Sahih Muslim 1009, Sahih al-Bukhari 2989).
+  "sign-joint-charity": [
+    ["Charity is owed each day for every what?", "Joint of the body", "Each day the sun rises, every joint owes charity"],
+    ["What does each joint of the body owe every day?", "A charity", "Each day the sun rises, every joint owes charity"],
+    ["Which of these is also charity in the hadith?", "Judging fairly between two people", "Judging fairly between two is charity"],
+    ["What does the Prophet ﷺ call a good word?", "Charity", "A good word is charity"],
+    ["Which of these counts as a charity?", "A good word", "A good word is charity"],
+    ["Charity can only be given with money.", "False", "A good word is charity", "Removing harm from the road is charity"]
   ]
 };
 
