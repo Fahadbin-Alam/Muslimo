@@ -1,8 +1,8 @@
 import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
 // More companions, each a unit of its own in the Sahabah topic, told in the order their lives happened. Every
-// lesson rests on a sahih hadith from Bukhari or Muslim (or an ayah of the Quran), with the words on the
-// sunnah.com page lit up. Stories from weak chains, and anything the scholars differ on, are left out.
+// lesson rests on a sahih hadith from Bukhari or Muslim, a sahih or hasan hadith of the Sunan, or an ayah of
+// the Quran, with the words on the sunnah.com page lit up. Stories from weak chains, and anything the scholars differ on, are left out.
 
 // Ka'b ibn Malik tells his own story of Tabuk (Sahih al-Bukhari 4418), from the night of Al-Aqabah to the
 // day Allah accepted his repentance.
@@ -2024,6 +2024,19 @@ const UTHMAN_MAZUN: DeepUnit = {
         { q: "What did Umm al-Ala see in her dream?", a: "A flowing spring", wrong: ["A tall tree", "A palace", "A ship"], why: "I saw in a dream a flowing spring for Uthman." },
         { q: "What did the spring stand for?", a: "His good deeds", wrong: ["His wealth", "His house", "His camels"], why: "That is his good deeds." },
         { q: "Good deeds can keep giving reward after death.", tf: true, why: "Their reward is going on for him." }
+      ]
+    },
+    {
+      slug: "a-stone-at-his-grave",
+      title: "A stone at his grave",
+      line: "He ﷺ carried a stone himself to mark Uthman ibn Maz'un's grave.",
+      facts: ["Told by al-Muttalib", "The man sent for it could not carry the stone", "He ﷺ placed it at the head of the grave"],
+      source: hadith("abudawud", "3206", "Al-Muttalib", "Hasan (Al-Albani)", "Al-Muttalib said: when Uthman ibn Maz'un died and was buried, the Prophet ﷺ told a man to bring a stone, but he could not carry it. The Messenger of Allah ﷺ went over to it and rolled up his sleeves, then carried it and placed it at his head, saying: I am marking my brother's grave with it, and I shall bury beside him those of my family who die.", "He then carried it and placed it at his head"),
+      difficulty: 3,
+      questions: [
+        { q: "What did he ﷺ carry to the grave of Uthman ibn Maz'un?", a: "A heavy stone", wrong: ["A plank of wood", "A clay jar", "A bundle of sticks"], why: "The man could not carry the stone, so he ﷺ carried it and placed it at his head." },
+        { q: "What did he ﷺ call Uthman ibn Maz'un at the grave?", a: "My brother", wrong: ["My uncle", "My neighbor", "My teacher"], why: "I am marking my brother's grave with it, he ﷺ said." },
+        { q: "He ﷺ said he would bury those of his family who die beside Uthman.", tf: true, why: "I shall bury beside him those of my family who die, he ﷺ said." }
       ]
     }
   ]
