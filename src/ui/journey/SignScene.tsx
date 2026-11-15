@@ -51,6 +51,12 @@ const SWIM_TURN = 0.2;
 
 const TAU = Math.PI * 2;
 
+/**
+ * Below this width (a question's frame on a small phone, 184 to 199 px wide) the words are a little smaller, so each
+ * still fits its pill in two lines and none is cut short with "...".
+ */
+export const SMALL_WORDS_WIDTH = 220;
+
 /** A loop from 0 to 1 again and again (a lone loop does not run on the web; in a sequence it does). */
 function useLoops(msList: number[], running: boolean[]) {
   const values = useMemo(() => msList.map(() => new Animated.Value(STILL_LOOP)), [msList]);
@@ -284,6 +290,7 @@ function Asking({ value, testID }: { value: Animated.Value; testID: string }) {
 
 /** The words over the scene, one at a time, in a small dark pill at its top. */
 function Words({ words, clock, width, testID }: { words: SignWord[]; clock: Animated.Value; width: number; testID: string }) {
+  const small = width < SMALL_WORDS_WIDTH;
   return (
     <View style={[styles.words, { width }]} pointerEvents="none">
       {words.map((word, index) => {
@@ -294,7 +301,7 @@ function Words({ words, clock, width, testID }: { words: SignWord[]; clock: Anim
         return (
           <Animated.View key={index} style={[styles.wordSlot, { opacity }]} testID={`${testID}-${index}`}>
             <View style={[styles.word, { maxWidth: width - 20 }]}>
-              <Text style={styles.wordText} numberOfLines={2}>
+              <Text style={[styles.wordText, small && styles.wordTextSmall]} numberOfLines={2} testID={`${testID}-${index}-text`}>
                 {t(word.text)}
               </Text>
             </View>
@@ -311,6 +318,7 @@ const styles = StyleSheet.create({
   wordSlot: { position: "absolute", top: 0, left: 0, right: 0, alignItems: "center" },
   word: { backgroundColor: "rgba(16, 24, 40, 0.62)", borderRadius: 10, paddingHorizontal: 10, paddingVertical: 4 },
   wordText: { color: "#FFFFFF", fontFamily: fonts.bodyHeavy, fontSize: 13, lineHeight: 18, textAlign: "center" },
+  wordTextSmall: { fontSize: 12, lineHeight: 16 },
   asking: { position: "absolute", top: 8, left: 0, right: 0, alignItems: "center" },
   askText: { fontSize: 16, lineHeight: 20, minWidth: 14 }
 });

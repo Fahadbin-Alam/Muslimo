@@ -1265,6 +1265,49 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who is raised in status, in the hadith?", "The humble, for Allah's sake", "And raises up one who is humble for Him"],
     ["Humbling yourself for Allah raises you.", "True", "And raises up one who is humble for Him"],
     ["Humbling yourself for Allah lowers you.", "False", "And raises up one who is humble for Him"]
+  ],
+  // The palm trunk he ﷺ stood by cried like a child when he moved to the pulpit, until he came down and held it (Sahih
+  // al-Bukhari 3584). (Ibn Kathir's use of it for 59:21 is not in the scene.)
+  "sign-crying-trunk": [
+    ["What did the palm trunk do?", "Cried like a child", "And the trunk cried like a child"],
+    ["What did the Prophet ﷺ do then?", "Came down and held it", "Until he came down and held it"]
+  ],
+  // Digging the trench, they met a great rock no spade could break; he ﷺ struck it, and it became like soft sand (Sahih
+  // al-Bukhari 4101). (33:21, their hunger and Ibn Kathir's words are not in the scene.)
+  "sign-trench-rock": [["What did the Prophet ﷺ do to the rock, in the hadith?", "Struck it into sand", "He came, and struck it with the spade", "And it became like soft sand"]],
+  // On the road to Madinah a horseman caught up with them: "O Allah, throw him down", and the horse threw him (Sahih
+  // al-Bukhari 3911). (The reward he chased them for, and what Abu Bakr told those who asked, are not in the scene.)
+  "sign-chasing-horse": [["What happened to Suraqah's horse?", "It sank and threw him", "O Allah, throw him down: and it threw him"]],
+  // One bowl of milk: all the people of the Suffah drank their fill from it, one by one, then Abu Hurairah, and he ﷺ
+  // drank what was left (Sahih al-Bukhari 6452). (Who the people of the Suffah were is not in the scene.)
+  "sign-milk-bowl": [
+    ["How many bowls of milk were there?", "One", "One bowl of milk, given as a gift", "Each drank his fill, one by one"],
+    ["Abu Hurairah drank before the people of the Suffah.", "False", "Each drank his fill, one by one", "There remain you and I: drink"],
+    ["Who drank last?", "The Prophet ﷺ", "And he drank what was left"]
+  ],
+  // A few barley loaves fed seventy or eighty, ten at a time, each eating their fill (Sahih al-Bukhari 3578).
+  "sign-bread-for-seventy": [
+    ["What did Umm Sulaym send to the Prophet ﷺ?", "Loaves of barley bread", "A few barley loaves, sent in a cloth"],
+    ["How many men came in to eat at a time?", "Ten at a time", "Let ten come in: they ate their fill, and went out"],
+    ["Everyone there ate until they were full.", "True", "Let ten come in: they ate their fill, and went out", "Until all had eaten: seventy or eighty"]
+  ],
+  // When night falls, keep the children close; close the door and mention Allah's name (Sahih al-Bukhari 3304, 5624).
+  // (When to keep them close is asked in the day's sky, and for how long is not in the scene.)
+  "sign-nightfall": [["What should you say as you close the door at night?", "Allah's name", "Close the door, and say Allah's name"]],
+  // Shield yourselves from the Fire, even with half a date; and if you have none, with a good word (Sahih al-Bukhari
+  // 1417, 6023). (What a date is, and what kind of word he meant, are not asked: the scene shows only that they are
+  // given.)
+  "sign-half-date": [
+    ["What small thing can shield you from the Fire?", "Half a date in charity", "Shield yourselves from the Fire", "Even with half a date"],
+    ["What can half a date protect from?", "The Fire", "Shield yourselves from the Fire", "Even with half a date"],
+    ["How small can a charity be?", "Even half a date", "Even with half a date"],
+    ["What small charity did he name?", "Half a date", "Even with half a date"],
+    ["A tiny gift given for Allah still counts.", "True", "Even with half a date"],
+    ["Small charity matters to Allah.", "True", "Even with half a date"],
+    ["Charity only counts if it is large.", "False", "Even with half a date"],
+    ["If you have nothing to give?", "Say a good word", "And if you have none, with a good word"],
+    ["What if you have no date to give?", "Say a good word", "And if you have none, with a good word"],
+    ["A kind word is a good deed anyone can do.", "True", "And if you have none, with a good word"]
   ]
 };
 
