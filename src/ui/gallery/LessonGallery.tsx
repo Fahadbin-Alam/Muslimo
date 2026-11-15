@@ -1011,6 +1011,15 @@ const STATES: State[] = [
   { id: "scene-square-and-line", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-the-square-and-the-line" ask="What was the line going outside" /> },
   { id: "scene-more-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-more-water" ask="Why add it" /> },
   { id: "scene-joint-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-good-word" ask="Which of these is also charity" /> },
+  // More wisdom he taught: greed growing and the lamp burning low, the leaves falling, the camel tied, the lowest branch,
+  // the drop from the sea, the jar of gold found, and the home raised up on a hill.
+  { id: "scene-two-wolves", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-this-world-two-wolves" ask="What does that greed harm" /> },
+  { id: "scene-falling-leaves", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-trials-a-fever-like-two-mens" ask="make his sins fall away" /> },
+  { id: "scene-tie-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-faith-in-the-heart-tie-it-and-trust" ask="to do with his camel" /> },
+  { id: "scene-faith-branches", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-iman-branches" ask="What is the lowest branch" /> },
+  { id: "scene-sea-drop", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah2-finger-in-the-sea" ask="compare this world to" /> },
+  { id: "scene-jar-of-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-anbiya-the-jar-of-gold" ask="What did the buyer find" /> },
+  { id: "scene-charity-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-humility-raised-up" ask="someone humble for His sake" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
