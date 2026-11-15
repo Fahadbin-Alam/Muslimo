@@ -424,6 +424,20 @@ const SPEND: DeepUnit = {
       ]
     },
     {
+      slug: "what-harm",
+      title: "What harm could there be?",
+      line: "No harm comes from believing and giving from Allah's gifts.",
+      facts: ["Quran 4:39", "Said of those who gave only to be seen (4:38)", "Allah knows them well"],
+      quote: quranQuote(4, 39),
+      source: quran(4, 39, "Of those who held back or gave only to be seen, Allah asks: what harm would there have been for them if they had believed in Allah and the Last Day and spent from what Allah provided them? And Allah knows them well."),
+      difficulty: 2,
+      questions: [
+        { q: "From what should they have given, in Quran 4:39?", a: "What Allah provided them", wrong: ["What they borrowed", "What they found", "What others owned"], why: "And donated from what Allah has provided for them." },
+        { q: "In what should they have believed, in Quran 4:39?", a: "Allah and the Last Day", wrong: ["Wealth and the market", "Kings and the army", "Tribes and the elders"], why: "No harm could have come to them from believing in Allah and the Last Day." },
+        { q: "Quran 4:39 says Allah knows them well.", tf: true, why: "And Allah has perfect knowledge of them." }
+      ]
+    },
+    {
       slug: "ansar",
       title: "Others before themselves",
       line: "The Ansar put the Muhajirun first, even when in need themselves.",

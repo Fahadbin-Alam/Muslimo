@@ -1,17 +1,18 @@
-import { hadith, type DeepUnit } from "./deepKit";
+import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// One more unit for people new to Islam: how the first Muslims came to Islam, from Sahih Muslim, Sunan Abi Dawud,
-// Sunan an-Nasa'i and Sahih al-Bukhari. Dimad heard his ﷺ words three times, Amr ibn Abasah went looking for the
+// One more unit for people new to Islam: how people came to Islam, from Sahih Muslim, Sunan Abi Dawud, Sunan
+// an-Nasa'i, Sahih al-Bukhari and the Quran. Dimad heard his ﷺ words three times, Amr ibn Abasah went looking for the
 // truth, Islam was cast into Abu Rafi's heart, Umm Sulaym asked for Islam as her mahr, a man in armour did little and
-// was rewarded much, and a man who came for a gift found Islam dearer than the world. Every card is one sahih hadith
-// with its number, narrator and grade, and its exact English words to highlight, and none of them is taught anywhere
-// else in the app.
+// was rewarded much, and a man who came for a gift found Islam dearer than the world. Then two ayat: people who knew
+// the Quran was the truth asked why they should not believe (5:84), and Allah rewarded them for what they said (5:85).
+// Each hadith card is one sahih hadith with its number, narrator and grade, and its exact English words to highlight;
+// each Quran card is one ayah, shown in Arabic. No other question in the app asks about any of them.
 
 const STORIES: DeepUnit = {
   key: "how-they-came-to-islam",
   topicId: "intro",
   branchId: "intro-how-they-came-to-islam",
-  branch: { title: "How they came to Islam", description: "Words like no other, a free man and a slave, Islam cast into a heart, a mahr of Islam, a little work with a great reward, and dearer than the world." },
+  branch: { title: "How they came to Islam", description: "Words like no other, a free man and a slave, Islam cast into a heart, a mahr of Islam, a little work with a great reward, dearer than the world, and believing on hearing the Quran." },
   name: "coming to Islam",
   kind: "skill",
   lessonType: "skill",
@@ -92,6 +93,34 @@ const STORIES: DeepUnit = {
         { q: "What did the man ask his people to do?", a: "That they become Muslim", wrong: ["That they move to Madinah", "That they sell the sheep", "That they dig a well"], why: "My people, embrace Islam, for Muhammad gives like one who has no fear of want, he said." },
         { q: "What did Islam become for such a man, Anas said?", a: "Dearer to him than the world", wrong: ["A way to get rich", "A hard duty", "A passing interest"], why: "Islam became dearer to him than the world and what it contains, Anas said." },
         { q: "Islam can only grow dear to those born Muslim.", tf: false, why: "No. A man came for the world, then Islam grew dearer to him than the world, Anas said." }
+      ]
+    },
+    {
+      slug: "why-not-believe",
+      title: "Why should we not believe?",
+      line: "Hearing the Quran, they asked: why should we not believe?",
+      facts: ["Quran 5:84", "They wept, knowing it was the truth (5:83)", "They hoped to be with the righteous"],
+      quote: quranQuote(5, 84),
+      source: quran(5, 84, "People who wept on hearing the Quran, knowing it was the truth, said: why should we not believe in Allah and the truth that has come to us, when we hope our Lord will admit us with the righteous?"),
+      difficulty: 1,
+      questions: [
+        { q: "Whose company did they long for, in Quran 5:84?", a: "The righteous", wrong: ["The kings", "The rich", "The strong"], why: "We long for our Lord to include us in the company of the righteous." },
+        { q: "Who did they hope would place them with the righteous, in Quran 5:84?", a: "Their Lord, Allah", wrong: ["Their own friends", "Their own families", "Their own tribes"], why: "We aspire that our Lord will admit us with the righteous people." },
+        { q: "In Quran 5:84 they ask why they should not believe in Allah.", tf: true, why: "Why should we not believe in Allah and the truth that has come to us, they said." }
+      ]
+    },
+    {
+      slug: "rewarded-for-their-words",
+      title: "Rewarded for what they said",
+      line: "Allah rewards them for what they said, with gardens forever.",
+      facts: ["Quran 5:85", "Gardens under which rivers flow", "The reward of the good-doers"],
+      quote: quranQuote(5, 85),
+      source: quran(5, 85, "So Allah rewarded them for what they said with gardens beneath which rivers flow, where they will stay forever. And that is the reward of those who do good."),
+      difficulty: 1,
+      questions: [
+        { q: "Why does Allah reward them, in Quran 5:85?", a: "For what they said", wrong: ["For what they owned", "For what they built", "For what they sold"], why: "So Allah rewarded them for what they said with gardens." },
+        { q: "What does Quran 5:85 call this reward?", a: "The reward of the good-doers", wrong: ["The reward of the kings", "The reward of the rich", "The reward of the strong"], why: "Dhalika jaza'ul-muhsinin, that is the reward of doers of good." },
+        { q: "Quran 5:85 says they will stay in the gardens forever.", tf: true, why: "Gardens under which rivers flow, to stay there forever." }
       ]
     }
   ]
