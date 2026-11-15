@@ -8,7 +8,7 @@ const GATHERINGS: DeepUnit = {
   key: "manners-gatherings",
   topicId: "manners",
   branchId: "manners-gatherings",
-  branch: { title: "Manners of gatherings", description: "Room for everyone, sitting where it ends, your seat when you come back, keeping a secret, correcting kindly, thanking helpers, and closing a sitting." },
+  branch: { title: "Manners of gatherings", description: "Room for everyone, sitting where it ends, out of the sun into the shade, your seat when you come back, keeping a secret, correcting kindly, thanking helpers, and closing a sitting." },
   name: "the manners of gatherings",
   kind: "skill",
   lessonType: "skill",
@@ -37,6 +37,19 @@ const GATHERINGS: DeepUnit = {
         { q: "When they came to him ﷺ, where did each one sit, Jabir ibn Samurah said?", a: "Where there was room", wrong: ["Always in the front row", "Only by the door", "On a raised seat"], why: "Jalasa ahaduna haythu yantahi, each one sat where the sitting ended." },
         { q: "Who told how the Companions sat when they came to him ﷺ?", a: "Jabir ibn Samurah", wrong: ["Abu Hurairah", "Anas ibn Malik", "Ibn Abbas"], why: "Jabir ibn Samurah said it, in Sunan Abi Dawud 4825." },
         { q: "Arriving at a sitting, you sit down where there is room.", tf: true, why: "When we came to the Prophet ﷺ, each one would sit down where there was room, Jabir said." }
+      ]
+    },
+    {
+      slug: "into-the-shade",
+      title: "Into the shade",
+      line: "He ﷺ told a man in the sun to move into the shade.",
+      facts: ["Told by the father of Qays", "He ﷺ was speaking to the people", "The man moved into the shade"],
+      source: hadith("abudawud", "4822", "Qays's father", "Sahih (Al-Albani)", "Qays reported that his father came while the Messenger of Allah ﷺ was speaking to the people. He stood in the sun, so the Prophet ﷺ told him to move, and he moved into the shade.", "was addressing. He stood in the sun. He ordered him"),
+      difficulty: 1,
+      questions: [
+        { q: "Where did the man stand while he ﷺ was speaking?", a: "In the sun", wrong: ["In the rain", "On a rooftop", "By the well"], why: "He came while the Messenger of Allah ﷺ was speaking and stood in the sun." },
+        { q: "What did he ﷺ tell the man to do?", a: "Move into the shade", wrong: ["Move to the front", "Sit near the door", "Wait by the wall"], why: "He ordered him to shift, and he shifted to the shade." },
+        { q: "He ﷺ cared that the people with him were comfortable.", tf: true, why: "He ﷺ told the man standing in the sun to move into the shade." }
       ]
     },
     {
