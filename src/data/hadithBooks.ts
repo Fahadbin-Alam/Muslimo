@@ -3454,6 +3454,19 @@ const QURAN_VIRTUES: DeepUnit = {
         { q: "Who is the skilled reciter with?", a: "The noble angel scribes", wrong: ["Kings", "Poets", "Traders"], why: "Associated with the noble, upright, recording angels." },
         { q: "Struggling with recitation is a reason to stop.", tf: false, why: "Keep trying for two rewards. Sahih Muslim 798a." }
       ]
+    },
+    {
+      slug: "wish-to-be-like-the-reciter",
+      title: "Wishing to be like the reciter",
+      line: "Wish to be like one who recites the Quran night and day.",
+      facts: ["Told by Abu Hurairah", "His neighbor wished to do the same", "The other man spends his wealth rightly"],
+      source: hadith("bukhari", "5026", "Abu Hurairah", "Sahih", "Abu Hurairah said: the Messenger of Allah ﷺ said: do not wish to be like anyone except two men: a man whom Allah taught the Quran, who recites it in the hours of the night and the day, and his neighbor hears him and says: I wish I had been given what he was given, so that I could do what he does; and a man whom Allah gave wealth, who spends it on what is right.", "he recites it during the hours of the night and during the hours of the day, and his neighbor listens to him"),
+      difficulty: 2,
+      questions: [
+        { q: "When does the first man recite the Quran, he ﷺ said?", a: "Night and day", wrong: ["Only on Fridays", "Only in Ramadan", "Only at Eid"], why: "He recites it in the hours of the night and the day, and his neighbor listens to him." },
+        { q: "What did the neighbor wish, he ﷺ said?", a: "To do what he does", wrong: ["To move far away", "To buy his house", "To travel with him"], why: "I wish I had been given what he was given, so that I might do what he does, he says." },
+        { q: "Wishing to recite the Quran like a good reciter is a good wish.", tf: true, why: "He ﷺ named two men worth wishing to be like, and the first recites the Quran." }
+      ]
     }
   ]
 };

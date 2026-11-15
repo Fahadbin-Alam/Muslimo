@@ -1,17 +1,18 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Du'as unit: du'as and the prayer, from Jami at-Tirmidhi, Sunan Abi Dawud, Sunan an-Nasa'i and Sahih
-// al-Bukhari. Words to say on hearing the mu'adhdhin, his ﷺ du'a for the imams and the mu'adhdhins, what Umm Sulaim
-// was taught to say in her prayer, a du'a for light, the istikharah, mercy for one who prays four before Asr, and the
-// Mu'awwidhat after every prayer (how many surahs they are is not asked: the narrations count them differently). Every
-// card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight.
-// None of these hadith is taught anywhere else in the app.
+// al-Bukhari. Words to say on hearing the mu'adhdhin, his ﷺ du'a for the imams and the mu'adhdhins, what Umm Sulaim was
+// taught to say in her prayer, a du'a for light, the istikharah, mercy for one who prays four before Asr, the
+// Mu'awwidhat after every prayer (how many surahs they are is not asked: the narrations count them differently), and
+// the words he ﷺ taught al-Hasan ibn Ali to say in the witr. Every card is one sahih or hasan hadith with its number,
+// narrator and grade, and its exact English words to highlight. None of these hadith is taught anywhere else in the
+// app.
 
 const DUA_PRAYER: DeepUnit = {
   key: "duas-and-the-prayer",
   topicId: "duas",
   branchId: "duas-and-the-prayer",
-  branch: { title: "Du'as and the prayer", description: "On hearing the mu'adhdhin, a du'a for the imams, Umm Sulaim's words, a du'a for light, the istikharah, four before Asr, and the Mu'awwidhat." },
+  branch: { title: "Du'as and the prayer", description: "On hearing the mu'adhdhin, a du'a for the imams, Umm Sulaim's words, a du'a for light, the istikharah, four before Asr, the Mu'awwidhat, and words for the witr." },
   name: "du'as and the prayer",
   kind: "skill",
   lessonType: "skill",
@@ -105,6 +106,19 @@ const DUA_PRAYER: DeepUnit = {
         { q: "When was Uqbah told to recite the Mu'awwidhat?", a: "After every prayer", wrong: ["Only on Friday", "Only in Ramadan", "Only on Eid"], why: "The Messenger of Allah ﷺ commanded me to recite them after every prayer, Uqbah said." },
         { q: "Who said he was told to recite them after every prayer?", a: "Uqbah ibn Amir", wrong: ["Zayd ibn Thabit", "Salman al-Farisi", "Bilal ibn Rabah"], why: "The Messenger of Allah ﷺ commanded me to recite the Mu'awwidhat, Uqbah ibn Amir said." },
         { q: "The Mu'awwidhat are recited after every prayer.", tf: true, why: "Recite the Mu'awwidhat after every prayer, he ﷺ commanded Uqbah ibn Amir." }
+      ]
+    },
+    {
+      slug: "words-for-the-witr",
+      title: "Words for the witr",
+      line: "He ﷺ taught al-Hasan a du'a to say in the witr prayer.",
+      facts: ["Told by al-Hasan ibn Ali", "Allahumma-hdini fiman hadayt", "Witr: the odd prayer of the night"],
+      source: hadith("abudawud", "1425", "Al-Hasan ibn Ali", "Sahih (Al-Albani)", "Al-Hasan ibn Ali said: the Messenger of Allah ﷺ taught me words to say in the witr: O Allah, guide me among those You have guided, grant me well-being among those You have granted well-being, take me into Your care among those You have taken into Your care, bless me in what You have given, and guard me from the evil of what You have decreed, for You decree and none decrees over You. The one You befriend is never humbled. Blessed and exalted are You, our Lord.", "O Allah, guide me among those Thou hast guided, grant me security among those Thou hast granted security"),
+      difficulty: 2,
+      questions: [
+        { q: "In the witr du'a, we ask to be guided among whom?", a: "Those Allah has guided", wrong: ["Those who are rich", "Those who are famous", "Those who are strong"], why: "O Allah, guide me among those You have guided, al-Hasan was taught to say." },
+        { q: "From what do we ask Allah to guard us, in the witr du'a?", a: "The evil of what He decreed", wrong: ["The heat of the summer", "The noise of the market", "The cold of the night"], why: "Guard me from the evil of what Thou hast decreed, he ﷺ taught al-Hasan to say." },
+        { q: "The one whom Allah befriends is never humbled, the du'a says.", tf: true, why: "He whom You befriend is not humbled; blessed and exalted are You, our Lord, it ends." }
       ]
     }
   ]

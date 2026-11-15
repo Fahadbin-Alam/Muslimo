@@ -680,6 +680,34 @@ const DHIKR: DeepUnit = {
       ]
     },
     {
+      slug: "around-the-throne",
+      title: "Humming around the Throne",
+      line: "Your words of dhikr go around the Throne, humming like bees.",
+      facts: ["Told by An-Nu'man ibn Bashir", "Tasbih: SubhanAllah", "They mention the one who said them"],
+      quote: { text: "إِنَّ مِمَّا تَذْكُرُونَ مِنْ جَلاَلِ اللَّهِ التَّسْبِيحَ وَالتَّهْلِيلَ وَالتَّحْمِيدَ يَنْعَطِفْنَ حَوْلَ الْعَرْشِ لَهُنَّ دَوِيٌّ كَدَوِيِّ النَّحْلِ تُذَكِّرُ بِصَاحِبِهَا", reference: "Sunan Ibn Majah 3809" },
+      source: hadith("ibnmajah", "3809", "An-Nu'man ibn Bashir", "Hasan (Darussalam)", "An-Nu'man ibn Bashir said: the Messenger of Allah ﷺ said: the words you say to glorify Allah, tasbih, tahlil and tahmid, go around the Throne humming like bees, mentioning the one who said them. Would one of you not love to have something that keeps mentioning him there?", "revolves around the Throne, buzzing like bees, reminding of the one who said it"),
+      difficulty: 2,
+      questions: [
+        { q: "Where do the words of dhikr go, he ﷺ said?", a: "Around the Throne", wrong: ["Around the moon", "Across the seas", "Over the mountains"], why: "They revolve around the Throne, buzzing like bees, reminding of the one who said it." },
+        { q: "What do the words of dhikr hum like, he ﷺ said?", a: "Like bees", wrong: ["Like birds", "Like the wind", "Like a river"], why: "They go around the Throne buzzing like bees, mentioning the one who said them." },
+        { q: "The words of dhikr mention the one who said them.", tf: true, why: "Would you not love to have something there that keeps mentioning you, he ﷺ asked." }
+      ]
+    },
+    {
+      slug: "fingers-will-speak",
+      title: "Fingers that will speak",
+      line: "Count your dhikr on your fingers: they will be made to speak.",
+      facts: ["Told by Yusayrah, one of the women who emigrated", "Count dhikr on the fingertips", "The fingers will be asked about it"],
+      quote: { text: "أَمَرَهُنَّ أَنْ يُرَاعِينَ بِالتَّكْبِيرِ وَالتَّقْدِيسِ وَالتَّهْلِيلِ وَأَنْ يَعْقِدْنَ بِالأَنَامِلِ فَإِنَّهُنَّ مَسْئُولاَتٌ مُسْتَنْطَقَاتٌ", reference: "Sunan Abi Dawud 1501" },
+      source: hadith("abudawud", "1501", "Yusayrah", "Hasan (Al-Albani)", "Yusayrah, one of the women who emigrated, said: the Prophet ﷺ told the women to keep up the remembrance of Allah, saying: Allah is most great, Glory be to the King, the Holy, and there is no god but Allah, and to count them on their fingers, for the fingers will be questioned and made to speak.", "will be questioned and asked to speak"),
+      difficulty: 2,
+      questions: [
+        { q: "Why count dhikr on the fingers, he ﷺ said?", a: "They will be asked and made to speak", wrong: ["They will grow much longer", "They will turn into gold", "They will feel much warmer"], why: "Count them on the fingers, for they will be questioned and asked to speak, he ﷺ said." },
+        { q: "Whom did he ﷺ tell to count dhikr on their fingers?", a: "The emigrant women", wrong: ["The Persian kings", "The Yemeni traders", "The desert poets"], why: "He ﷺ told the women emigrants to keep up takbir and tahlil, Yusayrah said." },
+        { q: "Counting dhikr on our fingers is a good way to count it.", tf: true, why: "He ﷺ told the women to count dhikr on their fingertips, for those will be questioned." }
+      ]
+    },
+    {
       slug: "treasure",
       title: "A treasure of Paradise",
       line: "La hawla wa la quwwata illa billah is a treasure of Paradise.",
