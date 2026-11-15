@@ -2328,6 +2328,119 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What does the hadith teach givers to do?", "Look out for quiet need", "But the one who does not have enough", "No one notices him, to give him charity"],
     ["Who is truly poor, per Bukhari 1479?", "One whose need is unknown", "But the one who does not have enough", "No one notices him, to give him charity"],
     ["Who is not the poor meant, per Bukhari 1479?", "One who goes round asking", "The poor is not the one who goes around"]
+  ],
+  // One came to him in very white clothes and asked: tell me of Islam, of iman and of ihsan. Ihsan: worship Allah as if
+  // you see Him, and if you do not see Him, He sees you. Of the Hour: the one asked knows no more than the asker, and of
+  // its signs, when herders compete in tall buildings. Bring him back! But they saw nothing: Jibril came to teach you
+  // your religion (Sahih al-Bukhari 50, Sahih Muslim 8a). (What 41:47 says is not in the scene.)
+  "sign-came-to-teach": [
+    ["What did the Prophet ﷺ answer when Jibril asked when the Hour is?", "I know no more than you", "The one asked knows no more than the asker"],
+    ["What did he tell Jibril about instead?", "Its signs", "When herders compete in tall buildings"],
+    ["The Prophet ﷺ knew the exact day of the Hour.", "False", "The one asked knows no more than the asker"],
+    ["Who will compete in building tall buildings?", "Poor camel shepherds", "When herders compete in tall buildings"],
+    ["What will they compete in?", "Building tall buildings", "When herders compete in tall buildings"],
+    ["Tall buildings are a sign of the Hour named by the Prophet ﷺ.", "True", "When herders compete in tall buildings"],
+    ["What did the Prophet ﷺ answer Jibril, per Bukhari 50?", "The one asked knows no better", "The one asked knows no more than the asker"],
+    ["Someone can tell us the exact date of the Hour.", "False", "The one asked knows no more than the asker"],
+    ["What is Ihsan, per Bukhari 50?", "Worship Allah as if you see Him", "Ihsan: worship Allah as if you see Him"],
+    ["Who asked the Prophet ﷺ about Ihsan?", "Jibril", "Jibril came to teach you your religion"],
+    ["If we cannot reach that, we know Allah sees us.", "True", "And if you do not see Him, He sees you"],
+    ["If we cannot reach that level, what then?", "Know that He is looking at us", "And if you do not see Him, He sees you"],
+    ["What did the Prophet ﷺ answer about the Hour?", "The answerer knows no more", "The one asked knows no more than the asker"],
+    ["What did he tell about instead?", "Its signs", "When herders compete in tall buildings"],
+    ["Even the Prophet ﷺ did not know the time of the Hour.", "True", "The one asked knows no more than the asker"],
+    ["Who asked the Prophet ﷺ about the Hour?", "Jibril", "Jibril came to teach you your religion"],
+    ["What did the Prophet ﷺ answer?", "The answerer knows no more", "The one asked knows no more than the asker"],
+    ["Even Jibril did not know the time of the Hour.", "True", "The one asked knows no more than the asker"],
+    ["What was his answer?", "The answerer knows no more than the asker", "The one asked knows no more than the asker"],
+    ["He said he would tell of the Hour's portents.", "True", "When herders compete in tall buildings"],
+    ["Who came asking about Ihsan?", "Jibril", "Jibril came to teach you your religion"],
+    ["What is Ihsan?", "Worship as if you see Allah", "Ihsan: worship Allah as if you see Him"],
+    ["If we cannot reach that, what should we remember?", "He is looking at us", "And if you do not see Him, He sees you"],
+    ["What is ihsan?", "Worship as if you see Allah", "Ihsan: worship Allah as if you see Him"],
+    ["Who came to ask about Islam, iman and ihsan?", "Jibril, as a man", "Jibril came to teach you your religion"],
+    ["Even when we can't see Allah, He sees us.", "True", "And if you do not see Him, He sees you"],
+    ["Who came in very white clothes to ask the Prophet ﷺ?", "Jibril", "Jibril came to teach you your religion"],
+    ["Which three did Jibril ask about?", "Islam, Iman and Ihsan", "Tell me of Islam, of iman, of ihsan"],
+    ["Why did Jibril come?", "To teach the Muslims their religion", "Jibril came to teach you your religion"]
+  ],
+  // Asma: my mother came to me, hoping, and she was a polytheist. I asked: shall I keep ties with her? He said: yes,
+  // keep ties with your mother (Sahih al-Bukhari 2620, 5978, 3183). (Whose daughter she was and who linked 60:8 to her
+  // story are not in the scene.)
+  "sign-keep-ties": [
+    ["Who came to visit Asma?", "Her mother", "My mother came to me, hoping"],
+    ["What did the Prophet ﷺ tell Asma?", "Keep good relations with her", "Yes, keep ties with your mother"],
+    ["Asma's mother was not a Muslim at the time.", "True", "She was a polytheist"],
+    ["What did Asma ask the Prophet ﷺ?", "If she should be kind to her mother", "I asked: shall I keep ties with her?"],
+    ["What did he ﷺ answer?", "Yes, keep good ties", "Yes, keep ties with your mother"],
+    ["A new Muslim should cut off family who are not Muslim.", "False", "Yes, keep ties with your mother"],
+    ["What did Asma ask the Prophet ﷺ?", "May I be kind to my mother?", "I asked: shall I keep ties with her?"],
+    ["What did he answer?", "Yes", "Yes, keep ties with your mother"],
+    ["What did Asma ask the Prophet ﷺ?", "May I treat her kindly?", "I asked: shall I keep ties with her?"],
+    ["The Prophet ﷺ answered Asma with yes.", "True", "Yes, keep ties with your mother"],
+    ["What did the Prophet ﷺ tell her?", "Keep good ties with her", "Yes, keep ties with your mother"],
+    ["Muslims are kind to parents who are not Muslim.", "True", "Yes, keep ties with your mother"]
+  ],
+  // I will fast all day and pray all night. You cannot: fast and eat, pray and sleep. Fast one day and eat the next:
+  // that is the fast of Dawud, the best fast. Most beloved to Allah is Dawud's prayer: he slept half the night, prayed
+  // a third and slept a sixth of it (Sahih al-Bukhari 1976, 1131).
+  "sign-fast-of-dawud": [
+    ["How did Prophet Dawud fast?", "One day on, one day off", "Fast one day and eat the next"],
+    ["Which extra fast is most loved by Allah?", "The fast of Dawud", "That is the fast of Dawud, the best fast"],
+    ["Dawud also prayed part of the night and slept part.", "True", "He slept half the night, prayed a third", "And slept a sixth of it"],
+    ["How did Dawud fast?", "Every other day", "Fast one day and eat the next"],
+    ["How much of the night did Dawud pray?", "A third", "He slept half the night, prayed a third"],
+    ["Whose fast did the Prophet ﷺ call most loved by Allah?", "Dawud's", "That is the fast of Dawud, the best fast"],
+    ["What did Abdullah ibn Amr plan to do?", "Fast every day, pray all night", "I will fast all day and pray all night"],
+    ["What did the Prophet ﷺ tell him?", "Fast and eat, pray and sleep", "You cannot. Fast and eat, pray and sleep"],
+    ["Islam asks for balance in worship.", "True", "You cannot. Fast and eat, pray and sleep"],
+    ["What had Abdullah ibn Amr vowed?", "To fast every day", "I will fast all day and pray all night"],
+    ["What is the fast of Dawud?", "One day on, one day off", "Fast one day and eat the next"],
+    ["Which fast did the Prophet ﷺ call the best?", "The fast of Dawud", "That is the fast of Dawud, the best fast"]
+  ],
+  // I am nearest of all to Isa son of Maryam, in this world and in the Hereafter. The prophets are brothers, of one
+  // father; their mothers are different, and their religion is one (Sahih al-Bukhari 3443). (What 6:159, 10:72 and
+  // 42:13 say and what Ibn Kathir and Ibn Abbas say are not in the scene.)
+  "sign-one-religion": [
+    ["What did all the prophets share?", "One religion", "And their religion is one"],
+    ["Which prophet did he ﷺ say he was closest to?", "Isa", "I am nearest of all to Isa son of Maryam"],
+    ["Every prophet called to worship Allah alone.", "True", "And their religion is one"],
+    ["What do all prophets share, per Bukhari 3443?", "One religion", "And their religion is one"],
+    ["How are the Prophets described, per the hadith?", "Brothers with one religion", "The prophets are brothers, of one father", "And their religion is one"],
+    ["What did the Prophets share, per the hadith?", "One religion", "And their religion is one"],
+    ["What are the prophets like, per Bukhari 3443?", "Brothers with one religion", "The prophets are brothers, of one father", "And their religion is one"]
+  ],
+  // All my ummah will enter Paradise except whoever refuses. They asked: who would refuse? Whoever obeys me enters
+  // Paradise, and whoever disobeys me has refused (Sahih al-Bukhari 7280). (What 3:32 says is not in the scene.)
+  "sign-who-refuses": [
+    ["Who refuses Jannah, in Bukhari 7280?", "Whoever disobeys the Prophet ﷺ", "Whoever disobeys me has refused"],
+    ["In Bukhari 7280, obeying the Prophet ﷺ is the way into Jannah.", "True", "Whoever obeys me enters Paradise"],
+    ["Who will enter Paradise, per the hadith?", "Whoever obeys the Prophet ﷺ", "Whoever obeys me enters Paradise"],
+    ["Who is the one who refuses?", "Whoever disobeys him", "Whoever disobeys me has refused"],
+    ["All his followers will enter except those who refuse.", "True", "All my ummah will enter Paradise", "Except whoever refuses"],
+    ["Who will not enter Paradise, per the hadith?", "Those who refuse", "Except whoever refuses"],
+    ["Obeying him is the way into Paradise.", "True", "Whoever obeys me enters Paradise"]
+  ],
+  // I invited my mother to Islam; she said what I hated, and I came weeping. O Allah, guide Abu Hurairah's mother. The
+  // door was shut and I heard water; then: I testify, there is no god but Allah. I went back weeping for joy. Make them
+  // beloved to the believers (Sahih Muslim 2491). (Who asked for the second du'a is not in the scene.)
+  "sign-guided-at-the-door": [
+    ["What did Abu Hurairah ask the Prophet ﷺ?", "To make dua for his mother", "O Allah, guide Abu Hurairah's mother"],
+    ["What happened when he got home?", "His mother became Muslim", "I testify: there is no god but Allah"],
+    ["Abu Hurairah cried a second time, from joy.", "True", "I went back weeping for joy"],
+    ["What does this teach about our parents?", "Keep making dua for them", "O Allah, guide Abu Hurairah's mother"],
+    ["What did the Prophet ﷺ pray for Abu Hurairah and his mother?", "That the believers love them", "Make them beloved to the believers"],
+    ["Abu Hurairah said believers who hear of him love him.", "True", "Make them beloved to the believers"]
+  ],
+  // I stand to pray, meaning to make it long; then I hear a child crying, so I make my prayer short, disliking to make
+  // it hard for his mother (Sahih al-Bukhari 707).
+  "sign-prayer-made-short": [
+    ["What made the Prophet ﷺ shorten his prayer?", "A baby crying", "Then I hear a child crying"],
+    ["Whom did he ﷺ not want to trouble?", "The child's mother", "Disliking to make it hard for his mother"],
+    ["The Prophet ﷺ thought of others even while leading prayer.", "True", "So I make my prayer short", "Disliking to make it hard for his mother"],
+    ["What made him ﷺ shorten the prayer?", "A child crying", "Then I hear a child crying"],
+    ["Whom did he ﷺ not want to trouble?", "The mother", "Disliking to make it hard for his mother"],
+    ["An imam should think of the people behind him.", "True", "So I make my prayer short", "Disliking to make it hard for his mother"]
   ]
 };
 
