@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Manners unit: salam and visitors, from Sunan Abi Dawud, Sahih Muslim and Sunan Ibn Majah. The salam he ﷺ
-// taught for asking to come in, standing to one side of a door, being sent for, a sign to come in, the words he ﷺ
-// said not to greet with, and honoring a respected visitor. Every card is one sahih or hasan hadith with its number,
-// narrator and grade, and its exact English words to highlight. None of these hadith is taught anywhere else in the
-// app.
+// One more Manners unit: salam and visitors, from Sunan Abi Dawud, Sahih Muslim, Sunan Ibn Majah and Imam al-Bukhari's
+// book of manners, Al-Adab al-Mufrad. The salam he ﷺ taught for asking to come in, standing to one side of a door, being
+// sent for, a sign to come in, the words he ﷺ said not to greet with, salam as a Name of Allah placed in the earth, his
+// ﷺ soft salam at night, and honoring a respected visitor. Every card is one sahih or hasan hadith with its number,
+// narrator and grade, and its exact English words to highlight. No other question in the app asks about any of them.
 
 const COMING_IN: DeepUnit = {
   key: "manners-salam-and-visitors",
   topicId: "manners",
   branchId: "manners-salam-and-visitors",
-  branch: { title: "Salam and visitors", description: "Salam when asking to come in, standing to one side, being sent for, a sign to enter, the right words of salam, and honoring a visitor." },
+  branch: { title: "Salam and visitors", description: "Salam when asking to come in, standing to one side, being sent for, a sign to enter, the right words of salam, salam as a Name of Allah, a soft salam at night, and honoring a visitor." },
   name: "salam and visitors",
   kind: "skill",
   lessonType: "skill",
@@ -78,6 +78,32 @@ const COMING_IN: DeepUnit = {
         { q: "What did he ﷺ tell Abu Jurayy not to say?", a: "Alayka as-salam", wrong: ["As-salamu alaykum", "Bismillah", "Alhamdulillah"], why: "Do not say: Upon you be peace, alayka as-salam, he ﷺ told Abu Jurayy." },
         { q: "What did he ﷺ call the words alayka as-salam?", a: "The greeting of the dead", wrong: ["The greeting of kings", "The greeting of traders", "The greeting of travelers"], why: "Upon you be peace is the salutation to the dead, he ﷺ said." },
         { q: "He ﷺ told Abu Jurayy not to greet with alayka as-salam.", tf: true, why: "Do not say: Upon you be peace, for that is the greeting of the dead, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "salam-a-name-of-allah",
+      title: "As-Salam, a Name of Allah",
+      line: "As-Salam is a Name of Allah placed on earth: spread salam.",
+      facts: ["Told by Anas ibn Malik", "As-Salam means peace", "Allah has placed it in the earth"],
+      source: hadith("adab", "989", "Anas ibn Malik", "Hasan (Al-Albani)", "Anas said: the Messenger of Allah ﷺ said: as-Salam, peace, is one of the Names of Allah, which Allah has placed in the earth, so spread the greeting of salam among yourselves.", "is one of the Names of Allah Almighty which Allah has placed in the earth"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ say As-Salam is?", a: "A Name of Allah", wrong: ["A name of a month", "A name of a star", "A name of an angel"], why: "As-Salam is one of the Names of Allah Almighty which Allah has placed in the earth." },
+        { q: "Since As-Salam is placed in the earth, what should we do?", a: "Spread the salam", wrong: ["Keep it to ourselves", "Write it on our doors", "Say it only on Fridays"], why: "Fa-afshus-salama baynakum: so spread the greeting among yourselves." },
+        { q: "Allah has placed the Name As-Salam in the earth.", tf: true, why: "Inna as-salama ismun min asma'illah, wada'ahu Allahu fil-ard." }
+      ]
+    },
+    {
+      slug: "a-soft-salam-at-night",
+      title: "A soft salam at night",
+      line: "At night he ﷺ said salam softly, not waking those asleep.",
+      facts: ["Told by al-Miqdad ibn al-Aswad", "Those awake still heard him", "Sleepers were not woken"],
+      source: hadith("muslim", "2055a", "Al-Miqdad ibn al-Aswad", "Sahih", "Al-Miqdad said: the Messenger of Allah ﷺ took me and two friends to his home. He would come at night and greet in a manner that would not wake up one in sleep but make one who was awake hear it.", "in a manner that would not wake up one in sleep but make one who was awake hear it"),
+      difficulty: 1,
+      questions: [
+        { q: "Who would hear his ﷺ salam at night?", a: "Those who were awake", wrong: ["Those far away", "Those in the market", "Those on the road"], why: "The person who was awake would hear it, al-Miqdad said." },
+        { q: "He ﷺ said salam at night in a way that would not wake the sleeping.", tf: true, why: "Fa-yusallimu tasliman la yuqizu na'iman, wa yusmi'u al-yaqzan." },
+        { q: "Who told us how he ﷺ said salam at night?", a: "Al-Miqdad ibn al-Aswad", wrong: ["Abu Dharr", "Bilal ibn Rabah", "Salman al-Farisi"], why: "Al-Miqdad ibn al-Aswad said it, in Sahih Muslim 2055." }
       ]
     },
     {

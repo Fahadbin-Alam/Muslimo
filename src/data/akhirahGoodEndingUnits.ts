@@ -2,15 +2,16 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Akhirah unit: a good ending, from Sunan Ibn Majah, Jami at-Tirmidhi and Sunan Abi Dawud. Helping the dying
 // say La ilaha illallah, the rank of martyrs for one who asks for it sincerely, deeds that keep growing for one on the
-// frontier, tears that keep a man from the Fire, his ﷺ intercession for those with major sins, and a martyr's
-// intercession for seventy of his family. Every card is one sahih hadith with its number, narrator and grade, and its
-// exact English words to highlight. None of these hadith is taught anywhere else in the app.
+// frontier, tears that keep a man from the Fire, his ﷺ intercession for those with major sins, a martyr's intercession
+// for seventy of his family, and one man of this Ummah whose intercession brings more than Banu Tamim into Paradise.
+// Every card is one sahih hadith with its number, narrator and grade, and its exact English words to highlight. None of
+// these hadith is taught anywhere else in the app.
 
 const GOOD_ENDING: DeepUnit = {
   key: "akhirah-a-good-ending",
   topicId: "akhirah",
   branchId: "akhirah-a-good-ending",
-  branch: { title: "A good ending", description: "La ilaha illallah for the dying, asking sincerely, deeds that keep growing, tears of fear, his ﷺ intercession, and a martyr's seventy." },
+  branch: { title: "A good ending", description: "La ilaha illallah for the dying, asking sincerely, deeds that keep growing, tears of fear, his ﷺ intercession, a martyr's seventy, and more than Banu Tamim." },
   name: "a good ending",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +92,19 @@ const GOOD_ENDING: DeepUnit = {
         { q: "For how many of his family is a martyr's intercession accepted?", a: "Seventy of them", wrong: ["Two of them", "Ten of them", "One of them"], why: "The intercession of a martyr will be accepted for seventy members of his family." },
         { q: "Whose intercession is accepted for seventy of his family?", a: "A martyr's", wrong: ["A king's", "A rich man's", "A poet's"], why: "A martyr's intercession will be accepted for seventy members of his family, he ﷺ said." },
         { q: "A martyr can intercede for members of his family.", tf: true, why: "The intercession of a martyr will be accepted for seventy members of his family." }
+      ]
+    },
+    {
+      slug: "more-than-banu-tamim",
+      title: "More than Banu Tamim",
+      line: "One man's intercession brings more than Banu Tamim to Paradise.",
+      facts: ["Told by Abdullah ibn Abi al-Jad'a", "Banu Tamim: a very large Arab tribe", "A man of this Ummah, not the Prophet ﷺ"],
+      source: hadith("ibnmajah", "4316", "Abdullah ibn Abi al-Jad'a", "Sahih (Darussalam)", "Abdullah ibn Abi al-Jad'a heard the Prophet ﷺ say: more than the tribe of Banu Tamim will enter Paradise through the intercession of a man from my Ummah. They said: O Messenger of Allah ﷺ, besides you? He said: besides me.", "Banu Tamim will enter Paradise through the intercession of a man from among my nation"),
+      difficulty: 3,
+      questions: [
+        { q: "Which tribe did he ﷺ name, in Ibn Majah 4316?", a: "Banu Tamim", wrong: ["Banu Kalb", "Banu Tayy", "Banu Hamdan"], why: "More than Banu Tamim will enter Paradise through one man's intercession, he ﷺ said." },
+        { q: "Where would the man come from, he ﷺ said?", a: "From among his Ummah", wrong: ["From among the angels", "From among the jinn", "From among earlier nations"], why: "Through the intercession of a man from among my nation, he ﷺ said." },
+        { q: "He ﷺ said the man would be someone besides himself.", tf: true, why: "When they asked whether he meant himself, he ﷺ said: besides me." }
       ]
     }
   ]
