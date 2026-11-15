@@ -1020,6 +1020,19 @@ const HAWD: DeepUnit = {
         { q: "What happens to whoever drinks from it?", a: "Never thirsty again", wrong: ["Falls asleep", "Gets rich", "Grows wings"], why: "Bukhari 6579." },
         { q: "How many cups does it have?", a: "As many as the stars", wrong: ["Seven", "One", "A hundred"], why: "Countless." }
       ]
+    },
+    {
+      slug: "so-many-at-the-pool",
+      title: "So many at his Pool",
+      line: "He ﷺ said so many will come down to him at the Pool.",
+      facts: ["Told by Zayd ibn Arqam", "Said at a halting place", "Not one part in a hundred thousand"],
+      source: hadith("abudawud", "4746", "Zayd ibn Arqam", "Sahih (Al-Albani)", "Zayd ibn Arqam said: we were with the Messenger of Allah ﷺ, and when we stopped at a halting place he said: you are not even one part in a hundred thousand of those who will come to me at the Pool.", "You are not a hundred thousandth part of those who will come down to me at the pond"),
+      difficulty: 2,
+      questions: [
+        { q: "How big a part were they of all who will come to the Pool?", a: "Not one part in a hundred thousand", wrong: ["About half of them", "About a third of them", "Nearly all of them"], why: "You are not a hundred thousandth part of those who will come down to me, he ﷺ said." },
+        { q: "Where were they when he ﷺ said this?", a: "At a halting place", wrong: ["In the masjid", "In the market", "At his house"], why: "He ﷺ said it when we arrived at a halting place, Zayd ibn Arqam said." },
+        { q: "A very great number of people will come to the Pool of the Prophet ﷺ.", tf: true, why: "Those with him at the halting place were a tiny part of those coming to his Pool." }
+      ]
     }
   ]
 };
