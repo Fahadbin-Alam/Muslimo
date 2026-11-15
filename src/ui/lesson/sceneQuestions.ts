@@ -1062,6 +1062,43 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-shared-ship": [
     ["What did the people below want to do?", "Make a hole for water", "Let us make a hole in our part"],
     ["Stopping wrong protects the whole community.", "True", "Stop them, and all of them are saved"]
+  ],
+  // Three men in a cave: a rock shut it on them, and each asked Allah by a good deed done for Him (Sahih al-Bukhari
+  // 2272).
+  "sign-shut-cave": [
+    ["What trapped the three men in the cave?", "A big rock rolled over its mouth", "A rock rolled down and shut it"],
+    ["How did they ask Allah to save them?", "By a good deed each did for Him", "One held milk for his parents till dawn"],
+    ["One man had waited all night to give his parents their milk.", "True", "One held milk for his parents till dawn"],
+    ["What did another man give back to his worker?", "His wage, grown into a herd", "One gave a worker his wage, grown into a herd"]
+  ],
+  // A loan sent across the sea in a piece of wood, with Allah as witness (Sahih al-Bukhari 2291).
+  "sign-log-at-sea": [
+    ["Whom did the borrower name as his witness?", "Allah", "A thousand dinars, lent with Allah as witness"],
+    ["How did he send the money when he had no ship?", "Inside a piece of wood in the sea", "Money and a letter, sealed in a piece of wood", "He gave it to the sea, trusting Allah"],
+    ["The lender found the wood and the money inside it.", "True", "The lender took it home for firewood", "He opened it: his money, and the letter"]
+  ],
+  // The Quran by heart, like tied camels; and keep reviewing it (Sahih al-Bukhari 5031, 5033).
+  "sign-tied-camels": [
+    ["What is a hafiz compared to?", "An owner of tied camels", "Is like the owner of tied camels"],
+    ["What happens if the camels are let go?", "They run away", "If he lets them go, they run away"],
+    ["Memorised Quran needs regular review.", "True", "Keep reviewing it: it slips away faster"],
+    ["What slips away faster than a camel?", "The Quran we memorised", "Keep reviewing it: it slips away faster"],
+    ["What are we told to do?", "Keep reviewing it", "Keep reviewing it: it slips away faster"],
+    ["Once memorised, the Quran never leaves us.", "False", "If he lets them go, they run away", "Keep reviewing it: it slips away faster"]
+  ],
+  // Be in this world as a stranger or a traveler (Sahih al-Bukhari 6416), like a rider resting in a tree's shade, who
+  // then goes on and leaves it (Jami at-Tirmidhi 2377).
+  "sign-traveler": [
+    ["How should we live in this world?", "Like a traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live in this world?", "Like a stranger or traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live, per Bukhari 6416?", "Like a stranger or traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live in this world, per the hadith?", "Like a stranger or traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live in this world, per the hadith?", "Like a stranger or a traveller", "Be in this world", "Or a traveler on his way"],
+    ["What did he compare himself to in this world?", "A rider resting in shade", "Like a rider who rests in the shade of a tree"],
+    ["A rider in shade soon moves on.", "True", "Then goes on, and leaves it"],
+    ["A traveler does not get too attached to a road stop.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
+    ["A traveler does not cling to the road.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
+    ["Ibn Umar taught to expect a long life ahead.", "False", "At evening, do not wait for the morning"]
   ]
 };
 

@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(760);
+    expect(asks.length).toBe(783);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,7 +97,7 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(1072);
+    expect(places).toBe(1106);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -1554,6 +1554,208 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
+  });
+
+  it("waits on the scenes of the stories he ﷺ told before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-shut-cave", "sign-log-at-sea", "sign-tied-camels", "sign-traveler"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(23);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Three men in a cave: their ways gone in, the rock still up on its ledge; then it rolls down and shuts the cave.
+    const trapped = "What trapped the three men in the cave?";
+    expect([
+      shown(trapped, ["a way into the cave 1, part 2", "a way into the cave 3, part 2", "a way out of the cave 1"]),
+      moved(trapped, "the rock", "x"),
+      moved(trapped, "the rock", "y"),
+      moved(trapped, "the rock", "rotate")
+    ]).toEqual([
+      [
+        [1, 1, 0],
+        [1, 1, 0]
+      ],
+      [25, 0],
+      [-34, 0],
+      [0, -210]
+    ]);
+    // The cave shut, and no one has asked yet; then a voice behind the rock asks by his good deed, shown in a picture
+    // beside the cave: the bowl of milk held for his parents through the night, till dawn. It rises as sparks.
+    for (const prompt of ["How did they ask Allah to save them?", "One man had waited all night to give his parents their milk."]) {
+      expect([
+        prompt,
+        shown(prompt, ["a voice behind the rock, asking 1", "a picture of what the first did", "the bowl of milk, held till dawn", "the window, lit at dawn", "a voice behind the rock, asking 2"]),
+        moved(prompt, "the first good deed, rising 1", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0]
+        ],
+        [0, -10]
+      ]);
+    }
+    // Two have asked, and the rock has moved a little; then the third asks by the wage he kept for his worker, grown
+    // into a herd, and the way that came for it. Still no way out.
+    const wage = "What did another man give back to his worker?";
+    expect([
+      shown(wage, [
+        "a picture of what the second did",
+        "a voice behind the rock, asking 3",
+        "a picture of what the third did",
+        "the wage, left behind",
+        "a sheep, grown from the wage",
+        "a cow, grown from the wage",
+        "a camel, grown from the wage",
+        "the way that came for the wage",
+        "a way out of the cave 1"
+      ]),
+      moved(wage, "a camel, grown from the wage", "scale"),
+      moved(wage, "the rock", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1, 0]
+      ],
+      [0.25, 1],
+      [6.8, 6.8]
+    ]);
+    // A loan sent by sea: nothing yet; then a way borrows the thousand dinars, with Allah as witness, and they cross the sea.
+    const witness = "Whom did the borrower name as his witness?";
+    expect([shown(witness, ["a way, to borrow the money", "a way, ashore across the sea", "a piece of wood"]), moved(witness, "a thousand dinars", "x")]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, 120]
+    ]);
+    // The ship gone, a way on the empty shore, the money still with him; then it goes into a piece of wood, sealed,
+    // given to the sea, and the wood floats over to the other shore.
+    const wood = "How did he send the money when he had no ship?";
+    expect([shown(wood, ["a ship", "a way, down to the shore when it was time", "a thousand dinars", "a piece of wood", "the wood, sealed"]), moved(wood, "a piece of wood", "x")]).toEqual([
+      [
+        [0, 1, 1, 0, 0],
+        [0, 1, 0, 1, 1]
+      ],
+      [0, -104]
+    ]);
+    // The wood at the other shore, unopened; then a way takes it home, and it opens on the money and the letter.
+    expect(
+      shown("The lender found the wood and the money inside it.", [
+        "a piece of wood",
+        "a way, taking the wood home",
+        "the wood, opened, one half",
+        "the thousand dinars, inside",
+        "the letter, inside",
+        "a trust kept, a spark rising 1"
+      ])
+    ).toEqual([
+      [1, 0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 1, 1]
+    ]);
+    // The Quran by heart: a voice reciting, the pegs empty; then three camels come and are tied to them.
+    const hafiz = "What is a hafiz compared to?";
+    expect([shown(hafiz, ["a voice, reciting by heart", "a camel, tied 1", "a camel, tied 3", "its rope, tied 1", "its rope, tied 3"]), moved(hafiz, "a camel, tied 2", "x")]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [-110, 0]
+    ]);
+    // Tied and held; then the voice stops, the ropes are let go, and the camels run away.
+    const letGo = "What happens if the camels are let go?";
+    expect([shown(letGo, ["a voice, reciting by heart", "a camel, tied 1", "its rope, tied 1", "the knot, holding 1", "a camel, brought back 1"]), moved(letGo, "a camel, tied 1", "x")]).toEqual([
+      [
+        [1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      [0, 130]
+    ]);
+    // The camels gone; then the voice comes back, reviewing, and they are brought back and tied again.
+    for (const prompt of ["Memorised Quran needs regular review.", "What slips away faster than a camel?", "What are we told to do?"]) {
+      expect([prompt, shown(prompt, ["a camel, tied 1", "the voice, reviewing again", "a camel, brought back 1", "a camel, brought back 3", "its rope, tied again 1", "the knot, holding again 3"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0, 0],
+          [0, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Tied and held; then let go and gone, and only brought back by reviewing.
+    expect(shown("Once memorised, the Quran never leaves us.", ["a camel, tied 1", "a voice, reciting by heart", "the voice, reviewing again", "a camel, brought back 1", "its rope, tied again 1"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [0, 0, 1, 1, 1]
+    ]);
+    // Like a traveler: an empty road by a town; then a camel comes along it, a way behind it, and passes the town.
+    for (const [prompt, answer] of [
+      ["How should we live in this world?", "Like a traveler"],
+      ["How should we live in this world?", "Like a stranger or traveler"],
+      ["How should we live, per Bukhari 6416?", "Like a stranger or traveler"],
+      ["How should we live in this world, per the hadith?", "Like a stranger or traveler"],
+      ["How should we live in this world, per the hadith?", "Like a stranger or a traveller"]
+    ]) {
+      expect([prompt, answer, shown(prompt, ["a camel on its way", "a way along the road, part 1", "a way along the road, part 5", "a way along the road, part 6"], answer)]).toEqual([
+        prompt,
+        answer,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // On the road, short of the tree; then, at noon, it rests a little in the tree's shade.
+    const rider = "What did he compare himself to in this world?";
+    expect([
+      shown(rider, ["a way along the road, part 6", "a way, resting a little in the shade", "a way along the road, part 7"]),
+      moved(rider, "a camel on its way", "x"),
+      moved(rider, "the sun, going over the day", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [78, 92],
+      [-22, 0]
+    ]);
+    // Resting in the shade; then it goes on and leaves it behind.
+    const movesOn = "A rider in shade soon moves on.";
+    expect([shown(movesOn, ["a way, resting a little in the shade", "a way along the road, part 7"]), moved(movesOn, "a camel on its way", "x")]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [92, 114]
+    ]);
+    // Short of the tree; then it rests a little in the shade, and goes on, leaving it behind.
+    for (const prompt of ["A traveler does not get too attached to a road stop.", "A traveler does not cling to the road."]) {
+      expect([prompt, shown(prompt, ["a way, resting a little in the shade", "a way along the road, part 7"]), moved(prompt, "a camel on its way", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [78, 114]
+      ]);
+    }
+    // On its way by day; then evening comes, the sun sets, and it is gone over the horizon before the night.
+    const evening = "Ibn Umar taught to expect a long life ahead.";
+    expect([shown(evening, ["the evening sky", "stars", "a camel on its way", "a way along the road, part 8"]), moved(evening, "the sun, going over the day", "y")]).toEqual([
+      [
+        [0, 0, 1, 0],
+        [1, 1, 0, 1]
+      ],
+      [4, 30]
+    ]);
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {

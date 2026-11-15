@@ -991,6 +991,12 @@ const STATES: State[] = [
   { id: "scene-musk", render: () => <SceneQuestionDemo lessonId="lesson-deep-furqan1-musk-seller-and-blacksmith" ask="What might a bad friend do" /> },
   { id: "scene-shared-ship", render: () => <SceneQuestionDemo lessonId="lesson-deep-numan-the-ship" ask="What did the people below want" /> },
   { id: "scene-ashura", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-musa-ashura" ask="What happened on the day of Ashura" /> },
+  // The stories he ﷺ told: the wage grown into a herd, the money sent in a piece of wood, the tied camels let go, and the
+  // rider resting in a tree's shade.
+  { id: "scene-shut-cave", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-cave" ask="What did another man give back" /> },
+  { id: "scene-log-at-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-wooden-box" ask="How did he send the money" /> },
+  { id: "scene-tied-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-like-tied-camels" ask="What happens if the camels" /> },
+  { id: "scene-traveler", render: () => <SceneQuestionDemo lessonId="lesson-deep-duha1-like-a-rider-under-a-tree" ask="What did he compare himself to" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
