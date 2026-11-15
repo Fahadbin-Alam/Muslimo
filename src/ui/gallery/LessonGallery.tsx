@@ -1065,6 +1065,14 @@ const STATES: State[] = [
   { id: "scene-praise-each-bite", render: () => <SceneQuestionDemo lessonId="lesson-deep-abasa2-praise-for-every-bite" ask="When else" /> },
   { id: "scene-good-or-quiet", render: () => <SceneQuestionDemo lessonId="lesson-deep-naba3-say-good-or-stay-silent" ask="treat his guest" /> },
   { id: "scene-then-steadfast", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-famous-steadfast" ask="And after saying it" /> },
+  // A question on each scene of the deeds Allah loves (round 75).
+  { id: "scene-dearest-deeds", render: () => <SceneQuestionDemo lessonId="lesson-deep-parents-dearest-deeds" ask="What came second" /> },
+  { id: "scene-truth-leads", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-truth" ask="keeps telling the truth" /> },
+  { id: "scene-ease-a-hardship", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-heart-relieve" ask="How long does Allah help" /> },
+  { id: "scene-saved-by-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-ready-mercy-saves" ask="What gets us into Jannah" /> },
+  { id: "scene-give-while-healthy", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-everyday-give-now" ask="warn against" /> },
+  { id: "scene-strong-believer", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-qadar-if-only" ask="something bad happens" /> },
+  { id: "scene-forgotten-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-taha1-a-missed-prayer" ask="forgotten prayer" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
