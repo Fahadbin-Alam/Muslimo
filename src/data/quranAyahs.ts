@@ -4783,6 +4783,8 @@ export const QURAN_AYAHS: Record<string, string> = {
   "3:192": "رَبَّنَآ إِنَّكَ مَن تُدۡخِلِ ٱلنَّارَ فَقَدۡ أَخۡزَيۡتَهُۥۖ وَمَا لِلظَّـٰلِمِينَ مِنۡ أَنصَارٖ", // Ali 'Imran
   "7:47": "۞وَإِذَا صُرِفَتۡ أَبۡصَٰرُهُمۡ تِلۡقَآءَ أَصۡحَٰبِ ٱلنَّارِ قَالُواْ رَبَّنَا لَا تَجۡعَلۡنَا مَعَ ٱلۡقَوۡمِ ٱلظَّـٰلِمِينَ", // Al-A'raf
   "26:87": "وَلَا تُخۡزِنِي يَوۡمَ يُبۡعَثُونَ", // Ash-Shu'ara
+  // More names of Allah (src/data/aqidahNamesUnits.ts)
+  "3:150": "بَلِ ٱللَّهُ مَوۡلَىٰكُمۡۖ وَهُوَ خَيۡرُ ٱلنَّـٰصِرِينَ", // Ali 'Imran
 };
 
 /** The Arabic of an ayah, by "Quran 1:1" or "1:1"; undefined when it is not one the app shows. */
