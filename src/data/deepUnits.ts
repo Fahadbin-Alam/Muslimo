@@ -1824,7 +1824,7 @@ const ALI: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What had Fatimah asked for?", a: "A servant", wrong: ["A house", "Money", "A garden"], why: "Her hands hurt from the grinding stone." },
-        { q: "How many times is Allahu Akbar said?", a: "34", wrong: ["33", "10", "100"], why: "34 Allahu Akbar, 33 SubhanAllah, 33 Alhamdulillah." },
+        { q: "How many times is Allahu Akbar said?", a: "34", wrong: ["40", "10", "100"], why: "34 Allahu Akbar, 33 SubhanAllah, 33 Alhamdulillah." },
         { q: "When is this dhikr said?", a: "When going to bed", wrong: ["After Fajr only", "Before eating", "On Fridays"], why: "The Prophet ﷺ taught it for bedtime." },
         { q: "The Prophet ﷺ said the dhikr was better than a servant.", tf: true, why: "Better for them than what they asked for." }
       ]

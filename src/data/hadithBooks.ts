@@ -1516,6 +1516,19 @@ const MEDICINE: DeepUnit = {
       ]
     },
     {
+      slug: "indian-incense",
+      title: "The Indian incense",
+      line: "Do not pain a child's throat; Indian incense cures seven ills.",
+      facts: ["Told by Umm Qais bint Mihsan", "Ud al-Hindi: the Indian incense", "Sniffed for throat and tonsil pain"],
+      source: hadith("bukhari", "5713", "Umm Qais bint Mihsan", "Sahih", "Umm Qais brought her son to the Messenger of Allah ﷺ. She had pressed his palate and tonsils with her finger to treat his throat. The Prophet ﷺ said: why do you pain your children by pressing their throats? Use the Indian incense, for it cures seven diseases, one of them pleurisy. It is sniffed for throat and tonsil illness, and put into one side of the mouth for pleurisy.", "Why do you pain your children by pressing their throats"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ tell Umm Qais to use for the throat?", a: "Indian incense", wrong: ["Rose water", "Warm milk", "Salt water"], why: "Use Ud Al-Hindi, the Indian incense, he ﷺ said, rather than pressing the throat." },
+        { q: "How many diseases does the Indian incense cure, he ﷺ said?", a: "Seven", wrong: ["Three", "Ten", "Forty"], why: "It cures seven diseases, one of which is pleurisy, he ﷺ said." },
+        { q: "He ﷺ did not want children hurt by harsh remedies.", tf: true, why: "Why do you pain your children by pressing their throats, he ﷺ asked." }
+      ]
+    },
+    {
       slug: "talbina",
       title: "Talbina for the sick",
       line: "Aishah advised talbina for the sick: not tasty, but good.",
