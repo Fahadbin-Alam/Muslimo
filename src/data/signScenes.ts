@@ -259,7 +259,23 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - the buyer who found a jar of gold in the land he bought, and the seller who would not take it back either (Sahih
  *   al-Bukhari 3472);
  * - charity does not lessen wealth, Allah adds only honor to one who forgives, and raises up one who is humble for Him
- *   (Sahih Muslim 2588).
+ *   (Sahih Muslim 2588);
+ *
+ * and scenes from his ﷺ life and from what he taught for the home (lifeArt.ts draws them):
+ *
+ * - the palm trunk he stood by on Fridays, which cried like a child when he moved to the pulpit, until he came down
+ *   and held it (Sahih al-Bukhari 3584);
+ * - the great rock in the trench that no spade could break, until he struck it and it became like soft sand (Sahih
+ *   al-Bukhari 4101);
+ * - the horse that threw the horseman who chased him ﷺ on the road to Madinah: in the morning chasing them, by
+ *   evening guarding them (Sahih al-Bukhari 3911);
+ * - one bowl of milk that all the people of the Suffah drank their fill from, then Abu Hurairah, and he ﷺ last (Sahih
+ *   al-Bukhari 6452);
+ * - a few barley loaves that fed seventy or eighty, ten at a time (Sahih al-Bukhari 3578);
+ * - the home at nightfall: the children kept close, the door closed with Allah's name, the water skin tied, the cup
+ *   covered even with a stick, and the lamp put out (Sahih al-Bukhari 3304, 5624);
+ * - shield yourselves from the Fire, even with half a date, and if you have none, with a good word (Sahih al-Bukhari
+ *   1417, 6023).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -286,7 +302,10 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * square and its lines are drawn on the ground by no hand; and in the wisdom he ﷺ taught, the one hurt by a thorn,
  * the one who tied his camel, the one who removes harm from the road, the two men of the jar of gold and the one they
  * asked, the one who gives, forgives and is humble are only their dashed ways and their voices, and the finger dipped
- * in the sea is not drawn, only the rings where it dipped and the drop it brings back.
+ * in the sea is not drawn, only the rings where it dipped and the drop it brings back; and in the scenes from his ﷺ
+ * life, he and those with him are only their dashed ways, their voices, and rings or small dashed circles where they
+ * sat or stood, no hand is drawn on the trunk, the spade or the bowl, no one rides the camel or the horse on the road
+ * to Madinah, no devil is drawn at nightfall, and nothing of the Fire is drawn, only a shield of light.
  */
 
 export type SignKind =
@@ -402,7 +421,14 @@ export type SignKind =
   | "faith-branches"
   | "sea-drop"
   | "jar-of-gold"
-  | "charity-wealth";
+  | "charity-wealth"
+  | "crying-trunk"
+  | "trench-rock"
+  | "chasing-horse"
+  | "milk-bowl"
+  | "bread-for-seventy"
+  | "nightfall"
+  | "half-date";
 
 export type SignScene = {
   id: string;
@@ -1173,6 +1199,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "charity-wealth",
     caption: "The Prophet ﷺ said: charity does not lessen wealth; Allah adds nothing to a servant who forgives but honor; and no one is humble for Allah but Allah raises him up.",
     sources: [muslim("2588")]
+  },
+  {
+    id: "sign-crying-trunk",
+    kind: "crying-trunk",
+    caption: "The Prophet ﷺ used to stand by a palm trunk on Fridays. When a pulpit was made for him, the trunk cried like a child, until he came down and held it.",
+    sources: [bukhari("3584")]
+  },
+  {
+    id: "sign-trench-rock",
+    kind: "trench-rock",
+    caption: "Digging the trench, they came to a great rock no spade could break. The Prophet ﷺ came, hungry as they were, struck it with the spade, and it became like soft sand.",
+    sources: [bukhari("4101")]
+  },
+  {
+    id: "sign-chasing-horse",
+    kind: "chasing-horse",
+    caption: "On the road to Madinah, a horseman caught up with the Prophet ﷺ and Abu Bakr. He ﷺ said: O Allah, throw him down, and the horse threw him. In the morning he was chasing them; by evening he was guarding them.",
+    sources: [bukhari("3911")]
+  },
+  {
+    id: "sign-milk-bowl",
+    kind: "milk-bowl",
+    caption: "One bowl of milk: all the people of the Suffah drank their fill from it, one by one, then Abu Hurairah, and the Prophet ﷺ drank what was left.",
+    sources: [bukhari("6452")]
+  },
+  {
+    id: "sign-bread-for-seventy",
+    kind: "bread-for-seventy",
+    caption: "A few barley loaves were broken in pieces, and the Prophet ﷺ said: let ten come in. Ten at a time ate their fill and went out, until seventy or eighty had eaten.",
+    sources: [bukhari("3578")]
+  },
+  {
+    id: "sign-nightfall",
+    kind: "nightfall",
+    caption: "The Prophet ﷺ said: when night falls, keep your children close; close the door and mention Allah's name; tie the water skin, cover the cup, even with a stick, and put out the lamp when you sleep.",
+    sources: [bukhari("3304"), bukhari("5624")]
+  },
+  {
+    id: "sign-half-date",
+    kind: "half-date",
+    caption: "The Prophet ﷺ said: shield yourselves from the Fire, even with half a date; and if you have none, then with a good word.",
+    sources: [bukhari("1417"), bukhari("6023")]
   }
 ];
 
@@ -1975,7 +2043,26 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-qalam4-charity-does-not-decrease": "sign-charity-wealth",
   "deep-humility-raised-up": "sign-charity-wealth",
   "deep-fath1-humble-and-raised": "sign-charity-wealth",
-  "deep-yusuf5-forgiving-raises-honor": "sign-charity-wealth"
+  "deep-yusuf5-forgiving-raises-honor": "sign-charity-wealth",
+  // The palm trunk that cried when he ﷺ moved to the pulpit (Sahih al-Bukhari 3584).
+  "deep-hashr4-the-crying-palm": "sign-crying-trunk",
+  // The rock in the trench that became sand (Sahih al-Bukhari 4101).
+  "deep-ahzab1-the-best-example": "sign-trench-rock",
+  // The horse that threw the horseman who chased him ﷺ on the road to Madinah (Sahih al-Bukhari 3911); the Seerah's own
+  // lesson on it keeps its map.
+  "deep-abubakr-suraqah": "sign-chasing-horse",
+  // One bowl of milk for all the people of the Suffah (Sahih al-Bukhari 6452).
+  "deep-abu-hurairah-milk-bowl": "sign-milk-bowl",
+  // A few barley loaves for seventy or eighty, ten at a time (Sahih al-Bukhari 3578).
+  "deep-kids-signs-bread-for-seventy": "sign-bread-for-seventy",
+  // The home at nightfall: children close, the door shut with Allah's name, the cup covered, the lamp out (Sahih
+  // al-Bukhari 3304, 5624).
+  "deep-marriage-gentle-with-children-home-at-nightfall": "sign-nightfall",
+  // Shield yourselves from the Fire, even with half a date, or with a good word (Sahih al-Bukhari 1417, 6023).
+  "deep-kids-small-deeds-half-a-date": "sign-half-date",
+  "deep-jahannam-half-date": "sign-half-date",
+  "deep-zalzalah2-even-half-a-date": "sign-half-date",
+  "deep-zalzalah2-a-good-word": "sign-half-date"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
