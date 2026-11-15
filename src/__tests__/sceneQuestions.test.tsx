@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(783);
+    expect(asks.length).toBe(815);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,7 +97,7 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(1106);
+    expect(places).toBe(1149);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -1756,6 +1756,178 @@ describe("where the scene waits and where it stops", () => {
       ],
       [4, 30]
     ]);
+  });
+
+  it("waits on the scenes of more of his likenesses before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-citron", "sign-forgiving-trader", "sign-hungry-birds", "sign-two-flocks", "sign-bending-plant", "sign-remember"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(32);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The citron: a voice reciting in one home, nothing on its plate; then the citron comes, its sweet smell rising.
+    const scent = "Reciting the Quran adds a good scent to a believer.";
+    expect([shown(scent, ["a voice, reciting", "a citron", "its sweet smell, rising", "a slice of it, good to taste"]), moved(scent, "a citron", "scale")]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0.3, 1]
+    ]);
+    // A way gone into the quiet home, its plate empty; then dates come on it, shining with their taste, and nothing rises.
+    expect(shown("A believer who does not recite is like what?", ["a way into the quiet home, part 2", "dates", "their good taste, shining"])).toEqual([
+      [1, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The trader: the third way has only an empty purse, his mark still on the board; then a voice from the stall says
+    // "let him off", the mark is wiped, and the way goes home free.
+    for (const prompt of ["What did the trader do when a debtor could not pay?", "What did the lender do for poor debtors?"]) {
+      expect([prompt, shown(prompt, ["an empty purse, opened", "a mark on the tally board 3", "a voice from the stall, saying: let him off", "a way, going home free"])]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0],
+          [0, 0, 0, 1]
+        ]
+      ]);
+      const { kind, pause, reveal } = asked(prompt);
+      expect([prompt, value(kind, "a voice from the stall, saying: let him off", "opacity", 0.55), pause < 0.55 && 0.55 < reveal]).toEqual([prompt, 1, true]);
+    }
+    // The debtor gone home free; then warmth comes over the stall, and sparks rise: Allah forgave him.
+    for (const prompt of ["What did Allah do for the trader?", "Being easy on people in debt is loved by Allah.", "Being gentle with people in debt is loved by Allah."]) {
+      expect([prompt, shown(prompt, ["a way, going home free", "warmth over the stall", "forgiven, rising 1", "forgiven, rising 5"]), moved(prompt, "forgiven, rising 5", "y")]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [0, -18]
+      ]);
+    }
+    // The birds: nothing in the field yet; then crops grow and grain lies on the ground, shining: His provision.
+    const provision = "What does true reliance on Allah bring?";
+    expect([shown(provision, ["the crops in the field", "the grain on the ground", "the grain, shining"]), moved(provision, "the crops in the field", "scale")]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0.2, 1]
+    ]);
+    // Slim birds in their nests at dawn; then they fly out hungry to the field, and the grain is eaten.
+    for (const prompt of [
+      "How do the birds leave in the morning?",
+      "How do the birds leave in the morning, in the hadith?",
+      "How does a bird go out, in the hadith?",
+      "In the hadith, birds leave in the morning how?",
+      "The birds stay in their nests and wait for food.",
+      "The bird still flies out to look for food.",
+      "The birds still go out to seek food, in the hadith."
+    ]) {
+      expect([prompt, shown(prompt, ["a bird, going out hungry 1", "a bird, going out hungry 3", "a bird, coming back full 1", "the dawn sky", "the grain on the ground"]), moved(prompt, "a bird, going out hungry 1", "x"), moved(prompt, "a bird, going out hungry 3", "x")]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 1, 1],
+          [1, 1, 0, 0, 0]
+        ],
+        [0, 86],
+        [0, 92]
+      ]);
+    }
+    // Still hungry in the field; then evening comes, and they fly back to their nests full and round.
+    const back = "How do they come back, in the hadith?";
+    expect([shown(back, ["a bird, going out hungry 1", "a bird, going out hungry 2", "a bird, coming back full 1", "a bird, coming back full 3", "the evening sky"]), moved(back, "a bird, coming back full 1", "x")]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [0, 0, 1, 1, 1]
+      ],
+      [0, -86]
+    ]);
+    // The sheep alone; then two flocks come in, one from each side.
+    const flocks = "How many flocks does the sheep wander between?";
+    expect([shown(flocks, ["a sheep, wandering", "a sheep of the first flock 1", "a sheep of the first flock 4", "a sheep of the second flock 1", "a sheep of the second flock 4"]), moved(flocks, "a sheep of the second flock 1", "x")]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [70, 0]
+    ]);
+    // With the first flock; then it goes to the second, and back between them, settling with neither.
+    const settles = "The sheep settles firmly with one flock.";
+    expect([shown(settles, ["its way, to the first flock", "its way, to the second flock", "its way, back between them"]), moved(settles, "a sheep, wandering", "x")]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      [-31.5, 0]
+    ]);
+    // The plant: nothing yet; then a fresh, soft plant grows, and no pine.
+    const plant = "What is the believer like, he ﷺ said?";
+    expect([shown(plant, ["a fresh, soft plant", "a pine, hard and straight"]), moved(plant, "a fresh, soft plant", "scale")]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0.15, 1]
+    ]);
+    // Bent by the wind from the right; then the wind is still, and it stands straight again.
+    const straight = "What does the plant do when the wind stops?";
+    expect([shown(straight, ["the wind, from the right"]), moved(straight, "a fresh, soft plant", "rotate")]).toEqual([[[1], [0]], [-26, 0]]);
+    // Upright; then the wind bends it one way and the other, and it stands straight again, not broken.
+    const bent = "Being bent by trials means a believer has lost his faith.";
+    const { kind: field, pause: still, reveal: again } = asked(bent);
+    expect([moved(bent, "a fresh, soft plant", "rotate"), [0.25, 0.38].map((t) => [still < t && t < again, value(field, "a fresh, soft plant", "rotate", t)]), shown(bent, ["a fresh, soft plant"])]).toEqual([
+      [0, 0],
+      [
+        [true, 26],
+        [true, -26]
+      ],
+      [[1], [1]]
+    ]);
+    // The living and the dead: two quiet homes; then a voice remembering in one of them.
+    expect(shown("What does dhikr mean?", ["a voice, remembering", "a way into the other home"])).toEqual([
+      [0, 0],
+      [1, 0]
+    ]);
+    // Both homes dim; then the home that remembers comes alive: its lamp bright, its door glowing, warmth and life rising.
+    for (const [prompt, answer] of [
+      ["Who is like the living, in the hadith?", "One who remembers his Lord"],
+      ["Who is like the living, in the hadith?", "One who remembers Allah"],
+      ["Whom is the one who remembers Allah like?", "Someone alive"],
+      ["The one who remembers Allah is like what?", "A living person"],
+      ["One who remembers Allah is like what?", "A living creature"],
+      ["Remembering Allah keeps the heart alive.", "True"],
+      ["Dhikr keeps the heart alive.", "True"]
+    ]) {
+      const { kind, pause, reveal } = asked(prompt, answer);
+      expect([prompt, answer, shown(prompt, ["its warmth, all around", "its door, glowing", "life in it, rising 1", "life in it, rising 4"], answer), [pause, reveal].map((t) => value(kind, "the lamp in the home that remembers", "opacity", t))]).toEqual([
+        prompt,
+        answer,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [0.55, 1]
+      ]);
+    }
+    // The other home still dimly lit; then its lamp goes out, and it stands dark and still.
+    for (const prompt of ["And the one who never remembers Him?", "Who is like the dead, in the hadith?", "One who does not remember Allah is like what?"]) {
+      expect([prompt, shown(prompt, ["the lamp in the other home", "the other home, dark and still", "its warmth, all around"])]).toEqual([
+        prompt,
+        [
+          [0.55, 0, 1],
+          [0, 0.35, 1]
+        ]
+      ]);
+    }
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {

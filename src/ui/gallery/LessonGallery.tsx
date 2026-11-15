@@ -997,6 +997,14 @@ const STATES: State[] = [
   { id: "scene-log-at-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-wooden-box" ask="How did he send the money" /> },
   { id: "scene-tied-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-like-tied-camels" ask="What happens if the camels" /> },
   { id: "scene-traveler", render: () => <SceneQuestionDemo lessonId="lesson-deep-duha1-like-a-rider-under-a-tree" ask="What did he compare himself to" /> },
+  // More of his likenesses: the dates with no smell, the debtor let off, the birds back full, the two flocks, the plant
+  // straight again when the wind stops, and the home gone dark.
+  { id: "scene-citron", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-like-a-citron" ask="A believer who does not recite" /> },
+  { id: "scene-forgiving-trader", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-forgiving-trader" ask="What did the trader do when" /> },
+  { id: "scene-hungry-birds", render: () => <SceneQuestionDemo lessonId="lesson-deep-ankabut4-like-the-birds" ask="How do they come back" /> },
+  { id: "scene-two-flocks", render: () => <SceneQuestionDemo lessonId="lesson-deep-munafiqun1-sheep-between-flocks" ask="How many flocks" /> },
+  { id: "scene-bending-plant", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-steady-on-the-path-a-plant-that-bends" ask="What does the plant do when" /> },
+  { id: "scene-remember", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-dhikr-living-dead" ask="And the one who never remembers" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
