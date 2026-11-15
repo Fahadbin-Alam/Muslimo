@@ -110,8 +110,9 @@ describe("which questions are asked on a scene", () => {
     // say after something goes wrong in place of what a believer does when something hard happens and whether saying
     // if only opens a door to Shaytan. The final quiz of "Jahannam" swaps two of its scene questions for two others.
     // Every one of them is still asked in its own lesson. "The Book of the Virtues of the Quran" gained a lesson, so its
-    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson).
-    expect(places).toBe(1931);
+    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). "The reward of dhikr"
+    // gained a lesson too, so its final quiz no longer asks which pair are the two words (still asked in its lesson).
+    expect(places).toBe(1930);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {

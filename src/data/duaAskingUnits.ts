@@ -1,17 +1,18 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Du'as unit: asking Allah well, from Sunan Abi Dawud, Jami at-Tirmidhi and Sunan Ibn Majah. Du'as that gather
-// much good, a du'a for all that is good, three du'as that are answered, the time between the adhan and the iqamah,
-// asking for pardon and well-being, asking for knowledge that benefits, and asking with the palms of the hands (no card
-// asks about the backs of the hands, which some scholars say face up when asking Allah to lift a trial). Every card is
-// one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight. Points the
-// schools differ on are left out, and none of these hadith is taught anywhere else in the app.
+// One more Du'as unit: asking Allah well, from Sahih Muslim, Sunan Abi Dawud, Jami at-Tirmidhi and Sunan Ibn Majah.
+// Du'as that gather much good, a du'a for all that is good, three du'as that are answered, the time between the adhan
+// and the iqamah, asking for pardon and well-being, asking for good and not for punishment to come sooner, asking for
+// knowledge that benefits, and asking with the palms of the hands (no card asks about the backs of the hands, which
+// some scholars say face up when asking Allah to lift a trial). Every card is one sahih or hasan hadith with its
+// number, narrator and grade, and its exact English words to highlight. Points the schools differ on are left out, and
+// none of these hadith is taught anywhere else in the app.
 
 const ASKING: DeepUnit = {
   key: "duas-asking-allah-well",
   topicId: "duas",
   branchId: "duas-asking-allah-well",
-  branch: { title: "Asking Allah well", description: "Du'as that gather much good, asking for all that is good, three du'as that are answered, the wait for the iqamah, pardon and well-being, useful knowledge, and open palms." },
+  branch: { title: "Asking Allah well", description: "Du'as that gather much good, asking for all that is good, three du'as that are answered, the wait for the iqamah, pardon and well-being, good and not punishment, useful knowledge, and open palms." },
   name: "asking Allah well",
   kind: "skill",
   lessonType: "skill",
@@ -79,6 +80,19 @@ const ASKING: DeepUnit = {
         { q: "Where did Abu Bakr stand and weep?", a: "On the minbar", wrong: ["In the market", "On a hilltop", "At the city gate"], why: "Abu Bakr stood upon the Minbar, then wept, and said what he had heard." },
         { q: "What two things did he ﷺ tell us to ask Allah for?", a: "Pardon and well-being", wrong: ["Riches and fame", "Power over people", "Gold and silver"], why: "Ask Allah for pardon and Al-Afiyah, for none has been given better, he ﷺ said." },
         { q: "No one is given anything better than well-being.", tf: true, why: "None has been given anything better than Al-Afiyah, Abu Bakr heard him ﷺ say." }
+      ]
+    },
+    {
+      slug: "good-not-punishment",
+      title: "Ask for good, not punishment",
+      line: "Do not ask Allah to punish you now; ask Him for good.",
+      facts: ["Told by Anas ibn Malik", "The sick man had grown as weak as a chick", "Our Lord, give us good in both worlds"],
+      source: hadith("muslim", "2688a", "Anas ibn Malik", "Sahih", "Anas said: the Messenger of Allah ﷺ visited a sick Muslim man who had grown as weak as a chick, and asked him: did you ask Allah for something? He said: yes, I used to say: O Allah, whatever You would punish me with in the Hereafter, bring it on me now in this world. He ﷺ said: Subhan Allah, you could not bear it. Why did you not say: O Allah, give us good in this world and good in the Hereafter, and save us from the punishment of the Fire?", "Impose punishment upon me earlier in this world, what Thou art going to impose upon me in the Hereafter"),
+      difficulty: 2,
+      questions: [
+        { q: "What had the sick man been asking Allah for?", a: "To be punished in this world", wrong: ["To be made rich in this world", "To be made famous in this world", "To be made a king in this world"], why: "Impose on me now what You would punish me with in the Hereafter, he used to say." },
+        { q: "What had the sick man become like?", a: "A weak little chick", wrong: ["A strong young lion", "A tall old tree", "A fast wild horse"], why: "He had grown feeble like a chick when he ﷺ came to visit him, Anas said." },
+        { q: "We should not ask Allah to rush His punishment onto us.", tf: true, why: "Subhan Allah, you could not bear it, he ﷺ told the man who had asked for that." }
       ]
     },
     {

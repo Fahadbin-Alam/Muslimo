@@ -67,6 +67,19 @@ const REWARD: DeepUnit = {
       ]
     },
     {
+      slug: "asr-twice-the-reward",
+      title: "Twice the reward for Asr",
+      line: "Whoever guards the Asr prayer has its reward twice.",
+      facts: ["Told by Abu Basrah al-Ghifari", "He ﷺ led them in Asr at al-Mukhammas", "Those before us lost this prayer"],
+      source: hadith("muslim", "830a", "Abu Basrah al-Ghifari", "Sahih", "Abu Basrah al-Ghifari said: the Messenger of Allah ﷺ led us in the Asr prayer at al-Mukhammas, then said: this prayer was presented to those who came before you, but they lost it, and whoever guards it will have his reward twice.", "he who guards it has two rewards in store for him"),
+      difficulty: 2,
+      questions: [
+        { q: "The one who guards Asr gets its reward how many times?", a: "Twice", wrong: ["Once", "Three times", "Four times"], why: "He who guards it has two rewards in store for him, he ﷺ said at al-Mukhammas." },
+        { q: "What did those before us do with this prayer, he ﷺ said?", a: "They lost it", wrong: ["They kept it well", "They prayed it twice", "They never heard of it"], why: "This prayer was presented to those gone before you, but they lost it, he ﷺ said." },
+        { q: "Asr is a prayer worth guarding with care.", tf: true, why: "Those before us lost it, and the one who guards it is rewarded twice, he ﷺ said." }
+      ]
+    },
+    {
       slug: "isha-fajr",
       title: "Isha and Fajr together",
       line: "Pray Isha and Fajr in jamaah: like praying the whole night.",
