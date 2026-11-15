@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Du'as unit: du'as from the Sunnah, all from Jami at-Tirmidhi. Asking by Allah's Greatest Name, a man's
-// du'a in the masjid, words that Allah affirms, a du'a to be ever grateful, the sajdah du'a a tree said in a dream,
-// and the du'a over the first fruit. Every card is one sahih or hasan hadith with its number, narrator and grade,
-// and its exact English words to highlight. Which name is the Greatest Name is left out, as scholars differ on it,
-// and none of these hadith is taught anywhere else in the app.
+// One more Du'as unit: du'as from the Sunnah, all from Jami at-Tirmidhi. Asking by Allah's Greatest Name, a man's du'a
+// in the masjid, words that Allah affirms, a du'a to be ever grateful, the sajdah du'a a tree said in a dream, the du'a
+// over the first fruit, and the du'a for fear of Allah he ﷺ said before standing up. Every card is one sahih or hasan
+// hadith with its number, narrator and grade, and its exact English words to highlight. Which name is the Greatest Name
+// is left out, as scholars differ on it, and none of these hadith is taught anywhere else in the app.
 
 const SUNNAH_DUAS: DeepUnit = {
   key: "duas-from-the-sunnah",
   topicId: "duas",
   branchId: "duas-from-the-sunnah",
-  branch: { title: "Du'as from the Sunnah", description: "Allah's Greatest Name, a man's du'a in the masjid, words Allah affirms, a du'a to be ever grateful, a tree in a dream, and the first fruit." },
+  branch: { title: "Du'as from the Sunnah", description: "Allah's Greatest Name, a man's du'a in the masjid, words Allah affirms, a du'a to be ever grateful, a tree in a dream, the first fruit, and fear that keeps us from sin." },
   name: "du'as from the Sunnah",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const SUNNAH_DUAS: DeepUnit = {
         { q: "Who did he ﷺ give the first fruit to?", a: "The smallest child he saw", wrong: ["The oldest man there", "The richest trader", "The first man he saw"], why: "First he ﷺ made du'a for blessing, then called a young child over, Abu Hurairah said." },
         { q: "Along with their fruits, what did he ﷺ ask Allah to bless?", a: "Their city", wrong: ["Their ships", "Their clothes", "Their markets"], why: "And bless for us our sa' and our mudd, he ﷺ also said." },
         { q: "He ﷺ asked for Madinah what Ibrahim had asked for Makkah.", tf: true, why: "Ibrahim is Your friend and Your Prophet, he ﷺ said in that du'a." }
+      ]
+    },
+    {
+      slug: "fear-that-keeps-from-sin",
+      title: "Fear that keeps us from sin",
+      line: "He ﷺ asked for fear of Allah that keeps us from sin.",
+      facts: ["Told by Ibn Umar", "He ﷺ rarely stood up from a sitting without it", "He ﷺ said it for his Companions"],
+      source: hadith("tirmidhi", "3502", "Ibn Umar", "Sahih (Darussalam)", "Ibn Umar said: rarely would the Messenger of Allah ﷺ stand up from a sitting without saying these words for his Companions: O Allah, give us a share of fear of You that comes between us and disobeying You, of obedience to You that brings us to Your Paradise, and of certainty that makes the troubles of this world easy for us.", "apportion for us, fear of You, that shall come between us and disobedience of You"),
+      difficulty: 3,
+      questions: [
+        { q: "What fear did he ﷺ ask Allah for, before standing up from a sitting?", a: "Fear of Allah", wrong: ["Fear of the dark", "Fear of the sea", "Fear of the cold"], why: "Allahumma qsim lana min khashyatika ma tahulu bihi baynana wa bayna ma'asik." },
+        { q: "In his ﷺ du'a for fear of Allah, what should certainty make easy?", a: "The troubles of this world", wrong: ["The heat of summer", "The cold of winter", "The length of the road"], why: "And of certainty, which shall make the afflictions of the world easy for us, he ﷺ asked." },
+        { q: "He ﷺ asked Allah for obedience that brings us to Paradise.", tf: true, why: "And of obedience to You, which shall cause us to obtain Your Paradise, he ﷺ said." }
       ]
     }
   ]
