@@ -9,23 +9,13 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="bar">
-      <a class="brand" href="./"><img src="icon.png" alt="">Muslimo</a>
-      <nav>
-        <a href="./">Support</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="delete-account.html" aria-current="page">Delete account</a>
-      </nav>
-    </div>
-  </header>
-  <main>
+  {{> header}}
+  <main class="page">
     <h1>Delete your Muslimo account</h1>
     <p class="updated">Muslimo is made by {{DEVELOPER_NAME}}.</p>
 
     <h2>Delete in the app</h2>
-    <ol>
+    <ol class="steps">
       <li>Open Muslimo and sign in.</li>
       <li>Open your profile and tap <strong>Settings</strong>.</li>
       <li>Scroll down, tap <strong>Delete account</strong> and confirm.</li>
@@ -34,7 +24,7 @@
     <h2>Delete without the app</h2>
     <p>Email <a href="mailto:{{SUPPORT_EMAIL}}?subject=Delete%20my%20Muslimo%20account">{{SUPPORT_EMAIL}}</a> from the email address on your account with the subject "Delete my Muslimo account". We confirm by email and delete the account within 30 days. If you write from a different address, we will ask you to confirm that the account is yours.</p>
 
-    <div class="callout">
+    <div class="callout warn">
       <strong>Subscriptions are separate.</strong> Deleting your account does not cancel a premium subscription. Cancel it first in your App Store account settings or in Google Play under Payments and subscriptions.
     </div>
 
@@ -56,6 +46,6 @@
     </ul>
     <p>Progress saved on your device without an account is removed when you uninstall the app.</p>
   </main>
-  <footer>Muslimo · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a></footer>
+  {{> footer}}
 </body>
 </html>
