@@ -1081,6 +1081,14 @@ const STATES: State[] = [
   { id: "scene-refuge-from-anger", render: () => <SceneQuestionDemo lessonId="lesson-deep-nahl6-refuge-calms-anger" ask="What would happen if he said it" /> },
   { id: "scene-gate-ar-rayyan", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahl-ar-rayyan" ask="Who enters by that gate" /> },
   { id: "scene-make-it-easy", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-bukhari-69" ask="What should we give people" /> },
+  // A question on each scene of what truly counts (round 79).
+  { id: "scene-needle-in-the-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibrahim1-o-my-servants" ask="kingdom if He gives everyone" /> },
+  { id: "scene-hearts-and-deeds", render: () => <SceneQuestionDemo lessonId="lesson-deep-taghabun1-allah-looks-at-hearts" ask="What does Allah look at" /> },
+  { id: "scene-real-strength", render: () => <SceneQuestionDemo lessonId="lesson-deep-anger-real-strength" ask="Who is truly strong" /> },
+  { id: "scene-treasure-of-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-musa-treasure" ask="call a treasure of Paradise" /> },
+  { id: "scene-hundred-levels", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf4-ask-allah-for-al-firdaws" ask="What flows from Al-Firdaws" /> },
+  { id: "scene-faith-at-the-pleiades", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah1-faith-at-the-pleiades" ask="say faith might be" /> },
+  { id: "scene-sacred-city", render: () => <SceneQuestionDemo lessonId="lesson-deep-naml6-sacred-since-creation" ask="pick up a lost item" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

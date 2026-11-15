@@ -1968,6 +1968,92 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should we give people, per the hadith?", "Good tidings", "Give them good tidings"],
     ["What did the Prophet ﷺ tell us to do?", "Make things easy", "Make things easy for people"],
     ["What should we give people?", "Good news", "Give them good tidings"]
+  ],
+  // Allah has forbidden oppression for Himself, so do not oppress one another; seek guidance of Him and food of Him;
+  // were all to ask and each be given, that would not decrease what He has, any more than a needle decreases the sea
+  // (Sahih Muslim 2577). (Forgiveness, the wicked not shrinking His dominion, who narrated it, 10:44, 40:17 and Ibn
+  // Kathir are not in the scene.)
+  "sign-needle-in-the-sea": [
+    ["What has Allah forbidden for Himself, per the hadith?", "Oppression", "I have forbidden oppression for Myself"],
+    ["Allah wrongs people a little now and then.", "False", "I have forbidden oppression for Myself"],
+    ["What happens to Allah's kingdom if He gives everyone what they ask?", "It does not decrease", "That would not decrease what I have", "Any more than a needle decreases the sea"],
+    ["What has Allah forbidden for Himself, in the hadith?", "Oppression", "I have forbidden oppression for Myself"],
+    ["What has Allah forbidden for Himself, per Muslim 2577?", "Injustice", "I have forbidden oppression for Myself"],
+    ["What does Allah say, per Muslim 2577?", "Seek food of Me, I will feed you", "Seek food of Me and I shall feed you"],
+    ["What must we seek for guidance?", "Ask Allah for it", "Seek guidance of Me and I shall guide you"]
+  ],
+  // Allah does not look to your faces and your wealth, but He looks to your heart and to your deeds (Sahih Muslim
+  // 2564c). (Who narrated it, a poor believer dearer than a rich chief, 34:37 and Ibn Kathir are not in the scene.)
+  "sign-hearts-and-deeds": [
+    ["What does Allah look at?", "Your heart and your deeds", "But He looks to your heart", "And to your deeds"],
+    ["Allah cares most about how pretty or rich you are.", "False", "Verily Allah does not look to your faces", "And your wealth"],
+    ["What does Allah look at, per Muslim 2564?", "Hearts and deeds", "But He looks to your heart", "And to your deeds"],
+    ["What does Allah look at, in the hadith?", "Hearts and deeds", "But He looks to your heart", "And to your deeds"],
+    ["What does Allah look at, per the hadith?", "Hearts and deeds", "But He looks to your heart", "And to your deeds"],
+    ["What does Allah not judge us by?", "Our faces and wealth", "Verily Allah does not look to your faces", "And your wealth"],
+    ["A rich person is better to Allah for being rich.", "False", "And your wealth"],
+    ["What does Allah not look at?", "Our faces and wealth", "Verily Allah does not look to your faces", "And your wealth"],
+    ["Allah judges people by their looks.", "False", "Verily Allah does not look to your faces"]
+  ],
+  // The strong is not the one who overcomes the people by his strength, but the one who controls himself while in
+  // anger (Sahih al-Bukhari 6114). (Who narrated it and 3:134 are not in the scene.)
+  "sign-real-strength": [
+    ["Who is truly strong?", "The one who controls his anger", "But the strong is the one", "Who controls himself while in anger"],
+    ["Beating others in a fight makes you truly strong.", "False", "The strong is not the one", "Who overcomes the people by his strength"],
+    ["Who is truly strong?", "One who controls himself when angry", "But the strong is the one", "Who controls himself while in anger"],
+    ["Winning a fight shows true strength.", "False", "The strong is not the one", "Who overcomes the people by his strength"],
+    ["Who is truly strong, in Bukhari 6114?", "One who controls himself when angry", "But the strong is the one", "Who controls himself while in anger"]
+  ],
+  // They said Takbir loudly on every high place; he said: be kind to yourselves, you are not calling a deaf or absent
+  // one, but an All-Hearer, an All-Seer; say la hawla wa la quwwata illa billah, for it is one of the treasures of
+  // Paradise (Sahih al-Bukhari 6384). (Abu Musa's name, what the words mean and Ibn Kathir are not in the scene.)
+  "sign-treasure-of-paradise": [
+    ["Which words did the Prophet ﷺ call a treasure of Paradise?", "La hawla wa la quwwata illa billah", "Say: La hawla wa la quwwata illa billah", "For it is one of the treasures of Paradise"],
+    ["We must shout our dhikr so Allah hears it.", "False", "O people! Be kind to yourselves", "You are calling an All-Hearer, an All-Seer"],
+    ["La hawla wa la quwwata illa billah is a treasure of where?", "Paradise", "For it is one of the treasures of Paradise"],
+    ["On that journey he ﷺ also said: Allah is not deaf or far away.", "True", "You are not calling a deaf or absent one", "You are calling an All-Hearer, an All-Seer"],
+    ["Which words are a treasure of Paradise?", "La hawla wa la quwwata illa billah", "Say: La hawla wa la quwwata illa billah", "For it is one of the treasures of Paradise"],
+    ["Why need they not shout, in the hadith?", "Allah hears and sees all", "You are not calling a deaf or absent one", "You are calling an All-Hearer, an All-Seer"]
+  ],
+  // Paradise has one hundred grades, as far apart as the heaven and the earth; when you ask Allah, ask for al-Firdaws,
+  // the best and highest part of Paradise, from which its rivers originate (Sahih al-Bukhari 2790). (23:11 and
+  // staying in it forever are not in the scene.)
+  "sign-hundred-levels": [
+    ["How many levels does Jannah have?", "One hundred", "Paradise has one hundred grades"],
+    ["Which level should you ask for?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
+    ["How far apart are two levels?", "Like the sky and the earth", "The distance between each of two grades", "Is like that between the heaven and the earth"],
+    ["How many levels does Paradise have, in the hadith?", "One hundred", "Paradise has one hundred grades"],
+    ["What should we ask Allah for, in the hadith?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
+    ["What flows from Al-Firdaws, in the hadith?", "The rivers of Paradise", "From it originate the rivers of Paradise"],
+    ["How far apart are two grades, in the hadith?", "Like heaven and earth", "The distance between each of two grades", "Is like that between the heaven and the earth"],
+    ["What comes from Al-Firdaws, in the hadith?", "The rivers of Paradise", "From it originate the rivers of Paradise"],
+    ["What should we ask Allah for, per the hadith?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
+    ["What should we ask Allah for, per Bukhari 2790?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
+    ["How many grades does Paradise have?", "One hundred", "Paradise has one hundred grades"],
+    ["What flows from Al-Firdaws?", "The rivers of Paradise", "From it originate the rivers of Paradise"],
+    ["What should we ask Allah for?", "Al-Firdaus", "When you ask Allah, ask for al-Firdaws"],
+    ["All of Paradise is one single level.", "False", "Paradise has one hundred grades"]
+  ],
+  // He was asked three times who the others in 62:3 are, and said: if faith were at Ath-Thurayya, the Pleiades, men,
+  // or a man, from these would attain it (Sahih al-Bukhari 4897). (Salman by name, where his hand was, Persia and
+  // when the surah came are not in the scene.)
+  "sign-faith-at-the-pleiades": [
+    ["What did he say Salman's people would reach?", "Faith, even at the stars", "If faith were at Ath-Thurayya, the Pleiades", "Men, or a man, from these would attain it"],
+    ["How many times was the question asked?", "Three times", "Who are they, O Allah's Messenger?", "I repeated my question thrice"],
+    ["Where did the Prophet ﷺ say faith might be?", "At Ath-Thurayya", "If faith were at Ath-Thurayya, the Pleiades"]
+  ],
+  // Allah made Makkah a sanctuary since the creation of the heavens and the earth, till the Day of Resurrection; its
+  // thorns are not uprooted, its game is not chased, and its fallen things are not picked up except by one who would
+  // announce them (Sahih al-Bukhari 1834).
+  "sign-sacred-city": [
+    ["Since when has Makkah been sacred?", "Since the heavens and earth were made", "Since the creation of the heavens and the earth"],
+    ["What may not be done to its animals?", "Chase them", "Its game should not be chased"],
+    ["Makkah stays sacred until the Day of Resurrection.", "True", "Till the Day of Resurrection"],
+    ["Since when has Makkah been a sanctuary?", "Since the heavens and earth were made", "Since the creation of the heavens and the earth"],
+    ["What must not be chased in Makkah?", "Its game animals", "Its game should not be chased"],
+    ["Who may pick up a lost item there?", "One who announces it", "Its fallen things should not be picked up", "Except by one who would announce it"],
+    ["Until when will it stay sacred?", "The Day of Resurrection", "Till the Day of Resurrection"],
+    ["In Makkah, people may chase its animals for sport.", "False", "Its game should not be chased"]
   ]
 };
 
