@@ -412,6 +412,20 @@ const SAD: DeepUnit = {
         { q: "Why not give away more?", a: "Better to leave heirs rich than poor", wrong: ["Charity is bad", "Wealth must be hidden", "Gifts are not rewarded"], why: "Heirs should not be left to beg." },
         { q: "When was Sa'd very ill?", a: "In the year of the last Hajj", wrong: ["At Badr", "In his childhood", "After Uhud"], why: "The Prophet ﷺ visited him then." }
       ]
+    },
+    {
+      slug: "guard-me-tonight",
+      title: "A guard for the night",
+      line: "Sa'd came by night to guard the Prophet ﷺ in Madinah.",
+      facts: ["Told by Aishah", "They heard the clatter of weapons", "Then the Prophet ﷺ slept"],
+      quote: { text: "لَيْتَ رَجُلاً مِنْ أَصْحَابِي صَالِحًا يَحْرُسُنِي اللَّيْلَةَ", reference: "Sahih al-Bukhari 2885" },
+      source: hadith("bukhari", "2885", "Aishah", "Sahih", "Aishah said: the Prophet ﷺ stayed awake one night, and when he came to Madinah he said: if only a righteous man of my Companions would guard me tonight. Then we heard the clatter of weapons. He ﷺ said: who is this? He said: I am Sa'd ibn Abi Waqqas, and I have come to guard you. Then the Prophet ﷺ slept.", "Would that a pious man from my companions guard me tonight"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ wish for that night?", a: "A righteous man to guard him", wrong: ["A guide to show the road", "A rider to bring news", "A guest to eat with him"], why: "Would that a pious man from my companions guard me tonight, he ﷺ said." },
+        { q: "What did they hear in the night?", a: "The clatter of weapons", wrong: ["The bleating of sheep", "The singing of birds", "The barking of dogs"], why: "Suddenly we heard the clatter of arms, and it was Sa'd ibn Abi Waqqas, Aishah said." },
+        { q: "After Sa'd came to guard him, the Prophet ﷺ slept.", tf: true, why: "Sa'd said he had come to guard him, and so the Prophet ﷺ slept that night." }
+      ]
     }
   ]
 };
