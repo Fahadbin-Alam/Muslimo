@@ -1,15 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Zakat unit: stories of charity, from Sahih al-Bukhari, Sunan Abi Dawud and Jami at-Tirmidhi. Charity
-// that reached a thief, Nusaybah's sheep, a Bedouin's camels, a man deep in debt, a whip no one asked for, and what
-// he ﷺ said in the shade of the Ka'bah. Every card is one sahih hadith with its number, narrator and grade, and its
-// exact English words to highlight, and none of them is taught anywhere else in the app.
+// One more Zakat unit: stories of charity, from Sahih al-Bukhari, Sahih Muslim, Sunan Abi Dawud and Jami at-Tirmidhi.
+// Charity that reached a thief, Nusaybah's sheep, a Bedouin's camels, a man deep in debt, a whip no one asked for, what
+// he ﷺ said in the shade of the Ka'bah, and the cloud sent to water the garden of a man who gave a third of its harvest
+// away. Every card is one sahih hadith with its number, narrator and grade, and its exact English words to highlight,
+// and none of them is taught anywhere else in the app.
 
 const STORIES: DeepUnit = {
   key: "zakat-stories-of-charity",
   topicId: "zakat",
   branchId: "zakat-stories-of-charity",
-  branch: { title: "Stories of charity", description: "Charity that reached a thief, Nusaybah's sheep, a Bedouin's camels, a man deep in debt, a fallen whip, and the shade of the Ka'bah." },
+  branch: { title: "Stories of charity", description: "Charity that reached a thief, Nusaybah's sheep, a Bedouin's camels, a man deep in debt, a fallen whip, the shade of the Ka'bah, and a cloud sent to a garden." },
   name: "stories of charity",
   kind: "skill",
   lessonType: "skill",
@@ -90,6 +91,19 @@ const STORIES: DeepUnit = {
         { q: "Where was he ﷺ sitting when Abu Dharr came?", a: "In the shade of the Ka'bah", wrong: ["Under a palm tree", "At the market", "On Mount Uhud"], why: "Abu Dharr reached him ﷺ while he sat there, saying: they are the losers." },
         { q: "Who did he ﷺ say were the losers?", a: "The wealthy, except those who give", wrong: ["The poor who have little", "Those who travel far", "Those who sleep early"], why: "They are the wealthy people, except the one who spends like this and like this." },
         { q: "Abu Dharr worried that the words were about him.", tf: true, why: "Abu Dharr asked himself what was wrong with him, and sat down, full of worry." }
+      ]
+    },
+    {
+      slug: "the-cloud-and-the-garden",
+      title: "The cloud and the garden",
+      line: "He gave a third in charity, and a cloud watered his garden.",
+      facts: ["Told by Abu Hurairah", "A third for charity, a third for his family", "The last third went back into the garden"],
+      source: hadith("muslim", "2984a", "Abu Hurairah", "Sahih", "Abu Hurairah said: the Prophet ﷺ said: a man in the wilderness heard a voice in a cloud say: water the garden of so-and-so. The cloud moved and poured its water on stony ground, and a channel carried it all away. He followed the water and found a man in his garden turning the water with his spade. He asked his name, and it was the name he had heard in the cloud. Then he asked what he did with his garden, and the man said: I look at what it yields; I give a third in charity, my family and I eat a third, and I put a third back into it.", "I give one-third as charity out of it and I and my children eat one-third of it"),
+      difficulty: 2,
+      questions: [
+        { q: "In the story he ﷺ told, what watered the man's garden?", a: "A cloud", wrong: ["A river", "A spring", "A lake"], why: "A voice in a cloud said: water the garden of so-and-so, and the cloud poured its water." },
+        { q: "How much of the harvest did the garden's owner give in charity?", a: "One third", wrong: ["One tenth", "One half", "One quarter"], why: "I give one-third as charity, and my family and I eat one-third, the owner said." },
+        { q: "The garden's owner put a third of the harvest back into his garden.", tf: true, why: "He said: one-third I return to it as investment." }
       ]
     }
   ]

@@ -291,6 +291,19 @@ const MINOR_SIGNS: DeepUnit = {
         { q: "What will its light fall on at Busra?", a: "The necks of the camels", wrong: ["The walls of the houses", "The tops of the palms", "The faces of the people"], why: "The fire will throw light on the necks of the camels at Busra, he ﷺ said." },
         { q: "The fire's light will reach as far as Busra.", tf: true, why: "The fire from Hijaz will light up the necks of the camels at Busra, he ﷺ said." }
       ]
+    },
+    {
+      slug: "the-righteous-pass-away",
+      title: "The righteous pass away",
+      line: "The righteous will pass away one after the other, he ﷺ said.",
+      facts: ["Told by Mirdas al-Aslami", "Husk: the dry skin left from grain", "Barley: a grain like wheat"],
+      source: hadith("bukhari", "6434", "Mirdas al-Aslami", "Sahih", "Mirdas al-Aslami said: the Prophet ﷺ said: the righteous will pass away one after the other, and there will remain useless people, like the useless husk of barley or of dates.", "useless people like the useless husk of barley seeds or bad dates"),
+      difficulty: 3,
+      questions: [
+        { q: "Who will pass away one after the other, he ﷺ said?", a: "The righteous", wrong: ["The kings", "The rich", "The strong"], why: "The righteous will depart in succession one after the other, he ﷺ said." },
+        { q: "What did he ﷺ liken the people left behind to?", a: "Useless husk", wrong: ["Ripe fruit", "Sweet honey", "Fresh milk"], why: "There will remain useless people like the useless husk of barley seeds or bad dates." },
+        { q: "After the righteous pass away, useless people will remain.", tf: true, why: "The righteous will depart one after the other, and useless people will remain, he ﷺ said." }
+      ]
     }
   ]
 };

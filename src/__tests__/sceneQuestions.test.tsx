@@ -97,13 +97,15 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    // The Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons. The
-    // "Spending, the Quran's way" unit's first review and final quiz now also draw on its lessons on 2:265, 2:272 and
-    // 2:274, so three of its scene questions are each asked in one place fewer (they are still asked in their lessons).
-    // "Zakat in Islam" now has seven lessons, so it gets a review card, which asks two of its scene questions, and its
-    // final quiz draws one more. "A fresh start" gained its lesson on 3:136, so its final quiz asks one scene question
-    // fewer (that question is still asked in its lesson). "Neighbors and guests" now has seven lessons, so it gets a
-    // review card, which asks one of its scene questions.
+    // "The reward of the adhan" unit's final quiz asks one of its scene questions: with five lessons it asked who was
+    // told to call the first adhan, and with seven it asks whether people had to guess the prayer time before the
+    // adhan (both are still asked in their lesson). The "Spending, the Quran's way" unit's first review and final
+    // quiz now also draw on its lessons on 2:265, 2:272 and 2:274, so three of its scene questions are each asked in
+    // one place fewer (they are still asked in their lessons). "Zakat in Islam" now has seven lessons, so it gets a
+    // review card, which asks two of its scene questions, and its final quiz draws one more. "A fresh start" gained
+    // its lesson on 3:136, so its final quiz asks one scene question fewer (that question is still asked in its
+    // lesson). "Neighbors and guests" now has seven lessons, so it gets a review card, which asks one of its scene
+    // questions.
     expect(places).toBe(1741);
   });
 
