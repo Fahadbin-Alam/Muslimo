@@ -1446,6 +1446,123 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many things follow the dead to the grave?", "Three", "Three follow the dead to his grave"],
     ["What stays with him?", "His deeds", "Two go back: his family and his wealth", "And his deeds stay with him"],
     ["Good deeds are the only friends that stay.", "True", "Two go back: his family and his wealth", "And his deeds stay with him"]
+  ],
+  // Every affair of a believer is good: thanks when joy comes, patience when harm comes, and that is for no one but the
+  // believer (Sahih Muslim 2999). (Who is with the patient in 2:153, who is excepted in 11:11, Ayyub, and who narrated
+  // it are not in the scene.)
+  "sign-good-in-every-state": [
+    ["What does a believer do when something good happens?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does a believer do when something hard happens?", "Is patient", "If harm comes, he is patient: good for him"],
+    ["For a believer, both good and hard times can be good.", "True", "If joy comes, he gives thanks: good for him", "If harm comes, he is patient: good for him"],
+    ["What should a believer do when good comes, in Muslim 2999?", "Be grateful", "If joy comes, he gives thanks: good for him"],
+    ["And when hardship comes?", "Be patient", "If harm comes, he is patient: good for him"],
+    ["What does a believer do when good comes, per the hadith?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does a believer do in trouble, per the hadith?", "Is patient", "If harm comes, he is patient: good for him"],
+    ["Good in every affair is for everyone, not only believers.", "False", "And this is for no one but the believer"],
+    ["What does the believer do when good comes, per the hadith?", "He gives thanks", "If joy comes, he gives thanks: good for him"],
+    ["For the believer, both ease and hardship can be good.", "True", "If joy comes, he gives thanks: good for him", "If harm comes, he is patient: good for him"],
+    ["What does a believer do in good times, in the hadith?", "He thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does a believer do in trouble?", "He is patient", "If harm comes, he is patient: good for him"],
+    ["What does the believer do in joy, in the hadith?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does the believer do in hardship, in the hadith?", "Is patient", "If harm comes, he is patient: good for him"],
+    ["In the hadith, every affair of a believer holds good.", "True", "Wonderful: every affair of the believer is good"],
+    ["What does a believer do in joy, in the hadith?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does he do in trouble, in the hadith?", "Endures it patiently", "If harm comes, he is patient: good for him"],
+    ["What does a believer do in good times?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does a believer do in hard times?", "Stays patient", "If harm comes, he is patient: good for him"],
+    ["What does a believer do in happy times?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does he do in trouble?", "Shows patience", "If harm comes, he is patient: good for him"],
+    ["For a believer, there is good in every affair.", "True", "Wonderful: every affair of the believer is good"],
+    ["What does a believer do when good comes?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
+    ["What does a believer do in trouble?", "Stays patient", "If harm comes, he is patient: good for him"],
+    ["Every affair holds good for a believer.", "True", "Wonderful: every affair of the believer is good"]
+  ],
+  // Who most deserves good company: your mother, three times, then your father (Sahih al-Bukhari 5971). (The ayahs of
+  // 46:15 on carrying and weaning are not in the scene.)
+  "sign-your-mother": [
+    ["How many times did the Prophet ﷺ say 'your mother'?", "Three", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["Who came after the mother?", "The father", "Then who? Your father"],
+    ["Mothers are given extra care in Islam.", "True", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["How many times did he ﷺ say: your mother?", "Three times", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["Who came next, after the mother?", "The father", "Then who? Your father"],
+    ["Being kind to your mother is a big deed in Islam.", "True", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["Whom did the Prophet ﷺ name three times for kindness?", "Your mother", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["Who most deserves good company, in the hadith?", "Your mother", "Your mother. Then who? Your mother"],
+    ["How many times was the mother named?", "Three", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["Who came after the mother, in the hadith?", "Your father", "Then who? Your father"],
+    ["How many times did the Prophet ﷺ say your mother?", "Three", "Your mother. Then who? Your mother", "Then who? Your mother"],
+    ["Who came fourth, per Bukhari 5971?", "Your father", "Then who? Your father"]
+  ],
+  // Do not think little of any good deed, even meeting your brother with a cheerful face (Sahih Muslim 2626). (To whom he
+  // said it, and what 31:18 and Ibn Kathir say, are not in the scene.)
+  "sign-cheerful-face": [
+    ["How should you meet your brother?", "With a smile", "With a cheerful face"],
+    ["A small good deed, like a smile, does not count.", "False", "Do not think little of any good deed"],
+    ["Which small deed did the Prophet ﷺ say not to look down on?", "Meeting your brother cheerfully", "Even if it is meeting your brother", "With a cheerful face"],
+    ["A smile is too small to count as a good deed.", "False", "Do not think little of any good deed"],
+    ["Which small good deed is named in the hadith?", "Meeting your brother with a cheerful face", "Even if it is meeting your brother", "With a cheerful face"],
+    ["What should we never think little of?", "Any good deed", "Do not think little of any good deed"],
+    ["A smile can be a good deed.", "True", "With a cheerful face"],
+    ["How should we meet our brother, in the hadith?", "With a cheerful face", "With a cheerful face"],
+    ["What good deed did he mention to Abu Dharr?", "A cheerful face", "With a cheerful face"],
+    ["What should we never think of good deeds?", "That any is too small", "Do not think little of any good deed"],
+    ["Smiling at a Muslim brother is a good deed.", "True", "With a cheerful face"]
+  ],
+  // The best are those who learn the Quran and teach it (Sahih al-Bukhari 5027). (Who narrated it, 35:29 and 54:17 are
+  // not in the scene.)
+  "sign-learn-and-teach": [
+    ["Who are the best among us?", "Those who learn and teach the Quran", "Are those who learn the Quran", "And teach it"],
+    ["Once you learn the Quran, you should keep it to yourself.", "False", "And teach it"],
+    ["Who are the best, in the hadith Uthman told?", "Those who learn and teach the Quran", "Are those who learn the Quran", "And teach it"],
+    ["Only learning the Quran is enough; teaching it does not matter.", "False", "And teach it"],
+    ["Who is best, in the hadith?", "Who learns and teaches Quran", "Are those who learn the Quran", "And teach it"],
+    ["Who are the best, per Bukhari 5027?", "Who learn and teach the Quran", "Are those who learn the Quran", "And teach it"],
+    ["Who are the best people, by this saying?", "Those who learn and teach the Quran", "Are those who learn the Quran", "And teach it"]
+  ],
+  // The believers in their mercy, love and kindness are like one body: when one part is unwell, the whole body shares
+  // its sleeplessness and fever (Sahih al-Bukhari 6011). (What 48:29 and 59:14 say is not in the scene.)
+  "sign-one-body": [
+    ["Believers are like what?", "One body", "Are like one body"],
+    ["What happens when one part hurts?", "The whole body feels it", "The whole body shares sleeplessness and fever"],
+    ["Muslims should care when others suffer.", "True", "The whole body shares sleeplessness and fever"],
+    ["What are believers like, in their love?", "One body", "Are like one body"],
+    ["What happens when one part of the body hurts?", "The whole body feels it", "The whole body shares sleeplessness and fever"],
+    ["Muslims should care when another Muslim is hurting.", "True", "The whole body shares sleeplessness and fever"],
+    ["What are the believers like, in their mercy to each other?", "One body", "Are like one body"],
+    ["What does the whole body share when one part is ill?", "Fever and sleeplessness", "The whole body shares sleeplessness and fever"],
+    ["A believer should feel the pain of other believers.", "True", "The whole body shares sleeplessness and fever"],
+    ["What are believers like, per Bukhari 6011?", "One body", "Are like one body"],
+    ["When one believer hurts, the others should feel it too.", "True", "The whole body shares sleeplessness and fever"],
+    ["What are believers like, in Bukhari 6011?", "One body", "Are like one body"],
+    ["If one part is unwell, what happens?", "The whole body shares it", "The whole body shares sleeplessness and fever"]
+  ],
+  // Say Bismillah, eat with your right hand, and eat from what is near you (Sahih al-Bukhari 5376). (How gently he
+  // taught is not drawn.)
+  "sign-eat-near": [
+    ["Which hand should you eat with?", "Your right hand", "O boy! Say Bismillah, eat with your right hand"],
+    ["What should you say before you eat?", "Bismillah", "O boy! Say Bismillah, eat with your right hand"],
+    ["Which food should you take from the dish?", "What is nearest to you", "And eat from what is near you"],
+    ["What did the Prophet ﷺ tell the boy to say first?", "Bismillah", "O boy! Say Bismillah, eat with your right hand"],
+    ["With which hand should we eat?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
+    ["What do you say before eating?", "Bismillah", "O boy! Say Bismillah, eat with your right hand"],
+    ["Which hand do you eat with?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
+    ["You should eat from what is nearest to you on the plate.", "True", "And eat from what is near you"],
+    ["Which hand did he ﷺ say to eat with?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
+    ["From which part of the dish should you eat?", "What is nearest to you", "And eat from what is near you"]
+  ],
+  // When will the Hour be? What have you prepared for it? Love of Allah and His Messenger. You will be with those you
+  // love; and they had never been so glad (Sahih al-Bukhari 3688). (Whom Anas loved, and 42:18, are not in the scene.)
+  "sign-those-you-love": [
+    ["What did the Prophet ﷺ promise a man who loved Allah and His Messenger?", "You will be with those you love", "You will be with those you love"],
+    ["The companions were very happy to hear they will be with those they love.", "True", "We had never been so glad"],
+    ["What did the Prophet ﷺ ask the man back?", "What have you prepared for it?", "What have you prepared for it?"],
+    ["What did the man say he had prepared?", "Love of Allah and His Messenger", "Nothing, but I love Allah and His Messenger"],
+    ["What was the good news?", "You will be with those you love", "You will be with those you love"],
+    ["What did the Prophet ﷺ ask the man, per Bukhari 3688?", "What have you prepared for it?", "What have you prepared for it?"],
+    ["What was the good news, per Bukhari 3688?", "You will be with those you love", "You will be with those you love"],
+    ["What did the Prophet ﷺ ask the man back?", "What have you prepared?", "What have you prepared for it?"],
+    ["What did the man say he had?", "Love of Allah and His Messenger", "Nothing, but I love Allah and His Messenger"],
+    ["The Companions were very glad to hear this answer.", "True", "We had never been so glad"]
   ]
 };
 
