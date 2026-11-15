@@ -1772,6 +1772,103 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Prophet ﷺ say after: I believe in Allah?", "Then stay firm on it", "And then remain steadfast to it"],
     ["What did the Prophet ﷺ tell Sufyan, per Muslim 38?", "Say I believe in Allah, then stand firm", "Say: I affirm my faith in Allah", "And then remain steadfast to it"],
     ["Sufyan wanted advice he would never need to ask anyone else about.", "True", "That I need ask no one other than you"]
+  ],
+  // The deed dearest to Allah is the prayer at its early fixed time, then being good and dutiful to one's parents
+  // (Sahih al-Bukhari 527). (Who asked, the prayer times of the day and 23:9 are not in the scene.)
+  "sign-dearest-deeds": [
+    ["____ on time is a deed Allah loves most.", "Salah", "The prayers at their early fixed times"],
+    ["Which deed did the Prophet ﷺ name first as dearest to Allah?", "Prayer on time", "The prayers at their early fixed times"],
+    ["What came second?", "Kindness to parents", "Then, to be good and dutiful to your parents"],
+    ["Which deed does Allah love most, per the hadith?", "Prayer on time", "The prayers at their early fixed times"],
+    ["What came next after prayer, per the hadith?", "Kindness to parents", "Then, to be good and dutiful to your parents"],
+    ["Which deed is dearest to Allah, per the hadith?", "Prayer at its early fixed time", "The prayers at their early fixed times"],
+    ["What came next after prayer?", "Being good to parents", "Then, to be good and dutiful to your parents"],
+    ["Delaying prayer to the last minute is best.", "False", "The prayers at their early fixed times"]
+  ],
+  // Truthfulness leads to righteousness and righteousness to Paradise, and a man keeps telling the truth until he is
+  // truthful; falsehood leads to wickedness and wickedness to the Fire (Sahih al-Bukhari 6094). (Who narrated it and
+  // 9:119 are not in the scene.)
+  "sign-truth-leads": [
+    ["Where does truthfulness lead?", "To goodness, then Jannah", "Truthfulness leads to righteousness", "And righteousness leads to Paradise"],
+    ["What happens to someone who keeps telling the truth?", "He becomes a truthful person", "A man keeps telling the truth until he is truthful"],
+    ["Lying leads to wrongdoing.", "True", "Falsehood leads to wickedness"],
+    ["Where does truthfulness lead, per the hadith?", "To righteousness", "Truthfulness leads to righteousness"],
+    ["Telling the truth again and again makes a person truthful.", "True", "A man keeps telling the truth until he is truthful"]
+  ],
+  // He who relieves a brother's suffering, Allah relieves his on the Day of Resurrection; he who hides a Muslim's
+  // faults, Allah hides his; Allah helps a servant while he helps his brother; and a path for knowledge is made easy
+  // to Paradise (Sahih Muslim 2699a). (Which knowledge is meant, and these lessons, are not in the scene.)
+  "sign-ease-a-hardship": [
+    ["Ease someone's hardship. What does Allah do?", "Eases yours on Judgment Day", "Allah relieves him on the Day of Resurrection"],
+    ["How long does Allah help a servant?", "While he helps his brother", "Allah helps him as long as he helps his brother"],
+    ["Hiding a Muslim's faults is also rewarded.", "True", "He who hides a Muslim's faults, Allah hides his"],
+    ["When does Allah help a person?", "While they help their brother", "Allah helps him as long as he helps his brother"],
+    ["What happens when you hide a friend's mistake?", "Allah hides yours", "He who hides a Muslim's faults, Allah hides his"],
+    ["Seeking knowledge makes the path to Jannah easy.", "True", "A path for knowledge, made easy to Paradise"],
+    ["Seeking knowledge makes which path easy?", "The path to Jannah", "A path for knowledge, made easy to Paradise"]
+  ],
+  // No one's deeds will save him, not even the Prophet's, unless Allah has mercy on him; so do good deeds properly,
+  // sincerely and moderately, and you will reach your target (Sahih al-Bukhari 6463). (35:35 is not in the scene.)
+  "sign-saved-by-mercy": [
+    ["What gets us into Jannah in the end?", "Allah's mercy", "Not even I, unless Allah has mercy on me"],
+    ["So should we stop doing good deeds?", "No: do them steadily and sincerely", "Do good deeds properly, sincerely and moderately"],
+    ["The Prophet ﷺ said even he needs Allah's mercy.", "True", "Not even I, unless Allah has mercy on me"],
+    ["What saves a person, in Bukhari 6463?", "Allah's mercy", "Not even I, unless Allah has mercy on me"],
+    ["How should we do good deeds, per the hadith?", "Sincerely and moderately", "Do good deeds properly, sincerely and moderately"],
+    ["We still do good deeds, while hoping for Allah's mercy.", "True", "Not even I, unless Allah has mercy on me", "Do good deeds properly, sincerely and moderately"],
+    ["What saves a person in the end?", "Allah's mercy", "Not even I, unless Allah has mercy on me"],
+    ["How should we do good deeds?", "Sincerely and moderately", "Do good deeds properly, sincerely and moderately"],
+    ["Since mercy saves us, deeds do not matter.", "False", "Do good deeds properly, sincerely and moderately"],
+    ["What saves a person, in the hadith?", "Allah's mercy", "Not even I, unless Allah has mercy on me"],
+    ["We should stop doing good since mercy saves us.", "False", "Do good deeds properly, sincerely and moderately"]
+  ],
+  // The best charity is the one given while healthy, afraid of poverty and wishing to be wealthy, not delayed until
+  // death is near, when it already belongs to others (Sahih al-Bukhari 1419). (Who narrated it and 63:10 are not in
+  // the scene.)
+  "sign-give-while-healthy": [
+    ["Which charity is best?", "Given while healthy and wanting money", "The charity you give while you are healthy", "Afraid of poverty and wishing to be wealthy"],
+    ["What did he ﷺ warn against?", "Waiting until death is near", "Do not delay it until death is near"],
+    ["Giving is harder, and better, when you want the money.", "True", "Afraid of poverty and wishing to be wealthy"],
+    ["Which charity is best, in the hadith?", "Given while healthy", "The charity you give while you are healthy"],
+    ["Until when should charity not be delayed?", "Approaching death", "Do not delay it until death is near"],
+    ["When is charity best, per the hadith?", "While healthy", "The charity you give while you are healthy"],
+    ["What feeling makes the giving greater?", "Fear of becoming poor", "Afraid of poverty and wishing to be wealthy"],
+    ["What does the hadith say not to delay?", "Charity", "Do not delay it until death is near"],
+    ["When is it too late to give?", "When death is near", "Do not delay it until death is near", "And it already belongs to such and such"],
+    ["Which charity is best, per the hadith?", "Given while healthy", "The charity you give while you are healthy"],
+    ["Delaying charity until the last moment is just as good.", "False", "Do not delay it until death is near", "And it already belongs to such and such"],
+    ["How does the giver feel about wealth, per the hadith?", "He wishes to become wealthy", "Afraid of poverty and wishing to be wealthy"]
+  ],
+  // A strong believer is more lovable to Allah than a weak one, and there is good in everyone; cherish what benefits
+  // you and seek Allah's help; in trouble, do not say "if only" but: Allah did what He had ordained, for "if" opens
+  // the gate for Satan (Sahih Muslim 2664).
+  "sign-strong-believer": [
+    ["What should we say when something bad happens?", "Allah decreed and did as He willed", "But say: Allah did what He had ordained"],
+    ["What does 'if only' open, as he ﷺ said?", "The door to Satan", "If trouble comes, don't say: If only I had", "For your 'if' opens the gate for Satan"],
+    ["Accepting the decree brings peace to the heart.", "True", "But say: Allah did what He had ordained"],
+    ["Which believer is dearer to Allah?", "The strong believer", "A strong believer is more lovable to Allah"],
+    ["What should you do with what benefits you?", "Strive for it, with Allah's help", "Cherish what benefits you, seek Allah's help"],
+    ["There is good in every believer.", "True", "Than a weak believer; there is good in everyone"],
+    ["What should you say after something goes wrong?", "Allah decreed and did what He willed", "But say: Allah did what He had ordained"],
+    ["Which believer is more loved by Allah?", "The strong believer", "A strong believer is more lovable to Allah"],
+    ["Saying if only opens a door to Shaytan.", "True", "If trouble comes, don't say: If only I had", "For your 'if' opens the gate for Satan"],
+    ["Whom is Allah more pleased with, per Muslim 2664?", "A strong believer", "A strong believer is more lovable to Allah"],
+    ["What should we say when trouble comes?", "Allah did what He ordained", "But say: Allah did what He had ordained"],
+    ["Saying if only I had is the best reply to trouble.", "False", "If trouble comes, don't say: If only I had", "But say: Allah did what He had ordained"],
+    ["Who is more loved by Allah, per Muslim 2664?", "The strong believer", "A strong believer is more lovable to Allah"],
+    ["Is there good in the weak believer too?", "Yes, there is good in both", "Than a weak believer; there is good in everyone"],
+    ["What does the hadith say to do in trouble?", "Seek Allah's help, do not lose heart", "Cherish what benefits you, seek Allah's help"],
+    ["What should we say after trouble?", "Allah decreed it", "But say: Allah did what He had ordained"],
+    ["What does if only open, per the hadith?", "The way for Satan", "If trouble comes, don't say: If only I had", "For your 'if' opens the gate for Satan"],
+    ["A strong believer is more loved by Allah.", "True", "A strong believer is more lovable to Allah"]
+  ],
+  // If anyone forgets a prayer, he should pray it when he remembers it; there is no expiation except to pray it
+  // (Sahih al-Bukhari 597). (Sleeping through a prayer, the prayer times, how serious missing one is and 20:14 are
+  // not in the scene.)
+  "sign-forgotten-prayer": [
+    ["What should one do with a forgotten prayer?", "Pray it when remembered", "He should pray it when he remembers it"],
+    ["Is there another expiation, in the hadith?", "No, only praying it", "There is no expiation except to pray it"],
+    ["If you miss a prayer, pray it as ____ as you can.", "soon", "He should pray it when he remembers it"]
   ]
 };
 
