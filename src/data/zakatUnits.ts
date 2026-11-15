@@ -41,6 +41,20 @@ const PILLAR: DeepUnit = {
       ]
     },
     {
+      slug: "faith-prayer-zakat",
+      title: "Faith, prayer and zakat",
+      line: "Believers who pray and give zakat have their reward with Allah.",
+      facts: ["Quran 2:277", "Faith, good deeds, prayer, zakat"],
+      quote: quranQuote(2, 277),
+      source: quran(2, 277, "Those who believe, do righteous deeds, establish prayer and give zakat will have their reward with their Lord, and there will be no fear concerning them, nor will they grieve."),
+      difficulty: 1,
+      questions: [
+        { q: "Which two acts of worship does Quran 2:277 name?", a: "Prayer and zakat", wrong: ["Hajj and fasting", "Hajj and Umrah", "Fasting and Umrah"], why: "Those who believe, do good, establish prayer and give zakat have their reward." },
+        { q: "What does Quran 2:277 name before prayer and zakat?", a: "Faith and good deeds", wrong: ["Wealth and children", "Trade and travel", "Land and houses"], why: "First come faith and righteous deeds, then prayer and zakat." },
+        { q: "Quran 2:277 promises these believers no fear and no grief.", tf: true, why: "There will be no fear concerning them, nor will they grieve." }
+      ]
+    },
+    {
       slug: "rich-to-poor",
       title: "From the rich to the poor",
       line: "Zakat is taken from their rich and given to their poor.",
