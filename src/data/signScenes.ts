@@ -217,7 +217,20 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - one who has the Quran by heart, like the owner of tied camels: kept while tied, gone when let go; and keep
  *   reviewing it, for it slips away faster (Sahih al-Bukhari 5031, 5033);
  * - be in this world as a stranger, or a traveler on his way (Sahih al-Bukhari 6416), like a rider who rests in the
- *   shade of a tree, then goes on and leaves it (Jami at-Tirmidhi 2377).
+ *   shade of a tree, then goes on and leaves it (Jami at-Tirmidhi 2377);
+ *
+ * and more of his likenesses (exampleArt.ts draws them):
+ *
+ * - a believer who recites the Quran like a citron, which smells good and tastes good, and one who does not like a
+ *   date, which tastes good and has no smell (Sahih al-Bukhari 5020);
+ * - the trader who let off those in hardship, so that Allah might let him off; and Allah forgave him (Sahih
+ *   al-Bukhari 2078);
+ * - if you relied on Allah as you should, He would provide for you as for the birds, which go out in the morning
+ *   hungry and come back in the evening full (Jami at-Tirmidhi 2344);
+ * - a hypocrite like a sheep wandering between two flocks, to this one once and to that one once (Sahih Muslim 2784);
+ * - the believer like a fresh plant, which the wind bends and which stands straight again when it is still, and the
+ *   wicked like a pine, hard and straight, until it is broken (Sahih al-Bukhari 5644);
+ * - one who remembers his Lord and one who does not, like the living and the dead (Sahih al-Bukhari 6407).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -237,7 +250,9 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * is only a haze over the land; the people of the likenesses are only their dashed ways and their voices, no hand is
  * drawn, and the hundred parts of mercy are only rings to count them, with nothing coming down from the sky; the
  * people of the stories he ﷺ told are only their dashed ways and their voices, what each one in the cave did is only
- * things and animals in a picture, and no page of the Quran is drawn, only a voice reciting.
+ * things and animals in a picture, and no page of the Quran is drawn, only a voice reciting; and in his other
+ * likenesses, the one who recites, the trader and the one who remembers are only their voices and their dashed ways,
+ * and the pine is broken only by the wind.
  */
 
 export type SignKind =
@@ -334,7 +349,13 @@ export type SignKind =
   | "shut-cave"
   | "log-at-sea"
   | "tied-camels"
-  | "traveler";
+  | "traveler"
+  | "citron"
+  | "forgiving-trader"
+  | "hungry-birds"
+  | "two-flocks"
+  | "bending-plant"
+  | "remember";
 
 export type SignScene = {
   id: string;
@@ -979,6 +1000,46 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ took Ibn Umar by the shoulder and said: be in this world as if you were a stranger, or a traveler on his way. And Ibn Umar used to say: at evening, do not wait for the morning, and at morning, do not wait for the evening. Once, when he ﷺ had slept on a mat that marked his side, he said: I am in this world only like a rider who rests in the shade of a tree, then goes on and leaves it.",
     sources: [bukhari("6416"), tirmidhi("2377")]
+  },
+  {
+    id: "sign-citron",
+    kind: "citron",
+    caption:
+      "The Prophet ﷺ said: a believer who recites the Quran is like a citron: it smells good, and it tastes good. And a believer who does not recite the Quran is like a date: it tastes good, but it has no smell.",
+    sources: [bukhari("5020")]
+  },
+  {
+    id: "sign-forgiving-trader",
+    kind: "forgiving-trader",
+    caption:
+      "The Prophet ﷺ told of a trader who used to lend to people. When he saw one in hardship, he said to his helpers: let him off, so that Allah may let us off. So Allah forgave him.",
+    sources: [bukhari("2078")]
+  },
+  {
+    id: "sign-hungry-birds",
+    kind: "hungry-birds",
+    caption:
+      "The Prophet ﷺ said: if you relied on Allah as He should be relied on, He would provide for you as He provides for the birds: they go out in the morning hungry, and come back in the evening full.",
+    sources: [tirmidhi("2344")]
+  },
+  {
+    id: "sign-two-flocks",
+    kind: "two-flocks",
+    caption: "The Prophet ﷺ said: the likeness of a hypocrite is that of a sheep wandering between two flocks: it goes to this one once, and to that one once.",
+    sources: [muslim("2784")]
+  },
+  {
+    id: "sign-bending-plant",
+    kind: "bending-plant",
+    caption:
+      "The Prophet ﷺ said: the believer is like a fresh, soft plant: from wherever the wind comes, it bends it, and when the wind is still, it stands straight again. So the believer is bent by trials. And the wicked is like a pine, hard and straight, until Allah breaks it when He wills.",
+    sources: [bukhari("5644")]
+  },
+  {
+    id: "sign-remember",
+    kind: "remember",
+    caption: "The Prophet ﷺ said: the likeness of one who remembers his Lord and one who does not remember Him is that of the living and the dead.",
+    sources: [bukhari("6407")]
   }
 ];
 
@@ -1721,7 +1782,28 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-naziat4-a-stranger-or-a-traveller": "sign-traveler",
   "deep-humazah1-like-a-traveler": "sign-traveler",
   "deep-qiyamah2-a-stranger-or-a-traveler": "sign-traveler",
-  "deep-duha1-like-a-rider-under-a-tree": "sign-traveler"
+  "deep-duha1-like-a-rider-under-a-tree": "sign-traveler",
+  // One who recites the Quran like a citron, and one who does not like a date (Sahih al-Bukhari 5020).
+  "deep-book-quran-virtues-like-a-citron": "sign-citron",
+  // The trader who let off those in hardship, and Allah forgave him (Sahih al-Bukhari 2078).
+  "deep-hadith-stories-the-forgiving-trader": "sign-forgiving-trader",
+  "deep-book-trade-forgive-the-debtor": "sign-forgiving-trader",
+  // The birds that go out hungry and come back full (Jami at-Tirmidhi 2344), and the lesson on 67:15 that teaches it:
+  // walk its paths and eat of His provision, working and trusting Allah.
+  "deep-mulk3-like-the-birds": "sign-hungry-birds",
+  "deep-mumtahanah2-like-the-birds": "sign-hungry-birds",
+  "deep-ankabut4-like-the-birds": "sign-hungry-birds",
+  "deep-mulk-earth": "sign-hungry-birds",
+  // A sheep wandering between two flocks (Sahih Muslim 2784).
+  "deep-munafiqun1-sheep-between-flocks": "sign-two-flocks",
+  // The fresh plant the wind bends, and the hard pine (Sahih al-Bukhari 5644).
+  "deep-aqidah-steady-on-the-path-a-plant-that-bends": "sign-bending-plant",
+  // One who remembers his Lord and one who does not, like the living and the dead (Sahih al-Bukhari 6407).
+  "deep-kids-dhikr-alive-heart": "sign-remember",
+  "deep-dua-dhikr-living-dead": "sign-remember",
+  "deep-raad3-living-and-dead": "sign-remember",
+  "deep-ahzab2-remember-allah-much": "sign-remember",
+  "deep-mujadila3-living-heart": "sign-remember"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

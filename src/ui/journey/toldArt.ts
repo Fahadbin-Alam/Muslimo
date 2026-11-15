@@ -15,11 +15,18 @@ import { crescent, home } from "./trialArt";
  * from the sky: a good deed is sparks rising.
  */
 
-type Track = { xy?: [number, number, number][]; opacity?: [number, number][]; scale?: [number, number][]; rotate?: [number, number][] };
+export type Track = {
+  xy?: [number, number, number][];
+  opacity?: [number, number][];
+  scale?: [number, number][];
+  scaleX?: [number, number][];
+  scaleY?: [number, number][];
+  rotate?: [number, number][];
+};
 
 /** Keys from a part's tracks, each a list of [at, value] (or [at, x, y]), straight between, held before the first and after the last. */
-function track({ xy, opacity, scale, rotate }: Track): SignKeys {
-  const lists = ([xy, opacity, scale, rotate] as (number[][] | undefined)[]).filter((list): list is number[][] => Boolean(list));
+export function track({ xy, opacity, scale, scaleX, scaleY, rotate }: Track): SignKeys {
+  const lists = ([xy, opacity, scale, scaleX, scaleY, rotate] as (number[][] | undefined)[]).filter((list): list is number[][] => Boolean(list));
   const at = [...new Set([0, ...lists.flatMap((list) => list.map(([time]) => time))])].sort((a, b) => a - b);
   const valueAt = (list: number[][], time: number, k: number) => {
     if (time <= list[0][0]) return list[0][k];
@@ -35,12 +42,14 @@ function track({ xy, opacity, scale, rotate }: Track): SignKeys {
     keys.y = at.map((time) => n(valueAt(xy, time, 2)));
   }
   if (scale) keys.scale = at.map((time) => Math.round(valueAt(scale, time, 1) * 1000) / 1000);
+  if (scaleX) keys.scaleX = at.map((time) => Math.round(valueAt(scaleX, time, 1) * 1000) / 1000);
+  if (scaleY) keys.scaleY = at.map((time) => Math.round(valueAt(scaleY, time, 1) * 1000) / 1000);
   if (rotate) keys.rotate = at.map((time) => n(valueAt(rotate, time, 1)));
   return keys;
 }
 
 /** Sparks rising quickly from each of `list`, one after another from `start`, `step` apart, each gone 0.03 after it rose. */
-const quickSparks = (label: string, list: [number, number][], start: number, step: number): SignPart[] =>
+export const quickSparks = (label: string, list: [number, number][], start: number, step: number): SignPart[] =>
   list.map(([x, y], i) => {
     const from = at3(start + i * step);
     return {
@@ -52,7 +61,7 @@ const quickSparks = (label: string, list: [number, number][], start: number, ste
   });
 
 /** Opacity that shows a part from `from` to `to` and hides it from `hide` to `gone`, as a track. */
-const shownWhile = (from: number, to: number, hide: number, gone: number): [number, number][] => [
+export const shownWhile = (from: number, to: number, hide: number, gone: number): [number, number][] => [
   [from, 0],
   [to, 1],
   [hide, 1],
