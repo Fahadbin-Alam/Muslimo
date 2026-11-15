@@ -694,6 +694,20 @@ const DHIKR: DeepUnit = {
       ]
     },
     {
+      slug: "fingers-will-speak",
+      title: "Fingers that will speak",
+      line: "Count your dhikr on your fingers: they will be made to speak.",
+      facts: ["Told by Yusayrah, one of the women who emigrated", "Count dhikr on the fingertips", "The fingers will be asked about it"],
+      quote: { text: "أَمَرَهُنَّ أَنْ يُرَاعِينَ بِالتَّكْبِيرِ وَالتَّقْدِيسِ وَالتَّهْلِيلِ وَأَنْ يَعْقِدْنَ بِالأَنَامِلِ فَإِنَّهُنَّ مَسْئُولاَتٌ مُسْتَنْطَقَاتٌ", reference: "Sunan Abi Dawud 1501" },
+      source: hadith("abudawud", "1501", "Yusayrah", "Hasan (Al-Albani)", "Yusayrah, one of the women who emigrated, said: the Prophet ﷺ told the women to keep up the remembrance of Allah, saying: Allah is most great, Glory be to the King, the Holy, and there is no god but Allah, and to count them on their fingers, for the fingers will be questioned and made to speak.", "will be questioned and asked to speak"),
+      difficulty: 2,
+      questions: [
+        { q: "Why count dhikr on the fingers, he ﷺ said?", a: "They will be asked and made to speak", wrong: ["They will grow much longer", "They will turn into gold", "They will feel much warmer"], why: "Count them on the fingers, for they will be questioned and asked to speak, he ﷺ said." },
+        { q: "Whom did he ﷺ tell to count dhikr on their fingers?", a: "The emigrant women", wrong: ["The Persian kings", "The Yemeni traders", "The desert poets"], why: "He ﷺ told the women emigrants to keep up takbir and tahlil, Yusayrah said." },
+        { q: "Counting dhikr on our fingers is a good way to count it.", tf: true, why: "He ﷺ told the women to count dhikr on their fingertips, for those will be questioned." }
+      ]
+    },
+    {
       slug: "treasure",
       title: "A treasure of Paradise",
       line: "La hawla wa la quwwata illa billah is a treasure of Paradise.",
