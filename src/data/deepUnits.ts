@@ -2228,6 +2228,19 @@ const NEIGHBORS: DeepUnit = {
       ]
     },
     {
+      slug: "patience-with-a-neighbor",
+      title: "Patience with a neighbor",
+      line: "When a neighbor hurts you, first be patient.",
+      facts: ["Told by Abu Hurairah", "The man came back twice or thrice", "In the end the neighbor stopped"],
+      source: hadith("abudawud", "5153", "Abu Hurairah", "Hasan Sahih (Al-Albani)", "Abu Hurairah said: a man came to the Prophet ﷺ complaining about his neighbor. He said: go and have patience. The man came twice or thrice, and he said: go and put your things out on the road. People asked him why, he told them, and they spoke against the neighbor. Then the neighbor came and said: come back, you will not see anything from me that you dislike.", "go and have patience. He again came to him twice or thrice"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ first tell the man whose neighbor hurt him?", a: "Go and have patience", wrong: ["Go and build a wall", "Go and sell your house", "Go and plant a tree"], why: "He said: go and have patience, as Abu Hurairah reported in Sunan Abi Dawud 5153." },
+        { q: "After people asked about the things on the road, what did the neighbor do?", a: "He asked him to come back", wrong: ["He moved to a new town", "He sold his own house", "He built a high wall"], why: "Return, you will not see from me anything which you dislike, the neighbor said." },
+        { q: "Patience comes first with a neighbor who hurts you.", tf: true, why: "When the man first complained of his neighbor, he ﷺ said: go and have patience." }
+      ]
+    },
+    {
       slug: "small-gift",
       title: "No gift is too small",
       line: "Never scorn a gift to a neighbor, even a sheep's hoof.",
