@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(898);
+    expect(asks.length).toBe(918);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -98,7 +98,7 @@ describe("which questions are asked on a scene", () => {
       }
     }
     // The Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons.
-    expect(places).toBe(1270);
+    expect(places).toBe(1304);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -2444,6 +2444,136 @@ describe("where the scene waits and where it stops", () => {
         [true, 1]
       ]);
     }
+  });
+
+  it("waits on more scenes from his ﷺ life and from what he told before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-lamp-out", "sign-helped-at-home", "sign-a-span-closer", "sign-uhud-shook", "sign-greeting-stone", "sign-around-us", "sign-blessed-water"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(20);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The guest come in; then the little ones go to the mat and a blanket covers them.
+    const food = "What food did the wife have?";
+    expect([moved(food, "the little ones' places", "x"), shown(food, ["a blanket over the little ones"])]).toEqual([[0, 37], [[0], [1]]]);
+    // The lamp still lit and the food not eaten; then the light goes out, the room is dark, and the food is eaten.
+    const light = "Why did they put out the light?";
+    expect([shown(light, ["the lamp's light", "the room, dark"]), moved(light, "the food in it", "scaleY"), moved(light, "a small pot of food", "x")]).toEqual([
+      [
+        [1, 0],
+        [0, 0.6]
+      ],
+      [1, 0.12],
+      [0, -6]
+    ]);
+    // Night still; then the morning comes, and praise rises.
+    expect(shown("This story led to the words of 59:9.", ["the window at dawn", "praise, rising 1", "praise, rising 3"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // Home, and nothing done yet; then the way goes from one of his family to the next, a warm glow on each.
+    expect(shown("What did the Prophet ﷺ do at home?", ["a way, going to the first of them", "the way, going to the last", "a warm glow on the first place", "a warm glow on the last place"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    // The call to prayer heard; then the way goes out to the mosque, and the prayer rises.
+    for (const prompt of ["What did he do when prayer time came?", "What did he ﷺ do when prayer time came?"]) {
+      expect([prompt, shown(prompt, ["a way, out to the mosque", "the prayer, rising 1"]), moved(prompt, "the sun", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [52, 52]
+      ]);
+    }
+    // A voice has asked; then a voice from the hut answers, and a way sets out for the village.
+    expect(shown("Where was the man going, in the hadith?", ["a way, setting out for the village", "the way, going on"])).toEqual([
+      [0, 0],
+      [1, 0]
+    ]);
+    // On the road; then the way goes on, and stops at a ring.
+    expect(shown("Where did he die?", ["the way, going on", "a ring, where the way stopped"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // The villages moved; then the two are measured, the way's end glows and forgiveness rises.
+    for (const prompt of ["How much closer was he to the good village?", "How close was he to the good town?", "What happened to him at the end?"]) {
+      expect([prompt, shown(prompt, ["a line, measured to the village he left", "a line, measured to the village ahead", "a glow, where the way stopped", "forgiveness, rising 1"]), moved(prompt, "the village ahead", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [-6, -6]
+      ]);
+    }
+    // "Be firm" said and the mountain still; then a glow on each place in turn, and light rises.
+    for (const prompt of ["What did the Prophet ﷺ call Abu Bakr that day?", "What did the Prophet ﷺ call Uthman on Uhud?"]) {
+      expect([prompt, shown(prompt, ["a glow on the first place", "a glow on the second place", "glows on the other two places", "light, rising from the top 1"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // A way along the valley, the stone silent; then the way passes it, and a voice greets from it as it glows.
+    const greet = "What did the stone in Makkah use to do?";
+    expect(shown(greet, ["the way, passing the stone", "a voice from the stone, greeting", "a glow on the stone"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The voice again; then the stone shines, and light rises.
+    expect(shown("He ﷺ said he still knew that stone.", ["the stone, shining", "light, rising from the stone 1"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // Nothing yet; then a voice in the mosque asks.
+    expect(shown("When did the man ask him ﷺ to pray for rain?", ["a voice in the mosque, asking", "a cloud like a shield"])).toEqual([
+      [0, 1],
+      [1, 1]
+    ]);
+    // A week of rain on the town and around it; then a voice prays again, the clouds part to the hills, and the rain
+    // stops on the town but not around it.
+    const around = "What did he ﷺ say when the rain had to stop?";
+    expect([shown(around, ["rain on the town", "rain on the hills around"]), moved(around, "rain clouds to the left", "x"), moved(around, "rain clouds to the right", "x")]).toEqual([
+      [
+        [1, 1],
+        [0, 1]
+      ],
+      [0, -38],
+      [0, 38]
+    ]);
+    // The rain stopped; then the sun comes out, and ways walk out in it.
+    expect(shown("After the second du'a, they walked out in the sun.", ["the sun", "a way, walking out in the sun", "another way, walking out in the sun"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // A little water in the bowl; then a voice by it, and the water rises and wells up.
+    const blessing = "Whom did he ﷺ say the blessing was from?";
+    expect([shown(blessing, ["a voice by the bowl", "water, welling up"]), moved(blessing, "the water in the bowl", "scale")]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0.4, 1]
+    ]);
+    // No meal yet; then a meal is set out, voices come from the food, and praise rises.
+    expect(shown("What did the Companions hear, in the hadith?", ["a meal on a cloth", "voices from the food", "praise, rising from the food 1"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
