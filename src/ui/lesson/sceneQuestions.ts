@@ -1869,6 +1869,105 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should one do with a forgotten prayer?", "Pray it when remembered", "He should pray it when he remembers it"],
     ["Is there another expiation, in the hadith?", "No, only praying it", "There is no expiation except to pray it"],
     ["If you miss a prayer, pray it as ____ as you can.", "soon", "He should pray it when he remembers it"]
+  ],
+  // Whoever has a mustard seed of pride in his heart will not enter Paradise; liking fine clothes and shoes is not
+  // pride, for Allah is beautiful and loves beauty; pride is rejecting the truth and looking down on people (Sahih
+  // Muslim 91). (Ibn Kathir, 3:21, 46:11 and the first pride, of Iblis, are not in the scene.)
+  "sign-mustard-of-pride": [
+    ["What is pride, as the Prophet ﷺ explained it?", "Rejecting truth and looking down on people", "Pride is rejecting the truth", "And looking down on people"],
+    ["Is liking nice clothes pride?", "No, Allah loves beauty", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"],
+    ["How much pride keeps a person from Jannah?", "Even a mustard seed", "Whoever has a mustard seed of pride in his heart", "Will not enter Paradise"],
+    ["Liking nice clothes is pride.", "False", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"],
+    ["What is pride, in Muslim 91?", "Rejecting truth and scorning people", "Pride is rejecting the truth", "And looking down on people"],
+    ["Wanting fine clothes is itself pride.", "False", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"],
+    ["Is liking fine clothes pride?", "No, Allah loves beauty", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"],
+    ["What is pride, per the Prophet ﷺ?", "Rejecting truth and scorning people", "Pride is rejecting the truth", "And looking down on people"],
+    ["Looking down on people is real pride.", "True", "And looking down on people"],
+    ["What does Allah love, in the hadith?", "Grace", "Allah is beautiful and loves beauty"],
+    ["What is pride, in the hadith?", "Rejecting truth, scorning people", "Pride is rejecting the truth", "And looking down on people"],
+    ["In the hadith, liking fine clothes is pride.", "False", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"],
+    ["What is pride, per Muslim 91?", "Rejecting truth, looking down on people", "Pride is rejecting the truth", "And looking down on people"],
+    ["Is liking nice clothes pride, per Muslim 91?", "No, Allah loves grace", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"],
+    ["What does Allah love, per Muslim 91?", "Beauty", "Allah is beautiful and loves beauty"],
+    ["Wanting nice clothes and shoes is pride, per Muslim 91.", "False", "A man said: one likes fine clothes and shoes", "Allah is beautiful and loves beauty"]
+  ],
+  // Backbiting is talking of your brother in a way he dislikes; if what you say is in him, you have backbitten him,
+  // and if it is not, you have slandered him (Sahih Muslim 2589). (33:58 and Ibn Kathir are not in the scene.)
+  "sign-what-backbiting-is": [
+    ["What is backbiting?", "Saying what he would dislike", "Talking of your brother in a way he dislikes"],
+    ["If what you said about him is true, is it still backbiting?", "Yes, it is backbiting", "If it is in him, you have backbitten him"],
+    ["If what you said is not true, it is what?", "Slander", "If it is not, you have slandered him"],
+    ["What is backbiting, in the hadith?", "Saying what your brother dislikes", "Talking of your brother in a way he dislikes"],
+    ["What is backbiting, per Muslim 2589?", "Saying what your brother dislikes", "Talking of your brother in a way he dislikes"],
+    ["What if what you said is true, per Muslim 2589?", "It is still backbiting", "If it is in him, you have backbitten him"],
+    ["Saying something false about him is even worse.", "True", "If it is not, you have slandered him"],
+    ["What is backbiting, per the hadith?", "Saying what your brother dislikes", "Talking of your brother in a way he dislikes"],
+    ["What is it if the bad thing is not even true?", "Slander", "If it is not, you have slandered him"],
+    ["Saying a true fault is never backbiting.", "False", "If it is in him, you have backbitten him"]
+  ],
+  // The one who looks after an orphan will be with him in Paradise like two fingers, a little apart (Sahih al-Bukhari
+  // 5304). (Which two fingers he showed, and al-Ma'un, are not in the scene.)
+  "sign-orphan-carer": [
+    ["Who will be close to the Prophet ﷺ in Jannah, like two fingers?", "One who cares for an orphan", "I and the one who looks after an orphan", "Will be in Paradise like this"],
+    ["How did he ﷺ show how close they will be?", "With two fingers together", "He pointed with two fingers, a little apart"],
+    ["Whom should we look after?", "Orphans", "I and the one who looks after an orphan"],
+    ["What did he show with his hand?", "Two fingers together", "He pointed with two fingers, a little apart"],
+    ["Caring for orphans brings one near him in Paradise.", "True", "Will be in Paradise like this", "He pointed with two fingers, a little apart"],
+    ["Who will be close to him in Paradise?", "The one who looks after an orphan", "I and the one who looks after an orphan", "Will be in Paradise like this"],
+    ["Caring for an orphan is a path to Paradise.", "True", "Will be in Paradise like this"],
+    ["Who will be close to the Prophet ﷺ in Paradise?", "One who looks after an orphan", "I and the one who looks after an orphan", "Will be in Paradise like this"]
+  ],
+  // A Muslim is the one who avoids harming Muslims with his tongue and hands, and an emigrant is the one who gives up
+  // all that Allah has forbidden (Sahih al-Bukhari 10). (Who narrated it is not in the scene.)
+  "sign-safe-from-harm": [
+    ["A true Muslim keeps people safe from his tongue and his what?", "Hand", "With his tongue and hands"],
+    ["Hurting people with words is fine if you never hit them.", "False", "With his tongue and hands"],
+    ["A Muslim keeps others safe from what?", "His tongue and hand", "With his tongue and hands"],
+    ["Who is a true emigrant?", "One who leaves what Allah forbade", "And an emigrant is the one who gives up", "All that Allah has forbidden"],
+    ["Hurtful words go against being a good Muslim.", "True", "A Muslim is the one who avoids harming Muslims", "With his tongue and hands"],
+    ["Who is the true muhajir, says the Prophet ﷺ?", "One who leaves what Allah forbade", "And an emigrant is the one who gives up", "All that Allah has forbidden"],
+    ["Who is a true Muslim in the same hadith?", "One whose tongue and hands harm no one", "A Muslim is the one who avoids harming Muslims", "With his tongue and hands"],
+    ["You can still be a muhajir today by leaving sins.", "True", "And an emigrant is the one who gives up", "All that Allah has forbidden"],
+    ["Who is a Muslim, per the hadith?", "One who harms no one by tongue or hand", "A Muslim is the one who avoids harming Muslims", "With his tongue and hands"],
+    ["Which two things should we guard?", "Tongue and hands", "With his tongue and hands"],
+    ["Hurtful jokes do not count if we laugh.", "False", "With his tongue and hands"]
+  ],
+  // Two men abused each other and one became red with anger; if he said: I seek refuge with Allah from Satan, all his
+  // anger would go away (Sahih al-Bukhari 3282). (Who narrated it and 7:200 are not in the scene.)
+  "sign-refuge-from-anger": [
+    ["What words take anger away, in the hadith?", "I seek refuge with Allah from Shaytan", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
+    ["What was happening when the Prophet ﷺ said this?", "Two men were arguing", "Two men abused each other"],
+    ["What word takes anger away, as the Prophet ﷺ said?", "A'udhu billahi minash-shaytan", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
+    ["What does A'udhu billah mean?", "I seek refuge in Allah", "If he says: I seek refuge with Allah from Satan"],
+    ["Anger can come from Shaytan.", "True", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
+    ["What calms anger, in Bukhari 3282?", "Seeking refuge from Shaytan", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
+    ["What were the two men doing, in the hadith?", "Arguing", "Two men abused each other"],
+    ["What word did the Prophet ﷺ teach, in the hadith?", "I seek refuge with Allah from Satan", "I know a word that would calm him", "If he says: I seek refuge with Allah from Satan"],
+    ["What would happen if he said it, in the hadith?", "His anger would go away", "All his anger would go away"]
+  ],
+  // In Paradise there is a gate called ar-Rayyan; those who fast enter through it and none but them, and once they
+  // have entered it is closed (Sahih al-Bukhari 1896). (How many gates there are and who narrated it are not in the
+  // scene.)
+  "sign-gate-ar-rayyan": [
+    ["What is the gate called?", "Ar-Rayyan", "In Paradise there is a gate called ar-Rayyan"],
+    ["Who enters by that gate?", "Those who fasted", "Those who fast will enter through it"],
+    ["The gate closes once they have entered.", "True", "They will get up and enter", "Then it will be closed"],
+    ["What is the gate for fasting people called?", "Ar-Rayyan", "In Paradise there is a gate called ar-Rayyan"],
+    ["Anyone can enter by ar-Rayyan.", "False", "None but them will enter through it"],
+    ["What is the gate called, in the hadith?", "Ar-Rayyan", "In Paradise there is a gate called ar-Rayyan"],
+    ["Who enters through it, in the hadith?", "Those who fast", "Those who fast will enter through it"],
+    ["What is Ar-Rayyan?", "A gate of Paradise", "In Paradise there is a gate called ar-Rayyan"],
+    ["Who will enter through Ar-Rayyan?", "Those who fasted", "Those who fast will enter through it"]
+  ],
+  // Make things easy for people and do not make them hard; give them good tidings and do not make them run away
+  // (Sahih al-Bukhari 69). (Who narrated it and 22:78 are not in the scene.)
+  "sign-make-it-easy": [
+    ["What did the Prophet ﷺ tell us to do for people?", "Make things easy", "Make things easy for people"],
+    ["What should we give people, the Prophet ﷺ said?", "Good news", "Give them good tidings"],
+    ["What did the Prophet ﷺ tell us to do with religion for people?", "Make it easy", "Make things easy for people"],
+    ["What should we give people, per the hadith?", "Good tidings", "Give them good tidings"],
+    ["What did the Prophet ﷺ tell us to do?", "Make things easy", "Make things easy for people"],
+    ["What should we give people?", "Good news", "Give them good tidings"]
   ]
 };
 
