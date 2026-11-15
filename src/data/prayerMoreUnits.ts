@@ -1,8 +1,8 @@
 import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// More deep units for the Prayer topic: wudu as the Prophet ﷺ made it, the reward of the adhan, the night prayer,
-// and how Allah made salah easy for the sick and the traveller. Every card is one ayah or one sahih hadith
-// (number as sunnah.com gives it), with its exact English words to highlight. Only what is agreed on.
+// More deep units for the Prayer topic: wudu as the Prophet ﷺ made it, the reward of the adhan, the night prayer, and
+// how Allah made salah easy for the sick and the traveller. Every card is one ayah or one sahih or hasan hadith (number
+// as sunnah.com gives it), with its exact English words to highlight. Only what is agreed on.
 
 const WUDU: DeepUnit = {
   key: "pray-wudu-sunnah",
@@ -249,6 +249,19 @@ const NIGHT: DeepUnit = {
         { q: "How many rak'ahs did he ﷺ pray at night?", a: "Eleven", wrong: ["Two", "Forty", "One hundred"], why: "He never exceeded eleven rak'at." },
         { q: "How did Aishah describe those rak'ahs?", a: "Beautiful and long", wrong: ["Short and rushed", "Loud and fast", "Boring"], why: "Do not ask me about their beauty and length." },
         { q: "He ﷺ said: my eyes sleep but my heart stays awake.", tf: true, why: "My eyes sleep but my heart remains awake." }
+      ]
+    },
+    {
+      slug: "ten-times-each",
+      title: "Opening the night prayer",
+      line: "He ﷺ opened the night prayer with dhikr, ten times each.",
+      facts: ["Told by Aishah", "No one had asked her this before", "Then: forgive me, guide me, provide for me"],
+      source: hadith("abudawud", "766", "Aishah", "Hasan Sahih (Al-Albani)", "Asim ibn Humayd said: I asked Aishah with what the Messenger of Allah ﷺ began his voluntary prayer at night. She said: you have asked me about something no one asked me before you. When he stood, he said Allahu akbar ten times, Alhamdulillah ten times, Subhan Allah ten times and La ilaha illa Allah ten times, asked forgiveness ten times, and said: O Allah, forgive me, guide me, provide for me and keep me well. And he sought refuge with Allah from the hardship of standing before Him on the Day of Judgment.", "and he sought refuge in Allah from the hardship of standing before Allah on the Day of Judgment"),
+      difficulty: 2,
+      questions: [
+        { q: "How many times did he ﷺ say each dhikr when he stood at night?", a: "Ten times each", wrong: ["Twice each", "Seven times each", "Forty times each"], why: "He said Allahu akbar ten times and Alhamdulillah ten times, Aishah said." },
+        { q: "What did he ﷺ seek refuge from as he began?", a: "The hard standing on Judgment Day", wrong: ["The heat of the summer", "The noise of the market", "The dust of the road"], why: "He sought refuge with Allah from the hardship of standing before Him, Aishah said." },
+        { q: "He ﷺ asked Allah at night to forgive him and guide him.", tf: true, why: "O Allah, forgive me, guide me, provide for me and keep me well, he ﷺ would say." }
       ]
     },
     {

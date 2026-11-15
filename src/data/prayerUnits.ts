@@ -1,7 +1,7 @@
 import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// Deep units for the Prayer topic, after its own units: the reward of salah, extra prayers, Jumu'ah, and what to
-// say after the salah. Every card is from the Quran or a sahih hadith (number and grade as sunnah.com gives them).
+// Deep units for the Prayer topic, after its own units: the reward of salah, extra prayers, Jumu'ah, and what to say
+// after the salah. Every card is from the Quran or a sahih or hasan hadith (number and grade as sunnah.com gives them).
 // Fiqh details the schools differ on (which prayer is "the middle prayer", exact sunnah counts) are left out.
 
 const REWARD: DeepUnit = {
@@ -321,7 +321,7 @@ const AFTER: DeepUnit = {
   key: "pray-after",
   topicId: "prayer",
   branchId: "prayer-after-salah",
-  branch: { title: "After the salah", description: "The words he ﷺ said after salam, and the du'a he told Mu'adh never to leave." },
+  branch: { title: "After the salah", description: "The words he ﷺ said after salam, the du'a he told Mu'adh never to leave, and refuge from disbelief and poverty." },
   name: "after the salah",
   kind: "skill",
   lessonType: "skill",
@@ -363,6 +363,19 @@ const AFTER: DeepUnit = {
         { q: "What did he ﷺ tell Mu'adh before the du'a?", a: "By Allah, I love you", wrong: ["You are late", "Go home", "Be quiet"], why: "Sunan Abi Dawud 1522." },
         { q: "What does the du'a ask help for?", a: "Remembering, thanking, worshipping well", wrong: ["Getting rich", "Winning games", "Being famous"], why: "Help me remember You, thank You, worship You well." },
         { q: "When should this du'a be said?", a: "After every prayer", wrong: ["Only on Eid", "Once a year", "Only when sad"], why: "Never leave it after every prayer." }
+      ]
+    },
+    {
+      slug: "disbelief-and-poverty",
+      title: "From disbelief and poverty",
+      line: "After each prayer, seek refuge from disbelief and poverty.",
+      facts: ["Told by Abu Bakrah", "His son Muslim learned it from him", "Also refuge from the punishment of the grave"],
+      source: hadith("nasai", "1347", "Abu Bakrah", "Hasan (Darussalam)", "Muslim ibn Abi Bakrah said: my father used to say following every prayer: O Allah, I seek refuge with You from disbelief, poverty and the punishment of the grave. I used to say them too, and my father asked: my son, from whom did you learn this? I said: from you. He said: the Messenger of Allah ﷺ used to say them following the prayer.", "O Allah, I seek refuge with You from Kufr, poverty, and the torment of the grave"),
+      difficulty: 2,
+      questions: [
+        { q: "Which of these did he ﷺ seek refuge from after the prayer?", a: "Disbelief and poverty", wrong: ["Guests and visitors", "Books and pens", "Fruit and milk"], why: "I seek refuge with You from kufr, poverty and the torment of the grave, he ﷺ would say." },
+        { q: "From whom did Abu Bakrah's son learn these words?", a: "From his father", wrong: ["From his teacher", "From his uncle", "From his neighbor"], why: "He heard Abu Bakrah say them following every prayer and began saying them too." },
+        { q: "The Prophet ﷺ used to say these words following the prayer.", tf: true, why: "Abu Bakrah told his son the Messenger of Allah ﷺ said them after every prayer." }
       ]
     }
   ]
