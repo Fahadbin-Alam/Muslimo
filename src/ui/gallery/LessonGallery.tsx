@@ -1020,6 +1020,13 @@ const STATES: State[] = [
   { id: "scene-sea-drop", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah2-finger-in-the-sea" ask="compare this world to" /> },
   { id: "scene-jar-of-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-anbiya-the-jar-of-gold" ask="What did the buyer find" /> },
   { id: "scene-charity-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-humility-raised-up" ask="someone humble for His sake" /> },
+  { id: "scene-crying-trunk", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr4-the-crying-palm" ask="What did the palm trunk do" /> },
+  { id: "scene-trench-rock", render: () => <SceneQuestionDemo lessonId="lesson-deep-ahzab1-the-best-example" ask="do to the rock" /> },
+  { id: "scene-chasing-horse", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-suraqah" ask="Suraqah's horse" /> },
+  { id: "scene-milk-bowl", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-milk-bowl" ask="Who drank last" /> },
+  { id: "scene-bread-for-seventy", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-bread-for-seventy" ask="came in to eat" /> },
+  { id: "scene-nightfall", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-gentle-with-children-home-at-nightfall" ask="close the door" /> },
+  { id: "scene-half-date", render: () => <SceneQuestionDemo lessonId="lesson-deep-zalzalah2-a-good-word" ask="no date to give" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

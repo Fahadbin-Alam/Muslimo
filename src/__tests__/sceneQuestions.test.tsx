@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(877);
+    expect(asks.length).toBe(898);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,8 +97,8 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    // 1240: the Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons.
-    expect(places).toBe(1240);
+    // The Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons.
+    expect(places).toBe(1270);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -2293,6 +2293,154 @@ describe("where the scene waits and where it stops", () => {
           [1, 1, 1, 1]
         ],
         [0, -12],
+        [true, 1]
+      ]);
+    }
+  });
+
+  it("waits on the scenes from his ﷺ life before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-crying-trunk", "sign-trench-rock", "sign-chasing-horse", "sign-milk-bowl", "sign-bread-for-seventy", "sign-nightfall", "sign-half-date"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(21);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The pulpit made and the voice speaking from it, no crying yet; then the trunk shakes, crying to each side.
+    const cried = "What did the palm trunk do?";
+    const { kind: mosque, pause: pulpit, reveal: crying } = asked(cried);
+    expect([shown(cried, ["a voice from the pulpit", "its crying, to the left", "its crying, to the right"]), [pulpit < 0.52 && 0.52 < crying, value(mosque, "the palm trunk he stood by", "rotate", 0.52)]]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [true, 1.4]
+    ]);
+    // Still crying; then a way goes back to it from the pulpit, a glow holds it, its crying stops, and calm rises.
+    expect(shown("What did the Prophet ﷺ do then?", ["its crying, to the left", "a way, from the pulpit to the trunk", "a glow, holding the trunk", "calm, rising 1"])).toEqual([
+      [1, 0, 0, 0],
+      [0, 1, 1, 1]
+    ]);
+    // The rock that no spade could break; then a way comes, a spade strikes it once, and it becomes soft sand.
+    const rock = "What did the Prophet ﷺ do to the rock, in the hadith?";
+    expect([shown(rock, ["a great rock in the trench", "a way, coming to the rock", "a spade, striking once", "soft sand, where the rock was", "the way cleared, rising 1"]), moved(rock, "soft sand, where the rock was", "scale")]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1]
+      ],
+      [0.4, 1]
+    ]);
+    // The horse caught up with the camel; then a voice makes du'a, and the horse pitches into the sand in a cloud of dust.
+    const thrown = "What happened to Suraqah's horse?";
+    const { kind: road, pause: caught, reveal: fallen } = asked(thrown);
+    expect([shown(thrown, ["dust, as it falls 1", "dust, as it falls 3"]), moved(thrown, "a horse, chasing them", "rotate"), moved(thrown, "a horse, chasing them", "y"), [caught < 0.28 && 0.28 < fallen, value(road, "a voice from the camel, making du'a", "opacity", 0.28)]]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 38],
+      [0, 3],
+      [true, 1]
+    ]);
+    // No bowl yet; then one bowl of milk comes, and goes from place to place in the Suffah, still full.
+    const bowls = "How many bowls of milk were there?";
+    expect([shown(bowls, ["a bowl of milk, given as a gift", "a place, sitting 5"]), moved(bowls, "a bowl of milk, given as a gift", "x"), moved(bowls, "the milk in it", "scaleY")]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -14],
+      [1, 1]
+    ]);
+    // The places filled; then the bowl goes round them all, and only then comes to one more place, by the door.
+    const first = "Abu Hurairah drank before the people of the Suffah.";
+    expect([shown(first, ["a place, sitting 5", "a place by the door"]), moved(first, "a bowl of milk, given as a gift", "x")]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [0, -8]
+    ]);
+    // The bowl at the door; then it goes in, what was left is drunk, and praise rises.
+    const last = "Who drank last?";
+    expect([moved(last, "a bowl of milk, given as a gift", "x"), moved(last, "the milk in it", "scaleY"), shown(last, ["praise, rising 1", "praise, rising 3"])]).toEqual([
+      [-8, 0],
+      [1, 0.2],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Nothing yet; then a bundle of barley loaves goes along a small way to the mosque.
+    const loaves = "What did Umm Sulaym send to the Prophet ﷺ?";
+    expect([shown(loaves, ["barley loaves, wrapped in a cloth", "a small way, carrying them"]), moved(loaves, "barley loaves, wrapped in a cloth", "x")]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 70]
+    ]);
+    // The bread broken on the cloth; then ten come in and go out full, again and again, and the bread is still there.
+    for (const prompt of ["How many men came in to eat at a time?", "Everyone there ate until they were full."]) {
+      const { kind, pause, reveal } = asked(prompt);
+      expect([prompt, shown(prompt, ["the bread, broken in pieces", "ten, coming in, first", "ten, going out full, third"]), [pause < 0.59 && 0.59 < reveal, value(kind, "ten, coming in, first", "opacity", 0.59)]]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [1, 0, 0]
+        ],
+        [true, 1]
+      ]);
+    }
+    expect(shown("Everyone there ate until they were full.", ["the bread, still there", "all fed, rising 1"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // Night fallen and the door open; then it closes as a voice says Bismillah at it.
+    const door = "What should you say as you close the door at night?";
+    const { kind: home, pause: open, reveal: closed } = asked(door);
+    expect([moved(door, "the door, closing", "scaleX"), shown(door, ["a cord, tying the water skin"]), [open < 0.33 && 0.33 < closed, value(home, "a voice, saying Bismillah at the door", "opacity", 0.33)]]).toEqual([[0.12, 1], [[0], [0]], [true, 1]]);
+    // Nothing yet; then a date is split, and half goes along a way to a home in need, as a shield of light rises.
+    for (const prompt of ["What small thing can shield you from the Fire?", "What can half a date protect from?"]) {
+      expect([prompt, shown(prompt, ["half a date, given", "a way to the home in need", "a shield of light around the way"]), moved(prompt, "half a date, given", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, 62]
+      ]);
+    }
+    // The date split in two; then half goes to the home in need, and a shield of light rises around the way.
+    for (const prompt of ["How small can a charity be?", "What small charity did he name?", "A tiny gift given for Allah still counts.", "Small charity matters to Allah.", "Charity only counts if it is large."]) {
+      expect([prompt, shown(prompt, ["half a date, kept", "half a date, given", "a shield of light around the way"]), moved(prompt, "half a date, given", "x"), moved(prompt, "a shield of light around the way", "scale")]).toEqual([
+        prompt,
+        [
+          [1, 1, 0],
+          [1, 1, 1]
+        ],
+        [0, 62],
+        [0.5, 1]
+      ]);
+    }
+    // Then a way comes from another home, with nothing to give, a voice says a good word, and a shield rises around it.
+    for (const prompt of ["If you have nothing to give?", "What if you have no date to give?", "A kind word is a good deed anyone can do."]) {
+      const { kind, pause, reveal } = asked(prompt);
+      expect([prompt, shown(prompt, ["a way, from another home", "a shield of light around that way too", "a good deed, rising 1"]), [pause < 0.7 && 0.7 < reveal, value(kind, "a voice, saying a good word", "opacity", 0.7)]]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
         [true, 1]
       ]);
     }

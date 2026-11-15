@@ -17,7 +17,7 @@ import { setActiveLanguage, t } from "../i18n";
 import { getCatalog } from "../translations";
 import { LearnCard } from "../ui/lesson";
 import { SignCard } from "../ui/journey/SignCard";
-import { SignSceneView } from "../ui/journey/SignScene";
+import { SMALL_WORDS_WIDTH, SignSceneView } from "../ui/journey/SignScene";
 import { fitsTwoLines } from "../ui/journey/moonArt";
 import { SIGN_ART, SIGN_BOX, keyAt, signArt, signWords, type SignPart } from "../ui/journey/signArt";
 import type { Lesson, LessonSource } from "../types";
@@ -2077,7 +2077,7 @@ describe("the signs in creation, alive", () => {
     // and catches up; a voice from the camel makes du'a, and the horse pitches into the sand in a cloud of dust; it stands
     // up neighing, and a voice from where it is asks; a voice from the camel answers; then the camel goes on to Madinah,
     // the horse turns to face the road behind, dust coming along it turns back, and the sun sets.
-    expect(words("chasing-horse")).toEqual(["On the road to Madinah, a horseman caught up", "O Allah, throw him down: and the horse threw him", "It stood up neighing: order me what you wish", "Stay where you are: let no one reach us", "Chasing them in the morning, guarding them by evening"]);
+    expect(words("chasing-horse")).toEqual(["On the road to Madinah, a horseman caught up", "O Allah, throw him down: and it threw him", "It stood up neighing: order me what you wish", "Stay where you are: let no one reach us", "Chasing in the morning, guarding by evening"]);
     const camel = "a camel, going to Madinah";
     const horse = "a horse, chasing them";
     const dust = names("chasing-horse", /^dust, as it falls \d$/);
@@ -2171,6 +2171,20 @@ describe("the signs in creation, alive", () => {
         }
       }
     }
+  });
+
+  test("in a question's small frame on a small phone, the words are a little smaller, so none is cut short", async () => {
+    // A question's frame is never under 112 px high (184 wide), and on a 320 px phone it is 188 to 199 wide; every
+    // lesson frame is wider, so its words keep their size (and fit at it, above).
+    expect([Math.round(112 * 1.64), 188, 199].every((width) => width < SMALL_WORDS_WIDTH)).toBe(true);
+    expect(FRAMES.every(([width]) => width >= SMALL_WORDS_WIDTH)).toBe(true);
+    const sizes = (kind: SignKind) => signArt(kind).words.map((_, index) => StyleSheet.flatten(screen.getByTestId(`sign-scene-words-${index}-text`, ALL).props.style).fontSize);
+    await render(<SignSceneView scene={scene("sign-chasing-horse")} width={188} height={116} still />);
+    expect(sizes("chasing-horse")).toEqual([12, 12, 12, 12, 12]);
+    await render(<SignSceneView scene={scene("sign-chasing-horse")} width={SMALL_WORDS_WIDTH} height={134} still />);
+    expect(sizes("chasing-horse")).toEqual([13, 13, 13, 13, 13]);
+    await render(<SignSceneView scene={scene("sign-crying-trunk")} width={292} height={178} still />);
+    expect(new Set(sizes("crying-trunk"))).toEqual(new Set([13]));
   });
 
   test("a scene shows its parts and its words in the learner's language; with less motion it shows its end", async () => {

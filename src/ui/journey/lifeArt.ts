@@ -500,10 +500,10 @@ function chasingHorse(): SignArt {
     ],
     words: [
       { text: "On the road to Madinah, a horseman caught up", from: 0.02, to: 0.2 },
-      { text: "O Allah, throw him down: and the horse threw him", from: 0.22, to: 0.42 },
+      { text: "O Allah, throw him down: and it threw him", from: 0.22, to: 0.42 },
       { text: "It stood up neighing: order me what you wish", from: 0.44, to: 0.62 },
       { text: "Stay where you are: let no one reach us", from: 0.64, to: 0.8 },
-      { text: "Chasing them in the morning, guarding them by evening", from: 0.82, to: 1 }
+      { text: "Chasing in the morning, guarding by evening", from: 0.82, to: 1 }
     ]
   };
 }
