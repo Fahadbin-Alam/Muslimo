@@ -863,6 +863,20 @@ const RECKONING: DeepUnit = {
       ]
     },
     {
+      slug: "speck",
+      title: "Not wronged a speck",
+      line: "Man or woman, a believer who does good will enter Paradise.",
+      facts: ["Quran 4:124", "Naqir: the speck on a date stone"],
+      quote: quranQuote(4, 124),
+      source: quran(4, 124, "Whoever does righteous deeds, male or female, while being a believer, will enter Paradise and will not be wronged even as much as the speck on a date stone."),
+      difficulty: 2,
+      questions: [
+        { q: "Whose good deeds lead to Paradise, in Quran 4:124?", a: "Believing men and women", wrong: ["Believing men only", "Believing women only", "Rich people only"], why: "Whoever does righteous deeds, male or female, while being a believer." },
+        { q: "In Quran 4:124, believers are not wronged even as much as what?", a: "A speck on a date stone", wrong: ["A grain of sand", "A strand of hair", "A grain of rice"], why: "They will not be wronged, even as much as the speck on a date seed." },
+        { tf: true, q: "In Quran 4:124, the one who does good must also have faith.", why: "Whoever does good, male or female, while a believer, will enter Paradise." }
+      ]
+    },
+    {
       slug: "heavy-words",
       title: "Two light, heavy words",
       line: "Two short phrases are light to say, heavy on the scale.",

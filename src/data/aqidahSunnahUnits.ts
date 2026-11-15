@@ -1,15 +1,16 @@
-import { hadith, type DeepUnit } from "./deepKit";
+import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// One more Aqidah unit: following the Sunnah, from Sahih al-Bukhari and Sunan Abi Dawud. The angels' parable of the
-// house and the feast, nothing new in the religion, the man on his couch, the rings the Companions threw away, the two
-// Umar followed, and Ibn Mas'ud on the best way. Every card is one sahih hadith with its number, narrator and grade,
-// and its exact English words to highlight, and none of them is taught anywhere else in the app.
+// One more Aqidah unit: following the Sunnah, from Sahih al-Bukhari, Sunan Abi Dawud and the Quran. The angels'
+// parable of the house and the feast, nothing new in the religion, the man on his couch, the rings the Companions
+// threw away, the two Umar followed, Ibn Mas'ud on the best way, and Quran 24:54, obey him and be guided. Every hadith
+// card is one sahih hadith with its number, narrator and grade, and its exact English words to highlight, and none of
+// them is taught anywhere else in the app. No question anywhere else asks about Quran 24:54.
 
 const SUNNAH: DeepUnit = {
   key: "aqidah-sunnah",
   topicId: "aqidah",
   branchId: "aqidah-sunnah",
-  branch: { title: "Following the Sunnah", description: "The angels' parable of the feast, nothing new in the religion, the man on his couch, rings thrown away, the two Umar followed, and the best way." },
+  branch: { title: "Following the Sunnah", description: "The angels' parable of the feast, nothing new in the religion, the man on his couch, rings thrown away, the two Umar followed, the best way, and obey him ﷺ and be guided." },
   name: "following the Sunnah",
   kind: "skill",
   lessonType: "skill",
@@ -90,6 +91,20 @@ const SUNNAH: DeepUnit = {
         { q: "What is the best speech, Ibn Mas'ud said?", a: "The Book of Allah", wrong: ["The words of poets", "The talk of kings", "The tales of old"], why: "The best talk is Allah's Book, and the best way is the way of Muhammad ﷺ, he said." },
         { q: "Whose way is the best way, Ibn Mas'ud said?", a: "The way of Muhammad ﷺ", wrong: ["The way of our forefathers", "The way of the rich", "The way of the crowd"], why: "The best way is the way of Muhammad ﷺ, and the worst matters are the heresies, he said." },
         { q: "Ibn Mas'ud called new things in the religion the best of matters.", tf: false, why: "No. The worst matters are the new things brought into the religion, Ibn Mas'ud said." }
+      ]
+    },
+    {
+      slug: "obey-and-be-guided",
+      title: "Obey him and be guided",
+      line: "If we obey the Messenger ﷺ, we will be guided.",
+      facts: ["Quran 24:54", "Surah An-Nur", "Wa in tuti'uhu tahtadu"],
+      quote: quranQuote(24, 54),
+      source: quran(24, 54, "Say: obey Allah and obey the Messenger ﷺ. If you turn away, he is only responsible for his duty, and you for yours. If you obey him, you will be guided, and the Messenger's ﷺ duty is only to convey clearly."),
+      difficulty: 2,
+      questions: [
+        { q: "Whom does Quran 24:54 tell us to obey?", a: "Allah and the Messenger ﷺ", wrong: ["Our friends", "The strong", "The richest"], why: "Allah told the Prophet ﷺ to say: obey Allah and obey the Messenger ﷺ." },
+        { q: "What happens if we obey him ﷺ, in Quran 24:54?", a: "We will be guided", wrong: ["We will be famous", "We will be rich", "We will be strong"], why: "If you obey him, you will be guided; his duty is only to convey clearly." },
+        { tf: true, q: "Quran 24:54 says the Messenger's ﷺ duty is to convey the message clearly.", why: "The Messenger's ﷺ duty is only to deliver the message clearly." }
       ]
     }
   ]

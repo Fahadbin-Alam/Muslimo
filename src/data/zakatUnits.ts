@@ -314,6 +314,20 @@ const SPEND: DeepUnit = {
       ]
     },
     {
+      slug: "garden-on-a-hill",
+      title: "The garden on a hill",
+      line: "Giving to please Allah is like a garden on a hill.",
+      facts: ["Quran 2:265", "Heavy rain or a drizzle"],
+      quote: quranQuote(2, 265),
+      source: quran(2, 265, "Those who spend their wealth seeking Allah's pleasure are like a garden on high ground: heavy rain hits it and it gives double its fruit, and if no heavy rain hits it, a drizzle is enough. And Allah sees what you do."),
+      difficulty: 2,
+      questions: [
+        { q: "What is giving to please Allah like, in Quran 2:265?", a: "A garden on a hill", wrong: ["A rock covered with dust", "A house by the sea", "A well in a desert"], why: "Like a garden on high ground: heavy rain hits it, and it gives double its fruit." },
+        { q: "What does the garden give when heavy rain falls?", a: "Double its fruit", wrong: ["Half its fruit", "No fruit at all", "Only dry leaves"], why: "The garden yields its fruit in double, and Allah sees what you do." },
+        { tf: true, q: "In Quran 2:265, a drizzle is enough when no heavy rain falls.", why: "And if no heavy rain hits it, then a drizzle is enough." }
+      ]
+    },
+    {
       slug: "give-good",
       title: "Give the good, not the bad",
       line: "Give from the good things, not what you yourself wouldn't take.",
@@ -338,6 +352,34 @@ const SPEND: DeepUnit = {
         { q: "Which is better, says 2:271?", a: "Charity given in secret", wrong: ["Charity with a speech", "Charity with photos", "No charity"], why: "If you hide it, it is better for you." },
         { q: "Is showing charity wrong?", a: "No, it is good too", wrong: ["Yes, always", "Only on Friday", "Only for kids"], why: "If you show it, it is good." },
         { q: "Secret charity also wipes away some sins.", tf: true, why: "He removes some of your sins." }
+      ]
+    },
+    {
+      slug: "repaid-in-full",
+      title: "Repaid in full",
+      line: "Whatever good you give comes back to you in full.",
+      facts: ["Quran 2:272", "You will not be wronged"],
+      quote: quranQuote(2, 272),
+      source: quran(2, 272, "Their guidance is not on you; Allah guides whom He wills. Whatever good you spend is for yourselves, and whatever good you spend will be repaid to you in full, and you will not be wronged."),
+      difficulty: 2,
+      questions: [
+        { q: "What happens to the good you give, in Quran 2:272?", a: "It is repaid to you in full", wrong: ["It is lost on the way", "It is cut in half", "It is soon forgotten"], why: "Whatever good you spend will be repaid to you in full, and you will not be wronged." },
+        { q: "Who guides whom He wills, in Quran 2:272?", a: "Allah", wrong: ["The kings", "The rich", "The strong"], why: "Their guidance is not on you, but Allah guides whom He wills." },
+        { tf: true, q: "Quran 2:272 says the good we give is for our own good.", why: "Whatever good you spend is for yourselves." }
+      ]
+    },
+    {
+      slug: "night-and-day",
+      title: "By night and by day",
+      line: "Give by night and by day, in secret and in the open.",
+      facts: ["Quran 2:274", "Their reward is with their Lord"],
+      quote: quranQuote(2, 274),
+      source: quran(2, 274, "Those who spend their wealth by night and by day, secretly and openly, will have their reward with their Lord, and no fear will there be on them, nor will they grieve."),
+      difficulty: 1,
+      questions: [
+        { q: "How do these givers give, in Quran 2:274?", a: "Both secretly and openly", wrong: ["Only to be seen", "Only once a year", "Only in hard times"], why: "They spend their wealth by night and by day, secretly and openly." },
+        { q: "Where is their reward, in Quran 2:274?", a: "With their Lord", wrong: ["With the wealthy", "With the rulers", "With their friends"], why: "They spend by night and by day, and their reward is with their Lord." },
+        { tf: true, q: "Quran 2:274 says these givers will have no fear and no grief.", why: "No fear will there be on them, nor will they grieve." }
       ]
     },
     {
