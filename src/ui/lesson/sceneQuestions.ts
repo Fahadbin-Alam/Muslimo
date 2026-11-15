@@ -1308,6 +1308,56 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["If you have nothing to give?", "Say a good word", "And if you have none, with a good word"],
     ["What if you have no date to give?", "Say a good word", "And if you have none, with a good word"],
     ["A kind word is a good deed anyone can do.", "True", "And if you have none, with a good word"]
+  ],
+  // The lamp put out: an Ansari couple put their little ones to sleep and the light out, so a hungry guest could eat,
+  // and 59:9 was revealed (Sahih al-Bukhari 4889).
+  "sign-lamp-out": [
+    ["What food did the wife have?", "Only the children's food", "Only the little ones' food: let them sleep"],
+    ["Why did they put out the light?", "So the guest could eat", "And she put out the light", "In the dark he ate, and they slept hungry"],
+    ["This story led to the words of 59:9.", "True", "Then Allah revealed 59:9 about them"]
+  ],
+  // Busy serving his family, and when the time for prayer came, out to the prayer (Sahih al-Bukhari 676). (Who was
+  // asked is in the scene's first words, so it is not asked.)
+  "sign-helped-at-home": [
+    ["What did the Prophet ﷺ do at home?", "Helped his family", "He was busy serving his family"],
+    ["What did he do when prayer time came?", "Went to pray", "He went out to the prayer"],
+    ["What did he ﷺ do when prayer time came?", "Went out to pray", "He went out to the prayer"]
+  ],
+  // The man who killed a hundred: told to go to such and such a village, overtaken by death on the way, and found a span
+  // closer to it, so he was forgiven (Sahih al-Bukhari 3470). (That repentance is open while one lives is not in the
+  // scene.)
+  "sign-a-span-closer": [
+    ["Where was the man going, in the hadith?", "To a town to repent", "He was told: go to such and such a village"],
+    ["Where did he die?", "On the way to the good village", "On the way, death overtook him"],
+    ["How much closer was he to the good village?", "One span", "A span closer to that village: forgiven"],
+    ["How close was he to the good town?", "One span closer", "A span closer to that village: forgiven"],
+    ["What happened to him at the end?", "He was forgiven", "A span closer to that village: forgiven"]
+  ],
+  // Uhud shook under him ﷺ, Abu Bakr, Umar and Uthman: be firm, Uhud, for on you are a Prophet, a Siddiq and two martyrs
+  // (Sahih al-Bukhari 3675, 3686). (Which mountain shook is asked on the map; the scene does not show which two were the
+  // martyrs, and its four rings would confuse "how many were with him"; the narrator is not asked.)
+  "sign-uhud-shook": [
+    ["What did the Prophet ﷺ call Abu Bakr that day?", "A siddiq", "On you are a Prophet, a Siddiq and two martyrs"],
+    ["What did the Prophet ﷺ call Uthman on Uhud?", "A martyr", "On you are a Prophet, a Siddiq and two martyrs"]
+  ],
+  // The stone in Makkah that used to greet him with salam before he was sent, which he knew even after (Sahih Muslim
+  // 2277). (In which city is asked on the map.)
+  "sign-greeting-stone": [
+    ["What did the stone in Makkah use to do?", "Greet him with salam", "A stone would greet him with salam"],
+    ["He ﷺ said he still knew that stone.", "True", "I know that stone, even now"]
+  ],
+  // Rain prayed for in the Friday khutbah, a week of it, then "around us, not on us", and out in the sun (Sahih al-Bukhari
+  // 1013).
+  "sign-around-us": [
+    ["When did the man ask him ﷺ to pray for rain?", "During the Friday khutbah", "On a Friday, in the khutbah: pray for rain"],
+    ["What did he ﷺ say when the rain had to stop?", "Around us, not on us", "Around us, not on us"],
+    ["After the second du'a, they walked out in the sun.", "True", "And they walked out in the sun"]
+  ],
+  // The blessed water on a journey, and the food heard glorifying Allah (Sahih al-Bukhari 3579). (What flowed is asked
+  // on picture cards of water, milk, honey and oil.)
+  "sign-blessed-water": [
+    ["What did the Companions hear, in the hadith?", "The food glorifying Allah", "And we heard the food glorify Allah"],
+    ["Whom did he ﷺ say the blessing was from?", "Allah", "Come to the water: the blessing is from Allah"]
   ]
 };
 

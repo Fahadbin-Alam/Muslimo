@@ -590,8 +590,8 @@ function greetingStone(): SignArt {
       { name: "a stone by the path", svg: stone },
       { name: "a way along the valley", svg: way("M4 111 C30 108 60 104 84 102.6", GOLD, 1.1), keys: showFrom(0.06, 0.16) },
       { name: "the way, passing the stone", svg: way("M84 102.6 C104 101.6 120 101 140 100.6", GOLD, 1.1), keys: showFrom(0.27, 0.31) },
-      { name: "a voice from the stone, greeting", svg: arcsLeft(89, 93, VOICE), keys: showWhile(0.32, 0.34, 0.42, 0.44), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
-      { name: "a glow on the stone", svg: glow(100, 95, 13, "#FFE6A0", 0.14), keys: showWhile(0.32, 0.34, 0.42, 0.44) },
+      { name: "a voice from the stone, greeting", svg: arcsLeft(89, 93, VOICE), keys: showWhile(0.32, 0.34, 0.48, 0.5), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
+      { name: "a glow on the stone", svg: glow(100, 95, 13, "#FFE6A0", 0.14), keys: showWhile(0.32, 0.34, 0.48, 0.5) },
       {
         name: "a night, passing",
         svg: `<rect width="160" height="120" fill="#1B2A4A"/>`,
@@ -736,7 +736,7 @@ function aroundUs(): SignArt {
       { name: "homes of the town", svg: town },
       { name: "the mosque", svg: mosque },
       { name: "a palm in the town", svg: palm(108, 102, 22), origin: { x: 108, y: 102 }, loop: { move: "sway", ms: 4600, angle: 1 } },
-      { name: "a voice in the mosque, asking", svg: arcs(64, 92, VOICE), keys: showWhile(0.04, 0.06, 0.12, 0.14), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
+      { name: "a voice in the mosque, asking", svg: arcs(64, 92, VOICE), keys: showWhile(0.04, 0.06, 0.16, 0.18), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
       { name: "a voice from the mosque, praying", svg: arcs(84, 90, VOICE), keys: showWhile(0.21, 0.23, 0.27, 0.29), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
       {
         name: "the sky, gray with rain",
@@ -899,7 +899,7 @@ function blessedWater(): SignArt {
           ]
         })
       },
-      { name: "a voice by the bowl", svg: arcs(62, 92, VOICE), keys: showWhile(0.24, 0.26, 0.32, 0.34), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
+      { name: "a voice by the bowl", svg: arcs(62, 92, VOICE), keys: showWhile(0.24, 0.26, 0.4, 0.42), loop: { move: "twinkle", ms: 1300, low: 0.55 } },
       {
         name: "water, welling up",
         svg: spring,
