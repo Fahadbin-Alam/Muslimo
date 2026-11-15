@@ -1113,6 +1113,14 @@ const STATES: State[] = [
   { id: "scene-respite-then-seized", render: () => <SceneQuestionDemo lessonId="lesson-deep-hud6-respite-then-seizure" ask="seizes him" /> },
   { id: "scene-convey-one-ayah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-knowledge-one-verse" ask="How much should we pass on" /> },
   { id: "scene-the-hidden-poor", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah3-the-hidden-poor" ask="real poor person, per" /> },
+  // A question on each scene of what he ﷺ taught (round 87).
+  { id: "scene-came-to-teach", render: () => <SceneQuestionDemo lessonId="lesson-deep-tree-umar-jibril-came" ask="Which three did Jibril" /> },
+  { id: "scene-keep-ties", render: () => <SceneQuestionDemo lessonId="lesson-deep-mumtahanah3-be-good-to-your-mother" ask="Who came to visit Asma" /> },
+  { id: "scene-fast-of-dawud", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-dawud-fast-of-dawud" ask="How much of the night" /> },
+  { id: "scene-one-religion", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-rusul-brothers" ask="closest to" /> },
+  { id: "scene-who-refuses", render: () => <SceneQuestionDemo lessonId="lesson-deep-taghabun3-who-refuses" ask="Who will enter Paradise" /> },
+  { id: "scene-guided-at-the-door", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-his-mother" ask="What happened when he got home" /> },
+  { id: "scene-prayer-made-short", render: () => <SceneQuestionDemo lessonId="lesson-deep-mercy-shortened-prayer" ask="What made the Prophet" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
