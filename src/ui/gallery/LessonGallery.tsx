@@ -9,7 +9,7 @@ import { MatchGame } from "../lesson/WordGames";
 import { MapGame } from "../lesson/MapGame";
 import { mapPlacesFor } from "../lesson/mapQuestions";
 import { SkyGame } from "../lesson/SkyGame";
-import { skyTimesFor } from "../lesson/skyQuestions";
+import { answersArePrayers, skyTimesFor } from "../lesson/skyQuestions";
 import { SceneGame } from "../lesson/SceneGame";
 import { sceneQuestionFor } from "../lesson/sceneQuestions";
 import { MonthGame } from "../lesson/MonthGame";
@@ -555,6 +555,7 @@ function SkyQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; ask
         prompt={challenge.prompt}
         choices={challenge.choices}
         times={times}
+        byPrayer={answersArePrayers(english.challenges[index])}
         correctChoiceId={challenge.correctChoiceId}
         selectedChoiceId={selected}
         result={checked ? { correct, correctLabel, why: shortWhy({ explanation: challenge.explanation, prompt: challenge.prompt, correctLabel }) } : undefined}
@@ -898,6 +899,9 @@ const STATES: State[] = [
   { id: "sky-right", render: () => <SkyQuestionDemo lessonId="lesson-deep-fast-suhur-blessing" ask="suhur eaten" pick="right" check /> },
   { id: "sky-wrong", render: () => <SkyQuestionDemo lessonId="lesson-deep-insan4-prostrate-at-night" ask="who will call" pick="wrong" check /> },
   { id: "sky-zuhr", render: () => <SkyQuestionDemo lessonId="lesson-deep-prayer-sunnah-times-the-times-of-the-five-prayers" ask="pray Zuhr" /> },
+  // A prayer asked in the sky by its name (Maghrib, Fajr, Zuhr, Asr), each at its time; then answered right.
+  { id: "sky-prayer", render: () => <SkyQuestionDemo lessonId="lesson-deep-tur1-at-tur-in-maghrib" ask="recite At-Tur" /> },
+  { id: "sky-prayer-right", render: () => <SkyQuestionDemo lessonId="lesson-deep-tur1-at-tur-in-maghrib" ask="recite At-Tur" pick="right" check /> },
   // Story questions on their living scene: where the ark came to rest (waiting, picked, answered: the ark settles on
   // al-Judi); the twelve springs, answered wrong; a true-or-false on the she-camel; the ant's call; the birds held up.
   { id: "scene", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-nuh-judi" ask="come to rest" /> },
@@ -915,6 +919,98 @@ const STATES: State[] = [
   { id: "scene-barrier", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf4-the-iron-barrier" ask="How high did the blocks go" /> },
   { id: "scene-yunus", render: () => <SceneQuestionDemo lessonId="lesson-deep-saffat5-the-gourd-plant" ask="What grew over him" /> },
   { id: "scene-maryam", render: () => <SceneQuestionDemo lessonId="lesson-deep-maryam1-dates-and-a-stream" ask="What fell from the palm" /> },
+  // Allah's favors to His Prophets: Dawud's coat of mail, the camels coming to the House, the seven times between Safa
+  // and Marwah, the glass floor, the provision in the mihrab, the fire made cool.
+  { id: "scene-dawud", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-dawud-mountains-birds" ask="What did Dawud make from the iron" /> },
+  { id: "scene-house", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-house-proclaim" ask="How would the pilgrims come" /> },
+  { id: "scene-zamzam", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-hajar-safa-marwah" ask="How many times did Hajar go" /> },
+  { id: "scene-throne", render: () => <SceneQuestionDemo lessonId="lesson-deep-naml2-the-glass-palace" ask="What was under the glass floor" /> },
+  { id: "scene-mihrab", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-maryam-provision" ask="What did Zakariyya find each time" /> },
+  { id: "scene-cool-fire", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-ibrahim-fire" ask="What did Allah tell the fire" /> },
+  // The Prophets' trials and their peoples: the wind of seven nights and eight days on 'Ad, the chest cast into the
+  // river, Qarun's home swallowed, the flock watered at Madyan, the golden locusts on Ayyub, Yusuf's eleven stars.
+  { id: "scene-ad-wind", render: () => <SceneQuestionDemo lessonId="lesson-deep-haqqah1-seven-nights-eight-days" ask="How long did the wind blow on Ad" /> },
+  { id: "scene-river", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-musa-river" ask="Where did Musa's mother put her baby" /> },
+  { id: "scene-qarun", render: () => <SceneQuestionDemo lessonId="lesson-deep-qasas7-the-earth-took-him" ask="What happened to Qarun, in 28:81" /> },
+  { id: "scene-madyan", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-musa-madyan" ask="How did Musa help the two women" /> },
+  { id: "scene-ayyub", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-ayyub-locusts" ask="What fell on Ayyub after his cure" /> },
+  { id: "scene-yusuf-dream", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-yusuf-dream" ask="How many stars did Yusuf see in his dream" /> },
+  // Allah's commands and the stories told with them: the measure given in full, the great ram, the qiblah turned toward
+  // the Ka'bah, the flood of Saba's dam, the yellow cow.
+  { id: "scene-measure", render: () => <SceneQuestionDemo lessonId="lesson-deep-isra2-a-straight-balance" ask="How should we measure" /> },
+  { id: "scene-ram", render: () => <SceneQuestionDemo lessonId="lesson-deep-saffat4-o-ibrahim" ask="What did he see when he turned" /> },
+  { id: "scene-qiblah", render: () => <SceneQuestionDemo lessonId="lesson-surah-meaning-2-142-147" ask="Which way did the qiblah turn to" /> },
+  { id: "scene-saba", render: () => <SceneQuestionDemo lessonId="lesson-deep-saba1-the-dam-burst" ask="What did Allah send" /> },
+  { id: "scene-cow", render: () => <SceneQuestionDemo lessonId="lesson-surah-meaning-2-62-71" ask="What color was the cow?" /> },
+  // Allah's power in the stories: Lut's town turned upside down, the frogs on Pharaoh's people, the fish on the Sabbath,
+  // the land with no shelter from the sun, the four birds, the hundred years, Yusuf's shirt.
+  { id: "scene-overturned", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-lut-stones" ask="What did Allah do to the town" /> },
+  { id: "scene-five-signs", render: () => <SceneQuestionDemo lessonId="lesson-deep-araf4-five-signs" ask="Which of these was a sign sent in 7:133" /> },
+  { id: "scene-sabbath", render: () => <SceneQuestionDemo lessonId="lesson-deep-araf5-sabbath-town" ask="When did the fish come" /> },
+  { id: "scene-west-east", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf4-journey-to-the-east" ask="What did the eastern people lack" /> },
+  { id: "scene-four-birds", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-ibrahim-birds" ask="How many birds was he told to take" /> },
+  { id: "scene-hundred-years", render: () => <SceneQuestionDemo lessonId="lesson-deep-baqarah3-hundred-years" ask="How long did the man stay dead" /> },
+  { id: "scene-shirt", render: () => <SceneQuestionDemo lessonId="lesson-deep-yusuf5-the-scent-of-yusuf" ask="What did Yusuf send to his father" /> },
+  // The wonders of the stories: the roasted calf brought to Ibrahim's guests, the rain for asking forgiveness, the wind's
+  // month's journey, the scourge on Iram, Thamud and Pharaoh, the camel's load for the cup, the bird of clay, and the
+  // way lit by the lightning.
+  { id: "scene-guests", render: () => <SceneQuestionDemo lessonId="lesson-deep-hud4-ibrahims-guests" ask="What did Ibrahim bring his guests" /> },
+  { id: "scene-forgiveness", render: () => <SceneQuestionDemo lessonId="lesson-deep-hud3-repent-for-rain-and-strength" ask="What did Hud promise" /> },
+  { id: "scene-wind", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-sulayman-wind-jinn" ask="How far did the wind carry him" /> },
+  { id: "scene-pillars", render: () => <SceneQuestionDemo lessonId="lesson-deep-fajr2-they-spread-corruption" ask="What did your Lord pour on them" /> },
+  { id: "scene-cup", render: () => <SceneQuestionDemo lessonId="lesson-deep-yusuf4-the-kings-cup" ask="What was the reward for finding it" /> },
+  { id: "scene-clay-bird", render: () => <SceneQuestionDemo lessonId="lesson-deep-maidah2-isa-miracles" ask="How did the clay bird come to life" /> },
+  { id: "scene-storm", render: () => <SceneQuestionDemo lessonId="lesson-deep-baqarah1-storm-parable" ask="What do they do when lightning flashes" /> },
+  // Zakat, giving and Eid: a tenth of what the rain waters, the five prayers after the shahadah, the ayah that made Abu
+  // Talhah give his garden, zakat al-Fitr given before the prayer, and the three dates before the Eid prayer.
+  { id: "scene-zakat", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-zakat-zakat-on-crops" ask="Crops watered by rain give" /> },
+  { id: "scene-yemen", render: () => <SceneQuestionDemo lessonId="lesson-deep-fresh-start-what-comes-first" ask="What came right after the shahadah" /> },
+  { id: "scene-bayruha", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-talhah-bayruha" ask="Which ayah made Abu Talhah give his garden" /> },
+  { id: "scene-fitr", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-fitr-before-prayer" ask="When should zakat al-Fitr be paid" /> },
+  { id: "scene-eid", render: () => <SceneQuestionDemo lessonId="lesson-deep-eid-fitr-dates" ask="How many dates fit this Sunnah" /> },
+  { id: "scene-thirsty-dog", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-everyday-thirsty-dog" ask="How did the man carry the water" /> },
+  { id: "scene-thorny-branch", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-small-deeds-the-thorny-branch" ask="What did the man move off the path" /> },
+  { id: "scene-planting", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-everyday-tree" ask="Who eating from it counts" /> },
+  { id: "scene-waqf", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-wills-the-keeper-of-a-waqf" ask="What could the keeper do" /> },
+  { id: "scene-permission", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-knock-three-times" ask="If no one answers after three times" /> },
+  { id: "scene-adhan", render: () => <SceneQuestionDemo lessonId="lesson-deep-bilal-first-adhan" ask="Whom did the Prophet" /> },
+  { id: "scene-wet-grain", render: () => <SceneQuestionDemo lessonId="lesson-deep-mutaffifin1-whoever-cheats" ask="Where should the wet part have been" /> },
+  { id: "scene-rumah", render: () => <SceneQuestionDemo lessonId="lesson-deep-uthman-rumah" ask="Which army did Uthman equip" /> },
+  // The Companions' stories and the river at the door: the plain truth Ka'b told, the three nights in the cave of
+  // Thawr, Umar's answer from decree to decree, and bathing in the river five times a day.
+  { id: "scene-tabuk", render: () => <SceneQuestionDemo lessonId="lesson-deep-kab-truth" ask="What did Ka'b decide to tell" /> },
+  { id: "scene-thawr", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-cave-of-thawr" ask="How many nights did they stay" /> },
+  { id: "scene-plague", render: () => <SceneQuestionDemo lessonId="lesson-deep-abuubaydah-decree" ask="What was Umar's answer" /> },
+  { id: "scene-river-at-the-door", render: () => <SceneQuestionDemo lessonId="lesson-intro-five-prayers" ask="How many times a day do Muslims pray" /> },
+  // The likenesses he ﷺ gave, and the day of Ashura: believers like bricks of one wall, the mare lifting her hoof from
+  // her foal, what avoiding doubtful things keeps safe, the bellows burning clothes, the hole in the shared ship, and
+  // the sea split on the day of Ashura.
+  { id: "scene-building", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah3-like-a-wall" ask="What are believers like, per Abu Musa" /> },
+  { id: "scene-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-qudsi-hundred-parts" ask="What does the mare do" /> },
+  { id: "scene-sanctuary", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-famous-clear-and-doubtful" ask="What do you protect by avoiding" /> },
+  { id: "scene-musk", render: () => <SceneQuestionDemo lessonId="lesson-deep-furqan1-musk-seller-and-blacksmith" ask="What might a bad friend do" /> },
+  { id: "scene-shared-ship", render: () => <SceneQuestionDemo lessonId="lesson-deep-numan-the-ship" ask="What did the people below want" /> },
+  { id: "scene-ashura", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-musa-ashura" ask="What happened on the day of Ashura" /> },
+  // The stories he ﷺ told: the wage grown into a herd, the money sent in a piece of wood, the tied camels let go, and the
+  // rider resting in a tree's shade.
+  { id: "scene-shut-cave", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-cave" ask="What did another man give back" /> },
+  { id: "scene-log-at-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-wooden-box" ask="How did he send the money" /> },
+  { id: "scene-tied-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-like-tied-camels" ask="What happens if the camels" /> },
+  { id: "scene-traveler", render: () => <SceneQuestionDemo lessonId="lesson-deep-duha1-like-a-rider-under-a-tree" ask="What did he compare himself to" /> },
+  // More of his likenesses: the dates with no smell, the debtor let off, the birds back full, the two flocks, the plant
+  // straight again when the wind stops, and the home gone dark.
+  { id: "scene-citron", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-like-a-citron" ask="A believer who does not recite" /> },
+  { id: "scene-forgiving-trader", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-stories-the-forgiving-trader" ask="What did the trader do when" /> },
+  { id: "scene-hungry-birds", render: () => <SceneQuestionDemo lessonId="lesson-deep-ankabut4-like-the-birds" ask="How do they come back" /> },
+  { id: "scene-two-flocks", render: () => <SceneQuestionDemo lessonId="lesson-deep-munafiqun1-sheep-between-flocks" ask="How many flocks" /> },
+  { id: "scene-bending-plant", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-steady-on-the-path-a-plant-that-bends" ask="What does the plant do when" /> },
+  { id: "scene-remember", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-dhikr-living-dead" ask="And the one who never remembers" /> },
+  { id: "scene-lost-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-shura2-he-accepts-repentance" ask="What did the man lose" /> },
+  { id: "scene-stung-twice", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-not-stung-twice" ask="A believer is not stung twice" /> },
+  { id: "scene-doors-of-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-pillar-puts-out-sin" ask="What does charity do to sins" /> },
+  { id: "scene-square-and-line", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-the-square-and-the-line" ask="What was the line going outside" /> },
+  { id: "scene-more-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-more-water" ask="Why add it" /> },
+  { id: "scene-joint-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-good-word" ask="Which of these is also charity" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

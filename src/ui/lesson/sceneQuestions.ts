@@ -45,12 +45,20 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did Allah tell Nuh to build?", "A ship", "Build the ark"],
     ["What did Nuh build?", "The Ark", "Build the ark"]
   ],
-  // The sea split for Musa, each side like a great mountain (26:63).
+  // The sea split for Musa, each side like a great mountain (26:63). It was the day of Ashura, the day Allah saved Musa
+  // and his people from their enemy (Sahih al-Bukhari 2004).
   "sign-sea": [
     ["What did each part of the split sea look like?", "A great mountain", "The sea split", "Each side like a great mountain"],
     ["How did Allah save them from Pharaoh?", "He parted the sea", "The sea split"],
     ["Ayahs 53-69: what are they about?", "The sea splits", "The sea split"],
-    ["Ayah 63: what was each part of the split sea like?", "A great mountain", "The sea split", "Each side like a great mountain"]
+    ["Ayah 63: what was each part of the split sea like?", "A great mountain", "The sea split", "Each side like a great mountain"],
+    ["What happened on the day of Ashura?", "Allah saved Musa", "The sea split"],
+    ["What happened on the day of Ashura?", "Allah saved Musa and his people", "The sea split"],
+    ["What happened on the day of Ashura?", "Allah saved the Children of Israel", "The sea split"],
+    ["What happened on Ashura, per the hadith?", "Allah saved Musa's people", "The sea split"],
+    ["What happened on Ashura, per the hadith?", "Allah rescued Bani Israel", "The sea split"],
+    ["What happened on Ashura, per Bukhari 2004?", "Allah rescued Bani Israel from their enemy", "The sea split"],
+    ["Why did the Jews fast Ashura, in the hadith?", "Allah saved Musa that day", "The sea split"]
   ],
   // The clouds' shade, the manna and quails, the twelve springs (2:57, 2:60, 7:160).
   "sign-springs": [
@@ -232,6 +240,395 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What is Sariy, per Ibn Abbas?", "A river or stream", "A stream beneath"],
     ["What fell from the palm, in 19:25?", "Fresh ripe dates", "Fresh ripe dates fell"]
   ],
+  // Dawud: the birds gathered with him, and the coats of mail he made from the iron, their rings just right (21:79, 21:80, 34:10, 34:11, 38:19).
+  "sign-dawud": [
+    ["What did Dawud make from the iron?", "Coats of armor", "Make coats of mail"],
+    ["What did the birds do, per Ibn Kathir?", "Hovered and repeated after him", "And the birds, gathered"],
+    ["What did Allah teach Dawud to make, in 21:80?", "Coats of mail", "Make coats of mail"],
+    ["Dawud was the first to make armor of linked rings, per Qatadah.", "True", "Make coats of mail", "The rings just right"],
+    ["What was Dawud told to make, in 34:11?", "Coats of mail", "Make coats of mail"],
+    ["How should the rings be, per Mujahid?", "Just right", "Make coats of mail", "The rings just right"],
+    ["What did a passing bird do, per Ibn Kathir?", "Hovered and glorified Allah", "And the birds, gathered"]
+  ],
+  // The House: its foundations raised, our Lord, accept from us, the call to Hajj, the camels from every distant path (2:127, 22:26, 22:27).
+  "sign-house": [
+    ["Ismail helped his father Ibrahim build the ____.", "Ka'bah", "Raising the foundations of the House"],
+    ["Ismail helped his father Ibrahim build the ark.", "False", "Raising the foundations of the House"],
+    ["What did they ask while building?", "Our Lord, accept from us", "Our Lord, accept from us"],
+    ["How would the pilgrims come?", "On foot and on camels", "From every distant path"],
+    ["Pilgrims come from every distant place.", "True", "From every distant path"],
+    ["What did they ask while building?", "Our Lord, accept this from us", "Our Lord, accept from us"],
+    ["Ayahs 122-129: what are they about?", "Building the Kabah", "Raising the foundations of the House"],
+    ["Ayahs 122-129 say: Ibrahim and Ismail built the Kabah and asked Allah to accept.", "True", "Raising the foundations of the House", "Our Lord, accept from us"],
+    ["What did Ibrahim and Ismail ask while building?", "Our Lord, accept from us", "Our Lord, accept from us"],
+    ["Ayahs 26-33: what are they about?", "The call to Hajj", "Proclaim the Hajj to the people"],
+    ["Ayah 27: how will people come to Hajj?", "On foot and on lean camels", "From every distant path"],
+    ["What did they pray while working?", "Our Lord, accept from us", "Our Lord, accept from us"],
+    ["After a good deed, what does their dua teach?", "Ask Allah to accept it", "Our Lord, accept from us"],
+    ["What was Ibrahim told to proclaim, in 22:27?", "The Hajj", "Proclaim the Hajj to the people"],
+    ["How will people come, in 22:27?", "On foot and lean camels", "From every distant path"],
+    ["What was Ibrahim told when he worried his voice was weak?", "Call, and Allah conveys it", "Proclaim the Hajj to the people", "From every distant path"]
+  ],
+  // Safa and Marwah: the seven times between them, the water of Zamzam, the bird circling over it (2:158; Sahih al-Bukhari 3364).
+  "sign-zamzam": [
+    ["____ is walking between Safa and Marwah seven times.", "Sa'i", "Seven times between them"],
+    ["What is Hajar known for?", "She was Ismail's mother and ran between Safa and Marwah.", "Seven times between them"],
+    ["How many times did Hajar go between Safa and Marwah?", "Seven", "Seven times between them"],
+    ["What was she looking for?", "Someone to help, and water", "Seven times between them", "The water of Zamzam"],
+    ["What came out at the spot of Zamzam?", "Water", "The water of Zamzam"],
+    ["How did they find the water?", "Birds circling over it", "A bird circling over the water"]
+  ],
+  // The queen's throne: brought before the glance returns, the favor of his Lord, the palace paved with glass over water (27:40, 27:44).
+  "sign-throne": [
+    ["How fast was her throne brought?", "In the blink of an eye", "Before your glance returns"],
+    ["What did Sulayman call it when he saw the throne?", "A favor from my Lord, to test me", "From the favor of my Lord"],
+    ["Ayah 40: what did Sulayman call the throne's swift arrival?", "My Lord's favour, to test me", "From the favor of my Lord"],
+    ["How fast was the throne brought, in 27:40?", "In the blink of an eye", "Before your glance returns"],
+    ["What did Sulayman call it?", "The grace of my Lord", "From the favor of my Lord"],
+    ["What was under the glass floor?", "Flowing water", "A palace paved with glass"],
+    ["What did she think it was?", "A pool", "A palace paved with glass"]
+  ],
+  // The mihrab: the provision Zakariyya found with Maryam, from Allah, and his call to his Lord there (3:37, 3:38).
+  "sign-mihrab": [
+    ["What did Zakariyya find with Maryam?", "Food from Allah", "He found provision with her", "It is from Allah"],
+    ["Zakariyya made his du'a when he saw Allah's provision with Maryam.", "True", "He found provision with her", "There, Zakariyya called on his Lord"],
+    ["What did Zakariyya find each time he entered her room?", "Food", "He found provision with her"],
+    ["What did Maryam answer when asked where it came from?", "It is from Allah", "It is from Allah"],
+    ["What did Zakariyya find with her?", "Food from Allah", "He found provision with her", "It is from Allah"]
+  ],
+  // The fire made coolness and safety for Ibrahim (21:69, 29:24, 37:98).
+  "sign-cool-fire": [
+    ["What did Allah tell the fire?", "Be cool and safe for Ibrahim", "O fire, be coolness", "And safety for Ibrahim"],
+    ["The fire harmed Ibrahim a little.", "False", "O fire, be coolness", "And safety for Ibrahim"],
+    ["What did Allah tell the fire to be for Ibrahim?", "Cool and safe", "O fire, be coolness", "And safety for Ibrahim"],
+    ["Ayahs 51-75 say: Ibrahim broke the idols; Allah made the fire cool and safe.", "True", "O fire, be coolness", "And safety for Ibrahim"],
+    ["Ayah 69: what did Allah tell the fire to be?", "Cool and safe", "O fire, be coolness", "And safety for Ibrahim"],
+    ["What did Allah command the fire, in 21:69?", "Be cool and safe", "O fire, be coolness", "And safety for Ibrahim"],
+    ["How did Allah save him, per Ibn Kathir?", "Made the fire cool and safe", "O fire, be coolness", "And safety for Ibrahim"],
+    ["What did Allah do for Ibrahim, per Ibn Kathir?", "Saved him from the fire", "O fire, be coolness", "And safety for Ibrahim"]
+  ],
+  // 'Ad: their towers on every high place, the cloud facing their valleys, the wind of seven nights and eight days, only their homes left (26:128, 46:24, 69:7, 46:25; Sahih al-Bukhari 1035).
+  "sign-ad-wind": [
+    ["What did 'Ad build on every high place?", "Landmarks to show off", "Towers on every high place"],
+    ["Ayahs 123-140 say: Hud warned Ad not to build monuments in vanity.", "True", "Towers on every high place"],
+    ["Ayah 128: why did Ad build monuments?", "Just to show off", "Towers on every high place"],
+    ["Why did 'Ad build their landmarks?", "To show off their strength", "Towers on every high place"],
+    ["What did 'Ad think the cloud was?", "Rain", "A cloud facing their valleys"],
+    ["What did Ad think the coming cloud was?", "A rain cloud", "A cloud facing their valleys"],
+    ["What did 'Ad think the cloud was, in 46:24?", "A cloud bringing rain", "A cloud facing their valleys"],
+    ["What was it really, in 46:24?", "A wind with a painful torment", "A wind with a painful punishment"],
+    ["Which wind took 'Ad?", "The west wind", "A wind with a painful punishment"],
+    ["What destroyed 'Ad, in Bukhari 1035?", "The west wind", "A wind with a painful punishment"],
+    ["What destroyed 'Ad, per the hadith?", "A wind", "A wind with a painful punishment"],
+    ["Which wind ended Ad, per Bukhari 1035?", "Ad-Dabur, the west wind", "A wind with a painful punishment"],
+    ["Which wind destroyed Ad?", "Ad-Dabur, the westerly", "A wind with a painful punishment"],
+    ["Which wind destroyed Ad?", "Ad-Dabur, the west wind", "A wind with a painful punishment"],
+    ["What was sent upon Ad, in 41:16?", "A Sarsar wind", "A wind with a painful punishment"],
+    ["What was sent against Ad, in 51:41?", "The barren wind", "A wind with a painful punishment"],
+    ["What did Allah send on Ad, in 54:19?", "A violently cold wind", "A wind with a painful punishment"],
+    ["The wind sent on Ad was a gentle breeze.", "False", "A wind with a painful punishment"],
+    ["How long did the wind blow?", "Seven nights and eight days", "Seven nights and eight days"],
+    ["How long did it last, per 69:7?", "Seven nights and eight days", "Seven nights and eight days"],
+    ["How long did the wind last, in 69:7?", "Seven nights, eight days", "Seven nights and eight days"],
+    ["How long did the wind blow on Ad?", "Seven nights and eight days", "Seven nights and eight days"],
+    ["What does Husum mean?", "In succession", "Seven nights and eight days"],
+    ["The wind on Ad stopped after one night.", "False", "Seven nights and eight days"],
+    ["How were they destroyed, per 69:7?", "A furious wind for 7 nights and 8 days", "A wind with a painful punishment", "Seven nights and eight days"],
+    ["Ayah 25: what was left of Ad after the wind?", "Only their homes", "Nothing seen but their homes"]
+  ],
+  // Musa's mother: the chest cast into the river, do not fear, his sister following him, and Musa returned to her (20:39, 28:7, 28:11, 28:13).
+  "sign-river": [
+    ["Where did Musa's mother put baby Musa?", "In the river", "Cast it into the river"],
+    ["Allah told Musa's mother to put baby Musa in a cave.", "False", "Cast it into the river"],
+    ["Where did Musa's mother put her baby?", "In the river", "Cast it into the river"],
+    ["Where did Musa's mother place him?", "In the river", "Cast it into the river"],
+    ["Ayah 7: where was Musa's mother told to put him?", "In the river", "Cast it into the river"],
+    ["What was she told to do if she feared, in 28:7?", "Put him in the river", "Cast it into the river"],
+    ["Where was baby Musa put, in 20:39?", "In a box on the river", "Put him into the chest", "Cast it into the river"],
+    ["Allah told her not to fear and not to grieve.", "True", "Do not fear, do not grieve"],
+    ["Allah told her to feel afraid and sad.", "False", "Do not fear, do not grieve"],
+    ["What did Musa's mother tell his sister to do?", "Follow him", "Follow him"],
+    ["Whom did the mother send, in 28:11?", "His sister", "Follow him"],
+    ["How did the sister watch him?", "From afar, quietly", "Follow him"],
+    ["Ayahs 1-13 say: Musa's mother put him in the river; Allah brought him back.", "True", "Cast it into the river", "We returned him to his mother"],
+    ["Allah brought baby Musa back to his ____.", "mother", "We returned him to his mother"],
+    ["Who nursed Musa in the end?", "His own mother", "We returned him to his mother"],
+    ["Who alone was to nurse him?", "His own mother", "We returned him to his mother"],
+    ["Ayah 13: why did Allah return Musa to his mother?", "So her eyes would be cooled", "We returned him to his mother"]
+  ],
+  // Qarun: the keys of his treasures, a load for strong men, his going out in his finery, the earth swallowing him and his home (28:76, 28:79, 28:81).
+  "sign-qarun": [
+    ["How heavy were Qarun's keys?", "Too heavy for strong men", "Treasures with heavy keys"],
+    ["Ayah 76: what was heavy even for strong men?", "Qarun's keys", "Treasures with heavy keys"],
+    ["What was heavy for strong men?", "The keys to his treasures", "Treasures with heavy keys"],
+    ["How did Qarun go out, in 28:79?", "In his finery", "He went out in his finery"],
+    ["What happened to Qarun and his home?", "The earth swallowed them", "The earth swallowed his home"],
+    ["What happened to Qarun?", "The earth swallowed him", "The earth swallowed his home"],
+    ["What happened to Qarun, in 28:81?", "The earth swallowed him", "The earth swallowed his home"],
+    ["Could his wealth save him?", "No, it could not", "The earth swallowed his home"],
+    ["No group could help him against Allah.", "True", "No one could help him"]
+  ],
+  // The well of Madyan: two women holding back their flock, Musa watering for them, then his call in the shade (28:23, 28:24).
+  "sign-madyan": [
+    ["Why were the two sisters waiting at the well?", "Until the shepherds left", "Two women held back their flock"],
+    ["Why were the women waiting, in 28:23?", "For the shepherds to finish", "Two women held back their flock"],
+    ["How did Musa help the two women?", "He watered their flock", "So he watered for them"],
+    ["What did Musa do for them?", "Watered their flock", "So he watered for them"],
+    ["What did Musa do at the well of Madyan?", "Helped two women water their flock", "So he watered for them"],
+    ["Ayahs 22-28 say: At Madyan's well, Musa helped two women water their flock.", "True", "So he watered for them"],
+    ["What did Musa say in the shade?", "My Lord, I am in need", "My Lord, I am in need"],
+    ["Ayah 24: what did Musa pray in the shade?", "I need any good You send", "My Lord, I am in need"],
+    ["What did Musa say, in 28:24?", "I am in need of Your good", "My Lord, I am in need"]
+  ],
+  // Ayyub: the ground struck with his foot, the cool water to wash and drink, the golden locusts, an excellent servant (38:42, 38:44; Sahih al-Bukhari 279).
+  "sign-ayyub": [
+    ["What was Ayyub told to strike?", "The ground, with his foot", "Strike the ground with your foot"],
+    ["Ayah 42: what did Ayyub strike the ground with?", "His foot", "Strike the ground with your foot"],
+    ["What was Ayyub told, in 38:42?", "Strike the ground with your foot", "Strike the ground with your foot"],
+    ["What came out for him?", "Cool water to wash and drink", "Cool water to wash and drink"],
+    ["What happened after washing, per Ibn Kathir?", "His bodily pain left", "Cool water to wash and drink"],
+    ["What fell on Ayyub after his cure?", "Golden locusts", "Golden locusts fell"],
+    ["Why did Ayyub gather them, though he was rich?", "He always needs Allah's blessing", "Golden locusts fell"],
+    ["What did Allah find Ayyub to be?", "Patient", "What an excellent servant!"],
+    ["What did Allah call him?", "An excellent servant", "What an excellent servant!"],
+    ["Ayah 44: what did Allah call Ayyub?", "An excellent servant", "What an excellent servant!"],
+    ["Why did Allah call Ayyub an excellent servant, per as-Sa'di?", "He served Allah in ease and hardship", "What an excellent servant!"]
+  ],
+  // Yusuf's dream: eleven stars, the sun and the moon, bowing to him, kept from his brothers, then made true (12:4, 12:5, 12:100).
+  "sign-yusuf-dream": [
+    ["How many stars did Yusuf see in his dream?", "Eleven", "Eleven stars"],
+    ["Ayah 4: how many stars bowed in Yusuf's dream?", "Eleven stars", "Eleven stars"],
+    ["How many stars did Yusuf see, in 12:4?", "Eleven", "Eleven stars"],
+    ["Ayahs 1-6 say: Yusuf dreamed eleven stars, the sun and the moon bowing to him.", "True", "Eleven stars", "I saw them bowing to me"],
+    ["What did Ya'qub tell him about the dream?", "Do not tell your brothers", "Do not tell your brothers"],
+    ["Ayah 5: whom did Yaqub tell Yusuf not to tell?", "His brothers", "Do not tell your brothers"],
+    ["Whom should Yusuf not tell, in 12:5?", "His brothers", "Do not tell your brothers"],
+    ["What did Yusuf say when they bowed, in 12:100?", "This is the meaning of my dream", "My Lord has made it true"],
+    ["Ayahs 94-104: what are they about?", "The dream comes true", "My Lord has made it true"],
+    ["What did the eleven stars stand for, as the story ends?", "His eleven brothers", "My Lord has made it true"],
+    ["Whom did the sun and the moon stand for?", "His father and mother", "My Lord has made it true"]
+  ],
+  // Fair measure: taken in full, given less, then given in full, and weighed with a straight balance (83:1-3, 26:181-182, 17:35).
+  "sign-measure": [
+    ["What do the cheaters do?", "Take in full, give less", "When they take, they take in full", "When they give, they give less"],
+    ["Ayahs 1-17 say: Woe to cheaters who take in full but give short.", "True", "When they take, they take in full", "When they give, they give less"],
+    ["Ayahs 1-17: what are they about?", "Cheating in measure", "When they take, they take in full", "When they give, they give less"],
+    ["What did Madyan do wrong in trade?", "Cheated on measure and weight", "When they take, they take in full", "When they give, they give less"],
+    ["What were they doing, per Ibn Kathir?", "Cheating in buying and selling", "When they take, they take in full", "When they give, they give less"],
+    ["How did they cheat, per Ibn Kathir?", "In weights and measures", "When they take, they take in full", "When they give, they give less"],
+    ["What do they demand when receiving, per 83:2?", "Full measure", "When they take, they take in full"],
+    ["Ayah 3: what do the cheats do when they give?", "They give less", "When they give, they give less"],
+    ["What do they do when giving, per 83:3?", "Give less than due", "When they give, they give less"],
+    ["What wrong did Shu'ayb forbid, in 11:84?", "Short measure and weight", "When they give, they give less"],
+    ["What is Tatfif, per Ibn Kathir?", "Being stingy in measure and weight", "When they give, they give less"],
+    ["What did Shu'ayb teach about trade, in Ash-Shu'ara?", "Give full, fair measure", "Give full measure"],
+    ["Ayahs 176-191: what are they about?", "Shu'ayb and fair measure", "Give full measure"],
+    ["How should we measure, in 17:35?", "Give full measure", "Give full measure"],
+    ["What is the rule of fair trade, per Ibn Kathir?", "Give as you take", "Give full measure"],
+    ["What did Madinah's traders do after it came down?", "They gave good measure", "Give full measure"],
+    ["Full measure is a command for justice in trade.", "True", "Give full measure"],
+    ["What did Shu'ayb ask them to give?", "Full measure and weight", "Give full measure", "Weigh with a straight balance"],
+    ["What did Shu'ayb tell Madyan, in 7:85?", "Give full measure and weight", "Give full measure", "Weigh with a straight balance"],
+    ["What did Shu'ayb tell the people of Madyan, in Al-A'raf?", "Give full measure and weight", "Give full measure", "Weigh with a straight balance"],
+    ["What must they give, in 11:85?", "Full measure and weight", "Give full measure", "Weigh with a straight balance"],
+    ["What did Allah command, per Ibn Kathir?", "Give measure and weight in full", "Give full measure", "Weigh with a straight balance"],
+    ["Ayah 152: what must we give in trade?", "Full measure and weight", "Give full measure", "Weigh with a straight balance"],
+    ["Ayah 182: with what kind of balance should we weigh?", "An honest, straight balance", "Weigh with a straight balance"],
+    ["What must the balance be, in 26:182?", "True and straight", "Weigh with a straight balance"],
+    ["What does a straight balance mean, per Ibn Kathir?", "Scales that are not distorted", "Weigh with a straight balance"]
+  ],
+  // Ibrahim's dream: the dream, the son's answer, both submitting, the call, and the great ram (37:102-107).
+  "sign-ram": [
+    ["What did the son say?", "Do as you are commanded", "Do what you are commanded"],
+    ["What did the son answer?", "Do as you are commanded", "Do what you are commanded"],
+    ["Ayah 102: what did the son tell his father?", "Do as you are told", "Do what you are commanded"],
+    ["What did the son say, in 37:102?", "Do what you are commanded", "Do what you are commanded"],
+    ["What did both do, in 37:103?", "Submit to Allah", "When they had both submitted"],
+    ["Who called Ibrahim, in 37:104?", "Allah", "O Ibrahim, you have fulfilled the dream"],
+    ["What did Ibrahim fulfil, in 37:105?", "The dream", "O Ibrahim, you have fulfilled the dream"],
+    ["Allah stopped the sacrifice of the son.", "True", "O Ibrahim, you have fulfilled the dream", "We ransomed him with a great sacrifice"],
+    ["Ibrahim's son was harmed in the end.", "False", "O Ibrahim, you have fulfilled the dream", "We ransomed him with a great sacrifice"],
+    ["Ayahs 75-113 say: Ibrahim was ready to sacrifice his son; Allah ransomed him.", "True", "When they had both submitted", "We ransomed him with a great sacrifice"],
+    ["What did Allah give in his son's place?", "A great sacrifice", "We ransomed him with a great sacrifice"],
+    ["What did Allah send in place of Ibrahim's son?", "A great sacrifice, a ram", "We ransomed him with a great sacrifice"],
+    ["What did Allah give in place of Ibrahim's son?", "A great sacrifice", "We ransomed him with a great sacrifice"],
+    ["Ayah 107: what did Allah ransom the son with?", "A great sacrifice", "We ransomed him with a great sacrifice"],
+    ["How was the son ransomed, in 37:107?", "With a great sacrifice", "We ransomed him with a great sacrifice"],
+    ["What did he see when he turned, per Ibn Abbas?", "A horned white ram", "We ransomed him with a great sacrifice"],
+    ["Ayahs 75-113: what are they about?", "Ibrahim's sacrifice", "We ransomed him with a great sacrifice"]
+  ],
+  // The qiblah: toward Jerusalem at first, the face turning to the sky, turned toward the Ka'bah, and everywhere (Bukhari 40, 2:144).
+  "sign-qiblah": [
+    ["Which way did Muslims first pray in Madinah?", "Toward Jerusalem", "Facing Jerusalem at first"],
+    ["Before the Ka'bah, which way did Muslims face?", "Jerusalem", "Facing Jerusalem at first"],
+    ["Which way did the Muslims face before the Ka'bah?", "Jerusalem (Bayt al-Maqdis)", "Facing Jerusalem at first"],
+    ["Why did he ﷺ keep looking to the sky?", "Hoping the qiblah would change", "Your face turning to the sky", "Turn toward al-Masjid al-Haram"],
+    ["Why did the Prophet ﷺ keep looking at the sky?", "He hoped for a new qiblah", "Your face turning to the sky", "Turn toward al-Masjid al-Haram"],
+    ["Which way did the qiblah turn to?", "The Sacred Mosque in Makkah", "Turn toward al-Masjid al-Haram"],
+    ["Ayahs 142-147 say: Allah turned the qiblah toward the Sacred Mosque in Makkah.", "True", "Turn toward al-Masjid al-Haram"],
+    ["Ayahs 142-147: what are they about?", "The new qiblah", "Turn toward al-Masjid al-Haram"],
+    ["Which way do Muslims face in prayer since 2:144?", "The Ka'bah in Makkah", "Turn toward al-Masjid al-Haram"],
+    ["What did foolish people question, in 2:142?", "The change of qiblah", "Turn toward al-Masjid al-Haram"],
+    ["Which way do Muslims face to pray?", "Toward the Kaaba", "Turn toward al-Masjid al-Haram", "Wherever you are, turn to it"],
+    ["Only people in Makkah must face the Kaaba.", "False", "Turn toward al-Masjid al-Haram", "Wherever you are, turn to it"],
+    ["Muslims from every country face one ____ together.", "Ka'bah", "Turn toward al-Masjid al-Haram", "Wherever you are, turn to it"],
+    ["Do Muslims everywhere face the same Ka'bah?", "Yes, wherever they are", "Wherever you are, turn to it"]
+  ],
+  // Saba: two gardens, eat and be grateful, the flood of the dam, bitter fruit and tamarisk, scattered (34:15-19).
+  "sign-saba": [
+    ["What did Saba have, in 34:15?", "Two gardens", "Two gardens, right and left"],
+    ["What were they told, in 34:15?", "Eat and be grateful", "Eat, and be grateful to Him"],
+    ["What did Allah send, in 34:16?", "A flood from the dam", "The flood of the dam"],
+    ["Why is it called Surah Saba?", "The people of Saba, who lost their gardens", "The flood of the dam", "Bitter fruit and tamarisk"],
+    ["What did the gardens become, in 34:16?", "Bitter fruit gardens", "Bitter fruit and tamarisk"],
+    ["What happened to them, in 34:19?", "They were dispersed", "Scattered far and wide"]
+  ],
+  // The cow: the old one and the calf go, then the ones that are not yellow, as the bright yellow cow comes (2:67-71).
+  "sign-cow": [
+    ["What color was the cow?", "Yellow", "Bright yellow, pleasing to see"],
+    ["What colour was the cow, in ayah 69?", "Bright yellow", "Bright yellow, pleasing to see"],
+    ["What color was the cow, in 2:69?", "Bright yellow", "Bright yellow, pleasing to see"]
+  ],
+  // Lut's town: by night, the morning, turned upside down, the stones of baked clay, and the clear sign (11:81-83, 29:35).
+  "sign-overturned": [
+    ["When was the punishment set to come, in 11:81?", "In the morning", "Their appointed time is the morning"],
+    ["What did Allah do to the town?", "Turned it upside down", "We turned it upside down"],
+    ["What happened to the town, in 11:82?", "Turned upside down", "We turned it upside down"],
+    ["What did Allah destroy, in 53:53?", "The overthrown cities", "We turned it upside down"],
+    ["Allah turned those cities upside down.", "True", "We turned it upside down"],
+    ["What happened to the rest, in 37:136?", "They were destroyed", "We turned it upside down", "Stones of baked clay, layer on layer"],
+    ["What rained on it?", "Stones of baked clay", "Stones of baked clay, layer on layer"],
+    ["What fell on Lut's people, in 7:84?", "A rain of stones", "Stones of baked clay, layer on layer"],
+    ["From where was the punishment, in 29:34?", "From the sky", "Stones of baked clay, layer on layer"],
+    ["What did Sijjil mean, per Ibn Abbas?", "Stones of clay", "Stones of baked clay, layer on layer"],
+    ["What covered them, per Ibn Kathir?", "Stones of Sijjil", "Stones of baked clay, layer on layer"],
+    ["What does 53:54 say?", "There covered them what covered", "Stones of baked clay, layer on layer"],
+    ["What did Allah leave, in 51:37?", "A sign", "We left a clear sign"]
+  ],
+  // Pharaoh's people: the drought, then the flood, the locusts, the lice, the frogs and the blood, each lifted in its
+  // turn (7:130, 7:133, 7:135, 43:50).
+  "sign-five-signs": [
+    ["Ayahs 127-141: what are they about?", "Signs on Pharaoh", "The flood", "The blood"],
+    ["Which creatures were signs to Pharaoh's people, in Al-A'raf?", "Locusts, lice and frogs", "The locusts", "The frogs"],
+    ["Which of these was a sign sent in 7:133?", "Frogs", "The frogs"],
+    ["What happened to their water, per Ibn Kathir?", "It turned to blood", "The blood"],
+    ["What did they do after each sign was lifted, in 7:135?", "Broke their promise", "Each time it was lifted, they broke their word"],
+    ["What did they do when the torment was removed, in 43:50?", "Broke their covenant", "Each time it was lifted, they broke their word"],
+    ["How often did they break it, per Ibn Kathir?", "On each occasion", "Each time it was lifted, they broke their word"]
+  ],
+  // The town by the sea: its fish came on their Sabbath, and not on other days (7:163).
+  "sign-sabbath": [
+    ["When did the fish come, in 7:163?", "On the Sabbath", "Their fish came on their Sabbath"],
+    ["Which day's rule did they break?", "The Sabbath", "Their fish came on their Sabbath"],
+    ["Ayahs 159-171: what are they about?", "The Sabbath town", "Their fish came on their Sabbath"]
+  ],
+  // Dhul-Qarnayn: the means to all things, to where the sun sets, and to where it rises, on a land with no shelter (18:84-90).
+  "sign-west-east": [
+    ["What did Allah give him, in 18:84?", "The means of everything", "We gave him the means to all things"],
+    ["How far did he go, per Ibn Kathir?", "The farthest west one could reach", "To where the sun sets"],
+    ["What did the eastern people lack, in 18:90?", "Shelter from the sun", "No shelter from the sun"]
+  ],
+  // Ibrahim's four birds: taken, a part of them on each hill, called, and coming back in haste (2:260).
+  "sign-four-birds": [
+    ["How many birds was he told to take?", "Four", "Take four birds"],
+    ["How many birds were there?", "Four", "Take four birds"],
+    ["When he called them, what did the birds do?", "Came flying to him", "Then call them", "They will come to you in haste"],
+    ["What happened when Ibrahim called them?", "They came flying to him", "Then call them", "They will come to you in haste"]
+  ],
+  // The hundred years: the town fallen on its roofs, the hundred years, the food and drink, the bones raised (2:259).
+  "sign-hundred-years": [
+    ["How long did the man stay dead, in 2:259?", "A hundred years", "Allah made him die for a hundred years"],
+    ["How long did the man stay dead with his donkey?", "A hundred years", "Allah made him die for a hundred years"],
+    ["How long was the man in ayah 259 dead?", "A hundred years", "Allah made him die for a hundred years"],
+    ["Ayahs 258-260: what are they about?", "Giving life", "We raise the bones, then clothe them with flesh"],
+    ["What did he say after seeing it?", "Allah is able to do all things", "Allah is able to do all things"]
+  ],
+  // Yusuf's shirt: sent with the caravan, its scent, the bearer of good news, and sight come back (12:93, 12:94, 12:96).
+  "sign-shirt": [
+    ["What did Yusuf send to his father, in 12:93?", "His shirt", "Take this shirt of mine"],
+    ["What did Yusuf send to make his father see again?", "His shirt", "Take this shirt of mine"],
+    ["What happened when the shirt touched his face, in 12:96?", "His sight returned", "He could see again"]
+  ],
+  // Ibrahim's honored guests: the greeting, the roasted calf, "will you not eat?", and the good news of Ishaq, and after
+  // him Ya'qub (11:69 to 11:71, 51:25 to 51:28).
+  "sign-guests": [
+    ["Ibrahim answered their greeting with peace too.", "True", "They said Peace; he said Peace"],
+    ["What did the guests say on entering, in 15:52?", "Salam, peace", "They said Peace; he said Peace"],
+    ["What did Ibrahim reply, in 51:25?", "Salamun", "They said Peace; he said Peace"],
+    ["Ayahs 45-60: what are they about?", "Ibrahim's guests", "They said Peace; he said Peace", "He brought a roasted calf"],
+    ["Ayahs 24-46: what are they about?", "Ibrahim's guests", "They said Peace; he said Peace", "He brought a roasted calf"],
+    ["What did Ibrahim serve his guests?", "A fat roasted calf", "He brought a roasted calf"],
+    ["What did Ibrahim serve his guests?", "A roasted calf", "He brought a roasted calf"],
+    ["Ayah 69: what did Ibrahim serve his guests?", "A roasted calf", "He brought a roasted calf"],
+    ["Ayah 26: what did Ibrahim serve his guests?", "A roasted calf", "He brought a roasted calf"],
+    ["What did Ibrahim bring his guests, in 11:69?", "A roasted calf", "He brought a roasted calf"],
+    ["What did Ibrahim bring, in 51:26?", "A roasted calf", "He brought a roasted calf"],
+    ["What did Ibrahim say to his guests, in 51:27?", "Will you not eat?", "Will you not eat?"],
+    ["What good news did they bring?", "A knowledgeable son", "Good news of a knowing son"],
+    ["What good news did Ibrahim's guests bring, in Al-Hijr?", "A knowing son", "Good news of a knowing son"],
+    ["Ayah 53: what good news did the guests bring Ibrahim?", "A wise son", "Good news of a knowing son"],
+    ["Ayah 28: what news did the guests give Ibrahim?", "A knowing son", "Good news of a knowing son"],
+    ["What news did the angels bring, in 15:53?", "A boy with much knowledge", "Good news of a knowing son"],
+    ["What news did they give, in 51:28?", "A son having knowledge", "Good news of a knowing son"],
+    ["What news did Sarah receive?", "A son, Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
+    ["Whose birth was announced to Ibrahim's wife, in Hud?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
+    ["Which son was promised, in 11:71?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
+    ["Who was the boy, per Ibn Kathir?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
+    ["Who was the son, per Ibn Kathir?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
+    ["Ayahs 69-83: what are they about?", "News of Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
+    ["Who would come after Ishaq, in the same good news?", "Ya'qub", "Ishaq, and after him Ya'qub"],
+    ["Who would come after Ishaq?", "Ya'qub", "Ishaq, and after him Ya'qub"],
+    ["Ayah 71: who would come after Ishaq?", "Yaqub", "Ishaq, and after him Ya'qub"],
+    ["Who would come after Ishaq, in 11:71?", "Ya'qub", "Ishaq, and after him Ya'qub"]
+  ],
+  // Asking forgiveness: the rain in abundance, more wealth, gardens and rivers (71:10 to 71:12, 11:52).
+  "sign-forgiveness": [
+    ["What did Nuh tell his people to ask Allah for?", "Forgiveness", "Ask your Lord's forgiveness"],
+    ["Ayahs 10-20: what are they about?", "Ask forgiveness", "Ask your Lord's forgiveness"],
+    ["What did Nuh tell them to do in 71:10?", "Ask forgiveness from their Lord", "Ask your Lord's forgiveness"],
+    ["What brings these blessings, per Ibn Kathir?", "Repenting and obeying Allah", "Ask your Lord's forgiveness"],
+    ["Ayahs 50-60 say: Hud told Ad: ask forgiveness, and Allah will send rain.", "True", "Ask your Lord's forgiveness", "He will send rain in abundance"],
+    ["Which is a blessing Nuh promised for istighfar?", "Abundant rain", "He will send rain in abundance"],
+    ["What did Hud say Allah would send if Ad repented?", "Abundant rain", "He will send rain in abundance"],
+    ["Ayahs 50-60: what are they about?", "Hud and the rain", "He will send rain in abundance"],
+    ["What did Hud promise if they repented, in 11:52?", "Abundant rain", "He will send rain in abundance"],
+    ["What did Nuh say asking forgiveness brings?", "Rain, wealth and children", "He will send rain in abundance", "And give you more wealth"],
+    ["What does 71:12 promise?", "Wealth, children, gardens, rivers", "And give you more wealth", "And make rivers for you"]
+  ],
+  // The wind for Sulayman: a month's journey each way, gently wherever he willed, and work in thanks (34:12, 34:13, 38:36).
+  "sign-wind": [
+    ["How far did the wind carry him in a morning?", "A month's journey", "Its morning course, a month's journey"],
+    ["The wind's morning trip was a month's journey.", "True", "Its morning course, a month's journey"],
+    ["Where did it go, per Ibn Kathir?", "Wherever in the world he wanted", "Gently, wherever he willed"],
+    ["How should Dawud's family work, in 34:13?", "With thanks", "Work, family of Dawud, in thanks"]
+  ],
+  // Iram of the pillars, Thamud and Pharaoh, their corruption, the scourge poured on them; your Lord is ever watchful
+  // (89:6 to 89:14).
+  "sign-pillars": [
+    ["Ayahs 1-14: what are they about?", "Ad, Thamud and Pharaoh", "Iram of the pillars", "Pharaoh, owner of the stakes"],
+    ["How is Fir'awn described in 89:10?", "With Al-Awtad", "Pharaoh, owner of the stakes"],
+    ["What did they do, per 89:11?", "Transgressed beyond bounds", "They spread much corruption"],
+    ["What did they make much of, per 89:12?", "Mischief", "They spread much corruption"],
+    ["Ayahs 1-14 say: Allah punished Ad, Thamud and Pharaoh for their wrongdoing.", "True", "They spread much corruption", "A scourge of punishment"],
+    ["What did your Lord pour on them, per 89:13?", "Kinds of severe torment", "A scourge of punishment"],
+    ["Their great strength saved them from Allah.", "False", "A scourge of punishment"],
+    ["What does 89:14 say about your Lord?", "He is Ever Watchful", "Your Lord is ever watchful"]
+  ],
+  // The cup put in his brother's bag, the camel's load for whoever brings it, and the bags searched (12:70, 12:72, 12:76).
+  "sign-cup": [
+    ["Ayah 70: where was the king's cup placed?", "In Binyamin's bag", "He put the cup in his brother's bag"],
+    ["What was the reward for finding it, in 12:72?", "A camel load", "Whoever brings it gets a camel's load"],
+    ["Whose bags were searched first, in 12:76?", "The other brothers'", "He began with their bags"],
+    ["Ayahs 69-79 say: Yusuf kept his brother near through a planned search.", "True", "He began with their bags", "Out of his brother's bag"]
+  ],
+  // The bird of clay, a bird by Allah's permission (3:49, 5:110).
+  "sign-clay-bird": [
+    ["How did Isa do his miracles?", "By Allah's permission", "It becomes a bird, by Allah's permission"],
+    ["Whose permission made Isa's miracles happen?", "Allah's", "It becomes a bird, by Allah's permission"],
+    ["How did the clay bird come to life, in 5:110?", "By Allah's permission", "It becomes a bird, by Allah's permission"]
+  ],
+  // The storm: whenever the lightning lights the way for them, they walk in it (2:20).
+  "sign-storm": [["What do they do when lightning flashes?", "Walk a little in its light", "When it lights the way, they walk"]],
   // Rain on a dead land (7:57, 35:9, 16:65).
   "sign-rain": [
     ["What does Allah send down to grow our food?", "Rain", "The winds bring the clouds", "The rain falls"],
@@ -402,6 +799,407 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What were the two gardens of, in 18:32?", "Grapes, with date palms around", "Two gardens of grapes", "Palms around, crops between"],
     ["What flowed between the gardens, in 18:33?", "A river", "A river flowing between"],
     ["What happened to his fruits, in 18:42?", "They were ruined", "Then all the fruit was ruined"]
+  ],
+  // What zakat is due on: nothing on fewer than five camels; one part in forty of silver; a tenth of what the rain
+  // waters, and half a tenth of what a camel at the well waters (Sahih al-Bukhari 1459, 1454; Sahih Muslim 981).
+  "sign-zakat": [
+    ["Is zakat due on fewer than five camels?", "No", "Fewer than five camels: nothing is due"],
+    ["Zakat on savings is ____ percent each year.", "2.5", "On silver: one part in forty"],
+    ["Crops watered by rain give...?", "A tenth", "Watered by rain: a tenth"],
+    ["Crops watered with camel work give...?", "A twentieth", "Watered by a camel: half a tenth"],
+    ["Hard work to water lowers the zakat share.", "True", "Watered by rain: a tenth", "Watered by a camel: half a tenth"]
+  ],
+  // Mu'adh sent to Yemen: first the shahadah, then the five prayers of the day and the night, then zakat, taken from
+  // their rich and given to their poor (Sahih al-Bukhari 1395, 1496).
+  "sign-yemen": [
+    ["What was Mu'adh to teach first?", "The testimony of faith", "First: the shahadah"],
+    ["What did Mu'adh teach first?", "The shahadah", "First: the shahadah"],
+    ["What came right after the shahadah?", "The five daily prayers", "Then five prayers, day and night"],
+    ["Who is zakat taken from?", "Those with enough wealth", "Then zakat from their rich"],
+    ["In Yemen, zakat went to Yemen's own poor.", "True", "Given to their poor"],
+    ["Zakat is taken from the poor and given to the rich.", "False", "Then zakat from their rich", "Given to their poor"]
+  ],
+  // Bayruha: the garden Abu Talhah loved most; when the ayah came, he gave it for Allah, and it was shared among his
+  // relatives (Quran 3:92, Sahih al-Bukhari 1461).
+  "sign-bayruha": [
+    ["Bayruha was the garden Abu Talhah loved least.", "False", "Bayruha, the garden he loved most"],
+    ["To reach true goodness, what should we give?", "Something we love", "Spend from what you love"],
+    ["What made him give it?", "The ayah about giving what you love", "Spend from what you love"],
+    ["Which ayah made Abu Talhah give his garden?", "Spend from what you love", "Spend from what you love"],
+    ["How do we reach true righteousness, in Ali 'Imran?", "By giving what we love", "Spend from what you love"],
+    ["Ayahs 81-101: what are they about?", "Give what you love", "Spend from what you love"],
+    ["How do you reach al-birr, in 3:92?", "By giving from what you love", "Spend from what you love"],
+    ["Ayah 3:92 says we reach righteousness by spending what we love.", "True", "Spend from what you love"],
+    ["Abu Talhah obeyed 3:92 right away.", "True", "Spend from what you love", "He gave it for Allah"],
+    ["Whom did the Prophet ﷺ tell him to give it to?", "His relatives", "Shared among his relatives"]
+  ],
+  // Zakat al-Fitr: a sa' for every one, young or old, of dates or barley, given before the Eid prayer (Sahih al-Bukhari
+  // 1503, 1506).
+  "sign-fitr": [
+    ["Who is zakat al-Fitr given for?", "Every Muslim, young or old", "A sa' for every one", "Young or old"],
+    ["Who is it due for?", "Every Muslim, even a baby", "A sa' for every one", "Young or old"],
+    ["A baby's zakat al-Fitr is paid too.", "True", "Young or old"],
+    ["What is it paid in, in this hadith?", "A sa' of dates or barley", "Of dates or barley"],
+    ["What is it paid in, in the hadith?", "Food, like dates or barley", "Of dates or barley"],
+    ["What did the Companions give as zakat al-Fitr?", "A sa' of everyday food", "Of dates or barley"],
+    ["A sa' is a measure of food.", "True", "Of dates or barley"],
+    ["When should zakat al-Fitr be paid?", "Before the Eid prayer", "Given before the Eid prayer"],
+    ["When must zakat al-Fitr be paid?", "Before the Eid prayer", "Given before the Eid prayer"]
+  ],
+  // The morning of Eid: dates first, an odd number; out to the open prayer ground, a short spear planted there; the
+  // prayer first, then the khutbah; and home by another way (Sahih al-Bukhari 953, 494, 956, 986).
+  "sign-eid": [
+    ["What did he eat before the Eid al-Fitr prayer?", "Dates", "Dates first, an odd number"],
+    ["How many dates fit this Sunnah?", "Three", "Dates first, an odd number"],
+    ["What did the Prophet ﷺ eat before the Eid prayer?", "Some dates", "Dates first, an odd number"],
+    ["On Eid al-Fitr, he went to pray before eating anything.", "False", "Dates first, an odd number"],
+    ["What was planted in front of him ﷺ on Eid?", "A short spear", "Out to the open prayer ground"],
+    ["Where did he pray Eid?", "At an open prayer ground", "Out to the open prayer ground"],
+    ["What came first on Eid?", "The Eid prayer", "The prayer first, then the khutbah"],
+    ["On Friday the khutbah comes first; on Eid the prayer does.", "True", "The prayer first, then the khutbah"],
+    ["What did he do on the way back from Eid prayer?", "Took a different road", "Home by another way"]
+  ],
+  // Water for a thirsty dog: he drank from a well, saw a dog licking mud from thirst, filled his shoe with water and
+  // gave it a drink; Allah thanked him and forgave him; a reward for any living being (Sahih al-Bukhari 2363, 2466).
+  "sign-thirsty-dog": [
+    ["How did the man carry the water?", "In his shoe", "He filled his shoe with water"],
+    ["How did the man carry water up to the dog?", "In his shoe", "He filled his shoe with water", "And gave the dog a drink"],
+    ["How did the man carry water for the dog?", "In his shoe", "He filled his shoe with water", "And gave the dog a drink"],
+    ["What did Allah do for him?", "Thanked and forgave him", "Allah thanked him and forgave him"],
+    ["What did Allah do for the man?", "Forgave him", "Allah thanked him and forgave him"],
+    ["What did Allah do for him?", "Allah thanked him and forgave him", "Allah thanked him and forgave him"],
+    ["Is there reward for kindness to animals?", "Yes, for every living thing", "Allah thanked him and forgave him", "A reward for any living being"],
+    ["There is reward only for kindness to people, not animals.", "False", "Allah thanked him and forgave him", "A reward for any living being"],
+    ["There is a reward for being kind to any living being.", "True", "Allah thanked him and forgave him", "A reward for any living being"]
+  ],
+  // A thorny branch moved out of the way: Allah thanked him and forgave him; and removing harm from the way is charity
+  // (Sahih al-Bukhari 652, 2989). ("What did Allah do for him?", "Forgave him" is also asked of the trader who forgave
+  // his debtors, so it stays as it is.)
+  "sign-thorny-branch": [
+    ["What did the man move off the path?", "A thorny branch", "A thorny branch across the way", "He moved it out of the way"],
+    ["What did he ﷺ tell Abu Barzah to do?", "Remove harm from paths", "He moved it out of the way"],
+    ["You see a thorn on the path. What do you do?", "Move it: that is charity", "He moved it out of the way", "Removing harm from the way is charity"],
+    ["Clearing a path of harm is a good deed.", "True", "Allah thanked him and forgave him", "Removing harm from the way is charity"],
+    ["Moving harm off a path is a good deed to do.", "True", "Allah thanked him and forgave him", "Removing harm from the way is charity"],
+    ["Helping strangers on the road gets reward.", "True", "Allah thanked him and forgave him", "Removing harm from the way is charity"],
+    ["Moving something harmful off the path is a ____.", "charity", "Allah thanked him and forgave him", "Removing harm from the way is charity"]
+  ],
+  // A tree planted or a seed sown: what a bird, a person or an animal eats from it is charity for the one who planted
+  // it (Sahih al-Bukhari 2320, 6012).
+  "sign-planting": [
+    ["Who eating from it counts?", "A bird, person or animal", "A bird eats from it", "An animal eats from it"],
+    ["Who can eat from the plant and still bring you reward?", "A person or an animal", "A person eats from it", "An animal eats from it"],
+    ["A bird eats fruit from your tree. What is it for you?", "Charity", "Charity for the one who planted it"],
+    ["An animal eats from a tree you planted. What do you get?", "Reward like charity", "Charity for the one who planted it"],
+    ["Planting seeds can be worship.", "True", "Charity for the one who planted it"],
+    ["Planting can be a good deed in Islam.", "True", "Charity for the one who planted it"]
+  ],
+  // Umar's land at Khaybar: the land itself kept and its fruit given in charity, never sold, given away or inherited;
+  // its keeper may eat from it and feed a friend, storing nothing for himself (Sahih al-Bukhari 2737, 2777).
+  "sign-waqf": [
+    ["What is a waqf?", "Property kept for charity forever", "Keep the land itself", "Never sold, gifted or inherited"],
+    ["What did Umar do with his best land?", "Gave its fruit to charity forever", "And give its fruit in charity", "Never sold, gifted or inherited"],
+    ["Umar's land could be sold later.", "False", "Never sold, gifted or inherited"],
+    ["What could the keeper do?", "Eat from it and feed a friend", "Its keeper may eat and feed a friend"],
+    ["What could he not do?", "Store things for himself", "Storing nothing for himself"]
+  ],
+  // Asking permission three times at Umar's door, going back, and the youngest as the witness (Sahih al-Bukhari 6245).
+  "sign-permission": [
+    ["How many times should you ask to come in?", "Three", "He asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to come in?", "Three times", "He asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to enter?", "Three times", "He asked permission once", "A third time: no permission given"],
+    ["Why did Abu Musa leave Umar's door?", "He asked three times, no answer", "He asked permission once", "A third time: no permission given"],
+    ["Whose door did Abu Musa knock on?", "Umar's", "At Umar's door"],
+    ["If no one answers after three times, what do you do?", "Go back", "So he went back"],
+    ["What should you do if no one lets you in?", "Go back home", "So he went back"],
+    ["What should you do if you ask to come in three times with no answer?", "Go back home", "So he went back"],
+    ["What should you do if no one allows you in?", "Go back politely", "So he went back"],
+    ["What should you do after three unanswered asks?", "Return home", "So he went back"],
+    ["Abu Musa went back after asking Umar three times.", "True", "So he went back"],
+    ["What did Umar ask Abu Musa to bring?", "A witness to the hadith", "The youngest went with him as witness"],
+    ["Who did Ubayy send as the witness?", "The youngest of them", "The youngest went with him as witness"],
+    ["Who went as Abu Musa's witness?", "Abu Sa'id, the youngest", "The youngest went with him as witness"]
+  ],
+  // The first call to prayer in Madinah, and walking calmly to the prayer (Sahih al-Bukhari 604, 636).
+  "sign-adhan": [
+    ["Before the adhan, how did Muslims know the prayer time?", "They guessed it", "They used to guess the prayer time"],
+    ["Before the adhan, people had to guess the prayer time.", "True", "They used to guess the prayer time"],
+    ["Who was told to call the first adhan?", "Bilal", "O Bilal, stand and call to prayer"],
+    ["Whom did the Prophet ﷺ tell to call the adhan?", "Bilal", "O Bilal, stand and call to prayer"],
+    ["Bilal was the first ____, who calls the adhan.", "mu'adhdhin", "O Bilal, stand and call to prayer"],
+    ["The Muslims chose a bell like a church bell.", "False", "O Bilal, stand and call to prayer"],
+    ["The ____ is the call to prayer.", "adhan", "O Bilal, stand and call to prayer", "Calling the people to prayer"],
+    ["The ____ is the second call, just before salah starts.", "iqamah", "When you hear the iqamah"],
+    ["Walk to salah ____; don't run, even if late.", "calmly", "Walk to it calmly, do not rush"],
+    ["How should we go to prayer after the iqamah?", "Calmly, without rushing", "Walk to it calmly, do not rush"],
+    ["How should we walk to the prayer?", "With calmness", "Walk to it calmly, do not rush"],
+    ["Running to catch the start of prayer is better.", "False", "Walk to it calmly, do not rush"]
+  ],
+  // The wet grain hidden under the dry in a heap of food (Sahih Muslim 102).
+  "sign-wet-grain": [
+    ["What did the Prophet ﷺ find inside the heap of food?", "Wet grain", "Rain fell on a heap of food", "Inside, it was wet"],
+    ["What did he ﷺ find in the heap, per Muslim 102?", "Wet grain hidden inside", "Rain fell on a heap of food", "Inside, it was wet"],
+    ["What did the Prophet ﷺ find in the heap?", "Wet grain hidden under dry", "Rain fell on a heap of food", "Inside, it was wet"],
+    ["What did the seller hide, per the hadith?", "Wet grain under dry grain", "Rain fell on a heap of food", "The wet part hidden under dry"],
+    ["What should the seller have done with the wet part?", "Put it on top to be seen", "Why not on top, for people to see?"],
+    ["Where should the wet part have been?", "On top, for people to see", "Why not on top, for people to see?"],
+    ["The Prophet ﷺ told the seller to put the wet part where people could see.", "True", "Why not on top, for people to see?"],
+    ["What did the Prophet ﷺ say about one who deceives?", "He is not of me", "Whoever cheats is not of me"],
+    ["What did he ﷺ say about one who deceives?", "He is not of me", "Whoever cheats is not of me"],
+    ["Hiding a fault in what you sell is fine if no one asks.", "False", "Whoever cheats is not of me"],
+    ["Hiding a fault in what we sell is cheating.", "True", "Whoever cheats is not of me"],
+    ["Hiding a flaw in goods is fine if no one notices.", "False", "Whoever cheats is not of me"]
+  ],
+  // The well of Rumah that Uthman dug, and the army of hardship he equipped (Sahih al-Bukhari 2778).
+  "sign-rumah": [
+    ["Uthman bought a ____ and gave its water to everyone.", "well", "Whoever digs the well of Rumah", "Its water for all the Muslims"],
+    ["What did Uthman buy for the Muslims?", "The well of Rumah", "Whoever digs the well of Rumah", "Its water for all the Muslims"],
+    ["Which army did Uthman equip?", "The army of hardship", "Whoever equips the army of hardship", "And Uthman equipped it"],
+    ["What did the Prophet ﷺ promise for these deeds?", "Jannah", "Both were promised Paradise"]
+  ],
+  // Ka'b ibn Malik, who stayed behind from Tabuk, told the plain truth and was forgiven (Sahih al-Bukhari 4418, 9:118).
+  "sign-tabuk": [
+    ["How many she-camels did Ka'b own before Tabuk?", "Two", "Never stronger, never richer"],
+    ["How many she-camels did Ka'b have then?", "Two", "Never stronger, never richer"],
+    ["Ka'b stayed behind because he was too poor to go.", "False", "Never stronger, never richer"],
+    ["How was Ka'b when he stayed behind?", "Stronger and richer than ever", "Never stronger, never richer"],
+    ["What was the weather when the army left for Tabuk?", "Very hot", "Never stronger, never richer", "He kept delaying, and the army left"],
+    ["Why did Ka'b miss the army leaving for Tabuk?", "He kept putting it off", "He kept delaying, and the army left"],
+    ["What does Ka'b's delay teach us?", "Do a good deed now, not later", "He kept delaying, and the army left"],
+    ["The lesson is not to delay good deeds.", "True", "He kept delaying, and the army left"],
+    ["What did Ka'b decide to tell the Prophet ﷺ?", "The plain truth", "He told the plain truth"],
+    ["What did the Prophet ﷺ say about Ka'b?", "He has told the truth", "He told the plain truth"],
+    ["Ka'b said he had a good excuse for staying behind.", "False", "He told the plain truth"],
+    ["What saved Ka'b in the end?", "Telling the truth", "He told the plain truth"],
+    ["What saved Ka'b ibn Malik after Tabuk?", "Telling the truth", "He told the plain truth"],
+    ["Why was Ka'b saved, in his own words?", "He told the truth", "He told the plain truth"],
+    ["How long did people not speak to the three?", "Fifty nights", "Fifty nights, no one spoke to him"],
+    ["How long did the three wait, per Ka'b?", "Fifty nights", "Fifty nights, no one spoke to him"],
+    ["How did the earth feel to the three?", "Narrow, wide as it was", "Fifty nights, no one spoke to him"],
+    ["9:118 says the earth felt narrow to them.", "True", "Fifty nights, no one spoke to him"],
+    ["Who sent Ka'b the letter?", "The king of Ghassan", "A king's letter went into the oven"],
+    ["What did Ka'b do with the letter?", "Burned it in the oven", "A king's letter went into the oven"],
+    ["Ka'b left Madinah to join the king.", "False", "A king's letter went into the oven"]
+  ],
+  // The cave of Thawr on the Hijrah: the camels fed four months, Asma's belt, three nights in the cave, and "two, the
+  // third of whom is Allah" (Sahih al-Bukhari 3905, 3653).
+  "sign-thawr": [
+    ["How long did Abu Bakr feed the two camels?", "Four months", "Two camels, fed for four months"],
+    ["What did Asma use to tie the food bag?", "Part of her waist belt", "Asma cut her belt to tie the food"],
+    ["What did Asma use to tie the food?", "Her waist belt, cut in two", "Asma cut her belt to tie the food"],
+    ["What does Dhat an-Nitaqayn mean?", "The one with two belts", "Asma cut her belt to tie the food"],
+    ["Asma helped the Hijrah journey.", "True", "Asma cut her belt to tie the food"],
+    ["How many nights did they stay in the cave?", "Three", "Three nights in the cave of Thawr"],
+    ["How long did they stay in the cave?", "Three days", "Three nights in the cave of Thawr"],
+    ["What did Abu Bakr fear in the cave?", "The enemy would see them", "Two, the third of whom is Allah"],
+    ["Abu Bakr feared they could be seen if the enemy looked down.", "True", "Two, the third of whom is Allah"],
+    ["What did the Prophet ﷺ say to calm him?", "Two, and Allah is the third", "Two, the third of whom is Allah"],
+    ["What did the Prophet ﷺ say about the two in the cave?", "Allah is their third", "Two, the third of whom is Allah"],
+    ["What did the Prophet ﷺ say about the two of them?", "The third of them is Allah", "Two, the third of whom is Allah"],
+    ["What sums up the answer in the cave?", "Trust that Allah is with you", "Two, the third of whom is Allah"]
+  ],
+  // The plague in Sham: Umar at Sargh asks counsel and goes back, from Allah's decree to Allah's decree (Sahih
+  // al-Bukhari 5729).
+  "sign-plague": [
+    ["Why did Umar decide not to enter Sham?", "A sickness had spread there", "Plague had broken out in Sham"],
+    ["What did Umar do before deciding?", "He asked the companions' advice", "He asked them all for counsel"],
+    ["Abu Ubaydah asked: are you running from Allah's decree? What did Umar say?", "From His decree to His decree", "From Allah's decree to Allah's decree"],
+    ["What was Umar's answer?", "From Allah's decree to Allah's decree", "From Allah's decree to Allah's decree"],
+    ["What did the Prophet ﷺ say about a land with plague?", "Do not go into it", "Do not go to it, nor flee from it"]
+  ],
+  // A river at the door, bathed in five times a day, like the five prayers (Sahih al-Bukhari 528).
+  "sign-river-at-the-door": [
+    ["What did he compare the five prayers to?", "Bathing in a river five times a day", "If a river ran by your door", "And you bathed in it five times a day"],
+    ["What are the five prayers like, per the hadith?", "Bathing in a river", "If a river ran by your door", "And you bathed in it five times a day"],
+    ["The Prophet ﷺ compared the five prayers to bathing in a river.", "True", "If a river ran by your door", "And you bathed in it five times a day"],
+    ["How many times a day do Muslims pray?", "Five", "And you bathed in it five times a day"],
+    ["What do the prayers wash away?", "Sins", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"],
+    ["What do good deeds do, in 11:114?", "Remove bad deeds", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"]
+  ],
+  // Believers like a building, each part holding up the other; a man came asking, and he ﷺ said: speak up for him, and
+  // be rewarded (Sahih al-Bukhari 481, 6026). His laced fingers are only told, never drawn, so they are not asked here.
+  "sign-building": [
+    ["A believer to a believer is like what?", "A building", "The believer to the believer", "Is like a building"],
+    ["What are believers like, per Abu Musa's hadith?", "Bricks of one wall", "The believer to the believer", "Is like a building"],
+    ["What are believers like, per Bukhari 481?", "Bricks of a wall", "The believer to the believer", "Is like a building"],
+    ["What are believers like, in the hadith?", "Bricks of a wall", "The believer to the believer", "Is like a building"],
+    ["In a wall, each brick supports the others.", "True", "Each part holding up the other"],
+    ["Believers should support one another.", "True", "Each part holding up the other"],
+    ["Believers should hold each other up.", "True", "Each part holding up the other"],
+    ["When a man came asking, the Prophet ﷺ told them to help him.", "True", "Speak up for him, and be rewarded"]
+  ],
+  // Mercy in a hundred parts: one part among all creation, by which they are kind to each other, so that a mare lifts
+  // her hoof from her foal, and ninety-nine kept back (Sahih al-Bukhari 6000, 6469).
+  "sign-mercy": [
+    ["Into how many parts did Allah make mercy?", "One hundred", "Allah made mercy in a hundred parts"],
+    ["How many parts did He send to all creatures?", "One", "One part among all creation"],
+    ["How many parts of mercy came to earth, in Bukhari 6000?", "One part of a hundred", "One part among all creation"],
+    ["All the mercy among creatures comes from just one part.", "True", "One part among all creation", "By it, creatures are kind to each other"],
+    ["What is the one part used for?", "All creatures' mercy to each other", "By it, creatures are kind to each other"],
+    ["What does the mare do because of the one part of mercy?", "Lifts her hoof off her foal", "A mare lifts her hoof from her foal"],
+    ["How many parts of mercy did Allah keep with Him?", "Ninety-nine", "He kept ninety-nine parts with Him"],
+    ["How many parts of mercy did Allah keep for that Day?", "Ninety-nine", "He kept ninety-nine parts with Him"]
+  ],
+  // The halal is clear and the haram is clear, and between them are doubtful things; avoiding them keeps one's
+  // religion and honour safe, like one grazing around a sanctuary (Sahih al-Bukhari 52).
+  "sign-sanctuary": [
+    ["What lies between clear halal and clear haram?", "Doubtful things", "Between them are doubtful things"],
+    ["What lies between halal and haram?", "Doubtful things", "Between them are doubtful things"],
+    ["What lies between the halal and the haram?", "Doubtful things", "Between them are doubtful things"],
+    ["What do you protect by avoiding doubtful things?", "Your religion and honor", "Avoid them: your religion and honour stay safe"],
+    ["What does avoiding doubtful things protect?", "Religion and honor", "Avoid them: your religion and honour stay safe"],
+    ["What does staying away from doubtful things protect?", "Your faith and honour", "Avoid them: your religion and honour stay safe"],
+    ["When unsure if something is halal, it's safer to leave it.", "True", "Avoid them: your religion and honour stay safe"]
+  ],
+  // A good friend like one who carries musk, and a bad friend like one who blows the bellows (Sahih al-Bukhari 5534).
+  "sign-musk": [
+    ["What is a good friend like, in the hadith?", "One carrying musk", "Like one who carries musk"],
+    ["Even if he gives you nothing, a good friend leaves a good smell.", "True", "Or you find a sweet smell from him"],
+    ["What might a bad friend do, like the bellows?", "Burn your clothes", "He burns your clothes, or you find a bad smell"]
+  ],
+  // The people who shared a ship: those below would make a hole in their part; stopped, all are saved (Sahih
+  // al-Bukhari 2493).
+  "sign-shared-ship": [
+    ["What did the people below want to do?", "Make a hole for water", "Let us make a hole in our part"],
+    ["Stopping wrong protects the whole community.", "True", "Stop them, and all of them are saved"]
+  ],
+  // Three men in a cave: a rock shut it on them, and each asked Allah by a good deed done for Him (Sahih al-Bukhari
+  // 2272).
+  "sign-shut-cave": [
+    ["What trapped the three men in the cave?", "A big rock rolled over its mouth", "A rock rolled down and shut it"],
+    ["How did they ask Allah to save them?", "By a good deed each did for Him", "One held milk for his parents till dawn"],
+    ["One man had waited all night to give his parents their milk.", "True", "One held milk for his parents till dawn"],
+    ["What did another man give back to his worker?", "His wage, grown into a herd", "One gave a worker his wage, grown into a herd"]
+  ],
+  // A loan sent across the sea in a piece of wood, with Allah as witness (Sahih al-Bukhari 2291).
+  "sign-log-at-sea": [
+    ["Whom did the borrower name as his witness?", "Allah", "A thousand dinars, lent with Allah as witness"],
+    ["How did he send the money when he had no ship?", "Inside a piece of wood in the sea", "Money and a letter, sealed in a piece of wood", "He gave it to the sea, trusting Allah"],
+    ["The lender found the wood and the money inside it.", "True", "The lender took it home for firewood", "He opened it: his money, and the letter"]
+  ],
+  // The Quran by heart, like tied camels; and keep reviewing it (Sahih al-Bukhari 5031, 5033).
+  "sign-tied-camels": [
+    ["What is a hafiz compared to?", "An owner of tied camels", "Is like the owner of tied camels"],
+    ["What happens if the camels are let go?", "They run away", "If he lets them go, they run away"],
+    ["Memorised Quran needs regular review.", "True", "Keep reviewing it: it slips away faster"],
+    ["What slips away faster than a camel?", "The Quran we memorised", "Keep reviewing it: it slips away faster"],
+    ["What are we told to do?", "Keep reviewing it", "Keep reviewing it: it slips away faster"],
+    ["Once memorised, the Quran never leaves us.", "False", "If he lets them go, they run away", "Keep reviewing it: it slips away faster"]
+  ],
+  // Be in this world as a stranger or a traveler (Sahih al-Bukhari 6416), like a rider resting in a tree's shade, who
+  // then goes on and leaves it (Jami at-Tirmidhi 2377).
+  "sign-traveler": [
+    ["How should we live in this world?", "Like a traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live in this world?", "Like a stranger or traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live, per Bukhari 6416?", "Like a stranger or traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live in this world, per the hadith?", "Like a stranger or traveler", "Be in this world", "Or a traveler on his way"],
+    ["How should we live in this world, per the hadith?", "Like a stranger or a traveller", "Be in this world", "Or a traveler on his way"],
+    ["What did he compare himself to in this world?", "A rider resting in shade", "Like a rider who rests in the shade of a tree"],
+    ["A rider in shade soon moves on.", "True", "Then goes on, and leaves it"],
+    ["A traveler does not get too attached to a road stop.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
+    ["A traveler does not cling to the road.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
+    ["Ibn Umar taught to expect a long life ahead.", "False", "At evening, do not wait for the morning"]
+  ],
+  // A believer who recites the Quran is like a citron, and one who does not like a date (Sahih al-Bukhari 5020).
+  "sign-citron": [
+    ["Reciting the Quran adds a good scent to a believer.", "True", "Is like a citron", "It smells good, and it tastes good"],
+    ["A believer who does not recite is like what?", "A date with no smell", "Is like a date", "It tastes good, but has no smell"]
+  ],
+  // The trader who let off those in hardship, so that Allah might let him off; and Allah forgave him (Sahih al-Bukhari
+  // 2078). ("What did Allah do for him?", "Forgave him" is also asked of the thorny branch, so it stays as it is.)
+  "sign-forgiving-trader": [
+    ["What did the trader do when a debtor could not pay?", "He forgave him", "He told his helpers: let him off", "So that Allah may let us off"],
+    ["What did the lender do for poor debtors?", "Let them off", "He told his helpers: let him off", "So that Allah may let us off"],
+    ["What did Allah do for the trader?", "Allah forgave him", "And Allah forgave him"],
+    ["Being easy on people in debt is loved by Allah.", "True", "And Allah forgave him"],
+    ["Being gentle with people in debt is loved by Allah.", "True", "And Allah forgave him"]
+  ],
+  // Provided for like the birds, which go out in the morning hungry and come back in the evening full (Jami
+  // at-Tirmidhi 2344).
+  "sign-hungry-birds": [
+    ["What does true reliance on Allah bring?", "Allah's provision", "He would provide for you, as for the birds"],
+    ["How do the birds leave in the morning?", "Empty", "They go out in the morning hungry"],
+    ["How do the birds leave in the morning, in the hadith?", "Empty", "They go out in the morning hungry"],
+    ["How does a bird go out, in the hadith?", "Hungry in the morning", "They go out in the morning hungry"],
+    ["In the hadith, birds leave in the morning how?", "Hungry", "They go out in the morning hungry"],
+    ["The birds stay in their nests and wait for food.", "False", "They go out in the morning hungry"],
+    ["The bird still flies out to look for food.", "True", "They go out in the morning hungry"],
+    ["The birds still go out to seek food, in the hadith.", "True", "They go out in the morning hungry"],
+    ["How do they come back, in the hadith?", "Full", "And come back in the evening full"]
+  ],
+  // A hypocrite like a sheep wandering between two flocks, to this one once and to that one once (Sahih Muslim 2784).
+  "sign-two-flocks": [
+    ["How many flocks does the sheep wander between?", "Two", "Wandering between two flocks"],
+    ["The sheep settles firmly with one flock.", "False", "Then to that one", "Never settling with either"]
+  ],
+  // The believer like a fresh plant the wind bends, which stands straight again when it is still, and the wicked like a
+  // pine, until it is broken (Sahih al-Bukhari 5644).
+  "sign-bending-plant": [
+    ["What is the believer like, he ﷺ said?", "A fresh, soft plant", "A believer is like a fresh, soft plant"],
+    ["Being bent by trials means a believer has lost his faith.", "False", "From wherever the wind comes, it bends it", "When the wind is still, it stands straight again"],
+    ["What does the plant do when the wind stops?", "Stands straight again", "When the wind is still, it stands straight again"]
+  ],
+  // One who remembers his Lord and one who does not, like the living and the dead (Sahih al-Bukhari 6407).
+  "sign-remember": [
+    ["What does dhikr mean?", "Remembering Allah", "One who remembers his Lord"],
+    ["Who is like the living, in the hadith?", "One who remembers his Lord", "Are like the living"],
+    ["Who is like the living, in the hadith?", "One who remembers Allah", "Are like the living"],
+    ["Whom is the one who remembers Allah like?", "Someone alive", "Are like the living"],
+    ["The one who remembers Allah is like what?", "A living person", "Are like the living"],
+    ["One who remembers Allah is like what?", "A living creature", "Are like the living"],
+    ["Remembering Allah keeps the heart alive.", "True", "Are like the living"],
+    ["Dhikr keeps the heart alive.", "True", "Are like the living"],
+    ["And the one who never remembers Him?", "Like the dead", "And the dead"],
+    ["Who is like the dead, in the hadith?", "One who does not remember Allah", "And the dead"],
+    ["One who does not remember Allah is like what?", "A dead one", "And the dead"]
+  ],
+  // Allah more pleased with His servant's repentance than one who lost his camel in the desert, with his food and
+  // drink, and found it standing by him (Sahih Muslim 2747). (The lesson's question on 42:25 is about the ayah, so it
+  // stays as it is.)
+  "sign-lost-camel": [
+    ["What did the man lose, per Muslim 2747?", "His camel with food and drink", "A man in a desert, with his camel", "It ran off, with his food and drink"],
+    ["How does Allah feel when we repent, per Muslim 2747?", "More pleased than that man", "Then there it was, standing by him", "Allah is more pleased when we repent"]
+  ],
+  // A believer is not stung from the same hole twice (Sahih al-Bukhari 6133).
+  "sign-stung-twice": [
+    ["A believer is not stung twice from...?", "The same hole", "A believer is not stung", "From the same hole twice"],
+    ["What does this teach?", "Learn from what hurt you", "From the same hole twice", "He learns, and keeps away from it"],
+    ["A believer keeps making the same mistake.", "False", "A believer is not stung", "He learns, and keeps away from it"]
+  ],
+  // The doors of good: fasting is a shield, charity puts out sins as water puts out fire, and prayer deep in the night
+  // (Jami at-Tirmidhi 2616).
+  "sign-doors-of-good": [
+    ["What did he ﷺ call fasting in the same hadith?", "A shield", "Fasting is a shield"],
+    ["What is fasting, in the hadith?", "A shield", "Fasting is a shield"],
+    ["What does charity do to sins?", "Puts them out like water on fire", "Charity puts out sins", "As water puts out fire"],
+    ["What does charity do, in the hadith?", "Puts out sins", "Charity puts out sins", "As water puts out fire"],
+    ["Night prayer is also among the doors of good.", "True", "And prayer deep in the night"],
+    ["Which prayer is a door of good, in the hadith?", "Prayer deep in the night", "And prayer deep in the night"]
+  ],
+  // The square he ﷺ drew: a person's lifetime all around him, his hope a line going out of it, and troubles the small
+  // lines beside it (Sahih al-Bukhari 6417).
+  "sign-square-and-line": [
+    ["In the drawing, what did the square stand for?", "A person's lifetime", "The square is our lifetime"],
+    ["What was the line going outside the square?", "His hope", "The line going out is our hope"],
+    ["Our hopes often reach further than our lifetime.", "True", "The square is our lifetime", "The line going out is our hope"]
+  ],
+  // When you cook a soup, add more water to it, then look to your neighbors and give them some of it kindly (Sahih
+  // Muslim 2625b). (The lesson's question on zakat and sadaqah is not about the soup, so it stays as it is.)
+  "sign-more-water": [
+    ["What did the Prophet ﷺ tell Abu Dharr to add to his soup?", "More water", "Add more water to it"],
+    ["Why add it?", "To share with neighbors", "Then look to your neighbors' homes", "And give them some of it, kindly"],
+    ["Sharing food with neighbors is part of good manners.", "True", "Then look to your neighbors' homes", "And give them some of it, kindly"],
+    ["Who did the Prophet ﷺ say to share soup with?", "Your neighbors", "Then look to your neighbors' homes", "And give them some of it, kindly"]
+  ],
+  // A charity owed for every joint each day the sun rises: judging fairly, helping someone with his ride, a good word,
+  // every step to the prayer, and removing harm from the road (Sahih Muslim 1009, Sahih al-Bukhari 2989).
+  "sign-joint-charity": [
+    ["Charity is owed each day for every what?", "Joint of the body", "Each day the sun rises, every joint owes charity"],
+    ["What does each joint of the body owe every day?", "A charity", "Each day the sun rises, every joint owes charity"],
+    ["Which of these is also charity in the hadith?", "Judging fairly between two people", "Judging fairly between two is charity"],
+    ["What does the Prophet ﷺ call a good word?", "Charity", "A good word is charity"],
+    ["Which of these counts as a charity?", "A good word", "A good word is charity"],
+    ["Charity can only be given with money.", "False", "A good word is charity", "Removing harm from the road is charity"]
   ]
 };
 

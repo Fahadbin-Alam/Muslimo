@@ -212,7 +212,7 @@ function sea(): SignArt {
     ms: 10500,
     parts: [
       { name: "dawn sky", svg: dawn },
-      { name: "sun rising", svg: SUN(124, 46), keys: { at: [0, 0.3], y: [8, -6] } },
+      { name: "sun rising", svg: SUN(124, 46), keys: { at: [0, 0.18], y: [8, -6] } },
       { name: "far shore", svg: shore },
       { name: "the sea", svg: seaPlane },
       { name: "waves on the sea", svg: seaWaves, clip: { x: 0, y: 52, w: 160, h: 44 }, loop: { move: "slide", ms: 5200 } },
@@ -223,7 +223,7 @@ function sea(): SignArt {
         keys: { at: [0, 0.24, 0.28, 0.32, 0.36], opacity: [0, 0, 1, 1, 0], scaleY: [0, 0, 1, 1, 1] }
       },
       { name: "dry path", svg: path, keys: showFrom(0.3, 0.4) },
-      { name: "light on the path", svg: light, keys: showFrom(0.44, 0.56), loop: { move: "twinkle", ms: 2400, low: 0.5 } },
+      { name: "light on the path", svg: light, keys: showFrom(0.5, 0.6), loop: { move: "twinkle", ms: 2400, low: 0.5 } },
       { name: "left wall of water", svg: wall(false), origin: { x: 40, y: 96 }, keys: rise, loop: { move: "bob", ms: 2600, y: 0.5 } },
       { name: "right wall of water", svg: wall(true), origin: { x: 120, y: 96 }, keys: rise, loop: { move: "bob", ms: 2600, y: 0.5, phase: 0.5 } },
       { name: "foam on the crests", svg: foam(false) + foam(true), keys: { at: [0, 0.38, 0.44], opacity: [0, 0, 1] }, loop: { move: "twinkle", ms: 1100, low: 0.55 } },

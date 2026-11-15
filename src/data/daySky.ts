@@ -15,9 +15,18 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  * Maghrib once the sun has gone (561), the young camels in the forenoon heat (Sahih Muslim 748a), the shadows of the
  * hillocks once Zuhr has cooled (539), the arrow still seen after Maghrib (559), the white thread of dawn (Quran 2:187),
  * night coming from the east at iftar (1954, 1956), suhur close to dawn (1921) and the last third of the night (1145).
+ * The night has its own skies: standing in prayer for half of it, a little less or a little more (Quran 73:2-4), the
+ * night a covering, sleep a rest and the day a rising (25:47), and Laylat al-Qadr, better than a thousand months and
+ * peace until dawn (97:3, 97:5).
+ * The Quran swears by the times of the day, and each oath has its sky: the night as it leaves and the dawn as it
+ * brightens (89:1, 89:4, 74:33-34), the twilight's glow and the night drawing in (84:16-17), the sun, the day and the
+ * night (91:1, 91:4, 92:1-2), and the forenoon after the still night (93:1-2). Night passes into day and day into night,
+ * each following the other (22:61, 25:62); shadows lean right and left, morning and evening, bowing to Allah (13:15,
+ * 16:48); and our time, next to the nations before us, is like the time from Asr until sunset (Sahih al-Bukhari 557).
  *
- * Left out, because the scholars differ: how long a shadow is when Asr begins, which glow of twilight Isha waits for,
- * and whether Fajr is best prayed in the dark or in the light. Nothing in the sky is a person or an angel: only the sun,
+ * Left out, because the scholars differ: how long a shadow is when Asr begins, which glow of twilight Isha waits for
+ * (so the twilight's oath names no colour), whether Fajr is best prayed in the dark or in the light, and whether the
+ * night of 81:17 is coming or going. Nothing in the sky is a person or an angel: only the sun,
  * the moon, the stars, hills, palms, two young camels and an arrow.
  */
 
@@ -279,13 +288,179 @@ const NIGHT_PRAYER: SkyStop = {
   }
 };
 
+// The skies of the night: standing in prayer for most of it, sleep and waking, and the Night of Decree.
+
+const STAND_NIGHT: SkyStop = {
+  when: "Standing at night",
+  moments: ["night", "lastThird"],
+  span: true,
+  scene: {
+    id: "sky-stand-night",
+    from: AT.isha,
+    to: 28.4,
+    caption: "He ﷺ was told to stand in prayer at night, all but a little: half of it, a little less, or a little more.",
+    sources: [quran(73, 2), quran(73, 3), quran(73, 4)]
+  }
+};
+
+// From before sunset to just after sunrise: night comes over the sky like a covering, lifts as dawn breaks, and the
+// sun rises on the day.
+const SLEEP: SkyStop = {
+  when: "Night, then morning",
+  moments: ["night", "sunrise"],
+  scene: {
+    id: "sky-sleep",
+    from: 17.4,
+    to: 30.6,
+    touches: ["nightFalls"],
+    caption: "Allah made the night a covering for you, sleep a rest, and the day a time to rise.",
+    sources: [quran(25, 47)]
+  }
+};
+
+// The night begins at sunset; its peace lasts until dawn rises.
+const QADR: SkyStop = {
+  when: "Night until dawn · Laylat al-Qadr",
+  moments: ["night", "lastThird", "dawn"],
+  scene: {
+    id: "sky-qadr",
+    from: 18.2,
+    to: AT.nextFajr,
+    caption: "Laylat al-Qadr is better than a thousand months, a night of peace until dawn rises.",
+    sources: [quran(97, 3), quran(97, 5)]
+  }
+};
+
+// The Quran's oaths by the times of the day: each sky plays the times its oath names.
+
+// From the last third of the night until dawn has brightened: the night leaves as the dawn breaks.
+const DAWN_OATH: SkyStop = {
+  when: "The night leaves · Dawn",
+  moments: ["lastThird", "dawn"],
+  scene: {
+    id: "sky-dawn-oath",
+    from: 26.6,
+    to: 29.4,
+    caption: "Allah swears by the night as it leaves, and by the dawn as it brightens.",
+    sources: [quran(89, 1), quran(89, 4), quran(74, 33), quran(74, 34)]
+  }
+};
+
+// From just before sunset into the twilight: its glow still in the west as the night draws in from the east (the sky
+// stops before the glow is gone, as the scholars differ on which glow it is).
+const TWILIGHT: SkyStop = {
+  when: "Sunset · Twilight",
+  moments: ["sunset", "night"],
+  scene: {
+    id: "sky-twilight",
+    from: 17.5,
+    to: 18.9,
+    touches: ["nightFalls"],
+    caption: "Allah swears by the twilight's glow, and by the night and what it gathers in.",
+    sources: [quran(84, 16), quran(84, 17)]
+  }
+};
+
+// From the morning sun, through the day, until night has covered the sky.
+const SUN_OATH: SkyStop = {
+  when: "The day, then the night",
+  moments: ["forenoon", "night"],
+  span: true,
+  scene: {
+    id: "sky-sun-oath",
+    from: 8.4,
+    to: 20.6,
+    touches: ["nightFalls"],
+    caption: "Allah swears by the sun and its brightness, by the day as it shines, and by the night as it covers.",
+    sources: [quran(91, 1), quran(91, 4), quran(92, 1), quran(92, 2)]
+  }
+};
+
+// From the still of the night until the bright forenoon.
+const DUHA_OATH: SkyStop = {
+  when: "The night, then the forenoon",
+  moments: ["night", "lastThird", "dawn", "sunrise", "forenoon"],
+  scene: {
+    id: "sky-duha-oath",
+    from: 22,
+    to: 33.2,
+    caption: "Allah swears by the bright forenoon, and by the night when it grows still.",
+    sources: [quran(93, 1), quran(93, 2)]
+  }
+};
+
+// A whole turn, from midday to the next midday: the night comes in from the east, then the day comes back.
+const NIGHT_DAY: SkyStop = {
+  when: "Night and day in turn",
+  moments: ["midday", "afternoon", "sunset", "night", "lastThird", "dawn", "sunrise", "forenoon"],
+  scene: {
+    id: "sky-night-day",
+    from: 12.4,
+    to: 36.4,
+    touches: ["nightFalls"],
+    caption: "Allah makes the night pass into the day and the day into the night, each following the other.",
+    sources: [quran(22, 61), quran(25, 62)]
+  }
+};
+
+// From sunrise to sunset: the palm's shadow and the hills' shadows lean west in the morning and east in the evening.
+const SHADOWS: SkyStop = {
+  when: "Morning to evening",
+  moments: ["sunrise", "sunset"],
+  span: true,
+  scene: {
+    id: "sky-shadows",
+    from: 6.4,
+    to: 17.7,
+    caption: "Shadows lean to the right and to the left, morning and evening, bowing down to Allah.",
+    sources: [quran(13, 15), quran(16, 48)]
+  }
+};
+
+// From Asr until the sun has set.
+const WORKERS: SkyStop = {
+  when: "Asr to sunset",
+  moments: ["afternoon", "sunset"],
+  scene: {
+    id: "sky-workers",
+    from: 15.1,
+    to: 18.2,
+    marks: [{ hour: AT.asr, label: "Asr" }],
+    caption: "Our time, next to the nations before us, is like the time from Asr until sunset.",
+    sources: [bukhari("557")]
+  }
+};
+
 /** Every sky: the day of prayer, then the ones only a lesson opens on. */
-export const SKY_STOPS: readonly SkyStop[] = [...DAY_OF_PRAYER, COOL, ARROW, THREAD, IFTAR, FAST, SUHUR, FAJR_ASR, ISHA_FAJR, MIDNIGHT, NIGHT_PRAYER];
+export const SKY_STOPS: readonly SkyStop[] = [
+  ...DAY_OF_PRAYER,
+  COOL,
+  ARROW,
+  THREAD,
+  IFTAR,
+  FAST,
+  SUHUR,
+  FAJR_ASR,
+  ISHA_FAJR,
+  MIDNIGHT,
+  NIGHT_PRAYER,
+  STAND_NIGHT,
+  SLEEP,
+  QADR,
+  DAWN_OATH,
+  TWILIGHT,
+  SUN_OATH,
+  DUHA_OATH,
+  NIGHT_DAY,
+  SHADOWS,
+  WORKERS
+];
 
 /**
  * The lessons that open on the sky, by their lesson's node id, and the sky each opens on: the times of the five
- * prayers, the sunnah of Fajr, Duha, Zuhr in the heat, Asr, Maghrib, Isha late, the night prayer and witr, the last
- * third of the night, and the fast from suhur to iftar.
+ * prayers, the sunnah of Fajr, Duha, Zuhr in the heat, Asr, Maghrib, Isha late, the night prayer and witr, standing
+ * at night, the last third of the night, sleep and waking, Laylat al-Qadr, the fast from suhur to iftar, the Quran's
+ * oaths by the times of the day, night and day in turn, the shadows bowing, and our time from Asr until sunset.
  */
 export const DAY_SKY_LESSONS: Record<string, string> = {
   // The five prayers and their times.
@@ -341,10 +516,143 @@ export const DAY_SKY_LESSONS: Record<string, string> = {
   "deep-isra3-the-night-prayer": "sky-night-prayer",
   "deep-pray-night-praised-station": "sky-night-prayer",
   "deep-tur3-glorify-at-night": "sky-night-prayer",
+  "deep-pray-night-thankful-servant": "sky-night-prayer",
+  "deep-pray-night-eleven": "sky-night-prayer",
+  "deep-pray-night-prayer-of-dawud": "sky-night-prayer",
+  "deep-pray-night-leave-their-beds": "sky-night-prayer",
+  "deep-pray-night-final-quiz": "sky-night-prayer",
+  "deep-prayer-night-sunnahs-wake-the-sleepers": "sky-night-prayer",
+  "deep-prayer-night-sunnahs-sleep-early-rise-late": "sky-night-prayer",
+  "deep-prayer-night-sunnahs-sitting-then-standing": "sky-night-prayer",
+  "deep-prayer-night-sunnahs-a-middle-voice": "sky-night-prayer",
+  "deep-prayer-night-sunnahs-loud-or-quiet": "sky-night-prayer",
+  "deep-prayer-night-sunnahs-final-quiz": "sky-night-prayer",
+  "deep-book-night-prayer-a-deed-done-always": "sky-night-prayer",
+  "deep-book-night-prayer-he-stood-so-long": "sky-night-prayer",
+  "deep-book-night-prayer-seven-nine-or-eleven": "sky-night-prayer",
+  "deep-book-night-prayer-an-hour-every-night": "sky-night-prayer",
+  "deep-book-night-prayer-review-1": "sky-night-prayer",
+  "deep-book-night-prayer-final-quiz": "sky-night-prayer",
+  "deep-mothers-maymunah-night-prayer": "sky-night-prayer",
+  "deep-tree-ibn-umar-a-righteous-man": "sky-night-prayer",
+  "deep-book-prayer-clean-mouth-at-night": "sky-night-prayer",
+  "deep-found-reciting-quran-ayahs-at-night": "sky-night-prayer",
+  "deep-zumar3-the-night-prayer-dua": "sky-night-prayer",
+  "deep-kahf2-wont-you-pray": "sky-night-prayer",
+  "deep-tur3-waking-at-night": "sky-night-prayer",
+  "deep-sajdah2-sides-leave-their-beds": "sky-night-prayer",
+  "deep-sajdah2-sweeter-than-sleep": "sky-night-prayer",
+  "deep-zumar1-standing-at-night": "sky-night-prayer",
+  "deep-zumar1-best-deed-best-time": "sky-night-prayer",
+  "deep-insan4-prostrate-at-night": "sky-night-prayer",
+  "deep-dhariyat1-little-sleep-at-night": "sky-night-prayer",
+  "deep-fast-manners-so-it-stays-easy": "sky-night-prayer",
+  "deep-ubayy-taraweeh": "sky-night-prayer",
+  "ramadan-night-prayer": "sky-night-prayer",
+  "fasting-ramadan-growth-night-worship": "sky-night-prayer",
   "deep-hadith-forgives-last-third": "sky-last-third",
   "deep-imran1-last-third": "sky-last-third",
   "deep-dhariyat1-the-last-third": "sky-last-third",
   "deep-muzzammil4-the-last-third": "sky-last-third",
+  // Standing in prayer at night, as Al-Muzzammil tells it (73:2-4), and as much of it as is easy (73:20).
+  "surah-meaning-73-1-9": "sky-stand-night",
+  "deep-muzzammil1-stand-the-night": "sky-stand-night",
+  "deep-muzzammil2-rising-at-night": "sky-stand-night",
+  "deep-muzzammil2-best-voluntary-prayer": "sky-stand-night",
+  "deep-muzzammil2-a-busy-day": "sky-stand-night",
+  "deep-muzzammil3-strength-from-prayer": "sky-stand-night",
+  "surah-meaning-73-20": "sky-stand-night",
+  "deep-muzzammil4-allah-knows-your-night": "sky-stand-night",
+  "deep-muzzammil4-recite-what-is-easy": "sky-stand-night",
+  // Sleep and waking: the sunnahs and duas of bedtime and of waking up, and sleep as one of Allah's signs.
+  "deep-manners-sleep-right-side": "sky-sleep",
+  "deep-manners-sleep-dust-the-bed": "sky-sleep",
+  "deep-manners-sleep-three-quls": "sky-sleep",
+  "deep-manners-sleep-waking-up": "sky-sleep",
+  "deep-manners-sleep-final-quiz": "sky-sleep",
+  "deep-dua-sleep-kursi": "sky-sleep",
+  "deep-dua-sleep-better-than-servant": "sky-sleep",
+  "deep-dua-sleep-bismika": "sky-sleep",
+  "deep-dua-sleep-last-words": "sky-sleep",
+  "deep-dua-sleep-review-1": "sky-sleep",
+  "deep-dua-sleep-waking": "sky-sleep",
+  "deep-dua-sleep-final-quiz": "sky-sleep",
+  "deep-bara-bedtime-dua": "sky-sleep",
+  "deep-book-dua-bedtime-thanks": "sky-sleep",
+  "deep-duas-remembering-allah-always-a-dua-before-sleeping": "sky-sleep",
+  "deep-nas-before-sleep": "sky-sleep",
+  "deep-baqarah3-kursi-night": "sky-sleep",
+  "deep-kafirun1-a-surah-before-sleep": "sky-sleep",
+  "deep-hadid1-a-dua-before-sleep": "sky-sleep",
+  "deep-zumar3-the-bedtime-dua": "sky-sleep",
+  "deep-naba1-the-bedtime-dua": "sky-sleep",
+  "deep-found-reciting-quran-two-surahs-before-sleep": "sky-sleep",
+  "deep-found-day-night-before-bed": "sky-sleep",
+  "deep-manners-staying-safe-a-roof-with-a-wall": "sky-sleep",
+  "deep-manners-staying-safe-clean-hands-at-bedtime": "sky-sleep",
+  "deep-zakat-counted-by-allah-sleep-as-a-gift": "sky-sleep",
+  "deep-book-bad-al-khalq-three-knots": "sky-sleep",
+  "foundation-phrases-rhythm-morning-remembrance": "sky-sleep",
+  "deep-anam2-waking-dua": "sky-sleep",
+  "deep-found-day-night-wash-hands-on-waking": "sky-sleep",
+  "deep-book-taharah-wash-hands-on-waking": "sky-sleep",
+  "deep-book-bad-al-khalq-rinse-the-nose": "sky-sleep",
+  "deep-furqan2-night-and-sleep": "sky-sleep",
+  "deep-naba1-sleep-for-rest": "sky-sleep",
+  "deep-rum2-sleep-and-seeking": "sky-sleep",
+  "deep-anam2-sleep-death": "sky-sleep",
+  "deep-zumar3-sleep-the-lesser-death": "sky-sleep",
+  "surah-meaning-39-42-52": "sky-sleep",
+  // Laylat al-Qadr, and the last ten nights of Ramadan in which it is sought.
+  "surah-meaning-97-1-3": "sky-qadr",
+  "surah-meaning-97-4-5": "sky-qadr",
+  "surah-meaning-97-final-quiz": "sky-qadr",
+  "deep-qadr1-sent-down-on-a-blessed-night": "sky-qadr",
+  "deep-qadr1-why-al-qadr": "sky-qadr",
+  "deep-qadr1-what-will-make-you-know": "sky-qadr",
+  "deep-qadr1-better-than-a-thousand-months": "sky-qadr",
+  "deep-qadr1-review-1": "sky-qadr",
+  "deep-qadr1-more-than-a-lifetime": "sky-qadr",
+  "deep-qadr1-forgiven-for-standing": "sky-qadr",
+  "deep-qadr1-final-quiz": "sky-qadr",
+  "deep-qadr2-the-angels-descend": "sky-qadr",
+  "deep-qadr2-peace-until-dawn": "sky-qadr",
+  "deep-qadr2-seek-it-in-the-odd-nights": "sky-qadr",
+  "deep-qadr2-its-date-was-taken-away": "sky-qadr",
+  "deep-qadr2-working-hard-in-the-last-ten": "sky-qadr",
+  "deep-qadr2-review-1": "sky-qadr",
+  "deep-qadr2-the-dua-of-the-night": "sky-qadr",
+  "deep-qadr2-final-quiz": "sky-qadr",
+  "deep-laylat-al-qadr-better-than-a-thousand": "sky-qadr",
+  "deep-laylat-al-qadr-peace-until-dawn": "sky-qadr",
+  "deep-laylat-al-qadr-the-odd-nights": "sky-qadr",
+  "deep-laylat-al-qadr-the-quarrel": "sky-qadr",
+  "deep-laylat-al-qadr-the-last-ten-nights": "sky-qadr",
+  "deep-laylat-al-qadr-all-sins-forgiven": "sky-qadr",
+  "deep-laylat-al-qadr-review-1": "sky-qadr",
+  "deep-laylat-al-qadr-the-dua": "sky-qadr",
+  "deep-laylat-al-qadr-final-quiz": "sky-qadr",
+  "deep-dukhan1-a-blessed-night": "sky-qadr",
+  "deep-dukhan1-standing-on-laylatul-qadr": "sky-qadr",
+  "deep-dukhan1-seek-it-in-odd-nights": "sky-qadr",
+  "deep-fast-last-ten-strive": "sky-qadr",
+  "deep-fast-last-ten-family": "sky-qadr",
+  "deep-fast-last-ten-odd-nights": "sky-qadr",
+  "deep-fast-last-ten-stand-the-night": "sky-qadr",
+  "deep-fast-last-ten-angels-descend": "sky-qadr",
+  "deep-fast-last-ten-afuww": "sky-qadr",
+  "deep-fast-last-ten-review-1": "sky-qadr",
+  "deep-fast-last-ten-final-quiz": "sky-qadr",
+  "deep-abu-said-mud-and-water": "sky-qadr",
+  "deep-ubadah-quarrel-and-qadr": "sky-qadr",
+  "fasting-ramadan-growth-laylat-al-qadr": "sky-qadr",
+  "ramadan-sent-down": "sky-qadr",
+  "ramadan-thousand-months": "sky-qadr",
+  "ramadan-angels-descend": "sky-qadr",
+  "ramadan-peace-until-dawn": "sky-qadr",
+  "ramadan-odd-nights": "sky-qadr",
+  "ramadan-pray-on-qadr": "sky-qadr",
+  "ramadan-work-harder": "sky-qadr",
   // The fast: suhur, the white thread, the day, and iftar.
   "fasting-times-and-rules-suhur-and-intent": "sky-suhur",
   "deep-fast-suhur-blessing": "sky-suhur",
@@ -359,7 +667,53 @@ export const DAY_SKY_LESSONS: Record<string, string> = {
   "fasting-times-and-rules-timing-review": "sky-fast",
   "fasting-times-and-rules-breaking-the-fast": "sky-iftar",
   "deep-fast-suhur-hasten": "sky-iftar",
-  "ramadan-hurry-to-iftar": "sky-iftar"
+  "ramadan-hurry-to-iftar": "sky-iftar",
+  // The night a sign: the day is pulled away from it, and the fasting person breaks the fast (36:37).
+  "deep-yasin2-the-night-a-sign": "sky-iftar",
+  // The Quran's oaths by the times of the day: the dawn (Al-Fajr, Al-Muddaththir), the twilight (Al-Inshiqaq), the
+  // sun, the day and the night (Ash-Shams, Al-Layl), and the forenoon (Ad-Duha).
+  "deep-fajr1-by-the-dawn": "sky-dawn-oath",
+  "deep-fajr1-the-night-as-it-passes": "sky-dawn-oath",
+  "deep-fajr1-final-quiz": "sky-dawn-oath",
+  "deep-muddaththir3-moon-night-dawn": "sky-dawn-oath",
+  "deep-inshiqaq2-by-the-twilight": "sky-twilight",
+  "deep-inshiqaq2-the-night-and-what-it-gathers": "sky-twilight",
+  "deep-shams1-by-the-sun-and-its-light": "sky-sun-oath",
+  "deep-shams1-the-day-shines": "sky-sun-oath",
+  "deep-shams1-the-night-covers": "sky-sun-oath",
+  "deep-shams1-day-and-night-in-order": "sky-sun-oath",
+  "deep-shams1-review-1": "sky-sun-oath",
+  "deep-shams1-final-quiz": "sky-sun-oath",
+  "deep-layl1-by-the-night": "sky-sun-oath",
+  "deep-layl1-by-the-day": "sky-sun-oath",
+  "deep-layl1-final-quiz": "sky-sun-oath",
+  "deep-duha1-why-ad-duha-came-down": "sky-duha-oath",
+  "deep-duha1-by-the-forenoon": "sky-duha-oath",
+  "deep-duha1-the-still-night": "sky-duha-oath",
+  "deep-duha1-review-1": "sky-duha-oath",
+  "deep-duha1-final-quiz": "sky-duha-oath",
+  "surah-meaning-93-1-5": "sky-duha-oath",
+  // Night and day in turn, each passing into the other: signs for those who think.
+  "deep-imran1-night-day": "sky-night-day",
+  "deep-imran3-signs-in-the-sky": "sky-night-day",
+  "deep-yunus1-night-and-day": "sky-night-day",
+  "deep-isra1-night-and-day-signs": "sky-night-day",
+  "deep-hajj3-night-into-day": "sky-night-day",
+  "deep-muminun3-night-and-day": "sky-night-day",
+  "deep-furqan2-night-and-day-to-make-up": "sky-night-day",
+  "deep-qasas6-night-and-day-a-mercy": "sky-night-day",
+  "surah-meaning-28-61-75": "sky-night-day",
+  "deep-luqman2-night-into-day": "sky-night-day",
+  "deep-fatir1-night-merges-into-day": "sky-night-day",
+  "deep-zumar1-night-wraps-the-day": "sky-night-day",
+  "deep-hadid1-night-into-day": "sky-night-day",
+  "deep-naba1-night-and-day": "sky-night-day",
+  "deep-naziat3-night-and-forenoon": "sky-night-day",
+  // The shadows bowing to Allah, morning and evening, right and left.
+  "deep-raad2-even-the-shadows-bow": "sky-shadows",
+  "deep-nahl3-shadows-bow-down": "sky-shadows",
+  // Our time, next to the nations before us: from Asr until sunset.
+  "deep-hadid4-work-until-sunset": "sky-workers"
 };
 
 /** A lesson's sky: the stop it opens on. `lessonSlug` is the lesson's node id. */
