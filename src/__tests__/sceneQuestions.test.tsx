@@ -109,8 +109,11 @@ describe("which questions are asked on a scene", () => {
     // one scene question fewer: the first no longer asks about the one who remembers Allah, and the second asks what to
     // say after something goes wrong in place of what a believer does when something hard happens and whether saying
     // if only opens a door to Shaytan. The final quiz of "Jahannam" swaps two of its scene questions for two others.
-    // Every one of them is still asked in its own lesson.
-    expect(places).toBe(2012);
+    // Every one of them is still asked in its own lesson. "The Book of the Virtues of the Quran" gained a lesson, so its
+    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). The new final quiz of
+    // "The reward of dhikr" also no longer asks where la hawla wa la quwwata illa billah is a treasure of (still asked in
+    // its lesson).
+    expect(places).toBe(2010);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
