@@ -28981,7 +28981,7 @@
   },
   {
     "kind": "course",
-    "text": "Room for everyone, sitting where it ends, your seat when you come back, keeping a secret, correcting kindly, thanking helpers, and closing a sitting."
+    "text": "Room for everyone, sitting where it ends, out of the sun into the shade, your seat when you come back, keeping a secret, correcting kindly, thanking helpers, and closing a sitting."
   },
   {
     "kind": "course",
@@ -29606,6 +29606,10 @@
   {
     "kind": "course",
     "text": "Where the sitting ends"
+  },
+  {
+    "kind": "course",
+    "text": "Into the shade"
   },
   {
     "kind": "course",
@@ -39269,7 +39273,7 @@
   },
   {
     "kind": "course",
-    "text": "Estates that pull the heart, what is spared in this world, sixty to seventy years, what people call nobility, kept from the world out of love, and a house for rain and sun."
+    "text": "Estates that pull the heart, what is spared in this world, sixty to seventy years, what people call nobility, kept from the world out of love, a house for rain and sun, and less than a dead lamb."
   },
   {
     "kind": "arabic",
@@ -39866,6 +39870,10 @@
   {
     "kind": "course",
     "text": "A house for rain and sun"
+  },
+  {
+    "kind": "course",
+    "text": "Less than a dead lamb"
   },
   {
     "kind": "course",
@@ -94465,6 +94473,78 @@
   },
   {
     "kind": "lesson",
+    "text": "He ﷺ told a man in the sun to move into the shade."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by the father of Qays"
+  },
+  {
+    "kind": "lesson",
+    "text": "He ﷺ was speaking to the people"
+  },
+  {
+    "kind": "lesson",
+    "text": "The man moved into the shade"
+  },
+  {
+    "kind": "source",
+    "text": "Sunan Abi Dawud 4822"
+  },
+  {
+    "kind": "question",
+    "text": "Where did the man stand while he ﷺ was speaking?"
+  },
+  {
+    "kind": "question",
+    "text": "In the sun"
+  },
+  {
+    "kind": "question",
+    "text": "In the rain"
+  },
+  {
+    "kind": "question",
+    "text": "On a rooftop"
+  },
+  {
+    "kind": "question",
+    "text": "By the well"
+  },
+  {
+    "kind": "question",
+    "text": "He came while the Messenger of Allah ﷺ was speaking and stood in the sun."
+  },
+  {
+    "kind": "question",
+    "text": "Move to the front"
+  },
+  {
+    "kind": "question",
+    "text": "Sit near the door"
+  },
+  {
+    "kind": "question",
+    "text": "Wait by the wall"
+  },
+  {
+    "kind": "question",
+    "text": "Move into the shade"
+  },
+  {
+    "kind": "question",
+    "text": "He ordered him to shift, and he shifted to the shade."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ cared that the people with him were comfortable."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ told the man standing in the sun to move into the shade."
+  },
+  {
+    "kind": "lesson",
     "text": "If you get up and come back, your seat is still yours."
   },
   {
@@ -94629,6 +94709,10 @@
   },
   {
     "kind": "lesson",
+    "text": "Can you still remember these about the manners of gatherings?"
+  },
+  {
+    "kind": "lesson",
     "text": "Pray for those who help you, and speak well of them."
   },
   {
@@ -94682,10 +94766,6 @@
   {
     "kind": "question",
     "text": "They had not taken all the reward while you pray for them and praise them."
-  },
-  {
-    "kind": "lesson",
-    "text": "Can you still remember these about the manners of gatherings?"
   },
   {
     "kind": "lesson",
@@ -97118,10 +97198,6 @@
   {
     "kind": "question",
     "text": "On Fridays"
-  },
-  {
-    "kind": "question",
-    "text": "In the rain"
   },
   {
     "kind": "question",
@@ -195673,6 +195749,78 @@
   },
   {
     "kind": "lesson",
+    "text": "Can you still remember these about what this world is worth?"
+  },
+  {
+    "kind": "lesson",
+    "text": "To Allah, this world is worth less than a dead lamb."
+  },
+  {
+    "kind": "lesson",
+    "text": "He ﷺ took the dead lamb by its ear"
+  },
+  {
+    "kind": "lesson",
+    "text": "No one wanted it, even for a dirham"
+  },
+  {
+    "kind": "source",
+    "text": "Sahih Muslim 2957a"
+  },
+  {
+    "kind": "question",
+    "text": "What did he ﷺ find in the market, as Jabir reported?"
+  },
+  {
+    "kind": "question",
+    "text": "A lost sandal"
+  },
+  {
+    "kind": "question",
+    "text": "A dead lamb"
+  },
+  {
+    "kind": "question",
+    "text": "A broken jar"
+  },
+  {
+    "kind": "question",
+    "text": "There he found a dead lamb with very short ears, Jabir said."
+  },
+  {
+    "kind": "question",
+    "text": "How did the people answer when he ﷺ offered it for a dirham?"
+  },
+  {
+    "kind": "question",
+    "text": "They did not want it"
+  },
+  {
+    "kind": "question",
+    "text": "They raced to buy it"
+  },
+  {
+    "kind": "question",
+    "text": "They asked for two"
+  },
+  {
+    "kind": "question",
+    "text": "They paid in gold"
+  },
+  {
+    "kind": "question",
+    "text": "They said they would not want it even for less, as it was of no use to them."
+  },
+  {
+    "kind": "question",
+    "text": "This world is of little worth in Allah's sight."
+  },
+  {
+    "kind": "question",
+    "text": "This world is more insignificant to Allah than this dead lamb is to you, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about what this world is worth!"
   },
   {
@@ -233038,10 +233186,6 @@
   {
     "kind": "question",
     "text": "Ground to dust"
-  },
-  {
-    "kind": "question",
-    "text": "In the sun"
   },
   {
     "kind": "question",

@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Akhirah unit: what this world is worth, from Jami at-Tirmidhi, Sunan an-Nasa'i and Sahih al-Bukhari.
-// Estates that pull the heart, what in this world is spared the curse, a lifespan of sixty to seventy years, what the
-// people of this world call nobility, kept from the world out of love, and a house built only for rain and sun. Every
-// card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight. None
-// of these hadith is taught anywhere else in the app.
+// One more Akhirah unit: what this world is worth, from Jami at-Tirmidhi, Sunan an-Nasa'i, Sahih al-Bukhari and Sahih
+// Muslim. Estates that pull the heart, what in this world is spared the curse, a lifespan of sixty to seventy years,
+// what the people of this world call nobility, kept from the world out of love, a house built only for rain and sun,
+// and a world worth less to Allah than a dead lamb. Every card is one sahih or hasan hadith with its number, narrator
+// and grade, and its exact English words to highlight. None of these hadith is taught anywhere else in the app.
 
 const WORTH: DeepUnit = {
   key: "akhirah-what-this-world-is-worth",
   topicId: "akhirah",
   branchId: "akhirah-what-this-world-is-worth",
-  branch: { title: "What this world is worth", description: "Estates that pull the heart, what is spared in this world, sixty to seventy years, what people call nobility, kept from the world out of love, and a house for rain and sun." },
+  branch: { title: "What this world is worth", description: "Estates that pull the heart, what is spared in this world, sixty to seventy years, what people call nobility, kept from the world out of love, a house for rain and sun, and less than a dead lamb." },
   name: "what this world is worth",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const WORTH: DeepUnit = {
         { q: "Why did Ibn Umar build his house?", a: "For shelter from rain and sun", wrong: ["For storing trade goods", "For hosting big feasts", "For keeping horses"], why: "So that it might protect me from the rain and shade me from the sun, he said." },
         { q: "Who helped Ibn Umar build it?", a: "Nobody", wrong: ["His father Umar", "Some hired builders", "His whole tribe"], why: "None of Allah's creatures assisted me in building it, Ibn Umar said." },
         { q: "Ibn Umar built this house during the life of the Prophet ﷺ.", tf: true, why: "During the life-time of the Prophet ﷺ, he built it with his own hands." }
+      ]
+    },
+    {
+      slug: "less-than-a-dead-lamb",
+      title: "Less than a dead lamb",
+      line: "To Allah, this world is worth less than a dead lamb.",
+      facts: ["Told by Jabir ibn Abdullah", "He ﷺ took the dead lamb by its ear", "No one wanted it, even for a dirham"],
+      source: hadith("muslim", "2957a", "Jabir ibn Abdullah", "Sahih", "Jabir ibn Abdullah said: the Messenger of Allah ﷺ walked through the market and found a dead lamb with very short ears. He took it by the ear and asked: who would like to have this for a dirham? They said: we would not want it even for less, it is of no use to us; even alive it had a defect, so how now that it is dead? He said: by Allah, this world is more insignificant to Allah than this is to you.", "this world is more insignificant in the eye of Allah than it"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ find in the market, as Jabir reported?", a: "A dead lamb", wrong: ["A bag of gold", "A broken jar", "A lost sandal"], why: "There he found a dead lamb with very short ears, Jabir said." },
+        { q: "How did the people answer when he ﷺ offered it for a dirham?", a: "They did not want it", wrong: ["They raced to buy it", "They asked for two", "They paid in gold"], why: "They said they would not want it even for less, as it was of no use to them." },
+        { q: "This world is of little worth in Allah's sight.", tf: true, why: "This world is more insignificant to Allah than this dead lamb is to you, he ﷺ said." }
       ]
     }
   ]
