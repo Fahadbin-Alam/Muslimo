@@ -28,12 +28,12 @@ const track = (points: Parameters<typeof trackFrom>[0]): SignKeys => {
 };
 
 /** The grey of someone who does wrong or is weighed down, and the dark of a wrong done. */
-const GREY = "#7D746C";
-const DARK = "#4A3A2A";
-const DIM = "#A89F94";
+export const GREY = "#7D746C";
+export const DARK = "#4A3A2A";
+export const DIM = "#A89F94";
 
 /** A prayer mat, its middle at (x, y). */
-const prayerMat = (x: number, y: number) =>
+export const prayerMat = (x: number, y: number) =>
   `<path d="M${n(x - 9)} ${n(y + 2.6)} L${n(x + 7)} ${n(y + 2.6)} L${n(x + 9.6)} ${n(y - 2.4)} L${n(x - 6.4)} ${n(y - 2.4)} Z" fill="#B5473A"/>` +
   `<path d="M${n(x - 7.4)} ${n(y + 1.6)} L${n(x + 5.8)} ${n(y + 1.6)} L${n(x + 8)} ${n(y - 1.4)} L${n(x - 5.4)} ${n(y - 1.4)} Z" stroke="#E8C45A" stroke-width="0.5" fill="none"/>` +
   `<path d="M${n(x - 4.4)} ${n(y + 0.4)} Q${n(x + 0.4)} ${n(y - 2)} ${n(x + 3.4)} ${n(y + 0.4)}" stroke="#E8C45A" stroke-width="0.4" fill="none"/>`;
@@ -42,13 +42,13 @@ const prayerMat = (x: number, y: number) =>
 const timeMark = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="6.4" stroke="${GOLD}" stroke-width="0.7" stroke-dasharray="1.6 1.3" fill="#FFFFFF" fill-opacity="0.18"/>`;
 
 /** A small dark speck over (x, y): a wrong, or a fault. */
-const speck = (x: number, y: number, r = 1.2) => `<circle cx="${n(x)}" cy="${n(y)}" r="${r}" fill="${DARK}"/>`;
+export const speck = (x: number, y: number, r = 1.2) => `<circle cx="${n(x)}" cy="${n(y)}" r="${r}" fill="${DARK}"/>`;
 
 /** A good light over (x, y): a good deed, or righteousness. */
-const goodLight = (x: number, y: number) => glow(x, y, 3.4, WARM, 0.3) + sparkle(x, y, 1.6, SPARK);
+export const goodLight = (x: number, y: number) => glow(x, y, 3.4, WARM, 0.3) + sparkle(x, y, 1.6, SPARK);
 
 /** [at, x, y] keys that hold a part where it is drawn until `from`, then move it by (dx, dy) by `to`. */
-const goes = (from: number, to: number, dx: number, dy: number): [number, number, number][] => [
+export const goes = (from: number, to: number, dx: number, dy: number): [number, number, number][] => [
   [from, 0, 0],
   [to, dx, dy]
 ];
@@ -243,11 +243,11 @@ function truthLeads(): SignArt {
 }
 
 /** A crooked voice from (x, y), facing right: the words of a lie, or of "if". */
-const crooked = (x: number, y: number) =>
+export const crooked = (x: number, y: number) =>
   `<path d="M${x} ${n(y + 1.2)} l1 -1.4 l1 1.4 l1 -1.4 l1 1.4 M${x} ${n(y - 1.2)} l1.4 -1.6 l1.4 1.6 l1.4 -1.6 l1.4 1.6" stroke="${GREY}" stroke-width="0.8" fill="none" stroke-linecap="round"/>`;
 
 /** A soft cover over (x, y): a fault kept hidden. */
-const cover = (x: number, y: number) =>
+export const cover = (x: number, y: number) =>
   `<path d="M${n(x - 3.6)} ${n(y + 1.6)} Q${n(x - 3.4)} ${n(y - 2.8)} ${x} ${n(y - 3)} Q${n(x + 3.4)} ${n(y - 2.8)} ${n(x + 3.6)} ${n(y + 1.6)} Z" fill="#FFF3DA" stroke="#E2C48C" stroke-width="0.4"/>`;
 
 // Easing a hardship. The Prophet ﷺ said: he who alleviates the suffering of a brother out of the sufferings of the
