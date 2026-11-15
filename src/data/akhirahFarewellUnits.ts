@@ -1,16 +1,17 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Akhirah unit: saying goodbye to a believer, from Jami at-Tirmidhi, Sahih al-Bukhari, Sunan Ibn Majah and
-// Sunan Abi Dawud. Sweat on the brow at death, the believers as Allah's witnesses on earth, his ﷺ du'a at a funeral,
-// Allah's name when laying the dead in the grave, honor for the body, and visiting graves to remember death. Every card
-// is one sahih hadith with its number, narrator and grade, and its exact English words to highlight. Points the schools
-// differ on are left out, and none of these hadith is taught anywhere else in the app.
+// Sunan Abi Dawud. Sweat on the brow at death, the believers as Allah's witnesses on earth, the bier that speaks as it
+// is carried, his ﷺ du'a at a funeral, Allah's name when laying the dead in the grave, honor for the body, and visiting
+// graves to remember death. Every card is one sahih hadith with its number, narrator and grade, and its exact English
+// words to highlight. Points the schools differ on are left out, and none of these hadith is taught anywhere else in
+// the app.
 
 const FAREWELL: DeepUnit = {
   key: "akhirah-saying-goodbye",
   topicId: "akhirah",
   branchId: "akhirah-saying-goodbye",
-  branch: { title: "Saying goodbye to a believer", description: "Sweat on the brow, witnesses on earth, the funeral du'a, laying in the grave, honor for the body, and visiting graves." },
+  branch: { title: "Saying goodbye to a believer", description: "Sweat on the brow, witnesses on earth, a bier that speaks, the funeral du'a, laying in the grave, honor for the body, and visiting graves." },
   name: "saying goodbye to a believer",
   kind: "skill",
   lessonType: "skill",
@@ -39,6 +40,19 @@ const FAREWELL: DeepUnit = {
         { q: "What was affirmed for the man the people praised?", a: "Paradise", wrong: ["A long life", "Great wealth", "A big house"], why: "You praised this, so Paradise has been affirmed to him, he ﷺ said." },
         { q: "Who asked him ﷺ what had been affirmed?", a: "Umar ibn al-Khattab", wrong: ["Abu Bakr as-Siddiq", "Ali ibn Abi Talib", "Uthman ibn Affan"], why: "Umar ibn al-Khattab asked what had been affirmed after both funerals passed, Anas said." },
         { q: "He ﷺ called the believers Allah's witnesses on earth.", tf: true, why: "You people are Allah's witnesses on earth, he ﷺ told them." }
+      ]
+    },
+    {
+      slug: "present-me-quickly",
+      title: "Present me quickly",
+      line: "A righteous person on the bier says: present me quickly.",
+      facts: ["Told by Abu Sa'id al-Khudri", "Bier: the frame a body is carried on", "Everything hears it except people"],
+      source: hadith("bukhari", "1314", "Abu Sa'id al-Khudri", "Sahih", "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ said: when the funeral is ready and the men carry it on their shoulders, if the dead person was righteous, it says: present me quickly. If not, it says: woe to it, where are they taking it? Everything hears its voice except people, and a person who heard it would fall unconscious.", "Its voice is heard by everything except man and if he heard it he would fall unconscious"),
+      difficulty: 2,
+      questions: [
+        { q: "What does a righteous person on the bier say, he ﷺ said?", a: "Present me quickly", wrong: ["Carry me slowly", "Set me down here", "Wait for the others"], why: "If the deceased was righteous it will say: present me hurriedly, he ﷺ said." },
+        { q: "Who hears the voice from the bier, he ﷺ said?", a: "Everything except people", wrong: ["None but the angels", "None but its family", "None but the birds"], why: "Its voice is heard by everything except man; if he heard it he would fall unconscious." },
+        { q: "The bier of one who was not righteous cries out: woe to it!", tf: true, why: "If he was not righteous, it will say: woe to it, where are they taking it, he ﷺ said." }
       ]
     },
     {
