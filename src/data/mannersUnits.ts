@@ -671,6 +671,19 @@ const BROTHERHOOD: DeepUnit = {
         { q: "Who narrated the hadith on the one who loves more?", a: "Anas ibn Malik", wrong: ["Ibn Abbas", "Abu Hurayrah", "Jabir ibn Abdullah"], why: "Anas reported that the Prophet ﷺ said it, in Al-Adab al-Mufrad 544." },
         { q: "Loving your companion more strongly makes you the better of the two.", tf: true, why: "Anas reported that he ﷺ said the better of two friends is the one with the strongest love." }
       ]
+    },
+    {
+      slug: "split-apart-by-a-sin",
+      title: "Split apart by a sin",
+      line: "A sin splits two who love each other for Allah.",
+      facts: ["Told by Anas ibn Malik", "Love in Allah, or in Islam", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "401", "Anas ibn Malik", "Sahih (Al-Albani)", "Anas said: the Messenger of Allah ﷺ said: when two love each other in Allah Almighty, or in Islam, what splits them apart is the first wrong action that one of them does.", "if the first wrong action that one of them does creates a split between them"),
+      difficulty: 2,
+      questions: [
+        { q: "What splits two who love each other for Allah, he ﷺ said?", a: "A sin one of them does", wrong: ["A trip one of them takes", "A house one of them buys", "A job one of them starts"], why: "The first wrong action that one of them does creates a split between them, he ﷺ said." },
+        { q: "How did he ﷺ describe the love of the two, as Anas reported?", a: "In Allah, or in Islam", wrong: ["In trade, or in travel", "In play, or in sport", "In work, or in study"], why: "He ﷺ spoke of two who love each other in Allah Almighty or in Islam, as Anas reported." },
+        { q: "Sins can harm a friendship made for Allah's sake.", tf: true, why: "Two who love each other in Allah are split by a sin one of them does, Anas reported." }
+      ]
     }
   ]
 };

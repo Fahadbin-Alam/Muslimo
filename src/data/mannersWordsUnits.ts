@@ -2,16 +2,17 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Manners unit: choosing your words, from Sunan Abi Dawud, Jami at-Tirmidhi and Al-Adab al-Mufrad. The thing
 // he ﷺ feared most for a man, the show-off who rolls his tongue, "they claim" as a bad riding-beast, "what Allah wills,
-// then", a gentler word for a low mood, the man who says the people are ruined, and two who revile each other. Every
-// card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight, and
-// none of them is taught anywhere else in the app.
+// then", a gentler word for a low mood, the man who says the people are ruined, two who revile each other, and poetry,
+// whose good is like good words and whose bad is like bad words. Every card is one sahih or hasan hadith with its
+// number, narrator and grade, and its exact English words to highlight, and none of them is taught anywhere else in the
+// app.
 // How clearly he ﷺ spoke (Abu Dawud 4839) is left out, as the kids' path already teaches it from Bukhari 3567.
 
 const WORDS: DeepUnit = {
   key: "manners-choosing-words",
   topicId: "manners",
   branchId: "manners-choosing-words",
-  branch: { title: "Choosing your words", description: "The thing he ﷺ feared most, the show-off with words, they claim as a bad riding-beast, putting Allah's will first, a gentler word for a low mood, the most ruined man, and two who revile." },
+  branch: { title: "Choosing your words", description: "The thing he ﷺ feared most, the show-off with words, they claim as a bad riding-beast, putting Allah's will first, a gentler word for a low mood, the most ruined man, two who revile, and poetry that is like speech." },
   name: "choosing your words",
   kind: "skill",
   lessonType: "skill",
@@ -105,6 +106,19 @@ const WORDS: DeepUnit = {
         { q: "What did he ﷺ call two who revile each other, as Iyad ibn Himar reported?", a: "Two shaytans", wrong: ["Two friends", "Two farmers", "Two kings"], why: "Al-mustabban shaytanan, he ﷺ said, in Al-Adab al-Mufrad 427." },
         { q: "What do two who revile each other do, he ﷺ said?", a: "Accuse and deny each other", wrong: ["Thank and help each other", "Visit and love each other", "Advise and forgive each other"], why: "Two shaytans who accuse one another and deny one another, he ﷺ said." },
         { q: "Two people who revile one another show good manners.", tf: false, why: "No. Those who revile one another are two shaytans, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "poetry-is-like-speech",
+      title: "Poetry is like speech",
+      line: "Good poetry is like good words, bad poetry like bad words.",
+      facts: ["Told by Abdullah ibn Amr", "Poetry is judged like speech", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "865", "Abdullah ibn Amr", "Sahih (Al-Albani)", "Abdullah ibn Amr said: the Messenger of Allah ﷺ said: poetry is in the same position as speech. The good of it is like good words, and the bad of it is like bad words.", "Poetry is in the same position as speech. The good of it is like good words and its bad part is like bad words"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ say poetry is in the same position as?", a: "Speech", wrong: ["Prayer", "Silence", "Sleep"], why: "Poetry is in the same position as speech, he ﷺ said, as Abdullah ibn Amr reported." },
+        { q: "What is good poetry like, he ﷺ said?", a: "Good words", wrong: ["Bad words", "Empty words", "Strange words"], why: "The good of it is like good words, and its bad part is like bad words, he ﷺ said." },
+        { q: "All poetry is bad, whatever it says.", tf: false, why: "No. Its good part is like good words, and its bad part like bad words, he ﷺ said." }
       ]
     }
   ]
