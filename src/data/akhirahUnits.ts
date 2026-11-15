@@ -1366,6 +1366,19 @@ const JAHANNAM: DeepUnit = {
       ]
     },
     {
+      slug: "the-falling-stone",
+      title: "A stone falling seventy years",
+      line: "A stone fell seventy years in Jahannam before reaching its base.",
+      facts: ["Told by Abu Hurairah", "They heard a loud sound", "Jahannam is very deep"],
+      source: hadith("muslim", "2844a", "Abu Hurairah", "Sahih", "Abu Hurairah said: we were with the Messenger of Allah ﷺ when we heard a loud sound. He said: do you know what this is? We said: Allah and His Messenger know best. He said: that is a stone thrown into the Fire seventy years ago; it has been falling ever since and has now reached its bottom.", "That is a stone which was thrown seventy years before in Hell"),
+      difficulty: 3,
+      questions: [
+        { q: "What made the loud sound they heard, he ﷺ said?", a: "A stone falling in the Fire", wrong: ["A tree falling in a storm", "A wave hitting the shore", "Thunder in the clouds"], why: "That is a stone which was thrown seventy years before in Hell, he ﷺ said." },
+        { q: "How long had the stone been falling?", a: "Seventy years", wrong: ["Seven days", "Seventy days", "Seven months"], why: "That stone was thrown seventy years before and has now reached its base." },
+        { q: "Jahannam is so deep that a stone falls in it for many years.", tf: true, why: "A stone thrown seventy years before has only now reached its base, he ﷺ said." }
+      ]
+    },
+    {
       slug: "seventy",
       title: "Seventy times hotter",
       line: "Our fire is one part of seventy of the heat of Jahannam.",
