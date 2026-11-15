@@ -366,7 +366,7 @@ const LUQMAN_ONE: DeepUnit = {
       questions: [
         { q: "What does Allah love, in the hadith?", a: "Grace", wrong: ["Pride", "Boasting", "Laziness"], why: "Verily, Allah is Graceful and He loves Grace." },
         { q: "What is pride, in the hadith?", a: "Rejecting truth, scorning people", wrong: ["Wearing nice shoes", "Being tall", "Being rich"], why: "Pride is disdaining the truth and contempt for the people." },
-        { tf: true, q: "In the hadith, liking fine clothes is pride.", why: "Verily, Allah is Graceful and He loves Grace. Pride is disdaining the truth." }
+        { tf: false, q: "In the hadith, liking fine clothes is pride.", why: "Verily, Allah is Graceful and He loves Grace. Pride is disdaining the truth." }
       ]
     },
     {
