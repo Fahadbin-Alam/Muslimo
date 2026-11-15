@@ -110,9 +110,10 @@ describe("which questions are asked on a scene", () => {
     // say after something goes wrong in place of what a believer does when something hard happens and whether saying
     // if only opens a door to Shaytan. The final quiz of "Jahannam" swaps two of its scene questions for two others.
     // Every one of them is still asked in its own lesson. "The Book of the Virtues of the Quran" gained a lesson, so its
-    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). The new final quiz of
-    // "The reward of dhikr" also no longer asks where la hawla wa la quwwata illa billah is a treasure of (still asked in
-    // its lesson).
+    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). "The reward of dhikr"
+    // gained a lesson too: its final quiz now asks whether he also said Allah is not deaf or far away, and no longer
+    // asks which pair are the two words or where la hawla wa la quwwata illa billah is a treasure of (both still asked in
+    // their lessons).
     expect(places).toBe(2010);
   });
 
