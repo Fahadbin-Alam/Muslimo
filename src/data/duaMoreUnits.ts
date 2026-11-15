@@ -190,7 +190,7 @@ const PROPHETS: DeepUnit = {
       questions: [
         { q: "Along with himself, whom did Nuh ask Allah to save?", a: "The believers with him", wrong: ["The chiefs of his people", "The rich of his people", "The strong of his people"], why: "Save me and those with me of the believers, Nuh asked." },
         { q: "How did Nuh ask Allah to judge between him and them?", a: "Decisively", wrong: ["Slowly", "Secretly", "Gently"], why: "So judge between me and them with decisive judgement, he said." },
-        { q: "Nuh made this du'a after saying that his people denied him.", tf: true, why: "My Lord, indeed my people have denied me, Nuh said first." }
+        { q: "Before this du'a, Nuh said that his people had denied him.", tf: true, why: "My Lord, indeed my people have denied me, Nuh said first." }
       ]
     }
   ]
