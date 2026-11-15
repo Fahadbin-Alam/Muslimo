@@ -2586,6 +2586,71 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Two friends quarrel. Who is the better one?", "The one who greets first", "The better of the two greets first"],
     ["Saying salam first is a good deed.", "True", "The better of the two greets first"],
     ["Saying salam first after a fight is a sign of weakness.", "False", "The better of the two greets first"]
+  ],
+  // At Arafah he addressed the people: your blood and wealth are sacred, like this day, in this month, in this town.
+  // Fear Allah concerning women; their right is food and clothing, in fairness. You will be asked of me; they said:
+  // we testify you conveyed, fulfilled and advised; and he said: O Allah, be witness (Sahih Muslim 1218).
+  "sign-farewell-sermon": [
+    ["In his Farewell Sermon, what did the Prophet ﷺ warn men about?", "Fear Allah about women", "Fear Allah concerning women"],
+    ["What did the Companions testify, in Muslim 1218?", "That he conveyed the message", "We testify you conveyed, fulfilled, advised"]
+  ],
+  // He said to Ibn Mas'ud: recite to me. Recite to you, when it was revealed to you? I love to hear it from another.
+  // He recited an-Nisa until he reached its forty-first ayah; he said: stop, and his eyes were overflowing with tears
+  // (Sahih al-Bukhari 4582). (Who recited is the one telling it, never named in the scene, so it is not asked here.)
+  "sign-recite-to-me": [
+    ["Why did the Prophet ﷺ ask Ibn Mas'ud to recite?", "He liked to hear the Quran from others", "I love to hear it from another"],
+    ["Why did the Prophet ﷺ want to hear it from him?", "He liked to hear it from others", "I love to hear it from another"],
+    ["Why did the Prophet ﷺ like to hear the Quran from others?", "He said he loved to hear it", "I love to hear it from another"],
+    ["Which surah did Ibn Mas'ud recite?", "An-Nisa", "So I recited an-Nisa to him"],
+    ["Which surah did Ibn Mas'ud recite to the Prophet ﷺ?", "An-Nisa", "So I recited an-Nisa to him"],
+    ["At which ayah did he say 'Enough'?", "4:41", "Until I reached its ayah forty-one", "He said: stop"],
+    ["The Prophet ﷺ wept when Ibn Mas'ud reached 4:41.", "True", "Until I reached its ayah forty-one", "And his eyes were overflowing with tears"],
+    ["What happened to the Prophet ﷺ at ayah 41?", "His eyes filled with tears", "And his eyes were overflowing with tears"]
+  ],
+  // Richness is not having many possessions; richness is the richness of the soul (Sahih al-Bukhari 6446).
+  "sign-richness-of-the-soul": [
+    ["What is wealth NOT, per the hadith?", "Having many possessions", "Richness is not having many possessions"],
+    ["What is wealth not about?", "Having many possessions", "Richness is not having many possessions"],
+    ["What is true wealth, per the hadith?", "Feeling enough in the soul", "Richness is the richness of the soul"],
+    ["What is real wealth, per the hadith?", "Contentment in the soul", "Richness is the richness of the soul"],
+    ["A person with little can still be rich at heart.", "True", "Richness is the richness of the soul"],
+    ["A poor person can be rich in his heart.", "True", "Richness is the richness of the soul"]
+  ],
+  // Jibril kept on advising him about the neighbor, until he thought he would make him an heir (Sahih al-Bukhari
+  // 6014). (Who narrated it is not in the scene.)
+  "sign-the-neighbor": [
+    ["Who kept advising the Prophet ﷺ about neighbors?", "Jibril", "Jibril kept on advising me"],
+    ["What did Jibril keep telling the Prophet ﷺ about?", "Neighbors", "Advising me about the neighbor"],
+    ["In Islam, you should be kind to your neighbors.", "True", "Advising me about the neighbor"],
+    ["The Prophet ﷺ thought neighbors might even do what?", "Inherit", "Until I thought he would make him an heir"],
+    ["What did the Prophet ﷺ think Jibril would do?", "Make neighbors heirs", "Until I thought he would make him an heir"]
+  ],
+  // The nearest a servant is to his Lord is when he is in sujud, so make much du'a then (Sahih Muslim 482).
+  "sign-closest-in-sujud": [
+    ["When is a servant closest to his Lord?", "In sujud", "Is when he is in sujud"],
+    ["When is a servant nearest to Allah?", "In sujud", "Is when he is in sujud"],
+    ["What should we do much of in sujud?", "Du'a", "So make much du'a then"],
+    ["What should we do much of in sujud?", "Make dua", "So make much du'a then"],
+    ["Sujud is a time to ask Allah for what you need.", "True", "So make much du'a then"]
+  ],
+  // Allah is Good and accepts only what is good; one who travels long, unkempt and dusty, lifts his hands: O Lord,
+  // O Lord; but his food, drink and clothes are unlawful, and he was fed on the unlawful: so how can he be answered?
+  // (Sahih Muslim 1015). (What 2:168 says stays on its usual picture.)
+  "sign-accepts-only-good": [
+    ["What does Allah accept, in the hadith?", "Only what is good", "Allah is Good, accepting only what is good"],
+    ["Why was the traveller's dua not answered?", "His food and clothes were unlawful", "His food is unlawful, his drink unlawful", "His clothes unlawful, fed on the unlawful"],
+    ["What can stop a dua being answered, in Muslim 1015?", "Haram food and clothing", "His food is unlawful, his drink unlawful", "His clothes unlawful, fed on the unlawful"]
+  ],
+  // He divided a share, and one said it was not for Allah's sake; told of it, he was angry, then said: may Allah have
+  // mercy on Musa; he was harmed with more than this, and he was patient (Sahih al-Bukhari 3405). (What 33:69 says
+  // stays on its usual picture.)
+  "sign-mercy-on-musa": [
+    ["Whom did the Prophet ﷺ remember when hurt?", "Musa", "May Allah have mercy on Musa"],
+    ["What did the Prophet ﷺ remember when he was hurt by words?", "Musa's patience", "May Allah have mercy on Musa", "And he was patient"],
+    ["Musa was harmed even more than this.", "True", "He was harmed with more than this"],
+    ["Musa was hurt by his own people and kept patient.", "True", "He was harmed with more than this", "And he was patient"],
+    ["What did Musa do when harmed, in the hadith?", "Endured patiently", "And he was patient"],
+    ["What did Musa do when harmed, per the hadith?", "He endured patiently", "And he was patient"]
   ]
 };
 

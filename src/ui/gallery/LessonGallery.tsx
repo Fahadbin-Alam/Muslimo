@@ -1137,6 +1137,14 @@ const STATES: State[] = [
   { id: "scene-ship-to-abyssinia", render: () => <SceneQuestionDemo lessonId="lesson-deep-jafar-khaybar" ask="When did Ja'far return" /> },
   { id: "scene-ten-years-serving", render: () => <SceneQuestionDemo lessonId="lesson-deep-anas-never-uff" ask="How long did Anas serve" /> },
   { id: "scene-greet-first", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-ayyub-three-nights" ask="Who is the better of the two" /> },
+  // A question on each scene of counsel he gave ﷺ (round 93).
+  { id: "scene-farewell-sermon", render: () => <SceneQuestionDemo lessonId="lesson-deep-araf3-you-conveyed" ask="What did the Companions testify" /> },
+  { id: "scene-recite-to-me", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-recite-to-me" ask="Which surah did Ibn Mas'ud recite" /> },
+  { id: "scene-richness-of-the-soul", render: () => <SceneQuestionDemo lessonId="lesson-deep-duha2-richness-of-the-soul" ask="What is true wealth" /> },
+  { id: "scene-the-neighbor", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-jibril" ask="Who kept advising" /> },
+  { id: "scene-closest-in-sujud", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-reward-closest" ask="When is a servant closest" /> },
+  { id: "scene-accepts-only-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-muminun2-allah-is-good" ask="Why was the traveller's dua" /> },
+  { id: "scene-mercy-on-musa", render: () => <SceneQuestionDemo lessonId="lesson-deep-saff2-mercy-on-musa" ask="Whom did the Prophet" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
