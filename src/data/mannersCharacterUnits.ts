@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Manners unit: beautiful character, from Sahih al-Bukhari, Sunan Abi Dawud and Jami' at-Tirmidhi. A cloak
-// he ﷺ gave away though he needed it, mercy taken only from the miserable, the two-faced on the Day of Resurrection,
-// taqwa and good character, keeping good company, hosting a man who did not host you, and the believer who is simple
-// and generous. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
+// One more Manners unit: beautiful character, from Sahih al-Bukhari, Sunan Abi Dawud, Jami' at-Tirmidhi and Sunan Ibn
+// Majah. A cloak he ﷺ gave away though he needed it, mercy taken only from the miserable, the two-faced on the Day of
+// Resurrection, taqwa and good character, keeping good company, the best of you who remind you of Allah, hosting a man
+// who did not host you, and the believer who is simple and generous. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
 // words to highlight, and none of them is taught anywhere else in the app.
 
 const CHARACTER: DeepUnit = {
   key: "manners-beautiful-character",
   topicId: "manners",
   branchId: "manners-beautiful-character",
-  branch: { title: "Beautiful character", description: "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, hosting a man who did not host you, and the believer, simple and generous." },
+  branch: { title: "Beautiful character", description: "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, those who remind you of Allah, hosting a man who did not host you, and the believer, simple and generous." },
   name: "beautiful character",
   kind: "skill",
   lessonType: "skill",
@@ -78,6 +78,19 @@ const CHARACTER: DeepUnit = {
         { q: "Whom should we keep company with, he ﷺ said?", a: "A believer", wrong: ["Anyone who lies", "Anyone who cheats", "Anyone who is rude"], why: "Associate only with a believer, he ﷺ said." },
         { q: "Who should eat your meals, he ﷺ said?", a: "A God-fearing person", wrong: ["A proud person", "A rude person", "A lazy person"], why: "Let only a God-fearing man eat your meals, he ﷺ said." },
         { q: "The company we keep does not matter.", tf: false, why: "No. Keep company only with a believer, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "they-remind-you-of-allah",
+      title: "They remind you of Allah",
+      line: "The best of you are those who remind you of Allah.",
+      facts: ["Told by Asma' bint Yazid", "When they are seen, Allah is remembered", "Good friends turn our hearts to Allah"],
+      source: hadith("ibnmajah", "4119", "Asma' bint Yazid", "Hasan (Darussalam)", "Asma' bint Yazid heard the Messenger of Allah ﷺ say: shall I not tell you of the best of you? They said: yes, O Messenger of Allah. He said: the best of you are those who, when they are seen, Allah the Mighty, the Majestic, is remembered.", "are those who, when they are seen, Allah the Mighty, the Majestic, is remembered"),
+      difficulty: 2,
+      questions: [
+        { q: "Who are the best of you, he ﷺ said, as Asma' bint Yazid reported?", a: "Those who remind you of Allah", wrong: ["Those who are the richest", "Those who are the tallest", "Those who are the fastest"], why: "The best of you are those who, when they are seen, Allah is remembered, he ﷺ said." },
+        { q: "When the best of you are seen, what happens, he ﷺ said?", a: "Allah is remembered", wrong: ["Food is served", "Gold is counted", "A game is played"], why: "Khiyarukum alladhina idha ru'u dhukira Allah, in Sunan Ibn Majah 4119." },
+        { q: "A good friend helps you remember Allah.", tf: true, why: "When the best of you are seen, Allah is remembered, Asma' bint Yazid reported." }
       ]
     },
     {
