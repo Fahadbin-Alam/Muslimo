@@ -153,6 +153,20 @@ const MERCY: DeepUnit = {
       ]
     },
     {
+      slug: "waliyy",
+      title: "Al-Waliyy",
+      line: "Allah knows our enemies; He is enough to protect and help us.",
+      facts: ["Quran 4:45", "Surah An-Nisa", "Wa kafa billahi waliyya"],
+      quote: quranQuote(4, 45),
+      source: quran(4, 45, "And Allah knows best your enemies; and Allah is enough as an Ally, and Allah is enough as a Helper."),
+      difficulty: 2,
+      questions: [
+        { q: "Which name of Allah is in Quran 4:45?", a: "Al-Waliyy", wrong: ["Al-Malik", "Al-Quddus", "Al-Hayy"], why: "Wa kafa billahi waliyya: and Allah is enough as an Ally." },
+        { q: "Allah is enough as a Waliyy and as what, in Quran 4:45?", a: "A Helper", wrong: ["A Guide", "A Reckoner", "A Trustee"], why: "And Allah is enough as an Ally, and Allah is enough as a Helper." },
+        { tf: true, q: "Quran 4:45 says Allah knows best who our enemies are.", why: "And Allah is most knowing of your enemies, and He is enough as an Ally." }
+      ]
+    },
+    {
       slug: "afuww-ghafur",
       title: "Al-'Afuww, Al-Ghafur",
       line: "Allah helps the one who is wronged; He pardons and forgives.",

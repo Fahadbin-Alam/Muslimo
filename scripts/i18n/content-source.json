@@ -1985,7 +1985,7 @@
   },
   {
     "kind": "course",
-    "text": "The angels' parable of the feast, nothing new in the religion, the man on his couch, rings thrown away, the two Umar followed, and the best way."
+    "text": "The angels' parable of the feast, nothing new in the religion, the man on his couch, rings thrown away, the two Umar followed, the best way, and obey him ﷺ and be guided."
   },
   {
     "kind": "course",
@@ -2361,6 +2361,10 @@
   },
   {
     "kind": "course",
+    "text": "Al-Waliyy"
+  },
+  {
+    "kind": "course",
     "text": "Al-'Afuww, Al-Ghafur"
   },
   {
@@ -2510,6 +2514,10 @@
   {
     "kind": "course",
     "text": "The best way"
+  },
+  {
+    "kind": "course",
+    "text": "Obey him and be guided"
   },
   {
     "kind": "course",
@@ -30673,11 +30681,23 @@
   },
   {
     "kind": "course",
+    "text": "The garden on a hill"
+  },
+  {
+    "kind": "course",
     "text": "Give the good, not the bad"
   },
   {
     "kind": "course",
     "text": "In secret is better"
+  },
+  {
+    "kind": "course",
+    "text": "Repaid in full"
+  },
+  {
+    "kind": "course",
+    "text": "By night and by day"
   },
   {
     "kind": "course",
@@ -39446,6 +39466,10 @@
   {
     "kind": "course",
     "text": "The scales of justice"
+  },
+  {
+    "kind": "course",
+    "text": "Not wronged a speck"
   },
   {
     "kind": "course",
@@ -79921,6 +79945,62 @@
   },
   {
     "kind": "lesson",
+    "text": "Allah knows our enemies; He is enough to protect and help us."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 4:45"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa kafa billahi waliyya"
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah is in Quran 4:45?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Quddus"
+  },
+  {
+    "kind": "question",
+    "text": "Wa kafa billahi waliyya: and Allah is enough as an Ally."
+  },
+  {
+    "kind": "question",
+    "text": "Allah is enough as a Waliyy and as what, in Quran 4:45?"
+  },
+  {
+    "kind": "question",
+    "text": "A Trustee"
+  },
+  {
+    "kind": "question",
+    "text": "A Helper"
+  },
+  {
+    "kind": "question",
+    "text": "A Guide"
+  },
+  {
+    "kind": "question",
+    "text": "A Reckoner"
+  },
+  {
+    "kind": "question",
+    "text": "And Allah is enough as an Ally, and Allah is enough as a Helper."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 4:45 says Allah knows best who our enemies are."
+  },
+  {
+    "kind": "question",
+    "text": "And Allah is most knowing of your enemies, and He is enough as an Ally."
+  },
+  {
+    "kind": "lesson",
     "text": "Allah helps the one who is wronged; He pardons and forgives."
   },
   {
@@ -80038,10 +80118,6 @@
   {
     "kind": "question",
     "text": "Which name means the Most Pure?"
-  },
-  {
-    "kind": "question",
-    "text": "Al-Quddus"
   },
   {
     "kind": "question",
@@ -81978,6 +82054,66 @@
   {
     "kind": "question",
     "text": "The worst matters are the new things brought into the religion, Ibn Mas'ud said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about following the Sunnah?"
+  },
+  {
+    "kind": "lesson",
+    "text": "If we obey the Messenger ﷺ, we will be guided."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 24:54"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa in tuti'uhu tahtadu"
+  },
+  {
+    "kind": "question",
+    "text": "Whom does Quran 24:54 tell us to obey?"
+  },
+  {
+    "kind": "question",
+    "text": "Our friends"
+  },
+  {
+    "kind": "question",
+    "text": "Allah told the Prophet ﷺ to say: obey Allah and obey the Messenger ﷺ."
+  },
+  {
+    "kind": "question",
+    "text": "What happens if we obey him ﷺ, in Quran 24:54?"
+  },
+  {
+    "kind": "question",
+    "text": "We will be rich"
+  },
+  {
+    "kind": "question",
+    "text": "We will be strong"
+  },
+  {
+    "kind": "question",
+    "text": "We will be guided"
+  },
+  {
+    "kind": "question",
+    "text": "We will be famous"
+  },
+  {
+    "kind": "question",
+    "text": "If you obey him, you will be guided; his duty is only to convey clearly."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 24:54 says the Messenger's ﷺ duty is to convey the message clearly."
+  },
+  {
+    "kind": "question",
+    "text": "The Messenger's ﷺ duty is only to deliver the message clearly."
   },
   {
     "kind": "lesson",
@@ -103105,6 +103241,74 @@
   },
   {
     "kind": "lesson",
+    "text": "Giving to please Allah is like a garden on a hill."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:265"
+  },
+  {
+    "kind": "lesson",
+    "text": "Heavy rain or a drizzle"
+  },
+  {
+    "kind": "question",
+    "text": "What is giving to please Allah like, in Quran 2:265?"
+  },
+  {
+    "kind": "question",
+    "text": "A garden on a hill"
+  },
+  {
+    "kind": "question",
+    "text": "A rock covered with dust"
+  },
+  {
+    "kind": "question",
+    "text": "A house by the sea"
+  },
+  {
+    "kind": "question",
+    "text": "A well in a desert"
+  },
+  {
+    "kind": "question",
+    "text": "Like a garden on high ground: heavy rain hits it, and it gives double its fruit."
+  },
+  {
+    "kind": "question",
+    "text": "What does the garden give when heavy rain falls?"
+  },
+  {
+    "kind": "question",
+    "text": "Half its fruit"
+  },
+  {
+    "kind": "question",
+    "text": "No fruit at all"
+  },
+  {
+    "kind": "question",
+    "text": "Only dry leaves"
+  },
+  {
+    "kind": "question",
+    "text": "Double its fruit"
+  },
+  {
+    "kind": "question",
+    "text": "The garden yields its fruit in double, and Allah sees what you do."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 2:265, a drizzle is enough when no heavy rain falls."
+  },
+  {
+    "kind": "question",
+    "text": "And if no heavy rain hits it, then a drizzle is enough."
+  },
+  {
+    "kind": "lesson",
     "text": "Give from the good things, not what you yourself wouldn't take."
   },
   {
@@ -103225,6 +103429,118 @@
   },
   {
     "kind": "lesson",
+    "text": "Whatever good you give comes back to you in full."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:272"
+  },
+  {
+    "kind": "lesson",
+    "text": "You will not be wronged"
+  },
+  {
+    "kind": "question",
+    "text": "What happens to the good you give, in Quran 2:272?"
+  },
+  {
+    "kind": "question",
+    "text": "It is cut in half"
+  },
+  {
+    "kind": "question",
+    "text": "It is soon forgotten"
+  },
+  {
+    "kind": "question",
+    "text": "It is repaid to you in full"
+  },
+  {
+    "kind": "question",
+    "text": "It is lost on the way"
+  },
+  {
+    "kind": "question",
+    "text": "Whatever good you spend will be repaid to you in full, and you will not be wronged."
+  },
+  {
+    "kind": "question",
+    "text": "Who guides whom He wills, in Quran 2:272?"
+  },
+  {
+    "kind": "question",
+    "text": "Their guidance is not on you, but Allah guides whom He wills."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 2:272 says the good we give is for our own good."
+  },
+  {
+    "kind": "question",
+    "text": "Whatever good you spend is for yourselves."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about spending in the Quran?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Give by night and by day, in secret and in the open."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:274"
+  },
+  {
+    "kind": "lesson",
+    "text": "Their reward is with their Lord"
+  },
+  {
+    "kind": "question",
+    "text": "How do these givers give, in Quran 2:274?"
+  },
+  {
+    "kind": "question",
+    "text": "Only in hard times"
+  },
+  {
+    "kind": "question",
+    "text": "Both secretly and openly"
+  },
+  {
+    "kind": "question",
+    "text": "They spend their wealth by night and by day, secretly and openly."
+  },
+  {
+    "kind": "question",
+    "text": "Where is their reward, in Quran 2:274?"
+  },
+  {
+    "kind": "question",
+    "text": "With the rulers"
+  },
+  {
+    "kind": "question",
+    "text": "With their friends"
+  },
+  {
+    "kind": "question",
+    "text": "With their Lord"
+  },
+  {
+    "kind": "question",
+    "text": "They spend by night and by day, and their reward is with their Lord."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 2:274 says these givers will have no fear and no grief."
+  },
+  {
+    "kind": "question",
+    "text": "No fear will there be on them, nor will they grieve."
+  },
+  {
+    "kind": "lesson",
     "text": "You won't reach true goodness until you give what you love."
   },
   {
@@ -103330,10 +103646,6 @@
   {
     "kind": "question",
     "text": "It was in front of the masjid."
-  },
-  {
-    "kind": "lesson",
-    "text": "Can you still remember these about spending in the Quran?"
   },
   {
     "kind": "lesson",
@@ -188525,6 +188837,74 @@
   },
   {
     "kind": "lesson",
+    "text": "Man or woman, a believer who does good will enter Paradise."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 4:124"
+  },
+  {
+    "kind": "lesson",
+    "text": "Naqir: the speck on a date stone"
+  },
+  {
+    "kind": "question",
+    "text": "Whose good deeds lead to Paradise, in Quran 4:124?"
+  },
+  {
+    "kind": "question",
+    "text": "Rich people only"
+  },
+  {
+    "kind": "question",
+    "text": "Believing men and women"
+  },
+  {
+    "kind": "question",
+    "text": "Believing men only"
+  },
+  {
+    "kind": "question",
+    "text": "Believing women only"
+  },
+  {
+    "kind": "question",
+    "text": "Whoever does righteous deeds, male or female, while being a believer."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 4:124, believers are not wronged even as much as what?"
+  },
+  {
+    "kind": "question",
+    "text": "A speck on a date stone"
+  },
+  {
+    "kind": "question",
+    "text": "A grain of sand"
+  },
+  {
+    "kind": "question",
+    "text": "A strand of hair"
+  },
+  {
+    "kind": "question",
+    "text": "A grain of rice"
+  },
+  {
+    "kind": "question",
+    "text": "They will not be wronged, even as much as the speck on a date seed."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 4:124, the one who does good must also have faith."
+  },
+  {
+    "kind": "question",
+    "text": "Whoever does good, male or female, while a believer, will enter Paradise."
+  },
+  {
+    "kind": "lesson",
     "text": "Two short phrases are light to say, heavy on the scale."
   },
   {
@@ -197878,10 +198258,6 @@
   {
     "kind": "question",
     "text": "The dua says: none forgives sins but...?"
-  },
-  {
-    "kind": "question",
-    "text": "Our friends"
   },
   {
     "kind": "question",
@@ -214962,10 +215338,6 @@
   {
     "kind": "question",
     "text": "In times of ease"
-  },
-  {
-    "kind": "question",
-    "text": "Only in hard times"
   },
   {
     "kind": "question",
@@ -400737,10 +401109,6 @@
   },
   {
     "kind": "question",
-    "text": "A Trustee"
-  },
-  {
-    "kind": "question",
     "text": "And sufficient is Allah as a Trustee."
   },
   {
@@ -402869,10 +403237,6 @@
   },
   {
     "kind": "question",
-    "text": "A Reckoner"
-  },
-  {
-    "kind": "question",
     "text": "And sufficient is Allah as a Reckoner."
   },
   {
@@ -404990,10 +405354,6 @@
   {
     "kind": "question",
     "text": "Whom will Allah pardon, in 33:73?"
-  },
-  {
-    "kind": "question",
-    "text": "Believing men and women"
   },
   {
     "kind": "question",
@@ -484653,10 +485013,6 @@
   },
   {
     "kind": "question",
-    "text": "A grain of sand"
-  },
-  {
-    "kind": "question",
     "text": "I have been sent and the Hour (is at hand) as these two, showing his two fingers."
   },
   {
@@ -503066,10 +503422,6 @@
   {
     "kind": "question",
     "text": "Where are the martyrs, in 57:19?"
-  },
-  {
-    "kind": "question",
-    "text": "With their Lord"
   },
   {
     "kind": "question",
