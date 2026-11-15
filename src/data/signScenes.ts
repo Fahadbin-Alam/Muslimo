@@ -513,7 +513,14 @@ export type SignKind =
   | "family-ties"
   | "pray-as-you-can"
   | "even-a-thorn"
-  | "intentions";
+  | "intentions"
+  | "two-words"
+  | "half-of-faith"
+  | "three-signs"
+  | "call-to-good"
+  | "praise-each-bite"
+  | "good-or-quiet"
+  | "then-steadfast";
 
 export type SignScene = {
   id: string;
@@ -1511,6 +1518,54 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Alqamah said: I heard Umar on the minbar say: I heard the Messenger of Allah ﷺ say: deeds are only by intentions, and each person gets only what he intended. So whoever emigrated for the world, to gain it, or for a woman, to marry her, his emigration is for what he emigrated for.",
     sources: [bukhari("1")]
+  },
+  {
+    id: "sign-two-words",
+    kind: "two-words",
+    caption:
+      "The Prophet ﷺ said: two expressions are very easy for the tongue to say, but they are very heavy in the balance and very dear to the Most Merciful: Subhan Allah al-Azim, and Subhan Allah wa bihamdihi.",
+    sources: [bukhari("6406")]
+  },
+  {
+    id: "sign-half-of-faith",
+    kind: "half-of-faith",
+    caption:
+      "The Prophet ﷺ said: cleanliness is half of faith, and al-Hamdu lillah fills the scale, and Subhan Allah and al-Hamdu lillah fill what is between the heavens and the earth, and prayer is a light, and charity is proof, and endurance is a brightness.",
+    sources: [muslim("223")]
+  },
+  {
+    id: "sign-three-signs",
+    kind: "three-signs",
+    caption:
+      "The Prophet ﷺ said: the signs of a hypocrite are three: whenever he speaks, he tells a lie; whenever he promises, he always breaks it; and if you trust him, he proves to be dishonest.",
+    sources: [bukhari("33")]
+  },
+  {
+    id: "sign-call-to-good",
+    kind: "call-to-good",
+    caption:
+      "The Prophet ﷺ said: he who calls to righteousness has a reward like the rewards of those who adhere to it, without their rewards being diminished at all; and he who calls to error carries its sin, like those who commit it, without their sins being diminished at all.",
+    sources: [muslim("2674")]
+  },
+  {
+    id: "sign-praise-each-bite",
+    kind: "praise-each-bite",
+    caption: "The Prophet ﷺ said: Allah is pleased with His servant who says al-Hamdu lillah while taking a morsel of food and while drinking.",
+    sources: [muslim("2734")]
+  },
+  {
+    id: "sign-good-or-quiet",
+    kind: "good-or-quiet",
+    caption:
+      "The Prophet ﷺ said: anybody who believes in Allah and the Last Day should not harm his neighbor; anybody who believes in Allah and the Last Day should entertain his guest generously; and anybody who believes in Allah and the Last Day should talk what is good or keep quiet.",
+    sources: [bukhari("6018")]
+  },
+  {
+    id: "sign-then-steadfast",
+    kind: "then-steadfast",
+    caption:
+      "Sufyan ibn Abdullah ath-Thaqafi said: I asked the Messenger of Allah ﷺ to tell me something about Islam that I need ask no one other than him about. He said: say, I affirm my faith in Allah, and then remain steadfast to it.",
+    sources: [muslim("38")]
   }
 ];
 
@@ -2467,7 +2522,53 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-muhajirun-intention": "sign-intentions",
   "deep-insan2-deeds-by-intentions": "sign-intentions",
   "deep-tree-umar-on-the-minbar": "sign-intentions",
-  "deep-tree-alqamah-waqqas-heard-umar": "sign-intentions"
+  "deep-tree-alqamah-waqqas-heard-umar": "sign-intentions",
+  // Two expressions, light on the tongue and heavy in the balance (Sahih al-Bukhari 6406). The lesson on the same
+  // hadith as the last in al-Bukhari (7563, the two in the other order) and the whole passage of 101:6-11 keep their
+  // photo.
+  "deep-kids-dhikr-light-and-heavy": "sign-two-words",
+  "deep-reckoning-heavy-words": "sign-two-words",
+  "deep-dua-dhikr-two-words": "sign-two-words",
+  "deep-anbiya2-light-on-the-tongue": "sign-two-words",
+  "deep-muminun3-heavy-words": "sign-two-words",
+  "deep-saffat6-heavy-on-the-scale": "sign-two-words",
+  "deep-waqiah3-two-light-words": "sign-two-words",
+  // Cleanliness is half of faith, and al-Hamdu lillah fills the scale (Sahih Muslim 223). The lesson on the hadith's
+  // last words, each soul sold every morning, keeps its photo.
+  "deep-clean-half-of-faith": "sign-half-of-faith",
+  "deep-araf1-fills-scale": "sign-half-of-faith",
+  "deep-muddaththir1-half-of-faith": "sign-half-of-faith",
+  "deep-qariah2-alhamdulillah-fills-the-scale": "sign-half-of-faith",
+  // The three signs of a hypocrite (Sahih al-Bukhari 33). The whole passage of 61:1-9 keeps its photo.
+  "deep-honesty-three-signs": "sign-three-signs",
+  "deep-tawbah4-signs-of-a-hypocrite": "sign-three-signs",
+  "deep-raad2-three-signs-of-a-hypocrite": "sign-three-signs",
+  "deep-maryam2-keep-your-promises": "sign-three-signs",
+  "deep-muminun1-keep-trusts-promises": "sign-three-signs",
+  "deep-mujadila3-three-signs": "sign-three-signs",
+  "deep-saff1-signs-of-a-hypocrite": "sign-three-signs",
+  "deep-munafiqun1-three-signs": "sign-three-signs",
+  "deep-maarij3-signs-of-a-hypocrite": "sign-three-signs",
+  // Calling to good, and calling to error (Sahih Muslim 2674).
+  "deep-yusuf6-a-call-and-its-reward": "sign-call-to-good",
+  "deep-nahl2-callers-to-good": "sign-call-to-good",
+  "deep-ankabut1-callers-to-good": "sign-call-to-good",
+  "deep-najm3-calling-to-guidance": "sign-call-to-good",
+  // Praise for a morsel and for a drink (Sahih Muslim 2734).
+  "deep-clean-praise-after-food": "sign-praise-each-bite",
+  "deep-isra1-praise-for-each-bite": "sign-praise-each-bite",
+  "deep-mulk4-praise-after-drinking": "sign-praise-each-bite",
+  "deep-abasa2-praise-for-every-bite": "sign-praise-each-bite",
+  "deep-quraysh2-praise-him-for-food": "sign-praise-each-bite",
+  // Talk what is good or keep quiet (Sahih al-Bukhari 6018).
+  "hadith-for-kids-bukhari-6018": "sign-good-or-quiet",
+  "deep-speech-good-or-quiet": "sign-good-or-quiet",
+  "deep-naba3-say-good-or-stay-silent": "sign-good-or-quiet",
+  // Say: I affirm my faith in Allah, then remain steadfast (Sahih Muslim 38).
+  "deep-hadith-famous-steadfast": "sign-then-steadfast",
+  "deep-hud6-stand-firm-as-commanded": "sign-then-steadfast",
+  "deep-fussilat2-our-lord-is-allah-then-stand-firm": "sign-then-steadfast",
+  "deep-ahqaf1-believe-then-be-steadfast": "sign-then-steadfast"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
