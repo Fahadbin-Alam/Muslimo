@@ -102,8 +102,9 @@ describe("which questions are asked on a scene", () => {
     // 2:274, so three of its scene questions are each asked in one place fewer (they are still asked in their lessons).
     // "Zakat in Islam" now has seven lessons, so it gets a review card, which asks two of its scene questions, and its
     // final quiz draws one more. "A fresh start" gained its lesson on 3:136, so its final quiz asks one scene question
-    // fewer (that question is still asked in its lesson).
-    expect(places).toBe(1607);
+    // fewer (that question is still asked in its lesson). "Neighbors and guests" now has seven lessons, so it gets a
+    // review card, which asks one of its scene questions.
+    expect(places).toBe(1608);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
