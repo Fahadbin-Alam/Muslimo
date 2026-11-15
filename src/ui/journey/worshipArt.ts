@@ -19,20 +19,20 @@ import { track } from "./toldArt";
  */
 
 /** Colors that show on the light ground of these scenes: a voice, a way, sparks rising, a warm glow. */
-const VOICE = "#6B4A2E";
-const GOLD = "#C8963E";
-const SPARK = "#E8A93A";
-const WARM = "#FFE07A";
+export const VOICE = "#6B4A2E";
+export const GOLD = "#C8963E";
+export const SPARK = "#E8A93A";
+export const WARM = "#FFE07A";
 
 /** A small dashed circle where someone is, its middle at (x, y). */
-const someone = (x: number, y: number, r = 1.5, color = VOICE) =>
+export const someone = (x: number, y: number, r = 1.5, color = VOICE) =>
   `<circle cx="${n(x)}" cy="${n(y)}" r="${r}" stroke="${color}" stroke-width="0.8" stroke-dasharray="1 0.8" fill="none"/>`;
 
 /** A small sun, its middle at (x, y). */
-const sun = (x: number, y: number) => `${glow(x, y, 10, "#FFF0C0", 0.12)}<circle cx="${x}" cy="${y}" r="4.6" fill="#FFE07A"/>`;
+export const sun = (x: number, y: number) => `${glow(x, y, 10, "#FFF0C0", 0.12)}<circle cx="${x}" cy="${y}" r="4.6" fill="#FFE07A"/>`;
 
 /** Hills along the far side of the land, from y 61. */
-const hills = (fill = "#C9B38C") =>
+export const hills = (fill = "#C9B38C") =>
   peaks(
     [
       [20, 9, 30],
@@ -45,7 +45,7 @@ const hills = (fill = "#C9B38C") =>
   );
 
 /** The land, with a few tufts of dry grass. */
-const land = () =>
+export const land = () =>
   landOf([
     [14, 74],
     [60, 72],
@@ -55,7 +55,7 @@ const land = () =>
   ]);
 
 /** A soft wash of light over (x, y), `rx` across and `ry` high, brightest in the middle. */
-const wash = (x: number, y: number, rx: number, ry: number, color: string, opacity = 0.1) =>
+export const wash = (x: number, y: number, rx: number, ry: number, color: string, opacity = 0.1) =>
   [1, 0.8, 0.62, 0.46, 0.32].map((k) => `<ellipse cx="${x}" cy="${y}" rx="${n(rx * k)}" ry="${n(ry * k)}" fill="${color}" opacity="${opacity}"/>`).join("");
 
 // After the salam. Thawban said: when the Messenger of Allah ﷺ finished his prayer, he asked forgiveness three times
