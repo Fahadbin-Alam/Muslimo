@@ -1,16 +1,17 @@
 import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// One more Aqidah unit: following the Sunnah, from Sahih al-Bukhari, Sunan Abi Dawud and the Quran. The angels'
-// parable of the house and the feast, nothing new in the religion, the man on his couch, the rings the Companions
-// threw away, the two Umar followed, Ibn Mas'ud on the best way, and Quran 24:54, obey him and be guided. Every hadith
-// card is one sahih hadith with its number, narrator and grade, and its exact English words to highlight, and none of
-// them is taught anywhere else in the app. No question anywhere else asks about Quran 24:54.
+// One more Aqidah unit: following the Sunnah, from Sahih al-Bukhari, Sunan Abi Dawud, Sunan Ibn Majah and the Quran.
+// The angels' parable of the house and the feast, nothing new in the religion, the man on his couch, the rings the
+// Companions threw away, the two Umar followed, Ibn Mas'ud on the best way, Quran 24:54, obey him and be guided, and
+// the path as clear as day he ﷺ left us on. Every hadith card is one sahih or hasan hadith with its number, narrator
+// and grade, and its exact English words to highlight, and none of them is taught anywhere else in the app. No question
+// anywhere else asks about Quran 24:54.
 
 const SUNNAH: DeepUnit = {
   key: "aqidah-sunnah",
   topicId: "aqidah",
   branchId: "aqidah-sunnah",
-  branch: { title: "Following the Sunnah", description: "The angels' parable of the feast, nothing new in the religion, the man on his couch, rings thrown away, the two Umar followed, the best way, and obey him ﷺ and be guided." },
+  branch: { title: "Following the Sunnah", description: "The angels' parable of the feast, nothing new in the religion, the man on his couch, rings thrown away, the two Umar followed, the best way, obey him ﷺ and be guided, and a path as clear as day." },
   name: "following the Sunnah",
   kind: "skill",
   lessonType: "skill",
@@ -105,6 +106,19 @@ const SUNNAH: DeepUnit = {
         { q: "Whom does Quran 24:54 tell us to obey?", a: "Allah and the Messenger ﷺ", wrong: ["Our friends", "The strong", "The richest"], why: "Allah told the Prophet ﷺ to say: obey Allah and obey the Messenger ﷺ." },
         { q: "What happens if we obey him ﷺ, in Quran 24:54?", a: "We will be guided", wrong: ["We will be famous", "We will be rich", "We will be strong"], why: "If you obey him, you will be guided; his duty is only to convey clearly." },
         { tf: true, q: "Quran 24:54 says the Messenger's ﷺ duty is to convey the message clearly.", why: "The Messenger's ﷺ duty is only to deliver the message clearly." }
+      ]
+    },
+    {
+      slug: "clear-as-day",
+      title: "A path as clear as day",
+      line: "He ﷺ left us on a path whose night is like its day.",
+      facts: ["Told by Abu Darda'", "Bayda: white, bright and clear", "They had been talking of poverty"],
+      source: hadith("ibnmajah", "5", "Abu Darda'", "Hasan (Darussalam)", "Abu Darda' said: the Messenger of Allah ﷺ came out to us while we were speaking of poverty and how we feared it. He said: is it poverty that you fear? By the One in Whose Hand is my soul, this world will come to you in plenty, and nothing will make the heart of any of you turn away except it. By Allah, I am leaving you on something like Bayda, a white, bright, clear path, whose night and day are the same.", "the night and day of which are the same"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ say he was leaving them on?", a: "A white, clear path", wrong: ["A pile of gold", "A great palace", "A large army"], why: "I am leaving you on something like Bayda, whose night and day are the same, he ﷺ said." },
+        { q: "What were they talking about when he ﷺ came out?", a: "Poverty and fearing it", wrong: ["Rain and the harvest", "Trade and the market", "Poems and stories"], why: "Abu Darda' said they were speaking of poverty and how they feared it." },
+        { q: "The path he ﷺ left us on is as clear by night as by day.", tf: true, why: "Like Bayda, white, bright and clear, its night and day are the same, he ﷺ said." }
       ]
     }
   ]
