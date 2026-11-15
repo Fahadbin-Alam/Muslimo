@@ -319,6 +319,17 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - a boy taught to say Bismillah, eat with his right hand and eat from what is near him (Sahih al-Bukhari 5376);
  * - a man who asked when the Hour would be, and was told he will be with those he loves (Sahih al-Bukhari 3688).
  *
+ * and what he ﷺ taught of worship and of the heart (worshipArt.ts draws them):
+ *
+ * - when he finished his prayer, he asked forgiveness three times and said: O Allah, You are Peace (Sahih Muslim 591);
+ * - Islam is built on five: the testimony, the prayer, Zakat, Hajj and the fast of Ramadan (Sahih al-Bukhari 8);
+ * - he asked Allah's forgiveness and turned to Him more than seventy times a day (Sahih al-Bukhari 6307);
+ * - whoever loves more provision and a longer life, let him keep good relations with his kin (Sahih al-Bukhari 5986);
+ * - pray standing; if you cannot, sitting; and if you cannot, lying on your side (Sahih al-Bukhari 1117);
+ * - whatever befalls a Muslim, even the prick of a thorn, Allah wipes away some of his sins for it (Sahih al-Bukhari
+ *   5641);
+ * - deeds are only by intentions, and each person gets only what he intended (Sahih al-Bukhari 1).
+ *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
  * Each scene shows only what its ayahs say. Nothing in a scene is a person or an angel: only the land, the sky, the
@@ -495,7 +506,14 @@ export type SignKind =
   | "learn-and-teach"
   | "one-body"
   | "eat-near"
-  | "those-you-love";
+  | "those-you-love"
+  | "after-the-salam"
+  | "built-on-five"
+  | "seventy-times"
+  | "family-ties"
+  | "pray-as-you-can"
+  | "even-a-thorn"
+  | "intentions";
 
 export type SignScene = {
   id: string;
@@ -1446,6 +1464,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "A man asked the Prophet ﷺ: when will the Hour be? He said: what have you prepared for it? He said: nothing, except that I love Allah and His Messenger. He said: you will be with those you love. Anas said: we had never been so glad.",
     sources: [bukhari("3688")]
+  },
+  {
+    id: "sign-after-the-salam",
+    kind: "after-the-salam",
+    caption:
+      "Thawban said: when the Messenger of Allah ﷺ finished his prayer, he asked forgiveness three times and said: O Allah, You are Peace, and peace is from You; blessed are You, Owner of Majesty and Honor.",
+    sources: [muslim("591")]
+  },
+  {
+    id: "sign-built-on-five",
+    kind: "built-on-five",
+    caption:
+      "The Prophet ﷺ said: Islam is built on five: to testify that none is worthy of worship but Allah and that Muhammad is the Messenger of Allah, to offer the prayers, to pay Zakat, to perform Hajj, and to fast in Ramadan.",
+    sources: [bukhari("8")]
+  },
+  {
+    id: "sign-seventy-times",
+    kind: "seventy-times",
+    caption: "The Prophet ﷺ said: by Allah, I ask for forgiveness from Allah and turn to Him in repentance more than seventy times a day.",
+    sources: [bukhari("6307")]
+  },
+  {
+    id: "sign-family-ties",
+    kind: "family-ties",
+    caption: "The Prophet ﷺ said: whoever loves to be granted more provision, and that his life be prolonged, let him keep good relations with his kin.",
+    sources: [bukhari("5986")]
+  },
+  {
+    id: "sign-pray-as-you-can",
+    kind: "pray-as-you-can",
+    caption:
+      "Imran ibn Husayn said: I had piles, so I asked the Prophet ﷺ about the prayer. He said: pray while standing; and if you can't, pray while sitting; and if you cannot do even that, then pray lying on your side.",
+    sources: [bukhari("1117")]
+  },
+  {
+    id: "sign-even-a-thorn",
+    kind: "even-a-thorn",
+    caption:
+      "The Prophet ﷺ said: no fatigue, illness, worry, sadness, hurt or distress befalls a Muslim, even the prick of a thorn, but Allah wipes away some of his sins for it.",
+    sources: [bukhari("5641")]
+  },
+  {
+    id: "sign-intentions",
+    kind: "intentions",
+    caption:
+      "Alqamah said: I heard Umar on the minbar say: I heard the Messenger of Allah ﷺ say: deeds are only by intentions, and each person gets only what he intended. So whoever emigrated for the world, to gain it, or for a woman, to marry her, his emigration is for what he emigrated for.",
+    sources: [bukhari("1")]
   }
 ];
 
@@ -2366,7 +2431,43 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-umar-with-those-you-love": "sign-those-you-love",
   "deep-lastday-asked-bedouin": "sign-those-you-love",
   "deep-shura1-ready-for-the-hour": "sign-those-you-love",
-  "deep-jinn4-with-those-you-love": "sign-those-you-love"
+  "deep-jinn4-with-those-you-love": "sign-those-you-love",
+  // After the salam: forgiveness three times, then O Allah, You are Peace (Sahih Muslim 591).
+  "deep-pray-after-istighfar": "sign-after-the-salam",
+  "deep-thawban-after-the-prayer": "sign-after-the-salam",
+  "deep-dua-day-after-salah": "sign-after-the-salam",
+  "deep-rahman4-after-the-salam": "sign-after-the-salam",
+  // Islam is built on five (Sahih al-Bukhari 8).
+  "intro-five-pillars": "sign-built-on-five",
+  "intro-shahadah": "sign-built-on-five",
+  "deep-zakat-pillar-five-pillars": "sign-built-on-five",
+  "deep-bayyinah1-built-on-five": "sign-built-on-five",
+  // Forgiveness asked more than seventy times a day (Sahih al-Bukhari 6307).
+  "deep-ghafir3-seventy-times-a-day": "sign-seventy-times",
+  "deep-muhammad2-seventy-times-a-day": "sign-seventy-times",
+  "deep-tahrim2-he-repented-daily": "sign-seventy-times",
+  "deep-nuh2-seventy-times-a-day": "sign-seventy-times",
+  // Family ties bring more provision and a longer life (Sahih al-Bukhari 5986).
+  "deep-parents-family-ties": "sign-family-ties",
+  "deep-raad2-ties-bring-blessing": "sign-family-ties",
+  "deep-isra2-family-ties-bring-blessing": "sign-family-ties",
+  "deep-nuh1-family-ties-and-life": "sign-family-ties",
+  // Pray standing, else sitting, else lying on your side (Sahih al-Bukhari 1117).
+  "deep-prayerlive-sick-prayer": "sign-pray-as-you-can",
+  "deep-pray-easy-stand-sit-side": "sign-pray-as-you-can",
+  "deep-imran-ibn-husayn-pray-as-you-can": "sign-pray-as-you-can",
+  "deep-hijr4-pray-as-you-can": "sign-pray-as-you-can",
+  "deep-first-prayers-pray-as-you-can": "sign-pray-as-you-can",
+  // Even the prick of a thorn wipes away some sins (Sahih al-Bukhari 5641).
+  "deep-patience-even-a-thorn": "sign-even-a-thorn",
+  "deep-hud1-even-a-thorn-prick": "sign-even-a-thorn",
+  "deep-taghabun3-even-a-thorn": "sign-even-a-thorn",
+  // Deeds are only by intentions (Sahih al-Bukhari 1). The two lessons on its chain of narrators keep their photo.
+  "deep-hadith-famous-intentions": "sign-intentions",
+  "deep-muhajirun-intention": "sign-intentions",
+  "deep-insan2-deeds-by-intentions": "sign-intentions",
+  "deep-tree-umar-on-the-minbar": "sign-intentions",
+  "deep-tree-alqamah-waqqas-heard-umar": "sign-intentions"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
