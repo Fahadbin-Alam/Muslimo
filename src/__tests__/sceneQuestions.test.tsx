@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(815);
+    expect(asks.length).toBe(839);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -97,7 +97,7 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    expect(places).toBe(1149);
+    expect(places).toBe(1182);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -1928,6 +1928,169 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
+  });
+
+  it("waits on the scenes of good deeds he taught before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-lost-camel", "sign-stung-twice", "sign-doors-of-good", "sign-square-and-line", "sign-more-water", "sign-joint-charity"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(24);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The lost camel: the empty desert; then a camel comes with its food and drink, and runs off, out of sight.
+    const lost = "What did the man lose, per Muslim 2747?";
+    const camel = "a camel, carrying food and drink";
+    const { kind: desert, pause: before, reveal: gone } = asked(lost);
+    expect([shown(lost, [camel, "a way, with the camel"]), moved(lost, camel, "x"), [before < 0.16 && 0.16 < gone, value(desert, camel, "opacity", 0.16)]]).toEqual([
+      [
+        [0, 0],
+        [0, 1]
+      ],
+      [-60, -100],
+      [true, 1]
+    ]);
+    // Lying in the shade, the camel gone; then it comes back and stands by him, and gladness rises.
+    const pleased = "How does Allah feel when we repent, per Muslim 2747?";
+    expect([shown(pleased, [camel, "gladness over the tree", "gladness, rising 1", "gladness, rising 4", "a way, lying down in the shade"]), moved(pleased, camel, "x")]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1]
+      ],
+      [-70, 50]
+    ]);
+    // Stung once, the hole not yet marked; then the hole is kept in mind, and a new way passes far from it.
+    const hole = "A believer is not stung twice from...?";
+    const { kind: rocks, pause: stung, reveal: far } = asked(hole);
+    expect([shown(hole, ["the hole, kept in mind", "a new way, far from the hole, part 1", "a new way, far from the hole, part 2", "the sting"]), [stung < 0.655 && 0.655 < far, value(rocks, "a scorpion in the hole", "opacity", 0.655)]]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      [true, 1]
+    ]);
+    // The hole marked; then the way keeps far from it, and the lesson learned rises.
+    expect(shown("What does this teach?", ["the hole, kept in mind", "a new way, far from the hole, part 2", "a lesson learned, rising 1", "a lesson learned, rising 3"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    expect(shown("A believer keeps making the same mistake.", ["the hole, kept in mind", "a new way, far from the hole, part 2", "a lesson learned, rising 3"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The doors of good: all three shut; then the first opens on a shield, shining.
+    for (const prompt of ["What did he ﷺ call fasting in the same hadith?", "What is fasting, in the hadith?"]) {
+      expect([prompt, shown(prompt, ["the shield, shining", "the doors, glowing"]), moved(prompt, "the first door", "scaleX"), moved(prompt, "the second door", "scaleX")]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 0]
+        ],
+        [1, 0.08],
+        [1, 1]
+      ]);
+    }
+    // The second door shut on its fire; then it opens, a coin dims the fire, and water puts it out.
+    for (const prompt of ["What does charity do to sins?", "What does charity do, in the hadith?"]) {
+      expect([prompt, shown(prompt, ["a fire, burning", "smoke, as it goes out", "a jug, pouring water"]), moved(prompt, "the second door", "scaleX"), moved(prompt, "a fire, burning", "scale")]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [0, 1, 0]
+        ],
+        [1, 0.08],
+        [1, 0.02]
+      ]);
+    }
+    // By day, the third door shut; then night comes, and it opens on a lamp and a voice praying, with sparks rising.
+    for (const prompt of ["Night prayer is also among the doors of good.", "Which prayer is a door of good, in the hadith?"]) {
+      expect([prompt, shown(prompt, ["the night, coming", "a voice, praying deep in the night", "the prayer, rising 1", "the prayer, rising 4"]), moved(prompt, "the third door", "scaleX")]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [1, 0.08]
+      ]);
+    }
+    // The square and its lines on the ground; then the square shines as our lifetime, and then the line going out
+    // shines as our hope.
+    const lifetime = ["the lifetime, all around inside the square", "the hope, going out, shining", "a trouble, coming 1"];
+    expect(shown("In the drawing, what did the square stand for?", lifetime)).toEqual([
+      [0, 0, 0],
+      [1, 0, 0]
+    ]);
+    expect(shown("What was the line going outside the square?", lifetime)).toEqual([
+      [1, 0, 0],
+      [1, 1, 0]
+    ]);
+    expect(shown("Our hopes often reach further than our lifetime.", lifetime)).toEqual([
+      [0, 0, 0],
+      [1, 1, 0]
+    ]);
+    // The soup cooking; then a jug pours more water into it, and the soup rises.
+    const water = "What did the Prophet ﷺ tell Abu Dharr to add to his soup?";
+    const { kind: soup, pause: cooking, reveal: added } = asked(water);
+    expect([shown(water, ["a jug, pouring in more water", "more water, poured in"]), moved(water, "the soup in it", "y"), moved(water, "a jug, pouring in more water", "rotate"), [cooking < 0.29 && 0.29 < added, value(soup, "more water, poured in", "opacity", 0.29)]]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0, -0.7],
+      [0, 0],
+      [true, 1]
+    ]);
+    // Nothing yet for the neighbors; then their homes are looked to, bowls go to them, and their windows light up.
+    for (const prompt of ["Why add it?", "Sharing food with neighbors is part of good manners.", "Who did the Prophet ﷺ say to share soup with?"]) {
+      const { kind, pause, reveal } = asked(prompt);
+      expect([prompt, shown(prompt, ["a way to the home on the left", "a way to the home on the right", "their windows, lit", "kindness, rising 1"]), [0.53, 0.66].map((t) => [pause < t && t < reveal, value(kind, "the homes next door, looked to", "opacity", t), value(kind, "a bowl of it, for the home on the left", "opacity", t)])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [
+          [true, 1, 1],
+          [true, 1, 1]
+        ]
+      ]);
+    }
+    // A charity for every joint: before sunrise; then the sun rises and the day comes.
+    for (const prompt of ["Charity is owed each day for every what?", "What does each joint of the body owe every day?"]) {
+      expect([prompt, shown(prompt, ["the sky by day"]), moved(prompt, "the sun, rising", "y")]).toEqual([prompt, [[0], [1]], [22, 0]]);
+    }
+    // The balance still; then it tips and comes level, fair.
+    const fair = "Which of these is also charity in the hadith?";
+    const { kind: road, pause: still, reveal: level } = asked(fair);
+    expect([shown(fair, ["the balance, level and fair"]), moved(fair, "its crossbar and pans", "rotate"), [still < 0.19 && 0.19 < level, value(road, "its crossbar and pans", "rotate", 0.19)]]).toEqual([[[0], [1]], [0, 0], [true, 12]]);
+    // No voice yet; then a voice says a good word.
+    for (const prompt of ["What does the Prophet ﷺ call a good word?", "Which of these counts as a charity?"]) {
+      expect([prompt, shown(prompt, ["a voice, saying a good word", "a step to the prayer 1"])]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 0]
+        ]
+      ]);
+    }
+    // A good word, steps to the prayer, and a stone moved off the road: none of them money.
+    const money = "Charity can only be given with money.";
+    expect([shown(money, ["a voice, saying a good word", "a step to the prayer 1", "a step to the prayer 4", "a way, to the stone", "the road cleared, rising 1"]), moved(money, "a stone in the road, moved off it", "x")]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 7]
+    ]);
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
