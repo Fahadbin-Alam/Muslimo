@@ -13,6 +13,7 @@ import { LIFE_ART } from "./lifeArt";
 import { GRACE_ART } from "./graceArt";
 import { REWARD_ART } from "./rewardArt";
 import { KIND_ART } from "./kindArt";
+import { WORSHIP_ART } from "./worshipArt";
 import { GIVE_ART } from "./giveArt";
 import { HISTORY_ART } from "./historyArt";
 import { PARABLE_ART } from "./parableArt";
@@ -903,7 +904,7 @@ function shade(): SignArt {
   };
 }
 
-export const SIGN_ART: Record<SignKind, () => SignArt> = { rain, clouds, fade, seed, seas, ships, mountains, bee, spider, tree, look, birds, sow, water, fire, shade, ...PARABLE_ART, ...STORY_ART, ...HISTORY_ART, ...PROPHET_ART, ...FAVOR_ART, ...TRIAL_ART, ...COMMAND_ART, ...POWER_ART, ...WONDER_ART, ...GIVE_ART, ...CHARITY_ART, ...MANNERS_ART, ...COMPANION_ART, ...LIKENESS_ART, ...TOLD_ART, ...EXAMPLE_ART, ...DEED_ART, ...WISDOM_ART, ...LIFE_ART, ...GRACE_ART, ...REWARD_ART, ...KIND_ART };
+export const SIGN_ART: Record<SignKind, () => SignArt> = { rain, clouds, fade, seed, seas, ships, mountains, bee, spider, tree, look, birds, sow, water, fire, shade, ...PARABLE_ART, ...STORY_ART, ...HISTORY_ART, ...PROPHET_ART, ...FAVOR_ART, ...TRIAL_ART, ...COMMAND_ART, ...POWER_ART, ...WONDER_ART, ...GIVE_ART, ...CHARITY_ART, ...MANNERS_ART, ...COMPANION_ART, ...LIKENESS_ART, ...TOLD_ART, ...EXAMPLE_ART, ...DEED_ART, ...WISDOM_ART, ...LIFE_ART, ...GRACE_ART, ...REWARD_ART, ...KIND_ART, ...WORSHIP_ART };
 
 const drawn = new Map<SignKind, SignArt>();
 
