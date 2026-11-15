@@ -9,7 +9,7 @@ const SICK: DeepUnit = {
   key: "manners-visit-sick",
   topicId: "manners",
   branchId: "manners-visiting-the-sick",
-  branch: { title: "Visiting the sick", description: "How the Prophet ﷺ visited people who were ill, and the du'a he said for them." },
+  branch: { title: "Visiting the sick", description: "How the Prophet ﷺ visited people who were ill, the du'a he said for them, and his ruqyah." },
   name: "visiting the sick",
   kind: "skill",
   lessonType: "skill",
@@ -77,6 +77,19 @@ const SICK: DeepUnit = {
         { q: "Whom do we ask for healing in the du'a?", a: "Allah, Lord of the people", wrong: ["The stars", "A lucky charm", "The doctor only"], why: "Take away the disease, O the Lord of the people." },
         { q: "What kind of healing does the du'a ask for?", a: "Healing that leaves no illness", wrong: ["Healing for one day", "Half a healing", "Healing for money"], why: "A cure that leaves no disease." },
         { q: "Only Allah truly heals.", tf: true, why: "There is no cure but Yours." }
+      ]
+    },
+    {
+      slug: "the-earth-of-our-land",
+      title: "The earth of our land",
+      line: "In his ruqyah he ﷺ asked for healing by Allah's permission.",
+      facts: ["Told by Aishah", "Ruqyah: words read over the sick", "With a light touch of saliva"],
+      source: hadith("bukhari", "5746", "Aishah", "Sahih", "Aishah said: in his ruqyah for the sick, the Messenger of Allah ﷺ used to say, with a light touch of saliva: in the name of Allah, the earth of our land and the saliva of some of us cure our sick one, by the permission of our Lord.", "The earth of our land and the saliva of some of us cure our patient with the permission of our Lord"),
+      difficulty: 2,
+      questions: [
+        { q: "By whose permission does the sick one get well, in this ruqyah?", a: "By our Lord's permission", wrong: ["By the king's permission", "By the family's permission", "By the neighbor's permission"], why: "Cure our patient with the permission of our Lord, he ﷺ would say in his ruqyah." },
+        { q: "Which two things does his ﷺ ruqyah name?", a: "Earth and saliva", wrong: ["Salt and bread", "Milk and dates", "Ink and paper"], why: "The earth of our land and the saliva of some of us, he ﷺ said." },
+        { q: "His ﷺ ruqyah began with: in the name of Allah.", tf: true, why: "In the Name of Allah, he ﷺ would begin, then ask for healing by our Lord's permission." }
       ]
     },
     {
