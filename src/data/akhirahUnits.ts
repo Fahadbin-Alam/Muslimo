@@ -304,6 +304,19 @@ const MINOR_SIGNS: DeepUnit = {
         { q: "What did he ﷺ liken the people left behind to?", a: "Useless husk", wrong: ["Ripe fruit", "Sweet honey", "Fresh milk"], why: "There will remain useless people like the useless husk of barley seeds or bad dates." },
         { q: "After the righteous pass away, useless people will remain.", tf: true, why: "The righteous will depart one after the other, and useless people will remain, he ﷺ said." }
       ]
+    },
+    {
+      slug: "houses-like-painted-garments",
+      title: "Houses like painted garments",
+      line: "Before the Hour, houses will be adorned like painted garments.",
+      facts: ["Told by Abu Hurayrah", "One of the small signs of the Hour", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "777", "Abu Hurayrah", "Sahih (Al-Albani)", "Abu Hurayrah said: the Messenger of Allah ﷺ said: the Final Hour will not come until the adornments of houses look like painted garments.", "The Final Hour will not come until … adornments resemble painted garments"),
+      difficulty: 2,
+      questions: [
+        { q: "Before the Hour, what will the adornment of houses look like, he ﷺ said?", a: "Painted garments", wrong: ["Old ruins", "Plain tents", "Bare rocks"], why: "The Hour will not come until houses are adorned like painted garments, he ﷺ said." },
+        { q: "Who reported that houses will be adorned like painted garments?", a: "Abu Hurayrah", wrong: ["Ibn Abbas", "Anas ibn Malik", "Jabir ibn Abdullah"], why: "Abu Hurayrah reported it from the Messenger of Allah ﷺ, in Al-Adab al-Mufrad 777." },
+        { q: "Houses adorned like painted garments are a sign of the Hour.", tf: true, why: "He ﷺ said the Final Hour will not come until houses look like painted garments." }
+      ]
     }
   ]
 };

@@ -1,15 +1,16 @@
 import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// More Manners units: visiting the sick, asking permission to come in, the sunnah of going to sleep, and gifts.
-// Every card is one ayah or one sahih hadith of al-Bukhari (number as sunnah.com gives it), or of Sunan Abi Dawud with
-// its grade (the du'a for Sa'd when he was ill, and the highest assembly at bedtime), with its exact English words to
-// highlight. Only everyday adab that all scholars teach.
+// More Manners units: visiting the sick, asking permission to come in, the sunnah of going to sleep, and gifts. Every
+// card is one ayah or one sahih hadith of al-Bukhari (number as sunnah.com gives it), or of Sunan Abi Dawud with its
+// grade (the du'a for Sa'd when he was ill, and the highest assembly at bedtime), or of Imam al-Bukhari's book of
+// manners, Al-Adab al-Mufrad, with al-Albani's grade (diving into mercy when visiting the sick, and knocking with
+// fingernails), with its exact English words to highlight. Only everyday adab that all scholars teach.
 
 const SICK: DeepUnit = {
   key: "manners-visit-sick",
   topicId: "manners",
   branchId: "manners-visiting-the-sick",
-  branch: { title: "Visiting the sick", description: "How the Prophet ﷺ visited people who were ill, the du'a he said for them, and his ruqyah." },
+  branch: { title: "Visiting the sick", description: "How the Prophet ﷺ visited people who were ill, the du'a he said for them, his ruqyah, and the mercy a visitor dives into." },
   name: "visiting the sick",
   kind: "skill",
   lessonType: "skill",
@@ -104,6 +105,19 @@ const SICK: DeepUnit = {
         { q: "Where was Sa'd when he fell ill?", a: "In Makkah", wrong: ["In Khaybar", "In Ta'if", "In Tabuk"], why: "I had a complaint at Mecca, Sa'd said, and the Messenger of Allah ﷺ came to visit him." },
         { q: "He ﷺ came to visit Sa'd when he was ill.", tf: true, why: "The Messenger of Allah ﷺ came to pay a sick-visit to me, Sa'd said." }
       ]
+    },
+    {
+      slug: "diving-into-mercy",
+      title: "Diving into mercy",
+      line: "Visiting the sick, you dive into mercy and settle in it.",
+      facts: ["Told by Jabir ibn Abdullah", "On the way: diving into mercy", "Sitting with him: settled in it"],
+      source: hadith("adab", "522", "Jabir ibn Abdullah", "Sahih (Al-Albani)", "Jabir ibn Abdullah said: I heard the Prophet ﷺ say: whoever visits a sick person dives into mercy, and when he sits down with him, he settles in it.", "When someone visits a sick person, he dives into mercy to such an extent that when he sits with him, he settles in it"),
+      difficulty: 2,
+      questions: [
+        { q: "What does one who visits a sick person dive into, he ﷺ said?", a: "Mercy", wrong: ["Sadness", "Fear", "Darkness"], why: "Whoever visits a sick person wades into mercy until he sits and settles in it." },
+        { q: "When does the visitor settle in mercy, he ﷺ said?", a: "When he sits with the sick", wrong: ["When he leaves the house", "When he buys a gift", "When he goes back home"], why: "He dives into mercy, and when he sits with him, he settles in it, he ﷺ said." },
+        { q: "Visiting a sick person brings mercy to the visitor.", tf: true, why: "The visitor dives into mercy on the way and settles in it as he sits, he ﷺ said." }
+      ]
     }
   ]
 };
@@ -155,6 +169,19 @@ const PERMISSION: DeepUnit = {
         { q: "What did Jabir answer when asked who it was?", a: "Me", wrong: ["Jabir", "A friend", "Nothing"], why: "I replied: I." },
         { q: "What is the better answer at the door?", a: "Say your name", wrong: ["Say me", "Stay silent", "Knock louder"], why: "He disliked the answer me, because it tells nothing." },
         { q: "He ﷺ was happy with the answer me.", tf: false, why: "He repeated it as if he disliked it." }
+      ]
+    },
+    {
+      slug: "knock-gently",
+      title: "Knock gently",
+      line: "People knocked on his ﷺ door gently, with their fingernails.",
+      facts: ["Told by Anas ibn Malik", "Chapter: knocking on a door", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "1080", "Anas ibn Malik", "Sahih (Al-Albani)", "Anas ibn Malik said: people would knock on the door of the Prophet ﷺ with their fingernails.", "people knocked on the door of the Prophet … using their fingernails"),
+      difficulty: 1,
+      questions: [
+        { q: "How did people knock on his ﷺ door, Anas said?", a: "With their fingernails", wrong: ["With a small bell", "With a soft clap", "With a gentle call"], why: "People knocked on the door of the Prophet ﷺ using their fingernails, Anas said." },
+        { q: "Who reported how people knocked on his ﷺ door?", a: "Anas ibn Malik", wrong: ["Ibn Abbas", "Abu Hurayrah", "Ibn Umar"], why: "Anas ibn Malik reported it, in Al-Adab al-Mufrad 1080, in the chapter on knocking." },
+        { q: "People took care to knock softly on his ﷺ door.", tf: true, why: "They knocked on his ﷺ door with their fingernails, as Anas ibn Malik reported." }
       ]
     },
     {
