@@ -57,6 +57,8 @@ const slides = [
    "Sahih al-Bukhari 6114 · narrated by Abu Hurayrah","“The strong is not the one who overcomes the people by his strength, but the strong is the one who controls himself while in anger.”","Hadith quiz"),
  ...quiz("03-quiz-khalid","What did the Prophet ﷺ call Khalid ibn al-Walid at Mu'tah?",["The lion of Allah","One of the swords of Allah","The trustworthy one"],1,
    "Sahih al-Bukhari 3757 · narrated by Anas ibn Malik (summary)","At Mu'tah, Zaid, Ja'far and Ibn Rawaha fell carrying the flag. Then the Prophet ﷺ said one of Allah's swords took it, and Allah gave victory.","Sahabah quiz"),
+ ...quiz("07-quiz-bilal","Who freed Bilal?",["Umar","Abu Bakr","Uthman"],1,
+   "Sahih al-Bukhari 3754 · narrated by Jabir ibn Abdullah","Umar used to say: “Abu Bakr is our master, and he freed our master,” meaning Bilal.","Sahabah quiz"),
  ["04-hadith-smile", `<body class="green"><div class="pad"><span class="tag">Daily hadith</span>
    <h2 style="margin-top:60px">Even a smile counts</h2>
    <div class="quote">“Don't consider anything insignificant out of good things even if it is that you meet your brother with a cheerful countenance.”</div>

@@ -23,22 +23,35 @@ h1{font:120px/1.05 Baloo} h2{font:84px/1.08 Baloo} p{font:48px/1.3 Nun}
 .foot{position:absolute;left:80px;right:80px;bottom:300px;display:flex;align-items:center;gap:22px;font:40px Nun;color:#8a6a45}
 .foot img{width:96px;height:96px;border-radius:24px}`;
 const foot = `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">Muslimo · coming soon</div>`;
-const Q = "Who should you greet with salam?", OPTS = ["Only people you know", "People you know and people you don't", "Only people older than you"], OK = 1;
-const opts = st => OPTS.map((o, i) => `<div class="opt ${st === "reveal" ? (i === OK ? "ok" : "dim") : ""}"><b>${"ABC"[i]}</b>${o}</div>`).join("");
-const frames = {
-  hook: `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center;padding-top:0">
-   <h1 style="margin-top:-520px">Can you answer<br>in 5 seconds?</h1><p style="margin-top:40px">A hadith quiz from Muslimo</p></div>
+const QUIZZES = {
+  "": { kind: "hadith", tag: "Hadith quiz", Q: "Who should you greet with salam?", OPTS: ["Only people you know", "People you know and people you don't", "Only people older than you"], OK: 1,
+    intro: "A man asked the Prophet ﷺ which deeds of Islam are best. He said:", quote: "“To feed (the poor) and greet those whom you know and those whom you don't know.”",
+    src: "Sahih al-Bukhari 28 · narrated by Abdullah ibn Amr" },
+  // src/data/sahabaUnits.ts, Bilal unit
+  "b-": { kind: "Sahabah", tag: "Sahabah quiz", Q: "Who freed Bilal?", OPTS: ["Umar", "Abu Bakr", "Uthman"], OK: 1,
+    intro: "Umar ibn al-Khattab used to say:", quote: "“Abu Bakr is our master, and he freed our master,” meaning Bilal.",
+    src: "Sahih al-Bukhari 3754 · narrated by Jabir ibn Abdullah" },
+};
+const frames = {};
+for (const [p, z] of Object.entries(QUIZZES)) {
+const opts = st => z.OPTS.map((o, i) => `<div class="opt ${st === "reveal" ? (i === z.OK ? "ok" : "dim") : ""}"><b>${"ABC"[i]}</b>${o}</div>`).join("");
+Object.assign(frames, {
+  [p + "hook"]: `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center;padding-top:0">
+   <h1 style="margin-top:-520px">Can you answer<br>in 5 seconds?</h1><p style="margin-top:40px">A ${z.kind} quiz from Muslimo</p></div>
    <img src="${u("store/graphics/source/cover/camel.png")}" style="position:absolute;width:620px;left:230px;bottom:150px"></body>`,
-  q: `<body class="cream"><div class="pad"><span class="tag">Hadith quiz</span><h2 style="margin-top:56px">${Q}</h2>${opts()}</div>${foot}</body>`,
-  reveal: `<body class="cream"><div class="pad"><span class="tag" style="background:#58CC02">Answer</span><h2 style="margin-top:56px">${Q}</h2>${opts("reveal")}</div>${foot}</body>`,
-  quote: `<body class="cream"><div class="pad"><span class="tag" style="background:#58CC02">The hadith</span>
-   <p style="margin-top:56px;color:#3B2A1A">A man asked the Prophet ﷺ which deeds of Islam are best. He said:</p>
-   <div class="quote">“To feed (the poor) and greet those whom you know and those whom you don't know.”</div>
-   <div class="src">Sahih al-Bukhari 28 · narrated by Abdullah ibn Amr</div></div>${foot}</body>`,
+  [p + "q"]: `<body class="cream"><div class="pad"><span class="tag">${z.tag}</span><h2 style="margin-top:56px">${z.Q}</h2>${opts()}</div>${foot}</body>`,
+  [p + "reveal"]: `<body class="cream"><div class="pad"><span class="tag" style="background:#58CC02">Answer</span><h2 style="margin-top:56px">${z.Q}</h2>${opts("reveal")}</div>${foot}</body>`,
+  [p + "quote"]: `<body class="cream"><div class="pad"><span class="tag" style="background:#58CC02">The hadith</span>
+   <p style="margin-top:56px;color:#3B2A1A">${z.intro}</p>
+   <div class="quote">${z.quote}</div>
+   <div class="src">${z.src}</div></div>${foot}</body>`,
+});
+}
+Object.assign(frames, {
   cta: `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center;padding-top:0">
    <img src="${u("store/graphics/google-play/icon-512.png")}" style="width:340px;border-radius:80px;border:8px solid #fff">
    <h2 style="margin-top:70px">Learn one every day</h2><p style="margin-top:30px">Muslimo · coming soon<br>Follow for launch day</p></div></body>`,
-};
+});
 const b = await chromium.launch({ channel: "chrome", args: ["--allow-file-access-from-files"] });
 const pg = await b.newPage({ viewport: { width: 1080, height: 1920 } });
 for (const [k, body] of Object.entries(frames)) {
@@ -47,7 +60,9 @@ for (const [k, body] of Object.entries(frames)) {
   await pg.screenshot({ path: `${S}/frames/${k}.png` });
 }
 const ph = f => pathToFileURL(`${R}/store/graphics/google-play/phone/${f}.png`).href, fr = k => pathToFileURL(`${S}/frames/${k}.png`).href;
+const quizReel = p => [{ src: fr(p + "hook"), d: 2.2 }, { src: fr(p + "q"), d: 5, timer: true }, { src: fr(p + "reveal"), d: 2.5 }, { src: fr(p + "quote"), d: 5 }, { src: fr("cta"), d: 3 }];
 const REELS = {
+  "reel-4-bilal-quiz": quizReel("b-"),
   "reel-1-salam-quiz": [{ src: fr("hook"), d: 2.2 }, { src: fr("q"), d: 5, timer: true }, { src: fr("reveal"), d: 2.5 }, { src: fr("quote"), d: 5 }, { src: fr("cta"), d: 3 }],
   "reel-2-app-tour": [{ src: ph("01-learn"), d: 2.4 }, { src: ph("02-path"), d: 2.4 }, { src: ph("03-question"), d: 2.4 }, { src: ph("04-feedback"), d: 2.4 }, { src: ph("05-complete"), d: 2.4 }, { src: ph("06-topics"), d: 2.4 }, { src: fr("cta"), d: 3 }],
 };
@@ -60,12 +75,15 @@ await pg.goto(pathToFileURL(`${S}/enc.html`).href);
 await pg.addScriptTag({ content: readFileSync(`${S}/node_modules/mp4-muxer/build/mp4-muxer.js`, "utf8") });
 // Sound: the app's own effects from assets/sounds (no music, on purpose). [time in s, file, volume]
 const SFX = {
+  "reel-4-bilal-quiz": [[0, "camel", 0.9], [2.2, "whoosh", 0.6], ...[3, 4, 5, 6].map(t => [t + 0.2, "node_tap", 0.7]), [7.2, "correct", 1], [9.7, "whoosh", 0.6], [14.7, "lesson_complete", 1]],
   "reel-1-salam-quiz": [[0, "camel", 0.9], [2.2, "whoosh", 0.6], ...[3, 4, 5, 6].map(t => [t + 0.2, "node_tap", 0.7]), [7.2, "correct", 1], [9.7, "whoosh", 0.6], [14.7, "lesson_complete", 1]],
   "reel-2-app-tour": [[0, "camel", 0.9], [2.4, "whoosh", 0.6], [4.8, "node_tap", 0.8], [7.2, "correct", 1], [9.6, "lesson_complete", 1], [12, "pop", 0.8], [14.4, "sparkle", 1]],
   "reel-3-camel-misses-you": [[0.2, "pop", 0.9], [2.6, "pop", 0.9], [5.1, "pop", 0.9], [7.6, "sad", 0.8], [11, "camel", 1], [11.3, "sparkle", 0.8]],
 };
 const wav = n => readFileSync(`${R}/assets/sounds/${n}.wav`).toString("base64");
+const ONLY = process.argv.slice(2);
 for (const [name, scenes] of Object.entries(REELS)) {
+  if (ONLY.length && !ONLY.includes(name)) continue;
   const sfx = (SFX[name] ?? []).map(([t, f, g]) => ({ t, g, b64: wav(f) }));
   const b64 = await pg.evaluate(async ([scenes, sfx]) => {
     const FPS = 30, W = 1080, H = 1920, FADE = 0.3;
