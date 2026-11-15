@@ -2105,6 +2105,10 @@
   },
   {
     "kind": "course",
+    "text": "Fallen from the sky"
+  },
+  {
+    "kind": "course",
     "text": "Luqman's first advice"
   },
   {
@@ -2318,6 +2322,10 @@
   {
     "kind": "course",
     "text": "Faith goes up"
+  },
+  {
+    "kind": "course",
+    "text": "Seeking Allah's pleasure"
   },
   {
     "kind": "course",
@@ -30713,6 +30721,10 @@
   },
   {
     "kind": "course",
+    "text": "What harm could there be?"
+  },
+  {
+    "kind": "course",
     "text": "Only for Allah"
   },
   {
@@ -39421,6 +39433,10 @@
   },
   {
     "kind": "course",
+    "text": "Presented in rows"
+  },
+  {
+    "kind": "course",
     "text": "A very long Day"
   },
   {
@@ -42437,7 +42453,7 @@
   },
   {
     "kind": "course",
-    "text": "Words like no other, a free man and a slave, Islam cast into a heart, a mahr of Islam, a little work with a great reward, and dearer than the world."
+    "text": "Words like no other, a free man and a slave, Islam cast into a heart, a mahr of Islam, a little work with a great reward, dearer than the world, and believing on hearing the Quran."
   },
   {
     "kind": "arabic",
@@ -42810,6 +42826,14 @@
   {
     "kind": "course",
     "text": "Islam, dearer than the world"
+  },
+  {
+    "kind": "course",
+    "text": "Why should we not believe?"
+  },
+  {
+    "kind": "course",
+    "text": "Rewarded for what they said"
   },
   {
     "kind": "course",
@@ -77637,6 +77661,78 @@
   },
   {
     "kind": "lesson",
+    "text": "Joining partners with Allah is like falling from the sky."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 22:31"
+  },
+  {
+    "kind": "lesson",
+    "text": "Hunafa: devoted to Allah alone"
+  },
+  {
+    "kind": "lesson",
+    "text": "Snatched by birds, or blown far away by the wind"
+  },
+  {
+    "kind": "question",
+    "text": "What is a person who joins partners with Allah like, in Quran 22:31?"
+  },
+  {
+    "kind": "question",
+    "text": "One who wrote a letter"
+  },
+  {
+    "kind": "question",
+    "text": "One who won a race"
+  },
+  {
+    "kind": "question",
+    "text": "One who fell from the sky"
+  },
+  {
+    "kind": "question",
+    "text": "One who sold his goods"
+  },
+  {
+    "kind": "question",
+    "text": "As though he had fallen from the sky and was snatched by the birds."
+  },
+  {
+    "kind": "question",
+    "text": "Where does the wind carry him, in Quran 22:31?"
+  },
+  {
+    "kind": "question",
+    "text": "To his own home"
+  },
+  {
+    "kind": "question",
+    "text": "To a safe shelter"
+  },
+  {
+    "kind": "question",
+    "text": "To a busy town"
+  },
+  {
+    "kind": "question",
+    "text": "To a far-off place"
+  },
+  {
+    "kind": "question",
+    "text": "Or the wind carried him down into a remote place."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 22:31 tells us to join no partner with Allah."
+  },
+  {
+    "kind": "question",
+    "text": "Be upright in devotion to Allah, associating none with Him."
+  },
+  {
+    "kind": "lesson",
     "text": "Luqman told his son first: do not join partners with Allah."
   },
   {
@@ -77701,6 +77797,10 @@
   },
   {
     "kind": "lesson",
+    "text": "Can you still remember these about tawhid?"
+  },
+  {
+    "kind": "lesson",
     "text": "Allah needs no partner: a deed shared with others, He leaves it."
   },
   {
@@ -77758,10 +77858,6 @@
   {
     "kind": "question",
     "text": "He is the One most free of need."
-  },
-  {
-    "kind": "lesson",
-    "text": "Can you still remember these about tawhid?"
   },
   {
     "kind": "lesson",
@@ -79386,6 +79482,78 @@
   {
     "kind": "question",
     "text": "As Quran 8:2 says."
+  },
+  {
+    "kind": "lesson",
+    "text": "Some give their very selves to seek Allah's pleasure."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:207"
+  },
+  {
+    "kind": "lesson",
+    "text": "Mardat Allah: the pleasure of Allah"
+  },
+  {
+    "kind": "lesson",
+    "text": "Ra'uf: very kind"
+  },
+  {
+    "kind": "question",
+    "text": "What does this person seek, in Quran 2:207?"
+  },
+  {
+    "kind": "question",
+    "text": "The praise of people"
+  },
+  {
+    "kind": "question",
+    "text": "The wealth of this world"
+  },
+  {
+    "kind": "question",
+    "text": "The power of kings"
+  },
+  {
+    "kind": "question",
+    "text": "The pleasure of Allah"
+  },
+  {
+    "kind": "question",
+    "text": "He sells himself, seeking means to the approval of Allah."
+  },
+  {
+    "kind": "question",
+    "text": "What does this person give, in Quran 2:207?"
+  },
+  {
+    "kind": "question",
+    "text": "His spare coins"
+  },
+  {
+    "kind": "question",
+    "text": "His leftover food"
+  },
+  {
+    "kind": "question",
+    "text": "His own self"
+  },
+  {
+    "kind": "question",
+    "text": "His old clothes"
+  },
+  {
+    "kind": "question",
+    "text": "Those who would dedicate their lives to Allah's pleasure."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 2:207 says Allah is kind to His servants."
+  },
+  {
+    "kind": "question",
+    "text": "Wallahu ra'ufun bil-'ibad: Allah is Ever Gracious to His servants."
   },
   {
     "kind": "lesson",
@@ -103862,6 +104030,78 @@
   {
     "kind": "question",
     "text": "It was in front of the masjid."
+  },
+  {
+    "kind": "lesson",
+    "text": "No harm comes from believing and giving from Allah's gifts."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 4:39"
+  },
+  {
+    "kind": "lesson",
+    "text": "Said of those who gave only to be seen (4:38)"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah knows them well"
+  },
+  {
+    "kind": "question",
+    "text": "From what should they have given, in Quran 4:39?"
+  },
+  {
+    "kind": "question",
+    "text": "What they found"
+  },
+  {
+    "kind": "question",
+    "text": "What others owned"
+  },
+  {
+    "kind": "question",
+    "text": "What Allah provided them"
+  },
+  {
+    "kind": "question",
+    "text": "What they borrowed"
+  },
+  {
+    "kind": "question",
+    "text": "And donated from what Allah has provided for them."
+  },
+  {
+    "kind": "question",
+    "text": "In what should they have believed, in Quran 4:39?"
+  },
+  {
+    "kind": "question",
+    "text": "Wealth and the market"
+  },
+  {
+    "kind": "question",
+    "text": "Kings and the army"
+  },
+  {
+    "kind": "question",
+    "text": "Tribes and the elders"
+  },
+  {
+    "kind": "question",
+    "text": "Allah and the Last Day"
+  },
+  {
+    "kind": "question",
+    "text": "No harm could have come to them from believing in Allah and the Last Day."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 4:39 says Allah knows them well."
+  },
+  {
+    "kind": "question",
+    "text": "And Allah has perfect knowledge of them."
   },
   {
     "kind": "lesson",
@@ -187909,6 +188149,78 @@
   },
   {
     "kind": "lesson",
+    "text": "On that Day, all are presented before their Lord in rows."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 18:48"
+  },
+  {
+    "kind": "lesson",
+    "text": "Saffan: in rows"
+  },
+  {
+    "kind": "lesson",
+    "text": "They come back as Allah first created them."
+  },
+  {
+    "kind": "question",
+    "text": "Before whom will people be presented in rows, in Quran 18:48?"
+  },
+  {
+    "kind": "question",
+    "text": "Before their leaders"
+  },
+  {
+    "kind": "question",
+    "text": "Before their elders"
+  },
+  {
+    "kind": "question",
+    "text": "Before their Lord"
+  },
+  {
+    "kind": "question",
+    "text": "Before their kings"
+  },
+  {
+    "kind": "question",
+    "text": "Wa 'uridu 'ala rabbika saffa."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 18:48 says people come back as Allah first created them."
+  },
+  {
+    "kind": "question",
+    "text": "You have come to Us just as We created you the first time."
+  },
+  {
+    "kind": "question",
+    "text": "What had the deniers claimed, in Quran 18:48?"
+  },
+  {
+    "kind": "question",
+    "text": "No time was set for their return"
+  },
+  {
+    "kind": "question",
+    "text": "No price was set for their goods"
+  },
+  {
+    "kind": "question",
+    "text": "No date was set for their trip"
+  },
+  {
+    "kind": "question",
+    "text": "No limit was set for their wealth"
+  },
+  {
+    "kind": "question",
+    "text": "You claimed that We would never appoint a time for your return."
+  },
+  {
+    "kind": "lesson",
     "text": "That Day a person runs even from his own family."
   },
   {
@@ -218562,10 +218874,6 @@
   {
     "kind": "question",
     "text": "Their fine clothes"
-  },
-  {
-    "kind": "question",
-    "text": "What Allah provided them"
   },
   {
     "kind": "question",
@@ -312218,10 +312526,6 @@
   {
     "kind": "question",
     "text": "What is the greatest bliss, in 9:72?"
-  },
-  {
-    "kind": "question",
-    "text": "The pleasure of Allah"
   },
   {
     "kind": "question",
@@ -479461,10 +479765,6 @@
   },
   {
     "kind": "question",
-    "text": "What they found"
-  },
-  {
-    "kind": "question",
     "text": "What their Lord gave them"
   },
   {
@@ -590410,6 +590710,114 @@
   {
     "kind": "question",
     "text": "A man came for the world, then Islam grew dearer to him than the world, Anas said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about coming to Islam?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Hearing the Quran, they asked: why should we not believe?"
+  },
+  {
+    "kind": "source",
+    "text": "Quran 5:84"
+  },
+  {
+    "kind": "lesson",
+    "text": "They wept, knowing it was the truth (5:83)"
+  },
+  {
+    "kind": "lesson",
+    "text": "They hoped to be with the righteous"
+  },
+  {
+    "kind": "question",
+    "text": "Whose company did they long for, in Quran 5:84?"
+  },
+  {
+    "kind": "question",
+    "text": "We long for our Lord to include us in the company of the righteous."
+  },
+  {
+    "kind": "question",
+    "text": "Who did they hope would place them with the righteous, in Quran 5:84?"
+  },
+  {
+    "kind": "question",
+    "text": "We aspire that our Lord will admit us with the righteous people."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 5:84 they ask why they should not believe in Allah."
+  },
+  {
+    "kind": "question",
+    "text": "Why should we not believe in Allah and the truth that has come to us, they said."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah rewards them for what they said, with gardens forever."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 5:85"
+  },
+  {
+    "kind": "lesson",
+    "text": "The reward of the good-doers"
+  },
+  {
+    "kind": "question",
+    "text": "Why does Allah reward them, in Quran 5:85?"
+  },
+  {
+    "kind": "question",
+    "text": "For what they sold"
+  },
+  {
+    "kind": "question",
+    "text": "For what they said"
+  },
+  {
+    "kind": "question",
+    "text": "For what they owned"
+  },
+  {
+    "kind": "question",
+    "text": "For what they built"
+  },
+  {
+    "kind": "question",
+    "text": "So Allah rewarded them for what they said with gardens."
+  },
+  {
+    "kind": "question",
+    "text": "What does Quran 5:85 call this reward?"
+  },
+  {
+    "kind": "question",
+    "text": "The reward of the rich"
+  },
+  {
+    "kind": "question",
+    "text": "The reward of the strong"
+  },
+  {
+    "kind": "question",
+    "text": "The reward of the kings"
+  },
+  {
+    "kind": "question",
+    "text": "Dhalika jaza'ul-muhsinin, that is the reward of doers of good."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 5:85 says they will stay in the gardens forever."
+  },
+  {
+    "kind": "question",
+    "text": "Gardens under which rivers flow, to stay there forever."
   },
   {
     "kind": "lesson",
