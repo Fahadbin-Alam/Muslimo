@@ -263,6 +263,20 @@ const MESSENGERS: DeepUnit = {
       ]
     },
     {
+      slug: "sent-down-in-truth",
+      title: "Sent down with the truth",
+      line: "Allah sent the Quran down with the truth.",
+      facts: ["Quran 17:105", "Bil-haqq: with the truth", "Good news and a warning"],
+      quote: quranQuote(17, 105),
+      source: quran(17, 105, "With the truth Allah sent the Quran down, and with the truth it came down. And He sent the Prophet ﷺ only as a bringer of good news and a warner."),
+      difficulty: 2,
+      questions: [
+        { q: "Which word does Quran 17:105 say twice about the Quran?", a: "Truth", wrong: ["Light", "Mercy", "Guidance"], why: "With the truth We sent it down, and with the truth it came down." },
+        { q: "What was the Prophet ﷺ sent as, in Quran 17:105?", a: "A bringer of good news and a warner", wrong: ["A king over all lands", "A builder of palaces", "A keeper of treasures"], why: "We have sent you only to give good news and to warn, Allah told him ﷺ." },
+        { q: "Quran 17:105 says Allah Himself sent the Quran down.", tf: true, why: "We have sent down the Quran in truth, Allah says." }
+      ]
+    },
+    {
       slug: "brothers",
       title: "Prophets are brothers",
       line: "Prophets are brothers with one religion, he ﷺ said.",
