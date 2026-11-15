@@ -675,6 +675,20 @@ const GATHERING: DeepUnit = {
       ]
     },
     {
+      slug: "presented-in-rows",
+      title: "Presented in rows",
+      line: "On that Day, all are presented before their Lord in rows.",
+      facts: ["Quran 18:48", "Saffan: in rows", "They come back as Allah first created them."],
+      quote: quranQuote(18, 48),
+      source: quran(18, 48, "They will be presented before your Lord in rows: you have come to Us as We created you the first time, yet you claimed We would never set an appointed time for you."),
+      difficulty: 2,
+      questions: [
+        { q: "Before whom will people be presented in rows, in Quran 18:48?", a: "Before their Lord", wrong: ["Before their kings", "Before their leaders", "Before their elders"], why: "Wa 'uridu 'ala rabbika saffa." },
+        { q: "Quran 18:48 says people come back as Allah first created them.", tf: true, why: "You have come to Us just as We created you the first time." },
+        { q: "What had the deniers claimed, in Quran 18:48?", a: "No time was set for their return", wrong: ["No price was set for their goods", "No date was set for their trip", "No limit was set for their wealth"], why: "You claimed that We would never appoint a time for your return." }
+      ]
+    },
+    {
       slug: "flee",
       title: "Running from family",
       line: "That Day a person runs even from his own family.",

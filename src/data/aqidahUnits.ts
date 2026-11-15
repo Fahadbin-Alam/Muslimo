@@ -66,6 +66,20 @@ const TAWHID: DeepUnit = {
       ]
     },
     {
+      slug: "fallen-from-the-sky",
+      title: "Fallen from the sky",
+      line: "Joining partners with Allah is like falling from the sky.",
+      facts: ["Quran 22:31", "Hunafa: devoted to Allah alone", "Snatched by birds, or blown far away by the wind"],
+      quote: quranQuote(22, 31),
+      source: quran(22, 31, "Be devoted to Allah alone, joining no partner with Him. Whoever joins partners with Allah is as though he fell from the sky and was snatched by birds, or the wind carried him to a far-off place."),
+      difficulty: 2,
+      questions: [
+        { q: "What is a person who joins partners with Allah like, in Quran 22:31?", a: "One who fell from the sky", wrong: ["One who sold his goods", "One who wrote a letter", "One who won a race"], why: "As though he had fallen from the sky and was snatched by the birds." },
+        { q: "Where does the wind carry him, in Quran 22:31?", a: "To a far-off place", wrong: ["To his own home", "To a safe shelter", "To a busy town"], why: "Or the wind carried him down into a remote place." },
+        { q: "Quran 22:31 tells us to join no partner with Allah.", tf: true, why: "Be upright in devotion to Allah, associating none with Him." }
+      ]
+    },
+    {
       slug: "luqman",
       title: "Luqman's first advice",
       line: "Luqman told his son first: do not join partners with Allah.",
@@ -534,6 +548,20 @@ const LIVED: DeepUnit = {
         { q: "What makes a believer's faith increase, says Quran 8:2?", a: "Hearing Allah's ayahs", wrong: ["Sleeping more", "Buying things", "Arguing"], why: "Their faith increases." },
         { q: "Who do believers rely on?", a: "Their Lord", wrong: ["Their phones", "Luck", "Kings"], why: "And they rely on their Lord." },
         { q: "Hearing the Quran can strengthen faith.", tf: true, why: "As Quran 8:2 says." }
+      ]
+    },
+    {
+      slug: "seeking-allahs-pleasure",
+      title: "Seeking Allah's pleasure",
+      line: "Some give their very selves to seek Allah's pleasure.",
+      facts: ["Quran 2:207", "Mardat Allah: the pleasure of Allah", "Ra'uf: very kind"],
+      quote: quranQuote(2, 207),
+      source: quran(2, 207, "Among the people is one who gives his very self, seeking the pleasure of Allah. And Allah is kind to His servants."),
+      difficulty: 2,
+      questions: [
+        { q: "What does this person seek, in Quran 2:207?", a: "The pleasure of Allah", wrong: ["The praise of people", "The wealth of this world", "The power of kings"], why: "He sells himself, seeking means to the approval of Allah." },
+        { q: "What does this person give, in Quran 2:207?", a: "His own self", wrong: ["His old clothes", "His spare coins", "His leftover food"], why: "Those who would dedicate their lives to Allah's pleasure." },
+        { q: "Quran 2:207 says Allah is kind to His servants.", tf: true, why: "Wallahu ra'ufun bil-'ibad: Allah is Ever Gracious to His servants." }
       ]
     },
     {
