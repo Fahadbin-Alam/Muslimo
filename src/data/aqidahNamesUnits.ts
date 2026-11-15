@@ -1,6 +1,6 @@
 import { quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// Two more Aqidah units on the names of Allah, each name taught from the ayah it comes in. Only names that are
+// Three more Aqidah units on the names of Allah, each name taught from the ayah it comes in. Only names that are
 // written word for word in the Quran, with plain meanings every scholar agrees on.
 
 const MERCY: DeepUnit = {
@@ -321,4 +321,114 @@ const MAJESTY: DeepUnit = {
   ]
 };
 
-export const AQIDAH_NAMES_UNITS: DeepUnit[] = [MERCY, MAJESTY];
+const KNOWLEDGE: DeepUnit = {
+  key: "aqidah-names-knowledge",
+  topicId: "aqidah",
+  branchId: "aqidah-names-knowledge",
+  branch: { title: "Names of Allah: His knowledge", description: "As-Sami', Al-Basir, Ash-Shahid, Al-Wasi' and more: names that show He hears, sees and knows all." },
+  name: "Allah's names of knowledge",
+  kind: "skill",
+  lessonType: "skill",
+  lessons: [
+    {
+      slug: "sami-basir",
+      title: "As-Sami', Al-Basir",
+      line: "The reward of this world and the next is with Allah.",
+      facts: ["Quran 4:134", "Surah An-Nisa", "Wa kanallahu Sami'an Basira"],
+      quote: quranQuote(4, 134),
+      source: quran(4, 134, "Whoever desires the reward of this world - then with Allah is the reward of this world and the Hereafter. And ever is Allah Hearing and Seeing."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 4:134?", a: "As-Sami', Al-Basir", wrong: ["Al-Malik, Al-Quddus", "Al-Hayy, Al-Qayyum", "Al-Ghafur, Al-Wadud"], why: "And ever is Allah Hearing and Seeing." },
+        { q: "With whom is the reward of this world and the Hereafter, in Quran 4:134?", a: "With Allah", wrong: ["With the wealthy", "With the strong", "With the traders"], why: "Whoever desires the reward of this world: with Allah is the reward of both worlds." },
+        { q: "Which name of Allah means the All-Seeing?", a: "Al-Basir", wrong: ["Al-Wadud", "Al-Wahhab", "Ar-Razzaq"], why: "And ever is Allah Hearing and Seeing." }
+      ]
+    },
+    {
+      slug: "sami-alim",
+      title: "As-Sami', Al-Alim",
+      line: "Whatever is in the night and the day belongs to Allah.",
+      facts: ["Quran 6:13", "Surah Al-An'am", "Wa huwas-Sami'ul-Alim"],
+      quote: quranQuote(6, 13),
+      source: quran(6, 13, "And to Him belongs that which reposes by night and by day, and He is the Hearing, the Knowing."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 6:13?", a: "As-Sami', Al-Alim", wrong: ["Ar-Rahman, Ar-Rahim", "Al-Aliyy, Al-Kabir", "Al-Ghani, Al-Halim"], why: "And He is the Hearing, the Knowing." },
+        { q: "What belongs to Allah, in Quran 6:13?", a: "All that is in the night and day", wrong: ["Only what is in the day", "Only what is in the night", "Only what is on the land"], why: "And to Him belongs that which reposes by night and by day." },
+        { q: "Which name of Allah means the All-Hearing?", a: "As-Sami'", wrong: ["Al-Karim", "Ash-Shakur", "Al-Ghafur"], why: "And He is the Hearing, the Knowing." }
+      ]
+    },
+    {
+      slug: "shahid",
+      title: "Ash-Shahid",
+      line: "Allah Himself bears witness to what He sent down.",
+      facts: ["Quran 4:166", "Surah An-Nisa", "Wa kafa billahi shahida"],
+      quote: quranQuote(4, 166),
+      source: quran(4, 166, "But Allah bears witness to that which He has revealed to you. He has sent it down with His knowledge, and the angels bear witness as well. And sufficient is Allah as Witness."),
+      difficulty: 2,
+      questions: [
+        { q: "Which name of Allah ends Quran 4:166?", a: "Ash-Shahid", wrong: ["Al-Wahhab", "Al-Karim", "Ar-Razzaq"], why: "Wa kafa billahi shahida: and sufficient is Allah as Witness." },
+        { q: "Who else bears witness, in Quran 4:166?", a: "The angels", wrong: ["The jinn", "The poets", "The kings"], why: "He has sent it down with His knowledge, and the angels bear witness as well." },
+        { q: "Quran 4:166 says Allah sent the revelation down with His knowledge.", tf: true, why: "Allah bears witness to what He revealed: He sent it down with His knowledge." }
+      ]
+    },
+    {
+      slug: "hakim-khabir",
+      title: "Al-Hakim, Al-Khabir",
+      line: "All authority is Allah's on the Day the Horn is blown.",
+      facts: ["Quran 6:73", "Surah Al-An'am", "Wa huwal-Hakimul-Khabir"],
+      quote: quranQuote(6, 73),
+      source: quran(6, 73, "And His is the dominion on the Day the Horn is blown. He is Knower of the unseen and the witnessed; and He is the Wise, the Acquainted."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 6:73?", a: "Al-Hakim, Al-Khabir", wrong: ["Ar-Ra'uf, Ar-Rahim", "Al-Hayy, Al-Qayyum", "Al-Malik, Al-Quddus"], why: "And He is the Wise, the Acquainted." },
+        { q: "Who holds all authority on the Day the Horn is blown, in Quran 6:73?", a: "Allah alone", wrong: ["The kings", "The angels", "The strong"], why: "And His is the dominion on the Day the Horn is blown." },
+        { q: "In Quran 6:73, Allah knows both the seen and the unseen.", tf: true, why: "He is Knower of the unseen and the witnessed." }
+      ]
+    },
+    {
+      slug: "wasi-alim",
+      title: "Al-Wasi', Al-Alim",
+      line: "Allah promises forgiveness and bounty from Himself.",
+      facts: ["Quran 2:268", "Surah Al-Baqarah", "Wallahu Wasi'un Alim"],
+      quote: quranQuote(2, 268),
+      source: quran(2, 268, "Satan threatens you with poverty and orders you to immorality, while Allah promises you forgiveness from Him and bounty. And Allah is all-Encompassing and Knowing."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 2:268?", a: "Al-Wasi', Al-Alim", wrong: ["Al-Hayy, Al-Qayyum", "Al-Malik, Al-Quddus", "Ar-Ra'uf, Ar-Rahim"], why: "And Allah is all-Encompassing and Knowing." },
+        { q: "What does Allah promise, in Quran 2:268?", a: "Forgiveness and bounty", wrong: ["Fame and praise", "Rank and titles", "Power and armies"], why: "While Satan threatens you with poverty, Allah promises you forgiveness and bounty." },
+        { q: "In Quran 2:268, Shaytan threatens and Allah promises.", tf: true, why: "Satan threatens you with poverty, while Allah promises you forgiveness." }
+      ]
+    },
+    {
+      slug: "kabir-mutaal",
+      title: "Al-Kabir, Al-Muta'al",
+      line: "Allah knows the seen and the unseen, the Great, the Exalted.",
+      facts: ["Quran 13:9", "Surah Ar-Ra'd", "Al-Kabirul-Muta'al"],
+      quote: quranQuote(13, 9),
+      source: quran(13, 9, "He is Knower of the unseen and the witnessed, the Grand, the Exalted."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 13:9?", a: "Al-Kabir, Al-Muta'al", wrong: ["Al-Ghafur, Al-Wadud", "Ar-Rahman, Ar-Rahim", "Al-Ghani, Al-Halim"], why: "Knower of the unseen and the witnessed, the Grand, the Exalted." },
+        { q: "Which name of Allah means the Most Exalted?", a: "Al-Muta'al", wrong: ["Al-Wadud", "Al-Ghafur", "Ar-Razzaq"], why: "The Grand, the Exalted." },
+        { q: "Al-Kabir and Al-Muta'al both tell of Allah's greatness.", tf: true, why: "Knower of the unseen and the witnessed, the Grand, the Exalted." }
+      ]
+    },
+    {
+      slug: "alim-qadir",
+      title: "Al-Alim, Al-Qadir",
+      line: "Nothing in the heavens or the earth can escape Allah.",
+      facts: ["Quran 35:44", "Surah Fatir", "Innahu kana Aliman Qadira"],
+      quote: quranQuote(35, 44),
+      source: quran(35, 44, "But Allah is not to be caused failure by anything in the heavens or on the earth. Indeed, He is ever Knowing and Competent."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 35:44?", a: "Al-Alim, Al-Qadir", wrong: ["Al-Ghafur, Al-Wadud", "Al-Malik, Al-Quddus", "Ar-Ra'uf, Ar-Rahim"], why: "Indeed, He is ever Knowing and Competent." },
+        { q: "What can escape Allah in the heavens or the earth, per Quran 35:44?", a: "Nothing at all", wrong: ["The stars", "The deep sea", "The high mountains"], why: "Allah is not to be caused failure by anything in the heavens or on the earth." },
+        { q: "Al-Qadir is a name of Allah that tells of His power.", tf: true, why: "Indeed, He is ever Knowing and Competent." }
+      ]
+    }
+  ]
+};
+
+export const AQIDAH_NAMES_UNITS: DeepUnit[] = [MERCY, MAJESTY, KNOWLEDGE];
