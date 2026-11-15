@@ -548,7 +548,14 @@ export type SignKind =
   | "never-old"
   | "beware-of-suspicion"
   | "thirty-three"
-  | "five-gifts";
+  | "five-gifts"
+  | "seven-in-the-shade"
+  | "two-joys"
+  | "ruins-of-al-hijr"
+  | "born-on-the-fitrah"
+  | "best-ten-days"
+  | "sparrow-and-the-sea"
+  | "lofty-mansions";
 
 export type SignScene = {
   id: string;
@@ -1784,6 +1791,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: I have been given five things which were not given to anyone else before me. Allah made me victorious by awe for a distance of one month's journey. The earth has been made for me a place for praying and a thing to perform Tayammum, so anyone of my followers can pray wherever the time of a prayer is due. The booty has been made lawful for me. I have been given the right of intercession. And every Prophet used to be sent to his nation only, but I have been sent to all mankind.",
     sources: [bukhari("335")]
+  },
+  {
+    id: "sign-seven-in-the-shade",
+    kind: "seven-in-the-shade",
+    caption:
+      "The Prophet ﷺ said: Allah will give shade to seven on the Day when there will be no shade but His: a just ruler; a youth brought up in the worship of Allah; a man whose heart is attached to the mosques; two who love each other only for Allah's sake, meeting and parting for it; a man who refuses the call of a woman of position and beauty and says: I am afraid of Allah; a man who gives charity so secretly that his left hand does not know what his right hand has given; and one who remembers Allah alone and his eyes fill with tears.",
+    sources: [bukhari("660")]
+  },
+  {
+    id: "sign-two-joys",
+    kind: "two-joys",
+    caption:
+      "The Prophet ﷺ said: fasting is a shield. The one fasting should not behave foolishly, and if someone fights or insults him, he should say twice: I am fasting. By Him in whose Hand my soul is, the smell of the fasting person's mouth is better with Allah than the smell of musk. Allah says: he has left his food, drink and desires for My sake; the fast is for Me, and I will reward it. And he ﷺ said: the fasting person has two joys, one when he breaks his fast, and the other when he meets his Lord, pleased with his fasting.",
+    sources: [bukhari("1894"), bukhari("1904")]
+  },
+  {
+    id: "sign-ruins-of-al-hijr",
+    kind: "ruins-of-al-hijr",
+    caption:
+      "When the Prophet ﷺ passed by al-Hijr, he said: do not enter the dwelling places of those who were unjust to themselves unless you enter weeping, lest what befell them befall you. Then he covered his head and hurried on till he crossed the valley. He ﷺ also said: if you do not weep, do not enter.",
+    sources: [bukhari("4419"), bukhari("433")]
+  },
+  {
+    id: "sign-born-on-the-fitrah",
+    kind: "born-on-the-fitrah",
+    caption:
+      "The Prophet ﷺ said: every child is born on the fitrah, and his parents make him a Jew, a Christian or a Magian, as an animal gives birth to a whole young one. Do you find any part of it cut off?",
+    sources: [bukhari("1385")]
+  },
+  {
+    id: "sign-best-ten-days",
+    kind: "best-ten-days",
+    caption:
+      "The Prophet ﷺ said: no good deeds done on other days are better than those done on these, the first ten days of Dhul-Hijjah. Some of his companions said: not even jihad? He said: not even jihad, except a man who went out risking himself and his wealth, and did not return with any of it.",
+    sources: [bukhari("969")]
+  },
+  {
+    id: "sign-sparrow-and-the-sea",
+    kind: "sparrow-and-the-sea",
+    caption:
+      "The Prophet ﷺ said: Musa stood up to address Bani Israel and was asked: who is the most learned of the people? He said: I am the most learned. Allah admonished him, for he did not leave knowledge to Him, and told him: at the junction of the two seas there is a servant of Mine more learned than you. Later a boat passed by Musa and al-Khidr, and its crew knew al-Khidr and carried them without fare. Then a sparrow came, stood on the edge of the boat and dipped its beak once or twice in the sea. Al-Khidr said: O Musa, my knowledge and your knowledge have not decreased Allah's knowledge except as much as this sparrow has decreased the sea. And the Prophet ﷺ said: may Allah have mercy on Musa; we wish he had been patient, so that more of their story would be told to us.",
+    sources: [bukhari("122")]
+  },
+  {
+    id: "sign-lofty-mansions",
+    kind: "lofty-mansions",
+    caption:
+      "The Prophet ﷺ said: the people of Paradise will look at the dwellers of the lofty mansions above them as one looks at a brilliant star far away on the horizon, in the East or in the West, because of their ranks over one another. The people said: O Messenger of Allah, are these the homes of the prophets, which no one else can reach? He ﷺ said: no, by Him in whose Hand my soul is, they are for men who believed in Allah and believed the messengers.",
+    sources: [bukhari("3256")]
   }
 ];
 
@@ -2938,7 +2994,43 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-araf5-to-all-mankind": "sign-five-gifts",
   "deep-ibrahim1-sent-to-all-mankind": "sign-five-gifts",
   "deep-saba2-sent-to-all-mankind": "sign-five-gifts",
-  "deep-hashr1-awe-for-a-month": "sign-five-gifts"
+  "deep-hashr1-awe-for-a-month": "sign-five-gifts",
+  // Seven whom Allah shades on the Day there is no shade but His (Sahih al-Bukhari 660).
+  "deep-gathering-shade": "sign-seven-in-the-shade",
+  "deep-yusuf2-shade-for-one-who-fears-allah": "sign-seven-in-the-shade",
+  "deep-qaf3-tears-in-private": "sign-seven-in-the-shade",
+  "deep-mulk2-secret-charity": "sign-seven-in-the-shade",
+  // Fasting is a shield, better with Allah than musk, for Him, and its two joys (Sahih al-Bukhari 1894 and 1904).
+  "deep-fast-reward-shield": "sign-two-joys",
+  "deep-fast-reward-musk": "sign-two-joys",
+  "deep-fast-reward-two-joys": "sign-two-joys",
+  "deep-hadith-qudsi-what-is-qudsi": "sign-two-joys",
+  "ramadan-two-joys": "sign-two-joys",
+  // Passing al-Hijr: enter only weeping, and he covered his head and hurried through the valley (Sahih al-Bukhari 4419
+  // and 433).
+  "deep-araf3-weeping-at-hijr": "sign-ruins-of-al-hijr",
+  "deep-hud3-passing-their-ruins": "sign-ruins-of-al-hijr",
+  "deep-qamar2-lands-of-thamud": "sign-ruins-of-al-hijr",
+  "deep-prophet-salih-hijr": "sign-ruins-of-al-hijr",
+  "deep-hijr4-pass-ruins-weeping": "sign-ruins-of-al-hijr",
+  // Every child is born on the fitrah, as an animal gives birth to a whole young one (Sahih al-Bukhari 1385).
+  "deep-children-fitrah": "sign-born-on-the-fitrah",
+  "deep-hud1-born-on-the-fitrah": "sign-born-on-the-fitrah",
+  "deep-rum2-every-child-on-the-fitrah": "sign-born-on-the-fitrah",
+  "deep-shams2-born-on-the-fitrah": "sign-born-on-the-fitrah",
+  // No good deeds are better than those of the first ten days of Dhul-Hijjah (Sahih al-Bukhari 969).
+  "deep-hajj-best-ten-days": "sign-best-ten-days",
+  "deep-dhul-hijjah-best-ten-days": "sign-best-ten-days",
+  "deep-hajj2-best-ten-days": "sign-best-ten-days",
+  "deep-fajr1-the-best-days-for-good-deeds": "sign-best-ten-days",
+  // The most learned, and the sparrow that dipped its beak in the sea (Sahih al-Bukhari 122).
+  "deep-kahf3-the-most-learned": "sign-sparrow-and-the-sea",
+  "deep-kahf3-the-sparrow-and-the-sea": "sign-sparrow-and-the-sea",
+  "deep-kahf3-if-only-he-had-been-patient": "sign-sparrow-and-the-sea",
+  // The lofty mansions of Paradise, seen like a brilliant star on the horizon (Sahih al-Bukhari 3256).
+  "deep-zumar2-like-stars-on-the-horizon": "sign-lofty-mansions",
+  "deep-hadid3-the-lofty-mansions": "sign-lofty-mansions",
+  "deep-hadid3-not-only-for-prophets": "sign-lofty-mansions"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

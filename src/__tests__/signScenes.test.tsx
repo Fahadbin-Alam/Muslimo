@@ -245,7 +245,14 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-never-old": [/never (grow )?old|young forever/i, /never (fall )?ill|never sick|healthy|never die/i],
   "sign-beware-of-suspicion": [/suspicion/i, /spy|brothers/i],
   "sign-thirty-three": [/thirty[- ]three|\b33\b|(rich|wealthy).{0,40}(ranks|grades)/i, /poor/i],
-  "sign-five-gifts": [/all (people|mankind)|month.s journey/i, /five|nation|one people|special (things|gifts)/i]
+  "sign-five-gifts": [/all (people|mankind)|month.s journey/i, /five|nation|one people|special (things|gifts)/i],
+  "sign-seven-in-the-shade": [/shade/i, /seven/i],
+  "sign-two-joys": [/fast(ing)?\b/i, /shield|musk|two joys|for Me/i],
+  "sign-ruins-of-al-hijr": [/al-Hijr/i, /weep(ing)?/i],
+  "sign-born-on-the-fitrah": [/fitrah|true faith/i, /\bborn\b|parents/i],
+  "sign-best-ten-days": [/ten days|first ten/i, /Dhul[- ]Hijj?ah/i],
+  "sign-sparrow-and-the-sea": [/most learned|sparrow|patient/i, /Musa|Khidr|knowledge/i],
+  "sign-lofty-mansions": [/lofty mansions|high mansions|high rooms/i, /stars?\b|only for (the )?prophets/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -431,7 +438,14 @@ const SOURCES: Record<string, string[]> = {
   "sign-never-old": ["Sahih Muslim 2837"],
   "sign-beware-of-suspicion": ["Sahih al-Bukhari 6064"],
   "sign-thirty-three": ["Sahih al-Bukhari 843"],
-  "sign-five-gifts": ["Sahih al-Bukhari 335"]
+  "sign-five-gifts": ["Sahih al-Bukhari 335"],
+  "sign-seven-in-the-shade": ["Sahih al-Bukhari 660"],
+  "sign-two-joys": ["Sahih al-Bukhari 1894", "Sahih al-Bukhari 1904"],
+  "sign-ruins-of-al-hijr": ["Sahih al-Bukhari 4419", "Sahih al-Bukhari 433"],
+  "sign-born-on-the-fitrah": ["Sahih al-Bukhari 1385"],
+  "sign-best-ten-days": ["Sahih al-Bukhari 969"],
+  "sign-sparrow-and-the-sea": ["Sahih al-Bukhari 122"],
+  "sign-lofty-mansions": ["Sahih al-Bukhari 3256"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -455,7 +469,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(924);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(952);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -3218,6 +3232,171 @@ describe("the signs in creation, alive", () => {
     const nations = names("five-gifts", /^a nation, about the one sent to it only \d$/);
     const toAll = ["golden ways from his place to all of them", "a warm light over all", "every nation, sparkling"];
     expect([nations.length, all("five-gifts", nations, 0.76), all("five-gifts", nations, 0.83), all("five-gifts", toAll, 0.88), all("five-gifts", toAll, 0.97)]).toEqual([3, [0, 0, 0], [1, 1, 1], [0, 0, 0], [1, 1, 1]]);
+  });
+
+  test("hope and warning shows each moment in its order, and draws no Prophet, no person, no hand and no face", () => {
+    const taught: SignKind[] = ["seven-in-the-shade", "two-joys", "ruins-of-al-hijr", "born-on-the-fitrah", "best-ten-days", "sparrow-and-the-sea", "lofty-mansions"];
+    for (const kind of taught) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|belly|body|devils?|satan|shaytan|hypocrites?|heirs?|Umar|Uthman|Jabir|Mutarrif|Abu Sa'id|Sufyan|Anas|Abdullah|Mas'ud|Abu Hurairah|Abu Hurayrah|Sahl|Sulayman|Salman|Abu Musa|Abu Dharr|Ibn Abbas|Qays|Musa|Khidr|Yusha)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, nothing comes down from the sky, and no fire is drawn.
+      expect([kind, signArt(kind).parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name)).map((each) => each.name)]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    const risen = (kind: SignKind, list: string[], t: number) => list.map((name) => [shown(kind, name, t), value(kind, name, "y", t)]);
+    const at = (kind: SignKind, name: string, t: number) => [shown(kind, name, t), value(kind, name, "x", t), value(kind, name, "y", t)];
+    const round = (n: number) => Math.round(n * 1000) / 1000;
+    // Seven in the shade: on a wide plain of very many, a hot glare and no shade; a cool shade spreads and seven places
+    // show in it; a level balance by the first, a prayer mat by the second as it grows; a little masjid and a golden
+    // thread to it from the third, its heart a warm light; two come together with a warm glow between them, and part; a
+    // fine place calls with a crooked call, and the fifth turns away, its voice refusing, a calm on it; a sack goes in
+    // secret to one in need under a cover; last, the seventh in a quiet, its tears flowing and its remembrance rising,
+    // and all seven glow in the shade.
+    expect(words("seven-in-the-shade")).toEqual(["When there will be no shade but His", "Allah will give shade to seven", "A just ruler, a youth brought up in worship", "One whose heart is attached to the mosques", "Two who love each other for Allah's sake", "He refuses, saying: I am afraid of Allah", "His left hand knows not what his right gave", "Remembering Allah alone, his tears flow"]);
+    const glare = "a hot glare over all, no shade";
+    const shade = "a cool shade, spreading";
+    const seven = ["the first place in the shade", "the second place, growing up", "the third place in the shade", ...names("seven-in-the-shade", /^two who love each other for His sake \d$/), "the fifth place, turning away", "the sixth place in the shade", "the seventh place in the shade"];
+    expect([shown("seven-in-the-shade", glare, 0.02), shown("seven-in-the-shade", glare, 0.095), shown("seven-in-the-shade", shade, 0.095), seven.length, all("seven-in-the-shade", seven, 0.095)]).toEqual([0, 1, 0, 8, [0, 0, 0, 0, 0, 0, 0, 0]]);
+    expect([shown("seven-in-the-shade", shade, 0.22), value("seven-in-the-shade", shade, "scaleX", 0.22), all("seven-in-the-shade", seven, 0.22)]).toEqual([1, 1, [1, 1, 1, 1, 1, 1, 1, 1]]);
+    const youth = "the second place, growing up";
+    const ruler = ["a just ruler: a balance, level", "a prayer mat by the second place"];
+    expect([all("seven-in-the-shade", ruler, 0.27), value("seven-in-the-shade", youth, "scale", 0.27), all("seven-in-the-shade", ruler, 0.35), value("seven-in-the-shade", youth, "scale", 0.35)]).toEqual([[0, 0], 0.55, [1, 1], 1]);
+    const tied = ["a little masjid", "a golden thread from the third place to the masjid", "its heart, a warm light, tied to the masjid"];
+    expect([all("seven-in-the-shade", tied, 0.4), all("seven-in-the-shade", tied, 0.475)]).toEqual([[0, 0, 0], [1, 1, 1]]);
+    const two = names("seven-in-the-shade", /^two who love each other for His sake \d$/);
+    const between = "a warm glow between the two, for His sake";
+    expect([two.map((name) => value("seven-in-the-shade", name, "x", 0.52)), shown("seven-in-the-shade", between, 0.52), two.map((name) => value("seven-in-the-shade", name, "x", 0.575)), shown("seven-in-the-shade", between, 0.575), two.map((name) => value("seven-in-the-shade", name, "x", 0.595))]).toEqual([[0, 0], 0, [2.4, -2.4], 1, [0, 0]]);
+    const fine = ["a fine place, sparkling, calling", "a crooked call from the fine place", "a voice from him, refusing: I am afraid", "a calm on the fifth place"];
+    const refuser = "the fifth place, turning away";
+    expect([all("seven-in-the-shade", fine, 0.64), value("seven-in-the-shade", refuser, "x", 0.64), all("seven-in-the-shade", fine, 0.68), round(value("seven-in-the-shade", refuser, "x", 0.68))]).toEqual([[0, 0, 0, 0], 0, [1, 1, 0, 0], -2.5]);
+    expect([all("seven-in-the-shade", fine, 0.715), value("seven-in-the-shade", refuser, "x", 0.715)]).toEqual([[1, 0, 1, 1], -5]);
+    const secret = ["one in need", "a cover over it, unseen", "a warm glow on the one in need"];
+    const sack = "a sack, given in secret";
+    expect([all("seven-in-the-shade", secret, 0.76), at("seven-in-the-shade", sack, 0.76), all("seven-in-the-shade", [...secret, fine[0], fine[2]], 0.835), at("seven-in-the-shade", sack, 0.835)]).toEqual([[0, 0, 0], [0, 0, 0], [1, 1, 1, 0, 0], [1, 13.6, 0]]);
+    const quiet = ["a quiet about the seventh, alone", "its tears, flowing", "all seven, glowing in the shade"];
+    const remembrance = "its remembrance, rising";
+    expect([all("seven-in-the-shade", quiet, 0.88), at("seven-in-the-shade", remembrance, 0.88), at("seven-in-the-shade", remembrance, 0.95), all("seven-in-the-shade", quiet, 0.97), shown("seven-in-the-shade", remembrance, 0.97)]).toEqual([[0, 0, 0], [0, 0, 0], [1, 0, -12], [1, 1, 1], 0]);
+    // Two joys: before dawn, by his home, someone's place with his food and drink, and a shield of light closes about
+    // him; another comes with a crooked voice, his voice answers twice and the shield holds, and the other goes away; his
+    // food and drink are covered, left; his fast rises and is kept high up, shining; a jar of musk with its sweet smell,
+    // and a sweeter smell rises from him; two small lights of joy show; at sunset the food is uncovered and the first joy
+    // comes to him, a warm glow; last, at night, a golden way goes up to a light far off, and the second joy goes there.
+    expect(words("two-joys")).toEqual(["Fasting is a shield", "If someone fights him, he says: I am fasting", "He has left his food and drink for My sake", "The fast is for Me, and I will reward it", "Better with Allah than the smell of musk", "The fasting person has two joys", "One at the time of breaking his fast", "And the other when he will meet his Lord"]);
+    const dawn = ["the night before dawn", "fasting, a shield about him"];
+    expect([all("two-joys", dawn, 0.02), all("two-joys", dawn, 0.095)]).toEqual([[1, 0], [0, 1]]);
+    const other = "another's place, coming to fight";
+    const fight = ["a crooked voice from the other", "the shield, holding"];
+    const twice = "his voice, twice: I am fasting";
+    expect([at("two-joys", other, 0.14), all("two-joys", fight, 0.14), shown("two-joys", twice, 0.14), shown("two-joys", twice, 0.184), shown("two-joys", twice, 0.194), shown("two-joys", twice, 0.22), at("two-joys", other, 0.22), all("two-joys", fight, 0.22)]).toEqual([[0, 0, 0], [0, 0], 0, 1, 0, 1, [1, 0, 0], [1, 1]]);
+    const cover = "a cover over his food and drink: left";
+    expect([at("two-joys", other, 0.35), all("two-joys", [...fight, twice], 0.35), shown("two-joys", cover, 0.27), shown("two-joys", cover, 0.35)]).toEqual([[0, 26, 0], [0, 0, 0], 0, 1]);
+    const kept = "his fast, kept high up, shining";
+    expect([at("two-joys", "his fast, rising", 0.4), shown("two-joys", kept, 0.4), at("two-joys", "his fast, rising", 0.455), shown("two-joys", "his fast, rising", 0.475), shown("two-joys", kept, 0.475)]).toEqual([[0, 0, 0], 0, [1, 8, -40], 0, 1]);
+    const musk = ["a jar of musk", "the musk's sweet smell"];
+    const sweeter = "a sweeter smell from him, rising";
+    expect([all("two-joys", musk, 0.52), risen("two-joys", [sweeter], 0.52), all("two-joys", musk, 0.595), risen("two-joys", [sweeter], 0.595)]).toEqual([[0, 0], [[0, 0]], [1, 1], [[1, -6]]]);
+    const joys = ["the first joy, a small light", "the second joy, a small light"];
+    expect([all("two-joys", joys, 0.64), all("two-joys", joys, 0.715)]).toEqual([[0, 0], [1, 1]]);
+    const breaking = ["the first joy, breaking the fast: a warm glow on him", "the sky at sunset"];
+    expect([at("two-joys", joys[0], 0.76), all("two-joys", [...breaking, cover], 0.76), at("two-joys", joys[0], 0.835), all("two-joys", [...breaking, cover], 0.835), at("two-joys", "the sun, crossing the sky", 0.835)]).toEqual([[1, 0, 0], [0, 0, 1], [0, 6, 11], [1, 1, 0], [1, 132, 0]]);
+    const meeting = ["a light far off, the Hereafter", "a golden way, up to it", "the second joy, there: a warm glow", "the night", "stars", "his place, at night"];
+    expect([all("two-joys", meeting, 0.88), all("two-joys", [...meeting, "someone's place, fasting", "the sky at sunset"], 0.97), at("two-joys", joys[1], 0.97)]).toEqual([[0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 0, 0], [0, 76, -44]]);
+    // The ruins of al-Hijr: a golden ring, his place, comes along the valley with the places of those with him; his voice,
+    // and the doorways show dark and empty; tears show by their places; one turns toward a doorway and back; a dark shade
+    // over the dwellings and cracks in the rock; a cover comes over the ring and they hurry on; last, they cross the
+    // valley, and a calm light shows beyond it.
+    expect(words("ruins-of-al-hijr")).toEqual(["When he passed by al-Hijr", "Do not enter their dwelling places", "Unless you enter weeping", "If you do not weep, do not enter", "Lest what befell them befall you", "Then he covered his head and hurried", "Till he crossed the valley"]);
+    const ring = "a golden ring, his place";
+    const enter = ["the doorways, dark and empty", "his voice: do not enter"];
+    expect([at("ruins-of-al-hijr", ring, 0.02), at("ruins-of-al-hijr", ring, 0.1), all("ruins-of-al-hijr", enter, 0.15), all("ruins-of-al-hijr", enter, 0.24)]).toEqual([[1, -40, 0], [1, 0, 0], [0, 0], [1, 1]]);
+    const tears = "tears by their places";
+    expect([shown("ruins-of-al-hijr", tears, 0.29), shown("ruins-of-al-hijr", tears, 0.38)]).toEqual([0, 1]);
+    const turns = "one who turns toward a doorway, and back";
+    const back = "a way turning back from the doorway";
+    expect([at("ruins-of-al-hijr", turns, 0.43), shown("ruins-of-al-hijr", back, 0.43), at("ruins-of-al-hijr", turns, 0.47), at("ruins-of-al-hijr", turns, 0.52), shown("ruins-of-al-hijr", back, 0.52)]).toEqual([[1, 0, 0], 0, [1, -9, -9.2], [1, 0, 0], 1]);
+    const befell = ["what befell them: a dark shade over the dwellings", "cracks in the rock"];
+    expect([all("ruins-of-al-hijr", [...befell, enter[1]], 0.57), all("ruins-of-al-hijr", [...befell, enter[1]], 0.66)]).toEqual([[0, 0, 1], [1, 1, 0]]);
+    const covered = "a cover over his place";
+    const withHim = names("ruins-of-al-hijr", /^the place of one with him \d$/);
+    expect([at("ruins-of-al-hijr", covered, 0.71), at("ruins-of-al-hijr", ring, 0.71), at("ruins-of-al-hijr", covered, 0.8), at("ruins-of-al-hijr", ring, 0.8), withHim.length, withHim.map((name) => value("ruins-of-al-hijr", name, "x", 0.8)), all("ruins-of-al-hijr", [tears, befell[0], back], 0.8), value("ruins-of-al-hijr", turns, "x", 0.8)]).toEqual([[0, 0, 0], [1, 0, 0], [1, 44, 0], [1, 44, 0], 4, [44, 44, 44, 44], [0, 0, 0], 44]);
+    const beyond = "a calm light beyond the valley";
+    expect([shown("ruins-of-al-hijr", beyond, 0.85), at("ruins-of-al-hijr", ring, 0.97), shown("ruins-of-al-hijr", beyond, 0.97)]).toEqual([0, [1, 100, 0], 1]);
+    // Born on the fitrah: by a home, a small new place shows with a pure light on it, the fitrah; two places by him, and
+    // a dashed way from them turns off to the side; a young one shows by the she-camel, whole, with a warm glow; last, a
+    // ring of looking passes over it, and it sparkles, with not a part cut off.
+    expect(words("born-on-the-fitrah")).toEqual(["Every child is born on the fitrah", "His parents shape him into another religion", "As an animal gives birth to a whole young one", "Do you find any part of it cut off?"]);
+    const little = "the little one's place, new";
+    const pure = "the fitrah, a pure light on him";
+    expect([shown("born-on-the-fitrah", little, 0.02), value("born-on-the-fitrah", little, "scale", 0.02), shown("born-on-the-fitrah", pure, 0.02), shown("born-on-the-fitrah", little, 0.21), value("born-on-the-fitrah", little, "scale", 0.21), shown("born-on-the-fitrah", pure, 0.21)]).toEqual([0, 0.4, 0, 1, 1, 1]);
+    const by = [...names("born-on-the-fitrah", /^a place by him \d$/), "a way, turning off to the side"];
+    expect([by.length, all("born-on-the-fitrah", by, 0.26), all("born-on-the-fitrah", [...by, pure], 0.45)]).toEqual([3, [0, 0, 0], [1, 1, 1, 1]]);
+    const young = "a young one, born whole";
+    expect([shown("born-on-the-fitrah", young, 0.5), value("born-on-the-fitrah", young, "scale", 0.5), shown("born-on-the-fitrah", young, 0.71), value("born-on-the-fitrah", young, "scale", 0.71), shown("born-on-the-fitrah", "a warm glow by them", 0.71)]).toEqual([0, 0.6, 1, 1, 1]);
+    const looking = "a ring of looking, passing over it";
+    const whole = "whole: not a part cut off, sparkling";
+    expect([at("born-on-the-fitrah", looking, 0.76), shown("born-on-the-fitrah", whole, 0.76), at("born-on-the-fitrah", looking, 0.97), shown("born-on-the-fitrah", whole, 0.97)]).toEqual([[0, 0, 0], 0, [0, 12, 3], 1]);
+    // The best ten days: a row of days across the sky; places doing good, and the good of other days rises a little; a
+    // new crescent, and ten of the days turn golden, and the good of these days rises high; a voice asks from those with
+    // him, and a voice answers from the ring; a way goes out, and one goes along it with his sack; last, he and his sack go
+    // over the horizon and do not come back, and a light shows there.
+    expect(words("best-ten-days")).toEqual(["No good deeds done on other days", "Are better than those done on these days", "They asked: not even jihad?", "Not even jihad, except one who went out", "Risking himself and his wealth", "And did not return with anything"]);
+    const little3 = names("best-ten-days", /^the good of other days, rising a little \d$/);
+    const high = names("best-ten-days", /^the good of these days, rising high \d$/);
+    const ten = names("best-ten-days", /^one of the ten days, golden \d+$/);
+    const crescent = "a new crescent, the month of Hajj";
+    expect([little3.length, risen("best-ten-days", little3, 0.02), risen("best-ten-days", little3, 0.12), ten.length, shown("best-ten-days", crescent, 0.12), all("best-ten-days", ten, 0.12)]).toEqual([3, [[0, 0], [0, 0], [0, 0]], [[1, -8], [1, -8], [1, -8]], 10, 0, ten.map(() => 0)]);
+    expect([shown("best-ten-days", crescent, 0.29), all("best-ten-days", ten, 0.29), high.length, risen("best-ten-days", high, 0.17), risen("best-ten-days", high, 0.29)]).toEqual([1, ten.map(() => 1), 3, [[0, 0], [0, 0], [0, 0]], [[1, -30], [1, -30], [1, -30]]]);
+    const talk = ["a voice from among them, asking", "a voice from the ring, answering", "a way going out, toward the horizon"];
+    expect([all("best-ten-days", talk, 0.34), all("best-ten-days", talk, 0.45), all("best-ten-days", talk, 0.61)]).toEqual([[0, 0, 0], [1, 0, 0], [0, 1, 1]]);
+    const goer = "one who went out";
+    const wealth = "his wealth, a sack, going with him";
+    const horizon = "a light at the horizon, where he went";
+    expect([at("best-ten-days", goer, 0.66), at("best-ten-days", goer, 0.77), at("best-ten-days", wealth, 0.77), shown("best-ten-days", talk[1], 0.77), at("best-ten-days", goer, 0.82), shown("best-ten-days", horizon, 0.82)]).toEqual([[1, 0, 0], [1, 20, -28], [1, 20, -28], 0, [1, 20, -28], 0]);
+    expect([at("best-ten-days", goer, 0.97), at("best-ten-days", wealth, 0.97), shown("best-ten-days", horizon, 0.97)]).toEqual([[0, 36, -39], [0, 36, -39], 1]);
+    // The sparrow and the sea: a voice asks from the many on the shore, and his voice answers from his ring; a way goes
+    // along the shore to where the two seas meet, and a ring shows there; a boat comes, and the two rings show on it; a
+    // sparrow comes to its edge and dips its beak in the sea twice, and rings spread on the water; two small lights show,
+    // their knowledge, a light runs over the wide sea and it shines softly; a glint on the sparrow's beak, and the sea
+    // shines, as full as before; last, the sparrow flies off, and the boat sails on into a soft mist.
+    expect(words("sparrow-and-the-sea")).toEqual(["Musa was asked: who is the most learned?", "He said: I am the most learned", "At the two seas is one more learned than you", "A boat carried them without fare", "A sparrow dipped its beak in the sea", "Our knowledge has not decreased Allah's", "Except as this sparrow decreased the sea", "If only Musa had been more patient"]);
+    const voices = ["a voice from them, asking", "his voice: I am the most learned"];
+    expect([all("sparrow-and-the-sea", voices, 0.02), all("sparrow-and-the-sea", voices, 0.095), all("sparrow-and-the-sea", voices, 0.22)]).toEqual([[0, 0], [1, 0], [0, 1]]);
+    const meet = ["a way along the shore to where the seas meet", "one more learned: a ring there", "his place, a ring of light"];
+    expect([all("sparrow-and-the-sea", meet, 0.27), all("sparrow-and-the-sea", meet, 0.35)]).toEqual([[0, 0, 1], [1, 1, 1]]);
+    const boat = "a boat, carrying them";
+    const aboard = ["his place, on the boat", "one more learned, on the boat"];
+    expect([at("sparrow-and-the-sea", boat, 0.4), all("sparrow-and-the-sea", aboard, 0.4), at("sparrow-and-the-sea", boat, 0.475), all("sparrow-and-the-sea", [...aboard, ...meet.slice(1)], 0.475)]).toEqual([[0, 50, 0], [0, 0], [1, 0, 0], [1, 1, 0, 0]]);
+    const sparrow = "a sparrow, on the edge of the boat";
+    const ripples = names("sparrow-and-the-sea", /^a ring on the water \d$/);
+    expect([at("sparrow-and-the-sea", sparrow, 0.52), at("sparrow-and-the-sea", sparrow, 0.572), value("sparrow-and-the-sea", sparrow, "rotate", 0.572), at("sparrow-and-the-sea", sparrow, 0.595), value("sparrow-and-the-sea", sparrow, "rotate", 0.595), ripples.length, all("sparrow-and-the-sea", ripples, 0.52), all("sparrow-and-the-sea", ripples, 0.595)]).toEqual([[0, 26, -28], [1, 3, 6], 30, [1, 0, 0], 0, 2, [0, 0], [0.6, 0.6]]);
+    const knowledge = [...names("sparrow-and-the-sea", /^their knowledge, a small light \d$/), "the wide sea, softly shining"];
+    const running = "a light running over the wide sea";
+    expect([all("sparrow-and-the-sea", knowledge, 0.64), all("sparrow-and-the-sea", [...knowledge, ...ripples], 0.715), at("sparrow-and-the-sea", running, 0.715)]).toEqual([[0, 0, 0], [1, 1, 1, 0, 0], [0, 78, 0]]);
+    const little1 = ["so little on its beak, a glint", "the sea, as full as before, shining"];
+    expect([all("sparrow-and-the-sea", little1, 0.76), all("sparrow-and-the-sea", little1, 0.835)]).toEqual([[0, 0], [1, 1]]);
+    const mist = "a soft mist far off: more of their story, untold";
+    expect([at("sparrow-and-the-sea", boat, 0.88), shown("sparrow-and-the-sea", mist, 0.88), at("sparrow-and-the-sea", boat, 0.97), at("sparrow-and-the-sea", sparrow, 0.97), all("sparrow-and-the-sea", [mist, little1[0]], 0.97)]).toEqual([[1, 0, 0], 0, [1, 26, -2], [0, 16, -20], [1, 0]]);
+    // The lofty mansions: far off in a soft light, the gardens of Paradise one above another, small places in them, and
+    // lofty mansions high on its horizon; they shine like bright stars, first those in the east, then those in the west;
+    // each rank glows, one above another; below, by the masjid, a voice asks from those with him, and a voice answers from
+    // the ring; last, golden ways rise from their places up to the mansions, and a warm glow comes on them.
+    expect(words("lofty-mansions")).toEqual(["They will see the lofty mansions above them", "Like a brilliant star far away on the horizon", "In the East or in the West", "Because of the ranks between them", "They asked: are these only for the prophets?", "No: by Him in whose Hand my soul is", "Believers in Allah and in the messengers"]);
+    const gardens = ["Paradise, a soft light far off", ...names("lofty-mansions", /^a garden of Paradise, one above another \d$/), "the places of the dwellers there", "the lofty mansions in the east", "the lofty mansions in the west"];
+    expect([gardens.length, all("lofty-mansions", gardens, 0.02), all("lofty-mansions", gardens, 0.1)]).toEqual([7, [0, 0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1]]);
+    const stars = "the mansions, shining like bright stars";
+    const sides = ["the east, brighter", "the west, brighter"];
+    expect([shown("lofty-mansions", stars, 0.15), shown("lofty-mansions", stars, 0.24), all("lofty-mansions", sides, 0.29), all("lofty-mansions", sides, 0.33), all("lofty-mansions", sides, 0.38)]).toEqual([0, 1, [0, 0], [1, 0], [1, 1]]);
+    const ranks = names("lofty-mansions", /^a rank above another, glowing \d$/);
+    expect([ranks.length, all("lofty-mansions", ranks, 0.43), all("lofty-mansions", ranks, 0.52)]).toEqual([3, [0, 0, 0], [1, 1, 1]]);
+    const asked = ["a voice from among them, asking", "a voice from the ring, answering"];
+    expect([all("lofty-mansions", asked, 0.57), all("lofty-mansions", asked, 0.66), all("lofty-mansions", asked, 0.8)]).toEqual([[0, 0], [1, 0], [0, 1]]);
+    const believed = ["golden ways up to the mansions, for those who believed", "the mansions, a warm glow"];
+    expect([all("lofty-mansions", believed, 0.85), all("lofty-mansions", believed, 0.97)]).toEqual([[0, 0], [1, 1]]);
   });
 
   test("every word and caption is translated in every language", () => {
