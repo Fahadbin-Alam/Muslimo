@@ -1200,6 +1200,71 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What does the Prophet ﷺ call a good word?", "Charity", "A good word is charity"],
     ["Which of these counts as a charity?", "A good word", "A good word is charity"],
     ["Charity can only be given with money.", "False", "A good word is charity", "Removing harm from the road is charity"]
+  ],
+  // Two hungry wolves let loose among sheep do no more harm to them than a man's greed for wealth and honor does to his
+  // religion (Jami at-Tirmidhi 2376).
+  "sign-two-wolves": [
+    ["What did he ﷺ compare greed for wealth and honor to?", "Two wolves among sheep", "Two hungry wolves, let loose among sheep"],
+    ["What does that greed harm, he ﷺ said?", "A person's religion", "Than greed for wealth and honor", "Does to a person's religion"],
+    ["Chasing more money and fame can hurt your faith.", "True", "Than greed for wealth and honor", "Does to a person's religion"]
+  ],
+  // No Muslim is hurt by anything, even the prick of a thorn, but Allah wipes away his sins by it, as a tree sheds its
+  // leaves (Sahih al-Bukhari 5648). (The lesson's questions on the fever and on Ibn Mas'ud are not in the scene.)
+  "sign-falling-leaves": [["A Muslim's pain can make his sins fall away like leaves.", "True", "But Allah wipes away his sins by it", "As a tree sheds its leaves"]],
+  // "Shall I leave it loose and trust Allah?" "Tie it, and trust Allah" (Jami at-Tirmidhi 2517).
+  "sign-tie-camel": [
+    ["What did he ﷺ tell the man to do with his camel?", "Tie it, and trust Allah", "Tie it, and trust Allah"],
+    ["What is the lesson about trusting Allah?", "Do your part, then trust Him", "Tie it, and trust Allah", "Do your part, then trust Him"],
+    ["Trusting Allah means you never need to take care.", "False", "Shall I leave it loose, and trust Allah?", "Tie it, and trust Allah"]
+  ],
+  // Faith has over seventy, or sixty, branches: the highest is saying there is no god but Allah, the lowest is removing
+  // harm from the road, and modesty is a branch of faith (Sahih Muslim 35b, Sahih al-Bukhari 9). (How many branches
+  // Bukhari 9 names is not asked: the scene says seventy or sixty, as Muslim 35b does.)
+  "sign-faith-branches": [
+    ["Faith is only one single deed.", "False", "Faith has over seventy, or sixty, branches"],
+    ["What is the highest branch of iman?", "La ilaha illallah", "The highest: saying there is no god but Allah"],
+    ["What is the lowest branch?", "Removing harm from the road", "The lowest: removing harm from the road"],
+    ["Modesty (haya) is part of faith.", "True", "And modesty is a branch of faith"],
+    ["Which branch of faith does this hadith name?", "Haya, good shyness", "And modesty is a branch of faith"]
+  ],
+  // This world beside the Hereafter is like one of you dipping his finger in the sea: let him see what it brings back
+  // (Sahih Muslim 2858). (Which finger, and who told it, are not asked: no hand or finger is drawn.)
+  "sign-sea-drop": [
+    ["What did the Prophet ﷺ compare this world to?", "Water on a finger from the sea", "Is like a finger dipped in the sea", "Then see what it brings back"],
+    ["What is this world compared to, in the hadith?", "Water on a finger dipped in the sea", "Is like a finger dipped in the sea", "Then see what it brings back"],
+    ["Next to the Hereafter, this world is very small.", "True", "Then see what it brings back", "A drop, beside the whole sea"],
+    ["The hadith says this world is bigger than the Hereafter.", "False", "Then see what it brings back", "A drop, beside the whole sea"]
+  ],
+  // A man bought land and found in it a jar of gold: "Take your gold, I bought only the land." "I sold you the land and
+  // all in it." The one they asked to judge said to marry the girl to the boy, spend on them and give in charity
+  // (Sahih al-Bukhari 3472).
+  "sign-jar-of-gold": [
+    ["What did the buyer find in the land?", "A jar full of gold", "And found in it a jar of gold"],
+    ["Why did the buyer say the gold was not his?", "He had bought only the land", "Take your gold: I bought only the land"],
+    ["The rest of the gold was given away in charity.", "True", "Spend on them, and give the rest in charity"]
+  ],
+  // Charity does not lessen wealth, Allah adds honor to one who forgives, and no one is humble for Allah but Allah
+  // raises him (Sahih Muslim 2588). (The garden owners of surah 68 and Yusuf's brothers are not in the scene.)
+  "sign-charity-wealth": [
+    ["Does charity make your wealth less?", "No, never", "Charity does not lessen wealth"],
+    ["Does charity make your wealth less?", "No", "Charity does not lessen wealth"],
+    ["What does charity not do, in the hadith?", "Decrease wealth", "Charity does not lessen wealth"],
+    ["What does charity not do, per Muslim 2588?", "Decrease wealth", "Charity does not lessen wealth"],
+    ["What does charity not do to wealth?", "Decrease it", "Charity does not lessen wealth"],
+    ["What does charity do to wealth?", "It does not decrease it", "Charity does not lessen wealth"],
+    ["What happens to wealth given in charity?", "It does not decrease", "Charity does not lessen wealth"],
+    ["What does Allah give someone who forgives?", "More honor", "Allah adds honor to one who forgives"],
+    ["What does Allah give the one who forgives?", "More honour", "Allah adds honor to one who forgives"],
+    ["What does Allah give one who forgives?", "More honor", "Allah adds honor to one who forgives"],
+    ["What does forgiving others bring?", "More honor", "Allah adds honor to one who forgives"],
+    ["What does forgiving others bring?", "More honor from Allah", "Allah adds honor to one who forgives"],
+    ["Forgiving others brings more honor from Allah.", "True", "Allah adds honor to one who forgives"],
+    ["Forgiving people lowers your honour.", "False", "Allah adds honor to one who forgives"],
+    ["What does Allah do for someone humble for His sake?", "Raises him", "And raises up one who is humble for Him"],
+    ["What happens to one humble for Allah, per Muslim 2588?", "Allah raises his status", "And raises up one who is humble for Him"],
+    ["Who is raised in status, in the hadith?", "The humble, for Allah's sake", "And raises up one who is humble for Him"],
+    ["Humbling yourself for Allah raises you.", "True", "And raises up one who is humble for Him"],
+    ["Humbling yourself for Allah lowers you.", "False", "And raises up one who is humble for Him"]
   ]
 };
 
