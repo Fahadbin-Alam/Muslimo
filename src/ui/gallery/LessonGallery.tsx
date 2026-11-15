@@ -1049,6 +1049,14 @@ const STATES: State[] = [
   { id: "scene-one-body", render: () => <SceneQuestionDemo lessonId="lesson-deep-numan-one-body" ask="one part hurts" /> },
   { id: "scene-eat-near", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-bukhari-5376" ask="take from the dish" /> },
   { id: "scene-those-you-love", render: () => <SceneQuestionDemo lessonId="lesson-deep-lastday-asked-bedouin" ask="say he had prepared" /> },
+  // A question on each scene of worship and the heart (round 71).
+  { id: "scene-after-the-salam", render: () => <SceneQuestionDemo lessonId="lesson-deep-thawban-after-the-prayer" ask="How many times did he ask" /> },
+  { id: "scene-built-on-five", render: () => <SceneQuestionDemo lessonId="lesson-intro-five-pillars" ask="How many pillars" /> },
+  { id: "scene-seventy-times", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhammad2-seventy-times-a-day" ask="besides ask forgiveness" /> },
+  { id: "scene-family-ties", render: () => <SceneQuestionDemo lessonId="lesson-deep-raad2-ties-bring-blessing" ask="wants more provision" /> },
+  { id: "scene-pray-as-you-can", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-pray-as-you-can" ask="cannot stand" /> },
+  { id: "scene-even-a-thorn", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-even-a-thorn" ask="thorn's prick" /> },
+  { id: "scene-intentions", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-famous-intentions" ask="judged by" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

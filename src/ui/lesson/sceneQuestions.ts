@@ -1563,6 +1563,100 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Prophet ﷺ ask the man back?", "What have you prepared?", "What have you prepared for it?"],
     ["What did the man say he had?", "Love of Allah and His Messenger", "Nothing, but I love Allah and His Messenger"],
     ["The Companions were very glad to hear this answer.", "True", "We had never been so glad"]
+  ],
+  // When he ﷺ finished his prayer he asked forgiveness three times, then said: O Allah, You are Peace, and peace is from
+  // You; blessed are You, Owner of Majesty and Honor (Sahih Muslim 591).
+  "sign-after-the-salam": [
+    ["What did he ﷺ say three times after salam?", "Astaghfirullah", "He asked forgiveness three times"],
+    ["What does Allahumma antas-salam mean?", "O Allah, You are Peace", "O Allah, You are Peace, and peace is from You"],
+    ["Asking forgiveness right after salah is Sunnah.", "True", "He asked forgiveness three times"],
+    ["How many times did he ask forgiveness?", "Three", "He asked forgiveness three times"],
+    ["Which name of Allah did he say next?", "As-Salam", "O Allah, You are Peace, and peace is from You"],
+    ["He said Astaghfirullah after finishing prayer.", "True", "He asked forgiveness three times"],
+    ["How many times did he ﷺ say Astaghfirullah after the prayer?", "Three", "He asked forgiveness three times"],
+    ["Asking forgiveness right after praying is a sunnah.", "True", "He asked forgiveness three times"],
+    ["How many times did he ﷺ seek forgiveness?", "Three times", "He asked forgiveness three times"],
+    ["What did he ﷺ then say, per Muslim 591?", "You are Peace, peace comes from You", "O Allah, You are Peace, and peace is from You"],
+    ["The dhikr ends with O Possessor of Glory and Honor.", "True", "Blessed are You, Owner of Majesty and Honor"]
+  ],
+  // Islam is built on five: the testimony, the prayer, Zakat, Hajj and the fast of Ramadan (Sahih al-Bukhari 8). (The
+  // two questions with "Building a house" among their answers stay as they are: the scene draws a house being built.)
+  "sign-built-on-five": [
+    ["How many pillars is Islam built on?", "Five", "Islam is built on five"],
+    ["What is the first pillar of Islam?", "The shahadah", "To testify none is worthy of worship but Allah", "And that Muhammad is the Messenger of Allah"],
+    ["The shahadah says Muhammad ﷺ is Allah's Messenger.", "True", "And that Muhammad is the Messenger of Allah"],
+    ["Which of these is a pillar of Islam?", "Paying zakat", "To offer the prayers, and to pay Zakat"],
+    ["Zakat is an extra good deed, not a duty.", "False", "To offer the prayers, and to pay Zakat"],
+    ["On how many pillars is Islam built?", "Five", "Islam is built on five"],
+    ["Hajj is one of the five pillars.", "True", "To perform Hajj, and to fast in Ramadan"]
+  ],
+  // By Allah, he ﷺ asked Allah's forgiveness and turned to Him in repentance more than seventy times a day (Sahih
+  // al-Bukhari 6307). (What 40:55, 47:19 and Ibn Kathir say is not in the scene.)
+  "sign-seventy-times": [
+    ["How often did the Prophet ﷺ seek forgiveness, per Bukhari 6307?", "More than seventy times a day", "More than seventy times a day"],
+    ["How often did he seek forgiveness, per Bukhari 6307?", "More than seventy times a day", "More than seventy times a day"],
+    ["What else did he do besides ask forgiveness?", "Turned to Allah in repentance", "And turn to Him in repentance"],
+    ["How often did the Prophet ﷺ repent each day?", "More than seventy times", "More than seventy times a day"],
+    ["What can we learn from him?", "Ask forgiveness daily", "More than seventy times a day"],
+    ["Only sinful people need to ask forgiveness.", "False", "By Allah! I ask for forgiveness from Allah"],
+    ["How often did the Prophet ﷺ ask forgiveness?", "Over seventy times a day", "More than seventy times a day"],
+    ["What else did he do with it?", "Turned to Allah in repentance", "And turn to Him in repentance"],
+    ["Asking forgiveness often is the Sunnah.", "True", "More than seventy times a day"]
+  ],
+  // Whoever loves more provision and a longer life, let him keep good relations with his kin (Sahih al-Bukhari 5986).
+  // (What keeping ties brings is in the words before the ties, so that question stays as it is; so do who narrated it
+  // and what Ibn Kathir quotes.)
+  "sign-family-ties": [
+    ["Ties with whom?", "Relatives", "Then let him keep good relations with his kin"],
+    ["What should one who wants more provision do?", "Keep good ties with family", "Then let him keep good relations with his kin"],
+    ["What else grows by keeping ties, per the hadith?", "A longer life", "And that his life be prolonged", "Then let him keep good relations with his kin"],
+    ["What brings more provision, in the hadith?", "Keeping ties with relatives", "Then let him keep good relations with his kin"],
+    ["What else is prolonged by family ties, in the hadith?", "A person's life", "And that his life be prolonged", "Then let him keep good relations with his kin"],
+    ["What brings more wealth and life, per the hadith?", "Good ties with relatives", "Then let him keep good relations with his kin"],
+    ["Cutting off relatives brings barakah.", "False", "Then let him keep good relations with his kin"]
+  ],
+  // Pray standing; if you can't, sitting; if you cannot, lying on your side (Sahih al-Bukhari 1117). (Who narrated it,
+  // and why he asked, are not in the scene.)
+  "sign-pray-as-you-can": [
+    ["Example: your grandma has bad knees and can't stand. How does she pray?", "Sitting", "And if you can't, pray while sitting"],
+    ["And if someone can't even sit?", "Lying on the side", "If you cannot, then pray lying on your side"],
+    ["What does this teach about salah?", "It is kept in every state", "And if you can't, pray while sitting", "If you cannot, then pray lying on your side"],
+    ["How should a sick person pray who cannot stand?", "Sitting down", "And if you can't, pray while sitting"],
+    ["And if he cannot even sit?", "Lying on his side", "If you cannot, then pray lying on your side"],
+    ["A sick person still prays in the way he is able.", "True", "And if you can't, pray while sitting", "If you cannot, then pray lying on your side"],
+    ["If you cannot stand, how do you pray?", "Sitting", "And if you can't, pray while sitting"],
+    ["If you cannot sit, how do you pray?", "Lying on your side", "If you cannot, then pray lying on your side"],
+    ["Islam makes prayer easy for the sick.", "True", "And if you can't, pray while sitting", "If you cannot, then pray lying on your side"],
+    ["How should one pray first, in the hadith?", "Standing", "Pray while standing"],
+    ["What if one cannot sit, in the hadith?", "Pray lying on the side", "If you cannot, then pray lying on your side"],
+    ["Someone who cannot sit may pray lying on their side.", "True", "If you cannot, then pray lying on your side"]
+  ],
+  // No fatigue, illness, worry, sadness, hurt or distress befalls a Muslim, even the prick of a thorn, but Allah wipes
+  // away some of his sins for it (Sahih al-Bukhari 5641). (What Ibn Kathir says on 11:11 is not in the scene.)
+  "sign-even-a-thorn": [
+    ["What does even a thorn's prick do for a Muslim?", "Wipes away some sins", "But Allah wipes away some of his sins for it"],
+    ["Which of these is also named in the hadith?", "Sadness", "Nor worry, sadness, hurt or distress"],
+    ["Hard moments can be a mercy for a believer.", "True", "But Allah wipes away some of his sins for it"],
+    ["What does a thorn prick do for a Muslim, per the hadith?", "Wipes away some sins", "But Allah wipes away some of his sins for it"],
+    ["Sadness and worry also wipe away a Muslim's sins.", "True", "But Allah wipes away some of his sins for it"],
+    ["What does even a thorn prick do?", "Wipes away some sins", "But Allah wipes away some of his sins for it"],
+    ["Which of these is named in the hadith?", "Sadness", "Nor worry, sadness, hurt or distress"],
+    ["Small hurts can still bring a reward.", "True", "But Allah wipes away some of his sins for it"]
+  ],
+  // Umar on the minbar: deeds are only by intentions, and each person gets only what he intended; whoever emigrated for
+  // the world or to marry, his emigration is for what he emigrated for (Sahih al-Bukhari 1). (Where it stands in
+  // al-Bukhari, its chain, Alqamah's teachers and the feeding of 76:8 are not in the scene.)
+  "sign-intentions": [
+    ["What are deeds judged by?", "Intentions", "Deeds are only by intentions"],
+    ["Two people do the same deed. Can their reward differ?", "Yes, by their intentions", "Deeds are only by intentions", "Each person gets only what he intended"],
+    ["What decides the reward of a hijrah?", "The intention behind it", "Deeds are only by intentions", "Each person gets only what he intended"],
+    ["Someone who emigrated only to marry gets what?", "Only what he went for", "Whoever emigrated for the world, or to marry", "His emigration is for what he emigrated for"],
+    ["Which companion told the hadith that a hijrah is by intention?", "Umar", "I heard Umar on the minbar say"],
+    ["What does the reward of deeds depend on?", "Intentions", "Deeds are only by intentions"],
+    ["What will each person get?", "What he intended", "Each person gets only what he intended"],
+    ["Which hadith did Umar teach from the minbar?", "Actions are only by intentions", "Deeds are only by intentions"],
+    ["Who did Alqamah ibn Waqqas hear on the minbar?", "Umar ibn al-Khattab", "I heard Umar on the minbar say"],
+    ["Which hadith did he hear from Umar?", "Actions are by intentions", "Deeds are only by intentions"]
   ]
 };
 
