@@ -1,16 +1,17 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Prayer unit: the words said inside the salah, from Sunan Abi Dawud and Sahih al-Bukhari. How he ﷺ opened
-// the prayer, what he said in a long ruku' at night, Subbuhun Quddus in ruku' and sujud, Rabbana lakal hamd that
-// matches the angels, the praise that over thirty angels raced to write, and asking forgiveness for every sin in
-// sujud. Every card is one sahih hadith with its number, narrator and grade, and its exact English words to
-// highlight. Points the schools differ on are left out, and none of these hadith is taught anywhere else in the app.
+// One more Prayer unit: the words said inside the salah, from Sunan Abi Dawud, Sahih al-Bukhari and Sahih Muslim. How
+// he ﷺ opened the prayer, the words of praise the doors of heaven were opened for, what he said in a long ruku' at
+// night, Subbuhun Quddus in ruku' and sujud, Rabbana lakal hamd that matches the angels, the praise that over thirty
+// angels raced to write, and asking forgiveness for every sin in sujud. Every card is one sahih hadith with its number,
+// narrator and grade, and its exact English words to highlight. Points the schools differ on are left out, and none of
+// these hadith is taught anywhere else in the app.
 
 const WORDS: DeepUnit = {
   key: "prayer-words-of-salah",
   topicId: "prayer",
   branchId: "prayer-words-of-salah",
-  branch: { title: "Words inside the salah", description: "How he ﷺ opened the salah, what he said in ruku' and sujud, the praise over thirty angels raced to write, and asking forgiveness for every sin." },
+  branch: { title: "Words inside the salah", description: "How he ﷺ opened the salah, words heaven opened for, what he said in ruku' and sujud, the praise over thirty angels raced to write, and asking forgiveness for every sin." },
   name: "words inside the salah",
   kind: "skill",
   lessonType: "skill",
@@ -26,6 +27,19 @@ const WORDS: DeepUnit = {
         { q: "When did he ﷺ say Subhanakallahumma wa bihamdik?", a: "When he began his prayer", wrong: ["When he finished eating", "When he saw the new moon", "When he heard thunder"], why: "When the Messenger of Allah ﷺ began his prayer, he said it, Aishah said." },
         { q: "What does wa tabarakasmuk mean?", a: "Blessed is Your name", wrong: ["Great is Your house", "Near is Your help", "Wide is Your mercy"], why: "Then: wa ta'ala jadduk, exalted is Your majesty, and none is worshipped but You." },
         { q: "He ﷺ began his prayer by praising Allah's name and majesty.", tf: true, why: "Blessed is Your name, and exalted is Your majesty, he ﷺ said as he began." }
+      ]
+    },
+    {
+      slug: "the-doors-of-heaven-opened",
+      title: "Allahu akbar kabira",
+      line: "The doors of heaven opened for words a man said in prayer.",
+      facts: ["Told by Ibn Umar", "Allahu akbar kabira, walhamdu lillahi kathira", "Wa subhanallahi bukratan wa asila"],
+      source: hadith("muslim", "601", "Ibn Umar", "Sahih", "Ibn Umar said: while we were praying with the Messenger of Allah ﷺ, a man among the people said: Allah is the Greatest, truly great; much praise is for Allah; and glory be to Allah morning and evening. The Messenger of Allah ﷺ asked who had said those words, and the man said: I did, O Messenger of Allah. He said: I was amazed by them; the doors of heaven were opened for them. Ibn Umar said: I have not left them since I heard the Messenger of Allah ﷺ say that.", "surprised me, for the doors of heaven were opened for"),
+      difficulty: 2,
+      questions: [
+        { q: "What was opened for the man's words, he ﷺ said?", a: "The doors of heaven", wrong: ["The doors of the masjid", "The gates of the city", "The windows of the house"], why: "The doors of heaven were opened for it; it surprised me, he ﷺ said." },
+        { q: "How did the man's words of praise begin?", a: "Allahu akbar kabira", wrong: ["La ilaha illallah", "Subhanallahi wa bihamdihi", "Astaghfirullah"], why: "Allah is truly Great, praise be to Allah in abundance, the man said in the prayer." },
+        { q: "Ibn Umar kept saying these words from that day on.", tf: true, why: "I have not abandoned them since I heard him ﷺ say this, Ibn Umar said." }
       ]
     },
     {
