@@ -1027,6 +1027,13 @@ const STATES: State[] = [
   { id: "scene-bread-for-seventy", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-bread-for-seventy" ask="came in to eat" /> },
   { id: "scene-nightfall", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-gentle-with-children-home-at-nightfall" ask="close the door" /> },
   { id: "scene-half-date", render: () => <SceneQuestionDemo lessonId="lesson-deep-zalzalah2-a-good-word" ask="no date to give" /> },
+  { id: "scene-lamp-out", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr2-the-lamp-put-out" ask="put out the light" /> },
+  { id: "scene-helped-at-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-helped-at-home" ask="do at home" /> },
+  { id: "scene-a-span-closer", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-forgives-the-killer-who-repented" ask="Where did he die" /> },
+  { id: "scene-uhud-shook", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-uhud-shook" ask="call Abu Bakr" /> },
+  { id: "scene-greeting-stone", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fadail-the-stone-that-greeted-him" ask="use to do" /> },
+  { id: "scene-around-us", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-rain-and-wind-around-us" ask="rain had to stop" /> },
+  { id: "scene-blessed-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-isra2-the-food-glorified-allah" ask="Companions hear" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
