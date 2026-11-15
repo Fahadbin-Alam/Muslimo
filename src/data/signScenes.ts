@@ -534,7 +534,14 @@ export type SignKind =
   | "safe-from-harm"
   | "refuge-from-anger"
   | "gate-ar-rayyan"
-  | "make-it-easy";
+  | "make-it-easy"
+  | "needle-in-the-sea"
+  | "hearts-and-deeds"
+  | "real-strength"
+  | "treasure-of-paradise"
+  | "hundred-levels"
+  | "faith-at-the-pleiades"
+  | "sacred-city";
 
 export type SignScene = {
   id: string;
@@ -1674,6 +1681,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "make-it-easy",
     caption: "The Prophet ﷺ said: make things easy for people and do not make them hard, and give them good tidings and do not make them run away.",
     sources: [bukhari("69")]
+  },
+  {
+    id: "sign-needle-in-the-sea",
+    kind: "needle-in-the-sea",
+    caption:
+      "The Prophet ﷺ said that Allah said: O My servants, I have forbidden oppression for Myself and have made it forbidden amongst you, so do not oppress one another. All of you are astray except those I have guided, so seek guidance of Me and I shall guide you. All of you are hungry except those I have fed, so seek food of Me and I shall feed you. Were the first of you and the last of you to rise up in one place and ask of Me, and were I to give everyone what he asked, that would not decrease what I have, any more than a needle decreases the sea if put into it.",
+    sources: [muslim("2577")]
+  },
+  {
+    id: "sign-hearts-and-deeds",
+    kind: "hearts-and-deeds",
+    caption: "The Prophet ﷺ said: verily Allah does not look to your faces and your wealth, but He looks to your hearts and to your deeds.",
+    sources: [muslim("2564c")]
+  },
+  {
+    id: "sign-real-strength",
+    kind: "real-strength",
+    caption: "The Prophet ﷺ said: the strong is not the one who overcomes the people by his strength, but the strong is the one who controls himself while in anger.",
+    sources: [bukhari("6114")]
+  },
+  {
+    id: "sign-treasure-of-paradise",
+    kind: "treasure-of-paradise",
+    caption:
+      "Abu Musa said: we were with the Prophet ﷺ on a journey, and whenever we ascended a high place, we used to say Takbir. He ﷺ said: O people, be kind to yourselves, for you are not calling upon a deaf or an absent one, but you are calling an All-Hearer, an All-Seer. Then he came to me as I was saying within myself: la hawla wa la quwwata illa billah. He said: O Abdullah ibn Qays, say la hawla wa la quwwata illa billah, for it is one of the treasures of Paradise.",
+    sources: [bukhari("6384")]
+  },
+  {
+    id: "sign-hundred-levels",
+    kind: "hundred-levels",
+    caption:
+      "The Prophet ﷺ said: Paradise has one hundred grades, and the distance between each of two grades is like the distance between the heaven and the earth. So when you ask Allah, ask for al-Firdaws, the best and highest part of Paradise. The narrator thought he ﷺ also said: from it originate the rivers of Paradise.",
+    sources: [bukhari("2790")]
+  },
+  {
+    id: "sign-faith-at-the-pleiades",
+    kind: "faith-at-the-pleiades",
+    caption:
+      "Abu Hurayrah said: we were sitting with the Prophet ﷺ when Surat al-Jumu'ah was revealed, and its ayah on others who have not yet joined them was recited. I said: who are they, O Messenger of Allah? He did not reply till I repeated my question thrice. Salman al-Farisi was with us, and the Prophet ﷺ put his hand on Salman and said: if faith were at Ath-Thurayya, the Pleiades, even then men, or a man, from these would attain it.",
+    sources: [bukhari("4897")]
+  },
+  {
+    id: "sign-sacred-city",
+    kind: "sacred-city",
+    caption:
+      "On the day Makkah was opened, the Prophet ﷺ said: Allah has made this place a sanctuary since the creation of the heavens and the earth, and it will remain a sanctuary till the Day of Resurrection. Its thorns should not be uprooted, its game should not be chased, and its fallen things should not be picked up except by one who would announce it publicly.",
+    sources: [bukhari("1834")]
   }
 ];
 
@@ -2754,7 +2808,46 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Make things easy, not hard; give good tidings, do not make people run away (Sahih al-Bukhari 69).
   "hadith-for-kids-bukhari-69": "sign-make-it-easy",
   "deep-hajj3-make-things-easy": "sign-make-it-easy",
-  "deep-talaq2-make-things-easy": "sign-make-it-easy"
+  "deep-talaq2-make-things-easy": "sign-make-it-easy",
+  // Allah forbade oppression for Himself; ask Him for guidance and food; all He gives lessens what He has no more than
+  // a needle lessens the sea (Sahih Muslim 2577). The lessons on piety adding nothing to His dominion and on not being
+  // able to harm Him keep their photo.
+  "deep-yunus2-allah-wrongs-no-one": "sign-needle-in-the-sea",
+  "deep-ibrahim1-o-my-servants": "sign-needle-in-the-sea",
+  "deep-zumar1-his-dominion-never-shrinks": "sign-needle-in-the-sea",
+  "deep-ghafir1-no-injustice-this-day": "sign-needle-in-the-sea",
+  "deep-rahman2-ask-me-and-i-will-give": "sign-needle-in-the-sea",
+  // Allah does not look to your faces and wealth, but to your hearts and deeds (Sahih Muslim 2564c).
+  "hadith-for-kids-muslim-2564c": "sign-hearts-and-deeds",
+  "deep-anam1-hearts-deeds": "sign-hearts-and-deeds",
+  "deep-saba2-faith-brings-us-near": "sign-hearts-and-deeds",
+  "deep-taghabun1-allah-looks-at-hearts": "sign-hearts-and-deeds",
+  "deep-adiyat2-allah-looks-at-hearts": "sign-hearts-and-deeds",
+  // The strong is the one who controls himself in anger (Sahih al-Bukhari 6114).
+  "hadith-for-kids-bukhari-6114": "sign-real-strength",
+  "deep-anger-real-strength": "sign-real-strength",
+  "deep-imran3-swallow-anger": "sign-real-strength",
+  // La hawla wa la quwwata illa billah, one of the treasures of Paradise (Sahih al-Bukhari 6384).
+  "deep-abu-musa-treasure": "sign-treasure-of-paradise",
+  "deep-dua-dhikr-treasure": "sign-treasure-of-paradise",
+  "deep-kahf2-a-treasure-of-paradise": "sign-treasure-of-paradise",
+  // Paradise has a hundred grades; ask for al-Firdaws, from which its rivers come (Sahih al-Bukhari 2790).
+  "deep-jannah-levels": "sign-hundred-levels",
+  "deep-kahf4-ask-allah-for-al-firdaws": "sign-hundred-levels",
+  "deep-taha2-ask-allah-for-firdaws": "sign-hundred-levels",
+  "deep-muminun1-heirs-of-firdaws": "sign-hundred-levels",
+  "deep-muhammad1-ask-for-al-firdaws": "sign-hundred-levels",
+  "deep-haqqah3-one-hundred-levels": "sign-hundred-levels",
+  // If faith were at the Pleiades, men from these would attain it (Sahih al-Bukhari 4897). The lesson on the whole
+  // passage 62:1-8 keeps its photo.
+  "deep-salman-pleiades": "sign-faith-at-the-pleiades",
+  "deep-jumuah1-others-who-will-join": "sign-faith-at-the-pleiades",
+  "deep-jumuah1-faith-at-the-pleiades": "sign-faith-at-the-pleiades",
+  // Makkah, a sanctuary since the heavens and the earth were created: its thorns, its game and its fallen things
+  // (Sahih al-Bukhari 1834).
+  "deep-hajj-house-sanctuary": "sign-sacred-city",
+  "deep-naml6-sacred-since-creation": "sign-sacred-city",
+  "deep-balad1-a-sacred-city": "sign-sacred-city"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
