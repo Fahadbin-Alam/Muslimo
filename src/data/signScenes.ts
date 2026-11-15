@@ -244,7 +244,22 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - when you cook a soup, add more water to it, then look to your neighbors and give them some of it kindly (Sahih
  *   Muslim 2625b);
  * - a charity owed for every joint each day the sun rises: judging fairly, helping someone with his ride, a good word,
- *   every step to the prayer, and removing harm from the road (Sahih Muslim 1009, Sahih al-Bukhari 2989).
+ *   every step to the prayer, and removing harm from the road (Sahih Muslim 1009, Sahih al-Bukhari 2989);
+ *
+ * and more of the wisdom he ﷺ taught with a picture (wisdomArt.ts draws it):
+ *
+ * - two hungry wolves let loose among sheep do no more harm to them than greed for wealth and honor does to a person's
+ *   religion (Jami at-Tirmidhi 2376);
+ * - no Muslim is hurt by anything, even the prick of a thorn, but Allah wipes away his sins by it, as a tree sheds its
+ *   leaves (Sahih al-Bukhari 5648);
+ * - tie your camel, and trust Allah (Jami at-Tirmidhi 2517);
+ * - faith has over seventy, or over sixty, branches: the highest is saying there is no god but Allah, the lowest is
+ *   removing harm from the road, and modesty is a branch of faith (Sahih Muslim 35b, Sahih al-Bukhari 9);
+ * - this world beside the Hereafter is like a finger dipped in the sea: see what it brings back (Sahih Muslim 2858);
+ * - the buyer who found a jar of gold in the land he bought, and the seller who would not take it back either (Sahih
+ *   al-Bukhari 3472);
+ * - charity does not lessen wealth, Allah adds only honor to one who forgives, and raises up one who is humble for Him
+ *   (Sahih Muslim 2588).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -268,7 +283,10 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * likenesses, the one who recites, the trader and the one who remembers are only their voices and their dashed ways,
  * and the pine is broken only by the wind; and in the good deeds he ﷺ taught, the one who lost his camel, the one who
  * was stung, the one who cooks and the ones who do each charity are only their dashed ways and their voices, and the
- * square and its lines are drawn on the ground by no hand.
+ * square and its lines are drawn on the ground by no hand; and in the wisdom he ﷺ taught, the one hurt by a thorn,
+ * the one who tied his camel, the one who removes harm from the road, the two men of the jar of gold and the one they
+ * asked, the one who gives, forgives and is humble are only their dashed ways and their voices, and the finger dipped
+ * in the sea is not drawn, only the rings where it dipped and the drop it brings back.
  */
 
 export type SignKind =
@@ -377,7 +395,14 @@ export type SignKind =
   | "doors-of-good"
   | "square-and-line"
   | "more-water"
-  | "joint-charity";
+  | "joint-charity"
+  | "two-wolves"
+  | "falling-leaves"
+  | "tie-camel"
+  | "faith-branches"
+  | "sea-drop"
+  | "jar-of-gold"
+  | "charity-wealth";
 
 export type SignScene = {
   id: string;
@@ -1103,6 +1128,51 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: each day the sun rises, a charity is owed for every joint of a person: judging fairly between two is a charity; helping someone with his ride, lifting him onto it or lifting his load onto it, is a charity; a good word is a charity; every step taken to the prayer is a charity; and removing harm from the road is a charity.",
     sources: [muslim("1009"), bukhari("2989")]
+  },
+  {
+    id: "sign-two-wolves",
+    kind: "two-wolves",
+    caption: "The Prophet ﷺ said: two hungry wolves let loose among sheep do no more harm to them than a person's greed for wealth and honor does to his religion.",
+    sources: [tirmidhi("2376")]
+  },
+  {
+    id: "sign-falling-leaves",
+    kind: "falling-leaves",
+    caption:
+      "Abdullah ibn Mas'ud visited the Prophet ﷺ when he had a high fever, and he ﷺ said: no Muslim is hurt by anything, even the prick of a thorn, but Allah wipes away his sins by it, as a tree sheds its leaves.",
+    sources: [bukhari("5648")]
+  },
+  {
+    id: "sign-tie-camel",
+    kind: "tie-camel",
+    caption: "A man said: O Messenger of Allah, shall I tie my camel and trust Allah, or leave it loose and trust Allah? He ﷺ said: tie it, and trust Allah.",
+    sources: [tirmidhi("2517")]
+  },
+  {
+    id: "sign-faith-branches",
+    kind: "faith-branches",
+    caption:
+      "The Prophet ﷺ said: faith has over seventy, or over sixty, branches. The highest of them is saying there is no god but Allah, the lowest is removing harm from the road, and modesty is a branch of faith.",
+    sources: [muslim("35b"), bukhari("9")]
+  },
+  {
+    id: "sign-sea-drop",
+    kind: "sea-drop",
+    caption: "The Prophet ﷺ said: by Allah, this world beside the Hereafter is only like one of you dipping his finger in the sea: let him see what it brings back.",
+    sources: [muslim("2858")]
+  },
+  {
+    id: "sign-jar-of-gold",
+    kind: "jar-of-gold",
+    caption:
+      "The Prophet ﷺ said: a man bought land from another and found in it a clay jar full of gold. He said to the seller: take your gold, for I bought only the land from you, not the gold. The seller said: I sold you the land and all that is in it. They took their case to a man, who asked: have you children? One had a boy and the other a girl. He said: marry the girl to the boy, spend some of it on them, and give charity.",
+    sources: [bukhari("3472")]
+  },
+  {
+    id: "sign-charity-wealth",
+    kind: "charity-wealth",
+    caption: "The Prophet ﷺ said: charity does not lessen wealth; Allah adds nothing to a servant who forgives but honor; and no one is humble for Allah but Allah raises him up.",
+    sources: [muslim("2588")]
   }
 ];
 
@@ -1882,7 +1952,30 @@ export const SIGN_LESSONS: Record<string, string> = {
   "zakat-broader-generosity-care-for-neighbors": "sign-more-water",
   // A charity for every joint: a good word, help with a ride, judging fairly (Sahih Muslim 1009, Sahih al-Bukhari 2989).
   "deep-speech-good-word": "sign-joint-charity",
-  "deep-kids-small-deeds-charity-for-every-joint": "sign-joint-charity"
+  "deep-kids-small-deeds-charity-for-every-joint": "sign-joint-charity",
+  // Two hungry wolves among sheep, and greed for wealth and honor (Jami at-Tirmidhi 2376).
+  "deep-akhirah-this-world-two-wolves": "sign-two-wolves",
+  // Sins falling as a tree sheds its leaves, even for the prick of a thorn (Sahih al-Bukhari 5648).
+  "deep-aqidah-trials-a-fever-like-two-mens": "sign-falling-leaves",
+  // Tie your camel, and trust Allah (Jami at-Tirmidhi 2517).
+  "deep-aqidah-faith-in-the-heart-tie-it-and-trust": "sign-tie-camel",
+  // The branches of faith, from saying there is no god but Allah to removing harm from the road (Sahih Muslim 35b,
+  // Sahih al-Bukhari 9).
+  "deep-aq-iman-branches": "sign-faith-branches",
+  "deep-book-iman-sixty-branches": "sign-faith-branches",
+  // This world beside the Hereafter, like a finger dipped in the sea (Sahih Muslim 2858), with 9:38 and 13:26.
+  "deep-tawbah2-finger-in-the-sea": "sign-sea-drop",
+  "deep-raad3-a-finger-in-the-sea": "sign-sea-drop",
+  // The jar of gold that neither man would keep (Sahih al-Bukhari 3472).
+  "deep-book-anbiya-the-jar-of-gold": "sign-jar-of-gold",
+  // Charity does not lessen wealth, forgiving brings honor, and the humble are raised (Sahih Muslim 2588).
+  "deep-zakat-pillar-never-less": "sign-charity-wealth",
+  "deep-isra2-charity-never-lessens-wealth": "sign-charity-wealth",
+  "deep-taghabun4-charity-does-not-decrease": "sign-charity-wealth",
+  "deep-qalam4-charity-does-not-decrease": "sign-charity-wealth",
+  "deep-humility-raised-up": "sign-charity-wealth",
+  "deep-fath1-humble-and-raised": "sign-charity-wealth",
+  "deep-yusuf5-forgiving-raises-honor": "sign-charity-wealth"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
