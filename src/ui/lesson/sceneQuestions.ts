@@ -1657,6 +1657,121 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which hadith did Umar teach from the minbar?", "Actions are only by intentions", "Deeds are only by intentions"],
     ["Who did Alqamah ibn Waqqas hear on the minbar?", "Umar ibn al-Khattab", "I heard Umar on the minbar say"],
     ["Which hadith did he hear from Umar?", "Actions are by intentions", "Deeds are only by intentions"]
+  ],
+  // Two expressions, easy for the tongue to say, but very heavy in the balance and very dear to the Most Merciful:
+  // Subhan Allah al-Azim and Subhan Allah wa bihamdihi (Sahih al-Bukhari 6406). (What Subhan Allah means, 56:74 and
+  // the end of as-Saffat are not in the scene.)
+  "sign-two-words": [
+    ["How are the two phrases on the tongue?", "Easy to say", "Two expressions, easy for the tongue to say"],
+    ["How are they on the scale of deeds?", "Very heavy", "But very heavy in the balance"],
+    ["These two phrases are light on the tongue and...", "Heavy on the scale", "But very heavy in the balance"],
+    ["Which is one of the two phrases?", "SubhanAllahi wa bihamdihi", "Subhan Allah al-Azim", "Subhan Allah wa bihamdihi"],
+    ["Who loves these words?", "The Most Merciful", "And very dear to the Most Merciful"],
+    ["Where are the two words heavy?", "On the Scale", "But very heavy in the balance"],
+    ["Which pair are the two words?", "Subhanallahi wa bihamdih, Subhanallahil-'azim", "Subhan Allah al-Azim", "Subhan Allah wa bihamdihi"],
+    ["These words are loved by the Most Merciful.", "True", "And very dear to the Most Merciful"],
+    ["How heavy are the two phrases in the Balance?", "Very heavy", "But very heavy in the balance"],
+    ["Who loves these phrases, in the hadith?", "The Most Merciful", "And very dear to the Most Merciful"],
+    ["Which phrase is one of the two?", "SubhanAllahi wa bihamdihi", "Subhan Allah al-Azim", "Subhan Allah wa bihamdihi"],
+    ["How are the two phrases on the tongue?", "Very easy", "Two expressions, easy for the tongue to say"],
+    ["How are they on the Scale?", "Very heavy", "But very heavy in the balance"],
+    ["Which phrase is one of the two?", "Subhan Allahi wa bihamdihi", "Subhan Allah al-Azim", "Subhan Allah wa bihamdihi"],
+    ["How are the two phrases, in the hadith?", "Easy to say, heavy on the Scale", "Two expressions, easy for the tongue to say", "But very heavy in the balance"],
+    ["Which phrase is one of them?", "SubhanAllah wa bihamdihi", "Subhan Allah al-Azim", "Subhan Allah wa bihamdihi"],
+    ["How are the two phrases on the scale?", "Very heavy", "But very heavy in the balance"],
+    ["They are dear to the Most Merciful.", "True", "And very dear to the Most Merciful"]
+  ],
+  // Cleanliness is half of faith, Alhamdulillah fills the scale, prayer is a light, charity is proof and endurance is a
+  // brightness (Sahih Muslim 223).
+  "sign-half-of-faith": [
+    ["How much of faith is purity?", "Half", "Cleanliness is half of faith"],
+    ["What fills the scale, in the same hadith?", "Alhamdulillah", "Alhamdulillah fills the scale"],
+    ["In the same hadith, prayer is called a light.", "True", "Prayer is a light"],
+    ["What fills the scale, in Muslim 223?", "Al-hamdu lillah", "Alhamdulillah fills the scale"],
+    ["What is half of faith, in the same hadith?", "Cleanliness", "Cleanliness is half of faith"],
+    ["A short word of praise can weigh heavy on the scale.", "True", "Alhamdulillah fills the scale"],
+    ["What is half of faith, per the hadith?", "Cleanliness", "Cleanliness is half of faith"],
+    ["What does Alhamdulillah fill, per the hadith?", "The scale", "Alhamdulillah fills the scale"],
+    ["Cleanliness has nothing to do with faith.", "False", "Cleanliness is half of faith"],
+    ["Which phrase fills the scale?", "Alhamdulillah", "Alhamdulillah fills the scale"],
+    ["The same hadith calls prayer a light.", "True", "Prayer is a light"]
+  ],
+  // The signs of a hypocrite are three: whenever he speaks he tells a lie, whenever he promises he breaks it, and if
+  // you trust him he proves to be dishonest (Sahih al-Bukhari 33). (Who narrated it, what Ibn Kathir says and 23:8 are
+  // not in the scene.)
+  "sign-three-signs": [
+    ["How many signs of a hypocrite did the Prophet ﷺ name?", "Three", "The signs of a hypocrite are three"],
+    ["Which is a sign of a hypocrite?", "Breaking promises", "Whenever he promises, he always breaks it"],
+    ["Keeping your promise is part of good character.", "True", "Whenever he promises, he always breaks it"],
+    ["How many signs of a hypocrite are in the hadith?", "Three", "The signs of a hypocrite are three"],
+    ["Which is NOT one of the three signs?", "Praying at night", "Whenever he speaks, he tells a lie", "If you trust him, he proves to be dishonest"],
+    ["Keeping promises protects a Muslim from hypocrisy.", "True", "Whenever he promises, he always breaks it"],
+    ["What does a hypocrite do when he promises?", "He breaks it", "Whenever he promises, he always breaks it"],
+    ["Telling lies is one of the hypocrite's signs.", "True", "Whenever he speaks, he tells a lie"],
+    ["How many signs of a hypocrite are named?", "Three", "The signs of a hypocrite are three"],
+    ["What does a hypocrite do with promises?", "Breaks them", "Whenever he promises, he always breaks it"],
+    ["How many signs of a hypocrite are in Bukhari 33?", "Three", "The signs of a hypocrite are three"],
+    ["What does a hypocrite do when he speaks?", "He tells a lie", "Whenever he speaks, he tells a lie"],
+    ["Breaking promises is a sign of a hypocrite.", "True", "Whenever he promises, he always breaks it"],
+    ["Betraying a trust is one of the three signs.", "True", "If you trust him, he proves to be dishonest"],
+    ["Telling lies is one of the three signs.", "True", "Whenever he speaks, he tells a lie"],
+    ["Which is one of the signs?", "Breaking promises", "Whenever he promises, he always breaks it"],
+    ["Lying is a sign of hypocrisy.", "True", "Whenever he speaks, he tells a lie"]
+  ],
+  // He who calls to righteousness has a reward like those who adhered to it, without their rewards being diminished;
+  // and he who calls to error carries its sin like those who committed it (Sahih Muslim 2674). (What 16:25 and Ibn
+  // Kathir say is not in the scene.)
+  "sign-call-to-good": [
+    ["What does one who calls to good receive?", "The reward of those who follow", "Has a reward like those who adhered to it"],
+    ["Does it lessen the followers' reward?", "No, not at all", "Without their rewards being diminished"],
+    ["Calling others to wrong carries a share of the sin.", "True", "Carries its sin, like those who committed it"],
+    ["What does one who calls to good get, in the hadith?", "A reward like his followers'", "Has a reward like those who adhered to it"],
+    ["Is the followers' reward reduced, in the hadith?", "No, not at all", "Without their rewards being diminished"],
+    ["What does a caller to good get, in the hadith?", "Reward like his followers", "Has a reward like those who adhered to it"],
+    ["Is the followers' reward lessened, in the hadith?", "No", "Without their rewards being diminished"],
+    ["Calling to error brings the sin of those who follow.", "True", "Carries its sin, like those who committed it"],
+    ["What does one who calls to good get, per Muslim 2674?", "Rewards like those who follow", "Has a reward like those who adhered to it"],
+    ["Are the followers' rewards reduced?", "No, not at all", "Without their rewards being diminished"]
+  ],
+  // Allah is pleased with His servant who says Alhamdulillah while taking a morsel and while drinking (Sahih Muslim
+  // 2734). (Who narrated it and what Ibn Kathir says are not in the scene.)
+  "sign-praise-each-bite": [
+    ["What pleases Allah after you eat or drink?", "Saying Alhamdulillah", "Who says Alhamdulillah while taking a morsel", "And while drinking"],
+    ["Is it only after food, or after drinks too?", "After drinks too", "And while drinking"],
+    ["Thanking Allah after a meal is a small but loved deed.", "True", "Allah is pleased with His servant", "Who says Alhamdulillah while taking a morsel"],
+    ["What pleases Allah, in the hadith?", "Praising Him for food and drink", "Who says Alhamdulillah while taking a morsel", "And while drinking"],
+    ["What should a grateful servant say after a sip of water?", "Al-Hamdu lillah", "Who says Alhamdulillah while taking a morsel", "And while drinking"],
+    ["What should we say after drinking?", "Alhamdulillah", "Who says Alhamdulillah while taking a morsel", "And while drinking"],
+    ["How does Allah feel about this praise?", "Pleased", "Allah is pleased with His servant", "And while drinking"],
+    ["Thanking Allah for water and food pleases Him.", "True", "Allah is pleased with His servant", "And while drinking"],
+    ["What pleases Allah, per the hadith?", "Saying Al-Hamdu lillah while eating", "Who says Alhamdulillah while taking a morsel"],
+    ["When else should we praise Him, per the hadith?", "While drinking", "And while drinking"],
+    ["Small thanks for food can win Allah's pleasure.", "True", "Allah is pleased with His servant", "Who says Alhamdulillah while taking a morsel"],
+    ["What pleases Allah at mealtime, per the hadith?", "Saying Alhamdulillah", "Who says Alhamdulillah while taking a morsel"],
+    ["When should we praise Him, per the hadith?", "When eating and drinking", "Who says Alhamdulillah while taking a morsel", "And while drinking"]
+  ],
+  // Anybody who believes in Allah and the Last Day should not harm his neighbor, should entertain his guest
+  // generously, and should talk what is good or keep quiet (Sahih al-Bukhari 6018).
+  "sign-good-or-quiet": [
+    ["If you can't say something good, what should you do?", "Stay quiet", "Should talk what is good or keep quiet"],
+    ["A believer is kind to his neighbor and his guest.", "True", "Should not harm his neighbor", "Should entertain his guest generously"],
+    ["If you have nothing good to say, what should you do?", "Stay quiet", "Should talk what is good or keep quiet"],
+    ["This advice is for whoever believes in Allah and what?", "The Last Day", "Anybody who believes in Allah and the Last Day"],
+    ["The same hadith also says to honor whom?", "Your guest", "Should entertain his guest generously"],
+    ["What should a believer say, per the hadith?", "What is good, or stay quiet", "Should talk what is good or keep quiet"],
+    ["How should a believer treat his guest?", "Generously", "Should entertain his guest generously"],
+    ["Harming a neighbor is fine if he is a stranger.", "False", "Should not harm his neighbor"]
+  ],
+  // Sufyan asked for something about Islam he need ask no one else; he ﷺ said: Say, I affirm my faith in Allah, and
+  // then remain steadfast to it (Sahih Muslim 38). (What 11:112, 41:30 and 46:13 say, and what Abu Bakr said, are not
+  // in the scene.)
+  "sign-then-steadfast": [
+    ["What did he ﷺ tell Sufyan to say?", "I believe in Allah", "Say: I affirm my faith in Allah"],
+    ["And after saying it?", "Stay firm on it", "And then remain steadfast to it"],
+    ["Being steadfast means staying on the right path every day.", "True", "And then remain steadfast to it"],
+    ["What did the Prophet ﷺ say after: I believe in Allah?", "Then stay firm on it", "And then remain steadfast to it"],
+    ["What did the Prophet ﷺ tell Sufyan, per Muslim 38?", "Say I believe in Allah, then stand firm", "Say: I affirm my faith in Allah", "And then remain steadfast to it"],
+    ["Sufyan wanted advice he would never need to ask anyone else about.", "True", "That I need ask no one other than you"]
   ]
 };
 

@@ -1057,6 +1057,14 @@ const STATES: State[] = [
   { id: "scene-pray-as-you-can", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-pray-as-you-can" ask="cannot stand" /> },
   { id: "scene-even-a-thorn", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-even-a-thorn" ask="thorn's prick" /> },
   { id: "scene-intentions", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-famous-intentions" ask="judged by" /> },
+  // A question on each scene of what we say (round 73).
+  { id: "scene-two-words", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-dhikr-light-and-heavy" ask="on the scale of deeds" /> },
+  { id: "scene-half-of-faith", render: () => <SceneQuestionDemo lessonId="lesson-deep-clean-half-of-faith" ask="What fills the scale" /> },
+  { id: "scene-three-signs", render: () => <SceneQuestionDemo lessonId="lesson-deep-mujadila3-three-signs" ask="when he speaks" /> },
+  { id: "scene-call-to-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-yusuf6-a-call-and-its-reward" ask="calls to good receive" /> },
+  { id: "scene-praise-each-bite", render: () => <SceneQuestionDemo lessonId="lesson-deep-abasa2-praise-for-every-bite" ask="When else" /> },
+  { id: "scene-good-or-quiet", render: () => <SceneQuestionDemo lessonId="lesson-deep-naba3-say-good-or-stay-silent" ask="treat his guest" /> },
+  { id: "scene-then-steadfast", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-famous-steadfast" ask="And after saying it" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
