@@ -2158,7 +2158,13 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How does one of them give charity?", "So secretly the left hand doesn't know", "His left hand knows not what his right gave"],
     ["How secretly does the man give charity?", "His left hand does not know", "His left hand knows not what his right gave"],
     ["Charity counts only if people see it.", "False", "His left hand knows not what his right gave"],
-    ["Who weeps among the seven, per Bukhari 660?", "One who remembers Allah alone", "Remembering Allah alone, his tears flow"]
+    ["Who weeps among the seven, per Bukhari 660?", "One who remembers Allah alone", "Remembering Allah alone, his tears flow"],
+    // The same hadith in Sahih al-Bukhari 1423. (What 2:271 says, and whether giving openly is allowed, are not in the
+    // scene.)
+    ["How secret is the charity in Bukhari 1423?", "The left hand doesn't know", "His left hand knows not what his right gave"],
+    ["How many are shaded, per Bukhari 1423?", "Seven", "Allah will give shade to seven"],
+    ["Who is the first of the seven named?", "A just ruler", "A just ruler, a youth brought up in worship"],
+    ["Weeping from fear of Allah when alone is praised.", "True", "Remembering Allah alone, his tears flow"]
   ],
   // Fasting is a shield; if someone fights him, he says: I am fasting; the smell of his mouth is better with Allah than
   // musk; he has left his food and drink for My sake, the fast is for Me; and the fasting person has two joys, at
@@ -2244,6 +2250,84 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["The Prophet ﷺ swore by Allah when answering.", "True", "No: by Him in whose Hand my soul is"],
     ["Are they only for the Prophets, in the hadith?", "No, for those who believed", "No: by Him in whose Hand my soul is", "Believers in Allah and in the messengers"],
     ["Are the lofty mansions only for prophets?", "No, for true believers too", "No: by Him in whose Hand my soul is", "Believers in Allah and in the messengers"]
+  ],
+  // Jibril came and said: this is Khadijah, coming to you with a dish of food or drink; give her salam from her Lord and
+  // from me, and give her glad tidings of a house in Paradise of qasab, of hollow pearl, with no noise in it and no toil
+  // (Sahih al-Bukhari 3820). (What 15:48 says is not in the scene.)
+  "sign-house-of-pearl": [
+    ["Who sent salam to Khadijah?", "Allah, through Jibril", "Give her salam from her Lord and from me"],
+    ["What was Khadijah bringing when Jibril came?", "A dish of food", "With a dish of food or drink"],
+    ["What is her palace in Jannah free of?", "Noise and tiredness", "With no noise in it and no toil"],
+    ["What will her palace in Paradise NOT have?", "Noise or tiredness", "With no noise in it and no toil"],
+    ["Who sent salam to Khadijah, along with Jibril?", "Her Lord, Allah", "Give her salam from her Lord and from me"],
+    ["What was in Khadijah's palace, in the hadith?", "No noise and no fatigue", "With no noise in it and no toil"]
+  ],
+  // In Paradise there is a tree in whose shade a rider could travel for a hundred years and not cross it (Sahih
+  // al-Bukhari 3251). (Who narrated it is not in the scene.)
+  "sign-tree-of-a-hundred-years": [
+    ["How long to ride through the tree's shade?", "A hundred years", "For a hundred years"],
+    ["What does it teach about Jannah?", "Its size is beyond us", "And not cross it"],
+    ["The rider crosses the shade in a day.", "False", "For a hundred years", "And not cross it"],
+    ["How long could a rider travel in the tree's shade?", "A hundred years", "For a hundred years"],
+    ["Could the rider cross the shade?", "No", "And not cross it"]
+  ],
+  // My Pool is a month's journey across; its water is whiter than milk, its smell better than musk, and its cups are
+  // like the stars of the sky; whoever drinks from it will never be thirsty again (Sahih al-Bukhari 6579).
+  "sign-the-pool": [
+    ["How wide is the Pool?", "A month's journey", "My Pool is a month's journey across"],
+    ["What happens to whoever drinks from it?", "Never thirsty again", "Whoever drinks from it", "Will never be thirsty again"],
+    ["How many cups does it have?", "As many as the stars", "Its cups are like the stars of the sky"],
+    ["What is the Pond water like, per the hadith?", "Whiter than milk", "Its water is whiter than milk"],
+    ["How many cups does the Pond have?", "As many as the stars", "Its cups are like the stars of the sky"],
+    ["One sip from the Pond lasts only a short while.", "False", "Whoever drinks from it", "Will never be thirsty again"]
+  ],
+  // Do not abuse my companions: if one of you spent gold as much as Uhud, it would not reach a mudd of theirs, nor even
+  // half of it (Sahih al-Bukhari 3673). (What Ibn Kathir says is not in the scene, and which mountain it was has its
+  // own picture.)
+  "sign-gold-like-uhud": [
+    ["What did the Prophet ﷺ forbid about his companions?", "Abusing them", "Do not abuse my companions"],
+    ["What would gold like Uhud not equal?", "A handful of theirs", "It would not reach a mudd of theirs"],
+    ["The Sahabah have a very high rank.", "True", "It would not reach a mudd of theirs", "Nor even half of it"],
+    ["What did he ﷺ forbid, per Bukhari 3673?", "Abusing his Companions", "Do not abuse my companions"],
+    ["What would gold like Uhud not equal, per Bukhari 3673?", "A small Mudd they spent", "It would not reach a mudd of theirs"],
+    ["How should we speak of the Companions?", "Never abuse them", "Do not abuse my companions"],
+    ["What small amount of theirs outweighs it?", "A Mudd or half a Mudd", "It would not reach a mudd of theirs", "Nor even half of it"]
+  ],
+  // Allah gives respite to the wrongdoer, until, when He seizes him, He does not let him go; then he recited 11:102
+  // (Sahih al-Bukhari 4686). (The ayah he recited, who narrated it and what Ibn Kathir says are not in the scene.)
+  "sign-respite-then-seized": [
+    ["What does Allah give the wrongdoer first, per the hadith?", "Respite", "Allah gives respite to the wrongdoer"],
+    ["What happens when Allah seizes him?", "He never lets him go", "He does not let him go"],
+    ["What does Allah give the oppressor first?", "Respite", "Allah gives respite to the wrongdoer"],
+    ["What happens when Allah takes the oppressor?", "He never releases him", "He does not let him go"],
+    ["A delay in punishment means Allah has forgotten.", "False", "Allah gives respite to the wrongdoer", "Until, when He seizes him"],
+    ["A delay means Allah has forgotten.", "False", "Allah gives respite to the wrongdoer", "Until, when He seizes him"],
+    ["What does Allah give the oppressor first?", "Respite, time", "Allah gives respite to the wrongdoer"],
+    ["What happens when Allah seizes him?", "He never escapes", "He does not let him go"],
+    ["Delay in punishment means no punishment.", "False", "Allah gives respite to the wrongdoer", "Until, when He seizes him"]
+  ],
+  // Convey from me, even if it is one ayah; tell of the Children of Israel, there is no harm; and whoever lies about me
+  // on purpose, let him take his seat in the Fire (Sahih al-Bukhari 3461). (What to do with a hadith you have learned
+  // is not in the scene.)
+  "sign-convey-one-ayah": [
+    ["How much should we pass on?", "Even one verse", "Even if it is one ayah"],
+    ["Only scholars may share what they know.", "False", "Convey from me", "Even if it is one ayah"],
+    ["How much should we pass on?", "Even one ayah", "Even if it is one ayah"],
+    ["What is the punishment for lying about him ﷺ on purpose?", "A seat in the Fire", "Let him take his seat in the Fire"],
+    ["Only scholars may share what they learned.", "False", "Convey from me", "Even if it is one ayah"],
+    ["How much should we convey, per the hadith?", "Even a single sentence", "Even if it is one ayah"],
+    ["What did he warn against?", "Lying about him on purpose", "Whoever lies about me on purpose"],
+    ["Only scholars may share anything about Islam.", "False", "Convey from me", "Even if it is one ayah"]
+  ],
+  // The poor is not the one who goes around for a bite or two, or a date or two, but the one who does not have enough,
+  // whom no one notices to give him charity, and who does not stand up to ask people (Sahih al-Bukhari 1479). (What
+  // Ibn Kathir says of 51:19 is not in the scene.)
+  "sign-the-hidden-poor": [
+    ["Who is the real poor person, per Abu Hurayrah?", "One whose need is hidden", "But the one who does not have enough", "No one notices him, to give him charity"],
+    ["The real poor person, in the hadith, does not beg.", "True", "And he does not stand up to ask people"],
+    ["What does the hadith teach givers to do?", "Look out for quiet need", "But the one who does not have enough", "No one notices him, to give him charity"],
+    ["Who is truly poor, per Bukhari 1479?", "One whose need is unknown", "But the one who does not have enough", "No one notices him, to give him charity"],
+    ["Who is not the poor meant, per Bukhari 1479?", "One who goes round asking", "The poor is not the one who goes around"]
   ]
 };
 
