@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(973);
+    expect(asks.length).toBe(1061);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -103,7 +103,7 @@ describe("which questions are asked on a scene", () => {
     // "Zakat in Islam" now has seven lessons, so it gets a review card, which asks two of its scene questions, and its
     // final quiz draws one more. "A fresh start" gained its lesson on 3:136, so its final quiz asks one scene question
     // fewer (that question is still asked in its lesson).
-    expect(places).toBe(1387);
+    expect(places).toBe(1511);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -2830,6 +2830,206 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
+  });
+
+  it("waits on the scenes of kindness and a believer's heart, from good in every state to those you love, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-good-in-every-state", "sign-your-mother", "sign-cheerful-face", "sign-learn-and-teach", "sign-one-body", "sign-eat-near", "sign-those-you-love"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(88);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // When good comes: no crops grown and no thanks yet; then the crops are green, a voice gives thanks and good rises.
+    for (const [prompt, answer] of [
+      ["What does a believer do when something good happens?", "Thanks Allah"],
+      ["What should a believer do when good comes, in Muslim 2999?", "Be grateful"],
+      ["What does the believer do when good comes, per the hadith?", "He gives thanks"],
+      ["What does a believer do in good times, in the hadith?", "He thanks Allah"],
+      ["What does a believer do in happy times?", "Thanks Allah"]
+    ]) {
+      expect([prompt, shown(prompt, ["the crops, growing green 1", "a voice from the place, giving thanks", "good for him, rising 1"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // When harm comes: the crops still green and no light of patience; then they dry, the calm light comes and good rises.
+    for (const [prompt, answer] of [
+      ["What does a believer do when something hard happens?", "Is patient"],
+      ["And when hardship comes?", "Be patient"],
+      ["What does a believer do in trouble?", "He is patient"],
+      ["What does a believer do in trouble?", "Stays patient"],
+      ["What does he do in trouble, in the hadith?", "Endures it patiently"]
+    ]) {
+      expect([prompt, answer, shown(prompt, ["the crops, dried 1", "a calm light on the place, patience", "good for him again, rising 1"], answer)]).toEqual([
+        prompt,
+        answer,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // Both: nothing has risen yet; then good rises with the thanks, and again with the patience.
+    for (const prompt of ["For a believer, both good and hard times can be good.", "For the believer, both ease and hardship can be good."]) {
+      expect([prompt, shown(prompt, ["good for him, rising 1", "good for him again, rising 1"])]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ]
+      ]);
+    }
+    // Good for no one but the believer: the glow on his place grows.
+    expect(shown("Good in every affair is for everyone, not only believers.", ["a warm glow on the place"])).toEqual([[0.7], [1]]);
+    // Your mother, three times: no light yet; then three lights above the first one at home, and her glow full. Your
+    // father: no light above the next one; then one.
+    for (const [prompt, answer] of [
+      ["How many times did the Prophet ﷺ say 'your mother'?", "Three"],
+      ["How many times did he ﷺ say: your mother?", "Three times"],
+      ["Whom did the Prophet ﷺ name three times for kindness?", "Your mother"],
+      ["How many times was the mother named?", "Three"]
+    ]) {
+      expect([prompt, shown(prompt, ["a light above the first one 1", "a light above the first one 2", "a light above the first one 3", "a glow on the first one"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    for (const [prompt, answer] of [
+      ["Who came after the mother?", "The father"],
+      ["Who came after the mother, in the hadith?", "Your father"],
+      ["Who came fourth, per Bukhari 5971?", "Your father"]
+    ]) {
+      expect([prompt, shown(prompt, ["a light above the next one", "a glow on the next one", "a voice from his place, answering 4"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // A cheerful face: the two have met, and no glow yet; then the warm glow, greetings both ways and a good deed rising.
+    for (const [prompt, answer] of [
+      ["How should you meet your brother?", "With a smile"],
+      ["How should we meet our brother, in the hadith?", "With a cheerful face"],
+      ["What good deed did he mention to Abu Dharr?", "A cheerful face"]
+    ]) {
+      expect([prompt, shown(prompt, ["someone, coming", "a warm glow between them, cheerful", "greetings, both ways", "a good deed, rising 1"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Any good deed: nothing rises yet; then the small good deeds rise.
+    expect(shown("What should we never think little of?", ["small good deeds, rising 1", "small good deeds, rising 4"], "Any good deed")).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // Learn and teach: no voice and no new circle yet; then he recites, they repeat, a light comes on each, and three new
+    // circles are taught.
+    for (const [prompt, answer] of [
+      ["Who are the best among us?", "Those who learn and teach the Quran"],
+      ["Who is best, in the hadith?", "Who learns and teaches Quran"],
+      ["Who are the best, per Bukhari 5027?", "Who learn and teach the Quran"]
+    ]) {
+      expect([prompt, shown(prompt, ["a light on each of them", "a way, going out to teach 1", "a new circle, gathering 3", "a voice, teaching 3"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    expect(shown("Once you learn the Quran, you should keep it to yourself.", ["a light on each of them", "a way, going out to teach 1", "a new circle, gathering 1"], "False")).toEqual([
+      [1, 0, 0],
+      [1, 1, 1]
+    ]);
+    // Like one body: joined by threads, and no shape yet; then one soft shape holds them all. One unwell: no night and no
+    // fever yet; then night, the windows lit, the warm glow on every one of them, the threads glowing.
+    for (const prompt of ["Believers are like what?", "What are believers like, in their love?", "What are believers like, per Bukhari 6011?"]) {
+      expect([prompt, shown(prompt, ["a warm thread between them 1", "one soft shape holding them all"], "One body")]).toEqual([
+        prompt,
+        [
+          [1, 0],
+          [1, 1]
+        ]
+      ]);
+    }
+    for (const [prompt, answer] of [
+      ["What happens when one part hurts?", "The whole body feels it"],
+      ["What does the whole body share when one part is ill?", "Fever and sleeplessness"],
+      ["If one part is unwell, what happens?", "The whole body shares it"]
+    ]) {
+      expect([prompt, shown(prompt, ["one of them, unwell", "the night", "windows lit, no one asleep", "warm glows on every one of them, fever", "the threads, glowing"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Eat near you: the reach wanders the dish, and no voice yet; then a voice teaches and Bismillah rises. Then no
+    // short way yet; then it goes only to the food near him.
+    for (const [prompt, answer] of [
+      ["What should you say before you eat?", "Bismillah"],
+      ["What did the Prophet ﷺ tell the boy to say first?", "Bismillah"],
+      ["Which hand did he ﷺ say to eat with?", "The right hand"]
+    ]) {
+      expect([prompt, shown(prompt, ["a reach, across the far side", "a voice from his place, teaching", "a small voice, saying Bismillah", "Bismillah, rising 1"], answer)]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [0, 1, 1, 1]
+        ]
+      ]);
+    }
+    for (const [prompt, answer] of [
+      ["Which food should you take from the dish?", "What is nearest to you"],
+      ["From which part of the dish should you eat?", "What is nearest to you"]
+    ]) {
+      expect([prompt, shown(prompt, ["a short way, to the food near him", "the food near him"], answer)]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ]
+      ]);
+    }
+    // With those you love: no question back yet; then it. No answer yet; then love of Allah and His Messenger, and a warm
+    // glow on his place. No glad news yet; then it, and a light joins him to the ring. Then joy on all.
+    expect(shown("What did the Prophet ﷺ ask the man back?", ["a voice from him, asking", "a voice from his place, asking back"], "What have you prepared for it?")).toEqual([
+      [0, 0],
+      [0, 1]
+    ]);
+    expect(shown("What did the man say he had prepared?", ["a voice from him, answering", "a warm glow of love on his place"], "Love of Allah and His Messenger")).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    expect(shown("What was the good news?", ["a voice from his place, giving glad news", "a light, joining him to the ring"], "You will be with those you love")).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    expect(shown("The Companions were very glad to hear this answer.", ["glows on all who sat there", "joy, rising 1"], "True")).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {

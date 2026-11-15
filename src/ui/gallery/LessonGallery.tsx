@@ -1041,6 +1041,14 @@ const STATES: State[] = [
   { id: "scene-safa-call", render: () => <SceneQuestionDemo lessonId="lesson-deep-masad1-never-heard-a-lie" ask="about his honesty" /> },
   { id: "scene-jabir-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-jabir-fathers-debt" ask="do with the dates" /> },
   { id: "scene-three-follow", render: () => <SceneQuestionDemo lessonId="lesson-deep-grave-three-follow" ask="go back home" /> },
+  // A question on each scene of kindness and a believer's heart (round 69).
+  { id: "scene-good-in-every-state", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-always-good" ask="something good happens" /> },
+  { id: "scene-your-mother", render: () => <SceneQuestionDemo lessonId="lesson-deep-parents-your-mother" ask="How many times" /> },
+  { id: "scene-cheerful-face", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-muslim-2626" ask="meet your brother" /> },
+  { id: "scene-learn-and-teach", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-bukhari-5027" ask="best among us" /> },
+  { id: "scene-one-body", render: () => <SceneQuestionDemo lessonId="lesson-deep-numan-one-body" ask="one part hurts" /> },
+  { id: "scene-eat-near", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-bukhari-5376" ask="take from the dish" /> },
+  { id: "scene-those-you-love", render: () => <SceneQuestionDemo lessonId="lesson-deep-lastday-asked-bedouin" ask="say he had prepared" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
