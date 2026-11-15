@@ -3307,7 +3307,7 @@ const QURAN_VIRTUES: DeepUnit = {
   key: "book-quran-virtues",
   topicId: "sahihayn",
   branchId: "hadith-book-quran",
-  branch: { title: "The Book of the Virtues of the Quran", description: "From the Books of the Virtues of the Quran: learning it, keeping it, reciting it well, and its reward." },
+  branch: { title: "The Book of the Virtues of the Quran", description: "From the Books of the Virtues of the Quran: how it came down, learning it, keeping it, reciting it well, and its reward." },
   name: "the Book of the Quran",
   kind: "skill",
   lessonType: "skill",
@@ -3466,6 +3466,19 @@ const QURAN_VIRTUES: DeepUnit = {
         { q: "When does the first man recite the Quran, he ﷺ said?", a: "Night and day", wrong: ["Only on Fridays", "Only in Ramadan", "Only at Eid"], why: "He recites it in the hours of the night and the day, and his neighbor listens to him." },
         { q: "What did the neighbor wish, he ﷺ said?", a: "To do what he does", wrong: ["To move far away", "To buy his house", "To travel with him"], why: "I wish I had been given what he was given, so that I might do what he does, he says." },
         { q: "Wishing to recite the Quran like a good reciter is a good wish.", tf: true, why: "He ﷺ named two men worth wishing to be like, and the first recites the Quran." }
+      ]
+    },
+    {
+      slug: "revelation-before-he-died",
+      title: "Revelation near the end",
+      line: "Before his ﷺ death, revelation came more often than ever.",
+      facts: ["Told by Anas ibn Malik", "Revelation came one part after another", "Allah sent it until He took him ﷺ"],
+      source: hadith("bukhari", "4982", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: Allah sent down revelation to His Messenger ﷺ one part after another, and often, in the time before his death, until He took him. That was the time when revelation came the most, and after that the Messenger of Allah ﷺ died.", "Allah sent down His Divine Inspiration to His Apostle continuously and abundantly during the period preceding his death"),
+      difficulty: 2,
+      questions: [
+        { q: "How did revelation come before his ﷺ death, Anas said?", a: "One part after another", wrong: ["Once every few years", "Only on Fridays", "Only in winter"], why: "Allah sent down revelation continuously and abundantly before his ﷺ death, Anas said." },
+        { q: "Until when did revelation keep coming, Anas said?", a: "Until Allah took him ﷺ", wrong: ["Until he ﷺ left Makkah", "Until he ﷺ reached Madinah", "Until he ﷺ turned fifty"], why: "Revelation kept coming until Allah took him, and then the Messenger of Allah ﷺ died." },
+        { q: "Revelation stopped long before his ﷺ death.", tf: false, why: "No. Allah sent it one part after another until He took him ﷺ, Anas said." }
       ]
     }
   ]
