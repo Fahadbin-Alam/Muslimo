@@ -2,15 +2,17 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Names of Allah unit for the Aqidah topic, from the Prophet's ﷺ own words in Sahih al-Bukhari and Sunan
 // Abi Dawud: none more patient than Allah, refuge in His might, As-Salam, the One who withholds and gives, the only
-// King of kings, and the Turner of hearts. Every card is one sahih hadith with its number, narrator and grade, and its
-// exact English words to highlight, and none of them is taught anywhere else in the app.
+// King of kings, the Turner of hearts, and Allah is Witr. Every card is one sahih hadith with its number, narrator and
+// grade, and its exact English words to highlight. None of them is taught anywhere else in the app, except the
+// ninety-nine names in Bukhari 6410, which Bukhari 2736 and 7392 teach in the Aqidah, Al-A'raf and Al-Hashr units;
+// that lesson asks only about Allah being Witr.
 
 const NAMES_SUNNAH: DeepUnit = {
   key: "names-sunnah",
   topicId: "aqidah",
   branchId: "aqidah-names-sunnah",
-  branch: { title: "Names of Allah: from the Sunnah", description: "None more patient than Allah, refuge in His might, As-Salam, the One who withholds and gives, the only King of kings, and the Turner of hearts." },
-  name: "Names of Allah from the Sunnah",
+  branch: { title: "Names of Allah: from the Sunnah", description: "None more patient than Allah, refuge in His might, As-Salam, the One who withholds and gives, the only King of kings, the Turner of hearts, and Allah is Witr." },
+  name: "Allah's names in the Sunnah",
   kind: "skill",
   lessonType: "skill",
   lessons: [
@@ -90,6 +92,19 @@ const NAMES_SUNNAH: DeepUnit = {
         { q: "What does Allah turn, in his ﷺ frequent oath?", a: "The hearts", wrong: ["The mountains", "The seas", "The skies"], why: "No, by Him who turns the hearts, was the oath of the Prophet ﷺ, Ibn Umar said." },
         { q: "A believer asks Allah to keep his heart firm. Why?", a: "Allah turns the hearts", wrong: ["Hearts never change", "Only people change hearts", "Hearts do not matter"], why: "His ﷺ oath was: no, by Him who turns the hearts, Ibn Umar said." },
         { q: "He ﷺ swore by Allah, the One who turns the hearts.", tf: true, why: "The oath of the Prophet ﷺ used to be: no, by Him who turns the hearts." }
+      ]
+    },
+    {
+      slug: "allah-is-witr",
+      title: "Allah is Witr",
+      line: "Allah is Witr, the One, and He loves witr.",
+      facts: ["Told by Abu Hurairah", "Witr means one", "He loves the witr"],
+      source: hadith("bukhari", "6410", "Abu Hurairah", "Sahih", "Allah has ninety-nine names, one hundred minus one, and whoever believes in their meanings and acts accordingly will enter Paradise. And Allah is witr, the One, and He loves the witr.", "will enter Paradise; and Allah is witr"),
+      difficulty: 2,
+      questions: [
+        { q: "What is Allah called in Sahih al-Bukhari 6410?", a: "Witr", wrong: ["Jamil", "Rafiq", "Tayyib"], why: "Allah has ninety-nine names, and Allah is witr, the One, and loves the witr." },
+        { q: "What does witr mean, as said of Allah?", a: "The One", wrong: ["The All-Knowing", "The All-Seeing", "The Ever-Living"], why: "And Allah is witr, which means one, and He loves the witr." },
+        { q: "This hadith says Allah loves the witr.", tf: true, why: "Allah has ninety-nine names; and Allah is witr, the One, and loves the witr." }
       ]
     }
   ]

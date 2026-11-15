@@ -519,7 +519,7 @@ const MUMTAHANAH_TWO: DeepUnit = {
       questions: [
         { q: "What does Al-Ghani mean, per Ibn Abbas?", a: "Perfectly rich", wrong: ["Very strong", "Very near", "Very kind"], why: "Ghani is the One Who is perfectly rich." },
         { q: "Which ayah does Ibn Kathir add?", a: "14:8", wrong: ["2:286", "55:1", "67:1"], why: "If you disbelieve, you and all on the earth together, then verily! Allah is Ghani, Hamid. (14:8)" },
-        { tf: true, q: "Allah needs people to worship Him.", why: "Verily, Allah is Al-Ghani, Al-Hamid." }
+        { tf: false, q: "Allah needs people to worship Him.", why: "Verily, Allah is Al-Ghani, Al-Hamid." }
       ]
     },
     {

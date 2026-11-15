@@ -151,6 +151,20 @@ const MERCY: DeepUnit = {
         { q: "Who is the best of helpers, in Quran 3:150?", a: "Allah", wrong: ["The kings", "The strong", "The rich"], why: "But Allah is your Protector, and He is the best of helpers." },
         { q: "In Quran 3:150, Allah tells the believers that He looks after them.", tf: true, why: "But Allah is your Protector." }
       ]
+    },
+    {
+      slug: "afuww-ghafur",
+      title: "Al-'Afuww, Al-Ghafur",
+      line: "Allah helps the one who is wronged; He pardons and forgives.",
+      facts: ["Quran 22:60", "Surah Al-Hajj", "Innallaha la-'Afuwwun Ghafur"],
+      quote: quranQuote(22, 60),
+      source: quran(22, 60, "And whoever responds to injustice with the equivalent of that by which he was harmed and then is tyrannized - Allah will surely aid him. Indeed, Allah is Pardoning and Forgiving."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 22:60?", a: "Al-'Afuww, Al-Ghafur", wrong: ["Al-Malik, Al-Quddus", "Al-Hayy, Al-Qayyum", "Al-Aliyy, Al-Kabir"], why: "Indeed, Allah is Pardoning and Forgiving." },
+        { q: "Which name of Allah means the Pardoning?", a: "Al-'Afuww", wrong: ["Al-Malik", "Al-Khaliq", "Al-Hayy"], why: "Indeed, Allah is Pardoning and Forgiving." },
+        { q: "In Quran 22:60, Allah promises to help one who is wronged.", tf: true, why: "Whoever is wronged after answering harm with its like, Allah will surely aid him." }
+      ]
     }
   ]
 };
@@ -316,6 +330,34 @@ const MAJESTY: DeepUnit = {
         { q: "Which name of Allah ends Quran 4:6?", a: "Al-Hasib", wrong: ["Al-Wadud", "Ar-Razzaq", "As-Salam"], why: "Wa kafa billahi hasiba: and sufficient is Allah as Accountant." },
         { q: "Who is enough as the One who takes account, in Quran 4:6?", a: "Allah", wrong: ["The judge", "The witnesses", "The guardian"], why: "Bring witnesses upon them. And sufficient is Allah as Accountant." },
         { q: "Quran 4:6 is about the wealth of orphans.", tf: true, why: "Test the orphans, and when you release their property to them, bring witnesses." }
+      ]
+    },
+    {
+      slug: "ghani-hamid",
+      title: "Al-Ghani, Al-Hamid",
+      line: "Everything in the heavens and earth belongs to Allah.",
+      facts: ["Quran 22:64", "Surah Al-Hajj", "Wa innallaha la-huwal-Ghaniyyul-Hamid"],
+      quote: quranQuote(22, 64),
+      source: quran(22, 64, "To Him belongs what is in the heavens and what is on the earth. And indeed, Allah is the Free of need, the Praiseworthy."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 22:64?", a: "Al-Ghani, Al-Hamid", wrong: ["Al-Malik, Al-Quddus", "Al-Hayy, Al-Qayyum", "Al-Ghafur, Al-Wadud"], why: "And indeed, Allah is the Free of need, the Praiseworthy." },
+        { q: "Which name of Allah means the Praiseworthy?", a: "Al-Hamid", wrong: ["Al-Wahhab", "Al-Karim", "Ar-Razzaq"], why: "And indeed, Allah is the Free of need, the Praiseworthy." },
+        { q: "Quran 22:64 says all in the heavens and on the earth is Allah's.", tf: true, why: "To Him belongs what is in the heavens and what is on the earth." }
+      ]
+    },
+    {
+      slug: "haqq",
+      title: "Al-Haqq",
+      line: "Allah is the Truth, best in reward and best in outcome.",
+      facts: ["Quran 18:44", "Surah Al-Kahf", "Hunalikal-walayatu lillahil-Haqq"],
+      quote: quranQuote(18, 44),
+      source: quran(18, 44, "There, the authority is completely for Allah, the Truth. He is best in reward and best in outcome."),
+      difficulty: 2,
+      questions: [
+        { q: "Which name of Allah means the Truth?", a: "Al-Haqq", wrong: ["Al-Wadud", "Al-Karim", "Ash-Shakur"], why: "There, the authority is for Allah, the Truth." },
+        { q: "Who is best in reward and best in outcome, in Quran 18:44?", a: "Allah", wrong: ["The rich", "The kings", "The strong"], why: "Allah, the Truth, is best in reward and best in outcome." },
+        { q: "In Quran 18:44, Allah is called the Truth.", tf: true, why: "There, the authority is for Allah, the Truth: best in reward and best in outcome." }
       ]
     }
   ]

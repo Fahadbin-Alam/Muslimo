@@ -1993,7 +1993,7 @@
   },
   {
     "kind": "course",
-    "text": "None more patient than Allah, refuge in His might, As-Salam, the One who withholds and gives, the only King of kings, and the Turner of hearts."
+    "text": "None more patient than Allah, refuge in His might, As-Salam, the One who withholds and gives, the only King of kings, the Turner of hearts, and Allah is Witr."
   },
   {
     "kind": "arabic",
@@ -2361,6 +2361,10 @@
   },
   {
     "kind": "course",
+    "text": "Al-'Afuww, Al-Ghafur"
+  },
+  {
+    "kind": "course",
     "text": "Al-Hayy, Al-Qayyum"
   },
   {
@@ -2402,6 +2406,14 @@
   {
     "kind": "course",
     "text": "Al-Hasib"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Ghani, Al-Hamid"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Haqq"
   },
   {
     "kind": "course",
@@ -2522,6 +2534,10 @@
   {
     "kind": "course",
     "text": "By the One who turns hearts"
+  },
+  {
+    "kind": "course",
+    "text": "Allah is Witr"
   },
   {
     "kind": "course",
@@ -79905,6 +79921,42 @@
   },
   {
     "kind": "lesson",
+    "text": "Allah helps the one who is wronged; He pardons and forgives."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 22:60"
+  },
+  {
+    "kind": "lesson",
+    "text": "Innallaha la-'Afuwwun Ghafur"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 22:60?"
+  },
+  {
+    "kind": "question",
+    "text": "Indeed, Allah is Pardoning and Forgiving."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Pardoning?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-'Afuww"
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 22:60, Allah promises to help one who is wronged."
+  },
+  {
+    "kind": "question",
+    "text": "Whoever is wronged after answering harm with its like, Allah will surely aid him."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about names of Allah: His mercy!"
   },
   {
@@ -80421,6 +80473,82 @@
   },
   {
     "kind": "lesson",
+    "text": "Everything in the heavens and earth belongs to Allah."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 22:64"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa innallaha la-huwal-Ghaniyyul-Hamid"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 22:64?"
+  },
+  {
+    "kind": "question",
+    "text": "And indeed, Allah is the Free of need, the Praiseworthy."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Praiseworthy?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Hamid"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Karim"
+  },
+  {
+    "kind": "question",
+    "text": "Quran 22:64 says all in the heavens and on the earth is Allah's."
+  },
+  {
+    "kind": "question",
+    "text": "To Him belongs what is in the heavens and what is on the earth."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is the Truth, best in reward and best in outcome."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 18:44"
+  },
+  {
+    "kind": "lesson",
+    "text": "Hunalikal-walayatu lillahil-Haqq"
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Truth?"
+  },
+  {
+    "kind": "question",
+    "text": "There, the authority is for Allah, the Truth."
+  },
+  {
+    "kind": "question",
+    "text": "Who is best in reward and best in outcome, in Quran 18:44?"
+  },
+  {
+    "kind": "question",
+    "text": "Allah, the Truth, is best in reward and best in outcome."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 18:44, Allah is called the Truth."
+  },
+  {
+    "kind": "question",
+    "text": "There, the authority is for Allah, the Truth: best in reward and best in outcome."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about Allah's names of greatness!"
   },
   {
@@ -80522,10 +80650,6 @@
   {
     "kind": "question",
     "text": "Which name of Allah means the All-Hearing?"
-  },
-  {
-    "kind": "question",
-    "text": "Al-Karim"
   },
   {
     "kind": "question",
@@ -82261,7 +82385,75 @@
   },
   {
     "kind": "lesson",
-    "text": "The last test: everything about Names of Allah from the Sunnah!"
+    "text": "Can you still remember these about Allah's names in the Sunnah?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is Witr, the One, and He loves witr."
+  },
+  {
+    "kind": "lesson",
+    "text": "Witr means one"
+  },
+  {
+    "kind": "lesson",
+    "text": "He loves the witr"
+  },
+  {
+    "kind": "source",
+    "text": "Sahih al-Bukhari 6410"
+  },
+  {
+    "kind": "question",
+    "text": "What is Allah called in Sahih al-Bukhari 6410?"
+  },
+  {
+    "kind": "question",
+    "text": "Tayyib"
+  },
+  {
+    "kind": "question",
+    "text": "Jamil"
+  },
+  {
+    "kind": "question",
+    "text": "Rafiq"
+  },
+  {
+    "kind": "question",
+    "text": "Allah has ninety-nine names, and Allah is witr, the One, and loves the witr."
+  },
+  {
+    "kind": "question",
+    "text": "What does witr mean, as said of Allah?"
+  },
+  {
+    "kind": "question",
+    "text": "The All-Seeing"
+  },
+  {
+    "kind": "question",
+    "text": "The One"
+  },
+  {
+    "kind": "question",
+    "text": "The All-Knowing"
+  },
+  {
+    "kind": "question",
+    "text": "And Allah is witr, which means one, and He loves the witr."
+  },
+  {
+    "kind": "question",
+    "text": "This hadith says Allah loves the witr."
+  },
+  {
+    "kind": "question",
+    "text": "Allah has ninety-nine names; and Allah is witr, the One, and loves the witr."
+  },
+  {
+    "kind": "lesson",
+    "text": "The last test: everything about Allah's names in the Sunnah!"
   },
   {
     "kind": "lesson",
