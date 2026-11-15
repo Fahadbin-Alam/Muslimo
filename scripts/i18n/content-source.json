@@ -4957,6 +4957,10 @@
   },
   {
     "kind": "course",
+    "text": "Completing seventy nations"
+  },
+  {
+    "kind": "course",
     "text": "Not all alike"
   },
   {
@@ -19137,6 +19141,10 @@
   },
   {
     "kind": "course",
+    "text": "Whose praise truly counts"
+  },
+  {
+    "kind": "course",
     "text": "Waiting is better"
   },
   {
@@ -29037,7 +29045,7 @@
   },
   {
     "kind": "course",
-    "text": "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, those who remind you of Allah, hosting a man who did not host you, and the believer, simple and generous."
+    "text": "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, those who remind you of Allah, hosting a man who did not host you, the believer, simple and generous, and never a miser, a liar or a coward."
   },
   {
     "kind": "arabic",
@@ -29754,6 +29762,10 @@
   {
     "kind": "course",
     "text": "Simple and generous"
+  },
+  {
+    "kind": "course",
+    "text": "Generous, truthful and brave"
   },
   {
     "kind": "course",
@@ -96997,6 +97009,74 @@
   },
   {
     "kind": "lesson",
+    "text": "He ﷺ was never a miser, a liar or a coward."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by Jubair ibn Mut'im"
+  },
+  {
+    "kind": "lesson",
+    "text": "On the way back from Hunayn"
+  },
+  {
+    "kind": "lesson",
+    "text": "Bedouins pressed him ﷺ, asking for things"
+  },
+  {
+    "kind": "source",
+    "text": "Sahih al-Bukhari 2821"
+  },
+  {
+    "kind": "question",
+    "text": "When he ﷺ stopped, what did he ask the people to give him?"
+  },
+  {
+    "kind": "question",
+    "text": "His water skin"
+  },
+  {
+    "kind": "question",
+    "text": "His sandals"
+  },
+  {
+    "kind": "question",
+    "text": "Give me my cloak, he ﷺ said, when it was snatched away under a thorny tree."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ said he would share out camels as many as what?"
+  },
+  {
+    "kind": "question",
+    "text": "These thorny trees"
+  },
+  {
+    "kind": "question",
+    "text": "The stars in the sky"
+  },
+  {
+    "kind": "question",
+    "text": "The grains of sand"
+  },
+  {
+    "kind": "question",
+    "text": "The drops of rain"
+  },
+  {
+    "kind": "question",
+    "text": "If I had as many camels as these thorny trees, I would divide them among you, he ﷺ said."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ said they would never find him a miser, a liar or a coward."
+  },
+  {
+    "kind": "question",
+    "text": "You will not find me a miser or a liar or a coward, he ﷺ told the Bedouins."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about beautiful character!"
   },
   {
@@ -112890,10 +112970,6 @@
   {
     "kind": "lesson",
     "text": "Looking for his camel, Jubair saw him ﷺ standing at Arafat."
-  },
-  {
-    "kind": "lesson",
-    "text": "Told by Jubair ibn Mut'im"
   },
   {
     "kind": "lesson",
@@ -142330,10 +142406,6 @@
   {
     "kind": "question",
     "text": "His leather socks"
-  },
-  {
-    "kind": "question",
-    "text": "His sandals"
   },
   {
     "kind": "question",
@@ -222121,14 +222193,6 @@
   },
   {
     "kind": "question",
-    "text": "The stars in the sky"
-  },
-  {
-    "kind": "question",
-    "text": "The grains of sand"
-  },
-  {
-    "kind": "question",
     "text": "I saw the Prophet ﷺ counting the tasbih on his hand, Abdullah ibn Amr said."
   },
   {
@@ -285062,6 +285126,50 @@
   {
     "kind": "question",
     "text": "It is earned by these qualities."
+  },
+  {
+    "kind": "lesson",
+    "text": "This Ummah completes seventy nations and is the best of them."
+  },
+  {
+    "kind": "lesson",
+    "text": "Bahz ibn Hakim told it from his grandfather"
+  },
+  {
+    "kind": "lesson",
+    "text": "He ﷺ said it about 3:110"
+  },
+  {
+    "kind": "lesson",
+    "text": "The most honored of the nations to Allah"
+  },
+  {
+    "kind": "source",
+    "text": "Jami at-Tirmidhi 3001"
+  },
+  {
+    "kind": "question",
+    "text": "This Ummah completes how many nations, he ﷺ said?"
+  },
+  {
+    "kind": "question",
+    "text": "You are the completion of seventy nations, he ﷺ said, explaining 3:110."
+  },
+  {
+    "kind": "question",
+    "text": "Which ayah was he ﷺ explaining with these words?"
+  },
+  {
+    "kind": "question",
+    "text": "You are the best of peoples ever raised up for mankind, says 3:110."
+  },
+  {
+    "kind": "question",
+    "text": "He ﷺ called this Ummah the most honored of the nations to Allah."
+  },
+  {
+    "kind": "question",
+    "text": "You are the best of them, and the most honorable of them to Allah, he ﷺ said."
   },
   {
     "kind": "lesson",
@@ -472225,6 +472333,62 @@
   },
   {
     "kind": "lesson",
+    "text": "The praise and blame that truly count belong to Allah."
+  },
+  {
+    "kind": "lesson",
+    "text": "Linked to 49:4 by Al-Bara"
+  },
+  {
+    "kind": "lesson",
+    "text": "A man spoke of his own praise and blame"
+  },
+  {
+    "kind": "source",
+    "text": "Jami at-Tirmidhi 3267"
+  },
+  {
+    "kind": "question",
+    "text": "A man said his praise was worthwhile and his blame fitting. What did he ﷺ reply?"
+  },
+  {
+    "kind": "question",
+    "text": "That is for kings"
+  },
+  {
+    "kind": "question",
+    "text": "That is for poets"
+  },
+  {
+    "kind": "question",
+    "text": "That is for tribes"
+  },
+  {
+    "kind": "question",
+    "text": "That is for Allah"
+  },
+  {
+    "kind": "question",
+    "text": "The Prophet ﷺ replied: that is for Allah, the Mighty and Sublime."
+  },
+  {
+    "kind": "question",
+    "text": "Which ayah was Al-Bara explaining with this story?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Bara told it about those who call you from behind the dwellings."
+  },
+  {
+    "kind": "question",
+    "text": "His ﷺ reply teaches that real praise and blame are Allah's."
+  },
+  {
+    "kind": "question",
+    "text": "Worthwhile praise and fitting blame are for Allah, the Mighty and Sublime, he ﷺ said."
+  },
+  {
+    "kind": "lesson",
     "text": "Had they waited for him to come out, it would be better."
   },
   {
@@ -580818,10 +580982,6 @@
   {
     "kind": "question",
     "text": "That is a hard road"
-  },
-  {
-    "kind": "question",
-    "text": "That is for kings"
   },
   {
     "kind": "question",

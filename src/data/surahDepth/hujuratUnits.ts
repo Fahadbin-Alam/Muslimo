@@ -1,9 +1,9 @@
 import type { LessonSource } from "../../types";
 import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
 
-// Surah Al-Hujurat ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
-// explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
-// the ayah. Each source opens at the highlighted words that say the lesson's point.
+// Surah Al-Hujurat ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a
+// lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih or hasan hadith
+// where one explains the ayah. Each source opens at the highlighted words that say the lesson's point.
 
 /** Tafsir Ibn Kathir on Al-Hujurat 49:ayah, on quran.com, opened at `highlight` (words copied from that page). */
 function ik(ayah: number, summary: string, highlight: string): LessonSource {
@@ -157,6 +157,20 @@ const HUJURAT_ONE: DeepUnit = {
         { q: "From where did they call him, in 49:4?", a: "From behind the dwellings", wrong: ["From the mosque", "From a hill", "From a boat"], why: "Verily, those who call you from behind the dwellings, most of them have no sense." },
         { q: "Whose dwellings were they, per Ibn Kathir?", a: "His wives' homes", wrong: ["The guests' tents", "The market", "The well"], why: "From behind the dwellings which belong to his wives." },
         { tf: true, q: "Al-Hujurat is named after these dwellings.", why: "Those who call you from behind the dwellings." }
+      ]
+    },
+    {
+      slug: "whose-praise-counts",
+      title: "Whose praise truly counts",
+      line: "The praise and blame that truly count belong to Allah.",
+      facts: ["Told by Al-Bara ibn Azib", "Linked to 49:4 by Al-Bara", "A man spoke of his own praise and blame"],
+      quote: q49(4),
+      source: hadith("tirmidhi", "3267", "Al-Bara ibn Azib", "Hasan (Darussalam)", "Al-Bara ibn Azib said, about the ayah on those who call from behind the dwellings: a man stood and said: O Messenger of Allah ﷺ, my praise is worth having and my blame is fitting. The Prophet ﷺ said: that is for Allah, the Mighty and Sublime.", "That is for Allah, the Mighty and Sublime"),
+      difficulty: 1,
+      questions: [
+        { q: "A man said his praise was worthwhile and his blame fitting. What did he ﷺ reply?", a: "That is for Allah", wrong: ["That is for kings", "That is for poets", "That is for tribes"], why: "The Prophet ﷺ replied: that is for Allah, the Mighty and Sublime." },
+        { q: "Which ayah was Al-Bara explaining with this story?", a: "49:4", wrong: ["49:10", "49:12", "49:13"], why: "Al-Bara told it about those who call you from behind the dwellings." },
+        { q: "His ﷺ reply teaches that real praise and blame are Allah's.", tf: true, why: "Worthwhile praise and fitting blame are for Allah, the Mighty and Sublime, he ﷺ said." }
       ]
     },
     {
