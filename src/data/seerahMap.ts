@@ -164,6 +164,7 @@ export interface SeerahJourney {
 
 export const bukhari = (number: string): MapSource => ({ reference: `Sahih al-Bukhari ${number}`, url: `https://sunnah.com/bukhari:${number}` });
 export const muslim = (number: string): MapSource => ({ reference: `Sahih Muslim ${number}`, url: `https://sunnah.com/muslim:${number}` });
+export const tirmidhi = (number: string): MapSource => ({ reference: `Jami at-Tirmidhi ${number}`, url: `https://sunnah.com/tirmidhi:${number}` });
 export const quran = (surah: number, ayah: number): MapSource => ({ reference: `Quran ${surah}:${ayah}`, url: `https://quran.com/${surah}/${ayah}` });
 
 /** The road between Madinah and Makkah, inland, as its bends (north to south). */

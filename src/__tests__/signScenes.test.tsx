@@ -152,7 +152,11 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-mercy": [/mercy|mercies/i, /hundred|ninety-nine|parts of mercy/i],
   "sign-sanctuary": [/halal/i, /doubtful|unclear|in between/i],
   "sign-musk": [/musk/i, /bellows|blacksmith/i],
-  "sign-shared-ship": [/ship|boat/i, /hole|deck|drown/i]
+  "sign-shared-ship": [/ship|boat/i, /hole|deck|drown/i],
+  "sign-shut-cave": [/cave/i, /rock/i],
+  "sign-log-at-sea": [/thousand dinars/i, /wood|sea/i],
+  "sign-tied-camels": [/camels?/i, /Quran/i],
+  "sign-traveler": [/travell?er|rider/i, /world/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -245,7 +249,11 @@ const SOURCES: Record<string, string[]> = {
   "sign-mercy": ["Sahih al-Bukhari 6000", "Sahih al-Bukhari 6469"],
   "sign-sanctuary": ["Sahih al-Bukhari 52"],
   "sign-musk": ["Sahih al-Bukhari 5534"],
-  "sign-shared-ship": ["Sahih al-Bukhari 2493"]
+  "sign-shared-ship": ["Sahih al-Bukhari 2493"],
+  "sign-shut-cave": ["Sahih al-Bukhari 2272"],
+  "sign-log-at-sea": ["Sahih al-Bukhari 2291"],
+  "sign-tied-camels": ["Sahih al-Bukhari 5031", "Sahih al-Bukhari 5033"],
+  "sign-traveler": ["Sahih al-Bukhari 6416", "Jami at-Tirmidhi 2377"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -269,7 +277,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(619);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(630);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -299,12 +307,13 @@ describe("the signs in creation, alive", () => {
     const taught = new Set((Object.values(LESSONS_BY_ID) as Lesson[]).flatMap((lesson) => lessonSources(lesson).map((source) => source.url.split("#")[0])));
     for (const each of SIGN_SCENES) {
       for (const source of each.sources) {
-        const match = /^(Sahih al-Bukhari|Sahih Muslim|Quran) (\S+)$/.exec(source.reference);
+        const match = /^(Sahih al-Bukhari|Sahih Muslim|Jami at-Tirmidhi|Quran) (\S+)$/.exec(source.reference);
         expect([source.reference, Boolean(match)]).toEqual([source.reference, true]);
         const [, book, number] = match!;
         if (book === "Quran") expect(source.url).toBe(`https://quran.com/${number.replace(":", "/")}`);
         else {
-          expect(source.url).toBe(`https://sunnah.com/${book === "Sahih Muslim" ? "muslim" : "bukhari"}:${number}`);
+          const collection = book === "Sahih Muslim" ? "muslim" : book === "Jami at-Tirmidhi" ? "tirmidhi" : "bukhari";
+          expect(source.url).toBe(`https://sunnah.com/${collection}:${number}`);
           expect([source.reference, taught.has(source.url)]).toEqual([source.reference, true]);
         }
       }
@@ -1592,6 +1601,88 @@ describe("the signs in creation, alive", () => {
     const saved = names("shared-ship", /^all of them saved, a spark rising \d$/);
     expect([all("shared-ship", hole, 0.6), shown("shared-ship", "a voice below: let us make a hole", 0.66), all("shared-ship", hole, 0.8), shown("shared-ship", "a voice below: let us make a hole", 0.8), all("shared-ship", stop, 0.8), all("shared-ship", saved, 0.8)]).toEqual([[0, 0, 0], 1, [1, 1, 1], 0, [0, 0, 0], saved.map(() => 0)]);
     expect([all("shared-ship", hole, 1), all("shared-ship", stop, 1), saved.length, saved.map((name) => [shown("shared-ship", name, 1), value("shared-ship", name, "y", 1)]), all("shared-ship", [...above, ...below], 1)]).toEqual([[0, 1, 0], [1, 1, 1], 5, saved.map(() => [1, -12]), [1, 1, 1, 1, 1, 1]]);
+  });
+
+  test("the scenes of the stories he ﷺ told show each moment in its order, and draw no Prophet, no person and no hand", () => {
+    const told: SignKind[] = ["shut-cave", "log-at-sea", "tied-camels", "traveler"];
+    for (const kind of told) {
+      for (const each of signArt(kind).parts) {
+        const person = /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helper|servant|angels?|child|children|boy|girl|baby|mother|father|parents?|son|daughter|cousin|face|hands?|fingers?|feet|foot|shoulder|rider|travell?er|stranger|lender|borrower|debtor|worker|labou?rer|owner|shepherd|herdsman|friends?|believers?|teeth|mouth)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing comes down from the sky, nothing is drawn for Allah, and no page of the Quran is drawn: a good deed is
+      // sparks rising, and the Quran by heart is a voice.
+      expect([kind, signArt(kind).parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|scrolls?)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name)).map((each) => each.name)]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    const at = (kind: SignKind, name: string, t: number) => [shown(kind, name, t), value(kind, name, "x", t), value(kind, name, "y", t)];
+    // Three men in a cave: three ways go in by night; the rock rolls down from its ledge and shuts the cave; a voice
+    // behind the rock, and beside it a picture of what that one did (the milk held till dawn; the gold left and the way
+    // turning back from the sin; the wage grown into a herd, and the way that came for it), while his good deed rises
+    // as sparks and the rock moves a little; then it rolls away, and the three ways come out.
+    expect(words("shut-cave")).toEqual(["Three men went into a cave for the night", "A rock rolled down and shut it", "One held milk for his parents till dawn", "One kept away from a sin, for Allah's sake", "One gave a worker his wage, grown into a herd", "The rock moved, and they walked out"]);
+    const into = names("shut-cave", /^a way into the cave \d, part \d$/);
+    const out = names("shut-cave", /^a way out of the cave \d$/);
+    const voices = names("shut-cave", /^a voice behind the rock, asking \d$/);
+    const pictures = ["a picture of what the first did", "a picture of what the second did", "a picture of what the third did"];
+    expect([into.length, all("shut-cave", into, 0.02), at("shut-cave", "the rock", 0.02), all("shut-cave", into, 0.14), at("shut-cave", "the rock", 0.14)]).toEqual([6, into.map(() => 0), [1, 25, -34], into.map(() => 1), [1, 25, -34]]);
+    expect([at("shut-cave", "the rock", 0.3), value("shut-cave", "the rock", "rotate", 0.3), shown("shut-cave", "dust, as the rock lands", 0.3), all("shut-cave", [...voices, ...pictures], 0.32)]).toEqual([[1, 0, 0], -210, 0, [0, 0, 0, 0, 0, 0]]);
+    const milk = ["dawn, in the picture", "the home, in the picture of the milk", "a sheep, milked", "the milk, brought from the sheep", "the bowl of milk, held till dawn", "the window, lit at dawn"];
+    expect([all("shut-cave", voices, 0.45), all("shut-cave", pictures, 0.45), all("shut-cave", milk, 0.45), shown("shut-cave", "the night, waiting till dawn", 0.36), shown("shut-cave", "the night, waiting till dawn", 0.45), value("shut-cave", "the rock", "x", 0.45)]).toEqual([[1, 0, 0], [1, 0, 0], milk.map(() => 1), 1, 0, 0]);
+    expect([all("shut-cave", voices, 0.48), all("shut-cave", pictures, 0.48), all("shut-cave", milk, 0.48), value("shut-cave", "the rock", "x", 0.48)]).toEqual([[0, 0, 0], [0, 0, 0], milk.map(() => 0), 3.4]);
+    const gold = ["the gold, left behind", "a way, coming near the sin", "the way, turning back from it"];
+    expect([all("shut-cave", voices, 0.61), all("shut-cave", pictures, 0.61), all("shut-cave", gold, 0.61), value("shut-cave", "the rock", "x", 0.61), all("shut-cave", pictures, 0.64), value("shut-cave", "the rock", "x", 0.64)]).toEqual([[0, 1, 0], [0, 1, 0], [1, 1, 1], 3.4, [0, 0, 0], 6.8]);
+    const herd = names("shut-cave", /, grown from the wage$/);
+    expect([herd.length, all("shut-cave", voices, 0.81), all("shut-cave", pictures, 0.81), herd.map((name) => [shown("shut-cave", name, 0.81), value("shut-cave", name, "scale", 0.81)]), shown("shut-cave", "the way that came for the wage", 0.81), all("shut-cave", pictures, 0.84), value("shut-cave", "the rock", "x", 0.84)]).toEqual([3, [0, 0, 1], [0, 0, 1], herd.map(() => [1, 1]), 1, [0, 0, 0], 6.8]);
+    for (const deed of ["first", "second", "third"]) {
+      const sparks = names("shut-cave", new RegExp(`^the ${deed} good deed, rising \\d$`));
+      expect([deed, sparks.length, sparks.map((name) => shown("shut-cave", name, (part("shut-cave", name).keys?.at[2] ?? 0) + 0.005)), all("shut-cave", sparks, 1)]).toEqual([deed, 3, [1, 1, 1], [0, 0, 0]]);
+    }
+    expect([all("shut-cave", out, 0.84), at("shut-cave", "the rock", 1), all("shut-cave", out, 1), all("shut-cave", into, 1), all("shut-cave", voices, 1)]).toEqual([[0, 0, 0], [1, 40, 0], [1, 1, 1], into.map(() => 1), [0, 0, 0]]);
+    // A loan sent across the sea: a way comes to the door, voices ask for a witness and name Him; the thousand dinars
+    // go to a ship, across the sea and ashore; the ship sails away, and a way goes down to the empty shore; the money
+    // and a letter go into a piece of wood, which is sealed; a voice gives it to the sea, and it floats over to the other
+    // shore; a way comes down to it and it goes up to the home, where it opens on the money and the letter.
+    expect(words("log-at-sea")).toEqual(["A thousand dinars, lent with Allah as witness", "When it was time, he found no ship", "Money and a letter, sealed in a piece of wood", "He gave it to the sea, trusting Allah", "The lender took it home for firewood", "He opened it: his money, and the letter"]);
+    const lending = ["a way, to borrow the money", "a way, ashore across the sea"];
+    const asked = ["a voice at the door, asking for a witness", "a voice, naming the witness"];
+    expect([at("log-at-sea", "a thousand dinars", 0.02), at("log-at-sea", "a ship", 0.02), all("log-at-sea", lending, 0.02), shown("log-at-sea", asked[0], 0.05), shown("log-at-sea", asked[1], 0.07)]).toEqual([[1, 0, 0], [1, 0, 0], [0, 0], 1, 1]);
+    expect([at("log-at-sea", "a thousand dinars", 0.16), at("log-at-sea", "a ship", 0.16), all("log-at-sea", lending, 0.16), all("log-at-sea", asked, 0.16)]).toEqual([[1, 120, 0], [1, 72, 0], [1, 1], [0, 0]]);
+    expect([shown("log-at-sea", "a ship", 0.32), shown("log-at-sea", "a way, down to the shore when it was time", 0.32), shown("log-at-sea", "a piece of wood", 0.32), shown("log-at-sea", "a thousand dinars", 0.32)]).toEqual([0, 1, 0, 1]);
+    const wood = ["a piece of wood", "the wood, sealed"];
+    expect([all("log-at-sea", wood, 0.45), shown("log-at-sea", "a hole in the wood", 0.4), shown("log-at-sea", "a hole in the wood", 0.45), shown("log-at-sea", "a thousand dinars", 0.45), shown("log-at-sea", "a letter, with the money", 0.45), wood.map((name) => value("log-at-sea", name, "x", 0.48))]).toEqual([[1, 1], 1, 0, 0, 0, [0, 0]]);
+    expect([shown("log-at-sea", "a voice, giving it to the sea", 0.55), wood.map((name) => at("log-at-sea", name, 0.61)), shown("log-at-sea", "a voice, giving it to the sea", 0.61)]).toEqual([1, wood.map(() => [1, -104, 5]), 0]);
+    const found = ["a way, down to the shore to look for a ship", "a way, taking the wood home"];
+    expect([all("log-at-sea", found, 0.64), all("log-at-sea", found, 0.79), wood.map((name) => at("log-at-sea", name, 0.79))]).toEqual([[0, 0], [1, 1], wood.map(() => [1, -116, -16])]);
+    const opened = ["the wood, opened, one half", "the wood, opened, the other half", "the thousand dinars, inside", "the letter, inside"];
+    const kept = names("log-at-sea", /^a trust kept, a spark rising \d$/);
+    expect([all("log-at-sea", opened, 0.82), all("log-at-sea", wood, 1), all("log-at-sea", opened, 1), value("log-at-sea", "the thousand dinars, inside", "scale", 1), kept.length, kept.map((name) => [shown("log-at-sea", name, 1), value("log-at-sea", name, "y", 1)])]).toEqual([[0, 0, 0, 0], [0, 0], [1, 1, 1, 1], 1, 3, kept.map(() => [1, -10])]);
+    // The tied camels: a voice recites by heart; three camels come and are tied to their pegs; a day passes and they
+    // stay; the voice stops, the ropes are let go and the camels run away; then the voice comes back, and the camels
+    // are brought back and tied again.
+    expect(words("tied-camels")).toEqual(["One who has the Quran by heart", "Is like the owner of tied camels", "If he keeps them tied, he keeps them", "If he lets them go, they run away", "Keep reviewing it: it slips away faster"]);
+    const camels = names("tied-camels", /^a camel, tied \d$/);
+    const ropes = names("tied-camels", /^its rope, tied \d$/);
+    const knots = names("tied-camels", /^the knot, holding \d$/);
+    const back = names("tied-camels", /^a camel, brought back \d$/);
+    const again = [...names("tied-camels", /^its rope, tied again \d$/), ...names("tied-camels", /^the knot, holding again \d$/)];
+    expect([shown("tied-camels", "a voice, reciting by heart", 0.18), camels.map((name) => at("tied-camels", name, 0.18)), all("tied-camels", ropes, 0.18)]).toEqual([1, camels.map(() => [0, -110, 0]), [0, 0, 0]]);
+    expect([camels.map((name) => at("tied-camels", name, 0.38)), all("tied-camels", ropes, 0.38), all("tied-camels", names("tied-camels", /^a way out to the pegs/), 0.38), all("tied-camels", knots, 0.38)]).toEqual([camels.map(() => [1, 0, 0]), [1, 1, 1], [1, 1], [0, 0, 0]]);
+    expect([camels.map((name) => at("tied-camels", name, 0.58)), all("tied-camels", ropes, 0.58), all("tied-camels", knots, 0.58), value("tied-camels", "the sun, crossing the sky", "x", 0.4), value("tied-camels", "the sun, crossing the sky", "x", 0.58)]).toEqual([camels.map(() => [1, 0, 0]), [1, 1, 1], [1, 1, 1], -60, 60]);
+    expect([shown("tied-camels", "a voice, reciting by heart", 0.78), camels.map((name) => value("tied-camels", name, "x", 0.78)), all("tied-camels", [...camels, ...ropes, ...knots], 0.78), all("tied-camels", back, 0.78)]).toEqual([0, [130, 130, 130], Array(9).fill(0), [0, 0, 0]]);
+    expect([shown("tied-camels", "the voice, reviewing again", 1), back.map((name) => at("tied-camels", name, 1)), all("tied-camels", again, 1)]).toEqual([1, back.map(() => [1, 0, 0]), Array(6).fill(1)]);
+    // Like a traveler: a camel on the road, a dashed way behind it; it passes a town, rests a little in a tree's shade
+    // at noon, goes on and leaves it, and has gone over the horizon by evening, while the stars come out.
+    expect(words("traveler")).toEqual(["Be in this world", "As if you were a stranger", "Or a traveler on his way", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it", "At evening, do not wait for the morning"]);
+    const trail = names("traveler", /^a way along the road, part \d$/);
+    const camel = "a camel on its way";
+    expect([trail.length, at("traveler", camel, 0.02), at("traveler", camel, 0.14), all("traveler", trail, 0.14)]).toEqual([8, [0, -36, 4.5], [1, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0]]);
+    expect([at("traveler", camel, 0.3), all("traveler", trail, 0.3), at("traveler", camel, 0.46), all("traveler", trail, 0.46)]).toEqual([[1, 44, -12.1], [1, 1, 1, 0, 0, 0, 0, 0], [1, 78, -22.5], [1, 1, 1, 1, 1, 0, 0, 0]]);
+    expect([at("traveler", camel, 0.48), at("traveler", camel, 0.64), shown("traveler", "a way, resting a little in the shade", 0.48), shown("traveler", "a way, resting a little in the shade", 0.64), value("traveler", "the sun, going over the day", "x", 0.64), value("traveler", "the sun, going over the day", "y", 0.64)]).toEqual([[1, 78, -22.5], [1, 92, -26.1], 0, 1, 0, 0]);
+    expect([at("traveler", camel, 0.8), all("traveler", trail, 0.8), shown("traveler", "the evening sky", 0.8), shown("traveler", "stars", 0.8)]).toEqual([[1, 114, -33.9], [1, 1, 1, 1, 1, 1, 1, 0], 0, 0]);
+    expect([shown("traveler", camel, 1), all("traveler", trail, 1), shown("traveler", "the evening sky", 1), shown("traveler", "the night sky, coming", 1), shown("traveler", "stars", 1)]).toEqual([0, trail.map(() => 1), 1, 1, 1]);
   });
 
   test("every word and caption is translated in every language", () => {
