@@ -680,6 +680,20 @@ const DHIKR: DeepUnit = {
       ]
     },
     {
+      slug: "around-the-throne",
+      title: "Humming around the Throne",
+      line: "Your words of dhikr go around the Throne, humming like bees.",
+      facts: ["Told by An-Nu'man ibn Bashir", "Tasbih: SubhanAllah", "They mention the one who said them"],
+      quote: { text: "إِنَّ مِمَّا تَذْكُرُونَ مِنْ جَلاَلِ اللَّهِ التَّسْبِيحَ وَالتَّهْلِيلَ وَالتَّحْمِيدَ يَنْعَطِفْنَ حَوْلَ الْعَرْشِ لَهُنَّ دَوِيٌّ كَدَوِيِّ النَّحْلِ تُذَكِّرُ بِصَاحِبِهَا", reference: "Sunan Ibn Majah 3809" },
+      source: hadith("ibnmajah", "3809", "An-Nu'man ibn Bashir", "Hasan (Darussalam)", "An-Nu'man ibn Bashir said: the Messenger of Allah ﷺ said: the words you say to glorify Allah, tasbih, tahlil and tahmid, go around the Throne humming like bees, mentioning the one who said them. Would one of you not love to have something that keeps mentioning him there?", "revolves around the Throne, buzzing like bees, reminding of the one who said it"),
+      difficulty: 2,
+      questions: [
+        { q: "Where do the words of dhikr go, he ﷺ said?", a: "Around the Throne", wrong: ["Around the moon", "Across the seas", "Over the mountains"], why: "They revolve around the Throne, buzzing like bees, reminding of the one who said it." },
+        { q: "What do the words of dhikr hum like, he ﷺ said?", a: "Like bees", wrong: ["Like birds", "Like the wind", "Like a river"], why: "They go around the Throne buzzing like bees, mentioning the one who said them." },
+        { q: "The words of dhikr mention the one who said them.", tf: true, why: "Would you not love to have something there that keeps mentioning you, he ﷺ asked." }
+      ]
+    },
+    {
       slug: "treasure",
       title: "A treasure of Paradise",
       line: "La hawla wa la quwwata illa billah is a treasure of Paradise.",
