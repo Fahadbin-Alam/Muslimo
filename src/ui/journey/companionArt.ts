@@ -16,7 +16,7 @@ import { crescent, home } from "./trialArt";
 const NIGHT = "#0F1C3A";
 
 /** A voice's three arcs, from (x, y), facing left. */
-const arcsLeft = (x: number, y: number, color = "#FFFFFF") =>
+export const arcsLeft = (x: number, y: number, color = "#FFFFFF") =>
   [0, 1, 2]
     .map((i) => {
       const ax = n(x - i * 2.2);
