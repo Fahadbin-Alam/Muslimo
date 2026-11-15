@@ -1,17 +1,18 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more book for the Bukhari and Muslim topic: al-Bukhari's Book of Dreams (Kitab at-Ta'bir). The worst lie, two
-// golden bangles blown away, a land of date palms that was Madinah, Aishah shown to him ﷺ in a dream, the keys of the
-// earth's treasures, and a believer's dreams near the Last Day. Every card is one sahih hadith of that book (number as
-// sunnah.com gives it) with its exact English words to highlight, and none of them is taught anywhere else in the app.
-// No card asks how many parts of prophethood a good dream is, as the narrations give different numbers, and the dreams
-// of the milk, the well and Umar's palace are left out, as the app teaches them under other numbers.
+// One more book for the Bukhari and Muslim topic: al-Bukhari's Book of Dreams (Kitab at-Ta'bir), and one dream from
+// Muslim's Book of Dreams. The worst lie, two golden bangles blown away, a land of date palms that was Madinah, Aishah
+// shown to him ﷺ in a dream, the keys of the earth's treasures, a believer's dreams near the Last Day, and the fresh
+// dates of Ibn Tab, which he ﷺ read as good news (Sahih Muslim 2270). Every card is one sahih hadith of those books
+// (number as sunnah.com gives it) with its exact English words to highlight, and none of them is taught anywhere else
+// in the app. No card asks how many parts of prophethood a good dream is, as the narrations give different numbers, and
+// the dreams of the milk, the well and Umar's palace are left out, as the app teaches them under other numbers.
 
 const DREAMS: DeepUnit = {
   key: "book-tabir",
   topicId: "sahihayn",
   branchId: "hadith-book-tabir",
-  branch: { title: "The Book of Dreams", description: "From al-Bukhari's Book of Dreams: the worst lie, two golden bangles, a land of palm trees, Aishah shown in a dream, keys of treasure, and dreams that come true." },
+  branch: { title: "The Book of Dreams", description: "From the Books of Dreams of al-Bukhari and Muslim: the worst lie, two golden bangles, a land of palm trees, Aishah shown in a dream, keys of treasure, dreams that come true, and the dates of Ibn Tab." },
   name: "the Book of Dreams",
   kind: "skill",
   lessonType: "skill",
@@ -92,6 +93,19 @@ const DREAMS: DeepUnit = {
         { q: "When will a believer's dreams hardly fail to come true?", a: "As the Last Day draws near", wrong: ["Only on Fridays", "Only in Ramadan", "Only on journeys"], why: "As the Day of Resurrection approaches, a believer's dreams will hardly fail to come true." },
         { q: "What did he ﷺ say can never be false?", a: "What belongs to prophethood", wrong: ["Every dream we see", "What people say", "What poets write"], why: "A believer's dream is a part of prophethood, which can never be false, he ﷺ said." },
         { q: "Near the Last Day, a believer's dreams will often be false.", tf: false, why: "No. As the Day draws near, a believer's dreams will hardly fail to come true, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "the-dates-of-ibn-tab",
+      title: "The dates of Ibn Tab",
+      line: "He ﷺ read good news from the names in his dream.",
+      facts: ["Told by Anas ibn Malik", "The house of Uqbah ibn Rafi', and dates of Ibn Tab", "Rafi': raised; Uqbah: the end; Tab: good"],
+      source: hadith("muslim", "2270", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: the Messenger of Allah ﷺ said: I saw at night, as a sleeper sees, that we were in the house of Uqbah ibn Rafi', and we were brought fresh dates of Ibn Tab. I took it to mean that we are raised high in this world, that we have a good end in the Hereafter, and that our religion has become good.", "I interpreted it as the sublimity for us in the world and good ending in the Hereafter and that our religion is good"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ read from his dream for us in this world?", a: "A high rank", wrong: ["A big fortune", "A long life", "A large family"], why: "Rafi' means one who raises, so he ﷺ read a high rank for us in this world." },
+        { q: "What did he ﷺ read from the dates of Ibn Tab?", a: "Our religion has become good", wrong: ["Our harvest has become big", "Our city has become rich", "Our market has become busy"], why: "Tab means good, so from the dates of Ibn Tab he ﷺ read that our religion is good." },
+        { q: "He ﷺ read a good end in the Hereafter from his dream.", tf: true, why: "From the name Uqbah he ﷺ read a good ending for us in the Hereafter." }
       ]
     }
   ]

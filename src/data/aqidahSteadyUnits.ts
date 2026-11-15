@@ -1,16 +1,17 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Aqidah unit: keeping iman steady, from Jami at-Tirmidhi, Sahih al-Bukhari, Sunan Ibn Majah and Sunan Abi
-// Dawud. A parable of the straight path with open doors, the believer who bends like a tender plant, the hardest
-// illness, the hidden shirk of showing off in prayer, hope and fear together at the end, and bad whispers in the
-// heart. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to
-// highlight. Points the schools differ on are left out, and none of these hadith is taught anywhere else in the app.
+// One more Aqidah unit: keeping iman steady, from Jami at-Tirmidhi, Sahih al-Bukhari, Sunan Ibn Majah, Sunan Abi Dawud
+// and Imam al-Bukhari's book of manners, Al-Adab al-Mufrad. A parable of the straight path with open doors, the believer
+// who bends like a tender plant, the hardest illness, the hidden shirk of showing off in prayer, shirk more hidden than
+// the movement of ants and the du'a against it, hope and fear together at the end, and bad whispers in the heart. Every
+// card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight.
+// Points the schools differ on are left out, and no other question in the app asks about any of them.
 
 const STEADY: DeepUnit = {
   key: "aqidah-steady-on-the-path",
   topicId: "aqidah",
   branchId: "aqidah-steady-on-the-path",
-  branch: { title: "Steady on the straight path", description: "A parable of the path, a plant that bends, the hardest illness, hidden showing off, hope with fear, and bad whispers in the heart." },
+  branch: { title: "Steady on the straight path", description: "A parable of the path, a plant that bends, the hardest illness, hidden showing off, shirk more hidden than ants, hope with fear, and bad whispers in the heart." },
   name: "steady on the straight path",
   kind: "skill",
   lessonType: "skill",
@@ -65,6 +66,19 @@ const STEADY: DeepUnit = {
         { q: "What did he ﷺ fear for us more than the Dajjal?", a: "Hidden shirk", wrong: ["Hunger", "Cold winters", "Wild animals"], why: "What I fear more for you than the Dajjal is hidden shirk, he ﷺ said." },
         { q: "What hidden shirk did he ﷺ describe?", a: "Praying well because someone watches", wrong: ["Praying with others", "Praying at night", "Praying in the masjid"], why: "When a man stands to pray and makes it look good because he sees a man looking at him." },
         { q: "Making our prayer look good only for people is fine.", tf: false, why: "No. Making the prayer look good because a man is looking is hidden shirk, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "more-hidden-than-ants",
+      title: "More hidden than ants",
+      line: "Shirk is more hidden than crawling ants; he ﷺ taught a du'a.",
+      facts: ["Told by Ma'qil ibn Yasar", "He ﷺ said it to Abu Bakr", "The du'a is for shirk, little and much"],
+      source: hadith("adab", "716", "Ma'qil ibn Yasar", "Sahih (Al-Albani)", "Ma'qil ibn Yasar said: he came to the Prophet ﷺ with Abu Bakr, and he ﷺ said: O Abu Bakr, shirk creeps among your people more quietly than the movement of ants. He ﷺ said he would teach him words that take away shirk, little and much: say, O Allah, I seek refuge in You from associating anything with You while I know it, and I ask Your forgiveness for what I do not know.", "polytheism is more concealed than the movement of ants"),
+      difficulty: 3,
+      questions: [
+        { q: "Shirk is more hidden than what, he ﷺ told Abu Bakr?", a: "The movement of ants", wrong: ["The roots of a tree", "The fish in the sea", "The stars by day"], why: "Lash-shirku akhfa min dabibin-naml: shirk is more hidden than the crawling of ants." },
+        { q: "To whom did he ﷺ say shirk is more hidden than ants?", a: "Abu Bakr", wrong: ["Umar ibn al-Khattab", "Bilal ibn Rabah", "Abu Dharr"], why: "O Abu Bakr, polytheism enters your people more quietly than the movement of ants." },
+        { q: "He ﷺ taught Abu Bakr a du'a to keep away shirk.", tf: true, why: "Say: O Allah, I seek refuge in You lest I associate anything with You while I know it." }
       ]
     },
     {

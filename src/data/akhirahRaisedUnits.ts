@@ -1,17 +1,18 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Akhirah unit: how people will be raised on the Day of Resurrection, from Sahih al-Bukhari, Sunan Abi
-// Dawud, Sunan Ibn Majah and Jami at-Tirmidhi. The pilgrim who died at Arafah raised saying the talbiyah, an army
-// swallowed by the earth but raised by their intentions, a wound for Allah's cause that smells of musk, grey hair that
-// becomes light, the callers to prayer with the longest necks, and the proud gathered as tiny specks. Every card is
-// one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight. Points
-// the schools differ on are left out, and none of these hadith is taught anywhere else in the app.
+// One more Akhirah unit: how people will be raised on the Day of Resurrection, from Sahih al-Bukhari, Sahih Muslim,
+// Sunan Abi Dawud, Sunan Ibn Majah and Jami at-Tirmidhi. The pilgrim who died at Arafah raised saying the talbiyah,
+// every servant raised in the state in which he dies, an army swallowed by the earth but raised by their intentions, a
+// wound for Allah's cause that smells of musk, grey hair that becomes light, the callers to prayer with the longest
+// necks, and the proud gathered as tiny specks. Every card is one sahih or hasan hadith with its number, narrator and
+// grade, and its exact English words to highlight. Points the schools differ on are left out, and none of these hadith
+// is taught anywhere else in the app.
 
 const RAISED: DeepUnit = {
   key: "akhirah-how-people-are-raised",
   topicId: "akhirah",
   branchId: "akhirah-how-people-are-raised",
-  branch: { title: "How people will be raised", description: "A pilgrim raised saying the talbiyah, raised by intentions, a wound of musk, grey hair as light, the callers to prayer, and the proud made small." },
+  branch: { title: "How people will be raised", description: "A pilgrim raised saying the talbiyah, raised as one died, raised by intentions, a wound of musk, grey hair as light, the callers to prayer, and the proud made small." },
   name: "how people will be raised",
   kind: "skill",
   lessonType: "skill",
@@ -27,6 +28,19 @@ const RAISED: DeepUnit = {
         { q: "Where was the man when he fell from his mount?", a: "At Arafah, on Hajj", wrong: ["In the market", "At his home", "On a ship at sea"], why: "He was standing with the Prophet ﷺ at Arafah when he fell, Ibn Abbas said." },
         { q: "How will Allah raise him on the Day of Resurrection?", a: "Reciting the talbiyah", wrong: ["Crying for help", "Silent and afraid", "Calling for his family"], why: "Allah will resurrect him and he will be reciting Talbiya, he ﷺ said." },
         { q: "He will rise still in the state of a pilgrim.", tf: true, why: "He died in ihram, so he will be raised on the Day of Resurrection reciting the talbiyah." }
+      ]
+    },
+    {
+      slug: "raised-as-they-died",
+      title: "Raised as they died",
+      line: "Every servant will be raised in the state in which he dies.",
+      facts: ["Told by Jabir ibn Abdullah", "Raised: brought back to life", "Every servant: every person"],
+      source: hadith("muslim", "2878a", "Jabir ibn Abdullah", "Sahih", "Jabir ibn Abdullah said: I heard the Messenger of Allah ﷺ say: every servant will be raised in the very state in which he dies.", "as saying. Every servant would be raised"),
+      difficulty: 1,
+      questions: [
+        { q: "In what state will every servant be raised, he ﷺ said?", a: "The state in which he died", wrong: ["The state of his first prayer", "The state of his last meal", "The state of his best clothes"], why: "Every servant would be raised in the very state in which he dies, Jabir heard him ﷺ say." },
+        { q: "Who heard him ﷺ say that every servant is raised as he died?", a: "Jabir ibn Abdullah", wrong: ["Abu Dharr al-Ghifari", "Salman al-Farisi", "Bilal ibn Rabah"], why: "Jabir reported: I heard Allah's Messenger ﷺ as saying it, in Sahih Muslim." },
+        { q: "How a person dies will show in how he is raised.", tf: true, why: "Every servant would be raised in the very state in which he dies, he ﷺ said." }
       ]
     },
     {
