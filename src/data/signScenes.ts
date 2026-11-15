@@ -288,7 +288,23 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - Uhud, which shook under him, Abu Bakr, Umar and Uthman: be firm, Uhud (Sahih al-Bukhari 3675, 3686);
  * - the stone in Makkah that greeted him before he was sent, which he knew even after (Sahih Muslim 2277);
  * - the rain he ﷺ prayed for on a Friday, and then "around us, not on us" (Sahih al-Bukhari 1013);
- * - the blessed water on a journey, and the food heard glorifying Allah as it was eaten (Sahih al-Bukhari 3579).
+ * - the blessed water on a journey, and the food heard glorifying Allah as it was eaten (Sahih al-Bukhari 3579);
+ *
+ * and more of what he ﷺ told and lived (rewardArt.ts draws them):
+ *
+ * - every prophet tended sheep, and he too, for the people of Makkah, for a few qirats (Sahih al-Bukhari 2262);
+ * - one date given in charity from honest earnings, grown as a foal is raised until it is as big as a mountain (Sahih
+ *   al-Bukhari 1410);
+ * - when a person dies his deeds end, but for three: a charity that keeps going, knowledge that people benefit from,
+ *   and a righteous child who prays for him (Sahih Muslim 1631);
+ * - a good deed intended and not done is written as a full good deed, done it is ten to seven hundred times or more;
+ *   a bad deed intended and left is written as a good deed, done it is written as one (Sahih al-Bukhari 6491);
+ * - his call from as-Safa: they had never heard him tell a lie, he warned them, and Abu Lahab went away (Sahih
+ *   al-Bukhari 4770, 4971);
+ * - Jabir's dates, blessed until every lender was paid in full and thirteen wasqs were left over (Sahih al-Bukhari
+ *   2709);
+ * - three follow the dead to his grave, his family, his wealth and his deeds; two go back and his deeds stay with him
+ *   (Sahih al-Bukhari 6514).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -452,7 +468,14 @@ export type SignKind =
   | "uhud-shook"
   | "greeting-stone"
   | "around-us"
-  | "blessed-water";
+  | "blessed-water"
+  | "shepherds"
+  | "date-mountain"
+  | "deeds-continue"
+  | "good-intentions"
+  | "safa-call"
+  | "jabir-dates"
+  | "three-follow";
 
 export type SignScene = {
   id: string;
@@ -1311,6 +1334,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "On a journey the water ran short. A little water was brought, and the Prophet ﷺ said: come to the blessed water, and the blessing is from Allah. The water flowed, and Ibn Mas'ud said: we used to hear the food glorifying Allah as it was eaten.",
     sources: [bukhari("3579")]
+  },
+  {
+    id: "sign-shepherds",
+    kind: "shepherds",
+    caption: "The Prophet ﷺ said: Allah sent no prophet who did not tend sheep. They asked: did you do the same? He said: yes, I tended the sheep of the people of Makkah for a few qirats.",
+    sources: [bukhari("2262")]
+  },
+  {
+    id: "sign-date-mountain",
+    kind: "date-mountain",
+    caption:
+      "The Prophet ﷺ said: whoever gives in charity as much as one date from honest earnings, and Allah accepts only what is honestly earned, Allah grows its reward for him, as one of you raises his foal, until it becomes as big as a mountain.",
+    sources: [bukhari("1410")]
+  },
+  {
+    id: "sign-deeds-continue",
+    kind: "deeds-continue",
+    caption: "The Prophet ﷺ said: when a person dies, his deeds come to an end, except for three: a charity that keeps going, knowledge that people benefit from, or a righteous child who prays for him.",
+    sources: [muslim("1631")]
+  },
+  {
+    id: "sign-good-intentions",
+    kind: "good-intentions",
+    caption:
+      "The Prophet ﷺ told of his Lord: whoever intends a good deed and does not do it, a full good deed is written for him; if he does it, ten to seven hundred times or more. Whoever intends a bad deed and leaves it, a full good deed is written; if he does it, one bad deed is written.",
+    sources: [bukhari("6491")]
+  },
+  {
+    id: "sign-safa-call",
+    kind: "safa-call",
+    caption:
+      "When he ﷺ was told to warn his near kindred, he climbed as-Safa and called out to Quraysh. He asked: if I told you horsemen were coming, would you believe me? They said: we have never heard you tell a lie. He said: I am a plain warner to you of a severe punishment. Abu Lahab said: was it only for this? And he went away.",
+    sources: [bukhari("4770"), bukhari("4971")]
+  },
+  {
+    id: "sign-jabir-dates",
+    kind: "jabir-dates",
+    caption:
+      "Jabir's father died in debt, and the lenders thought his dates would not cover it. The Prophet ﷺ sat on the gathered dates and asked Allah to bless them. Every lender was paid in full, and thirteen wasqs of dates were left over.",
+    sources: [bukhari("2709")]
+  },
+  {
+    id: "sign-three-follow",
+    kind: "three-follow",
+    caption: "The Prophet ﷺ said: three follow the dead to his grave: his family, his wealth and his deeds. Two go back, his family and his wealth, and his deeds stay with him.",
+    sources: [bukhari("6514")]
   }
 ];
 
@@ -2152,7 +2221,38 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-dua-rain-and-wind-around-us": "sign-around-us",
   // The blessed water, and the food that glorified Allah (Sahih al-Bukhari 3579); the Seerah's lesson on the water at
   // al-Hudaybiyah keeps its map.
-  "deep-isra2-the-food-glorified-allah": "sign-blessed-water"
+  "deep-isra2-the-food-glorified-allah": "sign-blessed-water",
+  // Every prophet a shepherd, and he too for the people of Makkah (Sahih al-Bukhari 2262); the Seerah's lesson on it
+  // keeps its map.
+  "deep-humility-shepherds": "sign-shepherds",
+  "deep-muminun2-prophets-were-shepherds": "sign-shepherds",
+  "deep-qasas3-shepherds-like-the-prophets": "sign-shepherds",
+  // One honest date given in charity, grown like a mountain (Sahih al-Bukhari 1410).
+  "deep-tawbah4-a-date-like-a-mountain": "sign-date-mountain",
+  "deep-rum3-a-date-like-a-mountain": "sign-date-mountain",
+  "deep-taghabun4-date-like-a-mountain": "sign-date-mountain",
+  // The three deeds that keep going after death (Sahih Muslim 1631).
+  "deep-grave-continue": "sign-deeds-continue",
+  "deep-children-righteous-child": "sign-deeds-continue",
+  "deep-tur2-a-child-who-prays": "sign-deeds-continue",
+  "deep-nuh4-a-child-who-prays": "sign-deeds-continue",
+  // How good and bad deeds are written (Sahih al-Bukhari 6491).
+  "deep-hadith-qudsi-good-intentions": "sign-good-intentions",
+  "deep-anam3-tenfold": "sign-good-intentions",
+  "deep-naml6-ten-to-seven-hundred": "sign-good-intentions",
+  "deep-jathiyah2-how-good-deeds-are-written": "sign-good-intentions",
+  "deep-qamar3-a-good-intention-counts": "sign-good-intentions",
+  "deep-naba2-good-intentions-written": "sign-good-intentions",
+  // The call from as-Safa, and Abu Lahab's reply (Sahih al-Bukhari 4770, 4971); the Seerah's lessons on it keep their
+  // map.
+  "deep-masad1-never-heard-a-lie": "sign-safa-call",
+  "deep-shuara3-warn-your-family": "sign-safa-call",
+  "surah-meaning-111-1-3": "sign-safa-call",
+  // Jabir's dates, blessed until every lender was paid (Sahih al-Bukhari 2709).
+  "deep-jabir-fathers-debt": "sign-jabir-dates",
+  // Three follow the dead; two go back and his deeds stay (Sahih al-Bukhari 6514).
+  "deep-grave-three-follow": "sign-three-follow",
+  "deep-takathur1-only-deeds-stay": "sign-three-follow"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
