@@ -113,8 +113,11 @@ describe("which questions are asked on a scene", () => {
     // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). "The reward of dhikr"
     // gained a lesson too: its final quiz now asks whether he also said Allah is not deaf or far away, and no longer
     // asks which pair are the two words or where la hawla wa la quwwata illa billah is a treasure of (both still asked in
-    // their lessons).
-    expect(places).toBe(2175);
+    // their lessons). "This world and the next" now has seven lessons, so it gets a review card, which asks what he
+    // compared greed for wealth and honor to, and its final quiz asks what that greed harms in its place. "The Book of
+    // the Virtues of the Quran" now has thirteen lessons, so it gets a second review card, which asks what a believer
+    // who does not recite is like. Both are still asked in their lessons.
+    expect(places).toBe(2177);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
