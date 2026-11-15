@@ -465,6 +465,20 @@ const PATIENCE: DeepUnit = {
       ]
     },
     {
+      slug: "blessings-and-mercy",
+      title: "Blessings and mercy",
+      line: "Patient people get blessings and mercy from their Lord.",
+      facts: ["Allah tests people with fear, hunger and loss (2:155).", "The patient say: to Allah we belong, and to Him we return.", "Quran 2:157 tells what Allah gives them."],
+      quote: quranQuote(2, 157),
+      source: quran(2, 157, "Of the patient who say in a loss, to Allah we belong and to Him we return, Allah says: those are the ones upon whom are blessings from their Lord and mercy, and it is those who are the rightly guided."),
+      difficulty: 2,
+      questions: [
+        { q: "What do the patient receive, in Quran 2:157?", a: "Blessings and mercy", wrong: ["Gold and silver", "Fame and praise", "Land and houses"], why: "Those who say, to Allah we belong, are given blessings and mercy." },
+        { q: "Who gives the patient blessings, in Quran 2:157?", a: "Their Lord, Allah", wrong: ["Their own friends", "Their own families", "Their own tribes"], why: "Upon them are blessings from their Lord, and mercy, Allah says." },
+        { tf: true, q: "Quran 2:157 calls the patient the rightly guided.", why: "Those are the ones upon whom are blessings and mercy, and they are guided." }
+      ]
+    },
+    {
       slug: "best-gift",
       title: "The best gift",
       line: "No one is given a gift better than patience.",

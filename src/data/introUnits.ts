@@ -107,6 +107,24 @@ const FRESH_START: DeepUnit = {
       ]
     },
     {
+      slug: "forgiveness-and-gardens",
+      title: "Forgiveness and gardens",
+      line: "Allah rewards those who repent with forgiveness and gardens.",
+      facts: [
+        "After a sin, they remember Allah and ask Him to forgive (3:135).",
+        "Their reward is forgiveness and gardens with rivers (3:136).",
+        "They will stay there forever."
+      ],
+      quote: quranQuote(3, 136),
+      source: quran(3, 136, "Those who remember Allah after a sin and ask Him to forgive them: their reward is forgiveness from their Lord and gardens beneath which rivers flow, where they will stay forever. And excellent is the reward of those who do good."),
+      difficulty: 1,
+      questions: [
+        { q: "What is their reward, in Quran 3:136?", a: "Forgiveness and Gardens", wrong: ["Wealth and children", "Power and fame", "Trade and profit"], why: "Their reward is forgiveness from their Lord and gardens with rivers flowing." },
+        { q: "How long will they stay there, in Quran 3:136?", a: "Forever", wrong: ["One year", "A hundred years", "Until they leave"], why: "Gardens beneath which rivers flow, wherein they will abide eternally." },
+        { q: "Quran 3:136 calls this an excellent reward for those who do good.", tf: true, why: "How excellent is the reward of those who work righteousness!" }
+      ]
+    },
+    {
       slug: "step-by-step",
       title: "The Quran came step by step",
       line: "Aishah said the first surahs spoke of Paradise and the Fire.",
@@ -270,6 +288,24 @@ const QURAN_AND_PROPHET: DeepUnit = {
         { q: "How many rewards does one letter of the Quran bring?", a: "Ten", wrong: ["One", "Three", "Seven"], why: "He receives the reward of ten the like of it." },
         { q: "How many letters are in Alif Lam Mim, he ﷺ said?", a: "Three", wrong: ["One", "Two", "Ten"], why: "Alif is a letter, Lam is a letter and Mim is a letter." },
         { q: "A slow reader of the Quran still earns reward for every letter.", tf: true, why: "Each letter read brings its reward, multiplied ten times." }
+      ]
+    },
+    {
+      slug: "follow-the-blessed-book",
+      title: "Follow the blessed Book",
+      line: "Allah calls the Quran a blessed Book to follow.",
+      facts: [
+        "Quran 6:155 calls the Quran a blessed Book.",
+        "Allah tells us to follow it and be mindful of Him.",
+        "Then we may be shown mercy."
+      ],
+      quote: quranQuote(6, 155),
+      source: quran(6, 155, "And this Quran is a blessed Book which Allah has sent down, so follow it and fear Allah, so that you may receive mercy."),
+      difficulty: 1,
+      questions: [
+        { q: "What does Allah call the Quran, in Quran 6:155?", a: "A blessed Book", wrong: ["A book of poems", "A book of songs", "A book of riddles"], why: "This is a blessed Book which We have revealed, so follow it." },
+        { q: "Why should we follow the Quran, in Quran 6:155?", a: "So we may be shown mercy", wrong: ["So we may be rich", "So we may be famous", "So we may be praised"], why: "Follow it and fear Allah, that you may receive mercy." },
+        { q: "Quran 6:155 tells us to follow the Quran.", tf: true, why: "So follow it and be mindful of Allah, so you may be shown mercy." }
       ]
     },
     {
