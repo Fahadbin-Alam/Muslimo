@@ -95,6 +95,62 @@ const MERCY: DeepUnit = {
         { q: "What does Ash-Shakur mean?", a: "The Appreciative", wrong: ["The Forgetful", "The Careless", "The Stingy"], why: "Indeed, our Lord is Forgiving and Appreciative." },
         { q: "In Jannah, all sorrow is taken away.", tf: true, why: "Who has removed all sorrow from us." }
       ]
+    },
+    {
+      slug: "rauf-rahim",
+      title: "Ar-Ra'uf, Ar-Rahim",
+      line: "Allah holds up the sky; He is Kind and Merciful to people.",
+      facts: ["Quran 22:65", "Surah Al-Hajj", "Innallaha bin-nasi la-Ra'ufun Rahim"],
+      quote: quranQuote(22, 65),
+      source: quran(22, 65, "He restrains the sky from falling upon the earth, unless by His permission. Indeed Allah, to the people, is Kind and Merciful."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 22:65?", a: "Ar-Ra'uf, Ar-Rahim", wrong: ["Al-Malik, Al-Quddus", "Al-Hayy, Al-Qayyum", "Al-Khaliq, Al-Bari"], why: "Indeed Allah, to the people, is Kind and Merciful." },
+        { q: "To whom is Allah Ra'uf and Rahim, in Quran 22:65?", a: "All people", wrong: ["Only the kings", "Only the prophets", "Only the scholars"], why: "Indeed Allah, to the people, is Kind and Merciful." },
+        { q: "Allah has made what is on the earth of use to people.", tf: true, why: "Allah has subjected to you whatever is on the earth." }
+      ]
+    },
+    {
+      slug: "halim",
+      title: "Al-Halim",
+      line: "Allah is Free of need and Forbearing.",
+      facts: ["Quran 2:263", "In the ayat on charity", "Wallahu Ghaniyyun Halim"],
+      quote: quranQuote(2, 263),
+      source: quran(2, 263, "Kind speech and forgiveness are better than charity followed by injury. And Allah is Free of need and Forbearing."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 2:263?", a: "Al-Ghani, Al-Halim", wrong: ["Ar-Rahman, Ar-Rahim", "Al-Malik, Al-Quddus", "Al-Ahad, As-Samad"], why: "And Allah is Free of need and Forbearing." },
+        { q: "Which name of Allah means the Forbearing?", a: "Al-Halim", wrong: ["Al-Qahhar", "Al-Malik", "Al-Khaliq"], why: "Al-Halim is patient with His servants and does not rush to punish them." },
+        { q: "Quran 2:263 says Allah needs nothing from us.", tf: true, why: "And Allah is Free of need and Forbearing." }
+      ]
+    },
+    {
+      slug: "ghaffar",
+      title: "Al-Ghaffar",
+      line: "Allah forgives again and again whoever repents and believes.",
+      facts: ["Quran 20:82", "Surah Ta-Ha", "Wa inni la-Ghaffarun liman taba"],
+      quote: quranQuote(20, 82),
+      source: quran(20, 82, "But indeed, I am the Perpetual Forgiver of whoever repents and believes and does righteousness and then continues in guidance."),
+      difficulty: 2,
+      questions: [
+        { q: "Which name of Allah is in Quran 20:82?", a: "Al-Ghaffar", wrong: ["Al-Qahhar", "Al-Wahhab", "Ar-Razzaq"], why: "Wa inni la-Ghaffarun: indeed, I am the Perpetual Forgiver." },
+        { q: "What does Al-Ghaffar tell us about Allah?", a: "He forgives those who repent", wrong: ["He gives without limit", "He provides for all", "He knows all things"], why: "I am the Perpetual Forgiver of whoever repents and believes." },
+        { q: "After repenting, Quran 20:82 asks us to keep to guidance.", tf: true, why: "Whoever repents, believes, does righteousness and then continues in guidance." }
+      ]
+    },
+    {
+      slug: "mawla",
+      title: "Al-Mawla",
+      line: "Allah is your Protector, and the best of helpers.",
+      facts: ["Quran 3:150", "Surah Al Imran", "Balillahu mawlakum"],
+      quote: quranQuote(3, 150),
+      source: quran(3, 150, "But Allah is your Protector, and He is the best of helpers."),
+      difficulty: 2,
+      questions: [
+        { q: "Which name of Allah is in Quran 3:150?", a: "Al-Mawla", wrong: ["Al-Malik", "Al-Khaliq", "Ar-Razzaq"], why: "Balillahu mawlakum: but Allah is your Protector." },
+        { q: "Who is the best of helpers, in Quran 3:150?", a: "Allah", wrong: ["The kings", "The strong", "The rich"], why: "But Allah is your Protector, and He is the best of helpers." },
+        { q: "In Quran 3:150, Allah tells the believers that He looks after them.", tf: true, why: "But Allah is your Protector." }
+      ]
     }
   ]
 };
@@ -103,8 +159,8 @@ const MAJESTY: DeepUnit = {
   key: "aqidah-names-majesty",
   topicId: "aqidah",
   branchId: "aqidah-names-majesty",
-  branch: { title: "Names of Allah: His greatness", description: "Al-Hayy, Al-Quddus, Al-Khaliq, Al-Latif, Al-Wakil and Al-Hafiz: names that show His power." },
-  name: "names of Allah: His greatness",
+  branch: { title: "Names of Allah: His greatness", description: "Al-Hayy, Al-Quddus, Al-Khaliq, Al-Wahid, Al-Aliyy, Al-Qawiyy and more: names that show His power." },
+  name: "Allah's names of greatness",
   kind: "skill",
   lessonType: "skill",
   lessons: [
@@ -190,6 +246,76 @@ const MAJESTY: DeepUnit = {
         { q: "Who said that Allah is the best Guardian?", a: "Prophet Ya'qub", wrong: ["Prophet Nuh", "Prophet Hud", "Prophet Salih"], why: "He said it when his sons asked to take Binyamin." },
         { q: "What does Al-Hafiz mean?", a: "The Guardian who protects", wrong: ["The Forgetful", "The Careless", "The Weak"], why: "Allah is the best Guardian." },
         { q: "Ya'qub trusted Allah to protect his son.", tf: true, why: "Allah is the best Guardian." }
+      ]
+    },
+    {
+      slug: "wahid-qahhar",
+      title: "Al-Wahid, Al-Qahhar",
+      line: "Allah created all things, and He is the One, the Prevailing.",
+      facts: ["Quran 13:16", "Surah Ar-Ra'd", "Wa huwal-Wahidul-Qahhar"],
+      quote: quranQuote(13, 16),
+      source: quran(13, 16, "Say: Allah is the Creator of all things, and He is the One, the Prevailing."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 13:16?", a: "Al-Wahid, Al-Qahhar", wrong: ["Al-Ghafur, Al-Wadud", "Al-Latif, Al-Khabir", "Al-Hayy, Al-Qayyum"], why: "And He is the One, the Prevailing." },
+        { q: "Which name of Allah means the One?", a: "Al-Wahid", wrong: ["Al-Malik", "Al-Quddus", "Al-Wakil"], why: "Allah is the Creator of all things, and He is the One." },
+        { q: "Quran 13:16 says Allah is the Creator of all things.", tf: true, why: "Allah is the Creator of all things, and He is the One, the Prevailing." }
+      ]
+    },
+    {
+      slug: "aliyy-kabir",
+      title: "Al-Aliyy, Al-Kabir",
+      line: "Allah is the Truth, the Most High, the Grand.",
+      facts: ["Quran 22:62", "Surah Al-Hajj", "Wa annallaha huwal-Aliyyul-Kabir"],
+      quote: quranQuote(22, 62),
+      source: quran(22, 62, "That is because Allah is the Truth, and what they call upon other than Him is falsehood, and because Allah is the Most High, the Grand."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 22:62?", a: "Al-Aliyy, Al-Kabir", wrong: ["Al-Malik, Al-Quddus", "Ar-Rahman, Ar-Rahim", "As-Sami', Al-Basir"], why: "And because Allah is the Most High, the Grand." },
+        { q: "Which name of Allah means the Most High?", a: "Al-Aliyy", wrong: ["Al-Wadud", "Ash-Shakur", "Al-Wahhab"], why: "Allah is the Most High, the Grand." },
+        { q: "Al-Kabir is a name of Allah that means the Great.", tf: true, why: "Allah is the Most High, the Grand." }
+      ]
+    },
+    {
+      slug: "qawiyy-aziz",
+      title: "Al-Qawiyy, Al-Aziz",
+      line: "Allah is Powerful and Exalted in Might.",
+      facts: ["Quran 22:40", "Surah Al-Hajj", "Innallaha la-Qawiyyun Aziz"],
+      quote: quranQuote(22, 40),
+      source: quran(22, 40, "And Allah will surely support those who support Him. Indeed, Allah is Powerful and Exalted in Might."),
+      difficulty: 2,
+      questions: [
+        { q: "Which two names of Allah end Quran 22:40?", a: "Al-Qawiyy, Al-Aziz", wrong: ["Al-Ghafur, Al-Wadud", "Al-Latif, Al-Khabir", "Al-Ahad, As-Samad"], why: "Indeed, Allah is Powerful and Exalted in Might." },
+        { q: "Which name of Allah means the Powerful?", a: "Al-Qawiyy", wrong: ["Al-Wadud", "Al-Ghafur", "As-Salam"], why: "Indeed, Allah is Powerful and Exalted in Might." },
+        { q: "Al-Qawiyy and Al-Aziz both tell of Allah's might.", tf: true, why: "Allah is Powerful and Exalted in Might." }
+      ]
+    },
+    {
+      slug: "alim-hakim",
+      title: "Al-Alim, Al-Hakim",
+      line: "The angels praised Allah as the Knowing, the Wise.",
+      facts: ["Quran 2:32", "The angels' words to Allah", "Innaka antal-Alimul-Hakim"],
+      quote: quranQuote(2, 32),
+      source: quran(2, 32, "They said: Exalted are You; we have no knowledge except what You have taught us. Indeed, it is You who is the Knowing, the Wise."),
+      difficulty: 2,
+      questions: [
+        { q: "Who said the words of Quran 2:32?", a: "The angels", wrong: ["The jinn", "The prophets", "The kings"], why: "The angels said: Exalted are You; we have no knowledge except what You have taught us." },
+        { q: "Which two names of Allah end Quran 2:32?", a: "Al-Alim, Al-Hakim", wrong: ["Al-Ghafur, Al-Wadud", "Al-Hayy, Al-Qayyum", "Al-Khaliq, Al-Bari"], why: "Indeed, it is You who is the Knowing, the Wise." },
+        { q: "Which name of Allah means the All-Knowing?", a: "Al-Alim", wrong: ["Al-Wadud", "Al-Wahhab", "Ash-Shakur"], why: "Indeed, it is You who is the Knowing, the Wise." }
+      ]
+    },
+    {
+      slug: "hasib",
+      title: "Al-Hasib",
+      line: "Allah is enough as the One who takes account.",
+      facts: ["Quran 4:6", "About the wealth of orphans", "Wa kafa billahi hasiba"],
+      quote: quranQuote(4, 6),
+      source: quran(4, 6, "Then when you release their property to them, bring witnesses upon them. And sufficient is Allah as Accountant."),
+      difficulty: 2,
+      questions: [
+        { q: "Which name of Allah ends Quran 4:6?", a: "Al-Hasib", wrong: ["Al-Wadud", "Ar-Razzaq", "As-Salam"], why: "Wa kafa billahi hasiba: and sufficient is Allah as Accountant." },
+        { q: "Who is enough as the One who takes account, in Quran 4:6?", a: "Allah", wrong: ["The judge", "The witnesses", "The guardian"], why: "Bring witnesses upon them. And sufficient is Allah as Accountant." },
+        { q: "Quran 4:6 is about the wealth of orphans.", tf: true, why: "Test the orphans, and when you release their property to them, bring witnesses." }
       ]
     }
   ]

@@ -1945,7 +1945,7 @@
   },
   {
     "kind": "course",
-    "text": "Al-Hayy, Al-Quddus, Al-Khaliq, Al-Latif, Al-Wakil and Al-Hafiz: names that show His power."
+    "text": "Al-Hayy, Al-Quddus, Al-Khaliq, Al-Wahid, Al-Aliyy, Al-Qawiyy and more: names that show His power."
   },
   {
     "kind": "arabic",
@@ -2333,6 +2333,22 @@
   },
   {
     "kind": "course",
+    "text": "Ar-Ra'uf, Ar-Rahim"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Halim"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Ghaffar"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Mawla"
+  },
+  {
+    "kind": "course",
     "text": "Al-Hayy, Al-Qayyum"
   },
   {
@@ -2354,6 +2370,26 @@
   {
     "kind": "course",
     "text": "Al-Hafiz"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Wahid, Al-Qahhar"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Aliyy, Al-Kabir"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Qawiyy, Al-Aziz"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Alim, Al-Hakim"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Hasib"
   },
   {
     "kind": "course",
@@ -79613,6 +79649,222 @@
   },
   {
     "kind": "lesson",
+    "text": "Can you still remember these about names of Allah: His mercy?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah holds up the sky; He is Kind and Merciful to people."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 22:65"
+  },
+  {
+    "kind": "lesson",
+    "text": "Innallaha bin-nasi la-Ra'ufun Rahim"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 22:65?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Malik, Al-Quddus"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Khaliq, Al-Bari"
+  },
+  {
+    "kind": "question",
+    "text": "Indeed Allah, to the people, is Kind and Merciful."
+  },
+  {
+    "kind": "question",
+    "text": "To whom is Allah Ra'uf and Rahim, in Quran 22:65?"
+  },
+  {
+    "kind": "question",
+    "text": "Only the prophets"
+  },
+  {
+    "kind": "question",
+    "text": "Only the scholars"
+  },
+  {
+    "kind": "question",
+    "text": "Only the kings"
+  },
+  {
+    "kind": "question",
+    "text": "Allah has made what is on the earth of use to people."
+  },
+  {
+    "kind": "question",
+    "text": "Allah has subjected to you whatever is on the earth."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is Free of need and Forbearing."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:263"
+  },
+  {
+    "kind": "lesson",
+    "text": "In the ayat on charity"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wallahu Ghaniyyun Halim"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 2:263?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Ahad, As-Samad"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Ghani, Al-Halim"
+  },
+  {
+    "kind": "question",
+    "text": "And Allah is Free of need and Forbearing."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Forbearing?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Qahhar"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Halim is patient with His servants and does not rush to punish them."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 2:263 says Allah needs nothing from us."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah forgives again and again whoever repents and believes."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 20:82"
+  },
+  {
+    "kind": "lesson",
+    "text": "Surah Ta-Ha"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa inni la-Ghaffarun liman taba"
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah is in Quran 20:82?"
+  },
+  {
+    "kind": "question",
+    "text": "Ar-Razzaq"
+  },
+  {
+    "kind": "question",
+    "text": "Wa inni la-Ghaffarun: indeed, I am the Perpetual Forgiver."
+  },
+  {
+    "kind": "question",
+    "text": "What does Al-Ghaffar tell us about Allah?"
+  },
+  {
+    "kind": "question",
+    "text": "He knows all things"
+  },
+  {
+    "kind": "question",
+    "text": "He forgives those who repent"
+  },
+  {
+    "kind": "question",
+    "text": "He gives without limit"
+  },
+  {
+    "kind": "question",
+    "text": "He provides for all"
+  },
+  {
+    "kind": "question",
+    "text": "I am the Perpetual Forgiver of whoever repents and believes."
+  },
+  {
+    "kind": "question",
+    "text": "After repenting, Quran 20:82 asks us to keep to guidance."
+  },
+  {
+    "kind": "question",
+    "text": "Whoever repents, believes, does righteousness and then continues in guidance."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is your Protector, and the best of helpers."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 3:150"
+  },
+  {
+    "kind": "lesson",
+    "text": "Surah Al Imran"
+  },
+  {
+    "kind": "lesson",
+    "text": "Balillahu mawlakum"
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah is in Quran 3:150?"
+  },
+  {
+    "kind": "question",
+    "text": "Balillahu mawlakum: but Allah is your Protector."
+  },
+  {
+    "kind": "question",
+    "text": "Who is the best of helpers, in Quran 3:150?"
+  },
+  {
+    "kind": "question",
+    "text": "The strong"
+  },
+  {
+    "kind": "question",
+    "text": "The rich"
+  },
+  {
+    "kind": "question",
+    "text": "The kings"
+  },
+  {
+    "kind": "question",
+    "text": "But Allah is your Protector, and He is the best of helpers."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 3:150, Allah tells the believers that He looks after them."
+  },
+  {
+    "kind": "question",
+    "text": "But Allah is your Protector."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about names of Allah: His mercy!"
   },
   {
@@ -79925,7 +80177,215 @@
   },
   {
     "kind": "lesson",
-    "text": "The last test: everything about names of Allah: His greatness!"
+    "text": "Can you still remember these about Allah's names of greatness?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah created all things, and He is the One, the Prevailing."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 13:16"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa huwal-Wahidul-Qahhar"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 13:16?"
+  },
+  {
+    "kind": "question",
+    "text": "And He is the One, the Prevailing."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the One?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Wahid"
+  },
+  {
+    "kind": "question",
+    "text": "Allah is the Creator of all things, and He is the One."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 13:16 says Allah is the Creator of all things."
+  },
+  {
+    "kind": "question",
+    "text": "Allah is the Creator of all things, and He is the One, the Prevailing."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is the Truth, the Most High, the Grand."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 22:62"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa annallaha huwal-Aliyyul-Kabir"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 22:62?"
+  },
+  {
+    "kind": "question",
+    "text": "As-Sami', Al-Basir"
+  },
+  {
+    "kind": "question",
+    "text": "And because Allah is the Most High, the Grand."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Most High?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Aliyy"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Wadud"
+  },
+  {
+    "kind": "question",
+    "text": "Allah is the Most High, the Grand."
+  },
+  {
+    "kind": "question",
+    "text": "Al-Kabir is a name of Allah that means the Great."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is Powerful and Exalted in Might."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 22:40"
+  },
+  {
+    "kind": "lesson",
+    "text": "Innallaha la-Qawiyyun Aziz"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 22:40?"
+  },
+  {
+    "kind": "question",
+    "text": "Indeed, Allah is Powerful and Exalted in Might."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Powerful?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Qawiyy"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Qawiyy and Al-Aziz both tell of Allah's might."
+  },
+  {
+    "kind": "lesson",
+    "text": "The angels praised Allah as the Knowing, the Wise."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:32"
+  },
+  {
+    "kind": "lesson",
+    "text": "The angels' words to Allah"
+  },
+  {
+    "kind": "lesson",
+    "text": "Innaka antal-Alimul-Hakim"
+  },
+  {
+    "kind": "question",
+    "text": "Who said the words of Quran 2:32?"
+  },
+  {
+    "kind": "question",
+    "text": "The angels said: Exalted are You; we have no knowledge except what You have taught us."
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 2:32?"
+  },
+  {
+    "kind": "question",
+    "text": "Indeed, it is You who is the Knowing, the Wise."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the All-Knowing?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah is enough as the One who takes account."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 4:6"
+  },
+  {
+    "kind": "lesson",
+    "text": "About the wealth of orphans"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa kafa billahi hasiba"
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah ends Quran 4:6?"
+  },
+  {
+    "kind": "question",
+    "text": "Wa kafa billahi hasiba: and sufficient is Allah as Accountant."
+  },
+  {
+    "kind": "question",
+    "text": "Who is enough as the One who takes account, in Quran 4:6?"
+  },
+  {
+    "kind": "question",
+    "text": "The witnesses"
+  },
+  {
+    "kind": "question",
+    "text": "The guardian"
+  },
+  {
+    "kind": "question",
+    "text": "The judge"
+  },
+  {
+    "kind": "question",
+    "text": "And sufficient is Allah as Accountant."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 4:6 is about the wealth of orphans."
+  },
+  {
+    "kind": "question",
+    "text": "Test the orphans, and when you release their property to them, bring witnesses."
+  },
+  {
+    "kind": "lesson",
+    "text": "The last test: everything about Allah's names of greatness!"
   },
   {
     "kind": "lesson",
@@ -80166,10 +80626,6 @@
   {
     "kind": "question",
     "text": "Who would shake their hands if that feeling never left?"
-  },
-  {
-    "kind": "question",
-    "text": "The kings"
   },
   {
     "kind": "question",
@@ -81286,10 +81742,6 @@
   {
     "kind": "question",
     "text": "Al-Hakam"
-  },
-  {
-    "kind": "question",
-    "text": "Ar-Razzaq"
   },
   {
     "kind": "question",
@@ -84585,10 +85037,6 @@
   },
   {
     "kind": "question",
-    "text": "Al-Halim"
-  },
-  {
-    "kind": "question",
     "text": "Ar-Rahim"
   },
   {
@@ -85170,10 +85618,6 @@
   {
     "kind": "question",
     "text": "The righteous"
-  },
-  {
-    "kind": "question",
-    "text": "The rich"
   },
   {
     "kind": "question",
@@ -117701,10 +118145,6 @@
   },
   {
     "kind": "question",
-    "text": "Only the prophets"
-  },
-  {
-    "kind": "question",
     "text": "Only the martyrs"
   },
   {
@@ -126554,10 +126994,6 @@
   {
     "kind": "question",
     "text": "The excused and those accused of hypocrisy"
-  },
-  {
-    "kind": "question",
-    "text": "Only the scholars"
   },
   {
     "kind": "question",
@@ -139882,10 +140318,6 @@
   {
     "kind": "question",
     "text": "Who is Allah pleased with in Quran 9:100?"
-  },
-  {
-    "kind": "question",
-    "text": "Only the kings"
   },
   {
     "kind": "question",
@@ -155385,10 +155817,6 @@
   },
   {
     "kind": "question",
-    "text": "The strong"
-  },
-  {
-    "kind": "question",
     "text": "The many"
   },
   {
@@ -162034,10 +162462,6 @@
   {
     "kind": "question",
     "text": "Whom did Aishah say she would thank for clearing her?"
-  },
-  {
-    "kind": "question",
-    "text": "The judge"
   },
   {
     "kind": "question",
@@ -213425,10 +213849,6 @@
   },
   {
     "kind": "question",
-    "text": "The witnesses"
-  },
-  {
-    "kind": "question",
     "text": "The rulers"
   },
   {
@@ -215793,15 +216213,7 @@
   },
   {
     "kind": "question",
-    "text": "Al-Khaliq, Al-Bari"
-  },
-  {
-    "kind": "question",
     "text": "Al-Awwal, Al-Akhir"
-  },
-  {
-    "kind": "question",
-    "text": "Al-Malik, Al-Quddus"
   },
   {
     "kind": "question",
@@ -216038,10 +216450,6 @@
   {
     "kind": "question",
     "text": "Which two names of Allah were in the man's du'a?"
-  },
-  {
-    "kind": "question",
-    "text": "Al-Ahad, As-Samad"
   },
   {
     "kind": "question",
@@ -237605,10 +238013,6 @@
   },
   {
     "kind": "source",
-    "text": "Quran 22:40"
-  },
-  {
-    "kind": "source",
     "text": "Quran 22:39-48"
   },
   {
@@ -237846,10 +238250,6 @@
   {
     "kind": "lesson",
     "text": "Allah knows all in heaven and earth"
-  },
-  {
-    "kind": "source",
-    "text": "Quran 22:65"
   },
   {
     "kind": "source",
@@ -268361,10 +268761,6 @@
   },
   {
     "kind": "source",
-    "text": "Quran 2:32"
-  },
-  {
-    "kind": "source",
     "text": "Tafsir Ibn Kathir 2:32"
   },
   {
@@ -273077,10 +273473,6 @@
   },
   {
     "kind": "question",
-    "text": "As-Sami', Al-Basir"
-  },
-  {
-    "kind": "question",
     "text": "Is anyone else worthy of worship?"
   },
   {
@@ -275998,10 +276390,6 @@
   {
     "kind": "lesson",
     "text": "No reminding, no hurting"
-  },
-  {
-    "kind": "source",
-    "text": "Quran 2:263"
   },
   {
     "kind": "source",
@@ -283749,10 +284137,6 @@
   },
   {
     "kind": "source",
-    "text": "Quran 4:6"
-  },
-  {
-    "kind": "source",
     "text": "Tafsir Ibn Kathir 4:6"
   },
   {
@@ -288106,10 +288490,6 @@
   {
     "kind": "question",
     "text": "Shakir, the Appreciative"
-  },
-  {
-    "kind": "question",
-    "text": "Al-Qahhar"
   },
   {
     "kind": "question",
@@ -327957,10 +328337,6 @@
   },
   {
     "kind": "source",
-    "text": "Quran 13:16"
-  },
-  {
-    "kind": "source",
     "text": "Tafsir Ibn Kathir 13:16"
   },
   {
@@ -335578,10 +335954,6 @@
   {
     "kind": "question",
     "text": "Which surah tells the order of events, per Ibn Kathir?"
-  },
-  {
-    "kind": "question",
-    "text": "Surah Ta-Ha"
   },
   {
     "kind": "question",
@@ -358633,10 +359005,6 @@
   },
   {
     "kind": "source",
-    "text": "Quran 20:82"
-  },
-  {
-    "kind": "source",
     "text": "Tafsir Ibn Kathir 20:82"
   },
   {
@@ -366846,10 +367214,6 @@
   {
     "kind": "lesson",
     "text": "He is the Most High, Most Great"
-  },
-  {
-    "kind": "source",
-    "text": "Quran 22:62"
   },
   {
     "kind": "source",
@@ -489029,10 +489393,6 @@
   },
   {
     "kind": "question",
-    "text": "Al-Wadud"
-  },
-  {
-    "kind": "question",
     "text": "Al-Hakim"
   },
   {
@@ -519290,10 +519650,6 @@
   {
     "kind": "question",
     "text": "Where is the challenge to the Christians?"
-  },
-  {
-    "kind": "question",
-    "text": "Surah Al Imran"
   },
   {
     "kind": "question",
@@ -550002,10 +550358,6 @@
   {
     "kind": "lesson",
     "text": "Mashi'ah: Allah's will"
-  },
-  {
-    "kind": "lesson",
-    "text": "Al-Alim, Al-Hakim"
   },
   {
     "kind": "source",
