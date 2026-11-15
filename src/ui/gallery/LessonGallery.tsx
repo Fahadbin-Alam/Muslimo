@@ -1073,6 +1073,14 @@ const STATES: State[] = [
   { id: "scene-give-while-healthy", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-everyday-give-now" ask="warn against" /> },
   { id: "scene-strong-believer", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-qadar-if-only" ask="something bad happens" /> },
   { id: "scene-forgotten-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-taha1-a-missed-prayer" ask="forgotten prayer" /> },
+  // A question on each scene of a good character (round 77).
+  { id: "scene-mustard-of-pride", render: () => <SceneQuestionDemo lessonId="lesson-deep-qasas7-allah-loves-beauty" ask="Is liking fine clothes pride" /> },
+  { id: "scene-what-backbiting-is", render: () => <SceneQuestionDemo lessonId="lesson-deep-speech-backbiting" ask="not true, it is what" /> },
+  { id: "scene-orphan-carer", render: () => <SceneQuestionDemo lessonId="lesson-deep-mercy-the-orphan" ask="show how close" /> },
+  { id: "scene-safe-from-harm", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-amr-tongue-and-hand" ask="true emigrant" /> },
+  { id: "scene-refuge-from-anger", render: () => <SceneQuestionDemo lessonId="lesson-deep-nahl6-refuge-calms-anger" ask="What would happen if he said it" /> },
+  { id: "scene-gate-ar-rayyan", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahl-ar-rayyan" ask="Who enters by that gate" /> },
+  { id: "scene-make-it-easy", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-bukhari-69" ask="What should we give people" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
