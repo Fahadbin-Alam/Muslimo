@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Manners unit: the rights of others, from Jami at-Tirmidhi, Sunan Abi Dawud and Sunan Ibn Majah. A soul held
-// by debt, the evil of bad blood between people, keeping apart from a brother for a year, what a son owes his father,
-// the rights of orphans and women, and charity mixed with trade. Every card is one sahih or hasan hadith with its
-// number, narrator and grade, and its exact English words to highlight. None of these hadith is taught anywhere else in
-// the app.
+// One more Manners unit: the rights of others, from Jami at-Tirmidhi, Sunan Abi Dawud, Sunan Ibn Majah and Al-Adab
+// al-Mufrad. A soul held by debt, the evil of bad blood between people, keeping apart from a brother for a year, what a
+// son owes his father, the rights of orphans and women, charity mixed with trade, and never misleading a blind person.
+// Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to
+// highlight. None of these hadith is taught anywhere else in the app.
 
 const RIGHTS: DeepUnit = {
   key: "manners-rights-of-others",
   topicId: "manners",
   branchId: "manners-rights-of-others",
-  branch: { title: "The rights of others", description: "A soul held by debt, the evil of bad blood, a year apart, what a son owes his father, orphans and women, and charity mixed with trade." },
+  branch: { title: "The rights of others", description: "A soul held by debt, the evil of bad blood, a year apart, what a son owes his father, orphans and women, charity mixed with trade, and never misleading the blind." },
   name: "the rights of others",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const RIGHTS: DeepUnit = {
         { q: "What did he ﷺ tell the merchants to mix with selling?", a: "Some charity", wrong: ["Some rest", "Some travel", "Some farming"], why: "Selling involves oaths and idle talk, so mix some charity with it, he ﷺ said." },
         { q: "What new name did he ﷺ give the brokers?", a: "Merchants", wrong: ["Farmers", "Tailors", "Builders"], why: "He called them by a better name than brokers: O merchants." },
         { q: "Selling can bring idle talk and false oaths.", tf: true, why: "Selling involves false oaths and idle talk, so mix some charity with it, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "never-mislead-the-blind",
+      title: "Never mislead the blind",
+      line: "Allah curses one who leads a blind person off the path.",
+      facts: ["Told by Ibn Abbas", "From Imam al-Bukhari's book of manners", "Help a blind person find the way"],
+      source: hadith("adab", "892", "Ibn Abbas", "Hasan Sahih (Al-Albani)", "Ibn Abbas reported that the Messenger of Allah ﷺ said: Allah curses anyone who misguides a blind person and leads him away from the path.", "Allah curses anyone who misguides a blind person and leads him away from the path"),
+      difficulty: 2,
+      questions: [
+        { q: "Whom did he ﷺ say Allah curses, as Ibn Abbas reported?", a: "One who misleads a blind person", wrong: ["One who plants a tree", "One who sells bread", "One who rides a camel"], why: "La'ana Allahu man kammaha a'ma 'anis-sabil, he ﷺ said, in Al-Adab al-Mufrad 892." },
+        { q: "What does the one whom Allah curses do to a blind person, he ﷺ said?", a: "Leads him away from the path", wrong: ["Gives him some water", "Walks him to his home", "Reads him a story"], why: "Misguiding a blind person and leading him off the path brings Allah's curse." },
+        { q: "Tricking a blind person into the wrong way is a serious sin.", tf: true, why: "He ﷺ said Allah curses anyone who leads a blind person away from the path." }
       ]
     }
   ]

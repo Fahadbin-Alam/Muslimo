@@ -1,17 +1,18 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Aqidah unit: faith in the unseen, from Jami at-Tirmidhi and Sunan Abi Dawud. Believing in the decree, good
-// and bad, the Pen told to write it, light cast on creation, a need in the land where you will die, one card against
-// ninety-nine scrolls, and heavens where every spot holds an angel in sujud. Every card is one sahih or hasan hadith
-// with its number, narrator and grade, and its exact English words to highlight, and none of them is taught anywhere
-// else in the app. Which thing Allah created first is left out on purpose, as scholars differ on it, and so is the
-// Sur being a horn (Tirmidhi 2430), as the Taha and Kahf lessons already teach it through Ibn Kathir.
+// One more Aqidah unit: faith in the unseen, from Jami at-Tirmidhi, Sunan Abi Dawud and Sunan an-Nasa'i. Believing in
+// the decree, good and bad, the Pen told to write it, light cast on creation, a need in the land where you will die,
+// one card against ninety-nine scrolls, heavens where every spot holds an angel in sujud, and an Arabian horse allowed
+// two du'as before each dawn. Every card is one sahih or hasan hadith with its number, narrator and grade, and its
+// exact English words to highlight, and none of them is taught anywhere else in the app. Which thing Allah created
+// first is left out on purpose, as scholars differ on it, and so is the Sur being a horn (Tirmidhi 2430), as the Taha
+// and Kahf lessons already teach it through Ibn Kathir.
 
 const UNSEEN: DeepUnit = {
   key: "aqidah-faith-in-the-unseen",
   topicId: "aqidah",
   branchId: "aqidah-faith-in-the-unseen",
-  branch: { title: "Faith in the unseen", description: "Believing in the decree, the Pen told to write it, light cast on creation, a need in the land where you die, one card against ninety-nine scrolls, and heavens full of angels." },
+  branch: { title: "Faith in the unseen", description: "Believing in the decree, the Pen told to write it, light cast on creation, a need in the land where you die, one card against ninety-nine scrolls, heavens full of angels, and a horse's two du'as before dawn." },
   name: "faith in the unseen",
   kind: "skill",
   lessonType: "skill",
@@ -92,6 +93,19 @@ const UNSEEN: DeepUnit = {
         { q: "What is in every spot of the heavens, he ﷺ said?", a: "An angel in sujud", wrong: ["A shining star", "A rain cloud", "A flying bird"], why: "An angel is placing his forehead there, prostrating to Allah, he ﷺ said." },
         { q: "How big is each spot that has an angel?", a: "Four fingers wide", wrong: ["A mile wide", "A city wide", "A valley wide"], why: "There is no spot the size of four fingers without an angel in it, he ﷺ said." },
         { q: "Some parts of the heavens have no angels in them.", tf: false, why: "No. Not one spot of four fingers is without an angel in sujud, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "a-horses-two-duas",
+      title: "A horse's two du'as",
+      line: "Before each dawn, an Arabian horse is allowed two du'as.",
+      facts: ["Told by Abu Dharr", "Sahar: the last part of the night", "The horse asks to be dear to its owner"],
+      source: hadith("nasai", "3579", "Abu Dharr", "Sahih (Darussalam)", "Abu Dharr said: the Messenger of Allah ﷺ said: there is no Arabian horse but it is allowed to make two du'as at every Sahar, the end of the night: O Allah, You gave me to whom You willed of the sons of Adam and made me his, so make me the dearest of his family and wealth to him, or among the dearest of them.", "There is no Arabian horse but it is allowed to offer two supplications every Sahar"),
+      difficulty: 2,
+      questions: [
+        { q: "When is an Arabian horse allowed its two du'as?", a: "Each night before dawn", wrong: ["Each day at noon", "Each day at sunset", "Each week on Friday"], why: "Two supplications every Sahar, the end of the night, he ﷺ said of the horse." },
+        { q: "What does the horse ask Allah for?", a: "To be dear to its owner", wrong: ["To run faster than all", "To be free of its owner", "To live a long life"], why: "Make me the dearest of his family and wealth to him, the horse asks." },
+        { q: "The horse says Allah gave it to whom He willed of the sons of Adam.", tf: true, why: "O Allah, You have caused me to be owned by whoever You wanted among the sons of Adam." }
       ]
     }
   ]
