@@ -317,6 +317,19 @@ const MINOR_SIGNS: DeepUnit = {
         { q: "Who reported that houses will be adorned like painted garments?", a: "Abu Hurayrah", wrong: ["Ibn Abbas", "Anas ibn Malik", "Jabir ibn Abdullah"], why: "Abu Hurayrah reported it from the Messenger of Allah ﷺ, in Al-Adab al-Mufrad 777." },
         { q: "Houses adorned like painted garments are a sign of the Hour.", tf: true, why: "He ﷺ said the Final Hour will not come until houses look like painted garments." }
       ]
+    },
+    {
+      slug: "predators-speak",
+      title: "When predators speak",
+      line: "Before the Hour, predators will speak to people, he ﷺ said.",
+      facts: ["Told by Abu Sa'id al-Khudri", "A whip and a sandal strap will speak too", "One of the small signs of the Hour"],
+      source: hadith("tirmidhi", "2181", "Abu Sa'id al-Khudri", "Sahih (Darussalam)", "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ said: by the One in Whose Hand is my soul, the Hour will not come until predators speak to people, the tip of a man's whip and the straps of his sandal speak to him, and his thigh tells him what his family did after he left.", "The Hour will not be established until predators speak to people"),
+      difficulty: 2,
+      questions: [
+        { q: "Before the Hour, what will speak to people, he ﷺ said?", a: "Predators", wrong: ["Mountains", "Rivers", "Stars"], why: "The Hour will not be established until predators speak to people, he ﷺ said." },
+        { q: "What will tell a man what his family did after him?", a: "His thigh", wrong: ["His shadow", "His pillow", "His lamp"], why: "His thigh will inform him of what occurred with his family after him, he ﷺ said." },
+        { q: "Even the tip of a man's whip will speak to him before the Hour.", tf: true, why: "The tip of his whip and the straps on his sandal will speak to him, he ﷺ said." }
+      ]
     }
   ]
 };

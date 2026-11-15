@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Akhirah unit: holding on in times of trial, from Jami at-Tirmidhi, Sunan Ibn Majah, Sunan Abi Dawud and
-// Sahih al-Bukhari. Good deeds before trials like a dark night, worship in a time of bloodshed, keeping clear of strife,
-// a man who wishes he were in a grave, keeping far from the Dajjal, and an Ummah like the rain. Every card is one sahih
-// or hasan hadith with its number, narrator and grade, and its exact English words to highlight. None of these hadith
-// is taught anywhere else in the app.
+// One more Akhirah unit: holding on in times of trial, from Jami at-Tirmidhi, Sunan Ibn Majah, Sunan Abi Dawud, Sahih
+// al-Bukhari and Sahih Muslim. Good deeds before trials like a dark night, worship in a time of bloodshed, keeping
+// clear of strife, a man who wishes he were in a grave, keeping far from the Dajjal, an Ummah like the rain, and the
+// three things he ﷺ asked for his Ummah. Every card is one sahih or hasan hadith with its number, narrator and grade,
+// and its exact English words to highlight. None of these hadith is taught anywhere else in the app.
 
 const HOLDING_ON: DeepUnit = {
   key: "akhirah-holding-on-in-trials",
   topicId: "akhirah",
   branchId: "akhirah-holding-on-in-trials",
-  branch: { title: "Holding on in times of trial", description: "Good deeds before the dark trials, worship in a time of bloodshed, keeping clear of strife, wishing for a grave, keeping far from the Dajjal, and an Ummah like the rain." },
+  branch: { title: "Holding on in times of trial", description: "Good deeds before the dark trials, worship in a time of bloodshed, keeping clear of strife, wishing for a grave, keeping far from the Dajjal, an Ummah like the rain, and three things asked for the Ummah." },
   name: "holding on in times of trial",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const HOLDING_ON: DeepUnit = {
         { q: "What did he ﷺ liken his Ummah to?", a: "The rain", wrong: ["The sea", "The wind", "The mountains"], why: "The parable of my Ummah is that of a rain, Anas ibn Malik heard him ﷺ say." },
         { q: "What is not known about the rain, he ﷺ said?", a: "Whether its start or end is better", wrong: ["Whether it is pure water", "Whether it is from Allah", "Whether it brings any good"], why: "Its beginning or its end, no one knows which is better, he ﷺ said of his Ummah." },
         { q: "Like rain, his ﷺ Ummah may have good at its end too.", tf: true, why: "The end may be as good as the start: none knows if its beginning is better or its end." }
+      ]
+    },
+    {
+      slug: "three-things-for-the-ummah",
+      title: "Three things for his Ummah",
+      line: "He ﷺ asked Allah three things for his Ummah; two were granted.",
+      facts: ["Told by Sa'd ibn Abi Waqqas", "Granted: no famine or flood to destroy it", "Withheld: no bloodshed among its people"],
+      source: hadith("muslim", "2890a", "Sa'd ibn Abi Waqqas", "Sahih", "Sa'd ibn Abi Waqqas said: the Messenger of Allah ﷺ prayed two rak'ahs in a mosque and made a long du'a to his Lord, then said: I asked my Lord three things; He granted me two and withheld one. I asked that my Ummah not be destroyed by famine, and He granted it; that it not be destroyed by drowning, and He granted it; and that there be no bloodshed among its people, and He did not grant it.", "I asked my Lord three things and He has granted me two but has withheld one"),
+      difficulty: 2,
+      questions: [
+        { q: "How many things did he ﷺ ask his Lord for his Ummah?", a: "Three things", wrong: ["Two things", "Five things", "Seven things"], why: "He ﷺ asked his Lord three things, and He granted him two of them." },
+        { q: "Which of his ﷺ requests for his Ummah was not granted?", a: "No bloodshed among them", wrong: ["No famine to destroy them", "No flood to drown them", "No outside enemy over them"], why: "He ﷺ begged that there be no bloodshed among his Ummah, and it was not granted." },
+        { q: "Allah granted that famine would not destroy his ﷺ Ummah.", tf: true, why: "He ﷺ begged that his Ummah not be destroyed because of famine, and He granted it." }
       ]
     }
   ]
