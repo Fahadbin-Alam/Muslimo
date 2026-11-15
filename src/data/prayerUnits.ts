@@ -1,7 +1,7 @@
 import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// Deep units for the Prayer topic, after its own units: the reward of salah, extra prayers, Jumu'ah, and what to
-// say after the salah. Every card is from the Quran or a sahih hadith (number and grade as sunnah.com gives them).
+// Deep units for the Prayer topic, after its own units: the reward of salah, extra prayers, Jumu'ah, and what to say
+// after the salah. Every card is from the Quran or a sahih or hasan hadith (number and grade as sunnah.com gives them).
 // Fiqh details the schools differ on (which prayer is "the middle prayer", exact sunnah counts) are left out.
 
 const REWARD: DeepUnit = {
@@ -64,6 +64,19 @@ const REWARD: DeepUnit = {
         { q: "Which are the two cool prayers?", a: "Fajr and Asr", wrong: ["Dhuhr and Isha", "Maghrib and Isha", "Eid and Jumu'ah"], why: "The cool times of morning and afternoon." },
         { q: "What is promised for guarding them?", a: "Jannah", wrong: ["Wealth", "Honor", "Long life"], why: "Sahih al-Bukhari 574." },
         { q: "Fajr is easy to miss, so its reward is great.", tf: true, why: "It is one of the two cool prayers." }
+      ]
+    },
+    {
+      slug: "asr-twice-the-reward",
+      title: "Twice the reward for Asr",
+      line: "Whoever guards the Asr prayer has its reward twice.",
+      facts: ["Told by Abu Basrah al-Ghifari", "He ﷺ led them in Asr at al-Mukhammas", "Those before us lost this prayer"],
+      source: hadith("muslim", "830a", "Abu Basrah al-Ghifari", "Sahih", "Abu Basrah al-Ghifari said: the Messenger of Allah ﷺ led us in the Asr prayer at al-Mukhammas, then said: this prayer was presented to those who came before you, but they lost it, and whoever guards it will have his reward twice.", "he who guards it has two rewards in store for him"),
+      difficulty: 2,
+      questions: [
+        { q: "The one who guards Asr gets its reward how many times?", a: "Twice", wrong: ["Once", "Three times", "Four times"], why: "He who guards it has two rewards in store for him, he ﷺ said at al-Mukhammas." },
+        { q: "What did those before us do with this prayer, he ﷺ said?", a: "They lost it", wrong: ["They kept it well", "They prayed it twice", "They never heard of it"], why: "This prayer was presented to those gone before you, but they lost it, he ﷺ said." },
+        { q: "Asr is a prayer worth guarding with care.", tf: true, why: "Those before us lost it, and the one who guards it is rewarded twice, he ﷺ said." }
       ]
     },
     {
@@ -308,7 +321,7 @@ const AFTER: DeepUnit = {
   key: "pray-after",
   topicId: "prayer",
   branchId: "prayer-after-salah",
-  branch: { title: "After the salah", description: "The words he ﷺ said after salam, and the du'a he told Mu'adh never to leave." },
+  branch: { title: "After the salah", description: "The words he ﷺ said after salam, two easy habits, the du'a he told Mu'adh never to leave, and refuge from disbelief and poverty." },
   name: "after the salah",
   kind: "skill",
   lessonType: "skill",
@@ -334,9 +347,22 @@ const AFTER: DeepUnit = {
       source: hadith("muslim", "597a", "Abu Hurairah", "Sahih", "Whoever says Subhanallah 33 times, Alhamdulillah 33 and Allahu akbar 33 after every prayer, and completes the hundred with La ilaha illallah wahdahu la sharika lah, his sins are forgiven even if like the foam of the sea."),
       difficulty: 1,
       questions: [
-        { q: "How many times each: Subhanallah, Alhamdulillah, Allahu akbar?", a: "33", wrong: ["3", "10", "100"], why: "Sahih Muslim 597a." },
+        { q: "How many times each: Subhanallah, Alhamdulillah, Allahu akbar?", a: "33", wrong: ["3", "7", "100"], why: "Sahih Muslim 597a." },
         { q: "What makes it a full hundred?", a: "La ilaha illallah...", wrong: ["Clapping", "Amin", "A song"], why: "La ilaha illallah wahdahu la sharika lah." },
         { q: "What is forgiven for it?", a: "Sins, even like sea foam", wrong: ["Only one sin", "Nothing", "Only big sins"], why: "Even if like the foam of the sea." }
+      ]
+    },
+    {
+      slug: "ten-each-after-salah",
+      title: "Two easy habits",
+      line: "After salah, 10 each: Subhanallah, Alhamdulillah, Allahu akbar.",
+      facts: ["Told by Abdullah ibn Amr", "150 on the tongue, 1,500 on the Scale", "At bedtime: Allahu akbar 34, the others 33"],
+      source: hadith("abudawud", "5065", "Abdullah ibn Amr", "Sahih (Al-Albani)", "The Prophet ﷺ said: there are two habits that no Muslim keeps without entering Paradise. They are easy, yet those who keep them are few. After every prayer, say Subhanallah ten times, Alhamdulillah ten times and Allahu akbar ten times: that is a hundred and fifty on the tongue, but one thousand five hundred on the Scale. At bedtime, say Allahu akbar thirty-four times, Alhamdulillah thirty-three times and Subhanallah thirty-three times: a hundred on the tongue and a thousand on the Scale. Abdullah said: I saw the Messenger of Allah ﷺ counting them on his hand. Asked why so few keep them, he ﷺ said: Shaytan comes to one of you at bedtime and makes him sleep before he says them, and comes to him in his prayer and reminds him of a need before he says them.", "That is a hundred and fifty on the tongue, but one thousand and five hundred on the scale"),
+      difficulty: 2,
+      questions: [
+        { q: "How many times each after salah, per Abu Dawud 5065?", a: "Ten", wrong: ["Three", "Five", "Seven"], why: "Glory be to Allah ten times after every prayer, and the same for praise and takbir." },
+        { q: "150 on the tongue become how many on the Scale?", a: "1,500", wrong: ["300", "500", "15,000"], why: "A hundred and fifty on the tongue, but one thousand five hundred on the scale, he ﷺ said." },
+        { q: "These two habits are hard, so few people keep them.", tf: false, why: "No. They are easy, yet few keep them, for Shaytan brings sleep or a need to mind." }
       ]
     },
     {
@@ -350,6 +376,19 @@ const AFTER: DeepUnit = {
         { q: "What did he ﷺ tell Mu'adh before the du'a?", a: "By Allah, I love you", wrong: ["You are late", "Go home", "Be quiet"], why: "Sunan Abi Dawud 1522." },
         { q: "What does the du'a ask help for?", a: "Remembering, thanking, worshipping well", wrong: ["Getting rich", "Winning games", "Being famous"], why: "Help me remember You, thank You, worship You well." },
         { q: "When should this du'a be said?", a: "After every prayer", wrong: ["Only on Eid", "Once a year", "Only when sad"], why: "Never leave it after every prayer." }
+      ]
+    },
+    {
+      slug: "disbelief-and-poverty",
+      title: "From disbelief and poverty",
+      line: "After each prayer, seek refuge from disbelief and poverty.",
+      facts: ["Told by Abu Bakrah", "His son Muslim learned it from him", "Also refuge from the punishment of the grave"],
+      source: hadith("nasai", "1347", "Abu Bakrah", "Hasan (Darussalam)", "Muslim ibn Abi Bakrah said: my father used to say following every prayer: O Allah, I seek refuge with You from disbelief, poverty and the punishment of the grave. I used to say them too, and my father asked: my son, from whom did you learn this? I said: from you. He said: the Messenger of Allah ﷺ used to say them following the prayer.", "O Allah, I seek refuge with You from Kufr, poverty, and the torment of the grave"),
+      difficulty: 2,
+      questions: [
+        { q: "Which of these did he ﷺ seek refuge from after the prayer?", a: "Disbelief and poverty", wrong: ["Guests and visitors", "Books and pens", "Fruit and milk"], why: "I seek refuge with You from kufr, poverty and the torment of the grave, he ﷺ would say." },
+        { q: "From whom did Abu Bakrah's son learn these words?", a: "From his father", wrong: ["From his teacher", "From his uncle", "From his neighbor"], why: "He heard Abu Bakrah say them following every prayer and began saying them too." },
+        { q: "The Prophet ﷺ used to say these words following the prayer.", tf: true, why: "Abu Bakrah told his son the Messenger of Allah ﷺ said them after every prayer." }
       ]
     }
   ]

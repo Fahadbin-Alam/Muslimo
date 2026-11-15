@@ -3,14 +3,15 @@ import { hadith, type DeepUnit } from "./deepKit";
 // One more Manners unit: beautiful character, from Sahih al-Bukhari, Sunan Abi Dawud, Jami' at-Tirmidhi and Sunan Ibn
 // Majah. A cloak he ﷺ gave away though he needed it, mercy taken only from the miserable, the two-faced on the Day of
 // Resurrection, taqwa and good character, keeping good company, the best of you who remind you of Allah, hosting a man
-// who did not host you, and the believer who is simple and generous. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
-// words to highlight, and none of them is taught anywhere else in the app.
+// who did not host you, the believer who is simple and generous, and camels as many as the thorny trees, shared by one
+// who was never a miser, a liar or a coward. Every card is one sahih or hasan hadith with its number, narrator and
+// grade, and its exact English words to highlight, and none of them is taught anywhere else in the app.
 
 const CHARACTER: DeepUnit = {
   key: "manners-beautiful-character",
   topicId: "manners",
   branchId: "manners-beautiful-character",
-  branch: { title: "Beautiful character", description: "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, those who remind you of Allah, hosting a man who did not host you, and the believer, simple and generous." },
+  branch: { title: "Beautiful character", description: "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, those who remind you of Allah, hosting a man who did not host you, the believer, simple and generous, and never a miser, a liar or a coward." },
   name: "beautiful character",
   kind: "skill",
   lessonType: "skill",
@@ -117,6 +118,19 @@ const CHARACTER: DeepUnit = {
         { q: "How did he ﷺ describe the believer, as Abu Hurairah reported?", a: "Simple and generous", wrong: ["Famous and wealthy", "Busy and tired", "Young and fast"], why: "Al-mu'minu ghirrun karim, he ﷺ said, in Sunan Abi Dawud 4790." },
         { q: "How did he ﷺ describe the profligate, the one who does wrong?", a: "Deceitful and ignoble", wrong: ["Simple and generous", "Famous and wealthy", "Busy and tired"], why: "Wal-fajiru khibbun la'im, he ﷺ said, meaning the profligate is a cheat and mean." },
         { q: "A believer tricks people to get ahead.", tf: false, why: "No. The believer is simple and generous, while the profligate is deceitful, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "generous-truthful-brave",
+      title: "Generous, truthful and brave",
+      line: "He ﷺ was never a miser, a liar or a coward.",
+      facts: ["Told by Jubair ibn Mut'im", "On the way back from Hunayn", "Bedouins pressed him ﷺ, asking for things"],
+      source: hadith("bukhari", "2821", "Jubair ibn Mut'im", "Sahih", "Jubair ibn Mut'im said: he was with the Messenger of Allah ﷺ and the people, coming back from Hunayn, when Bedouins held on to the Prophet ﷺ, asking him for things, until he had to stand under a thorny tree, and his cloak was snatched away. He ﷺ stopped and said: give me my cloak. If I had as many camels as these thorny trees, I would share them out among you, and you would not find me a miser, a liar or a coward.", "you will not find me a miser or a liar or a coward"),
+      difficulty: 2,
+      questions: [
+        { q: "When he ﷺ stopped, what did he ask the people to give him?", a: "His cloak", wrong: ["His sandals", "His staff", "His water skin"], why: "Give me my cloak, he ﷺ said, when it was snatched away under a thorny tree." },
+        { q: "He ﷺ said he would share out camels as many as what?", a: "These thorny trees", wrong: ["The stars in the sky", "The grains of sand", "The drops of rain"], why: "If I had as many camels as these thorny trees, I would divide them among you, he ﷺ said." },
+        { q: "He ﷺ said they would never find him a miser, a liar or a coward.", tf: true, why: "You will not find me a miser or a liar or a coward, he ﷺ told the Bedouins." }
       ]
     }
   ]

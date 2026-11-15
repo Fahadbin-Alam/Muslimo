@@ -481,6 +481,20 @@ const ANAM_TWO: DeepUnit = {
       ]
     },
     {
+      slug: "refuge-in-his-face",
+      title: "Refuge in His Face",
+      line: "As 6:65 came down, he ﷺ sought refuge in Allah's Face.",
+      facts: ["Told by Jabir ibn Abdullah", "A torment from above, or from below", "A'udhu bi-wajhik: I seek refuge in Your Face"],
+      quote: q6(65),
+      source: hadith("bukhari", "4628", "Jabir ibn Abdullah", "Sahih", "Jabir said: when the ayah came down, say: He has power to send torment on you from above, the Messenger of Allah ﷺ said: O Allah, I seek refuge in Your Face. When the words or from below your feet came down, he ﷺ said again: I seek refuge in Your Face. And when the words or confuse you in party strife and make you taste the violence of one another came down, he ﷺ said: this is lighter, or this is easier.", "O Allah! I seek refuge with Your Face"),
+      difficulty: 3,
+      questions: [
+        { q: "When 6:65 named a torment from above, what did he ﷺ say?", a: "I seek refuge in Your Face", wrong: ["Allah is the Greatest", "Glory be to Allah", "All praise is for Allah"], why: "O Allah, I seek refuge with Your Face, he ﷺ said, as those words came down." },
+        { q: "6:65 names a torment from above, and from where else?", a: "From below", wrong: ["From behind", "From the right", "From the left"], why: "A torment from above you or from beneath your feet, says 6:65." },
+        { q: "He ﷺ sought refuge again when from below your feet came down.", tf: true, why: "Or from below your feet: again he ﷺ said, I seek refuge with Your Face." }
+      ]
+    },
+    {
       slug: "leave-mockers",
       title: "Leave those who mock",
       line: "When people mock Allah's ayahs, leave until they change topic.",

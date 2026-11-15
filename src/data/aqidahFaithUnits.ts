@@ -1,15 +1,15 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Aqidah unit: faith in the heart, from Jami at-Tirmidhi. Trusting Allah while doing your part, acting for
-// His sake, good deeds before the end, faith that rises and falls, and repentance while there is time. Every card is
-// one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight, and none
-// of them is taught anywhere else in the app.
+// One more Aqidah unit: faith in the heart, from Jami at-Tirmidhi and Sunan Abi Dawud. Trusting Allah while doing your
+// part, seeking a remedy for illness, acting for His sake, good deeds before the end, faith that rises and falls, and
+// repentance while there is time. Every card is one sahih or hasan hadith with its number, narrator and grade, and its
+// exact English words to highlight, and none of them is taught anywhere else in the app.
 
 const FAITH: DeepUnit = {
   key: "aqidah-faith-in-the-heart",
   topicId: "aqidah",
   branchId: "aqidah-faith-in-the-heart",
-  branch: { title: "Faith in the heart", description: "Tie your camel and trust Allah, act for His sake, good deeds before the end, a time for this and a time for that, and repenting in time." },
+  branch: { title: "Faith in the heart", description: "Tie your camel and trust Allah, seek a remedy, act for His sake, good deeds before the end, a time for this and a time for that, and repenting in time." },
   name: "faith in the heart",
   kind: "skill",
   lessonType: "skill",
@@ -25,6 +25,20 @@ const FAITH: DeepUnit = {
         { q: "What did he ﷺ tell the man to do with his camel?", a: "Tie it, and trust Allah", wrong: ["Leave it loose", "Sell it at once", "Give it to a friend"], why: "Tie it and rely upon Allah, he ﷺ said." },
         { q: "What is the lesson about trusting Allah?", a: "Do your part, then trust Him", wrong: ["Do nothing and wait", "Trust only yourself", "Worry about everything"], why: "The man asked whether to tie it or leave it loose and trust Allah." },
         { q: "Trusting Allah means you never need to take care.", tf: false, why: "No. Tie it and rely upon Allah: take care, and trust Him." }
+      ]
+    },
+    {
+      slug: "seek-a-remedy",
+      title: "Seek a remedy",
+      line: "Use medicine: every illness has a cure, except old age.",
+      facts: ["Told by Usamah ibn Sharik", "Bedouins came asking about medicine", "Old age is the one illness with no cure"],
+      quote: { text: "تَدَاوَوْا فَإِنَّ اللَّهَ عَزَّ وَجَلَّ لَمْ يَضَعْ دَاءً إِلاَّ وَضَعَ لَهُ دَوَاءً غَيْرَ دَاءٍ وَاحِدٍ الْهَرَمُ", reference: "Sunan Abi Dawud 3855" },
+      source: hadith("abudawud", "3855", "Usamah ibn Sharik", "Sahih (Al-Albani)", "Usamah ibn Sharik said: I came to the Prophet ﷺ and his Companions were sitting as if birds were on their heads. I gave salam and sat down. Then Bedouins came from here and there and asked: O Messenger of Allah, should we use medicine? He ﷺ said: use medicine, for Allah has not made a disease without making a remedy for it, except one disease: old age.", "with the exception of one disease, namely old age"),
+      difficulty: 2,
+      questions: [
+        { q: "What did the Bedouins ask him ﷺ about?", a: "Using medicine", wrong: ["Building homes", "Trading goods", "Raising sheep"], why: "Messenger of Allah, should we make use of medical treatment, the desert Arabs asked." },
+        { q: "Which illness has no cure, he ﷺ said?", a: "Old age", wrong: ["Toothache", "Earache", "Stomach ache"], why: "Allah has not made a disease without appointing a remedy for it, except one: old age." },
+        { q: "Usamah found the Companions sitting as if birds were on their heads.", tf: true, why: "Usamah came and gave salam while the Companions sat as if birds were on their heads." }
       ]
     },
     {
