@@ -1129,6 +1129,14 @@ const STATES: State[] = [
   { id: "scene-skilled-reciter", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-two-rewards-for-trying" ask="finds it hard" /> },
   { id: "scene-fast-of-arafah", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-qatadah-day-of-arafah" ask="covers sins" /> },
   { id: "scene-one-word", render: () => <SceneQuestionDemo lessonId="lesson-deep-qaf2-one-word-pleases-allah" ask="one pleasing word" /> },
+  // A question on each scene of those who were with him ﷺ (round 91).
+  { id: "scene-lamps-in-the-sky", render: () => <SceneQuestionDemo lessonId="lesson-deep-usayd-lamps-in-the-sky" ask="What did Usayd see" /> },
+  { id: "scene-prayer-too-long", render: () => <SceneQuestionDemo lessonId="lesson-deep-muadh-long-prayer" ask="Which surahs did the Prophet" /> },
+  { id: "scene-every-one-a-shepherd", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-shepherds" ask="a man is the guardian" /> },
+  { id: "scene-the-garden-gate", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-garden-gate" ask="Who came to the gate second" /> },
+  { id: "scene-ship-to-abyssinia", render: () => <SceneQuestionDemo lessonId="lesson-deep-jafar-khaybar" ask="When did Ja'far return" /> },
+  { id: "scene-ten-years-serving", render: () => <SceneQuestionDemo lessonId="lesson-deep-anas-never-uff" ask="How long did Anas serve" /> },
+  { id: "scene-greet-first", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-ayyub-three-nights" ask="Who is the better of the two" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
