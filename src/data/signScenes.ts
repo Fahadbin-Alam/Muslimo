@@ -1,4 +1,4 @@
-import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
+import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
 
 /**
  * The signs in creation, alive. The lessons about the ayahs that ask us to look at Allah's signs in the world open on
@@ -205,7 +205,19 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  *   grazes inside it (Sahih al-Bukhari 52);
  * - a good friend like one who carries musk, and a bad friend like one who blows the bellows (Sahih al-Bukhari 5534);
  * - the people who shared a ship, some above and some below: if those below are stopped from making a hole, all are
- *   saved (Sahih al-Bukhari 2493).
+ *   saved (Sahih al-Bukhari 2493);
+ *
+ * and stories he ﷺ told (toldArt.ts draws them):
+ *
+ * - three men shut in a cave by a rock, who asked Allah by a good deed each had done for Him: the milk held for his
+ *   parents till dawn, a sin left for Allah's sake, and a worker's wage grown into a herd; and the rock moved away
+ *   (Sahih al-Bukhari 2272);
+ * - a thousand dinars lent with Allah as witness, sent across the sea in a piece of wood when no ship came, and found
+ *   by the lender as firewood (Sahih al-Bukhari 2291);
+ * - one who has the Quran by heart, like the owner of tied camels: kept while tied, gone when let go; and keep
+ *   reviewing it, for it slips away faster (Sahih al-Bukhari 5031, 5033);
+ * - be in this world as a stranger, or a traveler on his way (Sahih al-Bukhari 6416), like a rider who rests in the
+ *   shade of a tree, then goes on and leaves it (Jami at-Tirmidhi 2377).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -223,7 +235,9 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  * the heap of food is not drawn, and no bell or horn is drawn for the call to prayer; Ka'b, Abu Bakr, Asma, Umar and
  * those with them are only their dashed ways and their voices, nothing is drawn for Allah in the cave, and the plague
  * is only a haze over the land; the people of the likenesses are only their dashed ways and their voices, no hand is
- * drawn, and the hundred parts of mercy are only rings to count them, with nothing coming down from the sky.
+ * drawn, and the hundred parts of mercy are only rings to count them, with nothing coming down from the sky; the
+ * people of the stories he ﷺ told are only their dashed ways and their voices, what each one in the cave did is only
+ * things and animals in a picture, and no page of the Quran is drawn, only a voice reciting.
  */
 
 export type SignKind =
@@ -316,7 +330,11 @@ export type SignKind =
   | "mercy"
   | "sanctuary"
   | "musk"
-  | "shared-ship";
+  | "shared-ship"
+  | "shut-cave"
+  | "log-at-sea"
+  | "tied-camels"
+  | "traveler";
 
 export type SignScene = {
   id: string;
@@ -933,6 +951,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: those who keep to Allah's limits and those who break them are like people who drew lots for their places on a ship, some above and some below. Those below, when they wanted water, went by those above, and said: let us make a hole in our part, and not trouble those above. If they are left to do it, all of them drown; and if they are stopped, they are saved, and all of them are saved.",
     sources: [bukhari("2493")]
+  },
+  {
+    id: "sign-shut-cave",
+    kind: "shut-cave",
+    caption:
+      "The Prophet ﷺ told of three men before us who went into a cave for the night. A rock rolled down the mountain and shut the cave on them. They said: nothing can save you from this rock but asking Allah by a good deed you did for His sake. One had held the milk for his old parents till dawn while they slept, so that no one drank before them. One had kept away from a sin, for Allah's sake, and left the gold. One had grown a worker's wage into a herd, and gave it all to him when he came. After each one, the rock moved a little; after the third, it moved away, and they walked out.",
+    sources: [bukhari("2272")]
+  },
+  {
+    id: "sign-log-at-sea",
+    kind: "log-at-sea",
+    caption:
+      "The Prophet ﷺ told of a man who asked another to lend him a thousand dinars. The lender asked for witnesses, and he said: Allah is enough as a witness. He asked for a guarantor, and he said: Allah is enough as a guarantor. When it was time to repay, he found no ship. So he put the money and a letter in a piece of wood, sealed it, and gave it to the sea, trusting Allah. The lender came out to see if a ship had come, found the piece of wood, and took it home for firewood. When he opened it, he found his money and the letter.",
+    sources: [bukhari("2291")]
+  },
+  {
+    id: "sign-tied-camels",
+    kind: "tied-camels",
+    caption:
+      "The Prophet ﷺ said: one who has the Quran by heart is like the owner of tied camels. If he keeps them tied, he keeps them; and if he lets them go, they run away. And he ﷺ said: keep reviewing the Quran, for by Him in whose Hand my soul is, it slips away faster than camels from their ropes.",
+    sources: [bukhari("5031"), bukhari("5033")]
+  },
+  {
+    id: "sign-traveler",
+    kind: "traveler",
+    caption:
+      "The Prophet ﷺ took Ibn Umar by the shoulder and said: be in this world as if you were a stranger, or a traveler on his way. And Ibn Umar used to say: at evening, do not wait for the morning, and at morning, do not wait for the evening. Once, when he ﷺ had slept on a mat that marked his side, he said: I am in this world only like a rider who rests in the shade of a tree, then goes on and leaves it.",
+    sources: [bukhari("6416"), tirmidhi("2377")]
   }
 ];
 
@@ -1659,7 +1705,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The musk and the bellows (Sahih al-Bukhari 5534).
   "deep-furqan1-musk-seller-and-blacksmith": "sign-musk",
   // The people who shared a ship (Sahih al-Bukhari 2493).
-  "deep-numan-the-ship": "sign-shared-ship"
+  "deep-numan-the-ship": "sign-shared-ship",
+  // Three men shut in a cave, and the good deeds they asked Allah by (Sahih al-Bukhari 2272).
+  "deep-hadith-stories-the-cave": "sign-shut-cave",
+  // A loan sent across the sea in a piece of wood (Sahih al-Bukhari 2291).
+  "deep-hadith-stories-the-wooden-box": "sign-log-at-sea",
+  // The Quran by heart like tied camels, and keep reviewing it (Sahih al-Bukhari 5031, 5033).
+  "deep-book-quran-virtues-like-tied-camels": "sign-tied-camels",
+  "deep-book-quran-virtues-it-slips-away-fast": "sign-tied-camels",
+  // Be in this world as a stranger or a traveler (Sahih al-Bukhari 6416), like a rider resting in a tree's shade (Jami
+  // at-Tirmidhi 2377). Not the lesson on taking from your health for your sickness, which the scene does not show.
+  "deep-ready-traveler": "sign-traveler",
+  "deep-waqiah3-a-traveler-in-this-world": "sign-traveler",
+  "deep-munafiqun3-like-a-traveler": "sign-traveler",
+  "deep-naziat4-a-stranger-or-a-traveller": "sign-traveler",
+  "deep-humazah1-like-a-traveler": "sign-traveler",
+  "deep-qiyamah2-a-stranger-or-a-traveler": "sign-traveler",
+  "deep-duha1-like-a-rider-under-a-tree": "sign-traveler"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
