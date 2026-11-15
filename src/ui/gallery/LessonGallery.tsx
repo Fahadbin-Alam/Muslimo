@@ -1121,6 +1121,14 @@ const STATES: State[] = [
   { id: "scene-who-refuses", render: () => <SceneQuestionDemo lessonId="lesson-deep-taghabun3-who-refuses" ask="Who will enter Paradise" /> },
   { id: "scene-guided-at-the-door", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-his-mother" ask="What happened when he got home" /> },
   { id: "scene-prayer-made-short", render: () => <SceneQuestionDemo lessonId="lesson-deep-mercy-shortened-prayer" ask="What made the Prophet" /> },
+  // A question on each scene of the first revelation and of deeds he ﷺ taught (round 89).
+  { id: "scene-cave-of-hira", render: () => <SceneQuestionDemo lessonId="lesson-deep-meet-the-quran-first-revelation" ask="first word Jibril" /> },
+  { id: "scene-never-disgrace", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-khadijah" ask="Which good deed of his" /> },
+  { id: "scene-prayer-together", render: () => <SceneQuestionDemo lessonId="lesson-deep-tree-nafi-twenty-seven" ask="How much better" /> },
+  { id: "scene-two-ayat-at-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-sleep-baqarah-end" ask="Which ayahs are enough" /> },
+  { id: "scene-skilled-reciter", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-two-rewards-for-trying" ask="finds it hard" /> },
+  { id: "scene-fast-of-arafah", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-qatadah-day-of-arafah" ask="covers sins" /> },
+  { id: "scene-one-word", render: () => <SceneQuestionDemo lessonId="lesson-deep-qaf2-one-word-pleases-allah" ask="one pleasing word" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
