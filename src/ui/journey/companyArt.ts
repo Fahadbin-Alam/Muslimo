@@ -195,7 +195,7 @@ function lampsInTheSky(): SignArt {
           };
         }
       ),
-      { name: "a worry on the one reciting, for the little one", svg: glow(reader[0], n(reader[1] - 0.6), 5, "#C9C3D8", 0.22), keys: showWhile(0.47, 0.48, 0.52, 0.53) },
+      { name: "a worry on the one reciting, for the little one", svg: glow(reader[0], n(reader[1] - 0.6), 5, "#C9C3D8", 0.22), keys: showWhile(0.47, 0.48, 0.6, 0.62) },
       {
         name: "like a cloud, with lights like lamps in it",
         svg:
