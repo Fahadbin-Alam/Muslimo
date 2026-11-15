@@ -182,7 +182,14 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-milk-bowl": [/milk/i, /Suffah|bowl/i],
   "sign-bread-for-seventy": [/bread|loaves/i, /seventy|eighty|\bten\b/i],
   "sign-nightfall": [/night|bed|sleep/i, /door|lamp|cover/i],
-  "sign-half-date": [/date/i, /Fire|charity|sadaqah|good word/i]
+  "sign-half-date": [/date/i, /Fire|charity|sadaqah|good word/i],
+  "sign-lamp-out": [/lamp|light/i, /guest/i],
+  "sign-helped-at-home": [/home/i, /pray/i],
+  "sign-a-span-closer": [/repent|forgiven/i, /span|village|town/i],
+  "sign-uhud-shook": [/Uhud/i, /shook|martyr|siddiq/i],
+  "sign-greeting-stone": [/stone/i, /greet|salam/i],
+  "sign-around-us": [/rain/i, /around us/i],
+  "sign-blessed-water": [/food|water/i, /glorif|bless/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -305,7 +312,14 @@ const SOURCES: Record<string, string[]> = {
   "sign-milk-bowl": ["Sahih al-Bukhari 6452"],
   "sign-bread-for-seventy": ["Sahih al-Bukhari 3578"],
   "sign-nightfall": ["Sahih al-Bukhari 3304", "Sahih al-Bukhari 5624"],
-  "sign-half-date": ["Sahih al-Bukhari 1417", "Sahih al-Bukhari 6023"]
+  "sign-half-date": ["Sahih al-Bukhari 1417", "Sahih al-Bukhari 6023"],
+  "sign-lamp-out": ["Sahih al-Bukhari 4889"],
+  "sign-helped-at-home": ["Sahih al-Bukhari 676"],
+  "sign-a-span-closer": ["Sahih al-Bukhari 3470"],
+  "sign-uhud-shook": ["Sahih al-Bukhari 3675", "Sahih al-Bukhari 3686"],
+  "sign-greeting-stone": ["Sahih Muslim 2277"],
+  "sign-around-us": ["Sahih al-Bukhari 1013"],
+  "sign-blessed-water": ["Sahih al-Bukhari 3579"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -329,7 +343,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(678);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(689);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -2150,6 +2164,102 @@ describe("the signs in creation, alive", () => {
     expect([shown("half-date", "a way, from the home that gives", 0.24), shown("half-date", "a date", 0.12), shown("half-date", "a date", 0.24), shown("half-date", "half a date, kept", 0.24), at("half-date", "half a date, given", 0.24)]).toEqual([1, 1, 0, 1, [1, 0, 0]]);
     expect([at("half-date", "half a date, given", 0.5), shown("half-date", "a way to the home in need", 0.5), shown("half-date", shield, 0.5), value("half-date", shield, "scale", 0.5), shown("half-date", "a way, from another home", 0.5)]).toEqual([[1, 62, 1], 1, 1, 1, 0]);
     expect([shown("half-date", "a voice, saying a good word", 0.7), shown("half-date", another, 0.7), shown("half-date", "a voice, saying a good word", 1), shown("half-date", another, 1), value("half-date", another, "scale", 1), risen("half-date", good, 1)]).toEqual([1, 0, 0, 1, 1, good.map(() => [1, -10])]);
+  });
+
+  test("more scenes from his ﷺ life and from what he told show each moment in its order, and draw no Prophet, no person, no hand and no angel", () => {
+    const grace: SignKind[] = ["lamp-out", "helped-at-home", "a-span-closer", "uhud-shook", "greeting-stone", "around-us", "blessed-water"];
+    for (const kind of grace) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|daughter|face|hands?|fingers?|arms?|feet|foot|shoulder|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|teeth|mouth|lips?|belly|killer|monk|devils?|satan|shaytan|Aishah|Abu Bakr|Umar|Uthman|Mas'ud)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah and nothing comes down from the sky but the rain; nothing of the killing is drawn.
+      expect([kind, signArt(kind).parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|scrolls?|lightning|storm|fire|flames?|blood|swords?|knife)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name)).map((each) => each.name)]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    const risen = (kind: SignKind, list: string[], t: number) => list.map((name) => [shown(kind, name, t), value(kind, name, "y", t)]);
+    // The lamp put out: a visitor and his host come in at the door; the little ones go to sleep on the mat; a way goes
+    // from her place to the lamp and it goes out; in the dark the pot comes to the visitor and its food is eaten, while
+    // sounds only seem like eating, and the two go to the mat; with the morning, praise rises.
+    expect(words("lamp-out")).toEqual(["A hungry guest came: who will host him?", "Only the little ones' food: let them sleep", "And she put out the light", "In the dark he ate, and they slept hungry", "Then Allah revealed 59:9 about them"]);
+    const entering = ["a way, coming in at the door", "another way, coming in with it"];
+    const praise = names("lamp-out", /^praise, rising \d$/);
+    expect([all("lamp-out", entering, 0.18), shown("lamp-out", "the place where the visitor sat", 0.18), shown("lamp-out", "the host's place", 0.18), shown("lamp-out", "the lamp's light", 0.18), shown("lamp-out", "the room, dark", 0.18)]).toEqual([[1, 1], 1, 1, 1, 0]);
+    expect([all("lamp-out", entering, 0.38), value("lamp-out", "the little ones' places", "x", 0.38), shown("lamp-out", "a blanket over the little ones", 0.38), shown("lamp-out", "the lamp's light", 0.38)]).toEqual([[0, 0], 37, 1, 1]);
+    expect([shown("lamp-out", "a way, from her place to the lamp", 0.56), shown("lamp-out", "the lamp's light", 0.56), shown("lamp-out", "the room, dark", 0.56), value("lamp-out", "a small pot of food", "x", 0.56)]).toEqual([1, 0, 0.6, 0]);
+    expect([shown("lamp-out", "small sounds in the dark, as if eating", 0.66), value("lamp-out", "a small pot of food", "x", 0.78), value("lamp-out", "the food in it", "scaleY", 0.78), value("lamp-out", "the host's place", "x", 0.78), value("lamp-out", "her place by the cloth", "x", 0.78), shown("lamp-out", "small sounds in the dark, as if eating", 0.78)]).toEqual([1, -6, 0.12, 47, 67, 0]);
+    expect([praise.length, shown("lamp-out", "the window at dawn", 1), shown("lamp-out", "the room, dark", 1), risen("lamp-out", praise, 1)]).toEqual([3, 1, 0.1, praise.map(() => [1, -10])]);
+    // He helped at home: a way comes home; it goes from one of his family to the next, and a warm glow comes on each in
+    // turn; the call to prayer rises from the mosque's roof; and the way goes out to the mosque, where the prayer rises.
+    // No chore is drawn that Aishah did not name.
+    expect(words("helped-at-home")).toEqual(["Aishah was asked: what did he do at home?", "He was busy serving his family", "When the time for prayer came", "He went out to the prayer"]);
+    const serving = ["a way, going to the first of them", "the way, going to the next", "the way, going to the last"];
+    const warmth = ["a warm glow on the first place", "a warm glow on the next place", "a warm glow on the last place"];
+    const prayer = names("helped-at-home", /^the prayer, rising \d$/);
+    expect(names("helped-at-home", /broom|sweep|jar|dust|cook|pot|bucket|sew|mend|milk/i)).toEqual([]);
+    expect([shown("helped-at-home", "a way, coming home", 0.22), all("helped-at-home", serving, 0.22), all("helped-at-home", warmth, 0.22)]).toEqual([1, [0, 0, 0], [0, 0, 0]]);
+    expect([all("helped-at-home", serving, 0.32), all("helped-at-home", warmth, 0.32), all("helped-at-home", serving, 0.39), all("helped-at-home", warmth, 0.39)]).toEqual([[1, 0, 0], [1, 0, 0], [1, 1, 0], [1, 1, 0]]);
+    expect([shown("helped-at-home", "a way, coming home", 0.52), all("helped-at-home", serving, 0.52), all("helped-at-home", warmth, 0.52)]).toEqual([0, [1, 1, 1], [1, 1, 1]]);
+    expect([shown("helped-at-home", "the call to prayer, from the mosque's roof", 0.64), shown("helped-at-home", "the call to prayer, from the mosque's roof", 0.72), value("helped-at-home", "the sun", "x", 0.72), shown("helped-at-home", "a way, out to the mosque", 0.72)]).toEqual([1, 0, 52, 0]);
+    expect([prayer.length, shown("helped-at-home", "a way, out to the mosque", 1), risen("helped-at-home", prayer, 1)]).toEqual([3, 1, prayer.map(() => [1, -10])]);
+    // A span closer: a voice asks and a voice from the hut answers; a way sets out from the village he left, goes on
+    // and stops at a ring; the village ahead comes near and the one he left goes far; the two are measured, the line to
+    // the village ahead a little shorter; the way's end glows and forgiveness rises.
+    expect(words("a-span-closer")).toEqual(["He killed a hundred, then asked: can I repent?", "He was told: go to such and such a village", "On the way, death overtook him", "This village was told: come near; that, go far", "A span closer to that village: forgiven"]);
+    const forgiven = names("a-span-closer", /^forgiveness, rising \d$/);
+    const towns = ["the village he left", "the village ahead"];
+    const measured = ["a line, measured to the village he left", "a line, measured to the village ahead", "a glow, where the way stopped"];
+    const length = (name: string) => {
+      const [, from, to] = /^<path d="M([\d.]+) [\d.]+ L([\d.]+) /.exec(signArt("a-span-closer").parts.find((each) => each.name === name)!.svg)!;
+      return Math.abs(Number(from) - Number(to));
+    };
+    expect([length(measured[1]) < length(measured[0]), length(measured[0]) - length(measured[1]) < 6]).toEqual([true, true]);
+    expect([shown("a-span-closer", "a voice, asking: can I repent?", 0.1), shown("a-span-closer", "a voice, asking: can I repent?", 0.2), shown("a-span-closer", "a way, setting out for the village", 0.2)]).toEqual([1, 0, 0]);
+    expect([shown("a-span-closer", "a voice from the hut, answering", 0.28), shown("a-span-closer", "a voice from the hut, answering", 0.4), shown("a-span-closer", "a way, setting out for the village", 0.4), shown("a-span-closer", "the way, going on", 0.4), shown("a-span-closer", "a ring, where the way stopped", 0.4)]).toEqual([1, 0, 1, 0, 0]);
+    expect([shown("a-span-closer", "the way, going on", 0.58), shown("a-span-closer", "a ring, where the way stopped", 0.58), towns.map((name) => value("a-span-closer", name, "x", 0.58)), towns.map((name) => value("a-span-closer", name, "x", 0.78))]).toEqual([1, 1, [0, 0], [-6, -6]]);
+    expect([forgiven.length, all("a-span-closer", measured, 0.78), all("a-span-closer", measured, 1), risen("a-span-closer", forgiven, 1)]).toEqual([3, [0, 0, 0], [1, 1, 1], forgiven.map(() => [1, -10])]);
+    // Uhud shook: a way climbs the mountain and four places stand on its top; the mountain shakes, dust rises and a
+    // pebble rolls; it shakes once more, a voice says "be firm" and it stills; then a glow on one place, on another, and
+    // on the other two, and light rises.
+    expect(words("uhud-shook")).toEqual(["Up Uhud with Abu Bakr, Umar and Uthman", "And the mountain shook beneath them", "Be firm, Uhud!", "On you are a Prophet, a Siddiq and two martyrs"]);
+    const glows = ["a glow on the first place", "a glow on the second place", "glows on the other two places"];
+    const light = names("uhud-shook", /^light, rising from the top \d$/);
+    expect([shown("uhud-shook", "a way, climbing the mountain", 0.24), shown("uhud-shook", "four places on the top", 0.24), value("uhud-shook", "Mount Uhud", "x", 0.24)]).toEqual([1, 1, 0]);
+    expect([value("uhud-shook", "Mount Uhud", "x", 0.295), value("uhud-shook", "Mount Uhud", "x", 0.31), value("uhud-shook", "four places on the top", "x", 0.31), shown("uhud-shook", "dust below the mountain 1", 0.306), value("uhud-shook", "Mount Uhud", "x", 0.46), shown("uhud-shook", "a pebble, rolling down", 0.46)]).toEqual([1.4, -1.4, -1.4, 0.9, 0, 0]);
+    expect([value("uhud-shook", "Mount Uhud", "x", 0.5), shown("uhud-shook", "a voice on the top, saying: be firm", 0.55), shown("uhud-shook", "a voice on the top, saying: be firm", 0.64), value("uhud-shook", "Mount Uhud", "x", 0.64), all("uhud-shook", glows, 0.64)]).toEqual([-1, 1, 0, 0, [0, 0, 0]]);
+    expect([all("uhud-shook", glows, 0.72), all("uhud-shook", glows, 0.78), all("uhud-shook", glows, 1), risen("uhud-shook", light, 1)]).toEqual([[1, 0, 0], [1, 1, 0], [1, 1, 1], light.map(() => [1, -10])]);
+    // The stone that greeted him: a way goes along a valley of Makkah and past a stone, and a voice greets from it as it
+    // glows; a night passes as the sun sets and rises, and it greets again; then the stone shines, and light rises.
+    expect(words("greeting-stone")).toEqual(["In Makkah, before he was sent as a Prophet", "A stone would greet him with salam", "It greeted him again and again", "I know that stone, even now"]);
+    const risingLight = names("greeting-stone", /^light, rising from the stone \d$/);
+    expect([shown("greeting-stone", "a way along the valley", 0.22), shown("greeting-stone", "the way, passing the stone", 0.22), shown("greeting-stone", "a voice from the stone, greeting", 0.22)]).toEqual([1, 0, 0]);
+    expect([shown("greeting-stone", "the way, passing the stone", 0.38), shown("greeting-stone", "a voice from the stone, greeting", 0.38), shown("greeting-stone", "a glow on the stone", 0.38), shown("greeting-stone", "a voice from the stone, greeting", 0.5)]).toEqual([1, 1, 1, 0]);
+    expect([shown("greeting-stone", "a night, passing", 0.57), value("greeting-stone", "the sun, rising", "y", 0.57), shown("greeting-stone", "a night, passing", 0.65), value("greeting-stone", "the sun, rising", "y", 0.65), shown("greeting-stone", "the voice from the stone, again", 0.65), shown("greeting-stone", "the voice from the stone, again", 0.72)]).toEqual([0.5, 24, 0, 0, 1, 0]);
+    expect([shown("greeting-stone", "the stone, shining", 0.72), shown("greeting-stone", "the stone, shining", 1), risen("greeting-stone", risingLight, 1)]).toEqual([0, 1, risingLight.map(() => [1, -10])]);
+    // Around us, not on us: a voice in the mosque asks; a voice prays and a cloud like a shield rises from behind Sal';
+    // it rains on the town and around it, and the land turns green; a voice prays again, the clouds part to the hills,
+    // the rain stops on the town but not around it; and ways walk out in the sun.
+    expect(words("around-us")).toEqual(["On a Friday, in the khutbah: pray for rain", "A cloud like a shield rose behind Sal'", "It rained, and no sun was seen for a week", "Around us, not on us", "And they walked out in the sun"]);
+    const shield = "a cloud like a shield";
+    const rains = ["rain on the town", "rain on the hills around"];
+    expect([shown("around-us", "a voice in the mosque, asking", 0.1), shown("around-us", "a voice in the mosque, asking", 0.18), value("around-us", shield, "y", 0.18), shown("around-us", "cracks in the dry land", 0.18), shown("around-us", "the land, green again", 0.18)]).toEqual([1, 0, 0, 1, 0]);
+    expect([shown("around-us", "a voice from the mosque, praying", 0.25), value("around-us", shield, "y", 0.38), value("around-us", shield, "scale", 0.38), all("around-us", rains, 0.38)]).toEqual([1, -22, 1.8, [0, 0]]);
+    expect([all("around-us", rains, 0.58), shown("around-us", "the land, green again", 0.58), shown("around-us", "cracks in the dry land", 0.58), shown("around-us", "the sun", 0.58), shown("around-us", shield, 0.58), shown("around-us", "the sky, gray with rain", 0.58)]).toEqual([[1, 1], 1, 0, 0, 0, 0.4]);
+    expect([shown("around-us", "a voice from the mosque, praying again", 0.65), all("around-us", rains, 0.78), value("around-us", "rain clouds to the left", "x", 0.78), value("around-us", "rain clouds to the right", "x", 0.78), shown("around-us", "the sky, gray with rain", 0.78)]).toEqual([1, [0, 1], -38, 38, 0.08]);
+    expect([shown("around-us", "the sun", 1), all("around-us", ["a way, walking out in the sun", "another way, walking out in the sun"], 1), all("around-us", rains, 1)]).toEqual([1, [1, 1], [0, 1]]);
+    // The blessed water: a bowl with a little water is brought along a way; a voice speaks by it, its water rises,
+    // wells up and spills over; small dashed circles come to the water in turn; then a meal is set out, and voices and
+    // praise rise from the food.
+    expect(words("blessed-water")).toEqual(["On a journey, the water ran short", "Come to the water: the blessing is from Allah", "The water flowed, and all came to it", "And we heard the food glorify Allah"]);
+    const coming = names("blessed-water", /^someone, coming to the water \d$/);
+    const glorifying = names("blessed-water", /^praise, rising from the food \d$/);
+    expect([shown("blessed-water", "a way, bringing a little water", 0.2), Math.abs(value("blessed-water", "a bowl with a little water", "x", 0.2)), value("blessed-water", "the water in the bowl", "scale", 0.2), shown("blessed-water", "water, welling up", 0.2)]).toEqual([1, 0, 0.4, 0]);
+    expect([shown("blessed-water", "a way, bringing a little water", 0.42), shown("blessed-water", "a voice by the bowl", 0.3), shown("blessed-water", "a voice by the bowl", 0.42), value("blessed-water", "the water in the bowl", "scale", 0.42), all("blessed-water", ["water, welling up", "water, spilling over"], 0.42)]).toEqual([0, 1, 0, 1, [1, 1]]);
+    expect([coming.length, shown("blessed-water", coming[0], 0.48), all("blessed-water", coming, 0.62), shown("blessed-water", "a meal on a cloth", 0.62)]).toEqual([6, 1, coming.map(() => 0), 0]);
+    expect([all("blessed-water", ["a meal on a cloth", "voices from the food"], 1), risen("blessed-water", glorifying, 1)]).toEqual([[1, 1], glorifying.map(() => [1, -12])]);
   });
 
   test("every word and caption is translated in every language", () => {

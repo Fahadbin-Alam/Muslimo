@@ -275,7 +275,20 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - the home at nightfall: the children kept close, the door closed with Allah's name, the water skin tied, the cup
  *   covered even with a stick, and the lamp put out (Sahih al-Bukhari 3304, 5624);
  * - shield yourselves from the Fire, even with half a date, and if you have none, with a good word (Sahih al-Bukhari
- *   1417, 6023).
+ *   1417, 6023);
+ *
+ * and more scenes from his ﷺ life and from what he told (graceArt.ts draws them):
+ *
+ * - the lamp put out so a hungry guest could eat, while his hosts went to bed hungry, and 59:9 (Sahih al-Bukhari
+ *   4889);
+ * - his help at home: busy serving his family, and when the time for prayer came, out to the prayer (Sahih al-Bukhari
+ *   676);
+ * - the man who killed a hundred, kept asking if he could repent, was told to go to such and such a village, died on
+ *   the way, and was forgiven a span closer to it (Sahih al-Bukhari 3470);
+ * - Uhud, which shook under him, Abu Bakr, Umar and Uthman: be firm, Uhud (Sahih al-Bukhari 3675, 3686);
+ * - the stone in Makkah that greeted him before he was sent, which he knew even after (Sahih Muslim 2277);
+ * - the rain he ﷺ prayed for on a Friday, and then "around us, not on us" (Sahih al-Bukhari 1013);
+ * - the blessed water on a journey, and the food heard glorifying Allah as it was eaten (Sahih al-Bukhari 3579).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -305,7 +318,11 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * in the sea is not drawn, only the rings where it dipped and the drop it brings back; and in the scenes from his ﷺ
  * life, he and those with him are only their dashed ways, their voices, and rings or small dashed circles where they
  * sat or stood, no hand is drawn on the trunk, the spade or the bowl, no one rides the camel or the horse on the road
- * to Madinah, no devil is drawn at nightfall, and nothing of the Fire is drawn, only a shield of light.
+ * to Madinah, no devil is drawn at nightfall, and nothing of the Fire is drawn, only a shield of light; and in the
+ * other scenes from his ﷺ life and from what he told, the hosts and their guest, his family, the one who repented,
+ * the four on Uhud and those who came to the water are only rings, small dashed circles, dashed ways and voices, no
+ * hand is drawn in the blessed water, nothing of the killing is drawn and no angel, nothing comes down from the sky
+ * but the rain, and nothing is added to what the hadith says (no chore is drawn at his home).
  */
 
 export type SignKind =
@@ -428,7 +445,14 @@ export type SignKind =
   | "milk-bowl"
   | "bread-for-seventy"
   | "nightfall"
-  | "half-date";
+  | "half-date"
+  | "lamp-out"
+  | "helped-at-home"
+  | "a-span-closer"
+  | "uhud-shook"
+  | "greeting-stone"
+  | "around-us"
+  | "blessed-water";
 
 export type SignScene = {
   id: string;
@@ -1241,6 +1265,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "half-date",
     caption: "The Prophet ﷺ said: shield yourselves from the Fire, even with half a date; and if you have none, then with a good word.",
     sources: [bukhari("1417"), bukhari("6023")]
+  },
+  {
+    id: "sign-lamp-out",
+    kind: "lamp-out",
+    caption:
+      "A hungry man came, and the Prophet ﷺ asked who would host him. A man of the Ansar took him home, where there was only the children's food. They put the children to sleep, put out the lamp, and let him eat in the dark while they went to bed hungry. Then Allah revealed 59:9: they prefer others over themselves, even when in need.",
+    sources: [bukhari("4889")]
+  },
+  {
+    id: "sign-helped-at-home",
+    kind: "helped-at-home",
+    caption: "Aishah was asked what the Prophet ﷺ did at home. She said: he was busy serving his family, and when the time for prayer came, he went out to the prayer.",
+    sources: [bukhari("676")]
+  },
+  {
+    id: "sign-a-span-closer",
+    kind: "a-span-closer",
+    caption:
+      "A man who had killed a hundred kept asking if he could repent, and was told to go to such and such a village. Death overtook him on the way. That village was told to come near and the one he left to go far, and he was found a span closer to it, so he was forgiven.",
+    sources: [bukhari("3470")]
+  },
+  {
+    id: "sign-uhud-shook",
+    kind: "uhud-shook",
+    caption: "The Prophet ﷺ went up Uhud with Abu Bakr, Umar and Uthman, and the mountain shook beneath them. He ﷺ said: be firm, Uhud, for on you are a Prophet, a Siddiq and two martyrs.",
+    sources: [bukhari("3675"), bukhari("3686")]
+  },
+  {
+    id: "sign-greeting-stone",
+    kind: "greeting-stone",
+    caption: "The Prophet ﷺ said: I know a stone in Makkah that used to greet me before I was sent as a Prophet. I know it even now.",
+    sources: [muslim("2277")]
+  },
+  {
+    id: "sign-around-us",
+    kind: "around-us",
+    caption:
+      "On a Friday, a man asked the Prophet ﷺ in his khutbah to pray for rain. A cloud like a shield rose from behind Sal', and it rained for a week. The next Friday he ﷺ prayed: around us, not on us. The rain stopped, and they walked out in the sun.",
+    sources: [bukhari("1013")]
+  },
+  {
+    id: "sign-blessed-water",
+    kind: "blessed-water",
+    caption:
+      "On a journey the water ran short. A little water was brought, and the Prophet ﷺ said: come to the blessed water, and the blessing is from Allah. The water flowed, and Ibn Mas'ud said: we used to hear the food glorifying Allah as it was eaten.",
+    sources: [bukhari("3579")]
   }
 ];
 
@@ -2062,7 +2132,27 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-kids-small-deeds-half-a-date": "sign-half-date",
   "deep-jahannam-half-date": "sign-half-date",
   "deep-zalzalah2-even-half-a-date": "sign-half-date",
-  "deep-zalzalah2-a-good-word": "sign-half-date"
+  "deep-zalzalah2-a-good-word": "sign-half-date",
+  // The lamp put out so a hungry guest could eat, and 59:9 (Sahih al-Bukhari 4889).
+  "deep-hashr2-the-lamp-put-out": "sign-lamp-out",
+  // Busy serving his family, then out to the prayer (Sahih al-Bukhari 676).
+  "deep-humility-at-home": "sign-helped-at-home",
+  "deep-spouses-helped-at-home": "sign-helped-at-home",
+  "ramadan-help-at-home": "sign-helped-at-home",
+  // The man who killed a hundred, forgiven a span closer to the village he set out for (Sahih al-Bukhari 3470).
+  "deep-hadith-forgives-the-killer-who-repented": "sign-a-span-closer",
+  "deep-zumar4-the-man-who-was-forgiven": "sign-a-span-closer",
+  // Uhud shook: be firm, Uhud (Sahih al-Bukhari 3675, 3686). The lessons on Abu Bakr, Umar and Uthman as a whole,
+  // which cite it among other things, keep their pictures.
+  "deep-abubakr-uhud-shook": "sign-uhud-shook",
+  "deep-uthman-uhud": "sign-uhud-shook",
+  // The stone in Makkah that greeted him (Sahih Muslim 2277).
+  "deep-book-fadail-the-stone-that-greeted-him": "sign-greeting-stone",
+  // Around us, not on us (Sahih al-Bukhari 1013).
+  "deep-dua-rain-and-wind-around-us": "sign-around-us",
+  // The blessed water, and the food that glorified Allah (Sahih al-Bukhari 3579); the Seerah's lesson on the water at
+  // al-Hudaybiyah keeps its map.
+  "deep-isra2-the-food-glorified-allah": "sign-blessed-water"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
