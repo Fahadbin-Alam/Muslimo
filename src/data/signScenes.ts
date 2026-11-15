@@ -230,7 +230,21 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - a hypocrite like a sheep wandering between two flocks, to this one once and to that one once (Sahih Muslim 2784);
  * - the believer like a fresh plant, which the wind bends and which stands straight again when it is still, and the
  *   wicked like a pine, hard and straight, until it is broken (Sahih al-Bukhari 5644);
- * - one who remembers his Lord and one who does not, like the living and the dead (Sahih al-Bukhari 6407).
+ * - one who remembers his Lord and one who does not, like the living and the dead (Sahih al-Bukhari 6407);
+ *
+ * and good deeds he ﷺ taught with a picture (deedArt.ts draws them):
+ *
+ * - Allah more pleased with His servant's repentance than one who lost his camel in the desert, with his food and
+ *   drink, and lay down in a tree's shade, having lost hope, and then found it standing by him (Sahih Muslim 2747);
+ * - a believer is not stung from the same hole twice (Sahih al-Bukhari 6133);
+ * - the doors of good: fasting is a shield, charity puts out sins as water puts out fire, and prayer deep in the night
+ *   (Jami at-Tirmidhi 2616);
+ * - the square he ﷺ drew: a person's lifetime all around him, his hope a line going out of it, and troubles the small
+ *   lines beside it (Sahih al-Bukhari 6417);
+ * - when you cook a soup, add more water to it, then look to your neighbors and give them some of it kindly (Sahih
+ *   Muslim 2625b);
+ * - a charity owed for every joint each day the sun rises: judging fairly, helping someone with his ride, a good word,
+ *   every step to the prayer, and removing harm from the road (Sahih Muslim 1009, Sahih al-Bukhari 2989).
  *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
@@ -252,7 +266,9 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * people of the stories he ﷺ told are only their dashed ways and their voices, what each one in the cave did is only
  * things and animals in a picture, and no page of the Quran is drawn, only a voice reciting; and in his other
  * likenesses, the one who recites, the trader and the one who remembers are only their voices and their dashed ways,
- * and the pine is broken only by the wind.
+ * and the pine is broken only by the wind; and in the good deeds he ﷺ taught, the one who lost his camel, the one who
+ * was stung, the one who cooks and the ones who do each charity are only their dashed ways and their voices, and the
+ * square and its lines are drawn on the ground by no hand.
  */
 
 export type SignKind =
@@ -355,7 +371,13 @@ export type SignKind =
   | "hungry-birds"
   | "two-flocks"
   | "bending-plant"
-  | "remember";
+  | "remember"
+  | "lost-camel"
+  | "stung-twice"
+  | "doors-of-good"
+  | "square-and-line"
+  | "more-water"
+  | "joint-charity";
 
 export type SignScene = {
   id: string;
@@ -1040,6 +1062,47 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "remember",
     caption: "The Prophet ﷺ said: the likeness of one who remembers his Lord and one who does not remember Him is that of the living and the dead.",
     sources: [bukhari("6407")]
+  },
+  {
+    id: "sign-lost-camel",
+    kind: "lost-camel",
+    caption:
+      "The Prophet ﷺ said: Allah is more pleased with the repentance of His servant, when he repents to Him, than one of you who was on his camel in a barren desert, and it ran off from him with his food and his drink. He lost hope of it, came to a tree and lay down in its shade, having lost hope of his camel. Then, while he was like that, there it was, standing by him.",
+    sources: [muslim("2747")]
+  },
+  {
+    id: "sign-stung-twice",
+    kind: "stung-twice",
+    caption: "The Prophet ﷺ said: a believer is not stung from the same hole twice.",
+    sources: [bukhari("6133")]
+  },
+  {
+    id: "sign-doors-of-good",
+    kind: "doors-of-good",
+    caption:
+      "The Prophet ﷺ said to Mu'adh: shall I not tell you of the doors of good? Fasting is a shield, charity puts out sins as water puts out fire, and a man's prayer deep in the night.",
+    sources: [tirmidhi("2616")]
+  },
+  {
+    id: "sign-square-and-line",
+    kind: "square-and-line",
+    caption:
+      "The Prophet ﷺ drew a square, and a line in the middle of it going out of it, and small lines beside the one in the middle, and said: this is a person, and this is his lifetime all around him; this line going out is his hope; and these small lines are troubles: if one misses him, another bites him.",
+    sources: [bukhari("6417")]
+  },
+  {
+    id: "sign-more-water",
+    kind: "more-water",
+    caption:
+      "Abu Dharr said: my dear friend ﷺ advised me: when you cook a soup, add more water to it, then look to a household of your neighbors, and give them some of it kindly.",
+    sources: [muslim("2625b")]
+  },
+  {
+    id: "sign-joint-charity",
+    kind: "joint-charity",
+    caption:
+      "The Prophet ﷺ said: each day the sun rises, a charity is owed for every joint of a person: judging fairly between two is a charity; helping someone with his ride, lifting him onto it or lifting his load onto it, is a charity; a good word is a charity; every step taken to the prayer is a charity; and removing harm from the road is a charity.",
+    sources: [muslim("1009"), bukhari("2989")]
   }
 ];
 
@@ -1803,7 +1866,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-dua-dhikr-living-dead": "sign-remember",
   "deep-raad3-living-and-dead": "sign-remember",
   "deep-ahzab2-remember-allah-much": "sign-remember",
-  "deep-mujadila3-living-heart": "sign-remember"
+  "deep-mujadila3-living-heart": "sign-remember",
+  // Allah more pleased with His servant's repentance than one who found his lost camel (Sahih Muslim 2747), with 42:25.
+  "deep-shura2-he-accepts-repentance": "sign-lost-camel",
+  // A believer is not stung from the same hole twice (Sahih al-Bukhari 6133).
+  "deep-book-adab-not-stung-twice": "sign-stung-twice",
+  // The doors of good (Jami at-Tirmidhi 2616): charity puts out sins as water puts out fire, and the lesson on 32:16,
+  // which he ﷺ recited after naming prayer deep in the night.
+  "deep-zakat-pillar-puts-out-sin": "sign-doors-of-good",
+  "deep-sajdah2-doors-of-good": "sign-doors-of-good",
+  // The square he ﷺ drew, with the line of hope going out of it (Sahih al-Bukhari 6417).
+  "deep-book-riqaq-the-square-and-the-line": "sign-square-and-line",
+  // More water in the soup, for the neighbors (Sahih Muslim 2625b).
+  "deep-neighbors-more-water": "sign-more-water",
+  "zakat-broader-generosity-care-for-neighbors": "sign-more-water",
+  // A charity for every joint: a good word, help with a ride, judging fairly (Sahih Muslim 1009, Sahih al-Bukhari 2989).
+  "deep-speech-good-word": "sign-joint-charity",
+  "deep-kids-small-deeds-charity-for-every-joint": "sign-joint-charity"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
