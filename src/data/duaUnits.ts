@@ -247,7 +247,7 @@ const SLEEP: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What did Fatimah ask her father ﷺ for?", a: "A servant", wrong: ["A new house", "A horse", "Money for a trip"], why: "Her hands hurt from the hand mill." },
-        { q: "How many times is Allahu Akbar said at bedtime?", a: "34", wrong: ["33", "10", "100"], why: "34 takbir, 33 tasbih, 33 tahmid." },
+        { q: "How many times is Allahu Akbar said at bedtime?", a: "34", wrong: ["40", "10", "100"], why: "34 takbir, 33 tasbih, 33 tahmid." },
         { q: "He ﷺ said these words are better than a servant.", tf: true, why: "Bukhari 3705." }
       ]
     },
