@@ -124,8 +124,9 @@ describe("which questions are asked on a scene", () => {
     // The final quizzes of "Brothers and sisters in faith" and "Jibril kept advising" each swap one scene question
     // for another. Every one of them is still asked in its own lesson. The night prayer unit gained its lesson on how
     // he opened the night prayer, so its final quiz no longer asks how much of the night Dawud prayed (still asked in
-    // its lessons).
-    expect(places).toBe(2433);
+    // its lessons). The second review card of "The Book of the Virtues of the Quran" also asks what one who finds
+    // reciting hard gets, a question on the scene of the skilled reciter.
+    expect(places).toBe(2434);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
