@@ -105,8 +105,11 @@ describe("which questions are asked on a scene", () => {
     // review card, which asks two of its scene questions, and its final quiz draws one more. "A fresh start" gained
     // its lesson on 3:136, so its final quiz asks one scene question fewer (that question is still asked in its
     // lesson). "Neighbors and guests" now has seven lessons, so it gets a review card, which asks one of its scene
-    // questions.
-    expect(places).toBe(1741);
+    // questions. "The reward of dhikr" and "Patience and thanks" each gained a lesson, so their final quizzes each ask
+    // one scene question fewer (the one who remembers Allah, and what a believer does when something hard happens;
+    // both are still asked in their lessons), and the final quiz of "Jahannam" swaps two of its scene questions for two
+    // others (all four are still asked in their lessons).
+    expect(places).toBe(1739);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
