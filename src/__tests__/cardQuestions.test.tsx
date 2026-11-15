@@ -361,7 +361,7 @@ describe("which questions are asked on picture cards", () => {
     }
     expect(animals).toEqual(REVIEWED_ANIMALS);
     expect(things).toEqual(REVIEWED_THINGS);
-    expect(places).toEqual({ animals: 41, things: 202 });
+    expect(places).toEqual({ animals: 41, things: 201 });
     // The apes question stays as tiles: people were turned into apes, and a drawing could make light of it.
     for (const prompt of LEFT_AS_TILES) {
       const found = allChallenges().filter(({ challenge }) => challenge.prompt === prompt);

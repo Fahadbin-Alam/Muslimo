@@ -531,6 +531,19 @@ const PATIENCE: DeepUnit = {
       ]
     },
     {
+      slug: "the-thankful-eater",
+      title: "The thankful eater",
+      line: "One who eats and thanks Allah is like one who fasts patiently.",
+      facts: ["Told by Abu Hurairah", "Grateful: thankful for a blessing", "Patient: steady when things are hard"],
+      source: hadith("tirmidhi", "2486", "Abu Hurairah", "Hasan (Darussalam)", "Abu Hurairah said: the Prophet ﷺ said: the one who eats and is grateful is like the patient fasting person.", "The one who eats and is grateful is like the status of the patient fasting person"),
+      difficulty: 2,
+      questions: [
+        { q: "Who is the grateful eater like, he ﷺ said?", a: "A patient fasting person", wrong: ["A busy trader", "A tired traveler", "A strong builder"], why: "He ﷺ said: the one who eats and is grateful is like the patient fasting person." },
+        { q: "What makes the eater like the patient faster?", a: "Being grateful", wrong: ["Eating quickly", "Eating alone", "Eating early"], why: "The one who eats and is grateful is like the status of the patient fasting person." },
+        { q: "A grateful eater is like a person who fasts with patience.", tf: true, why: "Eating with thanks has the status of patient fasting, he ﷺ said." }
+      ]
+    },
+    {
       slug: "do-not-say-if-only",
       title: "Do not say: if only",
       line: "A strong believer seeks Allah's help and never gives up.",
@@ -644,6 +657,19 @@ const BROTHERHOOD: DeepUnit = {
         { q: "Why was the man visiting his brother?", a: "He loved him for Allah", wrong: ["To ask for money", "To trade", "He was lost"], why: "I love him for the sake of Allah." },
         { q: "Whom did Allah send to meet him on the road?", a: "An angel", wrong: ["A king", "A prophet", "A trader"], why: "Allah deputed an angel to wait for him on his way." },
         { q: "What did the angel tell him?", a: "Allah loves you as you love him", wrong: ["Go back home", "Your brother has moved", "Bring a gift"], why: "Allah loves you as you love him for His sake." }
+      ]
+    },
+    {
+      slug: "the-stronger-love",
+      title: "The one who loves more",
+      line: "Of two who love each other, the better loves more strongly.",
+      facts: ["Told by Anas ibn Malik", "About two who love each other", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "544", "Anas ibn Malik", "Sahih (Al-Albani)", "Anas said: the Prophet ﷺ said: when two men love one another, the better of them is the one whose love for his companion is stronger.", "the better of them is the one who has the strongest love for his companion"),
+      difficulty: 2,
+      questions: [
+        { q: "Of two who love each other, who is the better one?", a: "The one who loves more", wrong: ["The one who is older", "The one who is richer", "The one who is taller"], why: "Ma tahabba ar-rajulan illa kana afdaluhuma ashaddahuma hubban li-sahibihi." },
+        { q: "Who narrated the hadith on the one who loves more?", a: "Anas ibn Malik", wrong: ["Ibn Abbas", "Abu Hurayrah", "Jabir ibn Abdullah"], why: "Anas reported that the Prophet ﷺ said it, in Al-Adab al-Mufrad 544." },
+        { q: "Loving your companion more strongly makes you the better of the two.", tf: true, why: "Anas reported that he ﷺ said the better of two friends is the one with the strongest love." }
       ]
     }
   ]
