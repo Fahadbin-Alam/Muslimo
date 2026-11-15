@@ -97,13 +97,35 @@ describe("which questions are asked on a scene", () => {
         ]);
       }
     }
-    // The Bilal unit's final quiz also asks who was told to call the adhan, now that the unit has five lessons. The
-    // "Spending, the Quran's way" unit's first review and final quiz now also draw on its lessons on 2:265, 2:272 and
-    // 2:274, so three of its scene questions are each asked in one place fewer (they are still asked in their lessons).
-    // "Zakat in Islam" now has seven lessons, so it gets a review card, which asks two of its scene questions, and its
-    // final quiz draws one more. "A fresh start" gained its lesson on 3:136, so its final quiz asks one scene question
-    // fewer (that question is still asked in its lesson). "Neighbors and guests" now has seven lessons, so it gets a
-    // review card, which asks one of its scene questions.
+    // "The reward of the adhan" unit's final quiz asks one of its scene questions: with five lessons it asked who was
+    // told to call the first adhan, and with seven it asks whether people had to guess the prayer time before the
+    // adhan (both are still asked in their lesson). The "Spending, the Quran's way" unit's first review and final
+    // quiz now also draw on its lessons on 2:265, 2:272 and 2:274, so three of its scene questions are each asked in
+    // one place fewer (they are still asked in their lessons). "Zakat in Islam" now has seven lessons, so it gets a
+    // review card, which asks two of its scene questions, and its final quiz draws one more. "A fresh start" gained
+    // its lesson on 3:136, so its final quiz asks one scene question fewer (that question is still asked in its
+    // lesson). "Neighbors and guests" now has seven lessons, so it gets a review card, which asks one of its scene
+    // questions. "The reward of dhikr" and "Patience and thanks" each gained a lesson, so their final quizzes each ask
+    // one scene question fewer: the first no longer asks about the one who remembers Allah, and the second asks what to
+    // say after something goes wrong in place of what a believer does when something hard happens and whether saying
+    // if only opens a door to Shaytan. The final quiz of "Jahannam" swaps two of its scene questions for two others.
+    // Every one of them is still asked in its own lesson. "The Book of the Virtues of the Quran" gained a lesson, so its
+    // final quiz no longer asks what we are told to do with the Quran (still asked in its lesson). "The reward of dhikr"
+    // gained a lesson too: its final quiz now asks whether he also said Allah is not deaf or far away, and no longer
+    // asks which pair are the two words or where la hawla wa la quwwata illa billah is a treasure of (both still asked in
+    // their lessons). "The intercession and the Pool" gained a lesson, so its final quiz asks how wide the Pool is in
+    // place of how many cups it has (both still asked in their lesson). "This world and the next" now has seven
+    // lessons, so it gets a review card, which asks what he compared greed for wealth and honor to, and its final
+    // quiz asks what that greed harms in its place. "The Book of the Virtues of the Quran" now has thirteen lessons,
+    // so it gets a second review card, which asks what a believer who does not recite is like. Both are still asked
+    // in their lessons. "Real strength" and "Steady on the straight path" now have seven lessons, so each gets a
+    // review card, which asks what was happening when he said who is truly strong, and what the believer is like;
+    // their final quizzes now ask who is truly strong, and what the plant does when the wind stops, in their place.
+    // The final quizzes of "Brothers and sisters in faith" and "Jibril kept advising" each swap one scene question
+    // for another. Every one of them is still asked in its own lesson. The night prayer unit gained its lesson on how
+    // he opened the night prayer, so its final quiz no longer asks how much of the night Dawud prayed (still asked in
+    // its lessons). The second review card of "The Book of the Virtues of the Quran" also asks what one who finds
+    // reciting hard gets.
     expect(places).toBe(2500);
   });
 

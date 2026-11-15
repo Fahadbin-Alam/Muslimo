@@ -3082,6 +3082,19 @@ const THAWBAN: DeepUnit = {
         { q: "What is wahn?", a: "Love of the world and dislike of death", wrong: ["Love of prayer", "Fear of Allah", "Hard work"], why: "Love of the world and dislike of death." },
         { q: "Being many is enough without strong faith.", tf: false, why: "They will be many but like foam." }
       ]
+    },
+    {
+      slug: "deeds-like-dust",
+      title: "Deeds turned to dust",
+      line: "Thawban narrated: sins done alone can turn good deeds to dust.",
+      facts: ["Their good deeds were like the mountains of Tihamah.", "Allah will make them like scattered dust.", "When alone, they break the sacred limits of Allah."],
+      source: hadith("ibnmajah", "4245", "Thawban", "Hasan (Darussalam)", "Thawban said: the Prophet ﷺ said: I know people of my nation who will come on the Day of Resurrection with good deeds like the mountains of Tihamah, but Allah will make them like scattered dust. Thawban said: O Messenger of Allah ﷺ, describe them to us, so that we do not become like them without knowing. He ﷺ said: they are your brothers and of your own people, and they worship at night as you do, but when they are alone they break the sacred limits of Allah.", "but they will be people who, when they are alone, transgress the sacred limits of Allah"),
+      difficulty: 3,
+      questions: [
+        { q: "What will Allah make their good deeds like?", a: "Scattered dust", wrong: ["Shining stars", "Flowing rivers", "Shady trees"], why: "Deeds like the mountains of Tihamah will be made like scattered dust, he ﷺ said." },
+        { q: "What do these people do when they are alone?", a: "Break Allah's sacred limits", wrong: ["Count their coins", "Cook their food", "Sweep their homes"], why: "They worship at night as you do, but alone they transgress His limits, he ﷺ said." },
+        { q: "Sins done when no one sees still matter to Allah.", tf: true, why: "Those who break His limits when alone will find their deeds made like dust, he ﷺ said." }
+      ]
     }
   ]
 };

@@ -1,14 +1,15 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more unit for the Day of Judgment topic: this world and the next, from the Book of Zuhd in Jami at-Tirmidhi.
-// Every card is one sahih or hasan hadith (number, narrator and grade as sunnah.com gives them), with its exact
+// One more unit for the Day of Judgment topic: this world and the next, from the Book of Zuhd in Jami at-Tirmidhi, and
+// one hadith from Sahih Muslim (2808a): a believer is given for a good deed in this world and rewarded for it in the
+// next. Every card is one sahih or hasan hadith (number, narrator and grade as sunnah.com gives them), with its exact
 // English words to highlight, and none of them is taught anywhere else in the app.
 
 const WORLD: DeepUnit = {
   key: "akhirah-this-world",
   topicId: "akhirah",
   branchId: "akhirah-this-world",
-  branch: { title: "This world and the next", description: "Safe and fed is plenty, greed that harms faith, life that passes fast, the best of people, the tongue, and asking Allah." },
+  branch: { title: "This world and the next", description: "Safe and fed is plenty, greed that harms faith, life that passes fast, the best of people, the tongue, asking Allah, and good deeds rewarded in both worlds." },
   name: "this world and the next",
   kind: "skill",
   lessonType: "skill",
@@ -89,6 +90,19 @@ const WORLD: DeepUnit = {
         { q: "To whom should you bring your need, he ﷺ said?", a: "To Allah, not to people", wrong: ["To people, not to Allah", "To no one at all", "To the richest man"], why: "Whoever beseeches the people for it, his destitution shall not end." },
         { q: "When will Allah send provision to the one who asks Him?", a: "Sooner or later", wrong: ["Never", "Only in old age", "Only once he stops asking"], why: "Whoever beseeches Allah for it, Allah will send provisions to him." },
         { q: "Taking your need only to people always ends it.", tf: false, why: "No. His destitution shall not end, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "rewarded-in-both-worlds",
+      title: "Rewarded in both worlds",
+      line: "A believer's good deed is rewarded in both worlds.",
+      facts: ["Told by Anas ibn Malik", "A believer: given in this world, rewarded in the next", "A disbeliever: given for his good in this world"],
+      source: hadith("muslim", "2808a", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: the Messenger of Allah ﷺ said: Allah does not wrong a believer for a good deed. He is given for it in this world, and rewarded for it in the Hereafter. As for a disbeliever, he is given in this world for the good he did, so that when he reaches the Hereafter, he has no good deed left to be rewarded for.", "Allah does not treat a believer unjustly in regard to his virtues"),
+      difficulty: 2,
+      questions: [
+        { q: "Where is a believer given for a good deed, he ﷺ said?", a: "In this world and the Hereafter", wrong: ["In this world only", "In the Hereafter only", "In the grave only"], why: "He is given for it in this world and rewarded for it in the Hereafter, he ﷺ said." },
+        { q: "Where is a disbeliever given for his good deeds, he ﷺ said?", a: "In this world", wrong: ["In the Hereafter", "In Paradise", "In both worlds"], why: "He tastes their reward in this world, so none is left for him in the Hereafter." },
+        { q: "Allah does not wrong a believer for even one good deed.", tf: true, why: "Allah does not treat a believer unjustly in regard to his virtues, he ﷺ said." }
       ]
     }
   ]

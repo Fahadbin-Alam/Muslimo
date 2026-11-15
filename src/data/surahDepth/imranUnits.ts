@@ -3,8 +3,8 @@ import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
 
 // Surah Ali 'Imran ayah by ayah, the way Al-Baqarah is taught (baqarahUnits.ts): after the unit's own circles and its
 // passages, every ayah or small group of ayahs gets a lesson, explained as Tafsir Ibn Kathir explains it (the abridged
-// English on quran.com), with a sahih hadith where one explains the ayah. Each source opens at the highlighted words
-// that say the lesson's point. Where the scholars give different explanations, the card keeps to what they agree on.
+// English on quran.com), with a sahih or hasan hadith where one explains the ayah. Each source opens at the highlighted
+// words that say the lesson's point. Where scholars give different explanations, the card keeps to what they agree on.
 
 /** Tafsir Ibn Kathir on Ali 'Imran 3:ayah, on quran.com, opened at `highlight` (words copied from that page). */
 function ik(ayah: number, summary: string, highlight: string): LessonSource {
@@ -983,6 +983,20 @@ const IMRAN_TWO: DeepUnit = {
         { q: "Why is this Ummah the best nation, in 3:110?", a: "It commands good, forbids wrong and believes", wrong: ["It is the richest", "It is the biggest", "It is the oldest"], why: "Ta'muruna bil-ma'rufi wa tanhawna 'anil-munkar." },
         { q: "Whom was this nation brought out for?", a: "For people", wrong: ["For itself only", "For angels", "For nobody"], why: "Ukhrijat lin-nas." },
         { q: "Being born Muslim is enough to share this praise, with no deeds.", tf: false, why: "It is earned by these qualities." }
+      ]
+    },
+    {
+      slug: "seventy-nations",
+      title: "Completing seventy nations",
+      line: "This Ummah completes seventy nations and is the best of them.",
+      facts: ["Bahz ibn Hakim told it from his grandfather", "He ﷺ said it about 3:110", "The most honored of the nations to Allah"],
+      quote: q3(110),
+      source: hadith("tirmidhi", "3001", "Bahz ibn Hakim, from his grandfather", "Hasan (Darussalam)", "Bahz ibn Hakim's grandfather heard the Prophet ﷺ say, about the ayah you are the best nation raised up for mankind: you are the completion of seventy nations. You are the best of them, and the most honorable of them to Allah.", "You are the completion of seventy nations, you are the best of them"),
+      difficulty: 4,
+      questions: [
+        { q: "This Ummah completes how many nations, he ﷺ said?", a: "Seventy", wrong: ["Seven", "Forty", "Twelve"], why: "You are the completion of seventy nations, he ﷺ said, explaining 3:110." },
+        { q: "Which ayah was he ﷺ explaining with these words?", a: "3:110", wrong: ["2:255", "3:190", "112:1"], why: "You are the best of peoples ever raised up for mankind, says 3:110." },
+        { q: "He ﷺ called this Ummah the most honored of the nations to Allah.", tf: true, why: "You are the best of them, and the most honorable of them to Allah, he ﷺ said." }
       ]
     },
     {
