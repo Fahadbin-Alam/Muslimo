@@ -193,7 +193,21 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  *   the guide who brought the camels (Sahih al-Bukhari 3905, 3653);
  * - the plague in Sham: Umar at Sargh, asking counsel and going back in the morning, from Allah's decree to Allah's
  *   decree like camels grazing the green side of a valley; and the hadith: do not go to a land of plague, nor flee from
- *   it (Sahih al-Bukhari 5729).
+ *   it (Sahih al-Bukhari 5729);
+ *
+ * and likenesses the Prophet ﷺ gave (likenessArt.ts draws them):
+ *
+ * - the believers like a building, each part holding up the other; and speak up for the one who asks, and be rewarded
+ *   (Sahih al-Bukhari 481, 6026);
+ * - mercy in a hundred parts: one among all creation, by which a mare lifts her hoof from her foal, and ninety-nine
+ *   kept with Him (Sahih al-Bukhari 6000, 6469);
+ * - the halal and the haram are clear, with doubtful things between them; and one who grazes around a sanctuary soon
+ *   grazes inside it (Sahih al-Bukhari 52);
+ * - a good friend like one who carries musk, and a bad friend like one who blows the bellows (Sahih al-Bukhari 5534);
+ * - the people who shared a ship, some above and some below: if those below are stopped from making a hole, all are
+ *   saved (Sahih al-Bukhari 2493).
+ *
+ * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
  * Each scene shows only what its ayahs say. Nothing in a scene is a person or an angel: only the land, the sky, the
  * sea, plants, animals and things; the people of a parable are never drawn, only their gardens, and no Prophet and no
@@ -208,7 +222,8 @@ import { bukhari, muslim, quran, type MapSource } from "./seerahMap";
  * the one who asked permission, his witness, Bilal and Uthman are only their dashed ways and their voices, the hand in
  * the heap of food is not drawn, and no bell or horn is drawn for the call to prayer; Ka'b, Abu Bakr, Asma, Umar and
  * those with them are only their dashed ways and their voices, nothing is drawn for Allah in the cave, and the plague
- * is only a haze over the land.
+ * is only a haze over the land; the people of the likenesses are only their dashed ways and their voices, no hand is
+ * drawn, and the hundred parts of mercy are only rings to count them, with nothing coming down from the sky.
  */
 
 export type SignKind =
@@ -296,7 +311,12 @@ export type SignKind =
   | "river-at-the-door"
   | "tabuk"
   | "thawr"
-  | "plague";
+  | "plague"
+  | "building"
+  | "mercy"
+  | "sanctuary"
+  | "musk"
+  | "shared-ship";
 
 export type SignScene = {
   id: string;
@@ -446,8 +466,8 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-sea",
     kind: "sea",
     caption:
-      "With Pharaoh's army behind them and the sea before them, Allah told Musa to strike the sea with his staff. It split apart, each side like a great mountain, and a dry path opened through the sea, so they crossed without fear.",
-    sources: [quran(26, 61), quran(26, 63), quran(20, 77)]
+      "With Pharaoh's army behind them and the sea before them, Allah told Musa to strike the sea with his staff. It split apart, each side like a great mountain, and a dry path opened through the sea, so they crossed without fear. That was the day of Ashura, the day Allah saved the Children of Israel from their enemy: Musa fasted it, and the Prophet ﷺ fasted it too and told the Muslims to fast it.",
+    sources: [quran(26, 61), quran(26, 63), quran(20, 77), bukhari("2004")]
   },
   {
     id: "sign-springs",
@@ -878,6 +898,41 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Umar set out for Sham, and at Sargh he heard that plague had broken out there. He asked counsel, and said: we go back in the morning. Abu Ubaydah said: running from Allah's decree? Umar said: yes, from Allah's decree to Allah's decree, as camels may graze the green side of a valley or its dry side. Then Abd ar-Rahman ibn Awf told him the Prophet ﷺ said: if you hear of it in a land, do not go to it; and if it breaks out where you are, do not leave it, fleeing from it.",
     sources: [bukhari("5729")]
+  },
+  {
+    id: "sign-building",
+    kind: "building",
+    caption:
+      "The Prophet ﷺ said: the believer to the believer is like a building, each part of it holding up the other; and he laced his fingers together. Once, as he sat, a man came asking for what he needed, and he ﷺ said: speak up for him, and you will be rewarded.",
+    sources: [bukhari("481"), bukhari("6026")]
+  },
+  {
+    id: "sign-mercy",
+    kind: "mercy",
+    caption:
+      "The Prophet ﷺ said: Allah made mercy in a hundred parts. He kept ninety-nine parts with Him, and sent one part among all His creation. By that one part, creatures are kind to each other, so that a mare lifts her hoof away from her foal, fearing she might hurt it.",
+    sources: [bukhari("6000"), bukhari("6469")]
+  },
+  {
+    id: "sign-sanctuary",
+    kind: "sanctuary",
+    caption:
+      "The Prophet ﷺ said: the halal is clear and the haram is clear, and between them are doubtful things that many people do not know. Whoever keeps away from them keeps his religion and his honour safe. Whoever falls into them is like one who grazes his flock around a sanctuary: soon he grazes inside it. Every king has a sanctuary, and Allah's sanctuary on His earth is what He has made haram.",
+    sources: [bukhari("52")]
+  },
+  {
+    id: "sign-musk",
+    kind: "musk",
+    caption:
+      "The Prophet ﷺ said: a good friend and a bad friend are like one who carries musk and one who blows the bellows. The one with musk may give you some, or you may buy some from him, or at least you find a sweet smell from him. The one who blows the bellows may burn your clothes, or you find a bad smell from him.",
+    sources: [bukhari("5534")]
+  },
+  {
+    id: "sign-shared-ship",
+    kind: "shared-ship",
+    caption:
+      "The Prophet ﷺ said: those who keep to Allah's limits and those who break them are like people who drew lots for their places on a ship, some above and some below. Those below, when they wanted water, went by those above, and said: let us make a hole in our part, and not trouble those above. If they are left to do it, all of them drown; and if they are stopped, they are saved, and all of them are saved.",
+    sources: [bukhari("2493")]
   }
 ];
 
@@ -889,7 +944,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
  * Nuh's son, the shining hand, the parting from al-Khidr, Ya'juj and Ma'juj let loose at the end, Lut's guests and his
  * wife, the Sabbath-breakers made like apes, Dhul-Qarnayn's rulings), nor the reviews, nor the lessons on the twelve
  * paths through the sea (its scene shows the one dry path of 20:77), nor the ones on a hadith about a story (the virtue
- * of Yunus's dua, the gourd he ﷺ liked).
+ * of Yunus's dua, the gourd he ﷺ liked), but for the fast of Ashura: it is the day the sea split, as its caption tells.
  */
 export const SIGN_LESSONS: Record<string, string> = {
   // Rain on a dead land, which comes to life.
@@ -1058,6 +1113,14 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-baqarah1-sea-parted": "sign-sea",
   "deep-taha2-a-dry-path-in-the-sea": "sign-sea",
   "deep-dukhan2-leave-the-sea-calm": "sign-sea",
+  // The day of Ashura, the day Allah saved Musa and his people through the sea (Sahih al-Bukhari 2004).
+  "deep-prophet-musa-ashura": "sign-sea",
+  "deep-days-ashura": "sign-sea",
+  "deep-yunus4-ashura": "sign-sea",
+  "deep-taha2-fasting-ashura": "sign-sea",
+  "deep-shuara1-the-day-of-ashura": "sign-sea",
+  "deep-dukhan2-the-ashura-fast": "sign-sea",
+  "deep-naziat2-the-day-musa-was-saved": "sign-sea",
   // The clouds' shade, the manna and the quails, and the twelve springs.
   "deep-prophet-musa-twelve-springs": "sign-springs",
   "surah-meaning-2-60-61": "sign-springs",
@@ -1578,7 +1641,25 @@ export const SIGN_LESSONS: Record<string, string> = {
   "sahabi-abu-bakr-hijrah-and-turning-points": "sign-thawr",
   // The plague in Sham, and Umar at Sargh (Sahih al-Bukhari 5729).
   "deep-umar-plague": "sign-plague",
-  "deep-abuubaydah-decree": "sign-plague"
+  "deep-abuubaydah-decree": "sign-plague",
+  // Believers like a building, each part holding up the other (Sahih al-Bukhari 481, 6026).
+  "deep-brotherhood-a-building": "sign-building",
+  "deep-tawbah3-like-a-wall": "sign-building",
+  "deep-fath3-like-a-building": "sign-building",
+  "deep-saff1-bricks-of-a-wall": "sign-building",
+  // Mercy in a hundred parts, and the mare and her foal (Sahih al-Bukhari 6000, 6469).
+  "deep-hadith-qudsi-hundred-parts": "sign-mercy",
+  "deep-jahannam-mercy": "sign-mercy",
+  "deep-araf5-mercy-embraces": "sign-mercy",
+  "deep-hijr2-hundred-parts-of-mercy": "sign-mercy",
+  // The halal, the haram, the doubtful things between, and grazing around a sanctuary (Sahih al-Bukhari 52).
+  "deep-hadith-famous-clear-and-doubtful": "sign-sanctuary",
+  "deep-numan-clear-and-doubtful": "sign-sanctuary",
+  "deep-daily-life-clear-and-unclear": "sign-sanctuary",
+  // The musk and the bellows (Sahih al-Bukhari 5534).
+  "deep-furqan1-musk-seller-and-blacksmith": "sign-musk",
+  // The people who shared a ship (Sahih al-Bukhari 2493).
+  "deep-numan-the-ship": "sign-shared-ship"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
