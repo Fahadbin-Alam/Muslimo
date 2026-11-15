@@ -8,7 +8,7 @@ const GATHERINGS: DeepUnit = {
   key: "manners-gatherings",
   topicId: "manners",
   branchId: "manners-gatherings",
-  branch: { title: "Manners of gatherings", description: "Room for everyone, your seat when you come back, keeping a secret, correcting kindly, thanking helpers, and closing a sitting." },
+  branch: { title: "Manners of gatherings", description: "Room for everyone, sitting where it ends, your seat when you come back, keeping a secret, correcting kindly, thanking helpers, and closing a sitting." },
   name: "the manners of gatherings",
   kind: "skill",
   lessonType: "skill",
@@ -24,6 +24,19 @@ const GATHERINGS: DeepUnit = {
         { q: "Which places to sit did he ﷺ call the best?", a: "Those with the most room", wrong: ["Those nearest the door", "Those with soft cushions", "Those with the best view"], why: "The best places to sit are those which provide most room." },
         { q: "A friend arrives and the circle is tight. What fits the Sunnah?", a: "Make space for him", wrong: ["Spread out your things", "Pretend you did not see", "Tell him to stand"], why: "The best sittings are the roomy ones, so make space." },
         { q: "A crowded, tight sitting is the best kind.", tf: false, why: "No. The best places to sit are those which provide most room." }
+      ]
+    },
+    {
+      slug: "where-the-sitting-ends",
+      title: "Where the sitting ends",
+      line: "Coming to him ﷺ, each one sat down where there was room.",
+      facts: ["Told by Jabir ibn Samurah", "In Arabic: haythu yantahi, where the sitting ends", "This is how the Companions sat with him ﷺ"],
+      source: hadith("abudawud", "4825", "Jabir ibn Samurah", "Sahih (Al-Albani)", "Jabir ibn Samurah said: when we came to the Prophet ﷺ, each one would sit down where there was room.", "each one would sit down where there was room"),
+      difficulty: 1,
+      questions: [
+        { q: "When they came to him ﷺ, where did each one sit, Jabir ibn Samurah said?", a: "Where there was room", wrong: ["Always in the front row", "Only by the door", "On a raised seat"], why: "Jalasa ahaduna haythu yantahi, each one sat where the sitting ended." },
+        { q: "Who told how the Companions sat when they came to him ﷺ?", a: "Jabir ibn Samurah", wrong: ["Abu Hurairah", "Anas ibn Malik", "Ibn Abbas"], why: "Jabir ibn Samurah said it, in Sunan Abi Dawud 4825." },
+        { q: "Arriving at a sitting, you sit down where there is room.", tf: true, why: "When we came to the Prophet ﷺ, each one would sit down where there was room, Jabir said." }
       ]
     },
     {

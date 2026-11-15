@@ -2,15 +2,15 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Manners unit: beautiful character, from Sahih al-Bukhari, Sunan Abi Dawud and Jami' at-Tirmidhi. A cloak
 // he ﷺ gave away though he needed it, mercy taken only from the miserable, the two-faced on the Day of Resurrection,
-// taqwa and good character, keeping good company, and hosting a man who did not host you. Every card is one sahih or
-// hasan hadith with its number, narrator and grade, and its exact English words to highlight, and none of them is
-// taught anywhere else in the app.
+// taqwa and good character, keeping good company, hosting a man who did not host you, and the believer who is simple
+// and generous. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
+// words to highlight, and none of them is taught anywhere else in the app.
 
 const CHARACTER: DeepUnit = {
   key: "manners-beautiful-character",
   topicId: "manners",
   branchId: "manners-beautiful-character",
-  branch: { title: "Beautiful character", description: "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, and hosting a man who did not host you." },
+  branch: { title: "Beautiful character", description: "A cloak given away, mercy taken from the miserable, one face for all, taqwa and good character, good company, hosting a man who did not host you, and the believer, simple and generous." },
   name: "beautiful character",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const CHARACTER: DeepUnit = {
         { q: "What did the man want to do to the host who had not hosted him?", a: "Treat him the same way", wrong: ["Give him a gift", "Help him build a house", "Teach him the Quran"], why: "Shall I reciprocate the same to him, the man asked, when his host came to stay." },
         { q: "What did he ﷺ tell the man to do?", a: "Host him well", wrong: ["Send him to the masjid", "Wait until he asks", "Ask him where he is from"], why: "No, entertain him, he ﷺ said." },
         { q: "He ﷺ told the man to let his wealth be seen on him.", tf: true, why: "Then let it be seen on you, he ﷺ said, since Allah had given him camels and goats." }
+      ]
+    },
+    {
+      slug: "simple-and-generous",
+      title: "Simple and generous",
+      line: "A believer is simple-hearted and generous, not a cheat.",
+      facts: ["Told by Abu Hurairah", "In Arabic: ghirrun karim, simple and generous", "The profligate: deceitful and ignoble"],
+      source: hadith("abudawud", "4790", "Abu Hurairah", "Hasan (Al-Albani)", "Abu Hurairah said: the Prophet ﷺ said: the believer is simple and generous, but the profligate is deceitful and ignoble.", "The believer is simple and generous, but the profligate is deceitful and ignoble"),
+      difficulty: 2,
+      questions: [
+        { q: "How did he ﷺ describe the believer, as Abu Hurairah reported?", a: "Simple and generous", wrong: ["Famous and wealthy", "Busy and tired", "Young and fast"], why: "Al-mu'minu ghirrun karim, he ﷺ said, in Sunan Abi Dawud 4790." },
+        { q: "How did he ﷺ describe the profligate, the one who does wrong?", a: "Deceitful and ignoble", wrong: ["Simple and generous", "Famous and wealthy", "Busy and tired"], why: "Wal-fajiru khibbun la'im, he ﷺ said, meaning the profligate is a cheat and mean." },
+        { q: "A believer tricks people to get ahead.", tf: false, why: "No. The believer is simple and generous, while the profligate is deceitful, he ﷺ said." }
       ]
     }
   ]
