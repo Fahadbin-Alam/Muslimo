@@ -306,6 +306,19 @@ import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
  * - three follow the dead to his grave, his family, his wealth and his deeds; two go back and his deeds stay with him
  *   (Sahih al-Bukhari 6514).
  *
+ * and what he ﷺ taught of kindness and of a believer's heart (kindArt.ts draws them):
+ *
+ * - every affair of a believer is good: thanks when joy comes, patience when harm comes, and that is for no one but the
+ *   believer (Sahih Muslim 2999);
+ * - who most deserves good company: your mother, then your mother, then your mother, then your father (Sahih al-Bukhari
+ *   5971);
+ * - do not think little of any good deed, even meeting your brother with a cheerful face (Sahih Muslim 2626);
+ * - the best among you are those who learn the Quran and teach it (Sahih al-Bukhari 5027);
+ * - the believers in their mercy, love and kindness are like one body: when one part is unwell, the whole body shares
+ *   its sleeplessness and fever (Sahih al-Bukhari 6011);
+ * - a boy taught to say Bismillah, eat with his right hand and eat from what is near him (Sahih al-Bukhari 5376);
+ * - a man who asked when the Hour would be, and was told he will be with those he loves (Sahih al-Bukhari 3688).
+ *
  * The parted sea is also the day of Ashura, which Musa fasted in thanks, and the Prophet ﷺ too (Sahih al-Bukhari 2004).
  *
  * Each scene shows only what its ayahs say. Nothing in a scene is a person or an angel: only the land, the sky, the
@@ -475,7 +488,14 @@ export type SignKind =
   | "good-intentions"
   | "safa-call"
   | "jabir-dates"
-  | "three-follow";
+  | "three-follow"
+  | "good-in-every-state"
+  | "your-mother"
+  | "cheerful-face"
+  | "learn-and-teach"
+  | "one-body"
+  | "eat-near"
+  | "those-you-love";
 
 export type SignScene = {
   id: string;
@@ -1380,6 +1400,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "three-follow",
     caption: "The Prophet ﷺ said: three follow the dead to his grave: his family, his wealth and his deeds. Two go back, his family and his wealth, and his deeds stay with him.",
     sources: [bukhari("6514")]
+  },
+  {
+    id: "sign-good-in-every-state",
+    kind: "good-in-every-state",
+    caption:
+      "The Prophet ﷺ said: wonderful is the affair of the believer, for every affair of his is good, and this is for no one but the believer. If joy comes to him, he gives thanks, and it is good for him; and if harm comes to him, he is patient, and it is good for him.",
+    sources: [muslim("2999")]
+  },
+  {
+    id: "sign-your-mother",
+    kind: "your-mother",
+    caption: "A man asked the Prophet ﷺ: who most deserves my good company? He said: your mother. Then who? Your mother. Then who? Your mother. Then who? Your father.",
+    sources: [bukhari("5971")]
+  },
+  {
+    id: "sign-cheerful-face",
+    kind: "cheerful-face",
+    caption: "The Prophet ﷺ said: do not think little of any good deed, even if it is meeting your brother with a cheerful face.",
+    sources: [muslim("2626")]
+  },
+  {
+    id: "sign-learn-and-teach",
+    kind: "learn-and-teach",
+    caption: "The Prophet ﷺ said: the best among you are those who learn the Quran and teach it.",
+    sources: [bukhari("5027")]
+  },
+  {
+    id: "sign-one-body",
+    kind: "one-body",
+    caption:
+      "The Prophet ﷺ said: you see the believers, in their mercy, love and kindness to one another, like one body: if any part of it is unwell, the whole body shares its sleeplessness and fever.",
+    sources: [bukhari("6011")]
+  },
+  {
+    id: "sign-eat-near",
+    kind: "eat-near",
+    caption:
+      "Umar ibn Abi Salamah said: I was a boy in the care of the Prophet ﷺ, and my hand used to go all around the dish. He said to me: O boy! Say Bismillah, eat with your right hand, and eat from what is near you.",
+    sources: [bukhari("5376")]
+  },
+  {
+    id: "sign-those-you-love",
+    kind: "those-you-love",
+    caption:
+      "A man asked the Prophet ﷺ: when will the Hour be? He said: what have you prepared for it? He said: nothing, except that I love Allah and His Messenger. He said: you will be with those you love. Anas said: we had never been so glad.",
+    sources: [bukhari("3688")]
   }
 ];
 
@@ -1452,6 +1518,7 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-shura2-ships-like-mountains": "sign-ships",
   "deep-rahman1-ships-like-mountains": "sign-ships",
   "deep-nahl1-the-sea-and-ships": "sign-ships",
+  "deep-shura2-patient-and-grateful": "sign-ships",
   // The earth spread out, the mountains like pegs.
   "deep-naba1-mountains-as-pegs": "sign-mountains",
   "deep-naba1-the-earth-as-a-bed": "sign-mountains",
@@ -2252,7 +2319,54 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-jabir-fathers-debt": "sign-jabir-dates",
   // Three follow the dead; two go back and his deeds stay (Sahih al-Bukhari 6514).
   "deep-grave-three-follow": "sign-three-follow",
-  "deep-takathur1-only-deeds-stay": "sign-three-follow"
+  "deep-takathur1-only-deeds-stay": "sign-three-follow",
+  // Every affair of a believer is good: thanks in joy, patience in harm (Sahih Muslim 2999). The lesson on 42:32-33,
+  // the ships that stand still if the wind stops, opens on the ships; the one on 57:20-25, which cites it for hardship
+  // written before it comes, keeps its photo.
+  "deep-patience-always-good": "sign-good-in-every-state",
+  "deep-baqarah2-with-patient": "sign-good-in-every-state",
+  "deep-yunus1-good-in-everything": "sign-good-in-every-state",
+  "deep-hud1-the-patient-are-different": "sign-good-in-every-state",
+  "deep-ibrahim1-patient-and-thankful": "sign-good-in-every-state",
+  "deep-rum3-the-amazing-believer": "sign-good-in-every-state",
+  "deep-sad3-good-in-every-affair": "sign-good-in-every-state",
+  "deep-taghabun3-amazing-believer": "sign-good-in-every-state",
+  "deep-adiyat2-good-in-every-affair": "sign-good-in-every-state",
+  "deep-quraysh2-good-in-every-affair": "sign-good-in-every-state",
+  // Your mother, three times, then your father (Sahih al-Bukhari 5971).
+  "deep-parents-your-mother": "sign-your-mother",
+  "deep-kids-kindness-your-mother": "sign-your-mother",
+  "surah-meaning-46-11-20": "sign-your-mother",
+  "deep-isra1-your-mother-three-times": "sign-your-mother",
+  "deep-ahqaf2-your-mother-three-times": "sign-your-mother",
+  // Even meeting your brother with a cheerful face (Sahih Muslim 2626).
+  "hadith-for-kids-muslim-2626": "sign-cheerful-face",
+  "deep-speech-smile": "sign-cheerful-face",
+  "deep-abudharr-smile": "sign-cheerful-face",
+  "deep-luqman1-no-pride": "sign-cheerful-face",
+  "deep-zalzalah2-a-cheerful-face": "sign-cheerful-face",
+  // The best who learn the Quran and teach it (Sahih al-Bukhari 5027).
+  "hadith-for-kids-bukhari-5027": "sign-learn-and-teach",
+  "deep-uthman-best-of-you": "sign-learn-and-teach",
+  "deep-fatir2-a-trade-that-never-fails": "sign-learn-and-teach",
+  "deep-qamar1-learn-and-teach": "sign-learn-and-teach",
+  "deep-meet-the-quran-learn-and-teach": "sign-learn-and-teach",
+  // The believers like one body (Sahih al-Bukhari 6011).
+  "deep-numan-one-body": "sign-one-body",
+  "deep-kids-kindness-one-body": "sign-one-body",
+  "deep-tawbah3-one-body": "sign-one-body",
+  "deep-fath3-merciful-among-themselves": "sign-one-body",
+  "deep-hashr3-like-one-body": "sign-one-body",
+  // Say Bismillah, eat with your right hand, and eat from what is near you (Sahih al-Bukhari 5376).
+  "hadith-for-kids-bukhari-5376": "sign-eat-near",
+  "deep-children-teach-eating": "sign-eat-near",
+  "deep-dua-day-eat": "sign-eat-near",
+  "deep-daily-life-bismillah-and-right-hand": "sign-eat-near",
+  // You will be with those you love (Sahih al-Bukhari 3688).
+  "deep-umar-with-those-you-love": "sign-those-you-love",
+  "deep-lastday-asked-bedouin": "sign-those-you-love",
+  "deep-shura1-ready-for-the-hour": "sign-those-you-love",
+  "deep-jinn4-with-those-you-love": "sign-those-you-love"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
