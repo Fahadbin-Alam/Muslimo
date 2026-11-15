@@ -30,7 +30,7 @@ p{font:42px/1.25 Nun}
 .src{font:32px/1.3 NunB;margin-top:28px;opacity:.9}
 .phone{position:absolute;left:50%;transform:translateX(-50%);border-radius:44px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
 `;
-const foot = (t="Muslimo · free on Android") => `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">${t}</div>`;
+const foot = (t="Muslimo · coming soon") => `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">${t}</div>`;
 const shot = (f,top=430,w=620) => `<img class="phone" style="top:${top}px;width:${w}px" src="${u(`store/graphics/google-play/phone/${f}.png`)}">`;
 const quiz = (n, q, opts, okIdx, src, quote, label) => [
  [`${n}-1`, `<body class="cream"><div class="pad"><span class="tag" style="background:#FF9F45;border-color:#FF9F45;color:#fff">${label}</span>
@@ -51,7 +51,7 @@ const slides = [
  ["01-intro-4", `<body class="green"><div class="pad"><h2>Streaks, XP and rewards</h2><p style="margin-top:20px">Keep your streak and race your friends each week</p></div>${shot("05-complete")}</body>`],
  ["01-intro-5", `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center">
    <img src="${u("store/graphics/google-play/icon-512.png")}" style="width:300px;border-radius:70px;border:8px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.25)">
-   <h2 style="margin-top:60px">Free on Android</h2><p style="margin-top:24px">For kids, teens and adults.<br>Link in bio.</p>
+   <h2 style="margin-top:60px">Coming soon</h2><p style="margin-top:24px">For kids, teens and adults.<br>Follow for launch day.</p>
    <p style="margin-top:60px;font-size:34px;opacity:.9">A learning tool, not a fatwa service.<br>Every lesson links to its source.</p></div></body>`],
  ...quiz("02-quiz-strong","Who did the Prophet ﷺ call truly strong?",["The one who wins every fight","The one who controls himself when angry","The one who lifts the most"],1,
    "Sahih al-Bukhari 6114 · narrated by Abu Hurayrah","“The strong is not the one who overcomes the people by his strength, but the strong is the one who controls himself while in anger.”","Hadith quiz"),

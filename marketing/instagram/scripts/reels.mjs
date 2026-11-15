@@ -22,7 +22,7 @@ h1{font:120px/1.05 Baloo} h2{font:84px/1.08 Baloo} p{font:48px/1.3 Nun}
 .src{font:38px/1.3 NunB;margin-top:30px;color:#8a6a45}
 .foot{position:absolute;left:80px;right:80px;bottom:300px;display:flex;align-items:center;gap:22px;font:40px Nun;color:#8a6a45}
 .foot img{width:96px;height:96px;border-radius:24px}`;
-const foot = `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">Muslimo · free on Android</div>`;
+const foot = `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">Muslimo · coming soon</div>`;
 const Q = "Who should you greet with salam?", OPTS = ["Only people you know", "People you know and people you don't", "Only people older than you"], OK = 1;
 const opts = st => OPTS.map((o, i) => `<div class="opt ${st === "reveal" ? (i === OK ? "ok" : "dim") : ""}"><b>${"ABC"[i]}</b>${o}</div>`).join("");
 const frames = {
@@ -37,7 +37,7 @@ const frames = {
    <div class="src">Sahih al-Bukhari 28 · narrated by Abdullah ibn Amr</div></div>${foot}</body>`,
   cta: `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center;padding-top:0">
    <img src="${u("store/graphics/google-play/icon-512.png")}" style="width:340px;border-radius:80px;border:8px solid #fff">
-   <h2 style="margin-top:70px">Learn one every day</h2><p style="margin-top:30px">Muslimo · free on Android<br>Link in bio</p></div></body>`,
+   <h2 style="margin-top:70px">Learn one every day</h2><p style="margin-top:30px">Muslimo · coming soon<br>Follow for launch day</p></div></body>`,
 };
 const b = await chromium.launch({ channel: "chrome", args: ["--allow-file-access-from-files"] });
 const pg = await b.newPage({ viewport: { width: 1080, height: 1920 } });
@@ -58,15 +58,46 @@ if (existsSync(`${S}/out2/frames/r3-end.png`))
 writeFileSync(`${S}/enc.html`, `<html><body><canvas id=c width=1080 height=1920></canvas></body></html>`);
 await pg.goto(pathToFileURL(`${S}/enc.html`).href);
 await pg.addScriptTag({ content: readFileSync(`${S}/node_modules/mp4-muxer/build/mp4-muxer.js`, "utf8") });
+// Sound: the app's own effects from assets/sounds (no music, on purpose). [time in s, file, volume]
+const SFX = {
+  "reel-1-salam-quiz": [[0, "camel", 0.9], [2.2, "whoosh", 0.6], ...[3, 4, 5, 6].map(t => [t + 0.2, "node_tap", 0.7]), [7.2, "correct", 1], [9.7, "whoosh", 0.6], [14.7, "lesson_complete", 1]],
+  "reel-2-app-tour": [[0, "camel", 0.9], [2.4, "whoosh", 0.6], [4.8, "node_tap", 0.8], [7.2, "correct", 1], [9.6, "lesson_complete", 1], [12, "pop", 0.8], [14.4, "sparkle", 1]],
+  "reel-3-camel-misses-you": [[0.2, "pop", 0.9], [2.6, "pop", 0.9], [5.1, "pop", 0.9], [7.6, "sad", 0.8], [11, "camel", 1], [11.3, "sparkle", 0.8]],
+};
+const wav = n => readFileSync(`${R}/assets/sounds/${n}.wav`).toString("base64");
 for (const [name, scenes] of Object.entries(REELS)) {
-  const b64 = await pg.evaluate(async (scenes) => {
+  const sfx = (SFX[name] ?? []).map(([t, f, g]) => ({ t, g, b64: wav(f) }));
+  const b64 = await pg.evaluate(async ([scenes, sfx]) => {
     const FPS = 30, W = 1080, H = 1920, FADE = 0.3;
     const imgs = await Promise.all(scenes.map(s => new Promise((r, j) => { const i = new Image(); i.onload = () => r(i); i.onerror = j; i.src = s.src; })));
     const c = document.getElementById("c"), x = c.getContext("2d");
-    const muxer = new Mp4Muxer.Muxer({ target: new Mp4Muxer.ArrayBufferTarget(), video: { codec: "avc", width: W, height: H }, fastStart: "in-memory" });
+    const SR = 48000, total0 = scenes.reduce((a, s) => a + s.d, 0);
+    const muxer = new Mp4Muxer.Muxer({ target: new Mp4Muxer.ArrayBufferTarget(), video: { codec: "avc", width: W, height: H },
+      audio: { codec: "aac", numberOfChannels: 2, sampleRate: SR }, fastStart: "in-memory" });
     let err = null;
+    // Mix the sound effects, then encode them as AAC.
+    const oc = new OfflineAudioContext(2, Math.ceil(total0 * SR), SR);
+    for (const e of sfx) {
+      const bytes = Uint8Array.from(atob(e.b64), c => c.charCodeAt(0));
+      const buf = await oc.decodeAudioData(bytes.buffer);
+      const src = oc.createBufferSource(), g = oc.createGain(); g.gain.value = e.g;
+      src.buffer = buf; src.connect(g); g.connect(oc.destination); src.start(e.t);
+    }
+    const mix = await oc.startRendering();
+    { let pk = 0; for (let c = 0; c < 2; c++) for (const v of mix.getChannelData(c)) pk = Math.max(pk, Math.abs(v));
+      const k = pk > 0 ? 0.89 / pk : 1; for (let c = 0; c < 2; c++) { const a = mix.getChannelData(c); for (let i = 0; i < a.length; i++) a[i] *= k; } } // loud enough for phones
+    const aenc = new AudioEncoder({ output: (ch, m) => muxer.addAudioChunk(ch, m), error: e => { err = e; } });
+    aenc.configure({ codec: "mp4a.40.2", sampleRate: SR, numberOfChannels: 2, bitrate: 128000 });
+    const L = mix.getChannelData(0), Rr = mix.getChannelData(1), CH = 1024;
+    for (let i = 0; i < L.length; i += CH) {
+      const n = Math.min(CH, L.length - i), d = new Float32Array(n * 2); d.set(L.subarray(i, i + n), 0); d.set(Rr.subarray(i, i + n), n);
+      const ad = new AudioData({ format: "f32-planar", sampleRate: SR, numberOfFrames: n, numberOfChannels: 2, timestamp: Math.round(i * 1e6 / SR), data: d });
+      aenc.encode(ad); ad.close();
+    }
+    await aenc.flush();
+    if (err) throw err;
     const enc = new VideoEncoder({ output: (ch, m) => muxer.addVideoChunk(ch, m), error: e => { err = e; } });
-    enc.configure({ codec: "avc1.640033", width: W, height: H, bitrate: 8_000_000, framerate: FPS });
+    enc.configure({ codec: "avc1.640033", width: W, height: H, bitrate: 3_500_000, framerate: FPS });
     const total = scenes.reduce((a, s) => a + s.d, 0); const N = Math.round(total * FPS);
     for (let n = 0; n < N; n++) {
       const t = n / FPS;
@@ -90,7 +121,7 @@ for (const [name, scenes] of Object.entries(REELS)) {
     await enc.flush(); muxer.finalize();
     const buf = new Uint8Array(muxer.target.buffer); let s2 = ""; for (let k = 0; k < buf.length; k += 0x8000) s2 += String.fromCharCode(...buf.subarray(k, k + 0x8000));
     return btoa(s2);
-  }, scenes);
+  }, [scenes, sfx]);
   writeFileSync(`${S}/out/${name}.mp4`, Buffer.from(b64, "base64")); console.log(name, Math.round(b64.length * 0.75 / 1024), "KB");
 }
 await b.close();
