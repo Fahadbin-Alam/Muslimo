@@ -527,7 +527,14 @@ export type SignKind =
   | "saved-by-mercy"
   | "give-while-healthy"
   | "strong-believer"
-  | "forgotten-prayer";
+  | "forgotten-prayer"
+  | "mustard-of-pride"
+  | "what-backbiting-is"
+  | "orphan-carer"
+  | "safe-from-harm"
+  | "refuge-from-anger"
+  | "gate-ar-rayyan"
+  | "make-it-easy";
 
 export type SignScene = {
   id: string;
@@ -1621,6 +1628,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "forgotten-prayer",
     caption: "The Prophet ﷺ said: if anyone forgets a prayer, he should pray it when he remembers it. There is no expiation for it except to pray it.",
     sources: [bukhari("597")]
+  },
+  {
+    id: "sign-mustard-of-pride",
+    kind: "mustard-of-pride",
+    caption:
+      "The Prophet ﷺ said: he who has in his heart the weight of a mustard seed of pride shall not enter Paradise. A man said: a man loves that his clothes be fine and his shoes be fine. He said: Allah is beautiful and loves beauty. Pride is rejecting the truth and looking down on people.",
+    sources: [muslim("91")]
+  },
+  {
+    id: "sign-what-backbiting-is",
+    kind: "what-backbiting-is",
+    caption:
+      "The Prophet ﷺ said: do you know what backbiting is? They said: Allah and His Messenger know best. He said: it is talking about your brother in a way he dislikes. It was said: what if my brother is as I say? He said: if he is as you say, you have backbitten him, and if he is not, you have slandered him.",
+    sources: [muslim("2589")]
+  },
+  {
+    id: "sign-orphan-carer",
+    kind: "orphan-carer",
+    caption: "The Prophet ﷺ said: I and the one who looks after an orphan will be in Paradise like this, and he pointed with his index and middle fingers, keeping them a little apart.",
+    sources: [bukhari("5304")]
+  },
+  {
+    id: "sign-safe-from-harm",
+    kind: "safe-from-harm",
+    caption: "The Prophet ﷺ said: a Muslim is the one who avoids harming Muslims with his tongue and hands, and an emigrant is the one who gives up all that Allah has forbidden.",
+    sources: [bukhari("10")]
+  },
+  {
+    id: "sign-refuge-from-anger",
+    kind: "refuge-from-anger",
+    caption:
+      "Sulayman ibn Surad said: I was sitting with the Prophet ﷺ when two men abused each other, and the face of one of them became red with anger. The Prophet ﷺ said: I know a word that would calm him if he said it. If he said: I seek refuge with Allah from Satan, all his anger would go away.",
+    sources: [bukhari("3282")]
+  },
+  {
+    id: "sign-gate-ar-rayyan",
+    kind: "gate-ar-rayyan",
+    caption:
+      "The Prophet ﷺ said: in Paradise there is a gate called ar-Rayyan. Those who fast will enter through it on the Day of Resurrection, and none but them will enter through it. It will be said: where are those who used to fast? They will get up, and none but them will enter through it. When they have entered, it will be closed, and no one else will enter through it.",
+    sources: [bukhari("1896")]
+  },
+  {
+    id: "sign-make-it-easy",
+    kind: "make-it-easy",
+    caption: "The Prophet ﷺ said: make things easy for people and do not make them hard, and give them good tidings and do not make them run away.",
+    sources: [bukhari("69")]
   }
 ];
 
@@ -2660,7 +2713,48 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A forgotten prayer, prayed when it is remembered (Sahih al-Bukhari 597).
   "deep-taha1-a-missed-prayer": "sign-forgotten-prayer",
   "prayer-missed-prayers-returning-after-a-miss": "sign-forgotten-prayer",
-  "prayer-times-late-prayer-scenarios": "sign-forgotten-prayer"
+  "prayer-times-late-prayer-scenarios": "sign-forgotten-prayer",
+  // A mustard seed of pride keeps one from Paradise; Allah is beautiful and loves beauty; pride is rejecting the truth
+  // and looking down on people (Sahih Muslim 91).
+  "deep-humility-what-pride-is": "sign-mustard-of-pride",
+  "deep-imran1-pride": "sign-mustard-of-pride",
+  "deep-araf1-mustard-of-pride": "sign-mustard-of-pride",
+  "deep-qasas7-allah-loves-beauty": "sign-mustard-of-pride",
+  "deep-luqman1-pride-and-beauty": "sign-mustard-of-pride",
+  "deep-ahqaf1-what-pride-really-is": "sign-mustard-of-pride",
+  "deep-hujurat2-pride-looks-down-on-people": "sign-mustard-of-pride",
+  // Backbiting is talking about your brother in a way he dislikes; if it is not in him, it is slander (Sahih Muslim
+  // 2589). The lessons on the whole passages 49:11-13 and 104:1-4 keep their photo.
+  "deep-speech-backbiting": "sign-what-backbiting-is",
+  "deep-ahzab3-no-false-blame": "sign-what-backbiting-is",
+  "deep-hujurat2-what-is-backbiting": "sign-what-backbiting-is",
+  "deep-humazah1-what-backbiting-is": "sign-what-backbiting-is",
+  // The one who looks after an orphan, near him in Paradise like two fingers (Sahih al-Bukhari 5304). The lessons on
+  // the whole passages 89:15-20 and 107:1-3 keep their photo.
+  "deep-mercy-the-orphan": "sign-orphan-carer",
+  "deep-sahl-caring-for-orphans": "sign-orphan-carer",
+  "deep-fajr3-close-to-him-in-paradise": "sign-orphan-carer",
+  "deep-maun1-close-to-the-prophet-in-paradise": "sign-orphan-carer",
+  // A Muslim is the one others are safe from, his tongue and hands; an emigrant gives up what Allah forbade (Sahih
+  // al-Bukhari 10).
+  "deep-speech-safe-tongue": "sign-safe-from-harm",
+  "deep-ibn-amr-tongue-and-hand": "sign-safe-from-harm",
+  "deep-muhajirun-true-muhajir": "sign-safe-from-harm",
+  "deep-humazah1-safe-from-your-tongue": "sign-safe-from-harm",
+  // A word of refuge for anger: I seek refuge with Allah from Satan (Sahih al-Bukhari 3282).
+  "deep-anger-seek-refuge": "sign-refuge-from-anger",
+  "deep-dua-day-anger": "sign-refuge-from-anger",
+  "deep-araf6-seek-refuge": "sign-refuge-from-anger",
+  "deep-nahl6-refuge-calms-anger": "sign-refuge-from-anger",
+  // The gate ar-Rayyan, only for those who fast (Sahih al-Bukhari 1896).
+  "deep-sahl-ar-rayyan": "sign-gate-ar-rayyan",
+  "deep-jannah-gates": "sign-gate-ar-rayyan",
+  "deep-zumar4-the-gate-of-ar-rayyan": "sign-gate-ar-rayyan",
+  "ramadan-ar-rayyan": "sign-gate-ar-rayyan",
+  // Make things easy, not hard; give good tidings, do not make people run away (Sahih al-Bukhari 69).
+  "hadith-for-kids-bukhari-69": "sign-make-it-easy",
+  "deep-hajj3-make-things-easy": "sign-make-it-easy",
+  "deep-talaq2-make-things-easy": "sign-make-it-easy"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
