@@ -569,7 +569,14 @@ export type SignKind =
   | "one-religion"
   | "who-refuses"
   | "guided-at-the-door"
-  | "prayer-made-short";
+  | "prayer-made-short"
+  | "cave-of-hira"
+  | "never-disgrace"
+  | "prayer-together"
+  | "two-ayat-at-night"
+  | "skilled-reciter"
+  | "fast-of-arafah"
+  | "one-word";
 
 export type SignScene = {
   id: string;
@@ -1945,6 +1952,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "prayer-made-short",
     caption: "The Prophet ﷺ said: I stand in prayer meaning to make it long, then I hear a child crying, so I make my prayer short, disliking to make it hard for his mother.",
     sources: [bukhari("707")]
+  },
+  {
+    id: "sign-cave-of-hira",
+    kind: "cave-of-hira",
+    caption:
+      "Aishah said: the revelation began for the Messenger of Allah ﷺ with good dreams in his sleep, and every dream he saw came true like the break of dawn. Then being alone was made dear to him, and he would go alone to the cave of Hira and worship there for many nights, taking food with him for it, then go back to Khadijah for more, until the truth came to him while he was in the cave of Hira. The angel came to him and said: read. He ﷺ said: I am not one who reads. This happened three times, and then the angel recited to him the first ayat of Surat al-Alaq. The Messenger of Allah ﷺ came back with them, his heart trembling.",
+    sources: [bukhari("3")]
+  },
+  {
+    id: "sign-never-disgrace",
+    kind: "never-disgrace",
+    caption:
+      "The Prophet ﷺ went in to Khadijah and said: cover me, cover me; and they covered him until the fear left him. He told her what had happened and said: I feared for myself. Khadijah said: never! By Allah, Allah will never disgrace you. You keep ties of kinship, you carry the weak, you help the poor, you honor the guest, and you help in the troubles that come with the truth. Then Khadijah took him to her cousin Waraqah ibn Nawfal, an old man who had lost his sight, and he ﷺ told him what he had seen. Waraqah said: this is the Namus, the angel whom Allah sent to Musa. I wish I could be alive when your people drive you out. He ﷺ asked: will they drive me out? He said: yes; no man ever came with the like of what you have brought but he was met with hostility.",
+    sources: [bukhari("3")]
+  },
+  {
+    id: "sign-prayer-together",
+    kind: "prayer-together",
+    caption: "The Prophet ﷺ said: prayer in congregation is better than the prayer of one alone by twenty-seven degrees.",
+    sources: [muslim("650a"), bukhari("645")]
+  },
+  {
+    id: "sign-two-ayat-at-night",
+    kind: "two-ayat-at-night",
+    caption: "The Prophet ﷺ said: whoever recites the last two ayat of Surat al-Baqarah at night, they will be enough for him.",
+    sources: [bukhari("5009")]
+  },
+  {
+    id: "sign-skilled-reciter",
+    kind: "skilled-reciter",
+    caption:
+      "The Prophet ﷺ said: the one who recites the Quran and knows it well by heart is with the noble, righteous scribes; and the one who recites the Quran and keeps at it, though it is hard for him, has two rewards.",
+    sources: [bukhari("4937"), muslim("798a")]
+  },
+  {
+    id: "sign-fast-of-arafah",
+    kind: "fast-of-arafah",
+    caption: "Abu Qatadah said: the Messenger of Allah ﷺ was asked about fasting on the day of Arafah, and he ﷺ said: it expiates the year gone by and the year to come.",
+    sources: [muslim("1162b")]
+  },
+  {
+    id: "sign-one-word",
+    kind: "one-word",
+    caption:
+      "The Prophet ﷺ said: a servant may say a word that pleases Allah, paying it no mind, and by it Allah raises him by degrees; and a servant may say a word that angers Allah, paying it no mind, and by it he falls into Jahannam.",
+    sources: [bukhari("6478")]
   }
 ];
 
@@ -3203,7 +3256,39 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-abu-hurairah-loved": "sign-guided-at-the-door",
   // He made the prayer short when he heard a child crying (Sahih al-Bukhari 707).
   "deep-mercy-shortened-prayer": "sign-prayer-made-short",
-  "deep-book-prayer-shorter-for-a-crying-child": "sign-prayer-made-short"
+  "deep-book-prayer-shorter-for-a-crying-child": "sign-prayer-made-short",
+  // The first revelation in the cave of Hira (Sahih al-Bukhari 3).
+  "deep-alaq1-the-first-revelation": "sign-cave-of-hira",
+  "deep-meet-the-quran-first-revelation": "sign-cave-of-hira",
+  "surah-meaning-96-1-5": "sign-cave-of-hira",
+  // Khadijah's comfort, that Allah would never disgrace him, and Waraqah's words (Sahih al-Bukhari 3).
+  "deep-spouses-khadijah": "sign-never-disgrace",
+  "deep-mothers-khadijah-never-disgrace": "sign-never-disgrace",
+  "deep-alaq1-khadijahs-comfort": "sign-never-disgrace",
+  "deep-alaq1-waraqahs-words": "sign-never-disgrace",
+  "deep-anam3-every-prophet-enemies": "sign-never-disgrace",
+  // Prayer in congregation, twenty-seven degrees better than prayer alone (Sahih Muslim 650a, Sahih al-Bukhari 645).
+  "deep-tree-ibn-umar-nafi-and-malik": "sign-prayer-together",
+  "deep-tree-nafi-twenty-seven": "sign-prayer-together",
+  "deep-tree-yahya-yahya-read-to-malik": "sign-prayer-together",
+  "deep-mursalat3-praying-together": "sign-prayer-together",
+  // The last two ayat of al-Baqarah at night are enough for whoever recites them (Sahih al-Bukhari 5009).
+  "deep-dua-sleep-baqarah-end": "sign-two-ayat-at-night",
+  "surah-meaning-2-284-286": "sign-two-ayat-at-night",
+  "deep-baqarah3-amana-rasul": "sign-two-ayat-at-night",
+  // The skilled reciter with the noble scribes, and two rewards for the one who finds it hard (Sahih al-Bukhari
+  // 4937, Sahih Muslim 798a). Left out: the lesson on the blind man of Surat 'Abasa.
+  "deep-waqiah4-with-the-noble-scribes": "sign-skilled-reciter",
+  "deep-abasa1-with-the-noble-scribes": "sign-skilled-reciter",
+  "deep-book-quran-virtues-two-rewards-for-trying": "sign-skilled-reciter",
+  // The fast of the day of Arafah expiates the year gone by and the year to come (Sahih Muslim 1162b).
+  "deep-abu-qatadah-day-of-arafah": "sign-fast-of-arafah",
+  "deep-days-arafah-fast": "sign-fast-of-arafah",
+  "deep-hajj2-fast-of-arafah": "sign-fast-of-arafah",
+  // One word that pleases Allah raises a servant, and one that angers Him makes him fall (Sahih al-Bukhari 6478).
+  // Left out: the lesson on Surat Qaf 50:16-29, which is about much else.
+  "deep-hujurat1-one-small-word": "sign-one-word",
+  "deep-qaf2-one-word-pleases-allah": "sign-one-word"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
