@@ -1953,6 +1953,18 @@
   },
   {
     "kind": "course",
+    "text": "Names of Allah: His knowledge"
+  },
+  {
+    "kind": "course",
+    "text": "As-Sami', Al-Basir, Ash-Shahid, Al-Wasi' and more: names that show He hears, sees and knows all."
+  },
+  {
+    "kind": "arabic",
+    "text": "Names of knowledge"
+  },
+  {
+    "kind": "course",
     "text": "Faith in the heart"
   },
   {
@@ -2390,6 +2402,34 @@
   {
     "kind": "course",
     "text": "Al-Hasib"
+  },
+  {
+    "kind": "course",
+    "text": "As-Sami', Al-Basir"
+  },
+  {
+    "kind": "course",
+    "text": "As-Sami', Al-Alim"
+  },
+  {
+    "kind": "course",
+    "text": "Ash-Shahid"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Hakim, Al-Khabir"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Wasi', Al-Alim"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Kabir, Al-Muta'al"
+  },
+  {
+    "kind": "course",
+    "text": "Al-Alim, Al-Qadir"
   },
   {
     "kind": "course",
@@ -80237,10 +80277,6 @@
   },
   {
     "kind": "question",
-    "text": "As-Sami', Al-Basir"
-  },
-  {
-    "kind": "question",
     "text": "And because Allah is the Most High, the Grand."
   },
   {
@@ -80386,6 +80422,326 @@
   {
     "kind": "lesson",
     "text": "The last test: everything about Allah's names of greatness!"
+  },
+  {
+    "kind": "lesson",
+    "text": "The reward of this world and the next is with Allah."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 4:134"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa kanallahu Sami'an Basira"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 4:134?"
+  },
+  {
+    "kind": "question",
+    "text": "And ever is Allah Hearing and Seeing."
+  },
+  {
+    "kind": "question",
+    "text": "With whom is the reward of this world and the Hereafter, in Quran 4:134?"
+  },
+  {
+    "kind": "question",
+    "text": "With the strong"
+  },
+  {
+    "kind": "question",
+    "text": "With the traders"
+  },
+  {
+    "kind": "question",
+    "text": "With Allah"
+  },
+  {
+    "kind": "question",
+    "text": "With the wealthy"
+  },
+  {
+    "kind": "question",
+    "text": "Whoever desires the reward of this world: with Allah is the reward of both worlds."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the All-Seeing?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Basir"
+  },
+  {
+    "kind": "lesson",
+    "text": "Whatever is in the night and the day belongs to Allah."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 6:13"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa huwas-Sami'ul-Alim"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 6:13?"
+  },
+  {
+    "kind": "question",
+    "text": "And He is the Hearing, the Knowing."
+  },
+  {
+    "kind": "question",
+    "text": "What belongs to Allah, in Quran 6:13?"
+  },
+  {
+    "kind": "question",
+    "text": "Only what is in the night"
+  },
+  {
+    "kind": "question",
+    "text": "Only what is on the land"
+  },
+  {
+    "kind": "question",
+    "text": "All that is in the night and day"
+  },
+  {
+    "kind": "question",
+    "text": "Only what is in the day"
+  },
+  {
+    "kind": "question",
+    "text": "And to Him belongs that which reposes by night and by day."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the All-Hearing?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Karim"
+  },
+  {
+    "kind": "question",
+    "text": "As-Sami'"
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah Himself bears witness to what He sent down."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 4:166"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa kafa billahi shahida"
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah ends Quran 4:166?"
+  },
+  {
+    "kind": "question",
+    "text": "Wa kafa billahi shahida: and sufficient is Allah as Witness."
+  },
+  {
+    "kind": "question",
+    "text": "Who else bears witness, in Quran 4:166?"
+  },
+  {
+    "kind": "question",
+    "text": "He has sent it down with His knowledge, and the angels bear witness as well."
+  },
+  {
+    "kind": "question",
+    "text": "Quran 4:166 says Allah sent the revelation down with His knowledge."
+  },
+  {
+    "kind": "question",
+    "text": "Allah bears witness to what He revealed: He sent it down with His knowledge."
+  },
+  {
+    "kind": "lesson",
+    "text": "All authority is Allah's on the Day the Horn is blown."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 6:73"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wa huwal-Hakimul-Khabir"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 6:73?"
+  },
+  {
+    "kind": "question",
+    "text": "And He is the Wise, the Acquainted."
+  },
+  {
+    "kind": "question",
+    "text": "Who holds all authority on the Day the Horn is blown, in Quran 6:73?"
+  },
+  {
+    "kind": "question",
+    "text": "And His is the dominion on the Day the Horn is blown."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 6:73, Allah knows both the seen and the unseen."
+  },
+  {
+    "kind": "question",
+    "text": "He is Knower of the unseen and the witnessed."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah promises forgiveness and bounty from Himself."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 2:268"
+  },
+  {
+    "kind": "lesson",
+    "text": "Wallahu Wasi'un Alim"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 2:268?"
+  },
+  {
+    "kind": "question",
+    "text": "And Allah is all-Encompassing and Knowing."
+  },
+  {
+    "kind": "question",
+    "text": "What does Allah promise, in Quran 2:268?"
+  },
+  {
+    "kind": "question",
+    "text": "Forgiveness and bounty"
+  },
+  {
+    "kind": "question",
+    "text": "Fame and praise"
+  },
+  {
+    "kind": "question",
+    "text": "Rank and titles"
+  },
+  {
+    "kind": "question",
+    "text": "Power and armies"
+  },
+  {
+    "kind": "question",
+    "text": "While Satan threatens you with poverty, Allah promises you forgiveness and bounty."
+  },
+  {
+    "kind": "question",
+    "text": "In Quran 2:268, Shaytan threatens and Allah promises."
+  },
+  {
+    "kind": "question",
+    "text": "Satan threatens you with poverty, while Allah promises you forgiveness."
+  },
+  {
+    "kind": "lesson",
+    "text": "Allah knows the seen and the unseen, the Great, the Exalted."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 13:9"
+  },
+  {
+    "kind": "lesson",
+    "text": "Al-Kabirul-Muta'al"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 13:9?"
+  },
+  {
+    "kind": "question",
+    "text": "Knower of the unseen and the witnessed, the Grand, the Exalted."
+  },
+  {
+    "kind": "question",
+    "text": "Which name of Allah means the Most Exalted?"
+  },
+  {
+    "kind": "question",
+    "text": "Al-Muta'al"
+  },
+  {
+    "kind": "question",
+    "text": "The Grand, the Exalted."
+  },
+  {
+    "kind": "question",
+    "text": "Al-Kabir and Al-Muta'al both tell of Allah's greatness."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about Allah's names of knowledge?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Nothing in the heavens or the earth can escape Allah."
+  },
+  {
+    "kind": "source",
+    "text": "Quran 35:44"
+  },
+  {
+    "kind": "lesson",
+    "text": "Innahu kana Aliman Qadira"
+  },
+  {
+    "kind": "question",
+    "text": "Which two names of Allah end Quran 35:44?"
+  },
+  {
+    "kind": "question",
+    "text": "Indeed, He is ever Knowing and Competent."
+  },
+  {
+    "kind": "question",
+    "text": "What can escape Allah in the heavens or the earth, per Quran 35:44?"
+  },
+  {
+    "kind": "question",
+    "text": "The stars"
+  },
+  {
+    "kind": "question",
+    "text": "The deep sea"
+  },
+  {
+    "kind": "question",
+    "text": "The high mountains"
+  },
+  {
+    "kind": "question",
+    "text": "Allah is not to be caused failure by anything in the heavens or on the earth."
+  },
+  {
+    "kind": "question",
+    "text": "Al-Qadir is a name of Allah that tells of His power."
+  },
+  {
+    "kind": "lesson",
+    "text": "The last test: everything about Allah's names of knowledge!"
   },
   {
     "kind": "lesson",
@@ -81926,10 +82282,6 @@
   {
     "kind": "question",
     "text": "What must a believer believe in, its good and its bad?"
-  },
-  {
-    "kind": "question",
-    "text": "The stars"
   },
   {
     "kind": "question",
@@ -85030,10 +85382,6 @@
   {
     "kind": "question",
     "text": "Which of these is a name for Allah alone?"
-  },
-  {
-    "kind": "question",
-    "text": "Al-Karim"
   },
   {
     "kind": "question",
@@ -98982,10 +99330,6 @@
   {
     "kind": "question",
     "text": "Faith and hoping for reward"
-  },
-  {
-    "kind": "question",
-    "text": "Fame and praise"
   },
   {
     "kind": "question",
@@ -222461,10 +222805,6 @@
   },
   {
     "kind": "source",
-    "text": "Quran 2:268"
-  },
-  {
-    "kind": "source",
     "text": "Quran 2:267-273"
   },
   {
@@ -222510,10 +222850,6 @@
   {
     "kind": "question",
     "text": "Only fame"
-  },
-  {
-    "kind": "question",
-    "text": "Forgiveness and bounty"
   },
   {
     "kind": "question",
@@ -277945,10 +278281,6 @@
   },
   {
     "kind": "question",
-    "text": "With Allah"
-  },
-  {
-    "kind": "question",
     "text": "Wallahu 'indahu husnul-ma'ab."
   },
   {
@@ -319898,10 +320230,6 @@
   {
     "kind": "question",
     "text": "What did Nuh seek refuge from, in 11:47?"
-  },
-  {
-    "kind": "question",
-    "text": "The deep sea"
   },
   {
     "kind": "question",
@@ -410266,10 +410594,6 @@
   {
     "kind": "lesson",
     "text": "Travel the land and see the end of stronger nations before."
-  },
-  {
-    "kind": "source",
-    "text": "Quran 35:44"
   },
   {
     "kind": "source",
