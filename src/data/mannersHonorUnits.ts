@@ -1,16 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Manners unit: guarding people's honor, from Sunan Abi Dawud and Jami at-Tirmidhi. Unjust talk about a
-// Muslim called a kind of riba, nails of copper seen on the night he ﷺ was taken up, no hunting for faults, how
-// fault-finding spoils people, a believer's honor more sacred than the Ka'bah, and an angel who answered for Abu Bakr.
-// Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to
-// highlight, and none of them is taught anywhere else in the app.
+// One more Manners unit: guarding people's honor, from Sunan Abi Dawud, Jami at-Tirmidhi and Al-Adab al-Mufrad. Unjust
+// talk about a Muslim called a kind of riba, nails of copper seen on the night he ﷺ was taken up, no hunting for
+// faults, how fault-finding spoils people, a believer's honor more sacred than the Ka'bah, an angel who answered for
+// Abu Bakr, and the foul smell of backbiting. Every card is one sahih or hasan hadith with its number, narrator and
+// grade, and its exact English words to highlight, and none of them is taught anywhere else in the app.
 
 const HONOR: DeepUnit = {
   key: "manners-guarding-honor",
   topicId: "manners",
   branchId: "manners-guarding-honor",
-  branch: { title: "Guarding people's honor", description: "Unjust talk called a kind of riba, nails of copper, no hunting for faults, an honor more sacred than the Ka'bah, and an angel who answered for Abu Bakr." },
+  branch: { title: "Guarding people's honor", description: "Unjust talk called a kind of riba, nails of copper, no hunting for faults, an honor more sacred than the Ka'bah, an angel who answered for Abu Bakr, and the smell of backbiting." },
   name: "guarding people's honor",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const HONOR: DeepUnit = {
         { q: "What did Abu Bakr do the first time he was insulted?", a: "He stayed silent", wrong: ["He walked away", "He left the city", "He called for help"], why: "A man insulted Abu Bakr, but Abu Bakr remained silent, Sa'id ibn al-Musayyab said." },
         { q: "Who answered the man while Abu Bakr was silent?", a: "An angel from the sky", wrong: ["A friend nearby", "A child passing by", "Nobody"], why: "An angel came down from Heaven and was rejecting what he said, he ﷺ said." },
         { q: "He ﷺ got up when Abu Bakr answered the man back.", tf: true, why: "When you took revenge, a devil came down, he ﷺ told Abu Bakr." }
+      ]
+    },
+    {
+      slug: "the-smell-of-backbiting",
+      title: "The smell of backbiting",
+      line: "He ﷺ said a foul wind was the smell of those who backbite.",
+      facts: ["Told by Jabir ibn Abdullah", "He ﷺ first asked if they knew what it was", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "732", "Jabir ibn Abdullah", "Hasan (Al-Albani)", "Jabir ibn Abdullah said: we were with the Messenger of Allah ﷺ when a foul, stinking wind rose. He asked: do you know what this is? This is the wind of those who backbite the believers.", "air of those people who backbite the believers"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ say the foul wind was, as Jabir reported?", a: "The smell of those who backbite", wrong: ["The smell of a cooking fire", "The smell of the sea", "The smell of burnt bread"], why: "Hadhihi rihul-ladhina yaghtabunal-mu'minin, he ﷺ said, in Al-Adab al-Mufrad 732." },
+        { q: "What did he ﷺ ask his Companions when the foul wind blew?", a: "If they knew what it was", wrong: ["If they had eaten yet", "If the road was safe", "If the rain had come"], why: "Atadruna ma hadhihi, he ﷺ asked, and then he told them whose smell it was." },
+        { q: "Backbiting the believers is an ugly, foul thing.", tf: true, why: "He ﷺ called the stinking wind the smell of those who backbite the believers." }
       ]
     }
   ]
