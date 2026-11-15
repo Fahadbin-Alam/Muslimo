@@ -468,7 +468,7 @@ const SOURCES: Record<string, string[]> = {
   "sign-convey-one-ayah": ["Sahih al-Bukhari 3461"],
   "sign-the-hidden-poor": ["Sahih al-Bukhari 1479"],
   "sign-came-to-teach": ["Sahih al-Bukhari 50", "Sahih Muslim 8a"],
-  "sign-keep-ties": ["Sahih al-Bukhari 2620", "Sahih al-Bukhari 5978"],
+  "sign-keep-ties": ["Sahih al-Bukhari 2620", "Sahih al-Bukhari 5978", "Sahih al-Bukhari 3183"],
   "sign-fast-of-dawud": ["Sahih al-Bukhari 1976", "Sahih al-Bukhari 1131"],
   "sign-one-religion": ["Sahih al-Bukhari 3443"],
   "sign-who-refuses": ["Sahih al-Bukhari 7280"],
@@ -497,7 +497,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1004);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1005);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);

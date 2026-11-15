@@ -1912,7 +1912,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "keep-ties",
     caption:
       "Asma bint Abi Bakr said: my mother came to me, hoping for my kindness, in the time of the Messenger of Allah ﷺ, and she was a polytheist. I asked the Messenger of Allah ﷺ: shall I keep ties with my mother? He ﷺ said: yes, keep ties with your mother. Ibn Uyaynah said: then Allah revealed about her ayah 8 of Surat al-Mumtahanah.",
-    sources: [bukhari("2620"), bukhari("5978")]
+    sources: [bukhari("2620"), bukhari("5978"), bukhari("3183")]
   },
   {
     id: "sign-fast-of-dawud",
@@ -3177,11 +3177,12 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-bayyinah2-ihsan": "sign-came-to-teach",
   "deep-hadith-famous-ihsan": "sign-came-to-teach",
   "deep-tree-umar-jibril-came": "sign-came-to-teach",
-  // Asma keeping ties with her mother, who was a polytheist (Sahih al-Bukhari 2620, 5978).
+  // Asma keeping ties with her mother, who was a polytheist (Sahih al-Bukhari 2620, 5978 and 3183).
   "deep-mumtahanah3-be-good-to-your-mother": "sign-keep-ties",
   "deep-daily-life-family-not-muslim": "sign-keep-ties",
   "deep-parents-her-mother": "sign-keep-ties",
   "deep-mumtahanah3-then-allah-revealed": "sign-keep-ties",
+  "deep-asma-her-mother": "sign-keep-ties",
   // The fast of Dawud, the best fast, and his night prayer (Sahih al-Bukhari 1976, 1131).
   "deep-fast-extra-dawud": "sign-fast-of-dawud",
   "deep-prophet-dawud-fast-of-dawud": "sign-fast-of-dawud",
