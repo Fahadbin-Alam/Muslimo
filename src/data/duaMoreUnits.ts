@@ -1,13 +1,13 @@
 import { quran, quranQuote, type DeepUnit } from "./deepKit";
 
-// Two more Duas units, every dua word for word from the Quran: the duas of the prophets, and the duas of the
-// believers that Allah praised. Each card is one ayah, with who said it and when.
+// Three more Duas units, every dua word for word from the Quran: the duas of the prophets, the duas of the
+// believers that Allah praised, and the duas for the Last Day. Each card is one ayah, with who said it and when.
 
 const PROPHETS: DeepUnit = {
   key: "dua-prophets",
   topicId: "duas",
   branchId: "duas-prophets",
-  branch: { title: "Duas of the prophets", description: "What Ibrahim, Nuh, Zakariyya, Ayyub, Sulayman and Yusuf asked Allah for, in their own words." },
+  branch: { title: "Duas of the prophets", description: "What Ibrahim and Isma'il, Nuh, Musa, Zakariyya, Ayyub, Sulayman and Yusuf asked Allah for, in their own words." },
   name: "the duas of the prophets",
   kind: "skill",
   lessonType: "skill",
@@ -93,6 +93,104 @@ const PROPHETS: DeepUnit = {
         { q: "How did Yusuf ask to leave this world?", a: "As a Muslim", wrong: ["As a king", "As a rich man", "As a famous man"], why: "Let me die a Muslim." },
         { q: "Whom did Yusuf ask to be joined with?", a: "The righteous", wrong: ["The kings", "The traders", "The soldiers"], why: "And join me with the righteous." },
         { q: "Yusuf said his du'a when Allah had given him power and his family back.", tf: true, why: "Even at his best moment, he asked for a good end." }
+      ]
+    },
+    {
+      slug: "ibrahim-ismail-muslims",
+      title: "Ibrahim and Isma'il ask together",
+      line: "Ibrahim and Isma'il asked to be Muslims, with their children.",
+      facts: ["Quran 2:128", "Rabbana waj'alna muslimayni lak", "Said as they built the Ka'bah"],
+      quote: quranQuote(2, 128),
+      source: quran(2, 128, "Ibrahim and Isma'il said: our Lord, make us Muslims, submitting to You, and from our descendants a nation submitting to You. Show us our rites and accept our repentance; You are the Accepting of repentance, the Merciful."),
+      difficulty: 1,
+      questions: [
+        { q: "What did Ibrahim and Isma'il ask Allah to make them?", a: "Muslims who submit to Him", wrong: ["Kings of the earth", "Owners of much gold", "Leaders of great armies"], why: "Our Lord, and make us Muslims in submission to You, they asked." },
+        { q: "Whom else did they ask Allah to make a Muslim nation?", a: "Their descendants", wrong: ["Their travel companions", "Their honored guests", "Their hired workers"], why: "And from our descendants a Muslim nation in submission to You, they asked." },
+        { q: "They also asked Allah to show them their rites of worship.", tf: true, why: "And show us our rites and accept our repentance, they asked." }
+      ]
+    },
+    {
+      slug: "ibrahim-safe-city",
+      title: "Ibrahim prays for Makkah",
+      line: "Ibrahim asked for a safe Makkah, and to be kept from idols.",
+      facts: ["Quran 14:35", "Rabbij'al hadhal-balada amina", "For himself and his sons"],
+      quote: quranQuote(14, 35),
+      source: quran(14, 35, "When Ibrahim said: my Lord, make this city, Makkah, secure, and keep me and my sons away from worshipping idols."),
+      difficulty: 1,
+      questions: [
+        { q: "What did Ibrahim ask Allah to make Makkah?", a: "A safe city", wrong: ["A city of kings", "A city by the sea", "A city of towers"], why: "My Lord, make this city secure, Ibrahim asked." },
+        { q: "Whom did Ibrahim include with himself in this du'a?", a: "His sons", wrong: ["His guests", "His neighbors", "His helpers"], why: "Keep me and my sons away from worshipping idols, Ibrahim asked." },
+        { q: "Ibrahim asked Allah to keep him away from worshipping idols.", tf: true, why: "My Lord, make this city secure, and keep me and my sons away from worshipping idols." }
+      ]
+    },
+    {
+      slug: "ibrahim-righteous-child",
+      title: "A child from the righteous",
+      line: "Ibrahim asked Allah to give him a child from the righteous.",
+      facts: ["Quran 37:100", "Rabbi hab li minas-salihin", "Allah gave him a forbearing boy"],
+      quote: quranQuote(37, 100),
+      source: quran(37, 100, "Ibrahim said: my Lord, grant me a child from among the righteous."),
+      difficulty: 1,
+      questions: [
+        { q: "What did Ibrahim ask his Lord to grant him?", a: "A child", wrong: ["A grand palace", "An army", "A treasure"], why: "My Lord, grant me a child from among the righteous, Ibrahim said." },
+        { q: "Which words begin Ibrahim's du'a for a child?", a: "Rabbi hab li", wrong: ["Rabbana atina", "Rabbi zidni", "Rabbana la tuzigh"], why: "My Lord, grant me one of the righteous: Rabbi hab li minas-salihin." },
+        { q: "Ibrahim asked for a child who would be righteous.", tf: true, why: "My Lord, grant me a child from among the righteous, he asked." }
+      ]
+    },
+    {
+      slug: "musa-save-me",
+      title: "Musa leaves the city",
+      line: "Afraid, Musa asked Allah to save him from the wrongdoers.",
+      facts: ["Quran 28:21", "Rabbi najjini minal-qawmiz-zalimin", "He left the city in fear"],
+      quote: quranQuote(28, 21),
+      source: quran(28, 21, "So Musa left the city, afraid and on his guard. He said: my Lord, save me from the wrongdoing people."),
+      difficulty: 2,
+      questions: [
+        { q: "What did Musa ask Allah to save him from?", a: "The wrongdoing people", wrong: ["The desert heat", "The wild beasts", "The long road"], why: "My Lord, save me from the wrongdoing people, Musa said as he left." },
+        { q: "How did Musa feel as he left the city?", a: "Afraid and watchful", wrong: ["Calm and rested", "Happy and relaxed", "Full and sleepy"], why: "So he left it, fearful and anticipating, then made his du'a." },
+        { q: "When Musa was afraid, he turned to his Lord.", tf: true, why: "Fearful, he said: my Lord, save me from the wrongdoing people." }
+      ]
+    },
+    {
+      slug: "nuh-no-knowledge",
+      title: "Nuh seeks refuge",
+      line: "Nuh sought refuge from asking Allah what he did not know.",
+      facts: ["Quran 11:47", "Rabbi inni a'udhu bika", "He asked for forgiveness and mercy"],
+      quote: quranQuote(11, 47),
+      source: quran(11, 47, "Nuh said: my Lord, I seek refuge in You from asking You for what I have no knowledge of. Unless You forgive me and have mercy on me, I will be among the losers."),
+      difficulty: 2,
+      questions: [
+        { q: "What did Nuh seek refuge from?", a: "Asking what he did not know", wrong: ["Asking for more gold", "Asking for a long rest", "Asking for a big house"], why: "My Lord, I seek refuge in You from asking that of which I have no knowledge." },
+        { q: "Without Allah's forgiveness and mercy, Nuh said he would be among whom?", a: "The losers", wrong: ["The kings", "The rich", "The strong"], why: "Unless You forgive me and have mercy upon me, I will be among the losers." },
+        { q: "Nuh asked Allah to forgive him and have mercy on him.", tf: true, why: "Unless You forgive me and have mercy upon me, I will be among the losers, Nuh said." }
+      ]
+    },
+    {
+      slug: "nuh-help-me",
+      title: "Nuh asks for help",
+      line: "When his people denied him, Nuh asked his Lord for help.",
+      facts: ["Quran 23:26", "Rabbin-surni bima kadhdhabun", "Then Allah told him to build the ship"],
+      quote: quranQuote(23, 26),
+      source: quran(23, 26, "Nuh said: my Lord, help me, because they have denied me."),
+      difficulty: 1,
+      questions: [
+        { q: "What did Nuh say his people had done to him?", a: "Denied him", wrong: ["Crowned him", "Paid him", "Honored him"], why: "My Lord, help me, because they have denied me, Nuh said." },
+        { q: "Which words begin Nuh's du'a in Quran 23:26?", a: "Rabbin-surni", wrong: ["Rabbi zidni", "Rabbi hab li", "Rabbana atina"], why: "Rabbin-surni bima kadhdhabun: my Lord, help me, for they denied me." },
+        { q: "Nuh turned to his Lord when his people denied him.", tf: true, why: "He said: my Lord, help me, because they have denied me." }
+      ]
+    },
+    {
+      slug: "nuh-judge-between",
+      title: "Judge between me and them",
+      line: "Nuh asked Allah to judge, and to save him and the believers.",
+      facts: ["Quran 26:117 to 26:118", "Faftah bayni wa baynahum fathan", "Allah saved them in the loaded ship"],
+      quote: quranQuote(26, 118),
+      source: quran(26, 118, "Nuh said: my Lord, my people have denied me. So judge between me and them decisively, and save me and the believers with me."),
+      difficulty: 2,
+      questions: [
+        { q: "Along with himself, whom did Nuh ask Allah to save?", a: "The believers with him", wrong: ["The chiefs of his people", "The rich of his people", "The strong of his people"], why: "Save me and those with me of the believers, Nuh asked." },
+        { q: "How did Nuh ask Allah to judge between him and them?", a: "Decisively", wrong: ["Slowly", "Secretly", "Gently"], why: "So judge between me and them with decisive judgement, he said." },
+        { q: "Before this du'a, Nuh said that his people had denied him.", tf: true, why: "My Lord, indeed my people have denied me, Nuh said first." }
       ]
     }
   ]
@@ -190,8 +288,160 @@ const BELIEVERS: DeepUnit = {
         { q: "How does the du'a describe Allah?", a: "The best of the merciful", wrong: ["The strictest judge", "The far away", "The silent"], why: "You are the best of the merciful." },
         { q: "Quran 23:118 is the last ayah of Surah Al-Mu'minun.", tf: true, why: "It closes Surah Al-Mu'minun." }
       ]
+    },
+    {
+      slug: "we-have-believed",
+      title: "We have believed, so forgive us",
+      line: "The God-fearing say: we have believed, so forgive our sins.",
+      facts: ["Quran 3:16", "Rabbana innana amanna", "They seek forgiveness before dawn"],
+      quote: quranQuote(3, 16),
+      source: quran(3, 16, "Those who say: our Lord, we have believed, so forgive us our sins and protect us from the punishment of the Fire."),
+      difficulty: 2,
+      questions: [
+        { q: "What do they tell Allah before asking to be forgiven?", a: "We have believed", wrong: ["We have grown rich", "We have built a house", "We have traveled far"], why: "Our Lord, indeed we have believed, so forgive us our sins, they say." },
+        { q: "What do they ask Allah to protect them from?", a: "The punishment of the Fire", wrong: ["A hard journey", "A poor harvest", "A long winter"], why: "Forgive us our sins and protect us from the punishment of the Fire, they say." },
+        { q: "They ask Allah to forgive their sins.", tf: true, why: "Our Lord, we have believed, so forgive us our sins and protect us from the Fire." }
+      ]
+    },
+    {
+      slug: "disciples-witnesses",
+      title: "Write us with the witnesses",
+      line: "Isa's disciples asked Allah to write them among the witnesses.",
+      facts: ["Quran 3:53", "Al-Hawariyyun: the disciples of Isa", "Rabbana amanna bima anzalt"],
+      quote: quranQuote(3, 53),
+      source: quran(3, 53, "The disciples of Isa said: our Lord, we have believed in what You revealed and have followed the messenger, so write us among the witnesses."),
+      difficulty: 2,
+      questions: [
+        { q: "Whom did the disciples say they followed?", a: "The messenger Isa", wrong: ["The rich men", "The old poets", "The king's guards"], why: "We have believed in what You revealed and have followed the messenger, they said." },
+        { q: "Among whom did they ask Allah to write them?", a: "The witnesses", wrong: ["The kings", "The poets", "The rulers"], why: "So register us among the witnesses to the truth, they asked." },
+        { q: "The disciples believed in what Allah revealed.", tf: true, why: "Our Lord, we have believed in what You revealed, they said." }
+      ]
+    },
+    {
+      slug: "not-in-vain",
+      title: "You did not create this in vain",
+      line: "Thinking of creation, they say: You did not make this in vain.",
+      facts: ["Quran 3:191", "Rabbana ma khalaqta hadha batila", "Standing, sitting and lying down"],
+      quote: quranQuote(3, 191),
+      source: quran(3, 191, "Those who remember Allah standing, sitting and lying on their sides, and think about the creation of the heavens and the earth: our Lord, You did not create this in vain. Glory be to You; protect us from the punishment of the Fire."),
+      difficulty: 2,
+      questions: [
+        { q: "What do they do with the creation of the heavens and the earth?", a: "Think about it", wrong: ["Turn away from it", "Worship it", "Make fun of it"], why: "And give thought to the creation of the heavens and the earth, the ayah says." },
+        { q: "Which du'a do they make after thinking about creation?", a: "You did not create this in vain", wrong: ["Give us more of this world", "Make us kings of the land", "Let us live here forever"], why: "Our Lord, You did not create this aimlessly; exalted are You, they say." },
+        { q: "They remember Allah standing, sitting and lying on their sides.", tf: true, why: "In every state they remember Allah, and they think about creation." }
+      ]
+    },
+    {
+      slug: "turn-hell-away",
+      title: "Turn Hell's punishment away",
+      line: "The servants of the Most Merciful ask: turn Hell away from us.",
+      facts: ["Quran 25:65", "Rabbanasrif 'anna 'adhaba jahannam", "Ibad ar-Rahman: servants of the Most Merciful"],
+      quote: quranQuote(25, 65),
+      source: quran(25, 65, "And those who say: our Lord, turn away from us the punishment of Hell; its punishment never lets go."),
+      difficulty: 2,
+      questions: [
+        { q: "Who make this du'a, in Surah Al-Furqan?", a: "The servants of the Most Merciful", wrong: ["The people of Ad", "The people of Lut", "The people of Nuh"], why: "The servants of the Most Merciful say: our Lord, avert from us the punishment of Hell." },
+        { q: "What do they say about Hell's punishment?", a: "It never lets go", wrong: ["It soon ends", "It is light", "It is easy"], why: "Indeed, its punishment is ever adhering, they say." },
+        { q: "The servants of the Most Merciful ask Allah to keep Hell away from them.", tf: true, why: "Our Lord, turn away from us the punishment of Hell, they say." }
+      ]
+    },
+    {
+      slug: "perfect-our-light",
+      title: "Perfect our light",
+      line: "On that Day, believers ask Allah to complete their light.",
+      facts: ["Quran 66:8", "Rabbana atmim lana nurana", "Their light runs ahead of them"],
+      quote: quranQuote(66, 8),
+      source: quran(66, 8, "On the Day their light will run before them and on their right, they will say: our Lord, perfect for us our light and forgive us; You have power over all things."),
+      difficulty: 2,
+      questions: [
+        { q: "What will the believers ask Allah to perfect for them?", a: "Their light", wrong: ["Their clothes", "Their wealth", "Their farms"], why: "Their light will run before them; they will say: our Lord, perfect for us our light." },
+        { q: "What do the believers ask for along with their light?", a: "Forgiveness", wrong: ["Wealth", "A long life", "Power"], why: "Perfect for us our light and forgive us; You are over all things competent." },
+        { q: "The believers will say this du'a while their light runs before them.", tf: true, why: "Their light will proceed before them and on their right; they will say: our Lord." }
+      ]
     }
   ]
 };
 
-export const DUA_MORE_UNITS: DeepUnit[] = [PROPHETS, BELIEVERS];
+const LAST_DAY: DeepUnit = {
+  key: "dua-last-day",
+  topicId: "duas",
+  branchId: "duas-last-day",
+  branch: { title: "Duas for the Last Day", description: "What the believers and Ibrahim asked Allah for the Day all people are gathered." },
+  name: "the duas for the Last Day",
+  kind: "skill",
+  lessonType: "skill",
+  lessons: [
+    {
+      slug: "gather-for-the-day",
+      title: "A Day with no doubt",
+      line: "All people will be gathered for a Day of no doubt.",
+      facts: ["Quran 3:9", "Rabbana innaka jami'un-nasi", "It follows Rabbana la tuzigh, Quran 3:8"],
+      quote: quranQuote(3, 9),
+      source: quran(3, 9, "Our Lord, You will surely gather all the people for a Day about which there is no doubt. Allah does not fail in His promise."),
+      difficulty: 1,
+      questions: [
+        { q: "Whom will Allah gather for that Day, says Quran 3:9?", a: "All people", wrong: ["Only the kings", "Only the prophets", "Only the scholars"], why: "Our Lord, You will surely gather the people for a Day, the du'a says." },
+        { q: "What does the du'a say about that Day?", a: "There is no doubt about it", wrong: ["It may never come", "It is only a dream", "It is far away"], why: "La rayba fih: a Day about which there is no doubt." },
+        { q: "This du'a says that Allah never breaks His promise.", tf: true, why: "Indeed, Allah does not fail in His promise." }
+      ]
+    },
+    {
+      slug: "no-helpers",
+      title: "No helpers for the wrongdoers",
+      line: "The Fire disgraces, and the wrongdoers will have no helpers.",
+      facts: ["Quran 3:192", "Rabbana innaka man tudkhilin-nar", "Part of one du'a, Quran 3:191 to 3:194"],
+      quote: quranQuote(3, 192),
+      source: quran(3, 192, "Our Lord, whoever You put into the Fire, You have disgraced him, and the wrongdoers will have no helpers."),
+      difficulty: 2,
+      questions: [
+        { q: "What happens to those Allah puts in the Fire, says Quran 3:192?", a: "They are disgraced", wrong: ["They are honored", "They are rewarded", "They are thanked"], why: "Whoever You admit to the Fire, You have disgraced him, the du'a says." },
+        { q: "Who will have no helpers, says the du'a?", a: "The wrongdoers", wrong: ["The God-fearing", "The righteous", "The humble"], why: "Wa ma liz-zalimina min ansar: the wrongdoers have no helpers." },
+        { q: "Just before this du'a, they ask Allah to protect them from the Fire.", tf: true, why: "Quran 3:191 ends: protect us from the punishment of the Fire." }
+      ]
+    },
+    {
+      slug: "caller-to-faith",
+      title: "The call to faith",
+      line: "We heard the call to believe in our Lord, and we believed.",
+      facts: ["Quran 3:193", "Rabbana innana sami'na munadiyan", "They ask to die with the righteous"],
+      quote: quranQuote(3, 193),
+      source: quran(3, 193, "Our Lord, we have heard a caller calling to faith: believe in your Lord, and we believed. Our Lord, forgive us our sins, remove from us our misdeeds and let us die with the righteous."),
+      difficulty: 2,
+      questions: [
+        { q: "What did the caller say, in Quran 3:193?", a: "Believe in your Lord", wrong: ["Gather your wealth", "Build your houses", "Rest in your homes"], why: "We heard a caller calling to faith, saying: believe in your Lord." },
+        { q: "What did they ask Allah to remove from them?", a: "Their misdeeds", wrong: ["Their hunger", "Their debts", "Their poverty"], why: "Forgive us our sins and remove from us our misdeeds, they asked." },
+        { q: "When they heard the call to faith, they believed.", tf: true, why: "Believe in your Lord, the caller said, and we have believed." }
+      ]
+    },
+    {
+      slug: "not-with-wrongdoers",
+      title: "Not with the wrongdoing people",
+      line: "Looking at the Fire, they ask not to join the wrongdoers.",
+      facts: ["Quran 7:47", "Rabbana la taj'alna ma'al-qawmiz-zalimin", "Said while looking at the people of the Fire"],
+      quote: quranQuote(7, 47),
+      source: quran(7, 47, "When their eyes are turned toward the people of the Fire, they say: our Lord, do not place us with the wrongdoing people."),
+      difficulty: 2,
+      questions: [
+        { q: "When is the du'a of Quran 7:47 said?", a: "When they see the people of the Fire", wrong: ["When they see the new moon", "When they see the rain", "When they see the sea"], why: "When their eyes are turned toward the people of the Fire, they say it." },
+        { q: "Which words begin the du'a of Quran 7:47?", a: "Rabbana la taj'alna", wrong: ["Rabbana atina", "Rabbi zidni", "Rabbi hab li"], why: "Rabbana la taj'alna ma'al-qawmiz-zalimin: do not place us with the wrongdoers." },
+        { q: "They ask Allah not to place them with the wrongdoing people.", tf: true, why: "Our Lord, do not place us with the wrongdoing people, they say." }
+      ]
+    },
+    {
+      slug: "ibrahim-not-disgraced",
+      title: "Not disgraced on that Day",
+      line: "Ibrahim asked not to be disgraced on the Day all are raised.",
+      facts: ["Quran 26:87", "Wa la tukhzini yawma yub'athun", "Part of his du'a, Quran 26:83 to 26:87"],
+      quote: quranQuote(26, 87),
+      source: quran(26, 87, "Ibrahim said: and do not disgrace me on the Day all are resurrected."),
+      difficulty: 2,
+      questions: [
+        { q: "Who made the du'a of Quran 26:87?", a: "Ibrahim", wrong: ["Nuh", "Musa", "Yunus"], why: "Do not disgrace me on the Day they are resurrected, Ibrahim asked." },
+        { q: "What did Ibrahim ask to be kept from on that Day?", a: "Disgrace", wrong: ["Hunger", "Thirst", "Cold"], why: "Wa la tukhzini: and do not disgrace me on the Day they are resurrected." },
+        { q: "Ibrahim asked this for the Day when all people are resurrected.", tf: true, why: "Wa la tukhzini yawma yub'athun: the Day they are resurrected." }
+      ]
+    }
+  ]
+};
+
+export const DUA_MORE_UNITS: DeepUnit[] = [PROPHETS, BELIEVERS, LAST_DAY];
