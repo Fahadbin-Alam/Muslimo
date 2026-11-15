@@ -246,13 +246,20 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-beware-of-suspicion": [/suspicion/i, /spy|brothers/i],
   "sign-thirty-three": [/thirty[- ]three|\b33\b|(rich|wealthy).{0,40}(ranks|grades)/i, /poor/i],
   "sign-five-gifts": [/all (people|mankind)|month.s journey/i, /five|nation|one people|special (things|gifts)/i],
-  "sign-seven-in-the-shade": [/shade/i, /seven/i],
+  "sign-seven-in-the-shade": [/shade/i, /seven|left hand/i],
   "sign-two-joys": [/fast(ing)?\b/i, /shield|musk|two joys|for Me/i],
   "sign-ruins-of-al-hijr": [/al-Hijr/i, /weep(ing)?/i],
   "sign-born-on-the-fitrah": [/fitrah|true faith/i, /\bborn\b|parents/i],
   "sign-best-ten-days": [/ten days|first ten/i, /Dhul[- ]Hijj?ah/i],
   "sign-sparrow-and-the-sea": [/most learned|sparrow|patient/i, /Musa|Khidr|knowledge/i],
-  "sign-lofty-mansions": [/lofty mansions|high mansions|high rooms/i, /stars?\b|only for (the )?prophets/i]
+  "sign-lofty-mansions": [/lofty mansions|high mansions|high rooms/i, /stars?\b|only for (the )?prophets/i],
+  "sign-house-of-pearl": [/Khadijah?/i, /no (noise|tiredness|fatigue|toil)|tiredness|palace/i],
+  "sign-tree-of-a-hundred-years": [/\btree\b/i, /hundred years|century/i],
+  "sign-the-pool": [/\bPool\b|\bPond\b|Hawd|Kawthar/i, /thirst/i],
+  "sign-gold-like-uhud": [/companions/i, /Uhud|gold|mudd|charity/i],
+  "sign-respite-then-seized": [/respite|gives? (the )?(wrongdoers?|unjust|oppressors?) time/i, /seiz|grip|let (him )?go/i],
+  "sign-convey-one-ayah": [/convey|pass (it )?on/i, /one (verse|ayah|sentence)|single (verse|sentence)|even (a|one)\b/i],
+  "sign-the-hidden-poor": [/\bpoor\b/i, /\bbeg|\bask|notice/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -439,13 +446,20 @@ const SOURCES: Record<string, string[]> = {
   "sign-beware-of-suspicion": ["Sahih al-Bukhari 6064"],
   "sign-thirty-three": ["Sahih al-Bukhari 843"],
   "sign-five-gifts": ["Sahih al-Bukhari 335"],
-  "sign-seven-in-the-shade": ["Sahih al-Bukhari 660"],
+  "sign-seven-in-the-shade": ["Sahih al-Bukhari 660", "Sahih al-Bukhari 1423"],
   "sign-two-joys": ["Sahih al-Bukhari 1894", "Sahih al-Bukhari 1904"],
   "sign-ruins-of-al-hijr": ["Sahih al-Bukhari 4419", "Sahih al-Bukhari 433"],
   "sign-born-on-the-fitrah": ["Sahih al-Bukhari 1385"],
   "sign-best-ten-days": ["Sahih al-Bukhari 969"],
   "sign-sparrow-and-the-sea": ["Sahih al-Bukhari 122"],
-  "sign-lofty-mansions": ["Sahih al-Bukhari 3256"]
+  "sign-lofty-mansions": ["Sahih al-Bukhari 3256"],
+  "sign-house-of-pearl": ["Sahih al-Bukhari 3820"],
+  "sign-tree-of-a-hundred-years": ["Sahih al-Bukhari 3251"],
+  "sign-the-pool": ["Sahih al-Bukhari 6579"],
+  "sign-gold-like-uhud": ["Sahih al-Bukhari 3673"],
+  "sign-respite-then-seized": ["Sahih al-Bukhari 4686"],
+  "sign-convey-one-ayah": ["Sahih al-Bukhari 3461"],
+  "sign-the-hidden-poor": ["Sahih al-Bukhari 1479"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -469,7 +483,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(952);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(973);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -3397,6 +3411,133 @@ describe("the signs in creation, alive", () => {
     expect([all("lofty-mansions", asked, 0.57), all("lofty-mansions", asked, 0.66), all("lofty-mansions", asked, 0.8)]).toEqual([[0, 0], [1, 0], [0, 1]]);
     const believed = ["golden ways up to the mansions, for those who believed", "the mansions, a warm glow"];
     expect([all("lofty-mansions", believed, 0.85), all("lofty-mansions", believed, 0.97)]).toEqual([[0, 0], [1, 1]]);
+  });
+
+  test("treasures and trusts shows each moment in its order, and draws no Prophet, no Companion, no person, no hand and no face", () => {
+    const taught: SignKind[] = ["house-of-pearl", "tree-of-a-hundred-years", "the-pool", "gold-like-uhud", "respite-then-seized", "convey-one-ayah", "the-hidden-poor"];
+    for (const kind of taught) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|belly|body|devils?|satan|shaytan|hypocrites?|heirs?|Umar|Uthman|Jabir|Mutarrif|Abu Sa'id|Sufyan|Anas|Abdullah|Mas'ud|Abu Hurairah|Abu Hurayrah|Sahl|Sulayman|Salman|Abu Musa|Abu Dharr|Ibn Abbas|Qays|Musa|Khidr|Yusha|Khadijah?|Jibril|Gabriel)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, nothing comes down from the sky, and no fire is drawn.
+      expect([kind, signArt(kind).parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name)).map((each) => each.name)]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    const at = (kind: SignKind, name: string, t: number) => [shown(kind, name, t), value(kind, name, "x", t), value(kind, name, "y", t)];
+    // The house of hollow pearl: her place comes along a dashed way to the golden ring, a dish of food and a cup with
+    // her; a voice from his place gives her the salam and a warm glow comes on her; far off, a light of Paradise and a
+    // garden ledge, a house of hollow pearl rising on it, and a golden way to it from her place; a light shows within the
+    // pearl and it shines; last, the noise and the heavy sack of toil come near and are kept away, and a calm comes.
+    expect(words("house-of-pearl")).toEqual(["This is Khadijah, coming to you", "With a dish of food or drink", "Give her salam from her Lord and from me", "And glad tidings of a house in Paradise", "Made of qasab, of hollow pearl", "With no noise in it and no toil"]);
+    const her = "her place, coming";
+    const dish = "a dish of food or drink with her";
+    expect([at("house-of-pearl", her, 0.02), at("house-of-pearl", her, 0.12), shown("house-of-pearl", dish, 0.17), at("house-of-pearl", her, 0.28), at("house-of-pearl", dish, 0.28)]).toEqual([[1, 0, 0], [1, 28, 0], 0, [1, 54, 0], [1, 54, 0]]);
+    const salam = ["a voice from his place, giving her salam", "the salam on her, a warm glow"];
+    expect([all("house-of-pearl", salam, 0.33), at("house-of-pearl", her, 0.45), all("house-of-pearl", salam, 0.45), all("house-of-pearl", salam, 0.61)]).toEqual([[0, 0], [1, 78, 0], [1, 1], [0, 1]]);
+    const glad = ["Paradise, a light far off", "a garden ledge of Paradise, far off", "a house of hollow pearl, rising there", "a golden way from her place to it"];
+    expect([all("house-of-pearl", glad, 0.5), value("house-of-pearl", glad[2], "scale", 0.5), all("house-of-pearl", glad, 0.61), value("house-of-pearl", glad[2], "scale", 0.61)]).toEqual([[0, 0, 0, 0], 0.4, [1, 1, 1, 1], 1]);
+    const pearl = ["a light within the hollow pearl", "the pearl, shining"];
+    expect([all("house-of-pearl", pearl, 0.66), all("house-of-pearl", pearl, 0.77)]).toEqual([[0, 0], [1, 1]]);
+    const kept = [...names("house-of-pearl", /^noise, kept away \d$/), "toil, a heavy grey sack, kept away", "a calm over the house"];
+    expect([kept.length, all("house-of-pearl", kept, 0.82), all("house-of-pearl", kept, 0.855), all("house-of-pearl", kept, 0.91), all("house-of-pearl", kept, 0.97)]).toEqual([4, [0, 0, 0, 0], [1, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]);
+    // The tree of a hundred years: in the gardens of Paradise, in a soft light with no sun, a tree grows past both sides,
+    // light through its leaves; its shade spreads wide, and a traveller's small place comes along a dashed way in it; a
+    // row of small moons lights one after another as it goes on; last, it has still not crossed it: more shade ahead.
+    expect(words("tree-of-a-hundred-years")).toEqual(["In Paradise there is a tree", "A rider could travel in its shade", "For a hundred years", "And not cross it"]);
+    const tree = "a tree of Paradise, growing";
+    const leaves = "light through its leaves";
+    expect([value("tree-of-a-hundred-years", tree, "scale", 0.02), shown("tree-of-a-hundred-years", leaves, 0.02), value("tree-of-a-hundred-years", tree, "scale", 0.21), shown("tree-of-a-hundred-years", leaves, 0.21)]).toEqual([0.35, 0, 1, 1]);
+    const shade = "its shade, spreading wide";
+    const traveller = "a traveller's place, going on and on";
+    const way = "the traveller's way, in the shade";
+    expect([shown("tree-of-a-hundred-years", shade, 0.26), at("tree-of-a-hundred-years", traveller, 0.26), shown("tree-of-a-hundred-years", way, 0.26)]).toEqual([0, [0, 0, 0], 0]);
+    expect([shown("tree-of-a-hundred-years", shade, 0.47), value("tree-of-a-hundred-years", shade, "scaleX", 0.47), at("tree-of-a-hundred-years", traveller, 0.47), value("tree-of-a-hundred-years", way, "scaleX", 0.47)]).toEqual([1, 1, [1, 34, 0], 0.243]);
+    const years = names("tree-of-a-hundred-years", /^the years going by \d+$/);
+    expect([years.length, all("tree-of-a-hundred-years", years, 0.52), all("tree-of-a-hundred-years", years, 0.71), at("tree-of-a-hundred-years", traveller, 0.71)]).toEqual([10, Array(10).fill(0), Array(10).fill(1), [1, 94, 0]]);
+    const ahead = "more shade still ahead";
+    expect([shown("tree-of-a-hundred-years", ahead, 0.76), at("tree-of-a-hundred-years", traveller, 0.97), value("tree-of-a-hundred-years", way, "scaleX", 0.97), shown("tree-of-a-hundred-years", ahead, 0.97)]).toEqual([0, [1, 140, 0], 1, 1]);
+    // The Pool: a wide pool on a wide plain, the places of very many far off; a dashed way across it with thirty marks, a
+    // mark for each day of a month's journey; a bowl of milk, and the water turns whiter than it; a jar of musk, its smell
+    // rising, and a sweeter smell rising from the Pool; many cups about it, shining like stars; places come to drink and
+    // a cool glow comes on each; last, a grey shade of thirst is kept away, and a calm comes on each.
+    expect(words("the-pool")).toEqual(["My Pool is a month's journey across", "Its water is whiter than milk", "Its smell is better than musk", "Its cups are like the stars of the sky", "Whoever drinks from it", "Will never be thirsty again"]);
+    const month = ["a way across it, a month's journey", ...names("the-pool", /^ten days of the journey \d$/)];
+    expect([month.length, all("the-pool", month, 0.02), all("the-pool", month, 0.13)]).toEqual([4, [0, 0, 0, 0], [1, 1, 1, 1]]);
+    const milk = ["a bowl of milk by it", "its water, whiter than milk"];
+    expect([all("the-pool", milk, 0.18), all("the-pool", milk, 0.29)]).toEqual([[0, 0], [1, 1]]);
+    const musk = ["a jar of musk by it", "the musk's smell, rising", "a sweeter smell, rising from the Pool"];
+    expect([all("the-pool", musk, 0.34), all("the-pool", musk, 0.45)]).toEqual([[0, 0, 0], [1, 1, 1]]);
+    const cups = ["its cups, all about it", "its cups, shining like stars"];
+    expect([all("the-pool", cups, 0.5), all("the-pool", cups, 0.62)]).toEqual([[0, 0], [1, 1]]);
+    const drinkers = names("the-pool", /^a place, come to drink \d$/);
+    expect([drinkers.length, all("the-pool", [...drinkers, "a cool drink, a glow on each"], 0.67), drinkers.map((name) => at("the-pool", name, 0.78)), shown("the-pool", "a cool drink, a glow on each", 0.78)]).toEqual([4, [0, 0, 0, 0, 0], Array(4).fill([1, 0, 0]), 1]);
+    const thirst = ["thirst, a grey shade, kept away", "never thirsty, a calm on each"];
+    expect([all("the-pool", thirst, 0.83), all("the-pool", thirst, 0.855), all("the-pool", thirst, 0.97)]).toEqual([[0, 0], [1, 0], [0, 1]]);
+    // Gold as much as Uhud: by Mount Uhud, the golden ring and the places of those with him; crooked voices come at them
+    // from two other places, a voice from his place answers, the crooked voices fade and a calm comes; one of the other
+    // places shows, a way going from it to the mountain, and the mountain turns all to gold; a balance, a little golden
+    // mountain on one pan and a mudd from those with him on the other, and the mudd's pan goes down; last, the mudd is
+    // only half as much, its pan stays down, a warm glow comes on those with him, and sparks rise from the mudd.
+    expect(words("gold-like-uhud")).toEqual(["Do not abuse my companions", "If one of you spent", "Gold as much as Uhud", "It would not reach a mudd of theirs", "Nor even half of it"]);
+    const crookedVoices = names("gold-like-uhud", /^a crooked voice at those with him \d$/);
+    const answer = ["a voice from his place: do not", "a calm on those with him"];
+    expect([crookedVoices.length, all("gold-like-uhud", [...crookedVoices, ...answer], 0.02), all("gold-like-uhud", crookedVoices, 0.056), all("gold-like-uhud", [...crookedVoices, ...answer], 0.14)]).toEqual([2, [0, 0, 0, 0], [1, 1], [0, 0, 1, 1]]);
+    const spent = ["the place of one of you", "a way from it to the mountain, spending"];
+    expect([all("gold-like-uhud", spent, 0.19), all("gold-like-uhud", [...spent, answer[0]], 0.3)]).toEqual([[0, 0], [1, 1, 0]]);
+    const gold = ["Uhud, all of gold", "the gold, sparkling"];
+    expect([all("gold-like-uhud", gold, 0.35), all("gold-like-uhud", gold, 0.47)]).toEqual([[0, 0], [1, 1]]);
+    const bar = "the balance's bar, tipping to the mudd";
+    const goldPan = "gold as much as Uhud, on its pan";
+    const muddPan = "a mudd of theirs, on its pan";
+    const balance = ["a balance, its post", bar, "the pan of the gold", "the pan of the mudd", goldPan, muddPan];
+    expect([all("gold-like-uhud", balance, 0.52), all("gold-like-uhud", balance, 0.595), value("gold-like-uhud", bar, "rotate", 0.595), at("gold-like-uhud", muddPan, 0.595)]).toEqual([[0, 0, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1], 0, [1, 0, 0]]);
+    expect([value("gold-like-uhud", bar, "rotate", 0.7), at("gold-like-uhud", goldPan, 0.7), at("gold-like-uhud", muddPan, 0.7), at("gold-like-uhud", "the pan of the mudd", 0.7), value("gold-like-uhud", muddPan, "scale", 0.7)]).toEqual([12, [1, 0.4, -4.2], [1, -0.4, 4.2], [1, -0.4, 4.2], 1]);
+    const half = ["a warm glow on those with him", "sparks rising from the mudd"];
+    expect([all("gold-like-uhud", half, 0.75), value("gold-like-uhud", muddPan, "scale", 0.97), value("gold-like-uhud", bar, "rotate", 0.97), all("gold-like-uhud", half, 0.97), at("gold-like-uhud", half[1], 0.97)]).toEqual([[0, 0], 0.62, 12, [1, 1], [1, -0.4, -5.8]]);
+    // Respite, then seized: a big, proud house, the wrongdoer's place by it; crooked ways of wrong go to the small homes
+    // and grey shades come on them; his heap grows, and the moons of the months light one after another; then cracks
+    // open in the ground, a darkness rises from the ground, his house grows dark and his heap is gone; last, his ways out
+    // break off, a dark ring holds his place, the crooked ways are gone, and a calm comes on the small homes.
+    expect(words("respite-then-seized")).toEqual(["Allah gives respite to the wrongdoer", "Until, when He seizes him", "He does not let him go"]);
+    const months = names("respite-then-seized", /^the months of respite, going by \d$/);
+    const wrong = ["crooked ways of wrong, to the small homes", "grey shades on the small homes", "his heap, growing"];
+    expect([months.length, all("respite-then-seized", [...months, ...wrong], 0.02), all("respite-then-seized", [...months, ...wrong], 0.39), value("respite-then-seized", wrong[2], "scale", 0.13), value("respite-then-seized", wrong[2], "scale", 0.39)]).toEqual([8, Array(11).fill(0), Array(11).fill(1), 0.4, 1]);
+    const seized = ["cracks in the ground about his house", "a darkness, rising from the ground", "his house, gone dark"];
+    expect([all("respite-then-seized", seized, 0.44), value("respite-then-seized", seized[1], "y", 0.44), all("respite-then-seized", [...seized, wrong[2]], 0.67), value("respite-then-seized", seized[1], "y", 0.67)]).toEqual([[0, 0, 0], 8, [1, 1, 1, 0], 0]);
+    const held = ["his ways out, broken off", "a dark ring, holding his place", "a calm on the small homes"];
+    expect([all("respite-then-seized", [...held, ...wrong.slice(0, 2)], 0.72), all("respite-then-seized", held, 0.755), all("respite-then-seized", [...held, ...wrong.slice(0, 2)], 0.97)]).toEqual([[0, 0, 0, 1, 1], [1, 0, 0], [0, 1, 1, 0, 0]]);
+    // Convey from me, even one ayah: by his masjid, the golden ring; one small light goes from it along a dashed way to
+    // the first of five places, and on from each to the next, each lit as it reaches it; a voice from one of them tells
+    // at ease, and a calm comes on it; another place far off, grey, with a crooked voice; last, a dark seat shows beneath
+    // it, it sinks into the dark, and the dark spreads under it.
+    expect(words("convey-one-ayah")).toEqual(["Convey from me", "Even if it is one ayah", "Tell of the Children of Israel, no harm", "Whoever lies about me on purpose", "Let him take his seat in the Fire"]);
+    const light = "one small light, conveyed on and on";
+    const ways = names("convey-one-ayah", /^a way of what is conveyed \d$/);
+    const lit = names("convey-one-ayah", /^a light on the place it reached \d$/);
+    expect([ways.length, lit.length, at("convey-one-ayah", light, 0.02), all("convey-one-ayah", [...ways, ...lit], 0.02)]).toEqual([5, 5, [0, 0, 0], Array(10).fill(0)]);
+    expect([at("convey-one-ayah", light, 0.12), all("convey-one-ayah", ways, 0.12), all("convey-one-ayah", lit, 0.12), at("convey-one-ayah", light, 0.32), all("convey-one-ayah", [...ways, ...lit], 0.32)]).toEqual([[1, 18, -4], [1, 0, 0, 0, 0], [1, 0, 0, 0, 0], [1, 106, -4], Array(10).fill(1)]);
+    const told = ["a voice from one of them, telling at ease", "no harm, a calm on it"];
+    expect([all("convey-one-ayah", told, 0.37), all("convey-one-ayah", told, 0.51), all("convey-one-ayah", told, 0.72)]).toEqual([[0, 0], [1, 1], [0, 1]]);
+    const liar = ["another place, far off", "a crooked voice from it, lying"];
+    const seat = ["a dark seat beneath it", "the dark, spreading under it"];
+    expect([all("convey-one-ayah", [...liar, ...seat], 0.56), all("convey-one-ayah", [...liar, ...seat], 0.72), all("convey-one-ayah", [...liar, ...seat], 0.97), at("convey-one-ayah", liar[0], 0.97)]).toEqual([[0, 0, 0, 0], [1, 1, 0, 0], [1, 0, 1, 1], [1, 0, 2.6]]);
+    // The hidden poor: along a row of homes, a place goes round from door to door with its dish, and at the doors a bite
+    // and a date or two come into it; a quiet home stands apart, its door shut, and within it a dim place by an empty
+    // grey dish; other places pass by it and never turn; last, a soft light of patience is on it, and a calm.
+    expect(words("the-hidden-poor")).toEqual(["The poor is not the one who goes around", "For a bite or two, a date or two", "But the one who does not have enough", "No one notices him, to give him charity", "And he does not stand up to ask people"]);
+    const asker = "a place going round, door to door";
+    const given = names("the-hidden-poor", /^a (bite|date) or two, given \d$/);
+    expect([at("the-hidden-poor", asker, 0.02), at("the-hidden-poor", asker, 0.15), given.length, all("the-hidden-poor", given, 0.2), at("the-hidden-poor", asker, 0.35), given.map((name) => at("the-hidden-poor", name, 0.35))]).toEqual([[1, 0, 0], [1, 40, 0], 4, [0, 0, 0, 0], [1, 68, 0], Array(4).fill([1, 68, 0])]);
+    const within = ["a dim place within", "an empty grey dish within"];
+    expect([all("the-hidden-poor", within, 0.4), all("the-hidden-poor", within, 0.53)]).toEqual([[0, 0], [1, 1]]);
+    const passers = names("the-hidden-poor", /^another place, passing by without turning \d$/);
+    expect([passers.length, all("the-hidden-poor", passers, 0.58), passers.map((name) => at("the-hidden-poor", name, 0.75)), all("the-hidden-poor", passers, 0.97)]).toEqual([2, [0, 0], Array(2).fill([1, -70, 0]), [0, 0]]);
+    const patience = ["a soft light of patience on it", "a calm about the quiet home"];
+    expect([all("the-hidden-poor", [...within, ...patience], 0.8), all("the-hidden-poor", [...within, ...patience], 0.97)]).toEqual([[1, 1, 0, 0], [1, 1, 1, 1]]);
   });
 
   test("every word and caption is translated in every language", () => {

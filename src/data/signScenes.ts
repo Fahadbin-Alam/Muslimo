@@ -555,7 +555,14 @@ export type SignKind =
   | "born-on-the-fitrah"
   | "best-ten-days"
   | "sparrow-and-the-sea"
-  | "lofty-mansions";
+  | "lofty-mansions"
+  | "house-of-pearl"
+  | "tree-of-a-hundred-years"
+  | "the-pool"
+  | "gold-like-uhud"
+  | "respite-then-seized"
+  | "convey-one-ayah"
+  | "the-hidden-poor";
 
 export type SignScene = {
   id: string;
@@ -1797,7 +1804,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "seven-in-the-shade",
     caption:
       "The Prophet ﷺ said: Allah will give shade to seven on the Day when there will be no shade but His: a just ruler; a youth brought up in the worship of Allah; a man whose heart is attached to the mosques; two who love each other only for Allah's sake, meeting and parting for it; a man who refuses the call of a woman of position and beauty and says: I am afraid of Allah; a man who gives charity so secretly that his left hand does not know what his right hand has given; and one who remembers Allah alone and his eyes fill with tears.",
-    sources: [bukhari("660")]
+    sources: [bukhari("660"), bukhari("1423")]
   },
   {
     id: "sign-two-joys",
@@ -1840,6 +1847,51 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: the people of Paradise will look at the dwellers of the lofty mansions above them as one looks at a brilliant star far away on the horizon, in the East or in the West, because of their ranks over one another. The people said: O Messenger of Allah, are these the homes of the prophets, which no one else can reach? He ﷺ said: no, by Him in whose Hand my soul is, they are for men who believed in Allah and believed the messengers.",
     sources: [bukhari("3256")]
+  },
+  {
+    id: "sign-house-of-pearl",
+    kind: "house-of-pearl",
+    caption:
+      "Jibril came to the Prophet ﷺ and said: O Messenger of Allah, this is Khadijah coming to you with a dish of food or drink. When she reaches you, convey to her salam from her Lord and from me, and give her glad tidings of a house in Paradise of qasab, hollow pearl, in which there is no noise and no toil.",
+    sources: [bukhari("3820")]
+  },
+  {
+    id: "sign-tree-of-a-hundred-years",
+    kind: "tree-of-a-hundred-years",
+    caption: "The Prophet ﷺ said: in Paradise there is a tree so big that a rider could travel in its shade for a hundred years and not cross it.",
+    sources: [bukhari("3251")]
+  },
+  {
+    id: "sign-the-pool",
+    kind: "the-pool",
+    caption:
+      "The Prophet ﷺ said: my Pool is a month's journey across. Its water is whiter than milk, its smell is better than musk, and its cups are like the stars of the sky. Whoever drinks from it will never be thirsty.",
+    sources: [bukhari("6579")]
+  },
+  {
+    id: "sign-gold-like-uhud",
+    kind: "gold-like-uhud",
+    caption: "The Prophet ﷺ said: do not abuse my companions, for if any one of you spent gold as much as Uhud, it would not reach a mudd spent by one of them, nor even half of it.",
+    sources: [bukhari("3673")]
+  },
+  {
+    id: "sign-respite-then-seized",
+    kind: "respite-then-seized",
+    caption: "The Prophet ﷺ said: Allah gives respite to the wrongdoer, until, when He seizes him, He does not let him go. Then he ﷺ recited ayah 102 of Surah Hud, on the seizure of your Lord.",
+    sources: [bukhari("4686")]
+  },
+  {
+    id: "sign-convey-one-ayah",
+    kind: "convey-one-ayah",
+    caption: "The Prophet ﷺ said: convey from me, even if it is one ayah. Tell of the Children of Israel, and there is no harm in it. And whoever lies about me on purpose, let him take his seat in the Fire.",
+    sources: [bukhari("3461")]
+  },
+  {
+    id: "sign-the-hidden-poor",
+    kind: "the-hidden-poor",
+    caption:
+      "The Prophet ﷺ said: the poor one is not the one who goes around to people and is turned away with a bite or two, or a date or two. The poor one is the one who does not have enough for his needs, whom no one notices so as to give him charity, and who does not stand up to ask people.",
+    sources: [bukhari("1479")]
   }
 ];
 
@@ -2995,11 +3047,13 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-ibrahim1-sent-to-all-mankind": "sign-five-gifts",
   "deep-saba2-sent-to-all-mankind": "sign-five-gifts",
   "deep-hashr1-awe-for-a-month": "sign-five-gifts",
-  // Seven whom Allah shades on the Day there is no shade but His (Sahih al-Bukhari 660).
+  // Seven whom Allah shades on the Day there is no shade but His (Sahih al-Bukhari 660 and 1423).
   "deep-gathering-shade": "sign-seven-in-the-shade",
   "deep-yusuf2-shade-for-one-who-fears-allah": "sign-seven-in-the-shade",
   "deep-qaf3-tears-in-private": "sign-seven-in-the-shade",
   "deep-mulk2-secret-charity": "sign-seven-in-the-shade",
+  "deep-baqarah3-secret-charity": "sign-seven-in-the-shade",
+  "deep-rahman3-tears-in-private": "sign-seven-in-the-shade",
   // Fasting is a shield, better with Allah than musk, for Him, and its two joys (Sahih al-Bukhari 1894 and 1904).
   "deep-fast-reward-shield": "sign-two-joys",
   "deep-fast-reward-musk": "sign-two-joys",
@@ -3030,7 +3084,33 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The lofty mansions of Paradise, seen like a brilliant star on the horizon (Sahih al-Bukhari 3256).
   "deep-zumar2-like-stars-on-the-horizon": "sign-lofty-mansions",
   "deep-hadid3-the-lofty-mansions": "sign-lofty-mansions",
-  "deep-hadid3-not-only-for-prophets": "sign-lofty-mansions"
+  "deep-hadid3-not-only-for-prophets": "sign-lofty-mansions",
+  // Glad tidings to Khadijah of a house in Paradise of hollow pearl, with no noise and no toil (Sahih al-Bukhari 3820).
+  "deep-wives-khadijah-greeting": "sign-house-of-pearl",
+  "deep-mothers-khadijah-palace": "sign-house-of-pearl",
+  "deep-hijr2-no-fatigue-there": "sign-house-of-pearl",
+  // The tree of Paradise whose shade a rider could travel a hundred years (Sahih al-Bukhari 3251).
+  "deep-jannah-tree": "sign-tree-of-a-hundred-years",
+  "deep-raad3-a-hundred-years-of-shade": "sign-tree-of-a-hundred-years",
+  // His Pool, a month's journey across; whoever drinks from it will never be thirsty (Sahih al-Bukhari 6579).
+  "deep-hawd-pool": "sign-the-pool",
+  "deep-kawthar1-never-thirsty-again": "sign-the-pool",
+  // Gold as much as Uhud would not reach a mudd of those with him, nor half of it (Sahih al-Bukhari 3673).
+  "deep-abu-said-my-companions": "sign-gold-like-uhud",
+  "deep-fath3-honor-the-companions": "sign-gold-like-uhud",
+  "deep-hadid2-gold-like-mount-uhud": "sign-gold-like-uhud",
+  // Allah gives respite to the wrongdoer, until, when He seizes him, He does not let him go (Sahih al-Bukhari 4686).
+  "deep-hud6-respite-then-seizure": "sign-respite-then-seized",
+  "deep-raad4-respite-for-the-unjust": "sign-respite-then-seized",
+  "deep-hajj3-respite-then-seized": "sign-respite-then-seized",
+  "deep-qalam5-allah-gives-respite": "sign-respite-then-seized",
+  // Convey from me, even if it is one ayah (Sahih al-Bukhari 3461).
+  "deep-hadith-knowledge-one-verse": "sign-convey-one-ayah",
+  "deep-ibn-amr-even-one-ayah": "sign-convey-one-ayah",
+  "deep-jinn4-convey-even-one-ayah": "sign-convey-one-ayah",
+  // The poor one who has not enough, whom no one notices, and who does not ask (Sahih al-Bukhari 1479).
+  "deep-tawbah3-the-hidden-poor": "sign-the-hidden-poor",
+  "deep-dhariyat1-the-hidden-poor": "sign-the-hidden-poor"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
