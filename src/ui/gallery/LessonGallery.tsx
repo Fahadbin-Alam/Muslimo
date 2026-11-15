@@ -1105,6 +1105,14 @@ const STATES: State[] = [
   { id: "scene-best-ten-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-best-ten-days" ask="Which days did he call" /> },
   { id: "scene-sparrow-and-the-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf3-the-sparrow-and-the-sea" ask="sparrow's sip" /> },
   { id: "scene-lofty-mansions", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid3-the-lofty-mansions" ask="compared to" /> },
+  // A question on each scene of treasures and trusts (round 85).
+  { id: "scene-house-of-pearl", render: () => <SceneQuestionDemo lessonId="lesson-deep-wives-khadijah-greeting" ask="bringing when Jibril" /> },
+  { id: "scene-tree-of-a-hundred-years", render: () => <SceneQuestionDemo lessonId="lesson-deep-jannah-tree" ask="ride through" /> },
+  { id: "scene-the-pool", render: () => <SceneQuestionDemo lessonId="lesson-deep-hawd-pool" ask="How many cups" /> },
+  { id: "scene-gold-like-uhud", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-said-my-companions" ask="would gold like Uhud" /> },
+  { id: "scene-respite-then-seized", render: () => <SceneQuestionDemo lessonId="lesson-deep-hud6-respite-then-seizure" ask="seizes him" /> },
+  { id: "scene-convey-one-ayah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-knowledge-one-verse" ask="How much should we pass on" /> },
+  { id: "scene-the-hidden-poor", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah3-the-hidden-poor" ask="real poor person, per" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
