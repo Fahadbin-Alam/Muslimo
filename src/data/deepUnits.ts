@@ -497,8 +497,8 @@ const ABU_BAKR: DeepUnit = {
       source: hadith("bukhari", "3675", "Anas ibn Malik", "Sahih", "Uhud shook under the Prophet ﷺ, Abu Bakr, Umar and Uthman; he said: be firm, on you are a prophet, a siddiq and two martyrs."),
       difficulty: 5,
       questions: [
-        { q: "Which mountain shook under them?", a: "Uhud", wrong: ["Hira", "Thawr", "Arafah"], why: "The Prophet ﷺ told it: be firm, Uhud." },
-        { q: "Who were the two martyrs on the mountain?", a: "Umar and Uthman", wrong: ["Hamzah and Mus'ab", "Ali and Talhah", "Bilal and Ammar"], why: "Both were later killed as martyrs." },
+        { q: "Which mountain shook under them?", a: "Uhud", wrong: ["Safa", "Thawr", "Arafah"], why: "The Prophet ﷺ told it: be firm, Uhud." },
+        { q: "Who were the two martyrs on the mountain?", a: "Umar and Uthman", wrong: ["Anas and Abu Hurairah", "Ibn Umar and Ibn Abbas", "Abu Dharr and Ibn Mas'ud"], why: "Both were later killed as martyrs." },
         { q: "What did the Prophet ﷺ call Abu Bakr that day?", a: "A siddiq", wrong: ["A martyr", "A prophet", "A king"], why: "Siddiq: the one who always believes the truth." },
         { q: "How many people were on the mountain with the Prophet ﷺ?", a: "Three", wrong: ["Two", "Four", "Ten"], why: "Abu Bakr, Umar and Uthman." }
       ]
@@ -1824,7 +1824,7 @@ const ALI: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What had Fatimah asked for?", a: "A servant", wrong: ["A house", "Money", "A garden"], why: "Her hands hurt from the grinding stone." },
-        { q: "How many times is Allahu Akbar said?", a: "34", wrong: ["33", "10", "100"], why: "34 Allahu Akbar, 33 SubhanAllah, 33 Alhamdulillah." },
+        { q: "How many times is Allahu Akbar said?", a: "34", wrong: ["40", "10", "100"], why: "34 Allahu Akbar, 33 SubhanAllah, 33 Alhamdulillah." },
         { q: "When is this dhikr said?", a: "When going to bed", wrong: ["After Fajr only", "Before eating", "On Fridays"], why: "The Prophet ﷺ taught it for bedtime." },
         { q: "The Prophet ﷺ said the dhikr was better than a servant.", tf: true, why: "Better for them than what they asked for." }
       ]
