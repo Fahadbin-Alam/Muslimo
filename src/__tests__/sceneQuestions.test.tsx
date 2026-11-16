@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2043);
+    expect(asks.length).toBe(2083);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -126,7 +126,7 @@ describe("which questions are asked on a scene", () => {
     // he opened the night prayer, so its final quiz no longer asks how much of the night Dawud prayed (still asked in
     // its lessons). The second review card of "The Book of the Virtues of the Quran" also asks what one who finds
     // reciting hard gets.
-    expect(places).toBe(2987);
+    expect(places).toBe(3041);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -7882,6 +7882,324 @@ describe("where the scene waits and where it stops", () => {
     expect(shown("Saying a star brought the rain is fine.", ["the second place's voice, in grey: by such a star", "turned to the star: a faint grey line up from the second place", "disbelief: a grey shade about the second place", "one bright star, high in the sky"])).toEqual([
       [0, 0, 0, 1],
       [1, 1, 1, 0]
+    ]);
+  });
+
+  it("waits on the scenes of good ways with people, from making room to the valley of gold, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-make-room", "sign-rights-of-the-road", "sign-honest-trade", "sign-keep-them-close", "sign-small-gift", "sign-asked-about-blessings", "sign-valley-of-gold"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(40);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Make room. What he forbade: the gathering sits on its mat; then the one who came goes to the fourth place, and a
+    // grey copy of it is made to rise, before its seat is kept for it.
+    expect([
+      shown("What did the Prophet ﷺ forbid, in Bukhari 6270?", ["made to rise: a grey copy of the fourth place", "the place of the one who came", "the seat kept: a ring of care about the fourth place"]),
+      moved("What did the Prophet ﷺ forbid, in Bukhari 6270?", "the place of the one who came", "x"),
+      moved("What did the Prophet ﷺ forbid, in Bukhari 6270?", "made to rise: a grey copy of the fourth place", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, -50],
+      [0, -7]
+    ]);
+    // What to do instead, and what 58:11 says when asked to make room: the fourth place's seat kept for it; then the
+    // places on the mat spread out, a warm wash shows where room was made, and the one who came sits among them.
+    for (const prompt of ["What should we do instead?", "Ayah 11: what should we do when asked to make room?", "Ayahs 7-13: what are they about?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["room made: a warm wash over the mat", "a ring of care about the gathering", "the seat kept: a ring of care about the fourth place"]),
+        moved(prompt, "a place on the mat 1", "x"),
+        moved(prompt, "a place on the mat 6", "x"),
+        moved(prompt, "the place of the one who came", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1],
+          [1, 1, 0]
+        ],
+        [0, -6],
+        [0, 14],
+        [-50, -76]
+      ]);
+    }
+    // Ibn Umar: not there yet; then his place comes to the end of the mat, not to the seat left for him, with a warm light.
+    expect([
+      shown("Ibn Umar disliked taking a seat someone left for him.", ["Ibn Umar's place", "Ibn Umar's place at the end of the mat: a warm light"]),
+      moved("Ibn Umar disliked taking a seat someone left for him.", "Ibn Umar's place", "x"),
+      value("make-room", "the seat left for Ibn Umar: a faint ring", "opacity", 0.84)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 32],
+      1
+    ]);
+    // The rights of the road. What he first said of the roads: the places sit by the road; then a grey shade comes over
+    // their sitting, before any right of the road shows.
+    expect(shown("What did the Prophet ﷺ first say about roads?", ["a grey shade over the sitting by the road", "the road's right: a golden band along it"])).toEqual([
+      [0, 0],
+      [1, 0]
+    ]);
+    // That they said they had to sit there: the grey shade stays while their voice speaks, and goes only with his answer.
+    expect([
+      shown("The companions first said they had to sit by the roads.", ["their voice: it is where we talk", "a grey shade over the sitting by the road", "the road's right: a golden band along it"]),
+      value("rights-of-the-road", "their voice: it is where we talk", "opacity", 0.22)
+    ]).toEqual([
+      [
+        [0, 1, 0],
+        [0, 1, 0]
+      ],
+      1
+    ]);
+    // The first right, lowering the gaze: one passes on the road; then the faint lines of looking go to the ground.
+    expect([
+      shown("What is the first right of the road?", ["the gaze lowered: faint lines to the ground", "the salam returned: a golden voice from the places"]),
+      moved("What is the first right of the road?", "one passing on the road", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0, -130]
+    ]);
+    // Returning the salam, a right of the road: the sack and jug lie on the road; then they are moved to its edge, a second
+    // one passes and greets, and the places return its salam.
+    for (const prompt of ["Which of these is a right of the road?", "What should you do with greetings on the road?"]) {
+      expect([
+        prompt,
+        moved(prompt, "their sack and jug, at the road's edge", "y"),
+        moved(prompt, "a second one passing, who greets", "x"),
+        value("rights-of-the-road", "the salam: a golden voice from the one passing", "opacity", 0.71),
+        value("rights-of-the-road", "the salam returned: a golden voice from the places", "opacity", 0.74)
+      ]).toEqual([prompt, [0, 6.6], [0, 76], 1, 1]);
+    }
+    // What is not one of its rights: from lowering the gaze to forbidding wrong, every right shows in turn, and the road
+    // given its right is warm at the end; selling is not among them.
+    expect([
+      shown("Which of these is NOT a right of the road?", ["the road's right: a golden band along it", "the road given its right: a warm wash along it"]),
+      moved("Which of these is NOT a right of the road?", "one passing on the road", "x"),
+      moved("Which of these is NOT a right of the road?", "a third one passing, who turns off", "x")
+    ]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [0, -130],
+      [0, -110]
+    ]);
+    // Honest trade. What brings blessing into a sale: the two buyers at their stalls; then the left seller makes the tear
+    // in its cloth clear, and a warm glow comes on its stall and its place as the left buyer goes with its sack.
+    for (const prompt of ["What brings blessing into a sale?", "What makes a sale blessed, per the hadith?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["made clear: a golden ring about the tear", "blessed in their sale: a warm glow on the left stall", "a warm light on the left seller's place", "the blessing wiped out: a grey shade over the right stall"]),
+        value("honest-trade", "made clear: a golden ring about the tear", "opacity", 0.44),
+        moved(prompt, "the sack the left buyer takes, with its blessing", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [0, 1, 1, 0]
+        ],
+        1,
+        [0, -36]
+      ]);
+    }
+    // When they lie and hide: the cover over the right stall's tear, and its faint warm light; then that light goes and a
+    // grey shade comes over the right stall as the right buyer goes with its sack.
+    for (const prompt of ["What happens if they lie and hide faults?", "What happens if they lie or hide things?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["hidden: a cover over the right stall's tear", "the blessing on the right stall: a faint warm light", "the blessing wiped out: a grey shade over the right stall", "the right buyer's place"]),
+        moved(prompt, "the sack the right buyer takes", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 1],
+          [1, 0, 1, 0]
+        ],
+        [0, 36]
+      ]);
+    }
+    // Keep them close. How many: no one there yet; then six places come about his place.
+    const six = ["Sa'd's place", "Abdullah's place", "one of the six 3", "one of the six 4", "one of the six 5", "one of the six 6"];
+    expect(shown("How many believers were there, in the hadith?", six)).toEqual([Array(6).fill(0), Array(6).fill(1)]);
+    // Who asked for them to be sent away, and what they wanted: no grey place yet; then the idolaters' grey places come
+    // near, and a grey shade comes over the six, before the ring of care.
+    for (const prompt of ["Who asked for the poor believers to be sent away, per Muslim 2413?", "What did the idolaters want?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the idolaters: a grey place 1", "the idolaters: a grey place 2", "the idolaters: a grey place 3", "looked down on: a grey shade over the six", "do not drive them away: a ring of care about the six"]),
+        moved(prompt, "the idolaters: a grey place 1", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0]
+        ],
+        [0, -22]
+      ]);
+    }
+    // Whether sending them away was allowed: the grey shade over the six; then it goes, a ring of care comes about them,
+    // and the grey places go back.
+    expect([
+      shown("Allah allowed sending the poor believers away.", ["looked down on: a grey shade over the six", "do not drive them away: a ring of care about the six", "the idolaters: a grey place 1"]),
+      moved("Allah allowed sending the poor believers away.", "the idolaters: a grey place 1", "x")
+    ]).toEqual([
+      [
+        [1, 0, 1],
+        [0, 1, 0]
+      ],
+      [-22, 0]
+    ]);
+    // When they call their Lord: no glow low in the sky yet; then the morning glows in the east and the evening in the
+    // west, a golden spark rises from each of the six, and a light comes in the other four.
+    expect([
+      shown("When do these believers call their Lord, in 6:52?", ["the evening: a soft glow low in the west", "one of the six 3: a light in it", "a warm wash over the six"]),
+      value("keep-them-close", "the morning: a soft glow low in the east", "opacity", 0.85),
+      moved("When do these believers call their Lord, in 6:52?", "calling on their Lord: a golden spark rising 1", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1,
+      [0, -11]
+    ]);
+    // A small gift. Whom it was first said to: no one at the doors yet; then a place shows at each home's door, with the
+    // way between them, before any gift.
+    expect(shown("Whom was Bukhari 2566 first said to?", ["the place at the left home's door", "the place at the next home's door", "the way between the two homes", "the gift: a small dish with a little on it"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // How to treat a neighbor's small gift, and whose: no gift yet; then a small dish shows at the left door with a grey
+    // shade of thinking it too little, the shade goes, the dish is carried to the next home, and a warm light comes on it.
+    for (const prompt of ["How should we treat a neighbour's small gift?", "Whose gift should not be looked down on?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the gift: a small dish with a little on it", "thought too little: a grey shade about the dish", "received: a warm light on the gift"]),
+        value("small-gift", "thought too little: a grey shade about the dish", "opacity", 0.4),
+        moved(prompt, "the gift: a small dish with a little on it", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 0, 1]
+        ],
+        1,
+        [0, 58]
+      ]);
+    }
+    // Even a sheep's trotter, and that a little is not too little: then a ring comes about the small gift, a warm glow on
+    // both homes, and a ring of care about the two.
+    for (const prompt of ["What small gift did he name?", "Only expensive gifts are worth thanks.", "Gifts between neighbours build love."]) {
+      expect([prompt, shown(prompt, ["even a little: a ring about the gift", "a warm glow on the left home", "a warm glow on the next home", "a ring of care about the two homes"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Asked about this blessing. What brought them out: the three places, out of their homes; then their voices answer,
+    // and a grey shade of hunger comes about Abu Bakr's and Umar's places, before his own.
+    expect(shown("What brought them out of their houses?", ["hunger: a grey shade about Abu Bakr's place", "hunger: a grey shade about Umar's place", "hunger: a grey shade about his place"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 0]
+    ]);
+    // Who fed them: the three, hungry, by their homes; then they go to the Ansari's home, its place comes back with the
+    // sweet water, they are honored, and the hunger goes as the dates are brought and eaten.
+    expect([
+      shown("Who fed them?", ["the Ansari's place, coming back", "the sweet water it fetched, in a waterskin", "honored: a warm wash on the three", "hunger: a grey shade about Abu Bakr's place"]),
+      moved("Who fed them?", "a golden ring, his place", "x"),
+      moved("Who fed them?", "a cluster of yellow, dry and fresh dates", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 1],
+        [1, 1, 1, 0]
+      ],
+      [9.8, 87.8],
+      [0, -30]
+    ]);
+    // What we will be asked about: the dates and water, eaten and drunk; then a soft light comes on each, and a golden ring
+    // about this blessing.
+    for (const prompt of [
+      "What will we be asked about, that Day?",
+      "Ayah 8: what will we be asked about that Day?",
+      "Ayahs 5-8: what are they about?",
+      "After dates and cool water, what did the Prophet ﷺ say?",
+      "He said they would be asked about that meal."
+    ]) {
+      expect([prompt, shown(prompt, ["this blessing: a soft light on the dates", "this blessing: a soft light on the water", "a golden ring about this blessing"])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    // A valley of gold. What one with a valley would want: the first valley, full of gold; then its place goes on, and a
+    // second valley it wants shows in dashed gold, with a golden line to it.
+    for (const prompt of ["With one valley of gold, what would a person want?", "If man had one valley of gold, what would he want?", "Ayahs 1-4: what are they about?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a golden glow over the first valley", "a second valley it wants: a dashed golden outline", "wanting more: a golden line to the second valley", "dust: a haze over the land"]),
+        moved(prompt, "the place of the one with the valley", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 0]
+        ],
+        [30, 56]
+      ]);
+    }
+    // What distracts until the grave: the one valley; then the wanting for a second, until dust comes over the land and
+    // about its place.
+    for (const prompt of ["What distracts people until the grave?", "Ayahs 1-4 say: Wanting more and more distracts you until the grave."]) {
+      expect([
+        prompt,
+        shown(prompt, ["wanting more: a golden line to the second valley", "dust: a haze over the land", "dust about its place"]),
+        value("valley-of-gold", "wanting more: a golden line to the second valley", "opacity", 0.45)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [0, 1, 1]
+        ],
+        1
+      ]);
+    }
+    // Whether more money fills one: the line of wanting more; then it goes, and only dust fills the land about its place.
+    expect(shown("More money always makes people feel full.", ["wanting more: a golden line to the second valley", "dust: a haze over the land", "dust about its place"])).toEqual([
+      [1, 0, 0],
+      [0, 1, 1]
+    ]);
+    // Whom Allah forgives: dust about its place; then the dust goes, a light of faith comes in it, and a ring of care.
+    expect([
+      shown("Whom does Allah forgive, per the hadith?", ["dust about its place", "turned to: a light of faith in its place", "a ring of care about its place"]),
+      moved("Whom does Allah forgive, per the hadith?", "the place of the one with the valley", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [-6, -2]
     ]);
   });
 

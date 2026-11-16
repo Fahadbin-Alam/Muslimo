@@ -3196,6 +3196,79 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should a believer say about rain, per the hadith?", "It came by Allah's mercy", "By Allah's grace and mercy: a believer in Me"],
     ["Who truly believes, per the hadith?", "Who says rain is Allah's mercy", "By Allah's grace and mercy: a believer in Me"],
     ["Saying a star brought the rain is fine.", "False", "By such a star: a disbeliever in Me"]
+  ],
+  // He forbade that a man be made to rise from his seat so that another may sit in it, but make room and spread out;
+  // and Ibn Umar disliked sitting where one had risen for him (Sahih al-Bukhari 6270). (Whom Allah raises in rank, and
+  // the woman who complained, stay on their usual picture: the scene does not show them.)
+  "sign-make-room": [
+    ["What did the Prophet ﷺ forbid, in Bukhari 6270?", "Making someone leave his seat", "He forbade making one rise from his seat"],
+    ["What should we do instead?", "Make room and spread out", "But make room, and spread out"],
+    ["Ayah 11: what should we do when asked to make room?", "Make room", "But make room, and spread out"],
+    ["Ayahs 7-13: what are they about?", "Make room", "But make room, and spread out"],
+    ["Ibn Umar disliked taking a seat someone left for him.", "True", "Ibn Umar disliked sitting where one rose"]
+  ],
+  // Beware of sitting on the roads. They said: we cannot do without it. If you must, give the road its right: lowering
+  // the gaze, holding back harm, returning the salam, and enjoining good and forbidding wrong (Sahih al-Bukhari 2465).
+  "sign-rights-of-the-road": [
+    ["What did the Prophet ﷺ first say about roads?", "Avoid sitting on them", "Beware of sitting on the roads"],
+    ["The companions first said they had to sit by the roads.", "True", "They said: we must, it is where we talk"],
+    ["What is the first right of the road?", "Lowering your gaze", "What is its right? Lowering the gaze"],
+    ["Which of these is a right of the road?", "Returning salam", "Holding back harm, returning the salam"],
+    ["What should you do with greetings on the road?", "Return them", "Holding back harm, returning the salam"],
+    ["Which of these is NOT a right of the road?", "Selling food to all", "What is its right? Lowering the gaze", "Enjoining good, and forbidding wrong"]
+  ],
+  // The buyer and the seller may choose as long as they have not parted; if they tell the truth and make things clear,
+  // they are blessed in their sale, and if they hide and lie, its blessing is wiped out (Sahih al-Bukhari 2079). (Who
+  // narrated it, and what Shu'ayb told his people, stay on their usual picture.)
+  "sign-honest-trade": [
+    ["What brings blessing into a sale?", "Truth and showing faults", "If they tell the truth and make it clear", "They are blessed in their sale"],
+    ["What makes a sale blessed, per the hadith?", "Truth and showing faults", "If they tell the truth and make it clear", "They are blessed in their sale"],
+    ["What happens if they lie and hide faults?", "The blessing is lost", "The blessing of their sale is wiped out"],
+    ["What happens if they lie or hide things?", "The blessing is lost", "The blessing of their sale is wiped out"]
+  ],
+  // Sa'd said: do not drive away those who call their Lord morning and evening was revealed about six of us; I and Ibn
+  // Mas'ud were among them, and the idolaters had said to him: do not keep these near you (Sahih Muslim 2413). (Which
+  // Companion was among the six stays on its usual picture: the scene does not name them.)
+  "sign-keep-them-close": [
+    ["How many believers were there, in the hadith?", "Six", "Sa'd said: an ayah was revealed about six"],
+    ["Who asked for the poor believers to be sent away, per Muslim 2413?", "The idol worshippers", "The idolaters said: do not keep these near"],
+    ["What did the idolaters want?", "Them sent away", "The idolaters said: do not keep these near"],
+    ["Allah allowed sending the poor believers away.", "False", "Do not drive away those who call their Lord"],
+    ["When do these believers call their Lord, in 6:52?", "Morning and evening", "In the morning and the evening"]
+  ],
+  // O Muslim women, let none of you look down on a gift for her neighbor, even if it is a sheep's trotter (Sahih
+  // al-Bukhari 2566).
+  "sign-small-gift": [
+    ["Whom was Bukhari 2566 first said to?", "The Muslim women", "O Muslim women"],
+    ["How should we treat a neighbour's small gift?", "Never look down on it", "Let none look down on a gift for her neighbor"],
+    ["Whose gift should not be looked down on?", "A neighbor's", "Let none look down on a gift for her neighbor"],
+    ["What small gift did he name?", "A sheep's foot", "Even if it is a sheep's trotter"],
+    ["Only expensive gifts are worth thanks.", "False", "Even if it is a sheep's trotter"],
+    ["Gifts between neighbours build love.", "True", "Even if it is a sheep's trotter"]
+  ],
+  // Hunger brought him out, and Abu Bakr and Umar; a man of the Ansar welcomed them with dates and sweet water, and he
+  // said: you will be asked about this blessing on the Day of Resurrection (Sahih Muslim 2038). (What ayahs 5-8 say of
+  // wanting more stays on its usual picture.)
+  "sign-asked-about-blessings": [
+    ["What brought them out of their houses?", "Hunger", "What brought you out? They said: hunger"],
+    ["Who fed them?", "A man of the Ansar", "They went with him to a man of the Ansar", "He brought a cluster of fresh and dry dates"],
+    ["What will we be asked about, that Day?", "The blessings we enjoyed", "You will be asked about this blessing"],
+    ["Ayah 8: what will we be asked about that Day?", "The blessings we enjoyed", "You will be asked about this blessing"],
+    ["Ayahs 5-8: what are they about?", "Asked about blessings", "You will be asked about this blessing"],
+    ["After dates and cool water, what did the Prophet ﷺ say?", "You will be asked about it", "You will be asked about this blessing"],
+    ["He said they would be asked about that meal.", "True", "You will be asked about this blessing"]
+  ],
+  // If the son of Adam had a valley of gold, he would love to have two; nothing fills his mouth but dust, and Allah
+  // turns to whoever repents (Sahih al-Bukhari 6439). (Until when the race for more distracts, until the graves are
+  // visited, stays on its usual picture: the scene does not show graves.)
+  "sign-valley-of-gold": [
+    ["With one valley of gold, what would a person want?", "A second valley", "He would love to have two valleys"],
+    ["If man had one valley of gold, what would he want?", "Two valleys", "He would love to have two valleys"],
+    ["Ayahs 1-4: what are they about?", "Wanting more", "He would love to have two valleys"],
+    ["What distracts people until the grave?", "Wanting more and more", "He would love to have two valleys", "Nothing fills his mouth but dust"],
+    ["Ayahs 1-4 say: Wanting more and more distracts you until the grave.", "True", "He would love to have two valleys", "Nothing fills his mouth but dust"],
+    ["More money always makes people feel full.", "False", "Nothing fills his mouth but dust"],
+    ["Whom does Allah forgive, per the hadith?", "Whoever repents", "And Allah turns to whoever repents"]
   ]
 };
 
