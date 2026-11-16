@@ -413,7 +413,14 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-rooster-and-donkey": [/rooster/i, /donkey/i],
   "sign-ask-before-milking": [/milk/i, /permission/i],
   "sign-goat-lent-for-milk": [/goat/i, /milk/i],
-  "sign-camel-as-sutrah": [/sutrah/i, /camel/i]
+  "sign-camel-as-sutrah": [/sutrah/i, /camel/i],
+  "sign-show-me-the-market": [/market/i, /Sa'd/i],
+  "sign-grain-on-credit": [/credit/i, /armou?r/i],
+  "sign-bundle-of-wood": [/wood/i, /ask/i],
+  "sign-easygoing-trader": [/easy/i, /buy/i],
+  "sign-fruit-when-ripe": [/fruit/i, /seller/i],
+  "sign-gold-for-gold": [/gold/i, /silver/i],
+  "sign-share-the-fruits": [/palm/i, /emigrant/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -767,7 +774,14 @@ const SOURCES: Record<string, string[]> = {
   "sign-rooster-and-donkey": ["Sahih Muslim 2729"],
   "sign-ask-before-milking": ["Sahih al-Bukhari 2435"],
   "sign-goat-lent-for-milk": ["Sahih al-Bukhari 2631"],
-  "sign-camel-as-sutrah": ["Sahih al-Bukhari 507"]
+  "sign-camel-as-sutrah": ["Sahih al-Bukhari 507"],
+  "sign-show-me-the-market": ["Sahih al-Bukhari 2049", "Sahih al-Bukhari 2048"],
+  "sign-grain-on-credit": ["Sahih al-Bukhari 2068"],
+  "sign-bundle-of-wood": ["Sahih al-Bukhari 2074"],
+  "sign-easygoing-trader": ["Sahih al-Bukhari 2076"],
+  "sign-fruit-when-ripe": ["Sahih al-Bukhari 2194"],
+  "sign-gold-for-gold": ["Sahih al-Bukhari 2175"],
+  "sign-share-the-fruits": ["Sahih al-Bukhari 2325"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -791,7 +805,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1322);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1330);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -11269,6 +11283,411 @@ describe("the signs in creation, alive", () => {
       [
         [0, 0, 0, 0],
         [1, 1, 1, 1]
+      ]
+    ]);
+  });
+
+  test("the scenes of trade and the market, from showing him the market to sharing the fruits, show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const tradeScenes: SignKind[] = ["show-me-the-market", "grain-on-credit", "bundle-of-wood", "easygoing-trader", "fruit-when-ripe", "gold-for-gold", "share-the-fruits"];
+    for (const kind of tradeScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Jabir|Musa|Moses|Mas'ud|Jibril|Gabriel|Aishah|Abu Hurairah)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, and nothing comes down from the sky: a call on one's Lord is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    const many = (kind: SignKind, list: string[], key: "x" | "y" | "scale" | "scaleX" | "rotate", t: number) => list.map((name) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Show me the market: Abdur-Rahman's place is a small dashed circle by a small home, Sa'd's by his larger home, and
+    // his place a golden ring between them. A golden line joins the two places; Sa'd's wealth parts in two halves, and
+    // one half goes toward Abdur-Rahman and then back; a warm glow comes over Sa'd's home. A way shows to the market, a
+    // soft ring comes about it, and Abdur-Rahman's place goes there and comes back to his home with butter and dried
+    // yogurt.
+    expect(words("show-me-the-market")).toEqual([
+      "He made Abdur-Rahman and Sa'd brothers",
+      "Sa'd: I'll share my wealth in two halves",
+      "Allah bless you in your family and wealth",
+      "Show me the market",
+      "Sa'd: the market of Qaynuqa'",
+      "He came back with dried yogurt and butter"
+    ]);
+    expect([
+      at("show-me-the-market", "brotherhood: a golden line between the two places", "opacity", [0.03, 0.14]),
+      [0.03, 0.14].map((t) => all("show-me-the-market", ["brotherhood: a soft ring about Abdur-Rahman's place", "brotherhood: a soft ring about Sa'd's place"], t)),
+      [at("show-me-the-market", "Sa'd's voice: I will share my wealth", "opacity", [0.17, 0.31, 0.47]), at("show-me-the-market", "in two halves: a line between them", "opacity", [0.2, 0.31, 0.47])],
+      at("show-me-the-market", "Sa'd's wealth: the half he offers", "x", [0.2, 0.31, 0.37, 0.47]),
+      [at("show-me-the-market", "Abdur-Rahman's voice: a blessing, and the market", "opacity", [0.35, 0.47, 0.61, 0.77]), at("show-me-the-market", "in your family and your wealth: a warm glow over Sa'd's home", "opacity", [0.41, 0.47])],
+      at("show-me-the-market", "show me the market: a way to it", "opacity", [0.53, 0.61]),
+      [at("show-me-the-market", "Sa'd's voice: the market of Qaynuqa'", "opacity", [0.65, 0.77, 0.97]), at("show-me-the-market", "the market of Qaynuqa': a soft ring about it", "opacity", [0.68, 0.77])],
+      at("show-me-the-market", "Abdur-Rahman's place", "x", [0.81, 0.87, 0.97]),
+      [at("show-me-the-market", "dried yogurt and butter, brought back", "opacity", [0.86, 0.877, 0.97]), at("show-me-the-market", "dried yogurt and butter, brought back", "x", [0.877, 0.97])],
+      [at("show-me-the-market", "to his household: a warm glow at Abdur-Rahman's home", "opacity", [0.91, 0.97]), at("show-me-the-market", "brotherhood: a soft ring about Abdur-Rahman's place", "opacity", [0.81, 0.97])]
+    ]).toEqual([
+      [0, 1],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 1, 0],
+        [0, 1, 0]
+      ],
+      [0, -16, -16, 0],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [0, 1],
+      [
+        [0, 1, 0],
+        [0, 1]
+      ],
+      [0, -46, 0],
+      [
+        [0, 1, 1],
+        [-46, 0]
+      ],
+      [
+        [0, 1],
+        [1, 0]
+      ]
+    ]);
+    // Food bought, to be paid later: his place is a golden ring at the door of his home, and the seller's place a small
+    // dashed circle by his store, with its sacks of grain. A way shows between the two, and a sack of food goes from the
+    // store to his home, with a warm glow there. Small days come one by one in a row above, and a golden ring comes
+    // about the last: the set time. Then his iron armour, a coat of rings, goes to the store, and a soft ring comes
+    // about it there: held as a pledge.
+    expect(words("grain-on-credit")).toEqual(["He bought food from a Jewish man", "To be paid at a set time", "And pledged his iron armour to him"]);
+    const days = names("grain-on-credit", /^to a set time: a day \d$/);
+    expect(days.length).toBe(5);
+    expect([
+      at("grain-on-credit", "the way of the sale", "opacity", [0.03, 0.29]),
+      at("grain-on-credit", "food bought: a sack of grain", "x", [0.09, 0.29]),
+      at("grain-on-credit", "food for his home: a warm glow", "opacity", [0.22, 0.29]),
+      [0.35, 0.61].map((t) => all("grain-on-credit", days, t)),
+      at("grain-on-credit", "the set time: a golden ring about the last day", "opacity", [0.5, 0.61]),
+      [at("grain-on-credit", "his iron armour, given as a pledge", "opacity", [0.66, 0.97]), at("grain-on-credit", "his iron armour, given as a pledge", "x", [0.69, 0.97])],
+      at("grain-on-credit", "held as a pledge: a soft ring about the armour", "opacity", [0.85, 0.97])
+    ]).toEqual([
+      [0, 1],
+      [0, -72],
+      [0, 1],
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 1],
+      [
+        [0, 1],
+        [0, 48]
+      ],
+      [0, 1]
+    ]);
+    // A bundle of firewood: the place of one who gathers is a small dashed circle on a hillside of thorn trees. Dry
+    // sticks come together into a pile and a rope comes about them; the bundle rises over the place, which carries it
+    // toward the town, and a golden ring comes about the two. Then a faint grey place stands by two doors of the town,
+    // with a grey dashed way to each: from one door a dish comes to it, and the other stays shut, with a grey dashed
+    // ring about it.
+    expect(words("bundle-of-wood")).toEqual([
+      "For one of you to gather firewood",
+      "A bundle of it on his back",
+      "Is better than to ask anyone",
+      "Who may give him or refuse him"
+    ]);
+    const sticks = names("bundle-of-wood", /^dry sticks, gathered \d$/);
+    expect(sticks.length).toBe(5);
+    expect([
+      [0.03, 0.21].map((t) => many("bundle-of-wood", sticks, "x", t)),
+      [0.21, 0.45].map((t) => all("bundle-of-wood", sticks, t)),
+      [at("bundle-of-wood", "a bundle of firewood", "opacity", [0.27, 0.45]), at("bundle-of-wood", "a rope about the bundle", "opacity", [0.27, 0.45])],
+      [at("bundle-of-wood", "a bundle of firewood", "x", [0.27, 0.45]), at("bundle-of-wood", "a bundle of firewood", "y", [0.27, 0.45]), at("bundle-of-wood", "the place of one who gathers", "x", [0.27, 0.45])],
+      at("bundle-of-wood", "better: a golden ring about the place and its bundle", "opacity", [0.5, 0.69]),
+      [0.55, 0.69].map((t) => all("bundle-of-wood", ["asking instead: a faint grey place by the doors", "asking anyone: a grey dashed way to each door"], t)),
+      [at("bundle-of-wood", "he may give: a dish from the door", "opacity", [0.75, 0.97]), at("bundle-of-wood", "he may give: a dish from the door", "x", [0.75, 0.97])],
+      at("bundle-of-wood", "or refuse: a grey dashed ring about the shut door", "opacity", [0.83, 0.97])
+    ]).toEqual([
+      [
+        [-32, -18, 16, -26, 22],
+        [0, 0, 0, 0, 0]
+      ],
+      [
+        [1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 24],
+        [0, -4.5],
+        [0, 36]
+      ],
+      [0, 1],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 1],
+        [-12, 0]
+      ],
+      [0, 1]
+    ]);
+    // The easygoing trader: the trader's place is a small dashed circle by his stall, and a warm glow and a soft ring
+    // come about it. A buyer's place comes, and along a soft golden way a jar goes to it and its coins come to the
+    // counter. A seller's place comes with a sack: the coins go to it, and the sack to the counter. Then the trader's
+    // place goes along a soft way to the home of one who owes him, and what he is owed comes to it there.
+    expect(words("easygoing-trader")).toEqual([
+      "May Allah have mercy on one who is easy",
+      "When he sells",
+      "When he buys",
+      "And when he asks for what he is owed"
+    ]);
+    const withTrader = ["mercy: a warm glow about the trader's place", "one who is easy: a soft ring about the trader's place"];
+    expect([
+      [0.03, 0.21].map((t) => all("easygoing-trader", withTrader, t)),
+      [at("easygoing-trader", "a buyer's place", "opacity", [0.26, 0.45]), at("easygoing-trader", "a buyer's place", "x", [0.26, 0.45])],
+      [at("easygoing-trader", "a jar, sold", "x", [0.34, 0.45]), at("easygoing-trader", "a jar, sold", "y", [0.34, 0.45])],
+      [at("easygoing-trader", "coins for the jar", "opacity", [0.38, 0.45]), at("easygoing-trader", "coins for the jar", "x", [0.39, 0.45])],
+      at("easygoing-trader", "when he sells: a soft golden way between the two", "opacity", [0.32, 0.45, 0.69]),
+      [at("easygoing-trader", "a buyer's place", "opacity", [0.69]), at("easygoing-trader", "a jar, sold", "opacity", [0.69])],
+      [at("easygoing-trader", "a seller's place", "opacity", [0.51, 0.69, 0.97]), at("easygoing-trader", "a seller's place", "x", [0.51, 0.69])],
+      [at("easygoing-trader", "a sack he buys", "x", [0.51, 0.69]), at("easygoing-trader", "a sack he buys", "y", [0.51, 0.69])],
+      [at("easygoing-trader", "coins for the jar", "x", [0.69, 0.97]), at("easygoing-trader", "coins for the jar", "opacity", [0.97])],
+      at("easygoing-trader", "when he buys: a soft golden way between the two", "opacity", [0.56, 0.69, 0.97]),
+      [at("easygoing-trader", "the trader's place", "x", [0.75, 0.97]), at("easygoing-trader", "the trader's place", "y", [0.75, 0.97])],
+      [0.75, 0.97].map((t) => many("easygoing-trader", withTrader, "x", t)),
+      at("easygoing-trader", "when he asks for what he is owed: a soft way to the one who owes", "opacity", [0.74, 0.97]),
+      [at("easygoing-trader", "what he is owed, come to him", "opacity", [0.87, 0.97]), at("easygoing-trader", "what he is owed, come to him", "x", [0.87, 0.97])]
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 1],
+        [-76, 0]
+      ],
+      [
+        [0, -24],
+        [0, 17.6]
+      ],
+      [
+        [0, 1],
+        [-10, 0]
+      ],
+      [0, 1, 0],
+      [[0], [0]],
+      [
+        [0, 1, 0],
+        [66, 0]
+      ],
+      [
+        [88, 0],
+        [17.6, 0]
+      ],
+      [[17.8, 89.8], [0]],
+      [0, 1, 0],
+      [
+        [0, -52],
+        [0, -6]
+      ],
+      [
+        [0, 0],
+        [-52, -52]
+      ],
+      [0, 1],
+      [
+        [0, 1],
+        [-10.8, 0]
+      ]
+    ]);
+    // Fruit sold only once it is clearly good: green dates hang on three palms, with the seller's place under them, and
+    // his place is a golden ring by them. His voice speaks; a buyer's place comes with coins, and a grey dashed way
+    // between the two and a grey dashed ring about the green dates show the sale he forbade. The sun goes on and the
+    // dates ripen; the grey fades, a soft golden ring comes about the ripe dates, and a golden way between the two. His
+    // voice speaks again, and a ring comes about the seller's place and about the buyer's.
+    expect(words("fruit-when-ripe")).toEqual(["He forbade selling fruit", "Until it is clearly good", "He forbade the seller and the buyer"]);
+    const green = names("fruit-when-ripe", /^green dates on a palm \d$/);
+    const ripe = names("fruit-when-ripe", /^the dates ripening on a palm \d$/);
+    expect([green, ripe].map((list) => list.length)).toEqual([3, 3]);
+    expect([
+      [at("fruit-when-ripe", "a buyer's place", "opacity", [0.03, 0.29]), at("fruit-when-ripe", "a buyer's place", "x", [0.03, 0.29])],
+      at("fruit-when-ripe", "his voice: he forbade it", "opacity", [0.03, 0.29, 0.61]),
+      [0.11, 0.29, 0.61].map((t) => all("fruit-when-ripe", ["selling the green fruit: a grey dashed way", "not yet good: a grey dashed ring about the green dates"], t)),
+      [0.29, 0.61].map((t) => all("fruit-when-ripe", ripe, t)),
+      at("fruit-when-ripe", "the sun", "x", [0.29, 0.61]),
+      [0.51, 0.61].map((t) => all("fruit-when-ripe", ["clearly good: a soft golden ring about the ripe dates", "now it may be sold: a golden way"], t)),
+      at("fruit-when-ripe", "his voice: the seller and the buyer", "opacity", [0.61, 0.97]),
+      [0.69, 0.75, 0.97].map((t) => all("fruit-when-ripe", ["the seller: a ring about the place", "the buyer: a ring about the place"], t))
+    ]).toEqual([
+      [
+        [0, 1],
+        [50, 0]
+      ],
+      [0, 1, 0],
+      [
+        [0, 0],
+        [1, 1],
+        [0, 0]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 32],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1],
+      [
+        [0, 0],
+        [1, 0],
+        [1, 1]
+      ]
+    ]);
+    // Gold for gold: a balance stands on a market counter. Three gold coins on one pan and two on the other: the beam
+    // tips, and a grey dashed ring comes about it; a third coin comes from the heap, the beam comes level, and a soft
+    // golden ring comes about it. Then the same with silver. Then gold on one pan and silver on the other: the beam tips
+    // and stays so, with golden ways between the two pans, and a warm glow comes over it.
+    expect(words("gold-for-gold")).toEqual([
+      "Do not sell gold for gold",
+      "Unless equal for equal",
+      "Nor silver for silver, unless equal",
+      "Sell gold for silver, silver for gold",
+      "However you wish"
+    ]);
+    expect([
+      at("gold-for-gold", "crossbar of the balance", "rotate", [0.03, 0.17, 0.35, 0.43, 0.5, 0.59, 0.79, 0.97]),
+      [at("gold-for-gold", "the pan on the left", "y", [0.03, 0.17, 0.35, 0.79]), at("gold-for-gold", "the pan on the right", "y", [0.03, 0.17, 0.35, 0.79])],
+      [0.02, 0.17, 0.43].map((t) => all("gold-for-gold", ["gold for gold: three coins on the left", "gold for gold: two coins on the right"], t)),
+      [at("gold-for-gold", "equal for equal: a gold coin added", "opacity", [0.21, 0.35]), at("gold-for-gold", "equal for equal: a gold coin added", "y", [0.21, 0.35])],
+      [at("gold-for-gold", "not equal: a grey dashed ring about the balance", "opacity", [0.09, 0.17, 0.35]), at("gold-for-gold", "equal for equal: a soft golden ring about the balance", "opacity", [0.17, 0.35, 0.43])],
+      [0.41, 0.5, 0.59, 0.67].map((t) => all("gold-for-gold", ["silver for silver: three coins on the left", "silver for silver: two coins on the right", "unless equal: a silver coin added"], t)),
+      [at("gold-for-gold", "silver not equal: a grey dashed ring about the balance", "opacity", [0.46, 0.5, 0.59]), at("gold-for-gold", "silver equal: a soft golden ring about the balance", "opacity", [0.5, 0.59, 0.67])],
+      [0.65, 0.79].map((t) => all("gold-for-gold", ["gold for silver: gold on the left", "silver for gold: silver on the right"], t)),
+      [0.7, 0.79].map((t) => all("gold-for-gold", ["gold for silver: a golden way between the pans", "silver for gold: a silver way back"], t)),
+      [0.85, 0.97].map((t) => all("gold-for-gold", ["however you wish: a warm glow over the balance", "however you wish: a soft golden ring about the balance"], t))
+    ]).toEqual([
+      [0, -8, 0, 0, -8, 0, 6, 6],
+      [
+        [0, 3.5, 0, -2.7],
+        [0, -3.5, 0, 2.7]
+      ],
+      [
+        [0, 0],
+        [1, 1],
+        [0, 0]
+      ],
+      [
+        [0, 1],
+        [18.2, 0]
+      ],
+      [
+        [0, 1, 0],
+        [0, 1, 0]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 1, 0],
+        [0, 1, 0]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Sharing the fruit: four palms stand in a garden, the places of the Ansar on one side and of the emigrants on the
+    // other, and his place is a golden ring before it. The Ansar's voice speaks, and a dashed line comes through the
+    // garden; his voice speaks, and the line fades. The Ansar's voice speaks again: the emigrants' places go to the
+    // palms, a jug of water by each; dates come on the palms, and a basket of dates goes to each side. The emigrants'
+    // voice speaks, and a warm glow comes over the garden.
+    expect(words("share-the-fruits")).toEqual([
+      "Divide the palms with our brothers",
+      "He said: no",
+      "You do the work of the trees",
+      "And we share the fruit with you",
+      "They said: we hear and obey"
+    ]);
+    const emigrants = names("share-the-fruits", /^an emigrant's place \d$/);
+    const jugs = names("share-the-fruits", /^the work of the trees: a jug by a palm \d$/);
+    const water = names("share-the-fruits", /^the work of the trees: water from the jug \d$/);
+    const dates = names("share-the-fruits", /^and we share the fruit: dates on a palm \d$/);
+    expect([emigrants, jugs, water, dates].map((list) => list.length)).toEqual([4, 4, 4, 4]);
+    expect([
+      [at("share-the-fruits", "the Ansar's voice: divide the palms", "opacity", [0.01, 0.17, 0.33]), at("share-the-fruits", "divide the palms: a dashed line through the garden", "opacity", [0.06, 0.17, 0.33])],
+      at("share-the-fruits", "his voice: no", "opacity", [0.21, 0.33, 0.55]),
+      at("share-the-fruits", "the Ansar's voice: you do the work, and we share the fruit", "opacity", [0.37, 0.55, 0.77, 0.97]),
+      [0.39, 0.55, 0.77].map((t) => many("share-the-fruits", emigrants, "x", t)),
+      [0.47, 0.55, 0.77].map((t) => all("share-the-fruits", jugs, t)),
+      [0.55, 0.77].map((t) => all("share-the-fruits", water, t)),
+      [0.59, 0.77].map((t) => all("share-the-fruits", dates, t)),
+      [at("share-the-fruits", "a basket of dates for the emigrants", "x", [0.6, 0.77]), at("share-the-fruits", "a basket of dates for the Ansar", "x", [0.6, 0.77])],
+      [0.81, 0.97].map((t) => all("share-the-fruits", ["the emigrants' voice: we hear and obey", "a warm glow over the garden", "we hear and obey: a soft golden ring about the emigrants"], t))
+    ]).toEqual([
+      [
+        [0, 1, 0],
+        [0, 1, 0]
+      ],
+      [0, 1, 0],
+      [0, 1, 1, 0],
+      [
+        [0, 0, 0, 0],
+        [23, 44, 73, 94],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [36, 0],
+        [-40, 0]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
       ]
     ]);
   });
