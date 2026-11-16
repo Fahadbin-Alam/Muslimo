@@ -361,6 +361,10 @@ describe("which questions are asked on picture cards", () => {
     }
     expect(animals).toEqual(REVIEWED_ANIMALS);
     expect(things).toEqual(REVIEWED_THINGS);
+    // 200 since batch 82: a new lesson in the Book of Medicine moved its final quiz off "What should we cool a fever
+    // with?" (the quiz takes another question from each of the last eight lessons whenever the unit grows). 201 since
+    // batch 85: the seventh lesson of "The manners of giving" brings "What did Umar give in Allah's cause?" into that
+    // unit's final quiz too.
     expect(places).toEqual({ animals: 41, things: 201 });
     // The apes question stays as tiles: people were turned into apes, and a drawing could make light of it.
     for (const prompt of LEFT_AS_TILES) {
