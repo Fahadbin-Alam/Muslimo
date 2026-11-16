@@ -674,7 +674,14 @@ export type SignKind =
   | "miqdad-promise"
   | "leave-that-call"
   | "abu-bakr-forgives"
-  | "between-two-calls";
+  | "between-two-calls"
+  | "nearest-door"
+  | "two-lights"
+  | "abu-umayr-bird"
+  | "family-spending"
+  | "answer-the-call"
+  | "supper-first"
+  | "siwak-every-prayer";
 
 export type SignScene = {
   id: string;
@@ -2770,6 +2777,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Mughaffal al-Muzani said: the Messenger of Allah ﷺ said: between every two calls there is a prayer. He said it three times, and said: for whoever wishes.",
     sources: [bukhari("624")]
+  },
+  {
+    id: "sign-nearest-door",
+    kind: "nearest-door",
+    caption: "Aishah said: I said: O Messenger of Allah, I have two neighbours; to which of them shall I give a gift? He said: to the one whose door is nearer to you.",
+    sources: [bukhari("2259"), bukhari("2595")]
+  },
+  {
+    id: "sign-two-lights",
+    kind: "two-lights",
+    caption:
+      "Anas said that two men of the companions of the Prophet ﷺ went out from the Prophet ﷺ on a dark night, and with them were two things like lamps, lighting the way before them. When they parted, one went with each of them, until he reached his family.",
+    sources: [bukhari("3639")]
+  },
+  {
+    id: "sign-abu-umayr-bird",
+    kind: "abu-umayr-bird",
+    caption:
+      "Anas said: the Prophet ﷺ was the best of people in character. I had a brother called Abu Umayr, who I think had just been weaned. Whenever he came, he would say: O Abu Umayr, what did the nughayr do? It was a little bird he played with. Sometimes the time of prayer came while he was in our house, and he would have the mat under him swept and sprinkled with water. Then he stood, and we stood behind him, and he led us in prayer.",
+    sources: [bukhari("6203")]
+  },
+  {
+    id: "sign-family-spending",
+    kind: "family-spending",
+    caption:
+      "Abu Mas'ud said that the Prophet ﷺ said: when a man spends on his family, hoping for its reward, it is a charity for him. And Sa'd ibn Abi Waqqas said that the Messenger of Allah ﷺ said: you will never spend anything seeking by it the Face of Allah but you will be rewarded for it, even what you put in your wife's mouth.",
+    sources: [bukhari("55"), bukhari("56")]
+  },
+  {
+    id: "sign-answer-the-call",
+    kind: "answer-the-call",
+    caption:
+      "Abu Sa'id al-Khudri said that the Messenger of Allah ﷺ said: when you hear the call, say the like of what the caller says. And Jabir ibn Abdullah said that the Messenger of Allah ﷺ said: whoever says, when he hears the call: O Allah, Lord of this perfect call and of the prayer to be established, give Muhammad al-wasilah and al-fadilah, and raise him to the praised station that You promised him, my intercession will be due for him on the Day of Resurrection.",
+    sources: [bukhari("611"), bukhari("614")]
+  },
+  {
+    id: "sign-supper-first",
+    kind: "supper-first",
+    caption: "Aishah said that the Prophet ﷺ said: when supper is served and the iqamah for the prayer is called, start with the supper.",
+    sources: [bukhari("671")]
+  },
+  {
+    id: "sign-siwak-every-prayer",
+    kind: "siwak-every-prayer",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: were it not that it would be hard on my ummah, or on the people, I would have ordered them to use the siwak with every prayer.",
+    sources: [bukhari("887")]
   }
 ];
 
@@ -4395,7 +4449,30 @@ export const SIGN_LESSONS: Record<string, string> = {
   "surah-meaning-24-21-26": "sign-abu-bakr-forgives",
   // Between every two calls there is a prayer, three times; and for whoever wishes.
   "deep-ibn-mughaffal-prayer-between-adhans": "sign-between-two-calls",
-  "deep-book-prayer-between-adhan-and-iqamah": "sign-between-two-calls"
+  "deep-book-prayer-between-adhan-and-iqamah": "sign-between-two-calls",
+  // To which of two neighbours shall I give a gift? To the one whose door is nearer to you.
+  "deep-neighbors-nearest-door": "sign-nearest-door",
+  "deep-manners-gifts-nearest-door": "sign-nearest-door",
+  // Two of his Companions went home on a dark night with two lights like lamps; when they parted, one went with each.
+  "deep-kids-signs-two-lights-on-a-dark-night": "sign-two-lights",
+  // O Abu Umayr, what did the nughayr do? Then the mat was swept and sprinkled, and he led them in prayer.
+  "deep-book-adab-abu-umayr-bird": "sign-abu-umayr-bird",
+  // Spending on one's family, hoping for its reward, is a charity; even a morsel put in one's wife's mouth is rewarded.
+  "zakat-broader-generosity-family-support-and-duty": "sign-family-spending",
+  "deep-spouses-spending": "sign-family-spending",
+  "deep-spouses-morsel": "sign-family-spending",
+  "deep-talaq2-even-a-morsel": "sign-family-spending",
+  // Say what the caller says; and whoever says the du'a after the call, his intercession is due for him.
+  "prayer-adhan-and-iqamah-responding-to-the-call": "sign-answer-the-call",
+  "deep-pray-adhan-reward-say-what-he-says": "sign-answer-the-call",
+  "deep-pray-adhan-reward-dua-after-adhan": "sign-answer-the-call",
+  "deep-dua-day-adhan": "sign-answer-the-call",
+  // When supper is served and the iqamah is called, start with the supper.
+  "prayer-khushu-prepare-for-khushu": "sign-supper-first",
+  "deep-sharh2-supper-before-prayer": "sign-supper-first",
+  // Were it not hard on his ummah, he would have ordered them to use the siwak with every prayer.
+  "deep-clean-siwak": "sign-siwak-every-prayer",
+  "deep-book-taharah-siwak": "sign-siwak-every-prayer"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
