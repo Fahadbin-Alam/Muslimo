@@ -125,8 +125,10 @@ describe("which questions are asked on a scene", () => {
     // for another. Every one of them is still asked in its own lesson. The night prayer unit gained its lesson on how
     // he opened the night prayer, so its final quiz no longer asks how much of the night Dawud prayed (still asked in
     // its lessons). The second review card of "The Book of the Virtues of the Quran" also asks what one who finds
-    // reciting hard gets.
-    expect(places).toBe(2500);
+    // reciting hard gets, a question on the scene of the skilled reciter. "Jumu'ah" now has seven lessons, so it gets
+    // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
+    // Fridays in place of what is special about that hour (both still asked in their lesson).
+    expect(places).toBe(2501);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
