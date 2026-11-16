@@ -64,7 +64,7 @@ const DREAMS: DeepUnit = {
       source: hadith("bukhari", "7011", "Aishah", "Sahih", "Aishah said: the Messenger of Allah ﷺ said to me: you were shown to me twice in a dream. A man was carrying you in a piece of silk and said to me: she is your wife. And it was you. I said to myself: if this is from Allah, then it must happen.", "If this is from Allah, then it must happen"),
       difficulty: 3,
       questions: [
-        { q: "How many times was Aishah shown to him ﷺ in a dream?", a: "Twice", wrong: ["Once", "Three times", "Seven times"], why: "You were shown to me twice in my dream, he ﷺ told Aishah." },
+        { q: "How many times was Aishah shown to him ﷺ in a dream?", a: "Twice", wrong: ["Once", "Four times", "Seven times"], why: "You were shown to me twice in my dream, he ﷺ told Aishah." },
         { q: "In what was she carried in the dream?", a: "A piece of silk", wrong: ["A woolen blanket", "A cotton sheet", "A leather mat"], why: "A man was carrying you in a silken piece of cloth, he ﷺ told her." },
         { q: "He ﷺ said: if this is from Allah, it will surely happen.", tf: true, why: "If this is from Allah, then it must happen, he ﷺ said to himself, and it did." }
       ]
