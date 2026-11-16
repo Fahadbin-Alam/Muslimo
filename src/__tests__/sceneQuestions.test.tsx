@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2113);
+    expect(asks.length).toBe(2146);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3089);
+    expect(places).toBe(3144);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -8489,6 +8489,255 @@ describe("where the scene waits and where it stops", () => {
           [0.75, 1, 0]
         ],
         [32.4, 20]
+      ]);
+    }
+  });
+
+  it("waits on the scenes of heeding, from the one who loved al-Ikhlas to Sa'd, firm and kind, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-loves-al-ikhlas", "sign-night-with-hudhayfah", "sign-ubayy-named", "sign-six-of-shawwal", "sign-six-rights", "sign-the-warner", "sign-firm-and-kind"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(33);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The one who loved al-Ikhlas. Why he always recited it: his voice asks why; then its voice answers, the light of
+    // the surah it loved shows over its place, and a warm glow comes about it.
+    expect(shown("Why did the man always recite Al-Ikhlas?", ["its voice: because it describes the Most Merciful", "the surah it loved: a golden light over its place", "its love of the surah: a warm glow about its place", "his voice: ask him why", "loved: a warm light in its place"])).toEqual([
+      [0, 0, 0, 1, 0],
+      [1, 1, 1, 0, 0]
+    ]);
+    // What he said of the one who loved it: its voice, and the light of the surah over its place; then his voice says to
+    // tell him that Allah loves him, and a warm light and a ring of care come about it.
+    for (const prompt of ["What did the Prophet ﷺ say of the man who loved it?", "What did the Prophet ﷺ say about him?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["his voice: tell him", "loved: a warm light in its place", "a ring of care about it", "its voice: because it describes the Most Merciful", "the surah it loved: a golden light over its place"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1, 1],
+          [1, 1, 1, 0, 1]
+        ]
+      ]);
+    }
+    // A night with Hudhayfah. What he did at an ayah of glory: his recitation, slow; then at an ayah of glory a spark of
+    // his glorifying rises, before anything at an asking.
+    expect([
+      shown("What did he do at ayahs of Allah's glory?", ["at an ayah of glory, his glorifying: a spark rising", "his recitation, slow: soft golden arcs", "at an asking, his asking: a light rising"]),
+      moved("What did he do at ayahs of Allah's glory?", "at an ayah of glory, his glorifying: a spark rising", "y")
+    ]).toEqual([
+      [
+        [0, 1, 0],
+        [1, 1, 0]
+      ],
+      [0, -14]
+    ]);
+    // What he did at an asking and at a seeking of refuge: the spark of his glorifying risen; then at an asking a light
+    // rises, and at a seeking of refuge a ring of care comes about his place.
+    for (const prompt of ["What did he do at ayahs about asking Allah?", "At ayahs of protection, he sought Allah's protection."]) {
+      expect([
+        prompt,
+        shown(prompt, ["at an asking, his asking: a light rising", "at a seeking of refuge: a ring of care about his place", "at an ayah of glory, his glorifying: a spark rising"]),
+        moved(prompt, "at an asking, his asking: a light rising", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1],
+          [1, 1, 1]
+        ],
+        [0, -14]
+      ]);
+    }
+    // What he said in ruku, and what we say in it: his recitation and what rose at its ayahs; then they go as he bows, a
+    // calm light comes, and his voice speaks in ruku, before the line of his bowing grows.
+    for (const prompt of ["In ____, we bow and say Subhana Rabbiyal Azim.", "In ruku, we bow and say Subhana Rabbiyal Azim.", "What did the Prophet ﷺ say in ruku?", "We glorify Allah the Most Great in ruku."]) {
+      expect([
+        prompt,
+        shown(prompt, ["his voice in ruku: glory be to my Lord, the Most Great", "at rest bowing: a calm light", "his recitation, slow: soft golden arcs", "at a seeking of refuge: a ring of care about his place", "his bowing, about as long as his standing: a golden line growing"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1, 1, 0],
+          [1, 1, 0, 0, 0]
+        ]
+      ]);
+    }
+    // Ubayy named. What Ubayy asked: his voice speaks to Ubayy's place; then it goes, and Ubayy's voice asks, before any
+    // answer.
+    expect(shown("What did Ubayy ask?", ["Ubayy's voice: did He name me", "his voice: ordered to recite to Ubayy", "his voice: yes", "named: a golden glow about Ubayy's place"])).toEqual([
+      [0, 1, 0, 0],
+      [1, 0, 0, 0]
+    ]);
+    // That Ubayy wept: his voice answers yes, and a golden glow about Ubayy's place; then his recitation comes to Ubayy
+    // as golden arcs, soft silver glints show as Ubayy weeps, and a warm light comes in his place.
+    expect(shown("Ubayy wept when he heard the answer.", ["his recitation to Ubayy: golden arcs", "Ubayy's weeping: soft silver glints", "a warm light in Ubayy's place", "his voice: yes", "named: a golden glow about Ubayy's place"])).toEqual([
+      [0, 0, 0, 1, 1],
+      [1, 1, 1, 0, 1]
+    ]);
+    // Six of Shawwal. That Shawwal comes after Ramadan, and how many of its days: Ramadan's crescent lit, with the
+    // golden line of its fasted days; then Shawwal's crescent lights up, and six of its days are fasted one by one.
+    for (const prompt of ["Shawwal comes right after Ramadan.", "How many days of Shawwal are in the hadith?", "How many fasts in Shawwal does the hadith mention?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["Shawwal: its crescent, lit", "six days of Shawwal, fasted 1", "six days of Shawwal, fasted 6", "Ramadan: its crescent, lit", "the days of Ramadan, fasted: a golden line under its crescent", "as if all the time: a month of the year, lit 1"]),
+        value("six-of-shawwal", "six days of Shawwal, fasted 1", "opacity", 0.45),
+        value("six-of-shawwal", "six days of Shawwal, fasted 6", "opacity", 0.45)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1, 1, 0],
+          [1, 1, 1, 1, 1, 0]
+        ],
+        1,
+        0
+      ]);
+    }
+    // What the reward is like: Ramadan and six of Shawwal fasted; then every month of the year lights up, a golden line
+    // goes along the whole year, and a warm light comes in the place of the one who fasted.
+    expect([
+      shown("What is the reward like?", ["as if all the time: a month of the year, lit 1", "as if all the time: a month of the year, lit 12", "on and on: a golden line along the whole year", "a warm light in the place of the one who fasted", "six days of Shawwal, fasted 6"]),
+      moved("What is the reward like?", "on and on: a golden line along the whole year", "scaleX")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1]
+      ],
+      [0.02, 1]
+    ]);
+    // Six rights. How many: the places of two Muslims, before anything is said; then his voice speaks, and six faint
+    // rings show in the sky, none lit yet.
+    for (const prompt of ["How many rights did the Prophet ﷺ name, of one Muslim over another?", "How many rights does a Muslim have over another in Muslim 2162?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the six rights: six faint rings", "his voice: the rights are six", "a right kept: a golden light 1", "the place of the other Muslim"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1],
+          [1, 1, 0, 1]
+        ]
+      ]);
+    }
+    // That advice is given sincerely: the meal at its home, two rings lit; then the dish goes, one asks advice, it is
+    // answered with golden arcs, and the third ring lights up.
+    expect(shown("When a Muslim asks your advice, give it sincerely.", ["advice given: golden arcs", "a right kept: a golden light 3", "a right kept: a golden light 2", "a meal at its home: a dish", "a right kept: a golden light 4"])).toEqual([
+      [0, 0, 1, 1, 0],
+      [1, 1, 1, 0, 0]
+    ]);
+    // The right of one who is ill: the sneeze answered with mercy; then a grey shade comes over the one who is ill, the
+    // other comes near, a warm glow of the visit comes over them both, and the fifth ring lights up.
+    for (const prompt of ["Your friend is ill. Which right does he have?", "Your classmate is sick at home. Which right fits?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["ill: a grey shade over its place", "the visit: a warm glow over them both", "a right kept: a golden light 5", "answered with mercy: golden arcs", "a right kept: a golden light 6"]),
+        moved(prompt, "the place of one Muslim", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1, 0],
+          [0.4, 1, 1, 0, 0]
+        ],
+        [54, 52]
+      ]);
+    }
+    // The warner. What he saw: the warner's place has come running to the homes; then far beyond the hills the grey dust
+    // of an army shows, his look goes to it, and his voice cries out.
+    for (const prompt of ["What did the man in the hadith see?", "What did the warner see, per Bukhari 6482?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["far off: the grey dust of an army", "the warner's look: a faint line to the dust", "the warner's voice: crying out", "the place of the warner, running"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // What happened to those who obeyed: the evening, the warner's voice crying out; then night comes, the windows are
+    // lit, three places go out by night along a dashed way, and a ring of care far off shows them saved, while the
+    // others stay.
+    for (const prompt of ["What happened to those who obeyed the warner?", "What happened to those who obeyed?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the night over the sky", "the homes at night: lit windows", "the way out by night: a dashed way", "saved: a ring of care far off", "the warner's voice: crying out", "a place that denied 1"]),
+        moved(prompt, "a place that obeyed 1", "x"),
+        moved(prompt, "a place that obeyed 3", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 1, 1],
+          [0.95, 1, 1, 1, 0, 1]
+        ],
+        [0, -52],
+        [0, -68]
+      ]);
+    }
+    // Firm and kind. That his mother refused to eat: the home in Makkah, before anything is said; then a grey line comes
+    // between her place and Sa'd's, a grey way away from his faith, and a dish and a cup, left untouched and struck out.
+    expect(shown("When Sa'd became Muslim, his ____ refused to eat.", ["never to speak to him: a grey line between them", "the way it asked of him: a grey way, away from his faith", "a dish and a cup, left untouched", "refused: a grey stroke across them", "three days: a day passing 1"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [1, 0.6, 1, 1, 0]
+    ]);
+    // What she wanted him to do: the grey line between them; then a grey way shows, away from his faith, before anything
+    // of food or drink.
+    expect(shown("What did she want Sa'd to do, in the hadith?", ["the way it asked of him: a grey way, away from his faith", "never to speak to him: a grey line between them", "a dish and a cup, left untouched"])).toEqual([
+      [0, 1, 0],
+      [0.6, 1, 0]
+    ]);
+    // What she refused: the grey way; then a dish and a cup show, left untouched, and a grey stroke goes across them.
+    for (const prompt of ["What did Sa'd's mother do to make him leave Islam?", "What did Sa'd's mother refuse, in the hadith?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a dish and a cup, left untouched", "refused: a grey stroke across them", "the way it asked of him: a grey way, away from his faith"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0.6],
+          [1, 1, 0.6]
+        ]
+      ]);
+    }
+    // That 29:8 was revealed about Sa'd: the three days passed; then the grey line between them goes and a golden line
+    // of goodness comes; the grey way shows again and fades as the golden ring of Sa'd's faith grows, with a golden glow
+    // about his place.
+    expect([
+      shown("Ayah 29:8 was revealed about Sa'd.", ["goodness, as enjoined: a golden line between them", "his faith kept: a golden glow about Sa'd's place", "never to speak to him: a grey line between them", "the way it asked of him: a grey way, away from his faith", "three days: a day passing 3"]),
+      moved("Ayah 29:8 was revealed about Sa'd.", "Sa'd's faith: a golden ring about his place", "scale")
+    ]).toEqual([
+      [
+        [0, 0, 1, 0.6, 1],
+        [1, 1, 0, 0, 1]
+      ],
+      [1, 1.25]
+    ]);
+    // What was revealed about her, and what to do if a parent orders shirk: the three days passed; then the golden line
+    // of goodness comes between them, the grey way fades as Sa'd's faith grows, the dish and the cup go, and Sa'd's
+    // place comes near hers, with a warm glow about them both.
+    for (const prompt of ["What did Allah reveal about her?", "What should you do if a parent orders shirk?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["goodness, as enjoined: a golden line between them", "kindness in this world: a warm glow about them both", "the way it asked of him: a grey way, away from his faith", "a dish and a cup, left untouched", "the place of the one who swore"]),
+        moved(prompt, "Sa'd's place", "x"),
+        moved(prompt, "Sa'd's faith: a golden ring about his place", "scale")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0.6, 1, 0.55],
+          [1, 1, 0, 0, 1]
+        ],
+        [0, -16],
+        [1, 1.25]
       ]);
     }
   });
