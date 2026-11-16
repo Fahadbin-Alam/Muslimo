@@ -3888,6 +3888,56 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Ansar first ask the Prophet ﷺ?", "To divide their palms", "Divide the palms with our brothers"],
     ["The emigrants worked the trees and shared the fruit.", "True", "You do the work of the trees", "And we share the fruit with you"],
     ["What did the emigrants answer?", "We listen and obey", "They said: we hear and obey"]
+  ],
+  // Jabir rode a camel that had grown tired; he struck it and made du'a for it, and it went as it had never gone
+  // before. Sell it to me for an uqiyah; Jabir sold it and rode it to his family, and he paid him its price; then: take
+  // your camel, it is your wealth (Sahih al-Bukhari 2718).
+  "sign-tired-camel": [
+    ["What happened to the camel after the dua?", "It became very fast", "It went as it had never gone before"],
+    ["The Prophet ﷺ paid for the camel.", "True", "He paid me its price"],
+    ["What did the Prophet ﷺ do after paying?", "Gave the camel back as a gift", "Take your camel: it is your wealth"]
+  ],
+  // We had grown very thirsty; a woman between two water-skins said there was no water, a day and a night away. He
+  // wiped the mouths of the water-skins; forty drank their fill, and every water-skin and vessel was filled; she
+  // accepted Islam, and so did they (Sahih al-Bukhari 3571). (How many drank stays on its usual picture: the forty
+  // places are there from the start.)
+  "sign-water-skins": [
+    ["The water-skins were nearly bursting full.", "True", "We filled every water-skin and vessel"],
+    ["What happened to the woman's people?", "They accepted Islam", "She accepted Islam, and so did they"]
+  ],
+  // If people knew what I know of being alone, no rider would travel by night alone (Sahih al-Bukhari 2998). (When he
+  // warned stays on its usual picture: it is night from the start.)
+  "sign-alone-at-night": [
+    ["He ﷺ knew of dangers in travelling alone that others did not.", "True", "If people knew what I know of being alone"],
+    ["What is safer for a journey at night?", "Going with others", "No rider would travel by night alone"]
+  ],
+  // Two came to him, intending a journey: when you two set out, give the adhan, then the iqamah, then let the older
+  // of you lead you (Sahih al-Bukhari 630).
+  "sign-travellers-adhan": [
+    ["What should two travellers do at prayer time?", "Give adhan and iqamah", "When you two set out, give the adhan", "Then the iqamah"],
+    ["The adhan is only for big masjids.", "False", "When you two set out, give the adhan"],
+    ["Who leads them?", "The older one", "Then let the older of you lead you"]
+  ],
+  // Ka'b ibn Malik used to say: seldom did he set out on a journey on a day other than Thursday (Sahih al-Bukhari
+  // 2949).
+  "sign-set-out-on-thursday": [
+    ["Ka'b ibn Malik is the one who told us of the Thursday journeys.", "True", "Ka'b ibn Malik used to say"],
+    ["How often did he ﷺ start a journey on another day?", "Rarely", "Seldom did he set out on a journey"],
+    ["On which day did he ﷺ usually set out on a journey?", "Thursday", "On a day other than Thursday"]
+  ],
+  // Ibn Umar was on a young camel, hard to handle; he said to Umar: sell it to me; so he bought it, and said: it is
+  // yours, O Abdullah (Sahih al-Bukhari 2611).
+  "sign-camel-is-yours": [
+    ["Who sold the camel to him ﷺ?", "Umar", "He said to Umar: sell it to me", "So he bought it"],
+    ["What did he ﷺ say to Abdullah after buying it?", "The camel is yours", "It is yours, O Abdullah"],
+    ["He ﷺ gave the camel to Abdullah ibn Umar as a gift.", "True", "It is yours, O Abdullah"]
+  ],
+  // Jubair lost a camel and looked for it on the day of Arafah; he saw him standing at Arafah and said: by Allah, this
+  // one is of the Hums, what is he doing here? (Sahih al-Bukhari 1664). (What Jubair looked for stays on its usual
+  // picture: his camel is there from the start.)
+  "sign-search-at-arafah": [
+    ["Jubair saw him ﷺ standing at Arafat on the day of Arafat.", "True", "I saw him standing at Arafah"],
+    ["Why was Jubair surprised to see him ﷺ there?", "He was one of the Hums of Quraysh", "By Allah, this one is of the Hums"]
   ]
 };
 

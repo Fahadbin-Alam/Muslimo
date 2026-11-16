@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2355);
+    expect(asks.length).toBe(2373);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3444);
+    expect(places).toBe(3468);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -11003,6 +11003,224 @@ describe("where the scene waits and where it stops", () => {
         [0, 0, 0],
         [1, 1, 1]
       ]
+    ]);
+  });
+
+  it("waits on the scenes on the road, from Jabir's tired camel to a lost camel on the day of Arafah, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-tired-camel", "sign-water-skins", "sign-alone-at-night", "sign-travellers-adhan", "sign-set-out-on-thursday", "sign-camel-is-yours", "sign-search-at-arafah"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(18);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Jabir's tired camel. What happened to the camel after the du'a: the camel grown tired, the touch and the spark of
+    // du'a gone; then it runs on as it never went before, with his place beside it, and goes on as the sold camel.
+    expect([
+      shown("What happened to the camel after the dua?", ["a camel grown tired", "the camel, sold, going on"]),
+      value("tired-camel", "the camel, going as it never went before", "x", 0.365),
+      moved("What happened to the camel after the dua?", "a golden ring, his place", "x")
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      60,
+      [40, 70]
+    ]);
+    // That he paid for the camel: the purse of its price by his place, at his home; then the owner's place comes, and
+    // the purse goes to it.
+    expect([
+      shown("The Prophet ﷺ paid for the camel.", ["the owner's place"]),
+      moved("The Prophet ﷺ paid for the camel.", "an uqiyah, its price, in a purse", "x")
+    ]).toEqual([
+      [[0], [1]],
+      [78, 58]
+    ]);
+    // What he did after paying: the camel brought to him, the purse with the owner's place; then his voice speaks, the
+    // camel is sent back after the owner, and a warm glow comes about it at its owner's home.
+    expect([
+      shown("What did the Prophet ﷺ do after paying?", ["his voice: take your camel", "the camel, sent back", "your wealth: a warm glow about the camel at its owner's home", "the camel, sold, going on"]),
+      moved("What did the Prophet ﷺ do after paying?", "the camel, sent back", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 1],
+        [1, 1, 1, 0]
+      ],
+      [0, -16]
+    ]);
+    // The water-skins. That her water-skins were all but bursting: the forty places have drunk their fill; then small
+    // water-skins and vessels fill one by one, and hers swell.
+    expect([
+      value("water-skins", "drank their fill: row 4", "opacity", 0.67),
+      shown("The water-skins were nearly bursting full.", ["filled 1", "filled 5", "her water-skins, all but bursting"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // What happened to the woman's people: the filled water-skins and vessels; then bread and dates go to her place, her
+    // camel and her place go back to her tribe's tents, a soft golden ring comes about her place and a warm glow over
+    // the tents.
+    expect([
+      shown("What happened to the woman's people?", ["bread and dates, gathered for her", "she accepted Islam: a soft golden ring about her place", "and they accepted Islam: a warm glow over the tents"]),
+      moved("What happened to the woman's people?", "her place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [-58, -28]
+    ]);
+    // No rider alone by night. That he knew of dangers in travelling alone that others did not: waits at the scene's
+    // start, a camel by the camp; then it sets out alone along the road, a grey dashed ring about it, and the dark ahead
+    // deepens.
+    expect([
+      shown("He ﷺ knew of dangers in travelling alone that others did not.", ["alone: a grey dashed ring about it", "the dark ahead"]),
+      moved("He ﷺ knew of dangers in travelling alone that others did not.", "a camel setting out alone", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 44]
+    ]);
+    // What is safer for a journey at night: the camel out alone in the dark; then it turns back to the camp, the grey
+    // ring goes, and a soft golden ring comes about the camp, all of them together.
+    expect([
+      shown("What is safer for a journey at night?", ["a camel setting out alone", "the camel turning back", "alone: a grey dashed ring about it", "together: a soft golden ring about the camp"]),
+      moved("What is safer for a journey at night?", "the camel turning back", "x")
+    ]).toEqual([
+      [
+        [1, 0, 1, 0],
+        [0, 1, 0, 1]
+      ],
+      [0, -44]
+    ]);
+    // Two setting out. What two travellers do at prayer time: the two places by his place; then they set out, the sun
+    // climbs with a dashed ring about it, the adhan goes out, then the iqamah, and prayer mats show.
+    expect([
+      shown("What should two travellers do at prayer time?", ["the time of a prayer: a dashed ring about the sun", "the iqamah: a shorter call", "prayer mats on the ground"]),
+      value("travellers-adhan", "the adhan: its call going out", "opacity", 0.4)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // That the adhan is not only for big masjids: the two places by his place; then they set out on the road with their
+    // camels, and the adhan goes out from where they stopped.
+    expect([
+      shown("The adhan is only for big masjids.", ["the adhan: its call going out"]),
+      moved("The adhan is only for big masjids.", "a camel for the journey 1", "x"),
+      moved("The adhan is only for big masjids.", "the older one's place", "x")
+    ]).toEqual([
+      [[0], [1]],
+      [0, 30],
+      [-54, 6]
+    ]);
+    // Who leads them: the two places on their prayer mats after the iqamah; then a soft golden ring comes about the
+    // older one's place, a spark rises from each, and a warm glow comes about the two.
+    expect([
+      value("travellers-adhan", "prayer mats on the ground", "opacity", 0.6),
+      shown("Who leads them?", ["the older one leads: a soft golden ring about the place", "together in prayer: a warm glow about the two"]),
+      value("travellers-adhan", "a spark of prayer, rising 1", "opacity", 0.72)
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1
+    ]);
+    // Setting out on a Thursday. That Ka'b ibn Malik told of it: waits at the scene's start; then Ka'b's voice speaks.
+    expect(shown("Ka'b ibn Malik is the one who told us of the Thursday journeys.", ["Ka'b's voice"])).toEqual([[0], [1]]);
+    // How often he set out on another day: Ka'b's voice; then Sunday to Wednesday light up one by one, and his place and
+    // the camels do not set out.
+    expect([
+      shown("How often did he ﷺ start a journey on another day?", ["a day gone by 1", "a day gone by 2", "a day gone by 3", "a day gone by 4"]),
+      moved("How often did he ﷺ start a journey on another day?", "a golden ring, his place", "x"),
+      moved("How often did he ﷺ start a journey on another day?", "a camel of the journey 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 0],
+      [0, 0]
+    ]);
+    // Which day he usually set out: four days lit; then Thursday lights golden with a golden ring about it, a way shows,
+    // and his place and the camels set out along it.
+    expect([
+      shown("On which day did he ﷺ usually set out on a journey?", ["Thursday: the fifth day, lit golden", "Thursday: a golden ring about it", "the way of the journey"]),
+      moved("On which day did he ﷺ usually set out on a journey?", "a golden ring, his place", "x"),
+      moved("On which day did he ﷺ usually set out on a journey?", "a camel of the journey 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 72],
+      [0, 72]
+    ]);
+    // The camel is yours. Who sold the camel: the young camel, hard to handle, with a grey dashed ring about it; then
+    // his voice speaks toward Umar's place, and a golden line goes from his place to the young camel, with a soft ring
+    // about it: bought.
+    expect([
+      shown("Who sold the camel to him ﷺ?", ["his voice: sell it to me", "bought: a golden line from his place to the young camel", "bought: a soft ring about the young camel"]),
+      value("camel-is-yours", "his voice: sell it to me", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [0, 1, 1]
+      ],
+      1
+    ]);
+    // What he said to Abdullah after buying it, and that he gave it to him: the golden line and the ring of the buying;
+    // then his voice speaks again, they go, and a warm glow comes about the young camel: given.
+    for (const prompt of ["What did he ﷺ say to Abdullah after buying it?", "He ﷺ gave the camel to Abdullah ibn Umar as a gift."]) {
+      expect([
+        prompt,
+        shown(prompt, ["his voice: it is yours, O Abdullah", "given: a warm glow about the young camel", "bought: a golden line from his place to the young camel", "bought: a soft ring about the young camel"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1, 1],
+          [1, 1, 0, 0]
+        ]
+      ]);
+    }
+    // A lost camel on the day of Arafah. That Jubair saw him standing at Arafah: Jubair's place at the edge of the plain
+    // after its search; then a faint golden line goes from it to the golden ring, and a soft ring comes about his place.
+    expect([
+      value("search-at-arafah", "Jubair's place", "x", 0.4),
+      shown("Jubair saw him ﷺ standing at Arafat on the day of Arafat.", ["Jubair sees: a faint golden line to the golden ring", "standing at Arafah: a soft ring about his place"])
+    ]).toEqual([
+      70,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Why Jubair was surprised: the soft ring about his place, standing at Arafah; then Jubair's voice wonders.
+    expect([
+      value("search-at-arafah", "standing at Arafah: a soft ring about his place", "opacity", 0.62),
+      shown("Why was Jubair surprised to see him ﷺ there?", ["Jubair's voice, wondering"])
+    ]).toEqual([
+      1,
+      [[0], [1]]
     ]);
   });
 

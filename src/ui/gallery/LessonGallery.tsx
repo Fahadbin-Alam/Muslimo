@@ -1280,6 +1280,13 @@ const STATES: State[] = [
   { id: "scene-fruit-when-ripe", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-ripe-fruit-only" ask="When may fruit on trees be sold" /> },
   { id: "scene-gold-for-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-gold-for-gold" ask="How must gold be swapped for gold" /> },
   { id: "scene-share-the-fruits", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr2-share-the-fruits" ask="What did the emigrants answer" /> },
+  { id: "scene-tired-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-jabir-the-camel" ask="What happened to the camel after the dua" /> },
+  { id: "scene-water-skins", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-the-water-skins" ask="What happened to the woman's people" /> },
+  { id: "scene-alone-at-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-staying-safe-not-alone-at-night" ask="What is safer for a journey at night" /> },
+  { id: "scene-travellers-adhan", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-travellers-call-too" ask="What should two travellers do at prayer time" /> },
+  { id: "scene-set-out-on-thursday", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-set-out-on-thursday" ask="usually set out on a journey" /> },
+  { id: "scene-camel-is-yours", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-the-camel-is-yours" ask="say to Abdullah after buying it" /> },
+  { id: "scene-search-at-arafah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-the-day-of-arafah-a-lost-camel" ask="Why was Jubair surprised" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
