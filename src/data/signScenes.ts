@@ -660,7 +660,14 @@ export type SignKind =
   | "six-of-shawwal"
   | "six-rights"
   | "the-warner"
-  | "firm-and-kind";
+  | "firm-and-kind"
+  | "most-generous"
+  | "dawud-recites"
+  | "good-kept"
+  | "last-ten-itikaf"
+  | "my-disciple"
+  | "help-your-brother"
+  | "last-surah-heard";
 
 export type SignScene = {
   id: string;
@@ -2658,6 +2665,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Mus'ab ibn Sa'd said, from his father, that ayat of the Quran came down about him. Sa'd's mother swore that she would never speak to him until he disbelieved in his religion, nor eat nor drink. She said: you claim that Allah has enjoined you to be good to your parents; I am your mother, and I command you to do this. She stayed so for three days, until she fainted from the strain; then a son of hers called Umarah stood and gave her drink, and she began to pray against Sa'd. Then Allah, Mighty and Majestic, sent down in the Quran this ayah: And We enjoined on man goodness to his parents, and: but if they strive to make you join with Me; and in it: and keep company with them in this world kindly.",
     sources: [muslim("1748c")]
+  },
+  {
+    id: "sign-most-generous",
+    kind: "most-generous",
+    caption:
+      "Ibn Abbas said: the Messenger of Allah ﷺ was the most generous of people, and he was most generous of all in Ramadan, when Jibril met him. Jibril would meet him every night of Ramadan and study the Quran with him. The Messenger of Allah ﷺ was more generous with good than the sent wind.",
+    sources: [bukhari("6")]
+  },
+  {
+    id: "sign-dawud-recites",
+    kind: "dawud-recites",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: reciting was made easy for Dawud, peace be upon him. He would order his mounts to be saddled, and he would finish reciting before his mounts were saddled. And he ate only from the work of his own hands.",
+    sources: [bukhari("3417")]
+  },
+  {
+    id: "sign-good-kept",
+    kind: "good-kept",
+    caption:
+      "Hakim ibn Hizam said: I said: O Messenger of Allah, what of the good things I used to do in the days of ignorance: charity, or freeing a slave, and keeping the ties of kinship? Is there any reward in them? The Prophet ﷺ said: you became Muslim with the good you did before.",
+    sources: [bukhari("1436")]
+  },
+  {
+    id: "sign-last-ten-itikaf",
+    kind: "last-ten-itikaf",
+    caption:
+      "Aishah, the wife of the Prophet ﷺ, said that the Prophet ﷺ would do i'tikaf in the last ten days of Ramadan, until Allah took him. Then his wives did i'tikaf after him.",
+    sources: [bukhari("2026")]
+  },
+  {
+    id: "sign-my-disciple",
+    kind: "my-disciple",
+    caption:
+      "Jabir said: the Prophet ﷺ said on the day of al-Ahzab: who will bring me news of the people? Az-Zubayr said: I. Then he said: who will bring me news of the people? Az-Zubayr said: I. Then the Prophet ﷺ said: every prophet has a disciple, and my disciple is az-Zubayr.",
+    sources: [bukhari("2846")]
+  },
+  {
+    id: "sign-help-your-brother",
+    kind: "help-your-brother",
+    caption:
+      "Anas said: the Messenger of Allah ﷺ said: help your brother, whether he does wrong or is wronged. They said: O Messenger of Allah, we help him when he is wronged; but how do we help him when he does wrong? He said: by holding back his hands.",
+    sources: [bukhari("2444")]
+  },
+  {
+    id: "sign-last-surah-heard",
+    kind: "last-surah-heard",
+    caption:
+      "Ibn Abbas said: Umm al-Fadl heard me reciting Wal-mursalati 'urfa, and she said: my son, by Allah, your recitation of this surah has reminded me that it was the last I heard from the Messenger of Allah ﷺ; he recited it in the Maghrib prayer.",
+    sources: [bukhari("763")]
   }
 ];
 
@@ -4248,7 +4304,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Sa'd's mother swore not to speak, eat or drink until he left his faith; 29:8 and 31:15 came down: firm and kind.
   "sahabi-sad-ibn-abi-waqqas-makkah-years": "sign-firm-and-kind",
   "deep-sad-mother": "sign-firm-and-kind",
-  "deep-ankabut1-sad-and-his-mother": "sign-firm-and-kind"
+  "deep-ankabut1-sad-and-his-mother": "sign-firm-and-kind",
+  "fasting-ramadan-growth-quran-in-ramadan": "sign-most-generous",
+  "ramadan-most-generous": "sign-most-generous",
+  "deep-prophet-dawud-zabur": "sign-dawud-recites",
+  "deep-isra2-dawud-and-the-zabur": "sign-dawud-recites",
+  "deep-hakim-deeds-before-islam": "sign-good-kept",
+  "deep-fresh-start-good-deeds-kept": "sign-good-kept",
+  "deep-fast-last-ten-itikaf": "sign-last-ten-itikaf",
+  "ramadan-itikaf": "sign-last-ten-itikaf",
+  "deep-zubayr-disciple": "sign-my-disciple",
+  "deep-saff3-my-disciple-is-zubayr": "sign-my-disciple",
+  "deep-brotherhood-help-your-brother": "sign-help-your-brother",
+  "deep-hujurat1-help-your-brother": "sign-help-your-brother",
+  "surah-meaning-77-1-15": "sign-last-surah-heard",
+  "deep-mursalat1-the-last-surah-she-heard": "sign-last-surah-heard"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

@@ -27,15 +27,15 @@ const longMat = (y: number, x1: number, x2: number) =>
   `<rect x="${n(x1 + 1)}" y="${n(y - 0.9)}" width="${n(x2 - x1 - 2)}" height="2.4" rx="0.4" stroke="#C9A866" stroke-width="0.4" fill="none"/>`;
 
 /** A small golden light, its middle at (x, y). */
-const goldLight = (x: number, y: number, r = 1.8) => glow(x, y, n(r * 2), WARM, 0.3) + sparkle(x, y, r, "#E8A93A");
+export const goldLight = (x: number, y: number, r = 1.8) => glow(x, y, n(r * 2), WARM, 0.3) + sparkle(x, y, r, "#E8A93A");
 
 /** A golden line from x1 to x2 at y: drawn whole, and grown from its left end (its `origin`). */
-const goldLine = (x1: number, x2: number, y: number, width = 1.4) =>
+export const goldLine = (x1: number, x2: number, y: number, width = 1.4) =>
   `<path d="M${x1} ${y} L${x2} ${y}" stroke="#FFF3C0" stroke-width="${n(width + 1.2)}" stroke-linecap="round" opacity="0.45"/>` +
   `<path d="M${x1} ${y} L${x2} ${y}" stroke="${GOLD}" stroke-width="${width}" stroke-linecap="round"/>`;
 
 /** A faint dashed ring in the air at (x, y): something still to come. */
-const faintRing = (x: number, y: number, r = 2.4, color = "#FFFFFF") =>
+export const faintRing = (x: number, y: number, r = 2.4, color = "#FFFFFF") =>
   `<circle cx="${x}" cy="${y}" r="${r}" stroke="${color}" stroke-width="0.5" stroke-dasharray="0.9 0.9" fill="none" opacity="0.7"/>`;
 
 /** Small silver glints about (x, y): weeping, drawn as light and not as tears. */
@@ -75,12 +75,12 @@ const dust = (x: number, y: number, s: number) =>
     .join("");
 
 /** A dark land at night, from y `top` down, with a few tufts. */
-const nightLand = (top: number, tufts: [number, number][]) =>
+export const nightLand = (top: number, tufts: [number, number][]) =>
   `<rect y="${top}" width="160" height="${120 - top}" fill="#2E3556"/><path d="M0 ${top} L160 ${top}" stroke="#454B6A" stroke-width="0.7"/>` +
   tufts.map(([x, y]) => tuft(x, y, "#454B6A", 3.4)).join("");
 
 /** The window of a home (trialArt.ts), lit at night. */
-const litWindow = (x: number, y: number, h: number) => {
+export const litWindow = (x: number, y: number, h: number) => {
   const [wx, wy] = [n(x + 2), n(y - h + 2.4)];
   return `${glow(n(wx + 1.3), n(wy + 1.3), 4, "#FFD866", 0.18)}<rect x="${wx}" y="${wy}" width="2.6" height="2.6" fill="#FFD866"/>`;
 };
@@ -90,8 +90,8 @@ const litDoor = (x: number, y: number) =>
   `${glow(n(x - 1.8), n(y - 3.4), 4.6, "#FFD866", 0.24)}<path d="M${n(x - 3.6)} ${y} L${n(x - 3.6)} ${n(y - 5.4)} Q${n(x - 1.8)} ${n(y - 7.6)} ${x} ${n(y - 5.4)} L${x} ${y} Z" fill="#FFD866" opacity="0.85"/>`;
 
 /** A night over the sky, from the top down to y 62; and over the land, from y 62 down. */
-const NIGHT_OVER_SKY = `<rect width="160" height="62" fill="#16284C"/><rect width="160" height="34" fill="#0F1C3A"/>`;
-const NIGHT_OVER_LAND = `<rect y="62" width="160" height="58" fill="#0F1C3A" opacity="0.42"/>`;
+export const NIGHT_OVER_SKY = `<rect width="160" height="62" fill="#16284C"/><rect width="160" height="34" fill="#0F1C3A"/>`;
+export const NIGHT_OVER_LAND = `<rect y="62" width="160" height="58" fill="#0F1C3A" opacity="0.42"/>`;
 
 /** A place that goes out to `to` (from its own start) between `from` and `out`, and back between `back` and `home`. */
 const outAndBack = (dx: number, dy: number, from: number, out: number, back: number, home: number) =>
