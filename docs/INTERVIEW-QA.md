@@ -5,10 +5,12 @@ Questions an interviewer is likely to ask about this project, with short answers
 [ROADMAP.md](ROADMAP.md) lists what's still missing before launch, with effort estimates.
 Answers are written in the first person so you can practise saying them; put them in your own words.
 
-Several fixes mentioned below came from a code review on the `claude/muslimo-improvements` branch: the
-lesson-completion XP hole, the sync validation, the catalog `GROUP BY`, the fail-closed subscription sync, the Ummah
-ranking in SQL, the request-body limit, the `socialHub` cap, and unknown store products granting nothing. If you merge
-them, say they were found in review, and make sure you can explain each fix without notes.
+Several fixes mentioned below came from a code review and are on the `claude/muslimo-fixes-v2` branch (exported as
+`patches-v2`), not yet on `main` (664f7c8): removing the old `backend/server.js` (its social login accepted any
+token), the lesson-completion XP hole, the sync validation, the catalog `GROUP BY`, the fail-closed subscription
+sync, the Ummah ranking in SQL, the request-body limit, the `socialHub` cap, and unknown store products granting
+nothing. Until they're merged, those holes are still on `main`. Once merged, say they were found in review, and make
+sure you can explain each fix without notes.
 
 ## The 60-second version
 
@@ -18,7 +20,8 @@ them, say they were found in review, and make sure you can explain each fix with
 > ship in the app and progress is saved on the phone, and the server is for accounts, cloud backup, the social
 > features and purchases. The interesting backend problem is sync: two phones can send out-of-date copies of the
 > same profile, so the server merges them with per-field rules instead of last-write-wins. It has about 150 pytest
-> tests and 135 Jest test files, and CI on every pull request.
+> tests and 170 Jest test files, and CI on every pull request. The API is configured to deploy to Render with Neon
+> Postgres, and iOS 1.0.0 has been through App Review once: it was rejected for two issues, which I've fixed.
 
 Numbers worth knowing: 44 API routes, 18 tables, 12 Alembic migrations, a 4-second sync debounce, a 5,000 XP-per-day
 cap, sessions that last 30 days.
@@ -60,7 +63,7 @@ one indexed read and one UPDATE per sync, and new app fields go into `progress_e
 `total_xp`, `streak_days`, `hearts_*`, `gems`. The trade-off is that JSON can't be indexed portably across SQLite and
 Postgres, so anything queried across learners needs its own column. The Ummah ranking is the example: `User` copies
 trophies and "joined" out of `ummah_json` into `ummah_trophies` / `ummah_ranked` on every assignment (a `@validates`
-hook in `models.py`), and the ranking sorts and counts on an index (question 12).
+hook in `models.py`), and the ranking sorts and counts on an index (question 13).
 
 ### 5. How does authentication work? Why not JWTs?
 
@@ -107,20 +110,34 @@ the row and everything that cascades from it.
 
 The API has pytest tests that use FastAPI's `TestClient` against a throwaway SQLite file (`backend/tests/conftest.py`
 sets `SIRA_DATABASE_URL` before the app imports its settings). The app has Jest tests for XP, streaks, hearts, the
-lesson flow and screens. CI runs both, bundles the Android and iOS apps, and opens the web build in a headless
-browser. The gap is that SQLite is permissive: it stores a string in an INTEGER column and doesn't enforce foreign
+lesson flow and screens. CI (`.github/workflows/ci.yml`) runs on every pull request and push to `main`: `tsc`,
+Jest, the notes-importer tests, an Android and iOS bundle, a release-config check, the web build opened in headless
+Chromium, and pytest on Python 3.12. The gap is that SQLite is permissive: it stores a string in an INTEGER column and doesn't enforce foreign
 keys by default, so a class of Postgres-only 500s was invisible to the tests. I added validation for those, and the
 next step is running the suite against Postgres in CI.
 
-### 11. How would you deploy it?
+### 11. How is it deployed?
 
-It's set up for Render with Neon Postgres (`render.yaml`, `backend/Dockerfile`, `docs/hosting.md`). The container
-runs `alembic upgrade head` and an idempotent catalog seed on start, then Uvicorn. The app is built with Expo EAS, and
-`EXPO_PUBLIC_API_BASE_URL` is baked in at build time; a release build without it stays offline-only instead of calling
-localhost. Before real users I'd move off the free plan (it sleeps), turn on database backups, and add error tracking
-and uptime alerts on `/api/health`.
+The API is a Docker image (`backend/Dockerfile`) on a Render web service defined in `render.yaml`: free plan,
+health check on `/api/health`, and it redeploys on every push. The database isn't on Render, because Render's free
+Postgres is deleted after 30 days; it's a free Neon Postgres, and the connection string and other secrets are typed
+into the Render dashboard (`sync: false`), never committed. Each container start runs `alembic upgrade head` and an
+idempotent catalog seed, then Uvicorn. The apps are built with Expo EAS (`eas.json`): a development client, a
+preview APK for testers and production builds with auto-incremented build numbers, submitted to Play's internal track
+as drafts. `EXPO_PUBLIC_API_BASE_URL` is set per EAS environment, and a release build without it stays offline-only
+instead of calling localhost. What I'd add: a paid plan so it doesn't sleep, backups, error tracking and uptime
+alerts, and making Render wait for green CI.
 
-### 12. What breaks first at 100,000 users?
+### 12. Is it live? Does it have users?
+
+Say only what you can show. The repository shows: iOS 1.0.0 went through App Review and was rejected for two
+reasons, both fixed on `main` (Apple's own Sign in with Apple button, `src/ui/screens/AppleSignInButton.native.tsx`;
+no personalised-ads consent form on iPhone, `src/services/monetization.native.ts`). `site/app-version.json` shows
+Android build 14 live on a Play track and iOS not yet on the App Store. Whether the resubmission is approved, which Play track
+the builds are on, and any user numbers are in App Store Connect, Play Console and the stats page, not the code. Check
+them the day before and say exactly that. The rejection is a good story: what Apple flagged, why, and the fix.
+
+### 13. What breaks first at 100,000 users?
 
 The rate limiter keeps counts in process memory, which is right for one process but wrong once there are several
 instances, so it would move to Redis. `GET /api/friends` runs a few queries per friend, which needs eager loading.
@@ -130,14 +147,14 @@ uses two `GROUP BY` queries, and the Ummah ranking used to load every user row a
 `ORDER BY ummah_trophies DESC, id LIMIT 50` plus two `COUNT`s on an index (`routes/ummah.py`, migration
 `20261119_0013`).
 
-### 13. Why rate-limit per email and per account instead of per IP?
+### 14. Why rate-limit per email and per account instead of per IP?
 
 Behind Render's proxy, and on mobile carrier NAT, many phones share an address, so a per-IP limit could lock out a
 whole classroom. Login is limited per email (10 per 15 minutes) to slow password guessing on one account;
 code entry is limited per account so nobody can enumerate 6-character family codes (`core/rate_limit.py`). It's a
 sliding window of timestamps in a deque per key, with a periodic sweep so memory stays bounded.
 
-### 14. How do database migrations work?
+### 15. How do database migrations work?
 
 Alembic, with a revision per schema change (`backend/migrations/versions`). One weakness I'd own: the first
 migration calls `Base.metadata.create_all` on the current models, so later migrations have to check whether a column
@@ -145,7 +162,7 @@ already exists before adding it. That works, but the history isn't a true record
 Now that the schema is settling I'd squash to one real baseline migration and write plain `op.add_column` migrations
 from there.
 
-### 15. Tell me about a bug you found.
+### 16. Tell me about a bug you found.
 
 A good one is the profile sync. The sync route copied values like `gems` or `preferredLanguage` straight from the
 app's JSON into typed columns. On SQLite, which the tests use, anything goes. On Postgres, a string in an INTEGER
@@ -154,18 +171,18 @@ a list, it *saved*, and then every `/api/session` for that account failed respon
 The fix was small validators (`clean_int`, `clean_bool`, `clean_text`, `clean_dict` in `service_layer.py`) that keep
 the saved value when a new one is invalid, plus tests.
 
-### 16. What would you do differently?
+### 17. What would you do differently?
 
-Split `src/TopicApp.tsx`, which is about 5,000 lines holding most screens' state, into feature hooks and a navigation
+Split `src/TopicApp.tsx`, which is about 5,400 lines holding most screens' state, into feature hooks and a navigation
 library. Decide earlier whether the server or the client owns lessons, instead of building both. Run tests on Postgres
 from day one. Use a maintained password library (passlib's last release was in 2020; `pwdlib` with Argon2 is a
 modern choice).
 
-### 17. How much of this did you write yourself? Did you use AI tools?
+### 18. How much of this did you write yourself? Did you use AI tools?
 
 Answer this one honestly; interviewers ask it often now, and a confident, specific answer beats a vague one. A good
 shape: say which tools you used and for what, then show ownership by explaining a design decision and a bug in
-detail (questions 3 and 15 work well). What interviewers want to know is whether you understand and can defend the
+detail (questions 3 and 16 work well). What interviewers want to know is whether you understand and can defend the
 code, and whether you can work in it without the tool.
 
 ## Weak spots an interviewer might poke at
@@ -174,7 +191,7 @@ code, and whether you can work in it without the tool.
 | --- | --- | --- |
 | "Your answers are checked on the client, and `GET /api/lessons/{slug}` returns `correctAnswerJson`." | Yes. Lessons and answers ship in the bundle too. | "For a learning app that's a deliberate trade-off for offline use. Anything competitive (battles, rankings) should be graded on the server; that's my next step." |
 | "You have catalog, completion, attempt and review-queue routes the app never calls." | True: `completeRemoteLesson` and `recordRemoteQuestionAttempt` in `backendSync.ts` have no callers, and the app's Review deck is a separate on-device system. | "I built the normalized model ahead of moving lessons to the server. If I weren't going to do that I'd delete it; unused code is a liability." The concrete wiring plan (which screen calls which route, and why the two catalogs must first share ids) is item 1 of [ROADMAP.md](ROADMAP.md). |
-| "Your first migration is `create_all`." | Yes (`20260412_0001_initial_schema.py`). | Question 14. |
+| "Your first migration is `create_all`." | Yes (`20260412_0001_initial_schema.py`). | Question 15. |
 | "Your tests run on SQLite but production is Postgres." | Yes. | Question 10: name the class of bugs it hid and the fix. |
 | "Where is the session token stored on the phone?" | AsyncStorage (`localStorage` on the web), not the Keychain/Keystore. | "On native I'd move it to `expo-secure-store`. On web, any XSS could read it; the mitigation is a strict CSP or an httpOnly cookie for the web build." |
 | "How is the on-device account password stored?" | `src/services/localAuth.ts`: 2,000 rounds of SHA-256 with a `Math.random` salt; saves from early versions kept the raw password. | "It only protects the copy on the phone itself, but I'd use a real KDF and a crypto-random salt, and rehash old saves at next login." |
@@ -182,8 +199,11 @@ code, and whether you can work in it without the tool.
 | "What stops a 100 MB request body?" | Fixed in review: an ASGI middleware (`core/body_limit.py`) refuses bodies over `SIRA_MAX_REQUEST_BODY_BYTES` (1 MiB) with 413, counting chunked bodies too, and `socialHub` is limited to its two lists, 200 items each, 64 KB. | "It used to be nothing. Now there's a size limit before any route parses JSON, plus per-field caps where data is stored." |
 | "Streaks use the phone's date." | Yes: `lastStreakDate` and `xpByDay` keys are the device's local dates. | "That's deliberate, so the day ends at the learner's midnight. Changing the phone's clock can game a streak; the XP caps bound the damage." |
 | "An unknown store product becomes premium." | Fixed in review: `plan_for_store_product` returns `None` for an unknown product, and the webhook grants nothing, logs a warning and records a `revenuecat.unknown_product` event. | "It used to fail open. For money, failing closed and alerting is right: a missed grant is a support ticket, a wrong grant is lost revenue that nobody notices." |
+| "Your server sleeps." | Yes: Render's free plan (`render.yaml`) sleeps after 15 idle minutes and takes up to a minute to wake. | "The app is offline first, pings `/api/health` on open and waits up to 60 s for log-in, so learners don't notice much. Before real traffic it goes on the paid plan." |
+| "Does a red CI build still deploy?" | `render.yaml` says `autoDeploy: true`; waiting for CI is a Render service setting the repo can't show. | "It should wait for checks; I'd turn on 'After CI checks pass' and add a Postgres job and a Docker build to CI." |
+| "Your app was rejected by Apple." | Yes, iOS 1.0.0, under guidelines 4 and 5.1.2(i); both fixed on `main`. | Question 12: say what was flagged and how you fixed it. |
 | "`api/islamic-learning.swagger.yaml` doesn't match your API." | It's an early design sketch. | "FastAPI's `/docs` and `/openapi.json` are generated from the code and are the real contract; I should delete the old file." |
-| "`TopicApp.tsx` is 5,000 lines." | Yes. | Question 16. |
+| "`TopicApp.tsx` is 5,400 lines." | Yes. | Question 17. |
 
 ## Practise out loud
 
@@ -196,3 +216,5 @@ Without notes, explain:
    server.
 5. How the Ummah ranking finds a learner's rank without loading every user, and why trophies are copied into a
    column instead of queried inside the JSON.
+6. What `render.yaml`, `eas.json` and `.github/workflows/ci.yml` each do, and what happens between merging a pull
+   request and a learner getting the new version (API: Render redeploys; app: an EAS build, then store review).

@@ -7,7 +7,10 @@ battle friends, and let a parent follow a child's progress.
 - **App:** Expo / React Native, one TypeScript codebase for Android, iOS and the web.
 - **API (optional):** FastAPI + SQLAlchemy over SQLite (local) or PostgreSQL (production), for accounts, cloud
   backup of progress, and the social features.
-- **Status:** in active development since April 2026; not yet deployed or in the stores.
+- **Status:** in active development since April 2026. Android build 14 is live on a Google Play track
+  ([site/app-version.json](site/app-version.json)); iOS 1.0.0 was rejected once by App Review and the two issues
+  are fixed. The API is set up to deploy to Render with Neon Postgres ([render.yaml](render.yaml)). Details: "Deployment and
+  release" in [docs/architecture.md](docs/architecture.md).
 
 ## Screenshots
 
@@ -28,7 +31,7 @@ battle friends, and let a parent follow a child's progress.
 4. **Social features** (Crew, Family links, friend battles, invite codes, the Ummah ranking) are server routes over
    their own tables.
 
-The full walkthrough, with a diagram, the SQL schema and the deployment plan, is in
+The full walkthrough, with a diagram, the SQL schema, the deployment setup and release status, is in
 [docs/architecture.md](docs/architecture.md).
 
 ## Tech stack
@@ -95,7 +98,8 @@ apps, and opens the web build in a headless browser on every pull request and ev
 
 - **API:** Docker image from [backend/Dockerfile](backend/Dockerfile) on Render ([render.yaml](render.yaml)), with
   a Neon Postgres database. Migrations and the catalog seed run on every start. Steps: [docs/hosting.md](docs/hosting.md).
-- **App:** Expo EAS builds for Google Play and the App Store. Steps: [docs/release.md](docs/release.md).
+- **App:** Expo EAS builds ([eas.json](eas.json): development client, preview APK, production) for Google Play
+  and the App Store. Steps: [docs/release.md](docs/release.md).
 
 ## Project layout
 
@@ -119,7 +123,7 @@ its questions. See [docs/obsidian-import.md](docs/obsidian-import.md).
 
 ## More docs
 
-- [docs/architecture.md](docs/architecture.md): end-to-end data flow, schema, deployment plan
+- [docs/architecture.md](docs/architecture.md): end-to-end data flow, schema, deployment and release status
 - [docs/INTERVIEW-QA.md](docs/INTERVIEW-QA.md): design questions about this codebase, with answers
 - [docs/ROADMAP.md](docs/ROADMAP.md): what's left before launch, prioritized, with effort estimates
 - [docs/hosting.md](docs/hosting.md): running the API on Render + Neon

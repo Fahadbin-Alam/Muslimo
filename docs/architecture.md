@@ -1,8 +1,8 @@
 # Muslimo architecture: where the data goes
 
 This is the end-to-end walkthrough: what happens when a learner taps a lesson, which code runs, what reaches the
-server, which SQL runs, and how it would be deployed. Every step names the file it lives in; if the code and this
-page ever disagree, the code wins and this page needs fixing.
+server, which SQL runs, and how it's deployed and released. Every step names the file it lives in; if the code and
+this page ever disagree, the code wins and this page needs fixing.
 
 ## The one idea to understand first: offline first
 
@@ -541,43 +541,69 @@ SELECT * FROM friendships WHERE user_id = :other AND friend_id = :me;
 | Oversized requests | bodies over `SIRA_MAX_REQUEST_BODY_BYTES` (1 MiB) get 413 before any route parses them; stored JSON has per-field caps (`progress_extra_json` 256 KB, `socialHub` 64 KB, analytics 16 KB) | `core/body_limit.py`, `schemas.py`, `service_layer.py` |
 | CORS | explicit allow-list (`SIRA_CORS_ORIGINS_RAW` + the GitHub Pages stats page); the phone apps don't use CORS | `main.py` |
 
-## Deployment plan
+## Deployment and release
 
-The repository already contains the pieces; nothing below is hypothetical except the order.
+This section describes what the repository sets up. Some things live outside it: whether the Render service is
+running right now, which EAS environment variables are set, and where a store submission stands today. Those are in
+the Render, EAS and App Store Connect / Play Console dashboards, so check there before quoting them.
 
-### Target
+### What runs where
 
-| Piece | Service | Why |
+| Piece | Setup | Defined in |
 | --- | --- | --- |
-| API | Render web service, Docker runtime, from `render.yaml` + `backend/Dockerfile` | git-push deploys, health checks, free tier to start |
-| Database | Neon Postgres (free tier) | Render's free Postgres is deleted after 30 days (see [hosting.md](hosting.md)); Neon also offers branching and point-in-time restore (retention depends on the plan) |
-| App builds | Expo EAS (`eas.json`: development, preview, production profiles) | builds and signs iOS/Android in the cloud, no Mac needed |
-| Website (privacy, terms, delete-account, stats) | GitHub Pages (`.github/workflows/pages.yml`, `site/`) | static |
+| API | One Render web service, `muslimo-api`, `runtime: docker`, built from `backend/Dockerfile` with the repository root as context. **Free plan**: it sleeps after 15 idle minutes and takes up to a minute to wake. Health check `GET /api/health`; `autoDeploy: true` redeploys on every push | `render.yaml` |
+| Settings and secrets | `SIRA_ENVIRONMENT=production` is set by the blueprint and by the image. `SIRA_DATABASE_URL`, `SIRA_REVENUECAT_WEBHOOK_AUTH`, `SIRA_GOOGLE_CLIENT_IDS_RAW` and `SIRA_ADMIN_KEY` are `sync: false`: typed into the Render dashboard, never stored in git | `render.yaml`, `backend/Dockerfile`, `backend/app/core/config.py` |
+| Database | **Not part of the blueprint.** A free Neon Postgres project (0.5 GB) in AWS US East, next to Render's Virginia region, connected through `SIRA_DATABASE_URL`. Render's own free Postgres is deleted after 30 days, so it isn't used. `config.py` rewrites `postgres://` / `postgresql://` to `postgresql+psycopg://` | `render.yaml` (top comment), `docs/hosting.md`, `backend/app/core/config.py` |
+| Container start | `python:3.12-slim`, runs as the non-root user `sira`. Every start runs `backend/scripts/bootstrap.py` (`alembic upgrade head`, then the idempotent catalog seed), then Uvicorn on `$PORT` with `--proxy-headers` | `backend/Dockerfile`, `backend/scripts/bootstrap.py` |
+| App builds | Expo EAS, project `ae9b976c-...` owned by `fahadbin.alam`. `eas.json` profiles: **development** (dev client, internal distribution, sandbox purchases), **preview** (internal distribution, Android APK, sandbox purchases), **production** (Android App Bundle, build number auto-incremented, version source remote). `requireCommit: true`; Node 22.22.0 | `eas.json`, `app.json` |
+| API address in the app | `EXPO_PUBLIC_API_BASE_URL`, set per EAS environment with `eas env:create` (it isn't in `eas.json`). A release build without it is offline-only and never calls `localhost` | `src/config/backend.ts`, `docs/hosting.md` (step 4) |
+| Store upload | `eas submit` (production profile): Android goes to the Play **internal** track as a **draft**, using a service-account key in `secrets/` (git-ignored). There's no iOS `submit` block, so `eas submit --platform ios` uses EAS's defaults | `eas.json`, `.gitignore`, `docs/release.md` |
+| Website | `site/` is published to GitHub Pages by `.github/workflows/pages.yml` on pushes to `main` that touch it (skipped until `site/site.config.json` is filled in). The log-in page and the owner's stats page call `https://muslimo-api.onrender.com` | `.github/workflows/pages.yml`, `site/log-in.html`, `site/stats.html` |
 
-Fly.io or Railway would work the same way: both run the same Docker image and take the same `SIRA_*` variables.
+### What CI checks, and what it doesn't
 
-### Steps
+`.github/workflows/ci.yml` runs on every push to `main` and on every pull request, in three jobs:
 
-1. **Database.** Create a Neon project in a US East region; copy the `postgresql://...?sslmode=require` URL.
-   (`config.py` rewrites `postgres://` and `postgresql://` to `postgresql+psycopg://` for SQLAlchemy.)
-2. **API.** Render > New > Blueprint > this repo. Set the secrets `render.yaml` asks for: `SIRA_DATABASE_URL`,
-   `SIRA_GOOGLE_CLIENT_IDS_RAW`, `SIRA_REVENUECAT_WEBHOOK_AUTH`, `SIRA_ADMIN_KEY`. `SIRA_ENVIRONMENT=production` is
-   set by both `render.yaml` and the Dockerfile.
-3. **First boot.** The container runs `python -m backend.scripts.bootstrap` (`alembic upgrade head`, then the
-   idempotent catalog seed), then `uvicorn ... --proxy-headers`. Check `GET /api/health` returns
-   `{"ok": true, "database": "postgresql+psycopg"}`; Render uses the same path as its health check.
-4. **Point the app at it.** `eas env:create --environment production --name EXPO_PUBLIC_API_BASE_URL --value
-   https://<service>.onrender.com` (and for `preview`). `src/config/backend.ts` reads it at build time; a release build
-   without it stays offline-only instead of calling `localhost`.
-5. **Build and ship.** `eas build --profile preview` for internal testers (Android APK), then `eas build --profile
-   production` and `eas submit` (Play internal track, as a draft, per `eas.json`). Full store checklist:
-   [release.md](release.md).
-6. **Payments.** In RevenueCat, set the webhook URL to `/api/subscriptions/revenuecat/webhook` with the same
-   Authorization value as `SIRA_REVENUECAT_WEBHOOK_AUTH`.
-7. **Before real users:** move off the free plan (it sleeps after 15 idle minutes and takes up to a minute to wake;
-   the app tolerates it with long timeouts and the `wakeBackend` ping, but it's a poor first impression), turn on
-   Neon backups / point-in-time restore, and add error tracking (for example Sentry) and uptime alerts on
-   `/api/health`.
+| Job | What it runs |
+| --- | --- |
+| `app` | Node 22, `npm ci`, `npm run typecheck` (`tsc --noEmit`), `npm test -- --ci` (Jest, 170 test files), `node --test scripts/obsidian-import/lib.test.mjs`, `expo export` for Android and iOS, then `scripts/check-release-config.mjs` (version format, bundle ids, iOS export-compliance flag, privacy manifest, blocked Android permissions) |
+| `web-smoke` | `expo export --platform web`, then `scripts/smoke-web.mjs` opens the build in headless Chromium (Playwright) and fails if the first screen doesn't render |
+| `backend` | Python 3.12, `pip install -r backend/requirements-dev.txt`, `python -m pytest backend/tests -q` (FastAPI `TestClient` on a throwaway SQLite file, `backend/tests/conftest.py`) |
+
+Not covered: tests against Postgres (they use SQLite), Alembic migrations against a real database, building the
+Docker image, a Python linter, and an EAS build. CI and deploys are separate: `render.yaml` only says
+`autoDeploy: true`, and Render's option to deploy only after CI checks pass is a service setting, so confirm it in
+the Render dashboard.
+
+### Release status (what the repository shows)
+
+| | Status | Evidence |
+| --- | --- | --- |
+| Version | `1.0.0`; bundle id and package `com.islamiclearning.muslimo` | `app.json`, `scripts/check-release-config.mjs` |
+| App Store (iOS) | Version 1.0.0 went to App Review and was rejected for two reasons, both fixed on `main` (PR #690): guideline 4 (use Apple's own Sign in with Apple button) and guideline 5.1.2(i) (don't show Google's personalised-ads consent form on iPhone). The repository doesn't show a resubmission or an approval, and `site/app-version.json` still has `"ios": { "build": 0 }`, which `docs/release.md` says stays 0 until the iPhone app is on the App Store | `src/ui/screens/AppleSignInButton.native.tsx`, `src/__tests__/appleSignInButton.test.tsx`, `src/services/monetization.native.ts`, `site/app-version.json`, `docs/release.md` |
+| Google Play | `site/app-version.json` sets Android to build 14, and `docs/release.md` says that number goes up only once a build is live in the store. The repository doesn't record which track (internal or closed testing) or a production release; new personal Play accounts need a 12-tester, 14-day closed test first | `site/app-version.json`, `eas.json`, `docs/release.md` |
+| Still open in the store checklist | "Production API served over HTTPS: Needed before release" | `store/README.md` |
+| Users | The repository has no user numbers (the owner's stats page reads them live), so don't quote any | `site/stats.html` |
+
+### What's still weak in the setup
+
+1. **The free plan sleeps** (`render.yaml`). The first request after 15 idle minutes can wait up to a minute. The
+   app copes (offline first, a wake-up ping, 30 s / 60 s timeouts in `src/config/backend.ts`), but it's a poor first
+   impression. The fix is the Starter plan (about $7 a month).
+2. **No backups, error tracking or uptime alerts are set up in the repository.** Neon's point-in-time restore depends
+   on the plan, and nothing like Sentry appears in `package.json` or `backend/requirements.txt`.
+3. **One process.** The rate limiter keeps counts in memory (`backend/app/core/rate_limit.py`), which is right only
+   while the Dockerfile runs one Uvicorn process.
+4. **CI gaps** (above): SQLite instead of Postgres, no migration run, no Docker build, no lint.
+5. **Migrations run at boot** (`backend/scripts/bootstrap.py`). On one instance a schema change means a short
+   restart, and a failed migration means the new deploy doesn't start. Use expand, migrate, then contract for changes
+   that old code must survive.
+6. **Payments.** RevenueCat calls `/api/subscriptions/revenuecat/webhook` with the same Authorization value as
+   `SIRA_REVENUECAT_WEBHOOK_AUTH`; until that secret is set the route answers 503 and no purchase reaches the server
+   (`backend/app/api/routes/subscriptions.py`).
+
+Fly.io or Railway would also work: both run the same Docker image with the same `SIRA_*` variables. The full
+store checklist is [release.md](release.md), and the hosting steps are [hosting.md](hosting.md).
 
 ### Scaling notes (what breaks first)
 

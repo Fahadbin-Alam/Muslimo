@@ -10,6 +10,18 @@ matters, what to do, which files are involved, and a rough effort:
 [architecture.md](architecture.md) explains how the pieces fit together, and [INTERVIEW-QA.md](INTERVIEW-QA.md)
 covers how to talk about these gaps in an interview.
 
+## Where the release stands
+
+From the repository alone (the dashboards hold the rest; see "Deployment and release" in
+[architecture.md](architecture.md)):
+
+| | State | Next step | Evidence |
+| --- | --- | --- | --- |
+| API | Configured: a Render Docker web service on the free plan, redeployed on every push, with a Neon Postgres database | Confirm it answers `GET /api/health` with `"database": "postgresql+psycopg"`; see item 8 | `render.yaml`, `backend/Dockerfile`, `docs/hosting.md` |
+| iOS | 1.0.0 was rejected by App Review under guidelines 4 and 5.1.2(i); both fixed on `main` | Build, resubmit, and set `"ios"` in `site/app-version.json` once it's on the App Store | `src/ui/screens/AppleSignInButton.native.tsx`, `src/services/monetization.native.ts`, `site/app-version.json`, `docs/release.md` |
+| Android | Build 14 is live on a Play track; uploads go to the internal track as drafts | Closed test with 12 testers for 14 days (new personal accounts), then production | `site/app-version.json`, `eas.json`, `docs/release.md` |
+| Store checklist | "Production API served over HTTPS" still marked as needed before release | Tick it once the API URL is in the production EAS environment | `store/README.md`, `src/config/backend.ts` |
+
 ## Summary
 
 | # | Item | Effort | Why it matters |
@@ -21,13 +33,15 @@ covers how to talk about these gaps in an interview.
 | 5 | [Weak on-device password hash](#5-a-real-kdf-for-the-on-device-password) | S | The phone's copy of the account uses fast SHA-256 and `Math.random` salts |
 | 6 | [First migration is `create_all`](#6-a-real-baseline-migration-and-postgres-in-ci) | M | The migration history isn't a true record; downgrades don't work |
 | 7 | [Rate limiter in process memory](#7-move-the-rate-limiter-to-redis) | M | Wrong the moment there's a second instance or worker |
-| 8 | [Hosting basics](#8-hosting-basics) | S | The free tier sleeps; there are no backups or error alerts |
+| 8 | [Hosting basics](#8-hosting-basics) | S | The free tier sleeps; no backups, error alerts, or CI gate on deploys |
 | 9 | [Outdated Swagger file](#9-delete-the-outdated-swagger-file) | S | It describes an API that doesn't exist |
-| 10 | [Smaller clean-ups](#10-smaller-clean-ups) | S each | N+1 queries, an old fallback, the 5,000-line `TopicApp.tsx` |
+| 10 | [Smaller clean-ups](#10-smaller-clean-ups) | S each | N+1 queries, an old fallback, the 5,400-line `TopicApp.tsx` |
 
-Done on the `claude/muslimo-improvements` branch, so not on this list: the lesson-completion XP hole, sync value
+Fixed on the `claude/muslimo-fixes-v2` branch (exported as `patches-v2`), so not on this list once it's merged:
+removing the old `backend/server.js` (its social login accepted any token), the lesson-completion XP hole, sync value
 validation, the catalog `GROUP BY`, client subscription sync only in development, the Ummah ranking in SQL with an
-index, a request-body size limit, the `socialHub` cap, and unknown store products granting nothing.
+index, a request-body size limit, the `socialHub` cap, and unknown store products granting nothing. Until the merge,
+all of these are still open on `main`.
 
 ## 1. Wire the app to the learning endpoints
 
@@ -198,16 +212,23 @@ instances, or `--workers 2`, every limit is silently multiplied, and a restart r
 
 ## 8. Hosting basics
 
-**Effort: S. Why:** see the deployment section of [architecture.md](architecture.md) and [hosting.md](hosting.md).
-The free Render plan sleeps after 15 idle minutes and takes up to a minute to wake. The app copes (`wakeBackend`,
-long timeouts), but it's a poor first impression.
+**Effort: S. Why:** see "Deployment and release" in [architecture.md](architecture.md) and [hosting.md](hosting.md).
+The API is set up as a Render web service on the **free** plan (`render.yaml`), which sleeps after 15 idle minutes
+and takes up to a minute to wake. The app copes (`wakeBackend`, long timeouts), but it's a poor first impression.
+`render.yaml` deploys on every push (`autoDeploy: true`), and nothing in the repository makes that wait for CI.
+CI (`.github/workflows/ci.yml`) never builds the Docker image or runs migrations on Postgres, so a broken image or
+migration is first seen on Render. No error tracking or uptime check is configured.
 
 **What to do:**
 
-- Move to a paid plan.
+- Move the service to a paid plan (Starter) in `render.yaml`.
 - Turn on Neon backups / point-in-time restore.
 - Add error tracking (Sentry) and an uptime check on `GET /api/health`.
-- Set `SIRA_ENVIRONMENT=production` (which turns off the client subscription sync) and `SIRA_REVENUECAT_WEBHOOK_AUTH`.
+- In Render, set auto-deploy to wait for CI checks to pass.
+- Add a CI job that builds `backend/Dockerfile` and runs `alembic upgrade head` against a Postgres service (pairs with
+  item 6).
+- Set `SIRA_REVENUECAT_WEBHOOK_AUTH` in Render and RevenueCat before paid plans go live (the webhook answers 503
+  until it is). `SIRA_ENVIRONMENT=production` is already set by `render.yaml` and `backend/Dockerfile`.
 
 ## 9. Delete the outdated Swagger file
 
@@ -226,7 +247,7 @@ and compared in CI.
   through the development-only client sync, but it should fail closed too once any old ids are migrated.
 - **Password library (S):** passlib (`backend/app/core/security.py`) hasn't had a release since 2020. Move to
   `pwdlib` with Argon2, and rehash at log-in.
-- **`src/TopicApp.tsx` is about 5,000 lines (L):** it holds most screens' state and the lesson flow. Split it into
+- **`src/TopicApp.tsx` is about 5,400 lines (L):** it holds most screens' state and the lesson flow. Split it into
   feature hooks (lesson session, shop, social) and use a navigation library. It will also make item 1 easier.
 - **Rank cache (S, only at scale):** the Ummah rank of a learner is a `COUNT(*)` over everyone above them
   (`routes/ummah.py`). Fine for tens of thousands. Past that, cache the leaderboard, for example in a Redis sorted
