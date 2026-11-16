@@ -2800,6 +2800,80 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Whom did Umar seat Ibn Abbas with?", "The elders of Badr", "Umar brought me in with the elders of Badr"],
     ["What did Ibn Abbas say the surah signaled?", "The end of the Prophet's ﷺ life", "I said: it is his life's end, made known to him"],
     ["Umar disagreed with Ibn Abbas.", "False", "Umar said: I know of it only what you say"]
+  ],
+  // One came in and prayed, then gave salam, and he said: go back and pray, for you have not prayed; three times, till
+  // it said: teach me. Say takbir, recite what is easy for you, bow until you are at rest bowing, rise until you stand
+  // up straight, prostrate until you are at rest, then sit at rest (Sahih al-Bukhari 757). (What is said in ruku, and
+  // standing up straight, are also asked of other hadiths, so they stay on their usual picture.)
+  "sign-go-back-and-pray": [
+    ["How many times was the man sent back?", "Three", "Go back and pray, for you have not prayed", "Three times; then he said: teach me"],
+    ["Example: you bow and stand up in one second. What's wrong?", "You didn't pause in ruku", "Bow until you are at rest bowing"],
+    ["What word sums up how to pray?", "Calmly", "Bow until you are at rest bowing", "Prostrate at rest, then sit at rest"],
+    ["Which comes first?", "Rise from ruku", "Rise until you stand up straight", "Prostrate at rest, then sit at rest"],
+    ["Between the two sujud, we ____ for a calm moment.", "sit", "Prostrate at rest, then sit at rest"]
+  ],
+  // He gave the spoils of Hunayn and none to the Ansar, and they felt it; he said: did I not find you astray, and Allah
+  // guided you through me, divided, and Allah joined you through me, and poor, and Allah made you rich through me? They
+  // said: Allah and His Messenger did us more favor (Sahih al-Bukhari 4330). (Which battle it was has its own map, and
+  // what Ibn Kathir explains with it stays on its usual picture.)
+  "sign-ansar-at-hunayn": [
+    ["What three favors did he ﷺ mention, per Bukhari 4330?", "Guided, united, made rich", "I found you astray; Allah guided you through me", "Poor, and Allah made you rich through me"],
+    ["How did the Ansar reply, per Bukhari 4330?", "Allah and His Messenger did us more favor", "Allah and His Messenger did us more favor"],
+    ["How were the Ansar before, in the hadith?", "Divided into groups", "Divided, and Allah joined you through me"],
+    ["The Prophet ﷺ also said Allah made them rich through him.", "True", "Poor, and Allah made you rich through me"]
+  ],
+  // When one of you sneezes, let him say: Alhamdulillah, and let his brother say to him: Yarhamuk Allah; and he says:
+  // Yahdikumullah wa yuslihu balakum (Sahih al-Bukhari 6224).
+  "sign-the-sneeze": [
+    ["After sneezing, what should a Muslim say first?", "Alhamdulillah", "Who sneezes, let him say: Alhamdulillah"],
+    ["If someone says Alhamdulillah after sneezing, another Muslim can reply with mercy.", "True", "His brother says to him: Yarhamuk Allah"],
+    ["What is a proper reply to someone's Alhamdulillah after a sneeze?", "Yarhamuk Allah", "His brother says to him: Yarhamuk Allah"],
+    ["What does the one who sneezes say?", "Alhamdulillah", "Who sneezes, let him say: Alhamdulillah"],
+    ["What do you say to someone who sneezed and praised Allah?", "Yarhamukallah", "His brother says to him: Yarhamuk Allah"],
+    ["What does the sneezer say back?", "Yahdikumullah wa yuslihu balakum", "He says: Yahdikumullah wa yuslihu balakum"],
+    ["You sneeze. What do you say?", "Alhamdulillah", "Who sneezes, let him say: Alhamdulillah"],
+    ["Your friend sneezes and says Alhamdulillah. What do you say?", "Yarhamukallah", "His brother says to him: Yarhamuk Allah"],
+    ["The sneezer answers: Yahdikumullahu wa yuslihu balakum.", "True", "He says: Yahdikumullah wa yuslihu balakum"]
+  ],
+  // Some came, barefoot and poor, all of Mudar, and his face changed at their need; he prayed, spoke and urged charity,
+  // from a dinar, a dirham, cloth, wheat, dates, even half a date, till there were two heaps of food and clothes, and
+  // his face shone as if gold (Sahih Muslim 1017). (Which surah he recited from stays on its usual picture.)
+  "sign-visitors-of-mudar": [
+    ["Which tribe were the poor visitors from?", "Mudar", "Some came, barefoot and poor, all of Mudar"],
+    ["His face changed when he saw their poverty.", "True", "His face changed, seeing their need"],
+    ["What did people start doing after he recited?", "Giving charity", "From his dinar, dirham, cloth, wheat, dates"],
+    ["What was the smallest gift he mentioned?", "Half a date", "Even if it is half a date"],
+    ["Small charity is still valued.", "True", "Even if it is half a date"]
+  ],
+  // At Fajr he said: Bilal, tell me of the deed you most hope for in Islam, for I heard your steps ahead of me in
+  // Paradise; he said: whenever I made wudu, night or day, I prayed with it what was written for me (Sahih al-Bukhari
+  // 1149). (The blank about his steps is also asked of another hadith, and how early he became Muslim is not shown.)
+  "sign-steps-in-paradise": [
+    ["What did the Prophet ﷺ hear in Paradise?", "Bilal's footsteps", "For I heard your steps ahead of me in Paradise"],
+    ["Which deed did Bilal say he did?", "Praying after every wudu", "He said: whenever I made wudu, night or day", "I prayed with it what was written for me"],
+    ["A small habit, done always, can be very great.", "True", "He said: whenever I made wudu, night or day", "I prayed with it what was written for me"],
+    ["When did the Prophet ﷺ ask Bilal about this?", "At the Fajr prayer", "At Fajr he said: Bilal, tell me"]
+  ],
+  // First came Mus'ab and Ibn Umm Maktum, who taught the people the Quran, then Bilal, Sa'd and Ammar, then Umar with
+  // twenty, then he came, and Madinah never rejoiced so at anything; even the girls said: he has come (Sahih al-Bukhari
+  // 3925).
+  "sign-madinah-rejoiced": [
+    ["Who came to Madinah first, with Ibn Umm Maktum?", "Mus'ab ibn Umayr", "First came Mus'ab and Ibn Umm Maktum"],
+    ["What did the first two teach the people of Madinah?", "The Quran", "They taught the people the Quran"],
+    ["Who came after them?", "Bilal, Sa'd and Ammar", "Then Bilal, Sa'd and Ammar came"],
+    ["How did Madinah feel when the Prophet ﷺ arrived?", "Happier than ever", "Then he came", "Madinah never rejoiced so at anything"],
+    ["Who called out that the Prophet ﷺ had come?", "Even the girls", "Even the girls said: he has come!"],
+    ["The Prophet ﷺ reached Madinah before Mus'ab.", "False", "First came Mus'ab and Ibn Umm Maktum", "Then he came"]
+  ],
+  // Tomorrow I will give the flag to one through whom Allah gives victory; all night they wondered, and each hoped for
+  // it; he asked for Ali, whose eyes were sore, prayed for him, and he was cured; go calmly, invite them to Islam, for
+  // one guided through you is better than red camels (Sahih al-Bukhari 3701). (Which battle it was has its own map.)
+  "sign-red-camels": [
+    ["What did everyone hope the night before?", "To be given the flag", "All night they wondered who it would be"],
+    ["What was wrong with Ali that morning?", "His eyes were sore", "Where is Ali? His eyes are sore"],
+    ["What did the Prophet ﷺ tell Ali to do first?", "Invite them to Islam", "Go calmly, then invite them to Islam"],
+    ["The Prophet ﷺ told Ali to rush in fast.", "False", "Go calmly, then invite them to Islam"],
+    ["One person guided through you is better than what?", "Red camels", "One guided through you is better than red camels"]
   ]
 };
 
