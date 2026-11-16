@@ -1210,6 +1210,13 @@ const STATES: State[] = [
   { id: "scene-asked-about-islam", render: () => <SceneQuestionDemo lessonId="lesson-deep-muzzammil4-five-prayers-only" ask="What did he say about more prayers" /> },
   { id: "scene-greatest-surah", render: () => <SceneQuestionDemo lessonId="lesson-deep-fatihah-greatest-surah" ask="Which surah did the Prophet" /> },
   { id: "scene-black-stone", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-black-stone" ask="Why did Umar kiss it then" /> },
+  { id: "scene-loves-al-ikhlas", render: () => <SceneQuestionDemo lessonId="lesson-deep-ikhlas-allah-loves-him" ask="Why did the man always recite" /> },
+  { id: "scene-night-with-hudhayfah", render: () => <SceneQuestionDemo lessonId="lesson-deep-qiyamah3-answering-the-ayah" ask="What did he do at ayahs of Allah's glory" /> },
+  { id: "scene-ubayy-named", render: () => <SceneQuestionDemo lessonId="lesson-deep-bayyinah1-ubayy-wept" ask="What did Ubayy ask" /> },
+  { id: "scene-six-of-shawwal", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-ayyub-six-of-shawwal" ask="How many days of Shawwal" /> },
+  { id: "scene-six-rights", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-six-rights" ask="Your friend is ill" /> },
+  { id: "scene-the-warner", render: () => <SceneQuestionDemo lessonId="lesson-deep-hijr4-a-plain-warner" ask="What happened to those who obeyed the warner" /> },
+  { id: "scene-firm-and-kind", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-mother" ask="What should you do if a parent orders shirk" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

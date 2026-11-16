@@ -3334,6 +3334,72 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Umar believed the stone had power.", "False", "I know that you are a stone", "You neither harm nor benefit"],
     ["Why did Umar kiss the Black Stone?", "He saw the Prophet ﷺ do it", "Had I not seen him kiss you"],
     ["Why did Umar kiss it then?", "He saw the Prophet ﷺ kiss it", "Had I not seen him kiss you"]
+  ],
+  // He sent a man in charge of a party, who ended his recitation with Say: He is Allah, One; because it describes the
+  // Most Merciful, and I love to recite it. Tell him that Allah loves him (Sahih al-Bukhari 7375). (Who told the story,
+  // and what ayahs 3-4 say, stay on their usual picture.)
+  "sign-loves-al-ikhlas": [
+    ["Why did the man always recite Al-Ikhlas?", "It describes Allah, and he loved it", "Because it describes the Most Merciful", "And I love to recite it"],
+    ["What did the Prophet ﷺ say of the man who loved it?", "Allah loves him", "Tell him that Allah loves him"],
+    ["What did the Prophet ﷺ say about him?", "Tell him that Allah loves him", "Tell him that Allah loves him"]
+  ],
+  // Hudhayfah prayed with him one night: he recited slowly; at an ayah of glory he glorified, at an asking he asked, at
+  // refuge he sought refuge; then he bowed: Glory be to my Lord, the Most Great (Sahih Muslim 772). (What he said in
+  // sujud stays on its usual picture: the scene ends at his bowing.)
+  "sign-night-with-hudhayfah": [
+    ["What did he do at ayahs of Allah's glory?", "Glorified Allah", "At an ayah of glory, he glorified"],
+    ["What did he do at ayahs about asking Allah?", "He asked Allah", "At an asking he asked; at refuge, he sought refuge"],
+    ["At ayahs of protection, he sought Allah's protection.", "True", "At an asking he asked; at refuge, he sought refuge"],
+    ["In ____, we bow and say Subhana Rabbiyal Azim.", "ruku", "He bowed: Glory be to my Lord, the Most Great"],
+    ["In ruku, we bow and say Subhana Rabbiyal Azim.", "True", "He bowed: Glory be to my Lord, the Most Great"],
+    ["What did the Prophet ﷺ say in ruku?", "Glory be to my Mighty Lord", "He bowed: Glory be to my Lord, the Most Great"],
+    ["We glorify Allah the Most Great in ruku.", "True", "He bowed: Glory be to my Lord, the Most Great"]
+  ],
+  // Allah has ordered me to recite to you Lam yakun; did He name me? Yes; and he wept (Sahih al-Bukhari 4959). (To
+  // whom he was told to recite, by name, and what ayahs 1-5 say, stay on their usual picture.)
+  "sign-ubayy-named": [
+    ["What did Ubayy ask?", "Did Allah mention me by name?", "Did He name me?"],
+    ["Ubayy wept when he heard the answer.", "True", "And he wept"]
+  ],
+  // Whoever fasts Ramadan, then follows it with six of Shawwal, it is like fasting all the time (Sahih Muslim 1164).
+  // (Fasting on the day of Eid stays on its usual picture.)
+  "sign-six-of-shawwal": [
+    ["Shawwal comes right after Ramadan.", "True", "Then follows it with six of Shawwal"],
+    ["How many days of Shawwal are in the hadith?", "Six", "Then follows it with six of Shawwal"],
+    ["How many fasts in Shawwal does the hadith mention?", "Six", "Then follows it with six of Shawwal"],
+    ["What is the reward like?", "Fasting all the time", "It is like fasting all the time"],
+    ["What is the reward like?", "Fasting forever", "It is like fasting all the time"]
+  ],
+  // A Muslim's rights on a Muslim are six: greet him, answer him, advise him, ask mercy for him when he sneezes and
+  // praises Allah, visit him when he is ill, and follow him when he dies (Sahih Muslim 2162b). (Which is not one of
+  // the six stays on its usual picture.)
+  "sign-six-rights": [
+    ["How many rights did the Prophet ﷺ name, of one Muslim over another?", "Six", "A Muslim's rights on a Muslim are six"],
+    ["How many rights does a Muslim have over another in Muslim 2162?", "Six", "A Muslim's rights on a Muslim are six"],
+    ["When a Muslim asks your advice, give it sincerely.", "True", "When he asks your advice, advise him"],
+    ["Your friend is ill. Which right does he have?", "That you visit him", "When he is ill, visit him"],
+    ["Your classmate is sick at home. Which right fits?", "Visit him", "When he is ill, visit him"]
+  ],
+  // Like a man who came to a people: I saw the army with my own eyes; I am the warner, save yourselves! Some obeyed
+  // and were saved, some denied him, and the army swept them away (Sahih al-Bukhari 6482). (What he is told to say in
+  // 15:89, and Ibn Kathir on 53:56, stay on their usual picture.)
+  "sign-the-warner": [
+    ["What did the man in the hadith see?", "An army coming", "I saw the army with my own eyes"],
+    ["What did the warner see, per Bukhari 6482?", "Enemy forces", "I saw the army with my own eyes"],
+    ["What happened to those who obeyed the warner?", "They were safe", "Some obeyed and left by night, and were saved"],
+    ["What happened to those who obeyed?", "They were safe", "Some obeyed and left by night, and were saved"]
+  ],
+  // Sa'd's mother swore never to speak to him until he disbelieved, nor eat nor drink; then 29:8 and 31:15 were
+  // revealed: do not obey them in shirk, but keep company with them kindly (Sahih Muslim 1748c). (Where Sa'd grew up
+  // stays on its usual picture.)
+  "sign-firm-and-kind": [
+    ["When Sa'd became Muslim, his ____ refused to eat.", "mother", "Sa'd's mother swore never to speak to him", "Nor would she eat or drink"],
+    ["What did she want Sa'd to do, in the hadith?", "Abandon his faith", "Until he disbelieved in his religion"],
+    ["What did Sa'd's mother do to make him leave Islam?", "Refused to eat or drink", "Nor would she eat or drink"],
+    ["What did Sa'd's mother refuse, in the hadith?", "To eat or drink", "Nor would she eat or drink"],
+    ["Ayah 29:8 was revealed about Sa'd.", "True", "And We enjoined on man goodness to his parents", "But if they strive to make you join with Me"],
+    ["What did Allah reveal about her?", "Do not obey parents in shirk, but be kind", "And We enjoined on man goodness to his parents", "Keep company with them in this world kindly"],
+    ["What should you do if a parent orders shirk?", "Refuse, and stay kind to them", "And We enjoined on man goodness to his parents", "Keep company with them in this world kindly"]
   ]
 };
 
