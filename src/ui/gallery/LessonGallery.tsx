@@ -1153,6 +1153,14 @@ const STATES: State[] = [
   { id: "scene-ready-for-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-jumuah-get-ready" ask="What is forgiven for doing it all" /> },
   { id: "scene-right-on-servants", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-tawhid-allahs-right" ask="What is the servants' right on Allah" /> },
   { id: "scene-pray-as-you-saw", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayerlive-pray-as-me" ask="Who did he say should lead" /> },
+  // A question on each scene of what he taught ﷺ of the heart and the Quran (round 97).
+  { id: "scene-gentleness", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-heart-gentle" ask="What does gentleness get" /> },
+  { id: "scene-looks-at-hearts", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj2-allah-looks-at-hearts" ask="What does Allah look at" /> },
+  { id: "scene-best-forgiveness", render: () => <SceneQuestionDemo lessonId="lesson-deep-nuh2-best-istighfar" ask="What is promised to one" /> },
+  { id: "scene-ten-blessings", render: () => <SceneQuestionDemo lessonId="lesson-deep-meet-the-quran-blessings-on-him" ask="How many blessings does Allah send" /> },
+  { id: "scene-friday-fajr", render: () => <SceneQuestionDemo lessonId="lesson-deep-sajdah1-friday-fajr-surah" ask="Which surah came with it" /> },
+  { id: "scene-learn-from-four", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-learn-from-four" ask="Who was named first" /> },
+  { id: "scene-young-ibn-abbas", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-ibn-abbas" ask="What did Ibn Abbas say the surah" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

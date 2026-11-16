@@ -2720,6 +2720,86 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How should a Muslim pray?", "As the Prophet ﷺ prayed", "Pray as you have seen me pray"],
     ["The Prophet ﷺ said: pray as you have seen me praying.", "True", "Pray as you have seen me pray"],
     ["Who did he say should lead their prayer?", "The eldest", "One of you calls the adhan, the eldest leads"]
+  ],
+  // O Aishah, Allah is Gentle and loves gentleness, and He gives for gentleness what He does not give for harshness,
+  // nor for anything else besides it (Sahih Muslim 2593). (Whom he said it to is also asked of another hadith, at home
+  // over dates, so it stays on its usual picture, and so does what 3:159 says.)
+  "sign-gentleness": [
+    ["What does Allah love, says this hadith?", "Gentleness", "And He loves gentleness"],
+    ["What does gentleness get that harshness doesn't?", "What Allah gives for it", "He gives for gentleness", "What He does not give for harshness"],
+    ["Being gentle is a weakness.", "False", "And He loves gentleness", "He gives for gentleness"],
+    ["What does Allah love?", "Kindness", "And He loves gentleness"],
+    ["Allah gives more for kindness than for harshness.", "True", "He gives for gentleness", "What He does not give for harshness"]
+  ],
+  // Allah does not look at your bodies nor at your faces, but He looks at your hearts, and he pointed with his fingers
+  // to his chest (Sahih Muslim 2564b). (Not looking down on a brother is not in the scene.)
+  "sign-looks-at-hearts": [
+    ["What does Allah look at, per the hadith?", "Our hearts", "But He looks at your hearts"],
+    ["Where did the Prophet ﷺ point when speaking of piety?", "To his chest", "And he pointed to his chest"],
+    ["Allah judges us by how we look.", "False", "Allah does not look at your bodies", "But He looks at your hearts"],
+    ["What does Allah look at, per Muslim 2564?", "Our hearts", "But He looks at your hearts"],
+    ["Where did he ﷺ point when speaking of piety?", "His chest", "And he pointed to his chest"],
+    ["What does Allah look to?", "Our hearts", "But He looks at your hearts"],
+    ["Where did the Prophet ﷺ point?", "Toward the heart", "And he pointed to his chest"],
+    ["Allah judges us by our looks.", "False", "Allah does not look at your bodies", "But He looks at your hearts"]
+  ],
+  // The best way to ask forgiveness is to say: O Allah, You are my Lord, no god but You; You created me, and I am Your
+  // slave; I admit Your favor on me and admit my sin, so forgive me, for none forgives sins but You. Whoever says it by
+  // day, sure of it, and dies that day before evening is of the people of Paradise (Sahih al-Bukhari 6306). (Saying it
+  // at night is not in the scene.)
+  "sign-best-forgiveness": [
+    ["What did the Prophet ﷺ call this dua?", "The master of asking forgiveness", "The best way to ask forgiveness is to say"],
+    ["Someone says it in the day with firm faith and dies before evening. Where are they?", "Among the people of Paradise", "Before evening, is of the people of Paradise"],
+    ["In this dua you admit your sins to Allah.", "True", "I admit Your favor on me, and admit my sin"],
+    ["How does Sayyid al-Istighfar begin?", "Allahumma anta Rabbi", "O Allah, You are my Lord, no god but You"],
+    ["What is promised to one who says it with faith and dies that day?", "He is of the people of Paradise", "Before evening, is of the people of Paradise"],
+    ["How must it be said to earn the reward?", "With firm faith", "Who says it by day, sure, and dies that day"]
+  ],
+  // Whoever sends blessings on me once, Allah sends blessings on him ten times (Sahih Muslim 408). (Which words send
+  // them, what the sign after his name stands for, what 33:56 says, and what Abu al-Aliyah and Ibn Kathir explain stay
+  // on their usual picture.)
+  "sign-ten-blessings": [
+    ["Send one salawat on the Prophet ﷺ. How many blessings does Allah send you?", "Ten", "Allah sends blessings on him ten times"],
+    ["How many blessings for one Salah, in the hadith?", "Ten", "Allah sends blessings on him ten times"],
+    ["How many blessings does Allah send for one?", "Ten", "Allah sends blessings on him ten times"],
+    ["Sending blessings on the Prophet ﷺ brings blessings back to you.", "True", "Allah sends blessings on him ten times"]
+  ],
+  // On Friday, in the Fajr prayer, he recited Alif Lam Mim Tanzil, as-Sajdah, and Hal ata 'ala al-insan (Sahih
+  // al-Bukhari 891). (The letters 32:1 opens with and the words al-Insan begins with stay on their usual picture.)
+  "sign-friday-fajr": [
+    ["In which prayer did he recite it, in the hadith?", "Fajr on Friday", "On Friday, in the Fajr prayer"],
+    ["Which surah came with it, in the hadith?", "Al-Insan", "And Hal ata 'ala al-insan"],
+    ["In which prayer did he recite Al-Insan?", "Fajr on Friday", "On Friday, in the Fajr prayer"],
+    ["Which surah did he recite with it?", "As-Sajdah", "He recited Alif Lam Mim Tanzil, as-Sajdah"]
+  ],
+  // Abdullah ibn Amr said of Ibn Mas'ud: a man I still love, since I heard him say: learn to recite the Quran from
+  // four, from Abdullah ibn Mas'ud, and he began with him, from Salim, freed slave of Abu Hudhayfah, from Ubayy ibn
+  // Ka'b and from Mu'adh ibn Jabal (Sahih al-Bukhari 3758).
+  "sign-learn-from-four": [
+    ["Who was named first of the four to learn the Quran from?", "Abdullah ibn Mas'ud", "Abdullah ibn Mas'ud, and he began with him"],
+    ["Which of these was also one of the four?", "Mu'adh ibn Jabal", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
+    ["How many teachers of the Quran did the Prophet ﷺ name?", "Four", "Learn to recite the Quran from four"],
+    ["How many people did the Prophet ﷺ name to learn the Quran from?", "Four", "Learn to recite the Quran from four"],
+    ["Who was NOT one of the four?", "Abu Hurairah", "Abdullah ibn Mas'ud, and he began with him", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
+    ["The Prophet ﷺ trusted Mu'adh to teach the Quran.", "True", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
+    ["Whose name came first among the four Quran teachers?", "Abdullah ibn Mas'ud", "Abdullah ibn Mas'ud, and he began with him"],
+    ["Which of these was NOT one of the four?", "Abu Hurayrah", "Abdullah ibn Mas'ud, and he began with him", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
+    ["The Prophet ﷺ chose Ibn Mas'ud as a teacher of the Quran.", "True", "Abdullah ibn Mas'ud, and he began with him"]
+  ],
+  // Umar brought Ibn Abbas in with the elders of Badr, and some asked why him, when they had sons like him. He asked
+  // them about When Allah's help comes: some said we are told to praise Him and ask forgiveness, and some kept quiet;
+  // Ibn Abbas said it was the end of his life, made known to him, and Umar said: I know of it only what you say (Sahih
+  // al-Bukhari 4970).
+  "sign-young-ibn-abbas": [
+    ["Why did Umar seat young Ibn Abbas with the elders?", "For his knowledge", "I said: it is his life's end, made known to him", "Umar said: I know of it only what you say"],
+    ["Which surah did Umar ask the elders about?", "An-Nasr", "He asked about: When Allah's help comes"],
+    ["What did Ibn Abbas say the surah was telling?", "The Prophet's ﷺ death was near", "I said: it is his life's end, made known to him"],
+    ["Why did Umar seat young Ibn Abbas with the elders of Badr?", "Because of his knowledge", "I said: it is his life's end, made known to him", "Umar said: I know of it only what you say"],
+    ["Which surah did Umar ask them about?", "An-Nasr", "He asked about: When Allah's help comes"],
+    ["Umar agreed with Ibn Abbas's meaning of the surah.", "True", "Umar said: I know of it only what you say"],
+    ["Whom did Umar seat Ibn Abbas with?", "The elders of Badr", "Umar brought me in with the elders of Badr"],
+    ["What did Ibn Abbas say the surah signaled?", "The end of the Prophet's ﷺ life", "I said: it is his life's end, made known to him"],
+    ["Umar disagreed with Ibn Abbas.", "False", "Umar said: I know of it only what you say"]
   ]
 };
 
