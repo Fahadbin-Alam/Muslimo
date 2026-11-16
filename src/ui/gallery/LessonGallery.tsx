@@ -1245,6 +1245,13 @@ const STATES: State[] = [
   { id: "scene-one-sheet", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-food-on-one-leather-sheet" ask="What did he ﷺ do before the people took the food" /> },
   { id: "scene-never-faulted", render: () => <SceneQuestionDemo lessonId="lesson-deep-seerah-khuluq-food" ask="What did he ﷺ do with food he did not like" /> },
   { id: "scene-date-in-street", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-zakat-date-in-the-street" ask="Why didn't he ﷺ eat it" /> },
+  { id: "scene-suhur-two-calls", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-suhur-two-adhans" ask="Whose adhan told them to stop eating" /> },
+  { id: "scene-wool-toys", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-manners-wool-toys" ask="What did the Ansar make for their fasting children" /> },
+  { id: "scene-generous-wind", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-manners-faster-than-wind" ask="What did he ﷺ do with Jibril each night" /> },
+  { id: "scene-fast-on-a-journey", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-ease-traveler" ask="What did he ﷺ tell the traveler" /> },
+  { id: "scene-friday-alone", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-extra-friday" ask="You want to fast on a Friday. What else" /> },
+  { id: "scene-fast-with-faith", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-reward-forgiven" ask="Which two things must go with the fast" /> },
+  { id: "scene-false-speech", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-manners-false-speech" ask="Besides food and drink, what should a fasting person give up" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

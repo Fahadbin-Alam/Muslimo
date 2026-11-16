@@ -3636,6 +3636,60 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-date-in-street": [
     ["Why didn't he ﷺ eat it?", "It might be charity", "If it were not from the charity"],
     ["Being careful with doubtful things is from the Sunnah.", "True", "If it were not from the charity", "I would have eaten it"]
+  ],
+  // Bilal calls the adhan at night, so eat and drink until Ibn Umm Maktum calls the adhan; he would not call until he
+  // was told: morning has come (Sahih al-Bukhari 617). (What he was told is asked on the sky.)
+  "sign-suhur-two-calls": [
+    ["Bilal's call at night meant the fast had started.", "False", "Bilal calls the adhan at night", "So eat and drink"],
+    ["Whose adhan told them to stop eating?", "Ibn Umm Maktum's", "Until Ibn Umm Maktum calls the adhan", "Morning has come, morning has come"]
+  ],
+  // On the morning of Ashura he sent word to the villages of the Ansar; they made their little ones fast, and made them
+  // toys of wool, until it was time to break the fast (Sahih al-Bukhari 1960).
+  "sign-wool-toys": [
+    ["Children can be helped to practise fasting little by little.", "True", "We fasted, and made our little ones fast", "If one cried for food, we gave him the toy"],
+    ["What did the Ansar make for their fasting children?", "Toys of wool", "We made them toys of wool", "If one cried for food, we gave him the toy"],
+    ["When did the children get to eat?", "At the time of breaking the fast", "Until it was time to break the fast"]
+  ],
+  // He was the most generous of people, and most generous in Ramadan, when Jibril met him every night and he recited
+  // the Quran to him: more generous than the blowing wind (Sahih al-Bukhari 1902).
+  "sign-generous-wind": [
+    ["When was he ﷺ at his most generous?", "In Ramadan", "And most generous in Ramadan"],
+    ["Who met him ﷺ every night of Ramadan?", "Jibril", "Jibril met him every night of Ramadan"],
+    ["What did he ﷺ do with Jibril each night?", "Recite the Quran to him", "He recited the Quran to him"]
+  ],
+  // Shall I fast on a journey? Fast if you wish, or do not (Sahih al-Bukhari 1943); on journeys, one fasting did not
+  // blame one not fasting, nor the other way (Sahih al-Bukhari 1947). (Who asked and who narrated stay on their usual
+  // picture: the scene's words do not name them; and so does making up the days, which the scene does not show.)
+  "sign-fast-on-a-journey": [
+    ["What did he ﷺ tell the traveler?", "Fast or not, as you wish", "Fast if you wish, or do not if you wish"],
+    ["A traveler may choose to fast or not, and is not blamed.", "True", "Fast if you wish, or do not if you wish", "One fasting did not blame one not fasting"],
+    ["On journeys, did they blame each other about fasting?", "No, never", "One fasting did not blame one not fasting", "Nor one not fasting blame one fasting"]
+  ],
+  // Did he forbid fasting on Friday? Yes (Sahih al-Bukhari 1984); none of you should fast on Friday, unless with a day
+  // before it or after it (Sahih al-Bukhari 1985). (Who answered stays on its usual picture: the words do not name him.)
+  "sign-friday-alone": [
+    ["Which day should not be fasted alone?", "Friday", "Did he forbid fasting on Friday? Yes", "None of you should fast on Friday"],
+    ["Which day should not be fasted on its own?", "Friday", "Did he forbid fasting on Friday? Yes", "None of you should fast on Friday"],
+    ["The warning is about fasting Friday on its own.", "True", "None of you should fast on Friday", "Unless with a day before it"],
+    ["Fasting Thursday and Friday together is fine.", "True", "Unless with a day before it"],
+    ["You want to fast on a Friday. What else?", "Fast the day before or after", "Unless with a day before it", "Or a day after it"]
+  ],
+  // Whoever fasts Ramadan out of faith and hoping for its reward, his past sins are forgiven (Sahih al-Bukhari 38).
+  "sign-fast-with-faith": [
+    ["How should you fast Ramadan?", "With faith", "Out of faith"],
+    ["Which two things must go with the fast?", "Faith and hoping for reward", "Out of faith", "And hoping for its reward"],
+    ["Fasting only to look good gets the same promise.", "False", "Out of faith", "His past sins are forgiven"],
+    ["Fasting Ramadan with faith and hope brings what?", "Past sins forgiven", "His past sins are forgiven"],
+    ["What does Allah forgive for whoever fasts this way?", "Their past sins", "His past sins are forgiven"]
+  ],
+  // Whoever does not leave false speech and acting on it, Allah has no need of his leaving his food and drink (Sahih
+  // al-Bukhari 1903).
+  "sign-false-speech": [
+    ["Besides food and drink, what should a fasting person give up?", "Lying and bad deeds", "Whoever does not leave false speech", "And acting on it"],
+    ["Besides food and drink, what should a fasting person leave?", "Lies and bad deeds", "Whoever does not leave false speech", "And acting on it"],
+    ["A real fast keeps the tongue clean too.", "True", "Whoever does not leave false speech", "Allah has no need"],
+    ["If you fast, it is fine to tell lies.", "False", "Whoever does not leave false speech", "Allah has no need"],
+    ["Whose hunger does Allah have no need of?", "The one who keeps lying and doing wrong", "Whoever does not leave false speech", "That he leave his food and drink"]
   ]
 };
 
