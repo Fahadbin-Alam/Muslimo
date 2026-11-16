@@ -583,7 +583,14 @@ export type SignKind =
   | "the-garden-gate"
   | "ship-to-abyssinia"
   | "ten-years-serving"
-  | "greet-first";
+  | "greet-first"
+  | "farewell-sermon"
+  | "recite-to-me"
+  | "richness-of-the-soul"
+  | "the-neighbor"
+  | "closest-in-sujud"
+  | "accepts-only-good"
+  | "mercy-on-musa";
 
 export type SignScene = {
   id: string;
@@ -2054,6 +2061,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Ayyub al-Ansari said: the Messenger of Allah ﷺ said: it is not lawful for a man to cut off his brother for more than three nights, when they meet and this one turns away and that one turns away; and the better of the two is the one who greets the other first.",
     sources: [bukhari("6077")]
+  },
+  {
+    id: "sign-farewell-sermon",
+    kind: "farewell-sermon",
+    caption:
+      "Jabir ibn Abdullah said: at Arafah, the Messenger of Allah ﷺ came to the bottom of the valley and addressed the people: your blood and your wealth are sacred to you, like the sacredness of this day of yours, in this month of yours, in this town of yours. Fear Allah concerning women; their right upon you is their food and their clothing, in a fitting manner. You will be asked about me, so what will you say? They said: we bear witness that you have conveyed, fulfilled and given sincere counsel. He raised his finger to the sky and pointed it at the people: O Allah, be witness; O Allah, be witness, three times.",
+    sources: [muslim("1218")]
+  },
+  {
+    id: "sign-recite-to-me",
+    kind: "recite-to-me",
+    caption:
+      "Abdullah ibn Mas'ud said: the Prophet ﷺ said to me: recite to me. I said: shall I recite to you, when it was revealed to you? He said: I love to hear it from another. So I recited Surat an-Nisa to him, until I reached its forty-first ayah, of a witness brought from every nation, and him brought as a witness over these. He said: stop. And his eyes were overflowing with tears.",
+    sources: [bukhari("4582")]
+  },
+  {
+    id: "sign-richness-of-the-soul",
+    kind: "richness-of-the-soul",
+    caption: "Abu Hurairah said: the Prophet ﷺ said: richness is not having many possessions; richness is the richness of the soul.",
+    sources: [bukhari("6446")]
+  },
+  {
+    id: "sign-the-neighbor",
+    kind: "the-neighbor",
+    caption: "Aishah said: the Prophet ﷺ said: Jibril kept on advising me about the neighbor, until I thought he would make him an heir.",
+    sources: [bukhari("6014")]
+  },
+  {
+    id: "sign-closest-in-sujud",
+    kind: "closest-in-sujud",
+    caption: "Abu Hurairah said: the Messenger of Allah ﷺ said: the nearest a servant is to his Lord is when he is in sujud, so make much du'a then.",
+    sources: [muslim("482")]
+  },
+  {
+    id: "sign-accepts-only-good",
+    kind: "accepts-only-good",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: O people, Allah is Good and accepts only what is good, and Allah commanded the believers with what He commanded the messengers. Then he mentioned one who travels long, unkempt and dusty, and lifts his hands to the sky: O Lord, O Lord; while his food is unlawful, his drink is unlawful, his clothing is unlawful, and he was fed on the unlawful. So how can he be answered?",
+    sources: [muslim("1015")]
+  },
+  {
+    id: "sign-mercy-on-musa",
+    kind: "mercy-on-musa",
+    caption:
+      "Abdullah ibn Mas'ud said: the Prophet ﷺ divided a share, and one said: this is a sharing by which the Face of Allah was not sought. I came to the Prophet ﷺ and told him, and he was angry, until I saw the anger on his face. Then he said: may Allah have mercy on Musa; he was harmed with more than this, and he was patient.",
+    sources: [bukhari("3405")]
   }
 ];
 
@@ -3370,7 +3423,35 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-qalam1-ten-years-no-uff": "sign-ten-years-serving",
   // Not cutting off a brother beyond three nights; the better of the two greets first (Sahih al-Bukhari 6077).
   "deep-abu-ayyub-three-nights": "sign-greet-first",
-  "deep-book-adab-greet-first": "sign-greet-first"
+  "deep-book-adab-greet-first": "sign-greet-first",
+  // The farewell sermon at Arafah: blood and wealth sacred, the right of women, and "O Allah, be witness" (Sahih Muslim
+  // 1218). Left out: the lesson on discipline that is not severe, which the scene does not show.
+  "deep-rights-farewell-sermon": "sign-farewell-sermon",
+  "deep-araf3-you-conveyed": "sign-farewell-sermon",
+  // "Recite to me": Ibn Mas'ud recites an-Nisa up to 4:41, and his eyes overflow with tears (Sahih al-Bukhari 4582).
+  "deep-ibnmasud-recite-to-me": "sign-recite-to-me",
+  "deep-tree-ibn-masud-recite-to-me": "sign-recite-to-me",
+  "deep-nisa1-witness": "sign-recite-to-me",
+  // Richness is not having many possessions, but the richness of the soul (Sahih al-Bukhari 6446). Left out: the lesson
+  // on Surat al-'Adiyat 100:6-11, which is about much else.
+  "deep-duha2-richness-of-the-soul": "sign-richness-of-the-soul",
+  "deep-adiyat2-real-richness": "sign-richness-of-the-soul",
+  // Jibril kept on advising him about the neighbor, until he thought he would make him an heir (Sahih al-Bukhari 6014).
+  "deep-neighbors-jibril": "sign-the-neighbor",
+  "deep-nisa1-neighbors": "sign-the-neighbor",
+  "intro-neighbors": "sign-the-neighbor",
+  // The nearest a servant is to his Lord is in sujud, so make much du'a then (Sahih Muslim 482). Left out: the lesson on
+  // Surat al-'Alaq 96:15-19, which is about much else.
+  "deep-pray-reward-closest": "sign-closest-in-sujud",
+  "deep-alaq2-closest-in-sujud": "sign-closest-in-sujud",
+  // Allah is Good and accepts only what is good; the traveller whose food, drink and clothing are unlawful (Sahih Muslim
+  // 1015). Left out: the lesson on Surat al-Mu'minun 23:51-77, which is about much else.
+  "deep-baqarah2-halal-tayyib": "sign-accepts-only-good",
+  "deep-muminun2-allah-is-good": "sign-accepts-only-good",
+  // May Allah have mercy on Musa: he was harmed with more than this, and he was patient (Sahih al-Bukhari 3405).
+  "deep-prophet-musa-patient-musa": "sign-mercy-on-musa",
+  "deep-ahzab3-be-not-like-those-who-hurt-musa": "sign-mercy-on-musa",
+  "deep-saff2-mercy-on-musa": "sign-mercy-on-musa"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
