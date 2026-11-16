@@ -653,7 +653,14 @@ export type SignKind =
   | "three-things-to-keep"
   | "asked-about-islam"
   | "greatest-surah"
-  | "black-stone";
+  | "black-stone"
+  | "loves-al-ikhlas"
+  | "night-with-hudhayfah"
+  | "ubayy-named"
+  | "six-of-shawwal"
+  | "six-rights"
+  | "the-warner"
+  | "firm-and-kind";
 
 export type SignScene = {
   id: string;
@@ -2602,6 +2609,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abis ibn Rabi'ah said: Umar came to the Black Stone and kissed it, and said: I know that you are a stone; you neither harm nor benefit. Had I not seen the Prophet ﷺ kiss you, I would not have kissed you.",
     sources: [bukhari("1597")]
+  },
+  {
+    id: "sign-loves-al-ikhlas",
+    kind: "loves-al-ikhlas",
+    caption:
+      "Aishah said: the Prophet ﷺ sent a man in charge of a party, and he would recite for his companions in their prayer and end with Say: He is Allah, One. When they came back, they told the Prophet ﷺ of it, and he said: ask him why he does so. They asked him, and he said: because it is the description of the Most Merciful, and I love to recite it. The Prophet ﷺ said: tell him that Allah loves him.",
+    sources: [bukhari("7375")]
+  },
+  {
+    id: "sign-night-with-hudhayfah",
+    kind: "night-with-hudhayfah",
+    caption:
+      "Hudhayfah said: I prayed with the Prophet ﷺ one night, and he began al-Baqarah. I said: he will bow at the hundredth ayah; but he went on. I said: he will pray it in one rak'ah; but he went on. I said: he will bow when he ends it. Then he began an-Nisa and recited it, then he began Al Imran and recited it, reciting slowly. When he passed an ayah with glorifying in it, he glorified; when he passed an asking, he asked; and when he passed a seeking of refuge, he sought refuge. Then he bowed, and began to say: Glory be to my Lord, the Most Great; and his bowing was about as long as his standing. Then he said: Allah hears the one who praises Him; then he stood a long time, near to how long he had bowed. Then he prostrated and said: Glory be to my Lord, the Most High; and his prostration was near to his standing.",
+    sources: [muslim("772")]
+  },
+  {
+    id: "sign-ubayy-named",
+    kind: "ubayy-named",
+    caption:
+      "Anas ibn Malik said: the Prophet ﷺ said to Ubayy: Allah has ordered me to recite to you Lam yakunil-ladhina kafaru. Ubayy said: and did He name me? He said: yes. And Ubayy wept.",
+    sources: [bukhari("4959")]
+  },
+  {
+    id: "sign-six-of-shawwal",
+    kind: "six-of-shawwal",
+    caption:
+      "Abu Ayyub al-Ansari said: the Messenger of Allah ﷺ said: whoever fasts Ramadan, then follows it with six of Shawwal, it is like fasting all the time.",
+    sources: [muslim("1164")]
+  },
+  {
+    id: "sign-six-rights",
+    kind: "six-rights",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: a Muslim's rights on a Muslim are six. It was said: what are they, O Messenger of Allah? He said: when you meet him, greet him; when he invites you, answer him; when he asks your advice, advise him; when he sneezes and praises Allah, ask mercy for him; when he is ill, visit him; and when he dies, follow him.",
+    sources: [muslim("2162b")]
+  },
+  {
+    id: "sign-the-warner",
+    kind: "the-warner",
+    caption:
+      "Abu Musa said: the Messenger of Allah ﷺ said: my likeness, and the likeness of what Allah sent me with, is like a man who came to a people and said: I saw the army with my own eyes, and I am the naked warner, so save yourselves, save yourselves! A group of them obeyed him, went out by night at their ease, and were saved; and a group denied him, and the army came on them in the morning and swept them away.",
+    sources: [bukhari("6482")]
+  },
+  {
+    id: "sign-firm-and-kind",
+    kind: "firm-and-kind",
+    caption:
+      "Mus'ab ibn Sa'd said, from his father, that ayat of the Quran came down about him. Sa'd's mother swore that she would never speak to him until he disbelieved in his religion, nor eat nor drink. She said: you claim that Allah has enjoined you to be good to your parents; I am your mother, and I command you to do this. She stayed so for three days, until she fainted from the strain; then a son of hers called Umarah stood and gave her drink, and she began to pray against Sa'd. Then Allah, Mighty and Majestic, sent down in the Quran this ayah: And We enjoined on man goodness to his parents, and: but if they strive to make you join with Me; and in it: and keep company with them in this world kindly.",
+    sources: [muslim("1748c")]
   }
 ];
 
@@ -4169,7 +4225,30 @@ export const SIGN_LESSONS: Record<string, string> = {
   "surah-meaning-15-80-99": "sign-greatest-surah",
   // Umar kissed the Black Stone only because he had seen the Prophet ﷺ kiss it; it neither harms nor benefits.
   "deep-hajj-black-stone": "sign-black-stone",
-  "deep-umar-black-stone": "sign-black-stone"
+  "deep-umar-black-stone": "sign-black-stone",
+  // He ended his recitation with Say: He is Allah, One, for it describes the Most Merciful; Allah loves him (112:1).
+  "surah-meaning-112-3-4": "sign-loves-al-ikhlas",
+  "deep-ikhlas-allah-loves-him": "sign-loves-al-ikhlas",
+  // Hudhayfah prayed with him one night: he recited slowly, glorified at glory, asked at asking, and bowed long.
+  "prayer-ruku-and-sujud-what-ruku-teaches": "sign-night-with-hudhayfah",
+  "deep-haqqah5-glory-in-ruku": "sign-night-with-hudhayfah",
+  "deep-qiyamah3-answering-the-ayah": "sign-night-with-hudhayfah",
+  // Allah ordered him to recite al-Bayyinah to Ubayy; did He name me? Yes; and Ubayy wept (98:1).
+  "surah-meaning-98-1-5": "sign-ubayy-named",
+  "deep-bayyinah1-ubayy-wept": "sign-ubayy-named",
+  // Whoever fasts Ramadan, then follows it with six of Shawwal, it is like fasting all the time.
+  "deep-abu-ayyub-six-of-shawwal": "sign-six-of-shawwal",
+  "deep-days-six-shawwal": "sign-six-of-shawwal",
+  // A Muslim's rights on a Muslim are six: greet him, answer him, advise him, ask mercy for him, visit him, follow him.
+  "deep-adab-six-rights": "sign-six-rights",
+  "deep-book-adab-six-rights": "sign-six-rights",
+  // He is like a man who warned his people of an army: some obeyed and were saved, some denied him (15:89, 53:56).
+  "deep-hijr4-a-plain-warner": "sign-the-warner",
+  "deep-najm3-the-urgent-warner": "sign-the-warner",
+  // Sa'd's mother swore not to speak, eat or drink until he left his faith; 29:8 and 31:15 came down: firm and kind.
+  "sahabi-sad-ibn-abi-waqqas-makkah-years": "sign-firm-and-kind",
+  "deep-sad-mother": "sign-firm-and-kind",
+  "deep-ankabut1-sad-and-his-mother": "sign-firm-and-kind"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
