@@ -576,7 +576,14 @@ export type SignKind =
   | "two-ayat-at-night"
   | "skilled-reciter"
   | "fast-of-arafah"
-  | "one-word";
+  | "one-word"
+  | "lamps-in-the-sky"
+  | "prayer-too-long"
+  | "every-one-a-shepherd"
+  | "the-garden-gate"
+  | "ship-to-abyssinia"
+  | "ten-years-serving"
+  | "greet-first";
 
 export type SignScene = {
   id: string;
@@ -1998,6 +2005,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "The Prophet ﷺ said: a servant may say a word that pleases Allah, paying it no mind, and by it Allah raises him by degrees; and a servant may say a word that angers Allah, paying it no mind, and by it he falls into Jahannam.",
     sources: [bukhari("6478")]
+  },
+  {
+    id: "sign-lamps-in-the-sky",
+    kind: "lamps-in-the-sky",
+    caption:
+      "Usayd ibn Hudayr was reciting Surat al-Baqarah at night, his horse tied beside him, when the horse was startled. He stopped, and it was quiet; he recited, and it was startled again. His son Yahya was near it, and he feared it would trample him, so he drew him away and looked up at the sky: there was something like a cloud with what looked like lamps in it. In the morning he told the Prophet ﷺ, who said: those were angels who came near to you for your voice; had you kept reciting, people would have seen them in the morning, not hidden from them.",
+    sources: [bukhari("5018")]
+  },
+  {
+    id: "sign-prayer-too-long",
+    kind: "prayer-too-long",
+    caption:
+      "Jabir ibn Abdullah said: a man came with two camels as night was falling, and found Mu'adh praying, so he joined him. Mu'adh recited Surat al-Baqarah or an-Nisa, so the man left. He heard that Mu'adh had spoken against him, so he came to the Prophet ﷺ and complained of Mu'adh. The Prophet ﷺ said three times: O Mu'adh, are you putting people to trial? Why did you not recite al-A'la, ash-Shams or al-Layl? For the old, the weak and the needy pray behind you.",
+    sources: [bukhari("705")]
+  },
+  {
+    id: "sign-every-one-a-shepherd",
+    kind: "every-one-a-shepherd",
+    caption:
+      "Ibn Umar said: I heard the Messenger of Allah ﷺ say: each of you is a shepherd, and each of you is responsible for his flock. The leader is a shepherd and responsible for his people; a man is a shepherd of his family and responsible for them; a woman is a shepherd of her husband's home and responsible for it; and a servant is a shepherd of his master's wealth and responsible for it.",
+    sources: [bukhari("893")]
+  },
+  {
+    id: "sign-the-garden-gate",
+    kind: "the-garden-gate",
+    caption:
+      "Abu Musa said: I was with the Prophet ﷺ in one of the gardens of Madinah, when a man came and asked me to open the gate. The Prophet ﷺ said: open for him, and give him the good news of Paradise. I opened for him, and it was Abu Bakr; I told him what the Prophet ﷺ had said, and he praised Allah. Then another came and asked, and he ﷺ said the same; it was Umar, and he praised Allah. Then another asked, and he ﷺ said: open for him, and give him the good news of Paradise, with a calamity that will strike him. It was Uthman; he praised Allah and said: Allah's help is sought.",
+    sources: [bukhari("3693")]
+  },
+  {
+    id: "sign-ship-to-abyssinia",
+    kind: "ship-to-abyssinia",
+    caption:
+      "Abu Musa said: the news of the Prophet's ﷺ migration reached us while we were in Yemen, so we set out to him, more than fifty of our people, and boarded a ship. Our ship took us to the Negus in Abyssinia, and there we found Ja'far ibn Abi Talib and his companions. Ja'far said: the Messenger of Allah ﷺ sent us here and told us to stay, so stay with us. We stayed with him until we all left together, and we met the Prophet ﷺ when he had conquered Khaybar. He gave us a share of it; he gave none who had not been at Khaybar but the people of our ship, with Ja'far and his companions.",
+    sources: [bukhari("3136")]
+  },
+  {
+    id: "sign-ten-years-serving",
+    kind: "ten-years-serving",
+    caption:
+      "Anas said: when the Messenger of Allah ﷺ came to Madinah, he had no servant. Abu Talhah took me to him and said: O Messenger of Allah, Anas is a wise boy, so let him serve you. So I served him at home and on journeys. I served the Prophet ﷺ for ten years, and he never said to me uff, nor: why did you do so, or why did you not do so?",
+    sources: [bukhari("2768"), bukhari("6038")]
+  },
+  {
+    id: "sign-greet-first",
+    kind: "greet-first",
+    caption:
+      "Abu Ayyub al-Ansari said: the Messenger of Allah ﷺ said: it is not lawful for a man to cut off his brother for more than three nights, when they meet and this one turns away and that one turns away; and the better of the two is the one who greets the other first.",
+    sources: [bukhari("6077")]
   }
 ];
 
@@ -3288,7 +3344,33 @@ export const SIGN_LESSONS: Record<string, string> = {
   // One word that pleases Allah raises a servant, and one that angers Him makes him fall (Sahih al-Bukhari 6478).
   // Left out: the lesson on Surat Qaf 50:16-29, which is about much else.
   "deep-hujurat1-one-small-word": "sign-one-word",
-  "deep-qaf2-one-word-pleases-allah": "sign-one-word"
+  "deep-qaf2-one-word-pleases-allah": "sign-one-word",
+  // Usayd's recitation at night, his startled horse and the cloud with lamps in it (Sahih al-Bukhari 5018). Left out:
+  // the notes on Usayd's life.
+  "deep-usayd-the-horse": "sign-lamps-in-the-sky",
+  "deep-usayd-lamps-in-the-sky": "sign-lamps-in-the-sky",
+  // The prayer Mu'adh made too long, and the short surahs he ﷺ named (Sahih al-Bukhari 705). Left out: the lesson on
+  // Surat ash-Shams 91:1-10, which is about much else.
+  "deep-muadh-long-prayer": "sign-prayer-too-long",
+  "deep-shams1-a-short-surah-for-prayer": "sign-prayer-too-long",
+  // Each of you is a shepherd, responsible for his flock (Sahih al-Bukhari 893). Left out: the lesson on Surat
+  // at-Tahrim 66:1-7, which is about much else.
+  "deep-spouses-shepherds": "sign-every-one-a-shepherd",
+  "deep-tahrim2-everyone-is-a-guardian": "sign-every-one-a-shepherd",
+  // The garden gate opened with good news of Paradise for Abu Bakr, Umar and Uthman (Sahih al-Bukhari 3693).
+  "deep-umar-garden-gate": "sign-the-garden-gate",
+  "deep-uthman-gate": "sign-the-garden-gate",
+  // The ship from Yemen to Abyssinia, Ja'far's "stay with us", and the share at Khaybar (Sahih al-Bukhari 3136).
+  "deep-jafar-abyssinia": "sign-ship-to-abyssinia",
+  "deep-jafar-khaybar": "sign-ship-to-abyssinia",
+  // Anas brought to serve him, and ten years without one "uff" (Sahih al-Bukhari 2768, 6038).
+  "deep-anas-brought": "sign-ten-years-serving",
+  "deep-abu-talhah-anas-serves": "sign-ten-years-serving",
+  "deep-anas-never-uff": "sign-ten-years-serving",
+  "deep-qalam1-ten-years-no-uff": "sign-ten-years-serving",
+  // Not cutting off a brother beyond three nights; the better of the two greets first (Sahih al-Bukhari 6077).
+  "deep-abu-ayyub-three-nights": "sign-greet-first",
+  "deep-book-adab-greet-first": "sign-greet-first"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
