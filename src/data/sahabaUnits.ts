@@ -256,7 +256,7 @@ const TALHAH: DeepUnit = {
       source: hadith("muslim", "2417", "Abu Hurairah", "Sahih", "Hira shook; the Prophet ﷺ said: be still, there is none on you but a prophet, a siddiq and martyrs. Talhah and Zubayr were with him."),
       difficulty: 4,
       questions: [
-        { q: "Which mountain shook under them?", a: "Hira", wrong: ["Uhud", "Thawr", "Arafah"], why: "They were on Mount Hira." },
+        { q: "Which mountain shook under them?", a: "Hira", wrong: ["Safa", "Thawr", "Arafah"], why: "They were on Mount Hira." },
         { q: "What did the Prophet ﷺ tell the mountain?", a: "Be still", wrong: ["Grow taller", "Move away", "Speak"], why: "He told it to be calm." },
         { q: "What did he say was on the mountain?", a: "A prophet, a siddiq and martyrs", wrong: ["Only kings", "Only traders", "Only angels"], why: "Talhah and Zubayr were among the martyrs." }
       ]
