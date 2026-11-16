@@ -100,7 +100,7 @@ const SAFF_ONE: DeepUnit = {
       questions: [
         { q: "What did scholars of the Salaf say about promises?", a: "They must be kept", wrong: ["They are optional", "Only big ones count", "Only written ones count"], why: "It is necessary to fulfill the promise." },
         { q: "Does a promise need to involve money to count?", a: "No, every promise counts", wrong: ["Yes, always", "Only gold counts", "Only land counts"], why: "Regardless of whether the promise includes some type of wealth for the person receiving the promise or otherwise." },
-        { tf: true, q: "A small promise to a friend can be broken freely.", why: "It is necessary to fulfill the promise, regardless of whether the promise includes some type of wealth." }
+        { tf: false, q: "A small promise to a friend can be broken freely.", why: "It is necessary to fulfill the promise, whether or not it includes some wealth." }
       ]
     },
     {
@@ -198,7 +198,7 @@ const SAFF_ONE: DeepUnit = {
       questions: [
         { q: "Who said 61:2 warned the boasters?", a: "Qatadah and Ad-Dahhak", wrong: ["Ibn Sirin and Malik", "Abu Lahab and Qarun", "Shafi and Ahmad"], why: "Qatadah and Ad-Dahhak said that this Ayah was sent down to admonish some people." },
         { q: "What was wrong with their claims?", a: "They had not done it", wrong: ["They spoke too softly", "They spoke Arabic", "They were too short"], why: "Even though they did not do any of it." },
-        { tf: true, q: "Claiming good deeds you did not do is fine.", why: "This Ayah was sent down to admonish some people who used to say things they did not do." }
+        { tf: false, q: "Claiming good deeds you did not do is fine.", why: "This Ayah was sent down to admonish some people who used to say things they did not do." }
       ]
     },
     {
@@ -337,7 +337,7 @@ const SAFF_TWO: DeepUnit = {
       questions: [
         { q: "What happened after they turned away, in 61:5?", a: "Allah turned their hearts away", wrong: ["They became kings", "They found gold", "Nothing changed"], why: "So, when they turned away, Allah turned their hearts away." },
         { q: "Did they know the guidance was true?", a: "Yes, they knew it", wrong: ["No, never", "They never heard it", "Only a few heard"], why: "When the Jews turned away from following the guidance, even though they knew it." },
-        { tf: true, q: "Turning from truth you know has no effect on the heart.", why: "Allah turned their hearts away from the guidance. Instead, Allah placed doubts, suspicion and failure in their hearts." }
+        { tf: false, q: "Turning from truth you know has no effect on the heart.", why: "Allah turned their hearts away from the guidance. Instead, Allah placed doubts, suspicion and failure in their hearts." }
       ]
     },
     {
@@ -519,7 +519,7 @@ const SAFF_TWO: DeepUnit = {
       questions: [
         { q: "What do they try to put out, in 61:8?", a: "The Light of Allah", wrong: ["A fire", "A lamp", "The stars"], why: "They intend to put out the Light of Allah with their mouths." },
         { q: "What is their attempt like, per Ibn Kathir?", a: "Blowing out the sun", wrong: ["Moving a hill", "Catching wind", "Counting sand"], why: "Similar to one's attempt to extinguish the sun with his mouth, which is impossible." },
-        { tf: true, q: "Falsehood can put out the truth for good.", why: "Their attempts are similar to one's attempt to extinguish the sun with his mouth, which is impossible." }
+        { tf: false, q: "Falsehood can put out the truth for good.", why: "Their attempt is like trying to blow out the sun with one's mouth, which is impossible." }
       ]
     },
     {
@@ -616,7 +616,7 @@ const SAFF_THREE: DeepUnit = {
       questions: [
         { q: "What is the trade of 61:11 better than?", a: "The trade of this life", wrong: ["Nothing at all", "Only sleep", "Only games"], why: "This is better than the trade of this life and striving hard for it and amassing it." },
         { q: "What does amassing mean?", a: "Piling up", wrong: ["Giving away", "Losing", "Forgetting"], why: "Striving hard for it and amassing it." },
-        { tf: true, q: "Ibn Kathir says worldly trade is better.", why: "This is better than the trade of this life." }
+        { tf: false, q: "Ibn Kathir says worldly trade is better.", why: "This is better than the trade of this life." }
       ]
     },
     {

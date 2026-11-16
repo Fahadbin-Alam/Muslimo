@@ -74,6 +74,19 @@ describe("the meaning of whole surahs", () => {
     expect(second.challenges[2].explanation).toBe(second.learnLine);
   });
 
+  it("never asks a false line that is also true of the passage: An-Nur 58-61 asks permission and greets", () => {
+    const nur = LESSONS_BY_ID["lesson-surah-meaning-24-58-61"];
+    expect(answerOf(nur.id, 2)).toBe("False");
+    expect(nur.challenges[2].prompt).toBe("Ayahs 58-61 say: Allah is the Light of the heavens and earth: light upon light.");
+    // A false line a passage names is always another passage's line of the same surah, so it is already translated.
+    for (const surah of SURAH_MEANINGS) {
+      for (const passage of surah.passages.filter((each) => each.falseLine)) {
+        const lines = surah.passages.filter((each) => each !== passage).map((each) => each.line);
+        expect({ surah: surah.surah, at: passage.at, borrowed: lines.includes(passage.falseLine!) }).toEqual({ surah: surah.surah, at: passage.at, borrowed: true });
+      }
+    }
+  });
+
   it("puts all 286 ayahs of Al-Baqarah in its unit, its topics among them, with reviews and a final quiz", () => {
     const nodes = quran.nodes.filter((node) => node.branchId === "quran-surah-baqarah");
     const meaning = nodes.filter((node) => node.id.startsWith("surah-meaning-2-"));
