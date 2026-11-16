@@ -3493,6 +3493,19 @@ const QURAN_VIRTUES: DeepUnit = {
         { q: "Until when did revelation keep coming, Anas said?", a: "Until Allah took him ﷺ", wrong: ["Until he ﷺ left Makkah", "Until he ﷺ reached Madinah", "Until he ﷺ turned fifty"], why: "Revelation kept coming until Allah took him, and then the Messenger of Allah ﷺ died." },
         { q: "Revelation stopped long before his ﷺ death.", tf: false, why: "No. Allah sent it one part after another until He took him ﷺ, Anas said." }
       ]
+    },
+    {
+      slug: "seven-ways",
+      title: "Recited in seven ways",
+      line: "Jibril recited the Quran to him ﷺ in seven different ways.",
+      facts: ["Told by Ibn Abbas", "First it was recited in one way", "He ﷺ kept asking for more"],
+      source: hadith("bukhari", "4991", "Abdullah ibn Abbas", "Sahih", "Ibn Abbas said: the Messenger of Allah ﷺ said: Jibril recited the Quran to me in one way. I asked him for another, and kept asking him for more, and he recited it in more ways, until in the end he recited it in seven different ways.", "till he ultimately recited it in seven different ways"),
+      difficulty: 3,
+      questions: [
+        { q: "In how many ways did Jibril recite the Quran in the end?", a: "Seven ways", wrong: ["Four ways", "Ten ways", "Forty ways"], why: "He kept reciting it in more ways, till he ultimately recited it in seven different ways." },
+        { q: "Who kept asking Jibril for more ways of reciting?", a: "The Prophet ﷺ", wrong: ["Abu Bakr", "Umar", "Ibn Abbas"], why: "He ﷺ continued asking him to recite it in other ways, and he recited it in several ways." },
+        { q: "At first, Jibril recited the Quran to him ﷺ in one way.", tf: true, why: "Jibril recited it to me in one way, then in more ways until seven, he ﷺ said." }
+      ]
     }
   ]
 };

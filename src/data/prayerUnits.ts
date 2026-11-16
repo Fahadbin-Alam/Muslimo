@@ -275,6 +275,19 @@ const JUMUAH: DeepUnit = {
       ]
     },
     {
+      slug: "like-a-warner",
+      title: "Like a warner at dawn",
+      line: "In his khutbah, he ﷺ was like one warning of an enemy.",
+      facts: ["Told by az-Zubair or Ali", "He reminded them of the days of Allah", "He smiled only after Jibril left"],
+      source: hadith("ahmad", "1437", "Az-Zubair or Ali", "Hasan (Darussalam)", "The Messenger of Allah ﷺ used to address us and remind us of the days of Allah, until we could see it on his face. It was as if he was warning people against an enemy that would attack them in the morning. If he had just met Jibril, he would not smile until Jibril had left him.", "It was as if he was warning people against an enemy that would attack them in the morning"),
+      difficulty: 2,
+      questions: [
+        { q: "In his khutbah, he ﷺ was like one warning of what?", a: "An enemy at dawn", wrong: ["A storm at sea", "A flood in the valley", "A wolf near the flock"], why: "As if he was warning people against an enemy that would attack them in the morning." },
+        { q: "After meeting Jibril, until when would he ﷺ not smile?", a: "Until Jibril left him", wrong: ["Until the next prayer", "Until sunset", "Until he had eaten"], why: "If he had just met Jibril, he would not smile until Jibril had departed from him." },
+        { q: "When he ﷺ reminded them, they could see it on his face.", tf: true, why: "He reminded us of the days of Allah until we could see that on his face." }
+      ]
+    },
+    {
       slug: "angels-door",
       title: "Angels at the door",
       line: "On Friday, angels at the masjid door write who comes first.",
