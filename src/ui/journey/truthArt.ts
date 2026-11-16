@@ -24,17 +24,17 @@ import { camel, care, DAWN, dayAround, lightIn, palms, sparkRising, tent, track 
  */
 
 /** A small light of faith at (x, y), `k` times its size: a soft glow with a spark in its middle. */
-const faithIn = (x: number, y: number, k = 1) => glow(x, y, n(3.4 * k), WARM, 0.36) + sparkle(x, y, n(1.1 * k), SPARK);
+export const faithIn = (x: number, y: number, k = 1) => glow(x, y, n(3.4 * k), WARM, 0.36) + sparkle(x, y, n(1.1 * k), SPARK);
 
 /** A soft warm light about a place at (x, y): honor, strength or truth. */
-const warmOn = (x: number, y: number, r = 4.4) => glow(x, y, r, WARM, 0.42);
+export const warmOn = (x: number, y: number, r = 4.4) => glow(x, y, r, WARM, 0.42);
 
 /** A faint golden line from (x1, y1) to (x2, y2), bowed up to `top`: a look, or a hearing. */
-const lookLine = (x1: number, y1: number, x2: number, y2: number, top: number, color = GOLD) =>
+export const lookLine = (x1: number, y1: number, x2: number, y2: number, top: number, color = GOLD) =>
   `<path d="M${x1} ${y1} Q${n((x1 + x2) / 2)} ${top} ${x2} ${y2}" stroke="${color}" stroke-width="0.5" stroke-dasharray="1 1.2" fill="none" opacity="0.8"/>`;
 
 /** A waterskin of leather, its foot's middle at (x, y). */
-const waterskin = (x: number, y: number) =>
+export const waterskin = (x: number, y: number) =>
   `<path d="M${n(x - 2.4)} ${y} Q${n(x - 3.2)} ${n(y - 2.4)} ${n(x - 1.2)} ${n(y - 3.4)} L${n(x - 0.6)} ${n(y - 4.4)} L${n(x + 0.6)} ${n(y - 4.4)} L${n(x + 1.2)} ${n(y - 3.4)} Q${n(x + 3.2)} ${n(y - 2.4)} ${n(x + 2.4)} ${y} Z" fill="#8A5A2E"/>` +
   `<path d="M${n(x - 0.8)} ${n(y - 4.4)} L${n(x + 0.8)} ${n(y - 4.4)}" stroke="#5E3C1E" stroke-width="0.5"/><path d="M${n(x - 1.6)} ${n(y - 1.4)} Q${x} ${n(y - 0.6)} ${n(x + 1.6)} ${n(y - 1.4)}" stroke="#6E4724" stroke-width="0.4" fill="none"/>`;
 
