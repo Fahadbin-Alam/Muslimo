@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2281);
+    expect(asks.length).toBe(2300);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3338);
+    expect(places).toBe(3365);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -10083,6 +10083,196 @@ describe("where the scene waits and where it stops", () => {
     expect(shown("Whose hunger does Allah have no need of?", ["false speech: harsh grey arcs", "acting on it: a grey shade over the place next door", "his fast: a soft golden ring about his food and drink", "no need of it: a faint grey ring about his food and drink"])).toEqual([
       [0, 0, 1, 0],
       [1, 1, 0, 1]
+    ]);
+  });
+
+  it("waits on the scenes of more days of fasting, from fasting in the heat to the milk at Arafah, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-fasting-in-heat", "sign-no-wisal", "sign-three-days-a-month", "sign-not-before-ramadan", "sign-no-fast-on-eid", "sign-ashura-and-ramadan", "sign-milk-at-arafah"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(19);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Fasting in the heat. How hot it was: waits at the scene's start, before the road; then they come along it, and the
+    // sun's glow spreads as heat shimmers over the land.
+    expect([
+      shown("How hot was it?", ["a very hot day: the sun's glow spreads", "a very hot day: heat shimmering over the land"]),
+      moved("How hot was it?", "a golden ring, his place", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [-40, 0]
+    ]);
+    // Who fasted, and that a traveler may choose: on the hot road; then a shade comes over each of three places, a cup
+    // of water by each, and a soft golden ring about his place and about Ibn Rawahah's, with a warm glow about the two.
+    for (const prompt of ["Who was fasting on that hot day?", "A traveler may choose not to fast."]) {
+      expect([
+        prompt,
+        value("fasting-in-heat", "a very hot day: the sun's glow spreads", "opacity", 0.38),
+        shown(prompt, ["from the great heat: a shade over a place 1", "not fasting: a cup of water by a place 1", "fasting: a soft golden ring about his place", "fasting: a soft golden ring about Ibn Rawahah's place", "the two fasting: a warm glow about them"])
+      ]).toEqual([
+        prompt,
+        1,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // No wisal. What al-wisal is: waits at the scene's start, a day and a night in a row in the sky; then a grey dashed
+    // line joins a day to the next through the night, and a grey dashed ring comes about them.
+    expect(shown("What is al-wisal?", ["al-wisal: a grey dashed line joining a day to the next, through the night", "he forbade it: a grey dashed ring about the joined days"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // That we are not to join fasts, nor to harm ourselves: waits at the scene's start; then the joined days get a grey
+    // dashed ring, a golden ring of care comes about the places, dates come on the cloth, and a warm light on the night.
+    for (const prompt of ["We are told to join fasts with no food between.", "Islam asks us to fast so hard that we harm ourselves."]) {
+      expect([
+        prompt,
+        shown(prompt, ["he forbade it: a grey dashed ring about the joined days", "out of mercy for them: a golden ring of care about the places", "eating at night: dates on the cloth", "eating at night: a warm light on the night"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Why he forbade it: the joined days with their grey ring; then a golden ring of care comes about the places, dates
+    // come on the cloth, and a warm light on the night.
+    expect([
+      value("no-wisal", "he forbade it: a grey dashed ring about the joined days", "opacity", 0.16),
+      shown("Why did he ﷺ forbid fasting day and night nonstop?", ["out of mercy for them: a golden ring of care about the places", "eating at night: dates on the cloth", "eating at night: a warm light on the night"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // What he said about himself: the places eating at night; then their voice speaks, a soft golden ring of his fast
+    // comes about his place, his voice answers, and a soft warm glow comes about his place.
+    expect(shown("What did he ﷺ say about himself?", ["their voice: but you do al-wisal", "his fast, kept on: a soft golden ring about his place", "his voice: I am not like you", "not like you: a soft warm glow about his place"])).toEqual([
+      [0, 0, 0, 0],
+      [0, 1, 1, 1]
+    ]);
+    // Why he could do it: their voice has spoken, and his fast is kept on; then his voice answers, and a soft warm glow
+    // comes about his place.
+    expect([
+      value("no-wisal", "their voice: but you do al-wisal", "opacity", 0.5),
+      value("no-wisal", "his fast, kept on: a soft golden ring about his place", "opacity", 0.5),
+      shown("Why could he ﷺ do it?", ["his voice: I am not like you", "not like you: a soft warm glow about his place"])
+    ]).toEqual([
+      1,
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Three days a month. How long it counts as: the days of the month with a grey dashed ring about them all; then a
+    // soft golden ring comes on three of the days, and a warm light over all of them.
+    expect([
+      value("three-days-a-month", "has not fasted: a grey dashed ring about all the days", "opacity", 0.56),
+      shown("Three days a month count like fasting how long?", ["three days: a soft golden ring on a day 1", "three days: a soft golden ring on a day 3", "like fasting all the time: a warm light over all the days", "has not fasted: a grey dashed ring about all the days"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 1],
+        [1, 1, 1, 0]
+      ]
+    ]);
+    // Not before Ramadan. What not to do: the days of Ramadan with their light; then a grey dashed ring comes about a
+    // day just before it, and about a second.
+    expect([
+      value("not-before-ramadan", "Ramadan: a soft golden light on its days", "opacity", 0.22),
+      shown("What should we not do just before Ramadan?", ["a day or two before it: a grey dashed ring about a day 1", "a day or two before it: a grey dashed ring about a day 2"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Who may still fast that day: the two days before Ramadan with grey rings; then a soft golden ring comes on his day
+    // each week, a golden line runs down to the day before Ramadan, its grey ring fades, and a soft golden ring comes on
+    // that day and about his place.
+    for (const prompt of ["Who may still fast that day?", "Someone who always fasts Mondays may fast that Monday."]) {
+      expect([
+        prompt,
+        shown(prompt, ["his habit: a soft golden ring on his day, week 1", "his habit: a soft golden ring on his day, week 2", "his habit: a golden line down his day", "a day or two before it: a grey dashed ring about a day 2", "that day: a soft golden ring on it", "let him fast it: a soft golden ring about his place"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1, 0, 0],
+          [1, 1, 1, 0, 1, 1]
+        ]
+      ]);
+    }
+    // No fast on Eid. Whether it is allowed: the gathering at the Eid prayer; then Umar's voice speaks, two days come in
+    // the sky, and a grey dashed ring comes about each.
+    expect(shown("Is it allowed to fast on Eid day?", ["Umar's voice: these are two days", "the day you break your fast: a day with its new moon", "the other day: a day", "he forbade fasting them: a grey dashed ring about the first day", "he forbade fasting them: a grey dashed ring about the other day"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Ashura and Ramadan. That Ashura came first: waits at the scene's start, the twelve months in the sky; then his
+    // voice speaks, a light comes on the first month and rings about the places, and then a golden ring and a light come
+    // on the ninth month.
+    expect(shown("Ashura was fasted before Ramadan was a duty.", ["his voice: fast the day of Ashura", "the day of Ashura: a small golden light on the first month", "fasting Ashura: a soft golden ring about a place 1", "Ramadan made a duty: a golden ring about the ninth month", "the month of Ramadan: a golden light on it"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 1]
+    ]);
+    // That Ashura became a choice: Ramadan made a duty, and all four places fasting Ashura; then a warm glow comes about
+    // two that fast, the rings about the other two fade, and dates and a cup come by each of them.
+    expect([
+      value("ashura-and-ramadan", "the month of Ramadan: a golden light on it", "opacity", 0.32),
+      shown("After Ramadan was made a duty, Ashura became...?", ["whoever wished fasted it: a warm glow about the two that fast", "fasting Ashura: a soft golden ring about a place 1", "fasting Ashura: a soft golden ring about a place 3", "whoever wished did not: dates and a cup by a place 1", "whoever wished did not: dates and a cup by a place 2"])
+    ]).toEqual([
+      1,
+      [
+        [0, 1, 1, 0, 0],
+        [1, 1, 0, 1, 1]
+      ]
+    ]);
+    // Which day he sought most to fast: some fasting and some not; then the light of Ashura shines brighter.
+    expect([
+      value("ashura-and-ramadan", "the day of Ashura: a small golden light on the first month", "opacity", 0.6),
+      shown("Which day did he ﷺ seek most to fast?", ["Ashura, sought more than any day: its light shines brighter"])
+    ]).toEqual([
+      1,
+      [[0], [1]]
+    ]);
+    // The milk at Arafah. Why the people wondered: waits at the scene's start, the places on the plain about his place;
+    // then grey voices of doubt come from three of them.
+    expect(shown("Why did people wonder?", ["doubting his fast: a grey voice 1", "doubting his fast: a grey voice 2", "doubting his fast: a grey voice 3"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // That he drank it while they watched: the cup of milk at his place as he stands, with the grey voices of doubt;
+    // then the milk is gone, the voices stop, faint warm lines go from the places to his, and a warm glow comes over
+    // them all.
+    expect([
+      value("milk-at-arafah", "standing at Arafah: a soft light about his place", "opacity", 0.58),
+      shown("He ﷺ drank it while people watched.", ["the milk in the cup", "doubting his fast: a grey voice 1", "looking on: a faint warm line to his place 1", "looking on: a faint warm line to his place 4", "they saw it: a warm glow over them all"])
+    ]).toEqual([
+      1,
+      [
+        [1, 1, 0, 0, 0],
+        [0, 0, 1, 1, 1]
+      ]
     ]);
   });
 
