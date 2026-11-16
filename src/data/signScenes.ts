@@ -646,7 +646,14 @@ export type SignKind =
   | "keep-them-close"
   | "small-gift"
   | "asked-about-blessings"
-  | "valley-of-gold";
+  | "valley-of-gold"
+  | "straight-rows"
+  | "sweetest-recitation"
+  | "easy-religion"
+  | "three-things-to-keep"
+  | "asked-about-islam"
+  | "greatest-surah"
+  | "black-stone";
 
 export type SignScene = {
   id: string;
@@ -2546,6 +2553,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "valley-of-gold",
     caption: "Anas ibn Malik said: the Messenger of Allah ﷺ said: if the son of Adam had a valley of gold, he would love to have two valleys; nothing fills his mouth but dust, and Allah turns to whoever repents.",
     sources: [bukhari("6439")]
+  },
+  {
+    id: "sign-straight-rows",
+    kind: "straight-rows",
+    caption:
+      "Anas ibn Malik said: the Prophet ﷺ said: straighten your rows, for straightening the rows is part of establishing the prayer.",
+    sources: [bukhari("723")]
+  },
+  {
+    id: "sign-sweetest-recitation",
+    kind: "sweetest-recitation",
+    caption:
+      "Al-Bara said: I heard the Prophet ﷺ recite By the fig and the olive in the Isha prayer, and I never heard anyone with a finer voice or recitation than him.",
+    sources: [bukhari("769")]
+  },
+  {
+    id: "sign-easy-religion",
+    kind: "easy-religion",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the religion is easy, and no one overdoes it in the religion but it overcomes him. So aim for what is right, come as close to it as you can, and be glad; and seek help in it in the morning, in the evening, and in a little of the night.",
+    sources: [bukhari("39")]
+  },
+  {
+    id: "sign-three-things-to-keep",
+    kind: "three-things-to-keep",
+    caption:
+      "Abu Hurairah said: my close friend ﷺ advised me of three things: fasting three days of every month, two rak'ahs of Duha, and that I pray witr before I sleep.",
+    sources: [bukhari("1981")]
+  },
+  {
+    id: "sign-asked-about-islam",
+    kind: "asked-about-islam",
+    caption:
+      "Talhah ibn Ubaydullah said: a man of the people of Najd came to the Messenger of Allah ﷺ, his hair unkempt; we heard the hum of his voice but could not make out what he said, until he came near, and he was asking about Islam. The Messenger of Allah ﷺ said: five prayers in the day and the night. He asked: is there any other on me? He said: no, unless you do it of your own will. The Messenger of Allah ﷺ said: and the fast of Ramadan. He asked: is there any other on me? He said: no, unless you do it of your own will. And the Messenger of Allah ﷺ told him of zakat. He asked: is there any other on me? He said: no, unless you do it of your own will. The man turned away, saying: by Allah, I will not add to this, nor take from it. The Messenger of Allah ﷺ said: he has succeeded, if he is truthful.",
+    sources: [bukhari("46")]
+  },
+  {
+    id: "sign-greatest-surah",
+    kind: "greatest-surah",
+    caption:
+      "Abu Sa'id ibn al-Mu'alla said: I was praying in the masjid when the Messenger of Allah ﷺ called me, and I did not answer him. Then I said: O Messenger of Allah, I was praying. He said: did Allah not say: answer Allah and the Messenger when he calls you? Then he said to me: I will teach you a surah that is the greatest surah in the Quran, before you leave the masjid. Then he took my hand, and when he was about to leave, I said to him: did you not say: I will teach you a surah that is the greatest surah in the Quran? He said: All praise is for Allah, Lord of the worlds: it is the seven oft-repeated, and the great Quran that I was given.",
+    sources: [bukhari("4474")]
+  },
+  {
+    id: "sign-black-stone",
+    kind: "black-stone",
+    caption:
+      "Abis ibn Rabi'ah said: Umar came to the Black Stone and kissed it, and said: I know that you are a stone; you neither harm nor benefit. Had I not seen the Prophet ﷺ kiss you, I would not have kissed you.",
+    sources: [bukhari("1597")]
   }
 ];
 
@@ -4092,7 +4148,28 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-takathur2-a-meal-of-dates": "sign-asked-about-blessings",
   // With a valley of gold, the son of Adam would want two; and Allah turns to whoever repents (102:1-2).
   "surah-meaning-102-1-4": "sign-valley-of-gold",
-  "deep-adiyat2-a-valley-of-gold": "sign-valley-of-gold"
+  "deep-adiyat2-a-valley-of-gold": "sign-valley-of-gold",
+  // Straighten your rows, for straightening the rows is part of establishing the prayer.
+  "prayer-congregational-prayer-masjid-etiquette": "sign-straight-rows",
+  "deep-saff1-straight-rows-in-prayer": "sign-straight-rows",
+  // Al-Bara heard him recite at-Tin in the Isha prayer, and never heard a finer voice or recitation (95:1).
+  "surah-meaning-95-1-4": "sign-sweetest-recitation",
+  "deep-tin1-the-sweetest-recitation": "sign-sweetest-recitation",
+  // The religion is easy; no one overdoes it but it overcomes him; aim right, come close, and be glad.
+  "deep-sharh1-an-easy-religion": "sign-easy-religion",
+  "intro-religion-is-easy": "sign-easy-religion",
+  // He advised Abu Hurairah of three: a fast of three days each month, two rak'ahs of Duha, and witr before sleep.
+  "deep-islamic-year-three-days-a-month": "sign-three-things-to-keep",
+  "deep-book-fasting-three-things-advice": "sign-three-things-to-keep",
+  // The one from Najd asked about Islam: five prayers, the fast of Ramadan and zakat, no more unless of his own will.
+  "zakat-broader-generosity-zakat-and-sadaqah": "sign-asked-about-islam",
+  "deep-muzzammil4-five-prayers-only": "sign-asked-about-islam",
+  // Al-Fatihah, the greatest surah: the seven oft-repeated and the great Quran (15:87).
+  "deep-fatihah-greatest-surah": "sign-greatest-surah",
+  "surah-meaning-15-80-99": "sign-greatest-surah",
+  // Umar kissed the Black Stone only because he had seen the Prophet ﷺ kiss it; it neither harms nor benefits.
+  "deep-hajj-black-stone": "sign-black-stone",
+  "deep-umar-black-stone": "sign-black-stone"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
