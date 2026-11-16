@@ -667,7 +667,14 @@ export type SignKind =
   | "last-ten-itikaf"
   | "my-disciple"
   | "help-your-brother"
-  | "last-surah-heard";
+  | "last-surah-heard"
+  | "umamah-in-prayer"
+  | "more-merciful"
+  | "abu-ayyub-house"
+  | "miqdad-promise"
+  | "leave-that-call"
+  | "abu-bakr-forgives"
+  | "between-two-calls";
 
 export type SignScene = {
   id: string;
@@ -2714,6 +2721,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: Umm al-Fadl heard me reciting Wal-mursalati 'urfa, and she said: my son, by Allah, your recitation of this surah has reminded me that it was the last I heard from the Messenger of Allah ﷺ; he recited it in the Maghrib prayer.",
     sources: [bukhari("763")]
+  },
+  {
+    id: "sign-umamah-in-prayer",
+    kind: "umamah-in-prayer",
+    caption:
+      "Abu Qatadah al-Ansari said that the Messenger of Allah ﷺ was praying while carrying Umamah, the daughter of Zaynab, the daughter of the Messenger of Allah ﷺ, and of Abu al-As ibn Rabi'ah ibn Abd Shams. When he prostrated, he put her down, and when he stood, he carried her.",
+    sources: [bukhari("516")]
+  },
+  {
+    id: "sign-more-merciful",
+    kind: "more-merciful",
+    caption:
+      "Umar ibn al-Khattab said: captives were brought to the Prophet ﷺ, and among the captives was a woman whose milk was flowing. Whenever she found a child among the captives, she took it, held it close to her, and nursed it. The Prophet ﷺ said to us: do you think this woman would throw her child into the fire? We said: no, not while she is able not to throw it. He said: Allah is more merciful to His servants than this woman is to her child.",
+    sources: [bukhari("5999")]
+  },
+  {
+    id: "sign-abu-ayyub-house",
+    kind: "abu-ayyub-house",
+    caption:
+      "Abu Ayyub said that the Prophet ﷺ stayed with him: the Prophet ﷺ in the lower part of the house, and Abu Ayyub in the upper. One night Abu Ayyub woke and said: we walk above the head of the Messenger of Allah ﷺ! So they moved aside and spent the night to one side. Then he told the Prophet ﷺ, and the Prophet ﷺ said: the lower part is easier. He said: I will not go up on a roof that you are under. So the Prophet ﷺ moved to the upper part, and Abu Ayyub to the lower. He would make food for the Prophet ﷺ, and when it was brought back to him he would ask where his fingers had touched, and seek out that place. He made him food with garlic in it, and when it was brought back he asked where the fingers of the Prophet ﷺ had touched, and he was told: he did not eat. He was alarmed, and went up to him and said: is it forbidden? The Prophet ﷺ said: no, but I dislike it. He said: then I dislike what you dislike.",
+    sources: [muslim("2053c"), muslim("2053a")]
+  },
+  {
+    id: "sign-miqdad-promise",
+    kind: "miqdad-promise",
+    caption:
+      "Ibn Mas'ud said: I saw al-Miqdad ibn al-Aswad in a stand that I would rather have been mine than anything weighed against it. He came to the Prophet ﷺ while he was making du'a against the idolaters, and said: we will not say as the people of Musa said: go, you and your Lord, and fight. But we will fight on your right and on your left, and in front of you and behind you. I saw the face of the Prophet ﷺ shine, and it pleased him, meaning his words.",
+    sources: [bukhari("3952")]
+  },
+  {
+    id: "sign-leave-that-call",
+    kind: "leave-that-call",
+    caption:
+      "Jabir ibn Abdullah said: we were on a campaign, and one of the Muhajirun struck one of the Ansar. The Ansari said: O Ansar! And the Muhajir said: O Muhajirun! The Messenger of Allah ﷺ heard it and said: what is this call of ignorance? They said: O Messenger of Allah, one of the Muhajirun struck one of the Ansar. He said: leave it, for it is foul.",
+    sources: [bukhari("4905")]
+  },
+  {
+    id: "sign-abu-bakr-forgives",
+    kind: "abu-bakr-forgives",
+    caption:
+      "Aishah said: Abu Bakr as-Siddiq used to spend on Mistah ibn Uthathah, because he was his kin and because he was poor. He said: by Allah, I will never spend anything on Mistah again, after what he said about Aishah. Then Allah sent down: and let not those of grace and wealth among you swear not to give to their kin, the poor, and those who emigrated for the sake of Allah; let them pardon and overlook; do you not love that Allah should forgive you? And Allah is Forgiving, Merciful. Abu Bakr said: yes, by Allah, I love that Allah should forgive me. And he gave back to Mistah what he used to spend on him, and said: by Allah, I will never take it away from him.",
+    sources: [bukhari("4750"), quran(24, 22)]
+  },
+  {
+    id: "sign-between-two-calls",
+    kind: "between-two-calls",
+    caption:
+      "Abdullah ibn Mughaffal al-Muzani said: the Messenger of Allah ﷺ said: between every two calls there is a prayer. He said it three times, and said: for whoever wishes.",
+    sources: [bukhari("624")]
   }
 ];
 
@@ -4318,7 +4374,28 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-brotherhood-help-your-brother": "sign-help-your-brother",
   "deep-hujurat1-help-your-brother": "sign-help-your-brother",
   "surah-meaning-77-1-15": "sign-last-surah-heard",
-  "deep-mursalat1-the-last-surah-she-heard": "sign-last-surah-heard"
+  "deep-mursalat1-the-last-surah-she-heard": "sign-last-surah-heard",
+  // He prayed carrying Umamah, his granddaughter: he put her down when he prostrated, and carried her when he stood.
+  "deep-children-carrying-umamah": "sign-umamah-in-prayer",
+  "deep-abu-qatadah-umamah-in-prayer": "sign-umamah-in-prayer",
+  // A mother among the captives held a child close: Allah is more merciful to His servants than she is to her child.
+  "deep-hadith-qudsi-the-mother": "sign-more-merciful",
+  // He stayed below and Abu Ayyub above, until they changed floors; the dish with garlic he did not eat.
+  "deep-abu-ayyub-the-host": "sign-abu-ayyub-house",
+  "deep-abu-ayyub-the-garlic": "sign-abu-ayyub-house",
+  // Al-Miqdad at Badr: not as Musa's people said; we will fight on your right and left, in front of you and behind you.
+  "deep-miqdad-not-like-musas-people": "sign-miqdad-promise",
+  "deep-anfal1-miqdad-promise": "sign-miqdad-promise",
+  // O Ansar! O Muhajirun! What is this call of ignorance? Leave it, for it is foul.
+  "deep-munafiqun2-a-fight-over-water": "sign-leave-that-call",
+  "deep-munafiqun2-call-of-ignorance": "sign-leave-that-call",
+  // Abu Bakr swore to stop spending on Mistah; 24:22 came down, and he forgave and gave again.
+  "deep-abubakr-forgiving-mistah": "sign-abu-bakr-forgives",
+  "deep-nur1-forgive-like-abu-bakr": "sign-abu-bakr-forgives",
+  "surah-meaning-24-21-26": "sign-abu-bakr-forgives",
+  // Between every two calls there is a prayer, three times; and for whoever wishes.
+  "deep-ibn-mughaffal-prayer-between-adhans": "sign-between-two-calls",
+  "deep-book-prayer-between-adhan-and-iqamah": "sign-between-two-calls"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
