@@ -5709,9 +5709,9 @@ describe("the signs in creation, alive", () => {
     ]);
     // The two bright ones: at night by a home a place on a prayer mat reads, with a golden voice and sparks rising. Then
     // a wide pale plain comes, the Day; the place stands on it, and a soft golden light comes to its side. Two bright
-    // lights show over it; two clouds come from either side, then they are two shades; then two flocks of birds come in
-    // rows. Golden voices plead, a warm glow comes about the place, small lights come about it, and far from it another
-    // place stands under a grey shade.
+    // lights show over it; two clouds come from either side and stay over it, with two soft shades on the plain beneath
+    // them; then two flocks of birds come in rows. Golden voices plead, a warm glow comes about the place, small lights
+    // come about it, and far from it another place stands under a grey shade.
     expect(words("two-bright-ones")).toEqual([
       "I heard him say: read the Quran",
       "It will intercede for its companions on the Day",
@@ -5733,7 +5733,7 @@ describe("the signs in creation, alive", () => {
       [shown("two-bright-ones", "the one who read it: a place", 0.1), shown("two-bright-ones", "the one who read it: a place", 0.24), shown("two-bright-ones", "the one who read it, on that Day", 0.1), shown("two-bright-ones", "the one who read it, on that Day", 0.24)],
       [shown("two-bright-ones", "it comes to plead for it: a soft golden light", 0.1), shown("two-bright-ones", "it comes to plead for it: a soft golden light", 0.24), value("two-bright-ones", "it comes to plead for it: a soft golden light", "x", 0.24)],
       [all("two-bright-ones", bright, 0.24), all("two-bright-ones", bright, 0.38), all("two-bright-ones", bright, 0.52)],
-      [all("two-bright-ones", clouds, 0), all("two-bright-ones", clouds, 0.38), all("two-bright-ones", clouds, 0.47), xs("two-bright-ones", clouds, 0.44), xs("two-bright-ones", clouds, 0.49), all("two-bright-ones", clouds, 0.52)],
+      [all("two-bright-ones", clouds, 0), all("two-bright-ones", clouds, 0.38), all("two-bright-ones", clouds, 0.47), xs("two-bright-ones", clouds, 0.44), xs("two-bright-ones", clouds, 0.49), all("two-bright-ones", clouds, 0.52), all("two-bright-ones", clouds, 0.66)],
       [all("two-bright-ones", shades, 0.38), all("two-bright-ones", shades, 0.52), all("two-bright-ones", shades, 0.66)],
       [all("two-bright-ones", flocks, 0.52), all("two-bright-ones", flocks, 0.66), xs("two-bright-ones", flocks, 0.66), all("two-bright-ones", flocks, 0.995)],
       [shown("two-bright-ones", "pleading for it: golden voices", 0.66), shown("two-bright-ones", "pleading for it: golden voices", 0.8), shown("two-bright-ones", "a warm glow about the one who read it", 0.8)],
@@ -5755,6 +5755,7 @@ describe("the signs in creation, alive", () => {
         [1, 1],
         [-70, 70],
         [0, 0],
+        [1, 1],
         [0, 0]
       ],
       [

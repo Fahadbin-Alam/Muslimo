@@ -641,9 +641,9 @@ const flock = (x: number, y: number, left = false) =>
     .map(([dx, dy]) => glider(n(x + (left ? -dx : dx)), n(y + dy), left))
     .join("");
 
-/** A soft shade over (x, y): a wide dark canopy with a light rim, as a shade in the air. */
+/** A soft shade on the plain at (x, y), as a cloud gives shade to what is under it. */
 const shade = (x: number, y: number, rx: number, ry: number) =>
-  `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#5E6A7E" opacity="0.55"/><ellipse cx="${x}" cy="${n(y - ry * 0.2)}" rx="${n(rx * 0.8)}" ry="${n(ry * 0.55)}" fill="#7E8A9E" opacity="0.4"/>`;
+  `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" fill="#7E8AA0" opacity="0.3"/><ellipse cx="${x}" cy="${y}" rx="${n(rx * 0.7)}" ry="${n(ry * 0.6)}" fill="#7E8AA0" opacity="0.14"/>`;
 
 // The two bright ones. Abu Umamah said: I heard the Messenger of Allah ﷺ say: read the Quran, for it will come on the
 // Day of Resurrection as an intercessor for its companions. Read the two bright ones, al-Baqarah and Surah Al Imran, for
@@ -652,8 +652,8 @@ const shade = (x: number, y: number, rx: number, ry: number) =>
 // sorcerers cannot face it (Sahih Muslim 804a). No one is drawn: at night by a home, a place sits on a prayer mat, and
 // its golden voice reads, with sparks rising. Then a wide pale plain comes, the Day; the place stands on it, and a soft
 // golden light comes to its side. Two bright lights show over it. Two clouds come from either side and stay over it,
-// then they are two shades; then two flocks of birds come in rows, their wings spread over it. Golden voices plead, a
-// warm glow comes about the place, and far from it another place stands under a grey shade.
+// and two soft shades show on the plain beneath them; then two flocks of birds come in rows, their wings spread over
+// it. Golden voices plead, a warm glow comes about the place, and far from it another place stands under a grey shade.
 function twoBrightOnes(): SignArt {
   const reader: [number, number] = [70, 104.4];
   const there: [number, number] = [80, 104.2];
@@ -710,9 +710,9 @@ function twoBrightOnes(): SignArt {
       ].map(([x, y, dx], i): SignPart => ({
         name: `like two clouds: a cloud ${i + 1}`,
         svg: cloud(x, y, 0.62, "#FFFFFF", 0.95),
-        keys: track({ opacity: [[0.44, 0], [0.445, 1], [0.49, 1], [0.51, 0]], xy: [[0.44, dx, 0], [0.49, 0, 0]] })
+        keys: track({ opacity: [[0.44, 0], [0.445, 1], [0.57, 1], [0.6, 0]], xy: [[0.44, dx, 0], [0.49, 0, 0]] })
       })),
-      ...[66, 94].map((x, i): SignPart => ({ name: `or two shades: a shade ${i + 1}`, svg: shade(x, 58, 13, 5), keys: track({ opacity: [[0.49, 0], [0.51, 1], [0.57, 1], [0.6, 0]] }) })),
+      ...[68, 92].map((x, i): SignPart => ({ name: `or two shades: a shade ${i + 1}`, svg: shade(x, 102, 12, 3.4), keys: track({ opacity: [[0.49, 0], [0.51, 1], [0.57, 1], [0.6, 0]] }) })),
       ...[
         [74, 60, false, -80],
         [88, 60, true, 80]
