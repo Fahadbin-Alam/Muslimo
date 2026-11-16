@@ -3837,6 +3837,57 @@ const ASKS: Record<string, readonly Ask[]> = {
   // from the start.)
   "sign-camel-as-sutrah": [
     ["Ibn Umar used to do the same as he ﷺ did.", "True", "Ibn Umar used to do the same"]
+  ],
+  // He made Abdur-Rahman and Sa'd brothers; Sa'd offered to share his wealth in two halves; he said: Allah bless you
+  // in your family and your wealth, show me the market; Sa'd said: the market of Qaynuqa'; and he came back with
+  // dried yogurt and butter (Sahih al-Bukhari 2049, and 2048 in his own telling).
+  "sign-show-me-the-market": [
+    ["Abdur-Rahman took half of Sa'd's wealth.", "False", "Allah bless you in your family and wealth"],
+    ["What did Abd ar-Rahman ask for instead of Sa'd's wealth?", "The way to the market", "Show me the market"],
+    ["What did Abdur-Rahman ask his new brother for?", "The way to the market", "Show me the market"],
+    ["Which market did they show him?", "The market of Qaynuqa'", "Sa'd: the market of Qaynuqa'"],
+    ["Abd ar-Rahman came back from the market with nothing.", "False", "He came back with dried yogurt and butter"],
+    ["What did he bring home from the market?", "Dried yogurt and butter", "He came back with dried yogurt and butter"]
+  ],
+  // He bought food from a Jewish man, to be paid at a set time, and pledged his iron armour to him (Sahih al-Bukhari
+  // 2068). (What he bought stays on its usual picture: the sacks of grain are there from the start.)
+  "sign-grain-on-credit": [
+    ["Muslims may trade fairly with people of other faiths.", "True", "He bought food from a Jewish man"],
+    ["What did he leave as a pledge?", "His iron armour", "And pledged his iron armour to him"]
+  ],
+  // For one of you to gather firewood, a bundle on his back, is better than to ask anyone, who may give him or refuse
+  // him (Sahih al-Bukhari 2074). (That Islam praises earning one's own living is a lesson drawn from it, not a moment
+  // of the scene, so it stays on its usual picture.)
+  "sign-bundle-of-wood": [
+    ["What is better than asking people for money?", "Carrying wood to earn", "For one of you to gather firewood", "Is better than to ask anyone"],
+    ["Why is asking people risky?", "They may or may not give", "Who may give him or refuse him"]
+  ],
+  // May Allah have mercy on one who is easygoing when he sells, when he buys, and when he asks for what he is owed
+  // (Sahih al-Bukhari 2076).
+  "sign-easygoing-trader": [
+    ["Who gets Allah's mercy in this hadith?", "One who is easy in trade", "May Allah have mercy on one who is easy"],
+    ["Bargaining harshly and rudely is the Sunnah.", "False", "May Allah have mercy on one who is easy"],
+    ["When else should we be easy?", "When asking for a debt back", "And when he asks for what he is owed"]
+  ],
+  // He forbade selling fruit until it is clearly good; he forbade it to the seller and to the buyer (Sahih al-Bukhari
+  // 2194). (Why the rule protects people is not in the scene's words, so it stays on its usual picture.)
+  "sign-fruit-when-ripe": [
+    ["When may fruit on trees be sold?", "When clearly good", "Until it is clearly good"],
+    ["Who was forbidden this early sale?", "Both seller and buyer", "He forbade the seller and the buyer"]
+  ],
+  // Do not sell gold for gold unless equal for equal, nor silver for silver unless equal; sell gold for silver and
+  // silver for gold however you wish (Sahih al-Bukhari 2175). (That these rules guard against riba is not in the
+  // scene's words, so it stays on its usual picture.)
+  "sign-gold-for-gold": [
+    ["How must gold be swapped for gold?", "Equal in weight", "Unless equal for equal"],
+    ["Gold for silver may be traded...?", "As you like", "Sell gold for silver, silver for gold", "However you wish"]
+  ],
+  // The Ansar asked him to divide the palms between them and their brothers; he said: no; then the emigrants did the
+  // work of the trees and shared the fruit, and said: we hear and obey (Sahih al-Bukhari 2325).
+  "sign-share-the-fruits": [
+    ["What did the Ansar first ask the Prophet ﷺ?", "To divide their palms", "Divide the palms with our brothers"],
+    ["The emigrants worked the trees and shared the fruit.", "True", "You do the work of the trees", "And we share the fruit with you"],
+    ["What did the emigrants answer?", "We listen and obey", "They said: we hear and obey"]
   ]
 };
 
