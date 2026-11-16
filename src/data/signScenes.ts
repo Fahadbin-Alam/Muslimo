@@ -716,7 +716,14 @@ export type SignKind =
   | "rooster-and-donkey"
   | "ask-before-milking"
   | "goat-lent-for-milk"
-  | "camel-as-sutrah";
+  | "camel-as-sutrah"
+  | "show-me-the-market"
+  | "grain-on-credit"
+  | "bundle-of-wood"
+  | "easygoing-trader"
+  | "fruit-when-ripe"
+  | "gold-for-gold"
+  | "share-the-fruits";
 
 export type SignScene = {
   id: string;
@@ -3100,6 +3107,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Umar said that the Prophet ﷺ would make his she-camel sit across in front of him and pray facing it. One asked: what if the camels got up and moved? The answer: he would take the saddle and set it up, and pray facing its back part. And Ibn Umar used to do the same.",
     sources: [bukhari("507")]
+  },
+  {
+    id: "sign-show-me-the-market",
+    kind: "show-me-the-market",
+    caption:
+      "Anas said: when Abdur-Rahman ibn Awf came to Madinah, the Prophet ﷺ made him and Sa'd ibn ar-Rabi' al-Ansari brothers. Sa'd was a man of wealth, and he said to Abdur-Rahman: I will share my wealth with you in two halves. He said: may Allah bless you in your family and your wealth; show me the market. He did not come back until he had gained some dried yogurt and butter, and he brought it to his household. In Abdur-Rahman's own telling, he asked: is there a market with trade? Sa'd said: the market of Qaynuqa'. He went to it in the morning and came back with dried yogurt and butter, and then he kept going there every morning.",
+    sources: [bukhari("2049"), bukhari("2048")]
+  },
+  {
+    id: "sign-grain-on-credit",
+    kind: "grain-on-credit",
+    caption: "Aishah said: the Prophet ﷺ bought food from a Jewish man, to be paid at a set time, and pledged his iron armour to him.",
+    sources: [bukhari("2068")]
+  },
+  {
+    id: "sign-bundle-of-wood",
+    kind: "bundle-of-wood",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: for one of you to gather firewood, a bundle on his back, is better than to ask anyone, who may give him or refuse him.",
+    sources: [bukhari("2074")]
+  },
+  {
+    id: "sign-easygoing-trader",
+    kind: "easygoing-trader",
+    caption:
+      "Jabir ibn Abdullah said that the Messenger of Allah ﷺ said: may Allah have mercy on a man who is easygoing when he sells, when he buys, and when he asks for what he is owed.",
+    sources: [bukhari("2076")]
+  },
+  {
+    id: "sign-fruit-when-ripe",
+    kind: "fruit-when-ripe",
+    caption: "Abdullah ibn Umar said that the Messenger of Allah ﷺ forbade selling fruit until it is clearly good; he forbade it to the seller and to the buyer.",
+    sources: [bukhari("2194")]
+  },
+  {
+    id: "sign-gold-for-gold",
+    kind: "gold-for-gold",
+    caption:
+      "Abu Bakrah said that the Messenger of Allah ﷺ said: do not sell gold for gold unless equal for equal, nor silver for silver unless equal for equal; and sell gold for silver and silver for gold however you wish.",
+    sources: [bukhari("2175")]
+  },
+  {
+    id: "sign-share-the-fruits",
+    kind: "share-the-fruits",
+    caption:
+      "Abu Hurairah said: the Ansar said to the Prophet ﷺ: divide the palms between us and our brothers. He said: no. The Ansar said to the emigrants: then you do the work of the trees for us, and we will share the fruit with you. The emigrants said: we hear and obey.",
+    sources: [bukhari("2325")]
   }
 ];
 
@@ -4819,7 +4873,22 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Forty good deeds, the highest lending a she-goat for its milk; they could not count fifteen below it.
   "deep-zakat-wise-wealth-a-goat-for-its-milk": "sign-goat-lent-for-milk",
   // He would make his she-camel sit across and pray facing it, or set up its saddle and pray facing its back.
-  "deep-prayer-sutrah-his-camel-as-a-sutrah": "sign-camel-as-sutrah"
+  "deep-prayer-sutrah-his-camel-as-a-sutrah": "sign-camel-as-sutrah",
+  // Made brothers with Sa'd, Abdur-Rahman blessed his wealth and asked for the market, and came back with a profit.
+  "deep-muhajirun-market": "sign-show-me-the-market",
+  "deep-abdur-rahman-market": "sign-show-me-the-market",
+  // He bought food from a Jewish man, to be paid at a set time, and pledged his iron armour to him.
+  "deep-book-trade-the-iron-armour": "sign-grain-on-credit",
+  // Gathering a bundle of firewood is better than asking anyone, who may give or refuse.
+  "deep-book-trade-carry-the-wood": "sign-bundle-of-wood",
+  // Allah's mercy on one who is easy when he sells, when he buys and when he asks for what he is owed.
+  "deep-book-trade-easygoing-trader": "sign-easygoing-trader",
+  // No selling fruit until it is clearly good: forbidden to the seller and the buyer.
+  "deep-book-trade-ripe-fruit-only": "sign-fruit-when-ripe",
+  // Gold for gold and silver for silver only equal for equal; gold for silver however you wish.
+  "deep-book-trade-gold-for-gold": "sign-gold-for-gold",
+  // The Ansar asked to divide their palms; he said no, so the emigrants did the work and shared the fruit.
+  "deep-hashr2-share-the-fruits": "sign-share-the-fruits"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
