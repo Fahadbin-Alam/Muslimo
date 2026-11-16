@@ -405,7 +405,7 @@ function honestTrade(): SignArt {
       { name: "a fault in the right stall's sack: a small tear", svg: fault(n(right - 4.4), y - 8.4) },
       { name: "the left seller's place", svg: someone(left - 16, y, 1.5) },
       { name: "the right seller's place", svg: someone(right + 16, y, 1.5) },
-      buyerIn("the left buyer's place", [4, 108], [left, y + 7], [0.55, 0.6, -36, 6]),
+      buyerIn("the left buyer's place", [4, 108], [left, y + 7], [0.54, 0.59, -36, 6]),
       buyerIn("the right buyer's place", [156, 108], [right, y + 7], [0.88, 0.93, 36, 6]),
       { name: "they may choose: a ring about the left buyer and seller", svg: care(36, y + 3.6, 12.4, 6.2), keys: showWhile(0.09, 0.11, 0.55, 0.57), loop: { move: "twinkle", ms: 1600, low: 0.6 } },
       { name: "they may choose: a ring about the right buyer and seller", svg: care(124, y + 3.6, 12.4, 6.2), keys: showWhile(0.09, 0.11, 0.88, 0.9), loop: { move: "twinkle", ms: 1600, low: 0.6 } },
@@ -422,12 +422,12 @@ function honestTrade(): SignArt {
           opacity: [
             [0.51, 0],
             [0.53, 1],
-            [0.59, 1],
-            [0.6, 0]
+            [0.58, 1],
+            [0.59, 0]
           ],
           xy: [
-            [0.55, 0, 0],
-            [0.6, -36, 6]
+            [0.54, 0, 0],
+            [0.59, -36, 6]
           ]
         })
       },
@@ -775,7 +775,7 @@ function askedAboutBlessings(): SignArt {
             [0.73, 0],
             [0.74, 1],
             [0.77, 1],
-            [0.8, 0.45]
+            [0.79, 0.45]
           ],
           xy: [
             [0.74, 0, 0],
