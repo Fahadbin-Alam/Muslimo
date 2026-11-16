@@ -3269,6 +3269,71 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Ayahs 1-4 say: Wanting more and more distracts you until the grave.", "True", "He would love to have two valleys", "Nothing fills his mouth but dust"],
     ["More money always makes people feel full.", "False", "Nothing fills his mouth but dust"],
     ["Whom does Allah forgive, per the hadith?", "Whoever repents", "And Allah turns to whoever repents"]
+  ],
+  // Straighten your rows, for straightening the rows is part of establishing the prayer (Sahih al-Bukhari 723). (How
+  // late-comers join the imam, and the reward of praying together, stay on their usual picture: the scene does not
+  // show them.)
+  "sign-straight-rows": [
+    ["In jamaah, stand in ____ rows, shoulder to shoulder.", "straight", "Straighten your rows"],
+    ["What did the Prophet ﷺ say about rows in prayer?", "Straighten them", "Straighten your rows"],
+    ["Why straighten the rows?", "For a complete prayer", "Is part of establishing the prayer"],
+    ["Straight rows are part of a correct prayer.", "True", "Is part of establishing the prayer"]
+  ],
+  // Al-Bara heard him recite By the fig and the olive in the Isha prayer, and never heard a finer voice or recitation
+  // (Sahih al-Bukhari 769). (What ayahs 1-4 say of the best form, and the safe city, stay on their usual picture: the
+  // scene shows only the fig and the olive; that he was on a journey is in the scene from the start, so it is not
+  // asked on it.)
+  "sign-sweetest-recitation": [
+    ["In which prayer did he recite At-Tin?", "Isha", "In the Isha prayer"],
+    ["What did Al-Bara say about his voice?", "He never heard a sweeter one", "I never heard a finer voice or recitation"]
+  ],
+  // The religion is easy, and no one overdoes it but it overcomes him; so aim right, come close, and be glad, and seek
+  // help in the morning, the evening and a little of the night (Sahih al-Bukhari 39). (What Ibn Kathir says of the
+  // opened chest stays on its usual picture.)
+  "sign-easy-religion": [
+    ["How did he describe the religion?", "Very easy", "The religion is easy"],
+    ["What did the Prophet ﷺ say about the religion?", "It is easy", "The religion is easy"],
+    ["What happens to one who overburdens himself?", "He cannot keep going", "No one overdoes it but it overcomes him"],
+    ["Doing too much too fast is the best way to start.", "False", "No one overdoes it but it overcomes him"]
+  ],
+  // My close friend advised me of three: fasting three days of every month, two rak'ahs of Duha, and to pray witr
+  // before I sleep (Sahih al-Bukhari 1981).
+  "sign-three-things-to-keep": [
+    ["How many days a month did he ﷺ advise fasting?", "Three", "My close friend advised me of three", "Fasting three days of every month"],
+    ["Duha was one of the three things he ﷺ advised.", "True", "Two rak'ahs of Duha"],
+    ["The advice also had two rakahs of Duha.", "True", "Two rak'ahs of Duha"],
+    ["When should witr be prayed, by this advice?", "Before sleeping", "And to pray witr before I sleep"],
+    ["When should witr be prayed, in this advice?", "Before sleeping", "And to pray witr before I sleep"]
+  ],
+  // One from Najd asked about Islam: five prayers in the day and the night, the fast of Ramadan, and zakat; is there
+  // more on me? No, unless you do it of your own will. He has succeeded, if he is truthful (Sahih al-Bukhari 46).
+  "sign-asked-about-islam": [
+    ["How many prayers are required daily?", "Five", "Five prayers in the day and the night"],
+    ["Zakat is required; salah is extra charity.", "False", "Five prayers in the day and the night", "Anything more? No, unless you wish to"],
+    ["Zakat is required; ____ is extra charity.", "sadaqah", "And the fast of Ramadan, and zakat", "Anything more? No, unless you wish to"],
+    ["What did he say about more prayers?", "They are voluntary", "Anything more? No, unless you wish to"],
+    ["Night prayer is still required for every Muslim.", "False", "Anything more? No, unless you wish to"]
+  ],
+  // Abu Sa'id ibn al-Mu'alla was praying when he called him; did Allah not say: answer Allah and the Messenger when he
+  // calls you? Then he taught him the greatest surah: All praise is for Allah, Lord of the worlds, the seven
+  // oft-repeated and the great Quran (Sahih al-Bukhari 4474). (That Abu Sa'id was at prayer is in the scene from the
+  // start, so why he did not answer at once is not asked on it; whom he told, by name, what else ayahs 80-99 say, and
+  // ayah 99, stay on their usual picture.)
+  "sign-greatest-surah": [
+    ["Which surah did the Prophet ﷺ call the greatest in the Quran?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds"],
+    ["What was the Prophet ﷺ given with the Quran, in Al-Hijr?", "Seven oft-repeated ayahs", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
+    ["Ayahs 80-99: what are they about?", "Seven oft-repeated", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
+    ["What are the 'seven oft-repeated' verses?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"]
+  ],
+  // Umar came to the Black Stone and kissed it, and said: I know that you are a stone; you neither harm nor benefit.
+  // Had I not seen the Prophet ﷺ kiss you, I would not have kissed you (Sahih al-Bukhari 1597).
+  "sign-black-stone": [
+    ["What does this teach about tawhid?", "We worship Allah, not objects", "I know that you are a stone", "You neither harm nor benefit"],
+    ["What did Umar say the stone can do?", "Neither benefit nor harm", "You neither harm nor benefit"],
+    ["What did Umar say to the Black Stone?", "You cannot harm or benefit", "You neither harm nor benefit"],
+    ["Umar believed the stone had power.", "False", "I know that you are a stone", "You neither harm nor benefit"],
+    ["Why did Umar kiss the Black Stone?", "He saw the Prophet ﷺ do it", "Had I not seen him kiss you"],
+    ["Why did Umar kiss it then?", "He saw the Prophet ﷺ kiss it", "Had I not seen him kiss you"]
   ]
 };
 
