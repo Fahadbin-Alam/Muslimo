@@ -392,7 +392,7 @@ const MAJOR_SIGNS: DeepUnit = {
       questions: [
         { q: "How long will the Dajjal stay on earth?", a: "Forty days", wrong: ["Forty years", "Seven days", "One night"], why: "But one day is like a year." },
         { q: "How long is his first day?", a: "Like a year", wrong: ["Like an hour", "Like a minute", "Normal"], why: "Then like a month, then like a week." },
-        { q: "The companions asked: do we pray one day's prayers in that year-long day?", tf: false, why: "He said: no, estimate the times and pray." }
+        { q: "One day's prayers are enough for that year-long day.", tf: false, why: "He said: no, estimate the times and pray." }
       ]
     },
     {

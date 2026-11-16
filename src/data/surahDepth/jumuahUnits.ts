@@ -86,7 +86,7 @@ const JUMUAH_ONE: DeepUnit = {
       questions: [
         { q: "Who are the unlettered, per Ibn Kathir?", a: "The Arabs", wrong: ["The Romans", "The Persians", "The angels"], why: "The word unlettered refers to the Arabs." },
         { q: "Where was the Messenger ﷺ from, in 62:2?", a: "From among themselves", wrong: ["From a far land", "From the sky", "From Rome"], why: "He it is Who sent among the unlettered ones a Messenger from among themselves." },
-        { tf: true, q: "Naming the Arabs means he was sent only to them.", why: "Mentioning the unlettered ones in specific does not mean that Muhammad was only sent to them." }
+        { tf: false, q: "Naming the Arabs means he was sent only to them.", why: "Naming the unlettered ones does not mean that Muhammad ﷺ was sent only to them." }
       ]
     },
     {
@@ -267,7 +267,7 @@ const JUMUAH_TWO: DeepUnit = {
       questions: [
         { q: "What animal is used in the example of 62:5?", a: "A donkey", wrong: ["A camel", "A horse", "A sheep"], why: "As the likeness of a donkey which carries huge burdens of books." },
         { q: "What does the donkey understand of the books?", a: "Nothing at all", wrong: ["Every word", "The titles", "Half of them"], why: "It will not understand what these books contain because it is only carrying these books using its strength." },
-        { tf: true, q: "Carrying a book is the same as following it.", why: "They read its letter but did not understand its meanings nor abided by them." }
+        { tf: false, q: "Carrying a book is the same as following it.", why: "They read its letter but did not understand its meanings nor abided by them." }
       ]
     },
     {
@@ -365,7 +365,7 @@ const JUMUAH_TWO: DeepUnit = {
       questions: [
         { q: "What happens to the death people run from?", a: "It will meet them", wrong: ["It forgets them", "It goes away", "It waits forever"], why: "Verily, the death from which you flee will surely meet you." },
         { q: "Which ayah does Ibn Kathir compare?", a: "4:78", wrong: ["2:2", "18:10", "112:2"], why: "Wheresoever you may be, death will overtake you even if you are in fortresses built up strong and high. (4:78)" },
-        { tf: true, q: "Strong towers can keep death away.", why: "Death will overtake you even if you are in fortresses built up strong and high." }
+        { tf: false, q: "Strong towers can keep death away.", why: "Death will overtake you even if you are in fortresses built up strong and high." }
       ]
     },
     {
@@ -393,7 +393,7 @@ const JUMUAH_TWO: DeepUnit = {
       questions: [
         { q: "Who does Allah love to meet?", a: "Whoever loves to meet Him", wrong: ["Only kings", "Only the rich", "No one"], why: "Who-ever loves to meet Allah, Allah too loves to meet him." },
         { q: "What does a believer receive near death?", a: "Good news of Allah's pleasure", wrong: ["A letter", "Gold", "Nothing"], why: "He receives the good news of Allah's pleasure with him and His blessings upon him." },
-        { tf: true, q: "Disliking death means hating to meet Allah.", why: "Aisha said, But we dislike death. He said: It is not like this." }
+        { tf: false, q: "Disliking death means hating to meet Allah.", why: "Aisha said, But we dislike death. He said: It is not like this." }
       ]
     }
   ]
@@ -490,7 +490,7 @@ const JUMUAH_THREE: DeepUnit = {
       questions: [
         { q: "What should believers do at the Friday call?", a: "Go to remember Allah", wrong: ["Go to the market", "Go to sleep", "Stay home"], why: "When the call is proclaimed for the Salah on Al-Jumu'ah, then hasten to the remembrance of Allah." },
         { q: "What does hasten mean, per Ibn Kathir?", a: "Head for it", wrong: ["Run fast", "Shout", "Jump"], why: "Meaning, go to it and head for it." },
-        { tf: true, q: "Hasten in 62:9 means walking fast.", why: "The meaning of Sa'y does not refer to walking quickly. It only refers to the importance of it." }
+        { tf: false, q: "Hasten in 62:9 means walking fast.", why: "The meaning of Sa'y does not refer to walking quickly. It only refers to the importance of it." }
       ]
     },
     {
@@ -601,8 +601,8 @@ const JUMUAH_THREE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What may believers do after the prayer, in 62:10?", a: "Seek Allah's bounty", wrong: ["Stay silent all day", "Leave Islam", "Stop working forever"], why: "Then when the Salah is complete, you may disperse through the land, and seek the bounty of Allah." },
-        { q: "When is work allowed again?", a: "After the prayer is finished", wrong: ["During the khutbah", "During the call", "Never"], why: "He allowed them to spread throughout the earth and seek bounty after the prayer is finished." },
-        { tf: true, q: "Islam forbids working on Friday at all.", why: "He allowed them to spread throughout the earth and seek bounty after the prayer is finished." }
+        { q: "When is work allowed again?", a: "After the prayer is finished", wrong: ["During the khutbah", "During the call", "Never"], why: "After the prayer, Allah allowed them to spread through the earth and seek bounty." },
+        { tf: false, q: "Islam forbids working on Friday at all.", why: "After the prayer, Allah allowed them to spread through the earth and seek bounty." }
       ]
     },
     {
