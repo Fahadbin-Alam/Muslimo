@@ -112,7 +112,8 @@ describe("app sheets", () => {
     expect(screen.getByText("or a parent's account")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("account-social-google"));
     expect(onSocial).toHaveBeenCalledWith("google");
-    await fireEvent.press(screen.getByTestId("account-social-apple"));
+    // On iPhone Apple's own system button is drawn (App Review guideline 4), not our button.
+    await fireEvent.press(screen.getByTestId("account-social-apple-native"));
     expect(onSocial).toHaveBeenCalledWith("apple");
 
     // Log in has no gate (it can't make a new account) and a plain "or".
