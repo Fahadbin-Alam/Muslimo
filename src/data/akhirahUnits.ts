@@ -330,6 +330,19 @@ const MINOR_SIGNS: DeepUnit = {
         { q: "What will tell a man what his family did after him?", a: "His thigh", wrong: ["His shadow", "His pillow", "His lamp"], why: "His thigh will inform him of what occurred with his family after him, he ﷺ said." },
         { q: "Even the tip of a man's whip will speak to him before the Hour.", tf: true, why: "The tip of his whip and the straps on his sandal will speak to him, he ﷺ said." }
       ]
+    },
+    {
+      slug: "greeting-only-some",
+      title: "A greeting for only some",
+      line: "Before the Hour, people will greet only certain people.",
+      facts: ["Told by Abdullah ibn Mas'ud", "A man rushing past greeted only him", "False testimony will appear"],
+      source: hadith("adab", "1049", "Abdullah ibn Mas'ud", "Sahih (Al-Albani)", "Tariq said: in the mosque a man rushing past greeted only Abdullah ibn Mas'ud, who said: Allah has spoken the truth and His Messenger conveyed it. Later he told them the Prophet ﷺ said: before the Final Hour people will single out one person for the greeting, trade will grow, people will cut their ties with relatives, false testimony will appear and true testimony will be hidden.", "Before the Final Hour people will single out one individual for the greeting"),
+      difficulty: 2,
+      questions: [
+        { q: "Before the Hour, who will people give salam to, he ﷺ said?", a: "To certain people only", wrong: ["To everyone they meet", "To strangers only", "To children only"], why: "Before the Final Hour people will single out one individual for the greeting, he ﷺ said." },
+        { q: "What did a man rushing past in the mosque do?", a: "Greeted only Ibn Mas'ud", wrong: ["Greeted no one", "Greeted everyone", "Gave the adhan"], why: "He greeted him alone, saying peace be upon you, Abu Abdur-Rahman, Tariq said." },
+        { q: "Before the Hour, false testimony will appear, he ﷺ said.", tf: true, why: "He ﷺ said false testimony will appear and true testimony will be concealed." }
+      ]
     }
   ]
 };
