@@ -723,7 +723,14 @@ export type SignKind =
   | "easygoing-trader"
   | "fruit-when-ripe"
   | "gold-for-gold"
-  | "share-the-fruits";
+  | "share-the-fruits"
+  | "tired-camel"
+  | "water-skins"
+  | "alone-at-night"
+  | "travellers-adhan"
+  | "set-out-on-thursday"
+  | "camel-is-yours"
+  | "search-at-arafah";
 
 export type SignScene = {
   id: string;
@@ -3154,6 +3161,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Ansar said to the Prophet ﷺ: divide the palms between us and our brothers. He said: no. The Ansar said to the emigrants: then you do the work of the trees for us, and we will share the fruit with you. The emigrants said: we hear and obey.",
     sources: [bukhari("2325")]
+  },
+  {
+    id: "sign-tired-camel",
+    kind: "tired-camel",
+    caption:
+      "Jabir said that he was riding a camel of his that had grown tired. The Prophet ﷺ passed by, struck it and made du'a for it, and it went as it had never gone before. Then he said: sell it to me for an uqiyah. I said: no. Then he said: sell it to me for an uqiyah. So I sold it to him, keeping the right to ride it to my family. When we arrived, I brought him the camel and he paid me its price. Then I went away, and he sent after me and said: I was not going to take your camel. Take that camel of yours, for it is your wealth.",
+    sources: [bukhari("2718")]
+  },
+  {
+    id: "sign-water-skins",
+    kind: "water-skins",
+    caption:
+      "Imran ibn Husayn said: we were with the Prophet ﷺ on a journey, and we had grown very thirsty. As we went on, we came upon a woman sitting between two water-skins, her legs hanging down. We said: where is the water? She said: there is no water. We said: how far is it between your people and the water? She said: a day and a night. We brought her to the Prophet ﷺ, and he had her two water-skins brought and wiped their mouths. Forty of us drank, thirsty, until we had our fill, and we filled every water-skin and vessel we had; and her water-skins were all but bursting from fullness. Then he said: bring what you have, and pieces of bread and dates were gathered for her. She went to her people, and Allah guided that settlement through her: she accepted Islam, and they accepted Islam.",
+    sources: [bukhari("3571")]
+  },
+  {
+    id: "sign-alone-at-night",
+    kind: "alone-at-night",
+    caption: "Ibn Umar said that the Prophet ﷺ said: if people knew what I know of being alone, no rider would travel by night alone.",
+    sources: [bukhari("2998")]
+  },
+  {
+    id: "sign-travellers-adhan",
+    kind: "travellers-adhan",
+    caption:
+      "Malik ibn al-Huwairith said: two men came to the Prophet ﷺ, intending a journey. The Prophet ﷺ said: when you two set out, give the adhan, then the iqamah, then let the older of you lead you.",
+    sources: [bukhari("630")]
+  },
+  {
+    id: "sign-set-out-on-thursday",
+    kind: "set-out-on-thursday",
+    caption: "Ka'b ibn Malik used to say: seldom did the Messenger of Allah ﷺ set out on a journey on any day other than Thursday.",
+    sources: [bukhari("2949")]
+  },
+  {
+    id: "sign-camel-is-yours",
+    kind: "camel-is-yours",
+    caption:
+      "Ibn Umar said: we were with the Prophet ﷺ on a journey, and I was on a young camel that was hard to handle. The Prophet ﷺ said to Umar: sell it to me. So he bought it, and the Prophet ﷺ said: it is yours, O Abdullah.",
+    sources: [bukhari("2611")]
+  },
+  {
+    id: "sign-search-at-arafah",
+    kind: "search-at-arafah",
+    caption:
+      "Jubair ibn Mut'im said: I lost a camel of mine, and I went looking for it on the day of Arafah. I saw the Prophet ﷺ standing at Arafah, and I said: by Allah, this one is of the Hums; what is he doing here?",
+    sources: [bukhari("1664")]
   }
 ];
 
@@ -4888,7 +4942,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Gold for gold and silver for silver only equal for equal; gold for silver however you wish.
   "deep-book-trade-gold-for-gold": "sign-gold-for-gold",
   // The Ansar asked to divide their palms; he said no, so the emigrants did the work and shared the fruit.
-  "deep-hashr2-share-the-fruits": "sign-share-the-fruits"
+  "deep-hashr2-share-the-fruits": "sign-share-the-fruits",
+  // His tired camel went as never before after his du'a; he bought it for an uqiyah, paid its price and gave it back.
+  "deep-jabir-the-camel": "sign-tired-camel",
+  // Forty thirsty drank from her two water-skins and filled every vessel; she and her people accepted Islam.
+  "deep-imran-ibn-husayn-the-water-skins": "sign-water-skins",
+  // If people knew what he knew of being alone, no rider would travel by night alone.
+  "deep-manners-staying-safe-not-alone-at-night": "sign-alone-at-night",
+  // Two setting out: give the adhan, then the iqamah, and let the older of you lead.
+  "deep-book-adhan-travellers-call-too": "sign-travellers-adhan",
+  // Seldom did he set out on a journey on a day other than Thursday.
+  "deep-found-journey-set-out-on-thursday": "sign-set-out-on-thursday",
+  // He bought Umar's young camel, hard to handle, and gave it to Abdullah ibn Umar.
+  "deep-kids-kind-ways-the-camel-is-yours": "sign-camel-is-yours",
+  // Looking for his lost camel on the day of Arafah, Jubair saw him standing at Arafah.
+  "deep-hajj-the-day-of-arafah-a-lost-camel": "sign-search-at-arafah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
