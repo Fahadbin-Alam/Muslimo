@@ -702,7 +702,14 @@ export type SignKind =
   | "not-before-ramadan"
   | "no-fast-on-eid"
   | "ashura-and-ramadan"
-  | "milk-at-arafah";
+  | "milk-at-arafah"
+  | "rain-dua"
+  | "nothing-grows"
+  | "cloud-and-garden"
+  | "pray-in-your-homes"
+  | "house-for-rain-and-sun"
+  | "sheep-on-the-hills"
+  | "when-the-wind-blows";
 
 export type SignScene = {
   id: string;
@@ -2990,6 +2997,54 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Maymunah said: the people doubted whether the Prophet ﷺ was fasting on the day of Arafah, so I sent him a cup of milk while he was standing at the place of standing, and he drank from it while the people were looking.",
     sources: [bukhari("1989")]
+  },
+  {
+    id: "sign-rain-dua",
+    kind: "rain-dua",
+    caption: "Aishah said: whenever the Messenger of Allah ﷺ saw the rain, he would say: let it be a strong, fruitful rain.",
+    sources: [bukhari("1032")]
+  },
+  {
+    id: "sign-nothing-grows",
+    kind: "nothing-grows",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: famine is not that no rain comes to you; famine is that rain comes to you, and comes again, and the earth grows nothing.",
+    sources: [muslim("2904")]
+  },
+  {
+    id: "sign-cloud-and-garden",
+    kind: "cloud-and-garden",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: while a man was in the wilderness, he heard a voice in a cloud: water the garden of so-and-so. That cloud moved aside and poured its water on stony ground, and a channel among its channels took all that water. He followed the water, and there was a man standing in his garden, turning the water with his spade. He said to him: servant of Allah, what is your name? He said: so-and-so, the name he had heard in the cloud. He said: servant of Allah, why do you ask my name? He said: I heard a voice in the cloud whose water this is, saying: water the garden of so-and-so, your name. What do you do with it? He said: since you say this, I look at what comes out of it; I give a third of it in charity, I and my family eat a third, and I put a third back into it.",
+    sources: [muslim("2984a")]
+  },
+  {
+    id: "sign-pray-in-your-homes",
+    kind: "pray-in-your-homes",
+    caption:
+      "Nafi said: Ibn Umar called the adhan for the prayer on a night of cold and wind, then said: pray in your homes. Then he said: on a night of cold and rain, the Messenger of Allah ﷺ used to tell the caller to say: pray in your homes.",
+    sources: [bukhari("666")]
+  },
+  {
+    id: "sign-house-for-rain-and-sun",
+    kind: "house-for-rain-and-sun",
+    caption:
+      "Ibn Umar said: I saw myself in the time of the Prophet ﷺ: I built a house with my own hand, to shelter me from the rain and shade me from the sun, and none of Allah's creation helped me build it.",
+    sources: [bukhari("6302")]
+  },
+  {
+    id: "sign-sheep-on-the-hills",
+    kind: "sheep-on-the-hills",
+    caption:
+      "Abu Sa'id al-Khudri said that the Messenger of Allah ﷺ said: soon the best wealth of a man will be sheep that he follows to the tops of the mountains and the places where the rain falls, fleeing with his faith from trials.",
+    sources: [bukhari("3300")]
+  },
+  {
+    id: "sign-when-the-wind-blows",
+    kind: "when-the-wind-blows",
+    caption:
+      "Aishah said: when the wind blew hard, the Prophet ﷺ would say: O Allah, I ask You for its good, the good in it and the good it is sent with, and I seek refuge in You from its evil, the evil in it and the evil it is sent with. When clouds gathered in the sky, his colour changed, and he went out and came in, and came forward and went back; and when it rained, it was lifted from him. I asked him, and he said: perhaps it is, Aishah, as the people of 'Ad said: when they saw it as a cloud coming toward their valleys, they said: this is a cloud that will bring us rain. She also said: when he saw clouds or wind, it showed on his face; she asked him, and he said: Aishah, what assures me that there is no punishment in it? A people were punished with the wind.",
+    sources: [muslim("899b"), bukhari("4829")]
   }
 ];
 
@@ -4680,7 +4735,22 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-eid-no-fasting": "sign-no-fast-on-eid",
   "deep-book-fasting-ashura-became-optional": "sign-ashura-and-ramadan",
   "deep-book-fasting-ashura-and-ramadan": "sign-ashura-and-ramadan",
-  "deep-book-fasting-milk-at-arafah": "sign-milk-at-arafah"
+  "deep-book-fasting-milk-at-arafah": "sign-milk-at-arafah",
+  // Whenever he saw the rain, he would say: let it be a strong, fruitful rain.
+  "deep-naba1-the-rain-dua": "sign-rain-dua",
+  // Famine is not that no rain comes; famine is that rain comes, and comes again, and the earth grows nothing.
+  "deep-dua-rain-and-wind-rain-yet-nothing-grows": "sign-nothing-grows",
+  // A voice in a cloud: water the garden of so-and-so; a third in charity, a third eaten, a third put back into it.
+  "deep-zakat-stories-of-charity-the-cloud-and-the-garden": "sign-cloud-and-garden",
+  // On a night of cold and rain, he would tell the caller to say: pray in your homes.
+  "deep-prayer-rain-cold-and-heat-pray-in-your-homes": "sign-pray-in-your-homes",
+  // Ibn Umar built a house with his own hand, to shelter him from the rain and shade him from the sun.
+  "deep-akhirah-what-this-world-is-worth-a-house-for-rain-and-sun": "sign-house-for-rain-and-sun",
+  // Soon a man's best wealth will be sheep he follows to the mountain tops, fleeing with his faith from trials.
+  "deep-book-bad-al-khalq-sheep-on-the-hills": "sign-sheep-on-the-hills",
+  // When the wind blew hard, he asked for its good and sought refuge from its evil; at clouds, he recalled 'Ad.
+  "deep-ahqaf2-dua-when-the-wind-blows": "sign-when-the-wind-blows",
+  "deep-ahqaf2-worry-at-the-clouds": "sign-when-the-wind-blows"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
