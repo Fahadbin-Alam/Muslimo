@@ -604,7 +604,14 @@ export type SignKind =
   | "ten-blessings"
   | "friday-fajr"
   | "learn-from-four"
-  | "young-ibn-abbas";
+  | "young-ibn-abbas"
+  | "go-back-and-pray"
+  | "ansar-at-hunayn"
+  | "the-sneeze"
+  | "visitors-of-mudar"
+  | "steps-in-paradise"
+  | "madinah-rejoiced"
+  | "red-camels";
 
 export type SignScene = {
   id: string;
@@ -2215,6 +2222,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: Umar used to bring me in with the elders of Badr, and some of them felt it, and said: why do you bring this one in with us, when we have sons like him? Umar said: it is for what you know of him. One day he called them and brought me in with them, and I saw that he called me that day only to show them. He said: what do you say of the word of Allah: when the help of Allah comes, and the opening? Some of them said: we are told to praise Allah and ask His forgiveness when He helps us and opens for us. Some kept quiet and said nothing. Then he said to me: is that what you say, Ibn Abbas? I said: no. He said: then what do you say? I said: it is the end of the life of the Messenger of Allah ﷺ, which He made known to him: when the help of Allah comes, and the opening, and that is the sign of your end, so glorify the praise of your Lord and ask His forgiveness; He is ever accepting of repentance. Umar said: I know of it only what you say.",
     sources: [bukhari("4970")]
+  },
+  {
+    id: "sign-go-back-and-pray",
+    kind: "go-back-and-pray",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ came into the masjid, and a man came in and prayed, then he gave salam to the Prophet ﷺ, who returned it and said: go back and pray, for you have not prayed. He went back and prayed as he had prayed, then came and gave salam to the Prophet ﷺ, and he said: go back and pray, for you have not prayed; three times. He said: by the One who sent you with the truth, I cannot do better than this, so teach me. He said: when you stand for the prayer, say takbir, then recite what is easy for you of the Quran, then bow until you are at rest bowing, then rise until you stand up straight, then prostrate until you are at rest in prostration, then rise until you are at rest sitting, and do that in all of your prayer.",
+    sources: [bukhari("757")]
+  },
+  {
+    id: "sign-ansar-at-hunayn",
+    kind: "ansar-at-hunayn",
+    caption:
+      "Abdullah ibn Zayd ibn Asim said: when Allah gave His Messenger ﷺ the spoils on the day of Hunayn, he shared them among the people whose hearts were being won, and gave the Ansar nothing, and it was as if they felt it, since they did not get what the others got. So he spoke to them and said: O Ansar, did I not find you astray, and Allah guided you through me? You were divided, and Allah joined you together through me; and poor, and Allah made you rich through me. Whatever he said, they said: Allah and His Messenger did us more favor. He said: what keeps you from answering the Messenger of Allah ﷺ? Whatever he said, they said: Allah and His Messenger did us more favor. He said: if you wished, you could say: you came to us like this and like this. Will you not be pleased that the others go with sheep and camels, and you go with the Prophet ﷺ to your homes? Were it not for the hijrah, I would have been one of the Ansar; and if the people went through a valley and a pass, I would go through the valley and the pass of the Ansar. The Ansar are the garment next to the skin, and the people the cloak over it. After me you will see others put before you, so be patient until you meet me at the Pool.",
+    sources: [bukhari("4330")]
+  },
+  {
+    id: "sign-the-sneeze",
+    kind: "the-sneeze",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: when one of you sneezes, let him say: al-hamdu lillah (all praise is for Allah). And let his brother, or his companion, say to him: yarhamuk Allah (may Allah have mercy on you). When he says to him: yarhamuk Allah, let him say: yahdikumullah wa yuslihu balakum (may Allah guide you and set your affairs right).",
+    sources: [bukhari("6224")]
+  },
+  {
+    id: "sign-visitors-of-mudar",
+    kind: "visitors-of-mudar",
+    caption:
+      "Jarir said: we were with the Messenger of Allah ﷺ early in the day, when some people came to him barefoot and ill-clad, wearing striped woollen cloaks, with swords hanging from them. Most of them, rather all of them, were of Mudar. The face of the Messenger of Allah ﷺ changed when he saw their need. He went in and came out, and told Bilal, who gave the adhan and the iqamah, and he prayed. Then he spoke, and recited: O people, be mindful of your Lord, who created you from one soul, to the end of the ayah: Allah is ever watching over you; and the ayah in al-Hashr: be mindful of Allah, and let every soul look to what it has sent ahead for tomorrow. Let a man give charity from his dinar, from his dirham, from his cloth, from his sa' of wheat, from his sa' of dates, until he said: even if it is half a date. Then a man of the Ansar came with a bag his hand could hardly carry, rather it could not; then the people followed one another, until I saw two heaps of food and clothes, and I saw the face of the Messenger of Allah ﷺ shining as if it were gold. The Messenger of Allah ﷺ said: whoever starts a good way in Islam has its reward, and the reward of those who act on it after him, without anything lessened from their rewards; and whoever starts a bad way in Islam carries its burden, and the burden of those who act on it after him, without anything lessened from their burdens.",
+    sources: [muslim("1017")]
+  },
+  {
+    id: "sign-steps-in-paradise",
+    kind: "steps-in-paradise",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said to Bilal at the Fajr prayer: O Bilal, tell me of the deed you most hope for that you have done in Islam, for I heard the sound of your steps ahead of me in Paradise. He said: I have done no deed that I hope for more than this: I have not made wudu at any hour of the night or the day but I prayed with that wudu what was written for me to pray.",
+    sources: [bukhari("1149")]
+  },
+  {
+    id: "sign-madinah-rejoiced",
+    kind: "madinah-rejoiced",
+    caption:
+      "Al-Bara ibn Azib said: the first to come to us were Mus'ab ibn Umayr and Ibn Umm Maktum, and they taught the people to recite the Quran. Then Bilal, Sa'd and Ammar ibn Yasir came. Then Umar ibn al-Khattab came with twenty of the Companions of the Prophet ﷺ. Then the Prophet ﷺ came, and I never saw the people of Madinah rejoice at anything as they rejoiced at the Messenger of Allah ﷺ, until even the girls were saying: the Messenger of Allah ﷺ has come. And before he came, I had read Glorify the name of your Lord, the Most High, among other surahs of the Mufassal.",
+    sources: [bukhari("3925")]
+  },
+  {
+    id: "sign-red-camels",
+    kind: "red-camels",
+    caption:
+      "Sahl ibn Sa'd said: the Messenger of Allah ﷺ said: tomorrow I will give the flag to a man through whose hands Allah will give victory. So the people spent the night wondering which of them would be given it. In the morning they went to the Messenger of Allah ﷺ, each of them hoping to be given it. He said: where is Ali ibn Abi Talib? They said: his eyes are sore, O Messenger of Allah. He said: send for him and bring him to me. When he came, he spat in his eyes and prayed for him, and he was cured as if he had had no pain, and he gave him the flag. Ali said: O Messenger of Allah, shall I fight them until they are like us? He said: go calmly until you reach their land, then invite them to Islam, and tell them what is due on them of the right of Allah; for by Allah, that Allah guides one man through you is better for you than to have red camels.",
+    sources: [bukhari("3701")]
   }
 ];
 
@@ -3611,7 +3667,30 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Umar brought young Ibn Abbas in with the elders of Badr, and asked them of an-Nasr (Sahih al-Bukhari 4970).
   "deep-umar-ibn-abbas": "sign-young-ibn-abbas",
   "deep-tree-umar-young-ibn-abbas": "sign-young-ibn-abbas",
-  "deep-nasr1-what-ibn-abbas-understood": "sign-young-ibn-abbas"
+  "deep-nasr1-what-ibn-abbas-understood": "sign-young-ibn-abbas",
+  // Go back and pray, for you have not prayed; then he taught him to pray at rest (Sahih al-Bukhari 757).
+  "deep-prayerlive-go-back": "sign-go-back-and-pray",
+  "prayer-ruku-and-sujud-rising-from-ruku": "sign-go-back-and-pray",
+  "prayer-ruku-and-sujud-sitting-between-sujud": "sign-go-back-and-pray",
+  // The Ansar after Hunayn: guided, joined and made rich through him, and taking him home (Sahih al-Bukhari 4330).
+  "deep-hujurat2-the-ansar-at-hunayn": "sign-ansar-at-hunayn",
+  "deep-mumtahanah3-brought-together-through-me": "sign-ansar-at-hunayn",
+  // The sneeze: al-hamdu lillah, yarhamuk Allah, and yahdikumullah wa yuslihu balakum (Sahih al-Bukhari 6224).
+  "foundation-sneeze": "sign-the-sneeze",
+  "deep-adab-the-sneeze": "sign-the-sneeze",
+  "deep-dua-day-sneeze": "sign-the-sneeze",
+  // The poor visitors of Mudar, and charity even of half a date, until two heaps were gathered (Sahih Muslim 1017).
+  "deep-hashr4-the-poor-visitors": "sign-visitors-of-mudar",
+  "deep-hashr4-even-half-a-date": "sign-visitors-of-mudar",
+  // He heard Bilal's steps ahead of him in Paradise, for Bilal prayed after every wudu (Sahih al-Bukhari 1149).
+  "sahabi-bilal-ibn-rabah-worship-and-character": "sign-steps-in-paradise",
+  "deep-bilal-footsteps": "sign-steps-in-paradise",
+  // Mus'ab and Ibn Umm Maktum came first to teach; and Madinah never rejoiced so as at his coming (Sahih al-Bukhari 3925).
+  "deep-muhajirun-first-teachers": "sign-madinah-rejoiced",
+  "deep-muhajirun-joy": "sign-madinah-rejoiced",
+  // The flag at Khaybar, and one guided through you is better than red camels (Sahih al-Bukhari 3701).
+  "deep-ali-the-flag": "sign-red-camels",
+  "deep-ali-red-camels": "sign-red-camels"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
