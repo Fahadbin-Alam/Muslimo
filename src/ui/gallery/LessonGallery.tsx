@@ -1145,6 +1145,14 @@ const STATES: State[] = [
   { id: "scene-closest-in-sujud", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-reward-closest" ask="When is a servant closest" /> },
   { id: "scene-accepts-only-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-muminun2-allah-is-good" ask="Why was the traveller's dua" /> },
   { id: "scene-mercy-on-musa", render: () => <SceneQuestionDemo lessonId="lesson-deep-saff2-mercy-on-musa" ask="Whom did the Prophet" /> },
+  // A question on each scene of ways he taught ﷺ (round 95).
+  { id: "scene-setting-out", render: () => <SceneQuestionDemo lessonId="lesson-deep-zukhruf1-the-riders-dua" ask="How many times did he say Allahu Akbar" /> },
+  { id: "scene-for-his-brother", render: () => <SceneQuestionDemo lessonId="lesson-hadith-for-kids-bukhari-13" ask="What should you wish for your brother" /> },
+  { id: "scene-eight-gates", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayerlive-after-wudu" ask="How many gates of Paradise" /> },
+  { id: "scene-house-for-twelve", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-extra-twelve" ask="Twelve extra rak'ahs a day bring" /> },
+  { id: "scene-ready-for-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-jumuah-get-ready" ask="What is forgiven for doing it all" /> },
+  { id: "scene-right-on-servants", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-tawhid-allahs-right" ask="What is the servants' right on Allah" /> },
+  { id: "scene-pray-as-you-saw", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayerlive-pray-as-me" ask="Who did he say should lead" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

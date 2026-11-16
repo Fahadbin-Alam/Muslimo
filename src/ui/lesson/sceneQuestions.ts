@@ -2651,6 +2651,75 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Musa was hurt by his own people and kept patient.", "True", "He was harmed with more than this", "And he was patient"],
     ["What did Musa do when harmed, in the hadith?", "Endured patiently", "And he was patient"],
     ["What did Musa do when harmed, per the hadith?", "He endured patiently", "And he was patient"]
+  ],
+  // When he mounted his camel for a journey he said Allahu Akbar three times, then: glory to Him who made this serve us,
+  // we could not have done it ourselves, and to our Lord we will return; and when he returned he said them and added:
+  // we return, repent, worship, praise our Lord (Sahih Muslim 1342). (What 43:13 says and what Ibn Abbas explains stay
+  // on their usual picture.)
+  "sign-setting-out": [
+    ["What did he ﷺ say three times before the travel dua?", "Allahu Akbar", "He said Allahu Akbar three times"],
+    ["How many times did he say Allahu Akbar first, per Muslim 1342?", "Three", "He said Allahu Akbar three times"],
+    ["The travel dua thanks Allah for making what serve us?", "Our ride", "Glory to Him who made this serve us"]
+  ],
+  // None of you will have faith till he wishes for his brother what he likes for himself (Sahih al-Bukhari 13). (A
+  // friend who wins a prize is not in the scene.)
+  "sign-for-his-brother": [
+    ["What should you wish for your brother?", "What you like for yourself", "What he likes for himself"],
+    ["True faith means wanting good things only for yourself.", "False", "Till he wishes for his brother", "What he likes for himself"],
+    ["When is a person's faith complete, in this hadith?", "When he wants for others what he wants", "Till he wishes for his brother", "What he likes for himself"],
+    ["Wanting good only for yourself is complete faith.", "False", "Till he wishes for his brother", "What he likes for himself"]
+  ],
+  // Whoever does wudu, and does it well, then says: I bear witness that there is no god but Allah and that Muhammad is
+  // His slave and Messenger, the eight gates of Paradise open for him; he enters by whichever he wishes (Sahih Muslim
+  // 234). (The two rak'ahs prayed with the heart are not in the scene.)
+  "sign-eight-gates": [
+    ["What comes first, in the hadith?", "Doing wudu well", "Whoever does wudu, and does it well"],
+    ["What should you say after finishing wudu?", "The shahadah", "Then says: I testify, no god but Allah", "And Muhammad is His slave and Messenger"],
+    ["How many gates of Paradise open for him?", "Eight", "The eight gates of Paradise open for him"],
+    ["What opens for him, in the hadith?", "The eight gates of Paradise", "The eight gates of Paradise open for him"],
+    ["Which gate may he enter, in the hadith?", "Whichever he wishes", "He enters by whichever he wishes"]
+  ],
+  // Whoever prays twelve rak'ahs in a day and night, a house is built for him in Paradise; Umm Habibah said: I never
+  // left them since (Sahih Muslim 728). (The five prayers and her father are not in the scene.)
+  "sign-house-for-twelve": [
+    ["How many voluntary rak'ahs a day earn a house in Paradise?", "Twelve", "Whoever prays twelve rak'ahs, day and night"],
+    ["Twelve extra rak'ahs a day bring what?", "A house in Jannah", "A house is built for him in Paradise"],
+    ["What did Umm Habibah do after hearing it?", "Never left them", "Umm Habibah said: I never left them since"],
+    ["What did Umm Habibah do after hearing it?", "Never stopped praying them", "Umm Habibah said: I never left them since"]
+  ],
+  // Whoever bathes on Friday and cleans himself, puts on oil or the scent of his home, goes out, not parting two people,
+  // prays what was written for him and is quiet when the imam speaks, is forgiven what is between it and the other
+  // Friday (Sahih al-Bukhari 883). (What Ibn Kathir says stays on its usual picture.)
+  "sign-ready-for-friday": [
+    ["What should you do before Jumu'ah?", "Bathe and wear scent", "Whoever bathes on Friday, cleans himself", "Puts on oil, or the scent of his home"],
+    ["What must you not do in the masjid?", "Push between two people", "Then goes out, not parting two people"],
+    ["What should one not do to people sitting?", "Push between two of them", "Then goes out, not parting two people"],
+    ["What should one do during the khutbah?", "Stay silent", "Then is quiet when the imam speaks"],
+    ["What is forgiven for doing it all?", "Sins until next Friday", "Forgiven what is between the two Fridays"]
+  ],
+  // Riding behind him on the donkey 'Ufayr, Mu'adh was asked: do you know Allah's right on His servants? To worship Him
+  // and join nothing with Him; and theirs on Him: He does not punish who joins none. Shall I give the people the good
+  // news? Do not, lest they rely on it (Sahih al-Bukhari 2856). (Who rode with him is never named in the scene, the
+  // donkey has its own picture, and what 4:36 says stays on its usual picture.)
+  "sign-right-on-servants": [
+    ["Where was Mu'adh when he was asked?", "Riding behind the Prophet ﷺ", "I rode behind him on a donkey called Ufayr"],
+    ["What is Allah's right on His servants?", "Worship Him, join no partner", "To worship Him and join nothing with Him"],
+    ["What is Allah's right on His servants?", "To worship Him alone", "To worship Him and join nothing with Him"],
+    ["What is Allah's right on His servants, in Bukhari 2856?", "To worship Him alone", "To worship Him and join nothing with Him"],
+    ["What is Allah's right on His servants, per Bukhari 2856?", "To worship Him alone", "To worship Him and join nothing with Him"],
+    ["Worshipping idols beside Allah is allowed.", "False", "To worship Him and join nothing with Him"],
+    ["What is the servants' right on Allah, as promised?", "Not to punish those without shirk", "Their right: He does not punish who joins none"],
+    ["What is the servant's right on Allah, per Bukhari 2856?", "Not to be punished if no shirk", "Their right: He does not punish who joins none"]
+  ],
+  // Young men close in age stayed with him twenty days and nights; he was merciful and gentle, and sent them back to
+  // teach their families: pray as you have seen me pray; one of you calls the adhan, and the eldest leads (Sahih
+  // al-Bukhari 631).
+  "sign-pray-as-you-saw": [
+    ["How long did the young men stay to learn?", "Twenty days", "We stayed with him twenty days and nights"],
+    ["Whose prayer is the model for every Muslim?", "The Prophet's ﷺ", "Pray as you have seen me pray"],
+    ["How should a Muslim pray?", "As the Prophet ﷺ prayed", "Pray as you have seen me pray"],
+    ["The Prophet ﷺ said: pray as you have seen me praying.", "True", "Pray as you have seen me pray"],
+    ["Who did he say should lead their prayer?", "The eldest", "One of you calls the adhan, the eldest leads"]
   ]
 };
 
