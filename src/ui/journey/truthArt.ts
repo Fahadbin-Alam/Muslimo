@@ -722,7 +722,7 @@ function everyRight(): SignArt {
             [0.48, n(darda[0] - darda0[0]), n(darda[1] - darda0[1])],
             [0.5, n(matB[0] - darda0[0]), n(matB[1] - darda0[1])],
             [0.52, n(matB[0] - darda0[0]), n(matB[1] - darda0[1])],
-            [0.54, n(darda[0] - darda0[0]), n(darda[1] - darda0[1])],
+            [0.535, n(darda[0] - darda0[0]), n(darda[1] - darda0[1])],
             [0.6, n(darda[0] - darda0[0]), n(darda[1] - darda0[1])],
             [0.63, n(matB[0] - darda0[0]), n(matB[1] - darda0[1])],
             [0.88, n(matB[0] - darda0[0]), n(matB[1] - darda0[1])],
