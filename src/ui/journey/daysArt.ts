@@ -20,24 +20,24 @@ import { GOLD, hills, land, someone, sun, VOICE, WARM, wash } from "./worshipArt
  */
 
 /** Keys through the given points (toldArt.ts), with no "-0" left by rounding, so an end at 0 reads as 0. */
-const track = (points: Parameters<typeof trackFrom>[0]): SignKeys => {
+export const track = (points: Parameters<typeof trackFrom>[0]): SignKeys => {
   const keys = trackFrom(points) as Record<string, number[]>;
   for (const key of Object.keys(keys)) keys[key] = keys[key].map((value) => value + 0);
   return keys as SignKeys;
 };
 
 /** A point of a move: when, and how far across and down. */
-type At = [number, number, number];
+export type At = [number, number, number];
 
 /** A place at night: a small dashed circle, light on the dark. */
-const LIGHT = "#F3E3C0";
+export const LIGHT = "#F3E3C0";
 
 /** A dashed ring of care on the ground about (x, y), `rx` across and `ry` high. */
-const care = (x: number, y: number, rx: number, ry: number, color = GOLD) =>
+export const care = (x: number, y: number, rx: number, ry: number, color = GOLD) =>
   `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" stroke="${color}" stroke-width="0.8" stroke-dasharray="1.6 1.2" fill="none"/>`;
 
 /** The day: sky, sun, a cloud or two, the hills and the land. */
-const dayAround = (sunAt: [number, number], ms: number): SignPart[] => [
+export const dayAround = (sunAt: [number, number], ms: number): SignPart[] => [
   { name: "sky", svg: sky("#BFE3FA", "#DDF1FC", 62) },
   { name: "the sun", svg: sun(sunAt[0], sunAt[1]) },
   { name: "clouds", svg: cloud(46, 28, 0.6, "#FFFFFF", 0.9) + cloud(104, 22, 0.55, "#FFFFFF", 0.85), loop: { move: "slide", ms } },
@@ -46,11 +46,11 @@ const dayAround = (sunAt: [number, number], ms: number): SignPart[] => [
 ];
 
 /** Palms at the given feet, each `h` high, swaying a little. */
-const palms = (list: [number, number, number][], of = "Madinah"): SignPart[] =>
+export const palms = (list: [number, number, number][], of = "Madinah"): SignPart[] =>
   list.map(([x, y, h], i) => ({ name: `a palm of ${of} ${i + 1}`, svg: palm(x, y, h), origin: { x, y }, loop: { move: "sway", ms: 5200 + i * 600, angle: 1.4, phase: i / 3 } }));
 
 /** A camel of the picture cards, `s` times its size, with its feet at (x, y). */
-const camel = (x: number, y: number, s: number, left = false) => animalAt("camel", n(x - 50 * s), n(y - 73 * s), s, left);
+export const camel = (x: number, y: number, s: number, left = false) => animalAt("camel", n(x - 50 * s), n(y - 73 * s), s, left);
 
 /** A red camel: the camel of the picture cards with a deep red-brown coat, the finest the Arabs had. */
 const redCamel = (x: number, y: number, s: number, left = false) =>
@@ -60,14 +60,14 @@ const redCamel = (x: number, y: number, s: number, left = false) =>
 const sheep = (x: number, y: number, s: number, left = false) => animalAt("sheep", n(x - 50 * s), n(y - 73 * s), s, left);
 
 /** Keys of a spark that shows at `from`, rises by `rise` and fades by `to`. */
-const sparkRising = (from: number, to: number, rise = 10): SignKeys => ({
+export const sparkRising = (from: number, to: number, rise = 10): SignKeys => ({
   at: [0, from, at3(from + 0.005), at3(to - 0.005), to],
   opacity: [0, 0, 1, 1, 0],
   y: [0, 0, -1, -rise, n(-rise - 1)]
 });
 
 /** A small light in a place, a soft glow with a spark in its middle at (x, y). */
-const lightIn = (x: number, y: number, r = 4, color = WARM) => glow(x, y, r, color, 0.36) + sparkle(x, y, 1.1, "#E8A93A");
+export const lightIn = (x: number, y: number, r = 4, color = WARM) => glow(x, y, r, color, 0.36) + sparkle(x, y, 1.1, "#E8A93A");
 
 /** Quick grey strokes beside a place at (x, y): a prayer rushed, up and down. */
 const rushed = (x: number, y: number) =>
@@ -81,7 +81,7 @@ const backMark = (x: number, y: number) =>
   `<path d="M${n(x - 2.6)} ${n(y + 0.4)} L${n(x - 1.4)} ${n(y + 1.4)} L${n(x - 0.6)} ${n(y + 0.2)}" stroke="${GREY}" stroke-width="0.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
 
 /** A gold coin, its middle at (x, y). */
-const goldCoin = (x: number, y: number, r = 1.6) =>
+export const goldCoin = (x: number, y: number, r = 1.6) =>
   `<circle cx="${x}" cy="${y}" r="${r}" fill="#F2C94C" stroke="#B8902E" stroke-width="0.4"/><circle cx="${x}" cy="${y}" r="${n(r * 0.55)}" fill="none" stroke="#D9AE3C" stroke-width="0.3"/>`;
 
 /** A silver coin, its middle at (x, y). */
@@ -117,12 +117,12 @@ const clothesHeap = (x: number, y: number) =>
   cloth(x, y, "#E9E2D0", "#C9BFA6", 7) + cloth(x, n(y - 2.4), "#B9D0E6", "#94AFC9", 6) + cloth(x, n(y - 4.8), "#E6C9A0", "#C9A87A", 5.2) + cloth(x, n(y - 7.2), "#C8D9B0", "#A6BC8A", 4.2);
 
 /** A jug of water, its foot's middle at (x, y), its spout to the right. */
-const jug = (x: number, y: number) =>
+export const jug = (x: number, y: number) =>
   `<path d="M${n(x - 2.2)} ${y} Q${n(x - 3.2)} ${n(y - 3)} ${n(x - 1.4)} ${n(y - 5.2)} L${n(x - 1.4)} ${n(y - 6.4)} L${n(x + 1.4)} ${n(y - 6.4)} L${n(x + 1.4)} ${n(y - 5.2)} Q${n(x + 3.2)} ${n(y - 3)} ${n(x + 2.2)} ${y} Z" fill="#B87A48"/>` +
   `<path d="M${n(x + 2)} ${n(y - 3.6)} L${n(x + 4.4)} ${n(y - 5.4)}" stroke="#B87A48" stroke-width="0.9" stroke-linecap="round"/><path d="M${n(x - 1.4)} ${n(y - 6.4)} L${n(x + 1.4)} ${n(y - 6.4)}" stroke="#8E5A30" stroke-width="0.5"/>`;
 
 /** A tent, its foot's middle at (x, y), `w` wide and `h` high. */
-const tent = (x: number, y: number, w: number, h: number, fill = "#EFE3C6") =>
+export const tent = (x: number, y: number, w: number, h: number, fill = "#EFE3C6") =>
   `<path d="M${n(x - w / 2)} ${y} L${x} ${n(y - h)} L${n(x + w / 2)} ${y} Z" fill="${fill}"/>` +
   `<path d="M${x} ${n(y - h)} L${n(x + w / 2)} ${y} L${n(x + w * 0.18)} ${y} Z" fill="#000000" opacity="0.1"/>` +
   `<path d="M${n(x - w * 0.12)} ${y} L${x} ${n(y - h * 0.5)} L${n(x + w * 0.12)} ${y} Z" fill="#6B4A2E"/>`;
@@ -149,14 +149,14 @@ const forts = () =>
     .join("");
 
 /** A dawn sky: still dark above, warm low down over the hills. */
-const DAWN = `<rect width="160" height="120" fill="#2E3D6E"/><rect y="28" width="160" height="18" fill="#4F6196"/><rect y="46" width="160" height="9" fill="#B9928E"/><rect y="54" width="160" height="8" fill="#F0BF8E"/>`;
+export const DAWN = `<rect width="160" height="120" fill="#2E3D6E"/><rect y="28" width="160" height="18" fill="#4F6196"/><rect y="46" width="160" height="9" fill="#B9928E"/><rect y="54" width="160" height="8" fill="#F0BF8E"/>`;
 
 /** Paradise far off: a soft circle of light with no sun in it, its middle at (x, y). */
-const farOff = (x: number, y: number, r: number) =>
+export const farOff = (x: number, y: number, r: number) =>
   `<circle cx="${x}" cy="${y}" r="${r}" fill="#FFF8E6" opacity="0.92" stroke="#E8D8B0" stroke-width="0.6"/>` + glow(x, y, n(r * 0.8), "#FFF3C0", 0.3);
 
 /** A garden low in a far circle of light about (x, y), `r` across: green ground and three small trees. */
-const gardenIn = (x: number, y: number, r: number) =>
+export const gardenIn = (x: number, y: number, r: number) =>
   `<path d="M${n(x - r * 0.86)} ${n(y + r * 0.4)} Q${x} ${n(y + r * 0.06)} ${n(x + r * 0.86)} ${n(y + r * 0.4)} Q${x} ${n(y + r * 0.9)} ${n(x - r * 0.86)} ${n(y + r * 0.4)} Z" fill="#9FD487"/>` +
   [-0.45, 0, 0.45]
     .map((k) => {

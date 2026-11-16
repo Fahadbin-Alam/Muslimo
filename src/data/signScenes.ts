@@ -611,7 +611,14 @@ export type SignKind =
   | "visitors-of-mudar"
   | "steps-in-paradise"
   | "madinah-rejoiced"
-  | "red-camels";
+  | "red-camels"
+  | "lost-necklace"
+  | "love-madinah"
+  | "thabit-good-news"
+  | "dearer-than-yourself"
+  | "better-than-camels"
+  | "two-bright-ones"
+  | "third-of-the-quran";
 
 export type SignScene = {
   id: string;
@@ -2271,6 +2278,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sahl ibn Sa'd said: the Messenger of Allah ﷺ said: tomorrow I will give the flag to a man through whose hands Allah will give victory. So the people spent the night wondering which of them would be given it. In the morning they went to the Messenger of Allah ﷺ, each of them hoping to be given it. He said: where is Ali ibn Abi Talib? They said: his eyes are sore, O Messenger of Allah. He said: send for him and bring him to me. When he came, he spat in his eyes and prayed for him, and he was cured as if he had had no pain, and he gave him the flag. Ali said: O Messenger of Allah, shall I fight them until they are like us? He said: go calmly until you reach their land, then invite them to Islam, and tell them what is due on them of the right of Allah; for by Allah, that Allah guides one man through you is better for you than to have red camels.",
     sources: [bukhari("3701")]
+  },
+  {
+    id: "sign-lost-necklace",
+    kind: "lost-necklace",
+    caption:
+      "Aishah said: we went out with the Messenger of Allah ﷺ on one of his journeys, until, when we were at al-Bayda' or Dhat al-Jaysh, a necklace of mine broke. The Messenger of Allah ﷺ stayed to look for it, and the people stayed with him, and they were not at water. The people came to Abu Bakr as-Siddiq and said: do you not see what Aishah has done? She has kept the Messenger of Allah ﷺ and the people, and they are not at water, and they have no water with them. Abu Bakr came while the Messenger of Allah ﷺ was asleep with his head on my thigh, and said: you have kept the Messenger of Allah ﷺ and the people, and they are not at water, and they have no water with them. Aishah said: Abu Bakr blamed me and said what Allah willed him to say, and began poking me in my side with his hand, and nothing kept me from moving but the place of the Messenger of Allah ﷺ on my thigh. The Messenger of Allah ﷺ rose in the morning with no water, and Allah revealed the ayah of tayammum, so they did tayammum. Usayd ibn Hudayr said: this is not the first of your blessings, O family of Abu Bakr. She said: then we raised the camel I had been on, and found the necklace under it.",
+    sources: [bukhari("334")]
+  },
+  {
+    id: "sign-love-madinah",
+    kind: "love-madinah",
+    caption:
+      "Aishah said: when the Messenger of Allah ﷺ came to Madinah, Abu Bakr and Bilal fell ill. I went in to them and said: my father, how do you find yourself? And Bilal, how do you find yourself? When the fever took Abu Bakr, he would say: every man is greeted in the morning among his family, and death is nearer to him than the strap of his sandal. And when the fever left Bilal, he would raise his voice and say: would that I knew whether I will spend a night in a valley, with idhkhir and jalil around me, and whether I will one day come down to the waters of Majannah, and whether Shamah and Tafil will show to me. Aishah said: I came to the Messenger of Allah ﷺ and told him, and he said: O Allah, make Madinah dear to us as we love Makkah, or more, and make it healthy, and bless us in its sa' and its mudd, and move its fever and put it in al-Juhfah.",
+    sources: [bukhari("3926")]
+  },
+  {
+    id: "sign-thabit-good-news",
+    kind: "thabit-good-news",
+    caption:
+      "Anas ibn Malik said: the Prophet ﷺ missed Thabit ibn Qays, and a man said: O Messenger of Allah, I will find out about him for you. He went to him and found him sitting in his house, his head lowered, and said to him: what is the matter with you? He said: bad; he used to raise his voice above the voice of the Prophet ﷺ, so his deeds have come to nothing, and he is of the people of the Fire. The man came and told him that he had said such and such. Musa ibn Anas said: then he went back to him the second time with great good news: he said: go to him and say to him: you are not of the people of the Fire, but you are of the people of Paradise.",
+    sources: [bukhari("3613"), bukhari("4846")]
+  },
+  {
+    id: "sign-dearer-than-yourself",
+    kind: "dearer-than-yourself",
+    caption:
+      "Abdullah ibn Hisham said: we were with the Prophet ﷺ, and he was holding the hand of Umar ibn al-Khattab. Umar said to him: O Messenger of Allah, you are dearer to me than everything except my own self. The Prophet ﷺ said: no, by the One in whose hand is my soul, not until I am dearer to you than your own self. Umar said to him: then now, by Allah, you are dearer to me than my own self. The Prophet ﷺ said: now, O Umar. And Anas said: the Prophet ﷺ said: none of you believes until I am dearer to him than his father, his child and all the people.",
+    sources: [bukhari("6632"), bukhari("15")]
+  },
+  {
+    id: "sign-better-than-camels",
+    kind: "better-than-camels",
+    caption:
+      "Uqbah ibn Amir said: the Messenger of Allah ﷺ came out while we were in the Suffah, and said: which of you would like to go out every morning to Buthan or al-Aqiq, and come back with two big she-camels, with no sin and without cutting the ties of kinship? We said: O Messenger of Allah, we would love that. He said: does one of you not go out in the morning to the masjid and learn or recite two ayat of the Book of Allah, the Mighty and Majestic? That is better for him than two she-camels, and three are better for him than three, and four better for him than four, and so on to their number of camels.",
+    sources: [muslim("803")]
+  },
+  {
+    id: "sign-two-bright-ones",
+    kind: "two-bright-ones",
+    caption:
+      "Abu Umamah al-Bahili said: I heard the Messenger of Allah ﷺ say: read the Quran, for it will come on the Day of Resurrection as an intercessor for its companions. Read the two bright ones, al-Baqarah and Surah Al Imran, for they will come on the Day of Resurrection as if they were two clouds, or two shades, or two flocks of birds in rows, pleading for their companions. Read Surah al-Baqarah, for taking it is a blessing, and leaving it is a regret, and the sorcerers cannot face it.",
+    sources: [muslim("804a")]
+  },
+  {
+    id: "sign-third-of-the-quran",
+    kind: "third-of-the-quran",
+    caption:
+      "Abu Sa'id al-Khudri said: a man heard a man reciting Qul huwa Allahu ahad (Say: He is Allah, One), repeating it. In the morning he came to the Messenger of Allah ﷺ and told him of it, as if he thought it was little. The Messenger of Allah ﷺ said: by the One in whose hand is my soul, it equals a third of the Quran. And Abu Sa'id said: the Prophet ﷺ said to his companions: is any of you unable to recite a third of the Quran in one night? That was hard on them, and they said: which of us can do that, O Messenger of Allah? He said: Allah, the One, as-Samad, is a third of the Quran.",
+    sources: [bukhari("5013"), bukhari("5015")]
   }
 ];
 
@@ -3690,7 +3746,32 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-muhajirun-joy": "sign-madinah-rejoiced",
   // The flag at Khaybar, and one guided through you is better than red camels (Sahih al-Bukhari 3701).
   "deep-ali-the-flag": "sign-red-camels",
-  "deep-ali-red-camels": "sign-red-camels"
+  "deep-ali-red-camels": "sign-red-camels",
+  // Her necklace was lost on a journey, and the ayah of tayammum came: not your first blessing (Sahih al-Bukhari 334).
+  "deep-usayd-family-of-abu-bakr": "sign-lost-necklace",
+  "deep-mothers-aishah-necklace": "sign-lost-necklace",
+  // Abu Bakr and Bilal fell ill in Madinah: make us love Madinah as Makkah, or more (Sahih al-Bukhari 3926).
+  "deep-muhajirun-fever": "sign-love-madinah",
+  "deep-muhajirun-love-madinah": "sign-love-madinah",
+  // Thabit sat at home, sure his deeds were lost: you are of the people of Paradise (Sahih al-Bukhari 3613, 4846).
+  "deep-thabit-sad-at-home": "sign-thabit-good-news",
+  "deep-thabit-people-of-jannah": "sign-thabit-good-news",
+  "deep-hujurat1-thabit-ibn-qays": "sign-thabit-good-news",
+  // Dearer than your own self: now, O Umar; and dearer than father, child and all the people (Sahih al-Bukhari 6632, 15).
+  "deep-umar-dearer": "sign-dearer-than-yourself",
+  "deep-tawbah2-dearer-than-yourself": "sign-dearer-than-yourself",
+  "deep-mujadila3-loved-most": "sign-dearer-than-yourself",
+  "deep-meet-the-quran-loving-the-prophet": "sign-dearer-than-yourself",
+  // Two ayat learned in the masjid are better than two big she-camels (Sahih Muslim 803).
+  "deep-uqbah-better-than-camels": "sign-better-than-camels",
+  "deep-book-quran-virtues-better-than-camels": "sign-better-than-camels",
+  // The Quran will intercede for its companions, and the two bright ones come like clouds (Sahih Muslim 804a).
+  "deep-abu-umamah-the-intercessor": "sign-two-bright-ones",
+  "ramadan-quran-intercedes": "sign-two-bright-ones",
+  // Qul huwa Allahu ahad equals a third of the Quran (Sahih al-Bukhari 5013, 5015).
+  "deep-abu-said-a-third": "sign-third-of-the-quran",
+  "deep-ikhlas-a-third": "sign-third-of-the-quran",
+  "deep-ikhlas-one-night": "sign-third-of-the-quran"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
