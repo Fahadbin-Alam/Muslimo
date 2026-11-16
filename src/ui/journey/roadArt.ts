@@ -22,13 +22,13 @@ import { nightLand } from "./heedArt";
  */
 
 /** A soft golden ring: a place or a thing marked out. */
-const SOFT_GOLD = "#E8C25A";
+export const SOFT_GOLD = "#E8C25A";
 
 /** A shown-from: hidden until `from`, shown by `to`. */
-const showAt = (from: number, to: number) => track({ opacity: [[from, 0], [to, 1]] });
+export const showAt = (from: number, to: number) => track({ opacity: [[from, 0], [to, 1]] });
 
 /** Shown from `from` to `to`, and hidden again from `hide` to `gone`. */
-const showFor = (from: number, to: number, hide: number, gone: number) =>
+export const showFor = (from: number, to: number, hide: number, gone: number) =>
   track({
     opacity: [
       [from, 0],
@@ -55,7 +55,7 @@ const onlyOnCamel = (x: number, y: number, s: number, left: boolean, extra: stri
 };
 
 /** A camel with a saddle cloth on its back, ready for the road, and no one on it. */
-const saddled = (x: number, y: number, s: number, left = false, coat?: [string, string]) => camelWith(x, y, s, left, SADDLE, coat);
+export const saddled = (x: number, y: number, s: number, left = false, coat?: [string, string]) => camelWith(x, y, s, left, SADDLE, coat);
 
 /** The card's units: where a point (cx, cy) of the card falls in the scene, for a camel `s` times its size with its feet at (x, y). */
 const onCamel = (x: number, y: number, s: number, left: boolean, cx: number, cy: number): [number, number] => [n(x - 50 * s + (left ? 100 - cx : cx) * s), n(y - 73 * s + cy * s)];
@@ -87,7 +87,7 @@ const purse = (x: number, y: number) =>
   `<path d="M${n(x - 0.6)} ${n(y - 3.5)} L${n(x - 1.2)} ${n(y - 4.6)} M${n(x + 0.6)} ${n(y - 3.5)} L${n(x + 1.2)} ${n(y - 4.6)}" stroke="#8C5A2E" stroke-width="0.5" stroke-linecap="round"/>`;
 
 /** The road, a lighter band across the land from x1 to x2 about y. */
-const road = (x1: number, x2: number, y: number, fill = "#EEDCAE") =>
+export const road = (x1: number, x2: number, y: number, fill = "#EEDCAE") =>
   `<path d="M${x1} ${n(y - 3)} Q${n((x1 + x2) / 2)} ${n(y - 4.6)} ${x2} ${n(y - 3.4)} L${x2} ${n(y + 3.4)} Q${n((x1 + x2) / 2)} ${n(y + 2.6)} ${x1} ${n(y + 3.6)} Z" fill="${fill}"/>`;
 
 /** Three short grey strokes over (x, y): weary. */
@@ -816,10 +816,10 @@ function travellersAdhan(): SignArt {
 }
 
 /** A day of the week, a small dim circle at (x, y). */
-const weekDay = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="3.4" fill="#FFFFFF" fill-opacity="0.35" stroke="#9CC4E4" stroke-width="0.5"/>`;
+export const weekDay = (x: number, y: number) => `<circle cx="${x}" cy="${y}" r="3.4" fill="#FFFFFF" fill-opacity="0.35" stroke="#9CC4E4" stroke-width="0.5"/>`;
 
 /** A day gone by, its light come on: a soft yellow in its circle at (x, y). */
-const dayLit = (x: number, y: number, fill = "#FFF0B8") => `<circle cx="${x}" cy="${y}" r="2.6" fill="${fill}"/>`;
+export const dayLit = (x: number, y: number, fill = "#FFF0B8") => `<circle cx="${x}" cy="${y}" r="2.6" fill="${fill}"/>`;
 
 // Setting out on a Thursday. Ka'b ibn Malik used to say: seldom did the Messenger of Allah ﷺ set out on a journey on
 // any day other than Thursday (Sahih al-Bukhari 2949). No one is drawn, and no one is drawn on a camel: the seven days

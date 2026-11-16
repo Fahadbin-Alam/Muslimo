@@ -730,7 +730,14 @@ export type SignKind =
   | "travellers-adhan"
   | "set-out-on-thursday"
   | "camel-is-yours"
-  | "search-at-arafah";
+  | "search-at-arafah"
+  | "walls-of-madinah"
+  | "faith-returns"
+  | "salt-in-water"
+  | "like-a-furnace"
+  | "between-house-and-pulpit"
+  | "thousand-prayers"
+  | "quba-every-saturday";
 
 export type SignScene = {
   id: string;
@@ -3208,6 +3215,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jubair ibn Mut'im said: I lost a camel of mine, and I went looking for it on the day of Arafah. I saw the Prophet ﷺ standing at Arafah, and I said: by Allah, this one is of the Hums; what is he doing here?",
     sources: [bukhari("1664")]
+  },
+  {
+    id: "sign-walls-of-madinah",
+    kind: "walls-of-madinah",
+    caption:
+      "Anas said: whenever the Prophet ﷺ came back from a journey and saw the walls of Madinah, he made his mount go fast, and if he was on a riding animal, he urged it on, out of his love for Madinah.",
+    sources: [bukhari("1886")]
+  },
+  {
+    id: "sign-faith-returns",
+    kind: "faith-returns",
+    caption: "Abu Hurairah said that the Messenger of Allah ﷺ said: faith returns to Madinah, as a snake returns to its hole.",
+    sources: [bukhari("1876")]
+  },
+  {
+    id: "sign-salt-in-water",
+    kind: "salt-in-water",
+    caption: "Sa'd said: I heard the Prophet ﷺ say: no one plots against the people of Madinah but he melts away, as salt melts in water.",
+    sources: [bukhari("1877")]
+  },
+  {
+    id: "sign-like-a-furnace",
+    kind: "like-a-furnace",
+    caption:
+      "Jabir said: a Bedouin came to the Prophet ﷺ and gave him his pledge on Islam. The next day he came with a fever and said: cancel my pledge. He refused three times, and said: Madinah is like a furnace: it drives out its dross, and its good shines pure.",
+    sources: [bukhari("1883")]
+  },
+  {
+    id: "sign-between-house-and-pulpit",
+    kind: "between-house-and-pulpit",
+    caption: "Abu Hurairah said that the Prophet ﷺ said: between my house and my pulpit is a garden of the gardens of Paradise, and my pulpit is over my Pool.",
+    sources: [bukhari("1196")]
+  },
+  {
+    id: "sign-thousand-prayers",
+    kind: "thousand-prayers",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: a prayer in this masjid of mine is better than a thousand prayers in any other masjid, except al-Masjid al-Haram.",
+    sources: [bukhari("1190")]
+  },
+  {
+    id: "sign-quba-every-saturday",
+    kind: "quba-every-saturday",
+    caption:
+      "Ibn Umar said: the Prophet ﷺ used to come to Masjid Quba every Saturday, walking and riding. And Abdullah ibn Umar used to do the same.",
+    sources: [bukhari("1193")]
   }
 ];
 
@@ -4956,7 +5009,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // He bought Umar's young camel, hard to handle, and gave it to Abdullah ibn Umar.
   "deep-kids-kind-ways-the-camel-is-yours": "sign-camel-is-yours",
   // Looking for his lost camel on the day of Arafah, Jubair saw him standing at Arafah.
-  "deep-hajj-the-day-of-arafah-a-lost-camel": "sign-search-at-arafah"
+  "deep-hajj-the-day-of-arafah-a-lost-camel": "sign-search-at-arafah",
+  // Back from a journey, seeing the walls of Madinah, he made his mount go fast, out of his love for it.
+  "deep-hajj-madinah-hurrying-home": "sign-walls-of-madinah",
+  // Faith returns to Madinah, as a snake returns to its hole.
+  "deep-hajj-madinah-faith-goes-home": "sign-faith-returns",
+  // No one plots against the people of Madinah but he melts away, as salt melts in water.
+  "deep-hajj-madinah-like-salt-in-water": "sign-salt-in-water",
+  // The Bedouin with a fever asked to cancel his pledge; Madinah is like a furnace that drives out its dross.
+  "deep-hajj-madinah-like-a-furnace": "sign-like-a-furnace",
+  // Between his house and his pulpit is a garden of the gardens of Paradise, and his pulpit is over his Pool.
+  "deep-hajj-masjids-rawdah": "sign-between-house-and-pulpit",
+  // A prayer in his masjid is better than a thousand elsewhere, except al-Masjid al-Haram.
+  "deep-hajj-masjids-thousand": "sign-thousand-prayers",
+  // He came to Masjid Quba every Saturday, walking and riding, and Ibn Umar did the same.
+  "deep-tawbah4-visiting-quba": "sign-quba-every-saturday"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
