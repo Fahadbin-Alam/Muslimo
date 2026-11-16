@@ -128,8 +128,12 @@ describe("which questions are asked on a scene", () => {
     // reciting hard gets, a question on the scene of the skilled reciter. "Jumu'ah" now has seven lessons, so it gets
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
-    // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4736);
+    // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday. The lessons from Mishkat
+    // al-Masabih grow two final quizzes: "The reward of fasting" swaps four scene questions for four others, and
+    // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
+    // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
+    // path seeking knowledge makes easy (all still asked in their lessons).
+    expect(places).toBe(4739);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {

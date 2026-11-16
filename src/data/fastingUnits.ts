@@ -8,7 +8,7 @@ const REWARD: DeepUnit = {
   key: "fast-reward",
   topicId: "fasting",
   branchId: "fasting-reward",
-  branch: { title: "The reward of fasting", description: "What Allah promises the one who fasts: a shield, forgiveness and joy." },
+  branch: { title: "The reward of fasting", description: "What Allah promises the one who fasts: a shield, forgiveness, joy and intercession." },
   name: "the reward of fasting",
   kind: "skill",
   lessonType: "skill",
@@ -103,6 +103,19 @@ const REWARD: DeepUnit = {
         { q: "When is the fasting person's first joy?", a: "When breaking the fast", wrong: ["At suhur", "At noon", "When the alarm rings"], why: "Sahih al-Bukhari 1904." },
         { q: "When is the second joy?", a: "When meeting his Lord", wrong: ["At school", "At the market", "At bedtime"], why: "He is pleased with his fasting then." },
         { q: "Feeling happy at iftar is part of the reward.", tf: true, why: "The Prophet ﷺ named it as one of the two joys." }
+      ]
+    },
+    {
+      slug: "fasting-intercedes",
+      title: "Fasting speaks up for you",
+      line: "Fasting and the Quran will intercede for the believer.",
+      facts: ["Told by Abdullah ibn Amr", "Fasting kept him from food by day"],
+      source: hadith("mishkat", "1963", "Abdullah ibn Amr", "Sahih (Al-Albani)", "Abdullah ibn Amr reported the Prophet ﷺ as saying: fasting and the Quran intercede for a man. Fasting says: my Lord, I kept him from his food and his desires by day, so accept my intercession for him. The Quran says: I kept him from sleep by night, so accept my intercession for him. And their intercession is accepted. Baihaqi transmitted it in Shu'ab al-Iman.", "I have kept him away from his food and his passions by day"),
+      difficulty: 2,
+      questions: [
+        { q: "Which two will intercede for a man, he ﷺ said?", a: "Fasting and the Quran", wrong: ["Wealth and children", "Gold and silver", "Fame and power"], why: "Fasting and the Quran intercede for a man, and their intercession is accepted." },
+        { q: "What will fasting say it kept him from by day?", a: "His food and desires", wrong: ["His work and trade", "His friends and games", "His home and family"], why: "I have kept him away from his food and his passions by day, fasting says." },
+        { q: "The intercession of fasting for the one who fasted is accepted.", tf: true, why: "Then their intercession is accepted, he ﷺ said of fasting and the Quran." }
       ]
     }
   ]

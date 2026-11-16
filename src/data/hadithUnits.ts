@@ -283,6 +283,19 @@ const KNOWLEDGE: DeepUnit = {
         { q: "What comes down on them?", a: "Calm and mercy", wrong: ["Rain", "Gold", "Fear"], why: "Calm descends and mercy covers them." },
         { q: "Allah mentions them to those with Him.", tf: true, why: "As the hadith says." }
       ]
+    },
+    {
+      slug: "unspent-treasure",
+      title: "Knowledge like unspent treasure",
+      line: "Knowledge that brings no benefit is like treasure never spent.",
+      facts: ["Told by Abu Hurairah", "Darimi transmitted it"],
+      source: hadith("mishkat", "280", "Abu Hurairah", "Hasan (Al-Albani)", "Abu Hurairah reported the Prophet ﷺ as saying: knowledge from which no benefit is taken is like a treasure from which nothing is spent in the path of Allah. Darimi transmitted it.", "Knowledge from which no benefit is derived is like a treasure from which nothing is expended"),
+      difficulty: 2,
+      questions: [
+        { q: "What is knowledge that brings no benefit like, he ﷺ said?", a: "A treasure never spent", wrong: ["A garden always green", "A river always flowing", "A lamp always lit"], why: "Like a treasure from which nothing is expended in the path of Allah, he ﷺ said." },
+        { q: "What does the knowledge in his ﷺ likeness lack?", a: "Benefit", wrong: ["Pages", "Ink", "Paper"], why: "Knowledge from which no benefit is derived is like an unspent treasure." },
+        { q: "Knowledge is meant to be used for good, not only stored.", tf: true, why: "Unused knowledge is like a treasure from which nothing is spent for Allah." }
+      ]
     }
   ]
 };
