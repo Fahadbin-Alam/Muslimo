@@ -1224,6 +1224,13 @@ const STATES: State[] = [
   { id: "scene-my-disciple", render: () => <SceneQuestionDemo lessonId="lesson-deep-zubayr-disciple" ask="How many times did Az-Zubayr" /> },
   { id: "scene-help-your-brother", render: () => <SceneQuestionDemo lessonId="lesson-deep-brotherhood-help-your-brother" ask="Your friend is bullying someone" /> },
   { id: "scene-last-surah-heard", render: () => <SceneQuestionDemo lessonId="lesson-surah-meaning-77-1-15" ask="In which prayer was it the last surah" /> },
+  { id: "scene-umamah-in-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-children-carrying-umamah" ask="What did he do when he went into sujud" /> },
+  { id: "scene-more-merciful", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-qudsi-the-mother" ask="Would the mother throw her child" /> },
+  { id: "scene-abu-ayyub-house", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-ayyub-the-garlic" ask="Is garlic forbidden" /> },
+  { id: "scene-miqdad-promise", render: () => <SceneQuestionDemo lessonId="lesson-deep-miqdad-not-like-musas-people" ask="Where did Al-Miqdad say they would fight" /> },
+  { id: "scene-leave-that-call", render: () => <SceneQuestionDemo lessonId="lesson-deep-munafiqun2-call-of-ignorance" ask="What did he tell them to do with it" /> },
+  { id: "scene-abu-bakr-forgives", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-forgiving-mistah" ask="What did Abu Bakr say when the ayah came" /> },
+  { id: "scene-between-two-calls", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-prayer-between-adhan-and-iqamah" ask="How many times did he ﷺ say it" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
