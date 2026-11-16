@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2373);
+    expect(asks.length).toBe(2391);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3468);
+    expect(places).toBe(3493);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -11221,6 +11221,216 @@ describe("where the scene waits and where it stops", () => {
     ]).toEqual([
       1,
       [[0], [1]]
+    ]);
+  });
+
+  it("waits on the scenes of Madinah, from hurrying home at the sight of its walls to Masjid Quba every Saturday, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-walls-of-madinah", "sign-faith-returns", "sign-salt-in-water", "sign-like-a-furnace", "sign-between-house-and-pulpit", "sign-thousand-prayers", "sign-quba-every-saturday"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(18);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Hurrying home at the sight of its walls. What he did on seeing Madinah's walls: his mount at rest before the walls
+    // in sight, the faint golden line to them and the soft ring about them; then his mount goes fast, quick strokes
+    // behind it, and his place with it, to the gate.
+    expect([
+      shown("What did he ﷺ do on seeing Madinah's walls?", ["his mount, back from a journey", "his mount, going fast", "Madinah in sight: a faint golden line", "Madinah in sight: a soft ring about its walls"]),
+      moved("What did he ﷺ do on seeing Madinah's walls?", "his mount, going fast", "x"),
+      moved("What did he ﷺ do on seeing Madinah's walls?", "a golden ring about his mount: his place", "x"),
+      value("walls-of-madinah", "going fast: quick strokes behind it", "opacity", 0.55)
+    ]).toEqual([
+      [
+        [1, 0, 1, 1],
+        [0, 1, 0, 1]
+      ],
+      [0, 50],
+      [34, 84],
+      1
+    ]);
+    // Why he hurried, and that he loved Madinah: his mount at the gate after going fast; then a warm glow comes over
+    // Madinah and sparks of love rise from it.
+    for (const prompt of ["Why did he ﷺ hurry when he saw Madinah?", "He ﷺ loved the city of Madinah."]) {
+      expect([
+        prompt,
+        shown(prompt, ["his love for Madinah: a warm glow over it", "love for Madinah, rising 1", "love for Madinah, rising 4", "his mount, going fast"]),
+        moved(prompt, "love for Madinah, rising 4", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1],
+          [1, 1, 1, 1]
+        ],
+        [0, -12]
+      ]);
+    }
+    // Faith returns to Madinah. Where faith returns to, and that it does not leave Madinah: waits at the scene's start,
+    // before any light of faith shows; then small lights come in from far off along the ways, go in at its gate, and a
+    // warm glow and a soft ring come about Madinah.
+    for (const prompt of ["Where does faith return to, he ﷺ said?", "He ﷺ said faith would leave Madinah forever."]) {
+      expect([
+        prompt,
+        shown(prompt, ["faith, a small light going back to Madinah 1", "faith, a small light going back to Madinah 6", "faith at home in Madinah: a warm glow", "faith at home in Madinah: a soft ring about it"]),
+        moved(prompt, "faith, a small light going back to Madinah 1", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [0, 58]
+      ]);
+    }
+    // How faith returns to Madinah: faith at home in Madinah, before any snake shows; then rocks show with a hole among
+    // them, a snake goes back into its hole, and a soft ring comes about it.
+    expect([
+      shown("How does faith return to Madinah, he ﷺ said?", ["rocks, and a hole among them", "a snake, going back to its hole", "home in its hole: a soft ring about it", "faith at home in Madinah: a warm glow"]),
+      value("faith-returns", "a snake, going back to its hole", "opacity", 0.56),
+      moved("How does faith return to Madinah, he ﷺ said?", "a snake, going back to its hole", "scale")
+    ]).toEqual([
+      [
+        [0, 0, 0, 1],
+        [1, 0, 1, 1]
+      ],
+      1,
+      [1, 0.25]
+    ]);
+    // Like salt in water. That plotting against Madinah's people does not end well: the grey haze of the plot crept up
+    // before its walls; then it shrinks and melts away, and a soft ring comes about Madinah, kept.
+    expect([
+      shown("Plotting against the people of Madinah ends well.", ["a plot: a grey haze, creeping toward Madinah", "Madinah kept: a soft ring about it"]),
+      moved("Plotting against the people of Madinah ends well.", "a plot: a grey haze, creeping toward Madinah", "scale")
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      [1, 0.12]
+    ]);
+    // What happens to one who plots against Madinah's people: the grey haze before its walls; then it melts away and
+    // Madinah is kept, a bowl of water shows, and the salt in it melts until the water is clear.
+    expect(shown("What happens to one who plots against Madinah's people?", ["a plot: a grey haze, creeping toward Madinah", "Madinah kept: a soft ring about it", "a bowl of water", "a heap of salt in the water, melting", "the salt all gone: the water clear"])).toEqual([
+      [1, 0, 0, 0, 0],
+      [0, 1, 1, 0, 1]
+    ]);
+    // What the plotter melts like: the plot gone and Madinah kept, before any bowl shows; then a bowl of water shows, a
+    // heap of salt in it melts away with ripples, and the water is clear.
+    expect([
+      shown("What does the plotter melt like, he ﷺ said?", ["a bowl of water", "a heap of salt in the water, melting", "ripples in the water", "the salt all gone: the water clear", "Madinah kept: a soft ring about it"]),
+      value("salt-in-water", "a heap of salt in the water, melting", "scaleY", 0.87)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [1, 0, 0, 1, 1]
+      ],
+      0.08
+    ]);
+    // Like a furnace. What happened to the Bedouin the day after his pledge: the golden line of the pledge and the soft
+    // ring of his Islam; then night passes to the next day, and waves of heat, a fever, come over his place.
+    expect([
+      shown("What happened to the Bedouin the day after his pledge?", ["the pledge: a golden line between them", "his Islam: a soft ring about the Bedouin's place", "a fever: waves of heat over the Bedouin's place"]),
+      value("like-a-furnace", "night passing, to the next day", "opacity", 0.225)
+    ]).toEqual([
+      [
+        [1, 1, 0],
+        [1, 1, 1]
+      ],
+      0.5
+    ]);
+    // That he did not cancel the pledge at once: the Bedouin's voice asking, the pledge still there; then his voice says
+    // no, three times, and three small dots show.
+    expect([
+      shown("He ﷺ cancelled the Bedouin's pledge at once.", ["the Bedouin's voice: cancel my pledge", "his voice: no, three times", "three times: a small dot 1", "three times: a small dot 2", "three times: a small dot 3", "the pledge: a golden line between them"]),
+      value("like-a-furnace", "his voice: no, three times", "opacity", 0.54)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1, 1]
+      ],
+      0
+    ]);
+    // What Madinah is like: no furnace yet, the fever still on the Bedouin's place; then a smith's furnace shows, with
+    // the glow in it, a crucible of metal and the bellows, and the fever is gone.
+    expect([
+      shown("What is Madinah like, he ﷺ said?", ["a smith's furnace, for the likeness", "the glow in the furnace", "a crucible of metal in the furnace", "the bellows, blowing", "a fever: waves of heat over the Bedouin's place"]),
+      moved("What is Madinah like, he ﷺ said?", "the glow in the furnace", "scale")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 0]
+      ],
+      [0.5, 0.7]
+    ]);
+    // Between his house and his pulpit. What lies between them: the golden dashed line from his house to his pulpit;
+    // then a soft green light comes, small leaves grow on the masjid floor, small flowers open and its soft light rises.
+    expect([
+      shown("What lies between his ﷺ house and his minbar?", ["between them: a golden dashed line", "a garden of the gardens of Paradise: a soft green light", "small leaves, growing 1", "small leaves, growing 7", "a small flower, opening 3"]),
+      moved("What lies between his ﷺ house and his minbar?", "small leaves, growing 7", "scaleY"),
+      value("between-house-and-pulpit", "the garden's soft light, rising 2", "opacity", 0.55)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0.1, 1],
+      1
+    ]);
+    // That his pulpit is over his Pool: the garden's soft green light, before the Pool shows; then a soft blue light
+    // comes under the pulpit, a soft blue ring and small glints.
+    expect(shown("His ﷺ minbar is over his Pool, he said.", ["his Pool: a soft blue light under the pulpit", "his Pool: a soft blue ring", "his Pool: small glints", "a garden of the gardens of Paradise: a soft green light"])).toEqual([
+      [0, 0, 0, 1],
+      [1, 1, 1, 1]
+    ]);
+    // A prayer better than a thousand. How many prayers elsewhere a prayer in his masjid beats: the warm light about his
+    // masjid after its prayer; then small sparks rise from the other masjids, many small lights come over it, and its
+    // warm light grows.
+    expect([
+      shown("A prayer in his ﷺ masjid beats how many elsewhere?", ["the prayer there: a warm light about his masjid", "a thousand prayers: many small lights over it 1", "a thousand prayers: many small lights over it 2", "a thousand prayers: many small lights over it 3"]),
+      moved("A prayer in his ﷺ masjid beats how many elsewhere?", "the prayer there: a warm light about his masjid", "scale"),
+      value("thousand-prayers", "prayers in other masjids: a small spark 8", "opacity", 0.36)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [1, 1.3],
+      1
+    ]);
+    // Which masjid is left out of the count: the dashed rings about the other masjids; then the Ka'bah shows far off,
+    // al-Masjid al-Haram, with a warm light of its own and a soft golden ring about it.
+    expect(shown("Which masjid is left out of that count?", ["any other masjid: a dashed ring about it 1", "any other masjid: a dashed ring about it 3", "al-Masjid al-Haram far off: the Ka'bah", "al-Masjid al-Haram: a warm light of its own", "left out of the count: a soft golden ring about it"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Masjid Quba every Saturday. How often he visited Quba: the way to Quba and the soft ring about its masjid, no day
+    // lit yet; then Saturday, the seventh day, lights golden with a ring about it.
+    expect(shown("How often did he ﷺ visit Quba, per Ibn Umar?", ["Saturday: the seventh day, lit golden", "Saturday: a golden ring about it", "the way to Quba", "Masjid Quba: a soft ring about it"])).toEqual([
+      [0, 0, 1, 1],
+      [1, 1, 1, 1]
+    ]);
+    // How he went there: his place, a golden ring, at his masjid in Madinah; then it walks the way to Quba, its steps
+    // showing, and then rides it, a golden ring about a camel with a saddle cloth.
+    expect([
+      shown("How did he ﷺ go there?", ["a golden ring, his place, walking", "his steps on the way 1", "his steps on the way 9", "riding: a camel with a saddle cloth", "a golden ring about the camel: his place, riding"]),
+      moved("How did he ﷺ go there?", "riding: a camel with a saddle cloth", "x"),
+      value("quba-every-saturday", "a golden ring, his place, walking", "x", 0.51)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1]
+      ],
+      [-14, 94],
+      108
     ]);
   });
 
