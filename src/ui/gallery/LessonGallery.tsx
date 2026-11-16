@@ -1273,6 +1273,13 @@ const STATES: State[] = [
   { id: "scene-ask-before-milking", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animal-manners-ask-before-milking" ask="What did he ﷺ compare an animal's udder to" /> },
   { id: "scene-goat-lent-for-milk", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-a-goat-for-its-milk" ask="What does Allah give for one of these deeds" /> },
   { id: "scene-camel-as-sutrah", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-his-camel-as-a-sutrah" ask="Ibn Umar used to do the same" /> },
+  { id: "scene-show-me-the-market", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-market" ask="Which market did they show him" /> },
+  { id: "scene-grain-on-credit", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-the-iron-armour" ask="What did he leave as a pledge" /> },
+  { id: "scene-bundle-of-wood", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-carry-the-wood" ask="Why is asking people risky" /> },
+  { id: "scene-easygoing-trader", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-easygoing-trader" ask="When else should we be easy" /> },
+  { id: "scene-fruit-when-ripe", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-ripe-fruit-only" ask="When may fruit on trees be sold" /> },
+  { id: "scene-gold-for-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-gold-for-gold" ask="How must gold be swapped for gold" /> },
+  { id: "scene-share-the-fruits", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr2-share-the-fruits" ask="What did the emigrants answer" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

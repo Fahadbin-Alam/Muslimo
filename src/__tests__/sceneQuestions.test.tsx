@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2335);
+    expect(asks.length).toBe(2355);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3416);
+    expect(places).toBe(3444);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -10745,6 +10745,263 @@ describe("where the scene waits and where it stops", () => {
       [
         [0, 0, 0, 0],
         [1, 1, 1, 1]
+      ]
+    ]);
+  });
+
+  it("waits on the scenes of trade and the market, from showing him the market to sharing the fruits, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-show-me-the-market", "sign-grain-on-credit", "sign-bundle-of-wood", "sign-easygoing-trader", "sign-fruit-when-ripe", "sign-gold-for-gold", "sign-share-the-fruits"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(20);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Show me the market. That he did not take half of Sa'd's wealth: Sa'd's voice, his wealth in two halves, and one
+    // half moved toward Abdur-Rahman; then the half goes back to Sa'd, Abdur-Rahman's voice speaks, and a warm glow
+    // comes over Sa'd's home.
+    expect([
+      value("show-me-the-market", "in two halves: a line between them", "opacity", 0.34),
+      moved("Abdur-Rahman took half of Sa'd's wealth.", "Sa'd's wealth: the half he offers", "x"),
+      shown("Abdur-Rahman took half of Sa'd's wealth.", ["Abdur-Rahman's voice: a blessing, and the market", "in your family and your wealth: a warm glow over Sa'd's home"])
+    ]).toEqual([
+      1,
+      [-16, 0],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // What he asked for instead of Sa'd's wealth, and what he asked his new brother for: Abdur-Rahman's voice of
+    // blessing, with the half of Sa'd's wealth back by Sa'd; then a way shows from his place to the market.
+    for (const prompt of ["What did Abd ar-Rahman ask for instead of Sa'd's wealth?", "What did Abdur-Rahman ask his new brother for?"]) {
+      expect([
+        prompt,
+        value("show-me-the-market", "Abdur-Rahman's voice: a blessing, and the market", "opacity", 0.5),
+        value("show-me-the-market", "Sa'd's wealth: the half he offers", "x", 0.5),
+        shown(prompt, ["show me the market: a way to it"])
+      ]).toEqual([
+        prompt,
+        1,
+        0,
+        [[0], [1]]
+      ]);
+    }
+    // Which market they showed him: the way to the market; then Sa'd's voice names it, and a soft ring comes about the
+    // market of Qaynuqa'.
+    expect([
+      value("show-me-the-market", "show me the market: a way to it", "opacity", 0.64),
+      shown("Which market did they show him?", ["Sa'd's voice: the market of Qaynuqa'", "the market of Qaynuqa': a soft ring about it"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // What he brought home, and that he did not come back with nothing: the soft ring about the market; then
+    // Abdur-Rahman's place goes to the market and comes back home with dried yogurt and butter, and a warm glow comes at
+    // his home.
+    for (const prompt of ["Abd ar-Rahman came back from the market with nothing.", "What did he bring home from the market?"]) {
+      expect([
+        prompt,
+        value("show-me-the-market", "the market of Qaynuqa': a soft ring about it", "opacity", 0.8),
+        value("show-me-the-market", "Abdur-Rahman's place", "x", 0.87),
+        shown(prompt, ["dried yogurt and butter, brought back", "to his household: a warm glow at Abdur-Rahman's home"])
+      ]).toEqual([
+        prompt,
+        1,
+        -46,
+        [
+          [0, 0],
+          [1, 1]
+        ]
+      ]);
+    }
+    // Food bought, to be paid at a set time. That one may trade fairly with people of other faiths: waits at the scene's
+    // start, his place by his home and the seller's place by his store; then the way of the sale shows, a sack of food
+    // goes to his home, and a warm glow comes there.
+    expect([
+      shown("Muslims may trade fairly with people of other faiths.", ["the way of the sale", "food for his home: a warm glow"]),
+      moved("Muslims may trade fairly with people of other faiths.", "food bought: a sack of grain", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -72]
+    ]);
+    // What he left as a pledge: the days to the set time, with a golden ring about the last; then his iron armour comes
+    // and goes to the seller's store, and a soft ring comes about it there.
+    expect([
+      value("grain-on-credit", "the set time: a golden ring about the last day", "opacity", 0.64),
+      shown("What did he leave as a pledge?", ["his iron armour, given as a pledge", "held as a pledge: a soft ring about the armour"]),
+      moved("What did he leave as a pledge?", "his iron armour, given as a pledge", "x")
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 48]
+    ]);
+    // A bundle of firewood. What is better than asking people: waits at the scene's start, dry sticks lying on the
+    // hillside; then they are gathered, tied into a bundle and carried toward the town, a golden ring comes about the
+    // place and its bundle, and a faint grey place stands asking by the doors.
+    expect([
+      shown("What is better than asking people for money?", ["a bundle of firewood", "a rope about the bundle", "better: a golden ring about the place and its bundle", "asking instead: a faint grey place by the doors"]),
+      moved("What is better than asking people for money?", "the place of one who gathers", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 36]
+    ]);
+    // Why asking people is risky: the grey dashed ways from the asking place to each door; then a dish comes from one
+    // door, and a grey dashed ring comes about the shut door of the other.
+    expect([
+      value("bundle-of-wood", "asking anyone: a grey dashed way to each door", "opacity", 0.72),
+      shown("Why is asking people risky?", ["he may give: a dish from the door", "or refuse: a grey dashed ring about the shut door"]),
+      moved("Why is asking people risky?", "he may give: a dish from the door", "x")
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [-12, 0]
+    ]);
+    // The easygoing trader. Who gets the mercy, and that harsh bargaining is not the Sunnah: waits at the scene's start,
+    // the trader's place at his stall; then a warm glow of mercy and a soft ring come about it.
+    for (const prompt of ["Who gets Allah's mercy in this hadith?", "Bargaining harshly and rudely is the Sunnah."]) {
+      expect([
+        prompt,
+        shown(prompt, ["mercy: a warm glow about the trader's place", "one who is easy: a soft ring about the trader's place"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ]
+      ]);
+    }
+    // When else to be easy: the soft golden way of his buying; then a soft way goes to the home of one who owes him, his
+    // place goes there with its glow and ring, and what he is owed comes to him.
+    expect([
+      value("easygoing-trader", "when he buys: a soft golden way between the two", "opacity", 0.72),
+      shown("When else should we be easy?", ["when he asks for what he is owed: a soft way to the one who owes", "what he is owed, come to him"]),
+      moved("When else should we be easy?", "the trader's place", "x")
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -52]
+    ]);
+    // Fruit sold only once it is clearly good. When fruit may be sold: the green dates with a grey dashed ring, and a
+    // grey dashed way of selling them; then the sun climbs, the dates ripen, a soft golden ring comes about them, and a
+    // golden way of selling.
+    expect([
+      value("fruit-when-ripe", "not yet good: a grey dashed ring about the green dates", "opacity", 0.32),
+      shown("When may fruit on trees be sold?", ["the dates ripening on a palm 1", "clearly good: a soft golden ring about the ripe dates", "now it may be sold: a golden way"]),
+      moved("When may fruit on trees be sold?", "the sun", "x")
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 32]
+    ]);
+    // Who was forbidden it: the ripe dates and the golden way; then his voice speaks, and a ring comes about the
+    // seller's place and about the buyer's.
+    expect([
+      value("fruit-when-ripe", "now it may be sold: a golden way", "opacity", 0.64),
+      shown("Who was forbidden this early sale?", ["his voice: the seller and the buyer", "the seller: a ring about the place", "the buyer: a ring about the place"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Gold for gold. How gold is sold for gold: three gold coins against two, the balance tipped, with a grey dashed
+    // ring; then a gold coin is added, the balance comes level, and a soft golden ring comes about it.
+    expect([
+      value("gold-for-gold", "not equal: a grey dashed ring about the balance", "opacity", 0.2),
+      shown("How must gold be swapped for gold?", ["equal for equal: a gold coin added", "equal for equal: a soft golden ring about the balance"]),
+      moved("How must gold be swapped for gold?", "crossbar of the balance", "rotate")
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [-8, 0]
+    ]);
+    // Gold for silver however you wish: the silver coins level on the balance; then gold comes on one side and silver on
+    // the other, the balance tips with no grey ring, a golden way and a silver way go between the pans, and a warm glow
+    // and a soft golden ring come about it.
+    expect([
+      value("gold-for-gold", "silver equal: a soft golden ring about the balance", "opacity", 0.62),
+      shown("Gold for silver may be traded...?", ["gold for silver: gold on the left", "silver for gold: silver on the right", "gold for silver: a golden way between the pans", "silver for gold: a silver way back", "however you wish: a warm glow over the balance", "however you wish: a soft golden ring about the balance"]),
+      moved("Gold for silver may be traded...?", "crossbar of the balance", "rotate"),
+      value("gold-for-gold", "not equal: a grey dashed ring about the balance", "opacity", 1),
+      value("gold-for-gold", "silver not equal: a grey dashed ring about the balance", "opacity", 1)
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, 6],
+      0,
+      0
+    ]);
+    // Sharing the fruits. What the Ansar first asked: waits at the scene's start, the garden of palms between the
+    // emigrants' places and the Ansar's; then the Ansar's voice speaks, and a dashed line comes through the garden.
+    expect(shown("What did the Ansar first ask the Prophet ﷺ?", ["the Ansar's voice: divide the palms", "divide the palms: a dashed line through the garden"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // That the emigrants worked the trees and shared the fruit: his voice saying no, the dashed line gone; then the
+    // emigrants' places go to the palms with jugs, water drips at their roots, they come back, dates come on the palms,
+    // and a basket of dates comes to the emigrants and one to the Ansar.
+    expect([
+      value("share-the-fruits", "divide the palms: a dashed line through the garden", "opacity", 0.36),
+      value("share-the-fruits", "his voice: no", "opacity", 0.36),
+      value("share-the-fruits", "an emigrant's place 1", "x", 0.5),
+      shown("The emigrants worked the trees and shared the fruit.", ["watered: wet ground at the root of a palm 1", "and we share the fruit: dates on a palm 1", "a basket of dates for the emigrants", "a basket of dates for the Ansar"])
+    ]).toEqual([
+      0,
+      1,
+      23,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // What the emigrants answered: the baskets of dates; then the emigrants' voice speaks, a warm glow comes over the
+    // garden, and a soft golden ring about the emigrants.
+    expect([
+      value("share-the-fruits", "a basket of dates for the emigrants", "opacity", 0.8),
+      shown("What did the emigrants answer?", ["the emigrants' voice: we hear and obey", "a warm glow over the garden", "we hear and obey: a soft golden ring about the emigrants"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
       ]
     ]);
   });
