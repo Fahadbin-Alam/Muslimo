@@ -2512,6 +2512,80 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What can one word that pleases Allah do, per Bukhari 6478?", "Raise a person by degrees", "He pays it no mind; Allah raises him ranks"],
     ["A careless word can displease Allah, per Bukhari 6478.", "True", "A servant says a word that angers Allah"],
     ["What can one pleasing word do, per Bukhari 6478?", "Raise a person in reward", "He pays it no mind; Allah raises him ranks"]
+  ],
+  // Usayd recited al-Baqarah at night; his horse, tied beside him, was startled, and was quiet when he stopped. His
+  // son Yahya was near it, and he feared for him. He looked up: like a cloud with lamps in it. Those were angels come
+  // near for his voice; had he read on, people would have seen them (Sahih al-Bukhari 5018).
+  "sign-lamps-in-the-sky": [
+    ["Which surah was Usayd reciting at night?", "Al-Baqarah", "He recited al-Baqarah at night"],
+    ["What did the horse do when he recited?", "It was startled", "His horse, tied beside him, was startled"],
+    ["Usayd stopped because his son was near the horse.", "True", "He stopped, and the horse was quiet", "His son Yahya was near it; he feared for him"],
+    ["What did Usayd see in the sky?", "A cloud like lamps", "He looked up: like a cloud, with lamps in it"],
+    ["What was the cloud, he ﷺ said?", "Angels come to hear him", "Those were angels, come near for your voice"],
+    ["If he had kept reciting, people would have seen them at dawn.", "True", "Had you read on, people would have seen them"]
+  ],
+  // A man came with two camels as night fell, found Mu'adh praying and joined him; Mu'adh recited al-Baqarah or
+  // an-Nisa, and the man left and complained. O Mu'adh, are you putting people to trial? Why not al-A'la, ash-Shams
+  // or al-Layl? Behind you pray the old, the weak and the needy (Sahih al-Bukhari 705).
+  "sign-prayer-too-long": [
+    ["Which surah did Mu'adh recite in Isha?", "Al-Baqarah", "Mu'adh recited al-Baqarah or an-Nisa"],
+    ["Mu'adh had recited a short surah that night.", "False", "Mu'adh recited al-Baqarah or an-Nisa"],
+    ["Which surahs did the Prophet ﷺ suggest instead?", "Al-A'la, Ash-Shams, Al-Layl", "Why not al-A'la, ash-Shams or al-Layl?"],
+    ["Which surah did he name besides Al-A'la and Al-Layl?", "Ash-Shams", "Why not al-A'la, ash-Shams or al-Layl?"],
+    ["Why should an imam keep the prayer light?", "The old, weak and needy pray behind", "Behind you pray the old, the weak and the needy"],
+    ["Why should an imam keep prayer short?", "The old, weak and needy pray behind him", "Behind you pray the old, the weak and the needy"]
+  ],
+  // Each of you is a shepherd, responsible for his flock: the leader of his people, a man of his family, a woman of
+  // her husband's home, a servant of his master's wealth (Sahih al-Bukhari 893).
+  "sign-every-one-a-shepherd": [
+    ["What did the Prophet ﷺ call all of us?", "Guardians", "Each of you is a shepherd"],
+    ["Only leaders have someone in their care.", "False", "Each of you is a shepherd", "A man is a shepherd of his family"],
+    ["In the hadith, a man is the guardian of what?", "His family", "A man is a shepherd of his family"],
+    ["A woman is the guardian of what?", "Her husband's home", "A woman, of her husband's home"],
+    ["What are we responsible for?", "Those under our care", "Each of you is responsible for his flock"],
+    ["Only rulers are responsible for anyone.", "False", "Each of you is responsible for his flock"]
+  ],
+  // He was in a garden of Madinah; one came and asked to open the gate: open for him, and give him good news of
+  // Paradise. It was Abu Bakr, then Umar, and each praised Allah; then Uthman, with a calamity to strike him, and he
+  // said: Allah's help is sought (Sahih al-Bukhari 3693). (Who kept the gate is the one telling it, never named.)
+  "sign-the-garden-gate": [
+    ["Who came to the gate before Uthman?", "Abu Bakr and Umar", "It was Abu Bakr, and he praised Allah", "Then it was Umar, and he praised Allah"],
+    ["Who came to the gate second?", "Umar", "Then it was Umar, and he praised Allah"],
+    ["What did Umar do when he heard the good news?", "He praised Allah", "Then it was Umar, and he praised Allah"],
+    ["What came with Uthman's good news of Jannah?", "A trial that would strike him", "Then Uthman: with a calamity to strike him"],
+    ["What did Uthman say when he heard?", "Allah's help is sought", "He praised Allah: Allah's help is sought"]
+  ],
+  // In Yemen, Abu Musa's people got news of his migration and boarded a ship; it took them to the Negus in Abyssinia,
+  // where Ja'far and his companions were. They stayed until all left together, and he gave them a share of Khaybar
+  // (Sahih al-Bukhari 3136). (Who told Ja'far to stay is only said, not shown, so it is not asked here.)
+  "sign-ship-to-abyssinia": [
+    ["How did Abu Musa's people reach Abyssinia?", "By ship", "We set out to him, and boarded a ship", "Our ship took us to the Negus in Abyssinia"],
+    ["Where did Ja'far live for years?", "Abyssinia", "Our ship took us to the Negus in Abyssinia", "There we found Ja'far and his companions"],
+    ["Who came back with Ja'far?", "The people of the ship", "We stayed until we all left together"],
+    ["When did Ja'far return to the Prophet ﷺ?", "When Khaybar was conquered", "Khaybar was won, and he gave us a share"],
+    ["Ja'far's group got a share of Khaybar though they did not fight.", "True", "Khaybar was won, and he gave us a share"]
+  ],
+  // He came to Madinah with no one to serve him; Abu Talhah took Anas to him: Anas is a wise boy, let him serve you.
+  // He served him at home and on journeys for ten years, and he never said to him uff, nor why did you, nor why not
+  // (Sahih al-Bukhari 2768 and 6038). (How Abu Talhah was related to Anas is not in the scene.)
+  "sign-ten-years-serving": [
+    ["Who brought Anas to serve the Prophet ﷺ?", "Abu Talhah", "Abu Talhah took me to him"],
+    ["How did Abu Talhah describe Anas?", "A wise boy", "Anas is a wise boy; let him serve you"],
+    ["Anas served the Prophet ﷺ only at home.", "False", "I served him at home and on journeys"],
+    ["How long did Anas serve the Prophet ﷺ?", "Ten years", "I served him for ten years"],
+    ["What did the Prophet ﷺ never say to him?", "Uff", "He never said to me: uff"],
+    ["What can we learn for those who help us?", "Be gentle and patient with them", "He never said to me: uff", "Nor: why did you do so, or why not?"],
+    ["The Prophet ﷺ was kind to those who served him.", "True", "He never said to me: uff", "Nor: why did you do so, or why not?"]
+  ],
+  // None may cut off a brother over three nights, each turning away when they meet; the better of the two greets
+  // first (Sahih al-Bukhari 6077).
+  "sign-greet-first": [
+    ["How long at most can you stay cut off from a Muslim?", "Three nights", "None may cut off a brother over three nights"],
+    ["How long at most may Muslims stop talking?", "Three nights", "None may cut off a brother over three nights"],
+    ["Who is the better of the two?", "The one who greets first", "The better of the two greets first"],
+    ["Two friends quarrel. Who is the better one?", "The one who greets first", "The better of the two greets first"],
+    ["Saying salam first is a good deed.", "True", "The better of the two greets first"],
+    ["Saying salam first after a fight is a sign of weakness.", "False", "The better of the two greets first"]
   ]
 };
 
