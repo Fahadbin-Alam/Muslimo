@@ -399,7 +399,14 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-not-before-ramadan": [/before Ramadan/i, /habit/i],
   "sign-no-fast-on-eid": [/eid/i, /fast/i],
   "sign-ashura-and-ramadan": [/ashura/i, /ramadan/i],
-  "sign-milk-at-arafah": [/milk/i, /arafah/i]
+  "sign-milk-at-arafah": [/milk/i, /arafah/i],
+  "sign-rain-dua": [/rain/i, /fruitful|beneficial/i],
+  "sign-nothing-grows": [/famine/i, /nothing grows/i],
+  "sign-cloud-and-garden": [/cloud/i, /garden/i, /third/i],
+  "sign-pray-in-your-homes": [/pray in your homes|pray at home/i, /cold/i],
+  "sign-house-for-rain-and-sun": [/house/i, /rain/i, /sun/i],
+  "sign-sheep-on-the-hills": [/sheep/i, /mountain/i, /trial/i],
+  "sign-when-the-wind-blows": [/wind|cloud/i, /its good|'Ad/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -739,7 +746,14 @@ const SOURCES: Record<string, string[]> = {
   "sign-not-before-ramadan": ["Sahih al-Bukhari 1914"],
   "sign-no-fast-on-eid": ["Sahih al-Bukhari 1990"],
   "sign-ashura-and-ramadan": ["Sahih al-Bukhari 2001", "Sahih al-Bukhari 2006"],
-  "sign-milk-at-arafah": ["Sahih al-Bukhari 1989"]
+  "sign-milk-at-arafah": ["Sahih al-Bukhari 1989"],
+  "sign-rain-dua": ["Sahih al-Bukhari 1032"],
+  "sign-nothing-grows": ["Sahih Muslim 2904"],
+  "sign-cloud-and-garden": ["Sahih Muslim 2984a"],
+  "sign-pray-in-your-homes": ["Sahih al-Bukhari 666"],
+  "sign-house-for-rain-and-sun": ["Sahih al-Bukhari 6302"],
+  "sign-sheep-on-the-hills": ["Sahih al-Bukhari 3300"],
+  "sign-when-the-wind-blows": ["Sahih Muslim 899b", "Sahih al-Bukhari 4829"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -763,7 +777,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1307);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1315);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -10415,6 +10429,428 @@ describe("the signs in creation, alive", () => {
         [1, 1, 1, 1]
       ],
       [0, 1]
+    ]);
+  });
+
+  test("the scenes of rain and wind, from the du'a when it rains to the du'a when the wind blows, show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const weatherScenes: SignKind[] = ["rain-dua", "nothing-grows", "cloud-and-garden", "pray-in-your-homes", "house-for-rain-and-sun", "sheep-on-the-hills", "when-the-wind-blows"];
+    for (const kind of weatherScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Jabir|Musa|Moses|Mas'ud|Jibril|Gabriel|Aishah|Abu Hurairah)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, and nothing comes down from the sky: a call on one's Lord is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    const many = (kind: SignKind, list: string[], key: "x" | "y" | "scale" | "scaleX" | "rotate", t: number) => list.map((name) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The du'a when it rains: in Madinah under grey clouds, his place is a golden ring at the door of his home. Drops
+    // begin to fall; his voice speaks, and a spark of du'a rises; the clouds grow heavy and more drops fall; then the
+    // land and the hills grow green, grass and flowers come up, dates show on the palms, and a warm glow comes over the
+    // land.
+    expect(words("rain-dua")).toEqual(["Whenever he saw the rain", "He would say", "Let it be a strong rain", "And a fruitful one"]);
+    const duaDrops = names("rain-dua", /^he saw it: drops falling \d$/);
+    const heavyDrops = names("rain-dua", /^a strong downpour: more drops \d$/);
+    const dates = names("rain-dua", /^fruitful: dates on a palm \d$/);
+    expect([duaDrops, heavyDrops, dates].map((list) => list.length)).toEqual([3, 3, 3]);
+    expect([
+      [0.01, 0.23].map((t) => all("rain-dua", duaDrops, t)),
+      at("rain-dua", "his voice: let it be strong and fruitful", "opacity", [0.27, 0.43]),
+      [at("rain-dua", "his du'a: a spark rising", "opacity", [0.33, 0.38, 0.43]), at("rain-dua", "his du'a: a spark rising", "y", [0.33, 0.43])],
+      [0.47, 0.69].map((t) => all("rain-dua", heavyDrops, t)),
+      at("rain-dua", "a strong downpour: the clouds grow heavy", "opacity", [0.47, 0.69]),
+      [0.73, 0.97].map((t) => all("rain-dua", ["fruitful: the land grows green", "fruitful: the hills grow green", "fruitful: a warm glow over the land"], t)),
+      [at("rain-dua", "fruitful: grass coming up, near", "scaleY", [0.73, 0.97]), at("rain-dua", "fruitful: flowers coming up", "scaleY", [0.73, 0.97])],
+      [0.73, 0.97].map((t) => all("rain-dua", dates, t))
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 1],
+      [
+        [0, 1, 0],
+        [0, -11]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 1],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Famine, though it rains: under a hot sun, a field lies sown in its furrows, dry and cracked, and by it stands a
+    // place with an empty basket. The sun goes behind grey clouds; drops fall and stop, then fall again; the field
+    // darkens, its cracks close, and pools of water stand in it. Then the drops stop, and nothing comes up: a grey
+    // dashed ring comes about the bare field, and about the empty basket.
+    expect(words("nothing-grows")).toEqual(["Famine is not that no rain comes", "But that rain comes, and comes again", "And the earth grows nothing"]);
+    const firstShower = names("nothing-grows", /^showers: drops falling \d$/);
+    const secondShower = names("nothing-grows", /^showers again: drops falling \d$/);
+    expect([firstShower, secondShower].map((list) => list.length)).toEqual([3, 3]);
+    expect([
+      at("nothing-grows", "no showers: the sun's heat spreads", "opacity", [0.01, 0.27, 0.61]),
+      [at("nothing-grows", "the sun", "opacity", [0.29, 0.61]), at("nothing-grows", "a hot clear sky", "opacity", [0.29, 0.61])],
+      [at("nothing-grows", "grey clouds", "x", [0.31, 0.61]), at("nothing-grows", "grey clouds", "opacity", [0.31, 0.61])],
+      [0.42, 0.48, 0.52].map((t) => all("nothing-grows", firstShower, t)),
+      [0.52, 0.61, 0.97].map((t) => all("nothing-grows", secondShower, t)),
+      [0.44, 0.61].map((t) => all("nothing-grows", ["the field, wet and dark", "pools of water on the field"], t)),
+      at("nothing-grows", "no showers: the field cracked", "opacity", [0.44, 0.61]),
+      at("nothing-grows", "pools of water on the field", "opacity", [0.61, 0.97]),
+      [0.75, 0.97].map((t) => all("nothing-grows", ["nothing grows: a grey dashed ring about the field", "famine: a grey dashed ring about the empty basket"], t))
+    ]).toEqual([
+      [0, 1, 0],
+      [
+        [1, 0],
+        [1, 0]
+      ],
+      [
+        [-60, 0],
+        [0, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [1, 0],
+      [1, 0.5],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // The cloud and the garden: in the wilderness a place hears a voice in a cloud, only arcs in it; a faint way goes
+    // from the cloud toward a garden far off. The cloud moves aside and its drops pour on the black stony ground; the
+    // water runs into a channel, and the place follows it to the garden, where a spade turns the water into the beds.
+    // What the garden gives is three small heaps: one goes to a place in need, and a spark rises; one goes to his home,
+    // with a warm glow; and one goes back into the garden, which grows, with a warm glow over it.
+    expect(words("cloud-and-garden")).toEqual([
+      "One in the wilderness heard a voice",
+      "In a cloud: water so-and-so's garden",
+      "It poured its water on stony ground",
+      "He followed the water to one in his garden",
+      "A third I give, a third we eat",
+      "And a third I put back into it"
+    ]);
+    const poured = names("cloud-and-garden", /^it poured its water: drops on the stony ground \d$/);
+    const channelWater = names("cloud-and-garden", /^the channel takes it all: water \d$/);
+    expect([poured, channelWater].map((list) => list.length)).toEqual([3, 3]);
+    const thirds = ["a third, given in charity", "a third, eaten at home", "a third, put back into it"];
+    expect([
+      at("cloud-and-garden", "a voice in the cloud", "opacity", [0.01, 0.13, 0.29, 0.45]),
+      at("cloud-and-garden", "the voice: a faint way toward the garden", "opacity", [0.17, 0.29, 0.45]),
+      at("cloud-and-garden", "the cloud", "x", [0.33, 0.45]),
+      [0.33, 0.45, 0.63].map((t) => all("cloud-and-garden", poured, t)),
+      at("cloud-and-garden", "the stony ground, wet", "opacity", [0.33, 0.45]),
+      [0.49, 0.63].map((t) => all("cloud-and-garden", channelWater, t)),
+      [at("cloud-and-garden", "the place of the one in the wilderness", "x", [0.49, 0.63]), at("cloud-and-garden", "the place of the one in the wilderness", "y", [0.49, 0.63])],
+      at("cloud-and-garden", "his spade, turning the water", "rotate", [0.49, 0.595, 0.63]),
+      at("cloud-and-garden", "turned by his spade: water in the beds", "opacity", [0.49, 0.63]),
+      [0.67, 0.8, 0.97].map((t) => all("cloud-and-garden", thirds, t)),
+      [at("cloud-and-garden", "a third, given in charity", "x", [0.67, 0.8]), at("cloud-and-garden", "a third, eaten at home", "y", [0.67, 0.8])],
+      [at("cloud-and-garden", "given in charity: a spark rising", "opacity", [0.67, 0.76, 0.8]), at("cloud-and-garden", "eaten at home: a warm glow at his home", "opacity", [0.67, 0.8])],
+      at("cloud-and-garden", "a third, put back into it", "x", [0.84, 0.97]),
+      [at("cloud-and-garden", "put back into it: the garden grows", "scaleY", [0.84, 0.97]), at("cloud-and-garden", "a warm glow over the garden", "opacity", [0.84, 0.97])]
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [0, 1, 0],
+      [0, 17],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [0, 1],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 70],
+        [0, -8]
+      ],
+      [0, -16, 0],
+      [0, 1],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [1, 1, 0]
+      ],
+      [
+        [0, -33.2],
+        [0, -23]
+      ],
+      [
+        [0, 1, 0],
+        [0, 1]
+      ],
+      [0, 24.5],
+      [
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Praying in one's home on a cold night: a cold wind blows over the homes, and Ibn Umar's place stands on a rise.
+    // His voice calls the adhan, and its call spreads; he says: pray in your homes, and a warm light comes in each home.
+    // Then his place, a golden ring, comes by the rise, and a golden way goes from it to the caller; drops fall on the
+    // cold night; the caller's voice speaks, and from each home a spark of prayer rises.
+    expect(words("pray-in-your-homes")).toEqual([
+      "On a night of cold and wind",
+      "Ibn Umar called the adhan",
+      "Then said: pray in your homes",
+      "He used to tell the caller",
+      "On nights of cold and rain",
+      "To say: pray in your homes"
+    ]);
+    const homeLights = names("pray-in-your-homes", /^pray in your homes: a warm light in a home \d$/);
+    const wetNight = names("pray-in-your-homes", /^a night of cold and wet: drops falling \d$/);
+    const homeSparks = names("pray-in-your-homes", /^praying at home: a spark rising from a home \d$/);
+    expect([homeLights, wetNight, homeSparks].map((list) => list.length)).toEqual([4, 3, 4]);
+    expect([
+      [0.01, 0.13].map((t) => all("pray-in-your-homes", ["the cold wind blowing", "a cold night: frost on the land"], t)),
+      at("pray-in-your-homes", "Ibn Umar's voice: the adhan, then pray in your homes", "opacity", [0.17, 0.29, 0.45, 0.61]),
+      [0.33, 0.45].map((t) => all("pray-in-your-homes", homeLights, t)),
+      [0.49, 0.61].map((t) => all("pray-in-your-homes", ["a golden ring, his place", "he told the caller: a golden way to the caller"], t)),
+      at("pray-in-your-homes", "his voice: tell them", "opacity", [0.49, 0.61, 0.78]),
+      [0.65, 0.78].map((t) => all("pray-in-your-homes", wetNight, t)),
+      at("pray-in-your-homes", "a cold, wet night: the clouds grow heavy", "opacity", [0.65, 0.78]),
+      at("pray-in-your-homes", "the caller's voice: pray in your homes", "opacity", [0.82, 0.97]),
+      [0.82, 0.97].map((t) => all("pray-in-your-homes", homeSparks, t)),
+      [0.82, 0.97].map((t) => many("pray-in-your-homes", homeSparks, "y", t))
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1, 1, 0],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1, 0],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 1],
+      [0, 1],
+      [
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [-11, -11, -11, -11]
+      ]
+    ]);
+    // A house for the rain and the sun: by Madinah, with his masjid and his place, a golden ring, far off, Ibn Umar's
+    // place stands by the ground where the house will be, and it rises row by row of mud brick, and a roof of palm
+    // leaves comes on it. Clouds come, and drops fall about the house; his place goes in at its door, and a warm glow
+    // comes inside. Then the sky clears and the sun is hot; the house casts its shade, and his place goes into it. A
+    // warm glow comes about the small house he built alone, and about his place.
+    expect(words("house-for-rain-and-sun")).toEqual([
+      "In his lifetime, I built a house",
+      "To shelter me from the rain",
+      "And shade me from the sun",
+      "None of Allah's creation helped me"
+    ]);
+    const brickRows = names("house-for-rain-and-sun", /^built by him: mud bricks, row \d$/);
+    const houseDrops = names("house-for-rain-and-sun", /^drops falling about the house \d$/);
+    expect([brickRows, houseDrops].map((list) => list.length)).toEqual([4, 3]);
+    expect([
+      [0.01, 0.21].map((t) => all("house-for-rain-and-sun", brickRows, t)),
+      [0.01, 0.21].map((t) => all("house-for-rain-and-sun", ["built by him: its doorway", "built by him: a roof of palm leaves"], t)),
+      [0.25, 0.45, 0.69].map((t) => all("house-for-rain-and-sun", ["a grey sky", "grey clouds"], t)),
+      at("house-for-rain-and-sun", "the sun", "opacity", [0.25, 0.45, 0.69]),
+      [0.25, 0.45, 0.69].map((t) => all("house-for-rain-and-sun", houseDrops, t)),
+      [at("house-for-rain-and-sun", "Ibn Umar's place", "x", [0.25, 0.45, 0.69]), at("house-for-rain-and-sun", "Ibn Umar's place", "y", [0.25, 0.45, 0.69])],
+      at("house-for-rain-and-sun", "sheltered: a warm glow inside the house", "opacity", [0.25, 0.45, 0.69]),
+      [0.49, 0.69].map((t) => all("house-for-rain-and-sun", ["the house's shade", "the sun's heat", "shaded: a soft ring about his place in the shade"], t)),
+      [0.73, 0.97].map((t) => all("house-for-rain-and-sun", ["a house he built alone: a warm glow about it", "none helped him: a soft golden ring about his place"], t))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1],
+        [0, 0]
+      ],
+      [1, 0, 1],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 26, 50],
+        [0, -3, 1.6]
+      ],
+      [0, 1, 0],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Sheep on the mountain tops: by a town in the valley, a place stands with three sheep, and a warm glow comes about
+    // them. The sheep go up the path to the mountain's top, and the place follows them; a cloud comes over it, drops
+    // fall, and green grass comes up where they fall. Down in the town, a grey haze and a grey dashed ring come about
+    // its homes: its trials; and a soft golden ring comes about his place on the mountain: his faith kept safe.
+    expect(words("sheep-on-the-hills")).toEqual([
+      "Soon a man's best wealth will be sheep",
+      "He follows them to the mountain tops",
+      "And to where the rain falls",
+      "Fleeing with his faith from trials"
+    ]);
+    const flock = names("sheep-on-the-hills", /^a sheep of the flock \d$/);
+    const topDrops = names("sheep-on-the-hills", /^where the drops fall on the mountain \d$/);
+    expect([flock, topDrops].map((list) => list.length)).toEqual([3, 3]);
+    expect([
+      at("sheep-on-the-hills", "his best wealth: a warm glow about the sheep", "opacity", [0.01, 0.21, 0.45]),
+      [0.25, 0.45].map((t) => many("sheep-on-the-hills", flock, "x", t)),
+      [0.25, 0.45].map((t) => many("sheep-on-the-hills", flock, "y", t)),
+      [at("sheep-on-the-hills", "the place of the one with the flock", "x", [0.25, 0.45]), at("sheep-on-the-hills", "the place of the one with the flock", "y", [0.25, 0.45])],
+      [at("sheep-on-the-hills", "a cloud over the mountain top", "opacity", [0.49, 0.69]), at("sheep-on-the-hills", "where the drops fall: green grass on the top", "opacity", [0.49, 0.69])],
+      [0.49, 0.69].map((t) => all("sheep-on-the-hills", topDrops, t)),
+      [0.73, 0.97].map((t) => all("sheep-on-the-hills", ["its trials: a grey haze over the town", "its trials: a grey dashed ring about the town", "his faith kept safe: a soft golden ring about his place"], t))
+    ]).toEqual([
+      [0, 1, 0],
+      [
+        [0, 0, 0],
+        [63, 64, 28]
+      ],
+      [
+        [0, 0, 0],
+        [-41.6, -41.6, -40.8]
+      ],
+      [
+        [0, 64],
+        [0, -41.6]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // The du'a when the wind blows: the wind sweeps over Madinah and bends the palms; his place is a golden ring at his
+    // door. His voice speaks; a spark of his du'a rises, and small lights of its good go with the wind; a golden ring of
+    // refuge comes about the homes, and another spark rises. Dark clouds gather; a faint grey ring comes about his
+    // place, and it goes out from his door and back in. Drops fall: the grey ring fades and a warm glow comes about his
+    // place. His voice speaks to her place at the door, and far off, in a soft circle, a cloud facing the valleys of 'Ad
+    // gets a grey dashed ring.
+    expect(words("when-the-wind-blows")).toEqual([
+      "When the wind blew hard, he said",
+      "O Allah, I ask You for its good",
+      "And seek refuge in You from its evil",
+      "When clouds gathered, his look changed",
+      "When it rained, it was lifted from him",
+      "Perhaps, Aishah, it is as 'Ad said"
+    ]);
+    const windDrops = names("when-the-wind-blows", /^when it fell: drops falling \d$/);
+    expect(windDrops.length).toBe(3);
+    expect([
+      [0.01, 0.13].map((t) => all("when-the-wind-blows", ["the wind blowing hard", "dust blown by the wind"], t)),
+      at("when-the-wind-blows", "his voice: I ask You for its good", "opacity", [0.01, 0.13, 0.45, 0.63]),
+      [at("when-the-wind-blows", "his du'a: a spark rising", "opacity", [0.19, 0.24, 0.29]), at("when-the-wind-blows", "his du'a: a spark rising", "y", [0.19, 0.29])],
+      at("when-the-wind-blows", "its good: small lights going with the wind", "opacity", [0.17, 0.29, 0.63]),
+      at("when-the-wind-blows", "refuge: a golden ring of care about the homes", "opacity", [0.33, 0.45]),
+      [at("when-the-wind-blows", "his refuge: a spark rising", "opacity", [0.36, 0.4, 0.45]), at("when-the-wind-blows", "his refuge: a spark rising", "y", [0.36, 0.45])],
+      at("when-the-wind-blows", "the sky clouded over: it darkens", "opacity", [0.49, 0.63, 0.79]),
+      [at("when-the-wind-blows", "clouds gathering in the sky", "x", [0.49, 0.63]), at("when-the-wind-blows", "clouds gathering in the sky", "opacity", [0.49, 0.63, 0.79])],
+      at("when-the-wind-blows", "his look changed: a faint grey ring about his place", "opacity", [0.49, 0.63, 0.79]),
+      at("when-the-wind-blows", "a golden ring, his place", "x", [0.49, 0.585, 0.63]),
+      [0.67, 0.79].map((t) => all("when-the-wind-blows", windDrops, t)),
+      at("when-the-wind-blows", "it was lifted from him: a warm glow about his place", "opacity", [0.67, 0.79]),
+      [0.83, 0.97].map((t) => all("when-the-wind-blows", ["his voice: perhaps it is as 'Ad said", "far off: the valleys of 'Ad, in a soft circle", "far off: a cloud facing their valleys", "as 'Ad said: a grey dashed ring about their cloud"], t))
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1, 1, 0],
+      [
+        [0, 1, 0],
+        [0, -11]
+      ],
+      [0, 1, 0],
+      [0, 1],
+      [
+        [0, 1, 0],
+        [0, -11]
+      ],
+      [0, 1, 0.6],
+      [
+        [-24, 0],
+        [0, 1, 0.7]
+      ],
+      [0, 1, 0],
+      [0, 9, 0],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 1],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
     ]);
   });
 
