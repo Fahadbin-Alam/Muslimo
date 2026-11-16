@@ -3983,6 +3983,63 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-quba-every-saturday": [
     ["How often did he ﷺ visit Quba, per Ibn Umar?", "Every Saturday", "Every Saturday"],
     ["How did he ﷺ go there?", "Walking or riding", "Sometimes walking, sometimes riding"]
+  ],
+  // We are the last, yet the first on the Day of Resurrection; this was their day, made a duty for them, and they
+  // differed over it, and Allah guided us to it; the people follow us in it: the Jews tomorrow, and the Christians the
+  // day after (Sahih al-Bukhari 876). (Who every nation has, and that each is judged with justice, stay on their usual
+  // picture: they are from 10:47, which the scene does not tell.)
+  "sign-guided-to-friday": [
+    ["Muslims came last among the nations.", "True", "We are the last, yet the first"],
+    ["When did the Muslims come, in the hadith?", "Last", "We are the last, yet the first"],
+    ["Where will Muslims be on the Day of Resurrection, in the hadith?", "Foremost", "We are the last, yet the first", "On the Day of Resurrection"],
+    ["When will this Ummah be judged, per the hadith?", "First of all nations", "We are the last, yet the first", "On the Day of Resurrection"],
+    ["When will Muslims be foremost?", "On the Day of Resurrection", "On the Day of Resurrection"],
+    ["Which day was this Ummah guided to?", "Friday", "And Allah guided us to it"],
+    ["To which day did Allah guide us, in the hadith?", "Friday", "And Allah guided us to it"]
+  ],
+  // Pray some of your prayers in your homes, and do not make them graves (Sahih al-Bukhari 432). (That family can see
+  // and learn stays on its usual picture: the hadith does not tell it.)
+  "sign-prayers-at-home": [
+    ["Where should some prayers be prayed?", "At home", "Pray some of your prayers in your homes"],
+    ["Pray some ____ at home, not only at the masjid.", "prayers", "Pray some of your prayers in your homes"],
+    ["Pray some prayers at home, not only at the masjid.", "True", "Pray some of your prayers in your homes"],
+    ["A home with no prayer is likened to what?", "A grave", "And do not make them graves"]
+  ],
+  // He used to pray the voluntary prayers while he was riding, facing other than the qiblah (Sahih al-Bukhari 1094).
+  "sign-prayer-on-his-mount": [
+    ["Which prayers did he ﷺ pray while riding?", "The voluntary prayers", "He used to pray the voluntary prayers"],
+    ["Travelling did not stop him ﷺ from extra prayers.", "True", "He used to pray the voluntary prayers", "While he was riding"],
+    ["Which way did he face when riding?", "The way he was travelling", "Facing other than the qiblah"]
+  ],
+  // There was a fright in Madinah; he borrowed a horse from Abu Talhah called al-Mandub and rode it; he came back and
+  // said: we saw nothing, and we found the horse like a sea (Sahih al-Bukhari 2627).
+  "sign-fast-horse": [
+    ["Whose horse did the Prophet ﷺ borrow?", "Abu Talhah's", "He borrowed a horse from Abu Talhah"],
+    ["What was the horse's name?", "Al-Mandub", "Called al-Mandub, and rode it"],
+    ["What did the Prophet ﷺ find when he rode out?", "Nothing to fear", "He came back and said: we saw nothing"]
+  ],
+  // A wolf took a sheep from a shepherd, who saved it; the wolf turned and said: who will guard it on the day of the
+  // wild beasts, with no shepherd but me? The people said: glory be to Allah! He said: I believe it, and so do Abu Bakr
+  // and Umar; and Abu Bakr and Umar were not there (Sahih al-Bukhari 3690).
+  "sign-talking-wolf": [
+    ["What did the wolf in the story do?", "It spoke to the shepherd", "The wolf turned and said: who guards it"],
+    ["Who did the Prophet ﷺ say believed it with him?", "Abu Bakr and Umar", "I believe it, as do Abu Bakr and Umar"],
+    ["Abu Bakr and Umar were sitting there when he said it.", "False", "I believe it, as do Abu Bakr and Umar", "And Abu Bakr and Umar were not there"]
+  ],
+  // In a dream he drew from a well as much as Allah willed; then Ibn Abi Quhafah drew a bucket or two; then it became
+  // a huge bucket, and Ibn al-Khattab took it, and none drew like Umar, until the people drank and their camels knelt
+  // (Sahih al-Bukhari 3664). (Who Ibn Abi Quhafah is stays on its usual picture: the scene does not tell it.)
+  "sign-well-dream": [
+    ["The Prophet ﷺ was first to draw water in the dream.", "True", "I drew from it as much as Allah willed"],
+    ["How many buckets did Ibn Abi Quhafah draw?", "One or two", "Then Ibn Abi Quhafah drew a bucket or two"],
+    ["Who took the bucket after him and drew the most?", "Umar", "And Ibn al-Khattab took it", "I never saw a mighty one draw like Umar"]
+  ],
+  // I saw in a dream that I was migrating from Makkah to a land of palm trees; I thought it was al-Yamamah or Hajar,
+  // but it was Madinah, Yathrib (Sahih al-Bukhari 7035).
+  "sign-land-of-palms": [
+    ["What kind of land did he ﷺ see himself migrating to?", "A land of date palms", "From Makkah to a land of palm trees"],
+    ["He ﷺ first thought the land might be al-Yamamah.", "True", "I thought it was al-Yamamah or Hajar"],
+    ["Which city did that land turn out to be?", "Madinah", "But it was Madinah, Yathrib"]
   ]
 };
 

@@ -1294,6 +1294,13 @@ const STATES: State[] = [
   { id: "scene-between-house-and-pulpit", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-masjids-rawdah" ask="house and his minbar" /> },
   { id: "scene-thousand-prayers", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-masjids-thousand" ask="Which masjid is left out of that count" /> },
   { id: "scene-quba-every-saturday", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-visiting-quba" ask="visit Quba, per Ibn Umar" /> },
+  { id: "scene-guided-to-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah3-guided-to-friday" ask="Which day was this Ummah guided to" /> },
+  { id: "scene-prayers-at-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-extra-at-home" ask="likened to what" /> },
+  { id: "scene-prayer-on-his-mount", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-easy-on-his-mount" ask="Which way did he face when riding" /> },
+  { id: "scene-fast-horse", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-talhah-the-horse" ask="find when he rode out" /> },
+  { id: "scene-talking-wolf", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-wolf" ask="What did the wolf in the story do" /> },
+  { id: "scene-well-dream", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-dream-of-the-well" ask="How many buckets did Ibn Abi Quhafah draw" /> },
+  { id: "scene-land-of-palms", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-tabir-a-land-of-palm-trees" ask="Which city did that land turn out to be" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
