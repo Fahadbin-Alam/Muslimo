@@ -1161,6 +1161,13 @@ const STATES: State[] = [
   { id: "scene-friday-fajr", render: () => <SceneQuestionDemo lessonId="lesson-deep-sajdah1-friday-fajr-surah" ask="Which surah came with it" /> },
   { id: "scene-learn-from-four", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-learn-from-four" ask="Who was named first" /> },
   { id: "scene-young-ibn-abbas", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-ibn-abbas" ask="What did Ibn Abbas say the surah" /> },
+  { id: "scene-go-back-and-pray", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayerlive-go-back" ask="How many times was the man sent back" /> },
+  { id: "scene-ansar-at-hunayn", render: () => <SceneQuestionDemo lessonId="lesson-deep-hujurat2-the-ansar-at-hunayn" ask="What three favors did he" /> },
+  { id: "scene-the-sneeze", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-the-sneeze" ask="What does the sneezer say back" /> },
+  { id: "scene-visitors-of-mudar", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr4-even-half-a-date" ask="What was the smallest gift" /> },
+  { id: "scene-steps-in-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-bilal-footsteps" ask="What did the Prophet ﷺ hear in Paradise" /> },
+  { id: "scene-madinah-rejoiced", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-joy" ask="Who called out that the Prophet" /> },
+  { id: "scene-red-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-ali-red-camels" ask="One person guided through you" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
