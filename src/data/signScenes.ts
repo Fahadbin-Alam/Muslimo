@@ -709,7 +709,14 @@ export type SignKind =
   | "pray-in-your-homes"
   | "house-for-rain-and-sun"
   | "sheep-on-the-hills"
-  | "when-the-wind-blows";
+  | "when-the-wind-blows"
+  | "good-in-horses"
+  | "horse-race"
+  | "al-adba"
+  | "rooster-and-donkey"
+  | "ask-before-milking"
+  | "goat-lent-for-milk"
+  | "camel-as-sutrah";
 
 export type SignScene = {
   id: string;
@@ -3045,6 +3052,54 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said: when the wind blew hard, the Prophet ﷺ would say: O Allah, I ask You for its good, the good in it and the good it is sent with, and I seek refuge in You from its evil, the evil in it and the evil it is sent with. When clouds gathered in the sky, his colour changed, and he went out and came in, and came forward and went back; and when it rained, it was lifted from him. I asked him, and he said: perhaps it is, Aishah, as the people of 'Ad said: when they saw it as a cloud coming toward their valleys, they said: this is a cloud that will bring us rain. She also said: when he saw clouds or wind, it showed on his face; she asked him, and he said: Aishah, what assures me that there is no punishment in it? A people were punished with the wind.",
     sources: [muslim("899b"), bukhari("4829")]
+  },
+  {
+    id: "sign-good-in-horses",
+    kind: "good-in-horses",
+    caption: "Abdullah ibn Umar said that the Messenger of Allah ﷺ said: good will remain in the foreheads of horses until the Day of Resurrection.",
+    sources: [bukhari("2849")]
+  },
+  {
+    id: "sign-horse-race",
+    kind: "horse-race",
+    caption:
+      "Ibn Umar said: the Prophet ﷺ held a race of the horses that had been made lean, from al-Hafya' to Thaniyat al-Wada', and of the horses that had not been made lean, from the Thaniyah to the masjid of Bani Zurayq; and I was among those who raced. Sufyan said: from al-Hafya' to Thaniyat al-Wada' is five or six miles, and from the Thaniyah to the masjid of Bani Zurayq is a mile.",
+    sources: [bukhari("2868")]
+  },
+  {
+    id: "sign-al-adba",
+    kind: "al-adba",
+    caption:
+      "Anas said: the Prophet ﷺ had a she-camel called al-Adba', and she could not be outrun. A bedouin came on a young camel of his and outran her, and that was hard on the Muslims, who said: al-Adba' has been outrun. He said: it is due from Allah that nothing of this world rises but He lowers it.",
+    sources: [bukhari("6501")]
+  },
+  {
+    id: "sign-rooster-and-donkey",
+    kind: "rooster-and-donkey",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: when you hear the crowing of the roosters, ask Allah for His favor, for they have seen an angel; and when you hear the braying of the donkey, seek refuge in Allah from Shaytan, for it has seen a devil.",
+    sources: [muslim("2729")]
+  },
+  {
+    id: "sign-ask-before-milking",
+    kind: "ask-before-milking",
+    caption:
+      "Ibn Umar said that the Messenger of Allah ﷺ said: let none milk another's animals without his permission. Would any of you like his store to be come to, his cupboard broken, and his food taken away? The udders of their animals store their food for them, so let none milk anyone's animals but with his permission.",
+    sources: [bukhari("2435")]
+  },
+  {
+    id: "sign-goat-lent-for-milk",
+    kind: "goat-lent-for-milk",
+    caption:
+      "Abdullah ibn Amr said that the Messenger of Allah ﷺ said: there are forty good deeds, the highest of them lending a she-goat for its milk; no one does one of them, hoping for its reward and believing in its promise, but Allah admits him into Paradise by it. Hassan said: we counted the deeds below lending a she-goat, returning a greeting, answering one who sneezes, moving harm from the road and the like, and we could not reach fifteen.",
+    sources: [bukhari("2631")]
+  },
+  {
+    id: "sign-camel-as-sutrah",
+    kind: "camel-as-sutrah",
+    caption:
+      "Ibn Umar said that the Prophet ﷺ would make his she-camel sit across in front of him and pray facing it. One asked: what if the camels got up and moved? The answer: he would take the saddle and set it up, and pray facing its back part. And Ibn Umar used to do the same.",
+    sources: [bukhari("507")]
   }
 ];
 
@@ -4750,7 +4805,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-book-bad-al-khalq-sheep-on-the-hills": "sign-sheep-on-the-hills",
   // When the wind blew hard, he asked for its good and sought refuge from its evil; at clouds, he recalled 'Ad.
   "deep-ahqaf2-dua-when-the-wind-blows": "sign-when-the-wind-blows",
-  "deep-ahqaf2-worry-at-the-clouds": "sign-when-the-wind-blows"
+  "deep-ahqaf2-worry-at-the-clouds": "sign-when-the-wind-blows",
+  // Good will remain in the foreheads of horses until the Day of Resurrection.
+  "deep-kids-animal-manners-good-in-horses": "sign-good-in-horses",
+  // He held a race of the lean horses from al-Hafya' to Thaniyat al-Wada', and of the others to Bani Zurayq's masjid.
+  "deep-sahaba-small-stories-the-horse-race": "sign-horse-race",
+  // Al-Adba' could not be outrun, until a bedouin's young camel outran her: nothing worldly rises but He lowers it.
+  "deep-book-riqaq-al-adba-the-camel": "sign-al-adba",
+  // At the rooster's crow, ask Allah for His favor; at the donkey's bray, seek refuge in Allah from Shaytan.
+  "deep-book-dua-rooster-and-donkey": "sign-rooster-and-donkey",
+  // Let none milk another's animals without his permission: their udders store their food.
+  "deep-kids-animal-manners-ask-before-milking": "sign-ask-before-milking",
+  // Forty good deeds, the highest lending a she-goat for its milk; they could not count fifteen below it.
+  "deep-zakat-wise-wealth-a-goat-for-its-milk": "sign-goat-lent-for-milk",
+  // He would make his she-camel sit across and pray facing it, or set up its saddle and pray facing its back.
+  "deep-prayer-sutrah-his-camel-as-a-sutrah": "sign-camel-as-sutrah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
