@@ -1189,6 +1189,13 @@ const STATES: State[] = [
   { id: "scene-two-refuges", render: () => <SceneQuestionDemo lessonId="lesson-deep-uqbah-the-two-refuges" ask="What do both surahs begin with" /> },
   { id: "scene-greatest-ayah", render: () => <SceneQuestionDemo lessonId="lesson-deep-ubayy-greatest-ayah" ask="Which ayah did Ubayy say" /> },
   { id: "scene-change-it", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran2-change-it" ask="What comes after the hand" /> },
+  { id: "scene-abu-dharr-seeks", render: () => <SceneQuestionDemo lessonId="lesson-deep-abudharr-aloud" ask="Who protected him" /> },
+  { id: "scene-heart-almost-flew", render: () => <SceneQuestionDemo lessonId="lesson-deep-tur3-my-heart-almost-flew" ask="How did Jubayr feel" /> },
+  { id: "scene-heraclius-asks", render: () => <SceneQuestionDemo lessonId="lesson-deep-yunus1-a-lifetime-among-you" ask="What did Heraclius ask" /> },
+  { id: "scene-mighty-since-umar", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-becoming-muslim" ask="What did the crowd do" /> },
+  { id: "scene-every-right", render: () => <SceneQuestionDemo lessonId="lesson-deep-salman-rights" ask="Which three have rights" /> },
+  { id: "scene-first-masjid", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj2-first-masjid-on-earth" ask="How long was between them" /> },
+  { id: "scene-rain-and-stars", render: () => <SceneQuestionDemo lessonId="lesson-deep-waqiah4-the-rain-and-the-stars" ask="Who truly believes" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

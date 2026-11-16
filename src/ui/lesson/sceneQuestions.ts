@@ -3116,6 +3116,86 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What is the weakest faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"],
     ["What is the first way to change a wrong, in Muslim 49?", "With the hand", "Let him change it with his hand"],
     ["What is the weakest of faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"]
+  ],
+  // Abu Dharr sent his brother, who came back and said: I saw him enjoining good character. Abu Dharr took his waterskin
+  // and came to Makkah; Ali saw him and knew he was a stranger, then said: follow me, and enter where I enter. He heard
+  // him and became Muslim on the spot, and called out the shahadah at the masjid; the people beat him, and al-Abbas knelt
+  // over him: he is of Ghifar (Sahih al-Bukhari 3861, 3522). (His name Jundub, that he was among the very first, and
+  // being told to go back to his people stay on their usual picture: the scene does not show them.)
+  "sign-abu-dharr-seeks": [
+    ["Whom did Abu Dharr send to Makkah first?", "His brother", "His brother said: he enjoins good character"],
+    ["Who led Abu Dharr to the Prophet ﷺ?", "Ali", "Ali saw him, and knew he was a stranger", "Follow me, and enter where I enter"],
+    ["What did Abu Dharr do after hearing the Prophet ﷺ?", "Became Muslim on the spot", "He heard him, and became Muslim at once"],
+    ["Abu Dharr bravely called out his Islam at the ____.", "Ka'bah", "He called out the shahadah at the masjid"],
+    ["Where did Abu Dharr declare his Islam aloud?", "In the Masjid al-Haram", "He called out the shahadah at the masjid"],
+    ["Who protected him from the angry people?", "Al-Abbas", "Al-Abbas knelt over him: he is of Ghifar"],
+    ["Abu Dharr grew up with the ____ tribe, outside Makkah.", "Ghifar", "Al-Abbas knelt over him: he is of Ghifar"],
+    ["Abu Dharr grew up with the Quraysh tribe, outside Makkah.", "False", "Al-Abbas knelt over him: he is of Ghifar"]
+  ],
+  // Jubayr ibn Mut'im heard him recite at-Tur in Maghrib: were they created by nothing, or were they themselves the
+  // creators? Or did they create the heavens and the earth? Nay, but they have no firm belief. My heart was about to fly
+  // (Sahih al-Bukhari 4854). (Jubayr's father, tribe and clan, why he had come to Madinah, and the night glorifying of
+  // 52:49 stay on their usual picture.)
+  "sign-heart-almost-flew": [
+    ["Ayah 35: which question made Jubayr's heart nearly fly?", "Were they created from nothing?", "Were they created by nothing?"],
+    ["How did Jubayr feel at 52:35, per Bukhari 4854?", "His heart almost flew", "My heart was about to fly"],
+    ["Hearing these ayahs helped lead Jubayr to Islam.", "True", "Nay, but they have no firm belief", "My heart was about to fly"]
+  ],
+  // Heraclius called Abu Sufyan to his court and asked: do the nobles follow him, or the poor? The poor. Increasing or
+  // decreasing? Increasing. Did you ever accuse him of lying? No. They are the followers of the messengers. Then his ﷺ
+  // letter: accept Islam, and be safe; come to a word common to us and you (Sahih al-Bukhari 7). (The questions on
+  // 6:53, 10:16 and 11:27 stay on their usual picture.)
+  "sign-heraclius-asks": [
+    ["Who followed the Prophet ﷺ, per Abu Sufyan to Heraclius?", "Mostly the poor", "Do nobles or the poor follow him? The poor"],
+    ["Who mostly followed the Prophet ﷺ, per the answer to Heraclius?", "The poor", "Do nobles or the poor follow him? The poor"],
+    ["Heraclius also asked if the followers were growing in number.", "True", "Increasing or decreasing? I said: increasing"],
+    ["What did Heraclius ask about him ﷺ?", "Had he ever lied before?", "Did you ever accuse him of lying? I said: no"],
+    ["Even an enemy at that time said he ﷺ never lied.", "True", "Did you ever accuse him of lying? I said: no"],
+    ["What did the letter invite Heraclius to?", "Islam", "His letter: accept Islam, and be safe"],
+    ["To whom did the Prophet ﷺ send a letter with 3:64?", "Heraclius, the Roman emperor", "His letter: accept Islam, and be safe", "Come to a word common to us and you"],
+    ["The Prophet ﷺ used an ayah of the Quran to invite a king.", "True", "His letter: accept Islam, and be safe", "Come to a word common to us and you"]
+  ],
+  // Umar was at home in fear: your people claim they will kill me. Al-As ibn Wa'il said: there is no way to you; the
+  // people streamed through the valley for Ibn al-Khattab, he told them there is no way to him, and they went back (Sahih
+  // al-Bukhari 3864). We have been mighty since Umar became Muslim (3684). (Where Umar grew up, his daughter Hafsah,
+  // that his son told this, and that Ibn Mas'ud said it stay on their usual picture: the scene does not show them.)
+  "sign-mighty-since-umar": [
+    ["Why was Umar afraid after he became Muslim?", "His people threatened his life", "Your people claim they will kill me"],
+    ["Who gave Umar protection that day?", "Al-As ibn Wa'il", "Umar was at home, in fear", "Al-As said: there is no way to you"],
+    ["What did the crowd do once Umar was protected?", "They went back", "There is no way to him. So they went back"],
+    ["When Umar became Muslim, the Muslims grew ____.", "stronger", "We stayed mighty since Umar became Muslim"],
+    ["What changed for the Muslims when Umar became Muslim?", "They became strong", "We stayed mighty since Umar became Muslim"],
+    ["Umar's Islam made the Muslims weaker.", "False", "We stayed mighty since Umar became Muslim"]
+  ],
+  // Salman visited his brother Abu ad-Darda; Umm ad-Darda said: your brother has no need of this world. Salman would not
+  // eat until he ate, told him to sleep at night, and at the end of the night both prayed. Your Lord, your self and your
+  // family each have a right on you; and he said: Salman has spoken the truth (Sahih al-Bukhari 1968).
+  "sign-every-right": [
+    ["Who was Salman's brother in faith in Madinah?", "Abu ad-Darda", "Salman visited his brother Abu ad-Darda"],
+    ["Why was Umm ad-Darda looking uncared for?", "Her husband gave her no time", "Your brother has no need of this world"],
+    ["What was Abu ad-Darda doing too much of?", "Fasting and night prayer", "Salman said: I will not eat until you eat", "At night he got up. Salman said: sleep"],
+    ["Which three have rights on you, Salman said?", "Your Lord, your body, your family", "Your Lord, self and family each have a right"],
+    ["Salman said: give each one who has a right its right.", "True", "Your Lord, self and family each have a right"],
+    ["What did the Prophet ﷺ say about Salman's advice?", "Salman spoke the truth", "He said: Salman has spoken the truth"],
+    ["The Prophet ﷺ said Salman was wrong.", "False", "He said: Salman has spoken the truth"]
+  ],
+  // Which masjid was set up on earth first? Al-Masjid al-Haram. Then which? Al-Masjid al-Aqsa. How long between them?
+  // Forty years; and wherever the prayer reaches you, pray there (Sahih al-Bukhari 3366). (Which was built second, in
+  // Bukhari 3366, keeps its map.)
+  "sign-first-masjid": [
+    ["What is the first House for people, in 3:96?", "The Ka'bah in Makkah", "He said: al-Masjid al-Haram"],
+    ["Which masjid was built first, per the hadith?", "Al-Masjid Al-Haram", "He said: al-Masjid al-Haram"],
+    ["Which masjid came second, per the hadith?", "Al-Aqsa", "Then which? He said: al-Masjid al-Aqsa"],
+    ["How long between the two, in Bukhari 3366?", "Forty years", "How long between them? Forty years"],
+    ["How long was between them, per the hadith?", "Forty years", "How long between them? Forty years"]
+  ],
+  // At al-Hudaybiyah, after rain in the night: whoever said we were given rain by the grace of Allah and His mercy
+  // believes in Me, and whoever said by such and such a star disbelieves in Me (Sahih al-Bukhari 846). (Where he taught
+  // it keeps its map, and the questions on 10:21 stay on their usual picture.)
+  "sign-rain-and-stars": [
+    ["What should a believer say about rain, per the hadith?", "It came by Allah's mercy", "By Allah's grace and mercy: a believer in Me"],
+    ["Who truly believes, per the hadith?", "Who says rain is Allah's mercy", "By Allah's grace and mercy: a believer in Me"],
+    ["Saying a star brought the rain is fine.", "False", "By such a star: a disbeliever in Me"]
   ]
 };
 
