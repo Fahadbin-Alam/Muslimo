@@ -625,7 +625,14 @@ export type SignKind =
   | "garden-in-charity"
   | "hornless-sheep"
   | "forgot-and-ate"
-  | "kiss-of-mercy";
+  | "kiss-of-mercy"
+  | "first-believers"
+  | "freed-bilal"
+  | "most-beloved"
+  | "trustworthy-one"
+  | "two-refuges"
+  | "greatest-ayah"
+  | "change-it";
 
 export type SignScene = {
   id: string;
@@ -2383,6 +2390,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Messenger of Allah ﷺ kissed al-Hasan ibn Ali while al-Aqra' ibn Habis at-Tamimi was sitting with him. Al-Aqra' said: I have ten children, and I have never kissed one of them. The Messenger of Allah ﷺ looked at him, then said: whoever is not merciful is not shown mercy.",
     sources: [bukhari("5997")]
+  },
+  {
+    id: "sign-first-believers",
+    kind: "first-believers",
+    caption: "Ammar said: I saw the Messenger of Allah ﷺ, and there was none with him but five slaves, two women and Abu Bakr.",
+    sources: [bukhari("3660")]
+  },
+  {
+    id: "sign-freed-bilal",
+    kind: "freed-bilal",
+    caption: "Jabir ibn Abdullah said: Umar used to say: Abu Bakr is our master, and he freed our master, meaning Bilal.",
+    sources: [bukhari("3754")]
+  },
+  {
+    id: "sign-most-beloved",
+    kind: "most-beloved",
+    caption:
+      "Amr ibn al-As said: the Prophet ﷺ sent me to lead the army of Dhat as-Salasil. I came to him and said: who of the people is most beloved to you? He said: Aishah. I said: and among the men? He said: her father. I said: then who? He said: then Umar ibn al-Khattab. And he named other men.",
+    sources: [bukhari("3662")]
+  },
+  {
+    id: "sign-trustworthy-one",
+    kind: "trustworthy-one",
+    caption: "Anas ibn Malik said: the Messenger of Allah ﷺ said: every nation has a trustworthy one, and our trustworthy one, O nation, is Abu Ubaydah ibn al-Jarrah.",
+    sources: [bukhari("3744")]
+  },
+  {
+    id: "sign-two-refuges",
+    kind: "two-refuges",
+    caption:
+      "Uqbah ibn Amir said: the Messenger of Allah ﷺ said: have you not seen ayat revealed tonight, the like of which has never been seen? Say: I seek refuge with the Lord of the dawn, and Say: I seek refuge with the Lord of men.",
+    sources: [muslim("814a")]
+  },
+  {
+    id: "sign-greatest-ayah",
+    kind: "greatest-ayah",
+    caption:
+      "Ubayy ibn Ka'b said: the Messenger of Allah ﷺ said: O Abu al-Mundhir, do you know which ayah of the Book of Allah with you is greatest? I said: Allah and His Messenger know best. He said again: O Abu al-Mundhir, do you know which ayah of the Book of Allah with you is greatest? I said: Allah, there is no god but He, the Living, the Eternal. He struck my chest and said: by Allah, may knowledge be pleasant for you, Abu al-Mundhir.",
+    sources: [muslim("810")]
+  },
+  {
+    id: "sign-change-it",
+    kind: "change-it",
+    caption:
+      "Abu Sa'id al-Khudri said: I heard the Messenger of Allah ﷺ say: whoever of you sees a wrong, let him change it with his hand; if he cannot, then with his tongue; and if he cannot, then with his heart, and that is the weakest of faith.",
+    sources: [muslim("49a")]
   }
 ];
 
@@ -3849,7 +3902,37 @@ export const SIGN_LESSONS: Record<string, string> = {
   "ramadan-if-you-forget": "sign-forgot-and-ate",
   // He kissed al-Hasan: whoever is not merciful is not shown mercy (Sahih al-Bukhari 5997).
   "deep-mercy-kissing-children": "sign-kiss-of-mercy",
-  "deep-children-kissing": "sign-kiss-of-mercy"
+  "deep-children-kissing": "sign-kiss-of-mercy",
+  // The first believers: none was with him but five slaves, two women and Abu Bakr.
+  "sahabi-abu-bakr-accepting-islam": "sign-first-believers",
+  "deep-abubakr-first-believers": "sign-first-believers",
+  "deep-ammar-first-believers": "sign-first-believers",
+  // Abu Bakr is our master, and he freed our master, meaning Bilal.
+  "sahabi-abu-bakr-makkah-years": "sign-freed-bilal",
+  "sahabi-bilal-ibn-rabah-early-life": "sign-freed-bilal",
+  "sahabi-bilal-ibn-rabah-sacrifice-for-islam": "sign-freed-bilal",
+  "deep-abubakr-freed-bilal": "sign-freed-bilal",
+  "deep-bilal-our-master": "sign-freed-bilal",
+  // Who is most beloved to you? Aishah; and among the men, her father; then Umar.
+  "sahabi-abu-bakr-family-lineage": "sign-most-beloved",
+  "women-mothers-depth-aishah-and-knowledge": "sign-most-beloved",
+  "deep-husbands-most-beloved": "sign-most-beloved",
+  "deep-abubakr-most-beloved": "sign-most-beloved",
+  "deep-mothers-aishah-loved": "sign-most-beloved",
+  // Every nation has a trustworthy one, and ours is Abu Ubaydah ibn al-Jarrah.
+  "sahabi-abu-ubaydah-ibn-al-jarrah-signature-virtue": "sign-trustworthy-one",
+  "deep-abuubaydah-amin": "sign-trustworthy-one",
+  // Ayat revealed tonight, the like of which was never seen: al-Falaq and an-Nas.
+  "deep-uqbah-the-two-refuges": "sign-two-refuges",
+  "deep-falaq-never-seen": "sign-two-refuges",
+  // Which ayah is greatest? Allah, there is no god but He, the Living, the Eternal.
+  "quran-surah-baqarah-ayat-al-kursi": "sign-greatest-ayah",
+  "deep-ubayy-greatest-ayah": "sign-greatest-ayah",
+  "deep-baqarah3-greatest-ayah": "sign-greatest-ayah",
+  // Whoever sees a wrong, let him change it with his hand, then his tongue, then his heart.
+  "deep-abu-said-changing-evil": "sign-change-it",
+  "deep-imran2-change-it": "sign-change-it",
+  "deep-araf5-change-it": "sign-change-it"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
