@@ -632,7 +632,14 @@ export type SignKind =
   | "trustworthy-one"
   | "two-refuges"
   | "greatest-ayah"
-  | "change-it";
+  | "change-it"
+  | "abu-dharr-seeks"
+  | "heart-almost-flew"
+  | "heraclius-asks"
+  | "mighty-since-umar"
+  | "every-right"
+  | "first-masjid"
+  | "rain-and-stars";
 
 export type SignScene = {
   id: string;
@@ -2436,6 +2443,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Sa'id al-Khudri said: I heard the Messenger of Allah ﷺ say: whoever of you sees a wrong, let him change it with his hand; if he cannot, then with his tongue; and if he cannot, then with his heart, and that is the weakest of faith.",
     sources: [muslim("49a")]
+  },
+  {
+    id: "sign-abu-dharr-seeks",
+    kind: "abu-dharr-seeks",
+    caption:
+      "Ibn Abbas said: Abu Dharr sent his brother to Makkah, who came back and said: I saw him enjoining good character. Abu Dharr took his waterskin and came to Makkah. Ali saw him and knew that he was a stranger, and later said: follow me, and enter where I enter. He heard the Prophet ﷺ and became Muslim on the spot. Then he called out at the masjid as loud as he could: I bear witness that none has the right to be worshipped but Allah, and that Muhammad is the Messenger of Allah. The people beat him, and al-Abbas knelt over him and said: woe to you, do you not know that he is of Ghifar, and that your trade road to Sham passes through them?",
+    sources: [bukhari("3861"), bukhari("3522")]
+  },
+  {
+    id: "sign-heart-almost-flew",
+    kind: "heart-almost-flew",
+    caption:
+      "Jubayr ibn Mut'im said: I heard the Prophet ﷺ recite at-Tur in the Maghrib prayer, and when he reached the ayat: were they created by nothing, or were they themselves the creators? Or did they create the heavens and the earth? Nay, but they have no firm belief. Or do they have the treasures of your Lord, or are they the ones in control? My heart was about to fly.",
+    sources: [bukhari("4854")]
+  },
+  {
+    id: "sign-heraclius-asks",
+    kind: "heraclius-asks",
+    caption:
+      "Abu Sufyan said: Heraclius called us to his court at Ilya and asked me about the Prophet ﷺ: do the nobles follow him, or the poor? I said: the poor. Are they increasing or decreasing? I said: increasing. Did you ever accuse him of lying before he said what he said? I said: no. Heraclius said: they are the followers of the messengers. Then he read his ﷺ letter: accept Islam, and you will be safe; and: O People of the Book, come to a word common to us and you.",
+    sources: [bukhari("7")]
+  },
+  {
+    id: "sign-mighty-since-umar",
+    kind: "mighty-since-umar",
+    caption:
+      "Abdullah ibn Umar said: while Umar was at home in fear, al-As ibn Wa'il came to him. Umar said: your people claim they will kill me because I became Muslim. Al-As said: there is no way to you. He went out and met the people streaming through the whole valley, and said: where are you going? They said: we want Ibn al-Khattab, who became Muslim. He said: there is no way to him. So the people went back. Abdullah ibn Mas'ud said: we have been mighty since Umar became Muslim.",
+    sources: [bukhari("3864"), bukhari("3684")]
+  },
+  {
+    id: "sign-every-right",
+    kind: "every-right",
+    caption:
+      "Abu Juhayfah said: the Prophet ﷺ made Salman and Abu ad-Darda brothers. Salman visited Abu ad-Darda and saw Umm ad-Darda poorly dressed. She said: your brother Abu ad-Darda has no need of this world. Abu ad-Darda made him food and said: eat, for I am fasting. Salman said: I will not eat until you eat. At night Abu ad-Darda got up to pray, and Salman said: sleep. At the end of the night Salman said: get up now, and both of them prayed. Salman said: your Lord has a right on you, your self has a right on you, and your family has a right on you, so give each one who has a right its right. The Prophet ﷺ said: Salman has spoken the truth.",
+    sources: [bukhari("1968")]
+  },
+  {
+    id: "sign-first-masjid",
+    kind: "first-masjid",
+    caption:
+      "Abu Dharr said: I said: O Messenger of Allah, which masjid was set up on earth first? He said: al-Masjid al-Haram. I said: then which? He said: al-Masjid al-Aqsa. I said: how long was between them? He said: forty years. Then wherever the prayer reaches you, pray there, for the virtue is in it.",
+    sources: [bukhari("3366")]
+  },
+  {
+    id: "sign-rain-and-stars",
+    kind: "rain-and-stars",
+    caption:
+      "Zayd ibn Khalid al-Juhani said: the Messenger of Allah ﷺ led us in the Fajr prayer at al-Hudaybiyah, after rain in the night. When he finished, he faced the people and said: do you know what your Lord has said? They said: Allah and His Messenger know best. He said: this morning some of My servants believe in Me and some disbelieve. Whoever said: we were given rain by the grace of Allah and His mercy, believes in Me and disbelieves in the star; and whoever said: by such and such a star, disbelieves in Me and believes in the star.",
+    sources: [bukhari("846")]
   }
 ];
 
@@ -3932,7 +3988,36 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Whoever sees a wrong, let him change it with his hand, then his tongue, then his heart.
   "deep-abu-said-changing-evil": "sign-change-it",
   "deep-imran2-change-it": "sign-change-it",
-  "deep-araf5-change-it": "sign-change-it"
+  "deep-araf5-change-it": "sign-change-it",
+  // Abu Dharr comes to Makkah to find him, becomes Muslim, and calls out the shahadah at the masjid.
+  "sahabi-abu-dharr-al-ghifari-makkah-years": "sign-abu-dharr-seeks",
+  "deep-abudharr-search": "sign-abu-dharr-seeks",
+  "deep-abudharr-aloud": "sign-abu-dharr-seeks",
+  "sahabi-abu-dharr-al-ghifari-early-life": "sign-abu-dharr-seeks",
+  "sahabi-abu-dharr-al-ghifari-accepting-islam": "sign-abu-dharr-seeks",
+  // Jubayr heard him recite at-Tur in Maghrib, and his heart was about to fly at 52:35-37.
+  "notes-sahabah-companions-from-your-notes-4-jubayr-ibn-mutim": "sign-heart-almost-flew",
+  "surah-meaning-52-29-49": "sign-heart-almost-flew",
+  "deep-tur3-my-heart-almost-flew": "sign-heart-almost-flew",
+  // Heraclius asks Abu Sufyan about him: the poor follow him, they are increasing, he never lied; then the letter.
+  "deep-imran2-letter-to-heraclius": "sign-heraclius-asks",
+  "deep-anam1-followers-poor": "sign-heraclius-asks",
+  "deep-yunus1-a-lifetime-among-you": "sign-heraclius-asks",
+  "deep-hud2-the-poor-follow-messengers": "sign-heraclius-asks",
+  // Umar kept safe from the crowd in Makkah; and we have been mighty since Umar became Muslim.
+  "sahabi-umar-ibn-al-khattab-early-life": "sign-mighty-since-umar",
+  "deep-umar-becoming-muslim": "sign-mighty-since-umar",
+  "sahabi-umar-ibn-al-khattab-accepting-islam": "sign-mighty-since-umar",
+  "deep-umar-powerful": "sign-mighty-since-umar",
+  // Salman and Abu ad-Darda: your Lord, your self and your family each have a right on you.
+  "deep-husbands-salman-and-abu-darda": "sign-every-right",
+  "deep-salman-rights": "sign-every-right",
+  // The first masjid on earth, then al-Aqsa, forty years between them.
+  "deep-imran2-first-house": "sign-first-masjid",
+  "deep-hajj2-first-masjid-on-earth": "sign-first-masjid",
+  // After rain at al-Hudaybiyah: whoever says by Allah's grace believes, whoever says by a star disbelieves.
+  "deep-yunus2-rain-and-the-stars": "sign-rain-and-stars",
+  "deep-waqiah4-the-rain-and-the-stars": "sign-rain-and-stars"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
