@@ -1266,6 +1266,13 @@ const STATES: State[] = [
   { id: "scene-house-for-rain-and-sun", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-what-this-world-is-worth-a-house-for-rain-and-sun" ask="Why did Ibn Umar build his house" /> },
   { id: "scene-sheep-on-the-hills", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-bad-al-khalq-sheep-on-the-hills" ask="Why will he take his sheep up the mountains" /> },
   { id: "scene-when-the-wind-blows", render: () => <SceneQuestionDemo lessonId="lesson-deep-ahqaf2-dua-when-the-wind-blows" ask="What did he ask for in a storm" /> },
+  { id: "scene-good-in-horses", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animal-manners-good-in-horses" ask="Until when will the good stay in them" /> },
+  { id: "scene-horse-race", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahaba-small-stories-the-horse-race" ask="Where did the horses not made lean race to" /> },
+  { id: "scene-al-adba", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-al-adba-the-camel" ask="Who beat Al-Adba in the race" /> },
+  { id: "scene-rooster-and-donkey", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dua-rooster-and-donkey" ask="A rooster crows at dawn" /> },
+  { id: "scene-ask-before-milking", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animal-manners-ask-before-milking" ask="What did he ﷺ compare an animal's udder to" /> },
+  { id: "scene-goat-lent-for-milk", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-a-goat-for-its-milk" ask="What does Allah give for one of these deeds" /> },
+  { id: "scene-camel-as-sutrah", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-his-camel-as-a-sutrah" ask="Ibn Umar used to do the same" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

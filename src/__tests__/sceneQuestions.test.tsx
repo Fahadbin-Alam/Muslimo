@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2318);
+    expect(asks.length).toBe(2335);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3392);
+    expect(places).toBe(3416);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -10506,6 +10506,240 @@ describe("where the scene waits and where it stops", () => {
     expect([
       value("when-the-wind-blows", "it was lifted from him: a warm glow about his place", "opacity", 0.82),
       shown("Why was he concerned?", ["his voice: perhaps it is as 'Ad said", "far off: the valleys of 'Ad, in a soft circle", "far off: a cloud facing their valleys", "as 'Ad said: a grey dashed ring about their cloud"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+  });
+
+  it("waits on the scenes of animals in his teaching, from the good in horses to his camel as a sutrah, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-good-in-horses", "sign-horse-race", "sign-al-adba", "sign-rooster-and-donkey", "sign-ask-before-milking", "sign-goat-lent-for-milk", "sign-camel-as-sutrah"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(17);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Good in horses. Until when the good stays, and that it will not end soon: the lights of good on the horses'
+    // foreheads; then the days go by, night falling and lifting twice with the lights still there, and a foal comes to
+    // the herd with a light of good on its forehead too.
+    for (const prompt of ["Until when will the good stay in them?", "The good in horses will end very soon."]) {
+      expect([
+        prompt,
+        value("good-in-horses", "in the foreheads of horses: a light of good 1", "opacity", 0.5),
+        value("good-in-horses", "the days go by: stars at night", "opacity", 0.64),
+        value("good-in-horses", "in the foreheads of horses: a light of good 3", "opacity", 0.64),
+        shown(prompt, ["a foal, come to the herd", "in the foal's forehead too: a light of good"]),
+        moved(prompt, "a foal, come to the herd", "x")
+      ]).toEqual([
+        prompt,
+        1,
+        1,
+        1,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [-10, 0]
+      ]);
+    }
+    // The race of horses. That he held a race: waits at the scene's start, before any horse has come; then three lean
+    // horses come to the palms of al-Hafya', their course shows, and they gallop along it to the pass.
+    expect([
+      shown("He ﷺ held a race between horses.", ["a lean horse 1", "a lean horse 2", "a lean horse 3", "he held a race: the course from al-Hafya' to the pass"]),
+      moved("He ﷺ held a race between horses.", "a lean horse 3", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [-28, 86]
+    ]);
+    // Where the horses not made lean raced to: the lean horses at the pass; then they are gone, two horses not made lean
+    // wait at the pass, their course shows, and they gallop to the masjid of Bani Zurayq.
+    expect([
+      shown("Where did the horses not made lean race to?", ["a lean horse 1", "a horse not made lean 1", "a horse not made lean 2", "for the horses not made lean: the course from the pass to the masjid"]),
+      moved("Where did the horses not made lean race to?", "a horse not made lean 2", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      [0, 48]
+    ]);
+    // Who said he raced: the horses not made lean at the masjid; then a soft ring comes about one of them, and a voice:
+    // Ibn Umar was among those who raced.
+    expect([
+      value("horse-race", "a horse not made lean 1", "x", 0.82),
+      shown("Who said he took part in that horse race?", ["Ibn Umar among those who raced: a soft ring about a horse", "Ibn Umar's voice: I was among them"])
+    ]).toEqual([
+      30,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Al-Adba'. The name of his fast camel: waits at the scene's start, three camels at the start; then a soft ring
+    // comes about al-Adba', and she runs with the two camels, comes first, and a small light rises above her.
+    expect([
+      value("al-adba", "his she-camel called al-Adba': a soft ring about her", "opacity", 0.12),
+      moved("What was the name of his ﷺ fast camel?", "al-Adba' in the first race", "x"),
+      moved("What was the name of his ﷺ fast camel?", "a camel in the first race 1", "x"),
+      shown("What was the name of his ﷺ fast camel?", ["she could not be outrun: a light rising above her"])
+    ]).toEqual([
+      1,
+      [0, 124],
+      [0, 92],
+      [[0], [1]]
+    ]);
+    // Who beat her: al-Adba' at the end of the track with her light above her; then she waits at the start again, a
+    // young camel comes with a striped cloth, and it runs and outruns her: her light goes down to her, and a light rises
+    // above the young camel.
+    expect([
+      value("al-adba", "she could not be outrun: a light rising above her", "opacity", 0.34),
+      shown("Who beat Al-Adba in the race?", ["a bedouin's young camel, with a striped cloth", "the light above al-Adba'", "it outran her: a light rising above the young camel"]),
+      moved("Who beat Al-Adba in the race?", "a bedouin's young camel, with a striped cloth", "x"),
+      moved("Who beat Al-Adba in the race?", "al-Adba' at the start again", "x")
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 0, 1]
+      ],
+      [-28, 138],
+      [0, 114]
+    ]);
+    // The lesson he gave: the light above the young camel that outran her; then his voice speaks, and the light goes
+    // down to the young camel and fades.
+    expect([
+      shown("What lesson did he ﷺ give?", ["his voice: it is due", "it outran her: a light rising above the young camel"]),
+      moved("What lesson did he ﷺ give?", "it outran her: a light rising above the young camel", "y")
+    ]).toEqual([
+      [
+        [0, 1],
+        [1, 0]
+      ],
+      [-6, 0]
+    ]);
+    // The rooster and the donkey. What to do when the rooster crows: the rooster crowing on the fence; then a spark of
+    // du'a rises from the place at the door, and a warm light comes about it.
+    expect([
+      value("rooster-and-donkey", "the rooster crows", "opacity", 0.16),
+      value("rooster-and-donkey", "asking for His favor: a spark rising", "opacity", 0.24),
+      shown("A rooster crows at dawn. What do you do?", ["His favor: a warm light about the place"])
+    ]).toEqual([
+      1,
+      1,
+      [[0], [1]]
+    ]);
+    // That it crows when it has seen an angel: the warm light about the place; then the rooster crows again, and nothing
+    // is drawn for what it saw.
+    expect([
+      value("rooster-and-donkey", "His favor: a warm light about the place", "opacity", 0.32),
+      shown("The rooster crows when it has seen an angel.", ["the rooster crows again"])
+    ]).toEqual([
+      1,
+      [[0], [1]]
+    ]);
+    // What to say when the donkey brays: the donkey braying at its post; then a golden ring of care comes about the
+    // place, and a spark of du'a rises.
+    expect([
+      value("rooster-and-donkey", "the donkey brays", "opacity", 0.64),
+      value("rooster-and-donkey", "seeking refuge: a spark rising", "opacity", 0.74),
+      shown("A donkey brays. What do you say?", ["refuge: a golden ring of care about the place"])
+    ]).toEqual([
+      1,
+      1,
+      [[0], [1]]
+    ]);
+    // Milking only with leave. That it is not fine without asking: waits at the scene's start, the she-goat grazing by
+    // her owner's home; then a passer-by's place comes to her, a grey dashed ring comes about her, and a way goes from
+    // her to her owner, with a soft ring about his place.
+    expect([
+      shown("Milking a neighbor's animal without asking is fine.", ["not without his permission: a grey dashed ring about her", "his permission: a way to her owner", "his permission: a soft ring about the owner's place"]),
+      moved("Milking a neighbor's animal without asking is fine.", "a passer-by's place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -54]
+    ]);
+    // What you must have: the passer-by's place by the goat, with the grey dashed ring about her; then a way goes from
+    // her to her owner, and a soft ring comes about his place.
+    expect([
+      value("ask-before-milking", "not without his permission: a grey dashed ring about her", "opacity", 0.16),
+      shown("What must you have before milking someone's animal?", ["his permission: a way to her owner", "his permission: a soft ring about the owner's place"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // What the udder is likened to: the way to her owner; then a way goes back to the passer-by's own store, its door is
+    // broken open, a jar of its food is taken away, and once the store is shut again, a soft ring comes about the goat's
+    // udder, with a golden way to her owner's home.
+    expect([
+      value("ask-before-milking", "his permission: a soft ring about the owner's place", "opacity", 0.32),
+      value("ask-before-milking", "his store broken: a grey dashed ring about it", "opacity", 0.5),
+      value("ask-before-milking", "his food taken away: a grey way", "opacity", 0.6),
+      shown("What did he ﷺ compare an animal's udder to?", ["his food taken away: a jar", "their udders store their food: a soft ring about her udder", "their food: a golden way to the owner's home"])
+    ]).toEqual([
+      1,
+      1,
+      1,
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ]
+    ]);
+    // A she-goat lent for its milk. What Allah gives: the she-goat at the next home, with a bowl of milk and a warm
+    // glow; then a soft ring comes about the place of the one who lent her, a spark rises, and far off a soft circle of
+    // light comes, with a golden way to it.
+    expect([
+      value("goat-lent-for-milk", "for her milk: a warm glow at the next home", "opacity", 0.34),
+      value("goat-lent-for-milk", "hoping for its reward: a spark rising", "opacity", 0.43),
+      shown("What does Allah give for one of these deeds, done for His reward?", ["hoping for its reward: a soft ring about the lender's place", "Paradise far off, in a soft circle of light", "admitted by it: a golden way to it"])
+    ]).toEqual([
+      1,
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // That they could not count them easily: the golden way to the circle of light; then Hassan's place and voice come,
+    // rings come about the lights below the highest one by one, fourteen of them, and the fifteenth gets a grey dashed
+    // ring.
+    expect([
+      value("goat-lent-for-milk", "admitted by it: a golden way to it", "opacity", 0.66),
+      shown("The narrators easily counted all forty good deeds.", ["Hassan's place", "Hassan's voice: we counted", "counted below it: a ring about a light 14", "not reaching fifteen: a grey dashed ring about the fifteenth"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // His she-camel as a sutrah. That Ibn Umar did the same: his prayer facing the back part of the saddle; then Ibn
+    // Umar's place comes, with a she-camel sitting across in front of it, a soft ring about it and a golden line to the
+    // camel.
+    expect([
+      value("camel-as-sutrah", "facing its back part: a golden line to it", "opacity", 0.8),
+      shown("Ibn Umar used to do the same as he ﷺ did.", ["Ibn Umar's place", "Ibn Umar's she-camel, sitting across in front of him", "Ibn Umar did the same: a soft ring about his place", "Ibn Umar did the same: a golden line to his she-camel"])
     ]).toEqual([
       1,
       [
