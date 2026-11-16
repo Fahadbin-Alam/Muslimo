@@ -2441,6 +2441,77 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What made him ﷺ shorten the prayer?", "A child crying", "Then I hear a child crying"],
     ["Whom did he ﷺ not want to trouble?", "The mother", "Disliking to make it hard for his mother"],
     ["An imam should think of the people behind him.", "True", "So I make my prayer short", "Disliking to make it hard for his mother"]
+  ],
+  // It began with good dreams that came true like daybreak. He would go alone to the cave of Hira, taking food, and
+  // worship there for many nights, until the truth came to him in the cave: Read! I am not one who reads. He came back,
+  // his heart trembling (Sahih al-Bukhari 3). (What 96:1-5 say and who comforted him at home are not in the scene.)
+  "sign-cave-of-hira": [
+    ["How did the revelation begin, per Aishah?", "Good dreams that came true", "Good dreams that came true like daybreak"],
+    ["He took food with him for his days of worship.", "True", "He would go alone to the cave of Hira"],
+    ["Where was the Prophet ﷺ when the first ayahs came?", "In the cave of Hira", "He would go alone to the cave of Hira", "Until the truth came to him in the cave"],
+    ["What was the first word Jibril said to him?", "Read", "Read! I am not one who reads"]
+  ],
+  // Cover me! Cover me! Khadijah: never, Allah will never disgrace you; you keep ties, carry the weak, help the poor and
+  // honor the guest. She took him to her cousin Waraqah: this is the one Allah sent to Musa; none brought the like but
+  // met hostility (Sahih al-Bukhari 3). (What 6:112 says and whom his enemies come from are not in the scene.)
+  "sign-never-disgrace": [
+    ["What did Khadijah say to comfort him?", "Allah will never disgrace you", "Never! Allah will never disgrace you"],
+    ["Which good deed of his did she name?", "Keeping family ties", "You keep ties, you carry the weak"],
+    ["Khadijah supported her husband at a hard time.", "True", "Never! Allah will never disgrace you"],
+    ["What did Khadijah say when he came home afraid?", "Allah will never disgrace you", "Never! Allah will never disgrace you"],
+    ["Which good deed did Khadijah name to comfort him?", "He helps the poor", "You help the poor and honor the guest"],
+    ["What did Khadijah say to calm him?", "Allah will never disgrace you", "Never! Allah will never disgrace you"],
+    ["Which good deed did Khadijah name?", "Helping the poor", "You help the poor and honor the guest"],
+    ["She said he served his guests generously.", "True", "You help the poor and honor the guest"],
+    ["Who was Waraqah to Khadijah?", "Her cousin", "She took him to her cousin Waraqah"],
+    ["To which Messenger did Waraqah say the angel came before?", "Musa", "This is the angel Allah sent to Musa"],
+    ["Waraqah said his people would welcome him warmly.", "False", "None brought the like but met hostility"],
+    ["Who told the Prophet ﷺ every messenger faced hostility, per Bukhari 3?", "Waraqah ibn Nawfal", "This is the angel Allah sent to Musa", "None brought the like but met hostility"]
+  ],
+  // Prayer in congregation is better than the prayer of one alone by twenty-seven degrees (Sahih Muslim 650a, Sahih
+  // al-Bukhari 645). (Who passed it on, from whom and to whom, is not in the scene.)
+  "sign-prayer-together": [
+    ["Prayer in congregation is how many degrees better than alone?", "Twenty-seven", "By twenty-seven degrees"],
+    ["How much better is prayer in congregation?", "27 degrees", "By twenty-seven degrees"],
+    ["Praying together has more reward than praying alone.", "True", "By twenty-seven degrees"],
+    ["Prayer in congregation is 27 degrees better.", "True", "By twenty-seven degrees"],
+    ["How much better is prayer in congregation?", "Twenty seven times", "By twenty-seven degrees"],
+    ["What is it compared with?", "Praying alone", "Than the prayer of one alone"],
+    ["Joining the believers in prayer brings great reward.", "True", "By twenty-seven degrees"]
+  ],
+  // Whoever recites the last two ayat of Surat al-Baqarah at night, they will be enough for him (Sahih al-Bukhari
+  // 5009). (What the ayat 2:284-286 say is not in the scene.)
+  "sign-two-ayat-at-night": [
+    ["Which ayahs are enough for you when read at night?", "The last two of Al-Baqarah", "Whoever recites the last two ayat", "Of Surat al-Baqarah at night"],
+    ["What do those two ayahs do for the one who reads them?", "They are enough for him", "They will be enough for him"],
+    ["What did the Prophet ﷺ say of the last two ayahs at night?", "They are enough for you", "They will be enough for him"],
+    ["What do the last two ayahs of Al-Baqarah give at night?", "They are enough for you", "They will be enough for him"]
+  ],
+  // One who recites the Quran, knowing it well, is with the noble, righteous scribes; one who keeps at it, though it is
+  // hard, has two rewards (Sahih al-Bukhari 4937, Sahih Muslim 798a). (Who the scribes are, by 56:79, is not in the
+  // scene.)
+  "sign-skilled-reciter": [
+    ["Who will be with the noble scribes?", "One who masters the Quran", "One recites the Quran, knowing it well", "He is with the noble, righteous scribes"],
+    ["What does one who struggles to recite get?", "A double reward", "He has two rewards"],
+    ["Reciting slowly with difficulty earns nothing.", "False", "He has two rewards"],
+    ["What does one who finds it hard get?", "Two rewards", "He has two rewards"],
+    ["Who is the skilled reciter with?", "The noble angel scribes", "He is with the noble, righteous scribes"],
+    ["Struggling with recitation is a reason to stop.", "False", "One keeps at it, though it is hard", "He has two rewards"]
+  ],
+  // He was asked about fasting on the day of Arafah: it expiates the year gone by and the year to come (Sahih Muslim
+  // 1162b). (Its date, the ten best days and the fast of Ashura are not in the scene.)
+  "sign-fast-of-arafah": [
+    ["Fasting Arafah covers sins of how many years?", "Two", "It expiates the year gone by", "And the year to come"],
+    ["Fasting the Day of Arafah expiates how much?", "Two years", "It expiates the year gone by", "And the year to come"],
+    ["What does fasting Arafah expiate, per the hadith?", "Sins of two years", "It expiates the year gone by", "And the year to come"]
+  ],
+  // A servant says a word that pleases Allah, paying it no mind, and Allah raises him ranks; a servant says a word that
+  // angers Allah, paying it no mind, and he falls in Jahannam (Sahih al-Bukhari 6478). (What Ibn Kathir and Alqamah
+  // say about it is not in the scene.)
+  "sign-one-word": [
+    ["What can one word that pleases Allah do, per Bukhari 6478?", "Raise a person by degrees", "He pays it no mind; Allah raises him ranks"],
+    ["A careless word can displease Allah, per Bukhari 6478.", "True", "A servant says a word that angers Allah"],
+    ["What can one pleasing word do, per Bukhari 6478?", "Raise a person in reward", "He pays it no mind; Allah raises him ranks"]
   ]
 };
 
