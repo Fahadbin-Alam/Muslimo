@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2207);
+    expect(asks.length).toBe(2233);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3233);
+    expect(places).toBe(3274);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -9349,6 +9349,258 @@ describe("where the scene waits and where it stops", () => {
         1,
         [0, -11],
         [0, -6]
+      ]);
+    }
+  });
+
+  it("waits on the scenes of home and prayer, from a gift to the nearest door to the siwak with every prayer, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-nearest-door", "sign-two-lights", "sign-abu-umayr-bird", "sign-family-spending", "sign-answer-the-call", "sign-supper-first", "sign-siwak-every-prayer"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(26);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // A gift to the nearest door. Which neighbour comes first: her voice asks, and faint dashed ways go to both doors;
+    // then his voice answers, a golden way goes to the nearer door, her place and her gift go to it, a warm light comes
+    // at its door, and a warm glow about the place next door.
+    for (const prompt of ["Which neighbor comes first for a gift?", "Which neighbour gets the gift first?", "The nearest neighbour has the most right to our kindness."]) {
+      expect([
+        prompt,
+        shown(prompt, ["his voice: to the one whose door is nearer", "the nearer door: a golden way to it", "a gift at the nearer door: a warm light", "a warm glow about the place next door", "which one: a faint dashed way to the further door"]),
+        moved(prompt, "her gift: a dish of food", "x"),
+        moved(prompt, "her place", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 1],
+          [1, 1, 1, 1, 0]
+        ],
+        [0, 35.4],
+        [0, 34]
+      ]);
+    }
+    // Two lights on a dark night. What lit their way: the two places leave his home in the dark; then two lights like
+    // lamps come before them and go on with them, lighting the way.
+    expect([
+      shown("What lit the way for the two companions?", ["like a lamp, lighting the way before one of the two", "like a lamp, lighting the way before the other", "home: a lit window far off"]),
+      moved("What lit the way for the two companions?", "like a lamp, lighting the way before one of the two", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, 30]
+    ]);
+    // When they parted: the two places together, each light before them; then their ways part, and one light goes with
+    // each of them.
+    expect([
+      moved("What happened when the two men parted?", "the place of one of the two, going home", "y"),
+      moved("What happened when the two men parted?", "like a lamp, lighting the way before one of the two", "y"),
+      moved("What happened when the two men parted?", "the place of the other, going home", "x"),
+      moved("What happened when the two men parted?", "like a lamp, lighting the way before the other", "x")
+    ]).toEqual([
+      [-1, -9.6],
+      [-1, -9.6],
+      [50, 79],
+      [30, 59]
+    ]);
+    // Abu Umayr's little bird. What it teaches about him: Abu Umayr's small place and his little bird; then his voice
+    // speaks to the small place, a warm line goes from him to it, and a warm glow comes about the two as the bird hops
+    // along.
+    expect([
+      shown("What does this teach about the Prophet ﷺ?", ["playing: a warm glow about the two", "his voice: O Abu Umayr", "his look: a faint warm line to the small place"]),
+      value("abu-umayr-bird", "his voice: O Abu Umayr", "opacity", 0.4),
+      value("abu-umayr-bird", "his look: a faint warm line to the small place", "opacity", 0.4),
+      moved("What does this teach about the Prophet ﷺ?", "his little bird, the nughayr", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 0, 0]
+      ],
+      1,
+      1,
+      [33.6, 42.6]
+    ]);
+    // Spending on family. That spending on your own family is a charity: waits at the scene's start, his place far from
+    // his home with a sack; then he comes home, the sack goes in, a small golden light of hope comes above him, a golden
+    // ring comes about the sack, a spark of charity rises, and a warm light comes in his home.
+    expect([
+      moved("Spending on your own ____ is a charity too.", "food for his family: a sack", "x"),
+      shown("Spending on your own ____ is a charity too.", ["hoping for its reward: a small golden light above his place", "a charity: a golden ring about the sack", "a charity: a warm light in his home"]),
+      moved("Spending on your own ____ is a charity too.", "a charity: a spark rising from the sack", "y")
+    ]).toEqual([
+      [0, -90.8],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -11]
+    ]);
+    // What makes it count: the sack gone in; then a small golden light of hope comes above his place, and a golden ring
+    // about him, before the charity.
+    expect(shown("What makes it count?", ["hoping for its reward: a small golden light above his place", "hoping for its reward: a golden ring about his place", "a charity: a golden ring about the sack"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 0]
+    ]);
+    // What it counts as: the light of hope above his place; then a golden ring comes about the sack, a spark of charity
+    // rises from it, and a warm light comes in his home.
+    expect([
+      shown("Spending on your family, hoping for reward, counts as what?", ["a charity: a golden ring about the sack", "a charity: a warm light in his home", "hoping for its reward: a small golden light above his place"]),
+      moved("Spending on your family, hoping for reward, counts as what?", "a charity: a spark rising from the sack", "y")
+    ]).toEqual([
+      [
+        [0, 0, 1],
+        [1, 1, 1]
+      ],
+      [0, -11]
+    ]);
+    // When it is rewarded: the charity at his home; then coins spent for Allah's sake go to his home, a spark of reward
+    // rises, and a warm glow comes about his place.
+    for (const prompt of ["When is it rewarded?", "Is spending on family rewarded?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["spent for His sake: a coin going home 1", "spent for His sake: a coin going home 2", "rewarded for it: a warm glow about his place"]),
+        moved(prompt, "spent for His sake: a coin going home 1", "x"),
+        moved(prompt, "rewarded for it: a spark rising", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, -30],
+        [0, -11]
+      ]);
+    }
+    // Even a morsel: his place by its glow of reward; then he goes to her place, a date goes to her, a warm glow comes
+    // about her place, and a spark of reward rises.
+    for (const prompt of ["What small act is rewarded in the hadith?", "What small example did the Prophet ﷺ give?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a warm glow about her place", "rewarded for it: a warm glow about his place"]),
+        value("family-spending", "a morsel: a date going to her place", "opacity", 0.76),
+        value("family-spending", "a morsel: a date going to her place", "opacity", 0.85),
+        moved(prompt, "his place, coming home", "x"),
+        moved(prompt, "rewarded even for a morsel: a spark rising", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 1],
+          [1, 0]
+        ],
+        0,
+        1,
+        [-56, -66],
+        [0, -11]
+      ]);
+    }
+    // Answering the call. What to say when you hear the adhan: the call rings out over the masjid with the caller's
+    // voice; then voices by the homes answer after the caller, line by line.
+    for (const prompt of ["When you hear the adhan, repeat its ____ quietly.", "When you hear the adhan, repeat its jokes quietly.", "What should you do when you hear the adhan?", "While the adhan is called, what do you say?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["answering, after the caller: a voice by the homes 1", "answering, after the caller: a voice by the homes 4", "the call to prayer, ring 1", "the caller's voice"]),
+        value("answer-the-call", "answering, after the caller: a voice by the homes 1", "opacity", 0.19),
+        value("answer-the-call", "answering, after the caller: a voice by the homes 1", "opacity", 0.23)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1, 1],
+          [1, 1, 1, 1]
+        ],
+        1,
+        0
+      ]);
+    }
+    // When the du'a is said: the call ringing and the voices answering; then the call ends, a faint ring shows about the
+    // one who says the du'a, and its words come as golden arcs, a spark rising.
+    expect([
+      shown("We say the du'a when the adhan is finished.", ["the call to prayer, ring 1", "answering, after the caller: a voice by the homes 1", "the one who says the du'a: a faint ring", "the du'a: golden arcs"]),
+      moved("We say the du'a when the adhan is finished.", "the du'a: a spark rising 1", "y")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0],
+        [0, 0, 1, 1]
+      ],
+      [0, -11]
+    ]);
+    // What the one who says it receives: the du'a in golden arcs, and a warm light at the masjid's door; then a golden
+    // ring of care and a warm glow come about the place: his intercession, due.
+    for (const prompt of ["What does the one who says it receive?", "What does the Prophet ﷺ promise the one who says this dua?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["his intercession, due: a golden ring of care about the place", "his intercession, due: a warm glow about the place", "the du'a: golden arcs", "the prayer to be established: a warm light at the door of the masjid"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1, 1],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Supper first. What comes first: supper served on the cloth with three dates on the dish, and the iqamah ringing at
+    // the masjid; then the dates are eaten one by one, a golden ring of ease comes about the cloth, and a warm glow over
+    // it.
+    for (const prompt of ["If food is ready, eat first so you can ____ in salah.", "If supper is served at Iqamah, what comes first?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a date on the dish 1", "a date on the dish 3", "supper first: a golden ring of ease about the cloth", "supper first: a warm glow over the cloth", "the iqamah, ring 1"]),
+        value("supper-first", "a date on the dish 1", "opacity", 0.72),
+        value("supper-first", "a date on the dish 3", "opacity", 0.8)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0, 1],
+          [0, 0, 1, 1, 1]
+        ],
+        0,
+        1
+      ]);
+    }
+    // The siwak with every prayer. Why he did not order it: waits at the scene's start, his ring by the masjid and the
+    // places of his ummah about it; then a golden ring of his care comes about them, more places come from the homes,
+    // and a wider ring comes about them all, before any siwak shows.
+    for (const prompt of ["Why did he ﷺ not order siwak before every prayer?", "Why did he ﷺ not order it for every prayer?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["his care: a golden ring about them", "his care: a wider ring about them all", "and on all: a place coming from the homes 1", "a siwak by each place 1"]),
+        moved(prompt, "and on all: a place coming from the homes 1", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0]
+        ],
+        [-26, 0]
+      ]);
+    }
+    // That the siwak before prayer is a loved sunnah: the places in his care; then a siwak shows by each place, and
+    // before each of the five prayers a soft light comes on every siwak, a spark rises from the masjid, and a small
+    // golden light stays in the sky.
+    for (const prompt of ["Using the siwak before prayer is a loved sunnah.", "Using siwak before prayer is a loved sunnah."]) {
+      expect([
+        prompt,
+        shown(prompt, ["a siwak by each place 1", "a siwak by each place 8", "prayer 1: a small golden light left in the sky", "prayer 5: a small golden light left in the sky"]),
+        value("siwak-every-prayer", "before each prayer: a soft light on every siwak", "opacity", 0.54),
+        moved(prompt, "prayer 5: a spark rising from the masjid", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        1,
+        [0, -11]
       ]);
     }
   });
