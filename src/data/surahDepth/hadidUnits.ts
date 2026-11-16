@@ -1230,7 +1230,7 @@ const HADID_THREE: DeepUnit = {
       source: hadith("bukhari", "843", "Abu Hurairah", "Sahih", "The Prophet ﷺ told them to say Subhan Allah, Alhamdulillah and Allahu Akbar thirty three times each after every prayer.", "thirty three times each after every"),
       difficulty: 2,
       questions: [
-        { q: "How many times is each phrase said?", a: "Thirty-three", wrong: ["Ten", "Seven", "One hundred"], why: "Thirty three times each after every (compulsory) prayer." },
+        { q: "How many times is each phrase said?", a: "Thirty-three", wrong: ["Twenty", "Seven", "One hundred"], why: "Thirty three times each after every (compulsory) prayer." },
         { q: "When is this dhikr said?", a: "After every prayer", wrong: ["Only at night", "Only on Friday", "Only in Ramadan"], why: "Thirty three times each after every (compulsory) prayer." },
         { tf: true, q: "Dhikr is a deed both rich and poor can do.", why: "Shall I not tell you a thing upon which if you acted you would catch up with those who have surpassed you?" }
       ]
