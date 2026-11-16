@@ -100,7 +100,7 @@ const LUQMAN_ONE: DeepUnit = {
       questions: [
         { q: "Whose guidance are they on, in 31:5?", a: "Their Lord's", wrong: ["Their tribe's", "Their own", "The crowd's"], why: "Such are on guidance from their Lord." },
         { q: "How do they follow it, per Ibn Kathir?", a: "With clear understanding", wrong: ["Blindly", "Rarely", "In secret only"], why: "They follow His guidance with clear understanding." },
-        { tf: true, q: "Ibn Kathir says the good-doers show off for praise.", why: "They do not show off or seek a reward or thanks from other people." }
+        { tf: false, q: "Ibn Kathir says the good-doers show off for praise.", why: "They do not show off or seek a reward or thanks from other people." }
       ]
     },
     {
@@ -156,7 +156,7 @@ const LUQMAN_ONE: DeepUnit = {
       questions: [
         { q: "What do believers who do good get, in 31:8?", a: "Gardens of Delight", wrong: ["Gold coins now", "Nothing", "Long names"], why: "For them are Gardens of Delight." },
         { q: "Whom do they believe in, per Ibn Kathir?", a: "Allah and His Messenger ﷺ", wrong: ["Only their elders", "Stars", "Kings"], why: "Those who believe in Allah and His Messenger and do righteous deeds." },
-        { tf: true, q: "Ibn Kathir says they will want to leave and change.", why: "They will stay there forever, never leaving and never desiring change." }
+        { tf: false, q: "Ibn Kathir says they will want to leave and change.", why: "They will stay there forever, never leaving and never desiring change." }
       ]
     },
     {
@@ -240,7 +240,7 @@ const LUQMAN_ONE: DeepUnit = {
       questions: [
         { q: "Which two parts did Luqman choose, per Ibn Kathir?", a: "The tongue and the heart", wrong: ["The eyes and ears", "The hands and feet", "The head and back"], why: "So he brought out the tongue and the heart." },
         { q: "When are they the worst, per Luqman?", a: "When they are bad", wrong: ["When they are old", "Never", "When they are small"], why: "There is nothing worse than these if they are bad." },
-        { tf: true, q: "Allah is harmed if people are unthankful.", why: "He has no need of His servants and He will not be harmed by that." }
+        { tf: false, q: "Allah is harmed if people are unthankful.", why: "He has no need of His servants and He will not be harmed by that." }
       ]
     },
     {
@@ -477,7 +477,7 @@ const LUQMAN_TWO: DeepUnit = {
       questions: [
         { q: "What should not grieve him, in 31:23?", a: "Their disbelief", wrong: ["The weather", "Hunger", "Travel"], why: "And whoever disbelieves, let not his disbelief grieve you." },
         { q: "What does Allah know, in 31:23?", a: "What is in the breasts", wrong: ["Only deeds", "Only words", "Only the past"], why: "Verily, Allah is the All-Knower of what is in the breasts." },
-        { tf: true, q: "Ibn Kathir says some secrets are hidden from Allah.", why: "And nothing whatsoever is hidden from Him." }
+        { tf: false, q: "Ibn Kathir says some secrets are hidden from Allah.", why: "And nothing whatsoever is hidden from Him." }
       ]
     },
     {

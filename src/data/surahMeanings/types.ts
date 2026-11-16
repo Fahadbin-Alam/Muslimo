@@ -19,6 +19,11 @@ export interface Passage {
   q: [string, string, string, string, string];
   /** Why the answer is right, when the card line alone does not say it. */
   why?: string;
+  /**
+   * The false line its True/False question asks, when the other passage's line it would borrow is also true of these
+   * ayahs (An-Nur 58-61 asks permission and greets, like 27-34). Always another passage's line.
+   */
+  falseLine?: string;
   /** The ayah whose Arabic the card shows (and plays), when not the passage's first. 0 shows none. */
   ayah?: number;
 }
