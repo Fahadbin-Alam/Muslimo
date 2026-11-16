@@ -1203,6 +1203,13 @@ const STATES: State[] = [
   { id: "scene-small-gift", render: () => <SceneQuestionDemo lessonId="lesson-deep-zalzalah2-a-neighbors-small-gift" ask="What small gift did he name" /> },
   { id: "scene-asked-about-blessings", render: () => <SceneQuestionDemo lessonId="lesson-deep-takathur2-a-meal-of-dates" ask="Who fed them" /> },
   { id: "scene-valley-of-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-adiyat2-a-valley-of-gold" ask="If man had one valley" /> },
+  { id: "scene-straight-rows", render: () => <SceneQuestionDemo lessonId="lesson-deep-saff1-straight-rows-in-prayer" ask="Why straighten the rows" /> },
+  { id: "scene-sweetest-recitation", render: () => <SceneQuestionDemo lessonId="lesson-deep-tin1-the-sweetest-recitation" ask="In which prayer did he recite" /> },
+  { id: "scene-easy-religion", render: () => <SceneQuestionDemo lessonId="lesson-deep-sharh1-an-easy-religion" ask="What happens to one who overburdens" /> },
+  { id: "scene-three-things-to-keep", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fasting-three-things-advice" ask="When should witr be prayed" /> },
+  { id: "scene-asked-about-islam", render: () => <SceneQuestionDemo lessonId="lesson-deep-muzzammil4-five-prayers-only" ask="What did he say about more prayers" /> },
+  { id: "scene-greatest-surah", render: () => <SceneQuestionDemo lessonId="lesson-deep-fatihah-greatest-surah" ask="Which surah did the Prophet" /> },
+  { id: "scene-black-stone", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-black-stone" ask="Why did Umar kiss it then" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
