@@ -1,14 +1,15 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Zakat unit: the manners of giving, from the Book of Zakat in Jami at-Tirmidhi. Every card is one sahih
-// hadith (number, narrator and grade as sunnah.com gives them), with its exact English words to highlight, and
-// none of them is taught anywhere else in the app.
+// One more Zakat unit: the manners of giving, from the Book of Zakat in Jami at-Tirmidhi, and one card from Sahih
+// al-Bukhari on the content hearts he ﷺ trusted. Every card is one sahih hadith (number, narrator and grade as
+// sunnah.com gives them), with its exact English words to highlight, and none of them is taught anywhere else in
+// the app.
 
 const GIVING: DeepUnit = {
   key: "zakat-manners-of-giving",
   topicId: "zakat",
   branchId: "zakat-manners-of-giving",
-  branch: { title: "The manners of giving", description: "Zakat on the road to Paradise, a pleased collector, charity or a gift, giving even a little, hearts won by giving, and never taking it back." },
+  branch: { title: "The manners of giving", description: "Zakat on the road to Paradise, a pleased collector, charity or a gift, giving even a little, hearts won by giving, the content he ﷺ trusted, and never taking it back." },
   name: "the manners of giving",
   kind: "skill",
   lessonType: "skill",
@@ -76,6 +77,19 @@ const GIVING: DeepUnit = {
         { q: "On which day did he ﷺ give to Safwan?", a: "The day of Hunayn", wrong: ["The day of Badr", "The day of Uhud", "The day of the Trench"], why: "He kept giving to Safwan until Safwan loved him most." },
         { q: "What did his ﷺ giving do to Safwan's heart?", a: "Filled it with love", wrong: ["Made it proud", "Made it jealous", "Left it the same"], why: "He did not stop giving to me until he was the most loved to me." },
         { q: "Kind giving can turn a heart from dislike to love.", tf: true, why: "Safwan came to love him ﷺ more than anyone because of his giving." }
+      ]
+    },
+    {
+      slug: "content-hearts",
+      title: "Left to the good in their hearts",
+      line: "Contentment and goodness in a heart are gifts from Allah.",
+      facts: ["Told by Amr ibn Taghlib", "He ﷺ named Amr among the content ones"],
+      source: hadith("bukhari", "7535", "Amr ibn Taghlib", "Sahih", "Amr ibn Taghlib said: some wealth was brought to the Prophet ﷺ, and he gave to some people and not to others. He ﷺ said: the one I do not give is dearer to me than the one I give. I give some people because of the impatience in their hearts, and I leave others to the contentment and goodness Allah has put in them, and Amr ibn Taghlib is one of them. Amr said: those words of his ﷺ about me are dearer to me than red camels.", "leave other people because of the content and goodness Allah has bestowed on them"),
+      difficulty: 2,
+      questions: [
+        { q: "Why did he ﷺ leave some people out when he gave?", a: "Their hearts were content", wrong: ["Their homes were far", "Their names were unknown", "Their camels were tired"], why: "He ﷺ left them to the content and goodness Allah had put in their hearts." },
+        { q: "Amr said his ﷺ words were dearer to him than what?", a: "Red camels", wrong: ["Gold coins", "Green gardens", "Fine silk"], why: "The sentence he ﷺ said in my favor is dearer to me than nice red camels, Amr said." },
+        { q: "The one he ﷺ left out was dearer to him than the one he gave.", tf: true, why: "The one to whom I do not give is dearer to me than the one to whom I give, he ﷺ said." }
       ]
     },
     {
