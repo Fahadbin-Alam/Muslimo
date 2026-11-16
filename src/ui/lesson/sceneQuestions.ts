@@ -2962,6 +2962,74 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What is Al-Ikhlas equal to, says the Prophet ﷺ?", "A third of the Quran", "It equals a third of the Quran"],
     ["How did the companions feel about reciting a third in one night?", "They found it hard", "Can one of you not recite a third in a night?"],
     ["How can you recite a third of the Quran in one night?", "Recite Al-Ikhlas", "Allah, One, as-Samad: a third of the Quran"]
+  ],
+  // You will not enter Paradise until you believe, and you will not believe until you love one another. Shall I not
+  // point you to something which, if you do it, you will love one another? Spread the salam among you (Sahih Muslim 54).
+  // (Who narrated it, what the greeting means, and the greeting of Paradise stay on their usual picture.)
+  "sign-spread-the-salam": [
+    ["What builds love between people, in the hadith?", "Spreading the Salam", "If you do it, you will love one another", "Spread the salam among you"],
+    ["What is needed for true faith, in the hadith?", "Loving one another", "Nor believe until you love one another"],
+    ["What must we do to truly believe, per Muslim 54?", "Love one another", "Nor believe until you love one another"],
+    ["What fosters love among us?", "Spreading salam", "If you do it, you will love one another", "Spread the salam among you"],
+    ["What does spreading the salam bring?", "Love between people", "If you do it, you will love one another", "Spread the salam among you"],
+    ["Loving one another is part of true faith.", "True", "Nor believe until you love one another"]
+  ],
+  // A man asked him: what in Islam is best? He said: that you feed people, and give salam to those you know and those
+  // you do not know (Sahih al-Bukhari 12).
+  "sign-feed-and-greet": [
+    ["What deeds of Islam did the Prophet ﷺ name?", "Feeding and greeting", "He said: that you feed people", "And to those you do not know"],
+    ["Whom should we greet?", "Those we know and do not know", "And give salam to those you know", "And to those you do not know"],
+    ["Feeding the poor is one of the good deeds of Islam.", "True", "He said: that you feed people"],
+    ["What good deed did the Prophet ﷺ name first?", "To feed people", "He said: that you feed people"],
+    ["Whom should we greet, per the hadith?", "Those we know and those we do not", "And give salam to those you know", "And to those you do not know"],
+    ["Salam is only for people we already know.", "False", "And to those you do not know"]
+  ],
+  // An-Nu'man's father gave him a gift, and his mother would not be pleased until the Prophet was made witness to it.
+  // He came and said: I have given my son a gift. He asked: have you given the rest of your children the like of this?
+  // He said: no. He said: then fear Allah, and be fair between your children; so he went back and took back his gift
+  // (Sahih al-Bukhari 2587).
+  "sign-a-fair-gift": [
+    ["What did the Prophet ﷺ ask An-Nu'man's father?", "Did you give all your sons the same?", "Have you given all your children the same?"],
+    ["What did he tell him?", "Fear Allah and be fair to your children", "Fear Allah, and be fair to your children"],
+    ["What did the father do then?", "Took the gift back", "He went back, and took back his gift"],
+    ["What did the Prophet ﷺ ask Nu'man's father?", "Did all your sons get the same?", "Have you given all your children the same?"],
+    ["What did he tell parents to be?", "Just to their children", "Fear Allah, and be fair to your children"],
+    ["Nu'man's father took the gift back.", "True", "He went back, and took back his gift"]
+  ],
+  // Sa'd ibn Ubadah's mother died while he was away from her. He said: my mother died while I was away; will it help
+  // her if I give anything in charity for her? He said: yes. He said: then I make you witness that my garden al-Mikhraf
+  // is charity for her (Sahih al-Bukhari 2756). (What he gave is asked on its own picture card.)
+  "sign-garden-in-charity": [
+    ["Does charity for a dead parent help them?", "Yes", "He said: yes"],
+    ["Sa'd was with his mother when she died.", "False", "Sa'd's mother died while he was away"],
+    ["Does charity help a parent who died?", "Yes", "He said: yes"],
+    ["We can still do good for our parents after they die.", "True", "He said: yes", "Is charity for her"]
+  ],
+  // Rights will surely be paid to their owners on the Day of Resurrection, until the hornless sheep gets its due from
+  // the horned sheep (Sahih Muslim 2582). (Which animal gets its due is asked on its own picture card, and who disputes,
+  // per Ibn Abbas, stays on its usual picture.)
+  "sign-hornless-sheep": [
+    ["What happens to rights, in the hadith?", "They will be restored", "Rights will surely be paid to their owners", "From the horned sheep"],
+    ["What will happen to rights, per the hadith?", "They will be restored", "Rights will surely be paid to their owners", "From the horned sheep"],
+    ["Allah judges between the animals with justice.", "True", "Until the hornless sheep gets its due", "From the horned sheep"]
+  ],
+  // If he forgets, and eats and drinks, let him complete his fast, for it was Allah who fed him and gave him drink
+  // (Sahih al-Bukhari 1933). (What breaks the fast, and keeping away from bad words, are asked of other lessons too.)
+  "sign-forgot-and-ate": [
+    ["If you eat because you ____, your fast still counts.", "forgot", "If he forgets, and eats", "Let him complete his fast"],
+    ["You forgot and drank water while fasting. What now?", "Finish your fast", "Let him complete his fast"],
+    ["Eating because you forgot still lets your fast count.", "True", "Let him complete his fast"]
+  ],
+  // He kissed al-Hasan ibn Ali while al-Aqra' ibn Habis was sitting with him. Al-Aqra' said: I have ten children, and
+  // I have never kissed one of them. He looked at him, then said: whoever is not merciful is not shown mercy (Sahih
+  // al-Bukhari 5997).
+  "sign-kiss-of-mercy": [
+    ["Whom did the Prophet ﷺ kiss in front of al-Aqra?", "His grandson al-Hasan", "He kissed al-Hasan ibn Ali", "Al-Aqra' ibn Habis was sitting with him"],
+    ["How many children did al-Aqra say he had?", "Ten", "Al-Aqra' said: I have ten children"],
+    ["Showing love to children is part of mercy.", "True", "Then said: whoever is not merciful", "Is not shown mercy"],
+    ["Whom did the Prophet ﷺ kiss?", "His grandson Al-Hasan", "He kissed al-Hasan ibn Ali"],
+    ["What did he say to the man who never kissed his children?", "No mercy shown, no mercy given", "Then said: whoever is not merciful", "Is not shown mercy"],
+    ["How many children did that man have?", "Ten", "Al-Aqra' said: I have ten children"]
   ]
 };
 

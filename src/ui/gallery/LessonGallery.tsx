@@ -1175,6 +1175,13 @@ const STATES: State[] = [
   { id: "scene-better-than-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-uqbah-better-than-camels" ask="What is better than two big she-camels" /> },
   { id: "scene-two-bright-ones", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-umamah-the-intercessor" ask="How will the two surahs come" /> },
   { id: "scene-third-of-the-quran", render: () => <SceneQuestionDemo lessonId="lesson-deep-ikhlas-a-third" ask="What is Al-Ikhlas equal to" /> },
+  { id: "scene-spread-the-salam", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibrahim2-spread-the-salam" ask="What builds love between people" /> },
+  { id: "scene-feed-and-greet", render: () => <SceneQuestionDemo lessonId="lesson-deep-haqqah4-feed-and-greet" ask="What deeds of Islam did the Prophet" /> },
+  { id: "scene-a-fair-gift", render: () => <SceneQuestionDemo lessonId="lesson-deep-children-fair" ask="What did he tell him" /> },
+  { id: "scene-garden-in-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-ubadah-garden-for-mother" ask="Does charity for a dead parent help them" /> },
+  { id: "scene-hornless-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-naba3-even-the-animals" ask="Allah judges between the animals" /> },
+  { id: "scene-forgot-and-ate", render: () => <SceneQuestionDemo lessonId="lesson-ramadan-if-you-forget" ask="You forgot and drank water" /> },
+  { id: "scene-kiss-of-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-children-kissing" ask="What did he say to the man who never kissed" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

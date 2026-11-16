@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(1917);
+    expect(asks.length).toBe(1951);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -126,7 +126,7 @@ describe("which questions are asked on a scene", () => {
     // he opened the night prayer, so its final quiz no longer asks how much of the night Dawud prayed (still asked in
     // its lessons). The second review card of "The Book of the Virtues of the Quran" also asks what one who finds
     // reciting hard gets.
-    expect(places).toBe(2794);
+    expect(places).toBe(2842);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -7111,6 +7111,229 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, -10]
     ]);
+  });
+
+  it("waits on the scenes of rights and mercy, from spreading the salam to the kiss of mercy, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-spread-the-salam", "sign-feed-and-greet", "sign-a-fair-gift", "sign-garden-in-charity", "sign-hornless-sheep", "sign-forgot-and-ate", "sign-kiss-of-mercy"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(34);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Spread the salam. What true faith needs, and whether loving one another is part of it: no light of faith yet, and
+    // no ring of care; then two places come together, a light of faith comes in each, and a ring of care about them.
+    for (const prompt of ["What is needed for true faith, in the hadith?", "What must we do to truly believe, per Muslim 54?", "Loving one another is part of true faith."]) {
+      expect([prompt, shown(prompt, ["faith: a light in a place 3", "faith: a light in a place 4", "love: a ring of care about two places"]), moved(prompt, "a place 3", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, 5]
+      ]);
+    }
+    // What builds love, what fosters it, and what spreading the salam brings: faint lights, and no voice of salam yet;
+    // then threads show between the places, a voice of salam goes from each, every light grows full, a ring of care
+    // comes about them all, and the far circle of light shines full.
+    const salam = [1, 2, 3, 4, 5, 6].map((n) => `salam: a voice from a place ${n}`);
+    const love = ["love to come: a thread between places 1", "loving one another: a ring of care about them all", "faith: a light in a place 1", "Paradise, far off: a soft circle of light with a garden in it"];
+    for (const prompt of ["What builds love between people, in the hadith?", "What fosters love among us?", "What does spreading the salam bring?"]) {
+      expect([prompt, shown(prompt, [...salam, ...love])]).toEqual([
+        prompt,
+        [
+          [...Array(8).fill(0), 0.45, 0.5],
+          Array(10).fill(1)
+        ]
+      ]);
+    }
+    // Feed and greet. What he named first, and whether feeding the poor is a good deed of Islam: a place under a grey
+    // shade of hunger, and no food yet; then a place comes out of the home with food on a dish, the grey goes, and a
+    // warm glow comes on the place in need.
+    const fed = ["hunger: a grey shade on a place", "a place, coming out of the home with food", "food on a dish, given", "fed: a warm glow on the place in need"];
+    for (const prompt of ["Feeding the poor is one of the good deeds of Islam.", "What good deed did the Prophet ﷺ name first?"]) {
+      expect([prompt, shown(prompt, fed), moved(prompt, "food on a dish, given", "x")]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [0, 1, 1, 1]
+        ],
+        [-15.8, 0]
+      ]);
+    }
+    // Which deeds he named: no food and no salam yet; then the food is given, its voice gives salam, soft lights come on
+    // the places it knows and on the one it does not, and a wide ring of care comes about them all.
+    expect(shown("What deeds of Islam did the Prophet ﷺ name?", ["food on a dish, given", "fed: a warm glow on the place in need", "its voice: salam", "salam: a soft light on a place it knows 1", "salam: a soft light on the place it does not know", "salam to all: a wide ring of care"])).toEqual([Array(6).fill(0), Array(6).fill(1)]);
+    // Whom to greet: no salam yet; then its voice gives salam, soft lights come on the two places it knows, a place comes
+    // along the road from far off, a soft light comes on it too, and a wide ring of care comes about them all.
+    const greet = ["its voice: salam", "salam: a soft light on a place it knows 1", "salam: a soft light on a place it knows 2", "a place it does not know, coming along the road", "salam: a soft light on the place it does not know", "salam to all: a wide ring of care"];
+    for (const prompt of ["Whom should we greet?", "Whom should we greet, per the hadith?"]) {
+      expect([prompt, shown(prompt, greet), moved(prompt, "a place it does not know, coming along the road", "x")]).toEqual([prompt, [Array(6).fill(0), Array(6).fill(1)], [30, 0]]);
+    }
+    // Whether salam is only for those we know: soft lights on the two places it knows, and no one on the road yet; then
+    // a place comes along the road from far off, a soft light comes on it too, and a wide ring of care about them all.
+    const only = "Salam is only for people we already know.";
+    expect([shown(only, greet.slice(1)), moved(only, "a place it does not know, coming along the road", "x")]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [30, 0]
+    ]);
+    // A fair gift. What he asked the father: the giver's voice, telling him of the gift; then his voice asks, and by each
+    // of the other young places shows only the faint outline of a gift.
+    const outlines = [1, 2, 3].map((n) => `no gift like it: a faint outline by another young place ${n}`);
+    for (const prompt of ["What did the Prophet ﷺ ask An-Nu'man's father?", "What did the Prophet ﷺ ask Nu'man's father?"]) {
+      expect([prompt, shown(prompt, ["the giver's voice: I gave a gift", "his voice, asking: all the same?", ...outlines])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [0, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // What he told him, and what parents are to be: the giver's voice saying no, and the outlines; then his voice
+    // speaks, and a level band of light comes under all the young places.
+    for (const prompt of ["What did he tell him?", "What did he tell parents to be?"]) {
+      expect([prompt, shown(prompt, ["the giver's voice: no", "his voice: be fair", "be fair: a level band of light under the young places", ...outlines])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 1, 1, 1],
+          [0, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // What the father did then: the giver's place by him, the gift by the young place, and the outlines; then the
+    // giver's place goes back along the way, the gift goes back to it, the outlines go, and the band stays level.
+    for (const prompt of ["What did the father do then?", "Nu'man's father took the gift back."]) {
+      expect([prompt, shown(prompt, [...outlines, "be fair: a level band of light under the young places"]), moved(prompt, "the giver's place, going to him and back", "x"), moved(prompt, "the gift, given and taken back", "x")]).toEqual([
+        prompt,
+        [
+          [1, 1, 1, 1],
+          [0, 0, 0, 1]
+        ],
+        [76, 0],
+        [0, -10.2]
+      ]);
+    }
+    // A garden in charity. Whether Sa'd was with his mother when she died: the light in her home; then it goes out
+    // softly, while Sa'd's place is still far off on the road.
+    const away = "Sa'd was with his mother when she died.";
+    expect([shown(away, ["her home: its light going out", "Sa'd's place, coming back from far off"]), moved(away, "Sa'd's place, coming back from far off", "x")]).toEqual([
+      [
+        [1, 1],
+        [0, 1]
+      ],
+      [29.4, 29.4]
+    ]);
+    // Whether charity helps a parent who died: Sa'd's voice asking, and the way to her faint; then his voice answers
+    // yes, and the way grows clearer.
+    for (const prompt of ["Does charity for a dead parent help them?", "Does charity help a parent who died?"]) {
+      expect([prompt, shown(prompt, ["Sa'd's voice, asking", "his voice: yes", "the way to her, faint"])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0.4],
+          [0, 1, 0.7]
+        ]
+      ]);
+    }
+    // Whether we can still do good for parents after they die: no answer yet; then his voice says yes, Sa'd's voice
+    // makes him witness, a golden light comes over the garden, the way turns golden, sparks rise from the garden, and
+    // a soft light comes about her home.
+    const good = "We can still do good for our parents after they die.";
+    expect([shown(good, ["Sa'd's voice: I make you witness", "the garden given: a golden light over it", "charity for her: the way turns golden", "for her: a soft light about her home"]), moved(good, "charity: a spark rising from the garden 1", "y")]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, -11]
+    ]);
+    // The hornless sheep. What happens to rights: the two sheep at rest, with no mark yet; then the horned one butts the
+    // hornless one and a grey mark stays on it, the Day comes as a wide pale plain, a soft light comes about the
+    // hornless sheep, it butts the horned one back, the mark goes, and a level band of light comes under both.
+    const due = ["a wrong done: a grey mark on the hornless sheep", "the Day: a wide pale plain", "its due: a soft light about the hornless sheep", "justice: a level band of light under both"];
+    for (const prompt of ["What happens to rights, in the hadith?", "What will happen to rights, per the hadith?"]) {
+      expect([prompt, shown(prompt, due)]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [0, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Whether Allah judges between the animals with justice: the Day's plain, and the grey mark on the hornless sheep;
+    // then a soft light comes about it, it butts the horned one back, the mark goes, and the level band comes under both.
+    expect(shown("Allah judges between the animals with justice.", due)).toEqual([
+      [1, 1, 0, 0],
+      [0, 1, 1, 1]
+    ]);
+    // If he forgets, and eats. Why the fast still counts: the date on the dish, the cup full, and the day still bright;
+    // then the date goes to its place, the water in the cup goes down, the ring of its fast grows full, and the sun goes
+    // on toward a warm evening sky.
+    const fast = ["a date, eaten", "fasting: a soft ring of light about its place", "evening coming: a warm sky"];
+    const forgot = "If you eat because you ____, your fast still counts.";
+    expect([shown(forgot, fast), moved(forgot, "the cup's water, going down", "scaleY"), moved(forgot, "the sun, going on toward evening", "x")]).toEqual([
+      [
+        [1, 0.5, 0],
+        [0, 1, 1]
+      ],
+      [1, 0.4],
+      [0, 70]
+    ]);
+    // What to do after forgetting, and whether the fast still counts: the date eaten, the cup low, and the ring of the
+    // fast still soft; then it grows full, and the sun goes on toward a warm evening sky.
+    for (const prompt of ["You forgot and drank water while fasting. What now?", "Eating because you forgot still lets your fast count."]) {
+      expect([prompt, shown(prompt, fast), moved(prompt, "the cup's water, going down", "scaleY"), moved(prompt, "the sun, going on toward evening", "x")]).toEqual([
+        prompt,
+        [
+          [0, 0.5, 0],
+          [0, 1, 1]
+        ],
+        [0.4, 0.4],
+        [0, 70]
+      ]);
+    }
+    // The kiss of mercy. Whom he kissed: no light yet; then a warm light comes about the small place beside his place,
+    // and, asked as in front of al-Aqra', al-Aqra's place comes and sits with him too.
+    const kiss = ["a kiss of mercy: a warm light about the small place", "al-Aqra's place, coming to sit with him"];
+    expect(shown("Whom did the Prophet ﷺ kiss?", kiss)).toEqual([
+      [0, 0],
+      [1, 0]
+    ]);
+    const front = "Whom did the Prophet ﷺ kiss in front of al-Aqra?";
+    expect([shown(front, kiss), moved(front, kiss[1], "x")]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [26, 0]
+    ]);
+    // How many children al-Aqra' had: its place sitting with him, and no voice yet; then its voice speaks, and ten
+    // small places show as it tells of them.
+    const ten = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `ten small places, as it tells of them ${n}`);
+    for (const prompt of ["How many children did al-Aqra say he had?", "How many children did that man have?"]) {
+      expect([prompt, shown(prompt, [kiss[1], "al-Aqra's voice: ten, and never kissed", ...ten])]).toEqual([prompt, [[1, ...Array(11).fill(0)], [1, 1, ...Array(10).fill(0.75)]]]);
+    }
+    // What he said to the one who never kissed his children, and whether love for children is part of mercy: his look
+    // as a faint golden line; then his voice speaks, and a soft light of mercy comes about his place and the small one.
+    for (const prompt of ["Showing love to children is part of mercy.", "What did he say to the man who never kissed his children?"]) {
+      expect([prompt, shown(prompt, ["his look: a faint golden line to al-Aqra's place", "his voice: whoever is not merciful", "mercy: a soft light about his place and the small one"])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [0, 1, 1]
+        ]
+      ]);
+    }
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
