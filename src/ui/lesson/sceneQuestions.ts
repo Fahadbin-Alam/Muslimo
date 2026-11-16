@@ -3526,6 +3526,66 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many times did he ﷺ say it?", "Three", "He said it three times"],
     ["This prayer is a must for everyone.", "False", "For whoever wishes"],
     ["This prayer is for whoever wants to pray it.", "True", "For whoever wishes"]
+  ],
+  // I have two neighbours: to which of them shall I give a gift? To the one whose door is nearer to you (Sahih
+  // al-Bukhari 2259). (Who asked it stays on its usual picture: the scene's words do not name her; and so does that
+  // neighbours further off have rights too, since the scene shows only the gift to the nearer door.)
+  "sign-nearest-door": [
+    ["Which neighbor comes first for a gift?", "The one with the nearest door", "To the one whose door is nearer to you"],
+    ["Which neighbour gets the gift first?", "The one whose door is nearest", "To the one whose door is nearer to you"],
+    ["The nearest neighbour has the most right to our kindness.", "True", "To the one whose door is nearer to you"]
+  ],
+  // Two of his Companions left him on a dark night, with two lights like lamps; when they parted, each had one with
+  // him, until he reached his family (Sahih al-Bukhari 3639). (That the night was very dark stays on its usual
+  // picture: the night is there from the scene's start.)
+  "sign-two-lights": [
+    ["What lit the way for the two companions?", "Two lights like lamps", "With them, like two lamps, lighting the way"],
+    ["What happened when the two men parted?", "Each one kept one light", "When they parted, each had one with him"]
+  ],
+  // O Abu Umayr, what did the nughayr do? A little bird he played with (Sahih al-Bukhari 6203). (What pet he had is
+  // asked on its picture cards; whose little brother he was stays on its usual picture: the scene's words do not name
+  // Anas.)
+  "sign-abu-umayr-bird": [
+    ["What does this teach about the Prophet ﷺ?", "He was kind to children", "O Abu Umayr, what did the nughayr do?", "A little bird he played with"]
+  ],
+  // When a man spends on his family hoping for its reward, it is a charity for him (Sahih al-Bukhari 55); whatever
+  // you spend for Allah's sake, you are rewarded for it, even a morsel you put in your wife's mouth (Sahih al-Bukhari
+  // 56). (Who narrated each stays on its usual picture.)
+  "sign-family-spending": [
+    ["Spending on your own ____ is a charity too.", "family", "When a man spends on his family", "It is a charity for him"],
+    ["What makes it count?", "Hoping for Allah's reward", "Hoping for its reward"],
+    ["Spending on your family, hoping for reward, counts as what?", "Charity", "It is a charity for him"],
+    ["When is it rewarded?", "When done for Allah", "Whatever you spend for Allah's sake", "You are rewarded for it"],
+    ["Is spending on family rewarded?", "Yes, for Allah's sake", "Whatever you spend for Allah's sake", "You are rewarded for it"],
+    ["What small act is rewarded in the hadith?", "A bite put in your wife's mouth", "Even a morsel you put in your wife's mouth"],
+    ["What small example did the Prophet ﷺ give?", "A bite for one's wife", "Even a morsel you put in your wife's mouth"]
+  ],
+  // When you hear the call, say the like of what the caller says (Sahih al-Bukhari 611); whoever says the du'a when he
+  // hears the call, his intercession is due for him (Sahih al-Bukhari 614). (Who the mu'adhdhin is stays on its usual
+  // picture: the caller is there from the start; and so do what the du'a asks for him and that answering shares in
+  // the reward, which the scene's words do not name.)
+  "sign-answer-the-call": [
+    ["When you hear the adhan, repeat its ____ quietly.", "words", "Say the like of what the caller says"],
+    ["When you hear the adhan, repeat its jokes quietly.", "False", "Say the like of what the caller says"],
+    ["What should you do when you hear the adhan?", "Say what the caller says", "Say the like of what the caller says"],
+    ["While the adhan is called, what do you say?", "The same words as the caller", "Say the like of what the caller says"],
+    ["We say the du'a when the adhan is finished.", "True", "Whoever says, when he hears the call", "O Allah, Lord of this perfect call"],
+    ["What does the one who says it receive?", "His ﷺ intercession", "My intercession is due for him"],
+    ["What does the Prophet ﷺ promise the one who says this dua?", "His intercession on the Last Day", "My intercession is due for him"]
+  ],
+  // When supper is served and the iqamah is called, start with the supper (Sahih al-Bukhari 671). (What khushu means,
+  // why Ibn Kathir cites it with 94:7, and that it does not allow missing the prayer stay on their usual picture.)
+  "sign-supper-first": [
+    ["If food is ready, eat first so you can ____ in salah.", "focus", "Start with the supper"],
+    ["If supper is served at Iqamah, what comes first?", "The supper", "Start with the supper"]
+  ],
+  // Were it not hard on my ummah, I would have ordered them to use the siwak with every prayer (Sahih al-Bukhari
+  // 887). (What a siwak is and what it is for stay on their usual picture: the scene does not show it in use.)
+  "sign-siwak-every-prayer": [
+    ["Why did he ﷺ not order siwak before every prayer?", "So it would not be hard on us", "Were it not hard on my ummah", "Or on the people"],
+    ["Why did he ﷺ not order it for every prayer?", "It could be hard on us", "Were it not hard on my ummah", "Or on the people"],
+    ["Using the siwak before prayer is a loved sunnah.", "True", "I would have ordered them to use the siwak", "With every prayer"],
+    ["Using siwak before prayer is a loved sunnah.", "True", "I would have ordered them to use the siwak", "With every prayer"]
   ]
 };
 

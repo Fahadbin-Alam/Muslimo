@@ -1231,6 +1231,13 @@ const STATES: State[] = [
   { id: "scene-leave-that-call", render: () => <SceneQuestionDemo lessonId="lesson-deep-munafiqun2-call-of-ignorance" ask="What did he tell them to do with it" /> },
   { id: "scene-abu-bakr-forgives", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-forgiving-mistah" ask="What did Abu Bakr say when the ayah came" /> },
   { id: "scene-between-two-calls", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-prayer-between-adhan-and-iqamah" ask="How many times did he ﷺ say it" /> },
+  { id: "scene-nearest-door", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-nearest-door" ask="Which neighbor comes first for a gift" /> },
+  { id: "scene-two-lights", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-two-lights-on-a-dark-night" ask="What happened when the two men parted" /> },
+  { id: "scene-abu-umayr-bird", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-abu-umayr-bird" ask="What does this teach about the Prophet" /> },
+  { id: "scene-family-spending", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-morsel" ask="What small act is rewarded in the hadith" /> },
+  { id: "scene-answer-the-call", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-adhan-reward-say-what-he-says" ask="What should you do when you hear the adhan" /> },
+  { id: "scene-supper-first", render: () => <SceneQuestionDemo lessonId="lesson-deep-sharh2-supper-before-prayer" ask="If supper is served at Iqamah, what comes first" /> },
+  { id: "scene-siwak-every-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-siwak" ask="Why did he ﷺ not order it for every prayer" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
