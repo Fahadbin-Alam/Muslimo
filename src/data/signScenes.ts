@@ -688,7 +688,14 @@ export type SignKind =
   | "after-eating"
   | "one-sheet"
   | "never-faulted"
-  | "date-in-street";
+  | "date-in-street"
+  | "suhur-two-calls"
+  | "wool-toys"
+  | "generous-wind"
+  | "fast-on-a-journey"
+  | "friday-alone"
+  | "fast-with-faith"
+  | "false-speech";
 
 export type SignScene = {
   id: string;
@@ -2878,6 +2885,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "date-in-street",
     caption: "Anas ibn Malik said that the Messenger of Allah ﷺ found a date in the street and said: if it were not from the charity, I would have eaten it.",
     sources: [muslim("1071a")]
+  },
+  {
+    id: "sign-suhur-two-calls",
+    kind: "suhur-two-calls",
+    caption:
+      "Salim ibn Abdullah said that his father said that the Messenger of Allah ﷺ said: Bilal calls the adhan at night, so eat and drink until Ibn Umm Maktum calls the adhan. Salim said: he was a blind man, and he would not call until he was told: morning has come, morning has come.",
+    sources: [bukhari("617")]
+  },
+  {
+    id: "sign-wool-toys",
+    kind: "wool-toys",
+    caption:
+      "Ar-Rubayyi' bint Mu'awwidh said: on the morning of Ashura, the Prophet ﷺ sent word to the villages of the Ansar: whoever woke up not fasting, let him complete the rest of his day, and whoever woke up fasting, let him fast. She said: so we used to fast it after that, and make our little ones fast, and we made toys of wool for them; when one of them cried for food, we gave him that, until it was time to break the fast.",
+    sources: [bukhari("1960")]
+  },
+  {
+    id: "sign-generous-wind",
+    kind: "generous-wind",
+    caption:
+      "Ibn Abbas said: the Prophet ﷺ was the most generous of people with good, and he was most generous of all in Ramadan, when Jibril met him. Jibril would meet him every night of Ramadan until it ended, and the Prophet ﷺ would recite the Quran to him. When Jibril met him, he was more generous with good than the blowing wind.",
+    sources: [bukhari("1902")]
+  },
+  {
+    id: "sign-fast-on-a-journey",
+    kind: "fast-on-a-journey",
+    caption:
+      "Aishah said that Hamzah ibn Amr al-Aslami, who fasted much, said to the Prophet ﷺ: shall I fast on a journey? He said: fast if you wish, and do not fast if you wish. Anas ibn Malik said: we used to travel with the Prophet ﷺ, and the one fasting did not blame the one not fasting, nor the one not fasting the one fasting.",
+    sources: [bukhari("1943"), bukhari("1947")]
+  },
+  {
+    id: "sign-friday-alone",
+    kind: "friday-alone",
+    caption:
+      "Muhammad ibn Abbad said: I asked Jabir: did the Prophet ﷺ forbid fasting on Friday? He said: yes. Abu Hurairah said: I heard the Prophet ﷺ say: none of you should fast on Friday, unless with a day before it or after it.",
+    sources: [bukhari("1984"), bukhari("1985")]
+  },
+  {
+    id: "sign-fast-with-faith",
+    kind: "fast-with-faith",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: whoever fasts Ramadan out of faith and hoping for its reward, his past sins are forgiven.",
+    sources: [bukhari("38")]
+  },
+  {
+    id: "sign-false-speech",
+    kind: "false-speech",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: whoever does not leave false speech and acting on it, Allah has no need of his leaving his food and drink.",
+    sources: [bukhari("1903")]
   }
 ];
 
@@ -4541,7 +4597,25 @@ export const SIGN_LESSONS: Record<string, string> = {
   // He never found fault with any food: if he liked it, he ate it, and if not, he left it.
   "deep-seerah-khuluq-food": "sign-never-faulted",
   // He found a date in the street, and did not eat it in case it was from the charity.
-  "deep-book-zakat-date-in-the-street": "sign-date-in-street"
+  "deep-book-zakat-date-in-the-street": "sign-date-in-street",
+  // Bilal calls the adhan at night, so eat and drink until Ibn Umm Maktum calls it at dawn.
+  "deep-fast-suhur-two-adhans": "sign-suhur-two-calls",
+  // On Ashura they made their little ones fast, and gave a toy of wool to one who cried for food.
+  "deep-fast-manners-wool-toys": "sign-wool-toys",
+  // In Ramadan, when Jibril met him, he was more generous with good than the blowing wind.
+  "deep-fast-manners-faster-than-wind": "sign-generous-wind",
+  // Fast on a journey if you wish, or do not; and no one fasting blamed one not fasting, nor the other way.
+  "deep-fast-ease-traveler": "sign-fast-on-a-journey",
+  "deep-book-fasting-no-blame-on-travelers": "sign-fast-on-a-journey",
+  // None of you should fast on Friday, unless with a day before it or after it.
+  "deep-book-fasting-not-friday-alone": "sign-friday-alone",
+  "deep-fast-extra-friday": "sign-friday-alone",
+  // Whoever fasts Ramadan out of faith and hoping for its reward, his past sins are forgiven.
+  "deep-fast-reward-forgiven": "sign-fast-with-faith",
+  "ramadan-fast-with-faith": "sign-fast-with-faith",
+  // Whoever does not leave false speech and acting on it, Allah has no need of his leaving his food and drink.
+  "deep-fast-manners-false-speech": "sign-false-speech",
+  "ramadan-leave-lies": "sign-false-speech"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
