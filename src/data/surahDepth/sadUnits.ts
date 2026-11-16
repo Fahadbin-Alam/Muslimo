@@ -296,7 +296,7 @@ const SAD_ONE: DeepUnit = {
       questions: [
         { q: "What is between the two blowings, in the hadith?", a: "Forty", wrong: ["Seven", "One hundred", "Three"], why: "Between the two blowing of the trumpet there will be forty." },
         { q: "Did Abu Hurairah say forty days or years?", a: "He refused to say", wrong: ["Forty days", "Forty years", "Forty months"], why: "They said, Forty years? I refused to reply." },
-        { tf: true, q: "The Trumpet will be blown twice.", why: "Between the two blowing of the trumpet there will be forty." }
+        { tf: true, q: "The hadith speaks of two blowings of the Trumpet.", why: "Between the two blowing of the trumpet there will be forty." }
       ]
     },
     {

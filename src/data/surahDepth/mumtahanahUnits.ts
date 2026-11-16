@@ -58,7 +58,7 @@ const MUMTAHANAH_ONE: DeepUnit = {
       questions: [
         { q: "Which battle did Hatib take part in?", a: "Badr", wrong: ["Hunayn", "Tabuk", "Mu'tah"], why: "Hatib was among the Early Emigrants and participated in the battle of Badr." },
         { q: "What did Hatib have in Makkah?", a: "Children and wealth", wrong: ["A palace", "An army", "Nothing at all"], why: "Hatib had children and wealth in Makkah." },
-        { tf: true, q: "Hatib belonged to the tribe of Quraysh.", why: "He was not from the tribe of Quraysh; he was an ally of Uthman." }
+        { tf: false, q: "Hatib belonged to the tribe of Quraysh.", why: "He was not from the tribe of Quraysh; he was an ally of Uthman." }
       ]
     },
     {
@@ -198,7 +198,7 @@ const MUMTAHANAH_ONE: DeepUnit = {
       questions: [
         { q: "What does Allah know, in 60:1?", a: "What you hide and reveal", wrong: ["Only what you say", "Only the past", "Only actions"], why: "I am All-Aware of what you conceal and what you reveal." },
         { q: "What else does Allah know, per Ibn Kathir?", a: "The intentions of hearts", wrong: ["Nothing hidden", "Only words", "Only numbers"], why: "I know the secrets of the hearts, the intentions and all apparent things." },
-        { tf: true, q: "Hatib's letter was hidden from Allah.", why: "Allah the Exalted conveyed this matter to His Messenger." }
+        { tf: false, q: "Hatib's letter was hidden from Allah.", why: "Allah the Exalted conveyed this matter to His Messenger." }
       ]
     },
     {
@@ -254,7 +254,7 @@ const MUMTAHANAH_ONE: DeepUnit = {
       questions: [
         { q: "When will relations not benefit you?", a: "When you anger Allah to please them", wrong: ["When you visit them", "When you help them", "When you pray"], why: "Your relations will not benefit you if you please them with what angers Allah." },
         { q: "Does being related to a Prophet save someone?", a: "No, not without faith", wrong: ["Yes, always", "Only on Fridays", "Only the eldest"], why: "Their relation will not benefit them with Allah, even if their relation was with a Prophet." },
-        { tf: true, q: "We may anger Allah to keep family happy.", why: "Your relations will not benefit you if you please them with what angers Allah." }
+        { tf: false, q: "We may anger Allah to keep family happy.", why: "Your relations will not benefit you if you please them with what angers Allah." }
       ]
     },
     {
@@ -309,7 +309,7 @@ const MUMTAHANAH_TWO: DeepUnit = {
       questions: [
         { q: "Who were those with Ibrahim, per Ibn Kathir?", a: "His followers who believed", wrong: ["His enemies", "Travelling traders", "Angels only"], why: "Meaning, his followers who believed in him." },
         { q: "To whom did they speak, in 60:4?", a: "Their own people", wrong: ["Their animals", "The angels", "The kings of Rome"], why: "When they said to their people." },
-        { tf: true, q: "Ibrahim stood alone with no believers beside him.", why: "Ibrahim and those with him, meaning, his followers who believed in him." }
+        { tf: false, q: "Ibrahim stood alone with no believers beside him.", why: "Ibrahim and those with him, meaning, his followers who believed in him." }
       ]
     },
     {
@@ -379,7 +379,7 @@ const MUMTAHANAH_TWO: DeepUnit = {
       questions: [
         { q: "What did Ibrahim say he had no power to do?", a: "Anything for him before Allah", wrong: ["Build a house", "Walk far", "Read"], why: "But I have no power to do anything for you before Allah." },
         { q: "Who alone decides who is forgiven?", a: "Allah", wrong: ["A Prophet", "A parent", "A king"], why: "I have no power to do anything for you before Allah." },
-        { tf: true, q: "Ibrahim could save his father by his own power.", why: "But I have no power to do anything for you before Allah." }
+        { tf: false, q: "Ibrahim could save his father by his own power.", why: "But I have no power to do anything for you before Allah." }
       ]
     },
     {
@@ -449,7 +449,7 @@ const MUMTAHANAH_TWO: DeepUnit = {
       questions: [
         { q: "What might the disbelievers think if they won?", a: "That they were on the truth", wrong: ["That they were tired", "That it rained", "That they were lost"], why: "They would then think that they were given victory over us because they are on the truth." },
         { q: "Whose words does Ibn Kathir quote?", a: "Qatadah", wrong: ["Abu Jahl", "Firawn", "Haman"], why: "Qatadah said: do not give the disbelievers victory over us." },
-        { tf: true, q: "Winning a battle always proves who is right.", why: "They would then think that they were given victory over us because they are on the truth." }
+        { tf: false, q: "Winning a battle always proves who is right.", why: "They would then think that they were given victory over us because they are on the truth." }
       ]
     },
     {
@@ -574,7 +574,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       questions: [
         { q: "What is Allah able to do, per Ibn Kathir?", a: "Bring hearts together", wrong: ["Nothing new", "Only end things", "Only count"], why: "Allah is able to gather opposites and bring together hearts." },
         { q: "What does 60:7 say Allah has?", a: "Power over all things", wrong: ["A helper", "A partner", "A limit"], why: "And Allah has power over all things." },
-        { tf: true, q: "Hostile hearts can never come together.", why: "Allah is able to gather opposites and bring together hearts." }
+        { tf: false, q: "Hostile hearts can never come together.", why: "Allah is able to gather opposites and bring together hearts." }
       ]
     },
     {
@@ -630,7 +630,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       questions: [
         { q: "Which two Names end 60:7?", a: "Oft-Forgiving, Most Merciful", wrong: ["Almighty, All-Wise", "Rich, Praised", "First, Last"], why: "And Allah is Oft-Forgiving, Most Merciful." },
         { q: "Whom does Allah forgive, per Ibn Kathir?", a: "Those who repent to Him", wrong: ["No one", "Only kings", "Only the rich"], why: "He is the Oft-Forgiving, the Most-Merciful to those who repent to Him from their sins." },
-        { tf: true, q: "Some sins are too big for Allah to forgive after repentance.", why: "To those who repent to Him from their sins, no matter what type of the sin it is." }
+        { tf: false, q: "Some sins are too big for Allah to forgive after repentance.", why: "To those who repent to Him from their sins, no matter what type of the sin it is." }
       ]
     },
     {
