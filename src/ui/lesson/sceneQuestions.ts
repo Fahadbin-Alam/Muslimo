@@ -3461,6 +3461,71 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who reminded Umm al-Fadl of it?", "Her son Ibn Abbas", "Umm al-Fadl heard Ibn Abbas recite al-Mursalat", "My son, by Allah, your recitation reminded me"],
     ["Al-Mursalat was the last surah she heard from the Prophet ﷺ.", "True", "It was the last I heard from him"],
     ["In which prayer was it the last surah Umm al-Fadl heard?", "The sunset prayer", "It was the last I heard from him", "He recited it in the Maghrib prayer"]
+  ],
+  // He prayed carrying Umamah, the daughter of Zaynab, his daughter; when he prostrated he put her down, and when he
+  // stood he carried her (Sahih al-Bukhari 516). (Who narrated it stays on its usual picture.)
+  "sign-umamah-in-prayer": [
+    ["Whom did the Prophet ﷺ carry while praying?", "His granddaughter Umamah", "He prayed, carrying Umamah", "The daughter of Zaynab, his daughter"],
+    ["Whom did the Prophet ﷺ carry in prayer?", "Umamah, his granddaughter", "He prayed, carrying Umamah", "The daughter of Zaynab, his daughter"],
+    ["The Prophet ﷺ was gentle with children.", "True", "He prayed, carrying Umamah"],
+    ["What did he do when he went into sujud?", "Put her down", "When he prostrated, he put her down"],
+    ["What did he do when prostrating?", "Put her down", "When he prostrated, he put her down"]
+  ],
+  // Among the captives a woman found a child, held it close and nursed it. Would she throw her child into the fire? No.
+  // Allah is more merciful to His servants than she is to her child (Sahih al-Bukhari 5999). Whom he compared with
+  // Allah's mercy waits at the scene's start, so the mother and her child do not show before it is answered.
+  "sign-more-merciful": [
+    ["Who did he ﷺ compare with Allah's mercy?", "A mother with her child", "Captives were brought, among them a woman", "Than she is to her child"],
+    ["Would the mother throw her child into a fire?", "No, never", "Would she throw her child into the fire?", "No, not while she is able not to"],
+    ["Allah's mercy is even greater than a mother's.", "True", "Allah is more merciful to His servants", "Than she is to her child"]
+  ],
+  // He stayed below and Abu Ayyub above: we walk above his head! So he moved up. Food with garlic came back uneaten:
+  // is it forbidden? No, but I dislike it. Then I dislike what you dislike (Sahih Muslim 2053). (Where he stayed stays
+  // on its usual picture: the house is there from the start.)
+  "sign-abu-ayyub-house": [
+    ["Why was Abu Ayyub upset?", "He was walking above the Prophet ﷺ", "We walk above his head!"],
+    ["In the end, the Prophet ﷺ moved upstairs.", "True", "So he moved up, and Abu Ayyub down"],
+    ["Why did the Prophet ﷺ not eat the food?", "It had garlic", "He made food for him, with garlic in it", "He was told: he did not eat it"],
+    ["Is garlic forbidden?", "No", "Is it forbidden? No, but I dislike it"],
+    ["What did Abu Ayyub say?", "I dislike what you dislike", "Then I dislike what you dislike"]
+  ],
+  // Al-Miqdad: we will not say as Musa's people said, but we will fight on your right and your left, in front of you
+  // and behind you; and his face shone (Sahih al-Bukhari 3952). (That his words recall 5:24 stays on its usual
+  // picture: the scene's words do not name it.)
+  "sign-miqdad-promise": [
+    ["Whose words did Al-Miqdad refuse to repeat?", "Musa's people", "We will not say as Musa's people said"],
+    ["Where did Al-Miqdad say they would fight?", "On his right, left, front and back", "But we will fight on your right and your left", "And in front of you and behind you"],
+    ["His words made the Prophet's ﷺ face shine with joy.", "True", "I saw his face shine, and it pleased him"],
+    ["How did the Prophet ﷺ react, per Ibn Mas'ud?", "His face shone with joy", "I saw his face shine, and it pleased him"]
+  ],
+  // One of the Muhajirun struck one of the Ansar; each called out to his own side. What is this call of ignorance?
+  // Leave it, for it is foul (Sahih al-Bukhari 4905). (Who the Ansar were, and who narrated it, stay on their usual
+  // picture.)
+  "sign-leave-that-call": [
+    ["What did each man call out?", "The name of his own group", "The Ansari called: O Ansar!", "The Muhajir called: O Muhajirun!"],
+    ["What did the Prophet ﷺ call their shouting?", "A call of ignorance", "What is this call of ignorance?"],
+    ["What did he tell them to do with it?", "Leave it", "Leave it, for it is foul"],
+    ["Muslims should not split into groups against each other.", "True", "Leave it, for it is foul"]
+  ],
+  // Abu Bakr swore never to spend on Mistah, his poor kin, again; then came: let them pardon and overlook; would you
+  // not love that Allah forgive you? Yes, by Allah, and he gave again (Sahih al-Bukhari 4750, Quran 24:22). (Which
+  // ayah it was, what he said in the end, and what ayahs 21-26 say stay on their usual picture.)
+  "sign-abu-bakr-forgives": [
+    ["Whom had Abu Bakr been helping?", "His poor cousin Mistah", "Abu Bakr used to spend on Mistah", "For he was his kin, and poor"],
+    ["Which relative did Abu Bakr swear to stop helping?", "Mistah", "Abu Bakr used to spend on Mistah", "By Allah, I will never spend on him again"],
+    ["Ayah 22: what should the generous do?", "Pardon and overlook", "Let them pardon and overlook"],
+    ["What does Allah ask in 24:22?", "Do you not love that Allah forgives you?", "Would you not love that Allah forgive you?"],
+    ["What did Abu Bakr say when the ayah came?", "I want Allah to forgive me", "Yes, by Allah, I love that Allah forgive me"],
+    ["Abu Bakr stopped helping Mistah forever.", "False", "So he gave Mistah again what he used to"],
+    ["After ayah 22, what did Abu Bakr do for Mistah?", "Helped him again", "So he gave Mistah again what he used to"]
+  ],
+  // Between every two calls there is a prayer, three times; for whoever wishes (Sahih al-Bukhari 624). ("How many
+  // times did he say it?" stays on its usual picture: lessons on parents ask it about another hadith.)
+  "sign-between-two-calls": [
+    ["When is this extra prayer?", "Between adhan and iqamah", "Between every two calls there is a prayer"],
+    ["How many times did he ﷺ say it?", "Three", "He said it three times"],
+    ["This prayer is a must for everyone.", "False", "For whoever wishes"],
+    ["This prayer is for whoever wants to pray it.", "True", "For whoever wishes"]
   ]
 };
 

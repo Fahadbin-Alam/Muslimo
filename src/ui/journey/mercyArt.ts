@@ -184,12 +184,12 @@ function moreMerciful(): SignArt {
       { name: "she looks among them: a faint dashed way", svg: way("M91 107.6 Q104 109.6 115.4 107.8", "#FFFFFF", 0.7), keys: showWhile(0.17, 0.19, 0.32, 0.34) },
       { name: "the small place she found", svg: someone(child[0], child[1], 1.1), keys: along(0.03, [[0.08, 0, 0], [0.33, 0, 0], [0.37, n(close[0] - child[0]), n(close[1] - child[1])]]) },
       { name: "held close: a warm glow about the two", svg: wash(n((found[0] + close[0]) / 2), n(found[1] - 1.4), 6, 4.4, WARM, 0.26), keys: showFrom(0.37, 0.41), loop: { move: "twinkle", ms: 1800, low: 0.75 } },
-      { name: "his voice: would she throw it", svg: arcs(n(his[0] + 3.4), n(his[1] - 4.4), VOICE), keys: showWhile(0.48, 0.485, 0.545, 0.55), loop: { move: "twinkle", ms: 900, low: 0.5 } },
-      { name: "his look: a faint line to her", svg: lookLine(33, 102, 115, 103.4, 88), keys: showWhile(0.49, 0.52, 0.545, 0.55) },
+      { name: "his voice: would she throw it", svg: arcs(n(his[0] + 3.4), n(his[1] - 4.4), VOICE), keys: showWhile(0.48, 0.485, 0.61, 0.615), loop: { move: "twinkle", ms: 900, low: 0.5 } },
+      { name: "his look: a faint line to her", svg: lookLine(33, 102, 115, 103.4, 88), keys: showWhile(0.49, 0.52, 0.61, 0.62) },
       ...muslims.map(([x, y], i): SignPart => ({
         name: `their voices: no ${i + 1}`,
         svg: (i === 0 ? arcs : arcsLeft)(n(x + (i === 0 ? 3.2 : -3.2)), n(y - 4.2), VOICE),
-        keys: showWhile(0.62, 0.625, 0.675, 0.68),
+        keys: showWhile(0.62, 0.625, 0.74, 0.745),
         loop: { move: "twinkle", ms: 800, low: 0.5 }
       })),
       { name: "his voice: more merciful", svg: arcs(n(his[0] + 3.4), n(his[1] - 4.4), VOICE), keys: showFrom(0.75, 0.755), loop: { move: "twinkle", ms: 900, low: 0.5 } },
@@ -342,7 +342,24 @@ function abuAyyubHouse(): SignArt {
           ]
         })
       },
-      { name: "Abu Ayyub's voice: we walk above his head", svg: arcs(n(above[0] + 3.2), n(above[1] - 4.2), LIGHT), keys: showWhile(0.17, 0.175, 0.235, 0.24), loop: { move: "twinkle", ms: 800, low: 0.5 } },
+      {
+        name: "Abu Ayyub's voice: we walk above his head",
+        svg: arcs(n(above[0] + 3.2), n(above[1] - 4.2), LIGHT),
+        // Its voice goes with its place as it moves aside, and stays until the night ends.
+        keys: track({
+          opacity: [
+            [0.17, 0],
+            [0.175, 1],
+            [0.3, 1],
+            [0.305, 0]
+          ],
+          xy: [
+            [0.19, 0, 0],
+            [0.23, n(aside[0] - above[0]), 0]
+          ]
+        }),
+        loop: { move: "twinkle", ms: 800, low: 0.5 }
+      },
       {
         name: "food for him: a dish with garlic",
         svg: garlicDish(plate[0], plate[1]),

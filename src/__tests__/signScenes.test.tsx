@@ -8616,8 +8616,8 @@ describe("the signs in creation, alive", () => {
       at("more-merciful", "she looks among them: a faint dashed way", "opacity", [0.12, 0.27, 0.42]),
       [at("more-merciful", "the small place she found", "x", [0.27, 0.42]), at("more-merciful", "the small place she found", "y", [0.27, 0.42])],
       at("more-merciful", "held close: a warm glow about the two", "opacity", [0.27, 0.42, 0.97]),
-      [0.42, 0.53, 0.56].map((t) => all("more-merciful", ["his voice: would she throw it", "his look: a faint line to her"], t)),
-      [0.56, 0.65, 0.69].map((t) => all("more-merciful", ["their voices: no 1", "their voices: no 2"], t)),
+      [0.42, 0.56, 0.69].map((t) => all("more-merciful", ["his voice: would she throw it", "his look: a faint line to her"], t)),
+      [0.56, 0.69, 0.84].map((t) => all("more-merciful", ["their voices: no 1", "their voices: no 2"], t)),
       [0.69, 0.84, 0.97].map((t) => all("more-merciful", ["his voice: more merciful", "mercy: a soft warm light over all the land", "mercy: a small warm light about every place"], t))
     ]).toEqual([
       [
@@ -8661,9 +8661,9 @@ describe("the signs in creation, alive", () => {
     ]);
     // The house of Abu Ayyub, drawn open to show its two floors and its stair: his place, a golden ring, comes in below,
     // and Abu Ayyub's place and his household's are above. Night comes, Abu Ayyub's voice speaks, and their places move
-    // aside. With the day they go down the stair, and his ring goes up. A dish with garlic goes up to him and comes
-    // back, and a faint ring shows about it. Abu Ayyub's place goes up, its voice asks, his voice answers, Abu Ayyub's
-    // voice speaks, and a warm glow comes over the upper floor.
+    // aside, its voice with it. With the day they go down the stair, and his ring goes up. A dish with garlic goes up to
+    // him and comes back, and a faint ring shows about it. Abu Ayyub's place goes up, its voice asks, his voice answers,
+    // Abu Ayyub's voice speaks, and a warm glow comes over the upper floor.
     expect(words("abu-ayyub-house")).toEqual([
       "He stayed below, and Abu Ayyub above",
       "We walk above his head!",
@@ -8677,7 +8677,7 @@ describe("the signs in creation, alive", () => {
       at("abu-ayyub-house", "a golden ring, his place", "opacity", [0.01, 0.1]),
       [at("abu-ayyub-house", "a golden ring, his place", "x", [0.01, 0.1, 0.25, 0.45]), at("abu-ayyub-house", "a golden ring, his place", "y", [0.01, 0.1, 0.25, 0.45])],
       [0.1, 0.25, 0.45].map((t) => all("abu-ayyub-house", ["the night over the sky", "stars of the night", "the night over the land"], t)),
-      at("abu-ayyub-house", "Abu Ayyub's voice: we walk above his head", "opacity", [0.1, 0.2, 0.25]),
+      [at("abu-ayyub-house", "Abu Ayyub's voice: we walk above his head", "opacity", [0.1, 0.25, 0.45]), at("abu-ayyub-house", "Abu Ayyub's voice: we walk above his head", "x", [0.1, 0.25])],
       [at("abu-ayyub-house", "Abu Ayyub's place", "x", [0.1, 0.25, 0.45, 0.71, 0.85]), at("abu-ayyub-house", "Abu Ayyub's place", "y", [0.1, 0.25, 0.45, 0.71, 0.85])],
       [at("abu-ayyub-house", "the place of his household", "x", [0.1, 0.25, 0.45]), at("abu-ayyub-house", "the place of his household", "y", [0.1, 0.25, 0.45])],
       at("abu-ayyub-house", "food for him: a dish with garlic", "opacity", [0.45, 0.59]),
@@ -8696,7 +8696,10 @@ describe("the signs in creation, alive", () => {
         [0.95, 1, 1],
         [0, 0, 0]
       ],
-      [0, 1, 0],
+      [
+        [0, 1, 0],
+        [0, -15.6]
+      ],
       [
         [0, -15.6, -8, -8, 12],
         [0, 0, 20, 20, 0]
