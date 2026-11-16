@@ -618,7 +618,14 @@ export type SignKind =
   | "dearer-than-yourself"
   | "better-than-camels"
   | "two-bright-ones"
-  | "third-of-the-quran";
+  | "third-of-the-quran"
+  | "spread-the-salam"
+  | "feed-and-greet"
+  | "a-fair-gift"
+  | "garden-in-charity"
+  | "hornless-sheep"
+  | "forgot-and-ate"
+  | "kiss-of-mercy";
 
 export type SignScene = {
   id: string;
@@ -2327,6 +2334,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Sa'id al-Khudri said: a man heard a man reciting Qul huwa Allahu ahad (Say: He is Allah, One), repeating it. In the morning he came to the Messenger of Allah ﷺ and told him of it, as if he thought it was little. The Messenger of Allah ﷺ said: by the One in whose hand is my soul, it equals a third of the Quran. And Abu Sa'id said: the Prophet ﷺ said to his companions: is any of you unable to recite a third of the Quran in one night? That was hard on them, and they said: which of us can do that, O Messenger of Allah? He said: Allah, the One, as-Samad, is a third of the Quran.",
     sources: [bukhari("5013"), bukhari("5015")]
+  },
+  {
+    id: "sign-spread-the-salam",
+    kind: "spread-the-salam",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: you will not enter Paradise until you believe, and you will not believe until you love one another. Shall I not point you to something which, if you do it, you will love one another? Spread the salam among you.",
+    sources: [muslim("54")]
+  },
+  {
+    id: "sign-feed-and-greet",
+    kind: "feed-and-greet",
+    caption:
+      "Abdullah ibn Amr said: a man asked the Prophet ﷺ: what in Islam is best? He said: that you feed people, and give salam to those you know and those you do not know.",
+    sources: [bukhari("12")]
+  },
+  {
+    id: "sign-a-fair-gift",
+    kind: "a-fair-gift",
+    caption:
+      "Amir said: I heard an-Nu'man ibn Bashir on the minbar saying: my father gave me a gift, and Amrah bint Rawahah said: I will not be pleased until you make the Messenger of Allah ﷺ witness to it. So he came to the Messenger of Allah ﷺ and said: I have given my son by Amrah bint Rawahah a gift, and she told me to make you witness, O Messenger of Allah. He said: have you given the rest of your children the like of this? He said: no. He said: then fear Allah, and be fair between your children. So he went back and took back his gift.",
+    sources: [bukhari("2587")]
+  },
+  {
+    id: "sign-garden-in-charity",
+    kind: "garden-in-charity",
+    caption:
+      "Ibn Abbas said: the mother of Sa'd ibn Ubadah died while he was away from her. He said: O Messenger of Allah, my mother died while I was away from her; will it help her if I give anything in charity for her? He said: yes. He said: then I make you witness that my garden al-Mikhraf is charity for her.",
+    sources: [bukhari("2756")]
+  },
+  {
+    id: "sign-hornless-sheep",
+    kind: "hornless-sheep",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: rights will surely be paid to their owners on the Day of Resurrection, until the hornless sheep gets its due from the horned sheep.",
+    sources: [muslim("2582")]
+  },
+  {
+    id: "sign-forgot-and-ate",
+    kind: "forgot-and-ate",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: if he forgets, and eats and drinks, let him complete his fast, for it was Allah who fed him and gave him drink.",
+    sources: [bukhari("1933")]
+  },
+  {
+    id: "sign-kiss-of-mercy",
+    kind: "kiss-of-mercy",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ kissed al-Hasan ibn Ali while al-Aqra' ibn Habis at-Tamimi was sitting with him. Al-Aqra' said: I have ten children, and I have never kissed one of them. The Messenger of Allah ﷺ looked at him, then said: whoever is not merciful is not shown mercy.",
+    sources: [bukhari("5997")]
   }
 ];
 
@@ -3771,7 +3827,29 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Qul huwa Allahu ahad equals a third of the Quran (Sahih al-Bukhari 5013, 5015).
   "deep-abu-said-a-third": "sign-third-of-the-quran",
   "deep-ikhlas-a-third": "sign-third-of-the-quran",
-  "deep-ikhlas-one-night": "sign-third-of-the-quran"
+  "deep-ikhlas-one-night": "sign-third-of-the-quran",
+  // Spread the salam: you will not believe until you love one another (Sahih Muslim 54).
+  "deep-ibrahim2-spread-the-salam": "sign-spread-the-salam",
+  "deep-waqiah1-spread-salam-now": "sign-spread-the-salam",
+  "deep-daily-life-spread-the-salam": "sign-spread-the-salam",
+  // Feed people, and give salam to those you know and those you do not know (Sahih al-Bukhari 12).
+  "deep-haqqah4-feed-and-greet": "sign-feed-and-greet",
+  "deep-maun1-feed-and-greet": "sign-feed-and-greet",
+  // A gift to one son: fear Allah, and be fair between your children (Sahih al-Bukhari 2587).
+  "deep-children-fair": "sign-a-fair-gift",
+  "deep-numan-a-fair-gift": "sign-a-fair-gift",
+  // Sa'd gave his garden al-Mikhraf in charity for his mother (Sahih al-Bukhari 2756).
+  "deep-sad-ubadah-garden-for-mother": "sign-garden-in-charity",
+  "deep-book-wills-a-garden-for-his-mother": "sign-garden-in-charity",
+  // Rights paid on the Day, until the hornless sheep gets its due from the horned (Sahih Muslim 2582).
+  "deep-zumar2-rights-will-be-restored": "sign-hornless-sheep",
+  "deep-naba3-even-the-animals": "sign-hornless-sheep",
+  // Whoever forgets and eats while fasting completes his fast: Allah fed him (Sahih al-Bukhari 1933).
+  "fasting-protection-forgetfulness-and-mercy": "sign-forgot-and-ate",
+  "ramadan-if-you-forget": "sign-forgot-and-ate",
+  // He kissed al-Hasan: whoever is not merciful is not shown mercy (Sahih al-Bukhari 5997).
+  "deep-mercy-kissing-children": "sign-kiss-of-mercy",
+  "deep-children-kissing": "sign-kiss-of-mercy"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

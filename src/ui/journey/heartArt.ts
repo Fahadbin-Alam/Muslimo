@@ -102,7 +102,7 @@ const nightLand = (top: number, tufts: [number, number][]) =>
   `<rect y="${top}" width="160" height="${120 - top}" fill="#2E3556"/><path d="M0 ${top} L160 ${top}" stroke="#454B6A" stroke-width="0.7"/>` + tufts.map(([x, y]) => tuft(x, y, "#454B6A", 3.4)).join("");
 
 /** An evening sky, warm, lighter low down. */
-const EVENING = `<rect width="160" height="62" fill="#F3C9A0"/><rect y="36" width="160" height="26" fill="#F7D9B4"/><rect y="52" width="160" height="10" fill="#FBE6C8"/>`;
+export const EVENING = `<rect width="160" height="62" fill="#F3C9A0"/><rect y="36" width="160" height="26" fill="#F7D9B4"/><rect y="52" width="160" height="10" fill="#FBE6C8"/>`;
 
 /** A camel of the picture cards, `s` times its size, with its feet at (x, y). */
 const camel = (x: number, y: number, s: number, left = false) => animalAt("camel", n(x - 50 * s), n(y - 73 * s), s, left);
