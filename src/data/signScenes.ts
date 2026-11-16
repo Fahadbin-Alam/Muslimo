@@ -737,7 +737,14 @@ export type SignKind =
   | "like-a-furnace"
   | "between-house-and-pulpit"
   | "thousand-prayers"
-  | "quba-every-saturday";
+  | "quba-every-saturday"
+  | "guided-to-friday"
+  | "prayers-at-home"
+  | "prayer-on-his-mount"
+  | "fast-horse"
+  | "talking-wolf"
+  | "well-dream"
+  | "land-of-palms";
 
 export type SignScene = {
   id: string;
@@ -3261,6 +3268,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Umar said: the Prophet ﷺ used to come to Masjid Quba every Saturday, walking and riding. And Abdullah ibn Umar used to do the same.",
     sources: [bukhari("1193")]
+  },
+  {
+    id: "sign-guided-to-friday",
+    kind: "guided-to-friday",
+    caption:
+      "Abu Hurairah heard the Messenger of Allah ﷺ say: we are the last, yet the first on the Day of Resurrection, though they were given the Scripture before us. Then this was their day, which was made a duty for them, and they differed over it, and Allah guided us to it; so the people follow us in it: the Jews tomorrow, and the Christians the day after.",
+    sources: [bukhari("876")]
+  },
+  {
+    id: "sign-prayers-at-home",
+    kind: "prayers-at-home",
+    caption: "Ibn Umar said that the Prophet ﷺ said: pray some of your prayers in your homes, and do not make them graves.",
+    sources: [bukhari("432")]
+  },
+  {
+    id: "sign-prayer-on-his-mount",
+    kind: "prayer-on-his-mount",
+    caption: "Jabir ibn Abdullah said that the Prophet ﷺ used to pray the voluntary prayers while he was riding, facing other than the qiblah.",
+    sources: [bukhari("1094")]
+  },
+  {
+    id: "sign-fast-horse",
+    kind: "fast-horse",
+    caption:
+      "Anas said: there was a fright in Madinah, so the Prophet ﷺ borrowed a horse from Abu Talhah called al-Mandub, and rode it. When he came back he said: we saw nothing, and we found the horse like a sea.",
+    sources: [bukhari("2627")]
+  },
+  {
+    id: "sign-talking-wolf",
+    kind: "talking-wolf",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: while a shepherd was with his sheep, a wolf attacked and took a sheep from them. He went after it until he saved it. The wolf turned to him and said: who will guard it on the day of the wild beasts, when it has no shepherd but me? The people said: glory be to Allah! He said: I believe it, and so do Abu Bakr and Umar. And Abu Bakr and Umar were not there.",
+    sources: [bukhari("3690")]
+  },
+  {
+    id: "sign-well-dream",
+    kind: "well-dream",
+    caption:
+      "Abu Hurairah heard the Prophet ﷺ say: while I was sleeping, I saw myself at a well with a bucket on it, and I drew from it as much as Allah willed. Then Ibn Abi Quhafah took it and drew a bucket or two. Then it became a huge bucket, and Ibn al-Khattab took it, and I never saw a mighty one among the people draw as Umar drew, until the people drank and their camels knelt to rest.",
+    sources: [bukhari("3664")]
+  },
+  {
+    id: "sign-land-of-palms",
+    kind: "land-of-palms",
+    caption:
+      "Abu Musa said that the Prophet ﷺ said: I saw in a dream that I was migrating from Makkah to a land with palm trees, and I thought that it was al-Yamamah or Hajar, but it was Madinah, Yathrib.",
+    sources: [bukhari("7035")]
   }
 ];
 
@@ -5023,7 +5077,24 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A prayer in his masjid is better than a thousand elsewhere, except al-Masjid al-Haram.
   "deep-hajj-masjids-thousand": "sign-thousand-prayers",
   // He came to Masjid Quba every Saturday, walking and riding, and Ibn Umar did the same.
-  "deep-tawbah4-visiting-quba": "sign-quba-every-saturday"
+  "deep-tawbah4-visiting-quba": "sign-quba-every-saturday",
+  // We are the last, yet the first; Allah guided us to Friday, and the others follow us: Saturday, then Sunday.
+  "deep-jumuah3-guided-to-friday": "sign-guided-to-friday",
+  "deep-yunus3-last-yet-first": "sign-guided-to-friday",
+  "deep-nahl7-last-but-first": "sign-guided-to-friday",
+  // Pray some of your prayers in your homes, and do not make them graves.
+  "deep-pray-extra-at-home": "sign-prayers-at-home",
+  "marriage-spiritual-home-pray-together": "sign-prayers-at-home",
+  // He prayed the voluntary prayers riding, facing other than the qiblah.
+  "deep-pray-easy-on-his-mount": "sign-prayer-on-his-mount",
+  // In a fright in Madinah he rode Abu Talhah's horse, saw nothing, and found the horse like a sea.
+  "deep-abu-talhah-the-horse": "sign-fast-horse",
+  // The wolf that spoke to the shepherd; he believed it, and so did Abu Bakr and Umar, who were not there.
+  "deep-umar-wolf": "sign-talking-wolf",
+  // In his dream of the well, Ibn Abi Quhafah drew a bucket or two after him, then Umar drew with a huge bucket.
+  "deep-abubakr-dream-of-the-well": "sign-well-dream",
+  // He dreamt he was migrating to a land of palms; he thought al-Yamamah or Hajar, but it was Madinah.
+  "deep-book-tabir-a-land-of-palm-trees": "sign-land-of-palms"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

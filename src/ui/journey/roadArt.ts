@@ -571,7 +571,7 @@ function waterSkins(): SignArt {
 }
 
 /** A camel lying down by a camp at night, as camels kneel at a stop: its belly's middle at (x, y), facing right, `s` times its size. */
-const restingCamel = (x: number, y: number, s = 1) => {
+export const restingCamel = (x: number, y: number, s = 1) => {
   const p = (dx: number, dy: number) => `${n(x + dx * s)} ${n(y + dy * s)}`;
   const [main, far] = ["#8E6E46", "#76583A"];
   return (
