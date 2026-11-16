@@ -639,7 +639,14 @@ export type SignKind =
   | "mighty-since-umar"
   | "every-right"
   | "first-masjid"
-  | "rain-and-stars";
+  | "rain-and-stars"
+  | "make-room"
+  | "rights-of-the-road"
+  | "honest-trade"
+  | "keep-them-close"
+  | "small-gift"
+  | "asked-about-blessings"
+  | "valley-of-gold";
 
 export type SignScene = {
   id: string;
@@ -2492,6 +2499,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Zayd ibn Khalid al-Juhani said: the Messenger of Allah ﷺ led us in the Fajr prayer at al-Hudaybiyah, after rain in the night. When he finished, he faced the people and said: do you know what your Lord has said? They said: Allah and His Messenger know best. He said: this morning some of My servants believe in Me and some disbelieve. Whoever said: we were given rain by the grace of Allah and His mercy, believes in Me and disbelieves in the star; and whoever said: by such and such a star, disbelieves in Me and believes in the star.",
     sources: [bukhari("846")]
+  },
+  {
+    id: "sign-make-room",
+    kind: "make-room",
+    caption:
+      "Ibn Umar said: the Prophet ﷺ forbade that a man be made to rise from his seat so that another may sit in it, but make room and spread out. And Ibn Umar disliked that a man should rise from his seat and he then sit in its place.",
+    sources: [bukhari("6270")]
+  },
+  {
+    id: "sign-rights-of-the-road",
+    kind: "rights-of-the-road",
+    caption:
+      "Abu Sa'id al-Khudri said: the Prophet ﷺ said: beware of sitting on the roads. They said: we cannot do without it; they are our sittings where we talk. He said: if you must sit, then give the road its right. They said: and what is the right of the road? He said: lowering the gaze, holding back harm, returning the salam, and enjoining good and forbidding wrong.",
+    sources: [bukhari("2465")]
+  },
+  {
+    id: "sign-honest-trade",
+    kind: "honest-trade",
+    caption:
+      "Hakim ibn Hizam said: the Messenger of Allah ﷺ said: the buyer and the seller may choose as long as they have not parted. If they tell the truth and make things clear, they are blessed in their sale; and if they hide and lie, the blessing of their sale is wiped out.",
+    sources: [bukhari("2079")]
+  },
+  {
+    id: "sign-keep-them-close",
+    kind: "keep-them-close",
+    caption:
+      "Sa'd said: this ayah was revealed about six of us: do not drive away those who call their Lord morning and evening. I and Ibn Mas'ud were among them, and the idolaters had said to him ﷺ: do not keep these near you.",
+    sources: [muslim("2413")]
+  },
+  {
+    id: "sign-small-gift",
+    kind: "small-gift",
+    caption: "Abu Hurairah said: the Prophet ﷺ said: O Muslim women, let none of you look down on a gift for her neighbor, even if it is a sheep's trotter.",
+    sources: [bukhari("2566")]
+  },
+  {
+    id: "sign-asked-about-blessings",
+    kind: "asked-about-blessings",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ went out one day, or one night, and found Abu Bakr and Umar, and asked: what brought you out of your homes at this hour? They said: hunger. He said: by Him in whose hand is my soul, what brought you out brought me out too. They went with him to a man of the Ansar, who was not at home. His wife said: welcome; he has gone to fetch sweet water for us. When the Ansari came and saw them, he said: praise be to Allah, no one today has more honored guests than I. He brought them a cluster of ripening, dry and fresh dates, and they ate and drank. When they had their fill, he ﷺ said to Abu Bakr and Umar: by Him in whose hand is my soul, you will be asked about this blessing on the Day of Resurrection.",
+    sources: [muslim("2038")]
+  },
+  {
+    id: "sign-valley-of-gold",
+    kind: "valley-of-gold",
+    caption: "Anas ibn Malik said: the Messenger of Allah ﷺ said: if the son of Adam had a valley of gold, he would love to have two valleys; nothing fills his mouth but dust, and Allah turns to whoever repents.",
+    sources: [bukhari("6439")]
   }
 ];
 
@@ -4017,7 +4071,28 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-hajj2-first-masjid-on-earth": "sign-first-masjid",
   // After rain at al-Hudaybiyah: whoever says by Allah's grace believes, whoever says by a star disbelieves.
   "deep-yunus2-rain-and-the-stars": "sign-rain-and-stars",
-  "deep-waqiah4-the-rain-and-the-stars": "sign-rain-and-stars"
+  "deep-waqiah4-the-rain-and-the-stars": "sign-rain-and-stars",
+  // Make room in a gathering: never make one rise from his seat to sit in it.
+  "surah-meaning-58-7-13": "sign-make-room",
+  "deep-mujadila2-dont-take-his-seat": "sign-make-room",
+  // The rights of the road: lowering the gaze, holding back harm, returning the salam, enjoining good, forbidding wrong.
+  "deep-adab-rights-of-the-road": "sign-rights-of-the-road",
+  "deep-nur1-rights-of-the-road": "sign-rights-of-the-road",
+  // A buyer and seller who tell the truth are blessed in their sale; if they hide and lie, its blessing is wiped out.
+  "deep-honesty-honest-trade": "sign-honest-trade",
+  "deep-hud5-honest-trade-is-blessed": "sign-honest-trade",
+  // The six he was told to keep close: do not drive away those who call their Lord morning and evening (6:52).
+  "deep-anam1-keep-weak": "sign-keep-them-close",
+  "deep-kahf1-six-companions-kept-close": "sign-keep-them-close",
+  // Let none look down on a gift for her neighbor, even a sheep's trotter.
+  "deep-manners-gifts-neighbors-gift": "sign-small-gift",
+  "deep-zalzalah2-a-neighbors-small-gift": "sign-small-gift",
+  // Hungry, he, Abu Bakr and Umar were given dates by a man of the Ansar: you will be asked about this blessing (102:8).
+  "surah-meaning-102-5-8": "sign-asked-about-blessings",
+  "deep-takathur2-a-meal-of-dates": "sign-asked-about-blessings",
+  // With a valley of gold, the son of Adam would want two; and Allah turns to whoever repents (102:1-2).
+  "surah-meaning-102-1-4": "sign-valley-of-gold",
+  "deep-adiyat2-a-valley-of-gold": "sign-valley-of-gold"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
