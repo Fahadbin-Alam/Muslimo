@@ -1217,6 +1217,13 @@ const STATES: State[] = [
   { id: "scene-six-rights", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-six-rights" ask="Your friend is ill" /> },
   { id: "scene-the-warner", render: () => <SceneQuestionDemo lessonId="lesson-deep-hijr4-a-plain-warner" ask="What happened to those who obeyed the warner" /> },
   { id: "scene-firm-and-kind", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-mother" ask="What should you do if a parent orders shirk" /> },
+  { id: "scene-most-generous", render: () => <SceneQuestionDemo lessonId="lesson-ramadan-most-generous" ask="When was the Prophet ﷺ most generous" /> },
+  { id: "scene-dawud-recites", render: () => <SceneQuestionDemo lessonId="lesson-deep-isra2-dawud-and-the-zabur" ask="When did Dawud finish reciting" /> },
+  { id: "scene-good-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-hakim-deeds-before-islam" ask="What did he ﷺ answer" /> },
+  { id: "scene-last-ten-itikaf", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-last-ten-itikaf" ask="Who kept doing i'tikaf" /> },
+  { id: "scene-my-disciple", render: () => <SceneQuestionDemo lessonId="lesson-deep-zubayr-disciple" ask="How many times did Az-Zubayr" /> },
+  { id: "scene-help-your-brother", render: () => <SceneQuestionDemo lessonId="lesson-deep-brotherhood-help-your-brother" ask="Your friend is bullying someone" /> },
+  { id: "scene-last-surah-heard", render: () => <SceneQuestionDemo lessonId="lesson-surah-meaning-77-1-15" ask="In which prayer was it the last surah" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
