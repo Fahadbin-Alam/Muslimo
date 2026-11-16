@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(1785);
+    expect(asks.length).toBe(1830);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(2604);
+    expect(places).toBe(2674);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -6327,6 +6327,246 @@ describe("where the scene waits and where it stops", () => {
       ],
       [62, 77]
     ]);
+  });
+
+  it("waits on the scenes of what he taught of the heart and the Quran, from gentleness to the young Ibn Abbas, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-gentleness", "sign-looks-at-hearts", "sign-best-forgiveness", "sign-ten-blessings", "sign-friday-fajr", "sign-learn-from-four", "sign-young-ibn-abbas"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(45);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Gentleness. What Allah loves: no way to the water yet; then a soft golden way to it, and a soft light over it.
+    // What gentleness gets that harshness does not, and whether He gives more for it: nothing given yet; then the
+    // gentle one walks ahead with its camel to the water, a warm glow and three small lights come on them, while the
+    // harsh one's voice is grey and jagged, its camel turns from it and goes off, and a grey shade is over them.
+    // Whether being gentle is a weakness: none of that yet; then the way, the light over it, and all that is given.
+    const loved = ["the gentle way: a soft golden way to the water", "loved: a soft light over the gentle way"];
+    const given = ["given for gentleness: a warm glow on them", ...[1, 2, 3].map((n) => `given for gentleness: a small light ${n}`)];
+    for (const prompt of ["What does Allah love, says this hadith?", "What does Allah love?"]) {
+      expect([prompt, shown(prompt, loved)]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ]
+      ]);
+    }
+    for (const prompt of ["What does gentleness get that harshness doesn't?", "Allah gives more for kindness than for harshness."]) {
+      expect([
+        prompt,
+        shown(prompt, [...given, "its voice, harsh: grey, jagged marks", "for harshness: a grey shade over them"]),
+        moved(prompt, "the gentle one's place, walking ahead", "x"),
+        moved(prompt, "its camel, turning from it and going off", "scaleX")
+      ]).toEqual([prompt, [Array(6).fill(0), Array(6).fill(1)], [0, 64], [1, -1]]);
+    }
+    expect([shown("Being gentle is a weakness.", [...loved, ...given]), moved("Being gentle is a weakness.", "the gentle one's place, walking ahead", "x")]).toEqual([
+      [Array(6).fill(0), Array(6).fill(1)],
+      [0, 64]
+    ]);
+    // He looks at hearts. What He looks at: no light in any of the four yet; then a light in the middle of each, its
+    // heart. Where he pointed: no light in the middle of his place yet; then a soft one there. Whether He judges us by
+    // how we look: each one's ring of how big it looks and its fine colors still bright, and no heart lit; then they
+    // fade and the hearts light.
+    const hearts = [1, 2, 3, 4].map((n) => `its heart: a light in its middle ${n}`);
+    for (const [prompt, answer] of [
+      ["What does Allah look at, per the hadith?", "Our hearts"],
+      ["What does Allah look at, per Muslim 2564?", "Our hearts"],
+      ["What does Allah look to?", undefined]
+    ] as [string, string | undefined][]) {
+      expect([prompt, shown(prompt, hearts, answer)]).toEqual([prompt, [Array(4).fill(0), Array(4).fill(1)]]);
+    }
+    for (const prompt of ["Where did the Prophet ﷺ point when speaking of piety?", "Where did he ﷺ point when speaking of piety?", "Where did the Prophet ﷺ point?"]) {
+      expect([prompt, shown(prompt, ["pointed to: a soft light in the middle of his place"])]).toEqual([prompt, [[0], [1]]]);
+    }
+    for (const prompt of ["Allah judges us by how we look.", "Allah judges us by our looks."]) {
+      expect([prompt, shown(prompt, ["how big it looks: a ring on the ground 1", "how it looks: fine colors about it 1", hearts[0]])]).toEqual([
+        prompt,
+        [
+          [1, 1, 0],
+          [0.2, 0.12, 1]
+        ]
+      ]);
+    }
+    // The best way to ask forgiveness. What he called it: no voice yet; then his voice. How it begins: its own voice
+    // not yet saying it; then it says it, and its words rise: You are my Lord. Whether you admit your sins in it: no
+    // glow of His favor and no mark of its sin yet; then both. How it must be said: no ring about its place yet, the
+    // sun still high; then a steady ring of light, being sure of it, and the sun goes on toward evening. Where one is
+    // who says it and dies before evening: no evening sky and nothing far off yet; then a warm evening sky, and far off
+    // a soft circle of light, with no sun in it, a garden in it, and a warm glow on its place.
+    expect(shown("What did the Prophet ﷺ call this dua?", ["his voice: the best way to ask forgiveness"])).toEqual([[0], [1]]);
+    const begins = "How does Sayyid al-Istighfar begin?";
+    expect([shown(begins, ["its voice, saying it", "its words, rising: You are my Lord"]), moved(begins, "its words, rising: You are my Lord", "y")]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -16]
+    ]);
+    expect(shown("In this dua you admit your sins to Allah.", ["His favor on it: a warm glow about its place", "its sin, admitted: a grey mark by it, then forgiven"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    const sure = "How must it be said to earn the reward?";
+    expect([shown(sure, ["sure of it: a steady ring of light about its place"]), moved(sure, "the sun, going on toward evening", "x")]).toEqual([[[0], [1]], [0, 106]]);
+    const paradise = ["evening coming: a warm sky", "far off: a soft circle of light, with no sun in it", "a garden in it", "of Paradise: a warm glow on its place"];
+    for (const prompt of ["Someone says it in the day with firm faith and dies before evening. Where are they?", "What is promised to one who says it with faith and dies that day?"]) {
+      expect([prompt, shown(prompt, paradise)]).toEqual([prompt, [Array(4).fill(0), Array(4).fill(1)]]);
+    }
+    // Ten blessings for one. How many He sends, and whether sending them brings blessings back: the one small mark of
+    // sending once, and none of the ten yet; then ten soft lights come about its place, ten small marks count them, and
+    // a warm glow comes on it.
+    const ten = [...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `ten blessings on it: a soft light ${n}`), ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => `ten times: a small mark ${n}`), "a warm glow on its place"];
+    for (const prompt of [
+      "Send one salawat on the Prophet ﷺ. How many blessings does Allah send you?",
+      "How many blessings for one Salah, in the hadith?",
+      "How many blessings does Allah send for one?",
+      "Sending blessings on the Prophet ﷺ brings blessings back to you."
+    ]) {
+      expect([prompt, shown(prompt, ["once: one small mark", ...ten])]).toEqual([prompt, [[1, ...Array(21).fill(0)], Array(22).fill(1)]]);
+    }
+    // The Friday Fajr. In which prayer: no true dawn along the far side yet, no golden light over the masjid, and no
+    // rows; then all three, the rows coming to stand behind him. Which surah he recited with al-Insan: no voice and no
+    // band yet; then his voice recites and the first golden band fills, for as-Sajdah. Which came with as-Sajdah: only
+    // its band; then a second golden band fills, for al-Insan.
+    for (const prompt of ["In which prayer did he recite it, in the hadith?", "In which prayer did he recite Al-Insan?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the true dawn: white along the far side", "Friday: a soft golden light over the masjid", "the rows, coming to stand behind him"]),
+        moved(prompt, "the rows, coming to stand behind him", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [-16, 0]
+      ]);
+    }
+    const sajdah = "as-Sajdah: a golden band on the wall, filling";
+    const insan = "al-Insan: a second golden band, filling";
+    expect([shown("Which surah did he recite with it?", ["his voice, reciting", sajdah, insan]), moved("Which surah did he recite with it?", sajdah, "scaleX")]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0.05, 1]
+    ]);
+    expect([shown("Which surah came with it, in the hadith?", [sajdah, insan]), moved("Which surah came with it, in the hadith?", insan, "scaleX")]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [0.05, 1]
+    ]);
+    // Learn the Quran from four. How many he named: only the first place, faint; then his voice says learn from four,
+    // and three more places come, faint. Who was named first, and whether he chose Ibn Mas'ud: the first place faint,
+    // nothing over it; then it comes full, with a golden spark over it, as he began with him, its voice recites, a soft
+    // light comes on it, and places come to sit and learn from it, while the second is not yet lit. Which of these was
+    // also one of the four, and whether he trusted Mu'adh: the fourth place faint and unlit, the second already lit;
+    // then the fourth comes full, lit, reciting, with places to learn from it. Who was not one of the four: the four
+    // faint and unlit; then each of the four comes full and lit, and only those four.
+    const place = (n: string) => `the ${n} of the four, its place`;
+    const lit = (n: string) => `the ${n} of the four, lit: a soft light`;
+    for (const prompt of ["How many teachers of the Quran did the Prophet ﷺ name?", "How many people did the Prophet ﷺ name to learn the Quran from?"]) {
+      expect([prompt, shown(prompt, ["his voice: learn from four", ...["first", "second", "third", "fourth"].map(place)])]).toEqual([
+        prompt,
+        [
+          [0, 0.5, 0, 0, 0],
+          [1, 0.5, 0.5, 0.5, 0.5]
+        ]
+      ]);
+    }
+    for (const prompt of ["Who was named first of the four to learn the Quran from?", "Whose name came first among the four Quran teachers?", "The Prophet ﷺ chose Ibn Mas'ud as a teacher of the Quran."]) {
+      expect([
+        prompt,
+        shown(prompt, [place("first"), "he began with him: a golden spark over the first", "the first of the four, reciting: a voice", lit("first"), "learning from the first: places coming to sit", lit("second")])
+      ]).toEqual([
+        prompt,
+        [
+          [0.5, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 0]
+        ]
+      ]);
+    }
+    for (const prompt of ["Which of these was also one of the four?", "The Prophet ﷺ trusted Mu'adh to teach the Quran."]) {
+      expect([prompt, shown(prompt, [place("fourth"), lit("fourth"), "the fourth of the four, reciting: a voice", "learning from the fourth: places coming to sit", lit("second")])]).toEqual([
+        prompt,
+        [
+          [0.5, 0, 0, 0, 1],
+          [1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    for (const prompt of ["Who was NOT one of the four?", "Which of these was NOT one of the four?"]) {
+      expect([prompt, shown(prompt, [...["first", "second", "third", "fourth"].map(place), ...["first", "second", "third", "fourth"].map(lit)])]).toEqual([
+        prompt,
+        [
+          [0.5, 0.5, 0.5, 0.5, 0, 0, 0, 0],
+          Array(8).fill(1)
+        ]
+      ]);
+    }
+    // The young Ibn Abbas. Whom Umar seated him with: he is not yet among the elders of Badr; then he is brought in.
+    // Which surah Umar asked about: some of them still saying why this one, in grey; then those voices go and Umar's
+    // voice asks them. What Ibn Abbas said it was telling: his voice not yet heard, the day still bright, and those who
+    // kept quiet faint; then his voice, a warm evening sky for his life's end, and those who kept quiet come back. Why
+    // Umar seated him, and whether Umar agreed or not: no evening sky and no word from Umar yet; then Umar's voice says
+    // he knows of it only what he said, and a warm glow comes on the young one's place.
+    const brought = "Whom did Umar seat Ibn Abbas with?";
+    expect([shown(brought, ["the young one's place, brought in"]), moved(brought, "the young one's place, brought in", "x")]).toEqual([[[0], [1]], [-70, 0]]);
+    for (const prompt of ["Which surah did Umar ask the elders about?", "Which surah did Umar ask them about?"]) {
+      expect([prompt, shown(prompt, ["some of them: why this one? a grey voice 1", "some of them: why this one? a grey voice 2", "Umar's voice, asking them"])]).toEqual([
+        prompt,
+        [
+          [1, 1, 0],
+          [0, 0, 1]
+        ]
+      ]);
+    }
+    for (const prompt of ["What did Ibn Abbas say the surah was telling?", "What did Ibn Abbas say the surah signaled?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the young one's voice", "toward evening: a warm sky", "the place of an elder of Badr 1, keeping quiet"]),
+        moved(prompt, "the sun, going on toward evening", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0.5],
+          [1, 1, 1]
+        ],
+        [0, 32]
+      ]);
+    }
+    const umar = ["Umar's voice: I know only what you say", "a warm glow on the young one's place"];
+    for (const prompt of ["Why did Umar seat young Ibn Abbas with the elders?", "Why did Umar seat young Ibn Abbas with the elders of Badr?"]) {
+      expect([prompt, shown(prompt, ["toward evening: a warm sky", ...umar])]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
+    }
+    for (const prompt of ["Umar agreed with Ibn Abbas's meaning of the surah.", "Umar disagreed with Ibn Abbas."]) {
+      expect([prompt, shown(prompt, ["the young one's voice", ...umar])]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [0, 1, 1]
+        ]
+      ]);
+    }
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
