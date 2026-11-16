@@ -3690,6 +3690,55 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A real fast keeps the tongue clean too.", "True", "Whoever does not leave false speech", "Allah has no need"],
     ["If you fast, it is fine to tell lies.", "False", "Whoever does not leave false speech", "Allah has no need"],
     ["Whose hunger does Allah have no need of?", "The one who keeps lying and doing wrong", "Whoever does not leave false speech", "That he leave his food and drink"]
+  ],
+  // We set out with him on a journey on a very hot day, until one put his hand on his head from the heat, and none of us
+  // was fasting but him and Ibn Rawahah (Sahih al-Bukhari 1945).
+  "sign-fasting-in-heat": [
+    ["How hot was it?", "Very hot", "We set out with him on a journey", "On a very hot day"],
+    ["Who was fasting on that hot day?", "The Prophet ﷺ and Ibn Rawahah", "One put his hand on his head from the heat", "Except him and Ibn Rawahah"],
+    ["A traveler may choose not to fast.", "True", "One put his hand on his head from the heat", "Except him and Ibn Rawahah"]
+  ],
+  // He forbade al-wisal, out of mercy for them. They said: but you do al-wisal. He said: I am not like you; my Lord
+  // feeds me and gives me drink (Sahih al-Bukhari 1964; and 1962).
+  "sign-no-wisal": [
+    ["What is al-wisal?", "Fasting nonstop with no iftar", "He forbade al-wisal"],
+    ["We are told to join fasts with no food between.", "False", "He forbade al-wisal", "Out of mercy for them"],
+    ["Why did he ﷺ forbid fasting day and night nonstop?", "Out of mercy to the people", "Out of mercy for them"],
+    ["Islam asks us to fast so hard that we harm ourselves.", "False", "He forbade al-wisal", "Out of mercy for them"],
+    ["What did he ﷺ say about himself?", "My Lord gives me food and drink", "They said: but you do al-wisal", "My Lord feeds me and gives me drink"],
+    ["Why could he ﷺ do it?", "Allah fed him", "He said: I am not like you", "My Lord feeds me and gives me drink"]
+  ],
+  // You fast all the time and pray all night? Whoever fasts all the time has not fasted; fasting three days a month is
+  // like fasting all the time (Sahih al-Bukhari 1979). (Why three count as thirty, and who was told, stay on their usual
+  // picture: the scene does not show the tenfold reward, and the words do not name him.)
+  "sign-three-days-a-month": [
+    ["Three days a month count like fasting how long?", "A whole year", "Fasting three days a month", "Is like fasting all the time"]
+  ],
+  // None of you should go before Ramadan with a fast of a day or two, unless one used to fast that fast; then let him
+  // fast that day (Sahih al-Bukhari 1914).
+  "sign-not-before-ramadan": [
+    ["What should we not do just before Ramadan?", "Fast a day or two", "With a fast of a day or two"],
+    ["Who may still fast that day?", "One with that habit", "Unless one used to fast that fast", "Then let him fast that day"],
+    ["Someone who always fasts Mondays may fast that Monday.", "True", "Unless one used to fast that fast", "Then let him fast that day"]
+  ],
+  // These are two days he forbade fasting: the day you break your fast, and the day you eat from your sacrifices (Sahih
+  // al-Bukhari 1990). (Which Eid is which, and the days after it, stay on their usual picture: the scene names neither.)
+  "sign-no-fast-on-eid": [
+    ["Is it allowed to fast on Eid day?", "No, it is forbidden", "These are two days he forbade fasting"]
+  ],
+  // He ordered fasting the day of Ashura; when Ramadan was made a duty, whoever wished fasted it, and whoever wished did
+  // not (Sahih al-Bukhari 2001); no day he sought to fast more than Ashura, and this month, Ramadan (Sahih al-Bukhari
+  // 2006). (Its date in Muharram and who narrated it stay on their usual picture: the scene shows neither.)
+  "sign-ashura-and-ramadan": [
+    ["Ashura was fasted before Ramadan was a duty.", "True", "He ordered fasting the day of Ashura", "When Ramadan was made a duty"],
+    ["After Ramadan was made a duty, Ashura became...?", "Optional", "Whoever wished fasted it", "And whoever wished did not"],
+    ["Which day did he ﷺ seek most to fast?", "Ashura", "No day he sought to fast more than Ashura"]
+  ],
+  // The people doubted if he fasted at Arafah, so Maymunah sent him a cup of milk while he stood there, and he drank
+  // from it as the people were looking (Sahih al-Bukhari 1989). (What she sent is asked on its picture card.)
+  "sign-milk-at-arafah": [
+    ["Why did people wonder?", "If he was fasting", "The people doubted if he fasted at Arafah"],
+    ["He ﷺ drank it while people watched.", "True", "He drank from it", "And the people were looking"]
   ]
 };
 

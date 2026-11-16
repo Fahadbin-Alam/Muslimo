@@ -1252,6 +1252,13 @@ const STATES: State[] = [
   { id: "scene-friday-alone", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-extra-friday" ask="You want to fast on a Friday. What else" /> },
   { id: "scene-fast-with-faith", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-reward-forgiven" ask="Which two things must go with the fast" /> },
   { id: "scene-false-speech", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-manners-false-speech" ask="Besides food and drink, what should a fasting person give up" /> },
+  { id: "scene-fasting-in-heat", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-rawahah-fasting-in-heat" ask="Who was fasting on that hot day" /> },
+  { id: "scene-no-wisal", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-manners-no-wisal" ask="Why did he ﷺ forbid fasting day and night nonstop" /> },
+  { id: "scene-three-days-a-month", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-extra-three-days" ask="Three days a month count like fasting how long" /> },
+  { id: "scene-not-before-ramadan", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fasting-no-fast-just-before-ramadan" ask="Who may still fast that day" /> },
+  { id: "scene-no-fast-on-eid", render: () => <SceneQuestionDemo lessonId="lesson-deep-eid-no-fasting" ask="Is it allowed to fast on Eid day" /> },
+  { id: "scene-ashura-and-ramadan", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fasting-ashura-became-optional" ask="After Ramadan was made a duty, Ashura became" /> },
+  { id: "scene-milk-at-arafah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fasting-milk-at-arafah" ask="He ﷺ drank it while people watched" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
