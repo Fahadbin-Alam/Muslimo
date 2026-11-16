@@ -3739,6 +3739,56 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-milk-at-arafah": [
     ["Why did people wonder?", "If he was fasting", "The people doubted if he fasted at Arafah"],
     ["He ﷺ drank it while people watched.", "True", "He drank from it", "And the people were looking"]
+  ],
+  // Whenever he saw the rain, he would say: O Allah, let it be a strong rain and a fruitful one (Sahih al-Bukhari 1032).
+  // (Who told us of this du'a stays on its usual picture: the scene's words do not name Aishah.)
+  "sign-rain-dua": [
+    ["What did he say when he saw rain?", "O Allah, a strong fruitful rain", "Let it be a strong rain", "And a fruitful one"],
+    ["We can ask Allah to make rain beneficial.", "True", "And a fruitful one"]
+  ],
+  // Famine is not that no rain comes to you; famine is that rain comes to you, and comes again, and the earth grows
+  // nothing (Sahih Muslim 2904). (Who reported it stays on its usual picture: the words do not name Abu Hurairah.)
+  "sign-nothing-grows": [
+    ["Why would there be famine despite heavy rain, he ﷺ said?", "Nothing would grow", "And the earth grows nothing"],
+    ["Famine comes only when no rain falls.", "False", "Famine is not that no rain comes", "And the earth grows nothing"]
+  ],
+  // One in the wilderness heard a voice in a cloud: water so-and-so's garden. It poured its water on stony ground, and
+  // he followed the water to one in his garden: a third I give in charity, a third we eat, and a third I put back into
+  // it (Sahih Muslim 2984a). (What watered the garden stays on its usual picture: the cloud is there from the start.)
+  "sign-cloud-and-garden": [
+    ["How much of the harvest did the garden's owner give in charity?", "One third", "A third I give, a third we eat"],
+    ["The garden's owner put a third of the harvest back into his garden.", "True", "And a third I put back into it"]
+  ],
+  // On a night of cold and wind, Ibn Umar called the adhan, then said: pray in your homes; he used to tell the caller,
+  // on nights of cold and rain, to say: pray in your homes (Sahih al-Bukhari 666).
+  "sign-pray-in-your-homes": [
+    ["On what kind of night did Ibn Umar say: pray in your homes?", "A very cold, stormy night", "On a night of cold and wind", "Then said: pray in your homes"],
+    ["Whom did he ﷺ tell to say: pray in your homes?", "The mu'adhdhin", "He used to tell the caller"],
+    ["On very cold, rainy nights, people could pray in their homes.", "True", "On nights of cold and rain", "To say: pray in your homes"]
+  ],
+  // In his lifetime, I built a house with my own hands, to shelter me from the rain and shade me from the sun; none of
+  // Allah's creation helped me build it (Sahih al-Bukhari 6302).
+  "sign-house-for-rain-and-sun": [
+    ["Ibn Umar built this house during the life of the Prophet ﷺ.", "True", "In his lifetime, I built a house"],
+    ["Why did Ibn Umar build his house?", "For shelter from rain and sun", "To shelter me from the rain", "And shade me from the sun"],
+    ["Who helped Ibn Umar build it?", "Nobody", "None of Allah's creation helped me"]
+  ],
+  // Soon a man's best wealth will be sheep he follows to the mountain tops and to where the rain falls, fleeing with
+  // his faith from trials (Sahih al-Bukhari 3300). (What his best wealth will be stays on its usual picture: the sheep
+  // are there from the start.)
+  "sign-sheep-on-the-hills": [
+    ["He grazes his sheep where the rain falls.", "True", "And to where the rain falls"],
+    ["Why will he take his sheep up the mountains?", "To keep his faith safe from trials", "Fleeing with his faith from trials"]
+  ],
+  // When the wind blew hard he said: O Allah, I ask You for its good, and seek refuge in You from its evil; when clouds
+  // gathered his look changed, and when it rained it was lifted from him: perhaps, Aishah, it is as 'Ad said (Sahih
+  // Muslim 899b); a people were punished with the wind (Sahih al-Bukhari 4829). (What he called the rain, and his
+  // smile, stay on their usual picture: the scene's words say neither.)
+  "sign-when-the-wind-blows": [
+    ["What did he ask for in a storm, per Muslim 899?", "The good in the wind", "O Allah, I ask You for its good"],
+    ["What did he seek refuge from?", "Its evil", "And seek refuge in You from its evil"],
+    ["What showed on his face at clouds, per Bukhari 4829?", "Deep concern", "When clouds gathered, his look changed"],
+    ["Why was he concerned?", "Some people were punished with wind", "Perhaps, Aishah, it is as 'Ad said"]
   ]
 };
 

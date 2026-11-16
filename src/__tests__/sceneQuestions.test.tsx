@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2300);
+    expect(asks.length).toBe(2318);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3365);
+    expect(places).toBe(3392);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -10272,6 +10272,245 @@ describe("where the scene waits and where it stops", () => {
       [
         [1, 1, 0, 0, 0],
         [0, 0, 1, 1, 1]
+      ]
+    ]);
+  });
+
+  it("waits on the scenes of rain and wind, from the du'a when it rains to the du'a when the wind blows, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-rain-dua", "sign-nothing-grows", "sign-cloud-and-garden", "sign-pray-in-your-homes", "sign-house-for-rain-and-sun", "sign-sheep-on-the-hills", "sign-when-the-wind-blows"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(18);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The du'a when it rains. What he said: he saw the rain, and his voice speaks; then more drops come as the clouds
+    // grow heavy, and the land and the hills grow green, flowers come up, and a warm glow comes over the land.
+    expect([
+      value("rain-dua", "his voice: let it be strong and fruitful", "opacity", 0.46),
+      shown("What did he say when he saw rain?", ["a strong downpour: more drops 1", "a strong downpour: the clouds grow heavy", "fruitful: the land grows green", "fruitful: the hills grow green", "fruitful: a warm glow over the land"]),
+      moved("What did he say when he saw rain?", "fruitful: flowers coming up", "scaleY")
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 1]
+    ]);
+    // That we can ask for rain that is fruitful: the strong rain falling; then the land and the hills grow green, grass
+    // comes up, dates come on a palm, and a warm glow comes over the land.
+    expect([
+      value("rain-dua", "a strong downpour: more drops 1", "opacity", 0.72),
+      shown("We can ask Allah to make rain beneficial.", ["fruitful: the land grows green", "fruitful: the hills grow green", "fruitful: dates on a palm 1", "fruitful: a warm glow over the land"]),
+      moved("We can ask Allah to make rain beneficial.", "fruitful: grass coming up, near", "scaleY")
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 1]
+    ]);
+    // Rain, yet nothing grows. Why the famine: the field wet and dark with pools on it, and the rain coming again; then
+    // the rain stops, and a grey dashed ring comes about the field, and about the empty basket.
+    expect([
+      value("nothing-grows", "the field, wet and dark", "opacity", 0.64),
+      value("nothing-grows", "pools of water on the field", "opacity", 0.64),
+      shown("Why would there be famine despite heavy rain, he ﷺ said?", ["showers again: drops falling 1", "nothing grows: a grey dashed ring about the field", "famine: a grey dashed ring about the empty basket"])
+    ]).toEqual([
+      1,
+      1,
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ]
+    ]);
+    // That famine is not only when no rain falls: waits at the scene's start, the dry field under a hot clear sky; then
+    // grey clouds come, the rain falls, and falls again, the field grows wet and dark, and a grey dashed ring comes
+    // about the field and about the empty basket.
+    expect([
+      shown("Famine comes only when no rain falls.", ["the field, wet and dark", "pools of water on the field", "nothing grows: a grey dashed ring about the field", "famine: a grey dashed ring about the empty basket"]),
+      moved("Famine comes only when no rain falls.", "grey clouds", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 0.5, 1, 1]
+      ],
+      [-60, 0]
+    ]);
+    // The cloud and the garden. How much he gave: the water turned into the beds of the garden; then three thirds of the
+    // harvest come, one goes to the place of one in need, one goes to his home, and a warm glow comes at his home.
+    expect([
+      value("cloud-and-garden", "turned by his spade: water in the beds", "opacity", 0.66),
+      shown("How much of the harvest did the garden's owner give in charity?", ["a third, given in charity", "a third, eaten at home", "a third, put back into it", "eaten at home: a warm glow at his home"]),
+      moved("How much of the harvest did the garden's owner give in charity?", "a third, given in charity", "x"),
+      moved("How much of the harvest did the garden's owner give in charity?", "a third, eaten at home", "y")
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, -33.2],
+      [0, -23]
+    ]);
+    // That he put a third back into it: one third given and one third eaten, the last one still there; then it goes into
+    // the garden, the garden grows, and a warm glow comes over it.
+    expect([
+      value("cloud-and-garden", "a third, eaten at home", "x", 0.83),
+      shown("The garden's owner put a third of the harvest back into his garden.", ["a third, put back into it", "a warm glow over the garden"]),
+      moved("The garden's owner put a third of the harvest back into his garden.", "a third, put back into it", "x"),
+      moved("The garden's owner put a third of the harvest back into his garden.", "put back into it: the garden grows", "scaleY")
+    ]).toEqual([
+      18.2,
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      [0, 24.5],
+      [0, 1]
+    ]);
+    // Pray in your homes. What kind of night: waits at the scene's start, the night over the homes; then the cold wind
+    // blows, frost comes on the land, Ibn Umar's voice calls, and a warm light comes in each home.
+    expect(shown("On what kind of night did Ibn Umar say: pray in your homes?", ["the cold wind blowing", "a cold night: frost on the land", "Ibn Umar's voice: the adhan, then pray in your homes", "pray in your homes: a warm light in a home 1", "pray in your homes: a warm light in a home 4"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Whom he told: the homes lit, as Ibn Umar's voice speaks; then his voice is done, a golden ring comes about his
+    // place, his voice speaks, and a golden way goes from his place to the caller.
+    expect([
+      value("pray-in-your-homes", "pray in your homes: a warm light in a home 1", "opacity", 0.48),
+      shown("Whom did he ﷺ tell to say: pray in your homes?", ["Ibn Umar's voice: the adhan, then pray in your homes", "a golden ring, his place", "his voice: tell them", "he told the caller: a golden way to the caller"])
+    ]).toEqual([
+      1,
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ]
+    ]);
+    // That on cold, rainy nights they could pray at home: the golden way to the caller, as his voice speaks; then his
+    // voice is done, the clouds grow heavy and drops fall, and the caller's voice speaks.
+    expect([
+      value("pray-in-your-homes", "he told the caller: a golden way to the caller", "opacity", 0.64),
+      shown("On very cold, rainy nights, people could pray in their homes.", ["his voice: tell them", "a cold, wet night: the clouds grow heavy", "a night of cold and wet: drops falling 1", "the caller's voice: pray in your homes"])
+    ]).toEqual([
+      1,
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ]
+    ]);
+    // A house for the rain and the sun. That he built it in his lifetime: waits at the scene's start, his place far off
+    // by his masjid; then the mud bricks go up row by row, with a doorway, and a roof of palm leaves.
+    expect([
+      value("house-for-rain-and-sun", "a golden ring, his place, far off", "opacity", 0),
+      shown("Ibn Umar built this house during the life of the Prophet ﷺ.", ["built by him: mud bricks, row 1", "built by him: mud bricks, row 4", "built by him: its doorway", "built by him: a roof of palm leaves"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // Why he built it: the house built; then rain falls about it and a warm glow shelters him inside, and the sun comes
+    // back, its heat spreads, and he goes into the house's shade, with a soft ring about his place.
+    expect([
+      value("house-for-rain-and-sun", "built by him: a roof of palm leaves", "opacity", 0.24),
+      value("house-for-rain-and-sun", "sheltered: a warm glow inside the house", "opacity", 0.46),
+      shown("Why did Ibn Umar build his house?", ["the sun's heat", "the house's shade", "shaded: a soft ring about his place in the shade"]),
+      moved("Why did Ibn Umar build his house?", "Ibn Umar's place", "x")
+    ]).toEqual([
+      1,
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 50]
+    ]);
+    // Who helped him: his place in the shade; then a warm glow comes about the house he built alone, and a soft golden
+    // ring about his place.
+    expect([
+      value("house-for-rain-and-sun", "shaded: a soft ring about his place in the shade", "opacity", 0.72),
+      shown("Who helped Ibn Umar build it?", ["a house he built alone: a warm glow about it", "none helped him: a soft golden ring about his place"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Sheep on the mountain tops. That he grazes them where the rain falls: the flock up on the top; then a cloud comes
+    // over it, drops fall there, and green grass comes up on the top.
+    expect([
+      value("sheep-on-the-hills", "a sheep of the flock 1", "y", 0.48),
+      shown("He grazes his sheep where the rain falls.", ["a cloud over the mountain top", "where the drops fall on the mountain 1", "where the drops fall: green grass on the top"])
+    ]).toEqual([
+      -41.6,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Why he takes them up: the green grass on the top; then a grey haze comes over the town, a grey dashed ring about
+    // it, and a soft golden ring about his place on the top.
+    expect([
+      value("sheep-on-the-hills", "where the drops fall: green grass on the top", "opacity", 0.72),
+      shown("Why will he take his sheep up the mountains?", ["its trials: a grey haze over the town", "its trials: a grey dashed ring about the town", "his faith kept safe: a soft golden ring about his place"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // The du'a when the wind blows. What he asked for: the wind blowing hard, as his voice speaks; then small lights go
+    // with the wind.
+    expect(shown("What did he ask for in a storm, per Muslim 899?", ["the wind blowing hard", "his voice: I ask You for its good", "its good: small lights going with the wind"])).toEqual([
+      [1, 1, 0],
+      [1, 1, 1]
+    ]);
+    // What he sought refuge from: the small lights going with the wind; then a golden ring of care comes about the
+    // homes.
+    expect([
+      value("when-the-wind-blows", "its good: small lights going with the wind", "opacity", 0.32),
+      shown("What did he seek refuge from?", ["refuge: a golden ring of care about the homes"])
+    ]).toEqual([
+      1,
+      [[0], [1]]
+    ]);
+    // What showed when clouds gathered: the homes in their ring of care, the small lights still with the wind; then the
+    // lights are gone, the clouds gather and the sky darkens, and a faint grey ring comes about his place.
+    expect([
+      shown("What showed on his face at clouds, per Bukhari 4829?", ["its good: small lights going with the wind", "the sky clouded over: it darkens", "clouds gathering in the sky", "his look changed: a faint grey ring about his place"]),
+      moved("What showed on his face at clouds, per Bukhari 4829?", "clouds gathering in the sky", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      [-24, 0]
+    ]);
+    // Why he was concerned: the rain came and a warm glow is about his place; then his voice speaks, the valleys of 'Ad
+    // come far off, a cloud facing their valleys, and a grey dashed ring about their cloud.
+    expect([
+      value("when-the-wind-blows", "it was lifted from him: a warm glow about his place", "opacity", 0.82),
+      shown("Why was he concerned?", ["his voice: perhaps it is as 'Ad said", "far off: the valleys of 'Ad, in a soft circle", "far off: a cloud facing their valleys", "as 'Ad said: a grey dashed ring about their cloud"])
+    ]).toEqual([
+      1,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
       ]
     ]);
   });

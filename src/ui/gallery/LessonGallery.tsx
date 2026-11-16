@@ -1259,6 +1259,13 @@ const STATES: State[] = [
   { id: "scene-no-fast-on-eid", render: () => <SceneQuestionDemo lessonId="lesson-deep-eid-no-fasting" ask="Is it allowed to fast on Eid day" /> },
   { id: "scene-ashura-and-ramadan", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fasting-ashura-became-optional" ask="After Ramadan was made a duty, Ashura became" /> },
   { id: "scene-milk-at-arafah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fasting-milk-at-arafah" ask="He ﷺ drank it while people watched" /> },
+  { id: "scene-rain-dua", render: () => <SceneQuestionDemo lessonId="lesson-deep-naba1-the-rain-dua" ask="What did he say when he saw rain" /> },
+  { id: "scene-nothing-grows", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-rain-and-wind-rain-yet-nothing-grows" ask="Why would there be famine despite heavy rain" /> },
+  { id: "scene-cloud-and-garden", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-the-cloud-and-the-garden" ask="How much of the harvest did the garden's owner give in charity" /> },
+  { id: "scene-pray-in-your-homes", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-rain-cold-and-heat-pray-in-your-homes" ask="Whom did he ﷺ tell to say: pray in your homes" /> },
+  { id: "scene-house-for-rain-and-sun", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-what-this-world-is-worth-a-house-for-rain-and-sun" ask="Why did Ibn Umar build his house" /> },
+  { id: "scene-sheep-on-the-hills", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-bad-al-khalq-sheep-on-the-hills" ask="Why will he take his sheep up the mountains" /> },
+  { id: "scene-when-the-wind-blows", render: () => <SceneQuestionDemo lessonId="lesson-deep-ahqaf2-dua-when-the-wind-blows" ask="What did he ask for in a storm" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
