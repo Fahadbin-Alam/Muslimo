@@ -937,7 +937,7 @@ const QAF_THREE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "Who came worried, per Bukhari 843?", a: "Some poor people", wrong: ["Some kings", "Some traders", "Some poets"], why: "Some poor people came to the Prophet ﷺ and said, The wealthy people will get higher grades." },
-        { q: "How many times each, per Bukhari 843?", a: "Thirty-three", wrong: ["Ten", "Seven", "One hundred"], why: "Say Subhana l-lah, Al hamdu li l-lah and Allahu Akbar thirty three times each after every (compulsory) prayer." },
+        { q: "How many times each, per Bukhari 843?", a: "Thirty-three", wrong: ["Twenty", "Seven", "One hundred"], why: "Say Subhana l-lah, Al hamdu li l-lah and Allahu Akbar thirty three times each after every (compulsory) prayer." },
         { q: "Why were the poor worried, per Bukhari 843?", a: "The rich could give charity", wrong: ["They had no mosque", "They could not read", "They were far away"], why: "They have more money by which they perform the Hajj, and Umra; fight and struggle in Allah's Cause and give in charity." }
       ]
     },
