@@ -250,7 +250,7 @@ sequenceDiagram
 | Family link | `POST /api/family/code` on the child's phone, `POST /api/family/kids` on the parent's | `family_link_codes` (6 chars, 24 h, one use), `family_links` |
 | Friend battle | `POST /api/battles`, `/accept`, `/score` (`routes/battles.py`) | `friend_battles` (both play the same `seed`; scores hidden until both played) |
 | Invite code | `POST /api/invites/redeem`, `/claim` (`routes/invites.py`) | `invites` (code = base-31 user id + check letter) |
-| Ummah ranking | `POST /api/ummah/rankings` (`routes/ummah.py`) | reads every `users` row, filters joined learners in Python |
+| Ummah ranking | `POST /api/ummah/rankings` (`routes/ummah.py`) | `users.ummah_ranked` / `ummah_trophies` (copied from `ummah_json`), `ORDER BY ... LIMIT 50` + `COUNT(*)` on `ix_users_ummah_ranking` |
 | Purchase | RevenueCat > `POST /api/subscriptions/revenuecat/webhook` (shared secret, `hmac.compare_digest`) | `subscription_entitlements`, `event_logs` |
 | Owner stats | `GET /api/admin/stats` with `X-Admin-Key` (`routes/admin.py`) | aggregate reads of `users`, `subscription_entitlements`, `invites` |
 
@@ -293,8 +293,11 @@ erDiagram
 The app's unit of state is one `UserProfile` object (`src/types.ts`) that changes on every answer and is synced
 whole. Storing it as columns plus JSON means one indexed read and one UPDATE per sync, and new app fields land in
 `progress_extra_json` without a migration. The cost: JSON columns can't be indexed or joined portably, so anything
-that has to be queried across learners (the Ummah ranking) is filtered in Python today. Columns are used where the
-server must enforce rules (`total_xp`, `streak_days`, `hearts_*`, `gems`) or where other routes read them.
+that has to be queried across learners gets a real column. The Ummah ranking is the example: `User` copies
+trophies and "joined with a nickname" out of `ummah_json` into `ummah_trophies` / `ummah_ranked` on every assignment
+(a SQLAlchemy `@validates` hook in `models.py`), and migration `20261119_0013` backfilled them and added the index.
+Columns are also used where the server must enforce rules (`total_xp`, `streak_days`, `hearts_*`, `gems`) or where
+other routes read them.
 
 ### Schema (PostgreSQL, as `create_all` builds it on a fresh database)
 
@@ -342,11 +345,14 @@ CREATE TABLE users (
   path_focus_json            JSON NOT NULL,
   league_json                JSON NOT NULL,                  -- {tier, weekStart, xp, last}
   ummah_json                 JSON NOT NULL,                  -- {trophies, best, nickname, joined, ...}
+  ummah_trophies             INTEGER NOT NULL DEFAULT 0,     -- copy of ummah_json.trophies
+  ummah_ranked               BOOLEAN NOT NULL DEFAULT false, -- joined with a nickname
   social_hub_json            JSON NOT NULL,
   progress_extra_json        JSON NOT NULL,                  -- every other profile field, <= 40 keys / 256 KB
   created_at                 TIMESTAMPTZ NOT NULL DEFAULT now(),
   updated_at                 TIMESTAMPTZ NOT NULL DEFAULT now()
 );
+CREATE INDEX ix_users_ummah_ranking ON users (ummah_ranked, ummah_trophies DESC, id);
 
 CREATE TABLE auth_sessions (
   id          SERIAL PRIMARY KEY,
@@ -576,9 +582,10 @@ Fly.io or Railway would work the same way: both run the same Docker image and ta
 
 - **The rate limiter is in process memory** (`core/rate_limit.py`). The Dockerfile runs one Uvicorn process, so
   that's correct today; with more than one instance or worker, the counts must move to Redis or Postgres.
-- **`POST /api/ummah/rankings` reads every user row** and sorts in Python, on every call. Fine for hundreds of
-  learners, not for 100,000. Fix: real `ummah_trophies` / `ummah_joined` columns with an index, then
-  `ORDER BY ummah_trophies DESC LIMIT 50` plus a `COUNT(*)` for the learner's own rank (or a cached leaderboard).
+- **`POST /api/ummah/rankings` runs three indexed queries per call** (top 50, total, and a `COUNT(*)` of learners
+  ahead of the caller) on `ix_users_ummah_ranking (ummah_ranked, ummah_trophies DESC, id)`. The rank count still
+  walks every ranked learner above the caller, so at very large sizes a cached leaderboard (recomputed every
+  minute, or a Redis sorted set) would be the next step.
 - **`GET /api/friends` and `GET /api/battles` issue queries per friend / per battle** (lazy loads, mutual checks).
   Fine for a crew of 20; fix with `selectinload` and one query for the mutual set.
 - **A JSON column is rewritten whole whenever a sync changes it.** `progress_extra_json` changes often (the Review deck lives there) and can
