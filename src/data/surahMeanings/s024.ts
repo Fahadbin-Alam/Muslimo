@@ -65,6 +65,8 @@ export const S024: SurahMeaning = {
       line: "Children ask permission at three private times of the day.",
       facts: ["Before Fajr, at noon, after Isha", "Greet each other with peace"],
       q: ["When do children ask permission to enter, in An-Nur?", "At three private times", "Never", "All day", "Only at night"],
+      // 24:58-59 ask permission and 24:61 greets, so the asking-before-entering line (27-34) is true here too.
+      falseLine: "Allah is the Light of the heavens and earth: light upon light.",
       ayah: 58
     },
     {
