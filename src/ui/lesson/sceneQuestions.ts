@@ -3586,6 +3586,56 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Why did he ﷺ not order it for every prayer?", "It could be hard on us", "Were it not hard on my ummah", "Or on the people"],
     ["Using the siwak before prayer is a loved sunnah.", "True", "I would have ordered them to use the siwak", "With every prayer"],
     ["Using siwak before prayer is a loved sunnah.", "True", "I would have ordered them to use the siwak", "With every prayer"]
+  ],
+  // He gave each of his Companions seven dates; one of Abu Hurairah's was dry and hard, and none pleased him more, for
+  // it made his chewing last long (Sahih al-Bukhari 5411).
+  "sign-seven-dates": [
+    ["How many dates did each companion get?", "Seven", "He gave each one seven dates"],
+    ["Which date did Abu Hurairah like the most?", "The hard one", "He gave me seven: one was dry and hard", "None of them pleased me more than it"],
+    ["Abu Hurairah was happy with the hard date.", "True", "None of them pleased me more than it", "For it made my chewing last long"]
+  ],
+  // Do not take two dates at once, for he forbade taking two at once; unless one asks his brother's permission (Sahih
+  // al-Bukhari 5446).
+  "sign-two-dates": [
+    ["What did Ibn Umar tell people not to do?", "Eat two dates at once", "Do not take two dates at once"],
+    ["When is it fine to take two dates at once?", "When your friends agree", "Unless one asks his brother's permission"],
+    ["Good table manners mean thinking of others too.", "True", "Unless one asks his brother's permission"]
+  ],
+  // A cup was brought to him; on his right was a boy, the youngest there, and the elders on his left. He asked the boy's
+  // permission to give it to the elders; the boy would not give up his share, so he gave it to him (Sahih al-Bukhari
+  // 2351).
+  "sign-boy-on-right": [
+    ["Who sat on the Prophet's ﷺ right?", "A young boy", "On his right, a boy, the youngest there"],
+    ["What did the Prophet ﷺ do first?", "Asked the boy's permission", "Boy, may I give it to the elders?"],
+    ["The right side has the first turn when serving.", "True", "Boy, may I give it to the elders?", "So he gave it to him"]
+  ],
+  // When his dining sheet was taken away, he said: praise be to Allah, much, good and blessed praise (Sahih al-Bukhari
+  // 5458). (Who narrated it stays on its usual picture: the scene's words do not name Abu Umamah.)
+  "sign-after-eating": [
+    ["When did the Prophet ﷺ say Al-hamdu lillahi kathiran tayyiban?", "When his meal was finished", "When his dining sheet was taken away", "He said: praise be to Allah"],
+    ["When did the Prophet ﷺ say this praise?", "When he finished his meal", "When his dining sheet was taken away", "He said: praise be to Allah"],
+    ["Thanking Allah after food is a sunnah.", "True", "When his dining sheet was taken away", "He said: praise be to Allah"],
+    ["What does Al-hamdu lillah kathiran mean?", "Much praise to Allah", "He said: praise be to Allah", "Much, good and blessed praise"],
+    ["What kind of praise is it?", "Much, good and blessed", "Much, good and blessed praise"]
+  ],
+  // What was left of their provisions was heaped on one leather sheet; he asked Allah to bless it, and they took from
+  // it till all had enough (Sahih al-Bukhari 2484).
+  "sign-one-sheet": [
+    ["Where was all the food put together?", "On one leather sheet", "It was all heaped on a leather sheet"],
+    ["What did he ﷺ do before the people took the food?", "Asked Allah to bless it", "He stood and asked Allah to bless it"],
+    ["There was not enough food for everyone.", "False", "They took from it till all had enough"]
+  ],
+  // He never found fault with any food: if he liked it, he ate it, and if not, he left it (Sahih al-Bukhari 3563).
+  "sign-never-faulted": [
+    ["Did he ﷺ ever criticize food?", "Never", "He never found fault with any food"],
+    ["What did he ﷺ do with food he did not like?", "Left it quietly", "And if not, he left it"],
+    ["We can follow this at every meal.", "True", "He never found fault with any food", "And if not, he left it"]
+  ],
+  // He found a date in the street: if it were not from the charity, I would have eaten it (Sahih Muslim 1071a). (Where
+  // he found it stays on its usual picture: the street and the date are there from the scene's start.)
+  "sign-date-in-street": [
+    ["Why didn't he ﷺ eat it?", "It might be charity", "If it were not from the charity"],
+    ["Being careful with doubtful things is from the Sunnah.", "True", "If it were not from the charity", "I would have eaten it"]
   ]
 };
 
