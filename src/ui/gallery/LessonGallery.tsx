@@ -1196,6 +1196,13 @@ const STATES: State[] = [
   { id: "scene-every-right", render: () => <SceneQuestionDemo lessonId="lesson-deep-salman-rights" ask="Which three have rights" /> },
   { id: "scene-first-masjid", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj2-first-masjid-on-earth" ask="How long was between them" /> },
   { id: "scene-rain-and-stars", render: () => <SceneQuestionDemo lessonId="lesson-deep-waqiah4-the-rain-and-the-stars" ask="Who truly believes" /> },
+  { id: "scene-make-room", render: () => <SceneQuestionDemo lessonId="lesson-deep-mujadila2-dont-take-his-seat" ask="What should we do instead" /> },
+  { id: "scene-rights-of-the-road", render: () => <SceneQuestionDemo lessonId="lesson-deep-nur1-rights-of-the-road" ask="What is the first right" /> },
+  { id: "scene-honest-trade", render: () => <SceneQuestionDemo lessonId="lesson-deep-honesty-honest-trade" ask="What happens if they lie and hide" /> },
+  { id: "scene-keep-them-close", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf1-six-companions-kept-close" ask="What did the idolaters want" /> },
+  { id: "scene-small-gift", render: () => <SceneQuestionDemo lessonId="lesson-deep-zalzalah2-a-neighbors-small-gift" ask="What small gift did he name" /> },
+  { id: "scene-asked-about-blessings", render: () => <SceneQuestionDemo lessonId="lesson-deep-takathur2-a-meal-of-dates" ask="Who fed them" /> },
+  { id: "scene-valley-of-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-adiyat2-a-valley-of-gold" ask="If man had one valley" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
