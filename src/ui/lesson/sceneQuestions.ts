@@ -3789,6 +3789,54 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did he seek refuge from?", "Its evil", "And seek refuge in You from its evil"],
     ["What showed on his face at clouds, per Bukhari 4829?", "Deep concern", "When clouds gathered, his look changed"],
     ["Why was he concerned?", "Some people were punished with wind", "Perhaps, Aishah, it is as 'Ad said"]
+  ],
+  // Good will remain in the foreheads of horses until the Day of Resurrection (Sahih al-Bukhari 2849). (Which animals
+  // have it is asked on picture cards.)
+  "sign-good-in-horses": [
+    ["Until when will the good stay in them?", "The Day of Resurrection", "Till the Day of Resurrection"],
+    ["The good in horses will end very soon.", "False", "Till the Day of Resurrection"]
+  ],
+  // He held a race of the horses made lean, from al-Hafya' to Thaniyat al-Wada', and of those not made lean, from the
+  // Thaniyah to the masjid of Bani Zurayq; and Ibn Umar was among those who raced (Sahih al-Bukhari 2868).
+  "sign-horse-race": [
+    ["He ﷺ held a race between horses.", "True", "He held a race for the lean horses", "From al-Hafya' to Thaniyat al-Wada'"],
+    ["Where did the horses not made lean race to?", "The masjid of Bani Zurayq", "And for the horses not made lean", "From the Thaniyah to Bani Zurayq's masjid"],
+    ["Who said he took part in that horse race?", "Abdullah ibn Umar", "Ibn Umar: I was among those who raced"]
+  ],
+  // He had a she-camel called al-Adba' that could not be outrun; a bedouin came on a young camel of his and outran
+  // her, and he said: it is due from Allah that nothing of this world rises but He lowers it (Sahih al-Bukhari 6501).
+  "sign-al-adba": [
+    ["What was the name of his ﷺ fast camel?", "Al-Adba", "He had a she-camel called al-Adba'", "She could not be outrun"],
+    ["Who beat Al-Adba in the race?", "A bedouin on his camel", "A bedouin came on a young camel of his", "And it outran her"],
+    ["What lesson did he ﷺ give?", "Nothing worldly stays on top", "It is due from Allah", "Nothing worldly rises but He lowers it"]
+  ],
+  // When you hear the roosters crow, ask Allah for His favor, for they have seen an angel; and when you hear the
+  // donkey bray, seek refuge in Allah from Shaytan, for it has seen a devil (Sahih Muslim 2729).
+  "sign-rooster-and-donkey": [
+    ["A rooster crows at dawn. What do you do?", "Ask Allah for His favor", "Then ask Allah for His favor"],
+    ["The rooster crows when it has seen an angel.", "True", "For it has seen an angel"],
+    ["A donkey brays. What do you say?", "A'udhu billahi minash-shaytan", "Seek refuge in Allah from Shaytan"]
+  ],
+  // None should milk another's animals without his permission: would any of you like his store broken and his food
+  // taken away? Their udders store their food (Sahih al-Bukhari 2435).
+  "sign-ask-before-milking": [
+    ["Milking a neighbor's animal without asking is fine.", "False", "None should milk another's animals", "Without his permission"],
+    ["What must you have before milking someone's animal?", "The owner's permission", "Without his permission"],
+    ["What did he ﷺ compare an animal's udder to?", "The owner's food store", "Would any of you like his store broken", "Their udders store their food"]
+  ],
+  // Forty good deeds, the highest lending a she-goat for its milk; whoever does one, hoping for its reward, Allah
+  // admits him into Paradise by it; Hassan: we counted the deeds below it and could not reach fifteen (Sahih
+  // al-Bukhari 2631). (Which deed is the highest stays on its usual picture: the she-goat is there from the start.)
+  "sign-goat-lent-for-milk": [
+    ["What does Allah give for one of these deeds, done for His reward?", "Entry into Paradise", "Whoever does one, hoping for its reward", "Allah admits him into Paradise by it"],
+    ["The narrators easily counted all forty good deeds.", "False", "Hassan: we counted the deeds below it", "And could not reach fifteen"]
+  ],
+  // He would make his she-camel sit across in front of him and pray facing it; if the camels moved, he would take the
+  // saddle, set it up and pray facing its back part; and Ibn Umar used to do the same (Sahih al-Bukhari 507). (What
+  // sat across is asked on picture cards, and what he prayed facing stays on its usual picture: the saddle is there
+  // from the start.)
+  "sign-camel-as-sutrah": [
+    ["Ibn Umar used to do the same as he ﷺ did.", "True", "Ibn Umar used to do the same"]
   ]
 };
 
