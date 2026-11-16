@@ -5,6 +5,7 @@ import { PopIn, useShake } from "../PopIn";
 import { Sheet, useKeyboardHeight } from "../Sheet";
 import { playUi, haptic } from "../sound";
 import { colors, space, text } from "../theme";
+import { AppleSignInButton } from "./AppleSignInButton";
 import { GrownUpCheck } from "./GrownUpGate";
 // Sign up / log in, as a sheet inside the phone column.
 import { MascotSays, SegmentButton, TextField, useBackToClose } from "./sheetParts";
@@ -207,17 +208,24 @@ export function AccountSheet({
                 <View style={styles.rule} />
               </View>
             ) : null}
-            {socialProviders.map((provider) => (
-              <GameButton
-                key={provider.id}
-                label={provider.label}
-                variant="secondary"
-                color={colors.ink}
-                fullWidth
-                onPress={() => onSocial?.(provider.id)}
-                testID={`account-social-${provider.id}`}
-              />
-            ))}
+            {socialProviders.map((provider) => {
+              const button = (
+                <GameButton
+                  key={provider.id}
+                  label={provider.label}
+                  variant="secondary"
+                  color={colors.ink}
+                  fullWidth
+                  onPress={() => onSocial?.(provider.id)}
+                  testID={`account-social-${provider.id}`}
+                />
+              );
+              return provider.id === "apple" ? (
+                <AppleSignInButton key={provider.id} onPress={() => onSocial?.(provider.id)} fallback={button} />
+              ) : (
+                button
+              );
+            })}
           </PopIn>
         )}
         <GameButton label={t("Later")} variant="ghost" fullWidth onPress={onClose} testID="account-later" />
