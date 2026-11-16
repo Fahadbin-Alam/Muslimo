@@ -269,8 +269,9 @@ function passageLesson(surah: SurahMeaning, index: number, branchId: string): Le
   const titles = pool.map((each) => each.title).filter((title, at, all) => title !== passage.title && all.indexOf(title) === at).slice(0, 3);
   const [q, a, ...wrong] = passage.q;
   // A false statement is another passage's line, from the far side of the same surah, so it is clearly about
-  // something else. A surah of one passage only asks its own line.
+  // something else, unless the passage names the one to borrow. A surah of one passage only asks its own line.
   const far = surah.passages[(index + Math.max(1, Math.round(surah.passages.length * OPPOSITE_SHIFT))) % surah.passages.length];
+  const falseLine = passage.falseLine ?? far.line;
   const statementTrue = index % 2 === 0 || surah.passages.length === 1;
   const challenges: Challenge[] = [
     choiceQuestion(`${nodeId}-q1`, q, a, wrong, passage.why ?? passage.line, source),
@@ -278,7 +279,7 @@ function passageLesson(surah: SurahMeaning, index: number, branchId: string): Le
     {
       id: `${nodeId}-q3`,
       type: "true_false",
-      prompt: `${many ? `Ayahs ${passage.at} say` : `Ayah ${passage.at} says`}: ${statementTrue ? passage.line : far.line}`,
+      prompt: `${many ? `Ayahs ${passage.at} say` : `Ayah ${passage.at} says`}: ${statementTrue ? passage.line : falseLine}`,
       choices: [
         { id: "true", label: "True" },
         { id: "false", label: "False" }

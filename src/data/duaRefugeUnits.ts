@@ -2,14 +2,15 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Du'as unit: seeking refuge with Allah, from Sahih al-Bukhari, Sunan Abi Dawud and Jami at-Tirmidhi. Sins
 // washed with snow and hail, hard trials and a bad end, poverty and wrong, a house falling, bad character and
-// desires, and why he ﷺ sought refuge from debt. Every card is one sahih hadith with its number, narrator and grade,
-// and its exact English words to highlight, and none of them is taught anywhere else in the app.
+// desires, why he ﷺ sought refuge from debt, and the evil of what we hear and see. Every card is one sahih hadith
+// with its number, narrator and grade, and its exact English words to highlight, and none of them is taught
+// anywhere else in the app.
 
 const REFUGE: DeepUnit = {
   key: "duas-seeking-refuge",
   topicId: "duas",
   branchId: "duas-seeking-refuge",
-  branch: { title: "Seeking refuge with Allah", description: "Sins washed with snow and hail, hard trials and a bad end, poverty and wrong, a falling house, bad character, and why he ﷺ feared debt." },
+  branch: { title: "Seeking refuge with Allah", description: "Sins washed with snow and hail, hard trials and a bad end, poverty and wrong, a falling house, bad character, why he ﷺ feared debt, and the evil of what we hear and see." },
   name: "seeking refuge with Allah",
   kind: "skill",
   lessonType: "skill",
@@ -90,6 +91,19 @@ const REFUGE: DeepUnit = {
         { q: "When did he ﷺ seek refuge from sins and debt?", a: "In his prayer", wrong: ["At the market", "On a journey", "At a feast"], why: "He ﷺ used to call on Allah in the prayer: I seek refuge with You from sins and debt." },
         { q: "What can debt lead a person to do, he ﷺ said?", a: "Lie and break promises", wrong: ["Sleep and rest more", "Eat and drink more", "Walk and travel more"], why: "If a person is in debt, he tells lies when he speaks, and breaks his promises." },
         { q: "He ﷺ often sought refuge with Allah from debt.", tf: true, why: "A man noticed how very often he ﷺ sought refuge with Allah from being in debt." }
+      ]
+    },
+    {
+      slug: "what-i-hear-and-see",
+      title: "Refuge for ears, eyes and tongue",
+      line: "Seek refuge from the evil of what you hear, see, say, think.",
+      facts: ["Told by Shakl ibn Humayd", "Five things in one short du'a"],
+      source: hadith("abudawud", "1551", "Shakl ibn Humayd", "Sahih (Al-Albani)", "Shakl ibn Humayd said: I said: Messenger of Allah, teach me a supplication. He ﷺ said: say: O Allah, I seek refuge in You from the evil of what I hear, from the evil of what I see, from the evil of what I speak, from the evil of what I think, and from the evil of my desire.", "I seek refuge in Thee from the evil of what I hear, from the evil of what I see"),
+      difficulty: 2,
+      questions: [
+        { q: "What did Shakl ask him ﷺ to teach him?", a: "A supplication", wrong: ["A poem", "A trade", "A letter"], why: "Messenger of Allah, teach me a supplication, Shakl ibn Humayd said." },
+        { q: "Which two come first in the du'a he ﷺ taught Shakl?", a: "What I hear and what I see", wrong: ["What I eat and what I drink", "What I buy and what I sell", "What I build and what I plant"], why: "I seek refuge in You from the evil of what I hear and what I see, he ﷺ said." },
+        { q: "The du'a he ﷺ taught also asks refuge from the evil of what we say.", tf: true, why: "From the evil of what I speak, and from the evil of what I think, he ﷺ taught." }
       ]
     }
   ]

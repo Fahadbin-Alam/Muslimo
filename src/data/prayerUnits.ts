@@ -275,6 +275,19 @@ const JUMUAH: DeepUnit = {
       ]
     },
     {
+      slug: "like-a-warner",
+      title: "Like a warner at dawn",
+      line: "In his khutbah, he ﷺ was like one warning of an enemy.",
+      facts: ["Told by az-Zubair or Ali", "He reminded them of the days of Allah", "He smiled only after Jibril left"],
+      source: hadith("ahmad", "1437", "Az-Zubair or Ali", "Hasan (Darussalam)", "The Messenger of Allah ﷺ used to address us and remind us of the days of Allah, until we could see it on his face. It was as if he was warning people against an enemy that would attack them in the morning. If he had just met Jibril, he would not smile until Jibril had left him.", "It was as if he was warning people against an enemy that would attack them in the morning"),
+      difficulty: 2,
+      questions: [
+        { q: "In his khutbah, he ﷺ was like one warning of what?", a: "An enemy at dawn", wrong: ["A storm at sea", "A flood in the valley", "A wolf near the flock"], why: "As if he was warning people against an enemy that would attack them in the morning." },
+        { q: "After meeting Jibril, until when would he ﷺ not smile?", a: "Until Jibril left him", wrong: ["Until the next prayer", "Until sunset", "Until he had eaten"], why: "If he had just met Jibril, he would not smile until Jibril had departed from him." },
+        { q: "When he ﷺ reminded them, they could see it on his face.", tf: true, why: "He reminded us of the days of Allah until we could see that on his face." }
+      ]
+    },
+    {
       slug: "angels-door",
       title: "Angels at the door",
       line: "On Friday, angels at the masjid door write who comes first.",
@@ -321,7 +334,7 @@ const AFTER: DeepUnit = {
   key: "pray-after",
   topicId: "prayer",
   branchId: "prayer-after-salah",
-  branch: { title: "After the salah", description: "The words he ﷺ said after salam, the du'a he told Mu'adh never to leave, and refuge from disbelief and poverty." },
+  branch: { title: "After the salah", description: "The words he ﷺ said after salam, two easy habits, the du'a he told Mu'adh never to leave, and refuge from disbelief and poverty." },
   name: "after the salah",
   kind: "skill",
   lessonType: "skill",
@@ -347,9 +360,22 @@ const AFTER: DeepUnit = {
       source: hadith("muslim", "597a", "Abu Hurairah", "Sahih", "Whoever says Subhanallah 33 times, Alhamdulillah 33 and Allahu akbar 33 after every prayer, and completes the hundred with La ilaha illallah wahdahu la sharika lah, his sins are forgiven even if like the foam of the sea."),
       difficulty: 1,
       questions: [
-        { q: "How many times each: Subhanallah, Alhamdulillah, Allahu akbar?", a: "33", wrong: ["3", "10", "100"], why: "Sahih Muslim 597a." },
+        { q: "How many times each: Subhanallah, Alhamdulillah, Allahu akbar?", a: "33", wrong: ["3", "7", "100"], why: "Sahih Muslim 597a." },
         { q: "What makes it a full hundred?", a: "La ilaha illallah...", wrong: ["Clapping", "Amin", "A song"], why: "La ilaha illallah wahdahu la sharika lah." },
         { q: "What is forgiven for it?", a: "Sins, even like sea foam", wrong: ["Only one sin", "Nothing", "Only big sins"], why: "Even if like the foam of the sea." }
+      ]
+    },
+    {
+      slug: "ten-each-after-salah",
+      title: "Two easy habits",
+      line: "After salah, 10 each: Subhanallah, Alhamdulillah, Allahu akbar.",
+      facts: ["Told by Abdullah ibn Amr", "150 on the tongue, 1,500 on the Scale", "At bedtime: Allahu akbar 34, the others 33"],
+      source: hadith("abudawud", "5065", "Abdullah ibn Amr", "Sahih (Al-Albani)", "The Prophet ﷺ said: there are two habits that no Muslim keeps without entering Paradise. They are easy, yet those who keep them are few. After every prayer, say Subhanallah ten times, Alhamdulillah ten times and Allahu akbar ten times: that is a hundred and fifty on the tongue, but one thousand five hundred on the Scale. At bedtime, say Allahu akbar thirty-four times, Alhamdulillah thirty-three times and Subhanallah thirty-three times: a hundred on the tongue and a thousand on the Scale. Abdullah said: I saw the Messenger of Allah ﷺ counting them on his hand. Asked why so few keep them, he ﷺ said: Shaytan comes to one of you at bedtime and makes him sleep before he says them, and comes to him in his prayer and reminds him of a need before he says them.", "That is a hundred and fifty on the tongue, but one thousand and five hundred on the scale"),
+      difficulty: 2,
+      questions: [
+        { q: "How many times each after salah, per Abu Dawud 5065?", a: "Ten", wrong: ["Three", "Five", "Seven"], why: "Glory be to Allah ten times after every prayer, and the same for praise and takbir." },
+        { q: "150 on the tongue become how many on the Scale?", a: "1,500", wrong: ["300", "500", "15,000"], why: "A hundred and fifty on the tongue, but one thousand five hundred on the scale, he ﷺ said." },
+        { q: "These two habits are hard, so few people keep them.", tf: false, why: "No. They are easy, yet few keep them, for Shaytan brings sleep or a need to mind." }
       ]
     },
     {

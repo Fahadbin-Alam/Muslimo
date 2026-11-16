@@ -1516,6 +1516,19 @@ const MEDICINE: DeepUnit = {
       ]
     },
     {
+      slug: "indian-incense",
+      title: "The Indian incense",
+      line: "Do not pain a child's throat; Indian incense cures seven ills.",
+      facts: ["Told by Umm Qais bint Mihsan", "Ud al-Hindi: the Indian incense", "Sniffed for throat and tonsil pain"],
+      source: hadith("bukhari", "5713", "Umm Qais bint Mihsan", "Sahih", "Umm Qais brought her son to the Messenger of Allah ﷺ. She had pressed his palate and tonsils with her finger to treat his throat. The Prophet ﷺ said: why do you pain your children by pressing their throats? Use the Indian incense, for it cures seven diseases, one of them pleurisy. It is sniffed for throat and tonsil illness, and put into one side of the mouth for pleurisy.", "Why do you pain your children by pressing their throats"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ tell Umm Qais to use for the throat?", a: "Indian incense", wrong: ["Rose water", "Warm milk", "Salt water"], why: "Use Ud Al-Hindi, the Indian incense, he ﷺ said, rather than pressing the throat." },
+        { q: "How many diseases does the Indian incense cure, he ﷺ said?", a: "Seven", wrong: ["Three", "Ten", "Forty"], why: "It cures seven diseases, one of which is pleurisy, he ﷺ said." },
+        { q: "He ﷺ did not want children hurt by harsh remedies.", tf: true, why: "Why do you pain your children by pressing their throats, he ﷺ asked." }
+      ]
+    },
+    {
       slug: "talbina",
       title: "Talbina for the sick",
       line: "Aishah advised talbina for the sick: not tasty, but good.",
@@ -3479,6 +3492,19 @@ const QURAN_VIRTUES: DeepUnit = {
         { q: "How did revelation come before his ﷺ death, Anas said?", a: "One part after another", wrong: ["Once every few years", "Only on Fridays", "Only in winter"], why: "Allah sent down revelation continuously and abundantly before his ﷺ death, Anas said." },
         { q: "Until when did revelation keep coming, Anas said?", a: "Until Allah took him ﷺ", wrong: ["Until he ﷺ left Makkah", "Until he ﷺ reached Madinah", "Until he ﷺ turned fifty"], why: "Revelation kept coming until Allah took him, and then the Messenger of Allah ﷺ died." },
         { q: "Revelation stopped long before his ﷺ death.", tf: false, why: "No. Allah sent it one part after another until He took him ﷺ, Anas said." }
+      ]
+    },
+    {
+      slug: "seven-ways",
+      title: "Recited in seven ways",
+      line: "Jibril recited the Quran to him ﷺ in seven different ways.",
+      facts: ["Told by Ibn Abbas", "First it was recited in one way", "He ﷺ kept asking for more"],
+      source: hadith("bukhari", "4991", "Abdullah ibn Abbas", "Sahih", "Ibn Abbas said: the Messenger of Allah ﷺ said: Jibril recited the Quran to me in one way. I asked him for another, and kept asking him for more, and he recited it in more ways, until in the end he recited it in seven different ways.", "till he ultimately recited it in seven different ways"),
+      difficulty: 3,
+      questions: [
+        { q: "In how many ways did Jibril recite the Quran in the end?", a: "Seven ways", wrong: ["Four ways", "Ten ways", "Forty ways"], why: "He kept reciting it in more ways, till he ultimately recited it in seven different ways." },
+        { q: "Who kept asking Jibril for more ways of reciting?", a: "The Prophet ﷺ", wrong: ["Abu Bakr", "Umar", "Ibn Abbas"], why: "He ﷺ continued asking him to recite it in other ways, and he recited it in several ways." },
+        { q: "At first, Jibril recited the Quran to him ﷺ in one way.", tf: true, why: "Jibril recited it to me in one way, then in more ways until seven, he ﷺ said." }
       ]
     }
   ]
