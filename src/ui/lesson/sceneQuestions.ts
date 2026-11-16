@@ -2874,6 +2874,94 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Prophet ﷺ tell Ali to do first?", "Invite them to Islam", "Go calmly, then invite them to Islam"],
     ["The Prophet ﷺ told Ali to rush in fast.", "False", "Go calmly, then invite them to Islam"],
     ["One person guided through you is better than what?", "Red camels", "One guided through you is better than red camels"]
+  ],
+  // On one of his journeys, at al-Bayda', her necklace was lost; he stayed to look for it, and the people with him,
+  // where there was no water; morning came with no water, and Allah revealed the ayah of tayammum. Usayd said: this is
+  // not your first blessing, family of Abu Bakr; then they raised the camel and found the necklace under it (Sahih
+  // al-Bukhari 334).
+  "sign-lost-necklace": [
+    ["Why did the army stop with no water?", "To look for Aishah's necklace", "At al-Bayda', a necklace of mine was lost", "He stayed to look for it, and the people with him"],
+    ["What did Allah send down then?", "The ayah of tayammum", "Then Allah revealed the ayah of tayammum"],
+    ["Usayd said it was not the first blessing from Abu Bakr's family.", "True", "Not your first blessing, family of Abu Bakr"],
+    ["What did Aishah lose on the journey?", "Her necklace", "At al-Bayda', a necklace of mine was lost"],
+    ["What did Allah allow when there was no water for wudu?", "Tayammum with clean earth", "Then Allah revealed the ayah of tayammum"],
+    ["Usayd ibn Hudayr called it the first blessing from Abu Bakr's family.", "False", "Not your first blessing, family of Abu Bakr"]
+  ],
+  // In Madinah, Abu Bakr and Bilal fell ill with fever; she went in to them and asked how they were, and Bilal longed
+  // aloud for a night in a valley of idhkhir. She told him, and he said: O Allah, make us love Madinah as we love Makkah,
+  // or more, make it healthy, bless its sa' and its mudd, and move its fever to al-Juhfah (Sahih al-Bukhari 3926).
+  "sign-love-madinah": [
+    ["Who fell ill with fever after the hijrah?", "Abu Bakr and Bilal", "In Madinah, Abu Bakr and Bilal fell ill"],
+    ["What did Bilal miss while he was ill?", "Makkah", "Bilal: will I spend a night in a valley of idhkhir?"],
+    ["Who visited them and told the Prophet ﷺ?", "Aishah", "I went in to them: how do you find yourself?", "Aishah: I came to him and told him"],
+    ["What did the Prophet ﷺ ask Allah for Madinah?", "To make them love it like Makkah, or more", "Make us love Madinah as Makkah, or more"],
+    ["What did he ask Allah to take from Madinah?", "Its fever", "And move its fever to al-Juhfah"],
+    ["He also asked Allah to bless Madinah's food.", "True", "Make it healthy, and bless its sa' and its mudd"]
+  ],
+  // He missed Thabit ibn Qays, and one went and found him at home, his head lowered: it is bad, he said, for he raised
+  // his voice above the Prophet's, so his deeds are lost and he is of the Fire. It came back and told him, and he said:
+  // go to him and say: you are not of the Fire, but of the people of Paradise (Sahih al-Bukhari 3613, 4846).
+  "sign-thabit-good-news": [
+    ["Who noticed that Thabit was missing?", "The Prophet ﷺ", "He missed Thabit ibn Qays"],
+    ["How did the man find Thabit?", "Sitting sadly with his head down", "He missed Thabit ibn Qays", "A man found him at home, his head lowered"],
+    ["The Prophet ﷺ cared about a companion who went missing.", "True", "He missed Thabit ibn Qays", "A man found him at home, his head lowered"],
+    ["What good news did Thabit get?", "He is of the people of Jannah", "Go to him and say: you are not of the Fire", "But you are of the people of Paradise"],
+    ["Who sent Thabit the good news?", "The Prophet ﷺ", "Go to him and say: you are not of the Fire"],
+    ["Thabit was told he was of the people of the Fire.", "False", "Go to him and say: you are not of the Fire", "But you are of the people of Paradise"],
+    ["Why was Thabit sad, per Bukhari 4846?", "He used to raise his voice", "Bad: he raised his voice above the Prophet's"],
+    ["What news was Thabit given, per Bukhari 4846?", "He is of the people of Paradise", "Go to him and say: you are not of the Fire", "But you are of the people of Paradise"],
+    ["The Prophet ﷺ noticed when Thabit was missing.", "True", "He missed Thabit ibn Qays"]
+  ],
+  // He held Umar's hand, and Umar said: you are dearer to me than all but myself; he said: no, until I am dearer to you
+  // than your own self; Umar said: now, by Allah, you are dearer to me than myself, and he said: now, O Umar (Sahih
+  // al-Bukhari 6632). None of you believes until I am dearer to him than his father, his child and all the people
+  // (Sahih al-Bukhari 15). (Who narrated it, and how this love shows, stay on their usual picture.)
+  "sign-dearer-than-yourself": [
+    ["What did Umar first say to the Prophet ﷺ?", "Dearer than all but myself", "Umar: you are dearer to me than all but myself"],
+    ["What did the Prophet ﷺ answer?", "Not until I am dearer than yourself", "No, until I am dearer to you than your own self"],
+    ["What did the Prophet ﷺ say when Umar said 'now, more than myself'?", "Now, O Umar", "He said: now, O Umar"],
+    ["The Prophet ﷺ was holding Umar's hand.", "True", "We were with him, and he held Umar's hand"],
+    ["When is faith complete, per Abdullah ibn Hisham?", "When he ﷺ is dearer than oneself", "No, until I am dearer to you than your own self", "He said: now, O Umar"],
+    ["Umar first said: dearer than everything except myself.", "True", "Umar: you are dearer to me than all but myself"],
+    ["After Umar changed his answer, the Prophet ﷺ said nothing.", "False", "He said: now, O Umar"],
+    ["Whom must a believer love most among people?", "The Prophet ﷺ", "None of you believes until I am dearer to him", "Than his father, his child, and all the people"],
+    ["This love is more than for one's own children.", "True", "Than his father, his child, and all the people"],
+    ["Whom should a believer love more than all people?", "The Prophet ﷺ", "None of you believes until I am dearer to him", "Than his father, his child, and all the people"]
+  ],
+  // He came out while they were in the Suffah: who would go each day to Buthan or al-Aqiq and bring back two big
+  // she-camels, with no sin and no cutting of ties? They said: we would love that. He said: why not go to the masjid
+  // and learn or recite two ayat? That is better than two she-camels, three better than three, four better than four
+  // (Sahih Muslim 803).
+  "sign-better-than-camels": [
+    ["What is better than two big she-camels?", "Learning two verses", "Why not go and learn two ayat in the masjid?", "That is better for him than two she-camels"],
+    ["Where was Uqbah when he heard this?", "In the Suffah", "He came out while we were in the Suffah"],
+    ["Three verses are better than three she-camels.", "True", "Three better than three, four better than four"],
+    ["What is better than two she-camels?", "Learning two verses", "Why not go and learn two ayat in the masjid?", "That is better for him than two she-camels"],
+    ["Where did they go to learn?", "The masjid", "Why not go and learn two ayat in the masjid?"],
+    ["Each verse learned is worth more than wealth.", "True", "That is better for him than two she-camels", "Three better than three, four better than four"]
+  ],
+  // Read the Quran, for it will come on the Day of Resurrection interceding for its companions; read the two bright
+  // ones, al-Baqarah and Al Imran, for they will come like two clouds, or two shades, or two flocks of birds in rows,
+  // pleading for their companions; taking it is a blessing, and leaving it a regret (Sahih Muslim 804a).
+  "sign-two-bright-ones": [
+    ["The Prophet ﷺ told us to recite the Quran.", "True", "I heard him say: read the Quran"],
+    ["What will the Quran do for its readers?", "Intercede for them", "It will intercede for its companions on the Day"],
+    ["On the Last Day, who does the Quran speak up for?", "Those who read it", "It will intercede for its companions on the Day"],
+    ["Which are the two bright surahs?", "Al-Baqarah and Al Imran", "Read the bright two: al-Baqarah and Al Imran"],
+    ["How will the two surahs come?", "Like two clouds", "They will come like two clouds, or two shades"]
+  ],
+  // One heard another recite Qul huwa Allahu ahad again and again, and in the morning told him of it, as if it were
+  // little; he said: by the One in whose hand is my soul, it equals a third of the Quran (Sahih al-Bukhari 5013). Can
+  // one of you not recite a third of the Quran in a night? It was hard on them, and he said: Allah, the One, as-Samad,
+  // is a third of the Quran (Sahih al-Bukhari 5015). (How the surah begins, and what it says of Allah, are its ayat.)
+  "sign-third-of-the-quran": [
+    ["Which surah equals a third of the Quran?", "Al-Ikhlas", "A man heard one recite: Qul huwa Allahu ahad", "It equals a third of the Quran"],
+    ["What did the man in the hadith do with Al-Ikhlas?", "He recited it again and again", "A man heard one recite: Qul huwa Allahu ahad", "Repeating it, again and again"],
+    ["The man thought reciting it was not enough.", "True", "In the morning he told him, as if it were little"],
+    ["Al-Ikhlas is a short surah with a great reward.", "True", "In the morning he told him, as if it were little", "It equals a third of the Quran"],
+    ["What is Al-Ikhlas equal to, says the Prophet ﷺ?", "A third of the Quran", "It equals a third of the Quran"],
+    ["How did the companions feel about reciting a third in one night?", "They found it hard", "Can one of you not recite a third in a night?"],
+    ["How can you recite a third of the Quran in one night?", "Recite Al-Ikhlas", "Allah, One, as-Samad: a third of the Quran"]
   ]
 };
 

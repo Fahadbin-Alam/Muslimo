@@ -1168,6 +1168,13 @@ const STATES: State[] = [
   { id: "scene-steps-in-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-bilal-footsteps" ask="What did the Prophet ﷺ hear in Paradise" /> },
   { id: "scene-madinah-rejoiced", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-joy" ask="Who called out that the Prophet" /> },
   { id: "scene-red-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-ali-red-camels" ask="One person guided through you" /> },
+  { id: "scene-lost-necklace", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-aishah-necklace" ask="What did Aishah lose on the journey" /> },
+  { id: "scene-love-madinah", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-love-madinah" ask="What did he ask Allah to take from Madinah" /> },
+  { id: "scene-thabit-good-news", render: () => <SceneQuestionDemo lessonId="lesson-deep-thabit-people-of-jannah" ask="What good news did Thabit get" /> },
+  { id: "scene-dearer-than-yourself", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-dearer" ask="What did the Prophet ﷺ say when Umar said" /> },
+  { id: "scene-better-than-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-uqbah-better-than-camels" ask="What is better than two big she-camels" /> },
+  { id: "scene-two-bright-ones", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-umamah-the-intercessor" ask="How will the two surahs come" /> },
+  { id: "scene-third-of-the-quran", render: () => <SceneQuestionDemo lessonId="lesson-deep-ikhlas-a-third" ask="What is Al-Ikhlas equal to" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
