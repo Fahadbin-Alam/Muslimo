@@ -392,7 +392,14 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-fast-on-a-journey": [/travel|journey/i, /fast/i],
   "sign-friday-alone": [/friday/i, /fast/i],
   "sign-fast-with-faith": [/faith/i, /forgiven/i],
-  "sign-false-speech": [/lie|lying|false/i, /food|drink/i]
+  "sign-false-speech": [/lie|lying|false/i, /food|drink/i],
+  "sign-fasting-in-heat": [/heat|hot/i, /fast/i],
+  "sign-no-wisal": [/wisal|nonstop|day and night/i, /fast/i],
+  "sign-three-days-a-month": [/three days/i, /month/i],
+  "sign-not-before-ramadan": [/before Ramadan/i, /habit/i],
+  "sign-no-fast-on-eid": [/eid/i, /fast/i],
+  "sign-ashura-and-ramadan": [/ashura/i, /ramadan/i],
+  "sign-milk-at-arafah": [/milk/i, /arafah/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -725,7 +732,14 @@ const SOURCES: Record<string, string[]> = {
   "sign-fast-on-a-journey": ["Sahih al-Bukhari 1943", "Sahih al-Bukhari 1947"],
   "sign-friday-alone": ["Sahih al-Bukhari 1984", "Sahih al-Bukhari 1985"],
   "sign-fast-with-faith": ["Sahih al-Bukhari 38"],
-  "sign-false-speech": ["Sahih al-Bukhari 1903"]
+  "sign-false-speech": ["Sahih al-Bukhari 1903"],
+  "sign-fasting-in-heat": ["Sahih al-Bukhari 1945"],
+  "sign-no-wisal": ["Sahih al-Bukhari 1962", "Sahih al-Bukhari 1964"],
+  "sign-three-days-a-month": ["Sahih al-Bukhari 1979"],
+  "sign-not-before-ramadan": ["Sahih al-Bukhari 1914"],
+  "sign-no-fast-on-eid": ["Sahih al-Bukhari 1990"],
+  "sign-ashura-and-ramadan": ["Sahih al-Bukhari 2001", "Sahih al-Bukhari 2006"],
+  "sign-milk-at-arafah": ["Sahih al-Bukhari 1989"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -749,7 +763,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1298);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1307);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -10107,6 +10121,299 @@ describe("the signs in creation, alive", () => {
         [1, 1]
       ],
       [1, 0],
+      [0, 1]
+    ]);
+  });
+
+  test("the scenes of more days of fasting, from fasting in the heat to the milk at Arafah, show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const fastDaysScenes: SignKind[] = ["fasting-in-heat", "no-wisal", "three-days-a-month", "not-before-ramadan", "no-fast-on-eid", "ashura-and-ramadan", "milk-at-arafah"];
+    for (const kind of fastDaysScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Jabir|Musa|Moses|Mas'ud|Jibril|Gabriel|Aishah|Abu Hurairah)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, and nothing comes down from the sky: a call on one's Lord is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    const many = (kind: SignKind, list: string[], key: "x" | "y" | "scale" | "scaleX" | "rotate", t: number) => list.map((name) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Fasting in the heat: on a journey, two camels, his place, Ibn Rawahah's place and the places of three of those
+    // with him walk in along the road. The sun's glow spreads, and heat shimmers over the land. A shade comes over each
+    // of the three places, from the great heat, and a cup of water comes by each: they were not fasting. Then a soft
+    // golden ring comes about his place and about Ibn Rawahah's place, and a warm glow about the two.
+    expect(words("fasting-in-heat")).toEqual([
+      "We set out with him on a journey",
+      "On a very hot day",
+      "One put his hand on his head from the heat",
+      "None of us was fasting",
+      "Except him and Ibn Rawahah"
+    ]);
+    const walkers = names("fasting-in-heat", /^(a camel of the journey \d|a golden ring, his place|Ibn Rawahah's place|a place of those with him \d)$/);
+    const shades = names("fasting-in-heat", /^from the great heat: a shade over a place \d$/);
+    const cups = names("fasting-in-heat", /^not fasting: a cup of water by a place \d$/);
+    expect([walkers, shades, cups].map((list) => list.length)).toEqual([7, 3, 3]);
+    expect([
+      [0.01, 0.17].map((t) => many("fasting-in-heat", walkers, "x", t)),
+      [0.21, 0.35].map((t) => all("fasting-in-heat", ["a very hot day: the sun's glow spreads", "a very hot day: heat shimmering over the land"], t)),
+      [0.37, 0.57].map((t) => all("fasting-in-heat", shades, t)),
+      [0.59, 0.75].map((t) => all("fasting-in-heat", cups, t)),
+      [0.79, 0.97].map((t) => all("fasting-in-heat", ["fasting: a soft golden ring about his place", "fasting: a soft golden ring about Ibn Rawahah's place", "the two fasting: a warm glow about them"], t))
+    ]).toEqual([
+      [
+        [-40, -40, -40, -40, -40, -40, -40],
+        [0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // No wisal: at dusk by the masjid of Madinah, a day, a night, a day and a night are in a row in the sky. A grey
+    // dashed line joins a day to the next through the night, and a grey dashed ring comes about the joined days: he
+    // forbade it. Out of mercy for them, a golden ring of care comes about the places at a cloth, dates come on the
+    // cloth, and a warm light on the night. Their voice speaks, and a soft golden ring of his fast, kept on, comes about
+    // his place at the door of the masjid. His voice answers, and a soft warm glow comes about his place.
+    expect(words("no-wisal")).toEqual([
+      "He forbade al-wisal",
+      "Out of mercy for them",
+      "They said: but you do al-wisal",
+      "He said: I am not like you",
+      "My Lord feeds me and gives me drink"
+    ]);
+    expect([
+      [0.01, 0.13].map((t) => all("no-wisal", ["al-wisal: a grey dashed line joining a day to the next, through the night", "he forbade it: a grey dashed ring about the joined days"], t)),
+      [0.17, 0.29].map((t) => all("no-wisal", ["out of mercy for them: a golden ring of care about the places", "eating at night: dates on the cloth", "eating at night: a warm light on the night"], t)),
+      at("no-wisal", "their voice: but you do al-wisal", "opacity", [0.33, 0.47, 0.53]),
+      at("no-wisal", "his fast, kept on: a soft golden ring about his place", "opacity", [0.33, 0.47]),
+      at("no-wisal", "his voice: I am not like you", "opacity", [0.51, 0.65, 0.97]),
+      at("no-wisal", "not like you: a soft warm glow about his place", "opacity", [0.69, 0.97])
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 1, 0],
+      [0, 1],
+      [0, 1, 1],
+      [0, 1]
+    ]);
+    // Three days a month: the thirty days of a month are small lights in the sky. A soft golden ring comes on every day,
+    // fasting all the time, and a small lamp by Abdullah's place, praying all night. His voice asks, and Abdullah's
+    // voice answers: yes. His voice speaks again: a grey dashed ring comes about all the days, and the rings on every
+    // day fade. Then the grey ring fades, a soft golden ring comes on three of the days, a warm light over all the days,
+    // and a warm glow about Abdullah's place.
+    expect(words("three-days-a-month")).toEqual([
+      "You fast all the time and pray all night?",
+      "I said: yes",
+      "Whoever fasts all the time has not fasted",
+      "Fasting three days a month",
+      "Is like fasting all the time"
+    ]);
+    const threeDays = names("three-days-a-month", /^three days: a soft golden ring on a day \d$/);
+    expect([
+      at("three-days-a-month", "fasting all the time: a soft golden ring on every day", "opacity", [0.01, 0.17, 0.53]),
+      at("three-days-a-month", "praying all night: a small lamp by Abdullah's place", "opacity", [0.01, 0.17]),
+      at("three-days-a-month", "his voice: you fast all the time?", "opacity", [0.01, 0.17, 0.29]),
+      at("three-days-a-month", "Abdullah's voice: yes", "opacity", [0.21, 0.29, 0.53]),
+      at("three-days-a-month", "his voice: whoever fasts all the time has not fasted", "opacity", [0.33, 0.53, 0.97]),
+      at("three-days-a-month", "has not fasted: a grey dashed ring about all the days", "opacity", [0.33, 0.53, 0.71]),
+      [0.57, 0.71].map((t) => all("three-days-a-month", threeDays, t)),
+      [0.75, 0.97].map((t) => all("three-days-a-month", ["like fasting all the time: a warm light over all the days", "a warm glow about Abdullah's place"], t))
+    ]).toEqual([
+      [0, 1, 0],
+      [0, 1],
+      [0, 1, 0],
+      [0, 1, 0],
+      [0, 1, 1],
+      [0, 1, 0],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Not before Ramadan: the days of three weeks are in rows in the sky, and a soft golden light comes on the days of
+    // Ramadan. A grey dashed ring comes about a day just before it, and about a second. Then a soft golden ring comes on
+    // his day in the first week and in the second, and a golden line runs down his day to the day just before Ramadan.
+    // The grey ring there fades, a soft golden ring comes on that day and about his place, and a spark of his fast
+    // rises.
+    expect(words("not-before-ramadan")).toEqual([
+      "None of you should go before Ramadan",
+      "With a fast of a day or two",
+      "Unless one used to fast that fast",
+      "Then let him fast that day"
+    ]);
+    expect([
+      at("not-before-ramadan", "Ramadan: a soft golden light on its days", "opacity", [0.01, 0.19]),
+      [0.23, 0.41].map((t) => all("not-before-ramadan", ["a day or two before it: a grey dashed ring about a day 1", "a day or two before it: a grey dashed ring about a day 2"], t)),
+      [0.45, 0.67].map((t) => all("not-before-ramadan", ["his habit: a soft golden ring on his day, week 1", "his habit: a soft golden ring on his day, week 2", "his habit: a golden line down his day"], t)),
+      [0.69, 0.97].map((t) => all("not-before-ramadan", ["a day or two before it: a grey dashed ring about a day 2", "that day: a soft golden ring on it", "let him fast it: a soft golden ring about his place"], t)),
+      [at("not-before-ramadan", "his fast: a spark rising", "opacity", [0.84, 0.88, 0.97]), at("not-before-ramadan", "his fast: a spark rising", "y", [0.84, 0.97])]
+    ]).toEqual([
+      [0, 1],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [
+        [0, 1, 0],
+        [0, -11]
+      ]
+    ]);
+    // No fast on Eid: at the place of the Eid prayer, among palms, the places sit in rows with Umar's place before them.
+    // Umar's voice speaks; two days come in the sky, the day of breaking the fast with its new moon and the other day,
+    // and a grey dashed ring comes about each: he forbade fasting them. Dates and a cup come by the places, and a warm
+    // glow on the first day. Then a dish of food comes by them, a warm glow on the other day, and a warm glow over the
+    // gathering.
+    expect(words("no-fast-on-eid")).toEqual([
+      "I attended the Eid with Umar",
+      "These are two days he forbade fasting",
+      "The day you break your fast",
+      "And the day you eat from your sacrifices"
+    ]);
+    expect([
+      [0.19, 0.43].map((t) => all("no-fast-on-eid", ["Umar's voice: these are two days", "the day you break your fast: a day with its new moon", "the other day: a day", "he forbade fasting them: a grey dashed ring about the first day", "he forbade fasting them: a grey dashed ring about the other day"], t)),
+      [0.45, 0.67].map((t) => all("no-fast-on-eid", ["breaking the fast: dates and a cup by the places", "the day you break your fast: a warm glow on it"], t)),
+      [0.69, 0.97].map((t) => all("no-fast-on-eid", ["the other day: a dish of food by the places", "the other day: a warm glow on it", "the days of Eid: a warm glow over the gathering"], t))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Ashura and Ramadan: the twelve months of the year are crescents in two rows in the sky. His voice speaks, a small
+    // golden light comes on the first month, and a soft golden ring comes about each of the four places by his place:
+    // they fast Ashura. A golden ring and a golden light come on the ninth month: Ramadan made a duty. A warm glow comes
+    // about two places that fast Ashura; the rings about the other two fade, and dates and a cup come by each of them.
+    // Then the light of Ashura shines brighter, and a warm glow comes about Ramadan.
+    expect(words("ashura-and-ramadan")).toEqual([
+      "He ordered fasting the day of Ashura",
+      "When Ramadan was made a duty",
+      "Whoever wished fasted it",
+      "And whoever wished did not",
+      "No day he sought to fast more than Ashura",
+      "And this month: Ramadan"
+    ]);
+    const ashuraRings = names("ashura-and-ramadan", /^fasting Ashura: a soft golden ring about a place \d$/);
+    const notFasting = names("ashura-and-ramadan", /^whoever wished did not: dates and a cup by a place \d$/);
+    expect([ashuraRings, notFasting].map((list) => list.length)).toEqual([4, 2]);
+    expect([
+      at("ashura-and-ramadan", "his voice: fast the day of Ashura", "opacity", [0.01, 0.13, 0.29]),
+      at("ashura-and-ramadan", "the day of Ashura: a small golden light on the first month", "opacity", [0.01, 0.13]),
+      [0.01, 0.13, 0.57].map((t) => all("ashura-and-ramadan", ashuraRings, t)),
+      [0.17, 0.29].map((t) => all("ashura-and-ramadan", ["Ramadan made a duty: a golden ring about the ninth month", "the month of Ramadan: a golden light on it"], t)),
+      at("ashura-and-ramadan", "whoever wished fasted it: a warm glow about the two that fast", "opacity", [0.33, 0.43]),
+      [0.47, 0.57].map((t) => all("ashura-and-ramadan", notFasting, t)),
+      at("ashura-and-ramadan", "Ashura, sought more than any day: its light shines brighter", "opacity", [0.61, 0.77]),
+      at("ashura-and-ramadan", "and this month: a warm glow about Ramadan", "opacity", [0.81, 0.97])
+    ]).toEqual([
+      [0, 1, 0],
+      [0, 1],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [1, 1, 0, 0]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1],
+      [0, 1]
+    ]);
+    // The milk at Arafah: on the plain of Arafah, with its hill and white tents, his place is a golden ring, and the
+    // places are about it. Grey voices of doubt come from three of them. A cup of milk goes from Maymunah's place by her
+    // tent to his place, and a soft light comes about his place as he stands. The milk in the cup is gone, and the grey
+    // voices stop; faint warm lines go from four places to his, and a warm glow comes over them all.
+    expect(words("milk-at-arafah")).toEqual([
+      "The people doubted if he fasted at Arafah",
+      "So I sent him a cup of milk",
+      "While he stood at Arafah",
+      "He drank from it",
+      "And the people were looking"
+    ]);
+    const doubts = names("milk-at-arafah", /^doubting his fast: a grey voice \d$/);
+    const looking = names("milk-at-arafah", /^looking on: a faint warm line to his place \d$/);
+    expect([doubts, looking].map((list) => list.length)).toEqual([3, 4]);
+    expect([
+      [0.01, 0.19, 0.71].map((t) => all("milk-at-arafah", doubts, t)),
+      [at("milk-at-arafah", "a cup of milk, sent to him", "opacity", [0.21, 0.39]), at("milk-at-arafah", "a cup of milk, sent to him", "x", [0.21, 0.39])],
+      at("milk-at-arafah", "standing at Arafah: a soft light about his place", "opacity", [0.43, 0.55]),
+      at("milk-at-arafah", "the milk in the cup", "opacity", [0.55, 0.71]),
+      [0.75, 0.97].map((t) => all("milk-at-arafah", looking, t)),
+      at("milk-at-arafah", "they saw it: a warm glow over them all", "opacity", [0.75, 0.97])
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 1],
+        [0, -50.8]
+      ],
+      [0, 1],
+      [1, 0],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
       [0, 1]
     ]);
   });

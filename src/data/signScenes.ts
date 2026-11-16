@@ -695,7 +695,14 @@ export type SignKind =
   | "fast-on-a-journey"
   | "friday-alone"
   | "fast-with-faith"
-  | "false-speech";
+  | "false-speech"
+  | "fasting-in-heat"
+  | "no-wisal"
+  | "three-days-a-month"
+  | "not-before-ramadan"
+  | "no-fast-on-eid"
+  | "ashura-and-ramadan"
+  | "milk-at-arafah";
 
 export type SignScene = {
   id: string;
@@ -2934,6 +2941,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said that the Messenger of Allah ﷺ said: whoever does not leave false speech and acting on it, Allah has no need of his leaving his food and drink.",
     sources: [bukhari("1903")]
+  },
+  {
+    id: "sign-fasting-in-heat",
+    kind: "fasting-in-heat",
+    caption:
+      "Abu ad-Darda said: we set out with the Prophet ﷺ on one of his journeys on a very hot day, until one of us would put his hand on his head from the great heat, and none of us was fasting but the Prophet ﷺ and Ibn Rawahah.",
+    sources: [bukhari("1945")]
+  },
+  {
+    id: "sign-no-wisal",
+    kind: "no-wisal",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ forbade al-wisal, out of mercy for them. They said: but you do al-wisal. He said: I am not like you; my Lord gives me food and drink. Abdullah ibn Umar said: the Messenger of Allah ﷺ forbade al-wisal. They said: but you do it. He said: I am not like you; I am given food and drink.",
+    sources: [bukhari("1962"), bukhari("1964")]
+  },
+  {
+    id: "sign-three-days-a-month",
+    kind: "three-days-a-month",
+    caption:
+      "Abdullah ibn Amr ibn al-As said: the Prophet ﷺ said to me: you fast all the time and pray all night? I said: yes. He said: if you do that, your eyes will grow weak and you will tire. Whoever fasts all the time has not fasted. Fasting three days a month is fasting all the time.",
+    sources: [bukhari("1979")]
+  },
+  {
+    id: "sign-not-before-ramadan",
+    kind: "not-before-ramadan",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: none of you should go before Ramadan with a fast of a day or two, unless one used to fast that fast; then let him fast that day.",
+    sources: [bukhari("1914")]
+  },
+  {
+    id: "sign-no-fast-on-eid",
+    kind: "no-fast-on-eid",
+    caption:
+      "Abu Ubayd said: I attended the Eid with Umar ibn al-Khattab, and he said: these are two days the Messenger of Allah ﷺ forbade fasting: the day you break your fast from your fasting, and the other day, on which you eat from your sacrifices.",
+    sources: [bukhari("1990")]
+  },
+  {
+    id: "sign-ashura-and-ramadan",
+    kind: "ashura-and-ramadan",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ had ordered fasting the day of Ashura; and when Ramadan was made a duty, whoever wished fasted it, and whoever wished did not. Ibn Abbas said: I never saw the Prophet ﷺ seek to fast a day he favored over others but this day, the day of Ashura, and this month, meaning the month of Ramadan.",
+    sources: [bukhari("2001"), bukhari("2006")]
+  },
+  {
+    id: "sign-milk-at-arafah",
+    kind: "milk-at-arafah",
+    caption:
+      "Maymunah said: the people doubted whether the Prophet ﷺ was fasting on the day of Arafah, so I sent him a cup of milk while he was standing at the place of standing, and he drank from it while the people were looking.",
+    sources: [bukhari("1989")]
   }
 ];
 
@@ -4615,7 +4671,16 @@ export const SIGN_LESSONS: Record<string, string> = {
   "ramadan-fast-with-faith": "sign-fast-with-faith",
   // Whoever does not leave false speech and acting on it, Allah has no need of his leaving his food and drink.
   "deep-fast-manners-false-speech": "sign-false-speech",
-  "ramadan-leave-lies": "sign-false-speech"
+  "ramadan-leave-lies": "sign-false-speech",
+  "deep-ibn-rawahah-fasting-in-heat": "sign-fasting-in-heat",
+  "deep-book-fasting-no-nonstop-fasting": "sign-no-wisal",
+  "deep-fast-manners-no-wisal": "sign-no-wisal",
+  "deep-fast-extra-three-days": "sign-three-days-a-month",
+  "deep-book-fasting-no-fast-just-before-ramadan": "sign-not-before-ramadan",
+  "deep-eid-no-fasting": "sign-no-fast-on-eid",
+  "deep-book-fasting-ashura-became-optional": "sign-ashura-and-ramadan",
+  "deep-book-fasting-ashura-and-ramadan": "sign-ashura-and-ramadan",
+  "deep-book-fasting-milk-at-arafah": "sign-milk-at-arafah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

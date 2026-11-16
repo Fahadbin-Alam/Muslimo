@@ -23,37 +23,37 @@ import { faintRing, goldLight, goldLine, litWindow, NIGHT_OVER_LAND, NIGHT_OVER_
  */
 
 /** A voice twinkling as it speaks. */
-const speaking = { move: "twinkle", ms: 900, low: 0.5 } as const;
+export const speaking = { move: "twinkle", ms: 900, low: 0.5 } as const;
 
 /** A light twinkling softly. */
-const soft = { move: "twinkle", ms: 1800, low: 0.75 } as const;
+export const soft = { move: "twinkle", ms: 1800, low: 0.75 } as const;
 
 /** A date, its middle at (x, y). */
-const date = (x: number, y: number) => `<ellipse cx="${x}" cy="${y}" rx="0.9" ry="0.65" fill="#7A2E14"/><ellipse cx="${n(x - 0.3)}" cy="${n(y - 0.25)}" rx="0.3" ry="0.15" fill="#B0563A"/>`;
+export const date = (x: number, y: number) => `<ellipse cx="${x}" cy="${y}" rx="0.9" ry="0.65" fill="#7A2E14"/><ellipse cx="${n(x - 0.3)}" cy="${n(y - 0.25)}" rx="0.3" ry="0.15" fill="#B0563A"/>`;
 
 /** Three dates on a dish whose middle is at (x, y), as offsets from it. */
-const ON_DISH: [number, number][] = [
+export const ON_DISH: [number, number][] = [
   [-1.5, -1.5],
   [0, -1.9],
   [1.5, -1.5]
 ];
 
 /** A drink in a cup (hopeArt.ts) whose foot's middle is at (x, y): water to its brim. */
-const drink = (x: number, y: number) => `<ellipse cx="${x}" cy="${n(y - 3.3)}" rx="1.45" ry="0.45" fill="#4F86B8"/>`;
+export const drink = (x: number, y: number) => `<ellipse cx="${x}" cy="${n(y - 3.3)}" rx="1.45" ry="0.45" fill="#4F86B8"/>`;
 
 /** A small cloth spread on the ground, from x1 to x2 at its back (y), a little wider at its front. */
-const cloth = (x1: number, x2: number, y: number, fill = "#EFE0BC") =>
+export const cloth = (x1: number, x2: number, y: number, fill = "#EFE0BC") =>
   `<path d="M${x1} ${y} L${x2} ${y} L${n(x2 + 2)} ${n(y + 3.2)} L${n(x1 - 2)} ${n(y + 3.2)} Z" fill="${fill}"/>`;
 
 /** A soft golden ring on the ground about (x, y): a fast being kept. */
-const fastRing = (x: number, y: number, rx = 3.4, ry = 1.8) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" stroke="#E8C25A" stroke-width="0.7" fill="#FFE07A" fill-opacity="0.16"/>`;
+export const fastRing = (x: number, y: number, rx = 3.4, ry = 1.8) => `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" stroke="#E8C25A" stroke-width="0.7" fill="#FFE07A" fill-opacity="0.16"/>`;
 
 /** A ring of grey dashes about (x, y): something not to be done. */
-const greyRing = (x: number, y: number, rx: number, ry: number) =>
+export const greyRing = (x: number, y: number, rx: number, ry: number) =>
   `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" stroke="${GREY}" stroke-width="0.6" stroke-dasharray="1 0.9" fill="none"/>`;
 
 /** A spark of a deed at (x, y), rising from `from` until `to`. */
-const spark = (name: string, x: number, y: number, from: number, to: number): SignPart => ({
+export const spark = (name: string, x: number, y: number, from: number, to: number): SignPart => ({
   name,
   svg: sparkle(x, y, 1.6, "#FFE7A0"),
   keys: sparkRising(from, to),
@@ -553,19 +553,19 @@ function fastOnAJourney(): SignArt {
 }
 
 /** A day of the week: a small light tile with a sun over a line of land, its foot's middle at (x, y). */
-const dayTile = (x: number, y: number) =>
+export const dayTile = (x: number, y: number) =>
   `<rect x="${n(x - 7)}" y="${n(y - 18)}" width="14" height="18" rx="2.4" fill="#FFF7E2" stroke="#D9C49A" stroke-width="0.6"/>` +
   `<path d="M${n(x - 5.6)} ${n(y - 5)} L${n(x + 5.6)} ${n(y - 5)}" stroke="#C9B38C" stroke-width="0.6"/>` +
   `<circle cx="${x}" cy="${n(y - 11.4)}" r="2.4" fill="#FFE07A"/>`;
 
 /** A little dome and minaret standing on the land of a day's tile whose foot's middle is at (x, y): Friday. */
-const fridayDome = (x: number, y: number) =>
+export const fridayDome = (x: number, y: number) =>
   `<rect x="${n(x - 3.4)}" y="${n(y - 8.2)}" width="6" height="3.2" fill="#EFE2C2"/>` +
   `<path d="M${n(x - 2.4)} ${n(y - 8.2)} Q${n(x - 0.4)} ${n(y - 11.6)} ${n(x + 1.6)} ${n(y - 8.2)} Z" fill="#7FB07A"/>` +
   `<rect x="${n(x + 3.2)}" y="${n(y - 12)}" width="1" height="7" fill="#E6D6B2"/><path d="M${n(x + 3.1)} ${n(y - 12)} L${n(x + 3.7)} ${n(y - 13)} L${n(x + 4.3)} ${n(y - 12)} Z" fill="#7FB07A"/>`;
 
 /** A dashed ring about a day's tile whose foot's middle is at (x, y), `pad` out from it. */
-const aboutDay = (x: number, y: number, pad: number, color: string, width = 0.9) =>
+export const aboutDay = (x: number, y: number, pad: number, color: string, width = 0.9) =>
   `<rect x="${n(x - 7 - pad)}" y="${n(y - 18 - pad)}" width="${n(14 + pad * 2)}" height="${n(18 + pad * 2)}" rx="${n(2.4 + pad)}" stroke="${color}" stroke-width="${width}" stroke-dasharray="1.6 1.2" fill="none"/>`;
 
 // Not Friday on its own. Muhammad ibn Abbad said: I asked Jabir: did the Prophet ﷺ forbid fasting on Friday? He said:
@@ -614,7 +614,7 @@ function fridayAlone(): SignArt {
 const shade = (x: number, y: number) => wash(x, y, 3.8, 2.4, "#5C6F7A", 0.17) + `<ellipse cx="${x}" cy="${y}" rx="1.4" ry="1" fill="#5C6F7A" opacity="0.22"/>`;
 
 /** A dusk sky: blue above, warm low down over the hills, and the land's light below. */
-const DUSK =
+export const DUSK =
   `<rect width="160" height="120" fill="#DDF1FC"/><rect width="160" height="62" fill="#6F7FB4"/><rect y="24" width="160" height="38" fill="#A98FB0"/>` +
   `<rect y="40" width="160" height="22" fill="#E2A98E"/><rect y="52" width="160" height="10" fill="#F7D3A8"/>`;
 
