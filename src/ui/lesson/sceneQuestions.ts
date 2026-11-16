@@ -3400,6 +3400,67 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Ayah 29:8 was revealed about Sa'd.", "True", "And We enjoined on man goodness to his parents", "But if they strive to make you join with Me"],
     ["What did Allah reveal about her?", "Do not obey parents in shirk, but be kind", "And We enjoined on man goodness to his parents", "Keep company with them in this world kindly"],
     ["What should you do if a parent orders shirk?", "Refuse, and stay kind to them", "And We enjoined on man goodness to his parents", "Keep company with them in this world kindly"]
+  ],
+  // He was the most generous of people, most generous of all in Ramadan, when Jibril met him every night of Ramadan
+  // and studied the Quran with him; more generous with good than the sent wind (Sahih al-Bukhari 6). (What Muslims
+  // pray at night in Ramadan stays on its usual picture.)
+  "sign-most-generous": [
+    ["When was the Prophet ﷺ most generous?", "In Ramadan", "Most generous of all in Ramadan"],
+    ["Ramadan is a good time to give more.", "True", "Most generous of all in Ramadan"],
+    ["Every Ramadan, Jibril went over the ____ with the Prophet ﷺ.", "Quran", "And studied the Quran with him"]
+  ],
+  // Reciting was made easy for Dawud: he would order his mounts to be saddled, and recite before they were saddled;
+  // and he ate only from the work of his hands (Sahih al-Bukhari 3417). (Which book he was given, and that it was not
+  // given to Musa, stay on their usual picture: the scene's words do not name it.)
+  "sign-dawud-recites": [
+    ["How fast could Dawud recite the Zabur?", "Before his animals were saddled", "He would order his mounts to be saddled", "And recite before they were saddled"],
+    ["When did Dawud finish reciting the Zabur?", "Before his animals were saddled", "He would order his mounts to be saddled", "And recite before they were saddled"],
+    ["How did Dawud earn his food, in the hadith?", "From his own handiwork", "And he ate only from the work of his hands"]
+  ],
+  // Hakim asked about the good he did in the days of ignorance, charity, freeing a slave and keeping ties: is there
+  // any reward in them? You became Muslim with the good you did before (Sahih al-Bukhari 1436).
+  "sign-good-kept": [
+    ["What did Hakim ask the Prophet ﷺ?", "If his good before Islam counted", "Good things I did in the days of ignorance", "Is there any reward in them?"],
+    ["What did Hakim ask the Prophet ﷺ?", "If his old good deeds count", "Good things I did in the days of ignorance", "Is there any reward in them?"],
+    ["Hakim kept good ties with his family before Islam.", "True", "Charity, freeing a slave, and keeping ties"],
+    ["Which good deed did Hakim do before Islam?", "He gave in charity", "Charity, freeing a slave, and keeping ties"],
+    ["What did he ﷺ answer?", "You became Muslim with all that good", "You became Muslim with the good you did before"],
+    ["The good a person did before Islam is thrown away.", "False", "You became Muslim with the good you did before"]
+  ],
+  // He would do i'tikaf in the last ten of Ramadan until Allah took him; then his wives did i'tikaf after him (Sahih
+  // al-Bukhari 2026). (What i'tikaf is stays on its usual picture: the masjid is there from the start.)
+  "sign-last-ten-itikaf": [
+    ["The Prophet ﷺ did i'tikaf in the last ten days of Ramadan.", "True", "He would do i'tikaf in the last ten of Ramadan"],
+    ["He ﷺ did i'tikaf only once.", "False", "He would do i'tikaf in the last ten of Ramadan", "Until Allah took him"],
+    ["Who kept doing i'tikaf after he ﷺ passed away?", "His wives", "Then his wives did i'tikaf after him"]
+  ],
+  // Who will bring me news of the people? Az-Zubayr said: I, and again: I. Every prophet has a disciple, and my
+  // disciple is az-Zubayr (Sahih al-Bukhari 2846). (At which battle it was said stays on its usual picture: the
+  // trench is there from the start.)
+  "sign-my-disciple": [
+    ["What did the Prophet ﷺ ask for at the Trench?", "Someone to bring news of the enemy", "Who will bring me news of the people?"],
+    ["How many times did Az-Zubayr say 'I will'?", "More than once", "Az-Zubayr said: I", "He asked again, and az-Zubayr said: I"],
+    ["Every prophet had a disciple, per the hadith.", "True", "Every prophet has a disciple"],
+    ["What did the Prophet ﷺ call Az-Zubayr?", "His disciple", "Every prophet has a disciple", "And my disciple is az-Zubayr"],
+    ["Whom did the Prophet ﷺ call his disciple?", "Az-Zubayr", "Who will bring me news of the people?", "And my disciple is az-Zubayr"]
+  ],
+  // Help your brother, wrongdoer or wronged. We help him when he is wronged; but how do we help him when he does
+  // wrong? By holding back his hands (Sahih al-Bukhari 2444).
+  "sign-help-your-brother": [
+    ["Whom should you help, per Bukhari 2444?", "Your brother, wronged or wrongdoer", "Help your brother, wrongdoer or wronged"],
+    ["How do you help a brother who is wronging others?", "Stop him from doing it", "By holding back his hands"],
+    ["How do you help a brother who wrongs others, per Bukhari 2444?", "Stop him from wronging", "By holding back his hands"],
+    ["Your friend is bullying someone. What fits this lesson?", "Stop your friend", "By holding back his hands"],
+    ["Helping a brother means always taking his side.", "False", "By holding back his hands"],
+    ["Stopping someone from doing wrong is a way of helping him.", "True", "By holding back his hands"]
+  ],
+  // Umm al-Fadl heard Ibn Abbas recite al-Mursalat: my son, your recitation reminded me; it was the last I heard
+  // from him; he recited it in the Maghrib prayer (Sahih al-Bukhari 763). (What al-Mursalat's ayahs say stays on
+  // its usual picture, and in which prayer he recited it is asked on the sky.)
+  "sign-last-surah-heard": [
+    ["Who reminded Umm al-Fadl of it?", "Her son Ibn Abbas", "Umm al-Fadl heard Ibn Abbas recite al-Mursalat", "My son, by Allah, your recitation reminded me"],
+    ["Al-Mursalat was the last surah she heard from the Prophet ﷺ.", "True", "It was the last I heard from him"],
+    ["In which prayer was it the last surah Umm al-Fadl heard?", "The sunset prayer", "It was the last I heard from him", "He recited it in the Maghrib prayer"]
   ]
 };
 
