@@ -1006,7 +1006,7 @@ const ZUKHRUF_FOUR: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How will the Hour come, in 43:66?", a: "Suddenly", wrong: ["Slowly", "With a warning date", "Never"], why: "That it shall come upon them suddenly while they perceive not." },
-        { tf: true, q: "Regret will help people once the Hour arrives.", why: "Ibn Kathir: they will feel the utmost regret when regret will not benefit them in the slightest." },
+        { tf: false, q: "Regret will help people once the Hour arrives.", why: "Ibn Kathir: they will feel the utmost regret when regret will not benefit them." },
         { q: "What should we do since the Hour is sudden?", a: "Prepare now with good deeds", wrong: ["Wait and see", "Forget about it", "Guess the date"], why: "These negligent people are unprepared for it, so the wise prepare before it comes." }
       ]
     },

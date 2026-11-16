@@ -379,7 +379,7 @@ const MUNAFIQUN_TWO: DeepUnit = {
       questions: [
         { q: "To whom do the treasures belong?", a: "Allah", wrong: ["The kings", "The traders", "The hypocrites"], why: "And to Allah belong the treasures of the heavens and the earth." },
         { q: "What did the hypocrites fail to grasp?", a: "That Allah provides", wrong: ["How to count", "How to travel", "How to farm"], why: "And to Allah belong the treasures of the heavens and the earth, but the hypocrites comprehend not." },
-        { tf: false, q: "Stopping charity can cut off Allah's provision.", why: "False. To Allah belong the treasures of the heavens and the earth." }
+        { tf: false, q: "Hypocrites can cut off Allah's provision to the believers.", why: "False. To Allah belong the treasures of the heavens and the earth." }
       ]
     },
     {
