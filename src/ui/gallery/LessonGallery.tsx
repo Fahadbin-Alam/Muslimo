@@ -1238,6 +1238,13 @@ const STATES: State[] = [
   { id: "scene-answer-the-call", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-adhan-reward-say-what-he-says" ask="What should you do when you hear the adhan" /> },
   { id: "scene-supper-first", render: () => <SceneQuestionDemo lessonId="lesson-deep-sharh2-supper-before-prayer" ask="If supper is served at Iqamah, what comes first" /> },
   { id: "scene-siwak-every-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-siwak" ask="Why did he ﷺ not order it for every prayer" /> },
+  { id: "scene-seven-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-table-seven-dates-each" ask="How many dates did each companion get" /> },
+  { id: "scene-two-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-table-two-dates-at-once" ask="What did Ibn Umar tell people not to do" /> },
+  { id: "scene-boy-on-right", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahl-the-boy-on-the-right" ask="Who sat on the Prophet's ﷺ right" /> },
+  { id: "scene-after-eating", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-day-after-eating" ask="What kind of praise is it" /> },
+  { id: "scene-one-sheet", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-food-on-one-leather-sheet" ask="What did he ﷺ do before the people took the food" /> },
+  { id: "scene-never-faulted", render: () => <SceneQuestionDemo lessonId="lesson-deep-seerah-khuluq-food" ask="What did he ﷺ do with food he did not like" /> },
+  { id: "scene-date-in-street", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-zakat-date-in-the-street" ask="Why didn't he ﷺ eat it" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

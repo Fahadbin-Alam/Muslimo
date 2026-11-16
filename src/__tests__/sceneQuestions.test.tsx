@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2233);
+    expect(asks.length).toBe(2255);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3274);
+    expect(places).toBe(3303);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -9603,6 +9603,237 @@ describe("where the scene waits and where it stops", () => {
         [0, -11]
       ]);
     }
+  });
+
+  it("waits on the scenes of the table, from seven dates each to a date in the street, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-seven-dates", "sign-two-dates", "sign-boy-on-right", "sign-after-eating", "sign-one-sheet", "sign-never-faulted", "sign-date-in-street"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(22);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Seven dates each. How many each one got: the places sit in a row by the basket; then a handful of seven dates goes
+    // from the basket to each place in turn.
+    expect([
+      shown("How many dates did each companion get?", ["seven dates for each: a handful 1", "seven dates for each: a handful 4", "his seven: a good date 1"]),
+      moved("How many dates did each companion get?", "seven dates for each: a handful 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [-24.2, 0]
+    ]);
+    // Which date he liked most: the four places with their dates; then his seven come, one of them dry and grey with a
+    // faint ring about it, and a warm glow comes about that date.
+    expect([
+      shown("Which date did Abu Hurairah like the most?", ["his seven: one dry and hard", "dry and hard: a faint ring about it", "none pleased him more: a warm glow about the dry date"]),
+      moved("Which date did Abu Hurairah like the most?", "his seven: one dry and hard", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [-82.2, 0]
+    ]);
+    // That he was happy with it: the dry date by his place; then a warm glow comes about it and about his place, the
+    // other six are gone, and the dry one goes on, little by little.
+    expect([
+      shown("Abu Hurairah was happy with the hard date.", ["none pleased him more: a warm glow about the dry date", "a warm glow about the place of the one who tells it", "his seven: a good date 1", "his seven: one dry and hard"]),
+      value("seven-dates", "his seven: one dry and hard", "scale", 1)
+    ]).toEqual([
+      [
+        [0, 0, 1, 1],
+        [1, 1, 0, 1]
+      ],
+      0.6
+    ]);
+    // Two dates at once. What Ibn Umar told them not to do: his place by the cloth; then his voice speaks, two dates go
+    // up together from the middle dish, and a grey ring comes about them.
+    expect([
+      shown("What did Ibn Umar tell people not to do?", ["Ibn Umar's voice: do not take two at once", "two at once: a grey ring about them", "Ibn Umar's place, passing by"]),
+      moved("What did Ibn Umar tell people not to do?", "two dates together, at once", "y")
+    ]).toEqual([
+      [
+        [0, 0, 1],
+        [1, 1, 1]
+      ],
+      [0, -2.4]
+    ]);
+    // When it is fine: the two dates back on the dish; then the middle place's voice asks the place beside it, a warm
+    // glow comes about that place, and the two dates go to the middle place.
+    for (const prompt of ["When is it fine to take two dates at once?", "Good table manners mean thinking of others too."]) {
+      expect([
+        prompt,
+        shown(prompt, ["the middle place's voice: may I take two?", "permission: a warm glow about the place beside it", "with permission: a warm glow about the middle place"]),
+        moved(prompt, "two dates together, at once", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, -4.4]
+      ]);
+    }
+    // The one on his right. Who sat on his right: the cup at his place; then a small place comes and sits on his right,
+    // with a faint ring about it, before the elders come.
+    expect([
+      shown("Who sat on the Prophet's ﷺ right?", ["on his right: the small place, the youngest there", "on his right: a faint ring about the small place", "on his left: an elder's place 1"]),
+      moved("Who sat on the Prophet's ﷺ right?", "on his right: the small place, the youngest there", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [10, 0]
+    ]);
+    // What he did first: the elders seated on his left; then his voice asks the small place, and a faint dashed way goes
+    // from the cup to the elders, while the cup stays at his place.
+    expect([
+      shown("What did the Prophet ﷺ do first?", ["his voice: may I give it to the elders?", "may I give it: a faint dashed way from the cup to the elders", "the small place's voice: I will not give my share"]),
+      moved("What did the Prophet ﷺ do first?", "a cup, brought to him", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, 0]
+    ]);
+    // That the right has the first turn: his voice asks the small place, the small place answers, and the cup goes to
+    // it, with a warm glow about it.
+    expect([
+      shown("The right side has the first turn when serving.", ["he gave it to him: a warm glow about the small place", "his voice: may I give it to the elders?"]),
+      moved("The right side has the first turn when serving.", "a cup, brought to him", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0, 17.4]
+    ]);
+    // Praise when the meal is done. When he said it: waits at the scene's start, the meal on its sheet; then the dish
+    // and the cup are gone, the sheet is taken away into his home, and his voice speaks.
+    for (const prompt of ["When did the Prophet ﷺ say Al-hamdu lillahi kathiran tayyiban?", "When did the Prophet ﷺ say this praise?", "Thanking Allah after food is a sunnah."]) {
+      expect([
+        prompt,
+        shown(prompt, ["the meal on the sheet: a dish", "his dining sheet, taken away", "his voice: the praise"]),
+        moved(prompt, "his dining sheet, taken away", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0],
+          [0, 0, 1]
+        ],
+        [0, -29.8]
+      ]);
+    }
+    // What its words mean: the sheet gone; then his voice speaks, a spark of praise rises, and three small golden lights
+    // come one after another.
+    expect([
+      shown("What does Al-hamdu lillah kathiran mean?", ["his voice: the praise", "much, good and blessed: a small golden light 1", "much, good and blessed: a small golden light 3"]),
+      moved("What does Al-hamdu lillah kathiran mean?", "praise: a spark rising", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -11]
+    ]);
+    // What kind of praise: his voice speaking; then three small golden lights come one after another.
+    expect(shown("What kind of praise is it?", ["much, good and blessed: a small golden light 1", "much, good and blessed: a small golden light 2", "much, good and blessed: a small golden light 3", "his voice: the praise"])).toEqual([
+      [0, 0, 0, 1],
+      [1, 1, 1, 1]
+    ]);
+    // A little food on one leather sheet. Where the food was put: a faint ring about each sack; then a leather sheet is
+    // spread out, and a little from each sack goes onto it.
+    expect([
+      shown("Where was all the food put together?", ["a leather sheet, spread out", "heaped on the sheet: what was left 1", "heaped on the sheet: what was left 5", "his blessing on it: a soft golden light over the heap"]),
+      moved("Where was all the food put together?", "heaped on the sheet: what was left 1", "x"),
+      value("one-sheet", "a leather sheet, spread out", "scaleX", 0.47)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      [-35.4, 0],
+      1
+    ]);
+    // What he did before they took it: the heap on the sheet; then his place comes to the sheet, his voice speaks, a
+    // spark of du'a rises, and a soft golden light comes over the heap.
+    expect([
+      shown("What did he ﷺ do before the people took the food?", ["his voice: a du'a", "his blessing on it: a soft golden light over the heap", "with their vessels: a bowl 1"]),
+      moved("What did he ﷺ do before the people took the food?", "a golden ring, his place", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, 3]
+    ]);
+    // Whether it was enough: the bowls at the sheet; then each goes back full, with a warm glow about each place.
+    expect([
+      shown("There was not enough food for everyone.", ["till all had enough: a bowl filled 1", "till all had enough: a bowl filled 5", "till all had enough: a warm glow about a place 1", "till all had enough: a warm glow about a place 5", "with their vessels: a bowl 1"]),
+      moved("There was not enough food for everyone.", "with their vessels: a bowl 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1]
+      ],
+      [33.8, 0]
+    ]);
+    // Food he never found fault with. Whether he found fault: waits at the scene's start, his place at the cloth; then
+    // two dishes are brought, and a calm warm glow comes about his place.
+    expect(shown("Did he ﷺ ever criticize food?", ["a dish brought to him", "another dish brought to him", "never found fault: a calm warm glow about his place"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // What he did with food he did not like: the first dish eaten; then the other dish goes gently aside, whole, with a
+    // faint ring about it.
+    expect([
+      shown("What did he ﷺ do with food he did not like?", ["he left it: a faint ring about the other dish", "another dish brought to him", "he ate it: the bread is gone"]),
+      moved("What did he ﷺ do with food he did not like?", "another dish brought to him", "x")
+    ]).toEqual([
+      [
+        [0, 1, 0],
+        [1, 1, 0]
+      ],
+      [0, 12]
+    ]);
+    // That we can follow it: waits at the scene's start; then the dishes come, a calm warm glow comes about his place,
+    // the first dish is eaten, and the other goes aside, whole.
+    expect(shown("We can follow this at every meal.", ["never found fault: a calm warm glow about his place", "he ate it: a warm glow about the first dish", "he left it: a faint ring about the other dish"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // A date in the street. Why he did not eat it: his place by the date; then his voice speaks, and a faint dashed way
+    // goes from the date to the heap of charity dates by the masjid.
+    expect(shown("Why didn't he ﷺ eat it?", ["his voice: if it were not from the charity", "from the charity: a faint dashed way from the heap to the date", "he found it: a faint ring about the date"])).toEqual([
+      [0, 0, 1],
+      [1, 1, 1]
+    ]);
+    // Being careful with what is doubtful: his place by the date; then the way to the charity dates comes, and his place
+    // goes on, leaving the date where it lay.
+    expect([
+      shown("Being careful with doubtful things is from the Sunnah.", ["from the charity: a faint dashed way from the heap to the date", "a date in the street"]),
+      moved("Being careful with doubtful things is from the Sunnah.", "a golden ring, his place, along the street", "x")
+    ]).toEqual([
+      [
+        [0, 1],
+        [1, 1]
+      ],
+      [44, 70]
+    ]);
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
