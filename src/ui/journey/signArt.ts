@@ -44,6 +44,7 @@ import { FAST_DAYS_ART } from "./fastDaysArt";
 import { WEATHER_ART } from "./weatherArt";
 import { HERD_ART } from "./herdArt";
 import { TRADE_ART } from "./tradeArt";
+import { ROAD_ART } from "./roadArt";
 import { GIVE_ART } from "./giveArt";
 import { HISTORY_ART } from "./historyArt";
 import { PARABLE_ART } from "./parableArt";
@@ -934,7 +935,7 @@ function shade(): SignArt {
   };
 }
 
-export const SIGN_ART: Record<SignKind, () => SignArt> = { rain, clouds, fade, seed, seas, ships, mountains, bee, spider, tree, look, birds, sow, water, fire, shade, ...PARABLE_ART, ...STORY_ART, ...HISTORY_ART, ...PROPHET_ART, ...FAVOR_ART, ...TRIAL_ART, ...COMMAND_ART, ...POWER_ART, ...WONDER_ART, ...GIVE_ART, ...CHARITY_ART, ...MANNERS_ART, ...COMPANION_ART, ...LIKENESS_ART, ...TOLD_ART, ...EXAMPLE_ART, ...DEED_ART, ...WISDOM_ART, ...LIFE_ART, ...GRACE_ART, ...REWARD_ART, ...KIND_ART, ...WORSHIP_ART, ...SPEECH_ART, ...LOVED_ART, ...CHARACTER_ART, ...WORTH_ART, ...LASTING_ART, ...HOPE_ART, ...TREASURE_ART, ...TEACH_ART, ...REVEAL_ART, ...COMPANY_ART, ...COUNSEL_ART, ...SUNNAH_ART, ...HEART_ART, ...DAYS_ART, ...BLESSING_ART, ...RIGHTS_ART, ...FAITH_ART, ...TRUTH_ART, ...WAYS_ART, ...DEVOTION_ART, ...HEED_ART, ...KEPT_ART, ...MERCY_ART, ...HOME_ART, ...TABLE_ART, ...FAST_ART, ...FAST_DAYS_ART, ...WEATHER_ART, ...HERD_ART, ...TRADE_ART };
+export const SIGN_ART: Record<SignKind, () => SignArt> = { rain, clouds, fade, seed, seas, ships, mountains, bee, spider, tree, look, birds, sow, water, fire, shade, ...PARABLE_ART, ...STORY_ART, ...HISTORY_ART, ...PROPHET_ART, ...FAVOR_ART, ...TRIAL_ART, ...COMMAND_ART, ...POWER_ART, ...WONDER_ART, ...GIVE_ART, ...CHARITY_ART, ...MANNERS_ART, ...COMPANION_ART, ...LIKENESS_ART, ...TOLD_ART, ...EXAMPLE_ART, ...DEED_ART, ...WISDOM_ART, ...LIFE_ART, ...GRACE_ART, ...REWARD_ART, ...KIND_ART, ...WORSHIP_ART, ...SPEECH_ART, ...LOVED_ART, ...CHARACTER_ART, ...WORTH_ART, ...LASTING_ART, ...HOPE_ART, ...TREASURE_ART, ...TEACH_ART, ...REVEAL_ART, ...COMPANY_ART, ...COUNSEL_ART, ...SUNNAH_ART, ...HEART_ART, ...DAYS_ART, ...BLESSING_ART, ...RIGHTS_ART, ...FAITH_ART, ...TRUTH_ART, ...WAYS_ART, ...DEVOTION_ART, ...HEED_ART, ...KEPT_ART, ...MERCY_ART, ...HOME_ART, ...TABLE_ART, ...FAST_ART, ...FAST_DAYS_ART, ...WEATHER_ART, ...HERD_ART, ...TRADE_ART, ...ROAD_ART };
 
 const drawn = new Map<SignKind, SignArt>();
 
