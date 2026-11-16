@@ -1,14 +1,14 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Duas unit: the du'as for rain and wind, from Sunan Abi Dawud and Sahih al-Bukhari. Every card is one
-// sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight, and none of
-// them is taught anywhere else in the app.
+// One more Duas unit: the du'as for rain and wind, from Sunan Abi Dawud, Sahih al-Bukhari and Sahih Muslim. Every card
+// is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight, and none
+// of them is taught anywhere else in the app.
 
 const WEATHER: DeepUnit = {
   key: "dua-rain-and-wind",
   topicId: "duas",
   branchId: "duas-rain-and-wind",
-  branch: { title: "Du'as for rain and wind", description: "Asking Allah for rain, around us and not on us, the Rich and the poor, rain fresh from its Lord, and the wind from Allah's mercy." },
+  branch: { title: "Du'as for rain and wind", description: "Asking Allah for rain, famine despite heavy rain, around us and not on us, the Rich and the poor, rain fresh from its Lord, and the wind from Allah's mercy." },
   name: "du'as for rain and wind",
   kind: "skill",
   lessonType: "skill",
@@ -24,6 +24,19 @@ const WEATHER: DeepUnit = {
         { q: "Why did the people come to him ﷺ weeping?", a: "There was a drought", wrong: ["A war had begun", "A flood had come", "A guest had left"], why: "They had no rain, so he ﷺ asked Allah to send it." },
         { q: "What kind of rain did he ﷺ ask Allah for?", a: "Rain that helps, not harms", wrong: ["Rain only at night", "Rain for one hour", "Rain only on the sea"], why: "Abundant and profitable, not injurious, and now without delay." },
         { q: "After his du'a, clouds covered the sky.", tf: true, why: "Thereupon the sky became overcast, Jabir said." }
+      ]
+    },
+    {
+      slug: "rain-yet-nothing-grows",
+      title: "Rain, yet nothing grows",
+      line: "Famine can come with heavy rain, when nothing grows.",
+      facts: ["Told by Abu Hurairah", "Famine is not only a lack of rain"],
+      source: hadith("muslim", "2904", "Abu Hurairah", "Sahih", "Abu Hurairah said: the Messenger of Allah ﷺ said: famine is not only that no rain falls; there can be famine while heavy rain falls, because nothing grows from the earth.", "there would be famine despite heavy rainfall as nothing would grow from the earth"),
+      difficulty: 2,
+      questions: [
+        { q: "Why would there be famine despite heavy rain, he ﷺ said?", a: "Nothing would grow", wrong: ["No river would flow", "No cloud would form", "No wind would blow"], why: "There would be famine despite heavy rainfall, as nothing would grow from the earth." },
+        { q: "Famine comes only when no rain falls.", tf: false, why: "No. There can be famine despite heavy rainfall, when nothing grows, he ﷺ said." },
+        { q: "Who reported his ﷺ words on famine despite heavy rain?", a: "Abu Hurairah", wrong: ["Anas ibn Malik", "Ibn Umar", "Jabir ibn Abdullah"], why: "Abu Hurairah heard it from the Messenger of Allah ﷺ; it is Sahih Muslim 2904." }
       ]
     },
     {
