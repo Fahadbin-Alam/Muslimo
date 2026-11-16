@@ -1182,6 +1182,13 @@ const STATES: State[] = [
   { id: "scene-hornless-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-naba3-even-the-animals" ask="Allah judges between the animals" /> },
   { id: "scene-forgot-and-ate", render: () => <SceneQuestionDemo lessonId="lesson-ramadan-if-you-forget" ask="You forgot and drank water" /> },
   { id: "scene-kiss-of-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-children-kissing" ask="What did he say to the man who never kissed" /> },
+  { id: "scene-first-believers", render: () => <SceneQuestionDemo lessonId="lesson-deep-ammar-first-believers" ask="when Ammar saw him" /> },
+  { id: "scene-freed-bilal", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-freed-bilal" ask="Who did he mean" /> },
+  { id: "scene-most-beloved", render: () => <SceneQuestionDemo lessonId="lesson-deep-husbands-most-beloved" ask="Among men, whom did he" /> },
+  { id: "scene-trustworthy-one", render: () => <SceneQuestionDemo lessonId="lesson-deep-abuubaydah-amin" ask="What title did the Prophet" /> },
+  { id: "scene-two-refuges", render: () => <SceneQuestionDemo lessonId="lesson-deep-uqbah-the-two-refuges" ask="What do both surahs begin with" /> },
+  { id: "scene-greatest-ayah", render: () => <SceneQuestionDemo lessonId="lesson-deep-ubayy-greatest-ayah" ask="Which ayah did Ubayy say" /> },
+  { id: "scene-change-it", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran2-change-it" ask="What comes after the hand" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
