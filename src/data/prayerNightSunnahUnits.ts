@@ -1,10 +1,10 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Prayer unit: sunnahs of the night prayer, from Sahih al-Bukhari, Jami at-Tirmidhi and Sunan Abi Dawud.
-// Waking the household one night, sleeping early and rising late, reciting sitting in old age, making up a missed
-// night portion before Zuhr, Abu Bakr's and Umar's voices, and reciting quietly or aloud. Every card is one sahih
-// hadith with its number, narrator and grade, and its exact English words to highlight. None of these hadith is
-// taught anywhere else in the app.
+// Waking the household one night, sleeping early and rising late, reciting sitting in old age, making up a missed night
+// portion before Zuhr, Abu Bakr's and Umar's voices, reciting quietly or aloud, and not raising one's voice over
+// another's recitation. Every card is one sahih hadith with its number, narrator and grade, and its exact English words
+// to highlight. None of these hadith is taught anywhere else in the app.
 
 const NIGHT: DeepUnit = {
   key: "prayer-night-sunnahs",
@@ -91,6 +91,19 @@ const NIGHT: DeepUnit = {
         { q: "How did he ﷺ recite at night, Aishah said?", a: "Sometimes quietly, sometimes aloud", wrong: ["Always in a whisper", "Always very loudly", "Only in his heart"], why: "Sometimes he was silent with his recitation and sometimes it was audible, Aishah said." },
         { q: "What did Abdullah ibn Abi Qais thank Allah for?", a: "Making the matter wide", wrong: ["Giving him a horse", "Sending down rain", "A safe journey home"], why: "All praise is due to Allah, the One who made the matter broad, he said." },
         { q: "He ﷺ sometimes recited aloud in his night prayer.", tf: true, why: "Sometimes he was silent with his recitation and sometimes it was audible, Aishah said." }
+      ]
+    },
+    {
+      slug: "each-calls-his-lord",
+      title: "Each one calls his Lord",
+      line: "In prayer, do not raise your voice over another's recitation.",
+      facts: ["Told by Abu Sa'id al-Khudri", "He ﷺ was in i'tikaf in the masjid", "Each one praying calls his Lord quietly"],
+      source: hadith("abudawud", "1332", "Abu Sa'id al-Khudri", "Sahih (Al-Albani)", "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ was in i'tikaf in the masjid and heard people reciting the Quran aloud. He drew back the curtain and said: each of you is calling his Lord quietly, so do not trouble one another, and do not raise your voices over one another in recitation, or in prayer.", "One should not trouble the other and one should not raise the voice in recitation"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ hear people doing in the masjid?", a: "Reciting the Quran aloud", wrong: ["Teaching children to write", "Planning a long journey", "Building a new wall"], why: "He heard them reciting the Qur'an in a loud voice, Abu Sa'id al-Khudri said." },
+        { q: "Each one praying is calling whom quietly, he ﷺ said?", a: "His Lord", wrong: ["His father", "His friend", "His teacher"], why: "Every one of you is calling his Lord quietly, he ﷺ said." },
+        { q: "We should not raise our voices over others when reciting.", tf: true, why: "One should not trouble the other, nor raise his voice over another, he ﷺ said." }
       ]
     }
   ]
