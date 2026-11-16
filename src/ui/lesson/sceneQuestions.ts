@@ -3938,6 +3938,51 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-search-at-arafah": [
     ["Jubair saw him ﷺ standing at Arafat on the day of Arafat.", "True", "I saw him standing at Arafah"],
     ["Why was Jubair surprised to see him ﷺ there?", "He was one of the Hums of Quraysh", "By Allah, this one is of the Hums"]
+  ],
+  // When he came back from a journey and saw the walls of Madinah, he made his mount go faster, out of his love for
+  // Madinah (Sahih al-Bukhari 1886).
+  "sign-walls-of-madinah": [
+    ["What did he ﷺ do on seeing Madinah's walls?", "Made his mount go faster", "He made his mount go faster"],
+    ["Why did he ﷺ hurry when he saw Madinah?", "Out of love for Madinah", "Out of his love for Madinah"],
+    ["He ﷺ loved the city of Madinah.", "True", "Out of his love for Madinah"]
+  ],
+  // Faith returns to Madinah as a snake returns to its hole (Sahih al-Bukhari 1876).
+  "sign-faith-returns": [
+    ["Where does faith return to, he ﷺ said?", "To Madinah", "Faith returns to Madinah"],
+    ["He ﷺ said faith would leave Madinah forever.", "False", "Faith returns to Madinah"],
+    ["How does faith return to Madinah, he ﷺ said?", "As a snake to its hole", "As a snake returns to its hole"]
+  ],
+  // No one plots against the people of Madinah but he melts away, as salt melts in water (Sahih al-Bukhari 1877).
+  "sign-salt-in-water": [
+    ["Plotting against the people of Madinah ends well.", "False", "But he melts away"],
+    ["What happens to one who plots against Madinah's people?", "He melts away like salt", "But he melts away", "As salt melts in water"],
+    ["What does the plotter melt like, he ﷺ said?", "Salt in water", "As salt melts in water"]
+  ],
+  // A Bedouin gave him his pledge on Islam; the next day he came with a fever and said: cancel my pledge; he refused
+  // three times, and said: Madinah is like a furnace, it drives out its dross and its good shines pure (Sahih
+  // al-Bukhari 1883).
+  "sign-like-a-furnace": [
+    ["What happened to the Bedouin the day after his pledge?", "He came with a fever", "The next day he came with a fever"],
+    ["He ﷺ cancelled the Bedouin's pledge at once.", "False", "He refused, three times"],
+    ["What is Madinah like, he ﷺ said?", "A furnace", "Madinah is like a furnace"]
+  ],
+  // Between my house and my pulpit is a garden of the gardens of Paradise, and my pulpit is over my Pool (Sahih
+  // al-Bukhari 1196). (What a minbar is stays on its usual picture: the pulpit is there from the start.)
+  "sign-between-house-and-pulpit": [
+    ["What lies between his ﷺ house and his minbar?", "A garden of Jannah", "Is a garden of the gardens of Paradise"],
+    ["His ﷺ minbar is over his Pool, he said.", "True", "And my pulpit is over my Pool"]
+  ],
+  // A prayer in this masjid of mine is better than a thousand prayers in any other masjid, except al-Masjid al-Haram
+  // (Sahih al-Bukhari 1190). (That his masjid is in Madinah stays on its usual picture: it is there from the start.)
+  "sign-thousand-prayers": [
+    ["A prayer in his ﷺ masjid beats how many elsewhere?", "A thousand", "Is better than a thousand prayers"],
+    ["Which masjid is left out of that count?", "Al-Masjid al-Haram", "Except al-Masjid al-Haram"]
+  ],
+  // He used to come to Masjid Quba every Saturday, walking and riding, and Ibn Umar used to do the same (Sahih
+  // al-Bukhari 1193).
+  "sign-quba-every-saturday": [
+    ["How often did he ﷺ visit Quba, per Ibn Umar?", "Every Saturday", "Every Saturday"],
+    ["How did he ﷺ go there?", "Walking or riding", "Sometimes walking, sometimes riding"]
   ]
 };
 

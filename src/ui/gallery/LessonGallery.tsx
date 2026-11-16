@@ -1287,6 +1287,13 @@ const STATES: State[] = [
   { id: "scene-set-out-on-thursday", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-set-out-on-thursday" ask="usually set out on a journey" /> },
   { id: "scene-camel-is-yours", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-the-camel-is-yours" ask="say to Abdullah after buying it" /> },
   { id: "scene-search-at-arafah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-the-day-of-arafah-a-lost-camel" ask="Why was Jubair surprised" /> },
+  { id: "scene-walls-of-madinah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-madinah-hurrying-home" ask="on seeing Madinah's walls" /> },
+  { id: "scene-faith-returns", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-madinah-faith-goes-home" ask="How does faith return to Madinah" /> },
+  { id: "scene-salt-in-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-madinah-like-salt-in-water" ask="What does the plotter melt like" /> },
+  { id: "scene-like-a-furnace", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-madinah-like-a-furnace" ask="What is Madinah like" /> },
+  { id: "scene-between-house-and-pulpit", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-masjids-rawdah" ask="house and his minbar" /> },
+  { id: "scene-thousand-prayers", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-masjids-thousand" ask="Which masjid is left out of that count" /> },
+  { id: "scene-quba-every-saturday", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-visiting-quba" ask="visit Quba, per Ibn Umar" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
