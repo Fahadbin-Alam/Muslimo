@@ -681,7 +681,14 @@ export type SignKind =
   | "family-spending"
   | "answer-the-call"
   | "supper-first"
-  | "siwak-every-prayer";
+  | "siwak-every-prayer"
+  | "seven-dates"
+  | "two-dates"
+  | "boy-on-right"
+  | "after-eating"
+  | "one-sheet"
+  | "never-faulted"
+  | "date-in-street";
 
 export type SignScene = {
   id: string;
@@ -2824,6 +2831,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said that the Messenger of Allah ﷺ said: were it not that it would be hard on my ummah, or on the people, I would have ordered them to use the siwak with every prayer.",
     sources: [bukhari("887")]
+  },
+  {
+    id: "sign-seven-dates",
+    kind: "seven-dates",
+    caption:
+      "Abu Hurairah said: one day the Prophet ﷺ shared out dates among his companions, and gave each one seven dates. He gave me seven dates, one of which was dry and hard, yet none of them pleased me more than it, for it made my chewing last long.",
+    sources: [bukhari("5411")]
+  },
+  {
+    id: "sign-two-dates",
+    kind: "two-dates",
+    caption:
+      "Jabalah ibn Suhaym said: a year of hunger struck us in the time of Ibn al-Zubayr, and he gave us dates to eat. Abdullah ibn Umar would pass by us as we ate and say: do not take two dates at once, for the Prophet ﷺ forbade taking two at once. Then he would say: unless one asks his brother's permission. Shu'bah said: the permission is from the words of Ibn Umar.",
+    sources: [bukhari("5446")]
+  },
+  {
+    id: "sign-boy-on-right",
+    kind: "boy-on-right",
+    caption:
+      "Sahl ibn Sa'd said: a cup was brought to the Prophet ﷺ, and he drank from it. On his right was a boy, the youngest of those there, and the elders were on his left. He said: O boy, will you let me give it to the elders? He said: I will not give anyone my share from you, O Messenger of Allah. So he gave it to him.",
+    sources: [bukhari("2351")]
+  },
+  {
+    id: "sign-after-eating",
+    kind: "after-eating",
+    caption:
+      "Abu Umamah said that whenever the dining sheet of the Prophet ﷺ was taken away, he would say: praise be to Allah, much, good and blessed praise, never enough, never given up and never done without, our Lord.",
+    sources: [bukhari("5458")]
+  },
+  {
+    id: "sign-one-sheet",
+    kind: "one-sheet",
+    caption:
+      "Salamah said: our provisions ran low on a journey, and the people were in need. The Messenger of Allah ﷺ said: call on the people to bring what is left of their provisions. A leather sheet was spread for it, and they heaped it all on the sheet. Then the Messenger of Allah ﷺ stood, asked Allah to bless it, and called them with their vessels, and the people took from it until they all had enough. Then he said: I bear witness that there is no god but Allah, and that I am the Messenger of Allah.",
+    sources: [bukhari("2484")]
+  },
+  {
+    id: "sign-never-faulted",
+    kind: "never-faulted",
+    caption: "Abu Hurairah said: the Prophet ﷺ never found fault with any food. If he liked it, he ate it, and if not, he left it.",
+    sources: [bukhari("3563")]
+  },
+  {
+    id: "sign-date-in-street",
+    kind: "date-in-street",
+    caption: "Anas ibn Malik said that the Messenger of Allah ﷺ found a date in the street and said: if it were not from the charity, I would have eaten it.",
+    sources: [muslim("1071a")]
   }
 ];
 
@@ -4472,7 +4526,22 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-sharh2-supper-before-prayer": "sign-supper-first",
   // Were it not hard on his ummah, he would have ordered them to use the siwak with every prayer.
   "deep-clean-siwak": "sign-siwak-every-prayer",
-  "deep-book-taharah-siwak": "sign-siwak-every-prayer"
+  "deep-book-taharah-siwak": "sign-siwak-every-prayer",
+  // He gave each of his Companions seven dates; one of Abu Hurairah's was dry and hard, and he liked it best.
+  "deep-kids-table-seven-dates-each": "sign-seven-dates",
+  // Do not take two dates at once, unless one asks his brother's permission.
+  "deep-kids-table-two-dates-at-once": "sign-two-dates",
+  // The boy on his right would not give up his share from him, so he gave him the cup.
+  "deep-sahl-the-boy-on-the-right": "sign-boy-on-right",
+  // When his dining sheet was taken away: praise be to Allah, much, good and blessed praise.
+  "deep-dua-day-after-eating": "sign-after-eating",
+  "deep-ibrahim3-praise-after-eating": "sign-after-eating",
+  // What was left of their provisions, heaped on one leather sheet and blessed, was enough for them all.
+  "deep-kids-signs-food-on-one-leather-sheet": "sign-one-sheet",
+  // He never found fault with any food: if he liked it, he ate it, and if not, he left it.
+  "deep-seerah-khuluq-food": "sign-never-faulted",
+  // He found a date in the street, and did not eat it in case it was from the charity.
+  "deep-book-zakat-date-in-the-street": "sign-date-in-street"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
