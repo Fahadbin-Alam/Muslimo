@@ -1,17 +1,18 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Sahabah unit: small stories of the Sahabah, from Jami at-Tirmidhi, Sahih Muslim and Sahih al-Bukhari.
-// How Abu Hurairah got his name, Jarir serving Anas, a du'a for Abu Zayd, Abdur-Rahman ibn Awf and the Mothers of the
-// Believers, Jibril asking about Badr, the Companions as a safety for the Ummah, what Adi ibn Hatim lived to see, what
-// Umar said of Adi, and the horse race Ibn Umar took part in. Every card is one sahih or hasan hadith with its number,
-// narrator and grade, and its exact English words to highlight. None of these hadith is taught anywhere else in the
-// app, and the distances in the horse race (a later narrator's words) are not asked.
+// One more Sahabah unit: small stories of the Sahabah, from Jami at-Tirmidhi, Sahih Muslim, Sahih al-Bukhari and Sunan
+// Ibn Majah. How Abu Hurairah got his name, Jarir serving Anas, a du'a for Abu Zayd, Abdur-Rahman ibn Awf and the
+// Mothers of the Believers, Jibril asking about Badr, the Companions as a safety for the Ummah, what Adi ibn Hatim
+// lived to see, what Umar said of Adi, the horse race Ibn Umar took part in, Suhaib eating dates with a sore eye, and
+// the people of Oman, who would not have insulted the man he ﷺ sent. Every card is one sahih or hasan hadith with its
+// number, narrator and grade, and its exact English words to highlight. None of these hadith is taught anywhere else in
+// the app, and the distances in the horse race (a later narrator's words) are not asked.
 
 const STORIES: DeepUnit = {
   key: "sahaba-small-stories",
   topicId: "sahabah",
   branchId: "sahaba-small-stories",
-  branch: { title: "Small stories of the Sahabah", description: "Abu Hurairah's kitten, Jarir serving Anas, a du'a for Abu Zayd, a gift for the Mothers, the best at Badr, a safety for the Ummah, Adi's two stories, and a horse race." },
+  branch: { title: "Small stories of the Sahabah", description: "Abu Hurairah's kitten, Jarir serving Anas, a du'a for Abu Zayd, a gift for the Mothers, the best at Badr, a safety for the Ummah, Adi's two stories, a horse race, Suhaib's sore eye, and the people of Oman." },
   name: "small stories of the Sahabah",
   kind: "story",
   lessonType: "story",
@@ -131,6 +132,32 @@ const STORIES: DeepUnit = {
         { q: "Where did the horses not made lean race to?", a: "The masjid of Bani Zurayq", wrong: ["The masjid of Quba", "The masjid of Bani Salimah", "The masjid at Dhul-Hulayfah"], why: "From Thaniyah, the other horses raced to the masjid of Bani Zurayq, Ibn Umar said." },
         { q: "Who said he took part in that horse race?", a: "Abdullah ibn Umar", wrong: ["Abdullah ibn Abbas", "Abdullah ibn Mas'ud", "Abdullah ibn Amr"], why: "Ibn Umar said he was among them when the Prophet ﷺ held that race." },
         { q: "He ﷺ held a race between horses.", tf: true, why: "The Prophet ﷺ arranged for a horse race, and Ibn Umar took part in it." }
+      ]
+    },
+    {
+      slug: "suhaibs-sore-eye",
+      title: "Chewing on the other side",
+      line: "Suhaib ate dates with a sore eye, and he ﷺ smiled.",
+      facts: ["Told by Suhaib", "Bread and dates were before him ﷺ", "He ﷺ said to Suhaib: come and eat"],
+      source: hadith("ibnmajah", "3443", "Suhaib", "Hasan (Darussalam)", "Suhaib said: I came to the Prophet ﷺ and in front of him there was bread and dates. He ﷺ said: come and eat. So I began to eat the dates. He ﷺ said: are you eating dates when your eye is sore? I said: I am chewing on the other side. And the Messenger of Allah ﷺ smiled.", "I am chewing from the other side"),
+      difficulty: 1,
+      questions: [
+        { q: "What was in front of him ﷺ when Suhaib came?", a: "Bread and dates", wrong: ["Rice and milk", "Meat and soup", "Honey and figs"], why: "He ﷺ had bread and dates before him, and he said to Suhaib: come and eat." },
+        { q: "Why did he ﷺ ask Suhaib about eating dates?", a: "His eye was sore", wrong: ["His tooth was loose", "His knee was hurt", "His throat was dry"], why: "Are you eating dates when you have an inflammation in your eye, he ﷺ asked." },
+        { q: "The Messenger of Allah ﷺ smiled at what Suhaib said.", tf: true, why: "Suhaib said he was chewing from the other side, and the Messenger of Allah ﷺ smiled." }
+      ]
+    },
+    {
+      slug: "the-people-of-oman",
+      title: "The people of Oman",
+      line: "The people of Oman would not have insulted or beaten him.",
+      facts: ["Told by Abu Barzah al-Aslami", "A tribe insulted and beat the man he ﷺ sent", "He ﷺ praised the people of Oman"],
+      source: hadith("muslim", "2544", "Abu Barzah al-Aslami", "Sahih", "Abu Barzah said: the Messenger of Allah ﷺ sent a man to one of the tribes of the Arabs. They insulted him and beat him, so he came to the Messenger of Allah ﷺ and told him what they had done. The Messenger of Allah ﷺ said: if you had gone to the people of Oman, they would not have insulted you or beaten you.", "they would have neither reviled you nor beaten you"),
+      difficulty: 1,
+      questions: [
+        { q: "Which people did he ﷺ say would not have beaten the man?", a: "The people of Oman", wrong: ["The people of Rome", "The people of Persia", "The people of India"], why: "If you had gone to the people of Oman, they would not have beaten you, he ﷺ said." },
+        { q: "What had the tribe done to the man he ﷺ sent?", a: "Insulted him and beat him", wrong: ["Hosted him and fed him", "Thanked him and praised him", "Welcomed him and helped him"], why: "They reviled him and beat him, so he came back and told the Prophet ﷺ." },
+        { q: "He ﷺ answered the man by praising the people of Oman.", tf: true, why: "The people of Oman would have neither reviled you nor beaten you, he ﷺ said." }
       ]
     }
   ]

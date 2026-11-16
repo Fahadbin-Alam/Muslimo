@@ -291,6 +291,58 @@ const MINOR_SIGNS: DeepUnit = {
         { q: "What will its light fall on at Busra?", a: "The necks of the camels", wrong: ["The walls of the houses", "The tops of the palms", "The faces of the people"], why: "The fire will throw light on the necks of the camels at Busra, he ﷺ said." },
         { q: "The fire's light will reach as far as Busra.", tf: true, why: "The fire from Hijaz will light up the necks of the camels at Busra, he ﷺ said." }
       ]
+    },
+    {
+      slug: "the-righteous-pass-away",
+      title: "The righteous pass away",
+      line: "The righteous will pass away one after the other, he ﷺ said.",
+      facts: ["Told by Mirdas al-Aslami", "Husk: the dry skin left from grain", "Barley: a grain like wheat"],
+      source: hadith("bukhari", "6434", "Mirdas al-Aslami", "Sahih", "Mirdas al-Aslami said: the Prophet ﷺ said: the righteous will pass away one after the other, and there will remain useless people, like the useless husk of barley or of dates.", "useless people like the useless husk of barley seeds or bad dates"),
+      difficulty: 3,
+      questions: [
+        { q: "Who will pass away one after the other, he ﷺ said?", a: "The righteous", wrong: ["The kings", "The rich", "The strong"], why: "The righteous will depart in succession one after the other, he ﷺ said." },
+        { q: "What did he ﷺ liken the people left behind to?", a: "Useless husk", wrong: ["Ripe fruit", "Sweet honey", "Fresh milk"], why: "There will remain useless people like the useless husk of barley seeds or bad dates." },
+        { q: "After the righteous pass away, useless people will remain.", tf: true, why: "The righteous will depart one after the other, and useless people will remain, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "houses-like-painted-garments",
+      title: "Houses like painted garments",
+      line: "Before the Hour, houses will be adorned like painted garments.",
+      facts: ["Told by Abu Hurayrah", "One of the small signs of the Hour", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "777", "Abu Hurayrah", "Sahih (Al-Albani)", "Abu Hurayrah said: the Messenger of Allah ﷺ said: the Final Hour will not come until the adornments of houses look like painted garments.", "The Final Hour will not come until … adornments resemble painted garments"),
+      difficulty: 2,
+      questions: [
+        { q: "Before the Hour, what will the adornment of houses look like, he ﷺ said?", a: "Painted garments", wrong: ["Old ruins", "Plain tents", "Bare rocks"], why: "The Hour will not come until houses are adorned like painted garments, he ﷺ said." },
+        { q: "Who reported that houses will be adorned like painted garments?", a: "Abu Hurayrah", wrong: ["Ibn Abbas", "Anas ibn Malik", "Jabir ibn Abdullah"], why: "Abu Hurayrah reported it from the Messenger of Allah ﷺ, in Al-Adab al-Mufrad 777." },
+        { q: "Houses adorned like painted garments are a sign of the Hour.", tf: true, why: "He ﷺ said the Final Hour will not come until houses look like painted garments." }
+      ]
+    },
+    {
+      slug: "predators-speak",
+      title: "When predators speak",
+      line: "Before the Hour, predators will speak to people, he ﷺ said.",
+      facts: ["Told by Abu Sa'id al-Khudri", "A whip and a sandal strap will speak too", "One of the small signs of the Hour"],
+      source: hadith("tirmidhi", "2181", "Abu Sa'id al-Khudri", "Sahih (Darussalam)", "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ said: by the One in Whose Hand is my soul, the Hour will not come until predators speak to people, the tip of a man's whip and the straps of his sandal speak to him, and his thigh tells him what his family did after he left.", "The Hour will not be established until predators speak to people"),
+      difficulty: 2,
+      questions: [
+        { q: "Before the Hour, what will speak to people, he ﷺ said?", a: "Predators", wrong: ["Mountains", "Rivers", "Stars"], why: "The Hour will not be established until predators speak to people, he ﷺ said." },
+        { q: "What will tell a man what his family did after him?", a: "His thigh", wrong: ["His shadow", "His pillow", "His lamp"], why: "His thigh will inform him of what occurred with his family after him, he ﷺ said." },
+        { q: "Even the tip of a man's whip will speak to him before the Hour.", tf: true, why: "The tip of his whip and the straps on his sandal will speak to him, he ﷺ said." }
+      ]
+    },
+    {
+      slug: "greeting-only-some",
+      title: "A greeting for only some",
+      line: "Before the Hour, people will greet only certain people.",
+      facts: ["Told by Abdullah ibn Mas'ud", "A man rushing past greeted only him", "False testimony will appear"],
+      source: hadith("adab", "1049", "Abdullah ibn Mas'ud", "Sahih (Al-Albani)", "Tariq said: in the mosque a man rushing past greeted only Abdullah ibn Mas'ud, who said: Allah has spoken the truth and His Messenger conveyed it. Later he told them the Prophet ﷺ said: before the Final Hour people will single out one person for the greeting, trade will grow, people will cut their ties with relatives, false testimony will appear and true testimony will be hidden.", "Before the Final Hour people will single out one individual for the greeting"),
+      difficulty: 2,
+      questions: [
+        { q: "Before the Hour, who will people give salam to, he ﷺ said?", a: "To certain people only", wrong: ["To everyone they meet", "To strangers only", "To children only"], why: "Before the Final Hour people will single out one individual for the greeting, he ﷺ said." },
+        { q: "What did a man rushing past in the mosque do?", a: "Greeted only Ibn Mas'ud", wrong: ["Greeted no one", "Greeted everyone", "Gave the adhan"], why: "He greeted him alone, saying peace be upon you, Abu Abdur-Rahman, Tariq said." },
+        { q: "Before the Hour, false testimony will appear, he ﷺ said.", tf: true, why: "He ﷺ said false testimony will appear and true testimony will be concealed." }
+      ]
     }
   ]
 };
@@ -1007,6 +1059,19 @@ const HAWD: DeepUnit = {
         { q: "What happens to whoever drinks from it?", a: "Never thirsty again", wrong: ["Falls asleep", "Gets rich", "Grows wings"], why: "Bukhari 6579." },
         { q: "How many cups does it have?", a: "As many as the stars", wrong: ["Seven", "One", "A hundred"], why: "Countless." }
       ]
+    },
+    {
+      slug: "so-many-at-the-pool",
+      title: "So many at his Pool",
+      line: "He ﷺ said so many will come down to him at the Pool.",
+      facts: ["Told by Zayd ibn Arqam", "Said at a halting place", "Not one part in a hundred thousand"],
+      source: hadith("abudawud", "4746", "Zayd ibn Arqam", "Sahih (Al-Albani)", "Zayd ibn Arqam said: we were with the Messenger of Allah ﷺ, and when we stopped at a halting place he said: you are not even one part in a hundred thousand of those who will come to me at the Pool.", "You are not a hundred thousandth part of those who will come down to me at the pond"),
+      difficulty: 2,
+      questions: [
+        { q: "How big a part were they of all who will come to the Pool?", a: "Not one part in a hundred thousand", wrong: ["About half of them", "About a third of them", "Nearly all of them"], why: "You are not a hundred thousandth part of those who will come down to me, he ﷺ said." },
+        { q: "Where were they when he ﷺ said this?", a: "At a halting place", wrong: ["In the masjid", "In the market", "At his house"], why: "He ﷺ said it when we arrived at a halting place, Zayd ibn Arqam said." },
+        { q: "A very great number of people will come to the Pool of the Prophet ﷺ.", tf: true, why: "Those with him at the halting place were a tiny part of those coming to his Pool." }
+      ]
     }
   ]
 };
@@ -1350,6 +1415,19 @@ const JAHANNAM: DeepUnit = {
         { q: "How many gates does Jahannam have?", a: "Seven", wrong: ["Eight", "One", "Ten"], why: "Quran 15:44." },
         { q: "How many gates does Jannah have?", a: "Eight", wrong: ["Seven", "Two", "Twelve"], why: "Bukhari 3257: one more than the Fire." },
         { q: "Allah's mercy is greater than His anger.", tf: true, why: "Bukhari 3194." }
+      ]
+    },
+    {
+      slug: "the-falling-stone",
+      title: "A stone falling seventy years",
+      line: "A stone fell seventy years in Jahannam before reaching its base.",
+      facts: ["Told by Abu Hurairah", "They heard a loud sound", "Jahannam is very deep"],
+      source: hadith("muslim", "2844a", "Abu Hurairah", "Sahih", "Abu Hurairah said: we were with the Messenger of Allah ﷺ when we heard a loud sound. He said: do you know what this is? We said: Allah and His Messenger know best. He said: that is a stone thrown into the Fire seventy years ago; it has been falling ever since and has now reached its bottom.", "That is a stone which was thrown seventy years before in Hell"),
+      difficulty: 3,
+      questions: [
+        { q: "What made the loud sound they heard, he ﷺ said?", a: "A stone falling in the Fire", wrong: ["A tree falling in a storm", "A wave hitting the shore", "Thunder in the clouds"], why: "That is a stone which was thrown seventy years before in Hell, he ﷺ said." },
+        { q: "How long had the stone been falling?", a: "Seventy years", wrong: ["Seven days", "Seventy days", "Seven months"], why: "That stone was thrown seventy years before and has now reached its base." },
+        { q: "Jahannam is so deep that a stone falls in it for many years.", tf: true, why: "A stone thrown seventy years before has only now reached its base, he ﷺ said." }
       ]
     },
     {

@@ -1824,7 +1824,7 @@ const ALI: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What had Fatimah asked for?", a: "A servant", wrong: ["A house", "Money", "A garden"], why: "Her hands hurt from the grinding stone." },
-        { q: "How many times is Allahu Akbar said?", a: "34", wrong: ["33", "10", "100"], why: "34 Allahu Akbar, 33 SubhanAllah, 33 Alhamdulillah." },
+        { q: "How many times is Allahu Akbar said?", a: "34", wrong: ["40", "10", "100"], why: "34 Allahu Akbar, 33 SubhanAllah, 33 Alhamdulillah." },
         { q: "When is this dhikr said?", a: "When going to bed", wrong: ["After Fajr only", "Before eating", "On Fridays"], why: "The Prophet ﷺ taught it for bedtime." },
         { q: "The Prophet ﷺ said the dhikr was better than a servant.", tf: true, why: "Better for them than what they asked for." }
       ]
@@ -2267,6 +2267,19 @@ const NEIGHBORS: DeepUnit = {
       ]
     },
     {
+      slug: "full-while-neighbor-hungry",
+      title: "Full while a neighbor is hungry",
+      line: "No true believer is full while his neighbor goes hungry.",
+      facts: ["Told by Ibn Abbas", "He told it to Ibn az-Zubayr", "From Imam al-Bukhari's book of manners"],
+      source: hadith("adab", "112", "Ibn Abbas", "Sahih (Al-Albani)", "Ibn Abbas told Ibn az-Zubayr: I heard the Prophet ﷺ say: he is not a believer whose stomach is filled while his neighbor goes hungry.", "He is not a believer whose stomach is filled while his neighbor goes hungry"),
+      difficulty: 2,
+      questions: [
+        { q: "Which man did he ﷺ say is not a true believer?", a: "One full while his neighbor is hungry", wrong: ["One far from his family", "One new to his town", "One late for his work"], why: "He is not a believer whose stomach is filled while his neighbor goes hungry." },
+        { q: "To whom did Ibn Abbas tell the hadith of the hungry neighbor?", a: "Ibn az-Zubayr", wrong: ["Ibn Umar", "Ibn Mas'ud", "Ibn Amr"], why: "Ibn Abbas told it to Ibn az-Zubayr, saying he heard it from the Prophet ﷺ." },
+        { q: "Eating your fill while a neighbor goes hungry is fine.", tf: false, why: "No. He is not a believer whose stomach is filled while his neighbor goes hungry." }
+      ]
+    },
+    {
       slug: "nearest-door",
       title: "The nearest door",
       line: "Two neighbors? Give your gift first to the nearest door.",
@@ -2353,6 +2366,19 @@ const ANGER: DeepUnit = {
         { q: "If you get angry while standing, what should you do?", a: "Sit down", wrong: ["Run", "Shout", "Stand taller"], why: "Changing position calms you." },
         { q: "If the anger stays after sitting?", a: "Lie down", wrong: ["Stand up again", "Leave the house", "Argue"], why: "Lower still, calmer still." },
         { q: "Who narrated it?", a: "Abu Dharr", wrong: ["Abu Hurayrah", "Abu Bakrah", "Anas"], why: "Abu Dharr al-Ghifari." }
+      ]
+    },
+    {
+      slug: "silent-when-angry",
+      title: "Silent when angry",
+      line: "When one of you is angry, let him be silent.",
+      facts: ["Told by Ibn Abbas", "Said with: teach, and make things easy", "In Arabic: fal-yaskut, let him be silent"],
+      source: hadith("adab", "245", "Ibn Abbas", "Sahih (Al-Albani)", "Ibn Abbas said: the Messenger of Allah ﷺ said: teach, and make things easy and not hard. When one of you is angry, he should be silent.", "When one of you is angry, he should be silent"),
+      difficulty: 2,
+      questions: [
+        { q: "What did he ﷺ tell an angry person to do, as Ibn Abbas reported?", a: "Keep silent", wrong: ["Go for a walk", "Eat something", "Write a letter"], why: "Wa idha ghadiba ahadukum fal-yaskut, he ﷺ said, meaning let the angry one be silent." },
+        { q: "Who narrated: when one of you is angry, let him be silent?", a: "Ibn Abbas", wrong: ["Abu Hurayrah", "Abu Dharr", "Anas ibn Malik"], why: "Ibn Abbas reported that the Messenger of Allah ﷺ said it, in Al-Adab al-Mufrad 245." },
+        { q: "When angry, it is best to say whatever comes to mind.", tf: false, why: "No. When one of you is angry, he should be silent, he ﷺ said." }
       ]
     },
     {
