@@ -597,7 +597,14 @@ export type SignKind =
   | "house-for-twelve"
   | "ready-for-friday"
   | "right-on-servants"
-  | "pray-as-you-saw";
+  | "pray-as-you-saw"
+  | "gentleness"
+  | "looks-at-hearts"
+  | "best-forgiveness"
+  | "ten-blessings"
+  | "friday-fajr"
+  | "learn-from-four"
+  | "young-ibn-abbas";
 
 export type SignScene = {
   id: string;
@@ -2162,6 +2169,52 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Malik ibn al-Huwayrith said: we came to the Prophet ﷺ, young men close in age, and stayed with him twenty days and nights. The Messenger of Allah ﷺ was merciful and gentle. When he thought we longed for our families, he asked us of those we had left behind, and we told him. He said: go back to your families, stay with them, teach them and bid them, and he spoke of things I remember and things I do not, and pray as you have seen me pray. When the prayer comes, let one of you call the adhan for you, and let the eldest of you lead you.",
     sources: [bukhari("631")]
+  },
+  {
+    id: "sign-gentleness",
+    kind: "gentleness",
+    caption:
+      "Aishah, the wife of the Prophet ﷺ, said: the Messenger of Allah ﷺ said: O Aishah, Allah is Gentle and loves gentleness, and He gives for gentleness what He does not give for harshness, and what He does not give for anything besides it.",
+    sources: [muslim("2593")]
+  },
+  {
+    id: "sign-looks-at-hearts",
+    kind: "looks-at-hearts",
+    caption: "Abu Hurairah said: the Messenger of Allah ﷺ said: Allah does not look at your bodies, nor at your faces, but He looks at your hearts. And he pointed to his chest with his fingers.",
+    sources: [muslim("2564b")]
+  },
+  {
+    id: "sign-best-forgiveness",
+    kind: "best-forgiveness",
+    caption:
+      "Shaddad ibn Aws said: the Prophet ﷺ said: the best way to ask forgiveness is to say: O Allah, You are my Lord, there is no god but You. You created me, and I am Your slave, and I keep Your covenant and Your promise as much as I can. I seek refuge in You from the evil of what I have done. I admit to You Your favor on me, and I admit to You my sin, so forgive me, for none forgives sins but You. And he said: whoever says it by day, sure of it, and dies that day before evening, is of the people of Paradise; and whoever says it by night, sure of it, and dies before morning, is of the people of Paradise.",
+    sources: [bukhari("6306")]
+  },
+  {
+    id: "sign-ten-blessings",
+    kind: "ten-blessings",
+    caption: "Abu Hurairah said: the Messenger of Allah ﷺ said: whoever sends blessings on me once, Allah sends blessings on him ten times.",
+    sources: [muslim("408")]
+  },
+  {
+    id: "sign-friday-fajr",
+    kind: "friday-fajr",
+    caption: "Abu Hurairah said: the Prophet ﷺ used to recite in the Fajr prayer on Friday: Alif Lam Mim Tanzil, as-Sajdah, and Hal ata 'ala al-insan.",
+    sources: [bukhari("891")]
+  },
+  {
+    id: "sign-learn-from-four",
+    kind: "learn-from-four",
+    caption:
+      "Masruq said: Abdullah ibn Mas'ud was spoken of before Abdullah ibn Amr, and he said: that is a man I still love, since I heard the Messenger of Allah ﷺ say: take the recitation of the Quran from four: from Abdullah ibn Mas'ud, and he began with him, and Salim the freed slave of Abu Hudhayfah, and Ubayy ibn Ka'b, and Mu'adh ibn Jabal. He said: I do not know whether he began with Ubayy or with Mu'adh.",
+    sources: [bukhari("3758")]
+  },
+  {
+    id: "sign-young-ibn-abbas",
+    kind: "young-ibn-abbas",
+    caption:
+      "Ibn Abbas said: Umar used to bring me in with the elders of Badr, and some of them felt it, and said: why do you bring this one in with us, when we have sons like him? Umar said: it is for what you know of him. One day he called them and brought me in with them, and I saw that he called me that day only to show them. He said: what do you say of the word of Allah: when the help of Allah comes, and the opening? Some of them said: we are told to praise Allah and ask His forgiveness when He helps us and opens for us. Some kept quiet and said nothing. Then he said to me: is that what you say, Ibn Abbas? I said: no. He said: then what do you say? I said: it is the end of the life of the Messenger of Allah ﷺ, which He made known to him: when the help of Allah comes, and the opening, and that is the sign of your end, so glorify the praise of your Lord and ask His forgiveness; He is ever accepting of repentance. Umar said: I know of it only what you say.",
+    sources: [bukhari("4970")]
   }
 ];
 
@@ -3531,7 +3584,34 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-quraysh2-allahs-right-on-his-servants": "sign-right-on-servants",
   // Twenty days with him, then home to teach: pray as you have seen me pray (Sahih al-Bukhari 631).
   "deep-prayerlive-pray-as-me": "sign-pray-as-you-saw",
-  "intro-first-prayer": "sign-pray-as-you-saw"
+  "intro-first-prayer": "sign-pray-as-you-saw",
+  // Allah is Gentle and loves gentleness, and gives for it what He does not give for harshness (Sahih Muslim 2593).
+  "deep-hadith-heart-gentle": "sign-gentleness",
+  "deep-kids-kindness-allah-loves-gentleness": "sign-gentleness",
+  "deep-imran3-gentle": "sign-gentleness",
+  // Allah does not look at your bodies, nor at your faces, but at your hearts (Sahih Muslim 2564b).
+  "deep-hajj2-allah-looks-at-hearts": "sign-looks-at-hearts",
+  "deep-hujurat2-allah-looks-at-hearts": "sign-looks-at-hearts",
+  "deep-mulk2-allah-looks-at-hearts": "sign-looks-at-hearts",
+  // The best way to ask forgiveness, and Paradise for one who says it sure of it (Sahih al-Bukhari 6306).
+  "deep-dua-adhkar-master": "sign-best-forgiveness",
+  "deep-nuh2-best-istighfar": "sign-best-forgiveness",
+  "deep-insan4-the-master-of-forgiveness": "sign-best-forgiveness",
+  // Whoever sends blessings on him once, Allah sends blessings on him ten times (Sahih Muslim 408).
+  "deep-dua-dhikr-salawat": "sign-ten-blessings",
+  "deep-ahzab3-send-salah-on-him": "sign-ten-blessings",
+  "deep-meet-the-quran-blessings-on-him": "sign-ten-blessings",
+  // In the Fajr prayer on Friday: as-Sajdah and al-Insan (Sahih al-Bukhari 891).
+  "deep-sajdah1-friday-fajr-surah": "sign-friday-fajr",
+  "deep-insan1-friday-fajr-surah": "sign-friday-fajr",
+  // Take the recitation of the Quran from four, and he began with Ibn Mas'ud (Sahih al-Bukhari 3758).
+  "deep-ibnmasud-learn-from-four": "sign-learn-from-four",
+  "deep-muadh-four-teachers": "sign-learn-from-four",
+  "deep-tree-ibn-masud-learn-from-four": "sign-learn-from-four",
+  // Umar brought young Ibn Abbas in with the elders of Badr, and asked them of an-Nasr (Sahih al-Bukhari 4970).
+  "deep-umar-ibn-abbas": "sign-young-ibn-abbas",
+  "deep-tree-umar-young-ibn-abbas": "sign-young-ibn-abbas",
+  "deep-nasr1-what-ibn-abbas-understood": "sign-young-ibn-abbas"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
