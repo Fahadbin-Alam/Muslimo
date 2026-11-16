@@ -3030,6 +3030,92 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Whom did the Prophet ﷺ kiss?", "His grandson Al-Hasan", "He kissed al-Hasan ibn Ali"],
     ["What did he say to the man who never kissed his children?", "No mercy shown, no mercy given", "Then said: whoever is not merciful", "Is not shown mercy"],
     ["How many children did that man have?", "Ten", "Al-Aqra' said: I have ten children"]
+  ],
+  // Ammar said: I saw the Messenger of Allah, and there was none with him but five slaves, two women and Abu Bakr
+  // (Sahih al-Bukhari 3660). (Who was the first grown man to accept Islam stays on its usual picture: the scene shows
+  // who was with him, not who came first.)
+  "sign-first-believers": [
+    ["Ammar named who was with the Prophet ﷺ at first. Which man did he name?", "Abu Bakr", "And Abu Bakr"],
+    ["How many slaves did Ammar count among the first Muslims?", "Five", "None was with him but five slaves"],
+    ["How many women did Ammar count?", "Two", "And two women"],
+    ["Which companion reported how few Muslims there were at first?", "Ammar ibn Yasir", "Ammar said: I saw him"],
+    ["Who was with the Prophet ﷺ when Ammar saw him?", "Five slaves, two women and Abu Bakr", "None was with him but five slaves", "And Abu Bakr"],
+    ["Ammar was one of the earliest Muslims.", "True", "Ammar said: I saw him", "And Abu Bakr"],
+    ["How many Muslims were there then?", "Very few", "None was with him but five slaves", "And Abu Bakr"]
+  ],
+  // Umar used to say: Abu Bakr is our master, and he freed our master, meaning Bilal (Sahih al-Bukhari 3754).
+  "sign-freed-bilal": [
+    ["In Makkah, Abu Bakr set ____ free.", "Bilal", "And he freed our master", "Meaning Bilal"],
+    ["In Makkah, Abu Bakr set Umar free.", "False", "And he freed our master", "Meaning Bilal"],
+    ["Bilal grew up as a ____ in Makkah.", "slave", "And he freed our master"],
+    ["Bilal grew up as a king in Makkah.", "False", "And he freed our master"],
+    ["Abu Bakr bought Bilal and set him ____.", "free", "And he freed our master"],
+    ["Umar said Abu Bakr freed 'our master'. Who did he mean?", "Bilal", "Meaning Bilal"],
+    ["What did Umar call Abu Bakr?", "Our master", "Abu Bakr is our master"],
+    ["Who praised Abu Bakr for freeing Bilal?", "Umar", "Umar used to say:"],
+    ["Umar looked down on Bilal because he had been a slave.", "False", "And he freed our master", "Meaning Bilal"],
+    ["What did Umar call Bilal?", "Our master", "Abu Bakr is our master", "Meaning Bilal"],
+    ["Who freed Bilal?", "Abu Bakr", "Abu Bakr is our master", "And he freed our master"],
+    ["What does Umar's saying teach?", "Faith, not birth, gives honor", "And he freed our master", "Meaning Bilal"],
+    ["Umar was the one who told this.", "True", "Umar used to say:"]
+  ],
+  // He sent Amr ibn al-As to lead the army of Dhat as-Salasil. Amr came and asked: who of the people is most beloved
+  // to you? He said: Aishah. He asked: and among the men? He said: her father. He asked: then who? He said: then Umar
+  // ibn al-Khattab, and he named other men (Sahih al-Bukhari 3662). (When Sawdah married him stays on its usual picture.)
+  "sign-most-beloved": [
+    ["Abu Bakr was the father of ____.", "Aishah", "He said: Aishah", "He said: her father"],
+    ["Abu Bakr was the father of Fatimah.", "False", "He said: Aishah", "He said: her father"],
+    ["Asked who he loved most, the Prophet ﷺ said: ____.", "Aishah", "He said: Aishah"],
+    ["Who did the Prophet ﷺ name as most beloved to him?", "Aishah", "He said: Aishah"],
+    ["Among men, whom did he ﷺ name?", "Her father, Abu Bakr", "He said: her father"],
+    ["Who asked the Prophet ﷺ this question?", "Amr ibn al-As", "He sent Amr to lead an army", "Amr asked: who is most beloved to you?"],
+    ["Who asked the Prophet ﷺ whom he loved most?", "Amr ibn al-As", "He sent Amr to lead an army", "Amr asked: who is most beloved to you?"],
+    ["Among men, whom did the Prophet ﷺ love most?", "Abu Bakr", "He said: her father"],
+    ["Whom did he name after Abu Bakr?", "Umar", "Then who? He said: then Umar"],
+    ["How did the Prophet ﷺ name Abu Bakr in his answer?", "Her father", "He said: her father"],
+    ["Among men, who did he say he loved most?", "Abu Bakr, her father", "He said: her father"],
+    ["Who came next after Abu Bakr?", "Umar ibn al-Khattab", "Then who? He said: then Umar"]
+  ],
+  // Every nation has a trustworthy one, and the trustworthy one of this nation is Abu Ubaydah ibn al-Jarrah (Sahih
+  // al-Bukhari 3744). (That he was among the first to accept Islam, and among the ten given good news of Paradise, stay
+  // on their usual picture.)
+  "sign-trustworthy-one": [
+    ["The Prophet ﷺ called Abu Ubaydah this Ummah's ____ one.", "trustworthy", "Every nation has a trustworthy one", "Is Abu Ubaydah ibn al-Jarrah"],
+    ["What title did the Prophet ﷺ give Abu Ubaydah?", "The trustworthy one of this nation", "Every nation has a trustworthy one", "Is Abu Ubaydah ibn al-Jarrah"],
+    ["What does amin mean?", "Trustworthy", "Every nation has a trustworthy one", "Is Abu Ubaydah ibn al-Jarrah"]
+  ],
+  // Have you not seen ayat revealed tonight, the like of which has never been seen? Say: I seek refuge with the Lord of
+  // the dawn, and Say: I seek refuge with the Lord of men (Sahih Muslim 814). (Who heard it stays on its usual picture:
+  // the scene's words do not name him.)
+  "sign-two-refuges": [
+    ["Which two surahs did the Prophet ﷺ praise to Uqbah?", "Al-Falaq and An-Nas", "Say: I seek refuge with the Lord of the dawn", "And Say: I seek refuge with the Lord of men"],
+    ["Verses like these had been seen many times before.", "False", "The like of which was never seen?"],
+    ["What do both surahs begin with?", "Say: I seek refuge", "Say: I seek refuge with the Lord of the dawn", "And Say: I seek refuge with the Lord of men"],
+    ["What did the Prophet ﷺ say about Al-Falaq and An-Nas?", "Nothing like them was ever seen", "The like of which was never seen?"],
+    ["Which two surahs are these?", "Al-Falaq and An-Nas", "Say: I seek refuge with the Lord of the dawn", "And Say: I seek refuge with the Lord of men"]
+  ],
+  // O Abu al-Mundhir, do you know which ayah of the Book of Allah with you is greatest? I said: Allah and His Messenger
+  // know best. He asked again, and I said: Allah, there is no god but He, the Living, the Eternal. He said: may
+  // knowledge be pleasant for you (Sahih Muslim 810). (Who answered and the two names at its start stay on their usual
+  // picture, since the scene's words give only his kunya and the names' meaning; so does the start of Al-Baqarah.)
+  "sign-greatest-ayah": [
+    ["Ayat al-Kursi is the greatest ____ in the Quran.", "ayah", "O Abu al-Mundhir, which ayah is greatest?", "May knowledge be pleasant for you"],
+    ["Which ayah did Ubayy say is the greatest?", "Ayat al-Kursi", "I said: Allah, there is no god but He", "The Living, the Eternal"],
+    ["What did the Prophet ﷺ call Ubayy?", "Abul-Mundhir", "O Abu al-Mundhir, which ayah is greatest?"],
+    ["The Prophet ﷺ was pleased with Ubayy's answer.", "True", "May knowledge be pleasant for you"],
+    ["Which is the greatest ayah, in Muslim 810?", "Ayat al-Kursi", "I said: Allah, there is no god but He", "The Living, the Eternal"]
+  ],
+  // Whoever of you sees a wrong, let him change it with his hand; if he cannot, then with his tongue; and if he cannot,
+  // then with his heart, and that is the weakest of faith (Sahih Muslim 49). (Abu Sa'id's word on the man who spoke up,
+  // and the saved group of 7:165, stay on their usual picture.)
+  "sign-change-it": [
+    ["What is the first way to change a wrong?", "With your hand", "Let him change it with his hand"],
+    ["What is the weakest level of faith?", "Hating it in your heart", "If he cannot, then with his heart", "And that is the weakest of faith"],
+    ["What is the first way to change a wrong, in Muslim 49?", "With your hand", "Let him change it with his hand"],
+    ["What comes after the hand, if you cannot?", "The tongue", "If he cannot, then with his tongue"],
+    ["What is the weakest faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"],
+    ["What is the first way to change a wrong, in Muslim 49?", "With the hand", "Let him change it with his hand"],
+    ["What is the weakest of faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"]
   ]
 };
 
