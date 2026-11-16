@@ -590,7 +590,14 @@ export type SignKind =
   | "the-neighbor"
   | "closest-in-sujud"
   | "accepts-only-good"
-  | "mercy-on-musa";
+  | "mercy-on-musa"
+  | "setting-out"
+  | "for-his-brother"
+  | "eight-gates"
+  | "house-for-twelve"
+  | "ready-for-friday"
+  | "right-on-servants"
+  | "pray-as-you-saw";
 
 export type SignScene = {
   id: string;
@@ -2107,6 +2114,54 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Mas'ud said: the Prophet ﷺ divided a share, and one said: this is a sharing by which the Face of Allah was not sought. I came to the Prophet ﷺ and told him, and he was angry, until I saw the anger on his face. Then he said: may Allah have mercy on Musa; he was harmed with more than this, and he was patient.",
     sources: [bukhari("3405")]
+  },
+  {
+    id: "sign-setting-out",
+    kind: "setting-out",
+    caption:
+      "Abdullah ibn Umar said: when the Messenger of Allah ﷺ mounted his camel to set out on a journey, he said Allahu Akbar three times, then said: glory to Him who made this serve us, and we could not have done it ourselves, and to our Lord we will return. O Allah, we ask You in this journey of ours for righteousness and piety, and deeds that please You. O Allah, make this journey of ours easy for us, and fold its distance for us. O Allah, You are the Companion on the journey and the One left over the family. O Allah, I seek refuge in You from the hardship of the journey, from a sad sight, and from a bad return to wealth and family. And when he returned, he said them, and added: returning, repenting, worshipping, praising our Lord.",
+    sources: [muslim("1342")]
+  },
+  {
+    id: "sign-for-his-brother",
+    kind: "for-his-brother",
+    caption: "Anas said: the Prophet ﷺ said: none of you will have faith till he wishes for his brother what he likes for himself.",
+    sources: [bukhari("13")]
+  },
+  {
+    id: "sign-eight-gates",
+    kind: "eight-gates",
+    caption:
+      "Uqbah ibn Amir said: tending the camels was our task, and my turn came, so I brought them back in the evening. I found the Messenger of Allah ﷺ standing, speaking to the people, and I caught of his words: there is no Muslim who does wudu and does it well, then stands and prays two rak'ahs, turning to them with his heart and his face, but Paradise is his due. I said: how fine this is! And one before me said: the one before it was finer. I looked, and it was Umar, who said: I saw you have just come. He ﷺ said: there is none of you who does wudu, and does it fully, then says: I bear witness that there is no god but Allah, and that Muhammad is the slave of Allah and His Messenger, but the eight gates of Paradise are opened for him; he enters by whichever of them he wishes.",
+    sources: [muslim("234")]
+  },
+  {
+    id: "sign-house-for-twelve",
+    kind: "house-for-twelve",
+    caption:
+      "Umm Habibah said: I heard the Messenger of Allah ﷺ say: whoever prays twelve rak'ahs in a day and night, a house is built for him by them in Paradise. Umm Habibah said: I have not left them since I heard them from the Messenger of Allah ﷺ. Anbasah said: I have not left them since I heard them from Umm Habibah. Amr ibn Aws said: I have not left them since I heard them from Anbasah. And an-Nu'man ibn Salim said: I have not left them since I heard them from Amr ibn Aws.",
+    sources: [muslim("728")]
+  },
+  {
+    id: "sign-ready-for-friday",
+    kind: "ready-for-friday",
+    caption:
+      "Salman al-Farisi said: the Prophet ﷺ said: a man does not bathe on Friday, and clean himself as much as he can, and put on his oil or touch the scent of his home, then go out, and not part two people, then pray what was written for him, then keep quiet when the imam speaks, but he is forgiven what is between it and the other Friday.",
+    sources: [bukhari("883")]
+  },
+  {
+    id: "sign-right-on-servants",
+    kind: "right-on-servants",
+    caption:
+      "Mu'adh said: I rode behind the Prophet ﷺ on a donkey called 'Ufayr, and he said: O Mu'adh, do you know what Allah's right on His servants is, and what the servants' right on Allah is? I said: Allah and His Messenger know best. He said: Allah's right on the servants is that they worship Him and join nothing with Him, and the servants' right on Allah is that He does not punish one who joins nothing with Him. I said: O Messenger of Allah, shall I not give the people this good news? He said: do not give them the good news, lest they rely on it.",
+    sources: [bukhari("2856")]
+  },
+  {
+    id: "sign-pray-as-you-saw",
+    kind: "pray-as-you-saw",
+    caption:
+      "Malik ibn al-Huwayrith said: we came to the Prophet ﷺ, young men close in age, and stayed with him twenty days and nights. The Messenger of Allah ﷺ was merciful and gentle. When he thought we longed for our families, he asked us of those we had left behind, and we told him. He said: go back to your families, stay with them, teach them and bid them, and he spoke of things I remember and things I do not, and pray as you have seen me pray. When the prayer comes, let one of you call the adhan for you, and let the eldest of you lead you.",
+    sources: [bukhari("631")]
   }
 ];
 
@@ -3451,7 +3506,32 @@ export const SIGN_LESSONS: Record<string, string> = {
   // May Allah have mercy on Musa: he was harmed with more than this, and he was patient (Sahih al-Bukhari 3405).
   "deep-prophet-musa-patient-musa": "sign-mercy-on-musa",
   "deep-ahzab3-be-not-like-those-who-hurt-musa": "sign-mercy-on-musa",
-  "deep-saff2-mercy-on-musa": "sign-mercy-on-musa"
+  "deep-saff2-mercy-on-musa": "sign-mercy-on-musa",
+  // Allahu Akbar three times on the camel, glory to Him who made this serve us, and the words again on the way home
+  // (Sahih Muslim 1342). Left out: the lesson on Surat az-Zukhruf 43:1-15, which is about much else.
+  "deep-dua-day-travel": "sign-setting-out",
+  "deep-zukhruf1-the-riders-dua": "sign-setting-out",
+  // None of you will have faith till he wishes for his brother what he likes for himself (Sahih al-Bukhari 13).
+  "hadith-for-kids-bukhari-13": "sign-for-his-brother",
+  "deep-brotherhood-what-you-love": "sign-for-his-brother",
+  // Wudu done well, then the witness: the eight gates of Paradise are opened (Sahih Muslim 234).
+  "deep-prayerlive-after-wudu": "sign-eight-gates",
+  "deep-zumar4-wudu-opens-eight-gates": "sign-eight-gates",
+  // Twelve rak'ahs in a day and night, a house built in Paradise; Umm Habibah never left them (Sahih Muslim 728).
+  "deep-pray-extra-twelve": "sign-house-for-twelve",
+  "deep-mothers-umm-habibah-twelve": "sign-house-for-twelve",
+  // Bathing, scent, not parting two, praying, then quiet at the khutbah: forgiven till the other Friday (Sahih
+  // al-Bukhari 883).
+  "deep-pray-jumuah-get-ready": "sign-ready-for-friday",
+  "deep-jumuah3-best-clothes-and-perfume": "sign-ready-for-friday",
+  // On the donkey 'Ufayr: Allah's right on His servants, and theirs on Him (Sahih al-Bukhari 2856).
+  "deep-aq-tawhid-allahs-right": "sign-right-on-servants",
+  "deep-nisa1-allahs-right": "sign-right-on-servants",
+  "deep-dhariyat3-allahs-right-on-us": "sign-right-on-servants",
+  "deep-quraysh2-allahs-right-on-his-servants": "sign-right-on-servants",
+  // Twenty days with him, then home to teach: pray as you have seen me pray (Sahih al-Bukhari 631).
+  "deep-prayerlive-pray-as-me": "sign-pray-as-you-saw",
+  "intro-first-prayer": "sign-pray-as-you-saw"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
