@@ -448,7 +448,14 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-cloak-on-the-thorns": [/Hunayn/i, /coward/i],
   "sign-rings-thrown-away": [/ring/i, /threw/i],
   "sign-tailors-gourd": [/gourd/i, /Anas/i],
-  "sign-the-eclipse": [/eclipse/i, /Ibrahim/i]
+  "sign-the-eclipse": [/eclipse/i, /Ibrahim/i],
+  "sign-ashari-recitation": [/Ash'ar/i, /night/i],
+  "sign-gold-not-kept-overnight": [/zakat|charity/i, /soon|delay|quick|hurr/i],
+  "sign-dimam-questions": [/Dimam/i, /angry|ask/i],
+  "sign-repaid-better": [/repay/i, /camel/i],
+  "sign-every-gate": [/gate/i, /Rayyan|Abu Bakr/i],
+  "sign-sharing-ashari": [/Ash'ar/i, /shar/i],
+  "sign-zamzam-drink": [/Zamzam/i, /good deed/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -522,7 +529,7 @@ const SOURCES: Record<string, string[]> = {
   "sign-storm": ["Quran 2:17", "Quran 2:19", "Quran 2:20"],
   "sign-zakat": ["Sahih al-Bukhari 1459", "Sahih al-Bukhari 1454", "Sahih Muslim 981"],
   "sign-yemen": ["Sahih al-Bukhari 1395", "Sahih al-Bukhari 1496"],
-  "sign-bayruha": ["Quran 3:92", "Sahih al-Bukhari 1461"],
+  "sign-bayruha": ["Quran 3:92", "Sahih al-Bukhari 1461", "Sahih al-Bukhari 4554"],
   "sign-fitr": ["Sahih al-Bukhari 1503", "Sahih al-Bukhari 1506"],
   "sign-eid": ["Sahih al-Bukhari 953", "Sahih al-Bukhari 494", "Sahih al-Bukhari 956", "Sahih al-Bukhari 986"],
   "sign-thirsty-dog": ["Sahih al-Bukhari 2363", "Sahih al-Bukhari 2466"],
@@ -643,7 +650,7 @@ const SOURCES: Record<string, string[]> = {
   "sign-sparrow-and-the-sea": ["Sahih al-Bukhari 122"],
   "sign-lofty-mansions": ["Sahih al-Bukhari 3256"],
   "sign-house-of-pearl": ["Sahih al-Bukhari 3820"],
-  "sign-tree-of-a-hundred-years": ["Sahih al-Bukhari 3251"],
+  "sign-tree-of-a-hundred-years": ["Sahih al-Bukhari 3251", "Sahih al-Bukhari 4881"],
   "sign-the-pool": ["Sahih al-Bukhari 6579"],
   "sign-gold-like-uhud": ["Sahih al-Bukhari 3673"],
   "sign-respite-then-seized": ["Sahih al-Bukhari 4686"],
@@ -837,7 +844,14 @@ const SOURCES: Record<string, string[]> = {
   "sign-cloak-on-the-thorns": ["Sahih al-Bukhari 2821"],
   "sign-rings-thrown-away": ["Sahih al-Bukhari 7298"],
   "sign-tailors-gourd": ["Sahih al-Bukhari 5436"],
-  "sign-the-eclipse": ["Sahih al-Bukhari 1043"]
+  "sign-the-eclipse": ["Sahih al-Bukhari 1043"],
+  "sign-ashari-recitation": ["Sahih al-Bukhari 4232"],
+  "sign-gold-not-kept-overnight": ["Sahih al-Bukhari 1430"],
+  "sign-dimam-questions": ["Sahih al-Bukhari 63"],
+  "sign-repaid-better": ["Sahih al-Bukhari 2609"],
+  "sign-every-gate": ["Sahih al-Bukhari 3666"],
+  "sign-sharing-ashari": ["Sahih Muslim 2500"],
+  "sign-zamzam-drink": ["Sahih al-Bukhari 1635"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -861,7 +875,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1365);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1375);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -13284,6 +13298,553 @@ describe("the signs in creation, alive", () => {
         [-13, -13, -13, -13, -13, -13]
       ],
       [0, 1]
+    ]);
+  });
+
+  test("the scenes from the Ash'aris known by their recitation to the drink at Zamzam show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const generousScenes: SignKind[] = ["ashari-recitation", "gold-not-kept-overnight", "dimam-questions", "repaid-better", "every-gate", "sharing-ashari", "zamzam-drink"];
+    for (const kind of generousScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boy|girl|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Jabir|Musa|Moses|Mas'ud|Jibril|Gabriel|Aishah|Abu Hurairah)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, and nothing comes down from the sky: a call on one's Lord is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    const names = (kind: SignKind, pattern: RegExp) => signArt(kind).parts.filter((each) => pattern.test(each.name)).map((each) => each.name);
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => shown(kind, name, t));
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    const many = (kind: SignKind, list: string[], key: "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", t: number) => list.map((name) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The Ash'aris, known by their recitation: at night, by the masjid of Madinah, his place is a golden ring, and
+    // beyond a dune the homes of the Ash'aris stand. Their places come along the way with their voices and go in at the
+    // doors; then their voices are in the homes. Faint golden lines go from his place over the dune to each home, and
+    // soft golden rings come about them: known by their voices. Lights come on in the homes, and sparks of their
+    // recitation rise. Then the day comes: the night lifts, the sun shows, and a grey line from his place stops at the
+    // dune, a grey ring there: not seen by day. Their camels kneel by the homes, and their places are by them: where
+    // they stopped by day.
+    expect(words("ashari-recitation")).toEqual([
+      "I know the voices of the Ash'aris",
+      "With the Quran, when they come in at night",
+      "I know where they stay by their voices",
+      "With the Quran at night",
+      "Though I had not seen where they stayed",
+      "When they stopped there by day"
+    ]);
+    const company = names("ashari-recitation", /^the company, coming in at night \d$/);
+    const homeVoices = names("ashari-recitation", /^their voices with the Quran, in the homes \d$/);
+    const goldenLines = names("ashari-recitation", /^knowing where they stay: a faint golden line \d$/);
+    const goldenRings = names("ashari-recitation", /^known by their voices: a soft golden ring \d$/);
+    const homeLights = names("ashari-recitation", /^a light in the home \d$/);
+    const recitationSparks = names("ashari-recitation", /^their recitation: a spark rising \d$/);
+    const dayPlaces = names("ashari-recitation", /^where they stopped by day: their places \d$/);
+    expect([company, homeVoices, goldenLines, goldenRings, homeLights, recitationSparks, dayPlaces].map((list) => list.length)).toEqual([4, 4, 4, 4, 4, 4, 4]);
+    expect([
+      [0.01, 0.66, 0.84].map((t) => all("ashari-recitation", ["the dark of the night", "stars", "the moon", "the sky by day", "the sun by day"], t)),
+      at("ashari-recitation", "hearing them: a soft ring about his place", "opacity", [0.01, 0.17, 0.66, 0.84]),
+      [at("ashari-recitation", "their voices with the Quran, on the way", "opacity", [0.01, 0.17, 0.34]), at("ashari-recitation", "the company, coming in at night 1", "x", [0.17, 0.34])],
+      [0.01, 0.17, 0.34].map((t) => all("ashari-recitation", company, t)),
+      [0.17, 0.34, 0.66, 0.84].map((t) => all("ashari-recitation", homeVoices, t)),
+      [0.34, 0.5, 0.66, 0.84].map((t) => all("ashari-recitation", goldenLines, t)),
+      [0.34, 0.5, 0.66, 0.84].map((t) => all("ashari-recitation", goldenRings, t)),
+      [0.5, 0.66, 0.84].map((t) => all("ashari-recitation", homeLights, t)),
+      [0.5, 0.56, 0.66].map((t) => all("ashari-recitation", recitationSparks, t)),
+      [0.5, 0.66].map((t) => many("ashari-recitation", recitationSparks, "y", t)),
+      [0.66, 0.84].map((t) => all("ashari-recitation", ["by day: a grey line, stopping at the dune", "not seen by day: a grey ring at the dune"], t)),
+      [0.84, 0.97].map((t) => all("ashari-recitation", ["stopped there by day: camels kneeling", "where they stopped by day: their places 1", "where they stopped by day: their places 2", "where they stopped by day: their places 3", "where they stopped by day: their places 4"], t))
+    ]).toEqual([
+      [
+        [1, 1, 1, 0, 0],
+        [1, 1, 1, 0, 0],
+        [0, 0, 0, 1, 1]
+      ],
+      [0, 1, 1, 0],
+      [
+        [0, 1, 0],
+        [0, -6.8]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 0, 0],
+        [0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [-11, -11, -11, -11]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ]
+    ]);
+    // The gold not kept overnight: in the afternoon, by the masjid of Madinah, the folk's places pray Asr, and sparks of
+    // their prayer rise. His place, a golden ring, goes quickly to his house, quick strokes behind it, and in at its
+    // door; a light shows in the door. It comes out again, and the folk's voice asks. His voice answers, and gold of
+    // charity shows in the house, a glow about it. The sun goes lower and the sky warms, the evening coming, and a grey
+    // ring comes about the gold: not to be kept overnight. Then pieces of the gold go out to homes nearby, and a warm
+    // glow comes on each.
+    expect(words("gold-not-kept-overnight")).toEqual([
+      "He prayed Asr with us, then hurried",
+      "He went into the house",
+      "And soon came out again",
+      "I had left gold of charity in the house",
+      "I disliked to keep it overnight",
+      "So I shared it out"
+    ]);
+    const asrSparks = names("gold-not-kept-overnight", /^their prayer: a spark rising \d$/);
+    const going = names("gold-not-kept-overnight", /^shared out: a piece of the gold, going \d$/);
+    const given = names("gold-not-kept-overnight", /^shared out: a piece of the gold, given \d$/);
+    const homeGlows = names("gold-not-kept-overnight", /^a warm glow on the home \d$/);
+    expect([asrSparks, going, given, homeGlows].map((list) => list.length)).toEqual([3, 3, 3, 3]);
+    expect([
+      [0.01, 0.05, 0.17].map((t) => all("gold-not-kept-overnight", asrSparks, t)),
+      [at("gold-not-kept-overnight", "a golden ring, his place", "x", [0.01, 0.17, 0.34, 0.5]), at("gold-not-kept-overnight", "a golden ring, his place", "opacity", [0.17, 0.34, 0.5])],
+      at("gold-not-kept-overnight", "hurrying: quick strokes behind his place", "opacity", [0.01, 0.1, 0.17]),
+      at("gold-not-kept-overnight", "a light in the door: he is in the house", "opacity", [0.17, 0.34, 0.5]),
+      at("gold-not-kept-overnight", "the folk's voice, asking", "opacity", [0.34, 0.5, 0.66]),
+      [0.5, 0.66, 0.84, 0.97].map((t) => all("gold-not-kept-overnight", ["his voice: I had left gold of charity", "gold of charity, left in the house: a glow", "gold of charity, left in the house"], t)),
+      [0.66, 0.84, 0.97].map((t) => all("gold-not-kept-overnight", ["the evening coming: a warm sky", "not to be kept overnight: a grey ring about the gold"], t)),
+      at("gold-not-kept-overnight", "the sun of the afternoon, going lower", "y", [0.66, 0.84]),
+      [0.84, 0.9, 0.97].map((t) => all("gold-not-kept-overnight", going, t)),
+      [0.84, 0.97].map((t) => many("gold-not-kept-overnight", going, "x", t)),
+      [0.84, 0.97].map((t) => all("gold-not-kept-overnight", given, t)),
+      [0.84, 0.97].map((t) => all("gold-not-kept-overnight", homeGlows, t))
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0],
+        [0, 0, 0]
+      ],
+      [
+        [0, 30.2, 30.2, 20],
+        [1, 0, 1]
+      ],
+      [0, 1, 0],
+      [0, 1, 0],
+      [0, 1, 0],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 0],
+        [1, 1],
+        [1, 0]
+      ],
+      [0, 14],
+      [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0]
+      ],
+      [
+        [0, 0, 0],
+        [41.7, 61.7, 81.7]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Dimam's questions: in the yard of the masjid of Madinah, within its low walls of mud brick, his place is a golden
+    // ring among the folk's places. A camel comes in, the asker's place beside it, and no one is drawn on it; the camel
+    // kneels, and a cord is tied about its foreleg. The asker's place comes near, and its voice asks; his voice answers,
+    // and a soft ring comes about his place. The asker's voice asks again, and far off, small places show on every side:
+    // all the folk. His voice answers, a warm glow about his place. The asker's voice asks of the five prayers, and five
+    // sparks rise from the masjid, one by one. Then a warm glow comes about the asker's place: I believe.
+    expect(words("dimam-questions")).toEqual([
+      "A man came into the masjid on a camel",
+      "He made it kneel there, then tied it",
+      "I will be hard in asking: do not be angry",
+      "Ask whatever you want",
+      "Did Allah send you to all the people?",
+      "He said: by Allah, yes",
+      "Did Allah order that we pray five prayers?",
+      "I believe in what you have brought"
+    ]);
+    const farPlaces = names("dimam-questions", /^to all the folk: small places far off \d$/);
+    const fivePrayerSparks = names("dimam-questions", /^the five prayers: a spark rising \d$/);
+    expect([farPlaces, fivePrayerSparks].map((list) => list.length)).toEqual([6, 5]);
+    expect([
+      [at("dimam-questions", "a camel, coming into the masjid", "x", [0.01, 0.125]), at("dimam-questions", "a camel, coming into the masjid", "opacity", [0.125, 0.265]), at("dimam-questions", "the camel, kneeling", "opacity", [0.125, 0.265])],
+      at("dimam-questions", "tied: a cord about its foreleg", "opacity", [0.125, 0.265]),
+      at("dimam-questions", "the asker's place", "x", [0.01, 0.125, 0.265, 0.385]),
+      at("dimam-questions", "the asker's voice: I will be hard in asking", "opacity", [0.265, 0.385, 0.505]),
+      [at("dimam-questions", "his voice: ask whatever you want", "opacity", [0.385, 0.505, 0.625]), at("dimam-questions", "not angry: a soft ring about his place", "opacity", [0.385, 0.505])],
+      at("dimam-questions", "the asker's voice: were you sent to all the folk", "opacity", [0.505, 0.625, 0.745]),
+      [0.505, 0.625].map((t) => all("dimam-questions", farPlaces, t)),
+      [at("dimam-questions", "his voice: yes", "opacity", [0.625, 0.745, 0.865]), at("dimam-questions", "yes: a warm glow about his place", "opacity", [0.625, 0.745])],
+      at("dimam-questions", "the asker's voice: the five prayers", "opacity", [0.745, 0.865, 0.97]),
+      [0.745, 0.79, 0.865].map((t) => all("dimam-questions", fivePrayerSparks, t)),
+      [0.745, 0.865].map((t) => many("dimam-questions", fivePrayerSparks, "y", t)),
+      at("dimam-questions", "his voice, answering again", "opacity", [0.745, 0.865, 0.97]),
+      [0.865, 0.97].map((t) => all("dimam-questions", ["the asker's voice: I believe", "I believe: a warm glow about the asker's place"], t))
+    ]).toEqual([
+      [
+        [44, 0],
+        [1, 0],
+        [0, 1]
+      ],
+      [0, 1],
+      [44, 0, 0, -38],
+      [0, 1, 0],
+      [
+        [0, 1, 0],
+        [0, 1]
+      ],
+      [0, 1, 0],
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [
+        [0, 1, 0],
+        [0, 1]
+      ],
+      [0, 1, 0],
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 0, 0, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0],
+        [-11, -11, -11, -11, -11]
+      ],
+      [0, 1, 0],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Paid back better: by the masjid of Madinah, his place is a golden ring. A young camel goes from its owner's place
+    // to his. The owner's place comes, and its voice asks for it back. His voice speaks, and a soft ring comes about the
+    // owner's place: a right, and a say. Then a bigger, older camel comes from the herd to the owner's place, a soft
+    // golden ring about it: better than its age. A warm glow comes about his place: the best in repaying.
+    expect(words("repaid-better")).toEqual([
+      "He took a camel of a certain age",
+      "Its owner came, asking for it back",
+      "One who has a right has a say",
+      "He gave him back better than its age",
+      "The best of you are the best in repaying"
+    ]);
+    expect([
+      at("repaid-better", "a young camel, taken", "x", [0.01, 0.2]),
+      at("repaid-better", "its owner's place", "x", [0.2, 0.4]),
+      at("repaid-better", "the owner's voice, asking for it back", "opacity", [0.2, 0.4, 0.6]),
+      [at("repaid-better", "his voice: one who has a right has a say", "opacity", [0.4, 0.6, 0.8]), at("repaid-better", "a right, and a say: a soft ring about the owner's place", "opacity", [0.4, 0.6])],
+      [at("repaid-better", "better than its age: an older camel, going to the owner", "x", [0.6, 0.8]), at("repaid-better", "better than its age: a soft golden ring about it", "opacity", [0.6, 0.8])],
+      [0.8, 0.97].map((t) => all("repaid-better", ["his voice: the best of you are the best in repaying", "the best in repaying: a warm glow about his place"], t))
+    ]).toEqual([
+      [0, -66],
+      [0, -52],
+      [0, 1, 0],
+      [
+        [0, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, -65],
+        [0, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Called from every gate: far off, beyond the land, Paradise is a soft light with no sun in it, and four gates stand
+    // open in it. His place is a golden ring, his voice speaking. A place spends a pair, two coins, and they rise and
+    // are gone. Soft lights come in the gates, a soft call comes from them, and a warm glow comes about that place. Then
+    // each gate in turn, as its line is said, gets its sign, a spark for prayer, a small flag for jihad, a coin for
+    // charity and a crescent for fasting, and a soft golden ring; places come below it, and a golden way goes from them
+    // to their gate. Abu Bakr's place shows, its voice asking; his voice answers, golden ways go from Abu Bakr's place
+    // to all four gates, and a warm glow comes about it.
+    expect(words("every-gate")).toEqual([
+      "Whoever spends a pair in Allah's cause",
+      "Is called from the gates of Paradise",
+      "The people of prayer: the gate of prayer",
+      "The people of jihad: the gate of jihad",
+      "The people of charity: the gate of charity",
+      "Of fasting: the gate of fasting, ar-Rayyan",
+      "Is anyone called from all of them?",
+      "Yes, and I hope you are one of them"
+    ]);
+    const coins = names("every-gate", /^spending a pair: a coin \d$/);
+    const gateLights = names("every-gate", /^a soft light in the gate of /);
+    const calls = names("every-gate", /^the call from the gate of .*: soft arcs$/);
+    const gateSigns = names("every-gate", /^the gate of .*: a (spark|small flag|coin|crescent) over it$/);
+    const gateRings = names("every-gate", /^the gate of .*: a soft golden ring about it$/);
+    const groups = names("every-gate", /^those of .*: their places$/);
+    const groupWays = names("every-gate", /^those of .*: a golden way to their gate$/);
+    const hopeWays = names("every-gate", /^hoped for: a golden way from Abu Bakr's place to /);
+    expect([coins, gateLights, calls, gateSigns, gateRings, groups, groupWays, hopeWays].map((list) => list.length)).toEqual([2, 4, 4, 4, 4, 4, 4, 4]);
+    expect([
+      at("every-gate", "his voice, speaking", "opacity", [0.01, 0.125, 0.745, 0.865]),
+      [0.01, 0.06, 0.125].map((t) => all("every-gate", coins, t)),
+      [0.01, 0.125].map((t) => many("every-gate", coins, "y", t)),
+      [0.125, 0.265].map((t) => all("every-gate", gateLights, t)),
+      [0.125, 0.265, 0.385].map((t) => all("every-gate", calls, t)),
+      at("every-gate", "called: a warm glow about the place of one who spends", "opacity", [0.125, 0.265]),
+      [0.265, 0.385, 0.505, 0.625, 0.745].map((t) => all("every-gate", gateSigns, t)),
+      [0.265, 0.385, 0.505, 0.625, 0.745].map((t) => all("every-gate", gateRings, t)),
+      [0.265, 0.385, 0.505, 0.625, 0.745].map((t) => all("every-gate", groups, t)),
+      [0.265, 0.385, 0.505, 0.625, 0.745].map((t) => all("every-gate", groupWays, t)),
+      [0.745, 0.865, 0.97].map((t) => all("every-gate", ["Abu Bakr's place", "Abu Bakr's voice: is anyone called from all of them"], t)),
+      [0.865, 0.97].map((t) => all("every-gate", ["his voice: yes, and I hope you are one of them", "hoped for: a warm glow about Abu Bakr's place"], t)),
+      [0.865, 0.97].map((t) => all("every-gate", hopeWays, t))
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [
+        [0, 0],
+        [1, 1],
+        [0, 0]
+      ],
+      [
+        [0, 0],
+        [-8, -8]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1],
+        [0, 0, 0, 0]
+      ],
+      [0, 1],
+      [
+        [0, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 1, 0, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 1, 0, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 1, 0, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 0, 0, 0],
+        [1, 1, 0, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1],
+        [1, 0]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // The Ash'aris share: far off on the left, the tents of a campaign, a little food by each, which grows less, and a
+    // grey ring comes about them; on the right, the homes of Madinah, a little food by each, which grows less, and a
+    // grey ring about them. A cloth is spread between, and the food goes to it from every tent and home and is heaped on
+    // it. Then a vessel shows by it, and equal shares go from the cloth to every tent and home, as the heap goes down.
+    // His place shows, a golden ring, a soft golden ring comes about it and the cloth, and a warm glow over every tent
+    // and home.
+    expect(words("sharing-ashari")).toEqual([
+      "When the Ash'aris run short on campaign",
+      "Or food runs low for their families",
+      "They gather what they have in one cloth",
+      "Then share it equally in one vessel",
+      "They are of me, and I am of them"
+    ]);
+    const campaignFood = names("sharing-ashari", /^on a campaign: a little food, running short \d$/);
+    const madinahFood = names("sharing-ashari", /^in Madinah: a little food, running low \d$/);
+    const shares = names("sharing-ashari", /^shared equally: a share \d$/);
+    const glows = names("sharing-ashari", /^a warm glow on the (tent|home) \d$/);
+    expect([campaignFood, madinahFood, shares, glows].map((list) => list.length)).toEqual([3, 3, 6, 6]);
+    expect([
+      [0.01, 0.2].map((t) => many("sharing-ashari", campaignFood, "scale", t)),
+      at("sharing-ashari", "running short: a grey ring about the tents", "opacity", [0.01, 0.2, 0.4, 0.6]),
+      [0.2, 0.4].map((t) => many("sharing-ashari", madinahFood, "scale", t)),
+      at("sharing-ashari", "running low: a grey ring about the homes", "opacity", [0.2, 0.4, 0.6]),
+      at("sharing-ashari", "one cloth, spread", "opacity", [0.4, 0.6]),
+      [0.4, 0.6].map((t) => all("sharing-ashari", [...campaignFood, ...madinahFood], t)),
+      [0.4, 0.6].map((t) => many("sharing-ashari", [...campaignFood, ...madinahFood], "x", t)),
+      [at("sharing-ashari", "gathered in one cloth: a heap", "scale", [0.4, 0.6, 0.8]), at("sharing-ashari", "gathered in one cloth: a heap", "opacity", [0.4, 0.6, 0.8])],
+      at("sharing-ashari", "one vessel", "opacity", [0.6, 0.8]),
+      [0.6, 0.8].map((t) => all("sharing-ashari", shares, t)),
+      [0.6, 0.8].map((t) => many("sharing-ashari", shares, "x", t)),
+      [0.8, 0.97].map((t) => all("sharing-ashari", ["a golden ring, his place", "of me, and I of them: a soft golden ring"], t)),
+      [0.8, 0.97].map((t) => all("sharing-ashari", glows, t))
+    ]).toEqual([
+      [
+        [1, 1, 1],
+        [0.5, 0.5, 0.5]
+      ],
+      [0, 1, 1, 0],
+      [
+        [1, 1, 1],
+        [0.5, 0.5, 0.5]
+      ],
+      [0, 1, 0],
+      [0, 1],
+      [
+        [1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0],
+        [60.4, 44.4, 28.4, -23.6, -43.6, -61.6]
+      ],
+      [
+        [0.3, 1, 0.2],
+        [0, 1, 0]
+      ],
+      [0, 1],
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0],
+        [-60.4, -44.4, -28.4, 23.6, 43.6, 61.6]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    ]);
+    // The drink at the drinking place, and at Zamzam: in Makkah, the Ka'bah far behind, the drinking place is a basin of
+    // stone, the folk's places about it. His place, a golden ring, comes to it, and his voice asks. Al-Abbas's voice
+    // speaks, and a dashed way goes from Fadl's place to a home, a jug of drink by it. Small ripples show in the basin's
+    // water where the folk dip in. His voice asks again; the way and the jug fade, a cup goes from the basin to his
+    // place, and a soft glint shows there: he drank. Then his place goes to Zamzam, where the places of those giving
+    // water stand; the bucket goes down and comes up, and cups of water go to those who drink. His voice speaks, a warm
+    // glow comes about those working, and a spark rises.
+    expect(words("zamzam-drink")).toEqual([
+      "At the drinking place he asked for a drink",
+      "Fadl, bring him a drink from your mother",
+      "They put their hands in it",
+      "Give me a drink; and he drank from it",
+      "He came to Zamzam, where they gave water",
+      "Work on, for you are doing a good deed"
+    ]);
+    const ripples = names("zamzam-drink", /^the folk dipping in: a ripple in the water \d$/);
+    const cupsGiven = names("zamzam-drink", /^water given: a cup to one who drinks \d$/);
+    const workGlows = names("zamzam-drink", /^a good deed: a warm glow about those giving water \d$/);
+    expect([ripples, cupsGiven, workGlows].map((list) => list.length)).toEqual([4, 2, 2]);
+    expect([
+      at("zamzam-drink", "a golden ring, his place", "x", [0.01, 0.17, 0.66, 0.84]),
+      at("zamzam-drink", "his voice: asking for a drink", "opacity", [0.01, 0.17, 0.34]),
+      at("zamzam-drink", "al-Abbas's voice: bring him a drink", "opacity", [0.17, 0.34, 0.5, 0.66]),
+      [0.17, 0.34, 0.5, 0.66].map((t) => all("zamzam-drink", ["a dashed way from Fadl's place to the home", "a drink from her: a jug by the home"], t)),
+      [0.34, 0.5].map((t) => all("zamzam-drink", ripples, t)),
+      at("zamzam-drink", "his voice: give me a drink", "opacity", [0.5, 0.66, 0.84]),
+      [at("zamzam-drink", "a cup from the basin", "x", [0.5, 0.66]), at("zamzam-drink", "a cup from the basin", "opacity", [0.5, 0.57, 0.66])],
+      at("zamzam-drink", "he drank: a soft glint at his place", "opacity", [0.5, 0.66, 0.84]),
+      at("zamzam-drink", "the well's rope and bucket", "y", [0.66, 0.73, 0.765, 0.84]),
+      [0.66, 0.84].map((t) => all("zamzam-drink", cupsGiven, t)),
+      [0.84, 0.97].map((t) => all("zamzam-drink", ["his voice: work on, for you are doing a good deed", "a good deed: a warm glow about those giving water 1", "a good deed: a warm glow about those giving water 2"], t)),
+      [at("zamzam-drink", "a good deed: a spark rising", "opacity", [0.84, 0.92, 0.97]), at("zamzam-drink", "a good deed: a spark rising", "y", [0.84, 0.97])]
+    ]).toEqual([
+      [0, -24, -24, 22],
+      [0, 1, 0],
+      [0, 1, 1, 0],
+      [
+        [0, 0],
+        [1, 1],
+        [1, 1],
+        [0, 0]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 1, 0],
+      [
+        [0, 9],
+        [0, 1, 0]
+      ],
+      [0, 1, 0],
+      [0, 4, 0, 4],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 1, 0],
+        [0, -11]
+      ]
     ]);
   });
 
