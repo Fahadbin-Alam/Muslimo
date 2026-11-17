@@ -828,7 +828,14 @@ export type SignKind =
   | "learning-in-turns"
   | "fathers-friend"
   | "one-in-a-hundred"
-  | "foam-of-the-sea";
+  | "foam-of-the-sea"
+  | "flowing-spring"
+  | "kings-on-the-sea"
+  | "glass-vessels"
+  | "right-sandal-first"
+  | "uways-of-yemen"
+  | "hazn-and-sahl"
+  | "ajwa-morning";
 
 export type SignScene = {
   id: string;
@@ -3987,6 +3994,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said that the Messenger of Allah ﷺ said: whoever says Subhan Allah wa bihamdihi a hundred times in a day, his sins are taken away, even if they were like the foam of the sea.",
     sources: [bukhari("6405")]
+  },
+  {
+    id: "sign-flowing-spring",
+    kind: "flowing-spring",
+    caption:
+      "Umm al-Ala, a woman of the Ansar who had pledged to the Messenger of Allah ﷺ, said: Uthman ibn Maz'un fell to us for lodging when the Ansar drew lots to house the Muhajirun. Uthman fell ill, and we nursed him until his death, and we shrouded him in his clothes. The Messenger of Allah ﷺ came in to us, and I said: may Allah have mercy on you, Abu as-Sa'ib; I testify that Allah has honored you. The Prophet ﷺ said: how do you know? I said: I do not know, by Allah. He said: as for him, death has come to him, and I hope good for him from Allah. Umm al-Ala said: by Allah, I will never vouch for anyone after him. Later I saw in a dream a flowing spring for Uthman, and I went to the Messenger of Allah ﷺ and told him, and he said: that is his deed, flowing for him.",
+    sources: [bukhari("7018"), bukhari("3929"), bukhari("1243")]
+  },
+  {
+    id: "sign-kings-on-the-sea",
+    kind: "kings-on-the-sea",
+    caption:
+      "Anas ibn Malik said: the Messenger of Allah ﷺ used to visit Umm Haram bint Milhan, and she would give him food. Once he slept there, then woke up smiling, and she asked: what makes you smile, O Messenger of Allah? He said: some of my ummah were shown to me, going out in the way of Allah, riding the middle of this sea, like kings on thrones. She said: O Messenger of Allah, pray to Allah to make me one of them, and he prayed for her. Then he slept again and woke up smiling, and she asked again, and he said: you are among the first. Umm Haram sailed the sea in the time of Mu'awiyah ibn Abi Sufyan.",
+    sources: [bukhari("2788"), bukhari("2924")]
+  },
+  {
+    id: "sign-glass-vessels",
+    kind: "glass-vessels",
+    caption:
+      "Anas ibn Malik said: the Prophet ﷺ was on one of his journeys, and the driver chanted to drive the camels on. The Prophet ﷺ had a camel driver named Anjashah, who had a fine voice, and the Prophet ﷺ said to him: gently, O Anjashah, do not break the glass vessels! Qatadah said: he meant the weak women.",
+    sources: [bukhari("6209"), bukhari("6211")]
+  },
+  {
+    id: "sign-right-sandal-first",
+    kind: "right-sandal-first",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: when you put on sandals, start with the right, and when you take them off, start with the left, so that the right is the first to be put on and the last to be taken off. And he ﷺ said: none of you should walk in one sandal; take both off, or wear both.",
+    sources: [bukhari("5855"), bukhari("5856")]
+  },
+  {
+    id: "sign-uways-of-yemen",
+    kind: "uways-of-yemen",
+    caption:
+      "Usayr ibn Jabir said: whenever help came to Umar ibn al-Khattab from the people of Yemen, Umar would ask them: is Uways ibn Amir among you? until Umar came upon Uways and asked: are you Uways ibn Amir? Uways said: yes. Umar asked: of Murad, then of Qaran? Uways said: yes. Umar asked: you have a mother? Uways said: yes. Umar said: I heard the Messenger of Allah ﷺ say: Uways ibn Amir will come to you with the help from the people of Yemen, of Murad, then of Qaran, dutiful to his mother; were he to swear by Allah, Allah would fulfil it; so if you can have him ask forgiveness for you, do so. So ask forgiveness for me. And Uways asked forgiveness for Umar. Umar asked: where are you going? Uways said: to Kufa. Umar said: shall I write to its governor for you? Uways said: I would rather be among the poor of the people.",
+    sources: [muslim("2542c")]
+  },
+  {
+    id: "sign-hazn-and-sahl",
+    kind: "hazn-and-sahl",
+    caption:
+      "Al-Musayyib said that his father Hazn came to the Prophet ﷺ, who asked: what is your name? The man said: Hazn. He said: you are Sahl. Hazn said: I will not change a name my father gave me. Ibn al-Musayyib said: the roughness has stayed among us ever since.",
+    sources: [bukhari("6190")]
+  },
+  {
+    id: "sign-ajwa-morning",
+    kind: "ajwa-morning",
+    caption:
+      "Sa'd ibn Abi Waqqas said that the Prophet ﷺ said: whoever eats some ajwa dates in the morning, every day, no poison and no magic will harm him that day, until night. Another narrator said: seven dates.",
+    sources: [bukhari("5768")]
   }
 ];
 
@@ -5950,7 +6006,31 @@ export const SIGN_LESSONS: Record<string, string> = {
   // People are like camels: among a hundred, hardly one is fit to ride.
   "deep-intro-short-words-to-live-by-one-in-a-hundred": "sign-one-in-a-hundred",
   // Subhan Allah wa bihamdihi a hundred times a day: sins forgiven, even like the foam of the sea.
-  "deep-waqiah4-forgiven-like-sea-foam": "sign-foam-of-the-sea"
+  "deep-waqiah4-forgiven-like-sea-foam": "sign-foam-of-the-sea",
+  // The Ansar drew lots to house the Muhajirun, and Uthman ibn Maz'un fell to Umm al-Ala's home.
+  "deep-uthman-mazun-drawn-by-lot": "sign-flowing-spring",
+  // Umm al-Ala vouched for Uthman, and he asked: how do you know?
+  "deep-uthman-mazun-how-do-you-know": "sign-flowing-spring",
+  // Umm al-Ala dreamt of a flowing spring for Uthman: his deed, flowing for him.
+  "deep-uthman-mazun-flowing-spring": "sign-flowing-spring",
+  // He was shown his ummah riding the sea like kings on thrones, and Umm Haram among the first.
+  "deep-quranwomen-umm-haram-sea": "sign-kings-on-the-sea",
+  // The first of his ummah to go out by sea, and Umm Haram among them.
+  "deep-ubadah-by-the-sea": "sign-kings-on-the-sea",
+  // Gently, Anjashah, with the glass vessels.
+  "deep-husbands-glass-vessels": "sign-glass-vessels",
+  // Do not break the glass vessels: Qatadah said he meant the weak women.
+  "deep-book-adab-glass-vessels": "sign-glass-vessels",
+  // The right sandal first on and last off.
+  "deep-book-dress-right-shoe-first": "sign-right-sandal-first",
+  // Not one sandal: wear both, or take both off.
+  "deep-book-dress-both-shoes": "sign-right-sandal-first",
+  // Umar found Uways of Yemen, dutiful to his mother, and asked him to ask forgiveness for Umar.
+  "deep-umar-uways": "sign-uways-of-yemen",
+  // Hazn, rough ground, would not take the name Sahl, smooth ground.
+  "deep-kids-good-names-hazn-and-sahl": "sign-hazn-and-sahl",
+  // A few ajwa dates in the morning: no poison or magic harms that day, until night.
+  "deep-book-medicine-ajwa-dates": "sign-ajwa-morning"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
