@@ -483,7 +483,7 @@ function caravanOnFriday(): SignArt {
   const left = rowsAt.flatMap((y) => xs.slice(4).map((x): [number, number] => [x, y]));
   const coming = track({
     xy: [
-      [0.04, 40, 0],
+      [0.04, 48, 0],
       [0.17, 0, 0]
     ]
   });

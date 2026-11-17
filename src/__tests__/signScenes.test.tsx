@@ -17037,7 +17037,7 @@ describe("the signs in creation, alive", () => {
       at("caravan-on-friday", "revealed to him: a soft golden glow about his place", "opacity", [0.69, 0.97])
     ]).toEqual([
       [
-        [40, 40, 40],
+        [48, 48, 48],
         [0, 0, 0]
       ],
       [0, 42],
