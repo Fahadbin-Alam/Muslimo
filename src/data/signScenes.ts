@@ -821,7 +821,14 @@ export type SignKind =
   | "visit-to-the-youth"
   | "room-for-a-sheep"
   | "husk-blown"
-  | "enough-for-more";
+  | "enough-for-more"
+  | "black-khamisa"
+  | "garden-for-the-masjid"
+  | "guide-daws"
+  | "learning-in-turns"
+  | "fathers-friend"
+  | "one-in-a-hundred"
+  | "foam-of-the-sea";
 
 export type SignScene = {
   id: string;
@@ -3931,6 +3938,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Messenger of Allah ﷺ said: the food of two is enough for three, and the food of three is enough for four.",
     sources: [bukhari("5392")]
+  },
+  {
+    id: "sign-black-khamisa",
+    kind: "black-khamisa",
+    caption:
+      "Umm Khalid bint Khalid said: the Prophet ﷺ was brought some clothes, among them a small black khamisa. He said: whom do you think we should dress in this? The people kept silent, and he said: bring me Umm Khalid. I was brought, carried, and he took the khamisa in his hand and dressed me in it, and said: may you live to wear it out and mend it many times. On it was a mark of green or yellow, and he said: O Umm Khalid, this is sanah. Sanah is the Abyssinian word for beautiful.",
+    sources: [bukhari("5823")]
+  },
+  {
+    id: "sign-garden-for-the-masjid",
+    kind: "garden-for-the-masjid",
+    caption:
+      "Anas ibn Malik said: when the Messenger of Allah ﷺ came to Madinah, he ordered that a masjid be built, and said: O Banu an-Najjar, name me a price for this garden of yours. They said: no, by Allah, we will not ask its price except from Allah.",
+    sources: [bukhari("2774")]
+  },
+  {
+    id: "sign-guide-daws",
+    kind: "guide-daws",
+    caption:
+      "Abu Hurairah said: at-Tufayl and his companions came and said: O Messenger of Allah, Daws has disbelieved and refused, so pray to Allah against them. It was said: Daws is ruined; the people thought he would pray against them. But he ﷺ said: O Allah, guide Daws, and bring them.",
+    sources: [muslim("2524"), bukhari("6397")]
+  },
+  {
+    id: "sign-learning-in-turns",
+    kind: "learning-in-turns",
+    caption:
+      "Umar said: an Ansari neighbour of mine, of Banu Umayyah ibn Zayd at the Awali of Madinah, and I used to go down to the Messenger of Allah ﷺ by turns: my neighbour one day, and I one day. When it was my day, I brought my neighbour the news of that day, of the revelation and other things, and on my neighbour's day, my neighbour did the same.",
+    sources: [bukhari("89")]
+  },
+  {
+    id: "sign-fathers-friend",
+    kind: "fathers-friend",
+    caption:
+      "Abdullah ibn Dinar said: a man of the desert met Abdullah ibn Umar on the road to Makkah. Ibn Umar greeted the man, set him on the donkey Ibn Umar had been riding, and gave him the turban from Ibn Umar's own head. We said: may Allah set you right, they are desert folk, and they are happy with little. Ibn Umar said: this man's father was dear to Umar ibn al-Khattab, and I heard the Messenger of Allah ﷺ say: the finest goodness is a son's kindness to the loved ones of his father.",
+    sources: [muslim("2552a")]
+  },
+  {
+    id: "sign-one-in-a-hundred",
+    kind: "one-in-a-hundred",
+    caption:
+      "Abdullah ibn Umar said: I heard the Messenger of Allah ﷺ say: people are like camels; among a hundred, you can hardly find one fit to ride.",
+    sources: [bukhari("6498")]
+  },
+  {
+    id: "sign-foam-of-the-sea",
+    kind: "foam-of-the-sea",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: whoever says Subhan Allah wa bihamdihi a hundred times in a day, his sins are taken away, even if they were like the foam of the sea.",
+    sources: [bukhari("6405")]
   }
 ];
 
@@ -5879,7 +5935,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   // With no sieve, they ground their barley and blew off its husk.
   "deep-kids-table-blow-off-the-husk": "sign-husk-blown",
   // The food of two is enough for three, and the food of three is enough for four.
-  "deep-book-food-food-for-two": "sign-enough-for-more"
+  "deep-book-food-food-for-two": "sign-enough-for-more",
+  // He dressed little Umm Khalid in a black khamisa and prayed she would live to wear it out.
+  "deep-quranwomen-umm-khalid-dress": "sign-black-khamisa",
+  // Banu an-Najjar would ask the price of their garden for the masjid only from Allah.
+  "deep-book-wills-the-price-from-allah": "sign-garden-for-the-masjid",
+  // Asked to pray against Daws, he prayed: O Allah, guide Daws, and bring them.
+  "deep-book-companions-guide-the-daws": "sign-guide-daws",
+  // The same: asked to pray against a tribe, he asked Allah to guide it.
+  "deep-duas-for-others-guide-them": "sign-guide-daws",
+  // Umar and his Ansari neighbour went to him by turns and told each other the news.
+  "deep-umar-learning-turns": "sign-learning-in-turns",
+  // Ibn Umar gave his donkey and turban to the son of his father's friend.
+  "deep-book-adab-father-friends": "sign-fathers-friend",
+  // People are like camels: among a hundred, hardly one is fit to ride.
+  "deep-intro-short-words-to-live-by-one-in-a-hundred": "sign-one-in-a-hundred",
+  // Subhan Allah wa bihamdihi a hundred times a day: sins forgiven, even like the foam of the sea.
+  "deep-waqiah4-forgiven-like-sea-foam": "sign-foam-of-the-sea"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
