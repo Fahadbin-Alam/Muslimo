@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2783);
+    expect(asks.length).toBe(2812);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4059);
+    expect(places).toBe(4103);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -16201,6 +16201,264 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1, 1, 1, 1, 1]
       ],
       1
+    ]);
+  });
+
+  it("waits on the scenes from say no cheating to constant deeds, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-say-no-cheating", "sign-dates-with-cucumber", "sign-the-worst-feast", "sign-charity-for-barirah", "sign-the-best-gift", "sign-content-with-enough", "sign-constant-deeds"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(29);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Say: no cheating. What problem the man had: the buyer's place has come from the market to his place, and its voice
+    // speaks, before the next words; then a faint line goes from it back to the stall, coins show on the counter, a
+    // small sack, half empty, shows by it, and grey rings come about the sack and the buyer's place. It stops before his
+    // voice speaks.
+    expect([
+      shown("What problem did the man have?", ["his trading: a faint line from the buyer's place to the stall", "the price: coins on the counter", "what came to the buyer: a small sack, half empty", "cheated: a grey ring about the small sack", "often cheated: a grey ring about the buyer's place", "his voice: when you buy"]),
+      value("say-no-cheating", "the buyer's place", "x", 0.253)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 0]
+      ],
+      -42
+    ]);
+    // What he was told to say when buying: grey rings are about the half-empty sack and the buyer's place, before the
+    // next words; then his voice speaks, a faint golden line goes from his place to the buyer's, the old trade goes, the
+    // buyer's place goes back to the stall, its voice speaks there, a soft golden ring comes about it, and a soft golden
+    // glow over the counter.
+    for (const prompt of ["What was he told to say when buying?", "Islam protects people from being tricked in trade."]) {
+      expect([
+        prompt,
+        shown(prompt, ["cheated: a grey ring about the small sack", "often cheated: a grey ring about the buyer's place", "his voice: when you buy", "the buyer's voice at the stall: no cheating", "no cheating: a soft golden ring about the buyer's place", "kept safe: a soft golden glow over the counter"]),
+        value("say-no-cheating", "his teaching: a faint golden line from his place to the buyer's", "opacity", 0.6),
+        moved(prompt, "the buyer's place", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0, 0, 0],
+          [0, 0, 1, 1, 1, 1]
+        ],
+        1,
+        [-42, 0]
+      ]);
+    }
+    // Dates with cucumber. Who saw him eat: his place and the cloth are by his home, before the first words; then
+    // Abdullah ibn Ja'far's small place comes along to them, a faint line goes from it to his place, and Abdullah's
+    // voice speaks. It stops before a dish of fresh dates shows.
+    expect([
+      shown("Who saw him ﷺ eat fresh dates with snake cucumbers?", ["Abdullah ibn Ja'far's small place", "I saw him: a faint line from Abdullah's place to his place", "Abdullah's voice: I saw him", "fresh dates: ripe dates on a dish"]),
+      moved("Who saw him ﷺ eat fresh dates with snake cucumbers?", "Abdullah ibn Ja'far's small place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      [0, -68]
+    ]);
+    // That he ate fresh dates with snake cucumbers: Abdullah's voice has spoken, before the next words; then a dish of
+    // fresh dates shows on the cloth, with glints, and a date goes from it to his place; snake cucumbers show by the
+    // dish, a date with a piece of cucumber goes to his place, and a soft golden ring comes about the dates and the
+    // cucumbers.
+    expect([
+      shown("He ﷺ ate fresh dates with snake cucumbers.", ["fresh dates: ripe dates on a dish", "fresh and ripe: glints over the dates", "snake cucumbers, long and thin, by the dish", "together: a soft golden ring about the dates and the cucumbers"]),
+      value("dates-with-cucumber", "eating: a fresh date, taken", "x", 0.48),
+      value("dates-with-cucumber", "with cucumbers: a fresh date and a piece of cucumber, taken", "x", 0.79),
+      value("dates-with-cucumber", "with cucumbers: a fresh date and a piece of cucumber, taken", "opacity", 1)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      -11,
+      -22.6,
+      0
+    ]);
+    // The worst feast. Which wedding food is the worst: the wedding home has its warm lights and a soft golden glow,
+    // with dishes on a cloth, before the next words; then faint golden lines go to the fine homes of the rich, two
+    // places of the rich come to the feast, a grey ring comes about the places of the poor by their huts, and a grey
+    // haze over the feast. It stops before the third place of the rich turns down the invitation.
+    for (const prompt of ["Which wedding food is the worst?", "A good wedding meal welcomes the poor as well."]) {
+      expect([
+        prompt,
+        shown(prompt, ["invited: a faint golden line to the first fine home", "invited: a faint golden line to the second fine home", "left out: a grey ring about the places of the poor", "the worst food: a grey haze over the feast", "turned down: a grey ring about its door"]),
+        moved(prompt, "the places of the rich: one", "x"),
+        moved(prompt, "the places of the rich: two", "x"),
+        value("the-worst-feast", "the places of the rich: three, turning down the invitation", "opacity", 0.635)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0]
+        ],
+        [0, -17.8],
+        [0, -32],
+        1
+      ]);
+    }
+    // What refusing an invitation is: the third place of the rich has gone in at the door of the second fine home, with
+    // a grey ring about the door, before the last words; then the line to that home turns grey, and a grey haze comes
+    // about it.
+    expect(shown("What about refusing an invitation without reason?", ["the places of the rich: three, turning down the invitation", "turned down: a grey ring about its door", "invited: a faint golden line to the second fine home", "turned down: the line to the second fine home, grey", "disobeyed: a grey haze about the second fine home"])).toEqual([
+      [0, 1, 1, 0, 0],
+      [0, 1, 0, 1, 1]
+    ]);
+    // Charity for Barirah. Who first got the meat as charity: meat on a dish has been brought to his place, before the
+    // next words; then the place of one who gave in charity shows far off, a faint golden way goes from it to Barirah's
+    // place, and a soft white ring comes about the meat. It stops before his voice speaks.
+    expect([
+      shown("Who first got the meat as charity?", ["the place of one who gave in charity, far off", "given to Barirah: a faint golden way from the giver's place to hers", "in charity: a soft white ring about the meat", "his voice: it is charity for her"]),
+      value("charity-for-barirah", "brought to him: meat on a dish", "x", 0.253)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      -12.6
+    ]);
+    // That charity becomes a gift once it is given on: a soft white ring is about the meat, before the next words; then
+    // his voice speaks, a faint line goes from the meat to Barirah's place, and a soft white ring comes about it; the
+    // white ring about the meat goes, glints show over the meat, a soft golden ring comes about it, and a soft golden
+    // glow about his place and his home.
+    expect(shown("Charity changes into a gift once the poor person gives it on.", ["in charity: a soft white ring about the meat", "his voice: it is charity for her", "charity for her: a faint line from the meat to Barirah's place", "hers: a soft white ring about Barirah's place", "a gift: glints over the meat", "a gift for us: a soft golden ring about the meat", "for us: a soft golden glow about his place and his home"])).toEqual([
+      [1, 0, 0, 0, 0, 0, 0],
+      [0, 1, 1, 1, 1, 1, 1]
+    ]);
+    // What the meat was for him: his voice has said it is charity for her, with a soft white ring about Barirah's place,
+    // before the last words; then the white ring about the meat goes, glints show over it, a soft golden ring comes
+    // about it, and a soft golden glow about his place and his home.
+    expect(shown("For the Prophet ﷺ the meat was...?", ["hers: a soft white ring about Barirah's place", "in charity: a soft white ring about the meat", "a gift: glints over the meat", "a gift for us: a soft golden ring about the meat", "for us: a soft golden glow about his place and his home"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 0, 1, 1, 1]
+    ]);
+    // The best gift. Whether he kept back any of what he had: three sacks have gone from the cloth beside his place to
+    // the places of the Ansar, with one left, before the next words; then the last sack goes to them, a soft white ring
+    // comes about the empty cloth, his voice speaks, and a faint golden line goes from his place to theirs. It stops
+    // before a soft ring comes about one place.
+    expect([
+      shown("The Prophet ﷺ kept back some of what he had from the Ansar.", ["all given: a soft white ring about the empty cloth", "his voice: I would never keep it from you", "never kept back: a faint golden line from his place to theirs", "bearing up: a soft ring about one place"]),
+      value("the-best-gift", "he gave them: a sack 3", "x", 0.335),
+      moved("The Prophet ﷺ kept back some of what he had from the Ansar.", "he gave them: a sack 4", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      48,
+      [0, 53.2]
+    ]);
+    // What Allah does for one who bears up: a faint golden line is from his place to the places of the Ansar, before the
+    // next words; then a soft ring comes about one place, and a warm glow about it. It stops before golden glints show
+    // over that place.
+    for (const prompt of ["What does Allah do for one who tries to be patient?", "What does Allah do for one who tries patience?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["bearing up: a soft ring about one place", "made patient: a warm glow about that place", "patience, the best gift: golden glints over that place"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 0]
+        ]
+      ]);
+    }
+    // What the best gift is: a faint golden line is from his place to the places of the Ansar, before the next words;
+    // then a soft ring and a warm glow come about one place, golden glints show over it, and a soft golden glow comes
+    // about it.
+    for (const prompt of ["What is the best gift a person can be given?", "What is the best blessing, per the hadith?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["bearing up: a soft ring about one place", "made patient: a warm glow about that place", "patience, the best gift: golden glints over that place", "better and vaster: a soft golden glow about that place"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Content with enough. Who is successful: his voice has spoken, and a soft golden ring is about the place of one by
+    // a modest home, before the next words; then a faint golden way goes from that place to the masjid, and golden
+    // glints show over it. It stops before a dish shows.
+    expect(shown("Who is successful, in the hadith?", ["successful: a soft golden ring about that place", "accepted Islam: a faint golden way from that place to the masjid", "a Muslim: golden glints over that place", "just enough: a loaf and a few dates on a dish"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // Who is successful, all told: a soft golden ring is about that place, before the next words; then a faint golden
+    // way goes from it to the masjid, with golden glints over it; a loaf and a few dates on a dish show by it, and a jug
+    // of water; a warm glow comes about it, glints over the dish, and a soft golden glow over the home.
+    expect(shown("Who is successful, per the hadith?", ["accepted Islam: a faint golden way from that place to the masjid", "a Muslim: golden glints over that place", "just enough: a loaf and a few dates on a dish", "just enough: a jug of water", "content: a warm glow about that place", "content with it: glints over the dish", "content: a soft golden glow over the home"])).toEqual([
+      [0, 0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1, 1]
+    ]);
+    // How much provision the successful one has: a faint golden way is from that place to the masjid, with golden glints
+    // over it, before the next words; then a loaf and a few dates on a dish show by it, and a jug of water. It stops
+    // before a warm glow comes about it.
+    expect(shown("How much provision does the successful one have, in the hadith?", ["a Muslim: golden glints over that place", "just enough: a loaf and a few dates on a dish", "just enough: a jug of water", "content: a warm glow about that place"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // That success needs no more than enough: golden glints are over that place, before the next words; then just a loaf
+    // and a few dates on a dish show by it, and a jug of water; a warm glow comes about it, glints over the dish, and a
+    // soft golden glow over the modest home.
+    expect(shown("Success needs much more than enough.", ["just enough: a loaf and a few dates on a dish", "just enough: a jug of water", "content: a warm glow about that place", "content with it: glints over the dish", "content: a soft golden glow over the home"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // What Allah made him feel, and who makes the heart content: the dish and the jug are by that place, before the last
+    // words; then a warm glow comes about it, glints over the dish, and a soft golden glow over the modest home.
+    for (const prompt of ["What did Allah make him feel, in the hadith?", "Who makes the heart content?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["just enough: a jug of water", "content: a warm glow about that place", "content with it: glints over the dish", "content: a soft golden glow over the home"])
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0],
+          [1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Constant deeds. Which deeds Allah loves most: the voice of one asking has spoken, before the next words; then his
+    // voice speaks, and on four days, with a night between each, a small spark rises from the place of one who does a
+    // deed by the home, and a mark comes on the home's wall for each day; a soft golden ring comes about the four marks.
+    // It stops before his voice speaks again.
+    for (const prompt of ["Which deed does Allah love most?", "Which deeds does Allah love most?", "The deeds Allah loves most are done ____, even if small.", "Is a small deed every day a good thing?", "A small deed done daily is beloved to Allah.", "Doing a lot once is better than a little every day."]) {
+      expect([
+        prompt,
+        shown(prompt, ["a day kept: a mark on the home's wall 1", "a day kept: a mark on the home's wall 4", "few, but constant: a soft golden ring about the marks", "his voice: take on what you can bear"]),
+        value("constant-deeds", "his voice: the most constant", "opacity", 0.3),
+        value("constant-deeds", "a deed, a little each day: a small spark rising 1", "opacity", 0.33),
+        value("constant-deeds", "night", "opacity", 0.385)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0]
+        ],
+        1,
+        1,
+        0.85
+      ]);
+    }
+    // What else he advised: the four marks are on the home's wall, with a soft golden ring about them, before the last
+    // words; then his voice speaks again, a soft golden ring comes about the place of one who does a deed, a soft golden
+    // glow over the home, and golden glints over the marks.
+    expect(shown("What else did he advise?", ["few, but constant: a soft golden ring about the marks", "his voice: take on what you can bear", "what one can bear: a soft golden ring about the place", "loved: a soft golden glow over the home", "kept up: golden glints over the marks"])).toEqual([
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
     ]);
   });
 

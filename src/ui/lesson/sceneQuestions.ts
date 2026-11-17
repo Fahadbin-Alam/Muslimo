@@ -5010,6 +5010,67 @@ const ASKS: Record<string, readonly Ask[]> = {
   // are.)
   "sign-days-of-tashriq": [
     ["The days of tashriq are for what?", "Eating, drinking and dhikr", "are days of eating", "and of remembering Allah"]
+  ],
+  // Abdullah ibn Umar said: a man told him that he was often cheated in trade, and he said: when you buy, say: no
+  // cheating (Sahih al-Bukhari 2117).
+  "sign-say-no-cheating": [
+    ["What problem did the man have?", "He was often cheated", "that he was often cheated in trade"],
+    ["What was he told to say when buying?", "No cheating", "He said: when you buy", "say: no cheating"],
+    ["Islam protects people from being tricked in trade.", "True", "He said: when you buy", "say: no cheating"]
+  ],
+  // Abdullah ibn Ja'far said: I saw him eating fresh dates with snake cucumbers (Sahih al-Bukhari 5447). (What he ate
+  // with the dates stays as it is, since the patch of cucumbers is there from the scene's start.)
+  "sign-dates-with-cucumber": [
+    ["Who saw him ﷺ eat fresh dates with snake cucumbers?", "Abdullah ibn Ja'far", "Abdullah ibn Ja'far said: I saw him"],
+    ["He ﷺ ate fresh dates with snake cucumbers.", "True", "eating fresh dates", "with snake cucumbers"]
+  ],
+  // Abu Hurairah used to say: the worst food is the food of a wedding feast to which the rich are invited and the poor
+  // are left out; and whoever turns down the invitation has disobeyed Allah and His Messenger (Sahih al-Bukhari 5177).
+  "sign-the-worst-feast": [
+    ["Which wedding food is the worst?", "One that leaves out the poor", "to which only the rich are invited", "and the poor are left out"],
+    ["A good wedding meal welcomes the poor as well.", "True", "to which only the rich are invited", "and the poor are left out"],
+    ["What about refusing an invitation without reason?", "It is disobeying Allah and His Messenger ﷺ", "has disobeyed Allah and His Messenger"]
+  ],
+  // Anas said: some meat was brought to him that had been given to Barirah in charity, and he said: it is charity for
+  // her, and for us it is a gift (Sahih al-Bukhari 1495).
+  "sign-charity-for-barirah": [
+    ["Who first got the meat as charity?", "Barirah", "that was given to Barirah in charity"],
+    ["Charity changes into a gift once the poor person gives it on.", "True", "He said: it is charity for her", "and for us it is a gift"],
+    ["For the Prophet ﷺ the meat was...?", "A gift", "and for us it is a gift"]
+  ],
+  // Abu Sa'id al-Khudri said: some of the Ansar asked him and he gave them, then they asked again and he gave them,
+  // until what he had ran out. He said: whatever good I have, I will never keep it from you; whoever keeps from asking,
+  // Allah keeps him chaste; whoever seeks to be free of need, Allah makes him free of need; whoever bears up, Allah
+  // makes him patient; and no one is given a gift better and vaster than patience (Sahih al-Bukhari 1469). (That Allah
+  // makes content one who keeps from asking is not in the scene's words, so it stays as it is.)
+  "sign-the-best-gift": [
+    ["The Prophet ﷺ kept back some of what he had from the Ansar.", "False", "until what he had ran out", "He said: I would never keep good from you"],
+    ["What does Allah do for one who tries to be patient?", "Makes him patient", "whoever bears up, Allah makes him patient"],
+    ["What does Allah do for one who tries patience?", "Makes him patient", "whoever bears up, Allah makes him patient"],
+    ["What is the best gift a person can be given?", "Patience", "whoever bears up, Allah makes him patient", "none is given a gift better than patience"],
+    ["What is the best blessing, per the hadith?", "Patience", "whoever bears up, Allah makes him patient", "none is given a gift better than patience"]
+  ],
+  // Abdullah ibn Amr ibn al-As said: he said: successful is the one who has accepted Islam, is given just what is
+  // enough, and whom Allah makes content with what He has given him (Sahih Muslim 1054).
+  "sign-content-with-enough": [
+    ["Who is successful, in the hadith?", "One who accepted Islam", "has accepted Islam"],
+    ["Who is successful, per the hadith?", "A Muslim given enough and content", "has accepted Islam", "and Allah makes him content with it"],
+    ["How much provision does the successful one have, in the hadith?", "Sufficient for his needs", "is given just what is enough"],
+    ["Success needs much more than enough.", "False", "is given just what is enough", "and Allah makes him content with it"],
+    ["What did Allah make him feel, in the hadith?", "Content", "and Allah makes him content with it"],
+    ["Who makes the heart content?", "Allah", "and Allah makes him content with it"]
+  ],
+  // Aishah said: he was asked which deeds are most loved by Allah, and he said: the most constant of them, even if they
+  // are few; and he said: take on of deeds only what you can bear (Sahih al-Bukhari 6465). (Laylat al-Qadr is not in the
+  // scene, so it stays as it is; Jibril going over the Quran with him is asked on its own scene.)
+  "sign-constant-deeds": [
+    ["Which deed does Allah love most?", "The one done regularly", "He said: the most constant", "even if they are few"],
+    ["Which deeds does Allah love most?", "Regular, constant ones", "He said: the most constant", "even if they are few"],
+    ["The deeds Allah loves most are done ____, even if small.", "regularly", "He said: the most constant", "even if they are few"],
+    ["Is a small deed every day a good thing?", "Yes, Allah loves it", "He said: the most constant", "even if they are few"],
+    ["A small deed done daily is beloved to Allah.", "True", "He said: the most constant", "even if they are few"],
+    ["Doing a lot once is better than a little every day.", "False", "He said: the most constant", "even if they are few"],
+    ["What else did he advise?", "Do what is in your ability", "and said: take on deeds you can bear"]
   ]
 };
 

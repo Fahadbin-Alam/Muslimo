@@ -1419,6 +1419,13 @@ const STATES: State[] = [
   { id: "scene-labbayk-as-it-rose", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-labbayk-as-the-camel-rose" ask="When exactly did he" /> },
   { id: "scene-a-bowl-of-milk", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-umm-al-fadl-milk" ask="How did Umm al-Fadl find out" /> },
   { id: "scene-days-of-tashriq", render: () => <SceneQuestionDemo lessonId="lesson-deep-days-tashriq" ask="are for what" /> },
+  { id: "scene-say-no-cheating", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-no-cheating" ask="say when buying" /> },
+  { id: "scene-dates-with-cucumber", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-foods-he-ate-dates-with-cucumber" ask="Who saw him" /> },
+  { id: "scene-the-worst-feast", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-marriage-the-worst-wedding-food" ask="Which wedding food" /> },
+  { id: "scene-charity-for-barirah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-zakat-charity-for-her-gift-for-us" ask="the meat was" /> },
+  { id: "scene-the-best-gift", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-best-gift" ask="best gift a person" /> },
+  { id: "scene-content-with-enough", render: () => <SceneQuestionDemo lessonId="lesson-deep-nahl6-content-with-what-allah-gives" ask="How much provision" /> },
+  { id: "scene-constant-deeds", render: () => <SceneQuestionDemo lessonId="lesson-deep-maarij3-small-but-constant" ask="Which deeds does Allah love most" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
