@@ -891,7 +891,14 @@ export type SignKind =
   | "as-much-as-you-can"
   | "understanding-the-religion"
   | "earth-from-the-trench"
-  | "who-is-not-merciful";
+  | "who-is-not-merciful"
+  | "health-and-free-time"
+  | "sincere-to-every-muslim"
+  | "refuge-from-worry"
+  | "married-for-four"
+  | "sawdah-gave-her-day"
+  | "pleased-with-another"
+  | "beware-of-wrongdoing";
 
 export type SignScene = {
   id: string;
@@ -4489,6 +4496,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jarir ibn Abdullah said that the Prophet ﷺ said: whoever is not merciful to others will not be shown mercy.",
     sources: [bukhari("6013")]
+  },
+  {
+    id: "sign-health-and-free-time",
+    kind: "health-and-free-time",
+    caption:
+      "Ibn Abbas said that the Prophet ﷺ said: there are two blessings that many people are deceived into losing: health and free time.",
+    sources: [bukhari("6412")]
+  },
+  {
+    id: "sign-sincere-to-every-muslim",
+    kind: "sincere-to-every-muslim",
+    caption:
+      "Jarir ibn Abdullah said: I gave my pledge to the Messenger of Allah ﷺ to keep up the prayer, to pay the zakat, and to be sincere to every Muslim.",
+    sources: [bukhari("57")]
+  },
+  {
+    id: "sign-refuge-from-worry",
+    kind: "refuge-from-worry",
+    caption:
+      "Anas ibn Malik said: the Prophet ﷺ used to say: O Allah, I seek refuge with You from worry and grief, from incapacity and laziness, from cowardice and miserliness, from being heavily in debt and from being overpowered by men.",
+    sources: [bukhari("6369")]
+  },
+  {
+    id: "sign-married-for-four",
+    kind: "married-for-four",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: a woman is married for four things: her wealth, her family status, her beauty and her religion. So marry the religious woman, or you will be a loser.",
+    sources: [bukhari("5090")]
+  },
+  {
+    id: "sign-sawdah-gave-her-day",
+    kind: "sawdah-gave-her-day",
+    caption:
+      "Aishah said: I never saw a woman I would love more to be like than Sawdah bint Zam'ah. When she grew old, she gave her day with the Messenger of Allah ﷺ to Aishah. She said: O Messenger of Allah, I have given my day with you to Aishah. So the Messenger of Allah ﷺ gave Aishah two days: her own day and the day of Sawdah.",
+    sources: [muslim("1463"), muslim("1463b")]
+  },
+  {
+    id: "sign-pleased-with-another",
+    kind: "pleased-with-another",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: a believing man should not hate a believing woman; if he dislikes one of her traits, he will be pleased with another.",
+    sources: [muslim("1468b")]
+  },
+  {
+    id: "sign-beware-of-wrongdoing",
+    kind: "beware-of-wrongdoing",
+    caption:
+      "Jabir ibn Abdullah said that the Messenger of Allah ﷺ said: beware of wrongdoing, for wrongdoing is darkness on the Day of Resurrection; and beware of stinginess, for stinginess destroyed those who were before you.",
+    sources: [muslim("2578")]
   }
 ];
 
@@ -6691,7 +6747,35 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The Trench, dug against the Confederates.
   "surah-meaning-33-9-20": "sign-earth-from-the-trench",
   // Whoever is not merciful is not shown mercy.
-  "deep-mercy-mercy-to-all": "sign-who-is-not-merciful"
+  "deep-mercy-mercy-to-all": "sign-who-is-not-merciful",
+  // By time: health and free time, two blessings many lose.
+  "surah-meaning-103-1-2": "sign-health-and-free-time",
+  // Health and free time, two blessings many waste.
+  "deep-takathur2-health-and-free-time": "sign-health-and-free-time",
+  // Jarir's pledge: prayer, zakat, and sincerity to every Muslim.
+  "deep-jarir-sincere-to-all": "sign-sincere-to-every-muslim",
+  // Jarir's promise: prayer, zakat, and good will to every Muslim.
+  "deep-book-iman-jarir-pledge": "sign-sincere-to-every-muslim",
+  // Refuge from worry, grief, laziness and heavy debt.
+  "deep-book-dua-worry-and-grief": "sign-refuge-from-worry",
+  // The dua for worry and grief.
+  "deep-dua-dhikr-worry": "sign-refuge-from-worry",
+  // Married for four things: choose the one with religion.
+  "marriage-choose": "sign-married-for-four",
+  // Wealth, family, beauty or faith: choose faith.
+  "deep-spouses-choose-religion": "sign-married-for-four",
+  // Sawdah, who gave her day to Aishah.
+  "women-mothers-depth-sawdah-and-stability": "sign-sawdah-gave-her-day",
+  // Aishah wished to be like Sawdah, who gave her day.
+  "deep-mothers-sawdah-loved": "sign-sawdah-gave-her-day",
+  // If one trait displeases, another pleases.
+  "marriage-spiritual-home-patience-and-growth": "sign-pleased-with-another",
+  // Dislike one trait? Another will please.
+  "deep-spouses-dislike-one-trait": "sign-pleased-with-another",
+  // Wrongdoing is darkness on the Day of Resurrection.
+  "deep-taha3-beware-of-wrongdoing": "sign-beware-of-wrongdoing",
+  // Stinginess destroyed those before.
+  "deep-hashr2-beware-of-stinginess": "sign-beware-of-wrongdoing"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
