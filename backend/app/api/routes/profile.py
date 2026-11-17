@@ -6,6 +6,7 @@ from fastapi import APIRouter, Depends
 
 from backend.app.api.deps import DbSession, current_user
 from backend.app.api.routes.family import forget_family
+from backend.app.api.routes.newsletter import forget_newsletter
 from backend.app.models import User
 from backend.app.schemas import ProfileUpdateInput, SessionPayload, SocialUpdateInput
 from backend.app.service_layer import account_payload, apply_frontend_state, frontend_user_payload
@@ -33,6 +34,7 @@ def update_profile(payload: ProfileUpdateInput, db: DbSession, user: User = Depe
 def delete_account(db: DbSession, user: User = Depends(current_user)):
     # Apple and Google both require in-app account deletion; cascades remove sessions, progress and entitlements.
     forget_family(db, user)
+    forget_newsletter(db, user)
     db.delete(user)
     db.commit()
     return {"ok": True}
