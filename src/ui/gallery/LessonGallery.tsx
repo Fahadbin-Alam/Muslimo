@@ -1356,6 +1356,13 @@ const STATES: State[] = [
   { id: "scene-blessed-bowl", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-salam-a-blessed-bowl" ask="serve his guest" /> },
   { id: "scene-cloaks-alike", render: () => <SceneQuestionDemo lessonId="lesson-deep-abudharr-brothers" ask="same cloak" /> },
   { id: "scene-half-a-sa", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-small-charity" ask="say about the small gift" /> },
+  { id: "scene-promise-of-bahrain", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hibah-a-promise-kept" ask="kept the promise" /> },
+  { id: "scene-swore-at-the-door", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-the-man-who-swore" ask="What did the man say" /> },
+  { id: "scene-covenant-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-hudhayfah-kept-his-word" ask="miss Badr" /> },
+  { id: "scene-dress-to-borrow", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hibah-a-dress-to-borrow" ask="borrow her dress" /> },
+  { id: "scene-shade-of-the-kabah", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-in-the-shade-of-the-kabah" ask="were the losers" /> },
+  { id: "scene-secret-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-anas-secret" ask="refuse to tell" /> },
+  { id: "scene-bless-the-givers", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-dua-for-the-giver" ask="Whose family" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
