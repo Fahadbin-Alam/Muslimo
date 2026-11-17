@@ -1377,6 +1377,13 @@ const STATES: State[] = [
   { id: "scene-room-for-a-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-room-for-a-sheep" ask="How much room" /> },
   { id: "scene-husk-blown", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-table-blow-off-the-husk" ask="clean the barley" /> },
   { id: "scene-enough-for-more", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-food-for-two" ask="Food for two people" /> },
+  { id: "scene-black-khamisa", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-umm-khalid-dress" ask="What does 'sanah' mean" /> },
+  { id: "scene-garden-for-the-masjid", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-wills-the-price-from-allah" ask="What was the land for" /> },
+  { id: "scene-guide-daws", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-companions-guide-the-daws" ask="pray instead" /> },
+  { id: "scene-learning-in-turns", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-learning-turns" ask="bring back for the other" /> },
+  { id: "scene-fathers-friend", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-father-friends" ask="finest goodness" /> },
+  { id: "scene-one-in-a-hundred", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-short-words-to-live-by-one-in-a-hundred" ask="Among how many camels" /> },
+  { id: "scene-foam-of-the-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-waqiah4-forgiven-like-sea-foam" ask="How many times a day" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
