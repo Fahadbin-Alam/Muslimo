@@ -105,6 +105,31 @@ export function fitForVoice(text: string, max = MAX_SPOKEN) {
   return head.slice(0, end > max / 2 ? end + 1 : space > 0 ? space : max).trim();
 }
 
+/**
+ * Why the voice could not speak: "silent" when the phone's speech engine never started talking (no speech engine,
+ * one turned off, or one still missing its voice data). The app shows a short sheet that says so and how to fix it,
+ * instead of a speaker that does nothing.
+ */
+export type VoiceTrouble = "silent";
+let voiceHelp: ((trouble: VoiceTrouble, language: SupportedLanguage) => void) | null = null;
+
+/** The app shell sets this, so a voice that cannot speak says why (see TopicApp). null: nothing is shown. */
+export function setVoiceHelp(show: ((trouble: VoiceTrouble, language: SupportedLanguage) => void) | null) {
+  voiceHelp = show;
+}
+
+/**
+ * How long the phone's voice may take to start before it counts as not working. A speech engine starting for the
+ * first time takes a second or two; one that is missing or broken never starts and never says so.
+ */
+export const VOICE_START_MS = 6000;
+let startWatch: ReturnType<typeof setTimeout> | undefined;
+
+function clearStartWatch() {
+  if (startWatch !== undefined) clearTimeout(startWatch);
+  startWatch = undefined;
+}
+
 export function speakTeacher(text: string, language: SupportedLanguage, voiceId: string, onEnd?: () => void) {
   speakTeacherParts([text], language, voiceId, { onEnd });
 }
@@ -121,11 +146,25 @@ export function speakTeacherParts(
   { onPart, onEnd }: { onPart?: (index: number) => void; onEnd?: () => void } = {}
 ) {
   let ended = false;
+  let started = false;
   const end = () => {
     if (ended) return;
     ended = true;
     onEnd?.();
   };
+  // The voice never started (or failed before it did): stop waiting, and tell the learner why nothing is heard.
+  const silent = () => {
+    clearStartWatch();
+    if (started || ended) return;
+    end();
+    try {
+      void Speech.stop();
+    } catch {
+      // Nothing was playing.
+    }
+    voiceHelp?.("silent", language);
+  };
+  clearStartWatch();
   try {
     void Speech.stop();
     parts.forEach((part, index) => {
@@ -134,20 +173,24 @@ export function speakTeacherParts(
         ...(voiceId ? { voice: voiceId } : null),
         rate: 0.95,
         onStart: () => {
+          started = true;
+          clearStartWatch();
           if (!ended) onPart?.(index);
         },
         onDone: index === parts.length - 1 ? end : undefined,
         onStopped: end,
-        onError: end
+        onError: () => (started ? end() : silent())
       });
     });
     if (!parts.length) end();
+    else startWatch = setTimeout(silent, VOICE_START_MS);
   } catch {
-    end();
+    silent();
   }
 }
 
 export function stopTeacher() {
+  clearStartWatch();
   try {
     void Speech.stop();
   } catch {
@@ -159,4 +202,5 @@ export function stopTeacher() {
 export function resetTeacherVoiceForTests() {
   voices.clear();
   foundVoices.clear();
+  clearStartWatch();
 }

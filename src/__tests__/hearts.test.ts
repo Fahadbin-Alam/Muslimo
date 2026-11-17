@@ -1,4 +1,4 @@
-import { applyShopItem, grantHearts, isOutOfHearts, isOutOfHeartsAfterAnswer, localDateKey, loseHeart, refillHeartsForToday } from "../api/islamicLearningApi";
+import { applyShopItem, grantHearts, isOutOfHearts, isOutOfHeartsAfterAnswer, localDateKey, loseHeart, regainHearts, HEART_REFILL_MS } from "../api/islamicLearningApi";
 import { SHOP_ITEMS } from "../data/course";
 import { makeUser } from "./testUtils";
 
@@ -49,19 +49,60 @@ describe("grantHearts", () => {
   });
 });
 
-describe("refillHeartsForToday", () => {
-  it("refills to max on a new day", () => {
-    const user = makeUser({ hearts: { current: 1, max: 5, unlimited: false, lastRefillDate: "2000-01-01" } });
-    const next = refillHeartsForToday(user);
+describe("regainHearts (one heart every 5 hours)", () => {
+  const start = new Date(2026, 10, 17, 9).getTime();
+  const at = (ms: number) => new Date(start + ms);
+  const H = HEART_REFILL_MS;
+  const withHearts = (current: number, nextHeartAt?: number) =>
+    makeUser({ hearts: { current, max: 5, unlimited: false, lastRefillDate: "2000-01-01", ...(nextHeartAt === undefined ? {} : { nextHeartAt }) } });
 
-    expect(next.hearts.current).toBe(5);
-    expect(next.hearts.lastRefillDate).toBe(today());
+  it("never fills the hearts just because a new day started", () => {
+    const user = withHearts(1, start + H);
+    expect(regainHearts(user, at(H - 1))).toBe(user);
+    expect(regainHearts(user, at(H - 1)).hearts.current).toBe(1);
   });
 
-  it("does not refill twice on the same day", () => {
-    const user = makeUser({ hearts: { current: 1, max: 5, unlimited: false, lastRefillDate: today() } });
+  it("gives one heart when the 5 hours are up, and starts the next wait", () => {
+    const next = regainHearts(withHearts(1, start + H), at(H));
+    expect(next.hearts.current).toBe(2);
+    expect(next.hearts.nextHeartAt).toBe(start + 2 * H);
+  });
 
-    expect(refillHeartsForToday(user)).toBe(user);
+  it("gives every heart earned while the app was closed, never above the max", () => {
+    const back = regainHearts(withHearts(0, start + H), at(2 * H + 10));
+    expect(back.hearts.current).toBe(2);
+    expect(back.hearts.nextHeartAt).toBe(start + 3 * H);
+    const full = regainHearts(withHearts(0, start + H), at(100 * H));
+    expect(full.hearts.current).toBe(5);
+    expect(full.hearts.nextHeartAt).toBeUndefined();
+  });
+
+  it("starts the clock, giving nothing, for hearts missing without one", () => {
+    const next = regainHearts(withHearts(0), at(0));
+    expect(next.hearts.current).toBe(0);
+    expect(next.hearts.nextHeartAt).toBe(start + H);
+  });
+
+  it("gives nothing when the phone's clock was moved back, and starts the wait again", () => {
+    // The next heart was due at start + H; the clock now says a day earlier.
+    const next = regainHearts(withHearts(0, start + H), at(-24 * H));
+    expect(next.hearts.current).toBe(0);
+    expect(next.hearts.nextHeartAt).toBe(start - 23 * H);
+  });
+
+  it("leaves full hearts and unlimited hearts alone", () => {
+    const full = withHearts(5);
+    expect(regainHearts(full, at(10 * H))).toBe(full);
+    const unlimited = makeUser({ hearts: { current: 0, max: 5, unlimited: true, lastRefillDate: today() } });
+    expect(regainHearts(unlimited, at(10 * H))).toBe(unlimited);
+  });
+
+  it("starts the clock on the first heart lost from full, and keeps a running one", () => {
+    const before = Date.now();
+    const lost = loseHeart(withHearts(5));
+    expect(lost.hearts.current).toBe(4);
+    expect(lost.hearts.nextHeartAt).toBeGreaterThanOrEqual(before + H);
+    expect(loseHeart(withHearts(3, start + H)).hearts.nextHeartAt).toBe(start + H);
   });
 });
 

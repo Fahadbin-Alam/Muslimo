@@ -2,7 +2,7 @@ import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "
 import { Animated, Dimensions, Easing, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import Svg, { Circle, Defs, Ellipse, G, Path, RadialGradient, Rect, Stop } from "react-native-svg";
 import type { GameSoundEvent } from "../services/gameSoundLibrary";
-import { sampleCurve, smoothKeys, useReduceMotion } from "./motion";
+import { pivotAt, sampleCurve, smoothKeys, useReduceMotion } from "./motion";
 import { Drop, Floater, Heart, Puff, Sparkle, Word, shake, useCycle, useOneShot } from "./reactions";
 import { Snooze, useScene } from "./sceneMood";
 import { feedback } from "./sound";
@@ -616,7 +616,7 @@ export const Camel = memo(function Camel({
             key={leg.x}
             style={[
               StyleSheet.absoluteFill,
-              { transformOrigin: `${(leg.x / VIEW_W) * 100}% ${(HIP_Y / VIEW_H) * 100}%`, transform: [{ rotate: anim.legs[index] }] }
+              { transformOrigin: pivotAt(leg.x / VIEW_W, HIP_Y / VIEW_H), transform: [{ rotate: anim.legs[index] }] }
             ]}
           >
             <Leg x={leg.x} color={leg.color} />
