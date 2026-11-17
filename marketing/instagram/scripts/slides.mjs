@@ -30,7 +30,7 @@ p{font:42px/1.25 Nun}
 .src{font:32px/1.3 NunB;margin-top:28px;opacity:.9}
 .phone{position:absolute;left:50%;transform:translateX(-50%);border-radius:44px;box-shadow:0 24px 60px rgba(0,0,0,.28)}
 `;
-const foot = (t="Muslimo · coming soon") => `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">${t}</div>`;
+const foot = (t="Muslimo · free on Android") => `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">${t}</div>`;
 const shot = (f,top=430,w=620) => `<img class="phone" style="top:${top}px;width:${w}px" src="${u(`store/graphics/google-play/phone/${f}.png`)}">`;
 const quiz = (n, q, opts, okIdx, src, quote, label) => [
  [`${n}-1`, `<body class="cream"><div class="pad"><span class="tag" style="background:#FF9F45;border-color:#FF9F45;color:#fff">${label}</span>
@@ -57,6 +57,19 @@ const slides = [
    "Sahih al-Bukhari 6114 · narrated by Abu Hurayrah","“The strong is not the one who overcomes the people by his strength, but the strong is the one who controls himself while in anger.”","Hadith quiz"),
  ...quiz("03-quiz-khalid","What did the Prophet ﷺ call Khalid ibn al-Walid at Mu'tah?",["The lion of Allah","One of the swords of Allah","The trustworthy one"],1,
    "Sahih al-Bukhari 3757 · narrated by Anas ibn Malik (summary)","At Mu'tah, Zaid, Ja'far and Ibn Rawaha fell carrying the flag. Then the Prophet ﷺ said one of Allah's swords took it, and Allah gave victory.","Sahabah quiz"),
+ // Launch post, 16 Nov 2026: live on Google Play (iPhone still in Apple review).
+ ["08-launch-1", `<body class="sun"><div class="pad" style="align-items:center;text-align:center">
+   <span class="tag" style="align-self:center">🎉 Out now</span>
+   <h1 style="margin-top:40px">Muslimo is here!</h1><p style="margin-top:28px">Now on Google Play. Free.</p></div>
+   <img src="${u("store/graphics/source/cover/camel.png")}" style="position:absolute;width:720px;left:180px;top:500px">
+   <div style="position:absolute;left:-200px;right:-200px;bottom:-520px;height:760px;border-radius:50%;background:#F7D58A"></div>${foot("Swipe to see inside →")}</body>`],
+ ["08-launch-2", `<body class="green"><div class="pad"><h2>Short lessons, every day</h2><p style="margin-top:20px">Quran, hadith, Seerah, salah and manners</p></div>${shot("02-path")}</body>`],
+ ["08-launch-3", `<body class="green"><div class="pad"><h2>Every answer explained</h2><p style="margin-top:20px">With the source it comes from</p></div>${shot("04-feedback")}</body>`],
+ ["08-launch-4", `<body class="green"><div class="pad"><h2>Streaks, XP and rewards</h2><p style="margin-top:20px">For kids, teens and adults</p></div>${shot("05-complete")}</body>`],
+ ["08-launch-5", `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center">
+   <img src="${u("store/graphics/google-play/icon-512.png")}" style="width:300px;border-radius:70px;border:8px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.25)">
+   <h2 style="margin-top:60px">Download free on Android</h2><p style="margin-top:24px">Search “Muslimo” on Google Play</p>
+   <p style="margin-top:60px;font-size:36px;opacity:.95">📱 iPhone coming soon</p></div></body>`],
  ...quiz("07-quiz-bilal","Who freed Bilal?",["Umar","Abu Bakr","Uthman"],1,
    "Sahih al-Bukhari 3754 · narrated by Jabir ibn Abdullah","Umar used to say: “Abu Bakr is our master, and he freed our master,” meaning Bilal.","Sahabah quiz"),
  ["04-hadith-smile", `<body class="green"><div class="pad"><span class="tag">Daily hadith</span>

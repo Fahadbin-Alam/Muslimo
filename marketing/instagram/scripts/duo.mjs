@@ -48,7 +48,7 @@ const pages = [
   ["05-camel-misses-you-3", W, lock(1350, N.slice(2, 4), "Day 7. He wrote a letter.", 1150)],
   ["05-camel-misses-you-4", W, `<body class="sun"><img class="camel" src="${camel}" style="width:600px;left:240px;top:520px">
     <div class="cap" style="top:110px">Two minutes<br>fixes everything 🐪</div><div class="cap" style="top:290px;font:44px/1.2 Nun">One short lesson keeps your streak alive</div>
-    <div class="foot" style="color:#fff;bottom:40px"><img src="${icon}">Muslimo · coming soon</div></body>`],
+    <div class="foot" style="color:#fff;bottom:40px"><img src="${icon}">Muslimo · free on Android</div></body>`],
   // Post 6: app-style "new word" quiz, then the answer with its ayah.
   ["06-new-word-sabr-1", W, `<body class="cream"><div style="position:absolute;inset:0;padding:80px">
     <span class="tag">NEW WORD</span><div style="font:58px Baloo;margin-top:36px">Select the correct meaning</div>
@@ -65,7 +65,7 @@ const pages = [
   // Reel 3 frames: the notifications stack up one by one, then the camel.
   ...[0, 1, 2, 3].map(i => [`frames/r3-${i}`, V, lock(1920, N.slice(Math.max(0, i - 2), i + 1), ["POV: you skipped your lesson", "Day 2...", "Day 5...", "Day 7. He wrote a letter."][i], 1400)]),
   ["frames/r3-end", V, `<body class="sun"><img class="camel" src="${camel}" style="width:700px;left:190px;top:760px">
-    <div class="cap" style="top:300px;font-size:88px">Two minutes<br>fixes everything 🐪</div><div class="cap" style="top:560px;font:50px/1.2 Nun">Muslimo · coming soon</div></body>`],
+    <div class="cap" style="top:300px;font-size:88px">Two minutes<br>fixes everything 🐪</div><div class="cap" style="top:560px;font:50px/1.2 Nun">Muslimo · free on Android</div></body>`],
   // Story highlight covers: Instagram crops the centre circle.
   ...[["quiz", "🧠", "#1CB0F6"], ["hadith", "📜", "#58CC02"], ["sahabah", "⭐", "#FF9600"], ["app", "📱", "#CE82FF"], ["camel", "🐪", "#FF4B4B"]].map(([n, e, c]) =>
     [`highlight-${n}`, V, `<body style="background:${c}"><div style="position:absolute;left:0;right:0;top:0;bottom:0;display:flex;align-items:center;justify-content:center;font-size:420px">${e}</div></body>`]),
