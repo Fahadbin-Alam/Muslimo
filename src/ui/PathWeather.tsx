@@ -55,6 +55,11 @@ const SKY_TAIL = 40;
  * Al-Baqarah made it hundreds of MB, which crashed the app. A soft gradient looks the same stretched.
  */
 export const SKY_DRAW_MAX = 1000;
+/**
+ * Every sky is drawn at least this many times smaller than its unit and stretched back up: a plain unit's full-size
+ * sky was still a 12 MB bitmap on a 3x Android screen, and three or four of them sat in memory on the path.
+ */
+const SKY_MIN_SHRINK = 4;
 const CLOUD_W = 84;
 const CLOUD_H = 40;
 
@@ -562,7 +567,7 @@ export type PathWeatherProps = {
 
 /** How much smaller the sky's gradient is drawn than the unit (1: full size), so its SVG stays small. */
 export function skyShrink(height: number) {
-  return Math.max(1, Math.ceil(height / SKY_DRAW_MAX));
+  return Math.max(SKY_MIN_SHRINK, Math.ceil(height / SKY_DRAW_MAX));
 }
 
 export const PathWeather = memo(function PathWeather({ weather, world = "desert", width, height, animated = false, meteor = animated, window: span }: PathWeatherProps) {
@@ -570,8 +575,9 @@ export const PathWeather = memo(function PathWeather({ weather, world = "desert"
   // A slow phone (lite motion) keeps the drifting clouds but leaves out the extras near the learner.
   const lite = useLiteMotion();
   const moving = animated && !reduceMotion && !lite;
-  // Clouds and the place's strip always move (cheap loops on the native driver); the rest only near the learner.
-  const drifting = !reduceMotion;
+  // Clouds and the place's strip move on every unit on the screen (cheap loops on the native driver); the rest
+  // only near the learner. Units off the screen hold still, so a cheap phone is not busy with skies nobody sees.
+  const drifting = animated && !reduceMotion;
   // At the real sunrise and sunset, a clear sky looks like the sunset one: warm, with the sun low.
   const { dark, twilight } = useScene();
   const look: Weather = twilight && weather === "sunny" ? "sunset" : weather;
