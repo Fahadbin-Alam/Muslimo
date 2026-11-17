@@ -77,7 +77,8 @@ describe("welcome: sign in at the start", () => {
     expect(screen.queryByTestId("account-sheet")).toBeNull();
     // Skipping goes straight on to the age question.
     expect(screen.getByTestId("age-sheet")).toBeTruthy();
-    first.unmount();
+    // Wait for it to close: if not, its animation timers keep running into the next test file.
+    await first.unmount();
 
     await render(<TopicApp />);
     await screen.findByTestId("learn-path-foundation", {}, { timeout: 5000 });
