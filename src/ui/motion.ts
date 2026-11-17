@@ -108,3 +108,13 @@ export function useReduceMotion() {
   }, []);
   return reduce;
 }
+
+/**
+ * A `transformOrigin` (the point a part turns about) at shares of the picture's width and height, e.g. a
+ * shoulder or a hip. Always whole-number percents: React Native's phone parser reads only whole numbers,
+ * so "50% 62.857%" became "50% 857142857142854%" on Android and iOS and the turning part (the kid's head,
+ * the waving arm, the camel's legs) flew off the screen the moment it rotated. Web read it fine.
+ */
+export function pivotAt(xShare: number, yShare: number) {
+  return `${Math.round(xShare * 100)}% ${Math.round(yShare * 100)}%`;
+}

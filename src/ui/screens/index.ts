@@ -25,6 +25,7 @@ export { OfflineBanner } from "./OfflineBanner";
 export { RewardPop, type RewardPopProps } from "./RewardPop";
 export { AgeSheet, type AgeSheetProps } from "./AgeSheet";
 export { BackgroundSheet, type BackgroundSheetProps } from "./BackgroundSheet";
+export { WelcomeSheet, type WelcomeSheetProps } from "./WelcomeSheet";
 export { LanguageSheet, type LanguageSheetProps } from "./LanguageSheet";
 export { DonateSheet, type DonateSheetProps } from "./DonateSheet";
 export { PrayerSheet, cityName, type PrayerSheetProps } from "./PrayerSheet";

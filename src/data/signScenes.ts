@@ -3662,7 +3662,8 @@ export const SIGN_SCENES: readonly SignScene[] = [
  * Nuh's son, the shining hand, the parting from al-Khidr, Ya'juj and Ma'juj let loose at the end, Lut's guests and his
  * wife, the Sabbath-breakers made like apes, Dhul-Qarnayn's rulings), nor the reviews, nor the lessons on the twelve
  * paths through the sea (its scene shows the one dry path of 20:77), nor the ones on a hadith about a story (the virtue
- * of Yunus's dua, the gourd he ﷺ liked), but for the fast of Ashura: it is the day the sea split, as its caption tells.
+ * of Yunus's dua, the gourd he ﷺ liked, which opens on the tailor's gourd instead), but for the fast of Ashura: it is
+ * the day the sea split, as its caption tells.
  */
 export const SIGN_LESSONS: Record<string, string> = {
   // Rain on a dead land, which comes to life.
