@@ -820,7 +820,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Zakat is taken from the poor and given to the rich.", "False", "Then zakat from their rich", "Given to their poor"]
   ],
   // Bayruha: the garden Abu Talhah loved most; when the ayah came, he gave it for Allah, and it was shared among his
-  // relatives (Quran 3:92, Sahih al-Bukhari 1461).
+  // relatives (Quran 3:92, Sahih al-Bukhari 1461, 4554). (What he gave, and that Bayruha faced the masjid, stay on their
+  // usual picture: the garden and the masjid are there from the scene's start.)
   "sign-bayruha": [
     ["Bayruha was the garden Abu Talhah loved least.", "False", "Bayruha, the garden he loved most"],
     ["To reach true goodness, what should we give?", "Something we love", "Spend from what you love"],
@@ -831,7 +832,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How do you reach al-birr, in 3:92?", "By giving from what you love", "Spend from what you love"],
     ["Ayah 3:92 says we reach righteousness by spending what we love.", "True", "Spend from what you love"],
     ["Abu Talhah obeyed 3:92 right away.", "True", "Spend from what you love", "He gave it for Allah"],
-    ["Whom did the Prophet ﷺ tell him to give it to?", "His relatives", "Shared among his relatives"]
+    ["Whom did the Prophet ﷺ tell him to give it to?", "His relatives", "Shared among his relatives"],
+    ["Where did the Prophet ﷺ tell him to give it?", "To his relatives", "Shared among his relatives"]
   ],
   // Zakat al-Fitr: a sa' for every one, young or old, of dates or barley, given before the Eid prayer (Sahih al-Bukhari
   // 1503, 1506).
@@ -2263,13 +2265,15 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What was in Khadijah's palace, in the hadith?", "No noise and no fatigue", "With no noise in it and no toil"]
   ],
   // In Paradise there is a tree in whose shade a rider could travel for a hundred years and not cross it (Sahih
-  // al-Bukhari 3251). (Who narrated it is not in the scene.)
+  // al-Bukhari 3251, 4881). (Who narrated it, the words he said to recite, and what 56:30 promises are not in the
+  // scene.)
   "sign-tree-of-a-hundred-years": [
     ["How long to ride through the tree's shade?", "A hundred years", "For a hundred years"],
     ["What does it teach about Jannah?", "Its size is beyond us", "And not cross it"],
     ["The rider crosses the shade in a day.", "False", "For a hundred years", "And not cross it"],
     ["How long could a rider travel in the tree's shade?", "A hundred years", "For a hundred years"],
-    ["Could the rider cross the shade?", "No", "And not cross it"]
+    ["Could the rider cross the shade?", "No", "And not cross it"],
+    ["How long to pass the tree's shade, per Bukhari 4881?", "One hundred years", "For a hundred years"]
   ],
   // My Pool is a month's journey across; its water is whiter than milk, its smell better than musk, and its cups are
   // like the stars of the sky; whoever drinks from it will never be thirsty again (Sahih al-Bukhari 6579).
@@ -4102,6 +4106,62 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did people wrongly think?", "The eclipse was for Ibrahim", "The sun eclipsed the day Ibrahim died", "The people said: it was for his death"],
     ["The Prophet ﷺ let a wrong belief spread to honor his son.", "False", "The sun and moon do not eclipse", "For anyone's death or for anyone's life"],
     ["What should we do at an eclipse?", "Pray and call on Allah", "When you see it, pray and call on Allah"]
+  ],
+  // I know the voices of the Ash'aris with the Quran when they come in at night, and I know where they stay by their
+  // voices with the Quran at night, though I had not seen where they stayed when they stopped there by day (Sahih
+  // al-Bukhari 4232). (Who the Ash'aris were stays on its usual picture: the scene does not tell it.)
+  "sign-ashari-recitation": [
+    ["How did the Prophet ﷺ recognize the Ash'aris' houses?", "By their Quran at night", "I know the voices of the Ash'aris", "With the Quran at night"],
+    ["What does this teach about a home?", "Fill it with the Quran", "I know the voices of the Ash'aris", "With the Quran at night"]
+  ],
+  // He prayed Asr, then hurried into the house and soon came out again; he said: I had left gold of charity in the
+  // house, and I disliked to keep it overnight, so I shared it out (Sahih al-Bukhari 1430). (Giving zakat to please
+  // Allah alone stays on its usual picture: the scene does not tell it.)
+  "sign-gold-not-kept-overnight": [
+    ["Once zakat is due, pay it ____.", "soon", "He prayed Asr with us, then hurried", "So I shared it out"]
+  ],
+  // A man came into the masjid on a camel, made it kneel there and tied it; he said: I will be hard in asking, so do not
+  // be angry; he said: ask whatever you want; did Allah send you to all the people? He said: by Allah, yes; did Allah
+  // order that we pray five prayers? Yes; and the man said: I believe in what you have brought (Sahih al-Bukhari 63).
+  "sign-dimam-questions": [
+    ["What did Dimam ask before his questions?", "Not to be angry with him", "I will be hard in asking: do not be angry"],
+    ["What did the Prophet ﷺ answer him?", "Ask whatever you want", "Ask whatever you want"],
+    ["A person may ask even hard questions about Islam.", "True", "I will be hard in asking: do not be angry", "Ask whatever you want"]
+  ],
+  // He took a camel of a certain age; its owner came asking for it back, and he said: one who has a right has a say;
+  // then he gave him back better than its age, and said: the best of you are the best in repaying (Sahih al-Bukhari
+  // 2609).
+  "sign-repaid-better": [
+    ["What did he ﷺ give the man back?", "An older camel than his", "He gave him back better than its age"],
+    ["Who is the best of people, he ﷺ said, when it comes to debts?", "Whoever repays in the best way", "He gave him back better than its age", "The best of you are the best in repaying"],
+    ["He ﷺ said the owner had a right to ask for his camel.", "True", "One who has a right has a say"]
+  ],
+  // Whoever spends a pair in Allah's cause is called from the gates of Paradise: the people of prayer from the gate of
+  // prayer, of jihad from the gate of jihad, of charity from the gate of charity, of fasting from the gate of fasting,
+  // ar-Rayyan; Abu Bakr asked: is anyone called from all of them? He said: yes, and I hope you are one of them (Sahih
+  // al-Bukhari 3666). (Who reported it stays on its usual picture: the scene does not tell it.)
+  "sign-every-gate": [
+    ["What is the gate of Jannah for people who fast called?", "Ar-Rayyan", "Of fasting: the gate of fasting, ar-Rayyan"],
+    ["Abu Bakr asked if anyone is called from every gate. What was the answer?", "Yes, and I hope you are", "Yes, and I hope you are one of them"],
+    ["Who is called from the gate of prayer?", "Those known for prayer", "The people of prayer: the gate of prayer"],
+    ["Which gate is for those who fast?", "Ar-Rayyan", "Of fasting: the gate of fasting, ar-Rayyan"],
+    ["What did Abu Bakr ask?", "Is anyone called from all gates?", "Is anyone called from all of them?"],
+    ["What did Muhammad ﷺ reply?", "Yes, and I hope you are one", "Yes, and I hope you are one of them"]
+  ],
+  // When the Ash'aris run short on campaign, or food runs low for their families in Madinah, they gather what they have
+  // in one cloth, then share it equally in one vessel: they are of me, and I am of them (Sahih Muslim 2500).
+  "sign-sharing-ashari": [
+    ["What did the Ash'aris do when food ran low?", "Pooled and shared equally", "They gather what they have in one cloth", "Then share it equally in one vessel"],
+    ["What did he ﷺ say about them?", "They are from me", "They are of me, and I am of them"],
+    ["Sharing food fairly in hard times is loved by the Prophet ﷺ.", "True", "They gather what they have in one cloth", "They are of me, and I am of them"]
+  ],
+  // At the drinking place he asked for a drink; al-Abbas said: Fadl, bring him a drink from your mother; he said: give
+  // me a drink, though they put their hands in it, and he drank from it; then he came to Zamzam, where they gave water,
+  // and said: work on, for you are doing a good deed (Sahih al-Bukhari 1635).
+  "sign-zamzam-drink": [
+    ["Which water did he ﷺ choose to drink?", "The same water as the people", "Give me a drink; and he drank from it"],
+    ["What did he ﷺ tell those drawing Zamzam water?", "Carry on, you are doing a good deed", "Work on, for you are doing a good deed"],
+    ["Giving water to pilgrims is a good deed.", "True", "He came to Zamzam, where they gave water", "Work on, for you are doing a good deed"]
   ]
 };
 

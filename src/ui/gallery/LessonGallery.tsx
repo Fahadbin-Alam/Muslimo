@@ -1308,6 +1308,13 @@ const STATES: State[] = [
   { id: "scene-rings-thrown-away", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-sunnah-rings-thrown-away" ask="threw his ring away" /> },
   { id: "scene-tailors-gourd", render: () => <SceneQuestionDemo lessonId="lesson-deep-saffat5-the-prophet-liked-gourd" ask="look for, in the hadith" /> },
   { id: "scene-the-eclipse", render: () => <SceneQuestionDemo lessonId="lesson-deep-mughirah-the-eclipse" ask="What should we do at an eclipse" /> },
+  { id: "scene-ashari-recitation", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-musa-night-recitation" ask="recognize the Ash'aris' houses" /> },
+  { id: "scene-gold-not-kept-overnight", render: () => <SceneQuestionDemo lessonId="lesson-zakat-character-and-intention-promptness" ask="Once zakat is due" /> },
+  { id: "scene-dimam-questions", render: () => <SceneQuestionDemo lessonId="lesson-deep-fresh-start-dimam-asks" ask="What did Dimam ask before his questions" /> },
+  { id: "scene-repaid-better", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hibah-repay-in-the-best-way" ask="give the man back" /> },
+  { id: "scene-every-gate", render: () => <SceneQuestionDemo lessonId="lesson-deep-layl4-called-from-every-gate" ask="What did Abu Bakr ask" /> },
+  { id: "scene-sharing-ashari", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-companions-the-sharing-ashariyyun" ask="when food ran low" /> },
+  { id: "scene-zamzam-drink", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-spirit-zamzam" ask="choose to drink" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
