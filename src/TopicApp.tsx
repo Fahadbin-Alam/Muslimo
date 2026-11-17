@@ -126,7 +126,9 @@ import {
   unlinkFamilyKid,
   unlinkFamilyParent,
   type FamilyLinks,
-  type LearningNow
+  type LearningNow,
+  fetchNewsletterChoice,
+  setNewsletterChoice
 } from "./services/backendSync";
 import { isKidsMode, isKidsTopic, kidsLearner, readKidsModeChoice, saveKidsModeChoice, type KidsModeChoice } from "./services/kidsMode";
 import {
@@ -515,6 +517,9 @@ type Action =
   | { type: "reset_lesson" }
   | { type: "make_harder"; challenges: LessonSession["lesson"]["challenges"]; user: UserProfile }
   | { type: "keep_difficulty" };
+
+// The newsletter tick box in Settings reads and saves the choice on the server.
+const NEWSLETTER_LINK = { load: fetchNewsletterChoice, save: setNewsletterChoice };
 
 const initialState: AppState = {
   screen: "home",
@@ -4819,6 +4824,7 @@ export default function TopicApp() {
             setSettingsModalVisible(false);
             setPrayerModalVisible(true);
           }}
+          newsletter={state.user.hasAccount && !kidsMode ? NEWSLETTER_LINK : undefined}
         />
         <AdhkarSheet
           visible={adhkarOpen !== null}

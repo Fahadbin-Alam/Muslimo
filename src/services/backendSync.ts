@@ -667,3 +667,21 @@ async function safeJson(response: Response) {
     return null;
   }
 }
+
+/**
+ * The Muslimo newsletter (backend/app/api/routes/newsletter.py). A signed-in grown-up ticks "Email me Muslimo news"
+ * in Settings; making an account never adds anyone by itself, and Kid accounts can't join.
+ */
+export type NewsletterChoice = { subscribed: boolean; canJoin: boolean };
+
+export async function fetchNewsletterChoice() {
+  return backendRequest<NewsletterChoice>("/api/newsletter/me", { headers: authHeaders() });
+}
+
+export async function setNewsletterChoice(subscribed: boolean) {
+  return backendRequest<NewsletterChoice>("/api/newsletter/me", {
+    method: "PUT",
+    headers: authHeaders(),
+    body: JSON.stringify({ subscribed })
+  });
+}
