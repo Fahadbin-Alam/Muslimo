@@ -1447,6 +1447,13 @@ const STATES: State[] = [
   { id: "scene-understanding-the-religion", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-knowledge-understanding" ask="someone He wants good for" /> },
   { id: "scene-earth-from-the-trench", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-rawahah-trench-verses" ask="Whose verses" /> },
   { id: "scene-who-is-not-merciful", render: () => <SceneQuestionDemo lessonId="lesson-deep-mercy-mercy-to-all" ask="Who heard the Prophet" /> },
+  { id: "scene-health-and-free-time", render: () => <SceneQuestionDemo lessonId="lesson-deep-takathur2-health-and-free-time" ask="Which two blessings do many" /> },
+  { id: "scene-sincere-to-every-muslim", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-iman-jarir-pledge" ask="Who made this promise" /> },
+  { id: "scene-refuge-from-worry", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dua-worry-and-grief" ask="Which two feelings" /> },
+  { id: "scene-married-for-four", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-choose-religion" ask="Which of the four" /> },
+  { id: "scene-sawdah-gave-her-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-sawdah-loved" ask="When did Sawdah give" /> },
+  { id: "scene-pleased-with-another", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-dislike-one-trait" ask="If a husband dislikes" /> },
+  { id: "scene-beware-of-wrongdoing", render: () => <SceneQuestionDemo lessonId="lesson-deep-taha3-beware-of-wrongdoing" ask="What will wrongdoing become" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
