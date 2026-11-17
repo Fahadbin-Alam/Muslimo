@@ -758,7 +758,14 @@ export type SignKind =
   | "repaid-better"
   | "every-gate"
   | "sharing-ashari"
-  | "zamzam-drink";
+  | "zamzam-drink"
+  | "silver-and-gold-gardens"
+  | "guard-tonight"
+  | "vow-in-the-sun"
+  | "one-who-followed"
+  | "water-for-wudu"
+  | "tawaf-on-camel"
+  | "soft-salam";
 
 export type SignScene = {
   id: string;
@@ -1577,7 +1584,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "lamp-out",
     caption:
       "A hungry man came, and the Prophet ﷺ asked who would host him. A man of the Ansar took him home, where there was only the children's food. They put the children to sleep, put out the lamp, and let him eat in the dark while they went to bed hungry. Then Allah revealed 59:9: they prefer others over themselves, even when in need.",
-    sources: [bukhari("4889")]
+    sources: [bukhari("4889"), muslim("2054c")]
   },
   {
     id: "sign-helped-at-home",
@@ -1649,7 +1656,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "safa-call",
     caption:
       "When he ﷺ was told to warn his near kindred, he climbed as-Safa and called out to Quraysh. He asked: if I told you horsemen were coming, would you believe me? They said: we have never heard you tell a lie. He said: I am a plain warner to you of a severe punishment. Abu Lahab said: was it only for this? And he went away.",
-    sources: [bukhari("4770"), bukhari("4971")]
+    sources: [bukhari("4770"), bukhari("4971"), bukhari("4972")]
   },
   {
     id: "sign-jabir-dates",
@@ -2242,7 +2249,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "recite-to-me",
     caption:
       "Abdullah ibn Mas'ud said: the Prophet ﷺ said to me: recite to me. I said: shall I recite to you, when it was revealed to you? He said: I love to hear it from another. So I recited Surat an-Nisa to him, until I reached its forty-first ayah, of a witness brought from every nation, and him brought as a witness over these. He said: stop. And his eyes were overflowing with tears.",
-    sources: [bukhari("4582")]
+    sources: [bukhari("4582"), bukhari("5050")]
   },
   {
     id: "sign-richness-of-the-soul",
@@ -3427,6 +3434,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said that the Messenger of Allah ﷺ came to the drinking place and asked for a drink. Al-Abbas said: Fadl, go to your mother, and bring the Messenger of Allah ﷺ a drink from her. He said: give me a drink. Al-Abbas said: O Messenger of Allah, they put their hands in it. He said: give me a drink; and he drank from it. Then he came to Zamzam, where they were giving water and working at it, and he said: work on, for you are doing a good deed.",
     sources: [bukhari("1635")]
+  },
+  {
+    id: "sign-silver-and-gold-gardens",
+    kind: "silver-and-gold-gardens",
+    caption:
+      "Abu Musa al-Ash'ari said: the Prophet ﷺ said: two gardens of silver, their vessels and all that is in them; and two gardens of gold, their vessels and all that is in them.",
+    sources: [bukhari("4878")]
+  },
+  {
+    id: "sign-guard-tonight",
+    kind: "guard-tonight",
+    caption:
+      "Aishah said: the Prophet ﷺ was wakeful one night as he came to Madinah, and he said: would that a good man of my companions would guard me tonight. Then we heard the clatter of weapons, and he said: who is this? He said: I am Sa'd ibn Abi Waqqas; I have come to guard you. And the Prophet ﷺ slept.",
+    sources: [bukhari("2885")]
+  },
+  {
+    id: "sign-vow-in-the-sun",
+    kind: "vow-in-the-sun",
+    caption:
+      "Ibn Abbas said: while the Prophet ﷺ was giving the khutbah, he saw a man standing, and asked about him. They said: this is Abu Isra'il; he has vowed to stand and never sit, never come into the shade, never speak, and to fast. The Prophet ﷺ said: tell him to speak, to come into the shade and to sit, and let him complete his fast.",
+    sources: [bukhari("6704")]
+  },
+  {
+    id: "sign-one-who-followed",
+    kind: "one-who-followed",
+    caption:
+      "Abu Mas'ud al-Ansari said: a man of the Ansar called Abu Shu'aib told his servant: make me food, that I may invite the Prophet ﷺ as one of five. He invited him as one of five, and a man followed them. The Prophet ﷺ said: you invited me as one of five, and this man has followed us; if you wish, let him in, and if you wish, leave him. He said: rather, I let him in.",
+    sources: [bukhari("5434")]
+  },
+  {
+    id: "sign-water-for-wudu",
+    kind: "water-for-wudu",
+    caption:
+      "Ibn Abbas said: the Prophet ﷺ went in to relieve himself, and I set out water for his wudu. He said: who put this? He was told, and he said: O Allah, give him understanding of the religion.",
+    sources: [bukhari("143")]
+  },
+  {
+    id: "sign-tawaf-on-camel",
+    kind: "tawaf-on-camel",
+    caption:
+      "Ibn Abbas said: the Prophet ﷺ went round the Ka'bah on a camel, and each time he came to the Corner of the Black Stone, he pointed to it with something he had with him and said: Allahu akbar.",
+    sources: [bukhari("1613")]
+  },
+  {
+    id: "sign-soft-salam",
+    kind: "soft-salam",
+    caption:
+      "Al-Miqdad said: the Prophet ﷺ took us to his family, and there were three goats. He said: milk this milk, to share among us. Each of us would drink his share, and we kept his share for him. He would come at night and give salam in a way that did not wake one asleep, and let one awake hear it. Then he would come to the masjid and pray, then come to his drink and drink it.",
+    sources: [muslim("2055a")]
   }
 ];
 
@@ -5241,7 +5297,28 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Short of food, the Ash'aris gathered what they had in one cloth and shared it equally: they are of me.
   "deep-book-companions-the-sharing-ashariyyun": "sign-sharing-ashari",
   // He drank from the drinking place as the folk did, and praised those giving water at Zamzam.
-  "deep-hajj-spirit-zamzam": "sign-zamzam-drink"
+  "deep-hajj-spirit-zamzam": "sign-zamzam-drink",
+  // Two gardens of silver and two of gold, their vessels and all that is in them.
+  "deep-rahman3-gardens-of-gold-and-silver": "sign-silver-and-gold-gardens",
+  // Wakeful as he came to Madinah, he wished for a guard; Sa'd came, and he slept.
+  "deep-sad-guard-me-tonight": "sign-guard-tonight",
+  // Abu Isra'il vowed to stand in the sun, silent; he was told to speak, sit in the shade, and keep his fast.
+  "deep-aqidah-the-balanced-way-a-vow-of-hardship": "sign-vow-in-the-sun",
+  // Invited as one of five, he asked the host about the man who followed them, and the host let him in.
+  "deep-kids-table-one-more-guest": "sign-one-who-followed",
+  // Ibn Abbas set out water for his wudu, and he asked Allah to give him understanding of the religion.
+  "deep-tree-ibn-abbas-water-for-wudu": "sign-water-for-wudu",
+  // He went round the House on a camel, pointing to the Corner and saying Allahu akbar each time.
+  "deep-hajj-kabah-tawaf-on-camel": "sign-tawaf-on-camel",
+  // He gave salam at night so softly that no one asleep woke, and one awake heard.
+  "deep-manners-salam-and-visitors-a-soft-salam-at-night": "sign-soft-salam",
+  // Ibn Mas'ud recited an-Nisa to him, and his eyes overflowed with tears (Sahih al-Bukhari 5050).
+  "sahabi-abdullah-ibn-masud-friendship-with-the-prophet": "sign-recite-to-me",
+  "deep-nahl5-recite-to-me": "sign-recite-to-me",
+  // Abu Talhah fed the hungry guest in the dark, and his family slept hungry (Sahih Muslim 2054c).
+  "deep-abu-talhah-the-guest": "sign-lamp-out",
+  // He called Quraysh from the mountain to believe his warning (Sahih al-Bukhari 4972).
+  "deep-masad1-the-call-from-the-mountain": "sign-safa-call"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
