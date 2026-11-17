@@ -5221,6 +5221,105 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Whom did Umar first ask to marry Hafsah?", "Uthman ibn Affan", "Umar: I met Uthman and offered him Hafsah"],
     ["Who married Hafsah in the end?", "The Prophet ﷺ", "He asked for her; I married her to him"],
     ["Why had Abu Bakr stayed quiet?", "He kept the Prophet's ﷺ secret", "Nothing held me back but that I knew", "he had spoken of her; I kept his secret"]
+  ],
+  // Abu Sa'id al-Khudri said: he said: Allah will say to the people of Paradise: O people of Paradise! They will say: at
+  // Your service, our Lord. Allah will say: are you pleased? They will say: why would we not be pleased, when You have
+  // given us what You have not given anyone of Your creation? Allah will say: I will give you better than that. They
+  // will say: our Lord, what is better than that? Allah will say: I bestow My pleasure on you, and I will never be angry
+  // with you after it (Sahih al-Bukhari 6549). At-Tawbah 9:72 too says the pleasure of Allah is greater. Nothing is
+  // drawn for Allah: His words are the lines only. (Why Ibn Kathir links it to Ta-Ha 20:130 is not in the scene, so that
+  // stays as it is.)
+  "sign-never-angry-again": [
+    ["What is the best gift in Jannah?", "Allah's pleasure forever", "Allah: My pleasure, and never angry again"],
+    ["What does Allah promise them?", "To never be angry with them", "Allah: My pleasure, and never angry again"],
+    ["Allah's approval is greater than gardens.", "True", "Allah: My pleasure, and never angry again"],
+    ["What is the greatest bliss, in 9:72?", "The pleasure of Allah", "Allah: My pleasure, and never angry again"],
+    ["What will Allah give that is better than Paradise?", "His pleasure forever", "Allah: My pleasure, and never angry again"],
+    ["After that, Allah will never be angry with them.", "True", "Allah: My pleasure, and never angry again"],
+    ["What will Allah ask the people of Paradise?", "Are you pleased?", "Allah will say: are you pleased?"],
+    ["What is better than all they were given?", "Allah's lasting pleasure", "Allah: My pleasure, and never angry again"],
+    ["What does Allah give that is better than all?", "His pleasure", "Allah: My pleasure, and never angry again"],
+    ["Will Allah be angry with them after?", "Never", "Allah: My pleasure, and never angry again"],
+    ["Allah asks the people of Paradise if they are pleased.", "True", "Allah will say: are you pleased?"],
+    ["What will He give that is better than all?", "His pleasure forever", "Allah: My pleasure, and never angry again"],
+    ["Allah may later become angry with the people of Paradise.", "False", "Allah: My pleasure, and never angry again"]
+  ],
+  // Abu Hurairah said: he said: Allah has ninety-nine names, a hundred less one; whoever knows them will enter Paradise
+  // (Sahih al-Bukhari 2736). The names are counted as glints, and no letter is drawn. The lessons on Al-A'raf 7:172-188
+  // and Al-Hashr 59:18-24 open on it, since Allah's most beautiful names are in 7:180 and 59:24. (Calling on Him by
+  // them, what Ibn Kathir says of their number, and the other ayahs are not in the scene, so those stay as they are.)
+  "sign-ninety-nine-names": [
+    ["How many names of Allah are in the hadith?", "Ninety-nine", "He said: Allah has ninety-nine names", "a hundred less one"],
+    ["What is the reward for knowing them?", "Jannah", "whoever knows them will enter Paradise"],
+    ["Learning Allah's names is a great deed.", "True", "whoever knows them will enter Paradise"],
+    ["How many names are in Bukhari 2736?", "Ninety-nine", "He said: Allah has ninety-nine names", "a hundred less one"],
+    ["Ayahs 172-188: what are they about?", "The most beautiful names", "He said: Allah has ninety-nine names"],
+    ["How many names of Allah did the Prophet ﷺ mention?", "Ninety-nine", "He said: Allah has ninety-nine names", "a hundred less one"],
+    ["Ayahs 18-24: what are they about?", "The beautiful names", "He said: Allah has ninety-nine names"]
+  ],
+  // Abu Musa said: he said: many men reached perfection, but of women none reached it except Asiyah, Pharaoh's wife, and
+  // Maryam, the daughter of Imran; and the excellence of Aishah over other women is like the excellence of tharid over
+  // other food (Sahih al-Bukhari 3411; also 3433, and from Anas 3770). At-Tahrim 66:11-12 gives Pharaoh's wife and
+  // Maryam as examples for the believers. No place is drawn for Asiyah or Maryam. (Who narrated it, what tharid is,
+  // Maryam's son, and what Pharaoh's wife asked for are not in the scene's words or picture, so those stay as they are.)
+  "sign-the-best-of-women": [
+    ["Which two women did the Prophet ﷺ name as reaching perfection?", "Asiyah and Maryam", "but of women only Asiyah, Pharaoh's wife,", "and Maryam, the daughter of Imran"],
+    ["Asiyah was the wife of whom?", "Pharaoh", "but of women only Asiyah, Pharaoh's wife,"],
+    ["A bad husband stopped Asiyah from reaching Allah's pleasure.", "False", "but of women only Asiyah, Pharaoh's wife,"],
+    ["Which two women did the Prophet ﷺ say reached perfection?", "Asiyah and Maryam", "but of women only Asiyah, Pharaoh's wife,", "and Maryam, the daughter of Imran"],
+    ["Asiyah kept her faith while living in Fir'awn's palace.", "True", "but of women only Asiyah, Pharaoh's wife,"],
+    ["Which two women in 66:11-12 reached perfection?", "Asiyah and Maryam", "but of women only Asiyah, Pharaoh's wife,", "and Maryam, the daughter of Imran"],
+    ["No woman ever reached perfection.", "False", "but of women only Asiyah, Pharaoh's wife,"],
+    ["Who are examples for believers, in At-Tahrim?", "Pharaoh's wife and Maryam", "but of women only Asiyah, Pharaoh's wife,", "and Maryam, the daughter of Imran"],
+    ["Who was Asiyah's husband?", "Pharaoh", "but of women only Asiyah, Pharaoh's wife,"],
+    ["Asiyah, Pharaoh's wife, believed in Allah.", "True", "but of women only Asiyah, Pharaoh's wife,"],
+    ["Who was Maryam's father?", "Imran", "and Maryam, the daughter of Imran"],
+    ["The Prophet ﷺ compared Aishah's virtue over women to what?", "Tharid over other food", "is like that of tharid over other food"]
+  ],
+  // Abu Hurairah said: he said: leave me as I leave you; those before you were ruined only by their questions and their
+  // differing over their prophets. So when I forbid you something, keep away from it, and when I order you to do
+  // something, do of it as much as you can (Sahih al-Bukhari 7288). At-Taghabun 64:16 has the same words: fear Allah as
+  // much as you can. (Who narrated it, where Ibn Kathir quotes it, and the other ayahs are not in the scene's words, so
+  // those stay as they are.)
+  "sign-as-much-as-you-can": [
+    ["How much should we fear Allah, in At-Taghabun?", "As much as we can", "as much as you can"],
+    ["Ayahs 11-18: what are they about?", "Fear Allah as you can", "as much as you can"],
+    ["Ayah 16: how much should we fear Allah?", "As much as we can", "as much as you can"],
+    ["How much of a command should we do?", "As much as we can", "as much as you can"],
+    ["What should we do with what he forbids?", "Keep away from it", "When I forbid you something, avoid it"],
+    ["What should we do with what he forbade?", "Keep away from it", "When I forbid you something, avoid it"],
+    ["What should we do with what he ordered?", "Do as much as we can", "When I order you to do something, do of it", "as much as you can"]
+  ],
+  // Mu'awiyah said: I heard him say: when Allah wants good for someone, He makes him understand the religion; I only
+  // share out, and Allah gives; and this nation will stay on Allah's command, not harmed by those who oppose them, until
+  // Allah's command comes (Sahih al-Bukhari 71). (Why a group stays back to learn in At-Tawbah 9:122, warning their
+  // people when they return, and the link Ibn Kathir makes to Ta-Ha 20:2 are not in the scene, so those stay as they
+  // are.)
+  "sign-understanding-the-religion": [
+    ["What does Allah give someone He wants good for?", "Understanding of the religion", "Allah makes him understand the religion"],
+    ["He ﷺ said: I distribute, but who gives?", "Allah", "I only share out, and Allah gives"],
+    ["Learning your deen is a sign of good.", "True", "He said: when Allah wants good for one,", "Allah makes him understand the religion"],
+    ["What does Allah give one He wants good for?", "Understanding of the religion", "Allah makes him understand the religion"],
+    ["Who is the true giver, in the hadith?", "Allah", "I only share out, and Allah gives"]
+  ],
+  // Al-Bara said: on the day of the Confederates, when he dug the trench, I saw him carrying the earth of the trench,
+  // and I heard him chanting Ibn Rawahah's words as he carried it: O Allah, without You we would not be guided, nor give
+  // in charity, nor pray; so send calm on us and make our feet firm if we meet them; they have wronged us, and if they
+  // want trial, we refuse; and he drew out his voice at the end (Sahih al-Bukhari 4106). The lesson on Al-Ahzab 33:9-20,
+  // the Battle of the Trench, opens on it. (The wind and the unseen soldiers, the hearts reaching the throats, and the
+  // other ayahs are not in the scene, so those stay as they are.)
+  "sign-earth-from-the-trench": [
+    ["Whose verses did the Prophet ﷺ recite at the Trench?", "Ibn Rawahah's", "I heard him chant Ibn Rawahah's words:"],
+    ["What did the verses say?", "Without You we would not be guided", "O Allah, without You we'd not be guided"],
+    ["The Prophet ﷺ carried earth with the companions.", "True", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"],
+    ["Ayahs 9-20: what are they about?", "The Battle of the Trench", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"]
+  ],
+  // Jarir ibn Abdullah said: he said: whoever is not merciful to others will not be shown mercy (Sahih al-Bukhari 6013).
+  // The thirsty sheep given water shows mercy is for all, not only for one's own family.
+  "sign-who-is-not-merciful": [
+    ["Who heard the Prophet ﷺ say: whoever is not merciful is not shown mercy?", "Jarir ibn Abdullah", "Jarir ibn Abdullah heard him say:"],
+    ["How can you hope for Allah's mercy, from this lesson?", "Be merciful to others", "Whoever is not merciful to others", "will not be shown mercy"],
+    ["Mercy in Islam is only for your own family.", "False", "Whoever is not merciful to others"]
   ]
 };
 

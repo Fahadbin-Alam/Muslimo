@@ -1440,6 +1440,13 @@ const STATES: State[] = [
   { id: "scene-a-charity-for-travellers", render: () => <SceneQuestionDemo lessonId="lesson-deep-nisa3-shorten" ask="call shortening the prayer" /> },
   { id: "scene-before-you-sleep", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid1-the-first-and-the-last" ask="What does Al-Akhir mean" /> },
   { id: "scene-a-secret-not-told", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-hafsah" ask="Why had Abu Bakr stayed quiet" /> },
+  { id: "scene-never-angry-again", render: () => <SceneQuestionDemo lessonId="lesson-deep-jannah-pleased" ask="best gift in Jannah" /> },
+  { id: "scene-ninety-nine-names", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-asma-ninety-nine" ask="How many names of Allah" /> },
+  { id: "scene-the-best-of-women", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-asiyah-perfect" ask="Which two women" /> },
+  { id: "scene-as-much-as-you-can", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr2-as-much-as-you-can" ask="with what he forbids" /> },
+  { id: "scene-understanding-the-religion", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-knowledge-understanding" ask="someone He wants good for" /> },
+  { id: "scene-earth-from-the-trench", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-rawahah-trench-verses" ask="Whose verses" /> },
+  { id: "scene-who-is-not-merciful", render: () => <SceneQuestionDemo lessonId="lesson-deep-mercy-mercy-to-all" ask="Who heard the Prophet" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
