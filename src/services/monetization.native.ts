@@ -219,7 +219,9 @@ function createLiveClient(): MonetizationClient {
         try {
           // Ask for consent where the law requires it (EEA, UK, some US states) before any ad request is made.
           // Under the age of consent the form is skipped and only limited, non-personalised ads are served.
-          await ads.AdsConsent.gatherConsent({ tagForUnderAgeOfConsent: adSettingsFor(adAudience, platform).tagForUnderAgeOfConsent }).catch(() => undefined);
+          // Not on iPhone: iOS never tracks (no App Tracking Transparency, non-personalised ads only), and
+          // Google's form talks about cookies for personalised ads, which App Review rejected under 5.1.2(i).
+          if (platform !== "ios") await ads.AdsConsent.gatherConsent({ tagForUnderAgeOfConsent: adSettingsFor(adAudience, platform).tagForUnderAgeOfConsent }).catch(() => undefined);
           await applyAudience();
           await ads.default().initialize();
           preload("interstitial");

@@ -63,7 +63,7 @@ export const LIBRARY_TOPICS: ReadonlySet<TopicId> = new Set<TopicId>(["quran_taf
 
 export const learningApi: IslamicLearningApi = {
   async getUser() {
-    return refillHeartsForToday(cloneUser(STARTER_USER));
+    return regainHearts(cloneUser(STARTER_USER));
   },
   async getCoursePath() {
     return COURSE;
@@ -228,30 +228,65 @@ export function refreshStreak(current: UserProfile, now = new Date()) {
   return { ...user, streakDays: 0 };
 }
 
-// Run whenever a saved profile is opened: refill today's hearts and drop a streak that has lapsed.
+// Run whenever a saved profile is opened: give back the hearts the slow refill has earned and drop a lapsed streak.
 export function prepareUserForToday(user: UserProfile, now = new Date()) {
-  return settleLeague(refreshStreak(refillHeartsForToday(user, now), now), now);
+  return settleLeague(refreshStreak(regainHearts(user, now), now), now);
 }
 
 export function didExtendStreak(before: UserProfile, after: UserProfile) {
   return Boolean(after.lastStreakDate) && after.lastStreakDate !== before.lastStreakDate;
 }
 
-export function refillHeartsForToday(user: UserProfile, now = new Date()) {
-  const today = localDateKey(now);
+// The slow refill: one heart comes back every 5 hours until the hearts are full. There is no free full refill.
+export const HEART_REFILL_MS = 5 * 60 * 60 * 1000;
 
-  if (user.hearts.unlimited || user.hearts.lastRefillDate === today) {
+// Gives back the hearts the slow refill has earned by `now`. `nextHeartAt` is when the next heart lands; with
+// hearts missing and no clock yet (an older profile, or one from the server), the clock starts now. A clock more
+// than one wait ahead means the phone's time was moved back: it starts again from now, giving nothing.
+export function regainHearts(user: UserProfile, now = new Date()): UserProfile {
+  const { hearts } = user;
+
+  if (hearts.unlimited) {
     return user;
   }
 
-  return {
-    ...user,
-    hearts: {
-      ...user.hearts,
-      current: user.hearts.max,
-      lastRefillDate: today
+  if (hearts.current >= hearts.max) {
+    if (hearts.nextHeartAt === undefined) {
+      return user;
     }
-  };
+    const { nextHeartAt: _done, ...rest } = hearts;
+    return { ...user, hearts: rest };
+  }
+
+  const time = now.getTime();
+  const next = hearts.nextHeartAt;
+
+  if (typeof next !== "number" || !Number.isFinite(next) || next - time > HEART_REFILL_MS) {
+    return { ...user, hearts: { ...hearts, nextHeartAt: time + HEART_REFILL_MS } };
+  }
+
+  if (time < next) {
+    return user;
+  }
+
+  const gained = 1 + Math.floor((time - next) / HEART_REFILL_MS);
+  const current = Math.min(hearts.max, hearts.current + gained);
+
+  if (current >= hearts.max) {
+    const { nextHeartAt: _done, ...rest } = hearts;
+    return { ...user, hearts: { ...rest, current } };
+  }
+
+  return { ...user, hearts: { ...hearts, current, nextHeartAt: next + gained * HEART_REFILL_MS } };
+}
+
+// How long until the next heart lands, in ms (0 when it is due), or undefined when no heart is on its way.
+export function timeToNextHeart(user: Pick<UserProfile, "hearts">, now = Date.now()) {
+  const { hearts } = user;
+  if (hearts.unlimited || hearts.current >= hearts.max || typeof hearts.nextHeartAt !== "number") {
+    return undefined;
+  }
+  return Math.max(0, hearts.nextHeartAt - now);
 }
 
 const lessonXpCache = new Map<string, number>();
@@ -362,16 +397,21 @@ export function isWarmUpLearner(_user: UserProfile) {
 // Every wrong answer costs a heart: in a lesson (the very first ones too), a quiz circle, a unit test and a test-out.
 // Only the Practice tab is free (MY LESSONS, the Review deck of questions missed before, and its quizzes), so a
 // learner with no hearts can still practise.
-export function loseHeart(user: UserProfile, session?: LessonSession) {
+export function loseHeart(user: UserProfile, session?: LessonSession): UserProfile {
   if (user.hearts.unlimited || isHeartFree(session)) {
     return user;
   }
+
+  const current = Math.max(0, user.hearts.current - 1);
+  // The first heart lost from full starts the slow refill's clock; one already running keeps going.
+  const startClock = current < user.hearts.max && (user.hearts.current >= user.hearts.max || typeof user.hearts.nextHeartAt !== "number");
 
   return {
     ...user,
     hearts: {
       ...user.hearts,
-      current: Math.max(0, user.hearts.current - 1)
+      current,
+      ...(startClock ? { nextHeartAt: Date.now() + HEART_REFILL_MS } : {})
     }
   };
 }
