@@ -835,7 +835,14 @@ export type SignKind =
   | "right-sandal-first"
   | "uways-of-yemen"
   | "hazn-and-sahl"
-  | "ajwa-morning";
+  | "ajwa-morning"
+  | "a-dua-for-anas"
+  | "truly-trustworthy"
+  | "takbir-on-the-rises"
+  | "gifts-to-the-collector"
+  | "three-days-for-a-guest"
+  | "garlic-and-the-masjid"
+  | "straight-as-an-arrow";
 
 export type SignScene = {
   id: string;
@@ -4043,6 +4050,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sa'd ibn Abi Waqqas said that the Prophet ﷺ said: whoever eats some ajwa dates in the morning, every day, no poison and no magic will harm him that day, until night. Another narrator said: seven dates.",
     sources: [bukhari("5768")]
+  },
+  {
+    id: "sign-a-dua-for-anas",
+    kind: "a-dua-for-anas",
+    caption:
+      "Anas ibn Malik said: Umm Sulaym said to the Prophet ﷺ: Anas is your servant. He said: O Allah, increase his wealth and his children, and bless him in what You give him.",
+    sources: [bukhari("6334")]
+  },
+  {
+    id: "sign-truly-trustworthy",
+    kind: "truly-trustworthy",
+    caption:
+      "Hudhayfah said: al-Aqib and as-Sayyid, the two leaders of Najran, came to the Messenger of Allah ﷺ. They said: we will give you what you ask of us; send with us a trustworthy man, and send none with us but one who is trustworthy. He said: I will send with you a man who is trustworthy, truly trustworthy. The Companions of the Messenger of Allah ﷺ each hoped to be the one. He said: stand up, Abu Ubaydah ibn al-Jarrah. When Abu Ubaydah stood, the Messenger of Allah ﷺ said: this is the trustworthy one of this ummah.",
+    sources: [bukhari("4380")]
+  },
+  {
+    id: "sign-takbir-on-the-rises",
+    kind: "takbir-on-the-rises",
+    caption:
+      "Abdullah ibn Umar said: when the Messenger of Allah ﷺ came home from a campaign, from Hajj or from Umrah, he said Allahu Akbar three times on every high ground, then said: La ilaha illallah, alone, with no partner; His is the dominion and His is the praise, and He has power over all things. We return, repenting, worshipping, prostrating, praising our Lord. Allah kept His promise, helped His servant, and alone defeated the clans.",
+    sources: [bukhari("1797")]
+  },
+  {
+    id: "sign-gifts-to-the-collector",
+    kind: "gifts-to-the-collector",
+    caption:
+      "Abu Humayd as-Sa'idi said: the Prophet ﷺ sent a man of al-Azd called Ibn al-Lutbiyyah to collect the zakat. Ibn al-Lutbiyyah came back and said: this is for you, and this was given to me as a gift. He said: why did he not sit in his father's house or his mother's house, to see whether gifts would come to him or not? By the One in whose hand my soul is, whoever takes anything of it wrongly will come on the Day of Resurrection carrying it on his neck. Then he raised his hands and said three times: O Allah, have I not conveyed?",
+    sources: [bukhari("2597")]
+  },
+  {
+    id: "sign-three-days-for-a-guest",
+    kind: "three-days-for-a-guest",
+    caption:
+      "Abu Shurayh al-Ka'bi said that the Messenger of Allah ﷺ said: whoever believes in Allah and the Last Day, let him honor his guest. The guest's due is a day and a night, and hospitality is three days; what is beyond that is charity. And it is not lawful for the guest to stay with his host so long that it is hard on the host.",
+    sources: [bukhari("6135")]
+  },
+  {
+    id: "sign-garlic-and-the-masjid",
+    kind: "garlic-and-the-masjid",
+    caption:
+      "Ibn Umar said that the Prophet ﷺ said during the campaign of Khaybar: whoever ate of this plant, meaning garlic, should not come near our masjid. And Jabir ibn Abdullah said that the Prophet ﷺ said: whoever eats garlic or onion should keep away from us, or should keep away from our masjid, and stay in his house.",
+    sources: [bukhari("853"), bukhari("855"), bukhari("5452")]
+  },
+  {
+    id: "sign-straight-as-an-arrow",
+    kind: "straight-as-an-arrow",
+    caption:
+      "Ali said: the Messenger of Allah ﷺ said to me: say: O Allah, guide me and keep me straight; and with guidance, remember your being guided on the road, and with straightness, remember the straightness of the arrow.",
+    sources: [muslim("2725a")]
   }
 ];
 
@@ -6031,7 +6087,29 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Hazn, rough ground, would not take the name Sahl, smooth ground.
   "deep-kids-good-names-hazn-and-sahl": "sign-hazn-and-sahl",
   // A few ajwa dates in the morning: no poison or magic harms that day, until night.
-  "deep-book-medicine-ajwa-dates": "sign-ajwa-morning"
+  "deep-book-medicine-ajwa-dates": "sign-ajwa-morning",
+  // Umm Sulaym brought Anas to serve him: Anas is your servant.
+  "sahabi-anas-ibn-malik-family-lineage": "sign-a-dua-for-anas",
+  // His du'a for Anas: more wealth and children, and blessing in what he was given.
+  "sahabi-anas-ibn-malik-worship-and-character": "sign-a-dua-for-anas",
+  // Najran asked for a trustworthy man, and he chose Abu Ubaydah.
+  "deep-abuubaydah-najran": "sign-truly-trustworthy",
+  // The two of Najran asked for one trustworthy; Abu Ubaydah, the trustworthy one of this ummah.
+  "deep-imran1-trustworthy": "sign-truly-trustworthy",
+  // Coming home from Hajj or Umrah: takbir on every rise, and we return, repenting, praising our Lord.
+  "deep-hajj-spirit-coming-home": "sign-takbir-on-the-rises",
+  // Ibn al-Lutbiyyah's gifts: would they have come had he sat at home?
+  "deep-book-hibah-gifts-for-the-collector": "sign-gifts-to-the-collector",
+  // Honor your guest: a day and a night, three days, and beyond that is charity.
+  "deep-neighbors-guest": "sign-three-days-for-a-guest",
+  // Whoever ate garlic should not come near our masjid.
+  "deep-book-adhan-no-garlic-in-the-masjid": "sign-garlic-and-the-masjid",
+  // Garlic or onion: keep away from our masjid, and stay home.
+  "deep-clean-no-bad-smell": "sign-garlic-and-the-masjid",
+  // Garlic or onion: keep away from us, or from our masjid.
+  "deep-book-food-garlic-and-onion": "sign-garlic-and-the-masjid",
+  // Guide me and keep me straight: the road and the arrow.
+  "deep-book-dua-straight-as-an-arrow": "sign-straight-as-an-arrow"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
