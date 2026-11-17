@@ -765,7 +765,14 @@ export type SignKind =
   | "one-who-followed"
   | "water-for-wudu"
   | "tawaf-on-camel"
-  | "soft-salam";
+  | "soft-salam"
+  | "army-of-leaves"
+  | "archers-of-aslam"
+  | "beyond-the-seas"
+  | "half-the-debt"
+  | "quba-peace"
+  | "better-than-a-servant"
+  | "thumamah-freed";
 
 export type SignScene = {
   id: string;
@@ -3483,6 +3490,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Al-Miqdad said: the Prophet ﷺ took us to his family, and there were three goats. He said: milk this milk, to share among us. Each of us would drink his share, and we kept his share for him. He would come at night and give salam in a way that did not wake one asleep, and let one awake hear it. Then he would come to the masjid and pray, then come to his drink and drink it.",
     sources: [muslim("2055a")]
+  },
+  {
+    id: "sign-army-of-leaves",
+    kind: "army-of-leaves",
+    caption:
+      "Jabir ibn Abdullah said: the Messenger of Allah ﷺ sent us, three hundred riders, under Abu Ubaidah ibn al-Jarrah, to watch for a caravan of Quraysh. We stayed at the shore half a month, and such hunger struck us that we ate the khabat, the leaves of the trees, so that army was called the army of the khabat. Then the sea threw out for us a creature called al-Anbar, and we ate of it for half a month. Abu Ubaidah took one of its ribs and set it up, and a man and a camel passed under it.",
+    sources: [bukhari("4361")]
+  },
+  {
+    id: "sign-archers-of-aslam",
+    kind: "archers-of-aslam",
+    caption:
+      "Salamah ibn al-Akwa' said: the Prophet ﷺ passed by some folk of Aslam at archery, and said: shoot, children of Ismail, for your father was an archer; shoot, and I am with the sons of so-and-so. So one of the two sides held back. The Messenger of Allah ﷺ said: why do you not shoot? They said: how can we shoot, when you are with them? He said: shoot, and I am with you all.",
+    sources: [bukhari("2899")]
+  },
+  {
+    id: "sign-beyond-the-seas",
+    kind: "beyond-the-seas",
+    caption:
+      "Abu Sa'id al-Khudri said: a Bedouin asked the Messenger of Allah ﷺ about the hijrah. He said: mercy on you! Its matter is hard. Have you camels? Do you give their zakat? He said: yes. He said: then work from beyond the seas, for Allah will not waste any of your deeds.",
+    sources: [bukhari("1452")]
+  },
+  {
+    id: "sign-half-the-debt",
+    kind: "half-the-debt",
+    caption:
+      "Ka'b ibn Malik asked Ibn Abi Hadrad, in the masjid, for a debt he owed him, and their voices rose until the Messenger of Allah ﷺ heard them in his house. He came out to them, lifting the curtain of his room, and called: O Ka'b! He said: at your service, O Messenger of Allah. He pointed to him with his hand: drop half of the debt. Ka'b said: I have done so, O Messenger of Allah. He said: get up and pay him.",
+    sources: [bukhari("2710")]
+  },
+  {
+    id: "sign-quba-peace",
+    kind: "quba-peace",
+    caption:
+      "Sahl ibn Sa'd said: the folk of Quba fought one another, till they threw stones at each other. The Messenger of Allah ﷺ was told of it, and he said: let us go, to make peace between them.",
+    sources: [bukhari("2693")]
+  },
+  {
+    id: "sign-better-than-a-servant",
+    kind: "better-than-a-servant",
+    caption:
+      "Ali said: Fatimah complained of what she suffered from the hand mill. Captives were brought to the Prophet ﷺ, and she went, but did not find him; she found Aishah and told her. When the Prophet ﷺ came, Aishah told him that Fatimah had come. He came to us when we had gone to bed, and I went to get up, but he said: stay where you are, and he sat between us. He said: shall I not teach you something better than what you asked of me? When you go to bed, say Allahu akbar thirty-four times, subhanallah thirty-three times and alhamdulillah thirty-three times: that is better for you both than a servant.",
+    sources: [bukhari("3705")]
+  },
+  {
+    id: "sign-thumamah-freed",
+    kind: "thumamah-freed",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ sent horsemen toward Najd, and they brought a man of Banu Hanifah called Thumamah ibn Uthal, and tied him to one of the pillars of the masjid. The Prophet ﷺ came out to him and said: what do you have, Thumamah? He left him till the next day, and asked again, and then till the day after. Then he said: set Thumamah free. He went to palms near the masjid and washed, then came into the masjid and said: I testify that there is no god but Allah, and that Muhammad is the Messenger of Allah. By Allah, there was no face on earth more hateful to me than yours, and now your face has become the dearest of all faces to me.",
+    sources: [bukhari("4372")]
   }
 ];
 
@@ -5319,7 +5375,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Abu Talhah fed the hungry guest in the dark, and his family slept hungry (Sahih Muslim 2054c).
   "deep-abu-talhah-the-guest": "sign-lamp-out",
   // He called Quraysh from the mountain to believe his warning (Sahih al-Bukhari 4972).
-  "deep-masad1-the-call-from-the-mountain": "sign-safa-call"
+  "deep-masad1-the-call-from-the-mountain": "sign-safa-call",
+  // Three hundred riders under Abu Ubaidah ate leaves at the shore, until the sea threw out al-Anbar.
+  "deep-abuubaydah-khabat": "sign-army-of-leaves",
+  // He found Aslam at archery and said: shoot, children of Ismail, and I am with you all.
+  "deep-prophet-ismail-archer": "sign-archers-of-aslam",
+  // A Bedouin who gave his camels' zakat was told: work from beyond the seas; none of your deeds will be wasted.
+  "deep-zakat-stories-of-charity-a-bedouins-camels": "sign-beyond-the-seas",
+  // Their voices rose over a debt in the masjid; he asked Ka'b to drop half, and the other to pay.
+  "deep-manners-making-peace-let-go-of-half": "sign-half-the-debt",
+  // When the folk of Quba threw stones at each other, he said: let us go and make peace between them.
+  "deep-manners-making-peace-let-us-make-peace": "sign-quba-peace",
+  // Instead of a servant, he taught Ali and Fatimah to praise Allah at bedtime.
+  "deep-ali-better-than-servant": "sign-better-than-a-servant",
+  // Thumamah, tied in the masjid, was set free, washed, and came back to bear witness.
+  "deep-fresh-start-thumamah": "sign-thumamah-freed"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
