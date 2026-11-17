@@ -800,7 +800,14 @@ export type SignKind =
   | "one-date-shared"
   | "blessed-bowl"
   | "cloaks-alike"
-  | "half-a-sa";
+  | "half-a-sa"
+  | "promise-of-bahrain"
+  | "swore-at-the-door"
+  | "covenant-kept"
+  | "dress-to-borrow"
+  | "shade-of-the-kabah"
+  | "secret-kept"
+  | "bless-the-givers";
 
 export type SignScene = {
   id: string;
@@ -3763,6 +3770,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Mas'ud said: when we were told to give charity, we would carry loads for hire. Abu Aqil came with half a sa', and someone came with more than him, and the hypocrites said: Allah has no need of this one's charity, and this other one did it only to show off. Then the ayah was revealed (Quran 9:79).",
     sources: [bukhari("4668")]
+  },
+  {
+    id: "sign-promise-of-bahrain",
+    kind: "promise-of-bahrain",
+    caption:
+      "Jabir said: the Prophet ﷺ said to me: if the wealth of Bahrain came, I would give you this much, three times. But it did not come until the Prophet ﷺ passed away. Then Abu Bakr had a caller call out: whoever had a promise or a debt from the Prophet ﷺ, let him come to us. So I came to him and said: the Prophet ﷺ promised me; and he scooped out three handfuls for me.",
+    sources: [bukhari("2598")]
+  },
+  {
+    id: "sign-swore-at-the-door",
+    kind: "swore-at-the-door",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ heard the raised voices of disputants at the door. One of them was asking the other to reduce his debt and to be lenient with him, and the other was saying: by Allah, I will not. The Messenger of Allah ﷺ went out to them and said: where is the one who swears by Allah that he will not do a good deed? The man said: I, O Messenger of Allah, and he may have whichever of that he likes.",
+    sources: [bukhari("2705")]
+  },
+  {
+    id: "sign-covenant-kept",
+    kind: "covenant-kept",
+    caption:
+      "Hudhayfah ibn al-Yaman said: nothing kept me from being at Badr but this: I went out with my father, Husayl, and the disbelievers of Quraysh took us. They said: you are making for Muhammad. We said: we are not making for him; we want nothing but Madinah. So they took from us Allah's covenant and pledge that we would go on to Madinah and not fight alongside him. We came to the Messenger of Allah ﷺ and told him the news, and he said: go on, both of you; we will keep their covenant, and ask Allah's help against them.",
+    sources: [muslim("1787")]
+  },
+  {
+    id: "sign-dress-to-borrow",
+    kind: "dress-to-borrow",
+    caption:
+      "Ayman said: I went in to Aishah, and on her was a coarse dress costing five dirhams. She said: look up at my slave girl; look at her: she is too proud to wear it at home. Yet I had a dress like it in the time of the Messenger of Allah ﷺ, and no woman in Madinah was made ready as a bride but she sent to me to borrow it.",
+    sources: [bukhari("2628")]
+  },
+  {
+    id: "sign-shade-of-the-kabah",
+    kind: "shade-of-the-kabah",
+    caption:
+      "Abu Dharr said: I came to him ﷺ as he was saying, in the shade of the Ka'bah: they are the losers, by the Lord of the Ka'bah; they are the losers, by the Lord of the Ka'bah. I said: what is the matter with me? Is something seen in me? What is the matter with me? I sat by him as he kept saying it, and I could not keep quiet, and there came over me what Allah willed. So I said: who are they, may my father and mother be ransomed for you, O Messenger of Allah? He said: those with the most wealth, except one who does like this, and like this, and like this.",
+    sources: [bukhari("6638")]
+  },
+  {
+    id: "sign-secret-kept",
+    kind: "secret-kept",
+    caption:
+      "Anas said: the Messenger of Allah ﷺ came to me as I was playing with the boys. He greeted us and sent me on an errand, and I was late coming to my mother. When I came, she said: what kept you? I said: the Messenger of Allah ﷺ sent me on an errand. She said: what was it? I said: it is a secret. She said: do not tell anyone the secret of the Messenger of Allah ﷺ.",
+    sources: [muslim("2482")]
+  },
+  {
+    id: "sign-bless-the-givers",
+    kind: "bless-the-givers",
+    caption:
+      "Abdullah ibn Abi Awfa said: when folk came to the Prophet ﷺ with their charity, he would say: O Allah, bless the family of so-and-so. My father came to him with his charity, and he said: O Allah, bless the family of Abu Awfa.",
+    sources: [bukhari("1497")]
   }
 ];
 
@@ -5669,7 +5725,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Abu Dharr dressed his slave as he dressed himself, as the Prophet ﷺ had taught him.
   "deep-abudharr-brothers": "sign-cloaks-alike",
   // The hypocrites mocked Abu Aqil's half a sa' and the one who gave more, and the ayah was revealed.
-  "deep-tawbah4-small-charity": "sign-half-a-sa"
+  "deep-tawbah4-small-charity": "sign-half-a-sa",
+  // He promised Jabir a gift from the wealth of Bahrain, and after him Abu Bakr gave it, three handfuls.
+  "deep-book-hibah-a-promise-kept": "sign-promise-of-bahrain",
+  // He went out to the one who swore he would not ease a debt, and the man gave all that was asked.
+  "deep-manners-making-peace-the-man-who-swore": "sign-swore-at-the-door",
+  // Hudhayfah and his father kept the covenant Quraysh took from them, and he told them to keep it.
+  "deep-hudhayfah-kept-his-word": "sign-covenant-kept",
+  // Aishah's coarse dress, which every bride in Madinah sent to borrow.
+  "deep-book-hibah-a-dress-to-borrow": "sign-dress-to-borrow",
+  // In the shade of the Ka'bah: those with the most wealth are the losers, but one who gives like this.
+  "deep-zakat-stories-of-charity-in-the-shade-of-the-kabah": "sign-shade-of-the-kabah",
+  // Anas kept his ﷺ secret, even from his mother, and she told him to keep it.
+  "deep-anas-secret": "sign-secret-kept",
+  // He asked Allah to bless the family of each one who brought charity, and of Abu Awfa.
+  "deep-tawbah4-dua-for-the-giver": "sign-bless-the-givers"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
