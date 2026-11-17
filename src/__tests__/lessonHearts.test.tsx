@@ -171,33 +171,18 @@ describe("TopicApp heart rule", () => {
       await press("feedback-continue");
     }
 
-    // At 0 hearts GOT IT opens the out-of-hearts sheet with its one free refill, never the next question
-    // and never the lesson complete screen.
+    // At 0 hearts GOT IT opens the out-of-hearts sheet, never the next question and never the lesson
+    // complete screen. There is no free refill on it: the hearts stay empty.
     expect(screen.getByTestId("refill-sheet")).toBeTruthy();
-    expect(screen.getByTestId("refill-claim")).toBeTruthy();
+    expect(screen.queryByTestId("refill-claim")).toBeNull();
+    expect(screen.getByTestId("refill-next-heart")).toBeTruthy();
     expect(screen.queryByTestId("stat-stars")).toBeNull();
     expect(savedUser().completedLessonIds).not.toContain(node.firstLessonId);
     expect(savedUser().completedNodeIds).not.toContain(node.id);
 
-    // The free refill fills the hearts one by one, then the lesson goes on with the third question's comeback.
-    await press("refill-claim");
-    await act(async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1100));
-    });
-    expect(heartLabel()).toBe("5 of 5 hearts");
-    expect(shownChallenge(challenges)!.id).toBe(challenges[2].id);
-
-    // Right at last, each one: the lesson-complete flow follows the last of them. Stars count first tries.
-    for (const index of [2, 0, 1]) {
-      const shown = shownChallenge(challenges)!;
-      expect(shown.id).toBe(challenges[index].id);
-      expect(screen.getByText("Try again!")).toBeTruthy();
-      await check(shown, true);
-      await press("feedback-continue");
-    }
-    expect(await screen.findByTestId("stat-stars")).toBeTruthy();
-    expect(screen.getByLabelText("1 of 3 stars")).toBeTruthy();
-    expect(savedUser().completedLessonIds).toContain(node.firstLessonId);
+    await press("refill-end");
+    expect(savedUser().hearts.current).toBe(0);
+    expect(savedUser().completedNodeIds).not.toContain(node.id);
   });
 
   it("brings a missed question back until it is right, its tiles moved each time, and the bar never goes back", async () => {
@@ -249,14 +234,14 @@ describe("TopicApp heart rule", () => {
     expect(screen.getByLabelText("2 of 3 stars")).toBeTruthy();
   });
 
-  it("after the free refill, 0 hearts says hearts come back tomorrow and END LESSON leaves the lesson unfinished", async () => {
-    const { node, challenges } = await startFirstLesson(makeUser({ hearts: hearts(1), reviewHeartRestoreUsed: true }));
+  it("at 0 hearts says when the next heart comes and END LESSON leaves the lesson unfinished", async () => {
+    const { node, challenges } = await startFirstLesson(makeUser({ hearts: hearts(1) }));
 
     await check(challenges[0], false);
     expect(heartLabel()).toBe("0 of 5 hearts");
     await press("feedback-continue");
 
-    expect(screen.getByTestId("refill-tomorrow")).toHaveTextContent("Full hearts again tomorrow!");
+    expect(screen.getByTestId("refill-next-heart")).toHaveTextContent(/^Next heart in \d+ h \d+ min$/);
     await press("refill-end");
     expect(screen.queryByTestId("exercise-view")).toBeNull();
     expect(screen.getByTestId("learn-path-foundation")).toBeTruthy();

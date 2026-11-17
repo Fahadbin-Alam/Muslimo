@@ -1,11 +1,14 @@
 import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Animated, Easing, View, type StyleProp, type ViewStyle } from "react-native";
+import { Animated, AppState, Easing, View, type StyleProp, type ViewStyle } from "react-native";
 import { sampleCurve, useReduceMotion } from "./motion";
 import { Floater, Word } from "./reactions";
+import { skyNow, skyTimeAt, type SkyTime } from "../services/skyClock";
 
 /**
- * Day and night on the Learn path. Tapping the sun turns it into the moon and the sky goes dark;
- * tapping the moon brings the day back. If nobody touches the screen for a while, night falls by
+ * Day and night on the Learn path. The sky follows the phone's own clock (and so the learner's
+ * timezone): warm at sunrise and sunset, dark with the moon at night (see services/skyClock.ts).
+ * Tapping the sun still turns it into the moon and the sky goes dark; tapping the moon brings the
+ * day back, until the real sky changes again. If nobody touches the screen for a while, night falls by
  * itself and everyone on the path (the kid, the camel, the sheep) goes to sleep; any touch wakes them.
  */
 
@@ -13,15 +16,21 @@ import { Floater, Word } from "./reactions";
 export const IDLE_MS = 30000;
 /** How long the sky takes to go dark or light again. */
 export const DUSK_MS = 900;
+/** How often the real time is looked at again (a cheap check; the sky only changes a few times a day). */
+export const SKY_CHECK_MS = 60000;
 
 export type SceneMood = {
-  /** The sky is dark: the learner picked night, or everyone fell asleep. */
+  /** The sky is dark: it is night where the learner is, the learner picked night, or everyone fell asleep. */
   night: boolean;
+  /** The real sky is at sunrise or sunset: clear skies look warm, the sun low. */
+  twilight: boolean;
+  /** The real time of day on the phone: dawn, day, dusk or night. */
+  skyTime: SkyTime;
   /** Nobody touched the screen for a while: everyone sleeps. */
   asleep: boolean;
   /** 0 by day, 1 at night; eases between them (native driver). */
   dark: Animated.Value;
-  /** The learner turns night on or off (the sun or the moon was tapped). */
+  /** The learner turns night on or off (the sun or the moon was tapped), until the real sky changes. */
   setNight: (night: boolean) => void;
   /** A touch or a scroll: wakes everyone and restarts the idle clock. */
   wake: () => void;
@@ -33,7 +42,7 @@ export type SceneMood = {
 
 const DAYLIGHT = new Animated.Value(0);
 const STILL = new Animated.Value(0);
-const SceneContext = createContext<SceneMood>({ night: false, asleep: false, dark: DAYLIGHT, setNight: () => undefined, wake: () => undefined, quake: STILL, rumble: () => undefined });
+const SceneContext = createContext<SceneMood>({ night: false, twilight: false, skyTime: "day", asleep: false, dark: DAYLIGHT, setNight: () => undefined, wake: () => undefined, quake: STILL, rumble: () => undefined });
 
 /** How long the path shakes after a meteor lands. */
 export const QUAKE_MS = 650;
@@ -49,6 +58,8 @@ export function useScene() {
 
 export type SceneProviderProps = {
   children: ReactNode;
+  /** Follow the phone's real time of day. Off: always day until the sun is tapped. */
+  clock?: boolean;
   /** Watch for an idle screen. Off: nobody ever falls asleep by themselves. */
   idle?: boolean;
   idleMs?: number;
@@ -59,10 +70,12 @@ export type SceneProviderProps = {
 };
 
 /** Holds day/night for everything inside it, and wakes everyone on any touch inside it. */
-export function SceneProvider({ children, idle = true, idleMs = IDLE_MS, wakeRef, style, testID }: SceneProviderProps) {
-  const [picked, setPicked] = useState(false);
+export function SceneProvider({ children, clock = true, idle = true, idleMs = IDLE_MS, wakeRef, style, testID }: SceneProviderProps) {
+  const [skyTime, setSkyTime] = useState<SkyTime>(() => (clock ? skyTimeAt(skyNow()) : "day"));
+  // What the learner picked by tapping the sun or the moon; null: the real sky.
+  const [picked, setPicked] = useState<boolean | null>(null);
   const [asleep, setAsleep] = useState(false);
-  const dark = useRef(new Animated.Value(0)).current;
+  const dark = useRef(new Animated.Value(skyTime === "night" ? 1 : 0)).current;
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const sleeping = useRef(false);
   const reduceMotion = useReduceMotion();
@@ -94,7 +107,31 @@ export function SceneProvider({ children, idle = true, idleMs = IDLE_MS, wakeRef
     };
   }, [arm]);
 
-  const night = picked || asleep;
+  // The real sky: looked at again every minute, and when the app comes back from the background.
+  useEffect(() => {
+    if (!clock) {
+      setSkyTime("day");
+      return undefined;
+    }
+    const check = () => setSkyTime(skyTimeAt(skyNow()));
+    check();
+    const timer = setInterval(check, SKY_CHECK_MS);
+    const sub = AppState.addEventListener("change", (state) => {
+      if (state === "active") check();
+    });
+    return () => {
+      clearInterval(timer);
+      sub.remove();
+    };
+  }, [clock]);
+  // When the real sky changes (sunset, sunrise), it takes over again from the learner's tap.
+  const realNight = skyTime === "night";
+  useEffect(() => {
+    setPicked(null);
+  }, [realNight]);
+
+  const night = (picked ?? realNight) || asleep;
+  const twilight = !night && picked === null && (skyTime === "dawn" || skyTime === "dusk");
   useEffect(() => {
     const animation = Animated.timing(dark, { toValue: night ? 1 : 0, duration: reduceMotion ? 0 : DUSK_MS, easing: Easing.inOut(Easing.sin), useNativeDriver: true });
     animation.start();
@@ -102,13 +139,13 @@ export function SceneProvider({ children, idle = true, idleMs = IDLE_MS, wakeRef
   }, [night, dark, reduceMotion]);
 
   const setNight = useCallback((value: boolean) => {
-    setPicked(value);
+    setPicked(value === realNight ? null : value);
     // Picking day while everyone sleeps wakes them too.
     if (!value && sleeping.current) {
       sleeping.current = false;
       setAsleep(false);
     }
-  }, []);
+  }, [realNight]);
 
   const quake = useRef(new Animated.Value(0)).current;
   const rumble = useCallback(() => {
@@ -117,7 +154,7 @@ export function SceneProvider({ children, idle = true, idleMs = IDLE_MS, wakeRef
     Animated.timing(quake, { toValue: 1, duration: QUAKE_MS, easing: Easing.linear, useNativeDriver: true }).start();
   }, [quake, reduceMotion]);
 
-  const value = useMemo<SceneMood>(() => ({ night, asleep, dark, setNight, wake, quake, rumble }), [night, asleep, dark, setNight, wake, quake, rumble]);
+  const value = useMemo<SceneMood>(() => ({ night, twilight, skyTime, asleep, dark, setNight, wake, quake, rumble }), [night, twilight, skyTime, asleep, dark, setNight, wake, quake, rumble]);
   return (
     <SceneContext.Provider value={value}>
       <View
