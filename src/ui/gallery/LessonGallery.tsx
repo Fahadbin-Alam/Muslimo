@@ -1398,6 +1398,13 @@ const STATES: State[] = [
   { id: "scene-three-days-for-a-guest", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-guest" ask="How long is a guest's full hospitality" /> },
   { id: "scene-garlic-and-the-masjid", render: () => <SceneQuestionDemo lessonId="lesson-deep-clean-no-bad-smell" ask="Which two foods are named" /> },
   { id: "scene-straight-as-an-arrow", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dua-straight-as-an-arrow" ask="What should you picture" /> },
+  { id: "scene-two-hijrahs", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-two-hijrahs" ask="How many hijrahs did the people of the ship earn" /> },
+  { id: "scene-sana-to-hadramawt", render: () => <SceneQuestionDemo lessonId="lesson-deep-khabbab-in-the-shade" ask="when Khabbab came" /> },
+  { id: "scene-heard-by-all", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-adhan-reward-everything-hears" ask="Who will be a witness for the caller" /> },
+  { id: "scene-feed-visit-free", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-feed-the-hungry" ask="Feed the hungry, free the captive" /> },
+  { id: "scene-never-refused-perfume", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-never-refused-scent" ask="Which companion copied this" /> },
+  { id: "scene-blessed-measures", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-for-others-bless-their-measures" ask="For which people did he" /> },
+  { id: "scene-twenty-nights", render: () => <SceneQuestionDemo lessonId="lesson-foundation-first-worship-rhythm-hear-the-call" ask="calls Muslims to pray five times a day" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
