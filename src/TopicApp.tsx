@@ -249,6 +249,7 @@ import {
   type RankingsState,
   AgeSheet,
   BackgroundSheet,
+  WelcomeSheet,
   LanguageSheet,
   LearnPath,
   PrayerSheet,
@@ -736,6 +737,7 @@ const PLAN_OFFER_AT_KEY = "sira-path-plan-offer-at";
 // The ayah and hadith of the day open by themselves this long after the app settles on its first open of the day.
 const DAILY_AUTO_OPEN_MS = 900;
 const DAILY_SHOWN_KEY = "sira-path-daily-shown";
+const WELCOME_KEY = "sira-path-welcome-done";
 
 // The plans sheet: why it opened, and the lesson to start once it closes (it can open as NEXT LESSON is tapped).
 type PlanOffer = {
@@ -936,6 +938,8 @@ export default function TopicApp() {
   // Sign-up asks the age first even with ads off: under 13, the account takes a parent's name and email.
   const signUpNeedsAge = Platform.OS !== "web" && !ageGroup;
   const [ageBeforeSignUp, setAgeBeforeSignUp] = useState(false);
+  // A first launch offers to log in or make an account before the first lesson (WelcomeSheet). Asked once.
+  const [welcomeDone, setWelcomeDone] = useState(() => getStoredItem(WELCOME_KEY) === "1");
   // Who the learner is (Muslim, new to Islam, Christian, Jewish or curious), asked once after the age on a first
   // launch. Anyone but a Muslim starts on the New to Islam path, in the unit that fits them. Kept on this device.
   const [learnerBackground, setLearnerBackground] = useState<LearnerBackground | undefined>(() => {
@@ -1838,6 +1842,10 @@ export default function TopicApp() {
   // After a few minutes a guest is asked to make an account, but never in the middle of a lesson
   // or practice: the ask waits until they are back on the Foundation path with nothing else open.
   const guestUser = Boolean(state.user && !state.user.hasAccount);
+  // Right after the language, before the age: a guest who has done no lessons yet is offered Log in or Sign up.
+  const welcomeVisible = Boolean(
+    guestUser && !welcomeDone && !state.user?.completedNodeIds.length && !state.user?.completedLessonIds.length && !languageModalVisible && !accountModalVisible && !ageBeforeSignUp
+  );
   useEffect(() => {
     if (!guestUser || accountPromptShown) {
       return;
@@ -1855,7 +1863,7 @@ export default function TopicApp() {
     selectedSection.topicId === "foundation";
   const otherSheetOpen =
     Boolean(outOfHearts?.open || rewardCelebration || testOutResult?.open || planOffer?.open || openHadith) ||
-    topicPickerVisible || settingsModalVisible || languageModalVisible || prayerModalVisible || noticeOpen || familyVisible ||
+    welcomeVisible || topicPickerVisible || settingsModalVisible || languageModalVisible || prayerModalVisible || noticeOpen || familyVisible ||
     // Practice's own sheets too: nothing pops up over a story, a quiz list, a sprint against the clock or a surah
     // being memorized with the reciter.
     quizSheetVisible || Boolean(storyShelf) || lifeMapOpen || hajjMapOpen || dayOfPrayerOpen || albumVisible || sayItVisible || sprintVisible || memorizeVisible ||
@@ -3118,6 +3126,11 @@ export default function TopicApp() {
       return;
     }
     setAccountModalVisible(true);
+  }
+
+  function finishWelcome() {
+    setStoredItem(WELCOME_KEY, "1");
+    setWelcomeDone(true);
   }
 
   function openAccountPanel() {
@@ -4967,8 +4980,21 @@ export default function TopicApp() {
         />
         <RewardPop visible={questChestDates > 0 && !rewardCelebration} gems={questChestDates} onClose={collectQuestChest} />
         <QuestsSheet visible={questsOpen && !inLesson} board={questBoardNow} onClaim={openQuestChest} onClose={() => setQuestsOpen(false)} />
+        <WelcomeSheet
+          visible={welcomeVisible}
+          onLogIn={() => {
+            finishWelcome();
+            openAccountSheet("login");
+          }}
+          onCreateAccount={() => {
+            finishWelcome();
+            openAccountSheet("create");
+          }}
+          onSkip={finishWelcome}
+        />
         <AgeSheet
-          visible={hasUser && !ageGroup}
+          // Waits for the welcome and for an open log in, then asks once (sign-up asks it first, see openAccountSheet).
+          visible={hasUser && !ageGroup && !welcomeVisible && !accountModalVisible}
           onSave={(group) => {
             setStoredItem("sira-path-age-group", group);
             setAgeGroup(group);
