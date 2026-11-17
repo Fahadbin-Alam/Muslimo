@@ -25,3 +25,8 @@ services:
       # Any long password you choose. It unlocks the owner's stats page (site/stats.html). Empty keeps it off.
       - key: SIRA_ADMIN_KEY
         sync: false
+      # Newsletter: the Brevo API key (brevo.com, free plan) and the number of the Brevo contact list to fill.
+      - key: SIRA_BREVO_API_KEY
+        sync: false
+      - key: SIRA_BREVO_LIST_ID
+        sync: false

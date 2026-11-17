@@ -120,6 +120,7 @@ describe("shop hearts", () => {
     await render(
       <ShopView user={makeUser({ gems: 120 })} strings={strings} items={SHOP_ITEMS_WITH_GEMS} storePrices={{}} busy={false} section={foundation} onUseItem={jest.fn()} onRestore={jest.fn()} />
     );
+    await fireEvent.press(screen.getByTestId("shop-shelf-hearts"));
     expect(screen.getByTestId("shop-line-gem-heart-refill")).toHaveTextContent("Hearts are full");
     expect(screen.queryByText(/^Need \d+ more$/)).toBeNull();
   });

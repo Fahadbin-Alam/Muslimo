@@ -34,6 +34,7 @@ const STATES = [
   "shop-premium",
   "shop-busy",
   "shop-hadith",
+  "shop-all-plans",
   "shop-all-hearts",
   "shop-all-hadith",
   "shop-all-icons",

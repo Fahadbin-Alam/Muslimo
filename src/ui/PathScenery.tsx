@@ -631,7 +631,9 @@ export const PathScenery = memo(function PathScenery(props: PathSceneryProps) {
   const live = animated && !reduceMotion && (!asleep || resting);
   // Animals given a row wander it (roamer.tsx) instead of their little idle moves; asleep they snore where they stopped.
   const roams = Boolean(props.roam) && ROAMERS.has(kind);
-  const idleLive = live && (!roams || asleep);
+  // A slow phone (lite motion) keeps the animals' little moves and lets the plants and buildings rest.
+  const lite = useLiteMotion();
+  const idleLive = live && (!roams || asleep) && (!lite || SLEEPERS.has(kind));
   const t = useIdleClock(idleLive, (asleep ? IDLE_PERIOD.sleep : IDLE_PERIOD[idle]) + (seed % 5) * 260, seed);
   const picture = (
     <Animated.View

@@ -78,7 +78,10 @@ path nodes are 72 px circles with a 7 px lip; sheets radius 24 on top.
   birds have 7. A tap in the middle of a show skips to the next one, so no tap is ignored. The rest
   hop with a boing. Day and night (`src/ui/sceneMood.tsx`): the first tap on the sun sets it, a
   round full moon comes up and the path goes dark; tapping the moon shows it gibbous, then half lit
-  (never a thin crescent, no stars), and one more tap brings the day back. The book stand's first tap
+  (never a thin crescent, no stars), and one more tap brings the day back. The sky also follows the
+  phone's real time of day (`src/services/skyClock.ts`, from the phone's clock and timezone name, no
+  location): sunny skies turn warm around sunrise and sunset, and at night the path is dark with the
+  moon; a tap still flips it until the real sky changes again. The book stand's first tap
   closes the book and puts it on a shelf that appears above the stand (the next tap takes it down);
   the ink and paper write, fold into a paper plane, dip and spill; the bush and rocks have 6 shows
   each (`src/ui/worldShows.tsx`). The kid fidgets by itself every few seconds (looks around, sways,

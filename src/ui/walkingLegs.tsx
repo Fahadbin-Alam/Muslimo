@@ -1,7 +1,7 @@
 import React, { createContext, memo, useContext, useMemo } from "react";
 import { Animated, StyleSheet } from "react-native";
 import Svg, { Path, Rect } from "react-native-svg";
-import { sampleCurve } from "./motion";
+import { pivotAt, sampleCurve } from "./motion";
 
 /**
  * Real walking legs for the animals that wander the path (sheep, goat, horse), like the camel's: each leg
@@ -96,7 +96,7 @@ export function WalkingLegs({ kind, size, clock }: { kind: LeggedKind; size: num
           style={[
             StyleSheet.absoluteFill,
             angles
-              ? { transformOrigin: `${(leg.x / 64) * 100}% ${(set.hip / 64) * 100}%`, transform: [{ rotate: leg.sign > 0 ? angles.fore : angles.back }] }
+              ? { transformOrigin: pivotAt(leg.x / 64, set.hip / 64), transform: [{ rotate: leg.sign > 0 ? angles.fore : angles.back }] }
               : null
           ]}
         >
