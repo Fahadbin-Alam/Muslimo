@@ -281,7 +281,7 @@ def cmd_apply(args):
         catalog = load_json(path)
         applied, held = 0, []
         types = set(args.types.split(","))
-        for line in open(work / f"findings-{lang}.jsonl", encoding="utf-8"):
+        for line in open(work / f"{args.source}-{lang}.jsonl", encoding="utf-8"):
             issue = json.loads(line)
             if issue["type"] not in types:
                 continue
@@ -308,6 +308,7 @@ def main():
     p.add_argument("--n", type=int, default=3)
     p.add_argument("--limit", type=int, default=0)
     p.add_argument("--types", default="wrong,english,unclear,term")
+    p.add_argument("--source", default="findings", help="apply reads <source>-<lang>.jsonl, e.g. verified")
     p.add_argument("--work", default="/mnt/project-files/translation-check")
     args = p.parse_args()
     globals()[f"cmd_{args.command}"](args)
