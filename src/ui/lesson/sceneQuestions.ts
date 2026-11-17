@@ -4961,6 +4961,55 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-joy-at-a-wedding": [
     ["How did he ﷺ react to the wedding guests?", "He stood up happily", "he stood up, energetic and happy"],
     ["A wedding is a happy time in Islam.", "True", "coming back from a wedding", "he stood up, energetic and happy"]
+  ],
+  // Aishah said: whenever he had a choice between two things, he took the easier of them, as long as it was not a sin;
+  // if it was a sin, he was the farthest of people from it. And he never took revenge for himself, unless what Allah
+  // made sacred was violated (Sahih al-Bukhari 3560).
+  "sign-the-easier-of-two": [
+    ["Which choice did he ﷺ usually take?", "The easier one, if not a sin", "he took the easier of them", "as long as it was not a sin"],
+    ["Did he ﷺ take revenge for himself?", "Never", "He never took revenge for himself"],
+    ["Islam likes making things easy for people.", "True", "he took the easier of them"]
+  ],
+  // Aishah said: he would talk so clearly that if one counting wanted to count his words, he could count them all (Sahih
+  // al-Bukhari 3567). (That he never rushed his words is not in the scene, which keeps to this hadith, so it stays as it
+  // is.)
+  "sign-words-you-could-count": [
+    ["How did he ﷺ speak?", "Slowly and clearly", "Aishah said: he would talk so clearly"],
+    ["What could a person count when he ﷺ spoke?", "His ﷺ words", "that if a counter counted his words", "they could all be counted"]
+  ],
+  // Abu Hurairah said: al-Hasan ibn Ali took a date of the sadaqah and put it in his mouth, and he said: kikh, kikh,
+  // throw it out; do you not know that we do not eat the sadaqah? (Sahih Muslim 1069a). (What al-Hasan took stays as it
+  // is, since the heap of sadaqah dates is there from the scene's start.)
+  "sign-a-date-of-sadaqah": [
+    ["Why did he ﷺ stop him?", "His family eats no sadaqah", "do you not know we do not eat sadaqah?"],
+    ["The family of the Prophet ﷺ does not take sadaqah.", "True", "do you not know we do not eat sadaqah?"]
+  ],
+  // Jabir ibn Abdullah said: he asked his family for a condiment; they said: we have nothing but vinegar. He called for
+  // it and ate with it, and said: vinegar is a good condiment. And Jabir said: I have loved vinegar ever since (Sahih
+  // Muslim 2052). (What Jabir loved keeps its picture cards.)
+  "sign-a-good-condiment": [
+    ["What did his family have to eat with the bread?", "Only vinegar", "they said: we have nothing but vinegar"],
+    ["He ﷺ ate the plain food at home and praised it.", "True", "he called for it, and ate with it", "and said: vinegar is a good condiment"]
+  ],
+  // Ibn Umar said: I saw him mount his camel at Dhul-Hulayfah, then begin the talbiyah when it stood upright (Sahih
+  // al-Bukhari 1514). (Where he began keeps its map.)
+  "sign-labbayk-as-it-rose": [
+    ["When exactly did he ﷺ begin?", "When his camel stood up", "then labbayk, as it stood upright"],
+    ["Dhul-Hulaifah is the miqat for people from Madinah.", "True", "at Dhul-Hulayfah"]
+  ],
+  // Umm al-Fadl bint al-Harith said: people by her differed on the day of Arafah about whether he was fasting; some said
+  // he is fasting, and some said he is not. So she sent him a bowl of milk while he stood on his camel, and he drank it
+  // (Sahih al-Bukhari 1661).
+  "sign-a-bowl-of-milk": [
+    ["What did the people differ over on the day of Arafah?", "Whether he ﷺ was fasting", "some said: he is fasting", "and some said: he is not fasting"],
+    ["How did Umm al-Fadl find out?", "She sent him a bowl of milk", "so Umm al-Fadl sent him a bowl of milk", "and he drank it"],
+    ["A question can be settled wisely, without a quarrel.", "True", "so Umm al-Fadl sent him a bowl of milk", "and he drank it"]
+  ],
+  // Nubayshah al-Hudhali said: he said: the days of Tashriq are days of eating and drinking, and of remembering Allah
+  // (Sahih Muslim 1141). (When they fall, and Eid's joy lasting several days, are not in the scene, so they stay as they
+  // are.)
+  "sign-days-of-tashriq": [
+    ["The days of tashriq are for what?", "Eating, drinking and dhikr", "are days of eating", "and of remembering Allah"]
   ]
 };
 

@@ -1412,6 +1412,13 @@ const STATES: State[] = [
   { id: "scene-a-modest-pace", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-the-day-of-arafah-a-modest-pace" ask="when there was enough space" /> },
   { id: "scene-salam-to-the-boys", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-everyday-manners-salam-to-the-children" ask="Why did Anas say salam" /> },
   { id: "scene-joy-at-a-wedding", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-marriage-joy-at-a-wedding" ask="react to the wedding guests" /> },
+  { id: "scene-the-easier-of-two", render: () => <SceneQuestionDemo lessonId="lesson-deep-seerah-khuluq-easier" ask="Which choice did he" /> },
+  { id: "scene-words-you-could-count", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-words-you-could-count" ask="What could a person count" /> },
+  { id: "scene-a-date-of-sadaqah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-zakat-hasan-and-the-date" ask="stop him" /> },
+  { id: "scene-a-good-condiment", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-eating-drinking-a-good-condiment" ask="eat with the bread" /> },
+  { id: "scene-labbayk-as-it-rose", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-labbayk-as-the-camel-rose" ask="When exactly did he" /> },
+  { id: "scene-a-bowl-of-milk", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-umm-al-fadl-milk" ask="How did Umm al-Fadl find out" /> },
+  { id: "scene-days-of-tashriq", render: () => <SceneQuestionDemo lessonId="lesson-deep-days-tashriq" ask="are for what" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
