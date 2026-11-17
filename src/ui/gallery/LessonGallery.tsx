@@ -1328,6 +1328,13 @@ const STATES: State[] = [
   { id: "scene-quba-peace", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-let-us-make-peace" ask="told about the fight" /> },
   { id: "scene-better-than-a-servant", render: () => <SceneQuestionDemo lessonId="lesson-deep-ali-better-than-servant" ask="Allahu Akbar said" /> },
   { id: "scene-thumamah-freed", render: () => <SceneQuestionDemo lessonId="lesson-deep-fresh-start-thumamah" ask="on the third day" /> },
+  { id: "scene-the-last-brick", render: () => <SceneQuestionDemo lessonId="lesson-deep-ahzab2-the-last-brick" ask="Who is that brick" /> },
+  { id: "scene-green-land", render: () => <SceneQuestionDemo lessonId="lesson-deep-kahf3-why-he-was-called-al-khidr" ask="where he sat" /> },
+  { id: "scene-mat-for-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-children-a-row-behind-him" ask="lined up with Anas" /> },
+  { id: "scene-held-back", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-with-you-by-intention" ask="counted as with them" /> },
+  { id: "scene-valley-of-the-ansar", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-but-for-hijrah" ask="Whose valley" /> },
+  { id: "scene-kept-for-you", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-we-kept-this-for-you" ask="came out to Makhramah" /> },
+  { id: "scene-long-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-starting-out-a-long-night-ends" ask="night of his journey" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

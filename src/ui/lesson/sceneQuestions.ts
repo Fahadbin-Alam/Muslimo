@@ -4270,6 +4270,59 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Prophet ﷺ say on the third day?", "Set Thumamah free", "Then he said: set Thumamah free"],
     ["How did Thumamah feel about the Prophet ﷺ after Islam?", "He loved him most of all", "Your face is now the dearest face to me"],
     ["Kindness can open a person's heart to Islam.", "True", "Then he said: set Thumamah free", "He came in: I testify, no god but Allah"]
+  ],
+  // My likeness and the prophets' before me is a man who built a house, fine and fair, but for one brick's place in a
+  // corner; the folk went round it and wondered at it, and said: if only this brick were set! So I am that brick, and I
+  // am the last of the prophets (Sahih al-Bukhari 3535).
+  "sign-the-last-brick": [
+    ["What did the house lack, in the hadith?", "One brick", "Is a man who built a house, fine and fair", "But for one brick's place in a corner"],
+    ["Who is that brick, in the hadith?", "The Prophet ﷺ", "So I am that brick"],
+    ["What is Muhammad ﷺ, in 33:40?", "The last of the Prophets", "And I am the last of the prophets"]
+  ],
+  // He was named al-Khidr because he sat on a white, barren land, and lo, it stirred green behind him (Sahih al-Bukhari
+  // 3402). (What kind of land he sat on stays on its usual picture: the white land is there from the scene's start.)
+  "sign-green-land": [
+    ["What happened where he sat, in the hadith?", "The land turned green", "He was named al-Khidr", "And lo, it stirred green behind him"],
+    ["Khadra in Arabic means green.", "True", "He was named al-Khidr", "And lo, it stirred green behind him"]
+  ],
+  // Mulaykah invited him to food she made; he ate of it, then said: get up, and let me lead you in prayer. Anas went to
+  // their mat, dark from long use, and sprinkled it with water; Anas and the orphan lined up behind him, and the old
+  // lady behind them, and he prayed two rak'ahs with them, then left (Sahih al-Bukhari 380).
+  "sign-mat-for-prayer": [
+    ["What did Anas do for him ﷺ to pray on?", "He washed an old mat", "I went to our mat, dark from long use", "And sprinkled it with water"],
+    ["Who lined up with Anas behind him ﷺ?", "An orphan boy", "The orphan and I lined up behind him"],
+    ["The old lady stood behind the two boys.", "True", "And the old lady behind us"]
+  ],
+  // He returned from Tabuk and neared Madinah, and said: in Madinah are folk; you went no way and crossed no valley but
+  // they were with you. They said: and they are in Madinah? He said: and they are in Madinah; an excuse held them back
+  // (Sahih al-Bukhari 4423).
+  "sign-held-back": [
+    ["When did the Prophet ﷺ say this, per Anas?", "Returning from Tabuk", "He returned from Tabuk and neared Madinah"],
+    ["A sincere intention can earn reward without the deed.", "True", "But they were with you"],
+    ["Why were some in Madinah counted as with them?", "A real excuse stopped them", "An excuse held them back"]
+  ],
+  // If the Ansar took a valley or a pass, I would take the valley of the Ansar; and but for the hijrah, I would be one
+  // of the Ansar. Abu Hurairah said: he was not unjust; they sheltered him and helped him (Sahih al-Bukhari 3779).
+  "sign-valley-of-the-ansar": [
+    ["Whose valley would the Prophet ﷺ take?", "The Ansar's valley", "If the Ansar took a valley or a pass", "I would take the valley of the Ansar"],
+    ["Why was the Prophet ﷺ not counted among the Ansar?", "Because he made the hijrah", "And but for the hijrah", "I would be one of the Ansar"],
+    ["Abu Hurayrah said the Ansar sheltered and helped him.", "True", "They sheltered him and helped him"]
+  ],
+  // He shared out cloaks and gave Makhramah none of them; Makhramah said to his son: let us go to him, and at his door:
+  // go in and call him for me; he came out to him wearing one of them, and said: we kept this for you; Makhramah looked
+  // at it and said: Makhramah is pleased (Sahih al-Bukhari 2599).
+  "sign-kept-for-you": [
+    ["He ﷺ remembered Makhramah and kept a cloak for him.", "True", "He came out to him, wearing one of them", "He said: we kept this for you"],
+    ["What did he ﷺ say when he came out to Makhramah?", "We kept this for you", "He said: we kept this for you"],
+    ["How did Makhramah feel about the cloak?", "He was pleased", "Makhramah looked at it, and was pleased"]
+  ],
+  // Abu Hurairah said: on my way to him I said: O night, how long and tiring! Yet from the land of kufr it saved us. A
+  // slave of mine ran away on the way. When I came to him I gave my pledge, and as I was with him the slave appeared; he
+  // said: O Abu Hurairah, here is your slave; I said: he is free, for the sake of Allah (Sahih al-Bukhari 2531).
+  "sign-long-night": [
+    ["What did Abu Hurairah call the night of his journey?", "Long and tiring", "O night, how long and tiring!"],
+    ["Abu Hurairah's slave ran away from him on the way.", "True", "A slave of mine ran away on the way"],
+    ["What did Abu Hurairah do when his slave came back?", "He freed him for Allah", "I said: he is free, for the sake of Allah"]
   ]
 };
 
