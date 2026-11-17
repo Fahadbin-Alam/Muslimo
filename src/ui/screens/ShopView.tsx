@@ -603,7 +603,7 @@ function HadithRows({ user, onBuy, onOpen }: { user: UserProfile; onBuy: () => v
 }
 
 /** The shop's shelves, one at a time, so the screen never shows everything at once. */
-export type ShopShelf = "hearts" | "hadith" | "icons" | "dates";
+export type ShopShelf = "plans" | "hearts" | "hadith" | "icons" | "dates";
 
 function shelfLabel(shelf: ShopShelf) {
   switch (shelf) {
@@ -613,16 +613,18 @@ function shelfLabel(shelf: ShopShelf) {
       return t("Icons");
     case "dates":
       return t("Dates");
+    case "plans":
+      return t("Premium");
     default:
       return t("Hearts");
   }
 }
 
-const SHELF_ICONS: Record<ShopShelf, IconName> = { hearts: "heart", hadith: "scroll", icons: "star8", dates: "date" };
+const SHELF_ICONS: Record<ShopShelf, IconName> = { plans: "crown", hearts: "heart", hadith: "scroll", icons: "star8", dates: "date" };
 
-/** The shelf a store item sits on: hearts and power-ups on Hearts, date packs and plans on Dates. */
+/** The shelf a store item sits on: hearts and power-ups on Hearts, date packs on Dates, plans on Premium. */
 export function itemShelf(item: ShopItem): ShopShelf {
-  if (item.tier) return "dates";
+  if (item.tier) return "plans";
   if (item.refillsHearts || item.heartsGranted || (item.type === "rewarded_ad" && !item.gemsGranted)) return "hearts";
   return item.gemsGranted ? "dates" : "hearts";
 }
@@ -723,13 +725,17 @@ export function ShopView({
   const pending = pendingItemId ?? pendingId;
   const rowProps = { user, storePrices, busy, pendingId: pending, onBuy: buy, heartVideosWatched };
 
-  // Only shelves with something on them; Premium's "can't be bought here" note lives on the Dates shelf.
+  // Only shelves with something on them. The plans get their own Premium shelf, first and open by default
+  // whenever the store sells them, so nobody has to hunt for them. When this build cannot sell, the
+  // "almost every lesson is free" note stays on the Dates shelf, with no Premium word anywhere.
   const shelves: ShopShelf[] = [];
+  if (plans.length) shelves.push("plans");
   if (hearts.length || powerUps.length || onBuyStreakFreeze) shelves.push("hearts");
   if (onBuyHadith || onBuySecretHint) shelves.push("hadith");
   if (onBuyIcon) shelves.push("icons");
-  if (gemPacks.length || plans.length || (!canBuyWithMoney && !premium)) shelves.push("dates");
-  const [picked, setPicked] = useState<ShopShelf | undefined>(focus === "premium" ? "dates" : undefined);
+  const appHint = !canBuyWithMoney && !premium;
+  if (gemPacks.length || appHint) shelves.push("dates");
+  const [picked, setPicked] = useState<ShopShelf | undefined>(focus === "premium" ? (plans.length ? "plans" : "dates") : undefined);
   const wanted = shelfProp ?? picked;
   const shelf: ShopShelf | undefined = wanted && shelves.includes(wanted) ? wanted : shelves[0];
   const pickShelf = (next: ShopShelf) => {
@@ -854,19 +860,19 @@ export function ShopView({
 
         {shelf === "hadith" && onBuySecretHint ? <SecretHintRow user={user} onBuy={onBuySecretHint} /> : null}
 
-        {shelf === "dates" && noAdsPlans.length ? (
+        {shelf === "plans" && noAdsPlans.length ? (
           <View style={styles.section}>
             <PremiumCard plans={noAdsPlans} kind="no_ads" {...rowProps} />
           </View>
         ) : null}
 
-        {shelf === "dates" && premiumPlans.length ? (
+        {shelf === "plans" && premiumPlans.length ? (
           <View style={styles.section} onLayout={(event) => focusPremium(event.nativeEvent.layout.y)}>
             <PremiumCard plans={premiumPlans} {...rowProps} />
           </View>
         ) : null}
 
-        {shelf === "dates" && !canBuyWithMoney && !premium ? (
+        {shelf === "dates" && appHint ? (
           // Only what is true here, in a child's words: this build cannot sell the crown units (premiumOnly,
           // a handful of circles), so they stay locked, and every other lesson is free to play.
           <View style={styles.appHint} testID="shop-app-hint" onLayout={(event) => focusPremium(event.nativeEvent.layout.y)}>
@@ -901,7 +907,7 @@ export function ShopView({
               <Text style={styles.restoreText}>{t("Restore purchases")}</Text>
             </Tappable>
           ) : null}
-          {!plans.length || shelf !== "dates" ? null : <Text style={styles.legal}>{t("Renews automatically. Cancel anytime in store settings.")}</Text>}
+          {!plans.length || shelf !== "plans" ? null : <Text style={styles.legal}>{t("Renews automatically. Cancel anytime in store settings.")}</Text>}
           <View style={styles.links}>
             <Tappable onPress={() => openGated(legalLinks.terms)} accessibilityRole="link" style={styles.link} testID="shop-terms">
               <Text style={styles.linkText}>{t("Terms")}</Text>

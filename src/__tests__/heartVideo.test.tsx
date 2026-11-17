@@ -78,7 +78,7 @@ describe("videos for a heart on the out-of-hearts sheet", () => {
   it("plays the shop's heart video right there; the third video gives one heart and the lesson goes on", async () => {
     showRewardedAd.mockResolvedValue({ ok: true, heartsGranted: 1, gemsGranted: 0, transactionId: "ad" });
     await runOutOfHearts();
-    expect(screen.getByTestId("refill-tomorrow")).toBeTruthy();
+    expect(screen.getByTestId("refill-next-heart")).toBeTruthy();
     expect(screen.getByTestId("refill-video")).toHaveTextContent("WATCH VIDEO 1 OF 3");
 
     // Two videos only tick off their dots: the sheet stays, still with no heart.
@@ -116,20 +116,20 @@ describe("videos for a heart on the out-of-hearts sheet", () => {
     showRewardedAd.mockResolvedValue({ ok: false, message: "No fill" });
     await runOutOfHearts();
     await press("refill-video");
-    expect(screen.getByTestId("refill-tomorrow")).toBeTruthy();
+    expect(screen.getByTestId("refill-next-heart")).toBeTruthy();
     expect(screen.getByText("No video right now")).toBeTruthy();
     expect(savedUser().hearts.current).toBe(0);
   });
 
-  it("never offers the video while the free refill is still there", async () => {
+  it("offers the video, never a free refill, even to a learner who never had one", async () => {
     await runOutOfHearts(makeUser({ hearts: hearts(1) }));
-    expect(screen.getByTestId("refill-claim")).toBeTruthy();
-    expect(screen.queryByTestId("refill-video")).toBeNull();
+    expect(screen.queryByTestId("refill-claim")).toBeNull();
+    expect(screen.getByTestId("refill-video")).toBeTruthy();
   });
 });
 
 describe("the out-of-hearts sheet's video button", () => {
-  const props = { visible: true, variant: "shop" as const, maxHearts: 5, mascotVariant: "hijabi", onShop: jest.fn(), onEndLesson: jest.fn() };
+  const props = { visible: true, maxHearts: 5, mascotVariant: "hijabi", onShop: jest.fn(), onEndLesson: jest.fn() };
 
   it("leads with FREE HEART and keeps GET HEARTS and END LESSON under it", async () => {
     const onWatchVideo = jest.fn();

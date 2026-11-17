@@ -184,6 +184,10 @@ const TUFT_SIZE = 26;
 const LIVE_MARGIN = 1;
 /** Units beyond the live ones (on each side) that still draw their circles; the rest are an empty stretch. */
 const MOUNT_MARGIN = 3;
+/** Screen heights either side of the two on-screen bands where pictures still move (see moveSpan). */
+const MOVE_MARGIN = 0.25;
+/** Tests draw the scenery with the circles; the app draws it a frame later (see `dressed`). */
+const DRESS_AT_ONCE = process.env.NODE_ENV === "test";
 /**
  * Units with at least this many rows (Al-Baqarah has over 250) draw their pictures, tufts and clouds only for
  * the rows near the screen, a few screens at a time, so a long unit stays light on a phone.
@@ -1467,11 +1471,14 @@ function PathMascot({
   mood,
   accent,
   testID,
+  animated = true,
 }: {
   variant: string;
   mood: "happy" | "cheer";
   accent: string;
   testID: string;
+  /** Off while it is off the screen: it stands still and costs nothing. */
+  animated?: boolean;
 }) {
   const { asleep } = useScene();
   return (
@@ -1481,6 +1488,7 @@ function PathMascot({
         mood={asleep ? "sleepy" : mood}
         size={MASCOT_SIZE}
         accent={accent}
+        animated={animated}
         tappable
         testID={testID}
       />
@@ -1499,14 +1507,17 @@ function PathEnd({
   mascotVariant,
   width,
   onNextTopic,
+  active = true,
 }: {
   done: boolean;
   color: string;
   mascotVariant: string;
   width: number;
   onNextTopic?: () => void;
+  /** Near the screen: the trophy bobs, the mascot and the camel move. Far down the path they hold still. */
+  active?: boolean;
 }) {
-  const bob = useLoop((value) => pingPong(value, 700), done);
+  const bob = useLoop((value) => pingPong(value, 700), done && active);
   const translateY = bob.interpolate({
     inputRange: [0, 1],
     outputRange: [0, -6],
@@ -1535,6 +1546,7 @@ function PathEnd({
             variant={mascotVariant}
             mood={done ? "cheer" : "happy"}
             accent={color}
+            animated={active}
             testID="path-end-mascot"
           />
         </View>
@@ -1551,7 +1563,7 @@ function PathEnd({
               size={CAMEL_SIZE}
               range={camelRange}
               accent={color}
-              walking={done}
+              walking={done && active}
               faceLeft
               tappable
               testID="path-end-camel"
@@ -1697,8 +1709,26 @@ export function LearnPath({
   );
   /** The screen-high stretch of the path on screen (scroll y / screen height), for long units (LONG_UNIT_ROWS). */
   const [screenBand, setScreenBand] = useState<number | undefined>(undefined);
+  /**
+   * The skies, pictures and animals come a moment after the circles: the path shows at once when the Learn tab opens
+   * (one long render on a cheap phone felt like the tab button did nothing), and the scenery follows a frame later.
+   */
+  const [dressed, setDressed] = useState(DRESS_AT_ONCE);
+  useEffect(() => {
+    if (dressed) return undefined;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const frame = requestAnimationFrame(() => {
+      timer = setTimeout(() => setDressed(true), 0);
+    });
+    return () => {
+      cancelAnimationFrame(frame);
+      if (timer) clearTimeout(timer);
+    };
+  }, [dressed]);
   const viewport = useRef(0);
   const scrollY = useRef(0);
+  /** Where the end of the path (the trophy) starts, px from the top of the scroll. */
+  const endY = useRef<number | undefined>(undefined);
   const unitY = useRef<Record<string, number>>({});
   const bannerH = useRef<Record<string, number>>({});
   const stickyH = useRef<Record<string, number>>({});
@@ -2262,6 +2292,44 @@ export function LearnPath({
       (itemsY.current[group.unit.id] ?? SKY_BANNER) + group.rowTops[index];
     return y + ROW_H >= span.from && y <= span.to;
   };
+  /**
+   * The stretch of the path (px from the top of the scroll) where pictures move: the screen-high band the learner is
+   * in and the next one, a little either side. Skies, animals, the camel and the mascot outside it are drawn but hold
+   * still, so a cheap phone only animates what can be seen (a path had about 60 things moving, half off the screen).
+   * Undefined until the path has measured itself: then every drawn unit moves, as before.
+   */
+  const moveSpan = (() => {
+    const screen = viewport.current;
+    if (screenBand === undefined || screen <= 0) return undefined;
+    return {
+      from: (screenBand - MOVE_MARGIN) * screen,
+      to: (screenBand + 2 + MOVE_MARGIN) * screen,
+    };
+  })();
+  /** Whether any of a unit lies in the moving stretch. */
+  const unitMoves = (group: Group) => {
+    if (!moveSpan) return true;
+    const top = unitY.current[group.unit.id];
+    if (top === undefined) return true;
+    const bottom =
+      top + (itemsY.current[group.unit.id] ?? SKY_BANNER) + group.rowsHeight;
+    return bottom >= moveSpan.from && top <= moveSpan.to;
+  };
+  /** Whether a row lies in the moving stretch (its pictures, camel and mascot move). */
+  const rowMoves = (group: Group, index: number) => {
+    if (!moveSpan) return true;
+    const top = unitY.current[group.unit.id];
+    if (top === undefined) return true;
+    const y =
+      top +
+      (itemsY.current[group.unit.id] ?? SKY_BANNER) +
+      group.rowTops[index];
+    return y + ROW_H >= moveSpan.from && y <= moveSpan.to;
+  };
+  const endMoves =
+    !moveSpan ||
+    endY.current === undefined ||
+    (endY.current <= moveSpan.to && endY.current + 260 >= moveSpan.from);
   const sticky = stickyId
     ? layout.byUnit.find((group) => group.unit.id === stickyId)
     : undefined;
@@ -2334,6 +2402,8 @@ export function LearnPath({
               const unitLive = holdsOpen || isLive(group.unitIndex);
               const unitMounted = holdsOpen || isMounted(group.unitIndex);
               const nearWindow = unitLive ? unitWindow(group) : undefined;
+              const unitMoving = unitLive && unitMoves(group);
+              const unitDressed = unitLive && dressed;
               return (
                 <View
                   key={unit.id}
@@ -2344,7 +2414,7 @@ export function LearnPath({
                     tryScrollToCurrent();
                   }}
                 >
-                  {unitLive ? (
+                  {unitDressed ? (
                     <PathWeather
                       weather={group.weather}
                       world={group.world}
@@ -2352,7 +2422,7 @@ export function LearnPath({
                       height={
                         UNIT_PAD + SKY_BANNER + 22 + group.rowsHeight + 40
                       }
-                      animated={unitLive}
+                      animated={unitMoving}
                       meteor={group.unitIndex === Math.max(0, currentUnitIndex)}
                       window={nearWindow}
                     />
@@ -2422,7 +2492,7 @@ export function LearnPath({
                             (laneEnd - laneStart - CAMEL_SIZE - camelRange) / 2,
                           );
                         const near =
-                          unitLive && rowNear(group, index, nearWindow);
+                          unitDressed && rowNear(group, index, nearWindow);
                         const pictures = near
                           ? group.scenery.find((spot) => spot.index === index)
                           : undefined;
@@ -2451,7 +2521,7 @@ export function LearnPath({
                                 tryScrollToCurrent();
                             }}
                           >
-                            {pictures && unitLive ? (
+                            {pictures && unitDressed ? (
                               <View
                                 style={[
                                   styles.decor,
@@ -2473,7 +2543,7 @@ export function LearnPath({
                                 <PathScenery
                                   kind={pictures.kind}
                                   size={DECOR_SIZE}
-                                  animated={unitLive}
+                                  animated={unitMoving && rowMoves(group, index)}
                                   tappable
                                   seed={group.unitIndex * 7 + index}
                                   roam={{
@@ -2520,7 +2590,7 @@ export function LearnPath({
                                 )}
                               </View>
                             ) : null}
-                            {index === group.camelIndex && unitLive ? (
+                            {index === group.camelIndex && unitDressed ? (
                               // Walks right across the row: off one edge of the screen and back in from the other, passing behind the circle.
                               <View
                                 style={[
@@ -2537,7 +2607,7 @@ export function LearnPath({
                                   wrapWidth={width}
                                   home={camelLeft + camelRange / 2}
                                   accent={color}
-                                  walking
+                                  walking={unitMoving && rowMoves(group, index)}
                                   tappable
                                   testID="path-camel"
                                 />
@@ -2562,6 +2632,7 @@ export function LearnPath({
                                   variant={mascotVariant}
                                   mood="happy"
                                   accent={accent}
+                                  animated={unitMoving && rowMoves(group, index)}
                                   testID="path-mascot"
                                 />
                               </View>
@@ -2710,13 +2781,20 @@ export function LearnPath({
               );
             })}
             {units.length > 0 ? (
+              <View
+                onLayout={(event: LayoutChangeEvent) => {
+                  endY.current = event.nativeEvent.layout.y;
+                }}
+              >
               <PathEnd
                 done={topicDone}
+                active={endMoves}
                 color={accent}
                 mascotVariant={mascotVariant}
                 width={width}
                 onNextTopic={onNextTopic}
               />
+              </View>
             ) : null}
           </QuakeView>
         </ScrollView>
