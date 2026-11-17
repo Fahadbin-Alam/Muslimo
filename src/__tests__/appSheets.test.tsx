@@ -272,30 +272,23 @@ describe("app sheets", () => {
     expect(props.onSave).toHaveBeenCalledTimes(1);
   });
 
-  it("offers a free refill without asking for a review, filling the empty hearts first", async () => {
-    jest.useFakeTimers();
-    const onRefill = jest.fn();
-    const onShop = jest.fn();
-    await render(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" onRefill={onRefill} onShop={onShop} />);
-    expect(screen.queryByText(/review|stars/i)).toBeNull();
-    // Out of hearts means the row starts empty.
-    expect(screen.getByTestId("refill-hearts").props.accessibilityLabel).toBe("0 of 5 hearts");
-    await fireEvent.press(screen.getByTestId("refill-claim"));
-    expect(onRefill).not.toHaveBeenCalled();
-    await act(async () => {
-      jest.advanceTimersByTime(2000);
-    });
-    expect(screen.getByTestId("refill-hearts").props.accessibilityLabel).toBe("5 of 5 hearts");
-    expect(onRefill).toHaveBeenCalledTimes(1);
-    await fireEvent.press(screen.getByTestId("refill-shop"));
-    expect(onShop).toHaveBeenCalled();
-    jest.useRealTimers();
-  });
-
-  it("sends the learner to the shop or out of the lesson once the free refill is used", async () => {
+  it("never gives a free refill: the hearts stay empty and only the shop or END LESSON are offered", async () => {
     const onShop = jest.fn();
     const onEndLesson = jest.fn();
-    await render(<RefillSheet visible variant="shop" maxHearts={5} mascotVariant="hijabi" onShop={onShop} onEndLesson={onEndLesson} />);
+    await render(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" onShop={onShop} onEndLesson={onEndLesson} />);
+    expect(screen.queryByTestId("refill-claim")).toBeNull();
+    expect(screen.queryByText(/free refill/i)).toBeNull();
+    expect(screen.getByTestId("refill-hearts").props.accessibilityLabel).toBe("0 of 5 hearts");
+    await fireEvent.press(screen.getByText("GET HEARTS"));
+    await fireEvent.press(screen.getByText("END LESSON"));
+    expect(onShop).toHaveBeenCalledTimes(1);
+    expect(onEndLesson).toHaveBeenCalledTimes(1);
+  });
+
+  it("sends the learner to the shop or out of the lesson", async () => {
+    const onShop = jest.fn();
+    const onEndLesson = jest.fn();
+    await render(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" onShop={onShop} onEndLesson={onEndLesson} />);
     expect(screen.queryByTestId("refill-claim")).toBeNull();
     expect(screen.getByTestId("refill-hearts").props.accessibilityLabel).toBe("0 of 5 hearts");
     await fireEvent.press(screen.getByText("GET HEARTS"));
