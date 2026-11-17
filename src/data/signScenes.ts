@@ -877,7 +877,14 @@ export type SignKind =
   | "a-dua-for-the-sick"
   | "the-work-of-his-hands"
   | "every-good-is-charity"
-  | "a-hundred-times-a-day";
+  | "a-hundred-times-a-day"
+  | "close-in-the-rows"
+  | "zayd-was-truthful"
+  | "this-is-my-sunnah"
+  | "not-home-at-night"
+  | "a-charity-for-travellers"
+  | "before-you-sleep"
+  | "a-secret-not-told";
 
 export type SignScene = {
   id: string;
@@ -4377,6 +4384,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Al-Agharr al-Muzani said that the Messenger of Allah ﷺ said: O people, turn to Allah in repentance, for I turn to Him in repentance a hundred times a day. In another narration he ﷺ said: I ask Allah's forgiveness a hundred times a day.",
     sources: [muslim("2702b"), muslim("2702a")]
+  },
+  {
+    id: "sign-close-in-the-rows",
+    kind: "close-in-the-rows",
+    caption:
+      "Jabir ibn Samurah said: the Prophet ﷺ came out to us and saw us sitting in circles, and said: why do I see you apart, in groups? Then he came out to us again and said: will you not draw up in rows as the angels draw up before their Lord? We asked: how do the angels draw up before their Lord? He said: they complete the first rows, and keep close together in the row.",
+    sources: [muslim("430")]
+  },
+  {
+    id: "sign-zayd-was-truthful",
+    kind: "zayd-was-truthful",
+    caption:
+      "Zayd ibn Arqam said: I was on a campaign and heard Abdullah ibn Ubayy say: do not spend on those who are with the Messenger of Allah ﷺ, so that they go away from him. I told my uncle, or Umar, who told the Prophet ﷺ. He sent for Abdullah ibn Ubayy and his companions, and they swore they had not said it; so he believed him and not me, and I grieved as never before. Then Allah revealed Surah al-Munafiqun, and he sent for me, recited it and said: Allah has confirmed you, O Zayd.",
+    sources: [bukhari("4900")]
+  },
+  {
+    id: "sign-this-is-my-sunnah",
+    kind: "this-is-my-sunnah",
+    caption:
+      "Anas ibn Malik said: three came to the homes of the wives of the Prophet ﷺ, asking about his worship, and when they were told, it was as if they thought it little. One said: as for me, I will pray all night, always. Another said: I will fast all the time and not break my fast. Another said: I will keep away from women and never marry. Then he came to them and said: by Allah, I fear Allah more than you do and am more mindful of Him, yet I fast and break my fast, I pray and I sleep, and I marry women; so whoever turns away from my Sunnah is not of me.",
+    sources: [bukhari("5063")]
+  },
+  {
+    id: "sign-not-home-at-night",
+    kind: "not-home-at-night",
+    caption:
+      "Jabir ibn Abdullah said that the Messenger of Allah ﷺ said: when one of you has been away a long time, he should not come to his family at night.",
+    sources: [bukhari("5244")]
+  },
+  {
+    id: "sign-a-charity-for-travellers",
+    kind: "a-charity-for-travellers",
+    caption:
+      "Ya'la ibn Umayyah said: I said to Umar ibn al-Khattab: the ayah allows shortening the prayer if you fear that the disbelievers may harm you, and now the people are safe. He said: I wondered at what you wonder at, so I asked the Messenger of Allah ﷺ about it, and he said: it is a charity Allah has given you, so accept His charity.",
+    sources: [muslim("686a"), muslim("686")]
+  },
+  {
+    id: "sign-before-you-sleep",
+    kind: "before-you-sleep",
+    caption:
+      "Suhayl said that Abu Salih used to tell us: when one of us goes to sleep, lie on the right side and say: O Allah, Lord of the heavens, Lord of the earth and Lord of the mighty Throne, our Lord and Lord of everything, Splitter of the grain and the date-stone, Revealer of the Torah, the Injil and the Furqan, I seek refuge in You from the evil of everything You hold by the forelock. O Allah, You are the First, there is nothing before You; You are the Last, there is nothing after You; You are the Evident, there is nothing above You; You are the Innermost, there is nothing beyond You. Settle our debt and free us from want. Abu Salih told it from Abu Hurairah, from the Prophet ﷺ.",
+    sources: [muslim("2713")]
+  },
+  {
+    id: "sign-a-secret-not-told",
+    kind: "a-secret-not-told",
+    caption:
+      "Umar said: when Hafsah bint Umar was widowed, I met Uthman ibn Affan and offered him Hafsah. He said: I will think it over; and after some nights he said: I have decided not to marry at present. Then I met Abu Bakr and said: if you wish, I will marry you to Hafsah. Abu Bakr was silent and gave me no answer, and I was angrier with him than with Uthman. Some nights later, the Messenger of Allah ﷺ asked for her hand, and I married her to him. Then Abu Bakr met me and said: perhaps you were angry with me when you offered me Hafsah and I gave you no answer? Nothing kept me from answering you but that I knew the Messenger of Allah ﷺ had spoken of her, and I would not tell his secret; had he left her, I would have accepted her.",
+    sources: [bukhari("4005")]
   }
 ];
 
@@ -6497,7 +6553,37 @@ export const SIGN_LESSONS: Record<string, string> = {
   // He ﷺ asked Allah's forgiveness a hundred times a day.
   "deep-dua-dhikr-istighfar": "sign-a-hundred-times-a-day",
   // Turn to Allah: he ﷺ turned to Him a hundred times a day.
-  "deep-tahrim2-a-hundred-times": "sign-a-hundred-times-a-day"
+  "deep-tahrim2-a-hundred-times": "sign-a-hundred-times-a-day",
+  // Rows like the angels: the first rows complete, and close together.
+  "deep-saffat1-rows-like-the-angels": "sign-close-in-the-rows",
+  // Why do I see you apart, in groups? Draw up in rows.
+  "deep-maarij4-in-scattered-groups": "sign-close-in-the-rows",
+  // The hypocrites: Zayd heard Ibn Ubayy, and Allah confirmed Zayd.
+  "surah-meaning-63-1-8": "sign-zayd-was-truthful",
+  // A boy who told the truth: Allah confirmed Zayd.
+  "deep-munafiqun1-zaid-heard-the-words": "sign-zayd-was-truthful",
+  // Marriage is part of his Sunnah, not a lesser way.
+  "deep-marriage-mistakes-too-holy-to-marry": "sign-this-is-my-sunnah",
+  // I fast and break my fast, I pray and I sleep, and I marry.
+  "deep-raad4-my-sunnah": "sign-this-is-my-sunnah",
+  // After a long time away, do not come home to your family at night.
+  "deep-marriage-mistakes-looking-for-faults": "sign-not-home-at-night",
+  // Do not come back to your family at night after a long trip.
+  "deep-book-marriage-dont-surprise-them-at-night": "sign-not-home-at-night",
+  // Shortening the prayer on a journey: a charity from Allah.
+  "surah-meaning-4-92-104": "sign-a-charity-for-travellers",
+  // A gift for travellers: accept His charity.
+  "deep-nisa3-shorten": "sign-a-charity-for-travellers",
+  // The First and the Last, in the du'a before sleep.
+  "surah-meaning-57-1-6": "sign-before-you-sleep",
+  // You are the First, nothing before You; the Last, nothing after You.
+  "deep-hadid1-the-first-and-the-last": "sign-before-you-sleep",
+  // You are the Evident and the Innermost.
+  "deep-hadid1-evident-and-innermost": "sign-before-you-sleep",
+  // Umar married his daughter Hafsah to him ﷺ.
+  "sahabi-umar-ibn-al-khattab-family-lineage": "sign-a-secret-not-told",
+  // A husband for Hafsah, and the secret Abu Bakr kept.
+  "deep-umar-hafsah": "sign-a-secret-not-told"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
