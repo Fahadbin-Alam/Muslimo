@@ -532,7 +532,7 @@ function fatihahCure(): SignArt {
 }
 
 /** A thorny samurah tree, its trunk's foot at (x, y), `s` times its size: a flat crown on a forked trunk, thorns under it. */
-const thornyTree = (x: number, y: number, s = 1) => {
+export const thornyTree = (x: number, y: number, s = 1) => {
   const p = (dx: number, dy: number) => `${n(x + dx * s)} ${n(y + dy * s)}`;
   const thorns = [-9, -6, -3, 0, 3, 6, 9]
     .map((dx, i) => {

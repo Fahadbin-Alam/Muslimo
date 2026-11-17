@@ -786,7 +786,14 @@ export type SignKind =
   | "marked-cloth"
   | "date-stones"
   | "like-no-other"
-  | "up-and-down";
+  | "up-and-down"
+  | "forgotten-tree"
+  | "cave-at-mina"
+  | "well-of-aris"
+  | "gold-not-kept"
+  | "reached-its-place"
+  | "horse-kept"
+  | "carpets-will-come";
 
 export type SignScene = {
   id: string;
@@ -3651,6 +3658,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jabir ibn Abdullah said: whenever we went up a place, we would say: Allahu akbar, and whenever we went down, we would say: subhan Allah.",
     sources: [bukhari("2993")]
+  },
+  {
+    id: "sign-forgotten-tree",
+    kind: "forgotten-tree",
+    caption:
+      "Tariq ibn Abdur-Rahman said: I set out for Hajj and passed by some people praying. I asked: what is this masjid? They said: this is the tree where the Messenger of Allah ﷺ took the pledge of Ridwan. I went to Sa'id ibn al-Musayyib and told him, and Sa'id said: my father told me that he was among those who pledged to the Messenger of Allah ﷺ beneath the tree. He said: when we set out the following year, we forgot it and could not recognize it. Then Sa'id said: the Companions of Muhammad ﷺ did not know it, and you know it? Then you know better.",
+    sources: [bukhari("4163")]
+  },
+  {
+    id: "sign-cave-at-mina",
+    kind: "cave-at-mina",
+    caption:
+      "Abdullah ibn Mas'ud said: while we were with the Prophet ﷺ in a cave at Mina, Al-Mursalat was revealed to him. He was reciting it, and I was taking it fresh from his mouth, when a snake sprang at us. The Prophet ﷺ said: kill it. We rushed at it, and it got away. The Prophet ﷺ said: it escaped your evil, as you escaped its evil.",
+    sources: [bukhari("1830")]
+  },
+  {
+    id: "sign-well-of-aris",
+    kind: "well-of-aris",
+    caption:
+      "Ibn Umar said: the Messenger of Allah ﷺ had a ring of silver made, and it was on his hand. Afterwards it was on the hand of Abu Bakr, then on the hand of Umar, then on the hand of Uthman, until it fell into the well of Aris. Engraved on it was: Muhammad, the Messenger of Allah.",
+    sources: [bukhari("5873")]
+  },
+  {
+    id: "sign-gold-not-kept",
+    kind: "gold-not-kept",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: if I had gold like Uhud, I would not like three nights to pass while any of it is still with me, except something I keep back for a debt.",
+    sources: [bukhari("6445")]
+  },
+  {
+    id: "sign-reached-its-place",
+    kind: "reached-its-place",
+    caption:
+      "Umm Atiyyah, Nusaybah al-Ansariyyah, said: a sheep was sent to me as charity, and I sent some of it to Aishah. The Prophet ﷺ asked Aishah: do you have anything? She said: nothing but what Nusaybah sent of that sheep. He said: bring it, for it has reached its place.",
+    sources: [bukhari("1446")]
+  },
+  {
+    id: "sign-horse-kept",
+    kind: "horse-kept",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: whoever keeps a horse in Allah's cause, out of faith in Allah and belief in His promise, what it has eaten and drunk, its dung and its urine, will be in his scale on the Day of Resurrection.",
+    sources: [bukhari("2853")]
+  },
+  {
+    id: "sign-carpets-will-come",
+    kind: "carpets-will-come",
+    caption:
+      "Jabir said: the Prophet ﷺ asked: have you got carpets? I said: where would we get carpets? He said: you shall soon have carpets. And I would say to my wife: take your carpets out of my sight, and she would say: did the Prophet ﷺ not tell you that you would soon have carpets? So I would let them be.",
+    sources: [bukhari("3631")]
   }
 ];
 
@@ -5528,7 +5584,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Dimad heard his words of praise and witness three times, never words like them, and pledged on Islam.
   "deep-how-they-came-to-islam-words-like-no-other": "sign-like-no-other",
   // Going up, they said Allahu akbar, and going down, subhan Allah.
-  "deep-found-day-night-going-up-going-down": "sign-up-and-down"
+  "deep-found-day-night-going-up-going-down": "sign-up-and-down",
+  // The year after the pledge, those who pledged forgot the tree and could not recognize it.
+  "deep-fath2-the-tree-was-forgotten": "sign-forgotten-tree",
+  // In a cave at Mina, Al-Mursalat was revealed to him, and a snake that sprang at them got away.
+  "deep-mursalat1-revealed-in-a-cave": "sign-cave-at-mina",
+  // His silver ring was worn by Abu Bakr, Umar and Uthman, until it fell into the well of Aris.
+  "deep-book-dress-the-silver-ring": "sign-well-of-aris",
+  // With gold like Uhud, he would not keep any of it three nights, except something for a debt.
+  "deep-book-riqaq-gold-like-uhud": "sign-gold-not-kept",
+  // Nusaybah's charity sheep, sent on to Aishah, had reached its place, so he asked for it.
+  "deep-zakat-stories-of-charity-nusaybahs-sheep": "sign-reached-its-place",
+  // What a horse kept in Allah's cause eats and drinks is in its keeper's scale.
+  "deep-kids-animal-manners-a-horse-kept-for-allah": "sign-horse-kept",
+  // He told Jabir that carpets would come, and when they came, Jabir let them be.
+  "deep-marriage-weddings-and-new-homes-carpets-will-come": "sign-carpets-will-come"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
