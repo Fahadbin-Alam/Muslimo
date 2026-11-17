@@ -1301,6 +1301,13 @@ const STATES: State[] = [
   { id: "scene-talking-wolf", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-wolf" ask="What did the wolf in the story do" /> },
   { id: "scene-well-dream", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-dream-of-the-well" ask="How many buckets did Ibn Abi Quhafah draw" /> },
   { id: "scene-land-of-palms", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-tabir-a-land-of-palm-trees" ask="Which city did that land turn out to be" /> },
+  { id: "scene-dearer-than-the-world", render: () => <SceneQuestionDemo lessonId="lesson-deep-fath1-dearer-than-the-world" ask="How many times did Umar ask" /> },
+  { id: "scene-milk-of-knowledge", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-milk" ask="where did the milk flow out" /> },
+  { id: "scene-fatihah-cure", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-said-fatihah-ruqyah" ask="What happened to the chief" /> },
+  { id: "scene-cloak-on-the-thorns", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-beautiful-character-generous-truthful-brave" ask="what did he ask the people to give him" /> },
+  { id: "scene-rings-thrown-away", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-sunnah-rings-thrown-away" ask="threw his ring away" /> },
+  { id: "scene-tailors-gourd", render: () => <SceneQuestionDemo lessonId="lesson-deep-saffat5-the-prophet-liked-gourd" ask="look for, in the hadith" /> },
+  { id: "scene-the-eclipse", render: () => <SceneQuestionDemo lessonId="lesson-deep-mughirah-the-eclipse" ask="What should we do at an eclipse" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

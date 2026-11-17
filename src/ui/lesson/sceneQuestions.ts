@@ -4040,6 +4040,68 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What kind of land did he ﷺ see himself migrating to?", "A land of date palms", "From Makkah to a land of palm trees"],
     ["He ﷺ first thought the land might be al-Yamamah.", "True", "I thought it was al-Yamamah or Hajar"],
     ["Which city did that land turn out to be?", "Madinah", "But it was Madinah, Yathrib"]
+  ],
+  // On a journey by night Umar asked him three times, with no answer; Umar moved his camel on ahead, afraid that Quran
+  // would be revealed about him; soon someone called him, and he said: tonight a surah was revealed to me, dearer to me
+  // than all the sun rises on: We have given you a clear victory (Sahih al-Bukhari 4833). (What Allah sent into the
+  // believers' hearts, and which peace was called a clear victory, stay on their usual picture: the scene does not
+  // tell them.)
+  "sign-dearer-than-the-world": [
+    ["How many times did Umar ask before giving up, per Bukhari 4833?", "Three times", "Umar asked three times, with no answer"],
+    ["What did Umar fear, per Bukhari 4833?", "That Quran had come down about him", "Afraid Quran would be revealed about me"],
+    ["How did the Prophet ﷺ describe Al-Fath, per Bukhari 4833?", "Dearer than all the sun rises on", "Dearer to me than all the sun rises on"],
+    ["Ayahs 1-10: what are they about?", "A clear victory", "We have given you a clear victory"]
+  ],
+  // While he slept he was brought a cup of milk, and drank till he saw its wetness come out of his nails; then he gave
+  // what was left to Umar; they asked how he interpreted it, and he said: knowledge (Sahih al-Bukhari 82).
+  "sign-milk-of-knowledge": [
+    ["In the dream, where did the milk flow out?", "Through his nails", "I drank till I saw it come out of my nails"],
+    ["In the dream, what did the Prophet ﷺ give Umar?", "His leftover milk", "While I slept, I was brought a cup of milk", "Then I gave what was left to Umar"],
+    ["What did the Prophet ﷺ give Umar in the dream?", "His leftover milk", "While I slept, I was brought a cup of milk", "Then I gave what was left to Umar"],
+    ["Umar's knowledge came from the Prophet ﷺ.", "True", "Then I gave what was left to Umar", "He said: knowledge"],
+    ["What did the milk in the dream mean?", "Knowledge", "He said: knowledge"],
+    ["What did the Prophet ﷺ say the milk meant?", "Knowledge", "He said: knowledge"]
+  ],
+  // A tribe would not host the travellers; its chief was stung and nothing helped him; one of them would not recite
+  // till they set a reward, and they agreed on a flock of sheep; he blew over him and recited Al-Fatihah, and the chief
+  // walked as if freed from a tether; he said: how did you know it is a ruqyah? You did right; give me a share with you
+  // (Sahih al-Bukhari 2276). (What stung the chief stays on its usual picture: the scene does not tell it.)
+  "sign-fatihah-cure": [
+    ["Which surah did the companion recite?", "Al-Fatihah", "He blew over him and recited Al-Fatihah"],
+    ["What did the companion recite over him?", "Al-Fatihah", "He blew over him and recited Al-Fatihah"],
+    ["What happened to the chief?", "He got up healed", "As if freed from a tether, he walked"],
+    ["What did the Prophet ﷺ ask the companion?", "How did you know it is a ruqyah?", "How did you know it is a ruqyah?"],
+    ["The Prophet ﷺ said they did right.", "True", "You did right; give me a share with you"]
+  ],
+  // Coming back from Hunayn, the people clung to him, asking him, till they pressed him to a thorny tree, and it
+  // snatched his cloak; he stopped and said: give me my cloak; had I camels as many as these thorny trees, I would share
+  // them out among you, and you would find me no miser, liar or coward (Sahih al-Bukhari 2821). (What he likened the
+  // camels to stays on its usual picture: the thorny trees are there from the scene's start.)
+  "sign-cloak-on-the-thorns": [
+    ["When he ﷺ stopped, what did he ask the people to give him?", "His cloak", "And it snatched his cloak away", "He stopped and said: give me my cloak"],
+    ["He ﷺ said they would never find him a miser, a liar or a coward.", "True", "You'd find me no miser, liar or coward"]
+  ],
+  // He took a ring of gold, and the people took gold rings too; he said: I took a ring of gold, and threw it away: I
+  // will never wear it; and the people threw their rings away (Sahih al-Bukhari 7298).
+  "sign-rings-thrown-away": [
+    ["What did the people do when he ﷺ wore a gold ring?", "They wore gold rings too", "And the people took gold rings too"],
+    ["The Companions followed what he ﷺ did, even in small things.", "True", "And the people took gold rings too", "And the people threw their rings away"],
+    ["What did the people do when he ﷺ threw his ring away?", "Threw their rings away too", "And the people threw their rings away"]
+  ],
+  // A tailor invited him to food he made, and Anas went with him: barley bread, and broth with gourd in it; Anas saw
+  // him pick the gourd around the dish, and loved gourd ever since that day (Sahih al-Bukhari 5436). (Who invited him
+  // stays on its usual picture: the tailor's home is there from the scene's start.)
+  "sign-tailors-gourd": [
+    ["What did the Prophet ﷺ look for, in the hadith?", "Pieces of gourd", "I saw him pick the gourd around the dish"],
+    ["Anas loved gourd because the Prophet ﷺ liked it.", "True", "I saw him pick the gourd around the dish", "I have loved gourd ever since that day"],
+    ["Anas loved gourd after seeing this.", "True", "I saw him pick the gourd around the dish", "I have loved gourd ever since that day"]
+  ],
+  // The sun eclipsed the day Ibrahim died, and the people said it was for his death; he said: the sun and moon do not
+  // eclipse for anyone's death or for anyone's life; when you see it, pray and call on Allah (Sahih al-Bukhari 1043).
+  "sign-the-eclipse": [
+    ["What did people wrongly think?", "The eclipse was for Ibrahim", "The sun eclipsed the day Ibrahim died", "The people said: it was for his death"],
+    ["The Prophet ﷺ let a wrong belief spread to honor his son.", "False", "The sun and moon do not eclipse", "For anyone's death or for anyone's life"],
+    ["What should we do at an eclipse?", "Pray and call on Allah", "When you see it, pray and call on Allah"]
   ]
 };
 
