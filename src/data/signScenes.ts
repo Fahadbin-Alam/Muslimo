@@ -793,7 +793,14 @@ export type SignKind =
   | "gold-not-kept"
   | "reached-its-place"
   | "horse-kept"
-  | "carpets-will-come";
+  | "carpets-will-come"
+  | "kaaba-as-it-was"
+  | "cloth-in-the-heat"
+  | "covered-cup"
+  | "one-date-shared"
+  | "blessed-bowl"
+  | "cloaks-alike"
+  | "half-a-sa";
 
 export type SignScene = {
   id: string;
@@ -3707,6 +3714,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jabir said: the Prophet ﷺ asked: have you got carpets? I said: where would we get carpets? He said: you shall soon have carpets. And I would say to my wife: take your carpets out of my sight, and she would say: did the Prophet ﷺ not tell you that you would soon have carpets? So I would let them be.",
     sources: [bukhari("3631")]
+  },
+  {
+    id: "sign-kaaba-as-it-was",
+    kind: "kaaba-as-it-was",
+    caption:
+      "Aishah, the wife of the Prophet ﷺ, said that the Messenger of Allah ﷺ said to her: do you not see that when your people built the Ka'bah, they fell short of the foundations of Ibrahim? I said: O Messenger of Allah, will you not return it to the foundations of Ibrahim? He said: were it not that your people are so newly out of disbelief, I would have done it. Abdullah ibn Umar said: if Aishah heard this from the Messenger of Allah ﷺ, then I do not think the Messenger of Allah ﷺ left touching the two corners that face the Hijr except because the House was not completed on the foundations of Ibrahim.",
+    sources: [bukhari("1583")]
+  },
+  {
+    id: "sign-cloth-in-the-heat",
+    kind: "cloth-in-the-heat",
+    caption:
+      "Anas ibn Malik said: we used to pray with the Prophet ﷺ in the scorching heat, and if one of us could not put his face on the earth, he would spread out his garment and prostrate on it.",
+    sources: [bukhari("1208")]
+  },
+  {
+    id: "sign-covered-cup",
+    kind: "covered-cup",
+    caption:
+      "Jabir ibn Abdullah said: Abu Humayd brought a cup of milk from al-Naqi', and the Messenger of Allah ﷺ said to him: will you not cover it, even by laying a stick across it?",
+    sources: [bukhari("5605")]
+  },
+  {
+    id: "sign-one-date-shared",
+    kind: "one-date-shared",
+    caption:
+      "Aishah said: a lady came in with her two daughters, asking, and she found nothing with me but one date, so I gave it to her. She divided it between her two daughters and did not eat of it, then she got up and went out. Then the Prophet ﷺ came in to us, and I told him, and he said: whoever is tried with any of these daughters, they will be a shield for him from the Fire.",
+    sources: [bukhari("1418")]
+  },
+  {
+    id: "sign-blessed-bowl",
+    kind: "blessed-bowl",
+    caption:
+      "Abu Burdah said: when I came to Madinah, Abdullah ibn Salam met me and said: come with me home, and I will give you a drink in a bowl the Messenger of Allah ﷺ drank from, and you will pray in a masjid the Prophet ﷺ prayed in. So I went with him, and he gave me sawiq to drink, fed me dates, and I prayed in his masjid.",
+    sources: [bukhari("7342")]
+  },
+  {
+    id: "sign-cloaks-alike",
+    kind: "cloaks-alike",
+    caption:
+      "Al-Ma'rur said: I met Abu Dharr at ar-Rabadhah, wearing a cloak, and his slave wore a cloak too. I asked him about it, and he said: I abused a man and shamed him for his mother, and the Prophet ﷺ said to me: O Abu Dharr, did you shame him for his mother? You are a man with some ignorance still in you. Your servants are your brothers; Allah has placed them under your hands. So whoever has his brother under his hand, let him feed him of what he eats and dress him of what he wears. Do not burden them with more than they can bear, and if you do, then help them.",
+    sources: [bukhari("30")]
+  },
+  {
+    id: "sign-half-a-sa",
+    kind: "half-a-sa",
+    caption:
+      "Abu Mas'ud said: when we were told to give charity, we would carry loads for hire. Abu Aqil came with half a sa', and someone came with more than him, and the hypocrites said: Allah has no need of this one's charity, and this other one did it only to show off. Then the ayah was revealed (Quran 9:79).",
+    sources: [bukhari("4668")]
   }
 ];
 
@@ -5599,7 +5655,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // What a horse kept in Allah's cause eats and drinks is in its keeper's scale.
   "deep-kids-animal-manners-a-horse-kept-for-allah": "sign-horse-kept",
   // He told Jabir that carpets would come, and when they came, Jabir let them be.
-  "deep-marriage-weddings-and-new-homes-carpets-will-come": "sign-carpets-will-come"
+  "deep-marriage-weddings-and-new-homes-carpets-will-come": "sign-carpets-will-come",
+  // He left the Ka'bah on the foundations Quraysh had built, as his people were so newly out of disbelief.
+  "deep-fresh-start-kabah-left-as-it-was": "sign-kaaba-as-it-was",
+  // In the scorching heat, one who could not put his face on the earth spread his garment and prostrated on it.
+  "deep-prayer-rain-cold-and-heat-clothes-in-the-heat": "sign-cloth-in-the-heat",
+  // He told Abu Humayd to cover the cup of milk, even with a stick laid across it.
+  "deep-book-food-cover-the-cup": "sign-covered-cup",
+  // A mother shared one date between her two daughters; daughters are a shield for the one tried with them.
+  "deep-children-daughters": "sign-one-date-shared",
+  // Ibn Salam gave Abu Burdah a drink in a bowl the Prophet ﷺ drank from, and he prayed in a masjid he prayed in.
+  "deep-ibn-salam-a-blessed-bowl": "sign-blessed-bowl",
+  // Abu Dharr dressed his slave as he dressed himself, as the Prophet ﷺ had taught him.
+  "deep-abudharr-brothers": "sign-cloaks-alike",
+  // The hypocrites mocked Abu Aqil's half a sa' and the one who gave more, and the ayah was revealed.
+  "deep-tawbah4-small-charity": "sign-half-a-sa"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
