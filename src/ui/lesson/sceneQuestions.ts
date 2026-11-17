@@ -4218,6 +4218,58 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-soft-salam": [
     ["Who would hear his ﷺ salam at night?", "Those who were awake", "Not waking one who was asleep", "And letting one awake hear it"],
     ["He ﷺ said salam at night in a way that would not wake the sleeping.", "True", "Not waking one who was asleep"]
+  ],
+  // Three hundred riders under Abu Ubaidah stayed at the shore half a month, so hungry that they ate the leaves, the
+  // khabat, and the army was called the army of the khabat; then the sea threw out a fish called al-Anbar, they ate of
+  // it half a month, and Abu Ubaidah set up one of its ribs, and a man and a camel passed under it (Sahih al-Bukhari
+  // 4361).
+  "sign-army-of-leaves": [
+    ["How many riders did Abu Ubaydah lead?", "300", "Three hundred riders, under Abu Ubaidah"],
+    ["Why was it called the army of leaves?", "They were so hungry they ate leaves", "So hungry, we ate the leaves, the khabat", "So it was called the army of the khabat"],
+    ["How did Allah feed them at last?", "The sea threw out a huge fish", "Then the sea threw out a fish, al-Anbar", "We ate of it for half a month"],
+    ["The leader of the army was Abu Bakr.", "False", "Three hundred riders, under Abu Ubaidah"]
+  ],
+  // A Bedouin asked him about the hijrah; he said: mercy on you, its matter is hard; have you camels, and do you give
+  // their zakat? He said: yes; and he said: then work from beyond the seas, for Allah will not waste anything of your
+  // deeds (Sahih al-Bukhari 1452).
+  "sign-beyond-the-seas": [
+    ["What did the Bedouin ask about?", "Hijrah, moving to Madinah", "A Bedouin asked him about the hijrah", "Mercy on you! Its matter is hard"],
+    ["What did he ﷺ ask the Bedouin about his camels?", "If he paid their zakat", "Have you camels? Do you give their zakat?"],
+    ["He ﷺ told the Bedouin his good deeds would not be wasted.", "True", "Allah will not waste any of your deeds"]
+  ],
+  // Ka'b asked Ibn Abi Hadrad in the masjid for a debt he owed him, and their voices rose till he heard them in his
+  // house; he lifted the curtain of his room and called: O Ka'b; he said: at your service; he pointed to him to drop
+  // half of the debt; Ka'b said: I have done so; and he said to the other: get up and pay him (Sahih al-Bukhari 2710).
+  // (Where they argued stays on its usual picture: the masjid is there from the scene's start.)
+  "sign-half-the-debt": [
+    ["What did he ﷺ ask Ka'b to do with the debt?", "Drop half of it", "He pointed: drop half of the debt"],
+    ["He ﷺ told the other man to pay the rest straight away.", "True", "Get up and pay him"]
+  ],
+  // The folk of Quba fought one another till they threw stones at each other; he was told of it, and said: let us go, to
+  // make peace between them (Sahih al-Bukhari 2693).
+  "sign-quba-peace": [
+    ["What did the people of Quba do to each other?", "They threw stones at each other", "The folk of Quba fought one another", "Till they threw stones at each other"],
+    ["What did he ﷺ say when he was told about the fight?", "Let us go and make peace", "And he said: let us go", "To make peace between them"],
+    ["Making peace between Muslims who fight is a good deed.", "True", "And he said: let us go", "To make peace between them"]
+  ],
+  // Fatimah complained of what the hand mill did to her; she went to him and did not find him; he came to them when they
+  // had gone to bed, and said: shall I teach you better than what you asked? When you go to bed, say Allahu akbar
+  // thirty-four times, subhanallah thirty-three times and alhamdulillah thirty-three times, for that is better for you
+  // both than a servant (Sahih al-Bukhari 3705).
+  "sign-better-than-a-servant": [
+    ["What had Fatimah asked for?", "A servant", "Better for you both than a servant"],
+    ["How many times is Allahu Akbar said?", "34", "In bed: Allahu akbar, thirty-four times"],
+    ["When is this dhikr said?", "When going to bed", "He came to us when we had gone to bed", "In bed: Allahu akbar, thirty-four times"],
+    ["The Prophet ﷺ said the dhikr was better than a servant.", "True", "Shall I teach you better than you asked?", "Better for you both than a servant"]
+  ],
+  // They tied Thumamah to a pillar of the masjid; he asked him: what do you have, Thumamah? and so the next day and the
+  // day after; then he said: set Thumamah free; Thumamah washed at palms near the masjid, came in and said: I testify
+  // that there is no god but Allah, and said that no face had been more hated to him than his, and now it was the
+  // dearest face of all to him (Sahih al-Bukhari 4372).
+  "sign-thumamah-freed": [
+    ["What did the Prophet ﷺ say on the third day?", "Set Thumamah free", "Then he said: set Thumamah free"],
+    ["How did Thumamah feel about the Prophet ﷺ after Islam?", "He loved him most of all", "Your face is now the dearest face to me"],
+    ["Kindness can open a person's heart to Islam.", "True", "Then he said: set Thumamah free", "He came in: I testify, no god but Allah"]
   ]
 };
 

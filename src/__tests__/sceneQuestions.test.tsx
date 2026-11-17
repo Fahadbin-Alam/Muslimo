@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2487);
+    expect(asks.length).toBe(2506);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3630);
+    expect(places).toBe(3658);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -12499,6 +12499,220 @@ describe("where the scene waits and where it stops", () => {
     expect(shown("Quraysh said yes, they would believe him.", ["voices from below, answering", "a voice from the top, warning"])).toEqual([
       [0, 0],
       [1, 0]
+    ]);
+  });
+
+  it("waits on the scenes from the army of the khabat to Thumamah set free, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight. (The
+    // archers of Aslam has none: what its lesson asks is there from the scene's start, or not in it.)
+    const scenes = ["sign-army-of-leaves", "sign-beyond-the-seas", "sign-half-the-debt", "sign-quba-peace", "sign-better-than-a-servant", "sign-thumamah-freed"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(19);
+    expect(sceneAsks().filter((each) => each.sceneId === "sign-archers-of-aslam")).toEqual([]);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The army of the khabat. How many riders there were, and who led them: waits at the scene's start, the tents and
+    // camels by the shore and the trees in leaf, before anyone comes; then the places of the three hundred come to the
+    // shore, with Abu Ubaidah's place, a soft ring about it. It stops before they go hungry.
+    for (const prompt of ["How many riders did Abu Ubaydah lead?", "The leader of the army was Abu Bakr."]) {
+      expect([
+        prompt,
+        shown(prompt, ["the places of the three hundred, come to the shore", "Abu Ubaidah's place, a soft ring about it", "a thorny tree of the coast 1: its leaves", "hunger: a grey ring about the camp"]),
+        moved(prompt, "the places of the three hundred, come to the shore", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 1, 0],
+          [1, 1, 1, 0]
+        ],
+        [30, 0]
+      ]);
+    }
+    // Why it was called the army of leaves: the camp at the shore with a few dates by the tents and the trees in leaf,
+    // before any hunger shows; then the dates are gone, a grey ring of hunger comes about the camp, the leaves are taken
+    // from the trees to the camp, and a soft ring comes about the camp and the trees: the army of the khabat. It stops
+    // before the sea stirs.
+    expect(shown("Why was it called the army of leaves?", ["their food: a few dates by the tents", "hunger: a grey ring about the camp", "a thorny tree of the coast 1: its leaves", "the army of the khabat: a soft ring about the camp and the trees", "the sea's swell at the shore"])).toEqual([
+      [1, 0, 1, 0, 0],
+      [0, 1, 0.3, 1, 0]
+    ]);
+    // How they were fed at last: the hungry camp with its grey ring and the trees bare, before the sea stirs; then the
+    // sea's swell comes at the shore and throws out al-Anbar, the great fish, its pieces are taken to the camp, the grey
+    // ring of hunger goes, and a warm glow comes about the camp. It stops before one of its ribs is set up.
+    expect([
+      shown("How did Allah feed them at last?", ["al-Anbar, the great fish the sea threw out", "hunger: a grey ring about the camp", "fed: a warm glow about the camp", "one of its ribs, set up: an arch"]),
+      moved("How did Allah feed them at last?", "al-Anbar, the great fish the sea threw out", "x")
+    ]).toEqual([
+      [
+        [0, 1, 0, 0],
+        [1, 0, 1, 0]
+      ],
+      [-34, 0]
+    ]);
+    // Beyond the seas. What the Bedouin asked about: waits at the scene's start, the Bedouin's place by its tent and
+    // camels, before it comes to him; then the Bedouin's place comes and its voice asks of the hijrah; his voice answers
+    // that its matter is hard, a long grey way shows from the tent to Madinah, and a grey ring comes about the tent. It
+    // stops before he asks of the camels.
+    expect([
+      shown("What did the Bedouin ask about?", ["the hijrah: a long grey way from the tent to Madinah", "hard: a grey ring about the tent", "his voice: have you camels? do you give their zakat?"]),
+      moved("What did the Bedouin ask about?", "the Bedouin's place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, 72]
+    ]);
+    // What he asked of the camels: the grey way of the hijrah and the grey ring about the tent, before his voice speaks
+    // again; then his voice asks: have you camels? do you give their zakat? A soft ring comes about the Bedouin's
+    // camels, and a camel given goes out with a soft golden ring about it. It stops before the Bedouin answers.
+    expect([
+      shown("What did he ﷺ ask the Bedouin about his camels?", ["camels: a soft ring about the Bedouin's camels", "their zakat: a camel given, a soft golden ring about it", "the hijrah: a long grey way from the tent to Madinah", "the Bedouin's voice: yes"]),
+      moved("What did he ﷺ ask the Bedouin about his camels?", "their zakat: a camel given, a soft golden ring about it", "x")
+    ]).toEqual([
+      [
+        [0, 0, 1, 0],
+        [1, 1, 1, 0]
+      ],
+      [-6, 10]
+    ]);
+    // That his deeds would not be wasted: glints on the far seas, before the last words; then the Bedouin's deeds rise
+    // as sparks, and a warm glow comes about the tent.
+    expect(shown("He ﷺ told the Bedouin his good deeds would not be wasted.", ["beyond the seas: glints on the far seas", "not wasted: a warm glow about the tent", "the Bedouin's deeds: a spark rising 1"])).toEqual([
+      [1, 0, 0],
+      [1, 1, 0]
+    ]);
+    // Half the debt. What he asked Ka'b to do with it: his place at the door of his room, the two halves of the debt
+    // owed, and the grey ring between the two places, before he points; then a faint golden line goes from him to the
+    // debt, and one half of it fades. It stops before Ka'b answers.
+    expect(shown("What did he ﷺ ask Ka'b to do with the debt?", ["the debt: half of it, coins owed", "the debt: the other half, coins owed", "he pointed: a faint golden line to the debt", "raised voices: a grey ring between them", "Ka'b's voice: I have done so"])).toEqual([
+      [1, 1, 0, 1, 0],
+      [0, 1, 1, 1, 0]
+    ]);
+    // That he told the other to pay the rest at once: Ka'b has agreed, a soft ring about its place, and the other half
+    // of the debt is still owed, before his voice speaks again; then his voice says get up and pay him, the other half
+    // goes over to Ka'b's place, gold coins show by it, paid, and a warm glow comes about them both.
+    expect([
+      shown("He ﷺ told the other man to pay the rest straight away.", ["the debt: the other half, coins owed", "paid: gold coins by Ka'b's place", "a warm glow about them both", "agreed: a soft ring about Ka'b's place"]),
+      moved("He ﷺ told the other man to pay the rest straight away.", "the debt: the other half, coins owed", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 1],
+        [0, 1, 1, 1]
+      ],
+      [0, -20]
+    ]);
+    // Making peace at Quba. What the folk of Quba did: waits at the scene's start, the two sides of Quba among its homes
+    // and palms, before any quarrel; then their voices rise, grey rings come about both sides with a grey line between
+    // them, and stones are thrown from side to side, till stones lie on the ground between them. It stops before he is
+    // told.
+    expect([
+      shown("What did the people of Quba do to each other?", ["fighting: grey rings about both sides", "a grey line between them", "stones on the ground between them", "the one who told him: a place from Quba"]),
+      value("quba-peace", "a stone thrown 1", "opacity", 0.23)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      1
+    ]);
+    // What he said once told of it, and that making peace is a good deed: the place from Quba come to tell him, before
+    // his voice speaks; then his voice says let us go, a faint golden way shows to Quba, his place goes along it with
+    // those with him, and a soft golden ring comes between the two sides: to make peace between them.
+    for (const prompt of ["What did he ﷺ say when he was told about the fight?", "Making peace between Muslims who fight is a good deed."]) {
+      expect([
+        prompt,
+        shown(prompt, ["to make peace: a faint golden way to Quba", "to make peace between them: a soft golden ring"]),
+        moved(prompt, "a golden ring, his place", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ],
+        [0, 96]
+      ]);
+    }
+    // Better than a servant. What Fatimah had asked for: the three rows of small lights of the dhikr, and the grey ring
+    // still about the mill, before the last words; then the grey ring about the mill fades, and a warm glow comes over
+    // the home: better for you both than a servant.
+    expect(shown("What had Fatimah asked for?", ["what the mill did: a grey ring about it", "better for them both: a warm glow over the home", "the praise, thirty-three: a row of small lights"])).toEqual([
+      [1, 0, 1],
+      [0, 1, 1]
+    ]);
+    // How many times Allahu akbar is said: his place come to their home at night, and his question asked, before the
+    // dhikr; then the takbir, thirty-four, shows as a row of small lights, and a spark rises. It stops before the
+    // tasbih.
+    expect([
+      shown("How many times is Allahu Akbar said?", ["the takbir, thirty-four: a row of small lights", "the tasbih, thirty-three: a row of small lights"]),
+      moved("How many times is Allahu Akbar said?", "the takbir, thirty-four: a row of small lights", "scaleX")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0.03, 1]
+    ]);
+    // When this dhikr is said (the one said in bed; another scene asks of the one after prayer): Fatimah's place come
+    // back from his door, the sun up and the mill turning, before night; then night comes, the mill rests, a small light
+    // shows in their home, his place comes to them, his voice asks if he should teach them better, and in bed the
+    // takbir, thirty-four, shows as a row of small lights. It stops before the tasbih.
+    expect(shown("When is this dhikr said?", ["the sun", "night: the sky dark, with stars", "a small light in the home, at night", "the mill's handle, turning", "a golden ring, his place", "the takbir, thirty-four: a row of small lights", "the tasbih, thirty-three: a row of small lights"], "When going to bed")).toEqual([
+      [1, 0, 0, 1, 0, 0, 0],
+      [0, 1, 1, 0, 1, 1, 0]
+    ]);
+    // That he said the dhikr was better than a servant: his place come to their home at night, before his voice speaks;
+    // then his voice asks if he should teach them better than they asked, the takbir, the tasbih and the praise show one
+    // by one as rows of small lights with sparks rising, the grey ring about the mill fades, and a warm glow comes over
+    // the home.
+    expect(shown("The Prophet ﷺ said the dhikr was better than a servant.", ["the takbir, thirty-four: a row of small lights", "the tasbih, thirty-three: a row of small lights", "the praise, thirty-three: a row of small lights", "what the mill did: a grey ring about it", "better for them both: a warm glow over the home"])).toEqual([
+      [0, 0, 0, 1, 0],
+      [1, 1, 1, 0, 1]
+    ]);
+    // Thumamah set free. What he said on the third day: Thumamah's place tied by a cord to a trunk of the masjid, the
+    // nights passed, before his voice speaks; then his voice says set Thumamah free, the cord fades, and a soft ring
+    // comes about Thumamah's place. It stops before it goes to wash.
+    expect(shown("What did the Prophet ﷺ say on the third day?", ["the cord, tying the place to a trunk", "set free: a soft ring about its place", "washing: ripples in the water"])).toEqual([
+      [1, 0, 0],
+      [0, 1, 0]
+    ]);
+    // How Thumamah came to feel about him: Thumamah's place come back in to testify, before its last words; then its
+    // place goes near his, its voice says his face is now the dearest of all to it, and a warm glow comes about them
+    // both.
+    expect([
+      shown("How did Thumamah feel about the Prophet ﷺ after Islam?", ["its voice: now the dearest of all to me", "a warm glow about them both", "its voice: I testify"]),
+      moved("How did Thumamah feel about the Prophet ﷺ after Islam?", "Thumamah's place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, -5]
+    ]);
+    // That kindness can open a heart to Islam: Thumamah's place tied by a cord, the nights passed, before he speaks;
+    // then he sets Thumamah free and the cord fades, its place goes to wash at the palms, with ripples in the water, and
+    // comes back in, and its voice testifies as a spark rises. It stops before its last words.
+    expect([
+      shown("Kindness can open a person's heart to Islam.", ["the cord, tying the place to a trunk", "set free: a soft ring about its place", "a warm glow about them both"]),
+      value("thumamah-freed", "Thumamah's place", "x", 0.65),
+      value("thumamah-freed", "its voice: I testify", "opacity", 0.77)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 0, 0]
+      ],
+      55.6,
+      1
     ]);
   });
 
