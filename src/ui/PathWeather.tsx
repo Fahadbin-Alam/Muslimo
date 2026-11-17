@@ -15,7 +15,9 @@ import { useSecretTap } from "./secretHadith";
 
 /**
  * The sky behind a unit of the path. Each unit has its own weather, so walking down the path feels
- * like days going by: a sunny sky, a breezy one, clouds, a little rain, a sunset, birds flying by. Tapping
+ * like days going by: a sunny sky, a breezy one, clouds, a little rain, a sunset, birds flying by. The sky
+ * also follows the real time of day on the phone: sunny skies turn warm at sunrise and sunset, and at
+ * night the whole path goes dark and the sun is the moon (sceneMood.tsx, services/skyClock.ts). Tapping
  * the sun turns it into a full moon and night falls over the path (see sceneMood.tsx); tapping the moon
  * shows its phases (full, gibbous, half), then brings the day back. Only plain weather: never a thin
  * crescent, and no stars (see the content rule in docs/design-system.md).
@@ -570,11 +572,13 @@ export const PathWeather = memo(function PathWeather({ weather, world = "desert"
   const moving = animated && !reduceMotion && !lite;
   // Clouds and the place's strip always move (cheap loops on the native driver); the rest only near the learner.
   const drifting = !reduceMotion;
-  const sky = SKIES[weather];
+  // At the real sunrise and sunset, a clear sky looks like the sunset one: warm, with the sun low.
+  const { dark, twilight } = useScene();
+  const look: Weather = twilight && weather === "sunny" ? "sunset" : weather;
+  const sky = SKIES[look];
   const bands = Math.max(1, Math.ceil(height / BAND));
-  const gradientId = `sky-${weather}`;
+  const gradientId = `sky-${look}`;
   // At night the day sky fades away and the dark sky behind the path shows through.
-  const { dark } = useScene();
   const daySky = dark.interpolate({ inputRange: [0, 1], outputRange: [1, 0] });
   // The gradient is drawn `shrink` times smaller, centered, then scaled back up to cover the whole unit.
   const shrink = skyShrink(height);
@@ -599,7 +603,7 @@ export const PathWeather = memo(function PathWeather({ weather, world = "desert"
           </LinearGradient>
         </Defs>
         <Rect x={0} y={0} width={width} height={height} fill={`url(#${gradientId})`} />
-        {weather === "sunset" ? (
+        {look === "sunset" ? (
           <G opacity={0.5}>
             <Ellipse cx={width * 0.2} cy={height} rx={width * 0.5} ry={60} fill="#FFD9B8" />
             <Ellipse cx={width * 0.85} cy={height + 10} rx={width * 0.45} ry={50} fill="#FFE3C8" />
@@ -614,8 +618,8 @@ export const PathWeather = memo(function PathWeather({ weather, world = "desert"
         if (span && !first && (y + BAND + 60 < span.from || y > span.to)) return null;
         return (
           <React.Fragment key={band}>
-            {weather === "sunny" && first ? <Sun top={y + 152} left={width - 80} moving={moving} reduceMotion={reduceMotion} /> : null}
-            {weather === "sunset" && first ? <Sun top={y + 152} left={width - 80} low moving={moving} reduceMotion={reduceMotion} /> : null}
+            {look === "sunny" && first ? <Sun top={y + 152} left={width - 80} moving={moving} reduceMotion={reduceMotion} /> : null}
+            {look === "sunset" && first ? <Sun top={y + 152} left={width - 80} low moving={moving} reduceMotion={reduceMotion} /> : null}
             <Cloud sky={sky} top={y + 150} width={width} size={weather === "rain" ? 92 : 76} duration={weather === "breeze" ? 14000 : 22000} start={0.15 + 0.3 * (band % 3)} moving={drifting} reduceMotion={reduceMotion} />
             {weather === "cloudy" || weather === "breeze" ? (
               <Cloud sky={sky} top={y + 300} width={width} size={58} duration={weather === "breeze" ? 11000 : 28000} start={0.65} moving={drifting} reduceMotion={reduceMotion} />
