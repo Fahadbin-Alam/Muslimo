@@ -856,7 +856,14 @@ export type SignKind =
   | "soft-hearts-of-yemen"
   | "a-modest-pace"
   | "salam-to-the-boys"
-  | "joy-at-a-wedding";
+  | "joy-at-a-wedding"
+  | "the-easier-of-two"
+  | "words-you-could-count"
+  | "a-date-of-sadaqah"
+  | "a-good-condiment"
+  | "labbayk-as-it-rose"
+  | "a-bowl-of-milk"
+  | "days-of-tashriq";
 
 export type SignScene = {
   id: string;
@@ -4209,6 +4216,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Anas ibn Malik said: the Prophet ﷺ saw some women and children coming back from a wedding, and he stood up, energetic and happy, and said: by Allah, you are among the people most beloved to me (meaning the Ansar).",
     sources: [bukhari("5180")]
+  },
+  {
+    id: "sign-the-easier-of-two",
+    kind: "the-easier-of-two",
+    caption:
+      "Aishah said: whenever the Messenger of Allah ﷺ was given a choice between two things, he took the easier of them, as long as it was not a sin; if it was a sin, he was the farthest of people from it. And the Messenger of Allah ﷺ never took revenge for himself, unless what Allah made sacred was violated; then he took revenge for Allah's sake.",
+    sources: [bukhari("3560")]
+  },
+  {
+    id: "sign-words-you-could-count",
+    kind: "words-you-could-count",
+    caption:
+      "Aishah said that the Prophet ﷺ would talk so clearly that if one counting wanted to count his words, he could count them all.",
+    sources: [bukhari("3567")]
+  },
+  {
+    id: "sign-a-date-of-sadaqah",
+    kind: "a-date-of-sadaqah",
+    caption:
+      "Abu Hurairah said: al-Hasan ibn Ali took a date of the sadaqah and put it in his mouth. The Messenger of Allah ﷺ said: kikh, kikh! Throw it out. Do you not know that we do not eat the sadaqah?",
+    sources: [muslim("1069a")]
+  },
+  {
+    id: "sign-a-good-condiment",
+    kind: "a-good-condiment",
+    caption:
+      "Jabir ibn Abdullah said that the Prophet ﷺ asked his family for a condiment. They said: we have nothing but vinegar. He called for it and began to eat with it, saying: vinegar is a good condiment, vinegar is a good condiment. In another narration Jabir said: the Messenger of Allah ﷺ took me to his home, and some bread was brought to him; and Jabir said: I have loved vinegar ever since I heard that from the Prophet of Allah ﷺ.",
+    sources: [muslim("2052")]
+  },
+  {
+    id: "sign-labbayk-as-it-rose",
+    kind: "labbayk-as-it-rose",
+    caption:
+      "Ibn Umar said: I saw the Messenger of Allah ﷺ mount his camel at Dhul-Hulayfah; then he began to say labbayk when it stood upright.",
+    sources: [bukhari("1514")]
+  },
+  {
+    id: "sign-a-bowl-of-milk",
+    kind: "a-bowl-of-milk",
+    caption:
+      "Umm al-Fadl bint al-Harith said: on the day of Arafah, some people with me differed about whether the Prophet ﷺ was fasting; some said: he is fasting, and some said: he is not fasting. So I sent him a bowl of milk while he was standing on his camel, and he drank it.",
+    sources: [bukhari("1661")]
+  },
+  {
+    id: "sign-days-of-tashriq",
+    kind: "days-of-tashriq",
+    caption:
+      "Nubayshah al-Hudhali said that the Messenger of Allah ﷺ said: the days of Tashriq are days of eating and drinking. Another narration adds: and of remembering Allah.",
+    sources: [muslim("1141")]
   }
 ];
 
@@ -6260,7 +6316,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Anas greeted some boys with salam, as the Prophet ﷺ used to do.
   "deep-kids-everyday-manners-salam-to-the-children": "sign-salam-to-the-boys",
   // Families coming back from a wedding: he stood up, energetic and happy.
-  "deep-book-marriage-joy-at-a-wedding": "sign-joy-at-a-wedding"
+  "deep-book-marriage-joy-at-a-wedding": "sign-joy-at-a-wedding",
+  // Given a choice of two things, he ﷺ took the easier, as long as it was not a sin.
+  "deep-seerah-khuluq-easier": "sign-the-easier-of-two",
+  // He ﷺ spoke so clearly that his words could be counted.
+  "deep-kids-kind-ways-words-you-could-count": "sign-words-you-could-count",
+  // Al-Hasan took a sadaqah date: kikh, kikh, throw it out; we do not eat sadaqah.
+  "deep-book-zakat-hasan-and-the-date": "sign-a-date-of-sadaqah",
+  // Only vinegar at home, and he ﷺ ate with it: vinegar is a good condiment.
+  "deep-found-eating-drinking-a-good-condiment": "sign-a-good-condiment",
+  // At Dhul-Hulayfah: labbayk as his ﷺ camel stood upright.
+  "deep-book-hajj-labbayk-as-the-camel-rose": "sign-labbayk-as-it-rose",
+  // Was he ﷺ fasting at Arafah? Umm al-Fadl sent a bowl of milk, and he drank it.
+  "deep-quranwomen-umm-al-fadl-milk": "sign-a-bowl-of-milk",
+  // The days of Tashriq: days of eating, drinking and remembering Allah.
+  "deep-days-tashriq": "sign-days-of-tashriq"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
