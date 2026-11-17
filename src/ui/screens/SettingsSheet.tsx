@@ -59,7 +59,16 @@ export type SettingsSheetProps = {
   /** "Off" or the chosen city, and opening the prayer-time lessons sheet. */
   prayerLabel?: string;
   onOpenPrayer?: () => void;
+  /**
+   * Shows "Email me Muslimo news" (the newsletter). Only for a signed-in grown-up: never for guests, Kids mode
+   * or Kid accounts. It starts off; making an account never signs anyone up.
+   */
+  newsletter?: NewsletterLink;
 };
+
+export type NewsletterChoice = { subscribed: boolean; canJoin: boolean };
+/** Reads and saves the newsletter choice on the server (services/backendSync.ts). */
+export type NewsletterLink = { load: () => Promise<NewsletterChoice>; save: (subscribed: boolean) => Promise<NewsletterChoice> };
 
 // Labels that say the difference on their own; the line under them is a reminder only.
 const ROLES: Array<{ id?: LearnerRole; label: string; line: string; testID: string }> = [
@@ -102,7 +111,8 @@ export function SettingsSheet({
   languageLabel,
   onOpenLanguage,
   prayerLabel,
-  onOpenPrayer
+  onOpenPrayer,
+  newsletter
 }: SettingsSheetProps) {
   useBackToClose(visible, onClose);
   const activeRole = ROLES.find((option) => option.id === role) ?? ROLES[0];
@@ -221,6 +231,8 @@ export function SettingsSheet({
             <Toggle label={t("Calm mode (less moving)")} icon="water" value={device.calm} onToggle={() => setDeviceSetting("calm", !device.calm)} testID="settings-calm" />
           </View>
 
+          {newsletter && !guest ? <NewsletterRow visible={visible} link={newsletter} /> : null}
+
           {!guest && onLogout ? <GameButton label={t("Log out")} variant="secondary" fullWidth onPress={onLogout} testID="settings-logout" /> : null}
           {!guest && onDeleteAccount ? (
             <Tappable onPress={onDeleteAccount} style={styles.linkButton} accessibilityRole="button" testID="settings-delete">
@@ -234,6 +246,46 @@ export function SettingsSheet({
         <GameButton label={t("Save")} fullWidth onPress={onSave} testID="settings-save" />
       </View>
     </Sheet>
+  );
+}
+
+/** The newsletter tick box. Saved on the server at once (no Save needed), like the phone's own settings. */
+function NewsletterRow({ visible, link }: { visible: boolean; link: NewsletterLink }) {
+  const [choice, setChoice] = React.useState<NewsletterChoice | null>(null);
+  const [problem, setProblem] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!visible) return;
+    let live = true;
+    link
+      .load()
+      .then((next) => { if (live) setChoice(next); })
+      .catch(() => undefined);
+    return () => { live = false; };
+    // The link is made once in the app; reading it again on each render is not needed.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible]);
+
+  if (!choice?.canJoin) return null;
+
+  const toggle = () => {
+    const want = !choice.subscribed;
+    setChoice({ ...choice, subscribed: want });
+    setProblem(false);
+    link
+      .save(want)
+      .then(setChoice)
+      .catch(() => {
+        setChoice({ ...choice, subscribed: !want });
+        setProblem(true);
+      });
+  };
+
+  return (
+    <View style={styles.card} testID="settings-newsletter">
+      <Toggle label={t("Email me Muslimo news")} icon="bell" value={choice.subscribed} onToggle={toggle} testID="settings-newsletter-toggle" />
+      <Text style={styles.hint}>{t(problem ? "Couldn't save. Check your internet and try again." : "New lessons, Ramadan ideas and offers, now and then. Leave any time.")}</Text>
+    </View>
   );
 }
 
