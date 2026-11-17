@@ -183,6 +183,8 @@ export interface HeartsBalance {
   max: number;
   unlimited: boolean;
   lastRefillDate: string;
+  /** When the slow refill's next heart lands (ms since 1970). Only set while hearts are missing. */
+  nextHeartAt?: number;
 }
 
 export interface UserProfile {

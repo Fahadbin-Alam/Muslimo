@@ -230,8 +230,8 @@ describe("the out-of-hearts sheet's sound (V10)", () => {
     jest.mocked(playGameSound).mockClear();
   });
 
-  it.each(["free", "shop"] as const)("plays the sad sheet sound once as the %s sheet opens", async (variant) => {
-    const props = { maxHearts: 5, mascotVariant: "hijabi", variant, onRefill: jest.fn(), onShop: jest.fn(), onEndLesson: jest.fn() };
+  it("plays the sad sheet sound once as the sheet opens", async () => {
+    const props = { maxHearts: 5, mascotVariant: "hijabi", onShop: jest.fn(), onEndLesson: jest.fn() };
     const sheet = await render(<RefillSheet visible={false} {...props} />);
     expect(sounds()).toEqual([]);
     await sheet.rerender(<RefillSheet visible {...props} />);
@@ -245,10 +245,8 @@ describe("the out-of-hearts sheet's sound (V10)", () => {
     expect(sounds()).toEqual(["wrong", "wrong"]);
   });
 
-  it.each([
-    ["free", false, "Here is one free refill."],
-    ["shop", true, "Full hearts again tomorrow!"]
-  ] as const)("in a lesson, GOT IT on the last heart stays quiet and the %s sheet makes the one sound", async (_variant, refillUsed, line) => {
+  it.each([false, true])("in a lesson, GOT IT on the last heart stays quiet and the sheet makes the one sound (old free refill used: %s)", async (refillUsed) => {
+    const line = /^Next heart in \d+ h \d+ min$/;
     const user = makeUser({ hearts: TODAY_HEARTS(1), reviewHeartRestoreUsed: refillUsed });
     seedUser(user);
     const node = learningApi.getPathNodes(user).find((item) => item.topicId === "foundation" && item.status === "current")!;
