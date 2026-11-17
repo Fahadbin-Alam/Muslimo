@@ -751,7 +751,14 @@ export type SignKind =
   | "cloak-on-the-thorns"
   | "rings-thrown-away"
   | "tailors-gourd"
-  | "the-eclipse";
+  | "the-eclipse"
+  | "ashari-recitation"
+  | "gold-not-kept-overnight"
+  | "dimam-questions"
+  | "repaid-better"
+  | "every-gate"
+  | "sharing-ashari"
+  | "zamzam-drink";
 
 export type SignScene = {
   id: string;
@@ -1236,7 +1243,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "bayruha",
     caption:
       "Bayruha, facing the masjid, was the garden Abu Talhah loved most, and he ﷺ would drink of its sweet water. When the ayah came down on spending from what you love, Abu Talhah gave it for Allah, and shared it among his relatives as he ﷺ advised.",
-    sources: [quran(3, 92), bukhari("1461")]
+    sources: [quran(3, 92), bukhari("1461"), bukhari("4554")]
   },
   {
     id: "sign-fitr",
@@ -2048,7 +2055,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-tree-of-a-hundred-years",
     kind: "tree-of-a-hundred-years",
     caption: "The Prophet ﷺ said: in Paradise there is a tree so big that a rider could travel in its shade for a hundred years and not cross it.",
-    sources: [bukhari("3251")]
+    sources: [bukhari("3251"), bukhari("4881")]
   },
   {
     id: "sign-the-pool",
@@ -3371,6 +3378,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Al-Mughirah ibn Shu'bah said: the sun was eclipsed in the time of the Messenger of Allah ﷺ on the day Ibrahim died, and the people said: the sun was eclipsed for the death of Ibrahim. The Messenger of Allah ﷺ said: the sun and the moon are not eclipsed for anyone's death or for anyone's life; so when you see it, pray and call on Allah.",
     sources: [bukhari("1043")]
+  },
+  {
+    id: "sign-ashari-recitation",
+    kind: "ashari-recitation",
+    caption:
+      "Abu Musa said: the Prophet ﷺ said: I know the voices of the company of the Ash'aris with the Quran when they come in at night, and I know their houses by their voices with the Quran at night, though I had not seen their houses when they stopped there by day.",
+    sources: [bukhari("4232")]
+  },
+  {
+    id: "sign-gold-not-kept-overnight",
+    kind: "gold-not-kept-overnight",
+    caption:
+      "Uqbah ibn al-Harith said: the Prophet ﷺ prayed Asr with us, then he hurried and went into the house, and soon came out again. I asked him, or it was asked of him, and he said: I had left in the house some gold of charity, and I disliked to keep it overnight, so I shared it out.",
+    sources: [bukhari("1430")]
+  },
+  {
+    id: "sign-dimam-questions",
+    kind: "dimam-questions",
+    caption:
+      "Anas ibn Malik said: while we were sitting with the Prophet ﷺ in the masjid, a man came in on a camel; he made it kneel in the masjid, then tied it. He said to the Prophet ﷺ: I will ask you, and be hard in asking, so do not be angry with me. He said: ask whatever you want. He said: I ask you by your Lord and the Lord of those before you: did Allah send you to all the people? He said: by Allah, yes. He said: I ask you by Allah: did Allah order you that we pray the five prayers in the day and the night? He said: by Allah, yes. He said: I ask you by Allah: did Allah order you that we fast this month of the year? He said: by Allah, yes. He said: I ask you by Allah: did Allah order you to take this charity from our rich and share it among our poor? He said: by Allah, yes. Then the man said: I believe in what you have brought, and I am the messenger of my people behind me, and I am Dimam ibn Tha'labah, of the Banu Sa'd ibn Bakr.",
+    sources: [bukhari("63")]
+  },
+  {
+    id: "sign-repaid-better",
+    kind: "repaid-better",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ took a camel of a certain age, and its owner came asking for it back. He said: one who has a right has a say. Then he gave him back better than its age, and said: the best of you are the best of you in repaying.",
+    sources: [bukhari("2609")]
+  },
+  {
+    id: "sign-every-gate",
+    kind: "every-gate",
+    caption:
+      "Abu Hurairah said: I heard the Messenger of Allah ﷺ say: whoever spends a pair of anything in the cause of Allah will be called from the gates of Paradise: O servant of Allah, this is good. Whoever is of the people of prayer will be called from the gate of prayer; whoever is of the people of jihad, from the gate of jihad; whoever is of the people of charity, from the gate of charity; and whoever is of the people of fasting, from the gate of fasting, the gate of ar-Rayyan. Abu Bakr said: the one who is called from those gates will be in no need; is anyone called from all of them, O Messenger of Allah? He said: yes, and I hope you are one of them, O Abu Bakr.",
+    sources: [bukhari("3666")]
+  },
+  {
+    id: "sign-sharing-ashari",
+    kind: "sharing-ashari",
+    caption:
+      "Abu Musa said: the Messenger of Allah ﷺ said: when the Ash'aris run short of food on a campaign, or the food of their families runs low in Madinah, they gather what they have in one cloth, then share it among themselves equally in one vessel. They are of me, and I am of them.",
+    sources: [muslim("2500")]
+  },
+  {
+    id: "sign-zamzam-drink",
+    kind: "zamzam-drink",
+    caption:
+      "Ibn Abbas said that the Messenger of Allah ﷺ came to the drinking place and asked for a drink. Al-Abbas said: Fadl, go to your mother, and bring the Messenger of Allah ﷺ a drink from her. He said: give me a drink. Al-Abbas said: O Messenger of Allah, they put their hands in it. He said: give me a drink; and he drank from it. Then he came to Zamzam, where they were giving water and working at it, and he said: work on, for you are doing a good deed.",
+    sources: [bukhari("1635")]
   }
 ];
 
@@ -3986,6 +4042,7 @@ export const SIGN_LESSONS: Record<string, string> = {
   "surah-meaning-3-81-101": "sign-bayruha",
   "deep-zakat-spend-what-you-love": "sign-bayruha",
   "deep-imran2-what-you-love": "sign-bayruha",
+  "deep-imran2-bayruha": "sign-bayruha",
   // Zakat al-Fitr: a sa' for every one, before the Eid prayer.
   "deep-zakat-fitr-everyone": "sign-fitr",
   "deep-zakat-fitr-before-prayer": "sign-fitr",
@@ -4571,6 +4628,7 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The tree of Paradise whose shade a rider could travel a hundred years (Sahih al-Bukhari 3251).
   "deep-jannah-tree": "sign-tree-of-a-hundred-years",
   "deep-raad3-a-hundred-years-of-shade": "sign-tree-of-a-hundred-years",
+  "deep-waqiah2-shade-that-never-ends": "sign-tree-of-a-hundred-years",
   // His Pool, a month's journey across; whoever drinks from it will never be thirsty (Sahih al-Bukhari 6579).
   "deep-hawd-pool": "sign-the-pool",
   "deep-kawthar1-never-thirsty-again": "sign-the-pool",
@@ -5168,7 +5226,22 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-book-food-the-gourd": "sign-tailors-gourd",
   "deep-saffat5-the-prophet-liked-gourd": "sign-tailors-gourd",
   // The sun eclipsed the day Ibrahim died: it eclipses for no one's death or life; pray and call on Allah.
-  "deep-mughirah-the-eclipse": "sign-the-eclipse"
+  "deep-mughirah-the-eclipse": "sign-the-eclipse",
+  // He knew the Ash'aris by their voices with the Quran at night, though he had not seen their houses by day.
+  "deep-abu-musa-night-recitation": "sign-ashari-recitation",
+  // After Asr he hurried home to share out gold of charity he disliked to keep overnight.
+  "zakat-character-and-intention-promptness": "sign-gold-not-kept-overnight",
+  // Dimam came into the masjid on a camel, asked by Allah of the message and the five prayers, and believed.
+  "deep-fresh-start-dimam-asks": "sign-dimam-questions",
+  // He paid back a camel with an older one: the best of you are the best in repaying.
+  "deep-book-hibah-repay-in-the-best-way": "sign-repaid-better",
+  // Whoever spends a pair is called from the gates of Paradise; he hoped Abu Bakr would be called from all of them.
+  "deep-abubakr-every-gate": "sign-every-gate",
+  "deep-layl4-called-from-every-gate": "sign-every-gate",
+  // Short of food, the Ash'aris gathered what they had in one cloth and shared it equally: they are of me.
+  "deep-book-companions-the-sharing-ashariyyun": "sign-sharing-ashari",
+  // He drank from the drinking place as the folk did, and praised those giving water at Zamzam.
+  "deep-hajj-spirit-zamzam": "sign-zamzam-drink"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
