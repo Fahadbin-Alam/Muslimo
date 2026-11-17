@@ -4541,6 +4541,59 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Prophet ﷺ say when charity came?", "O Allah, bless them", "he said: O Allah, bless the family", "of so-and-so"],
     ["Whose family did he pray for, in the hadith?", "The family of Abu Awfa", "He said: O Allah, bless the family", "of Abu Awfa"],
     ["Praying for those who give is a Sunnah.", "True", "he said: O Allah, bless the family", "of so-and-so"]
+  ],
+  // Abdullah ibn Amr said: a man came to him asking his permission to go for jihad. He said: are your parents alive? The
+  // man said: yes. He said: then strive in serving them (Sahih al-Bukhari 3004).
+  "sign-serve-your-parents": [
+    ["What did the Prophet ﷺ ask the man first?", "Are your parents alive?", "He said: are your parents alive?"],
+    ["What did he tell him to do?", "Strive in serving his parents", "He said: then strive in serving them"],
+    ["Serving your parents can be a great act of worship.", "True", "The man said: yes", "He said: then strive in serving them"]
+  ],
+  // Abu Hurairah said: I used to press my belly to pebbles from hunger, and the best of people to the poor was Ja'far
+  // ibn Abi Talib. He would take us home and feed us what was in his home, even bringing out to us a butter skin with
+  // nothing in it, and we would split it open and lick what was in it (Sahih al-Bukhari 3708).
+  "sign-best-to-the-poor": [
+    ["Who was the most generous to the poor, said Abu Hurairah?", "Ja'far", "The best of people to the poor", "was Ja'far ibn Abi Talib"],
+    ["What did Ja'far split open for the poor?", "An empty butter skin", "even bringing out to us a butter skin", "with nothing in it, and we split it open"],
+    ["Ja'far gave even when he had very little.", "True", "even bringing out to us a butter skin", "and licked what was in it"]
+  ],
+  // As-Sa'ib said: I remember going out with the boys to meet him at Thaniyyat al-Wada', as he came back from Tabuk
+  // (Sahih al-Bukhari 4427).
+  "sign-out-to-welcome": [
+    ["Who went out with As-Sa'ib to welcome him ﷺ?", "The other boys", "I remember going out with the boys"],
+    ["Where did the boys meet him ﷺ?", "Thaniyyat al-Wada'", "at Thaniyyat al-Wada'"],
+    ["He ﷺ was coming back from Tabuk.", "True", "as he came back from Tabuk"]
+  ],
+  // Ibn Umar said: while the people were praying Fajr in the masjid of Quba, someone came and said: Allah has revealed
+  // Quran to him, that he should face the Ka'bah, so face it. And they turned to the Ka'bah (Sahih al-Bukhari 4488).
+  // (Where they were praying keeps its own map picture.)
+  "sign-quba-turn": [
+    ["What did they do when they heard?", "Turned to the Ka'bah at once", "And they turned to the Ka'bah"],
+    ["What does their turning teach?", "Obey Allah quickly", "so face it", "And they turned to the Ka'bah"]
+  ],
+  // Jabir ibn Abdullah said: a caravan came on a Friday while we were with him, and all the people left except twelve
+  // men; then Allah revealed the ayah (Quran 62:11) (Sahih al-Bukhari 4899).
+  "sign-caravan-on-friday": [
+    ["What arrived during the Friday sermon?", "A caravan", "A caravan came on a Friday"],
+    ["How many people stayed?", "Twelve", "All the people left,", "except twelve men"],
+    ["62:11 was revealed about this event.", "True", "Then Allah revealed the ayah"]
+  ],
+  // Abu Hurairah said: I said: I hear many hadith from you but I forget them. He said: spread out your cloak; so I
+  // spread it out. He scooped with his hands, then said: wrap it to you; so I wrapped it to me, and I forgot nothing
+  // after that (Sahih al-Bukhari 119).
+  "sign-never-forgot": [
+    ["What was Abu Hurairah's problem?", "He forgot the hadith he heard", "but I forget them"],
+    ["What did the Prophet ﷺ tell him to spread?", "His cloak", "He said: spread out your cloak", "So I spread it out"],
+    ["After that day, Abu Hurairah never forgot anything.", "True", "So I wrapped it to me", "and I forgot nothing after that"]
+  ],
+  // Zaynab, the wife of Abdullah, said: he said: give, even of your jewellery. She spent on Abdullah and the orphans in
+  // her care, and went to ask him, and found a woman of the Ansar at his door. Bilal passed by, and they said: ask him.
+  // He said: who are they? Bilal said: Zaynab. He said: which Zaynab? Bilal said: the wife of Abdullah. He said: she has
+  // two rewards, the reward of kinship and the reward of charity (Sahih al-Bukhari 1466).
+  "sign-two-rewards": [
+    ["How many rewards did he ﷺ say Zaynab would get?", "Two", "He said: two rewards, kinship and charity"],
+    ["What did he ﷺ ask when Bilal said her name?", "Which Zaynab?", "He said: which Zaynab?"],
+    ["Giving to your own needy family can bring a double reward.", "True", "Bilal said: the wife of Abdullah", "He said: two rewards, kinship and charity"]
   ]
 };
 

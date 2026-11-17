@@ -1363,6 +1363,13 @@ const STATES: State[] = [
   { id: "scene-shade-of-the-kabah", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-in-the-shade-of-the-kabah" ask="were the losers" /> },
   { id: "scene-secret-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-anas-secret" ask="refuse to tell" /> },
   { id: "scene-bless-the-givers", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-dua-for-the-giver" ask="Whose family" /> },
+  { id: "scene-serve-your-parents", render: () => <SceneQuestionDemo lessonId="lesson-deep-parents-serve-them" ask="ask the man first" /> },
+  { id: "scene-best-to-the-poor", render: () => <SceneQuestionDemo lessonId="lesson-deep-jafar-the-poor" ask="split open" /> },
+  { id: "scene-out-to-welcome", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-children-out-to-welcome-him" ask="Where did the boys meet" /> },
+  { id: "scene-quba-turn", render: () => <SceneQuestionDemo lessonId="lesson-deep-baqarah2-quba-turn" ask="do when they heard" /> },
+  { id: "scene-caravan-on-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah3-the-caravan-arrives" ask="How many people stayed" /> },
+  { id: "scene-never-forgot", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-never-forgot" ask="tell him to spread" /> },
+  { id: "scene-two-rewards", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-zaynab-two-rewards" ask="when Bilal said her name" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
