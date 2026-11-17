@@ -814,7 +814,14 @@ export type SignKind =
   | "quba-turn"
   | "caravan-on-friday"
   | "never-forgot"
-  | "two-rewards";
+  | "two-rewards"
+  | "gift-in-ihram"
+  | "cloak-to-give"
+  | "water-for-jabir"
+  | "visit-to-the-youth"
+  | "room-for-a-sheep"
+  | "husk-blown"
+  | "enough-for-more";
 
 export type SignScene = {
   id: string;
@@ -3875,6 +3882,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Zaynab, the wife of Abdullah, said: I was in the masjid and saw the Prophet ﷺ, and he said: give charity, even of your jewellery. Zaynab spent on Abdullah and on orphans in her care. I went to the Prophet ﷺ and found a woman of the Ansar at the door, with the same need as mine. Bilal passed by us, and we said: ask the Prophet ﷺ whether it is enough for me to spend on my husband and the orphans in my care. He went in and asked him, and he said: who are they? Bilal said: Zaynab. He said: which Zaynab? Bilal said: the wife of Abdullah. He said: yes, she has two rewards: the reward of kinship and the reward of charity.",
     sources: [bukhari("1466")]
+  },
+  {
+    id: "sign-gift-in-ihram",
+    kind: "gift-in-ihram",
+    caption:
+      "As-Sa'b ibn Jaththamah gave the Messenger of Allah ﷺ a wild donkey at al-Abwa', or at Waddan, and he gave it back to As-Sa'b. When he saw what was in As-Sa'b's face, he said: we did not give it back to you, except that we are in ihram.",
+    sources: [bukhari("2573")]
+  },
+  {
+    id: "sign-cloak-to-give",
+    kind: "cloak-to-give",
+    caption:
+      "Ibn Umar said: Umar saw a silk cloak for sale, and said to the Prophet ﷺ: buy this cloak and wear it on Fridays, and when delegations come to you. He said: only one who has no share in the Hereafter wears this. Then cloaks like it were brought to the Messenger of Allah ﷺ, and he sent one of them to Umar. Umar said: how can I wear it, when you said of it what you said? He said: I did not give it to you to wear; sell it, or give it to someone to wear. So Umar sent it to a brother of his in Makkah, who had not yet accepted Islam.",
+    sources: [bukhari("2619")]
+  },
+  {
+    id: "sign-water-for-jabir",
+    kind: "water-for-jabir",
+    caption:
+      "Jabir said: the Messenger of Allah ﷺ came to visit me while I was sick and unconscious. He made wudu and poured some of its water on me, and I woke. I said: O Messenger of Allah, to whom will my inheritance go? I have neither parent nor child to inherit from me. Then the ayah of the shares of inheritance was revealed.",
+    sources: [bukhari("194")]
+  },
+  {
+    id: "sign-visit-to-the-youth",
+    kind: "visit-to-the-youth",
+    caption:
+      "Anas said: a Jewish youth used to serve the Prophet ﷺ, and the youth fell ill. The Prophet ﷺ came to visit him, sat by his head, and said to him: accept Islam. The youth looked at his father, who was with him, and the father said: obey Abul-Qasim ﷺ. So the youth accepted Islam, and the Prophet ﷺ came out, saying: praise be to Allah, who saved him from the Fire.",
+    sources: [bukhari("1356")]
+  },
+  {
+    id: "sign-room-for-a-sheep",
+    kind: "room-for-a-sheep",
+    caption:
+      "Sahl said: between the place where the Messenger of Allah ﷺ prayed and the wall, there was room for a sheep to pass.",
+    sources: [bukhari("496")]
+  },
+  {
+    id: "sign-husk-blown",
+    kind: "husk-blown",
+    caption:
+      "Abu Hazim said: I asked Sahl ibn Sa'd: did the Messenger of Allah ﷺ eat white flour? Sahl said: the Messenger of Allah ﷺ never saw white flour, from when Allah sent him until Allah took him. I said: did you have sieves in the time of the Messenger of Allah ﷺ? Sahl said: the Messenger of Allah ﷺ never saw a sieve, from when Allah sent him until He took him. I said: how did you eat barley, unsifted? Sahl said: we would grind it and blow on it, and what flew off flew, and what stayed, we wet and ate.",
+    sources: [bukhari("5413")]
+  },
+  {
+    id: "sign-enough-for-more",
+    kind: "enough-for-more",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: the food of two is enough for three, and the food of three is enough for four.",
+    sources: [bukhari("5392")]
   }
 ];
 
@@ -5809,7 +5865,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Abu Hurairah spread his cloak, wrapped it to him, and forgot nothing after that.
   "deep-abu-hurairah-never-forgot": "sign-never-forgot",
   // Zaynab spent on her husband and the orphans in her care, and he said she had two rewards.
-  "deep-quranwomen-zaynab-two-rewards": "sign-two-rewards"
+  "deep-quranwomen-zaynab-two-rewards": "sign-two-rewards",
+  // He gave back As-Sa'b's gift of a wild donkey, since they were in ihram, and kindly told him why.
+  "deep-kids-kind-ways-we-did-not-refuse-your-gift": "sign-gift-in-ihram",
+  // He sent Umar a silk cloak, not to wear but to sell or give, and Umar sent it to his brother in Makkah.
+  "deep-book-hibah-to-give-not-to-wear": "sign-cloak-to-give",
+  // He visited Jabir, sick and unconscious, poured of his wudu water on him, and Jabir woke.
+  "deep-jabir-the-visit": "sign-water-for-jabir",
+  // He visited the sick Jewish youth who used to serve him, and the youth accepted Islam.
+  "deep-manners-visit-sick-the-young-helper": "sign-visit-to-the-youth",
+  // Between the place where he prayed and the wall was room for a sheep to pass.
+  "deep-prayer-sutrah-room-for-a-sheep": "sign-room-for-a-sheep",
+  // With no sieve, they ground their barley and blew off its husk.
+  "deep-kids-table-blow-off-the-husk": "sign-husk-blown",
+  // The food of two is enough for three, and the food of three is enough for four.
+  "deep-book-food-food-for-two": "sign-enough-for-more"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
