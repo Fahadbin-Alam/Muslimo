@@ -772,7 +772,14 @@ export type SignKind =
   | "half-the-debt"
   | "quba-peace"
   | "better-than-a-servant"
-  | "thumamah-freed";
+  | "thumamah-freed"
+  | "the-last-brick"
+  | "green-land"
+  | "mat-for-prayer"
+  | "held-back"
+  | "valley-of-the-ansar"
+  | "kept-for-you"
+  | "long-night";
 
 export type SignScene = {
   id: string;
@@ -3539,6 +3546,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Prophet ﷺ sent horsemen toward Najd, and they brought a man of Banu Hanifah called Thumamah ibn Uthal, and tied him to one of the pillars of the masjid. The Prophet ﷺ came out to him and said: what do you have, Thumamah? He left him till the next day, and asked again, and then till the day after. Then he said: set Thumamah free. He went to palms near the masjid and washed, then came into the masjid and said: I testify that there is no god but Allah, and that Muhammad is the Messenger of Allah. By Allah, there was no face on earth more hateful to me than yours, and now your face has become the dearest of all faces to me.",
     sources: [bukhari("4372")]
+  },
+  {
+    id: "sign-the-last-brick",
+    kind: "the-last-brick",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: my likeness and the likeness of the prophets before me is that of a man who built a house and made it fine and fair, but for the place of one brick in a corner. The folk began to go round it and wonder at it, and say: if only this brick were set! So I am that brick, and I am the last of the prophets.",
+    sources: [bukhari("3535")]
+  },
+  {
+    id: "sign-green-land",
+    kind: "green-land",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: he was named al-Khidr only because he sat on a white, barren land, and lo, it stirred behind him, green.",
+    sources: [bukhari("3402")]
+  },
+  {
+    id: "sign-mat-for-prayer",
+    kind: "mat-for-prayer",
+    caption:
+      "Anas ibn Malik said: Mulaykah invited the Messenger of Allah ﷺ to food she had made for him. He ate of it, then said: get up, and let me lead you in prayer. So I went to a mat of ours that had gone dark from long use, and sprinkled it with water. The Messenger of Allah ﷺ stood on it, the orphan and I lined up behind him, and the old lady behind us. He prayed two rak'ahs with us, then left.",
+    sources: [bukhari("380")]
+  },
+  {
+    id: "sign-held-back",
+    kind: "held-back",
+    caption:
+      "Anas ibn Malik said: the Messenger of Allah ﷺ returned from the expedition of Tabuk, and when he neared Madinah he said: in Madinah are folk: you went no way and crossed no valley but they were with you. They said: O Messenger of Allah, and they are in Madinah? He said: and they are in Madinah; an excuse held them back.",
+    sources: [bukhari("4423")]
+  },
+  {
+    id: "sign-valley-of-the-ansar",
+    kind: "valley-of-the-ansar",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: if the Ansar took a valley or a mountain pass, I would take the valley of the Ansar; and but for the hijrah, I would be one of the Ansar. Abu Hurairah said: he was not unjust, for they sheltered him and helped him.",
+    sources: [bukhari("3779")]
+  },
+  {
+    id: "sign-kept-for-you",
+    kind: "kept-for-you",
+    caption:
+      "Al-Miswar ibn Makhramah said: the Messenger of Allah ﷺ shared out some cloaks and gave Makhramah none of them. Makhramah said: my son, let us go to the Messenger of Allah ﷺ. So I went with him, and he said: go in and call him for me. I called him for him, and he came out to him wearing one of them, and said: we kept this for you. Makhramah looked at it and said: Makhramah is pleased.",
+    sources: [bukhari("2599")]
+  },
+  {
+    id: "sign-long-night",
+    kind: "long-night",
+    caption:
+      "Abu Hurairah said: when I came to the Prophet ﷺ, I said on the way: O night, how long and tiring! Yet from the land of kufr it saved us. A slave of mine ran away from me on the way. When I came to the Prophet ﷺ, I gave him my pledge, and as I was with him, the slave appeared. The Messenger of Allah ﷺ said to me: O Abu Hurairah, here is your slave. I said: he is free, for the sake of Allah, and I freed him.",
+    sources: [bukhari("2531")]
   }
 ];
 
@@ -5388,7 +5444,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Instead of a servant, he taught Ali and Fatimah to praise Allah at bedtime.
   "deep-ali-better-than-servant": "sign-better-than-a-servant",
   // Thumamah, tied in the masjid, was set free, washed, and came back to bear witness.
-  "deep-fresh-start-thumamah": "sign-thumamah-freed"
+  "deep-fresh-start-thumamah": "sign-thumamah-freed",
+  // His likeness and the prophets' before him: a fine house but for one brick's place; he is that brick, the last of them.
+  "deep-ahzab2-the-last-brick": "sign-the-last-brick",
+  // Al-Khidr was so named because the white, barren land he sat on stirred green behind him.
+  "deep-kahf3-why-he-was-called-al-khidr": "sign-green-land",
+  // After Mulaykah's food, Anas sprinkled their dark mat, and he led them: Anas and the orphan behind him, the old lady behind them.
+  "deep-kids-children-a-row-behind-him": "sign-mat-for-prayer",
+  // Back from Tabuk, he said folk an excuse held back in Madinah had been with them all the way.
+  "deep-tawbah4-with-you-by-intention": "sign-held-back",
+  // If the Ansar took a valley, he would take theirs; but for the hijrah, he would be one of them.
+  "deep-muhajirun-but-for-hijrah": "sign-valley-of-the-ansar",
+  // He shared out cloaks and gave Makhramah none; then he came out to him wearing one of them: we kept this for you.
+  "deep-kids-kind-ways-we-kept-this-for-you": "sign-kept-for-you",
+  // Abu Hurairah's long night on the way to Islam, and his slave who ran away, set free when he appeared.
+  "deep-intro-starting-out-a-long-night-ends": "sign-long-night"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
