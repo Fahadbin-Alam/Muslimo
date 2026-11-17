@@ -4901,6 +4901,66 @@ const ASKS: Record<string, readonly Ask[]> = {
   // al-Bukhari 628). (Getting clean with wudu before the prayer is not in the scene, so it stays as it is.)
   "sign-twenty-nights": [
     ["The ____ calls Muslims to pray five times a day.", "adhan", "when prayer is due, let one give the adhan"]
+  ],
+  // Abdullah ibn Umar said: he said: a Muslim is the brother of a Muslim; he does not wrong him, nor hand him over.
+  // Whoever meets his brother's need, Allah meets his need; whoever relieves a Muslim of a hardship, Allah relieves him
+  // of one of the hardships of the Day of Resurrection; and whoever covers a Muslim, Allah covers him on the Day of
+  // Resurrection (Sahih al-Bukhari 2442).
+  "sign-brother-of-a-muslim": [
+    ["You help a friend with what he needs. What does Allah do?", "Meets your needs", "Allah meets his need"],
+    ["You know a friend's private mistake. What should you do?", "Cover it", "whoever covers a Muslim, Allah covers him"],
+    ["A Muslim may hand his brother over to someone who harms him.", "False", "he does not wrong him, nor hand him over"],
+    ["What is a Muslim to another Muslim, in the hadith?", "A brother", "A Muslim is a brother of a Muslim"],
+    ["What does Allah do for one who screens a Muslim?", "Screens him on Judgment Day", "whoever covers a Muslim, Allah covers him"],
+    ["Who fulfils the needs of one who helps his brother?", "Allah", "Allah meets his need"],
+    ["What must a Muslim never do to his brother, per Bukhari 2442?", "Oppress him", "he does not wrong him, nor hand him over"],
+    ["What does Allah do for one who meets a brother's needs?", "Meets his needs", "Allah meets his need"],
+    ["Whoever covers a Muslim's faults, Allah will cover his.", "True", "whoever covers a Muslim, Allah covers him"]
+  ],
+  // Usamah ibn Zayd said: he would take him and al-Hasan, and say: O Allah, love them both, for I love them both (Sahih
+  // al-Bukhari 3735). (Who Usamah's father was is not in the scene, so it stays as it is.)
+  "sign-love-them-both": [
+    ["Who was held with Usamah?", "Al-Hasan", "and al-Hasan"],
+    ["What did the Prophet ﷺ pray for them?", "That Allah loves them", "and say: O Allah, love them both"],
+    ["Which two children did he ﷺ hold?", "Usamah and Al-Hasan", "He would take Usamah", "and al-Hasan"],
+    ["What did he ﷺ ask Allah for them?", "To love them", "and say: O Allah, love them both"],
+    ["The Prophet ﷺ showed his love to children openly.", "True", "for I love them both"]
+  ],
+  // Abu Hurairah said: he said: travel is a piece of torment; it keeps one of you from his food, his drink and his
+  // sleep. So when he has done what he came for, let him hurry home to his family (Sahih al-Bukhari 1804).
+  "sign-hurry-home": [
+    ["What does travel keep a person from, he ﷺ said?", "Eating, drinking and sleeping well", "it keeps one of you from his food", "and his sleep"],
+    ["When your work on a journey is done, what should you do?", "Hurry back to your family", "let him hurry home to his family"],
+    ["Once your work is done, it is best to stay away a long time.", "False", "let him hurry home to his family"]
+  ],
+  // Abu Hurairah said: he said: the people of Yemen have come to you; they are more gentle and soft-hearted. Faith is
+  // Yemeni, and wisdom is Yemeni; pride and haughtiness are among the owners of camels, and calm and dignity among the
+  // owners of sheep (Sahih al-Bukhari 4388).
+  "sign-soft-hearts-of-yemen": [
+    ["Where did Abu Musa's people come from?", "Yemen", "The people of Yemen have come to you"],
+    ["How did the Prophet ﷺ describe the people of Yemen?", "Gentle and soft-hearted", "they are more gentle and soft-hearted"],
+    ["The Prophet ﷺ said faith and wisdom are Yemeni.", "True", "faith is Yemeni", "and wisdom is Yemeni"]
+  ],
+  // Urwah said: Usamah was asked, while I was sitting there, how he travelled in the Farewell Hajj when he set off from
+  // Arafat. Usamah said: he went at a modest pace, and when he found an open space, he went faster (Sahih al-Bukhari
+  // 1666).
+  "sign-a-modest-pace": [
+    ["What did he ﷺ do when there was enough space?", "He went faster", "he went faster"],
+    ["On which Hajj was Usamah asked about this?", "The Farewell Hajj", "in the Farewell Hajj, setting off"],
+    ["Usamah said he ﷺ went at a modest pace from Arafat.", "True", "Usamah said: he went at a modest pace"]
+  ],
+  // Anas ibn Malik passed by some boys and greeted them with salam, and said: he used to do so (Sahih al-Bukhari 6247).
+  // (Whom Anas greeted stays as it is, since the boys at play are there from the scene's start.)
+  "sign-salam-to-the-boys": [
+    ["Why did Anas say salam to the boys?", "The Prophet ﷺ used to do so", "Anas said: he used to do so"],
+    ["Saying salam to children is part of the Sunnah.", "True", "and greeted them with salam", "Anas said: he used to do so"]
+  ],
+  // Anas ibn Malik said: he saw some women and children coming back from a wedding, and he stood up, energetic and
+  // happy, and said: by Allah, you are among the people most beloved to me, meaning the Ansar (Sahih al-Bukhari 5180).
+  // (Who the guests were stays as it is, since nothing in the scene shows that they were of the Ansar.)
+  "sign-joy-at-a-wedding": [
+    ["How did he ﷺ react to the wedding guests?", "He stood up happily", "he stood up, energetic and happy"],
+    ["A wedding is a happy time in Islam.", "True", "coming back from a wedding", "he stood up, energetic and happy"]
   ]
 };
 
