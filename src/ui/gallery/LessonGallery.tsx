@@ -1349,6 +1349,13 @@ const STATES: State[] = [
   { id: "scene-reached-its-place", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-nusaybahs-sheep" ask="say about the meat" /> },
   { id: "scene-horse-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animal-manners-a-horse-kept-for-allah" ask="rewarded for" /> },
   { id: "scene-carpets-will-come", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-weddings-and-new-homes-carpets-will-come" ask="wife remind him" /> },
+  { id: "scene-kaaba-as-it-was", render: () => <SceneQuestionDemo lessonId="lesson-deep-fresh-start-kabah-left-as-it-was" ask="not rebuild the Ka'bah" /> },
+  { id: "scene-cloth-in-the-heat", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-rain-cold-and-heat-clothes-in-the-heat" ask="spread on the hot earth" /> },
+  { id: "scene-covered-cup", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-cover-the-cup" ask="tell Abu Humayd" /> },
+  { id: "scene-one-date-shared", render: () => <SceneQuestionDemo lessonId="lesson-deep-children-daughters" ask="do with one date" /> },
+  { id: "scene-blessed-bowl", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-salam-a-blessed-bowl" ask="serve his guest" /> },
+  { id: "scene-cloaks-alike", render: () => <SceneQuestionDemo lessonId="lesson-deep-abudharr-brothers" ask="same cloak" /> },
+  { id: "scene-half-a-sa", render: () => <SceneQuestionDemo lessonId="lesson-deep-tawbah4-small-charity" ask="say about the small gift" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

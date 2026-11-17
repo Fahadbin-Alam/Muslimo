@@ -4429,6 +4429,62 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did he ﷺ tell Jabir they would soon have?", "Carpets", "He asked: have you got carpets?", "He said: you shall soon have carpets"],
     ["What did Jabir's wife remind him of?", "His ﷺ words about carpets", "She would say: did he not tell you", "that you would soon have carpets?"],
     ["Jabir stopped asking his wife to remove the carpets.", "True", "So I would let them be"]
+  ],
+  // He said to Aishah: when your people built the Ka'bah, they fell short of Ibrahim's foundations. She said: will you
+  // not return it to them? He said: were your people not so newly out of disbelief, I would have done it. Ibn Umar said:
+  // he did not touch the two corners that face the Hijr, as the House was not completed on Ibrahim's foundations (Sahih
+  // al-Bukhari 1583).
+  "sign-kaaba-as-it-was": [
+    ["Whose foundations did the Ka'bah not fully stand on?", "Ibrahim's", "they fell short of Ibrahim's foundations"],
+    ["Why did he ﷺ not rebuild the Ka'bah?", "His people were new to Islam", "He said: were your people not so newly", "out of disbelief, I would have done it"],
+    ["Being gentle with people new to Islam is part of his ﷺ way.", "True", "He said: were your people not so newly", "out of disbelief, I would have done it"]
+  ],
+  // Anas said: we used to pray with him in the scorching heat, and if one of us could not put his face on the earth, he
+  // would spread out his garment and prostrate on it (Sahih al-Bukhari 1208).
+  "sign-cloth-in-the-heat": [
+    ["Why could some not put their face on the earth?", "Because of the heat", "We used to pray in the scorching heat", "his face on the earth"],
+    ["Anas prayed with him ﷺ even in scorching heat.", "True", "We used to pray in the scorching heat"],
+    ["What did some spread on the hot earth to prostrate on?", "Their clothes", "that one would spread out his garment", "and prostrate on it"]
+  ],
+  // Jabir said: Abu Humayd brought a cup of milk from al-Naqi', and he said to him: will you not cover it, even by
+  // laying a stick across it? (Sahih al-Bukhari 5605).
+  "sign-covered-cup": [
+    ["What did he ﷺ tell Abu Humayd about the milk?", "Cover it", "He said to him: will you not cover it,", "even by laying a stick across it?"],
+    ["With what, at the very least?", "A stick across it", "even by laying a stick across it?"],
+    ["Covering food and drink is a sunnah.", "True", "He said to him: will you not cover it,", "even by laying a stick across it?"]
+  ],
+  // Aishah said: a lady came with her two daughters, asking, and I found nothing but one date, so I gave it to her. She
+  // divided it between her two daughters and did not eat of it, then went out. He came in, and I told him, and he said:
+  // whoever is tried with daughters, they will be a shield for him from the Fire (Sahih al-Bukhari 1418). (Who saw the
+  // mother and told him stays on its usual picture, since the scene does not name her.)
+  "sign-one-date-shared": [
+    ["What did the poor mother do with one date?", "Split it between her daughters", "I gave it to her, and she divided it", "between her two daughters"],
+    ["What will daughters raised with kindness be for their parent?", "A shield from the Fire", "He said: whoever is tried with daughters", "they will be a shield for him"]
+  ],
+  // Abu Burdah said: when I came to Madinah, Abdullah ibn Salam met me and said: come home, I will give you a drink from
+  // a bowl he drank from, and you will pray in a masjid he prayed in. So I went; he gave me sawiq, fed me dates, and I
+  // prayed in that masjid (Sahih al-Bukhari 7342).
+  "sign-blessed-bowl": [
+    ["What did he serve his guest?", "Sawiq and dates", "So I went; Ibn Salam gave me sawiq", "and fed me dates"],
+    ["What was special about the bowl?", "The Prophet ﷺ drank from it", "from a bowl he drank from"],
+    ["Abdullah ibn Salam was a kind host.", "True", "So I went; Ibn Salam gave me sawiq", "and fed me dates"]
+  ],
+  // Al-Ma'rur met Abu Dharr at ar-Rabadhah, a cloak on him and one on his slave, and asked about it. Abu Dharr said: I
+  // abused a man, shaming him for his mother, and he said: there is still ignorance in you; your servants are your
+  // brothers, so feed them of what you eat and dress them of what you wear (Sahih al-Bukhari 30). (What to do when a
+  // task is too hard stays on its usual picture, since the scene's words stop before it.)
+  "sign-cloaks-alike": [
+    ["Why was Abu Dharr wearing the same cloak as his servant?", "He was told: dress them as you dress", "and dress them of what you wear"],
+    ["What had Abu Dharr done wrong?", "Insulted a man's mother", "I abused a man, shaming him for his mother"],
+    ["Islam lets you mock a person's family.", "False", "I abused a man, shaming him for his mother", "He said: there is still ignorance in you"]
+  ],
+  // Abu Mas'ud said: when we were told to give charity, we would carry loads for hire. Abu Aqil came with half a sa',
+  // and someone brought more; the hypocrites said: Allah has no need of this one's charity, and the other gave only to
+  // show off. Then the ayah was revealed (Sahih al-Bukhari 4668).
+  "sign-half-a-sa": [
+    ["How did they earn something to give, per Abu Mas'ud?", "They worked as porters", "we would carry loads for hire"],
+    ["What did the mockers say about the small gift?", "Allah does not need it", "The hypocrites said: Allah has no need", "of this one's charity"],
+    ["A small gift from little means is precious to Allah.", "True", "Then the ayah was revealed"]
   ]
 };
 
