@@ -744,7 +744,14 @@ export type SignKind =
   | "fast-horse"
   | "talking-wolf"
   | "well-dream"
-  | "land-of-palms";
+  | "land-of-palms"
+  | "dearer-than-the-world"
+  | "milk-of-knowledge"
+  | "fatihah-cure"
+  | "cloak-on-the-thorns"
+  | "rings-thrown-away"
+  | "tailors-gourd"
+  | "the-eclipse";
 
 export type SignScene = {
   id: string;
@@ -3315,6 +3322,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Musa said that the Prophet ﷺ said: I saw in a dream that I was migrating from Makkah to a land with palm trees, and I thought that it was al-Yamamah or Hajar, but it was Madinah, Yathrib.",
     sources: [bukhari("7035")]
+  },
+  {
+    id: "sign-dearer-than-the-world",
+    kind: "dearer-than-the-world",
+    caption:
+      "Aslam said that the Messenger of Allah ﷺ was travelling by night on one of his journeys, and Umar ibn al-Khattab was travelling with him. Umar asked him about something, and he did not answer him; he asked him again, and he did not answer him; he asked him again, and he did not answer him. Umar said: I moved my camel on and went ahead of the people, and I was afraid that Quran would be revealed about me. Soon I heard someone calling me, and I came to the Messenger of Allah ﷺ and greeted him. He said: tonight a surah has been revealed to me that is dearer to me than all that the sun rises on. Then he recited: Indeed, We have given you a clear victory.",
+    sources: [bukhari("4833")]
+  },
+  {
+    id: "sign-milk-of-knowledge",
+    kind: "milk-of-knowledge",
+    caption:
+      "Ibn Umar said: I heard the Messenger of Allah ﷺ say: while I was sleeping, I was brought a cup of milk, and I drank until I saw its wetness coming out of my nails. Then I gave what was left to Umar ibn al-Khattab. They said: how did you interpret it, O Messenger of Allah? He said: knowledge.",
+    sources: [bukhari("82")]
+  },
+  {
+    id: "sign-fatihah-cure",
+    kind: "fatihah-cure",
+    caption:
+      "Abu Sa'id said: some of the companions of the Prophet ﷺ set out on a journey until they stopped by a tribe of the Arabs, and asked them to host them, but they would not host them. Then the chief of that tribe was stung, and they tried everything for him, but nothing helped him. They came to them and said: our chief has been stung, and we have tried everything, but nothing has helped him; does any of you have anything? One of them said: yes, by Allah, I do recite ruqyah; but by Allah, we asked you to host us and you did not, so I will not recite for you until you set us a reward. They agreed with them on a flock of sheep. So he went, blowing over him and reciting: All praise is for Allah, Lord of the worlds. It was as if he had been freed from a tether, and he got up and walked, with nothing wrong with him. They gave them the reward they had agreed on. Some of them said: share it out. The one who recited said: do not, until we come to the Prophet ﷺ and tell him what happened, and see what he tells us. So they came to the Messenger of Allah ﷺ and told him, and he said: and how did you know that it is a ruqyah? Then he said: you did right; share it out, and give me a share with you. And the Messenger of Allah ﷺ laughed.",
+    sources: [bukhari("2276")]
+  },
+  {
+    id: "sign-cloak-on-the-thorns",
+    kind: "cloak-on-the-thorns",
+    caption:
+      "Jubair ibn Mut'im said that while he was travelling with the Messenger of Allah ﷺ, with the people, on his way back from Hunayn, the people clung to him, asking him, until they pressed him to a samurah tree, which snatched his cloak. The Prophet ﷺ stopped and said: give me my cloak. If I had camels as many as these thorny trees, I would share them out among you, and then you would not find me a miser, a liar or a coward.",
+    sources: [bukhari("2821")]
+  },
+  {
+    id: "sign-rings-thrown-away",
+    kind: "rings-thrown-away",
+    caption:
+      "Ibn Umar said: the Prophet ﷺ took a ring of gold, and the people took rings of gold. Then the Prophet ﷺ said: I took a ring of gold. And he threw it away and said: I will never wear it. And the people threw their rings away.",
+    sources: [bukhari("7298")]
+  },
+  {
+    id: "sign-tailors-gourd",
+    kind: "tailors-gourd",
+    caption:
+      "Anas ibn Malik said that a tailor invited the Prophet ﷺ to food he had made. I went with the Prophet ﷺ, and he brought barley bread and a broth with gourd and dried meat in it. I saw the Prophet ﷺ following the gourd from around the dish, and I have loved gourd ever since that day.",
+    sources: [bukhari("5436")]
+  },
+  {
+    id: "sign-the-eclipse",
+    kind: "the-eclipse",
+    caption:
+      "Al-Mughirah ibn Shu'bah said: the sun was eclipsed in the time of the Messenger of Allah ﷺ on the day Ibrahim died, and the people said: the sun was eclipsed for the death of Ibrahim. The Messenger of Allah ﷺ said: the sun and the moon are not eclipsed for anyone's death or for anyone's life; so when you see it, pray and call on Allah.",
+    sources: [bukhari("1043")]
   }
 ];
 
@@ -5094,7 +5150,25 @@ export const SIGN_LESSONS: Record<string, string> = {
   // In his dream of the well, Ibn Abi Quhafah drew a bucket or two after him, then Umar drew with a huge bucket.
   "deep-abubakr-dream-of-the-well": "sign-well-dream",
   // He dreamt he was migrating to a land of palms; he thought al-Yamamah or Hajar, but it was Madinah.
-  "deep-book-tabir-a-land-of-palm-trees": "sign-land-of-palms"
+  "deep-book-tabir-a-land-of-palm-trees": "sign-land-of-palms",
+  // A surah dearer to him than all the sun rises on, revealed on a night journey: We have given you a clear victory.
+  "deep-fath1-dearer-than-the-world": "sign-dearer-than-the-world",
+  "surah-meaning-48-1-10": "sign-dearer-than-the-world",
+  // In his dream he drank a cup of milk and gave what was left to Umar: knowledge.
+  "deep-tree-umar-milk-of-knowledge": "sign-milk-of-knowledge",
+  "deep-umar-milk": "sign-milk-of-knowledge",
+  // A tribe would not host them; when Al-Fatihah was recited over its stung chief, he rose as if freed from a tether.
+  "deep-abu-said-fatihah-ruqyah": "sign-fatihah-cure",
+  "deep-fatihah-ruqyah": "sign-fatihah-cure",
+  // Pressed to a thorny tree that snatched his cloak, he said: you would find me no miser, liar or coward.
+  "deep-manners-beautiful-character-generous-truthful-brave": "sign-cloak-on-the-thorns",
+  // He threw his ring of gold away, and the people threw theirs away too.
+  "deep-aqidah-sunnah-rings-thrown-away": "sign-rings-thrown-away",
+  // At a tailor's meal he picked out the gourd, and Anas loved gourd ever after.
+  "deep-book-food-the-gourd": "sign-tailors-gourd",
+  "deep-saffat5-the-prophet-liked-gourd": "sign-tailors-gourd",
+  // The sun eclipsed the day Ibrahim died: it eclipses for no one's death or life; pray and call on Allah.
+  "deep-mughirah-the-eclipse": "sign-the-eclipse"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

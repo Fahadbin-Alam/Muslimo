@@ -272,11 +272,11 @@ function prayerOnHisMount(): SignArt {
 const NIGHT_HOME = ["#8C7656", "#7A6448", "#2E2418"] as const;
 
 /** A grey ring at night, lighter than by day, about (x, y). */
-const nightGreyRing = (x: number, y: number, rx: number, ry: number) =>
+export const nightGreyRing = (x: number, y: number, rx: number, ry: number) =>
   `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" stroke="#A8A6B4" stroke-width="0.6" stroke-dasharray="1 0.9" fill="none"/>`;
 
 /** Light quick strokes behind (x, y): going fast; `left`: going left, so the strokes are behind it on the right. */
-const quickStrokes = (x: number, y: number, left = false) =>
+export const quickStrokes = (x: number, y: number, left = false) =>
   [
     [0, -3, 6],
     [-2, 0, 7.4],
@@ -679,7 +679,7 @@ function talkingWolf(): SignArt {
 }
 
 /** The sky of a dream: deep violet, with stars. */
-const DREAM_STARS: [number, number][] = [
+export const DREAM_STARS: [number, number][] = [
   [14, 14],
   [36, 26],
   [58, 13],
