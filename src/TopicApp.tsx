@@ -52,7 +52,7 @@ import {
   loseHeart,
   pickTestOutChallenges,
   prepareUserForToday,
-  refillHeartsForToday,
+  regainHearts,
   LIBRARY_TOPICS,
   harderQuestions
 } from "./api/islamicLearningApi";
@@ -249,6 +249,7 @@ import {
   type RankingsState,
   AgeSheet,
   BackgroundSheet,
+  WelcomeSheet,
   LanguageSheet,
   LearnPath,
   PrayerSheet,
@@ -303,6 +304,8 @@ import { getBranchArabic, getLessonArabic, getNodeArabic, getTopicArabic, isFirs
 import { questionSource, shortReference } from "./services/questionSource";
 import { openSource } from "./services/sourceLink";
 import { openWebPage, setOfflineLinkNotice, subscribeOnline, useOnline } from "./services/network";
+import { setVoiceHelp } from "./services/teacherVoice";
+import { canOpenVoiceSettings, openVoiceSettings } from "./services/voiceSettings";
 import { saveLessonsAhead } from "./services/offlineLessons";
 import { SCHOLAR_TREE, type ScholarYears } from "./data/scholarUnits";
 import { didRamadanToday, ramadanDoneDayNumbers, ramadanSeason, ramadanStreak } from "./data/ramadanCalendar";
@@ -374,11 +377,10 @@ type CrewState =
   | { status: "ready"; payload: CrewPayload }
   | { status: "error"; message: string };
 
-// The out-of-hearts sheet: the one free refill, or the shop. `resume` is what the learner was
-// starting on the path, played once a free refill lands.
+// The out-of-hearts sheet (there is no free refill). `resume` is what the learner was
+// starting on the path, played once hearts come back from a video or the shop.
 type OutOfHeartsSheet = {
   open: boolean;
-  variant: "free" | "shop";
   inLesson: boolean;
   resume?: { kind: "node"; node: LearningNodeView } | { kind: "test_out"; unitId: string; attempt?: number; jumpNodeId?: string };
 };
@@ -735,6 +737,7 @@ const PLAN_OFFER_AT_KEY = "sira-path-plan-offer-at";
 // The ayah and hadith of the day open by themselves this long after the app settles on its first open of the day.
 const DAILY_AUTO_OPEN_MS = 900;
 const DAILY_SHOWN_KEY = "sira-path-daily-shown";
+const WELCOME_KEY = "sira-path-welcome-done";
 
 // The plans sheet: why it opened, and the lesson to start once it closes (it can open as NEXT LESSON is tapped).
 type PlanOffer = {
@@ -783,6 +786,18 @@ export default function TopicApp() {
     return saved ?? (seenDay === localDayNumber() ? { day: seenDay, count: 1, at: Date.now() } : undefined);
   });
   // A newer Muslimo in the store shows a banner under the top bar; checked on every open and every return to the app.
+  // The slow refill keeps going while the app is open: the next heart lands on time, and coming back to the
+  // app gives back the hearts earned while it was away.
+  const nextHeartAt = state.user?.hearts.nextHeartAt;
+  useEffect(() => {
+    const regain = () => dispatch({ type: "apply_user_latest", update: (latest) => regainHearts(latest) });
+    const listener = PhoneAppState.addEventListener("change", (status) => status === "active" && regain());
+    const timer = typeof nextHeartAt === "number" ? setTimeout(regain, Math.min(Math.max(0, nextHeartAt - Date.now()) + 500, 2 ** 31 - 1)) : undefined;
+    return () => {
+      listener.remove();
+      if (timer) clearTimeout(timer);
+    };
+  }, [nextHeartAt]);
   const [updateReady, setUpdateReady] = useState(false);
   const [updateClosed, setUpdateClosed] = useState(false);
   useEffect(() => {
@@ -923,6 +938,8 @@ export default function TopicApp() {
   // Sign-up asks the age first even with ads off: under 13, the account takes a parent's name and email.
   const signUpNeedsAge = Platform.OS !== "web" && !ageGroup;
   const [ageBeforeSignUp, setAgeBeforeSignUp] = useState(false);
+  // A first launch offers to log in or make an account before the first lesson (WelcomeSheet). Asked once.
+  const [welcomeDone, setWelcomeDone] = useState(() => getStoredItem(WELCOME_KEY) === "1");
   // Who the learner is (Muslim, new to Islam, Christian, Jewish or curious), asked once after the age on a first
   // launch. Anyone but a Muslim starts on the New to Islam path, in the unit that fits them. Kept on this device.
   const [learnerBackground, setLearnerBackground] = useState<LearnerBackground | undefined>(() => {
@@ -1791,6 +1808,30 @@ export default function TopicApp() {
     });
     return () => setOfflineLinkNotice(null);
   }, []);
+  // The speaker on a lesson page that cannot speak (the phone's speech engine is off or missing) says why, and on
+  // Android opens the phone's voice settings, instead of doing nothing.
+  const confirmRef = useRef(confirm);
+  confirmRef.current = confirm;
+  useEffect(() => {
+    setVoiceHelp(() => {
+      const title = t("The voice did not start");
+      if (!canOpenVoiceSettings) {
+        void notifyRef.current(title, t("Turn the volume up and the silent switch off, then tap the speaker again."), { mood: "think" });
+        return;
+      }
+      void confirmRef
+        .current(
+          title,
+          t("Your phone's reading voice is off or missing. In Voice settings, choose Google's speech engine (free on Google Play) and turn the media volume up. Then tap the speaker again."),
+          t("Voice settings"),
+          { mood: "think", danger: false, cancelLabel: t("OK") }
+        )
+        .then((open) => {
+          if (open) void openVoiceSettings();
+        });
+    });
+    return () => setVoiceHelp(null);
+  }, []);
   const nextNodeId = sectionNextNode?.id;
   useEffect(() => {
     if (online && nextNodeId) {
@@ -1801,6 +1842,10 @@ export default function TopicApp() {
   // After a few minutes a guest is asked to make an account, but never in the middle of a lesson
   // or practice: the ask waits until they are back on the Foundation path with nothing else open.
   const guestUser = Boolean(state.user && !state.user.hasAccount);
+  // Right after the language, before the age: a guest who has done no lessons yet is offered Log in or Sign up.
+  const welcomeVisible = Boolean(
+    guestUser && !welcomeDone && !state.user?.completedNodeIds.length && !state.user?.completedLessonIds.length && !languageModalVisible && !accountModalVisible && !ageBeforeSignUp
+  );
   useEffect(() => {
     if (!guestUser || accountPromptShown) {
       return;
@@ -1818,7 +1863,7 @@ export default function TopicApp() {
     selectedSection.topicId === "foundation";
   const otherSheetOpen =
     Boolean(outOfHearts?.open || rewardCelebration || testOutResult?.open || planOffer?.open || openHadith) ||
-    topicPickerVisible || settingsModalVisible || languageModalVisible || prayerModalVisible || noticeOpen || familyVisible ||
+    welcomeVisible || topicPickerVisible || settingsModalVisible || languageModalVisible || prayerModalVisible || noticeOpen || familyVisible ||
     // Practice's own sheets too: nothing pops up over a story, a quiz list, a sprint against the clock or a surah
     // being memorized with the reciter.
     quizSheetVisible || Boolean(storyShelf) || lifeMapOpen || hajjMapOpen || dayOfPrayerOpen || albumVisible || sayItVisible || sprintVisible || memorizeVisible ||
@@ -2019,14 +2064,12 @@ export default function TopicApp() {
     dispatch({ type: "select_topic", topicId });
   }
 
-  // Out of hearts: the one free refill first, then the shop. In a lesson it opens after GOT IT on
-  // the wrong answer, so the learner sees the right answer and the Why? line before the sheet.
-  // Once the free refill is used, the plans come first (at most every few hours, see mayOfferPlans); NO THANKS
-  // there brings this sheet up.
+  // Out of hearts: no free refill. In a lesson it opens after GOT IT on the wrong answer, so the learner
+  // sees the right answer and the Why? line before the sheet. The plans come first (at most every few
+  // hours, see mayOfferPlans); NO THANKS there brings this sheet up with videos, the shop and Practice.
   function openOutOfHearts(user: UserProfile, inLesson: boolean, resume?: OutOfHeartsSheet["resume"]) {
-    const variant = shouldOfferReviewHeartRestore(user) ? "free" : "shop";
-    const plansFirst = variant === "shop" && mayOfferPlans(planOfferCheck(user));
-    setOutOfHearts({ open: !plansFirst, variant, inLesson, resume });
+    const plansFirst = mayOfferPlans(planOfferCheck(user));
+    setOutOfHearts({ open: !plansFirst, inLesson, resume });
     if (plansFirst) openPlanOffer("hearts");
   }
 
@@ -3085,6 +3128,11 @@ export default function TopicApp() {
     setAccountModalVisible(true);
   }
 
+  function finishWelcome() {
+    setStoredItem(WELCOME_KEY, "1");
+    setWelcomeDone(true);
+  }
+
   function openAccountPanel() {
     if (state.user?.hasAccount) {
       dispatch({ type: "open_profile" });
@@ -3357,7 +3405,7 @@ export default function TopicApp() {
     void signOutOfProviders();
 
     const fallbackUser = await learningApi.getUser(1001);
-    const guestUser = withExperienceDefaults(ensureLearnerProfile(refillHeartsForToday({
+    const guestUser = withExperienceDefaults(ensureLearnerProfile(regainHearts({
       ...fallbackUser,
       preferredLanguage: leaving.preferredLanguage ?? DEFAULT_LANGUAGE,
       soundEffectsEnabled: leaving.soundEffectsEnabled !== false,
@@ -3397,7 +3445,7 @@ export default function TopicApp() {
     }
 
     const fallbackUser = await learningApi.getUser(1001);
-    resetToGuest(withExperienceDefaults(ensureLearnerProfile(refillHeartsForToday({
+    resetToGuest(withExperienceDefaults(ensureLearnerProfile(regainHearts({
       ...fallbackUser,
       preferredLanguage: leaving.preferredLanguage ?? DEFAULT_LANGUAGE
     }))), true);
@@ -3815,15 +3863,6 @@ export default function TopicApp() {
     } catch (error) {
       void notify(crewErrorTitle(error, "answer"), undefined, { mood: "sad" });
     }
-  }
-
-  // REFILL HEARTS: RefillSheet fills the hearts on screen first, then calls this.
-  function claimReviewHeartRestore() {
-    if (!state.user) {
-      return;
-    }
-
-    resumeWithHearts(grantHearts({ ...state.user, reviewHeartRestoreUsed: true }, state.user.hearts.max, true));
   }
 
   // One more video toward the next heart; true when this one finished it.
@@ -4844,8 +4883,8 @@ export default function TopicApp() {
         />
         <RefillSheet
           visible={Boolean(outOfHearts?.open)}
-          variant={outOfHearts?.variant}
           maxHearts={state.user.hearts.max}
+          nextHeartAt={state.user.hearts.nextHeartAt}
           mascotVariant={inLesson ? lessonMascot : selectedSection.mascot}
           accent={inLesson ? lessonAccent : selectedSection.accentColor}
           endLabel={outOfHearts?.inLesson === false ? t("Not now") : undefined}
@@ -4854,7 +4893,6 @@ export default function TopicApp() {
             closeOutOfHearts();
             changeTab("practice");
           }}
-          onRefill={claimReviewHeartRestore}
           onWatchVideo={canWatchHeartVideo ? () => void watchVideoForHeart() : undefined}
           videosWatched={heartVideosWatched}
           onPlans={
@@ -4942,8 +4980,21 @@ export default function TopicApp() {
         />
         <RewardPop visible={questChestDates > 0 && !rewardCelebration} gems={questChestDates} onClose={collectQuestChest} />
         <QuestsSheet visible={questsOpen && !inLesson} board={questBoardNow} onClaim={openQuestChest} onClose={() => setQuestsOpen(false)} />
+        <WelcomeSheet
+          visible={welcomeVisible}
+          onLogIn={() => {
+            finishWelcome();
+            openAccountSheet("login");
+          }}
+          onCreateAccount={() => {
+            finishWelcome();
+            openAccountSheet("create");
+          }}
+          onSkip={finishWelcome}
+        />
         <AgeSheet
-          visible={hasUser && !ageGroup}
+          // Waits for the welcome and for an open log in, then asks once (sign-up asks it first, see openAccountSheet).
+          visible={hasUser && !ageGroup && !welcomeVisible && !accountModalVisible}
           onSave={(group) => {
             setStoredItem("sira-path-age-group", group);
             setAgeGroup(group);
@@ -5015,10 +5066,6 @@ function knownTopic(topicId: string | undefined): TopicId | undefined {
 // Whose practice session is saved: the account's email, or "guest".
 function assessmentOwner(user: UserProfile) {
   return user.hasAccount && user.accountEmail ? user.accountEmail : "guest";
-}
-
-function shouldOfferReviewHeartRestore(user: UserProfile) {
-  return !user.hearts.unlimited && user.hearts.current === 0 && !user.reviewHeartRestoreUsed;
 }
 
 function defaultReminderPreferences(): ReminderPreferences {
