@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2854);
+    expect(asks.length).toBe(2884);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4163);
+    expect(places).toBe(4200);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -16816,6 +16816,362 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
+  });
+
+  it("waits on the scenes from close in the rows to a secret not told, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-close-in-the-rows", "sign-zayd-was-truthful", "sign-this-is-my-sunnah", "sign-not-home-at-night", "sign-a-charity-for-travellers", "sign-before-you-sleep", "sign-a-secret-not-told"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(30);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // How the angels draw up, and that neat rows follow their way: the voice of one asking has spoken, with the places
+    // still in their circles, before the last words; then his voice speaks, the places leave their circles and stand on
+    // the lines in two rows, then close up, and a soft golden ring, a soft golden glow and glints come about the rows.
+    for (const prompt of ["How do angels make rows, in the hadith?", "Neat prayer rows follow the way of the angels."]) {
+      expect([
+        prompt,
+        shown(prompt, ["apart: grey rings about the circles", "his voice: they complete the first rows", "complete: a soft golden ring about the rows", "close together: a soft golden glow over the rows", "lined up: glints over the rows"]),
+        moved(prompt, "a place in the circles 1", "x"),
+        moved(prompt, "a place in the circles 9", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [0, 1, 1, 1, 1]
+        ],
+        [0, 25.9],
+        [0, -32.9]
+      ]);
+    }
+    // What he asked them, and what to form: his place has gone back in, with grey rings about the circles, before the
+    // next words; then it comes out again, his voice speaks, and two faint golden lines show on the ground. It stops
+    // before the voice of one asking speaks.
+    for (const prompt of ["What did the Prophet ﷺ ask the people?", "What did the Prophet ﷺ ask people to form?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["his place, a golden ring", "his voice, again: why not draw up in rows", "rows: two faint golden lines on the ground", "the voice of one asking how"]),
+        moved(prompt, "his place, a golden ring", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0]
+        ],
+        [-16.6, 0]
+      ]);
+    }
+    // That he disliked seeing them apart in groups: his place has come out, and a faint golden line goes from it to the
+    // circles, before the next words; then his voice speaks, grey rings come about the circles, and his place goes back
+    // in.
+    expect([
+      shown("The Prophet ﷺ disliked seeing people split into groups.", ["his place, a golden ring", "he saw them: a faint golden line from his place to the circles", "apart: grey rings about the circles"]),
+      value("close-in-the-rows", "his voice: why do I see you apart", "opacity", 0.2)
+    ]).toEqual([
+      [
+        [1, 1, 0],
+        [0, 0, 1]
+      ],
+      1
+    ]);
+    // Who heard the hypocrite and told of it: the camp, before the first words; then Ibn Ubayy's voice speaks, a faint
+    // line goes from it to Zayd's small place, and a grey ring comes about Ibn Ubayy and his folk; Zayd's small place
+    // goes to the one Zayd told, whose voice goes on to his place. It stops before a faint golden line goes from his
+    // place to Ibn Ubayy's.
+    expect([
+      shown("Who heard the hypocrite and reported him?", ["do not spend: a grey ring about Ibn Ubayy and his folk", "the voice of the one Zayd told, toward his place", "told him: a faint line from the one Zayd told to his place", "he sent for them: a faint golden line from his place to Ibn Ubayy's place"]),
+      value("zayd-was-truthful", "Ibn Ubayy's voice: do not spend on them", "opacity", 0.1),
+      value("zayd-was-truthful", "heard: a faint line from Ibn Ubayy's voice to Zayd's small place", "opacity", 0.1),
+      moved("Who heard the hypocrite and reported him?", "Zayd's small place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      1,
+      1,
+      [0, -27]
+    ]);
+    // How Zayd felt when he was not believed: Ibn Ubayy and his folk have come and sworn, before the next words; then
+    // they go back, a grey ring comes about Zayd's small place, it goes back to its tent, and a grey haze comes about
+    // it.
+    expect([
+      shown("How did Zaid feel when he was not believed?", ["Ibn Ubayy and his folk swear: their voice", "not believed: a grey ring about Zayd's small place", "grief: a grey haze about Zayd's small place"]),
+      moved("How did Zaid feel when he was not believed?", "Ibn Ubayy's place", "x"),
+      moved("How did Zaid feel when he was not believed?", "Zayd's small place", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [-90, 0],
+      [-27, 0]
+    ]);
+    // That the surah came and confirmed Zayd: Zayd's small place is back at its tent, with a grey ring and a grey haze,
+    // before the next words; then a faint golden line goes from his place to Zayd's tent, Zayd's small place comes to
+    // him, his voice speaks, the grey ring and haze go, and a soft golden ring, a warm glow and golden glints come about
+    // it; a grey ring comes about Ibn Ubayy's place.
+    expect([
+      shown("Allah revealed Al-Munafiqun and confirmed Zaid.", ["not believed: a grey ring about Zayd's small place", "grief: a grey haze about Zayd's small place", "his voice: confirmed, O Zayd", "confirmed: a soft golden ring about Zayd's small place", "truthful: a warm glow about Zayd's small place", "truthful: golden glints over Zayd's small place", "found out: a grey ring about Ibn Ubayy's place"]),
+      value("zayd-was-truthful", "he sent for Zayd: a faint golden line from his place to Zayd's tent", "opacity", 0.76),
+      moved("Allah revealed Al-Munafiqun and confirmed Zaid.", "Zayd's small place", "x")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0, 0, 0],
+        [0, 0, 1, 1, 1, 1, 1]
+      ],
+      1,
+      [0, -68]
+    ]);
+    // What the third one wanted to give up: the second one's voice has spoken, with a fast for each day, before the next
+    // words; then the third one's voice speaks, and a grey ring comes about its home. It stops before his place comes.
+    expect(shown("What did one of the three men want to give up?", ["the second one's voice: I will always fast", "always fasting: a fast for each day 7", "the third one's voice: I will never marry", "never to marry: a grey ring about the third one's home", "his place, a golden ring"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [0, 1, 1, 1, 0]
+    ]);
+    // What he said of marriage, and that never marrying is not more pious: his voice has said he fasts and breaks his
+    // fast, before the next words; then a spark rises from his place, a mat shows by it, and warm light in his homes; a
+    // faint golden way goes from his place to the three, the grey rings go, and a soft golden ring and a soft golden
+    // glow come about his place and his homes.
+    for (const prompt of ["What did the Prophet ﷺ say about marriage?", "Never marrying makes you more pious."]) {
+      expect([
+        prompt,
+        shown(prompt, ["they thought it little: a grey ring about the three", "never to marry: a grey ring about the third one's home", "and I sleep: a mat by his place", "and I marry: warm light in his homes", "my Sunnah: a faint golden way from his place to the three", "his Sunnah: a soft golden ring about his place", "his Sunnah: a soft golden glow over his homes"]),
+        value("this-is-my-sunnah", "I pray: a spark rising from his place", "opacity", 0.79)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0, 0, 0, 0],
+          [0, 0, 1, 1, 1, 1, 1]
+        ],
+        1
+      ]);
+    }
+    // What the first one wanted: a voice has answered from his homes, with a grey ring about the three, before the next
+    // words; then night comes over the first one, its voice speaks, and sparks rise from its place all night.
+    expect([
+      shown("What did one of the three men want?", ["told: a voice from his homes", "the first one's night", "the first one's night: stars and the moon", "the first one's voice: I will pray all night"]),
+      value("this-is-my-sunnah", "all night: a spark rising from the first one's place 1", "opacity", 0.3),
+      value("this-is-my-sunnah", "all night: a spark rising from the first one's place 3", "opacity", 0.32)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      1,
+      1
+    ]);
+    // What he said he does with fasting: the third one's voice has spoken, before the next words; then the fasts for
+    // each day go, his place comes to them, his voice speaks, and a fast or a meal shows in turn.
+    expect([
+      shown("What did the Prophet ﷺ say he does with fasting?", ["the third one's voice: I will never marry", "always fasting: a fast for each day 1", "his place, a golden ring", "his voice: I fast, and break my fast", "fasting and eating: a fast or a meal in turn 1", "fasting and eating: a fast or a meal in turn 6"]),
+      moved("What did the Prophet ﷺ say he does with fasting?", "his place, a golden ring", "x")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0, 0],
+        [0, 0, 1, 1, 1, 1]
+      ],
+      [-66, 0]
+    ]);
+    // That the Sunnah is not to go without sleep: his voice has said he fasts and breaks his fast, before the next
+    // words; then a spark rises from his place, a mat shows by it, and warm light in his homes. It stops before a faint
+    // golden way goes from his place to the three.
+    expect([
+      shown("The Sunnah is to never sleep and pray all night.", ["and I sleep: a mat by his place", "and I marry: warm light in his homes", "my Sunnah: a faint golden way from his place to the three"]),
+      value("this-is-my-sunnah", "I pray: a spark rising from his place", "opacity", 0.79)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      1
+    ]);
+    // How to come home after a long trip: eight marks are on the rock, before the next words; then the traveller's place
+    // and its camel go along the road, dusk comes on, and a soft ring comes about the traveller's place; night comes,
+    // the home's window is lit, and the traveller rests on a mat by the road; the day comes back, the traveller goes
+    // home, and glints show over the family's places, a warm glow about the home, and a soft golden ring about the
+    // traveller's place.
+    expect([
+      shown("Back from a long trip, how should you come home?", ["a day away: a mark on the rock 8", "home in the day: glints over the family's places", "home in the day: a warm glow about the home", "a soft golden ring about the traveller's place, home"]),
+      value("not-home-at-night", "not at night: a soft ring about the traveller's place", "opacity", 0.65),
+      value("not-home-at-night", "the night over the land", "opacity", 0.75),
+      value("not-home-at-night", "a mat by the road for the night", "opacity", 0.75),
+      moved("Back from a long trip, how should you come home?", "the traveller's place", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      1,
+      1,
+      1,
+      [0, -96]
+    ]);
+    // When not to arrive home: dusk has come on, with a soft ring about the traveller's place on the road, before the
+    // last words; then night comes, the home's window is lit, and the traveller rests on a mat by the road; the day
+    // comes back, the traveller goes home, and a warm glow comes about the home.
+    expect([
+      shown("After a long trip, when should you not arrive home?", ["dusk", "not at night: a soft ring about the traveller's place", "home in the day: a warm glow about the home", "a soft golden ring about the traveller's place, home"]),
+      value("not-home-at-night", "the night over the sky", "opacity", 0.75),
+      value("not-home-at-night", "the home at night: its window lit", "opacity", 0.75),
+      value("not-home-at-night", "a mat by the road for the night", "opacity", 0.75),
+      moved("After a long trip, when should you not arrive home?", "the traveller's place", "x")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0],
+        [0, 0, 1, 1]
+      ],
+      1,
+      1,
+      1,
+      [-70, -96]
+    ]);
+    // That it is about a long time away: the traveller's tent far off, before the first words; then a mark shows on a
+    // rock for each day away, eight in all. It stops before the traveller's place goes along the road.
+    expect([
+      shown("This is about a long time away from home.", ["a day away: a mark on the rock 1", "a day away: a mark on the rock 8"]),
+      moved("This is about a long time away from home.", "the traveller's place", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 0]
+    ]);
+    // What he called the shortened prayer: long before, Umar's voice has asked him, before the next words; then his
+    // voice speaks, two of the four marks go, glints show over the two left, and a soft golden glow over the travellers'
+    // places; a soft golden ring comes about them, and sparks rise from their shortened prayer.
+    for (const prompt of ["The Prophet ﷺ called the shortened prayer a what?", "What did the Prophet ﷺ call shortening the prayer?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["Umar's voice, long before: asking him", "his voice: a charity given to you", "a prayer of four: two more marks", "a charity: glints over the two marks left", "a charity: a soft golden glow over the travellers' places", "accepted: a soft golden ring about the travellers' places"]),
+        value("a-charity-for-travellers", "their prayer, shortened: a spark rising 1", "opacity", 0.89)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 1, 0, 0, 0],
+          [0, 1, 0, 1, 1, 1]
+        ],
+        1
+      ]);
+    }
+    // Who asked him: the travellers by the road, before the first words; then Ya'la's voice speaks to Umar, a soft ring
+    // comes about the travellers' places, and Umar's voice speaks; long before, in a pale wash, Umar's place is by his
+    // place, and Umar's voice asks him. It stops before his voice speaks.
+    expect([
+      shown("Who asked the Prophet ﷺ about it when people were safe?", ["safe: a soft ring about the travellers' places", "long before: a pale wash", "long before: his place, a golden ring", "long before: Umar's place by his place", "Umar's voice, long before: asking him", "his voice: a charity given to you"]),
+      value("a-charity-for-travellers", "Ya'la's voice: now the travellers are safe", "opacity", 0.1),
+      value("a-charity-for-travellers", "Umar's voice: I wondered as you wonder", "opacity", 0.42)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 0]
+      ],
+      1,
+      1
+    ]);
+    // The First and the Last: the grain and the date-stone have split, with a green shoot from each, before the next
+    // words; then with each line of the du'a a spark rises from the place of one going to sleep. It stops before the
+    // third spark rises.
+    for (const prompt of ["What does Allah call Himself in Al-Hadid?", "Ayahs 1-6: what are they about?", "Ayah 3: what does Allah call Himself?", "Allah had no beginning and has no end."]) {
+      expect([
+        prompt,
+        shown(prompt, ["the grain, split: a green shoot", "the date-stone, split: a green shoot", "the du'a: a spark rising 3"]),
+        value("before-you-sleep", "the du'a: a spark rising 1", "opacity", 0.55),
+        value("before-you-sleep", "the du'a: a spark rising 2", "opacity", 0.68)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0],
+          [1, 1, 0]
+        ],
+        1,
+        1
+      ]);
+    }
+    // What al-Awwal means: the grain and the date-stone have split, before the next words; then a spark rises from the
+    // place of one going to sleep. It stops before the next spark rises.
+    expect([
+      shown("What does Al-Awwal mean, per the dua?", ["the date-stone, split: a green shoot", "the du'a: a spark rising 2"]),
+      value("before-you-sleep", "the du'a: a spark rising 1", "opacity", 0.55)
+    ]).toEqual([
+      [
+        [1, 0],
+        [1, 0]
+      ],
+      1
+    ]);
+    // What al-Akhir means: a spark has risen with the First, before the next words; then another spark rises from that
+    // place. It stops before the third spark rises.
+    expect([
+      shown("What does Al-Akhir mean, per the dua?", ["the du'a: a spark rising 1", "the du'a: a spark rising 3"]),
+      value("before-you-sleep", "the du'a: a spark rising 2", "opacity", 0.68)
+    ]).toEqual([
+      [
+        [0, 0],
+        [0, 0]
+      ],
+      1
+    ]);
+    // How many names are in 57:3: the grain and the date-stone have split, before the next words; then with the First,
+    // the Last, and the Evident and the Innermost, a spark rises from that place, three in all. It stops before the grey
+    // ring about the sack of debt goes.
+    expect([
+      shown("How many names of Allah are in 57:3?", ["the du'a: a spark rising 3", "a debt: a grey ring about the sack", "free from want: food on the dish"]),
+      value("before-you-sleep", "the du'a: a spark rising 1", "opacity", 0.55),
+      value("before-you-sleep", "the du'a: a spark rising 2", "opacity", 0.68),
+      value("before-you-sleep", "the du'a: a spark rising 3", "opacity", 0.8)
+    ]).toEqual([
+      [
+        [0, 1, 0],
+        [0, 1, 0]
+      ],
+      1,
+      1,
+      1
+    ]);
+    // Whom Umar first asked: Umar's place by his home, before the first words; then it goes to Uthman's home, and Umar's
+    // voice speaks. It stops before Uthman's voice answers.
+    expect([
+      shown("Whom did Umar first ask to marry Hafsah?", ["Umar's voice: I offered him Hafsah", "Uthman's voice: not now"]),
+      moved("Whom did Umar first ask to marry Hafsah?", "Umar's place", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0, 40.6]
+    ]);
+    // Who married Hafsah in the end: a soft white ring is about Abu Bakr's place, silent, and a grey ring about Umar's
+    // place, back home, before the next words; then his place comes to Umar's home, his voice speaks, and a soft golden
+    // ring comes about Hafsah's place, with a warm glow about the home.
+    expect([
+      shown("Who married Hafsah in the end?", ["silent: a soft white ring about Abu Bakr's place", "angrier: a grey ring about Umar's place", "his voice: asking to marry her", "married to him: a soft golden ring about Hafsah's place", "married: a warm glow about Umar's home"]),
+      moved("Who married Hafsah in the end?", "his place, a golden ring", "x")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 24]
+    ]);
+    // Why Abu Bakr was silent: Abu Bakr's place has come to Umar's, and its voice has spoken, before the last words;
+    // then the grey ring about Umar's place goes, a faint golden line goes from his place to Abu Bakr's, a soft white
+    // veil comes about Abu Bakr's place, and a soft golden glow about them.
+    expect(shown("Why had Abu Bakr stayed quiet?", ["Abu Bakr's voice: perhaps you were angry", "angrier: a grey ring about Umar's place", "he had spoken of her: a faint golden line from his place to Abu Bakr's place", "kept his secret: a soft white veil about Abu Bakr's place", "a soft golden glow about them"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 0, 1, 1, 1]
+    ]);
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {

@@ -5144,6 +5144,83 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Whom did the Prophet ﷺ tell to repent?", "All people", "He said: O people, turn to Allah"],
     ["How many times a day did he repent?", "A hundred", "to Him a hundred times a day"],
     ["Asking forgiveness often is a Sunnah.", "True", "for I turn in repentance", "to Him a hundred times a day"]
+  ],
+  // Jabir ibn Samurah said: he came out to us and saw us in circles, and said: why do I see you apart, in groups? Then
+  // he came out to us again and said: will you not draw up in rows as the angels draw up before their Lord? We asked:
+  // how do the angels draw up before their Lord? He said: they complete the first rows, and keep close together in the
+  // row (Sahih Muslim 430). (What Ibn Abbas said al-izin means is not in the scene's words, so it stays as it is.)
+  "sign-close-in-the-rows": [
+    ["How do angels make rows, in the hadith?", "Front rows first, standing close", "He said: they complete the first rows", "and keep close together in the row"],
+    ["What did the Prophet ﷺ ask the people?", "Why not form rows like angels?", "He came again and said: why not draw up", "in rows as angels do before their Lord?"],
+    ["Neat prayer rows follow the way of the angels.", "True", "He said: they complete the first rows", "and keep close together in the row"],
+    ["What did the Prophet ﷺ ask people to form?", "Rows like the angels", "He came again and said: why not draw up", "in rows as angels do before their Lord?"],
+    ["The Prophet ﷺ disliked seeing people split into groups.", "True", "He said: why do I see you apart in groups?"]
+  ],
+  // Zayd ibn Arqam said: I heard Abdullah ibn Ubayy say: do not spend on those who are with him, so that they go away
+  // from him. I told my uncle, or Umar, who told him; Ibn Ubayy and his folk swore they had not said it, and he believed
+  // him and not me, and I grieved. Then Allah revealed Surah al-Munafiqun, and he sent for me, recited it and said:
+  // Allah has confirmed you, O Zayd (Sahih al-Bukhari 4900). (The ayahs of the surah, on what the hypocrites are like
+  // and whose the treasures are, are not in the scene, so those stay as they are.)
+  "sign-zayd-was-truthful": [
+    ["Who heard the hypocrite and reported him?", "Zaid bin Arqam", "Zayd: I heard Abdullah ibn Ubayy say", "I told my uncle or Umar, who told him"],
+    ["How did Zaid feel when he was not believed?", "Very sad", "He believed him, not me, and I grieved"],
+    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Then he sent for me and recited it", "and said: Allah has confirmed you, O Zayd"]
+  ],
+  // Anas ibn Malik said: three came to the homes of his wives, asking about his worship, and when they were told, they
+  // thought it little: one said he would pray all night, always; another that he would fast and never break it; another
+  // that he would never marry. He said: but I fast and break my fast, I pray and I sleep, and I marry; whoever turns
+  // from my Sunnah is not of me (Sahih al-Bukhari 5063). (Who narrated it is not in the scene's words, so that stays as
+  // it is.)
+  "sign-this-is-my-sunnah": [
+    ["What did one of the three men want to give up?", "Marriage", "Another: I will not marry, ever"],
+    ["What did the Prophet ﷺ say about marriage?", "He married; it is his sunnah", "I pray and I sleep, and I marry", "Whoever turns from my Sunnah is not of me"],
+    ["Never marrying makes you more pious.", "False", "I pray and I sleep, and I marry", "Whoever turns from my Sunnah is not of me"],
+    ["What did one of the three men want?", "To pray all night forever", "One said: I will pray all night, always"],
+    ["What did the Prophet ﷺ say he does with fasting?", "He fasts and breaks his fast", "He said: but I fast and break my fast"],
+    ["The Sunnah is to never sleep and pray all night.", "False", "I pray and I sleep, and I marry"]
+  ],
+  // Jabir ibn Abdullah said: he said: when one of you has been away a long time, he should not come to his family at
+  // night (Sahih al-Bukhari 5244). (The trust it teaches, why it is good manners, and catching one's wife out are not in
+  // the scene, so those stay as they are.)
+  "sign-not-home-at-night": [
+    ["Back from a long trip, how should you come home?", "Not suddenly at night", "he should not come to his family", "at night"],
+    ["After a long trip, when should you not arrive home?", "At night", "at night"],
+    ["This is about a long time away from home.", "True", "He said: when one of you is long away"]
+  ],
+  // Ya'la ibn Umayyah said: I said to Umar ibn al-Khattab: the people are now safe. He said: I wondered at what you
+  // wonder at, so I asked him about it, and he said: it is a charity Allah gives you, so accept His charity (Sahih
+  // Muslim 686a). Who asked him waits at the scene's start, before Ya'la names Umar. (What may be shortened and who may
+  // shorten it are not in the scene's words or are there from its start, and the other ayahs of An-Nisa are not in it,
+  // so those stay as they are.)
+  "sign-a-charity-for-travellers": [
+    ["The Prophet ﷺ called the shortened prayer a what?", "A charity from Allah", "He said: it is a charity Allah gives you", "so accept His charity"],
+    ["What did the Prophet ﷺ call shortening the prayer?", "A charity from Allah to accept", "He said: it is a charity Allah gives you", "so accept His charity"],
+    ["Who asked the Prophet ﷺ about it when people were safe?", "Umar ibn al-Khattab", "Ya'la said to Umar ibn al-Khattab", "so I asked him about it"]
+  ],
+  // Abu Salih taught, from Abu Hurairah, from him: when one of us goes to sleep, lie on the right side, then say: O
+  // Allah, Lord of the heavens and the earth, Splitter of the grain and the date-stone; You are the First, there is
+  // nothing before You; You are the Last, there is nothing after You; You are the Evident and the Innermost; settle our
+  // debt and free us from want (Sahih Muslim 2713). The same four names are in Al-Hadid 57:3. (The scene's words leave
+  // out nothing above You and nothing beyond You, so the questions on Az-Zahir and Al-Batin stay as they are, as do
+  // everything glorifying Allah and Allah being with you wherever you are.)
+  "sign-before-you-sleep": [
+    ["What does Allah call Himself in Al-Hadid?", "The First and the Last", "You are the First, nothing before You", "and the Last, nothing after You"],
+    ["Ayahs 1-6: what are they about?", "The First and the Last", "You are the First, nothing before You", "and the Last, nothing after You"],
+    ["Ayah 3: what does Allah call Himself?", "The First and the Last", "You are the First, nothing before You", "and the Last, nothing after You"],
+    ["What does Al-Awwal mean, per the dua?", "The First, nothing before Him", "You are the First, nothing before You"],
+    ["What does Al-Akhir mean, per the dua?", "The Last, nothing after Him", "and the Last, nothing after You"],
+    ["Allah had no beginning and has no end.", "True", "You are the First, nothing before You", "and the Last, nothing after You"],
+    ["How many names of Allah are in 57:3?", "Four", "You are the First, nothing before You", "You are the Evident and the Innermost"]
+  ],
+  // Umar said: when Hafsah was widowed, I met Uthman and offered her to him, and he said: I will not marry now. Then I
+  // offered her to Abu Bakr, who was silent, and I was angrier with him. Then he asked for her, and I married her to
+  // him. Abu Bakr said: perhaps you were angry with me; nothing held me back but that I knew he had spoken of her, and I
+  // would not tell his secret (Sahih al-Bukhari 4005). (Whose father Umar was, and when Hafsah's first husband died, are
+  // not in the scene's words, so those stay as they are.)
+  "sign-a-secret-not-told": [
+    ["Whom did Umar first ask to marry Hafsah?", "Uthman ibn Affan", "Umar: I met Uthman and offered him Hafsah"],
+    ["Who married Hafsah in the end?", "The Prophet ﷺ", "He asked for her; I married her to him"],
+    ["Why had Abu Bakr stayed quiet?", "He kept the Prophet's ﷺ secret", "Nothing held me back but that I knew", "he had spoken of her; I kept his secret"]
   ]
 };
 
