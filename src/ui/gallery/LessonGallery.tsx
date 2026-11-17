@@ -1315,6 +1315,13 @@ const STATES: State[] = [
   { id: "scene-every-gate", render: () => <SceneQuestionDemo lessonId="lesson-deep-layl4-called-from-every-gate" ask="What did Abu Bakr ask" /> },
   { id: "scene-sharing-ashari", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-companions-the-sharing-ashariyyun" ask="when food ran low" /> },
   { id: "scene-zamzam-drink", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-spirit-zamzam" ask="choose to drink" /> },
+  { id: "scene-silver-and-gold-gardens", render: () => <SceneQuestionDemo lessonId="lesson-deep-rahman3-gardens-of-gold-and-silver" ask="What are two gardens made of" /> },
+  { id: "scene-guard-tonight", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-guard-me-tonight" ask="wish for that night" /> },
+  { id: "scene-vow-in-the-sun", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-the-balanced-way-a-vow-of-hardship" ask="let him keep" /> },
+  { id: "scene-one-who-followed", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-table-one-more-guest" ask="another man followed them" /> },
+  { id: "scene-water-for-wudu", render: () => <SceneQuestionDemo lessonId="lesson-deep-tree-ibn-abbas-water-for-wudu" ask="ask Allah to give him" /> },
+  { id: "scene-tawaf-on-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-kabah-tawaf-on-camel" ask="reached the Corner" /> },
+  { id: "scene-soft-salam", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-salam-and-visitors-a-soft-salam-at-night" ask="Who would hear his" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

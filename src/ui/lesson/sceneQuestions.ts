@@ -1312,11 +1312,13 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A kind word is a good deed anyone can do.", "True", "And if you have none, with a good word"]
   ],
   // The lamp put out: an Ansari couple put their little ones to sleep and the light out, so a hungry guest could eat,
-  // and 59:9 was revealed (Sahih al-Bukhari 4889).
+  // and 59:9 was revealed (Sahih al-Bukhari 4889, Sahih Muslim 2054c). (That Allah was pleased with them is not in the
+  // scene, so it is not asked here.)
   "sign-lamp-out": [
     ["What food did the wife have?", "Only the children's food", "Only the little ones' food: let them sleep"],
     ["Why did they put out the light?", "So the guest could eat", "And she put out the light", "In the dark he ate, and they slept hungry"],
-    ["This story led to the words of 59:9.", "True", "Then Allah revealed 59:9 about them"]
+    ["This story led to the words of 59:9.", "True", "Then Allah revealed 59:9 about them"],
+    ["Why did they put out the lamp?", "So the guest would eat alone", "And she put out the light", "In the dark he ate, and they slept hungry"]
   ],
   // Busy serving his family, and when the time for prayer came, out to the prayer (Sahih al-Bukhari 676). (Who was
   // asked is in the scene's first words, so it is not asked.)
@@ -1423,14 +1425,17 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A bad deed you hold back from is written as a good deed.", "True", "A bad deed intended and left: a full good deed"]
   ],
   // The call from as-Safa: would you believe me? We have never heard you tell a lie. I am a plain warner. And Abu Lahab
-  // went away (Sahih al-Bukhari 4770, 4971). (Whom 26:214 says to warn, and the ayahs of al-Masad, are not in the scene;
-  // on which mountain he stood is asked on the map.)
+  // went away (Sahih al-Bukhari 4770, 4971, 4972). (Whom 26:214 says to warn, and the ayahs of al-Masad, are not in the
+  // scene; on which mountain he stood is asked on the map, and that he called from a mountain stays on its usual
+  // picture: the mountain is there from the scene's start.)
   "sign-safa-call": [
     ["What did Quraysh say about his honesty?", "They never heard him lie", "We have never heard you tell a lie"],
     ["What did he call himself to them?", "A plain warner", "I am a plain warner of a severe punishment"],
     ["Abu Lahab thanked him for the warning.", "False", "Abu Lahab: only for this? And he went away"],
     ["Where did the Prophet ﷺ call his people from?", "As-Safa", "He climbed as-Safa and called out to Quraysh"],
-    ["Why did Quraysh say they would believe him?", "He always told the truth", "We have never heard you tell a lie"]
+    ["Why did Quraysh say they would believe him?", "He always told the truth", "We have never heard you tell a lie"],
+    ["What did he first ask them?", "Would they believe a warning from him", "If I warned of horsemen, would you believe me?"],
+    ["Quraysh said yes, they would believe him.", "True", "We have never heard you tell a lie"]
   ],
   // Jabir's father died in debt; he ﷺ sat on the dates and prayed for blessing, every lender was paid in full, and
   // thirteen wasqs were left over (Sahih al-Bukhari 2709).
@@ -2600,7 +2605,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // He said to Ibn Mas'ud: recite to me. Recite to you, when it was revealed to you? I love to hear it from another.
   // He recited an-Nisa until he reached its forty-first ayah; he said: stop, and his eyes were overflowing with tears
-  // (Sahih al-Bukhari 4582). (Who recited is the one telling it, never named in the scene, so it is not asked here.)
+  // (Sahih al-Bukhari 4582, 5050). (Who recited is the one telling it, never named in the scene, so it is not asked
+  // here; nor when Ibn Mas'ud became Muslim.)
   "sign-recite-to-me": [
     ["Why did the Prophet ﷺ ask Ibn Mas'ud to recite?", "He liked to hear the Quran from others", "I love to hear it from another"],
     ["Why did the Prophet ﷺ want to hear it from him?", "He liked to hear it from others", "I love to hear it from another"],
@@ -2609,7 +2615,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which surah did Ibn Mas'ud recite to the Prophet ﷺ?", "An-Nisa", "So I recited an-Nisa to him"],
     ["At which ayah did he say 'Enough'?", "4:41", "Until I reached its ayah forty-one", "He said: stop"],
     ["The Prophet ﷺ wept when Ibn Mas'ud reached 4:41.", "True", "Until I reached its ayah forty-one", "And his eyes were overflowing with tears"],
-    ["What happened to the Prophet ﷺ at ayah 41?", "His eyes filled with tears", "And his eyes were overflowing with tears"]
+    ["What happened to the Prophet ﷺ at ayah 41?", "His eyes filled with tears", "And his eyes were overflowing with tears"],
+    ["The Prophet ﷺ asked Ibn Mas'ud to ____ the Quran to him.", "recite", "He said to me: recite to me"],
+    ["What did the Prophet ﷺ ask Ibn Masud, in the hadith?", "Recite the Quran to me", "He said to me: recite to me"],
+    ["Which surah did Ibn Masud recite, in the hadith?", "An-Nisa", "So I recited an-Nisa to him"],
+    ["What did Ibn Masud see, in the hadith?", "Eyes overflowing with tears", "And his eyes were overflowing with tears"]
   ],
   // Richness is not having many possessions; richness is the richness of the soul (Sahih al-Bukhari 6446).
   "sign-richness-of-the-soul": [
@@ -4162,6 +4172,52 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which water did he ﷺ choose to drink?", "The same water as the people", "Give me a drink; and he drank from it"],
     ["What did he ﷺ tell those drawing Zamzam water?", "Carry on, you are doing a good deed", "Work on, for you are doing a good deed"],
     ["Giving water to pilgrims is a good deed.", "True", "He came to Zamzam, where they gave water", "Work on, for you are doing a good deed"]
+  ],
+  // Two gardens of silver, their vessels and all that is in them, and two gardens of gold, their vessels and all that is
+  // in them (Sahih al-Bukhari 4878). (Who narrated it, and the levels of Paradise, are not in the scene.)
+  "sign-silver-and-gold-gardens": [
+    ["What are two gardens made of, per Bukhari 4878?", "Silver, and two of gold", "Two gardens of silver", "And two gardens of gold"]
+  ],
+  // He was wakeful one night as he came to Madinah, and wished that a good man of his companions would guard him; they
+  // heard the clatter of weapons, it was Sa'd ibn Abi Waqqas come to guard him, and he slept (Sahih al-Bukhari 2885).
+  "sign-guard-tonight": [
+    ["What did he ﷺ wish for that night?", "A righteous man to guard him", "Would that a good man of my companions", "Would guard me tonight"],
+    ["What did they hear in the night?", "The clatter of weapons", "Then we heard the clatter of weapons"],
+    ["After Sa'd came to guard him, the Prophet ﷺ slept.", "True", "And he slept"]
+  ],
+  // Abu Isra'il vowed to stand and never sit, never come into the shade, never speak, and to fast; he was told to speak,
+  // come into the shade and sit, and complete his fast (Sahih al-Bukhari 6704). (What he vowed stays on its usual
+  // picture: he stands in the sun from the scene's start.)
+  "sign-vow-in-the-sun": [
+    ["Which part of his vow did he ﷺ let him keep?", "His fast", "And to fast", "And sit, and let him complete his fast"],
+    ["Standing in the sun with no shade is worship Allah asks for.", "False", "Abu Isra'il: he vowed to stand, never sit", "Tell him to speak, come into the shade"]
+  ],
+  // Abu Shu'aib invited him as one of five, and a man followed them; he said: you invited me as one of five, and this
+  // man has followed us; if you wish, let him in, and if you wish, leave him; he said: rather, I let him in (Sahih
+  // al-Bukhari 5434). (How many were invited stays on its usual picture: the five are there from the scene's start.)
+  "sign-one-who-followed": [
+    ["What did he ﷺ do when another man followed them?", "He asked the host", "You invited me as one of five", "And if you wish, leave him"],
+    ["The host said yes, and the extra man came in.", "True", "Rather, I let him in"]
+  ],
+  // Ibn Abbas set out water for his wudu; he asked who put it, was told, and said: O Allah, give him understanding of
+  // the religion (Sahih al-Bukhari 143). (What Ibn Abbas set out stays on its usual picture: the jug is there from the
+  // scene's start.)
+  "sign-water-for-wudu": [
+    ["What did the Prophet ﷺ ask Allah to give him?", "Understanding of the religion", "O Allah, give him understanding", "Of the religion"],
+    ["A small kindness earned Ibn Abbas a great dua.", "True", "O Allah, give him understanding", "Of the religion"]
+  ],
+  // He went round the House on a camel, and each time he came to the Corner he pointed to it with something he had, and
+  // said: Allahu akbar (Sahih al-Bukhari 1613). (That he rode a camel stays on its usual picture: the camel is there
+  // from the scene's start.)
+  "sign-tawaf-on-camel": [
+    ["What did he ﷺ say each time he reached the Corner?", "Allahu akbar", "And said: Allahu akbar"],
+    ["He ﷺ pointed to the Black Stone each time he passed it.", "True", "He pointed to it with something he had"]
+  ],
+  // At night he gave salam in a way that did not wake one asleep and let one awake hear it; then he went to the masjid
+  // and prayed, and came to his drink (Sahih Muslim 2055a). (Who told it is not in the scene.)
+  "sign-soft-salam": [
+    ["Who would hear his ﷺ salam at night?", "Those who were awake", "Not waking one who was asleep", "And letting one awake hear it"],
+    ["He ﷺ said salam at night in a way that would not wake the sleeping.", "True", "Not waking one who was asleep"]
   ]
 };
 
