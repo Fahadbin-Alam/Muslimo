@@ -4775,6 +4775,66 @@ const ASKS: Record<string, readonly Ask[]> = {
   // dawn are there from the scene's start, so which dates are named and when they are eaten stay as they are.)
   "sign-ajwa-morning": [
     ["What do they protect from that day?", "Poison and magic", "no poison or magic will harm him"]
+  ],
+  // Anas ibn Malik said: Umm Sulaym said to him: Anas is your servant. He said: O Allah, increase his wealth and his
+  // children, and bless him in what You give him (Sahih al-Bukhari 6334).
+  "sign-a-dua-for-anas": [
+    ["Anas's mother, ____, brought him to serve the Prophet ﷺ.", "Umm Sulaym", "Umm Sulaym said: Anas is your servant"],
+    ["Anas's mother, Umm Sulaym, brought him to serve the Prophet ﷺ.", "True", "Umm Sulaym said: Anas is your servant"],
+    ["The Prophet ﷺ prayed for Anas to have wealth and many ____.", "children", "and his children"]
+  ],
+  // Hudhayfah said: al-Aqib and as-Sayyid, the two of Najran, came and said: send with us a trustworthy man, and send
+  // none with us but one trustworthy. He said: I will send with you one truly trustworthy. He said: stand up, Abu
+  // Ubaydah ibn al-Jarrah, and when Abu Ubaydah stood, he said: this is the trustworthy one of this ummah (Sahih
+  // al-Bukhari 4380). (How the companions felt before he chose shows only as small glints, and why the two of Najran
+  // held back is not in the scene, so they stay as they are.)
+  "sign-truly-trustworthy": [
+    ["What kind of man did the people of Najran ask for?", "A trustworthy, honest man", "They said: send with us a trustworthy man", "and send none with us but one trustworthy"],
+    ["Whom did the Prophet ﷺ send?", "Abu Ubaydah", "He said: stand up, Abu Ubaydah", "this is the trustworthy one of this ummah"],
+    ["Whom did the Prophet ﷺ send with them?", "Abu Ubaydah", "He said: stand up, Abu Ubaydah", "this is the trustworthy one of this ummah"]
+  ],
+  // Abdullah ibn Umar said: when he came home from Hajj or Umrah, he said Allahu akbar on every high ground three times,
+  // then: none is worshipped but Allah, alone, with no partner; we return, repenting, worshipping, prostrating, praising
+  // our Lord; Allah kept His promise, helped His servant, and defeated the clans alone (Sahih al-Bukhari 1797).
+  "sign-takbir-on-the-rises": [
+    ["What did he ﷺ say three times on every rise?", "Allahu akbar", "he said Allahu Akbar on every high ground", "three times"],
+    ["How did he ﷺ describe the travellers coming home?", "Repenting and praising our Lord", "We return, repenting, worshipping,", "prostrating, praising our Lord"],
+    ["He ﷺ said these words coming home from Umrah too.", "True", "When he came home from Hajj or Umrah", "he said Allahu Akbar on every high ground"]
+  ],
+  // Abu Humayd as-Sa'idi said: he sent a man of al-Azd called Ibn al-Lutbiyyah to collect the zakat. When Ibn
+  // al-Lutbiyyah came back, he said: this is for you, and this was a gift to me. He said: why did he not sit in his
+  // father's house or his mother's house, to see if gifts would come to him or not? Then he said three times: O Allah,
+  // have I not conveyed? (Sahih al-Bukhari 2597).
+  "sign-gifts-to-the-collector": [
+    ["What job was Ibn al-Lutbiyyah sent to do?", "Collect the zakat", "He sent Ibn al-Lutbiyyah to collect zakat", "Ibn al-Lutbiyyah came back and said:"],
+    ["Where did he ﷺ say the man should have stayed?", "In his parents' house", "He said: why did Ibn al-Lutbiyyah not sit", "in his father's or his mother's house"],
+    ["A worker may keep the gifts given to him because of his job.", "False", "He said: why did Ibn al-Lutbiyyah not sit", "to see if gifts would come to him or not?"]
+  ],
+  // Abu Shurayh al-Ka'bi said: he said: whoever believes in Allah and the Last Day, let him honor his guest; the guest's
+  // due is a day and a night, and hospitality is three days; what is beyond that is charity; and it is not lawful for
+  // the guest to stay on until it is hard on his host (Sahih al-Bukhari 6135).
+  "sign-three-days-for-a-guest": [
+    ["How long is a guest's full hospitality?", "Three days", "and hospitality is three days"],
+    ["What is hosting after three days?", "Charity", "what is beyond that is charity"],
+    ["A guest may stay as long as he likes, even if it burdens his host.", "False", "it is not lawful for the guest to stay", "so long that it is hard on his host"]
+  ],
+  // Ibn Umar said: he said: whoever ate of this plant, meaning garlic, should not come near our masjid (Sahih al-Bukhari
+  // 853). Jabir said: he said: whoever eats garlic or onion should keep away from our masjid, and stay in his house
+  // (Sahih al-Bukhari 855 and 5452). In the scene its smell drifts on to the masjid's door, where some are. (Which plant
+  // he named keeps its own picture, and whether garlic is forbidden is not in the scene, so they stay as they are.)
+  "sign-garlic-and-the-masjid": [
+    ["Why stay away after eating it?", "Its smell bothers others", "He said: whoever ate of this plant", "should not come near our masjid"],
+    ["Why stay away from the masjid after raw garlic?", "Its smell bothers others", "He said: whoever ate of this plant", "should not come near our masjid"],
+    ["Which two foods are named in the hadith?", "Garlic and onion", "He said: whoever eats garlic or onion"],
+    ["After eating raw garlic, where should you not go?", "The masjid", "should not come near our masjid"],
+    ["Why keep away?", "The smell bothers people", "He said: whoever ate of this plant", "should not come near our masjid"]
+  ],
+  // Ali said: he said to me: say: O Allah, guide me, and keep me straight; and with guidance remember your being guided
+  // on the road, and with straightness remember the straightness of the arrow (Sahih Muslim 2725a). (That thinking on a
+  // du'a's meaning makes it stronger is not in the scene, so it stays as it is.)
+  "sign-straight-as-an-arrow": [
+    ["Who was taught this dua?", "Ali ibn Abi Talib", "Ali said: he said to me: say", "O Allah, guide me, and keep me straight"],
+    ["What should you picture when asking to be kept straight?", "A straight arrow", "and with straightness, remember", "the straightness of the arrow"]
   ]
 };
 
