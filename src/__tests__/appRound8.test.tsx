@@ -357,6 +357,7 @@ describe("every tap on a shop item makes a sound", () => {
     const onUseItem = jest.fn();
     const full = makeUser({ hearts: { current: 5, max: 5, unlimited: false, lastRefillDate: "2026-10-20" } });
     const view = await render(<ShopView user={full} strings={strings} items={SHOP_ITEMS_WITH_GEMS} storePrices={{}} busy={false} section={section} onUseItem={onUseItem} onRestore={jest.fn()} canBuyWithMoney />);
+    await fireEvent.press(screen.getByTestId("shop-shelf-hearts"));
     expect(screen.getByTestId("shop-line-watch-ad-heart")).toHaveTextContent("Hearts are full");
     (playGameSound as jest.Mock).mockClear();
     await fireEvent.press(screen.getByTestId("shop-buy-watch-ad-heart"));
