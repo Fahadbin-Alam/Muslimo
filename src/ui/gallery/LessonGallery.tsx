@@ -1384,6 +1384,13 @@ const STATES: State[] = [
   { id: "scene-fathers-friend", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-father-friends" ask="finest goodness" /> },
   { id: "scene-one-in-a-hundred", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-short-words-to-live-by-one-in-a-hundred" ask="Among how many camels" /> },
   { id: "scene-foam-of-the-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-waqiah4-forgiven-like-sea-foam" ask="How many times a day" /> },
+  { id: "scene-flowing-spring", render: () => <SceneQuestionDemo lessonId="lesson-deep-uthman-mazun-flowing-spring" ask="What did Umm al-Ala see in her dream" /> },
+  { id: "scene-kings-on-the-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-umm-haram-sea" ask="What did Umm Haram ask for" /> },
+  { id: "scene-glass-vessels", render: () => <SceneQuestionDemo lessonId="lesson-deep-husbands-glass-vessels" ask="tell Anjashah to do" /> },
+  { id: "scene-right-sandal-first", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-right-shoe-first" ask="Which shoe comes off first" /> },
+  { id: "scene-uways-of-yemen", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-uways" ask="What was Uways known for" /> },
+  { id: "scene-hazn-and-sahl", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-good-names-hazn-and-sahl" ask="offer Hazn" /> },
+  { id: "scene-ajwa-morning", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-ajwa-dates" ask="What do they protect from" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

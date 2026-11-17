@@ -4706,6 +4706,75 @@ const ASKS: Record<string, readonly Ask[]> = {
   // show.)
   "sign-foam-of-the-sea": [
     ["How many times a day, per Bukhari 6405?", "One hundred", "a hundred times in a day,"]
+  ],
+  // Umm al-Ala, a woman of the Ansar, said: when the Ansar drew lots to house the Muhajirun, Uthman ibn Maz'un fell to
+  // us. He fell ill, and we nursed him until he died. When he came in, I said: I testify that Allah has honored you. He
+  // said: how do you know? and said: I hope good for him from Allah. Then I dreamt of a flowing spring for Uthman, and
+  // he said: that is his deed, flowing for him (Sahih al-Bukhari 3929, 1243 and 7018). (That Umm al-Ala never again
+  // declared anyone righteous is not in the scene, so it stays as it is.)
+  "sign-flowing-spring": [
+    ["How did the Ansar share out the emigrants?", "By drawing lots", "The Ansar drew lots to house the Muhajirun"],
+    ["Whose house did Uthman live in?", "Umm al-Ala's", "and Uthman ibn Maz'un fell to us"],
+    ["Umm al-Ala nursed him when he was ill.", "True", "We nursed Uthman until his death"],
+    ["What did the Prophet ﷺ ask Umm al-Ala?", "How do you know?", "He said: how do you know?"],
+    ["What does this teach us?", "Only Allah knows a person's end", "I said: I testify Allah has honored you", "He said: I hope good for him from Allah"],
+    ["What did Umm al-Ala see in her dream?", "A flowing spring", "I dreamt of a flowing spring for Uthman"],
+    ["What did the spring stand for?", "His good deeds", "He said: that is his deed, flowing for him"],
+    ["Good deeds can keep giving reward after death.", "True", "He said: that is his deed, flowing for him"]
+  ],
+  // Anas said: he woke up smiling at Umm Haram's house, and said: some of my ummah were shown to me, riding the middle
+  // of this sea, like kings on thrones. Umm Haram said: pray to Allah that I am one of them, and he said: you are among
+  // the first. She sailed in the time of Mu'awiyah (Sahih al-Bukhari 2788). (Ubadah, her husband, his home by the sea at
+  // Hims, and what the first sea army was promised are not in the scene, so they stay as they are.)
+  "sign-kings-on-the-sea": [
+    ["What did the Prophet ﷺ see in his dream at Umm Haram's house?", "Muslims sailing the sea", "He said: I was shown some of my ummah", "riding the middle of this sea"],
+    ["What did Umm Haram ask for?", "To be one of them", "Umm Haram said: pray I am one of them"],
+    ["What did he tell her?", "You are among the first", "He said: you are among the first"]
+  ],
+  // Anas said: on one of his journeys the driver chanted to drive the camels on. His driver, Anjashah, had a fine voice,
+  // and he said: gently, O Anjashah, with the glass vessels; do not break the glass vessels. Qatadah said: he meant the
+  // weak women (Sahih al-Bukhari 6209 and 6211). (Anjashah's place goes before the camels from the scene's start, so who
+  // Anjashah was stays as it is.)
+  "sign-glass-vessels": [
+    ["What did the Prophet ﷺ compare the women to?", "Glass vessels", "with the glass vessels!", "Qatadah said: he meant the weak women"],
+    ["What did he ﷺ tell Anjashah to do?", "Go gently", "He said: gently, Anjashah"],
+    ["Calling women glass means treat them with care.", "True", "Do not break the glass vessels", "Qatadah said: he meant the weak women"],
+    ["Whom did the Prophet ﷺ call glass vessels?", "The women riding", "with the glass vessels!", "Qatadah said: he meant the weak women"],
+    ["This hadith teaches care and gentleness with women.", "True", "He said: gently, Anjashah", "Qatadah said: he meant the weak women"]
+  ],
+  // Abu Hurairah said: he said: when you put on sandals, start with the right, and when you take them off, start with
+  // the left, so that the right is the first on and the last off. And he said: none of you should walk in one sandal;
+  // take both off, or wear both (Sahih al-Bukhari 5855 and 5856).
+  "sign-right-sandal-first": [
+    ["Which shoe goes on first?", "The right", "start with the right"],
+    ["Which shoe comes off first?", "The left", "and when you take them off, the left"],
+    ["The right shoe is the first on and the last off.", "True", "start with the right", "the right is first on and last off"],
+    ["One strap breaks. What fits this hadith?", "Take both shoes off", "He said: do not walk in one sandal", "take both off, or wear both"],
+    ["How should we walk?", "In both shoes or none", "He said: do not walk in one sandal", "take both off, or wear both"],
+    ["Walking in just one shoe is the Sunnah.", "False", "He said: do not walk in one sandal"]
+  ],
+  // Usayr ibn Jabir said: whenever help came from Yemen, Umar asked them: is Uways ibn Amir among you? until Umar came
+  // upon Uways and asked: you have a mother? Uways said: yes. Umar had heard him say that Uways is kind to his mother,
+  // so Umar said: ask forgiveness for me, and Uways asked forgiveness for Umar. Uways said he would rather be among the
+  // poor (Sahih Muslim 2542c). (That Uways never met him is not in the scene, so it stays as it is.)
+  "sign-uways-of-yemen": [
+    ["Where did Uways come from?", "Yemen", "Help came from Yemen, and Umar asked them", "until Umar came upon Uways"],
+    ["What was Uways known for?", "Kindness to his mother", "Umar asked: you have a mother? Uways: yes", "He had said: Uways is kind to his mother"],
+    ["What did Umar ask Uways to do?", "Pray for his forgiveness", "Umar said: so ask forgiveness for me", "And Uways asked forgiveness for Umar"]
+  ],
+  // Al-Musayyib said that his father Hazn came to him, and he asked: what is your name? The man said: Hazn. He said: you
+  // are Sahl. Hazn said: I will not change a name my father gave me. Ibn al-Musayyib said: the roughness has stayed
+  // among us ever since (Sahih al-Bukhari 6190).
+  "sign-hazn-and-sahl": [
+    ["What new name did he ﷺ offer Hazn?", "Sahl", "He said: you are Sahl"],
+    ["What did Hazn say about changing his name?", "He would keep his father's name", "Hazn said: I will not change the name", "my father gave me"],
+    ["Hazn happily took the new name Sahl.", "False", "Hazn said: I will not change the name", "my father gave me"]
+  ],
+  // Sa'd said: he said: whoever eats some ajwa dates in the morning, every day, no poison and no magic will harm him
+  // that day, until night. Another narrator said: seven dates (Sahih al-Bukhari 5768). (The dish of ajwa dates and the
+  // dawn are there from the scene's start, so which dates are named and when they are eaten stay as they are.)
+  "sign-ajwa-morning": [
+    ["What do they protect from that day?", "Poison and magic", "no poison or magic will harm him"]
   ]
 };
 
