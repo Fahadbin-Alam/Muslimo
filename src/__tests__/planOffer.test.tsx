@@ -167,7 +167,7 @@ describe("the plans when hearts run out", () => {
     expect(Number(getStoredItem(OFFER_AT_KEY))).toBeGreaterThan(0);
 
     await press("plan-offer-no-thanks");
-    expect(screen.getByTestId("refill-tomorrow")).toBeTruthy();
+    expect(screen.getByTestId("refill-next-heart")).toBeTruthy();
     expect(screen.getByTestId("refill-video")).toBeTruthy();
 
     // UNLIMITED HEARTS on that sheet opens the plans again.
@@ -190,7 +190,7 @@ describe("the plans when hearts run out", () => {
     setStoredItem(OFFER_AT_KEY, String(Date.now() - 60_000));
     await runOutOfHearts();
     expect(screen.queryByTestId("plan-offer-sheet")).toBeNull();
-    expect(screen.getByTestId("refill-tomorrow")).toBeTruthy();
+    expect(screen.getByTestId("refill-next-heart")).toBeTruthy();
     expect(screen.getByTestId("refill-plans")).toBeTruthy();
   });
 
@@ -198,7 +198,7 @@ describe("the plans when hearts run out", () => {
     setStoredItem("sira-path-age-group", "6-9");
     await runOutOfHearts();
     expect(screen.queryByTestId("plan-offer-sheet")).toBeNull();
-    expect(screen.getByTestId("refill-tomorrow")).toBeTruthy();
+    expect(screen.getByTestId("refill-next-heart")).toBeTruthy();
     expect(screen.queryByTestId("refill-plans")).toBeNull();
   });
 });

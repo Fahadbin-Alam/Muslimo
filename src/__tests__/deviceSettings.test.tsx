@@ -115,7 +115,7 @@ describe("this phone's settings", () => {
 });
 
 describe("smooth on slower phones", () => {
-  const { looksLikeSlowPhone, framesLookSlow, setLiteMotionForTests } = jest.requireActual("../ui/liteMotion") as typeof import("../ui/liteMotion");
+  const { looksLikeSlowPhone, framesLookSlow, framesLookChoppy, setLiteMotionForTests } = jest.requireActual("../ui/liteMotion") as typeof import("../ui/liteMotion");
 
   afterEach(() => setLiteMotionForTests(false));
 
@@ -131,6 +131,13 @@ describe("smooth on slower phones", () => {
     expect(framesLookSlow([...Array.from({ length: 50 }, () => 16.7), ...Array.from({ length: 10 }, () => 200)])).toBe(false);
     expect(framesLookSlow(Array.from({ length: 60 }, () => 33))).toBe(true);
     expect(framesLookSlow([40, 40])).toBe(false);
+  });
+
+  it("counts frames as choppy when a quarter of them take two frames' time, not for a few hiccups", () => {
+    expect(framesLookChoppy(Array.from({ length: 60 }, () => 16.7))).toBe(false);
+    expect(framesLookChoppy([...Array.from({ length: 50 }, () => 16.7), ...Array.from({ length: 10 }, () => 50)])).toBe(false);
+    expect(framesLookChoppy([...Array.from({ length: 40 }, () => 16.7), ...Array.from({ length: 20 }, () => 50)])).toBe(true);
+    expect(framesLookChoppy([50, 50])).toBe(false);
   });
 
   it("a picture on a slow phone keeps only its first two moving things", async () => {
