@@ -90,3 +90,12 @@ describe("far units", () => {
     expect(screen.getAllByTestId(/^path-node-/).length).toBeLessThan(80);
   });
 });
+
+// Even a short unit's sky was a full-size bitmap (about 12 MB on a 3x Android screen); it is drawn a quarter size now.
+describe("light skies", () => {
+  it("draws every sky at least four times smaller and stretches it up", () => {
+    const { skyShrink } = jest.requireActual("../ui/PathWeather") as typeof import("../ui/PathWeather");
+    expect(skyShrink(600)).toBe(4);
+    expect(skyShrink(30000)).toBeGreaterThanOrEqual(30);
+  });
+});

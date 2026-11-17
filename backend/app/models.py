@@ -380,3 +380,24 @@ class EventLog(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), server_default=func.now(), nullable=False)
 
     user: Mapped[Optional[User]] = relationship(back_populates="event_logs")
+
+
+class NewsletterSubscriber(Base, TimestampMixin):
+    """One email on the Muslimo newsletter list. People join from the website box (they confirm from an email
+    first) or with the tick box in the app (their own signed-in email, so it counts as confirmed). Nobody is
+    added just for making an account, and Kid accounts can't join."""
+
+    __tablename__ = "newsletter_subscribers"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    email: Mapped[str] = mapped_column(String(255), unique=True, index=True, nullable=False)
+    # "pending" until the website sign-up is confirmed, then "subscribed"; "unsubscribed" after they leave.
+    status: Mapped[str] = mapped_column(String(20), default="pending", nullable=False, index=True)
+    source: Mapped[str] = mapped_column(String(20), default="website", nullable=False)
+    language: Mapped[str] = mapped_column(String(16), default="en", nullable=False)
+    user_id: Mapped[Optional[int]] = mapped_column(ForeignKey("users.id", ondelete="CASCADE"), nullable=True, index=True)
+    # Secret in the confirm and unsubscribe links. Only its hash is kept, like session tokens.
+    token_hash: Mapped[str] = mapped_column(String(128), unique=True, index=True, nullable=False)
+    confirm_sent_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
+    confirmed_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
+    unsubscribed_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)

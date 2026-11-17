@@ -184,29 +184,19 @@ describe("LearnPath locked circles and open units", () => {
 });
 
 describe("RefillSheet", () => {
-  it("switches the bubble to a cheer as the last heart lands", async () => {
-    jest.useFakeTimers();
-    await render(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" onRefill={jest.fn()} onShop={jest.fn()} />);
+  it("stays sad with empty hearts: there is no free refill to cheer about", async () => {
+    await render(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" onShop={jest.fn()} />);
     expect(screen.getByText("Out of hearts!")).toBeTruthy();
-    await fireEvent.press(screen.getByTestId("refill-claim"));
-    await act(async () => {
-      jest.advanceTimersByTime(4 * 110 + 20);
-    });
-    expect(screen.getByText("Out of hearts!")).toBeTruthy();
-    await act(async () => {
-      jest.advanceTimersByTime(110);
-    });
-    expect(screen.getByTestId("refill-hearts").props.accessibilityLabel).toBe("5 of 5 hearts");
-    expect(screen.getByText("Hearts full!")).toBeTruthy();
-    expect(screen.queryByText("Out of hearts!")).toBeNull();
-    expect(screen.getByTestId("mascot").props.mood).toBe("cheer");
+    expect(screen.queryByTestId("refill-claim")).toBeNull();
+    expect(screen.getByTestId("refill-hearts").props.accessibilityLabel).toBe("0 of 5 hearts");
+    expect(screen.getByTestId("mascot").props.mood).toBe("sad");
   });
 
-  it("tells the child hearts come back tomorrow and keeps END LESSON", async () => {
+  it("tells the child how hearts come back and keeps END LESSON", async () => {
     const onShop = jest.fn();
     const onEndLesson = jest.fn();
-    await render(<RefillSheet visible variant="shop" maxHearts={5} mascotVariant="hijabi" onShop={onShop} onEndLesson={onEndLesson} />);
-    expect(screen.getByText("Full hearts again tomorrow!")).toBeTruthy();
+    await render(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" onShop={onShop} onEndLesson={onEndLesson} />);
+    expect(screen.getByText("1 new heart every 5 hours")).toBeTruthy();
     expect(screen.getByText("GET HEARTS")).toBeTruthy();
     await fireEvent.press(screen.getByText("END LESSON"));
     expect(onEndLesson).toHaveBeenCalledTimes(1);
@@ -217,16 +207,16 @@ describe("RefillSheet", () => {
     const onEndLesson = jest.fn();
     const onPractice = jest.fn();
     const sheet = await render(
-      <RefillSheet visible variant="shop" maxHearts={5} mascotVariant="hijabi" canGetHearts={false} onPractice={onPractice} onShop={onShop} onEndLesson={onEndLesson} />
+      <RefillSheet visible maxHearts={5} mascotVariant="hijabi" canGetHearts={false} onPractice={onPractice} onShop={onShop} onEndLesson={onEndLesson} />
     );
     expect(screen.queryByText("GET HEARTS")).toBeNull();
-    expect(screen.getByText("Full hearts again tomorrow!")).toBeTruthy();
+    expect(screen.getByText("1 new heart every 5 hours")).toBeTruthy();
     await fireEvent.press(screen.getByText("PRACTICE"));
     await fireEvent.press(screen.getByText("END LESSON"));
     expect(onPractice).toHaveBeenCalledTimes(1);
     expect(onEndLesson).toHaveBeenCalledTimes(1);
 
-    await sheet.rerender(<RefillSheet visible variant="shop" maxHearts={5} mascotVariant="hijabi" canGetHearts={false} onShop={onShop} onEndLesson={onEndLesson} />);
+    await sheet.rerender(<RefillSheet visible maxHearts={5} mascotVariant="hijabi" canGetHearts={false} onShop={onShop} onEndLesson={onEndLesson} />);
     expect(screen.queryByText("PRACTICE")).toBeNull();
     await fireEvent.press(screen.getByText("END LESSON"));
     expect(onEndLesson).toHaveBeenCalledTimes(2);
@@ -549,5 +539,16 @@ describe("web audio", () => {
     } finally {
       restore();
     }
+  });
+});
+
+describe("the out-of-hearts sheet's next heart line", () => {
+  it("counts down to the slow refill's next heart, rounded up to the minute", () => {
+    const { nextHeartLine } = jest.requireActual("../ui/screens/RefillSheet") as typeof import("../ui/screens/RefillSheet");
+    expect(nextHeartLine(5 * 60 * 60 * 1000)).toBe("Next heart in 5 h 0 min");
+    expect(nextHeartLine((4 * 60 + 11) * 60 * 1000 + 5)).toBe("Next heart in 4 h 12 min");
+    expect(nextHeartLine(30 * 1000)).toBe("Next heart in 1 min");
+    expect(nextHeartLine(0)).toBe("Next heart in 1 min");
+    expect(nextHeartLine(undefined)).toBe("1 new heart every 5 hours");
   });
 });

@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useRef, useState } from "react";
 import { Animated, Easing, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import Svg, { Circle, Defs, Ellipse, G, LinearGradient, Path, RadialGradient, Stop } from "react-native-svg";
-import { sampleCurve, smoothKeys, useReduceMotion } from "./motion";
+import { pivotAt, sampleCurve, smoothKeys, useReduceMotion } from "./motion";
 import { Drop, Floater, Heart, Puff, Sparkle, Word, shake, useCycle, useOneShot } from "./reactions";
 import { feedback } from "./sound";
 import type { GameSoundEvent } from "../services/gameSoundLibrary";
@@ -927,7 +927,7 @@ function MascotFigure({ variant, mood = "happy", size = 120, accent = colors.gre
   const viewBox = `0 0 ${VIEW_W} ${VIEW_H}`;
   const swingStyle = [
     StyleSheet.absoluteFill,
-    { transformOrigin: `${(SHOULDER_R.x / VIEW_W) * 100}% ${(SHOULDER_R.y / VIEW_H) * 100}%`, transform: [{ rotate }] }
+    { transformOrigin: pivotAt(SHOULDER_R.x / VIEW_W, SHOULDER_R.y / VIEW_H), transform: [{ rotate }] }
   ];
 
   // The head: its own turn (look) plus the act's, a lagging bounce, and a tilt that goes with the turn.
@@ -941,7 +941,7 @@ function MascotFigure({ variant, mood = "happy", size = 120, accent = colors.gre
   const headStyle = [
     StyleSheet.absoluteFill,
     {
-      transformOrigin: `${(NECK.x / VIEW_W) * 100}% ${(NECK.y / VIEW_H) * 100}%`,
+      transformOrigin: pivotAt(NECK.x / VIEW_W, NECK.y / VIEW_H),
       transform: [
         { translateY: Animated.add(headBounce, pitch.interpolate({ inputRange: [-1, 1], outputRange: [-HEAD_PITCH * u, HEAD_PITCH * u] })) },
         { translateX: yaw.interpolate({ inputRange: [-1, 1], outputRange: [-HEAD_YAW * u, HEAD_YAW * u] }) },
