@@ -3254,10 +3254,13 @@ const ASKS: Record<string, readonly Ask[]> = {
   // al-Bukhari 2566).
   "sign-small-gift": [
     ["Whom was Bukhari 2566 first said to?", "The Muslim women", "O Muslim women"],
+    ["Whom was this said to?", "The Muslim women", "O Muslim women"],
     ["How should we treat a neighbour's small gift?", "Never look down on it", "Let none look down on a gift for her neighbor"],
     ["Whose gift should not be looked down on?", "A neighbor's", "Let none look down on a gift for her neighbor"],
     ["What small gift did he name?", "A sheep's foot", "Even if it is a sheep's trotter"],
+    ["What small gift did the Prophet ﷺ name?", "A sheep's hoof", "Even if it is a sheep's trotter"],
     ["Only expensive gifts are worth thanks.", "False", "Even if it is a sheep's trotter"],
+    ["Only big gifts count between neighbors.", "False", "Even if it is a sheep's trotter"],
     ["Gifts between neighbours build love.", "True", "Even if it is a sheep's trotter"]
   ],
   // Hunger brought him out, and Abu Bakr and Umar; a man of the Ansar welcomed them with dates and sweet water, and he
@@ -4835,6 +4838,69 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-straight-as-an-arrow": [
     ["Who was taught this dua?", "Ali ibn Abi Talib", "Ali said: he said to me: say", "O Allah, guide me, and keep me straight"],
     ["What should you picture when asking to be kept straight?", "A straight arrow", "and with straightness, remember", "the straightness of the arrow"]
+  ],
+  // Abu Musa said: the ship took us to Abyssinia, where we met Ja'far, and then we all came to him. Umar said to Asma
+  // bint Umays: we went on hijrah before you, so we have more right to the Messenger of Allah ﷺ than you. When he came,
+  // Asma told him, and he said: Umar has no more right to me than you; Umar and his companions have one hijrah, and you
+  // of the ship have two. Asma said: Abu Musa and the people of the ship came to me in groups, asking about it (Sahih
+  // al-Bukhari 4230, 4231).
+  "sign-two-hijrahs": [
+    ["Where did Ja'far ibn Abi Talib first emigrate to?", "Abyssinia", "one hijrah, and you of the ship have two"],
+    ["How many hijrahs did the people of the ship earn?", "Two", "one hijrah, and you of the ship have two"],
+    ["Who asked the Prophet ﷺ about it?", "Asma bint Umays", "When he came, Asma told him what Umar said"]
+  ],
+  // Khabbab said: I came to him while he was in the shade of the Ka'bah, and we had met hardship from the idolaters. I
+  // said: will you not pray to Allah? He said: Allah will complete this matter, until a rider goes from San'a to
+  // Hadramawt fearing none but Allah, and the wolf for his sheep (Sahih al-Bukhari 3852). (That those before them
+  // suffered for their faith is not in the scene, so it stays as it is.)
+  "sign-sana-to-hadramawt": [
+    ["Where was the Prophet ﷺ when Khabbab came?", "In the shade of the Kaaba", "he was in the shade of the Ka'bah"],
+    ["What did the Prophet ﷺ promise?", "Allah will complete this religion", "He said: Allah will complete this matter"]
+  ],
+  // Abu Sa'id al-Khudri said: when you are with your sheep, or in your open country, and call the adhan, raise your
+  // voice; for none hears the reach of the caller's voice, jinn, human or thing, but will testify for him on the Day of
+  // Resurrection. Abu Sa'id said: I heard it from him (Sahih al-Bukhari 609).
+  "sign-heard-by-all": [
+    ["Where might a shepherd call the adhan?", "Out with his sheep", "so when you are with your sheep", "and call the adhan, raise your voice"],
+    ["Who will be a witness for the caller?", "Every creature that hears it", "none hears the reach of the caller's voice", "jinn, human or thing, but will testify"],
+    ["Abu Sa'id said to raise your voice with the adhan.", "True", "and call the adhan, raise your voice"]
+  ],
+  // Abu Musa al-Ash'ari said: he said: feed the hungry, visit the sick, and set free the captive (Sahih al-Bukhari 5373
+  // and 5649).
+  "sign-feed-visit-free": [
+    ["Whom did he ﷺ tell us to feed?", "The hungry", "Abu Musa said: he said: feed the hungry"],
+    ["Feed the hungry, free the captive, and...?", "Visit the sick", "and visit the sick"],
+    ["Giving food to a hungry person is a deed the Prophet ﷺ ordered.", "True", "Abu Musa said: he said: feed the hungry"],
+    ["What should we do for the sick, says Bukhari 5649?", "Visit them", "and visit the sick"],
+    ["What should we do for the hungry?", "Feed them", "Abu Musa said: he said: feed the hungry"],
+    ["Freeing a captive is one of the deeds in Bukhari 5649.", "True", "and set free the captive"]
+  ],
+  // Azra ibn Thabit said: Thumamah ibn Abdullah handed me some perfume and said: Anas never refused perfume; and Anas
+  // said that he never refused perfume (Sahih al-Bukhari 2582 and 5929).
+  "sign-never-refused-perfume": [
+    ["Which gift did he ﷺ never turn down?", "Perfume", "and Thumamah handed me some perfume", "Anas said: he never refused perfume"],
+    ["Which habit of his ﷺ did Anas follow?", "Never refusing perfume", "Thumamah said: Anas never refused perfume", "Anas said: he never refused perfume"],
+    ["Smelling nice is part of the sunnah.", "True", "Anas said: he never refused perfume"],
+    ["What gift did he ﷺ never refuse?", "Perfume", "and Thumamah handed me some perfume", "Anas said: he never refused perfume"],
+    ["Which companion copied this?", "Anas", "Thumamah said: Anas never refused perfume", "Anas said: he never refused perfume"],
+    ["Accepting perfume as a gift follows the Sunnah.", "True", "Anas said: he never refused perfume"]
+  ],
+  // Al-Miqdam ibn Ma'dikarib said: he said: measure your food, and it will be blessed for you (Sahih al-Bukhari 2128).
+  // Anas ibn Malik said: he said: O Allah, bless them in their measure, and bless them in their sa' and their mudd,
+  // meaning the people of Madinah (Sahih al-Bukhari 2130).
+  "sign-blessed-measures": [
+    ["What did he ﷺ tell us to measure?", "Our food", "Al-Miqdam said: he said: measure your food"],
+    ["What comes from measuring it?", "Blessing", "and it will be blessed for you"],
+    ["Planning and measuring well is part of the Sunnah.", "True", "Al-Miqdam said: he said: measure your food", "and it will be blessed for you"],
+    ["For which people did he ﷺ make du'a?", "The people of Madinah", "meaning the people of Madinah"],
+    ["What did he ﷺ ask Allah to bless?", "Their food measures", "in their measure", "and their mudd"],
+    ["The mudd and the sa' were used to measure food.", "True", "and bless them in their sa'", "and their mudd"]
+  ],
+  // Malik ibn al-Huwayrith said: we stayed with him twenty nights, and he said: go back to your families, teach them,
+  // and pray; when the prayer is due, let one of you give the adhan, and let the eldest of you lead you (Sahih
+  // al-Bukhari 628). (Getting clean with wudu before the prayer is not in the scene, so it stays as it is.)
+  "sign-twenty-nights": [
+    ["The ____ calls Muslims to pray five times a day.", "adhan", "when prayer is due, let one give the adhan"]
   ]
 };
 
