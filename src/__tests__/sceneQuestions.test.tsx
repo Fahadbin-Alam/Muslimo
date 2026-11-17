@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2544);
+    expect(asks.length).toBe(2563);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3712);
+    expect(places).toBe(3741);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -13222,6 +13222,252 @@ describe("where the scene waits and where it stops", () => {
       1,
       1,
       1
+    ]);
+  });
+
+  it("waits on the scenes from the forgotten tree to the carpets that would come, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-forgotten-tree", "sign-cave-at-mina", "sign-well-of-aris", "sign-gold-not-kept", "sign-reached-its-place", "sign-horse-kept", "sign-carpets-will-come"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(19);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The tree that was forgotten. Whose father was at the pledge: Tariq's place has asked by the folk at prayer, and
+    // their voices have told it of the tree, before the next words; then Tariq's place goes on to Sa'id's place, by his
+    // home, Sa'id's voice speaks, and the prayer place fades. It stops before the land grows warm and pale, long ago.
+    expect([
+      moved("Whose father was at the pledge, per Bukhari 4163?", "Tariq's place", "x"),
+      shown("Whose father was at the pledge, per Bukhari 4163?", ["Sa'id's voice", "a prayer place marked out with stones", "long ago: the land warm and pale"])
+    ]).toEqual([
+      [56, 120],
+      [
+        [0, 1, 0],
+        [1, 0, 0]
+      ]
+    ]);
+    // What happened the next year: Sa'id's voice speaks and the prayer place has faded, before his father's words; then
+    // the land grows warm and pale, long ago, the places of those who pledged come along the road the year after and go
+    // from tree to tree, and a grey ring comes about each one: not found. It stops before Sa'id's voice speaks again.
+    expect([
+      shown("What happened the next year, per Bukhari 4163?", ["long ago: the land warm and pale", "the places of those who pledged, the year after 1", "not found: a grey ring about the second tree", "not found: a grey ring about the fourth tree"]),
+      moved("What happened the next year, per Bukhari 4163?", "the places of those who pledged, the year after 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 98]
+    ]);
+    // That even the Companions could not find it: the prayer place has faded, before his father's words; then, long ago,
+    // those who pledged go from tree to tree, and a grey ring comes about each one: not found; the long ago fades, the
+    // prayer place comes back, and Sa'id's voice speaks again: they did not know it. It stops before the faint ring
+    // comes back about their tree.
+    expect([
+      shown("Even the Companions could not find the tree later.", ["not found: a grey ring about the third tree", "a prayer place marked out with stones", "their tree: a faint ring about it"]),
+      value("forgotten-tree", "long ago: the land warm and pale", "opacity", 0.6)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      1
+    ]);
+    // The snake in the cave at Mina. That Ibn Mas'ud learned the surah as it came, not years after: the cave is there
+    // with the places in it, before the words of its revealing; then a soft golden glow comes about his place: revealed
+    // to him, his voice recites, and a faint golden line goes from it to the place beside him: taking it from him. It
+    // stops before the snake.
+    expect(shown("Ibn Masud learned Al-Mursalat years after it came down.", ["revealed to him: a soft golden glow about his place", "his voice, reciting", "taking it from him: a faint golden line", "a snake, springing at them"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // How Ibn Mas'ud learned it: the soft golden glow is about his place, before the next words; then his voice recites,
+    // and a faint golden line goes from it to the place beside him: taking it from him. It stops before the snake.
+    expect([
+      shown("How did Ibn Masud learn the surah?", ["revealed to him: a soft golden glow about his place", "his voice, reciting", "taking it from him: a faint golden line", "a snake, springing at them"]),
+      value("cave-at-mina", "taking it from him: a faint golden line", "opacity", 0.31)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      1
+    ]);
+    // The ring that fell into the well of Aris. Who wore it after Abu Bakr: the ring of silver has gone over to Abu
+    // Bakr's place, before the next words; then Umar's place comes and the ring goes over to it, and then Uthman's
+    // place, by the garden of Aris, and the ring goes over to it. It stops before the ring drops into the well.
+    expect([
+      shown("Who wore it after Abu Bakr?", ["Umar's place", "Uthman's place", "ripples on the water of the well"]),
+      moved("Who wore it after Abu Bakr?", "the ring of silver", "x"),
+      value("well-of-aris", "the ring of silver", "x", 0.615)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [20, 66],
+      42
+    ]);
+    // Where the ring was lost: the ring is over Uthman's place, by the garden of Aris, before the last words; then it
+    // drops into the well and is gone: ripples show on its water, and a faint grey ring comes about the well.
+    expect([
+      shown("Where was the ring lost?", ["the ring of silver", "gone: a faint grey ring about the well"]),
+      moved("Where was the ring lost?", "the ring of silver", "x"),
+      value("well-of-aris", "ripples on the water of the well", "opacity", 0.86)
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      [66, 86],
+      1
+    ]);
+    // Gold he would not keep. How much gold: waits at the scene's start, since the first words name it; then his voice
+    // speaks, and a golden sheen comes over Uhud: gold like Uhud. It stops before the night.
+    expect(shown("How much gold did he ﷺ imagine having?", ["gold like Uhud: a golden sheen over the mountain", "his voice: if I had gold like Uhud", "night, three times"])).toEqual([
+      [0, 0, 0],
+      [0.85, 1, 0]
+    ]);
+    // How long he would keep it: the golden sheen is over Uhud, before the next words; then night comes, three times,
+    // and each night small lights of gold go from the mountain to the homes of Madinah, and the sheen grows less, until
+    // none is left on it. It stops before the coin kept back.
+    expect([
+      shown("How long would he ﷺ keep it?", ["gold like Uhud: a golden sheen over the mountain", "kept back for a debt: one small coin by his place"]),
+      value("gold-not-kept", "night, three times", "opacity", 0.285),
+      value("gold-not-kept", "night, three times", "opacity", 0.385),
+      value("gold-not-kept", "night, three times", "opacity", 0.545),
+      value("gold-not-kept", "given out: a small light of gold going to Madinah 1", "opacity", 0.285)
+    ]).toEqual([
+      [
+        [0.85, 0],
+        [0, 0]
+      ],
+      0.55,
+      0.55,
+      0.55,
+      1
+    ]);
+    // What he would keep back: no sheen is left on Uhud, before the last words; then one small coin shows by his place,
+    // a soft ring about it: kept back for a debt.
+    expect(shown("What would he ﷺ keep back?", ["kept back for a debt: one small coin by his place", "kept back: a soft ring about the coin", "gold like Uhud: a golden sheen over the mountain"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 0]
+    ]);
+    // The gift that reached its place. What was sent to Nusaybah: waits at the scene's start, while the sheep is still
+    // beyond the scene's left edge, since the first words name it; then the sheep comes along the way to Nusaybah's
+    // door, a soft ring about it: given to her. It stops before it goes in.
+    expect([
+      moved("What was sent to Nusaybah as charity?", "a sheep, sent to Nusaybah", "x"),
+      shown("What was sent to Nusaybah as charity?", ["given to her: a soft ring about the sheep", "some of it: a covered dish"])
+    ]).toEqual([
+      [0, 38],
+      [
+        [0, 0],
+        [1, 0]
+      ]
+    ]);
+    // That Aishah had nothing else: his place has come to his door and his voice asks, before the next words; then a
+    // voice answers from his home, and faint lines go from the door to the dish, and from the dish back to Nusaybah's
+    // home: none but what Nusaybah sent. It stops before his voice speaks again.
+    expect(shown("Aishah had plenty of other food that day.", ["a voice from his home: none but what was sent", "a faint line from the door to the dish", "a faint line from the dish to Nusaybah's home", "his voice: bring it"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // What he said of the meat: the faint lines go from the door to the dish and from the dish to Nusaybah's home,
+    // before his words; then his voice speaks: bring it, the dish comes to his place, and a soft golden ring and a warm
+    // glow come about it: it has reached its place.
+    expect([
+      shown("What did he ﷺ say about the meat?", ["his voice: bring it", "reached its place: a soft golden ring about the dish", "a warm glow about the dish and his place"]),
+      moved("What did he ﷺ say about the meat?", "some of it: a covered dish", "x"),
+      value("reached-its-place", "his voice: bring it", "opacity", 0.72)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [0, 1, 1]
+      ],
+      [63, 80],
+      1
+    ]);
+    // The horse kept for good. Why its keeper keeps it: waits at the scene's start, since the first words name it; then
+    // the horse comes along with its keeper's place beside it and is tied at a post, a soft ring about it: kept; a soft
+    // golden ring comes about the keeper's place and a spark rises: faith; and a soft glow comes about it and a spark
+    // rises: belief in His promise. It stops before the horse eats.
+    expect([
+      moved("Why does the owner keep the horse?", "a horse, kept for good", "x"),
+      shown("Why does the owner keep the horse?", ["kept: a cord from the post", "faith: a soft golden ring about the keeper's place", "belief in the promise: a soft glow about the keeper's place"]),
+      value("horse-kept", "faith: a spark rising from the keeper's place", "opacity", 0.28),
+      value("horse-kept", "belief in the promise: a spark rising", "opacity", 0.45)
+    ]).toEqual([
+      [0, 58],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1,
+      1
+    ]);
+    // What its keeper is rewarded for, and that keeping it brings reward: the soft glow of belief is about the keeper's
+    // place, before the next words; then the barley in the manger goes down as the horse eats, and sparks rise from it;
+    // the water in its trough goes down as it drinks, and sparks rise from it; a row of small lights shows over the
+    // keeper's place, kept for it, and a warm glow comes about the keeper and the horse.
+    for (const prompt of ["What will the owner be rewarded for?", "Looking after a horse kept for Allah brings reward."]) {
+      expect([
+        prompt,
+        moved(prompt, "barley in the manger", "scaleY"),
+        moved(prompt, "water in the trough", "scaleY"),
+        shown(prompt, ["kept for the keeper: a small light 1", "kept for the keeper: a small light 5", "a warm glow about the keeper and the horse"]),
+        value("horse-kept", "what it eats: a spark rising from the manger 1", "opacity", 0.59),
+        value("horse-kept", "what it drinks: a spark rising from the trough 1", "opacity", 0.65)
+      ]).toEqual([
+        prompt,
+        [1, 0.3],
+        [1, 0.35],
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        1,
+        1
+      ]);
+    }
+    // The carpets that would come. What he told Jabir they would have: waits at the scene's start, since the first words
+    // ask of carpets; then his voice asks, the voice in the home answers and a grey ring comes on the bare floor, and
+    // his voice speaks again: faint golden outlines of carpets show on the floor, still to come. It stops before the
+    // carpets come.
+    expect(shown("What did he ﷺ tell Jabir they would soon have?", ["his voice: you shall soon have carpets", "still to come: faint golden outlines of carpets", "none: a grey ring on the bare floor", "a carpet of red"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // What Jabir's wife reminded him of: the voice in the home has spoken and one carpet has rolled up, before her
+    // words; then the second's voice speaks: did he not tell you, a faint golden ring shows where his place stood, and
+    // the faint outlines show again about the carpets. It stops before the carpet rolls out again.
+    expect([
+      shown("What did Jabir's wife remind him of?", ["the second voice: did he not tell you", "where his place stood: a faint golden ring", "still to come: faint golden outlines of carpets"]),
+      value("carpets-will-come", "a carpet of blue", "scaleX", 0.83)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      0.3
+    ]);
+    // That Jabir let the carpets be: the faint golden ring shows where his place stood, before the last words; then the
+    // carpet rolls out again, and a warm glow comes over the home.
+    expect([
+      moved("Jabir stopped asking his wife to remove the carpets.", "a carpet of blue", "scaleX"),
+      shown("Jabir stopped asking his wife to remove the carpets.", ["a warm glow over the home"])
+    ]).toEqual([
+      [0.3, 1],
+      [[0], [1]]
     ]);
   });
 

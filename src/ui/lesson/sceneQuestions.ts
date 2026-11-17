@@ -4377,6 +4377,58 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Sahabah say going up a hill?", "Allahu akbar", "When we went up, we said: Allahu akbar"],
     ["We can remember Allah even while we travel.", "True", "When we went up, we said: Allahu akbar", "When we went down, we said: subhan Allah"],
     ["What did they say going down?", "Subhanallah", "When we went down, we said: subhan Allah"]
+  ],
+  // Tariq passed by some folk praying and asked: what is this masjid? They said: here is the tree of the pledge. Sa'id
+  // said: my father was one who pledged, and he said: the next year we forgot it, and we could not recognize it. Sa'id
+  // said: they did not know it, yet you know it, so you know better (Sahih al-Bukhari 4163).
+  "sign-forgotten-tree": [
+    ["Whose father was at the pledge, per Bukhari 4163?", "Sa'id ibn al-Musayyib", "Sa'id said: my father was one who pledged"],
+    ["What happened the next year, per Bukhari 4163?", "They forgot the tree", "My father said: next year, we forgot it", "and we could not recognize it"],
+    ["Even the Companions could not find the tree later.", "True", "My father said: next year, we forgot it", "Sa'id said: they did not know it"]
+  ],
+  // We were in a cave at Mina when Al-Mursalat was revealed to him; he was reciting it, and I took it from him. Suddenly
+  // a snake sprang at us, and he said: kill it. We rushed at it, and it got away. He said: it escaped your evil, as you
+  // escaped its evil (Sahih al-Bukhari 1830). (Where he was when Al-Mursalat came stays on its usual picture, since the
+  // cave is there from the scene's start.)
+  "sign-cave-at-mina": [
+    ["Ibn Masud learned Al-Mursalat years after it came down.", "False", "when Al-Mursalat was revealed to him", "He was reciting it, and I took it from him"],
+    ["How did Ibn Masud learn the surah?", "Straight from his mouth", "He was reciting it, and I took it from him"]
+  ],
+  // He had a ring of silver made, and it was worn on his hand; afterwards it was worn by Abu Bakr, then by Umar, and
+  // then by Uthman, till it fell in the well of Aris (Sahih al-Bukhari 5873). (What his ring was made of keeps its own
+  // picture cards.)
+  "sign-well-of-aris": [
+    ["Who wore it after Abu Bakr?", "Umar", "then by Umar, and then by Uthman"],
+    ["Where was the ring lost?", "In the well of Aris", "till it fell in the well of Aris"]
+  ],
+  // He said: if I had gold like Uhud, I would not like three nights to pass and any of it still be with me, except
+  // something I keep for a debt (Sahih al-Bukhari 6445).
+  "sign-gold-not-kept": [
+    ["How much gold did he ﷺ imagine having?", "As much as Mount Uhud", "He said: if I had gold like Uhud"],
+    ["How long would he ﷺ keep it?", "No more than three nights", "I would not like three nights to pass", "and any of it still be with me"],
+    ["What would he ﷺ keep back?", "Enough to repay debts", "except something I keep for a debt"]
+  ],
+  // A sheep was sent to Nusaybah as charity, and she sent some of it to Aishah. He asked: do you have anything? Aishah
+  // said: none but what Nusaybah sent. He said: bring it, for it has reached its place (Sahih al-Bukhari 1446).
+  "sign-reached-its-place": [
+    ["What was sent to Nusaybah as charity?", "A sheep", "A sheep was sent to Nusaybah, as charity"],
+    ["Aishah had plenty of other food that day.", "False", "Aishah said: none but what Nusaybah sent"],
+    ["What did he ﷺ say about the meat?", "Bring it, it has reached its place", "He said: bring it", "for it has reached its place"]
+  ],
+  // Whoever keeps a horse in Allah's cause, out of faith in Allah and belief in His promise, what it has eaten and drunk
+  // is in his scale on the Day of Resurrection (Sahih al-Bukhari 2853).
+  "sign-horse-kept": [
+    ["Why does the owner keep the horse?", "To serve Allah's cause", "Whoever keeps a horse in Allah's cause", "and belief in His promise"],
+    ["What will the owner be rewarded for?", "What the horse eats and drinks", "what it has eaten and drunk", "is in his scale on the Day of Resurrection"],
+    ["Looking after a horse kept for Allah brings reward.", "True", "what it has eaten and drunk", "is in his scale on the Day of Resurrection"]
+  ],
+  // He asked Jabir: have you got carpets? Jabir said: where would we get carpets? He said: you shall soon have carpets.
+  // Jabir would say to his wife: take your carpets out of my sight, and she would say: did he not tell you that you
+  // would soon have carpets? So he would let them be (Sahih al-Bukhari 3631).
+  "sign-carpets-will-come": [
+    ["What did he ﷺ tell Jabir they would soon have?", "Carpets", "He asked: have you got carpets?", "He said: you shall soon have carpets"],
+    ["What did Jabir's wife remind him of?", "His ﷺ words about carpets", "She would say: did he not tell you", "that you would soon have carpets?"],
+    ["Jabir stopped asking his wife to remove the carpets.", "True", "So I would let them be"]
   ]
 };
 
