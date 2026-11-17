@@ -17267,8 +17267,8 @@ describe("the signs in creation, alive", () => {
     ]);
     // Not to wear, but to give: by the masjid of Madinah, his place, a golden ring, Umar's place, and a silk cloak for
     // sale, folded, by the seller's place. A faint golden line goes from Umar's place to the cloak; Umar's voice speaks,
-    // then his, and a grey ring comes about the cloak for sale. The seller's place and the cloak go on, and Umar's place
-    // goes home. Cloaks like it show by his place, and the top one goes along a way to Umar's home. Umar's voice asks;
+    // then his, and a grey ring comes about the cloak for sale. Umar's place goes home. Then the seller's place and the
+    // cloak go on, cloaks like it show by his place, and the top one goes along a way to Umar's home. Umar's voice asks;
     // his voice answers, and a soft golden ring comes about the cloak: to give. Then a way shows to Makkah, far off, and
     // the cloak goes along it to the place of Umar's kin there, with a warm glow about it.
     expect(words("cloak-to-give")).toEqual([
@@ -17284,9 +17284,9 @@ describe("the signs in creation, alive", () => {
     expect([
       at("cloak-to-give", "Umar saw it: a faint golden line to the cloak", "opacity", [0.01, 0.095, 0.215]),
       at("cloak-to-give", "Umar's voice: buy it, wear it on Fridays", "opacity", [0.095, 0.215, 0.345]),
-      at("cloak-to-give", "his voice: only one with no share wears it", "opacity", [0.215, 0.345, 0.475]),
-      at("cloak-to-give", "not to be worn: a grey ring about the cloak for sale", "opacity", [0.215, 0.345, 0.475]),
-      [0.345, 0.475].map((t) => all("cloak-to-give", ["the seller's place", "the silk cloak for sale, folded"], t)),
+      at("cloak-to-give", "his voice: only one with no share wears it", "opacity", [0.215, 0.345, 0.475, 0.605]),
+      at("cloak-to-give", "not to be worn: a grey ring about the cloak for sale", "opacity", [0.215, 0.345, 0.475, 0.605]),
+      [0.475, 0.605].map((t) => all("cloak-to-give", ["the seller's place", "the silk cloak for sale, folded"], t)),
       at("cloak-to-give", "Umar's place", "x", [0.345, 0.475]),
       at("cloak-to-give", "cloaks like it, by his place", "opacity", [0.475, 0.605]),
       [at("cloak-to-give", "the cloak he sent to Umar", "opacity", [0.475, 0.605]), at("cloak-to-give", "the cloak he sent to Umar", "x", [0.605, 0.845, 0.97])],
@@ -17297,8 +17297,8 @@ describe("the signs in creation, alive", () => {
     ]).toEqual([
       [0, 1, 0],
       [0, 1, 0],
-      [0, 1, 0],
-      [0, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
       [
         [1, 1],
         [0, 0]

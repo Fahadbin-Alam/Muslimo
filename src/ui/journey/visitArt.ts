@@ -148,8 +148,8 @@ const silkCloak = (x: number, y: number) =>
 // to wear. So Umar sent it to a brother of his in Makkah, before he accepted Islam (Sahih al-Bukhari 2619). No one is
 // drawn: by the masjid of Madinah, his place, a golden ring, Umar's place, and a silk cloak for sale, folded, by the
 // seller's place. A faint golden line goes from Umar's place to the cloak; Umar's voice speaks, then his, and a grey ring
-// comes about the cloak for sale. The seller's place and the cloak go on, and Umar's place goes home. Cloaks like it
-// show by his place, and the top one goes along a way to Umar's home. Umar's voice asks; his voice answers, and a soft
+// comes about the cloak for sale. Umar's place goes home. Then the seller's place and the cloak go on, cloaks like
+// it show by his place, and the top one goes along a way to Umar's home. Umar's voice asks; his voice answers, and a soft
 // golden ring comes about the cloak: to give. Then a way shows to Makkah, far off, and the cloak goes along it to the
 // place of Umar's kin there, with a warm glow about it.
 function cloakToGive(): SignArt {
@@ -171,18 +171,18 @@ function cloakToGive(): SignArt {
       { name: "Umar's home", svg: home(umarHome, 100, 20, 14) },
       { name: "the way to Makkah, far off", svg: way("M106 104.6 C122 104.4 138 102.6 158 100.6", "#F4E3BC", 0.8), keys: showAt(0.89, 0.905) },
       { name: "far off in Makkah: the place of Umar's kin", svg: someone(152, 100.8, 1.2), keys: showAt(0.89, 0.905) },
-      { name: "the seller's place", svg: someone(33, 105.2), keys: track({ xy: [[0.4, 0, 0], [0.45, -6, 0]], opacity: [[0.4, 1], [0.45, 0]] }) },
+      { name: "the seller's place", svg: someone(33, 105.2), keys: track({ xy: [[0.52, 0, 0], [0.55, -6, 0]], opacity: [[0.52, 1], [0.55, 0]] }) },
       {
         name: "the silk cloak for sale, folded",
         svg: silkCloak(39.4, 106.6),
-        keys: track({ xy: [[0.4, 0, 0], [0.45, -6, 0]], opacity: [[0.4, 1], [0.45, 0]] })
+        keys: track({ xy: [[0.52, 0, 0], [0.55, -6, 0]], opacity: [[0.52, 1], [0.55, 0]] })
       },
       { name: "his place, a golden ring", svg: ring(62, 103.8, 2.6, GOLD) },
       { name: "Umar's place", svg: someone(50, 104.8), keys: track({ xy: umarGoes }) },
       { name: "Umar saw it: a faint golden line to the cloak", svg: lookLine(48.6, 103.6, 41, 104.2, 100.6, SOFT_GOLD), keys: showFor(0.03, 0.06, 0.15, 0.17) },
       { name: "Umar's voice: buy it, wear it on Fridays", svg: arcs(52, 103.4, VOICE), keys: showFor(0.145, 0.155, 0.26, 0.27), loop: speaking },
-      { name: "his voice: only one with no share wears it", svg: arcsLeft(59.4, 102.6, GOLD), keys: showFor(0.265, 0.275, 0.42, 0.43), loop: speaking },
-      { name: "not to be worn: a grey ring about the cloak for sale", svg: greyRing(39.4, 105.4, 4.8, 2), keys: showFor(0.29, 0.32, 0.4, 0.43) },
+      { name: "his voice: only one with no share wears it", svg: arcsLeft(59.4, 102.6, GOLD), keys: showFor(0.265, 0.275, 0.52, 0.53), loop: speaking },
+      { name: "not to be worn: a grey ring about the cloak for sale", svg: greyRing(39.4, 105.4, 4.8, 2), keys: showFor(0.29, 0.32, 0.52, 0.55) },
       { name: "cloaks like it, by his place", svg: silkCloak(76, 106.8) + silkCloak(76, 104.4), keys: showAt(0.52, 0.55) },
       {
         name: "the cloak he sent to Umar",
