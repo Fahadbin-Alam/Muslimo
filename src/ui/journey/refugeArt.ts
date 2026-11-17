@@ -290,15 +290,15 @@ const leftLying = (x: number, y: number) =>
   `<path d="M${n(x + 3.4)} ${n(y - 1.4)} L${n(x + 4.6)} ${n(y - 1.6)} L${n(x + 4.8)} ${n(y + 0.2)} L${n(x + 3.8)} ${n(y + 0.4)} Z" fill="#7A7A7A"/>`;
 
 // Refuge from worry. Anas said: the Prophet ﷺ used to say: O Allah, I seek refuge with You from worry and grief, from
-// incapacity and laziness, from cowardice and miserliness, from being heavily in debt and from being overpowered by
-// men (Sahih al-Bukhari 6369). Nothing is drawn for Allah, and no one is drawn: by the masjid of Madinah and his home,
-// his place, a golden ring, and Anas's place by it. Anas's voice speaks, and a faint line goes from Anas's place to
-// his; his voice speaks, a spark rises from his place, and a soft golden ring comes about it. Off to the side, away from
-// his place, grey things show one pair at a time and each fades to a trace: a grey tangle, worry, and a wilted flower,
-// grief; a heavy stone by a small place that cannot move it, incapacity, and a hoe left lying on unworked ground,
-// laziness; a grey place shrinking back behind a wall, cowardice, and a sack tied shut in a grey ring, miserliness; a
-// heap of grey coins, debt, weighing down; and three grey places closing in on one, overpowering it. Then a soft golden
-// glow comes about his place and his home, and glints.
+// incapacity and laziness, from cowardice and miserliness, from being heavily in debt and from being overpowered by men
+// (Sahih al-Bukhari 6369). Nothing is drawn for Allah, and no one is drawn: by the masjid of Madinah and his home, his
+// place, a golden ring, and Anas's place by it. Anas's voice speaks, and a faint line goes from Anas's place to his;
+// his voice speaks, a spark rises from his place, and a soft golden ring comes about it. Off to the side, away from his
+// place, grey things show one pair at a time, each fading to a trace as the next comes: a grey tangle, worry, and a
+// wilted flower, grief; a heavy stone by a small place that cannot move it, incapacity, and a hoe left lying on
+// unworked ground, laziness; a grey place shrinking back behind a wall, cowardice, and a sack tied shut in a grey ring,
+// miserliness; a heap of grey coins, debt, weighing down; and three grey places closing in on one, overpowering it.
+// Then a soft golden glow comes about his place and his home, and glints.
 function refugeFromWorry(): SignArt {
   const his: [number, number] = [36, 100.6];
   const anas: [number, number] = [47.4, 102.6];
@@ -331,11 +331,11 @@ function refugeFromWorry(): SignArt {
       { name: "his voice: I seek refuge", svg: arcsLeft(n(his[0] - 2.4), n(his[1] - 3.6), GOLD), keys: showAt(0.09, 0.1), loop: speaking },
       { name: "a spark rising from his place", svg: sparkle(his[0], n(his[1] - 5), 1.6, "#FFE7A0"), keys: sparkRising(0.18, 0.24, 12), loop: { move: "twinkle", ms: 900, low: 0.5 } },
       { name: "refuge: a soft golden ring about his place", svg: care(his[0], n(his[1] + 0.4), 5.6, 2.4, GOLD), keys: showAt(0.21, 0.23), loop: soft },
-      { name: "worry: a grey tangle", svg: tangle(worry[0], worry[1]), keys: fadedAfter(0.31, 0.32, 0.36, 0.38), loop: { move: "bob", ms: 1600, y: -0.4 } },
-      { name: "grief: a wilted flower", svg: wilted(grief[0], grief[1]), keys: fadedAfter(0.33, 0.34, 0.36, 0.38) },
-      { name: "incapacity: a heavy stone", svg: stone(heavy[0], heavy[1]), keys: fadedAfter(0.45, 0.46, 0.5, 0.52) },
-      { name: "a small place by it that cannot move it", svg: someone(n(heavy[0] - 7.4), n(heavy[1] - 1.6), 1.3, GREY), keys: fadedAfter(0.45, 0.46, 0.5, 0.52) },
-      { name: "laziness: a hoe left lying on unworked ground", svg: leftLying(lazy[0], lazy[1]), keys: fadedAfter(0.47, 0.48, 0.5, 0.52) },
+      { name: "worry: a grey tangle", svg: tangle(worry[0], worry[1]), keys: fadedAfter(0.31, 0.32, 0.44, 0.46), loop: { move: "bob", ms: 1600, y: -0.4 } },
+      { name: "grief: a wilted flower", svg: wilted(grief[0], grief[1]), keys: fadedAfter(0.33, 0.34, 0.44, 0.46) },
+      { name: "incapacity: a heavy stone", svg: stone(heavy[0], heavy[1]), keys: fadedAfter(0.45, 0.46, 0.58, 0.6) },
+      { name: "a small place by it that cannot move it", svg: someone(n(heavy[0] - 7.4), n(heavy[1] - 1.6), 1.3, GREY), keys: fadedAfter(0.45, 0.46, 0.58, 0.6) },
+      { name: "laziness: a hoe left lying on unworked ground", svg: leftLying(lazy[0], lazy[1]), keys: fadedAfter(0.47, 0.48, 0.58, 0.6) },
       {
         name: "cowardice: a grey place shrinking back behind a wall",
         svg: someone(n(behind[0] + 2), n(behind[1] + 4), 1.4, GREY),
@@ -343,8 +343,8 @@ function refugeFromWorry(): SignArt {
           opacity: [
             [0.585, 0],
             [0.595, 1],
-            [0.64, 1],
-            [0.66, 0.35]
+            [0.72, 1],
+            [0.74, 0.35]
           ],
           xy: [
             [0.6, 0, 0],
@@ -352,11 +352,11 @@ function refugeFromWorry(): SignArt {
           ]
         })
       },
-      { name: "a wall", svg: wall(n(behind[0] - 6), n(behind[0] + 6), behind[1], 3.4), keys: fadedAfter(0.58, 0.59, 0.64, 0.66) },
-      { name: "miserliness: a sack tied shut", svg: sack(shut[0], shut[1], 0.9, "#B09A78"), keys: fadedAfter(0.62, 0.63, 0.645, 0.66) },
-      { name: "held back: a grey ring about the sack", svg: greyRing(shut[0], n(shut[1] - 2.6), 4.4, 4), keys: fadedAfter(0.63, 0.64, 0.645, 0.66) },
-      { name: "debt: a heap of grey coins", svg: coins(n(debt[0] - 2.6), debt[1], 5, "#B8B4AC", "#8C8880") + coins(n(debt[0] + 2.4), debt[1], 7, "#B8B4AC", "#8C8880"), keys: fadedAfter(0.73, 0.75, 0.78, 0.8) },
-      { name: "heavily: a grey ring weighing about the coins", svg: greyRing(debt[0], n(debt[1] - 3.6), 6, 5), keys: fadedAfter(0.76, 0.77, 0.78, 0.8) },
+      { name: "a wall", svg: wall(n(behind[0] - 6), n(behind[0] + 6), behind[1], 3.4), keys: fadedAfter(0.58, 0.59, 0.72, 0.74) },
+      { name: "miserliness: a sack tied shut", svg: sack(shut[0], shut[1], 0.9, "#B09A78"), keys: fadedAfter(0.62, 0.63, 0.72, 0.74) },
+      { name: "held back: a grey ring about the sack", svg: greyRing(shut[0], n(shut[1] - 2.6), 4.4, 4), keys: fadedAfter(0.63, 0.64, 0.72, 0.74) },
+      { name: "debt: a heap of grey coins", svg: coins(n(debt[0] - 2.6), debt[1], 5, "#B8B4AC", "#8C8880") + coins(n(debt[0] + 2.4), debt[1], 7, "#B8B4AC", "#8C8880"), keys: fadedAfter(0.73, 0.75, 0.86, 0.88) },
+      { name: "heavily: a grey ring weighing about the coins", svg: greyRing(debt[0], n(debt[1] - 3.6), 6, 5), keys: fadedAfter(0.76, 0.77, 0.86, 0.88) },
       { name: "a place that is overpowered", svg: someone(one[0], one[1], 1.5), keys: fadedAfter(0.865, 0.875, 0.905, 0.915) },
       ...closing.map(
         ([x, y, tx, ty], i): SignPart => ({
@@ -817,8 +817,8 @@ function bewareOfWrongdoing(): SignArt {
         svg: someone(needFrom[0], needFrom[1], 1.5) + dish(n(needFrom[0] + 4), n(needFrom[1] + 1.4)),
         keys: track({
           xy: [
-            [0.62, 0, 0],
-            [0.66, n(needAt[0] - needFrom[0]), n(needAt[1] - needFrom[1])]
+            [0.635, 0, 0],
+            [0.675, n(needAt[0] - needFrom[0]), n(needAt[1] - needFrom[1])]
           ]
         })
       },
@@ -826,7 +826,7 @@ function bewareOfWrongdoing(): SignArt {
       { name: "stingy: a grey ring about the place that keeps it", svg: greyRing(keeper[0], n(keeper[1] + 0.4), 3.2, 1.7), keys: showAt(0.71, 0.72) },
       { name: "his place, a golden ring", svg: ring(his[0], his[1], 2.4, GOLD) },
       { name: "his voice: beware", svg: arcs(n(his[0] + 2.4), n(his[1] - 3.6), GOLD), keys: showAt(0.03, 0.04), loop: speaking },
-      { name: "the Day of Resurrection: a wide pale plain over the whole scene", svg: PLAIN, keys: showFor(0.42, 0.45, 0.52, 0.55) },
+      { name: "the Day of Resurrection: a wide pale plain over the whole scene", svg: PLAIN, keys: showFor(0.42, 0.45, 0.605, 0.635) },
       {
         name: "the sack by the small home, taken",
         svg: sack(sackFrom[0], sackFrom[1], 0.8),
@@ -838,8 +838,8 @@ function bewareOfWrongdoing(): SignArt {
           opacity: [
             [0.42, 1],
             [0.45, 0],
-            [0.52, 0],
-            [0.55, 1]
+            [0.605, 0],
+            [0.635, 1]
           ]
         })
       },

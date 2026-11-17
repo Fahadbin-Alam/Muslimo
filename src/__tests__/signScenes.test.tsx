@@ -21467,15 +21467,15 @@ describe("the signs in creation, alive", () => {
       ],
       [
         [0, 0],
-        [0.35, 0.35]
+        [1, 1]
       ],
       [
         [0, 0, 0],
-        [0.35, 0.35, 0.35]
+        [1, 1, 1]
       ],
       [
         [0, 0, 0, 0],
-        [0.35, 0.35, 0.35, 0.35]
+        [1, 1, 1, 1]
       ],
       [
         [0, -2],
@@ -21483,7 +21483,7 @@ describe("the signs in creation, alive", () => {
       ],
       [
         [0, 0],
-        [0.35, 0.35]
+        [1, 1]
       ],
       [
         [0, 0, 0, 0, 0],
@@ -21658,7 +21658,7 @@ describe("the signs in creation, alive", () => {
       [at("beware-of-wrongdoing", "his voice: beware", "opacity", [0.01, 0.2]), at("beware-of-wrongdoing", "wrongdoing: a grey ring about the wrongdoer", "opacity", [0.01, 0.2])],
       [at("beware-of-wrongdoing", "the wrongdoer: a grey place, going to the small home and taking its sack", "x", [0.01, 0.2]), at("beware-of-wrongdoing", "the sack by the small home, taken", "x", [0.01, 0.2])],
       [0.2, 0.395].map((t) => all("beware-of-wrongdoing", ["darkness: a dark haze about the wrongdoer", "deeper darkness about it"], t)),
-      [at("beware-of-wrongdoing", "the Day of Resurrection: a wide pale plain over the whole scene", "opacity", [0.395, 0.48, 0.59]), at("beware-of-wrongdoing", "the sack by the small home, taken", "opacity", [0.395, 0.48, 0.59])],
+      [at("beware-of-wrongdoing", "the Day of Resurrection: a wide pale plain over the whole scene", "opacity", [0.395, 0.48, 0.59, 0.785]), at("beware-of-wrongdoing", "the sack by the small home, taken", "opacity", [0.395, 0.48, 0.59, 0.785])],
       at("beware-of-wrongdoing", "a place in need coming with an empty dish", "x", [0.59, 0.785]),
       [0.59, 0.785].map((t) => all("beware-of-wrongdoing", ["held back: a grey ring about the sack", "stingy: a grey ring about the place that keeps it"], t)),
       [0.785, 0.97].map((t) => all("beware-of-wrongdoing", ["a home of those before 1", "destroyed: a broken home 1", "the faded places of those before", "destroyed: a grey haze over the broken homes"], t))
@@ -21676,8 +21676,8 @@ describe("the signs in creation, alive", () => {
         [1, 1]
       ],
       [
-        [0, 1, 0],
-        [1, 0, 1]
+        [0, 1, 1, 0],
+        [1, 0, 0, 1]
       ],
       [0, -24],
       [
