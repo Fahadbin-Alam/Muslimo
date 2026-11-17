@@ -4594,6 +4594,60 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many rewards did he ﷺ say Zaynab would get?", "Two", "He said: two rewards, kinship and charity"],
     ["What did he ﷺ ask when Bilal said her name?", "Which Zaynab?", "He said: which Zaynab?"],
     ["Giving to your own needy family can bring a double reward.", "True", "Bilal said: the wife of Abdullah", "He said: two rewards, kinship and charity"]
+  ],
+  // As-Sa'b ibn Jaththamah said: he gave the Messenger of Allah ﷺ a wild donkey at al-Abwa', or at Waddan, and he gave
+  // it back to him. When he saw what was in his face, he said: we did not give it back to you, except that we are in
+  // ihram (Sahih al-Bukhari 2573).
+  "sign-gift-in-ihram": [
+    ["What did he ﷺ see on the giver's face?", "Sadness", "and he gave it back to As-Sa'b", "When he saw the sorrow in As-Sa'b's face"],
+    ["Why could he ﷺ not take the gift?", "He was in ihram", "He said: we did not give it back to you", "except that we are in ihram"],
+    ["He ﷺ cared about the feelings of the man who gave the gift.", "True", "When he saw the sorrow in As-Sa'b's face", "except that we are in ihram"]
+  ],
+  // Ibn Umar said: Umar saw a silk cloak for sale and said: buy it, and wear it on Fridays. He said: only one with no
+  // share in the Hereafter wears this. Then cloaks like it came to him, and he sent one to Umar. Umar said: how can I
+  // wear it? He said: I did not give it to you to wear; sell it, or give it. So Umar sent it to a brother of his in
+  // Makkah, before he accepted Islam (Sahih al-Bukhari 2619).
+  "sign-cloak-to-give": [
+    ["Why did he ﷺ send Umar the silk cloak?", "To sell or to give away", "He said: not to wear, but to sell or give"],
+    ["Who did Umar give the cloak to?", "His brother in Makkah", "So Umar sent it to his brother in Makkah"],
+    ["Men may wear silk clothes.", "False", "He said: this is worn by one", "who has no share in the Hereafter"]
+  ],
+  // Jabir said: he came to visit me while I was sick and unconscious. He made wudu, and poured some of its water on me,
+  // and I woke. I said: to whom will my inheritance go? Then the ayah of inheritance was revealed (Sahih al-Bukhari
+  // 194).
+  "sign-water-for-jabir": [
+    ["What did the Prophet ﷺ sprinkle on Jabir?", "His wudu water", "He made wudu", "and poured of its water on me"],
+    ["What did Jabir ask about?", "His inheritance", "I said: to whom will my inheritance go?"],
+    ["Visiting the sick is part of the sunnah.", "True", "Jabir said: he came to visit me", "while I was sick and unconscious"]
+  ],
+  // Anas said: a Jewish youth used to serve him, and fell ill. He came to visit him, sat by his head, and said: accept
+  // Islam. The youth looked at his father, who was with him, and his father said: obey Abul-Qasim ﷺ. So he accepted
+  // Islam, and he came out saying: praise be to Allah, who saved him from the Fire (Sahih al-Bukhari 1356).
+  "sign-visit-to-the-youth": [
+    ["Whom did he ﷺ go to visit?", "A sick boy who served him", "The youth fell ill, and he came to visit"],
+    ["Where did he ﷺ sit during the visit?", "Near the boy's head", "The youth fell ill, and he came to visit", "He sat by his head and said: accept Islam"],
+    ["He ﷺ visited people even if they were not Muslim.", "True", "The youth fell ill, and he came to visit", "He sat by his head and said: accept Islam"]
+  ],
+  // Sahl said: between the place where the Messenger of Allah ﷺ prayed and the wall, there was room for a sheep to pass
+  // (Sahih al-Bukhari 496). (That he prayed close to the wall is there from the scene's start, so the two questions on
+  // it stay as they are.)
+  "sign-room-for-a-sheep": [
+    ["How much room was between his ﷺ prayer place and the wall?", "Room for a sheep", "was room for a sheep to pass"]
+  ],
+  // Abu Hazim said: I asked Sahl: did the Messenger of Allah ﷺ eat white flour? Sahl said: he never saw white flour. I
+  // said: did you have sieves? Sahl said: he never saw a sieve. I said: how did you eat barley unsifted? Sahl said: we
+  // ground it and blew on it; what flew off flew, and what stayed we wet and ate (Sahih al-Bukhari 5413).
+  "sign-husk-blown": [
+    ["How did they clean the barley, with no sieve?", "They blew off the husk", "Sahl said: we ground it and blew on it", "what flew off flew, and what stayed"],
+    ["What did he ﷺ never see, Sahl said?", "White flour", "I asked Sahl: did he eat white flour?", "Sahl said: he never saw white flour"],
+    ["He ﷺ and his companions lived a simple life.", "True", "I asked Sahl: did he eat white flour?", "Sahl said: he never saw a sieve"]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: the food of two is enough for three, and the food of three is
+  // enough for four (Sahih al-Bukhari 5392).
+  "sign-enough-for-more": [
+    ["Food for two people is enough for...?", "Three people", "is enough for three"],
+    ["A friend comes while you eat with your brother. What fits?", "Share the food", "is enough for three"],
+    ["Food for three people is enough for four.", "True", "is enough for four"]
   ]
 };
 
