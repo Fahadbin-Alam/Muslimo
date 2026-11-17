@@ -1335,6 +1335,13 @@ const STATES: State[] = [
   { id: "scene-valley-of-the-ansar", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhajirun-but-for-hijrah" ask="Whose valley" /> },
   { id: "scene-kept-for-you", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-we-kept-this-for-you" ask="came out to Makhramah" /> },
   { id: "scene-long-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-starting-out-a-long-night-ends" ask="night of his journey" /> },
+  { id: "scene-three-came", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-three-men-at-the-circle" ask="found a place in the circle" /> },
+  { id: "scene-friday-silq", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahl-friday-lunch" ask="When did she feed them" /> },
+  { id: "scene-what-you-meant", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-what-you-intended" ask="tell Yazid" /> },
+  { id: "scene-marked-cloth", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-prayer-the-marked-cloth" ask="ask for instead" /> },
+  { id: "scene-date-stones", render: () => <SceneQuestionDemo lessonId="lesson-deep-asma-hard-work" ask="worked hard" /> },
+  { id: "scene-like-no-other", render: () => <SceneQuestionDemo lessonId="lesson-deep-how-they-came-to-islam-words-like-no-other" ask="How many times" /> },
+  { id: "scene-up-and-down", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-day-night-going-up-going-down" ask="going down" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

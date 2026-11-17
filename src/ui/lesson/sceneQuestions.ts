@@ -4323,6 +4323,60 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did Abu Hurairah call the night of his journey?", "Long and tiring", "O night, how long and tiring!"],
     ["Abu Hurairah's slave ran away from him on the way.", "True", "A slave of mine ran away on the way"],
     ["What did Abu Hurairah do when his slave came back?", "He freed him for Allah", "I said: he is free, for the sake of Allah"]
+  ],
+  // As he sat in the masjid, three came; two came to him, and one went away. One saw a gap in the circle and sat in it,
+  // the other sat behind them, and the third turned his back and went. He said: one of them went to Allah, and Allah
+  // took him in; the second was shy, so Allah sheltered him; and the third turned away, so Allah turned away from him
+  // (Sahih al-Bukhari 66).
+  "sign-three-came": [
+    ["What did the second man do?", "Sat shyly at the back", "The other sat behind them"],
+    ["What did Allah do for the man who found a place in the circle?", "Took him into His mercy", "He said: one went to Allah; He took him in"],
+    ["Turning away from a lesson about Allah is a good choice.", "False", "The third turned away; Allah turned away"]
+  ],
+  // Sahl said: a woman among us sowed silq by the streams of her farm; on Friday she pulled up the silq's roots and put
+  // them in a pot, with a handful of barley she had ground. Leaving Jumu'ah, we would greet her, and she set that food
+  // before us, and we longed for Friday for that food of hers (Sahih al-Bukhari 938).
+  "sign-friday-silq": [
+    ["What did the woman cook on Fridays?", "Silq roots with barley", "There was a woman among us", "With a handful of barley she had ground"],
+    ["When did she feed them?", "After Jumu'ah", "On Friday she pulled up the silq's roots", "And she set that food before us"],
+    ["Small kindness can make people love a day.", "True", "We longed for Friday for that food of hers"]
+  ],
+  // Ma'n said: my father Yazid took out dinars for charity and left them with a man in the masjid; I came, took them,
+  // and brought them to him. He said: by Allah, I meant not you. So I took the case to him, and he said: yours is what
+  // you meant, Yazid, and yours is what you took, Ma'n (Sahih al-Bukhari 1422).
+  "sign-what-you-meant": [
+    ["Who ended up with Yazid's charity?", "His own son, Ma'n", "My father Yazid took dinars for charity", "I came, took them, and brought them to him"],
+    ["What did he ﷺ tell Yazid?", "You get the reward you intended", "He said: yours is what you meant, Yazid"],
+    ["Ma'n had to give the coins back.", "False", "And yours is what you took, Ma'n"]
+  ],
+  // He prayed in a cloth with marks on it, and said: its marks drew my mind away; take it to Abu Jahm, and bring me a
+  // plain one (Sahih al-Bukhari 752). (What distracted him stays on its usual picture: the cloth with marks is there
+  // from the scene's start.)
+  "sign-marked-cloth": [
+    ["Pray where little distracts you.", "True", "He said: its marks drew my mind away", "And bring me a plain one"],
+    ["What did he ﷺ ask for instead?", "A plain cloth", "And bring me a plain one"]
+  ],
+  // Asma said: I used to carry the date stones from the land he gave az-Zubair, on my head, two thirds of a farsakh away
+  // (Sahih al-Bukhari 3151). (What Asma carried stays on its usual picture, since the date stones are there from the
+  // scene's start, and so does who her husband was, which the scene does not tell.)
+  "sign-date-stones": [
+    ["Asma worked hard for her family.", "True", "I used to carry the date stones", "On my head, two thirds of a farsakh away"]
+  ],
+  // Dimad, who gave ruqyah, came to Makkah and met him; he said: praise be to Allah, we praise Him; I bear witness that
+  // there is no god but Allah. He said them three times, and Dimad said: I have heard soothsayers, magicians and poets,
+  // but never words like these of yours; they reach the depths of the sea. Give me your hand: I pledge to you on Islam
+  // (Sahih Muslim 868).
+  "sign-like-no-other": [
+    ["How many times did he ﷺ say the words to Dimad?", "Three times", "He said them thrice, and Dimad said:"],
+    ["Whose words did Dimad say he had heard before?", "Soothsayers, magicians and poets", "I heard soothsayers, magicians and poets"],
+    ["Dimad became Muslim after hearing these words.", "True", "Give your hand: I pledge to you on Islam"]
+  ],
+  // Jabir said: when we went up, we said: Allahu akbar, and when we went down, we said: subhan Allah (Sahih al-Bukhari
+  // 2993).
+  "sign-up-and-down": [
+    ["What did the Sahabah say going up a hill?", "Allahu akbar", "When we went up, we said: Allahu akbar"],
+    ["We can remember Allah even while we travel.", "True", "When we went up, we said: Allahu akbar", "When we went down, we said: subhan Allah"],
+    ["What did they say going down?", "Subhanallah", "When we went down, we said: subhan Allah"]
   ]
 };
 
