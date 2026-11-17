@@ -1370,6 +1370,13 @@ const STATES: State[] = [
   { id: "scene-caravan-on-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah3-the-caravan-arrives" ask="How many people stayed" /> },
   { id: "scene-never-forgot", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-never-forgot" ask="tell him to spread" /> },
   { id: "scene-two-rewards", render: () => <SceneQuestionDemo lessonId="lesson-deep-quranwomen-zaynab-two-rewards" ask="when Bilal said her name" /> },
+  { id: "scene-gift-in-ihram", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-we-did-not-refuse-your-gift" ask="not take the gift" /> },
+  { id: "scene-cloak-to-give", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hibah-to-give-not-to-wear" ask="give the cloak to" /> },
+  { id: "scene-water-for-jabir", render: () => <SceneQuestionDemo lessonId="lesson-deep-jabir-the-visit" ask="sprinkle on Jabir" /> },
+  { id: "scene-visit-to-the-youth", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-visit-sick-the-young-helper" ask="sit during the visit" /> },
+  { id: "scene-room-for-a-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-room-for-a-sheep" ask="How much room" /> },
+  { id: "scene-husk-blown", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-table-blow-off-the-husk" ask="clean the barley" /> },
+  { id: "scene-enough-for-more", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-food-for-two" ask="Food for two people" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
