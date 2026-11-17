@@ -22,7 +22,7 @@ h1{font:120px/1.05 Baloo} h2{font:84px/1.08 Baloo} p{font:48px/1.3 Nun}
 .src{font:38px/1.3 NunB;margin-top:30px;color:#8a6a45}
 .foot{position:absolute;left:80px;right:80px;bottom:300px;display:flex;align-items:center;gap:22px;font:40px Nun;color:#8a6a45}
 .foot img{width:96px;height:96px;border-radius:24px}`;
-const foot = `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">Muslimo · coming soon</div>`;
+const foot = `<div class="foot"><img src="${u("store/graphics/google-play/icon-512.png")}">Muslimo · free on Android</div>`;
 const QUIZZES = {
   "": { kind: "hadith", tag: "Hadith quiz", Q: "Who should you greet with salam?", OPTS: ["Only people you know", "People you know and people you don't", "Only people older than you"], OK: 1,
     intro: "A man asked the Prophet ﷺ which deeds of Islam are best. He said:", quote: "“To feed (the poor) and greet those whom you know and those whom you don't know.”",
@@ -50,7 +50,7 @@ Object.assign(frames, {
 Object.assign(frames, {
   cta: `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center;padding-top:0">
    <img src="${u("store/graphics/google-play/icon-512.png")}" style="width:340px;border-radius:80px;border:8px solid #fff">
-   <h2 style="margin-top:70px">Learn one every day</h2><p style="margin-top:30px">Muslimo · coming soon<br>Follow for launch day</p></div></body>`,
+   <h2 style="margin-top:70px">Learn one every day</h2><p style="margin-top:30px">Free on Google Play<br>Link in bio</p></div></body>`,
 });
 const b = await chromium.launch({ channel: "chrome", args: ["--allow-file-access-from-files"] });
 const pg = await b.newPage({ viewport: { width: 1080, height: 1920 } });
