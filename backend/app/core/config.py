@@ -27,6 +27,16 @@ class Settings(BaseSettings):
     revenuecat_webhook_auth: str = ""
     # Owner's password for the stats page (GET /api/admin/stats, header X-Admin-Key). Empty turns the route off.
     admin_key: str = ""
+    # Newsletter emails go out through Brevo (free plan). Empty key: sign-ups are still saved, and website
+    # sign-ups wait as "pending" until the key is set and the owner sends their confirm emails.
+    brevo_api_key: str = ""
+    # The Brevo contact list confirmed subscribers are copied into (0 = don't copy).
+    brevo_list_id: int = 0
+    # Must be a sender verified in Brevo.
+    newsletter_sender_email: str = "oneworldrelief.fma@gmail.com"
+    newsletter_sender_name: str = "Muslimo"
+    # The public website, for the links in confirm emails (site/newsletter.html).
+    site_url: str = "https://fahadbin-alam.github.io/Muslimo"
     # Slows down guessing of passwords and codes (see core/rate_limit.py). Tests turn it off.
     rate_limit_enabled: bool = True
 
