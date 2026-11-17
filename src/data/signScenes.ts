@@ -842,7 +842,14 @@ export type SignKind =
   | "gifts-to-the-collector"
   | "three-days-for-a-guest"
   | "garlic-and-the-masjid"
-  | "straight-as-an-arrow";
+  | "straight-as-an-arrow"
+  | "two-hijrahs"
+  | "sana-to-hadramawt"
+  | "heard-by-all"
+  | "feed-visit-free"
+  | "never-refused-perfume"
+  | "blessed-measures"
+  | "twenty-nights";
 
 export type SignScene = {
   id: string;
@@ -2728,7 +2735,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-small-gift",
     kind: "small-gift",
     caption: "Abu Hurairah said: the Prophet ﷺ said: O Muslim women, let none of you look down on a gift for her neighbor, even if it is a sheep's trotter.",
-    sources: [bukhari("2566")]
+    sources: [bukhari("2566"), bukhari("6017")]
   },
   {
     id: "sign-asked-about-blessings",
@@ -4099,6 +4106,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ali said: the Messenger of Allah ﷺ said to me: say: O Allah, guide me and keep me straight; and with guidance, remember your being guided on the road, and with straightness, remember the straightness of the arrow.",
     sources: [muslim("2725a")]
+  },
+  {
+    id: "sign-two-hijrahs",
+    kind: "two-hijrahs",
+    caption:
+      "Abu Musa said: we set out from Yemen by ship to join the Prophet ﷺ, and the ship took us to Abyssinia, where we met Ja'far and stayed with him; then we all came to him. Asma bint Umays, who had come with us, was with Hafsah when Umar came in and said: we went on hijrah before you, so we have more right to the Messenger of Allah ﷺ than you. When the Prophet ﷺ came, Asma said: O Prophet of Allah, Umar said such and such. He said: what did you say to him? She said: I said such and such. He said: he has no more right to me than you; he and his companions have one hijrah, and you, the people of the ship, have two hijrahs. Asma said: I saw Abu Musa and the people of the ship coming to me in groups, asking me about this hadith; nothing in this world made them happier, or meant more to them, than what the Prophet ﷺ said to them.",
+    sources: [bukhari("4230"), bukhari("4231")]
+  },
+  {
+    id: "sign-sana-to-hadramawt",
+    kind: "sana-to-hadramawt",
+    caption:
+      "Khabbab said: I came to the Prophet ﷺ while he was resting on his cloak in the shade of the Ka'bah, and we had met hardship from the idolaters. I said: will you not pray to Allah? He sat up, his face red, and said: one of those before you would be combed with iron combs, and that would not turn him from his religion... And Allah will complete this matter, until a rider goes from San'a to Hadramawt fearing none but Allah. Bayan added: and the wolf for his sheep.",
+    sources: [bukhari("3852")]
+  },
+  {
+    id: "sign-heard-by-all",
+    kind: "heard-by-all",
+    caption:
+      "Abd ar-Rahman said that Abu Sa'id al-Khudri said to his father: I see you love sheep and the open country. So when you are with your sheep, or in your open country, and you call the adhan for the prayer, raise your voice in the call; for none hears the reach of the caller's voice, jinn, human or thing, but will testify for him on the Day of Resurrection. Abu Sa'id said: I heard it from the Messenger of Allah ﷺ.",
+    sources: [bukhari("609")]
+  },
+  {
+    id: "sign-feed-visit-free",
+    kind: "feed-visit-free",
+    caption:
+      "Abu Musa al-Ash'ari said that the Prophet ﷺ said: feed the hungry, visit the sick, and set free the captive. Sufyan said: al-ani is the captive.",
+    sources: [bukhari("5373"), bukhari("5649")]
+  },
+  {
+    id: "sign-never-refused-perfume",
+    kind: "never-refused-perfume",
+    caption:
+      "Azra ibn Thabit al-Ansari said: I went in to Thumamah ibn Abdullah, and he handed me some perfume, and said: Anas would never refuse perfume. And Anas said that the Prophet ﷺ would never refuse perfume.",
+    sources: [bukhari("2582"), bukhari("5929")]
+  },
+  {
+    id: "sign-blessed-measures",
+    kind: "blessed-measures",
+    caption:
+      "Al-Miqdam ibn Ma'dikarib said that the Prophet ﷺ said: measure your food, and it will be blessed for you. And Anas ibn Malik said that the Messenger of Allah ﷺ said: O Allah, bless them in their measure, and bless them in their sa' and their mudd, meaning the people of Madinah.",
+    sources: [bukhari("2128"), bukhari("2130")]
+  },
+  {
+    id: "sign-twenty-nights",
+    kind: "twenty-nights",
+    caption:
+      "Malik ibn al-Huwayrith said: I came to the Prophet ﷺ with some of my people, and we stayed with him twenty nights. He was merciful and gentle. When he saw how we longed for our families, he said: go back, and be among them, and teach them, and pray; and when the prayer is due, let one of you give the adhan for you, and let the eldest of you lead you.",
+    sources: [bukhari("628")]
   }
 ];
 
@@ -6109,7 +6165,29 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Garlic or onion: keep away from us, or from our masjid.
   "deep-book-food-garlic-and-onion": "sign-garlic-and-the-masjid",
   // Guide me and keep me straight: the road and the arrow.
-  "deep-book-dua-straight-as-an-arrow": "sign-straight-as-an-arrow"
+  "deep-book-dua-straight-as-an-arrow": "sign-straight-as-an-arrow",
+  // Asma told him what Umar said: one hijrah for Umar and his companions, two for the people of the ship.
+  "deep-muhajirun-two-hijrahs": "sign-two-hijrahs",
+  // Khabbab in the shade of the Ka'bah: Allah will complete this matter, from San'a to Hadramawt.
+  "deep-khabbab-in-the-shade": "sign-sana-to-hadramawt",
+  // Raise your voice with the adhan: all that hears it will testify for you.
+  "deep-pray-adhan-reward-everything-hears": "sign-heard-by-all",
+  // Feed the hungry, visit the sick, set free the captive.
+  "deep-book-food-feed-the-hungry": "sign-feed-visit-free",
+  // Three deeds: feed the hungry, visit the sick, set free the captive.
+  "deep-manners-visit-sick-three-duties": "sign-feed-visit-free",
+  // Thumamah's perfume for Azra: Anas never refused it, and he never refused it.
+  "deep-found-day-night-gift-of-perfume": "sign-never-refused-perfume",
+  // Anas never refused perfume, and he never refused it.
+  "deep-book-dress-never-refused-scent": "sign-never-refused-perfume",
+  // Measure your food, and it will be blessed for you.
+  "deep-book-trade-measure-your-food": "sign-blessed-measures",
+  // His du'a for Madinah: blessing in their measure, their sa' and their mudd.
+  "deep-duas-for-others-bless-their-measures": "sign-blessed-measures",
+  // Twenty nights with him, then home to teach: one gives the adhan, the eldest leads.
+  "foundation-first-worship-rhythm-hear-the-call": "sign-twenty-nights",
+  // Never scorn a gift to a neighbor, even a sheep's hoof (the same words, in Sahih al-Bukhari 6017).
+  "deep-neighbors-small-gift": "sign-small-gift"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
