@@ -52,7 +52,7 @@ import {
   loseHeart,
   pickTestOutChallenges,
   prepareUserForToday,
-  refillHeartsForToday,
+  regainHearts,
   LIBRARY_TOPICS,
   harderQuestions
 } from "./api/islamicLearningApi";
@@ -376,11 +376,10 @@ type CrewState =
   | { status: "ready"; payload: CrewPayload }
   | { status: "error"; message: string };
 
-// The out-of-hearts sheet: the one free refill, or the shop. `resume` is what the learner was
-// starting on the path, played once a free refill lands.
+// The out-of-hearts sheet (there is no free refill). `resume` is what the learner was
+// starting on the path, played once hearts come back from a video or the shop.
 type OutOfHeartsSheet = {
   open: boolean;
-  variant: "free" | "shop";
   inLesson: boolean;
   resume?: { kind: "node"; node: LearningNodeView } | { kind: "test_out"; unitId: string; attempt?: number; jumpNodeId?: string };
 };
@@ -785,6 +784,18 @@ export default function TopicApp() {
     return saved ?? (seenDay === localDayNumber() ? { day: seenDay, count: 1, at: Date.now() } : undefined);
   });
   // A newer Muslimo in the store shows a banner under the top bar; checked on every open and every return to the app.
+  // The slow refill keeps going while the app is open: the next heart lands on time, and coming back to the
+  // app gives back the hearts earned while it was away.
+  const nextHeartAt = state.user?.hearts.nextHeartAt;
+  useEffect(() => {
+    const regain = () => dispatch({ type: "apply_user_latest", update: (latest) => regainHearts(latest) });
+    const listener = PhoneAppState.addEventListener("change", (status) => status === "active" && regain());
+    const timer = typeof nextHeartAt === "number" ? setTimeout(regain, Math.min(Math.max(0, nextHeartAt - Date.now()) + 500, 2 ** 31 - 1)) : undefined;
+    return () => {
+      listener.remove();
+      if (timer) clearTimeout(timer);
+    };
+  }, [nextHeartAt]);
   const [updateReady, setUpdateReady] = useState(false);
   const [updateClosed, setUpdateClosed] = useState(false);
   useEffect(() => {
@@ -2045,14 +2056,12 @@ export default function TopicApp() {
     dispatch({ type: "select_topic", topicId });
   }
 
-  // Out of hearts: the one free refill first, then the shop. In a lesson it opens after GOT IT on
-  // the wrong answer, so the learner sees the right answer and the Why? line before the sheet.
-  // Once the free refill is used, the plans come first (at most every few hours, see mayOfferPlans); NO THANKS
-  // there brings this sheet up.
+  // Out of hearts: no free refill. In a lesson it opens after GOT IT on the wrong answer, so the learner
+  // sees the right answer and the Why? line before the sheet. The plans come first (at most every few
+  // hours, see mayOfferPlans); NO THANKS there brings this sheet up with videos, the shop and Practice.
   function openOutOfHearts(user: UserProfile, inLesson: boolean, resume?: OutOfHeartsSheet["resume"]) {
-    const variant = shouldOfferReviewHeartRestore(user) ? "free" : "shop";
-    const plansFirst = variant === "shop" && mayOfferPlans(planOfferCheck(user));
-    setOutOfHearts({ open: !plansFirst, variant, inLesson, resume });
+    const plansFirst = mayOfferPlans(planOfferCheck(user));
+    setOutOfHearts({ open: !plansFirst, inLesson, resume });
     if (plansFirst) openPlanOffer("hearts");
   }
 
@@ -3383,7 +3392,7 @@ export default function TopicApp() {
     void signOutOfProviders();
 
     const fallbackUser = await learningApi.getUser(1001);
-    const guestUser = withExperienceDefaults(ensureLearnerProfile(refillHeartsForToday({
+    const guestUser = withExperienceDefaults(ensureLearnerProfile(regainHearts({
       ...fallbackUser,
       preferredLanguage: leaving.preferredLanguage ?? DEFAULT_LANGUAGE,
       soundEffectsEnabled: leaving.soundEffectsEnabled !== false,
@@ -3423,7 +3432,7 @@ export default function TopicApp() {
     }
 
     const fallbackUser = await learningApi.getUser(1001);
-    resetToGuest(withExperienceDefaults(ensureLearnerProfile(refillHeartsForToday({
+    resetToGuest(withExperienceDefaults(ensureLearnerProfile(regainHearts({
       ...fallbackUser,
       preferredLanguage: leaving.preferredLanguage ?? DEFAULT_LANGUAGE
     }))), true);
@@ -3841,15 +3850,6 @@ export default function TopicApp() {
     } catch (error) {
       void notify(crewErrorTitle(error, "answer"), undefined, { mood: "sad" });
     }
-  }
-
-  // REFILL HEARTS: RefillSheet fills the hearts on screen first, then calls this.
-  function claimReviewHeartRestore() {
-    if (!state.user) {
-      return;
-    }
-
-    resumeWithHearts(grantHearts({ ...state.user, reviewHeartRestoreUsed: true }, state.user.hearts.max, true));
   }
 
   // One more video toward the next heart; true when this one finished it.
@@ -4870,8 +4870,8 @@ export default function TopicApp() {
         />
         <RefillSheet
           visible={Boolean(outOfHearts?.open)}
-          variant={outOfHearts?.variant}
           maxHearts={state.user.hearts.max}
+          nextHeartAt={state.user.hearts.nextHeartAt}
           mascotVariant={inLesson ? lessonMascot : selectedSection.mascot}
           accent={inLesson ? lessonAccent : selectedSection.accentColor}
           endLabel={outOfHearts?.inLesson === false ? t("Not now") : undefined}
@@ -4880,7 +4880,6 @@ export default function TopicApp() {
             closeOutOfHearts();
             changeTab("practice");
           }}
-          onRefill={claimReviewHeartRestore}
           onWatchVideo={canWatchHeartVideo ? () => void watchVideoForHeart() : undefined}
           videosWatched={heartVideosWatched}
           onPlans={
@@ -5041,10 +5040,6 @@ function knownTopic(topicId: string | undefined): TopicId | undefined {
 // Whose practice session is saved: the account's email, or "guest".
 function assessmentOwner(user: UserProfile) {
   return user.hasAccount && user.accountEmail ? user.accountEmail : "guest";
-}
-
-function shouldOfferReviewHeartRestore(user: UserProfile) {
-  return !user.hearts.unlimited && user.hearts.current === 0 && !user.reviewHeartRestoreUsed;
 }
 
 function defaultReminderPreferences(): ReminderPreferences {
