@@ -807,7 +807,14 @@ export type SignKind =
   | "dress-to-borrow"
   | "shade-of-the-kabah"
   | "secret-kept"
-  | "bless-the-givers";
+  | "bless-the-givers"
+  | "serve-your-parents"
+  | "best-to-the-poor"
+  | "out-to-welcome"
+  | "quba-turn"
+  | "caravan-on-friday"
+  | "never-forgot"
+  | "two-rewards";
 
 export type SignScene = {
   id: string;
@@ -3819,6 +3826,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Abi Awfa said: when folk came to the Prophet ﷺ with their charity, he would say: O Allah, bless the family of so-and-so. My father came to him with his charity, and he said: O Allah, bless the family of Abu Awfa.",
     sources: [bukhari("1497")]
+  },
+  {
+    id: "sign-serve-your-parents",
+    kind: "serve-your-parents",
+    caption:
+      "Abdullah ibn Amr said: a man came to the Prophet ﷺ asking his permission to take part in jihad. He said: are your parents alive? The man said: yes. He said: then strive in serving them.",
+    sources: [bukhari("3004")]
+  },
+  {
+    id: "sign-best-to-the-poor",
+    kind: "best-to-the-poor",
+    caption:
+      "Abu Hurairah said: I kept close to the Messenger of Allah ﷺ, and I would press my belly to the pebbles from hunger. The best of people to the poor was Ja'far ibn Abi Talib: he would take us home with him and feed us what was in his home, even bringing out to us a butter skin with nothing in it, and we would split it open and lick what was in it.",
+    sources: [bukhari("3708")]
+  },
+  {
+    id: "sign-out-to-welcome",
+    kind: "out-to-welcome",
+    caption:
+      "As-Sa'ib ibn Yazid said: I remember that I went out with the boys to meet the Prophet ﷺ at Thaniyyat al-Wada', as he came back from the expedition of Tabuk.",
+    sources: [bukhari("4427")]
+  },
+  {
+    id: "sign-quba-turn",
+    kind: "quba-turn",
+    caption:
+      "Ibn Umar said: while the people were praying Fajr in the masjid of Quba, someone came and said: Allah has revealed Quran to the Prophet ﷺ that he should face the Ka'bah, so face it. And they turned to the Ka'bah.",
+    sources: [bukhari("4488")]
+  },
+  {
+    id: "sign-caravan-on-friday",
+    kind: "caravan-on-friday",
+    caption:
+      "Jabir ibn Abdullah said: a caravan came on a Friday while we were with the Prophet ﷺ, and all the people left except twelve men. Then Allah revealed the ayah (Quran 62:11).",
+    sources: [bukhari("4899")]
+  },
+  {
+    id: "sign-never-forgot",
+    kind: "never-forgot",
+    caption:
+      "Abu Hurairah said: I said: O Messenger of Allah, I hear many hadith from you, but I forget them. He said: spread out your cloak. So I spread it out, and he scooped with his hands, then said: wrap it to you. So I wrapped it to me, and I forgot nothing after that.",
+    sources: [bukhari("119")]
+  },
+  {
+    id: "sign-two-rewards",
+    kind: "two-rewards",
+    caption:
+      "Zaynab, the wife of Abdullah, said: I was in the masjid and saw the Prophet ﷺ, and he said: give charity, even of your jewellery. Zaynab spent on Abdullah and on orphans in her care. I went to the Prophet ﷺ and found a woman of the Ansar at the door, with the same need as mine. Bilal passed by us, and we said: ask the Prophet ﷺ whether it is enough for me to spend on my husband and the orphans in my care. He went in and asked him, and he said: who are they? Bilal said: Zaynab. He said: which Zaynab? Bilal said: the wife of Abdullah. He said: yes, she has two rewards: the reward of kinship and the reward of charity.",
+    sources: [bukhari("1466")]
   }
 ];
 
@@ -5739,7 +5795,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Anas kept his ﷺ secret, even from his mother, and she told him to keep it.
   "deep-anas-secret": "sign-secret-kept",
   // He asked Allah to bless the family of each one who brought charity, and of Abu Awfa.
-  "deep-tawbah4-dua-for-the-giver": "sign-bless-the-givers"
+  "deep-tawbah4-dua-for-the-giver": "sign-bless-the-givers",
+  // A man asked leave to go out for jihad, and he sent him back to strive in serving his parents.
+  "deep-parents-serve-them": "sign-serve-your-parents",
+  // Ja'far, the best of people to the poor, fed them what was in his home, even a butter skin with nothing in it.
+  "deep-jafar-the-poor": "sign-best-to-the-poor",
+  // As-Sa'ib went out with the boys to Thaniyyat al-Wada' to meet him as he came back from Tabuk.
+  "deep-kids-children-out-to-welcome-him": "sign-out-to-welcome",
+  // At Quba they heard in their Fajr prayer that he was to face the Ka'bah, and turned to it.
+  "deep-baqarah2-quba-turn": "sign-quba-turn",
+  // A caravan came on a Friday, all but twelve left, and the ayah was revealed.
+  "deep-jumuah3-the-caravan-arrives": "sign-caravan-on-friday",
+  // Abu Hurairah spread his cloak, wrapped it to him, and forgot nothing after that.
+  "deep-abu-hurairah-never-forgot": "sign-never-forgot",
+  // Zaynab spent on her husband and the orphans in her care, and he said she had two rewards.
+  "deep-quranwomen-zaynab-two-rewards": "sign-two-rewards"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
