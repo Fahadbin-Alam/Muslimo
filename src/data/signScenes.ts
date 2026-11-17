@@ -849,7 +849,14 @@ export type SignKind =
   | "feed-visit-free"
   | "never-refused-perfume"
   | "blessed-measures"
-  | "twenty-nights";
+  | "twenty-nights"
+  | "brother-of-a-muslim"
+  | "love-them-both"
+  | "hurry-home"
+  | "soft-hearts-of-yemen"
+  | "a-modest-pace"
+  | "salam-to-the-boys"
+  | "joy-at-a-wedding";
 
 export type SignScene = {
   id: string;
@@ -4155,6 +4162,53 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Malik ibn al-Huwayrith said: I came to the Prophet ﷺ with some of my people, and we stayed with him twenty nights. He was merciful and gentle. When he saw how we longed for our families, he said: go back, and be among them, and teach them, and pray; and when the prayer is due, let one of you give the adhan for you, and let the eldest of you lead you.",
     sources: [bukhari("628")]
+  },
+  {
+    id: "sign-brother-of-a-muslim",
+    kind: "brother-of-a-muslim",
+    caption:
+      "Abdullah ibn Umar said that the Messenger of Allah ﷺ said: a Muslim is the brother of a Muslim; he does not wrong him, nor hand him over. Whoever meets his brother's need, Allah meets his need; whoever relieves a Muslim of a hardship, Allah relieves him of one of the hardships of the Day of Resurrection; and whoever covers a Muslim, Allah covers him on the Day of Resurrection.",
+    sources: [bukhari("2442")]
+  },
+  {
+    id: "sign-love-them-both",
+    kind: "love-them-both",
+    caption: "Usamah ibn Zayd said that the Prophet ﷺ would take him and al-Hasan, and say: O Allah, love them both, for I love them both.",
+    sources: [bukhari("3735")]
+  },
+  {
+    id: "sign-hurry-home",
+    kind: "hurry-home",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: travel is a piece of torment; it keeps one of you from his food, his drink and his sleep. So when he has done what he came for, let him hurry home to his family.",
+    sources: [bukhari("1804")]
+  },
+  {
+    id: "sign-soft-hearts-of-yemen",
+    kind: "soft-hearts-of-yemen",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: the people of Yemen have come to you; they are more gentle and soft-hearted. Faith is Yemeni, and wisdom is Yemeni; pride and haughtiness are among the owners of camels, and calm and dignity among the owners of sheep.",
+    sources: [bukhari("4388")]
+  },
+  {
+    id: "sign-a-modest-pace",
+    kind: "a-modest-pace",
+    caption:
+      "Urwah said: Usamah was asked, while I was sitting there, how the Messenger of Allah ﷺ travelled in the Farewell Hajj when he set off from Arafat. Usamah said: he went at a modest pace, and when he found an open space, he went faster.",
+    sources: [bukhari("1666")]
+  },
+  {
+    id: "sign-salam-to-the-boys",
+    kind: "salam-to-the-boys",
+    caption: "Anas ibn Malik passed by some boys and greeted them with salam, and said: the Prophet ﷺ used to do so.",
+    sources: [bukhari("6247")]
+  },
+  {
+    id: "sign-joy-at-a-wedding",
+    kind: "joy-at-a-wedding",
+    caption:
+      "Anas ibn Malik said: the Prophet ﷺ saw some women and children coming back from a wedding, and he stood up, energetic and happy, and said: by Allah, you are among the people most beloved to me (meaning the Ansar).",
+    sources: [bukhari("5180")]
   }
 ];
 
@@ -6187,7 +6241,27 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Twenty nights with him, then home to teach: one gives the adhan, the eldest leads.
   "foundation-first-worship-rhythm-hear-the-call": "sign-twenty-nights",
   // Never scorn a gift to a neighbor, even a sheep's hoof (the same words, in Sahih al-Bukhari 6017).
-  "deep-neighbors-small-gift": "sign-small-gift"
+  "deep-neighbors-small-gift": "sign-small-gift",
+  // A Muslim is a Muslim's brother: he does not wrong him, and whoever meets his need, Allah meets his.
+  "deep-brotherhood-do-not-wrong-him": "sign-brother-of-a-muslim",
+  // Whoever covers a Muslim, Allah covers him on the Day of Resurrection.
+  "deep-nur1-screen-a-muslim": "sign-brother-of-a-muslim",
+  // A Muslim does not wrong his brother, nor hand him over, and meets his need.
+  "deep-hujurat1-a-muslim-is-a-brother": "sign-brother-of-a-muslim",
+  // He would take Usamah and al-Hasan: O Allah, love them both, for I love them both.
+  "deep-usamah-loved-child": "sign-love-them-both",
+  // O Allah, love them both: Usamah and al-Hasan.
+  "deep-book-companions-usamah-and-hasan": "sign-love-them-both",
+  // Travel keeps you from food, drink and sleep: when your work is done, hurry home.
+  "deep-found-journey-hurry-home": "sign-hurry-home",
+  // The people of Yemen have come to you, gentle and soft-hearted.
+  "deep-abu-musa-soft-hearts": "sign-soft-hearts-of-yemen",
+  // Setting off from Arafat at a modest pace, faster where there was room.
+  "deep-hajj-the-day-of-arafah-a-modest-pace": "sign-a-modest-pace",
+  // Anas greeted some boys with salam, as the Prophet ﷺ used to do.
+  "deep-kids-everyday-manners-salam-to-the-children": "sign-salam-to-the-boys",
+  // Families coming back from a wedding: he stood up, energetic and happy.
+  "deep-book-marriage-joy-at-a-wedding": "sign-joy-at-a-wedding"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
