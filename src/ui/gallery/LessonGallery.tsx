@@ -1342,6 +1342,13 @@ const STATES: State[] = [
   { id: "scene-date-stones", render: () => <SceneQuestionDemo lessonId="lesson-deep-asma-hard-work" ask="worked hard" /> },
   { id: "scene-like-no-other", render: () => <SceneQuestionDemo lessonId="lesson-deep-how-they-came-to-islam-words-like-no-other" ask="How many times" /> },
   { id: "scene-up-and-down", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-day-night-going-up-going-down" ask="going down" /> },
+  { id: "scene-forgotten-tree", render: () => <SceneQuestionDemo lessonId="lesson-deep-fath2-the-tree-was-forgotten" ask="What happened the next year" /> },
+  { id: "scene-cave-at-mina", render: () => <SceneQuestionDemo lessonId="lesson-deep-mursalat1-revealed-in-a-cave" ask="How did Ibn Masud learn" /> },
+  { id: "scene-well-of-aris", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-the-silver-ring" ask="Who wore it after" /> },
+  { id: "scene-gold-not-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-gold-like-uhud" ask="How long would he" /> },
+  { id: "scene-reached-its-place", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-nusaybahs-sheep" ask="say about the meat" /> },
+  { id: "scene-horse-kept", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animal-manners-a-horse-kept-for-allah" ask="rewarded for" /> },
+  { id: "scene-carpets-will-come", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-weddings-and-new-homes-carpets-will-come" ask="wife remind him" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
