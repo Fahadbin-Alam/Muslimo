@@ -1391,6 +1391,13 @@ const STATES: State[] = [
   { id: "scene-uways-of-yemen", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-uways" ask="What was Uways known for" /> },
   { id: "scene-hazn-and-sahl", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-good-names-hazn-and-sahl" ask="offer Hazn" /> },
   { id: "scene-ajwa-morning", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-ajwa-dates" ask="What do they protect from" /> },
+  { id: "scene-a-dua-for-anas", render: () => <SceneQuestionDemo lessonId="lesson-sahabi-anas-ibn-malik-worship-and-character" ask="prayed for Anas to have wealth" /> },
+  { id: "scene-truly-trustworthy", render: () => <SceneQuestionDemo lessonId="lesson-deep-abuubaydah-najran" ask="What kind of man did the people of Najran ask for" /> },
+  { id: "scene-takbir-on-the-rises", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-spirit-coming-home" ask="say three times on every rise" /> },
+  { id: "scene-gifts-to-the-collector", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hibah-gifts-for-the-collector" ask="What job was Ibn al-Lutbiyyah sent to do" /> },
+  { id: "scene-three-days-for-a-guest", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-guest" ask="How long is a guest's full hospitality" /> },
+  { id: "scene-garlic-and-the-masjid", render: () => <SceneQuestionDemo lessonId="lesson-deep-clean-no-bad-smell" ask="Which two foods are named" /> },
+  { id: "scene-straight-as-an-arrow", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dua-straight-as-an-arrow" ask="What should you picture" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
