@@ -4648,6 +4648,64 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Food for two people is enough for...?", "Three people", "is enough for three"],
     ["A friend comes while you eat with your brother. What fits?", "Share the food", "is enough for three"],
     ["Food for three people is enough for four.", "True", "is enough for four"]
+  ],
+  // Umm Khalid said: he was brought some clothes, among them a little black khamisa. He said: whom should we dress in
+  // this? The people kept silent. He said: bring me Umm Khalid. She was brought, carried, and he dressed her in it, and
+  // said: may you live to wear it out and mend it, many times over. On it was a mark of green or yellow, and he said:
+  // Umm Khalid, this is sanah, beautiful (Sahih al-Bukhari 5823).
+  "sign-black-khamisa": [
+    ["Whom did he ﷺ choose to wear the black cloak?", "Little Umm Khalid", "He said: bring me Umm Khalid"],
+    ["What does 'sanah' mean?", "Beautiful", "He said: Umm Khalid, this is sanah!"],
+    ["He ﷺ made du'a that Umm Khalid would live long.", "True", "He said: may you live to wear it out", "and mend it, many times over"]
+  ],
+  // Anas said: when he came to Madinah, he ordered a masjid to be built, and said: O Banu an-Najjar, name me a price for
+  // this garden of yours. They said: no, by Allah, we will not ask its price except from Allah (Sahih al-Bukhari 2774).
+  "sign-garden-for-the-masjid": [
+    ["What was the land for?", "Building the masjid", "he ordered a masjid to be built"],
+    ["Who would they ask the price from?", "Allah", "we will not ask its price", "except from Allah"],
+    ["Giving land for a masjid is a lasting charity.", "True", "They said: no, by Allah,", "except from Allah"]
+  ],
+  // Abu Hurairah said: at-Tufayl and his companions came and said: Daws has disbelieved and refused, so pray to Allah
+  // against them. It was said: Daws is ruined; the people thought he would pray against them. He said: O Allah, guide
+  // Daws, and bring them (Sahih Muslim 2524, Sahih al-Bukhari 6397). (Which famous Companion came from Daws is not in
+  // the scene, so it stays as it is.)
+  "sign-guide-daws": [
+    ["What did At-Tufayl ask for Daws?", "A curse on them", "They said: Daws disbelieved and refused", "so pray to Allah against them"],
+    ["What did he ﷺ pray instead?", "O Allah, guide Daws", "He said: O Allah, guide Daws", "and bring them"],
+    ["Why did at-Tufail ask him ﷺ to pray against Daws?", "They had refused Islam", "They said: Daws disbelieved and refused"],
+    ["What did he ﷺ ask Allah for, for Daws?", "Guidance for them", "He said: O Allah, guide Daws", "and bring them"],
+    ["People thought he ﷺ would pray against Daws.", "True", "It was said: Daws is ruined"]
+  ],
+  // Umar said: an Ansari neighbour and I, at the Awali of Madinah, went down to him by turns, my neighbour one day and I
+  // one day. I brought my neighbour that day's news, of the revelation and other things, and my neighbour did the same
+  // (Sahih al-Bukhari 89).
+  "sign-learning-in-turns": [
+    ["How did Umar and his neighbor make sure they learned everything?", "They took turns going to the Prophet ﷺ", "We went down to him by turns:", "my neighbour one day, and I one day"],
+    ["What did each bring back for the other?", "The news of that day", "I brought my neighbour that day's news", "and my neighbour did the same"],
+    ["Umar's neighbor was one of the Ansar.", "True", "Umar said: I and an Ansari neighbour"]
+  ],
+  // Abdullah ibn Dinar said: a man of the desert met Ibn Umar on the road to Makkah, and Ibn Umar set him on his own
+  // donkey and gave him the turban from his own head. We said: desert folk are happy with little. Ibn Umar said: Umar
+  // loved this man's father, and I heard him say: the finest goodness is a son's kindness to his father's loved ones
+  // (Sahih Muslim 2552a). (The donkey and the turban are there from the scene's start, so what Ibn Umar gave the man
+  // stays as it is.)
+  "sign-fathers-friend": [
+    ["What is the finest goodness, says Muslim 2552?", "Kindness to your father's loved ones", "Ibn Umar said: Umar loved the man's father", "a son's kindness to his father's friends"],
+    ["Being good to parents can go on after they pass away.", "True", "Ibn Umar said: Umar loved the man's father", "a son's kindness to his father's friends"]
+  ],
+  // Ibn Umar said: I heard him say: people are like camels; among a hundred, you can hardly find one fit to ride (Sahih
+  // al-Bukhari 6498). (The camel with the saddle is there from the scene's start, so what is hard to find among the
+  // hundred stays as it is.)
+  "sign-one-in-a-hundred": [
+    ["Among how many camels can you hardly find one fit to ride?", "One hundred camels", "a hundred of them,"],
+    ["He ﷺ likened people to camels.", "True", "People are like camels:"]
+  ],
+  // Abu Hurairah said: he said: whoever says Subhan Allah wa bihamdihi a hundred times in a day, their sins are
+  // forgiven, even if they were like the foam of the sea (Sahih al-Bukhari 6405). (The foam of the sea is there from the
+  // scene's start, so how big the forgiven sins can be stays as it is, and so does 56:96, which the scene does not
+  // show.)
+  "sign-foam-of-the-sea": [
+    ["How many times a day, per Bukhari 6405?", "One hundred", "a hundred times in a day,"]
   ]
 };
 
