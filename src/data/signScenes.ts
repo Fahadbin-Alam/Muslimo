@@ -779,7 +779,14 @@ export type SignKind =
   | "held-back"
   | "valley-of-the-ansar"
   | "kept-for-you"
-  | "long-night";
+  | "long-night"
+  | "three-came"
+  | "friday-silq"
+  | "what-you-meant"
+  | "marked-cloth"
+  | "date-stones"
+  | "like-no-other"
+  | "up-and-down";
 
 export type SignScene = {
   id: string;
@@ -3595,6 +3602,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: when I came to the Prophet ﷺ, I said on the way: O night, how long and tiring! Yet from the land of kufr it saved us. A slave of mine ran away from me on the way. When I came to the Prophet ﷺ, I gave him my pledge, and as I was with him, the slave appeared. The Messenger of Allah ﷺ said to me: O Abu Hurairah, here is your slave. I said: he is free, for the sake of Allah, and I freed him.",
     sources: [bukhari("2531")]
+  },
+  {
+    id: "sign-three-came",
+    kind: "three-came",
+    caption:
+      "Abu Waqid al-Laythi said: while the Messenger of Allah ﷺ was sitting in the masjid with the people, three men came. Two came to the Messenger of Allah ﷺ and one went away. The two stood by the Messenger of Allah ﷺ; one of them saw a gap in the circle and sat in it, the other sat behind them, and the third turned his back and went away. When the Messenger of Allah ﷺ finished, he said: shall I tell you about the three? One of them took himself to Allah, so Allah took him into His mercy; the second was shy, so Allah sheltered him in His mercy; and the third turned away, so Allah turned away from him.",
+    sources: [bukhari("66")]
+  },
+  {
+    id: "sign-friday-silq",
+    kind: "friday-silq",
+    caption:
+      "Sahl ibn Sa'd said: there was a woman among us who sowed silq on the edges of the streams of a farm of hers. On Fridays she would pull up the roots of the silq and put them in a pot, then put over them a handful of barley she had ground, and the roots of the silq were in place of meat. We would leave the Jumu'ah prayer and greet her, and she would set that food before us, and we would eat it up; and for that food of hers we looked forward to Friday.",
+    sources: [bukhari("938")]
+  },
+  {
+    id: "sign-what-you-meant",
+    kind: "what-you-meant",
+    caption:
+      "Ma'n ibn Yazid said: my father Yazid took out some dinars to give in charity and left them with a man in the masjid. I came, took them, and brought them to him. He said: by Allah, it was not you I meant. So I took the case to the Messenger of Allah ﷺ, and he said: you have what you intended, O Yazid, and you have what you took, O Ma'n.",
+    sources: [bukhari("1422")]
+  },
+  {
+    id: "sign-marked-cloth",
+    kind: "marked-cloth",
+    caption:
+      "Aishah said: the Prophet ﷺ prayed in a cloth with marks on it, and said: its marks drew my mind away. Take it to Abu Jahm, and bring me a plain cloth.",
+    sources: [bukhari("752")]
+  },
+  {
+    id: "sign-date-stones",
+    kind: "date-stones",
+    caption:
+      "Asma bint Abi Bakr said: I used to carry the date stones on my head from the land of az-Zubair that the Messenger of Allah ﷺ had given him, and it was two thirds of a farsakh from my house.",
+    sources: [bukhari("3151")]
+  },
+  {
+    id: "sign-like-no-other",
+    kind: "like-no-other",
+    caption:
+      "Ibn Abbas said: Dimad, of Azd Shanu'ah, came to Makkah; he used to treat people with ruqyah. He met the Messenger of Allah ﷺ and offered him ruqyah, and he answered: praise be to Allah, we praise Him and ask His help. Whomever Allah guides, none can lead astray, and whomever He leaves astray, none can guide. I bear witness that there is no god but Allah alone, with no partner, and that Muhammad is His servant and Messenger. Dimad said: say these words of yours to me again, and he ﷺ said them to him three times. Dimad said: I have heard the words of soothsayers, of magicians and of poets, but I have never heard words like these of yours; they reach the depths of the sea. Give me your hand, and I will pledge to you on Islam. And he pledged.",
+    sources: [muslim("868")]
+  },
+  {
+    id: "sign-up-and-down",
+    kind: "up-and-down",
+    caption:
+      "Jabir ibn Abdullah said: whenever we went up a place, we would say: Allahu akbar, and whenever we went down, we would say: subhan Allah.",
+    sources: [bukhari("2993")]
   }
 ];
 
@@ -5459,7 +5515,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // He shared out cloaks and gave Makhramah none; then he came out to him wearing one of them: we kept this for you.
   "deep-kids-kind-ways-we-kept-this-for-you": "sign-kept-for-you",
   // Abu Hurairah's long night on the way to Islam, and his slave who ran away, set free when he appeared.
-  "deep-intro-starting-out-a-long-night-ends": "sign-long-night"
+  "deep-intro-starting-out-a-long-night-ends": "sign-long-night",
+  // Three came to his circle in the masjid: one sat in a gap, one sat behind, and one turned away.
+  "deep-book-ilm-three-men-at-the-circle": "sign-three-came",
+  // Each Friday a woman cooked silq and barley, and set it before them after Jumu'ah.
+  "deep-sahl-friday-lunch": "sign-friday-silq",
+  // Yazid's charity came to his own son Ma'n: Yazid had what he meant, and Ma'n what he took.
+  "deep-zakat-anyone-what-you-intended": "sign-what-you-meant",
+  // A cloth whose marks drew his mind in prayer went to Abu Jahm, and he asked for a plain one.
+  "deep-book-prayer-the-marked-cloth": "sign-marked-cloth",
+  // Asma carried date stones on her head from az-Zubair's land, two thirds of a farsakh away.
+  "deep-asma-hard-work": "sign-date-stones",
+  // Dimad heard his words of praise and witness three times, never words like them, and pledged on Islam.
+  "deep-how-they-came-to-islam-words-like-no-other": "sign-like-no-other",
+  // Going up, they said Allahu akbar, and going down, subhan Allah.
+  "deep-found-day-night-going-up-going-down": "sign-up-and-down"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
