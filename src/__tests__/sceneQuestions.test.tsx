@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2563);
+    expect(asks.length).toBe(2583);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(3741);
+    expect(places).toBe(3767);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -13468,6 +13468,233 @@ describe("where the scene waits and where it stops", () => {
     ]).toEqual([
       [0.3, 1],
       [[0], [1]]
+    ]);
+  });
+
+  it("waits on the scenes from the Ka'bah left as it was to half a sa', before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-kaaba-as-it-was", "sign-cloth-in-the-heat", "sign-covered-cup", "sign-one-date-shared", "sign-blessed-bowl", "sign-cloaks-alike", "sign-half-a-sa"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(20);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The Ka'bah left as it was. Whose foundations it did not fully stand on: the House stands by the low wall of the
+    // Hijr and his voice speaks, before the next words; then a faint golden outline shows on the ground, Ibrahim's
+    // foundations, and a faint ring comes about the Hijr, left out. It stops before the voice beside him asks.
+    expect(shown("Whose foundations did the Ka'bah not fully stand on?", ["his voice: when your folk built it", "Ibrahim's foundations: a faint golden outline on the ground", "left out: a faint ring about the Hijr", "the voice beside him: will you not return it"])).toEqual([
+      [1, 0, 0, 0],
+      [0, 1, 1, 0]
+    ]);
+    // Why he did not rebuild it, and that being gentle with those new to Islam is his way: the voice beside him has
+    // asked, and a faint golden outline of the House as it could be stands on the foundations, before his answer; then
+    // his voice speaks, a soft ring comes about the folk, new to Islam, the outline as it could be fades with the
+    // foundations, and a warm glow comes about the folk: gentle with them. It stops before Ibn Umar's place.
+    for (const prompt of ["Why did he ﷺ not rebuild the Ka'bah?", "Being gentle with people new to Islam is part of his ﷺ way."]) {
+      expect([
+        prompt,
+        shown(prompt, ["the voice beside him: will you not return it", "as it could be: a faint golden outline of the House on the foundations", "Ibrahim's foundations: a faint golden outline on the ground", "his voice: were your folk not so new", "new to Islam: a soft ring about the folk", "gentle with them: a warm glow about the folk", "Ibn Umar's place"])
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 1, 0, 0, 0, 0],
+          [0, 0, 0, 1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // Prostrating on clothes in the heat. Why some could not put their face on the earth: waits at the scene's start,
+    // before the heat shows; then a hot glow comes about the sun, the earth burns hot and heat rises from it, the
+    // prayer's spark rises, and a pale red glow comes on the earth before one place, too hot, with heat rising there. It
+    // stops before the garments are spread.
+    expect([
+      shown("Why could some not put their face on the earth?", ["the scorching heat: a hot glow about the sun", "the earth, burning hot", "heat rising from the earth 1", "too hot: a pale red glow on the earth before one place", "heat rising there", "a garment spread out 1"]),
+      value("cloth-in-the-heat", "the prayer: a spark rising", "opacity", 0.12)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 0]
+      ],
+      1
+    ]);
+    // That Anas prayed with him even in scorching heat: waits at the scene's start, the rows at prayer behind his place;
+    // then the sun's hot glow comes, the earth burns hot, heat rises, and the prayer's spark rises. It stops before the
+    // next words.
+    expect([
+      shown("Anas prayed with him ﷺ even in scorching heat.", ["his place, a golden ring, leading", "the scorching heat: a hot glow about the sun", "the earth, burning hot", "heat rising from the earth 2", "too hot: a pale red glow on the earth before one place"]),
+      value("cloth-in-the-heat", "the prayer: a spark rising", "opacity", 0.12)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0]
+      ],
+      1
+    ]);
+    // What some spread on the hot earth to prostrate on: the pale red glow is on the earth before one place, too hot,
+    // before the next words; then it fades, three garments are spread out, one by one, a spark rises from each, the
+    // prostration, and soft rings come about them: eased.
+    expect([
+      shown("What did some spread on the hot earth to prostrate on?", ["too hot: a pale red glow on the earth before one place", "a garment spread out 1", "a garment spread out 2", "a garment spread out 3", "eased: soft rings about the garments"]),
+      moved("What did some spread on the hot earth to prostrate on?", "a garment spread out 3", "scaleX"),
+      value("cloth-in-the-heat", "the prostration: a spark rising from the second garment", "opacity", 0.86)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1]
+      ],
+      [0, 1],
+      1
+    ]);
+    // The cup covered with a stick. What he told Abu Humayd, and that covering food and drink is a sunnah: Abu Humayd's
+    // place has brought the cup of milk from al-Naqi' to his place, before his words; then his voice speaks, a faint
+    // ring comes about the open cup, a stick is laid across it, and a soft golden ring comes about it: covered.
+    for (const prompt of ["What did he ﷺ tell Abu Humayd about the milk?", "Covering food and drink is a sunnah."]) {
+      expect([
+        prompt,
+        value("covered-cup", "a wooden cup", "x", 0.48),
+        shown(prompt, ["his voice: will you not cover it", "open: a faint ring about the cup", "a stick, laid across the cup", "covered: a soft golden ring about the cup"]),
+        value("covered-cup", "open: a faint ring about the cup", "opacity", 0.7),
+        moved(prompt, "a stick, laid across the cup", "x")
+      ]).toEqual([
+        prompt,
+        80,
+        [
+          [0, 0, 0, 0],
+          [1, 0, 1, 1]
+        ],
+        1,
+        [7, 0]
+      ]);
+    }
+    // With what, at the very least: his voice has spoken and the faint ring is about the open cup, before the last
+    // words; then a stick is laid across it, and the soft golden ring comes about it.
+    expect([
+      shown("With what, at the very least?", ["his voice: will you not cover it", "open: a faint ring about the cup", "a stick, laid across the cup", "covered: a soft golden ring about the cup"]),
+      moved("With what, at the very least?", "a stick, laid across the cup", "y")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0],
+        [1, 0, 1, 1]
+      ],
+      [5.4, 0]
+    ]);
+    // One date shared. What the mother did with it: the one date has been found by the empty jar, before the next words;
+    // then it goes over to the lady's place and is two halves, and the halves go over to her two little ones. It stops
+    // before the faint ring comes about the lady's place: none for herself.
+    expect([
+      shown("What did the poor mother do with one date?", ["one date", "half of the date 1", "half of the date 2", "none for herself: a faint ring about the lady's place"]),
+      moved("What did the poor mother do with one date?", "half of the date 1", "x"),
+      moved("What did the poor mother do with one date?", "half of the date 2", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 0]
+      ],
+      [0, 11.2],
+      [0, -11.2]
+    ]);
+    // What daughters raised with kindness will be: his place has come in, and the voice in the home has told him, before
+    // his words; then his voice speaks, faint rings show where the little ones stood, and a soft golden dome comes
+    // there, a shield, with a warm glow.
+    expect(shown("What will daughters raised with kindness be for their parent?", ["his place, a golden ring", "the voice in the home: telling him", "his voice: whoever is tried with them", "where the little ones stood: faint rings", "a shield: a soft golden dome where they stood", "a warm glow where they stood"])).toEqual([
+      [1, 1, 0, 0, 0, 0],
+      [1, 0, 1, 1, 1, 1]
+    ]);
+    // The bowl he drank from. What Ibn Salam served his guest, and that he was a kind host: Ibn Salam's voice has asked
+    // Abu Burdah home, to the bowl he drank from and the masjid he prayed in, before the next words; then both places go
+    // along the way to his home, sawiq shows in the bowl, and dates on a dish. It stops before they go to the masjid.
+    for (const prompt of ["What did he serve his guest?", "Abdullah ibn Salam was a kind host."]) {
+      expect([
+        prompt,
+        moved(prompt, "Abu Burdah's place", "x"),
+        moved(prompt, "Ibn Salam's place", "x"),
+        shown(prompt, ["Ibn Salam's voice", "the bowl he drank from: a soft golden glint", "sawiq in the bowl", "dates on a dish", "the prayer: a spark rising from the masjid"])
+      ]).toEqual([
+        prompt,
+        [36, 104],
+        [-70, -4],
+        [
+          [1, 1, 0, 0, 0],
+          [0, 1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // What was special about the bowl: Ibn Salam's voice has asked Abu Burdah home, and a faint way shows to it, before
+    // the next words; then a wooden bowl shows by the door, and a soft golden glint on it: the bowl he drank from. It
+    // stops before the masjid's soft golden glow.
+    expect(shown("What was special about the bowl?", ["to his home: a faint way", "a wooden bowl, by the door", "the bowl he drank from: a soft golden glint", "where he prayed: a soft golden glow on the masjid"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // The cloaks alike. Why Abu Dharr wore the same cloak as his slave: his words have been told, your servants are your
+    // brothers, feed them of what you eat, and food is on a dish by each place, before the last words; then soft golden
+    // rings come about the two cloaks, dressed alike, and a warm glow about them both.
+    expect(shown("Why was Abu Dharr wearing the same cloak as his servant?", ["fed alike: food on a dish by Abu Dharr's place", "fed alike: food on a dish by the slave's place", "dressed alike: soft golden rings about the two cloaks", "a warm glow about them both"])).toEqual([
+      [1, 1, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    // What Abu Dharr had done wrong: al-Ma'rur's place has come and asked, and Abu Dharr's voice speaks, before his
+    // words; then the tents fade and the land grows warm and pale, long ago, the place of the one he abused shows, and
+    // grey arcs go from Abu Dharr's place: harsh words. It stops before his place comes.
+    expect(shown("What had Abu Dharr done wrong?", ["Abu Dharr's voice", "Abu Dharr's tent", "long ago: the land warm and pale", "the place of the one abused", "harsh words: grey arcs from Abu Dharr's place", "his place, a golden ring"])).toEqual([
+      [1, 1, 0, 0, 0, 0],
+      [0, 0, 1, 1, 1, 0]
+    ]);
+    // That Islam does not let you mock a person's family: Abu Dharr's voice speaks, before his words; then, long ago,
+    // grey arcs go from his place to the one he abused, harsh words; they stop, his place comes, his voice speaks, and a
+    // faint grey ring comes about Abu Dharr's place: some ignorance still. It stops before the tents come back.
+    expect([
+      shown("Islam lets you mock a person's family.", ["harsh words: grey arcs from Abu Dharr's place", "his place, a golden ring", "his voice: there is still ignorance in you", "some ignorance still: a faint grey ring about Abu Dharr's place", "Abu Dharr's tent"]),
+      value("cloaks-alike", "harsh words: grey arcs from Abu Dharr's place", "opacity", 0.45)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 0]
+      ],
+      1
+    ]);
+    // Half a sa'. How they earned something to give: his voice tells them to give charity, before the next words; then
+    // loads show, with the places carrying them, and they go along: carried for hire. It stops before Abu Aqil's place
+    // comes.
+    expect([
+      shown("How did they earn something to give, per Abu Mas'ud?", ["his voice: give charity", "a load carried for hire 1", "the place carrying it 1", "a load carried for hire 2", "the place carrying it 2"]),
+      moved("How did they earn something to give, per Abu Mas'ud?", "the place carrying it 1", "x"),
+      moved("How did they earn something to give, per Abu Mas'ud?", "Abu Aqil's place", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1]
+      ],
+      [0, 16],
+      [0, 0]
+    ]);
+    // What the mockers said of the small gift: Abu Aqil's place has brought half a sa', and someone a big sack, more
+    // than his, before the next words; then the hypocrites' places show, their voices mock, and a faint grey line goes
+    // to the half sa'. It stops before the grey line goes to the big sack.
+    expect([
+      value("half-a-sa", "a big sack, more than his", "x", 0.505),
+      shown("What did the mockers say about the small gift?", ["the hypocrites' places", "their voices: mocking", "mocked: a faint grey line to the half sa'", "mocked: a faint grey line to the big sack"])
+    ]).toEqual([
+      84.6,
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ]
+    ]);
+    // That a small gift from little means is precious: the voices mock and faint grey lines go to both gifts, before the
+    // last words; then a soft golden glow comes about his place, revealed to him, the grey lines and the voices fade,
+    // soft golden rings come about the two gifts, given for good, and a grey ring about the mockers.
+    expect(shown("A small gift from little means is precious to Allah.", ["their voices: mocking", "mocked: a faint grey line to the half sa'", "mocked: a faint grey line to the big sack", "revealed to him: a soft golden glow about his place", "given for good: soft golden rings about the two gifts", "a grey ring about the mockers"])).toEqual([
+      [1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 1, 1, 1]
     ]);
   });
 
