@@ -303,6 +303,8 @@ import { getBranchArabic, getLessonArabic, getNodeArabic, getTopicArabic, isFirs
 import { questionSource, shortReference } from "./services/questionSource";
 import { openSource } from "./services/sourceLink";
 import { openWebPage, setOfflineLinkNotice, subscribeOnline, useOnline } from "./services/network";
+import { setVoiceHelp } from "./services/teacherVoice";
+import { canOpenVoiceSettings, openVoiceSettings } from "./services/voiceSettings";
 import { saveLessonsAhead } from "./services/offlineLessons";
 import { SCHOLAR_TREE, type ScholarYears } from "./data/scholarUnits";
 import { didRamadanToday, ramadanDoneDayNumbers, ramadanSeason, ramadanStreak } from "./data/ramadanCalendar";
@@ -1790,6 +1792,30 @@ export default function TopicApp() {
       void notifyRef.current(t("No internet right now"), t("Tap it again when you are back online. The lesson keeps working."), { mood: "think" });
     });
     return () => setOfflineLinkNotice(null);
+  }, []);
+  // The speaker on a lesson page that cannot speak (the phone's speech engine is off or missing) says why, and on
+  // Android opens the phone's voice settings, instead of doing nothing.
+  const confirmRef = useRef(confirm);
+  confirmRef.current = confirm;
+  useEffect(() => {
+    setVoiceHelp(() => {
+      const title = t("The voice did not start");
+      if (!canOpenVoiceSettings) {
+        void notifyRef.current(title, t("Turn the volume up and the silent switch off, then tap the speaker again."), { mood: "think" });
+        return;
+      }
+      void confirmRef
+        .current(
+          title,
+          t("Your phone's reading voice is off or missing. In Voice settings, choose Google's speech engine (free on Google Play) and turn the media volume up. Then tap the speaker again."),
+          t("Voice settings"),
+          { mood: "think", danger: false, cancelLabel: t("OK") }
+        )
+        .then((open) => {
+          if (open) void openVoiceSettings();
+        });
+    });
+    return () => setVoiceHelp(null);
   }, []);
   const nextNodeId = sectionNextNode?.id;
   useEffect(() => {
