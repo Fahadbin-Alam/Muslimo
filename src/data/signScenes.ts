@@ -884,7 +884,14 @@ export type SignKind =
   | "not-home-at-night"
   | "a-charity-for-travellers"
   | "before-you-sleep"
-  | "a-secret-not-told";
+  | "a-secret-not-told"
+  | "never-angry-again"
+  | "ninety-nine-names"
+  | "the-best-of-women"
+  | "as-much-as-you-can"
+  | "understanding-the-religion"
+  | "earth-from-the-trench"
+  | "who-is-not-merciful";
 
 export type SignScene = {
   id: string;
@@ -4433,6 +4440,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Umar said: when Hafsah bint Umar was widowed, I met Uthman ibn Affan and offered him Hafsah. He said: I will think it over; and after some nights he said: I have decided not to marry at present. Then I met Abu Bakr and said: if you wish, I will marry you to Hafsah. Abu Bakr was silent and gave me no answer, and I was angrier with him than with Uthman. Some nights later, the Messenger of Allah ﷺ asked for her hand, and I married her to him. Then Abu Bakr met me and said: perhaps you were angry with me when you offered me Hafsah and I gave you no answer? Nothing kept me from answering you but that I knew the Messenger of Allah ﷺ had spoken of her, and I would not tell his secret; had he left her, I would have accepted her.",
     sources: [bukhari("4005")]
+  },
+  {
+    id: "sign-never-angry-again",
+    kind: "never-angry-again",
+    caption:
+      "Abu Sa'id al-Khudri said that the Messenger of Allah ﷺ said: Allah will say to the people of Paradise: O people of Paradise! They will say: here we are, our Lord, at Your service. He will say: are you pleased? They will say: why would we not be pleased, when You have given us what You have not given any of Your creation? He will say: I will give you something better than that. They will say: our Lord, and what is better than that? He will say: I grant you My pleasure, and I will never be angry with you after it.",
+    sources: [bukhari("6549")]
+  },
+  {
+    id: "sign-ninety-nine-names",
+    kind: "ninety-nine-names",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: Allah has ninety-nine names, a hundred less one; whoever knows them will enter Paradise.",
+    sources: [bukhari("2736")]
+  },
+  {
+    id: "sign-the-best-of-women",
+    kind: "the-best-of-women",
+    caption:
+      "Abu Musa said that the Messenger of Allah ﷺ said: many among men reached perfection, but none among women reached it except Asiyah, the wife of Pharaoh, and Maryam, the daughter of Imran; and the excellence of Aishah over women is like the excellence of tharid over all other food.",
+    sources: [bukhari("3411"), bukhari("3433"), bukhari("3770")]
+  },
+  {
+    id: "sign-as-much-as-you-can",
+    kind: "as-much-as-you-can",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: leave me as I leave you; those before you were ruined only by their questions and their differing over their prophets. So when I forbid you something, keep away from it; and when I command you to do something, do of it as much as you can.",
+    sources: [bukhari("7288")]
+  },
+  {
+    id: "sign-understanding-the-religion",
+    kind: "understanding-the-religion",
+    caption:
+      "The Prophet ﷺ said: when Allah wants good for someone, He gives him understanding of the religion. I am only the one who shares out, and Allah is the One who gives. And this nation will remain on the command of Allah; those who oppose them will not harm them, until the command of Allah comes.",
+    sources: [bukhari("71")]
+  },
+  {
+    id: "sign-earth-from-the-trench",
+    kind: "earth-from-the-trench",
+    caption:
+      "Al-Bara said: on the day of the Confederates, when the Messenger of Allah ﷺ dug the trench, I saw him carrying the earth of the trench, and I heard him chanting the words of Ibn Rawahah as he carried the earth: O Allah, without You we would not have been guided, nor given in charity, nor prayed. So send calm down upon us, and make our feet firm if we meet them. They have wronged us, and if they want trial, we refuse. Then he would draw out his voice at the end.",
+    sources: [bukhari("4106")]
+  },
+  {
+    id: "sign-who-is-not-merciful",
+    kind: "who-is-not-merciful",
+    caption:
+      "Jarir ibn Abdullah said that the Prophet ﷺ said: whoever is not merciful to others will not be shown mercy.",
+    sources: [bukhari("6013")]
   }
 ];
 
@@ -6583,7 +6639,59 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Umar married his daughter Hafsah to him ﷺ.
   "sahabi-umar-ibn-al-khattab-family-lineage": "sign-a-secret-not-told",
   // A husband for Hafsah, and the secret Abu Bakr kept.
-  "deep-umar-hafsah": "sign-a-secret-not-told"
+  "deep-umar-hafsah": "sign-a-secret-not-told",
+  // Allah's pleasure, and never His anger after it.
+  "deep-jannah-pleased": "sign-never-angry-again",
+  // Greater than Paradise itself: His pleasure.
+  "deep-tawbah3-allahs-pleasure": "sign-never-angry-again",
+  // Are you pleased? I grant you My pleasure.
+  "deep-taha3-never-angry-again": "sign-never-angry-again",
+  // Pleased with them, and never angry with them again.
+  "deep-mujadila3-never-angry-again": "sign-never-angry-again",
+  // At Your service, our Lord: never angry again.
+  "deep-bayyinah2-never-angry-again": "sign-never-angry-again",
+  // Ninety-nine names, a hundred less one.
+  "deep-aq-asma-ninety-nine": "sign-ninety-nine-names",
+  // The most beautiful names: ninety-nine of them.
+  "deep-araf6-beautiful-names": "sign-ninety-nine-names",
+  // Allah has the most beautiful names.
+  "surah-meaning-7-172-188": "sign-ninety-nine-names",
+  // The beautiful names, and Paradise for whoever knows them.
+  "surah-meaning-59-18-24": "sign-ninety-nine-names",
+  // Few women reached perfection: Asiyah and Maryam.
+  "deep-quranwomen-asiyah-perfect": "sign-the-best-of-women",
+  // Asiyah, Pharaoh's wife, among the best of women.
+  "deep-qasas1-asiyah-among-the-best": "sign-the-best-of-women",
+  // Asiyah and Maryam, women of perfection.
+  "deep-tahrim3-best-of-women": "sign-the-best-of-women",
+  // Pharaoh's wife and Maryam, examples for the believers.
+  "surah-meaning-66-8-12": "sign-the-best-of-women",
+  // Asiyah, Pharaoh's wife, who reached perfection.
+  "women-asiyah": "sign-the-best-of-women",
+  // Maryam, the daughter of Imran, who reached perfection.
+  "women-maryam": "sign-the-best-of-women",
+  // Aishah's excellence over women, like tharid over other food.
+  "women-aishah": "sign-the-best-of-women",
+  // Like tharid over all other food.
+  "deep-mothers-aishah-tharid": "sign-the-best-of-women",
+  // Fear Allah as much as you can.
+  "surah-meaning-64-11-18": "sign-as-much-as-you-can",
+  // Keep away from what is forbidden; do what is commanded as you can.
+  "deep-hashr2-as-much-as-you-can": "sign-as-much-as-you-can",
+  // Do of it as much as you can.
+  "deep-taghabun4-do-what-you-can": "sign-as-much-as-you-can",
+  // A sign of good: understanding of the religion.
+  "deep-hadith-knowledge-understanding": "sign-understanding-the-religion",
+  // Some stay to learn the religion.
+  "deep-tawbah5-learn-the-religion": "sign-understanding-the-religion",
+  // When Allah wants good for someone, He gives understanding.
+  "deep-taha1-understanding-the-religion": "sign-understanding-the-religion",
+  // Ibn Rawahah's words, chanted at the Trench.
+  "deep-ibn-rawahah-trench-verses": "sign-earth-from-the-trench",
+  // The Trench, dug against the Confederates.
+  "surah-meaning-33-9-20": "sign-earth-from-the-trench",
+  // Whoever is not merciful is not shown mercy.
+  "deep-mercy-mercy-to-all": "sign-who-is-not-merciful"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
