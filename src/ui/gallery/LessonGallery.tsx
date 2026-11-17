@@ -1322,6 +1322,12 @@ const STATES: State[] = [
   { id: "scene-water-for-wudu", render: () => <SceneQuestionDemo lessonId="lesson-deep-tree-ibn-abbas-water-for-wudu" ask="ask Allah to give him" /> },
   { id: "scene-tawaf-on-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-kabah-tawaf-on-camel" ask="reached the Corner" /> },
   { id: "scene-soft-salam", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-salam-and-visitors-a-soft-salam-at-night" ask="Who would hear his" /> },
+  { id: "scene-army-of-leaves", render: () => <SceneQuestionDemo lessonId="lesson-deep-abuubaydah-khabat" ask="called the army of leaves" /> },
+  { id: "scene-beyond-the-seas", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-a-bedouins-camels" ask="about his camels" /> },
+  { id: "scene-half-the-debt", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-let-go-of-half" ask="do with the debt" /> },
+  { id: "scene-quba-peace", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-let-us-make-peace" ask="told about the fight" /> },
+  { id: "scene-better-than-a-servant", render: () => <SceneQuestionDemo lessonId="lesson-deep-ali-better-than-servant" ask="Allahu Akbar said" /> },
+  { id: "scene-thumamah-freed", render: () => <SceneQuestionDemo lessonId="lesson-deep-fresh-start-thumamah" ask="on the third day" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
