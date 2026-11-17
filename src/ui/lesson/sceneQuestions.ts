@@ -4485,6 +4485,62 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How did they earn something to give, per Abu Mas'ud?", "They worked as porters", "we would carry loads for hire"],
     ["What did the mockers say about the small gift?", "Allah does not need it", "The hypocrites said: Allah has no need", "of this one's charity"],
     ["A small gift from little means is precious to Allah.", "True", "Then the ayah was revealed"]
+  ],
+  // Jabir said: he said to me: if the wealth of Bahrain came, I would give you this much, three times. It did not come
+  // until he passed away; then Abu Bakr had a caller call out: whoever had a promise or a debt from him, let him come to
+  // us. I came and said: he promised me; and Abu Bakr scooped out three handfuls for me (Sahih al-Bukhari 2598).
+  "sign-promise-of-bahrain": [
+    ["Where was the promised money coming from?", "Bahrain", "He said: if the wealth of Bahrain came,"],
+    ["Who kept the promise after the Prophet ﷺ passed away?", "Abu Bakr", "Abu Bakr had a caller call out:", "let him come to us"],
+    ["Abu Bakr gave Jabir three handfuls of the money.", "True", "and Abu Bakr scooped out three handfuls"]
+  ],
+  // Aishah said: he heard the raised voices of disputants at the door, one asking the other to reduce his debt, and the
+  // other saying: by Allah, I will not. He went out to them and said: where is the one who swears by Allah that he will
+  // not do a good deed? The man said: I, and he may have whichever of that he likes (Sahih al-Bukhari 2705).
+  "sign-swore-at-the-door": [
+    ["What did one man ask the other to do?", "Let go of part of his debt", "one asking the other to reduce his debt"],
+    ["What did the man say once he ﷺ came out?", "He may have whatever he wishes", "The man said: I,", "and the debtor may have whichever he likes"],
+    ["The man kept his harsh oath after he ﷺ came out.", "False", "The man said: I,", "and the debtor may have whichever he likes"]
+  ],
+  // Hudhayfah said: nothing kept me from Badr but this: Quraysh took my father, Husayl, and me, and took from us Allah's
+  // covenant that we would go on to Madinah and not fight alongside him. We told him, and he said: go on, both of you;
+  // we will keep their covenant, and ask Allah's help against them (Sahih Muslim 1787).
+  "sign-covenant-kept": [
+    ["Why did Hudhayfah miss Badr?", "He had made a promise", "They took from us Allah's covenant", "to go on to Madinah and not fight with him"],
+    ["What did the Prophet ﷺ tell them to do?", "Keep the promise", "He said: go; we will keep their covenant"],
+    ["Muslims keep their promises, even to enemies.", "True", "He said: go; we will keep their covenant", "and ask Allah's help against them"]
+  ],
+  // Ayman said: I went in to Aishah, and on her was a coarse dress costing five dirhams. She said: look at my slave
+  // girl, too proud to wear it at home; yet I had one like it in his time, and no woman in Madinah was made ready as a
+  // bride but she sent to me to borrow it (Sahih al-Bukhari 2628).
+  "sign-dress-to-borrow": [
+    ["How much was Aishah's coarse dress worth?", "Five dirhams", "a coarse dress costing five dirhams"],
+    ["Who came to borrow her dress in his ﷺ time?", "Brides getting ready", "and no bride in Madinah was made ready", "but she sent to me to borrow it"],
+    ["Aishah's servant girl would not wear the dress at home.", "True", "she is too proud to wear it at home"]
+  ],
+  // Abu Dharr said: I came to him in the shade of the Ka'bah as he was saying: they are the losers, by the Lord of the
+  // Ka'bah. I said: what is the matter with me? Is something seen in me? Who are they? He said: those with the most
+  // wealth, except one who does like this, and like this (Sahih al-Bukhari 6638). (Where he was sitting when Abu Dharr
+  // came stays on its usual picture, since the Ka'bah and its shade are there from the scene's start.)
+  "sign-shade-of-the-kabah": [
+    ["Who did he ﷺ say were the losers?", "The wealthy, except those who give", "He said: those with the most wealth,", "but one who does like this, and like this"],
+    ["Abu Dharr worried that the words were about him.", "True", "I said: what is the matter with me?", "Is something seen in me?"]
+  ],
+  // Anas said: he came to me as I played with the boys, greeted us and sent me on an errand, and I was late coming to my
+  // mother. She said: what kept you? I said: he sent me on an errand. She said: what was it? I said: a secret. She said:
+  // tell no one his secret (Sahih Muslim 2482). (What Anas was doing stays on its usual picture, since the little ones
+  // at play are there from the scene's start.)
+  "sign-secret-kept": [
+    ["Whom did Anas refuse to tell the secret?", "His own mother", "and I was late coming to my mother", "She said: what was it? I said: a secret"],
+    ["What did his mother say about the secret?", "Never tell it to anyone", "She said: tell no one his secret"]
+  ],
+  // Abdullah ibn Abi Awfa said: when folk came to him with their charity, he would say: O Allah, bless the family of
+  // so-and-so. My father came to him with his charity, and he said: O Allah, bless the family of Abu Awfa (Sahih
+  // al-Bukhari 1497).
+  "sign-bless-the-givers": [
+    ["What did the Prophet ﷺ say when charity came?", "O Allah, bless them", "he said: O Allah, bless the family", "of so-and-so"],
+    ["Whose family did he pray for, in the hadith?", "The family of Abu Awfa", "He said: O Allah, bless the family", "of Abu Awfa"],
+    ["Praying for those who give is a Sunnah.", "True", "he said: O Allah, bless the family", "of so-and-so"]
   ]
 };
 
