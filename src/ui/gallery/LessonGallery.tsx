@@ -1405,6 +1405,13 @@ const STATES: State[] = [
   { id: "scene-never-refused-perfume", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-never-refused-scent" ask="Which companion copied this" /> },
   { id: "scene-blessed-measures", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-for-others-bless-their-measures" ask="For which people did he" /> },
   { id: "scene-twenty-nights", render: () => <SceneQuestionDemo lessonId="lesson-foundation-first-worship-rhythm-hear-the-call" ask="calls Muslims to pray five times a day" /> },
+  { id: "scene-brother-of-a-muslim", render: () => <SceneQuestionDemo lessonId="lesson-deep-brotherhood-do-not-wrong-him" ask="a friend's private mistake" /> },
+  { id: "scene-love-them-both", render: () => <SceneQuestionDemo lessonId="lesson-deep-usamah-loved-child" ask="Who was held with Usamah" /> },
+  { id: "scene-hurry-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-hurry-home" ask="What does travel keep a person from" /> },
+  { id: "scene-soft-hearts-of-yemen", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-musa-soft-hearts" ask="faith and wisdom are Yemeni" /> },
+  { id: "scene-a-modest-pace", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-the-day-of-arafah-a-modest-pace" ask="when there was enough space" /> },
+  { id: "scene-salam-to-the-boys", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-everyday-manners-salam-to-the-children" ask="Why did Anas say salam" /> },
+  { id: "scene-joy-at-a-wedding", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-marriage-joy-at-a-wedding" ask="react to the wedding guests" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
