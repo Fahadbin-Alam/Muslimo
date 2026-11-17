@@ -170,8 +170,8 @@ const PUBLIC_ADAB: DeepUnit = {
       slug: "three-people",
       title: "No secrets in a group of three",
       line: "When three sit together, two should not whisper apart.",
-      facts: ["Whispering leaves the third person out.", "It can make him sad or worried.", "Abdullah ibn Mas'ud narrated it."],
-      source: hadith("bukhari", "6288", "Abdullah ibn Mas'ud", "Sahih", "When three people are together, two of them should not talk secretly, leaving out the third.", "no two of them should hold secret counsel excluding the third person"),
+      facts: ["Whispering leaves the third person out.", "It would make him sad.", "Abdullah ibn Mas'ud narrated it."],
+      source: hadith("bukhari", "6290", "Abdullah ibn Mas'ud", "Sahih", "The Prophet ﷺ said when three sit together, no two should hold secret counsel excluding the third, for that would grieve him.", "no two of you should hold secret counsel excluding the third person…for that would grieve him"),
       difficulty: 2,
       questions: [
         { q: "Three friends sit together. What should two of them not do?", a: "Whisper and leave one out", wrong: ["Laugh together", "Share food", "Say salam"], why: "No two of them should hold secret counsel excluding the third." },
