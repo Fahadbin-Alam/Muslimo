@@ -245,7 +245,7 @@ function guardTonight(): SignArt {
 }
 
 /** The roofed part of the masjid: a roof of palm leaves on palm trunks from x1 to x2, before the masjid's wall. */
-const roofOnTrunks = (x1: number, x2: number) =>
+export const roofOnTrunks = (x1: number, x2: number) =>
   `<path d="M${n(x1 - 2)} 84 L${n(x2 + 2)} 84 L${n(x2 + 1)} 88.4 L${n(x1 - 1)} 88.4 Z" fill="#6E8F3A"/>` +
   `<path d="${Array.from({ length: Math.floor((x2 - x1) / 6) }, (_, i) => `M${n(x1 + 1 + i * 6)} 85.6 L${n(x1 + 5 + i * 6)} 84.6`).join(" ")}" stroke="#56742B" stroke-width="0.6"/>` +
   [x1 + 2, (x1 * 2 + x2) / 3, (x1 + x2 * 2) / 3, x2 - 2].map((x) => `<rect x="${n(x - 0.8)}" y="88.4" width="1.6" height="15.6" fill="#A9895C"/>`).join("");
