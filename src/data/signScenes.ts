@@ -1430,7 +1430,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "rumah",
     caption:
       "The Prophet ﷺ said: whoever digs the well of Rumah will have Paradise, and Uthman dug it, and its water was for all the Muslims. And he ﷺ said: whoever equips the army of hardship will have Paradise, and Uthman equipped it.",
-    sources: [bukhari("2778")]
+    sources: [bukhari("2778"), tirmidhi("3699")]
   },
   {
     id: "sign-river-at-the-door",

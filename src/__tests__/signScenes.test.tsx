@@ -658,7 +658,7 @@ const SOURCES: Record<string, string[]> = {
   "sign-permission": ["Sahih al-Bukhari 6245"],
   "sign-adhan": ["Sahih al-Bukhari 604", "Sahih al-Bukhari 636"],
   "sign-wet-grain": ["Sahih Muslim 102"],
-  "sign-rumah": ["Sahih al-Bukhari 2778"],
+  "sign-rumah": ["Sahih al-Bukhari 2778", "Jami at-Tirmidhi 3699"],
   "sign-river-at-the-door": ["Sahih al-Bukhari 528"],
   "sign-tabuk": ["Sahih al-Bukhari 4418", "Quran 9:118"],
   "sign-thawr": ["Sahih al-Bukhari 3905", "Sahih al-Bukhari 3653"],

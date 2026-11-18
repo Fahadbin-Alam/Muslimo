@@ -354,10 +354,11 @@ function wetGrain(): SignArt {
 
 // The well of Rumah. Uthman reminded them that the Prophet ﷺ said: whoever digs the well of Rumah will have Paradise,
 // and he dug it; and he ﷺ said: whoever equips the army of hardship will have Paradise, and he equipped it; and they
-// bore witness to what he said (Sahih al-Bukhari 2778, in its chapter: whoever buys the well of Rumah, his bucket in it
-// is like the buckets of the Muslims, and Uthman bought it). No one is drawn: a dashed way comes to the place of the
-// well and it is dug, and its water rises; ways come to it, and buckets come up full; camels for the army come, and a
-// dashed way comes to them, and saddles and packs are on them; then sparks rise from the well and from the camels.
+// bore witness to what he said (Sahih al-Bukhari 2778). Its water was for all: no one could drink from it without
+// paying until Uthman bought it and made it for the rich, the poor and the wayfarer (Jami at-Tirmidhi 3699). No one is
+// drawn: a dashed way comes to the place of the well and it is dug, and its water rises; ways come to it, and buckets
+// come up full; camels for the army come, and a dashed way comes to them, and saddles and packs are on them; then
+// sparks rise from the well and from the camels.
 
 /** A bucket full of water, its foot's middle at (x, y). */
 const bucket = (x: number, y: number) =>
