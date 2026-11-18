@@ -870,7 +870,14 @@ export type SignKind =
   | "charity-for-barirah"
   | "the-best-gift"
   | "content-with-enough"
-  | "constant-deeds";
+  | "constant-deeds"
+  | "a-group-of-three"
+  | "four-dearest-words"
+  | "two-raised-well"
+  | "a-dua-for-the-sick"
+  | "the-work-of-his-hands"
+  | "every-good-is-charity"
+  | "a-hundred-times-a-day";
 
 export type SignScene = {
   id: string;
@@ -4321,6 +4328,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said: the Prophet ﷺ was asked: which deeds are most loved by Allah? He said: the most constant of them, even if they are few. And he said: take on of deeds only what you can bear. In another narration he ﷺ said: know that the deed most loved by Allah is the most constant, even if it is little.",
     sources: [bukhari("6465"), bukhari("6464")]
+  },
+  {
+    id: "sign-a-group-of-three",
+    kind: "a-group-of-three",
+    caption:
+      "Abdullah ibn Mas'ud said that the Prophet ﷺ said: when you are three, no two should talk in secret, leaving out the third, until you are with other people, for that would grieve him.",
+    sources: [bukhari("6290"), muslim("2184")]
+  },
+  {
+    id: "sign-four-dearest-words",
+    kind: "four-dearest-words",
+    caption:
+      "Samurah ibn Jundub said that the Messenger of Allah ﷺ said: the dearest words to Allah are four: Subhan Allah, al-hamdu lillah, la ilaha illa Allah and Allahu akbar. It does not matter which of them you begin with.",
+    sources: [muslim("2137a")]
+  },
+  {
+    id: "sign-two-raised-well",
+    kind: "two-raised-well",
+    caption:
+      "Anas ibn Malik said that the Messenger of Allah ﷺ said: whoever looks after two girls until they come of age will come on the Day of Resurrection, I and he, and he joined his fingers.",
+    sources: [muslim("2631")]
+  },
+  {
+    id: "sign-a-dua-for-the-sick",
+    kind: "a-dua-for-the-sick",
+    caption:
+      "Aishah said: when the Messenger of Allah ﷺ came to one who was ill, or one who was ill was brought to him, he would say: take away the harm, O Lord of the people; heal, for You are the Healer; there is no healing but Your healing, a healing that leaves no illness.",
+    sources: [bukhari("5675")]
+  },
+  {
+    id: "sign-the-work-of-his-hands",
+    kind: "the-work-of-his-hands",
+    caption:
+      "Al-Miqdam said that the Messenger of Allah ﷺ said: no one has ever eaten food better than what he eats from the work of his own hands, and the Prophet of Allah Dawud, peace be on him, used to eat from the work of his hands.",
+    sources: [bukhari("2072")]
+  },
+  {
+    id: "sign-every-good-is-charity",
+    kind: "every-good-is-charity",
+    caption:
+      "Jabir ibn Abdullah said that the Prophet ﷺ said: every good deed is charity.",
+    sources: [bukhari("6021")]
+  },
+  {
+    id: "sign-a-hundred-times-a-day",
+    kind: "a-hundred-times-a-day",
+    caption:
+      "Al-Agharr al-Muzani said that the Messenger of Allah ﷺ said: O people, turn to Allah in repentance, for I turn to Him in repentance a hundred times a day. In another narration he ﷺ said: I ask Allah's forgiveness a hundred times a day.",
+    sources: [muslim("2702b"), muslim("2702a")]
   }
 ];
 
@@ -6409,7 +6465,39 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A little every day: the most constant deeds, even if few.
   "deep-kids-dhikr-a-little-every-day": "sign-constant-deeds",
   // Small but constant: take on deeds you can bear.
-  "deep-maarij3-small-but-constant": "sign-constant-deeds"
+  "deep-maarij3-small-but-constant": "sign-constant-deeds",
+  // When three sit together, no two should talk in secret, leaving out the third.
+  "deep-adab-three-people": "sign-a-group-of-three",
+  // Two should not whisper without the third, for it would grieve him.
+  "deep-mujadila2-do-not-leave-one-out": "sign-a-group-of-three",
+  // Two may talk apart once others are with the third.
+  "deep-mujadila2-until-others-join": "sign-a-group-of-three",
+  // The four words dearest to Allah, begun in any order.
+  "deep-kids-dhikr-four-dearest-words": "sign-four-dearest-words",
+  // Subhan Allah, al-hamdu lillah, la ilaha illa Allah, Allahu akbar.
+  "deep-dua-dhikr-four-words": "sign-four-dearest-words",
+  // Whoever raises two girls until they come of age will be near him ﷺ on that Day.
+  "deep-children-two-girls": "sign-two-raised-well",
+  // Raising two girls well: nearness to him ﷺ on the Day of Resurrection.
+  "deep-nahl4-raising-two-girls": "sign-two-raised-well",
+  // His du'a when he came to one who was ill.
+  "deep-manners-visit-sick-the-healing-dua": "sign-a-dua-for-the-sick",
+  // Heal, for You are the Healer: there is no healing but Yours.
+  "deep-shuara2-dua-for-the-sick": "sign-a-dua-for-the-sick",
+  // Dawud ate from the work of his own hands.
+  "deep-prophet-dawud-own-hands": "sign-the-work-of-his-hands",
+  // No food is better than what one eats from the work of one's own hands.
+  "deep-sad2-the-work-of-his-hands": "sign-the-work-of-his-hands",
+  // Every good deed is charity, not only money.
+  "deep-zakat-everyday-every-good": "sign-every-good-is-charity",
+  // Every good thing you do for someone is charity.
+  "deep-kids-small-deeds-every-good-is-charity": "sign-every-good-is-charity",
+  // Every good deed you do is charity.
+  "ramadan-every-good-deed": "sign-every-good-is-charity",
+  // He ﷺ asked Allah's forgiveness a hundred times a day.
+  "deep-dua-dhikr-istighfar": "sign-a-hundred-times-a-day",
+  // Turn to Allah: he ﷺ turned to Him a hundred times a day.
+  "deep-tahrim2-a-hundred-times": "sign-a-hundred-times-a-day"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
