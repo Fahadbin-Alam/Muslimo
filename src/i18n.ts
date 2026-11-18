@@ -102,6 +102,33 @@ export const LANGUAGE_OPTIONS: LanguageOption[] = [
   { id: "ur", code: "UR", label: "Urdu", nativeLabel: "اردو" }
 ];
 
+/**
+ * Languages that are translated but wait for a native speaker's check, so learners do not see them yet.
+ * Indonesian: the screens, every topic and unit name, the placement questions and the first lessons of each topic
+ * (the rest shows in English). To try it, build with EXPO_PUBLIC_PREVIEW_LANGUAGES=1 or open the web app with
+ * ?preview-languages=1. To put it live, move its line up into LANGUAGE_OPTIONS.
+ */
+export const PREVIEW_LANGUAGE_OPTIONS: LanguageOption[] = [
+  { id: "id", code: "ID", label: "Indonesian", nativeLabel: "Bahasa Indonesia" }
+];
+
+export function previewLanguagesOn(): boolean {
+  if (process.env.EXPO_PUBLIC_PREVIEW_LANGUAGES === "1") {
+    return true;
+  }
+  try {
+    const search = typeof window !== "undefined" && typeof window.location?.search === "string" ? window.location.search : "";
+    return /[?&]preview-languages=1(?:&|$)/.test(search);
+  } catch {
+    return false;
+  }
+}
+
+/** The languages the picker offers: the live ones, plus the preview ones when they are turned on. */
+export function languageOptions(previewOn = previewLanguagesOn()): LanguageOption[] {
+  return previewOn ? [...LANGUAGE_OPTIONS, ...PREVIEW_LANGUAGE_OPTIONS] : LANGUAGE_OPTIONS;
+}
+
 const UI_STRINGS: UiStrings = {
   loadingPath: "Preparing your learning path...",
   streak: "Streak",
@@ -259,7 +286,7 @@ export function getUiStrings(language: SupportedLanguage = activeLanguage) {
 }
 
 export function getLanguageOption(language: SupportedLanguage) {
-  return LANGUAGE_OPTIONS.find((option) => option.id === language) ?? LANGUAGE_OPTIONS[0];
+  return [...LANGUAGE_OPTIONS, ...PREVIEW_LANGUAGE_OPTIONS].find((option) => option.id === language) ?? LANGUAGE_OPTIONS[0];
 }
 
 export function getTopicCopy(topicId: TopicId, language: SupportedLanguage = activeLanguage) {
@@ -280,7 +307,7 @@ export function getNodeTitle(_nodeId: string, fallback: string, language: Suppor
 // Bangla, Urdu and Arabic are machine translated and still need a native speaker's review.
 export const LANGUAGE_PICKER_ENABLED = true;
 
-/** The phone's (or browser's) language when the app offers it, else undefined. */
+/** The phone's (or browser's) language when the app offers it, else undefined. Never a preview language. */
 export function deviceLanguage(): SupportedLanguage | undefined {
   try {
     const locale = Intl.DateTimeFormat().resolvedOptions().locale.toLowerCase();
@@ -291,10 +318,11 @@ export function deviceLanguage(): SupportedLanguage | undefined {
   }
 }
 
-export function normalizeLanguage(language?: string, pickerEnabled = LANGUAGE_PICKER_ENABLED): SupportedLanguage {
+/** A saved language the app can show. A preview language falls back to English while previews are off. */
+export function normalizeLanguage(language?: string, pickerEnabled = LANGUAGE_PICKER_ENABLED, previewOn = previewLanguagesOn()): SupportedLanguage {
   if (!pickerEnabled) {
     return DEFAULT_LANGUAGE;
   }
 
-  return LANGUAGE_OPTIONS.some((option) => option.id === language) ? (language as SupportedLanguage) : DEFAULT_LANGUAGE;
+  return languageOptions(previewOn).some((option) => option.id === language) ? (language as SupportedLanguage) : DEFAULT_LANGUAGE;
 }

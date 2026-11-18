@@ -69,7 +69,7 @@ import {
   getNodeTitle,
   getTopicCopy,
   getUiStrings,
-  LANGUAGE_OPTIONS,
+  languageOptions,
   isRtlLanguage,
   LANGUAGE_PICKER_ENABLED,
   normalizeLanguage,
@@ -5011,7 +5011,7 @@ export default function TopicApp() {
         />
         <LanguageSheet
           visible={languageModalVisible}
-          options={LANGUAGE_OPTIONS}
+          options={languageOptions()}
           selected={pendingLanguage}
           canClose={Boolean(state.user.preferredLanguage)}
           onSelect={(language: string) => setPendingLanguage(language as SupportedLanguage)}

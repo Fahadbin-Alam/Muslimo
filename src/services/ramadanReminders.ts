@@ -95,6 +95,17 @@ const COPY: Record<SupportedLanguage, Record<RamadanReminderKind, { titles: stri
       titles: ["🌅 افطار قریب ہے، دن {day}!", "🐪 افطار قریب! اونٹ نے کھجوریں نکال لیں"],
       body: "\"لوگ اس وقت تک بھلائی پر رہیں گے جب تک افطار میں جلدی کریں گے۔\" (صحیح بخاری 1957)"
     }
+  },
+  // Indonesian is still in preview: these two hadith meanings must be checked by a person before it goes live.
+  id: {
+    suhoor: {
+      titles: ["🌙 Waktunya sahur, hari ke-{day}!", "🐪 Bangun untuk sahur! Untanya saja sudah bangun"],
+      body: "\"Bersahurlah kalian, karena dalam sahur itu ada berkah.\" (Sahih al-Bukhari 1923)"
+    },
+    iftar: {
+      titles: ["🌅 Sebentar lagi berbuka, hari ke-{day}!", "🐪 Sebentar lagi berbuka! Untanya sudah mengeluarkan kurma"],
+      body: "\"Manusia senantiasa dalam kebaikan selama mereka menyegerakan berbuka.\" (Sahih al-Bukhari 1957)"
+    }
   }
 };
 

@@ -39,7 +39,7 @@ const ACCENT = "#C9822B";
 
 function language(): SupportedLanguage {
   const query = Platform.OS === "web" && typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  return (["en", "bn", "ur", "ar"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  return (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
 }
 
 function LessonStart({ lessonId }: { lessonId: string }) {
