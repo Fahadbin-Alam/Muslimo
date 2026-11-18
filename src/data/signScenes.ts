@@ -863,7 +863,14 @@ export type SignKind =
   | "a-good-condiment"
   | "labbayk-as-it-rose"
   | "a-bowl-of-milk"
-  | "days-of-tashriq";
+  | "days-of-tashriq"
+  | "say-no-cheating"
+  | "dates-with-cucumber"
+  | "the-worst-feast"
+  | "charity-for-barirah"
+  | "the-best-gift"
+  | "content-with-enough"
+  | "constant-deeds";
 
 export type SignScene = {
   id: string;
@@ -4265,6 +4272,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Nubayshah al-Hudhali said that the Messenger of Allah ﷺ said: the days of Tashriq are days of eating and drinking. Another narration adds: and of remembering Allah.",
     sources: [muslim("1141")]
+  },
+  {
+    id: "sign-say-no-cheating",
+    kind: "say-no-cheating",
+    caption:
+      "Abdullah ibn Umar said that a man mentioned to the Prophet ﷺ that he was often cheated in his trading. He said: when you buy, say: no cheating.",
+    sources: [bukhari("2117")]
+  },
+  {
+    id: "sign-dates-with-cucumber",
+    kind: "dates-with-cucumber",
+    caption:
+      "Abdullah ibn Ja'far said: I saw the Prophet ﷺ eating fresh dates with snake cucumbers.",
+    sources: [bukhari("5447")]
+  },
+  {
+    id: "sign-the-worst-feast",
+    kind: "the-worst-feast",
+    caption:
+      "Abu Hurairah used to say: the worst food is the food of a wedding feast to which the rich are invited and the poor are left out. And whoever turns down the invitation has disobeyed Allah and His Messenger ﷺ.",
+    sources: [bukhari("5177")]
+  },
+  {
+    id: "sign-charity-for-barirah",
+    kind: "charity-for-barirah",
+    caption:
+      "Anas said that some meat was brought to the Prophet ﷺ that had been given to Barirah in charity. He said: it is charity for her, and for us it is a gift.",
+    sources: [bukhari("1495")]
+  },
+  {
+    id: "sign-the-best-gift",
+    kind: "the-best-gift",
+    caption:
+      "Abu Sa'id al-Khudri said: some of the Ansar asked the Messenger of Allah ﷺ, and he gave them; then they asked him again, and he gave them, until what he had ran out. He said: whatever good I have, I will never keep it from you. Whoever keeps from asking, Allah keeps him chaste; whoever seeks to be free of need, Allah makes him free of need; and whoever bears up, Allah makes him patient. No one is given a gift better and vaster than patience.",
+    sources: [bukhari("1469")]
+  },
+  {
+    id: "sign-content-with-enough",
+    kind: "content-with-enough",
+    caption:
+      "Abdullah ibn Amr ibn al-As said that the Messenger of Allah ﷺ said: successful is the one who has accepted Islam, is given just what is enough, and whom Allah makes content with what He has given him.",
+    sources: [muslim("1054")]
+  },
+  {
+    id: "sign-constant-deeds",
+    kind: "constant-deeds",
+    caption:
+      "Aishah said: the Prophet ﷺ was asked: which deeds are most loved by Allah? He said: the most constant of them, even if they are few. And he said: take on of deeds only what you can bear. In another narration he ﷺ said: know that the deed most loved by Allah is the most constant, even if it is little.",
+    sources: [bukhari("6465"), bukhari("6464")]
   }
 ];
 
@@ -6331,7 +6387,29 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Was he ﷺ fasting at Arafah? Umm al-Fadl sent a bowl of milk, and he drank it.
   "deep-quranwomen-umm-al-fadl-milk": "sign-a-bowl-of-milk",
   // The days of Tashriq: days of eating, drinking and remembering Allah.
-  "deep-days-tashriq": "sign-days-of-tashriq"
+  "deep-days-tashriq": "sign-days-of-tashriq",
+  // Often cheated in trade, a man was told to say when buying: no cheating.
+  "deep-book-trade-no-cheating": "sign-say-no-cheating",
+  // He ﷺ ate fresh dates with snake cucumbers.
+  "deep-found-foods-he-ate-dates-with-cucumber": "sign-dates-with-cucumber",
+  // The worst food: a wedding feast for the rich, with the poor left out.
+  "deep-book-marriage-the-worst-wedding-food": "sign-the-worst-feast",
+  // Meat given to Barirah in charity: charity for her, a gift for him ﷺ.
+  "deep-book-zakat-charity-for-her-gift-for-us": "sign-charity-for-barirah",
+  // He ﷺ gave the Ansar until nothing was left: no gift is better than patience.
+  "deep-patience-best-gift": "sign-the-best-gift",
+  // Whoever bears up, Allah makes him patient.
+  "deep-talaq1-patience-is-given": "sign-the-best-gift",
+  // Successful: a Muslim given just enough and made content by Allah.
+  "deep-nahl6-content-with-what-allah-gives": "sign-content-with-enough",
+  // Successful: a Muslim given just enough and made content with it.
+  "deep-duha2-content-with-allahs-gift": "sign-content-with-enough",
+  // After Ramadan: the deeds Allah loves most are the most constant, even if few.
+  "fasting-ramadan-growth-after-ramadan": "sign-constant-deeds",
+  // A little every day: the most constant deeds, even if few.
+  "deep-kids-dhikr-a-little-every-day": "sign-constant-deeds",
+  // Small but constant: take on deeds you can bear.
+  "deep-maarij3-small-but-constant": "sign-constant-deeds"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
