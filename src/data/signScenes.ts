@@ -961,7 +961,14 @@ export type SignKind =
   | "the-sheep-and-its-grass"
   | "two-mudds-of-barley"
   | "never-missed"
-  | "the-weak-go-early";
+  | "the-weak-go-early"
+  | "except-for-three-masjids"
+  | "pray-in-your-houses"
+  | "right-left-front-and-back"
+  | "the-night-at-dhi-tuwa"
+  | "the-young-greet-the-old"
+  | "a-widow-or-a-poor-person"
+  | "satisfied-and-quenched";
 
 export type SignScene = {
   id: string;
@@ -5049,6 +5056,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: I was among those whom the Prophet ﷺ sent on the night of Muzdalifah early, being among the weak members of his family.",
     sources: [bukhari("1678")]
+  },
+  {
+    id: "sign-except-for-three-masjids",
+    kind: "except-for-three-masjids",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: do not set out on a journey except for three masjids: al-Masjid al-Haram, the masjid of Allah's Messenger ﷺ, and the masjid of al-Aqsa.",
+    sources: [bukhari("1189")]
+  },
+  {
+    id: "sign-pray-in-your-houses",
+    kind: "pray-in-your-houses",
+    caption:
+      "On a rainy day Ibn Abbas said to his mu'adhdhin: say: pray in your houses. The people disliked it. Ibn Abbas said: it was done by one who was much better than I. No doubt, the Jumu'ah prayer is compulsory, but I dislike to put you to task by bringing you out walking in mud and slush.",
+    sources: [bukhari("901")]
+  },
+  {
+    id: "sign-right-left-front-and-back",
+    kind: "right-left-front-and-back",
+    caption:
+      "Abu Dharr said: once I went out at night and found Allah's Messenger ﷺ walking all alone, accompanied by nobody. He said: O Abu Dharr, come here! So I accompanied him for a while, and then he said: the rich are in fact the poor on the Day of Resurrection, except him whom Allah gives wealth which he gives to his right, left, front and back, and does good deeds with it.",
+    sources: [bukhari("6443")]
+  },
+  {
+    id: "sign-the-night-at-dhi-tuwa",
+    kind: "the-night-at-dhi-tuwa",
+    caption:
+      "Nafi' said: on reaching the sanctuary of Makkah, Ibn Umar used to stop reciting talbiyah, and then he would pass the night at Dhi Tuwa and then offer the Fajr prayer and take a bath. He used to say that the Prophet ﷺ used to do the same.",
+    sources: [bukhari("1573")]
+  },
+  {
+    id: "sign-the-young-greet-the-old",
+    kind: "the-young-greet-the-old",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the young should greet the old, the passer by should greet the sitting one, and the small group of persons should greet the large group of persons.",
+    sources: [bukhari("6231")]
+  },
+  {
+    id: "sign-a-widow-or-a-poor-person",
+    kind: "a-widow-or-a-poor-person",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the one who looks after a widow or a poor person is like a mujahid who fights for Allah's cause, or like him who performs prayers all the night and fasts all the day.",
+    sources: [bukhari("5353")]
+  },
+  {
+    id: "sign-satisfied-and-quenched",
+    kind: "satisfied-and-quenched",
+    caption:
+      "Abu Umamah said: whenever the Prophet ﷺ finished his meals, he used to say: praise be to Allah Who has satisfied our needs and quenched our thirst. Your favor cannot be compensated or denied.",
+    sources: [bukhari("5459")]
   }
 ];
 
@@ -7427,7 +7483,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // He never missed four rak'ahs before Zuhr and two before Fajr.
   "deep-book-night-prayer-never-missed": "sign-never-missed",
   // Ibn Abbas was among the weak of his family sent early from Muzdalifah.
-  "deep-book-hajj-the-weak-go-early": "sign-the-weak-go-early"
+  "deep-book-hajj-the-weak-go-early": "sign-the-weak-go-early",
+  // Travel for worship only to three masjids: al-Masjid al-Haram, his masjid, and al-Aqsa.
+  "deep-hajj-masjids-three": "sign-except-for-three-masjids",
+  // On a rainy day Ibn Abbas spared the people walking in mud and slush: pray in your houses.
+  "deep-prayer-rain-cold-and-heat-mud-and-slush": "sign-pray-in-your-houses",
+  // The rich will have little that Day, except those who give to their right, left, front and back.
+  "deep-akhirah-wealth-and-next-life-the-rich-who-give": "sign-right-left-front-and-back",
+  // Ibn Umar passed the night at Dhi Tuwa, prayed Fajr and took a bath, as the Prophet did.
+  "deep-hajj-makkah-the-beloved-city-ready-to-enter-makkah": "sign-the-night-at-dhi-tuwa",
+  // The young greet the old, the passer by the one sitting, and the small group the large group.
+  "deep-adab-who-greets-first": "sign-the-young-greet-the-old",
+  // Looking after a widow or a poor person is like striving in Allah's cause, or praying all night and fasting all day.
+  "deep-zakat-anyone-caring-for-the-poor": "sign-a-widow-or-a-poor-person",
+  // After his meals he praised Allah Who satisfied our needs and quenched our thirst.
+  "deep-abu-umamah-thanks-after-eating": "sign-satisfied-and-quenched"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

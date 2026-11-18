@@ -1516,6 +1516,13 @@ const STATES: State[] = [
   { id: "scene-two-mudds-of-barley", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-love-simple-walimah" ask="What was that walimah made of" /> },
   { id: "scene-never-missed", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-night-prayer-never-missed" ask="How many before Zuhr" /> },
   { id: "scene-the-weak-go-early", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-the-weak-go-early" ask="Who was sent early from Muzdalifah" /> },
+  { id: "scene-except-for-three-masjids", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-masjids-three" ask="How many masjids are named for travel" /> },
+  { id: "scene-pray-in-your-houses", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-rain-cold-and-heat-mud-and-slush" ask="What did Ibn Abbas not want people" /> },
+  { id: "scene-right-left-front-and-back", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-the-rich-who-give" ask="Which rich person is the exception" /> },
+  { id: "scene-the-night-at-dhi-tuwa", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-makkah-the-beloved-city-ready-to-enter-makkah" ask="Where did Ibn Umar spend the night" /> },
+  { id: "scene-the-young-greet-the-old", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-who-greets-first" ask="A group of three meets a group of ten" /> },
+  { id: "scene-a-widow-or-a-poor-person", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-caring-for-the-poor" ask="Whom does Bukhari 5353 tell us" /> },
+  { id: "scene-satisfied-and-quenched", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-umamah-thanks-after-eating" ask="Allah's favor can be fully paid back" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
