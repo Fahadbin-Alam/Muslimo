@@ -120,6 +120,8 @@ import { LESSON_SOURCES } from "../questionSources";
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const KATHIR_AYAHS: Record<string, number> = require("./kathirAyahs.json");
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const SAADI_AYAHS: Record<string, number> = require("./saadiAyahs.json");
 
 export type { Passage, PassageDeep, SurahMeaning } from "./types";
 
@@ -187,13 +189,14 @@ function meaningSource(surah: number, at: string, line: string): LessonSource {
 /**
  * A tafsir book on one passage, on Quran.com: it opens at the passage's first ayah. Tafsir Ibn Kathir explains a
  * passage a few ayahs at a time, one page each, so where the words of its first meaning line are explained on a
- * later ayah's page, it opens there instead (kathirAyahs.json, "surah:passage" to that ayah).
+ * later ayah's page, it opens there instead (kathirAyahs.json, "surah:passage" to that ayah). Tafsir as-Sa'di has
+ * one page per ayah, so it opens on the ayah whose page holds its highlighted line (saadiAyahs.json, the same way).
  */
 export function tafsirSource(book: "ibn-kathir" | "saadi", surah: number, at: string, summary: string): LessonSource {
   const [from] = passageAyahs(at);
   const kathir = book === "ibn-kathir";
   const name = kathir ? "Tafsir Ibn Kathir" : "Tafsir as-Sa'di";
-  const opens = (kathir ? KATHIR_AYAHS[`${surah}:${at}`] : undefined) ?? from;
+  const opens = (kathir ? KATHIR_AYAHS : SAADI_AYAHS)[`${surah}:${at}`] ?? from;
   return {
     id: `surah_deep_${kathir ? "ibn_kathir" : "saadi"}_${surah}_${at.replace("-", "_")}`,
     site: "Quran.com",

@@ -179,6 +179,7 @@ describe("Al-Baqarah in depth", () => {
 
   it("opens Tafsir Ibn Kathir on the later ayah of a passage whose first line it explains there", () => {
     const opens: Record<string, number> = require("../data/surahMeanings/kathirAyahs.json");
+    const SAADI: Record<string, number> = require("../data/surahMeanings/saadiAyahs.json");
     expect(Object.keys(opens).length).toBeGreaterThan(50);
     for (const [key, ayah] of Object.entries(opens)) {
       const [surah, at] = key.split(":");
@@ -188,12 +189,28 @@ describe("Al-Baqarah in depth", () => {
       const [kathir, saadi] = LESSONS_BY_ID[`lesson-surah-meaning-${surah}-${at}`].learnDeeper!.sources;
       expect([key, kathir.url, Boolean(kathir.highlight)]).toEqual([key, `https://quran.com/${surah}:${ayah}/tafsirs/en-tafisr-ibn-kathir`, true]);
       expect(kathir.reference).toBe(`Tafsir Ibn Kathir ${surah}:${at}`);
-      // As-Sa'di's Arabic page still opens at the passage's start.
-      expect(saadi.url).toBe(`https://quran.com/${surah}:${from}/tafsirs/ar-tafseer-al-saddi`);
+      // As-Sa'di's Arabic page opens on its own ayah (saadiAyahs.json), else at the passage's start.
+      expect(saadi.url).toBe(`https://quran.com/${surah}:${SAADI[key] ?? from}/tafsirs/ar-tafseer-al-saddi`);
     }
     // Ya-Sin 68-83: the rotten bones and the One who made them the first time are on 36:77's page.
     const bones = LESSONS_BY_ID["lesson-surah-meaning-36-68-83"].learnDeeper!.sources[0];
     expect(sourceUrl(bones)).toBe("https://quran.com/36:77/tafsirs/en-tafisr-ibn-kathir#:~:text=Who%20will%20give%20life,for%20the%20first%20time%21");
+  });
+
+  it("opens Tafsir as-Sa'di on the ayah whose page holds its highlighted line", () => {
+    const opens: Record<string, number> = require("../data/surahMeanings/saadiAyahs.json");
+    expect(Object.keys(opens).length).toBeGreaterThan(100);
+    for (const [key, ayah] of Object.entries(opens)) {
+      const [surah, at] = key.split(":");
+      const [from, to] = passageAyahs(at);
+      expect([key, Boolean(DEEP_PASSAGES[Number(surah)]?.[at]), ayah > from && ayah <= to]).toEqual([key, true, true]);
+      const saadi = LESSONS_BY_ID[`lesson-surah-meaning-${surah}-${at}`].learnDeeper!.sources[1];
+      expect([key, saadi.url, Boolean(saadi.highlight)]).toEqual([key, `https://quran.com/${surah}:${ayah}/tafsirs/ar-tafseer-al-saddi`, true]);
+      expect(saadi.reference).toBe(`Tafsir as-Sa'di ${surah}:${at}`);
+    }
+    // Every deep passage's Sa'di source now opens at a line.
+    const saadis = Object.values(LESSONS_BY_ID).flatMap((lesson) => lesson.learnDeeper?.sources ?? []).filter((source) => source.url.includes("ar-tafseer-al-saddi"));
+    expect(saadis.filter((source) => source.highlight).length / saadis.length).toBeGreaterThan(0.9);
   });
 
   it("asks two harder questions after the card's own three, each answered on the card and sourced", () => {
