@@ -19,39 +19,36 @@ Learn Quran, hadith, Seerah & salah in fun 5-minute lessons for kids & adults.
 ```
 Learn Islam a few minutes at a time, with a path that grows with you. A fun Islamic quiz app for kids, teens and adults: learn Quran, hadith, Seerah and salah like a game.
 
-Muslimo turns Islamic learning into short, game-like lessons. Answer questions, keep your streak, earn XP and dates, and watch your path unlock as you grow from the basics to deeper study. Every lesson links to its sources so you can read more from Quran.com, Sunnah.com and trusted teachers.
+Muslimo turns Islamic learning into short, game-like lessons. Answer questions, keep your streak, earn XP and dates, and watch your path unlock step by step. Every lesson shows its source, so you can read more on Quran.com, Sunnah.com and from trusted scholars.
 
 WHAT YOU WILL LEARN
-• Foundation: iman, greetings, daily dhikr and the basics every Muslim needs
-• Prayer: wudu step by step, then salah from the opening takbir to the taslim
-• Quran and tafsir: study surah by surah with meaning and reflection
-• Lives of the Prophets: from Adam to Muhammad, peace be upon them all
-• The Sahabah: the Rightly Guided Caliphs and the companions who carried the message
-• Manners: truthfulness, mercy, honouring parents, eating with adab and more
-• Marriage, fasting, zakat and hajj, and the women honoured in revelation
+• Iman, greetings, daily dhikr and the basics every Muslim needs
+• Wudu step by step, then salah from the opening takbir to the salam
+• Quran and tafsir: every surah, ayah by ayah, with meaning and hadith
+• Lives of the Prophets: from Adam to Muhammad ﷺ, in order
+• Seerah and the Sahabah: the Rightly Guided Caliphs and other companions, told like a story
+• Hadith from Sahih al-Bukhari and Sahih Muslim, book by book
+• Duas for every day, and the great women of Islam
+• Manners: truthfulness, mercy, honouring parents and much more
+• Fasting, zakat, hajj and the Day of Judgment
 
 LEARN THE WAY THAT STICKS
 • Short lessons that fit into a break or after salah
-• A placement check so you start at the right level
-• Review that brings back the questions you missed until they stick
-• Clear explanations after every answer, with why it matters
-• Mastery tests to prove what you know
+• Picture stories that bring each lesson's time and place to life
+• Questions you missed come back until you remember them
+• A clear explanation after every answer
+• Lessons work even without internet
 
 STAY MOTIVATED
 • Daily streaks, XP, dates and reward chests
-• A daily goal you choose
-• Funny reminders from your camel when you have been away (turn them off any time)
-• Prayer-time lessons: pick your city and get a tiny lesson right after each salah
-• A weekly XP race with family and friends, and quiz battles with friends
+• A weekly race and quiz battles with family and friends
+• Shared streaks with a friend
 • Invite a friend with your code and you both get dates
+• Funny reminders from your camel (turn them off any time)
 
-LEARN WITH OR WITHOUT AN ACCOUNT
-Start learning straight away. Create a free account to save your progress and keep it on a new phone.
+The app works in English, Bangla, Urdu and Arabic. Downloading and the core lessons are free. Premium is an optional monthly or yearly subscription for unlimited hearts and no ads. Subscriptions renew automatically until you cancel in Google Play; cancel at least 24 hours before the renewal date to avoid being charged.
 
-MUSLIMO PREMIUM
-Muslimo is free to download and the core lessons are free. Premium is an optional monthly or yearly subscription that gives you unlimited hearts, no ads, premium lesson branches and mastery tests. You can also buy heart packs. Subscriptions renew automatically until you cancel in Google Play; cancel at least 24 hours before the renewal date to avoid being charged.
-
-Muslimo is a learning tool, not a fatwa service. For rulings that affect you, please ask a qualified scholar. Found a mistake? Email us and we will review it, in sha Allah.
+Muslimo is a learning tool, not a fatwa service. For rulings about your own life, please ask a qualified scholar. Found a mistake? Email us and we will look at it, in sha Allah.
 ```
 
 ## Store settings
