@@ -724,7 +724,7 @@ function pleasedWithAnother(): SignArt {
       { text: "He said: a believing man should not hate", from: 0.02, to: 0.245 },
       { text: "a believing woman;", from: 0.26, to: 0.485 },
       { text: "if the man dislikes one of her traits,", from: 0.5, to: 0.725 },
-      { text: "another will please him", from: 0.74, to: 1 }
+      { text: "another will please the man", from: 0.74, to: 1 }
     ]
   };
 }
