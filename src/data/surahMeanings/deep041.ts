@@ -49,7 +49,7 @@ export const DEEP_041: Record<string, PassageDeep> = {
     ],
     takeaway: "Say 'my Lord is Allah', then stay firm: angels bring calm to such people.",
     q: [
-      ["Ayah 30: what do angels tell the steadfast?", "Do not fear, do not grieve", "Run away", "Be sad", "Wait"],
+      ["Ayah 30: what do angels tell the steadfast?", "Fear not, and grieve not", "Run away", "Be sad", "Wait"],
       ["Ayah 26: what did the deniers say about the Quran?", "Do not listen to it", "Read it more", "Teach it", "Write it down"]
     ]
   },

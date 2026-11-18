@@ -70,7 +70,7 @@ const AHQAF_ONE: DeepUnit = {
       source: ik(3, "Ibn Kathir says Allah did not create them in idle play, and they last for a fixed duration that will not increase or decrease.", "not in idle play and falsehood"),
       difficulty: 2,
       questions: [
-        { q: "How were the heavens and earth made, in 46:3?", a: "With truth, for a set term", wrong: ["For play", "By chance", "Forever with no end"], why: "We created not the heavens and the earth except with truth, and for a specified term." },
+        { q: "How were the heavens and earth made, in 46:3?", a: "With truth, for a set term", wrong: ["For play", "By chance", "Forever with no end"], why: "We created not the heavens and the earth and all between them except with truth, and for a specified term." },
         { q: "What does the set term mean, per Ibn Kathir?", a: "A fixed time that will not change", wrong: ["Any length", "A guess", "No end at all"], why: "For a fixed and specified duration that will not increase or decrease." },
         { tf: true, q: "Those who disbelieve turn away from the warning.", why: "But those who disbelieve, turn away from that whereof they are warned." }
       ]

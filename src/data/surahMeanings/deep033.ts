@@ -109,7 +109,7 @@ export const DEEP_033: Record<string, PassageDeep> = {
   "69-73": {
     meaning: [
       "Believers, be mindful of Allah and speak words that are right.",
-      "He will set your deeds right and forgive you; whoever obeys Allah has won a great success.",
+      "He will set your deeds right and forgive your sins; whoever obeys Allah and His Messenger has won great success.",
       "Allah offered the Trust to the heavens, earth and mountains; they refused, and mankind carried it."
     ],
     takeaway: "Honest words fix your deeds: think before you speak.",
