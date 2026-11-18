@@ -1489,6 +1489,12 @@ const STATES: State[] = [
   { id: "scene-over-which-the-sun-rises", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dua-dearer-than-the-world" ask="These four words" /> },
   { id: "scene-brisk-then-walking", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-kabah-ramal" ask="In how many rounds" /> },
   { id: "scene-said-three-times", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-said-three-times" ask="How many times" /> },
+  { id: "scene-the-gate-of-abu-bakr", render: () => <SceneQuestionDemo lessonId="lesson-deep-abubakr-khalil" ask="Which door to the masjid" /> },
+  { id: "scene-even-a-trotter", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-gifts-even-small" ask="Would he" /> },
+  { id: "scene-start-with-your-dependents", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-zakat-best-charity-family-first" ask="Whom should you give" /> },
+  { id: "scene-even-with-one-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-abdur-rahman-wedding" ask="What mahr did" /> },
+  { id: "scene-the-right-then-the-right", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-the-right-first" ask="Who got the drink" /> },
+  { id: "scene-stung-by-a-scorpion", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-adhkar-perfect-words" ask="When should he" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
