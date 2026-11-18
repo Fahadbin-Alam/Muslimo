@@ -876,10 +876,10 @@ function buildSahabiWorldBranches(): BranchSeed[] {
         "before-islam": { line: "Before Islam, Uthman was a rich [trader].", alt: ["king", "farmer"] },
         "accepting-islam": { line: "Uthman became Muslim early, invited by [Abu Bakr].", alt: ["Khalid", "Abu Jahl"] },
         "makkah-years": { line: "Uthman and his wife Ruqayyah moved to [Abyssinia] for safety.", alt: ["Rome", "Persia"], why: "In Abyssinia, a fair king let the Muslims live in peace." },
-        "sacrifice-for-islam": { line: "Uthman bought a [well] and gave its water to everyone.", alt: ["lake", "horse"] },
+        "sacrifice-for-islam": { line: "Uthman bought a [well] and gave its water to everyone.", alt: ["lake", "horse"], why: "Before that, no one could drink from it without paying." },
         "signature-virtue": { title: "Modesty and generosity", line: "Uthman was known for haya: being [modest] and shy.", alt: ["loud", "rude"], why: "The Prophet ﷺ said even the angels were shy of Uthman.", source: "hadith_muslim_2401" },
         "service-to-revelation": { line: "Uthman sent copies of the [Quran] to Muslim cities.", alt: ["letters", "poems"], why: "So everyone read from the same written Quran.", source: "hadith_bukhari_4987" },
-        "public-service-and-counsel": { title: "Helping the army", line: "Uthman paid for much of the army going to [Tabuk].", alt: ["Yemen", "Egypt"] },
+        "public-service-and-counsel": { title: "Helping the army", line: "Uthman paid for much of the army going to [Tabuk].", alt: ["Yemen", "Egypt"], why: "The Prophet ﷺ promised Paradise to whoever equipped that army." },
         "leadership-and-decisions": { line: "After Umar, Uthman became the [third] caliph.", alt: ["first", "fifth"], why: "Abu Bakr and Umar led the Muslims before him." },
         "final-years-and-advice": { line: "Uthman was martyred at home while reading the [Quran].", alt: ["news", "letters"] }
       }

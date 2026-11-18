@@ -1577,7 +1577,7 @@ const UTHMAN: DeepUnit = {
       source: hadith("bukhari", "2778", "Abu Abdur-Rahman as-Sulami", "Sahih", "Uthman reminded the companions that the Prophet ﷺ promised Paradise to whoever dug the well of Rumah and to whoever equipped the army of hardship, and he had done both; they confirmed it."),
       difficulty: 3,
       questions: [
-        { q: "What did Uthman buy for the Muslims?", a: "The well of Rumah", wrong: ["A market", "A ship", "A fort"], why: "So people could drink freely." },
+        { q: "What did Uthman buy for the Muslims?", a: "The well of Rumah", wrong: ["A market", "A ship", "A fort"], why: "Uthman said he bought it and dug it." },
         { q: "Which army did Uthman equip?", a: "The army of hardship", wrong: ["The army of Badr", "The army of Uhud", "The army of Yamamah"], why: "It went to Tabuk in a time of hardship." },
         { q: "What did the Prophet ﷺ promise for these deeds?", a: "Jannah", wrong: ["Riches", "Leadership", "A long life"], why: "The companions confirmed Uthman did both." }
       ]
