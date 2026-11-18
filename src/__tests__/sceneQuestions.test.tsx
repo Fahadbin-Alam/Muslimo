@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(2884);
+    expect(asks.length).toBe(2935);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4200);
+    expect(places).toBe(4269);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -17150,6 +17150,339 @@ describe("where the scene waits and where it stops", () => {
     expect(shown("Why had Abu Bakr stayed quiet?", ["Abu Bakr's voice: perhaps you were angry", "angrier: a grey ring about Umar's place", "he had spoken of her: a faint golden line from his place to Abu Bakr's place", "kept his secret: a soft white veil about Abu Bakr's place", "a soft golden glow about them"])).toEqual([
       [1, 1, 0, 0, 0],
       [1, 0, 1, 1, 1]
+    ]);
+  });
+
+  it("waits on the scenes from never angry again to whoever is not merciful, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-never-angry-again", "sign-ninety-nine-names", "sign-the-best-of-women", "sign-as-much-as-you-can", "sign-understanding-the-religion", "sign-earth-from-the-trench", "sign-who-is-not-merciful"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(51);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // What Allah gives that is better than all, and that He will never be angry with them: the places of the folk of
+    // Paradise have gathered in the gardens, with a warm glow about each, and their voices have asked what is better
+    // than that, before the last words; then a soft golden glow comes over all the gardens, a soft golden ring about
+    // them, and golden glints over all the gardens.
+    for (const prompt of ["What is the best gift in Jannah?", "What does Allah promise them?", "Allah's approval is greater than gardens.", "What is the greatest bliss, in 9:72?", "What will Allah give that is better than Paradise?", "After that, Allah will never be angry with them.", "What is better than all they were given?", "What does Allah give that is better than all?", "Will Allah be angry with them after?", "What will He give that is better than all?", "Allah may later become angry with the people of Paradise."]) {
+      expect([
+        prompt,
+        shown(prompt, ["pleased: a warm glow about each place", "given what none was given: glints over the palaces, the rivers and the trees", "His pleasure: a soft golden glow over all the gardens", "never angry again: a soft golden ring about them", "forever: golden glints over all the gardens"]),
+        value("never-angry-again", "their voices: what is better than that", "opacity", 0.8)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0.4, 0, 0, 0],
+          [1, 0.4, 1, 1, 1]
+        ],
+        1
+      ]);
+    }
+    // What Allah will ask the people of Paradise: their places have gathered in the gardens, and their voices have
+    // answered, before the next words; then the words of His question show, with nothing drawn for Him, and faint lines
+    // go from the places to the gardens as they look about them. It stops before their voices speak again.
+    for (const prompt of ["What will Allah ask the people of Paradise?", "Allah asks the people of Paradise if they are pleased."]) {
+      expect([
+        prompt,
+        shown(prompt, ["they look about them: faint lines from them to the gardens", "their voices: why would we not be pleased", "pleased: a warm glow about each place"]),
+        value("never-angry-again", "their voices: at Your service, our Lord", "opacity", 0.18),
+        value("never-angry-again", "the folk of Paradise: a place 1", "x", 0.255)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 0, 0]
+        ],
+        1,
+        33.2
+      ]);
+    }
+    // How many names of Allah there are: the masjid of Madinah and the place of one who learns them, before the first
+    // words; then a soft light shows where the names are counted, and rows of glints show one after another, ten rows,
+    // the last with nine; a faint frame comes about the rows, a hundred, and a faint ring where the hundredth would be.
+    // It stops before a soft golden ring comes about the place.
+    for (const prompt of ["How many names of Allah are in the hadith?", "How many names are in Bukhari 2736?", "How many names of Allah did the Prophet ﷺ mention?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a soft light where they are counted", "the names, counted: a row of glints 1", "the names, counted: a row of glints 10", "a hundred: a faint frame about the rows", "less one: a faint ring where the hundredth would be", "whoever knows them: a soft golden ring about the place"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // What the reward is for knowing them: the rows of glints are counted, with a faint frame about them and a faint
+    // ring where the hundredth would be, before the last words; then a soft golden ring comes about the place of one who
+    // learns them, a faint golden line goes from it to the glints, and a warm light in it; far off, Paradise shows, a
+    // soft light with a garden, and a golden way goes from the place up to it, with a warm glow and glints on the
+    // garden.
+    for (const prompt of ["What is the reward for knowing them?", "Learning Allah's names is a great deed."]) {
+      expect([
+        prompt,
+        shown(prompt, ["less one: a faint ring where the hundredth would be", "whoever knows them: a soft golden ring about the place", "knows them: a faint golden line from the place to the glints", "known by heart: a warm light in the place", "Paradise, a soft light far off, with a garden", "will enter it: a golden way from the place up to the garden", "a warm glow on the garden", "glints over the garden"])
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // What the ayahs are about, Allah's most beautiful names: the masjid of Madinah, before the first words; then a soft
+    // light shows where the names are counted, and rows of glints show one after another, ten rows, the last with nine.
+    // It stops before a faint frame comes about the rows.
+    for (const prompt of ["Ayahs 172-188: what are they about?", "Ayahs 18-24: what are they about?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a soft light where they are counted", "the names, counted: a row of glints 1", "the names, counted: a row of glints 10", "a hundred: a faint frame about the rows"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // Which two women reached perfection: soft golden rings have come about the many places across the land, before the
+    // next words; then a soft light shows in a window of Pharaoh's palace by the Nile, and a soft golden ring and glints
+    // come about the palace; a stream runs from beneath the palm, ripe dates show under its crown, and a soft golden
+    // ring and glints come about it. It stops before a soft golden ring comes about Aishah's place.
+    for (const prompt of ["Which two women did the Prophet ﷺ name as reaching perfection?", "Which two women did the Prophet ﷺ say reached perfection?", "Which two women in 66:11-12 reached perfection?", "Who are examples for believers, in At-Tahrim?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["many reached perfection: soft golden rings 4", "Asiyah's faith: a soft light in a window of the palace", "perfected: a soft golden ring about the palace", "glints over the palace", "ripe dates under the palm's crown", "perfected: a soft golden ring about the palm", "glints over the palm", "her excellence: a soft golden ring about Aishah's place"]),
+        value("the-best-of-women", "the stream from beneath the palm", "scaleX", 0.56)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1, 1, 0]
+        ],
+        1
+      ]);
+    }
+    // Whose wife Asiyah was, and that she kept her faith and reached perfection: soft golden rings have come about the
+    // many places across the land, before the next words; then a soft light shows in a window of Pharaoh's palace by the
+    // Nile, and a soft golden ring and glints come about the palace. It stops before a stream runs from beneath the
+    // palm.
+    for (const prompt of ["Asiyah was the wife of whom?", "A bad husband stopped Asiyah from reaching Allah's pleasure.", "Asiyah kept her faith while living in Fir'awn's palace.", "No woman ever reached perfection.", "Who was Asiyah's husband?", "Asiyah, Pharaoh's wife, believed in Allah."]) {
+      expect([
+        prompt,
+        shown(prompt, ["many reached perfection: soft golden rings 4", "Asiyah's faith: a soft light in a window of the palace", "perfected: a soft golden ring about the palace", "glints over the palace", "the stream from beneath the palm"])
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0]
+        ]
+      ]);
+    }
+    // Who Maryam's father was: a soft golden ring and glints are about Pharaoh's palace, before the next words; then a
+    // stream runs from beneath the palm, ripe dates show under its crown, and a soft golden ring and glints come about
+    // it. It stops before a soft golden ring comes about Aishah's place.
+    expect([
+      shown("Who was Maryam's father?", ["perfected: a soft golden ring about the palace", "ripe dates under the palm's crown", "perfected: a soft golden ring about the palm", "glints over the palm", "her excellence: a soft golden ring about Aishah's place"]),
+      moved("Who was Maryam's father?", "the stream from beneath the palm", "scaleX")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0]
+      ],
+      [0.05, 1]
+    ]);
+    // What Aishah's excellence over women is like: a soft golden ring, a warm glow and glints are about Aishah's place,
+    // before the last words; then a bowl of tharid shows among the other food on the cloth, with steam over it, a golden
+    // glow about it and glints.
+    expect(shown("The Prophet ﷺ compared Aishah's virtue over women to what?", ["her excellence: a soft golden ring about Aishah's place", "glints over Aishah's place", "a bowl of tharid", "steam over the tharid", "over other food: a golden glow about the tharid", "glints over the tharid"])).toEqual([
+      [1, 1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1]
+    ]);
+    // As much as we can: the three have set out on the faint golden way past the thorns, before the last words; then
+    // they go on, each as far as it can, and a soft golden ring and glints come about each place.
+    for (const prompt of ["How much should we fear Allah, in At-Taghabun?", "Ayahs 11-18: what are they about?", "Ayah 16: how much should we fear Allah?", "How much of a command should we do?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["kept away from: a grey ring about the thorns", "what is commanded: a faint golden way, going on past the thorns", "as much as each can: a soft golden ring about each place", "glints over each place"]),
+        moved(prompt, "the three: a place 1", "x"),
+        moved(prompt, "the three: a place 3", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [25.8, 94.4],
+        [2.3, 23.2]
+      ]);
+    }
+    // What to do with what he forbids: grey voices and crossing grey lines have shown by the homes of those before, and
+    // the homes have broken, with a grey haze over them, before the next words; then his voice speaks, a grey patch of
+    // thorns shows, the three step back from it, and a grey ring comes about the thorns. It stops before a faint golden
+    // way goes on past the thorns.
+    for (const prompt of ["What should we do with what he forbids?", "What should we do with what he forbade?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["ruined: a grey haze over the broken homes", "his voice: when I forbid, when I command", "what is forbidden: a grey patch of thorns", "kept away from: a grey ring about the thorns", "what is commanded: a faint golden way, going on past the thorns"]),
+        moved(prompt, "the three: a place 1", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0]
+        ],
+        [0, -3]
+      ]);
+    }
+    // What to do with what he orders: the three have stepped back from the thorns, with a grey ring about them, before
+    // the next words; then a faint golden way goes on past the thorns, the three set out on it and go on, each as far as
+    // it can, and a soft golden ring and glints come about each place.
+    expect([
+      shown("What should we do with what he ordered?", ["kept away from: a grey ring about the thorns", "what is commanded: a faint golden way, going on past the thorns", "as much as each can: a soft golden ring about each place", "glints over each place"]),
+      moved("What should we do with what he ordered?", "the three: a place 1", "x"),
+      moved("What should we do with what he ordered?", "the three: a place 3", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [-3, 94.4],
+      [-3, 23.2]
+    ]);
+    // What Allah gives one He wants good for: his voice has spoken, and a soft golden ring is about one place in the
+    // circle by him, before the next words; then a faint golden line goes from his place to it, a warm light comes in
+    // it, and glints over it. It stops before small sacks go from his place.
+    for (const prompt of ["What does Allah give someone He wants good for?", "What does Allah give one He wants good for?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["good wanted for it: a soft golden ring about one place", "taught: a faint golden line from his place to that place", "understanding: a warm light in that place", "glints over that place", "the giving: a soft golden glow over the shares"]),
+        value("understanding-the-religion", "he shares out: a small sack 1", "x", 0.305)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0],
+          [1, 1, 1, 1, 0]
+        ],
+        0
+      ]);
+    }
+    // Who the true giver is: a warm light and glints are in that place, before the next words; then small sacks go from
+    // his place, one to each place in the circle, and a soft golden glow comes over the shares. It stops before a golden
+    // way goes to the far horizon.
+    for (const prompt of ["He ﷺ said: I distribute, but who gives?", "Who is the true giver, in the hadith?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["glints over that place", "the giving: a soft golden glow over the shares", "this nation: a golden way to the far horizon"]),
+        moved(prompt, "he shares out: a small sack 1", "x"),
+        moved(prompt, "he shares out: a small sack 5", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0],
+          [1, 1, 0]
+        ],
+        [0, 17.8],
+        [0, 23.1]
+      ]);
+    }
+    // That understanding the religion is a sign of good: his place and the circle of places by him, before the first
+    // words; then his voice speaks, and a soft golden ring comes about one place; a faint golden line goes from his
+    // place to it, a warm light comes in it, and glints over it. It stops before small sacks go from his place.
+    expect(shown("Learning your deen is a sign of good.", ["his voice: when good is wanted for one", "good wanted for it: a soft golden ring about one place", "taught: a faint golden line from his place to that place", "understanding: a warm light in that place", "glints over that place", "the giving: a soft golden glow over the shares"])).toEqual([
+      [0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 0]
+    ]);
+    // Whose words he chanted at the Trench: the trench is dug, the baskets of earth have gone up and back, and a pale
+    // haze of dust is about his place, before the next words; then his voice chants, and a faint line goes from
+    // Al-Bara's place to it. It stops before a faint golden way goes to the masjid.
+    expect(shown("Whose verses did the Prophet ﷺ recite at the Trench?", ["the dust: a pale haze about his place", "his voice, chanting Ibn Rawahah's words", "heard: a faint line from Al-Bara's place to his voice", "guided: a faint golden way to the masjid"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // What the words said: his voice is chanting, with a faint line from Al-Bara's place to it, before the next words;
+    // then a faint golden way goes to the masjid. It stops before a small sack shows.
+    expect(shown("What did the verses say?", ["his voice, chanting Ibn Rawahah's words", "heard: a faint line from Al-Bara's place to his voice", "guided: a faint golden way to the masjid", "in charity: a small sack"])).toEqual([
+      [1, 1, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // That he carried earth with them, at the Battle of the Trench: his place and the diggers' places by the trench as
+    // it is begun, before the first words; then Al-Bara's voice speaks, the trench is dug, its earth heaped beyond it,
+    // and far off the tents of the Confederates' camp show; baskets of earth, his among them, go up and back, and a pale
+    // haze of dust comes about his place. It stops before his voice chants.
+    for (const prompt of ["The Prophet ﷺ carried earth with the companions.", "Ayahs 9-20: what are they about?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the Confederates' camp: a tent 1", "his basket of earth", "the dust: a pale haze about his place", "his voice, chanting Ibn Rawahah's words"]),
+        value("earth-from-the-trench", "Al-Bara's voice", "opacity", 0.06),
+        moved(prompt, "the trench, being dug, its earth heaped beyond it", "scaleX"),
+        value("earth-from-the-trench", "his basket of earth", "y", 0.165)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 0]
+        ],
+        1,
+        [0.25, 1],
+        -7
+      ]);
+    }
+    // Who heard him say it: his place and Jarir's place by the masjid of Madinah, before the first words; then his voice
+    // speaks, and a faint line goes from Jarir's place to his. It stops before the first place on the road passes the
+    // thirsty sheep by.
+    expect([
+      shown("Who heard the Prophet ﷺ say: whoever is not merciful is not shown mercy?", ["his voice: whoever is not merciful", "Jarir heard him: a faint line from Jarir's place to his", "not merciful: a grey ring about the first place"]),
+      value("who-is-not-merciful", "the first place on the road", "x", 0.3)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      0
+    ]);
+    // How to hope for Allah's mercy: his voice has spoken, with a faint line from Jarir's place to his, and a thirsty
+    // sheep, with a grey ring, stands by an empty bowl, before the next words; then the first place on the road passes
+    // it by, with a grey ring; the second stops, its jug of water goes to the bowl, the sheep drinks, with a glint, and
+    // a soft golden ring comes about the second place; a grey haze and grey strokes of the heat come over the first
+    // place, a warm glow about the second, a soft golden glow over it and the sheep, and glints over them.
+    expect([
+      shown("How can you hope for Allah's mercy, from this lesson?", ["thirsty: a grey ring about the sheep", "not merciful: a grey ring about the first place", "water in the bowl", "it drinks: a glint over the sheep", "merciful: a soft golden ring about the second place", "not shown mercy: a grey haze about the first place", "shown mercy: a warm glow about the second place", "a soft golden glow over it and the sheep"]),
+      moved("How can you hope for Allah's mercy, from this lesson?", "the first place on the road", "x"),
+      moved("How can you hope for Allah's mercy, from this lesson?", "the second place on the road", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      [0, -90],
+      [0, -76]
+    ]);
+    // That mercy is for all, not only for one's own family: a thirsty sheep, with a grey ring, stands by an empty bowl,
+    // before the next words; then the first place on the road passes it by, with a grey ring; the second stops, its jug
+    // of water goes to the bowl, the sheep drinks, with a glint, and a soft golden ring comes about the second place. It
+    // stops before a grey haze comes over the first place.
+    expect([
+      shown("Mercy in Islam is only for your own family.", ["thirsty: a grey ring about the sheep", "not merciful: a grey ring about the first place", "a jug of water by the second place", "water in the bowl", "it drinks: a glint over the sheep", "merciful: a soft golden ring about the second place", "not shown mercy: a grey haze about the first place"]),
+      moved("Mercy in Islam is only for your own family.", "a thirsty sheep", "x"),
+      moved("Mercy in Islam is only for your own family.", "the second place on the road", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 0]
+      ],
+      [0, -3.6],
+      [0, -76]
     ]);
   });
 
