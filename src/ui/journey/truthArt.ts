@@ -277,13 +277,13 @@ function abuDharrSeeks(): SignArt {
       { name: "kept safe: a ring of care about Abu Dharr's place", svg: care(calling[0], n(calling[1] - 1.6), 6, 3.8), keys: showFrom(0.94, 0.97) }
     ],
     words: [
-      { text: "His brother said: he enjoins good character", from: 0.02, to: 0.13 },
-      { text: "He took his waterskin and came to Makkah", from: 0.15, to: 0.27 },
-      { text: "Ali saw him, and knew he was a stranger", from: 0.29, to: 0.41 },
-      { text: "Follow me, and enter where I enter", from: 0.43, to: 0.55 },
-      { text: "He heard him, and became Muslim at once", from: 0.57, to: 0.69 },
-      { text: "He called out the shahadah at the masjid", from: 0.71, to: 0.83 },
-      { text: "Al-Abbas knelt over him: he is of Ghifar", from: 0.85, to: 1 }
+      { text: "Abu Dharr's brother: he enjoins good ways", from: 0.02, to: 0.13 },
+      { text: "Abu Dharr took his waterskin to Makkah", from: 0.15, to: 0.27 },
+      { text: "Ali saw Abu Dharr and knew: a stranger", from: 0.29, to: 0.41 },
+      { text: "Ali: Follow me, and enter where I enter", from: 0.43, to: 0.55 },
+      { text: "Abu Dharr heard him, became Muslim at once", from: 0.57, to: 0.69 },
+      { text: "Abu Dharr called out the shahadah aloud", from: 0.71, to: 0.83 },
+      { text: "Al-Abbas knelt over Abu Dharr: of Ghifar!", from: 0.85, to: 1 }
     ]
   };
 }
@@ -485,7 +485,7 @@ function heracliusAsks(): SignArt {
       { text: "Do nobles or the poor follow him? The poor", from: 0.15, to: 0.27 },
       { text: "Increasing or decreasing? I said: increasing", from: 0.29, to: 0.41 },
       { text: "Did you ever accuse him of lying? I said: no", from: 0.43, to: 0.55 },
-      { text: "They are the followers of the messengers", from: 0.57, to: 0.69 },
+      { text: "Heraclius: the messengers' followers", from: 0.57, to: 0.69 },
       { text: "His letter: accept Islam, and be safe", from: 0.71, to: 0.83 },
       { text: "Come to a word common to us and you", from: 0.85, to: 1 }
     ]
@@ -618,12 +618,12 @@ function mightySinceUmar(): SignArt {
     ],
     words: [
       { text: "Umar was at home, in fear", from: 0.02, to: 0.13 },
-      { text: "Your people claim they will kill me", from: 0.15, to: 0.27 },
+      { text: "Umar: your people claim they will kill me", from: 0.15, to: 0.27 },
       { text: "Al-As said: there is no way to you", from: 0.29, to: 0.41 },
       { text: "The people streamed through the whole valley", from: 0.43, to: 0.55 },
       { text: "We want Ibn al-Khattab, who became Muslim", from: 0.57, to: 0.69 },
-      { text: "There is no way to him. So they went back", from: 0.71, to: 0.83 },
-      { text: "We stayed mighty since Umar became Muslim", from: 0.85, to: 1 }
+      { text: "Al-As: no way to him. So they went back", from: 0.71, to: 0.83 },
+      { text: "Ibn Mas'ud: mighty ever since Umar's Islam", from: 0.85, to: 1 }
     ]
   };
 }
@@ -746,9 +746,9 @@ function everyRight(): SignArt {
     ],
     words: [
       { text: "Salman visited his brother Abu ad-Darda", from: 0.02, to: 0.13 },
-      { text: "Your brother has no need of this world", from: 0.14, to: 0.25 },
+      { text: "Umm ad-Darda: no need of this world", from: 0.14, to: 0.25 },
       { text: "Salman said: I will not eat until you eat", from: 0.27, to: 0.42 },
-      { text: "At night he got up. Salman said: sleep", from: 0.44, to: 0.57 },
+      { text: "At night Abu ad-Darda rose. Salman: sleep", from: 0.44, to: 0.57 },
       { text: "At the end of the night, both of them prayed", from: 0.59, to: 0.7 },
       { text: "Your Lord, self and family each have a right", from: 0.72, to: 0.85 },
       { text: "He said: Salman has spoken the truth", from: 0.87, to: 1 }
@@ -818,7 +818,7 @@ function firstMasjid(): SignArt {
       )
     ],
     words: [
-      { text: "Which masjid was built first on earth?", from: 0.02, to: 0.19 },
+      { text: "Abu Dharr: Which masjid was built first?", from: 0.02, to: 0.19 },
       { text: "He said: al-Masjid al-Haram", from: 0.21, to: 0.39 },
       { text: "Then which? He said: al-Masjid al-Aqsa", from: 0.41, to: 0.59 },
       { text: "How long between them? Forty years", from: 0.61, to: 0.79 },
@@ -905,7 +905,7 @@ function rainAndStars(): SignArt {
       { text: "At Hudaybiyah he led Fajr after night rain", from: 0.02, to: 0.15 },
       { text: "Do you know what your Lord has said?", from: 0.17, to: 0.31 },
       { text: "They said: Allah and His Messenger know best", from: 0.33, to: 0.47 },
-      { text: "My servants woke: some believing, some not", from: 0.49, to: 0.63 },
+      { text: "Allah said: some believe in Me, some not", from: 0.49, to: 0.63 },
       { text: "By Allah's grace and mercy: a believer in Me", from: 0.65, to: 0.79 },
       { text: "By such a star: a disbeliever in Me", from: 0.81, to: 1 }
     ]

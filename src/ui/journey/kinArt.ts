@@ -259,7 +259,7 @@ function brotherOfAMuslim(): SignArt {
     ],
     words: [
       { text: "A Muslim is a brother of a Muslim", from: 0.02, to: 0.129 },
-      { text: "he does not wrong him, nor hand him over", from: 0.144, to: 0.253 },
+      { text: "who must not be wronged or handed over", from: 0.144, to: 0.253 },
       { text: "whoever meets his brother's need", from: 0.268, to: 0.377 },
       { text: "Allah meets his need", from: 0.392, to: 0.501 },
       { text: "whoever relieves a Muslim of a hardship", from: 0.516, to: 0.625 },
@@ -517,11 +517,11 @@ function hurryHome(): SignArt {
     ],
     words: [
       { text: "Travel is a piece of torment", from: 0.02, to: 0.17 },
-      { text: "it keeps one of you from his food", from: 0.185, to: 0.335 },
-      { text: "his drink", from: 0.35, to: 0.5 },
-      { text: "and his sleep", from: 0.515, to: 0.665 },
-      { text: "so when he has done what he came for", from: 0.68, to: 0.83 },
-      { text: "let him hurry home to his family", from: 0.845, to: 1 }
+      { text: "it keeps one of you from food", from: 0.185, to: 0.335 },
+      { text: "from drink", from: 0.35, to: 0.5 },
+      { text: "and from sleep", from: 0.515, to: 0.665 },
+      { text: "So when one has done what one came for", from: 0.68, to: 0.83 },
+      { text: "let one hurry home to one's family", from: 0.845, to: 1 }
     ]
   };
 }

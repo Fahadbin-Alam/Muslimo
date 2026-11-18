@@ -157,8 +157,8 @@ function goodInEveryState(): SignArt {
     words: [
       { text: "Wonderful: every affair of the believer is good", from: 0.02, to: 0.2 },
       { text: "And this is for no one but the believer", from: 0.22, to: 0.36 },
-      { text: "If joy comes, he gives thanks: good for him", from: 0.38, to: 0.66 },
-      { text: "If harm comes, he is patient: good for him", from: 0.68, to: 1 }
+      { text: "In joy, the believer gives thanks: good", from: 0.38, to: 0.66 },
+      { text: "In harm, the believer is patient: good", from: 0.68, to: 1 }
     ]
   };
 }
@@ -217,7 +217,7 @@ function yourMother(): SignArt {
       light("a light above the next one", 132, 88.6, 0.84)
     ],
     words: [
-      { text: "Who most deserves my good company?", from: 0.02, to: 0.2 },
+      { text: "A man: Who most deserves my kindness?", from: 0.02, to: 0.2 },
       { text: "Your mother. Then who? Your mother", from: 0.22, to: 0.48 },
       { text: "Then who? Your mother", from: 0.5, to: 0.7 },
       { text: "Then who? Your father", from: 0.72, to: 1 }
@@ -478,7 +478,7 @@ function eatNear(): SignArt {
       { name: "the food near him", svg: `<path d="M76.4 98.8 Q80 96.6 83.6 98.8 Z" fill="#F0CB80"/>`, origin: { x: 80, y: 98.8 }, keys: track({ opacity: [[0.66, 0], [0.68, 1]], scaleY: [[0.74, 1], [0.86, 0.4]] }) }
     ],
     words: [
-      { text: "My hand used to go all around the dish", from: 0.02, to: 0.3 },
+      { text: "The boy Umar: my hand went round the dish", from: 0.02, to: 0.3 },
       { text: "O boy! Say Bismillah, eat with your right hand", from: 0.32, to: 0.62 },
       { text: "And eat from what is near you", from: 0.64, to: 1 }
     ]
@@ -544,7 +544,7 @@ function thoseYouLove(): SignArt {
       { text: "What have you prepared for it?", from: 0.22, to: 0.36 },
       { text: "Nothing, but I love Allah and His Messenger", from: 0.38, to: 0.58 },
       { text: "You will be with those you love", from: 0.6, to: 0.8 },
-      { text: "We had never been so glad", from: 0.82, to: 1 }
+      { text: "Anas: We had never been so glad", from: 0.82, to: 1 }
     ]
   };
 }

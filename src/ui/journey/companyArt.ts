@@ -236,11 +236,11 @@ function lampsInTheSky(): SignArt {
       { name: "a warm glow on the one who recited", svg: glow(n(reader[0] + go), n(reader[1] - 0.8), 6, WARM, 0.22), keys: showFrom(0.9, 0.94), loop: { move: "twinkle", ms: 1500, low: 0.7 } }
     ],
     words: [
-      { text: "He recited al-Baqarah at night", from: 0.02, to: 0.14 },
-      { text: "His horse, tied beside him, was startled", from: 0.16, to: 0.28 },
-      { text: "He stopped, and the horse was quiet", from: 0.3, to: 0.42 },
-      { text: "His son Yahya was near it; he feared for him", from: 0.44, to: 0.56 },
-      { text: "He looked up: like a cloud, with lamps in it", from: 0.58, to: 0.7 },
+      { text: "Usayd recited al-Baqarah at night", from: 0.02, to: 0.14 },
+      { text: "Usayd's tied horse was suddenly startled", from: 0.16, to: 0.28 },
+      { text: "Usayd stopped, and the horse was quiet", from: 0.3, to: 0.42 },
+      { text: "Usayd's son Yahya was near; Usayd feared", from: 0.44, to: 0.56 },
+      { text: "Usayd looked up: like a cloud, with lamps", from: 0.58, to: 0.7 },
       { text: "Those were angels, come near for your voice", from: 0.72, to: 0.84 },
       { text: "Had you read on, people would have seen them", from: 0.86, to: 1 }
     ]
@@ -414,7 +414,7 @@ function prayerTooLong(): SignArt {
     ],
     words: [
       { text: "A man came with two camels, as night fell", from: 0.02, to: 0.13 },
-      { text: "He found Mu'adh praying, and joined him", from: 0.15, to: 0.27 },
+      { text: "The man found Mu'adh praying and joined in", from: 0.15, to: 0.27 },
       { text: "Mu'adh recited al-Baqarah or an-Nisa", from: 0.29, to: 0.41 },
       { text: "The man left, and complained of Mu'adh", from: 0.43, to: 0.55 },
       { text: "O Mu'adh, are you putting people to trial?", from: 0.57, to: 0.69 },
@@ -632,13 +632,13 @@ function theGardenGate(): SignArt {
       { name: "help is sought: a steady warm light on the third", svg: glow(atGate[0], n(atGate[1] - 0.8), 6.6, "#FFF3C4", 0.2), keys: withComer(2, 0.9, 0.02) }
     ],
     words: [
-      { text: "I was with him in a garden of Madinah", from: 0.02, to: 0.13 },
+      { text: "Abu Musa: I was with him in a garden", from: 0.02, to: 0.13 },
       { text: "One came, and asked me to open the gate", from: 0.14, to: 0.25 },
       { text: "Open for him; give him good news of Paradise", from: 0.27, to: 0.38 },
-      { text: "It was Abu Bakr, and he praised Allah", from: 0.4, to: 0.51 },
-      { text: "Then it was Umar, and he praised Allah", from: 0.53, to: 0.66 },
-      { text: "Then Uthman: with a calamity to strike him", from: 0.68, to: 0.83 },
-      { text: "He praised Allah: Allah's help is sought", from: 0.85, to: 1 }
+      { text: "It was Abu Bakr, who praised Allah", from: 0.4, to: 0.51 },
+      { text: "Then it was Umar, who praised Allah", from: 0.53, to: 0.66 },
+      { text: "Paradise, with a calamity; it was Uthman", from: 0.68, to: 0.83 },
+      { text: "Uthman praised Allah: I seek Allah's aid", from: 0.85, to: 1 }
     ]
   };
 }
@@ -728,7 +728,7 @@ function shipToAbyssinia(): SignArt {
       { text: "We set out to him, and boarded a ship", from: 0.15, to: 0.27 },
       { text: "Our ship took us to the Negus in Abyssinia", from: 0.29, to: 0.41 },
       { text: "There we found Ja'far and his companions", from: 0.43, to: 0.55 },
-      { text: "He sent us here to stay; so stay with us", from: 0.57, to: 0.69 },
+      { text: "Ja'far: He sent us here; so stay with us", from: 0.57, to: 0.69 },
       { text: "We stayed until we all left together", from: 0.71, to: 0.83 },
       { text: "Khaybar was won, and he gave us a share", from: 0.85, to: 1 }
     ]
@@ -842,9 +842,9 @@ function tenYearsServing(): SignArt {
     ],
     words: [
       { text: "He came to Madinah, and had no servant", from: 0.02, to: 0.13 },
-      { text: "Abu Talhah took me to him", from: 0.15, to: 0.27 },
-      { text: "Anas is a wise boy; let him serve you", from: 0.29, to: 0.41 },
-      { text: "I served him at home and on journeys", from: 0.43, to: 0.55 },
+      { text: "Anas: Abu Talhah took me to him", from: 0.15, to: 0.27 },
+      { text: "Abu Talhah: let wise young Anas serve you", from: 0.29, to: 0.41 },
+      { text: "Anas: I served him at home and on journeys", from: 0.43, to: 0.55 },
       { text: "I served him for ten years", from: 0.57, to: 0.69 },
       { text: "He never said to me: uff", from: 0.71, to: 0.83 },
       { text: "Nor: why did you do so, or why not?", from: 0.85, to: 1 }

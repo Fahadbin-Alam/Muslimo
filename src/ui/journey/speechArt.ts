@@ -387,9 +387,9 @@ function threeSigns(): SignArt {
     ],
     words: [
       { text: "The signs of a hypocrite are three", from: 0.02, to: 0.18 },
-      { text: "Whenever he speaks, he tells a lie", from: 0.2, to: 0.42 },
-      { text: "Whenever he promises, he always breaks it", from: 0.44, to: 0.68 },
-      { text: "If you trust him, he proves to be dishonest", from: 0.7, to: 1 }
+      { text: "The hypocrite lies whenever speaking", from: 0.2, to: 0.42 },
+      { text: "The hypocrite always breaks a promise", from: 0.44, to: 0.68 },
+      { text: "Trusted, the hypocrite proves dishonest", from: 0.7, to: 1 }
     ]
   };
 }
@@ -669,7 +669,7 @@ function thenSteadfast(): SignArt {
       }
     ],
     words: [
-      { text: "Tell me something about Islam", from: 0.02, to: 0.24 },
+      { text: "Sufyan: Tell me something about Islam", from: 0.02, to: 0.24 },
       { text: "That I need ask no one other than you", from: 0.26, to: 0.46 },
       { text: "Say: I affirm my faith in Allah", from: 0.48, to: 0.66 },
       { text: "And then remain steadfast to it", from: 0.68, to: 1 }

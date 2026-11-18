@@ -123,12 +123,12 @@ function guests(): SignArt {
       { name: "a second light, after it", svg: `${glow(94, 60, 11, "#FFFFFF", 0.22)}${sparkle(94, 60, 4.6, "#E9A93A")}`, keys: showFrom(0.84, 0.9), loop: { move: "twinkle", ms: 1600, low: 0.75, phase: 0.5 } }
     ],
     words: [
-      { text: "They said Peace; he said Peace", from: 0.02, to: 0.15 },
-      { text: "He brought a roasted calf", from: 0.17, to: 0.32 },
-      { text: "Will you not eat?", from: 0.34, to: 0.48 },
-      { text: "Do not fear", from: 0.5, to: 0.63 },
+      { text: "They said Peace; Ibrahim said Peace", from: 0.02, to: 0.15 },
+      { text: "Ibrahim brought a roasted calf", from: 0.17, to: 0.32 },
+      { text: "Ibrahim: Will you not eat?", from: 0.34, to: 0.48 },
+      { text: "They said: Do not fear", from: 0.5, to: 0.63 },
       { text: "Good news of a knowing son", from: 0.65, to: 0.8 },
-      { text: "Ishaq, and after him Ya'qub", from: 0.82, to: 1 }
+      { text: "Ishaq, and after Ishaq, Ya'qub", from: 0.82, to: 1 }
     ]
   };
 }
@@ -253,8 +253,8 @@ function forgiveness(): SignArt {
       }))
     ],
     words: [
-      { text: "Ask your Lord's forgiveness", from: 0.02, to: 0.18 },
-      { text: "He will send rain in abundance", from: 0.2, to: 0.4 },
+      { text: "Nuh: Ask your Lord's forgiveness", from: 0.02, to: 0.18 },
+      { text: "Allah will send rain in abundance", from: 0.2, to: 0.4 },
       { text: "And give you more wealth", from: 0.42, to: 0.58 },
       { text: "And make gardens for you", from: 0.6, to: 0.78 },
       { text: "And make rivers for you", from: 0.8, to: 1 }
@@ -343,7 +343,7 @@ function wind(): SignArt {
     words: [
       { text: "Its morning course, a month's journey", from: 0.02, to: 0.2 },
       { text: "Its evening course, a month's journey", from: 0.22, to: 0.4 },
-      { text: "Gently, wherever he willed", from: 0.42, to: 0.58 },
+      { text: "Gently, wherever Sulayman directed", from: 0.42, to: 0.58 },
       { text: "A spring of molten copper", from: 0.6, to: 0.78 },
       { text: "Work, family of Dawud, in thanks", from: 0.8, to: 1 }
     ]
@@ -550,11 +550,11 @@ function cup(): SignArt {
       }
     ],
     words: [
-      { text: "He put the cup in his brother's bag", from: 0.02, to: 0.18 },
+      { text: "Yusuf put the cup in his brother's bag", from: 0.02, to: 0.18 },
       { text: "O caravan, you are thieves!", from: 0.2, to: 0.36 },
       { text: "Whoever brings it gets a camel's load", from: 0.38, to: 0.54 },
-      { text: "He began with their bags", from: 0.56, to: 0.76 },
-      { text: "Out of his brother's bag", from: 0.78, to: 1 }
+      { text: "Yusuf began with their bags", from: 0.56, to: 0.76 },
+      { text: "Out of Yusuf's brother's bag", from: 0.78, to: 1 }
     ]
   };
 }
@@ -645,7 +645,7 @@ function clayBird(): SignArt {
       { name: "a sign, light over all", svg: glow(80, 60, 70, "#FFF6DC", 0.05), keys: showFrom(0.83, 0.88), loop: { move: "twinkle", ms: 2400, low: 0.7 } }
     ],
     words: [
-      { text: "From clay, the shape of a bird", from: 0.02, to: 0.2 },
+      { text: "Isa: From clay, the shape of a bird", from: 0.02, to: 0.2 },
       { text: "Then I breathe into it", from: 0.22, to: 0.38 },
       { text: "It becomes a bird, by Allah's permission", from: 0.4, to: 0.6 },
       { text: "What you eat and what you store", from: 0.62, to: 0.8 },

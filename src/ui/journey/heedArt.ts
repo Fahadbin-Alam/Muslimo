@@ -171,10 +171,10 @@ function lovesAlIkhlas(): SignArt {
     ],
     words: [
       { text: "He sent a man in charge of a party", from: 0.02, to: 0.14 },
-      { text: "In their prayer, he would end with", from: 0.16, to: 0.28 },
+      { text: "In their prayer, the man would end with", from: 0.16, to: 0.28 },
       { text: "Say: He is Allah, One", from: 0.3, to: 0.42 },
       { text: "They told him; he said: ask him why", from: 0.44, to: 0.56 },
-      { text: "Because it describes the Most Merciful", from: 0.58, to: 0.7 },
+      { text: "The man: it describes the Most Merciful", from: 0.58, to: 0.7 },
       { text: "And I love to recite it", from: 0.72, to: 0.84 },
       { text: "Tell him that Allah loves him", from: 0.86, to: 1 }
     ]
@@ -326,9 +326,9 @@ function ubayyNamed(): SignArt {
     ],
     words: [
       { text: "Allah has ordered me to recite to you", from: 0.02, to: 0.26 },
-      { text: "Did He name me?", from: 0.28, to: 0.5 },
+      { text: "Ubayy: Did Allah name me?", from: 0.28, to: 0.5 },
       { text: "He said: yes", from: 0.52, to: 0.72 },
-      { text: "And he wept", from: 0.74, to: 1 }
+      { text: "And Ubayy wept", from: 0.74, to: 1 }
     ]
   };
 }
@@ -541,12 +541,12 @@ function sixRights(): SignArt {
     ],
     words: [
       { text: "A Muslim's rights on a Muslim are six", from: 0.02, to: 0.14 },
-      { text: "When you meet him, greet him", from: 0.16, to: 0.28 },
-      { text: "When he invites you, answer him", from: 0.3, to: 0.42 },
-      { text: "When he asks your advice, advise him", from: 0.44, to: 0.56 },
-      { text: "If he sneezes and praises Allah, ask mercy for him", from: 0.58, to: 0.7 },
-      { text: "When he is ill, visit him", from: 0.72, to: 0.84 },
-      { text: "When he dies, follow him", from: 0.86, to: 1 }
+      { text: "Greet the Muslim you meet", from: 0.16, to: 0.28 },
+      { text: "When a Muslim invites you, accept it", from: 0.3, to: 0.42 },
+      { text: "When a Muslim asks your advice, give it", from: 0.44, to: 0.56 },
+      { text: "A Muslim sneezes, praises Allah: ask mercy", from: 0.58, to: 0.7 },
+      { text: "Visit the Muslim who falls ill", from: 0.72, to: 0.84 },
+      { text: "Follow the bier of the Muslim who dies", from: 0.86, to: 1 }
     ]
   };
 }
@@ -845,8 +845,8 @@ function firmAndKind(): SignArt {
       { name: "kindness in this world: a warm glow about them both", svg: wash(n((swore[0] + sad[0] - 16) / 2), n(swore[1] - 2), 14, 7, WARM, 0.2), keys: showFrom(0.9, 0.94), loop: { move: "twinkle", ms: 1800, low: 0.75 } }
     ],
     words: [
-      { text: "Sa'd's mother swore never to speak to him", from: 0.02, to: 0.14 },
-      { text: "Until he disbelieved in his religion", from: 0.16, to: 0.28 },
+      { text: "Umm Sa'd swore never to speak to her son", from: 0.02, to: 0.14 },
+      { text: "Until Sa'd disbelieved in his religion", from: 0.16, to: 0.28 },
       { text: "Nor would she eat or drink", from: 0.3, to: 0.42 },
       { text: "She stayed so for three days", from: 0.44, to: 0.56 },
       { text: "And We enjoined on man goodness to his parents", from: 0.58, to: 0.7 },

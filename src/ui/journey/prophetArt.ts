@@ -483,7 +483,7 @@ function yunus(): SignArt {
       { text: "In the darknesses", from: 0.34, to: 0.5 },
       { text: "Cast on the open shore", from: 0.52, to: 0.66 },
       { text: "A gourd plant grew", from: 0.68, to: 0.82 },
-      { text: "His people believed", from: 0.84, to: 1 }
+      { text: "Yunus's people believed", from: 0.84, to: 1 }
     ]
   };
 }

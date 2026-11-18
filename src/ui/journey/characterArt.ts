@@ -477,9 +477,9 @@ function refugeFromAnger(): SignArt {
     words: [
       { text: "Two men abused each other", from: 0.02, to: 0.16 },
       { text: "One of them became red with anger", from: 0.18, to: 0.34 },
-      { text: "I know a word that would calm him", from: 0.36, to: 0.52 },
-      { text: "If he says: I seek refuge with Allah from Satan", from: 0.54, to: 0.74 },
-      { text: "All his anger would go away", from: 0.76, to: 1 }
+      { text: "He said: I know a word to calm the man", from: 0.36, to: 0.52 },
+      { text: "If the man says: I seek refuge with Allah", from: 0.54, to: 0.74 },
+      { text: "All the man's anger would go away", from: 0.76, to: 1 }
     ]
   };
 }

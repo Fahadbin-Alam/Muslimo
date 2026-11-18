@@ -204,7 +204,7 @@ function ashes(): SignArt {
       { name: "stormy wind", svg: storm, keys: { at: [0, 0.4, 0.46, 0.88, 0.98], opacity: [0, 0, 1, 1, 0] }, loop: { move: "slide", ms: 1300 } }
     ],
     words: [
-      { text: "Deeds like ashes", from: 0.04, to: 0.4 },
+      { text: "Deeds of disbelievers are like ashes", from: 0.04, to: 0.4 },
       { text: "A stormy wind blows", from: 0.42, to: 0.7 },
       { text: "Nothing is left", from: 0.72, to: 1 }
     ]

@@ -245,7 +245,7 @@ function needleInTheSea(): SignArt {
       { name: "the sea, as full as before, shining", svg: [118, 126, 140, 150].map((x, i) => sparkle(x, 88 + (i % 2 ? 10 : 0), 1.2, "#FFF6D0")).join(""), keys: showFrom(0.955, 0.965), loop: { move: "twinkle", ms: 1200, low: 0.4 } }
     ],
     words: [
-      { text: "I have forbidden oppression for Myself", from: 0.02, to: 0.13 },
+      { text: "Allah: I forbade oppression for Myself", from: 0.02, to: 0.13 },
       { text: "So do not oppress one another", from: 0.15, to: 0.26 },
       { text: "Seek guidance of Me and I shall guide you", from: 0.28, to: 0.4 },
       { text: "Seek food of Me and I shall feed you", from: 0.42, to: 0.54 },
@@ -560,7 +560,7 @@ function treasureOfParadise(): SignArt {
       }
     ],
     words: [
-      { text: "Whenever we ascended a high place", from: 0.02, to: 0.13 },
+      { text: "Abu Musa: Whenever we climbed a high place", from: 0.02, to: 0.13 },
       { text: "We used to say Takbir", from: 0.15, to: 0.26 },
       { text: "O people! Be kind to yourselves", from: 0.28, to: 0.4 },
       { text: "You are not calling a deaf or absent one", from: 0.42, to: 0.55 },
@@ -679,7 +679,7 @@ function hundredLevels(): SignArt {
       { text: "Is like that between the heaven and the earth", from: 0.35, to: 0.5 },
       { text: "When you ask Allah, ask for al-Firdaws", from: 0.52, to: 0.66 },
       { text: "The best and highest part of Paradise", from: 0.68, to: 0.82 },
-      { text: "From it originate the rivers of Paradise", from: 0.84, to: 1 }
+      { text: "Perhaps he said: from it rivers originate", from: 0.84, to: 1 }
     ]
   };
 }
@@ -810,7 +810,7 @@ function faithAtThePleiades(): SignArt {
       { name: "a warm glow on the place beside him", svg: glow(beside[0], beside[1], 4.6, WARM, 0.26), keys: showFrom(0.88, 0.92), loop: { move: "twinkle", ms: 1400, low: 0.7 } }
     ],
     words: [
-      { text: "Who are they, O Allah's Messenger?", from: 0.02, to: 0.2 },
+      { text: "Abu Hurairah: Who are they?", from: 0.02, to: 0.2 },
       { text: "I repeated my question thrice", from: 0.22, to: 0.42 },
       { text: "If faith were at Ath-Thurayya, the Pleiades", from: 0.44, to: 0.68 },
       { text: "Men, or a man, from these would attain it", from: 0.7, to: 1 }

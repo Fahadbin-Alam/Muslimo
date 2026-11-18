@@ -331,8 +331,8 @@ function vowInTheSun(): SignArt {
     words: [
       { text: "While he was giving the khutbah", from: 0.02, to: 0.13 },
       { text: "He saw a man standing, and asked about him", from: 0.15, to: 0.27 },
-      { text: "Abu Isra'il: he vowed to stand, never sit", from: 0.29, to: 0.41 },
-      { text: "Never come into the shade, nor speak", from: 0.43, to: 0.55 },
+      { text: "They said: Abu Isra'il vowed to stand", from: 0.29, to: 0.41 },
+      { text: "Never sit, nor come into shade, nor speak", from: 0.43, to: 0.55 },
       { text: "And to fast", from: 0.57, to: 0.69 },
       { text: "Tell him to speak, come into the shade", from: 0.71, to: 0.84 },
       { text: "And sit, and let him complete his fast", from: 0.86, to: 1 }
@@ -465,14 +465,14 @@ function oneWhoFollowed(): SignArt {
       { name: "let in: a warm glow in the home", svg: glow(homeAt[0], 94, 10, WARM, 0.3), keys: showAt(0.93, 0.96) }
     ],
     words: [
-      { text: "Make me food, to invite him as one of five", from: 0.02, to: 0.125 },
-      { text: "So he invited him, one of five", from: 0.14, to: 0.245 },
+      { text: "Abu Shu'aib: Make me food to invite him", from: 0.02, to: 0.125 },
+      { text: "So Abu Shu'aib invited him, one of five", from: 0.14, to: 0.245 },
       { text: "But a man followed them", from: 0.26, to: 0.365 },
       { text: "You invited me as one of five", from: 0.38, to: 0.485 },
       { text: "And this man has followed us", from: 0.5, to: 0.605 },
       { text: "If you wish, let him in", from: 0.62, to: 0.725 },
       { text: "And if you wish, leave him", from: 0.74, to: 0.845 },
-      { text: "Rather, I let him in", from: 0.86, to: 1 }
+      { text: "Abu Shu'aib: Rather, I let this man in", from: 0.86, to: 1 }
     ]
   };
 }
@@ -570,10 +570,10 @@ function waterForWudu(): SignArt {
       { name: "a warm glow about Ibn Abbas's place", svg: glow(back[0], n(back[1] - 2), 6, WARM, 0.3), keys: showAt(0.86, 0.9) }
     ],
     words: [
-      { text: "He went in, and I set out water for wudu", from: 0.02, to: 0.2 },
+      { text: "Ibn Abbas: He went in; I set out water", from: 0.02, to: 0.2 },
       { text: "He said: who put this?", from: 0.22, to: 0.4 },
       { text: "He was told, and he said", from: 0.42, to: 0.58 },
-      { text: "O Allah, give him understanding", from: 0.6, to: 0.78 },
+      { text: "O Allah, give Ibn Abbas understanding", from: 0.6, to: 0.78 },
       { text: "Of the religion", from: 0.8, to: 1 }
     ]
   };

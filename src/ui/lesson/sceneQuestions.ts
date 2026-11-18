@@ -100,10 +100,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   // The valley of the ants (27:18, 27:19).
   "sign-ants": [
     ["What did the ant tell the other ants?", "Go into your homes", "Into your homes!"],
-    ["What did Sulayman do when he heard the ant?", "Smiled and thanked Allah", "He smiled and thanked Allah"],
+    ["What did Sulayman do when he heard the ant?", "Smiled and thanked Allah", "Sulayman smiled and thanked Allah"],
     ["Ayah 18: what did the ant tell the ants to do?", "Go into your homes", "Into your homes!"],
     ["What did the ant tell the others, in 27:18?", "Enter your dwellings", "Into your homes!"],
-    ["What did Sulayman do, in 27:19?", "He smiled", "He smiled and thanked Allah"]
+    ["What did Sulayman do, in 27:19?", "He smiled", "Sulayman smiled and thanked Allah"]
   ],
   // The hoopoe and the news from Saba (27:20, 27:22).
   "sign-hoopoe": [
@@ -216,19 +216,19 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What is Yunus called in Quran 21:87?", "The man of the fish", "A great fish"],
     ["Where did Yunus make his dua?", "In the darkness", "In the darknesses"],
     ["What grew over him on the shore?", "A gourd plant", "A gourd plant grew"],
-    ["Which people were saved because they believed in time?", "The people of Yunus", "His people believed"],
+    ["Which people were saved because they believed in time?", "The people of Yunus", "Yunus's people believed"],
     ["Where was Yunus when he made this dua?", "In the darkness, inside the whale", "A great fish", "In the darknesses"],
-    ["Which people believed in time and were spared, in Yunus?", "Yunus's people", "His people believed"],
-    ["Ayahs 94-103: what are they about?", "Yunus's people", "His people believed"],
-    ["Ayahs 94-103 say: Yunus's people believed in time, so the punishment was lifted.", "True", "His people believed"],
+    ["Which people believed in time and were spared, in Yunus?", "Yunus's people", "Yunus's people believed"],
+    ["Ayahs 94-103: what are they about?", "Yunus's people", "Yunus's people believed"],
+    ["Ayahs 94-103 say: Yunus's people believed in time, so the punishment was lifted.", "True", "Yunus's people believed"],
     ["Ayahs 139-182: what are they about?", "Yunus and the whale", "A great fish"],
     ["Ayahs 139-182 say: Yunus glorified Allah in the whale, and Allah saved him.", "True", "A great fish", "Cast on the open shore"],
-    ["Which people were spared after believing, in 10:98?", "The people of Yunus", "His people believed"],
+    ["Which people were spared after believing, in 10:98?", "The people of Yunus", "Yunus's people believed"],
     ["Which three darknesses, per Ibn Mas'ud?", "Fish, sea and night", "In the darknesses"],
     ["What does the name Dhun-Nun mean?", "The one of the fish", "A great fish"],
     ["What swallowed Yunus, in 37:142?", "A big fish", "A great fish"],
     ["What grew over him, in 37:146?", "A gourd plant", "A gourd plant grew"],
-    ["What did his people do, in 37:148?", "They believed", "His people believed"]
+    ["What did his people do, in 37:148?", "They believed", "Yunus's people believed"]
   ],
   // Maryam's palm tree: the stream beneath her, the fresh ripe dates (19:24, 19:25).
   "sign-maryam": [
@@ -290,11 +290,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // The mihrab: the provision Zakariyya found with Maryam, from Allah, and his call to his Lord there (3:37, 3:38).
   "sign-mihrab": [
-    ["What did Zakariyya find with Maryam?", "Food from Allah", "He found provision with her", "It is from Allah"],
-    ["Zakariyya made his du'a when he saw Allah's provision with Maryam.", "True", "He found provision with her", "There, Zakariyya called on his Lord"],
-    ["What did Zakariyya find each time he entered her room?", "Food", "He found provision with her"],
-    ["What did Maryam answer when asked where it came from?", "It is from Allah", "It is from Allah"],
-    ["What did Zakariyya find with her?", "Food from Allah", "He found provision with her", "It is from Allah"]
+    ["What did Zakariyya find with Maryam?", "Food from Allah", "Zakariyya found provision with her", "Maryam: It is from Allah"],
+    ["Zakariyya made his du'a when he saw Allah's provision with Maryam.", "True", "Zakariyya found provision with her", "There, Zakariyya called on his Lord"],
+    ["What did Zakariyya find each time he entered her room?", "Food", "Zakariyya found provision with her"],
+    ["What did Maryam answer when asked where it came from?", "It is from Allah", "Maryam: It is from Allah"],
+    ["What did Zakariyya find with her?", "Food from Allah", "Zakariyya found provision with her", "Maryam: It is from Allah"]
   ],
   // The fire made coolness and safety for Ibrahim (21:69, 29:24, 37:98).
   "sign-cool-fire": [
@@ -347,9 +347,9 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Where was baby Musa put, in 20:39?", "In a box on the river", "Put him into the chest", "Cast it into the river"],
     ["Allah told her not to fear and not to grieve.", "True", "Do not fear, do not grieve"],
     ["Allah told her to feel afraid and sad.", "False", "Do not fear, do not grieve"],
-    ["What did Musa's mother tell his sister to do?", "Follow him", "Follow him"],
-    ["Whom did the mother send, in 28:11?", "His sister", "Follow him"],
-    ["How did the sister watch him?", "From afar, quietly", "Follow him"],
+    ["What did Musa's mother tell his sister to do?", "Follow him", "Musa's mother: Follow him"],
+    ["Whom did the mother send, in 28:11?", "His sister", "Musa's mother: Follow him"],
+    ["How did the sister watch him?", "From afar, quietly", "Musa's mother: Follow him"],
     ["Ayahs 1-13 say: Musa's mother put him in the river; Allah brought him back.", "True", "Cast it into the river", "We returned him to his mother"],
     ["Allah brought baby Musa back to his ____.", "mother", "We returned him to his mother"],
     ["Who nursed Musa in the end?", "His own mother", "We returned him to his mother"],
@@ -361,12 +361,12 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How heavy were Qarun's keys?", "Too heavy for strong men", "Treasures with heavy keys"],
     ["Ayah 76: what was heavy even for strong men?", "Qarun's keys", "Treasures with heavy keys"],
     ["What was heavy for strong men?", "The keys to his treasures", "Treasures with heavy keys"],
-    ["How did Qarun go out, in 28:79?", "In his finery", "He went out in his finery"],
-    ["What happened to Qarun and his home?", "The earth swallowed them", "The earth swallowed his home"],
-    ["What happened to Qarun?", "The earth swallowed him", "The earth swallowed his home"],
-    ["What happened to Qarun, in 28:81?", "The earth swallowed him", "The earth swallowed his home"],
-    ["Could his wealth save him?", "No, it could not", "The earth swallowed his home"],
-    ["No group could help him against Allah.", "True", "No one could help him"]
+    ["How did Qarun go out, in 28:79?", "In his finery", "Qarun went out in his finery"],
+    ["What happened to Qarun and his home?", "The earth swallowed them", "The earth swallowed Qarun and his home"],
+    ["What happened to Qarun?", "The earth swallowed him", "The earth swallowed Qarun and his home"],
+    ["What happened to Qarun, in 28:81?", "The earth swallowed him", "The earth swallowed Qarun and his home"],
+    ["Could his wealth save him?", "No, it could not", "The earth swallowed Qarun and his home"],
+    ["No group could help him against Allah.", "True", "No one could help Qarun"]
   ],
   // The well of Madyan: two women holding back their flock, Musa watering for them, then his call in the shade (28:23, 28:24).
   "sign-madyan": [
@@ -396,17 +396,17 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // Yusuf's dream: eleven stars, the sun and the moon, bowing to him, kept from his brothers, then made true (12:4, 12:5, 12:100).
   "sign-yusuf-dream": [
-    ["How many stars did Yusuf see in his dream?", "Eleven", "Eleven stars"],
-    ["Ayah 4: how many stars bowed in Yusuf's dream?", "Eleven stars", "Eleven stars"],
-    ["How many stars did Yusuf see, in 12:4?", "Eleven", "Eleven stars"],
-    ["Ayahs 1-6 say: Yusuf dreamed eleven stars, the sun and the moon bowing to him.", "True", "Eleven stars", "I saw them bowing to me"],
-    ["What did Ya'qub tell him about the dream?", "Do not tell your brothers", "Do not tell your brothers"],
-    ["Ayah 5: whom did Yaqub tell Yusuf not to tell?", "His brothers", "Do not tell your brothers"],
-    ["Whom should Yusuf not tell, in 12:5?", "His brothers", "Do not tell your brothers"],
-    ["What did Yusuf say when they bowed, in 12:100?", "This is the meaning of my dream", "My Lord has made it true"],
-    ["Ayahs 94-104: what are they about?", "The dream comes true", "My Lord has made it true"],
-    ["What did the eleven stars stand for, as the story ends?", "His eleven brothers", "My Lord has made it true"],
-    ["Whom did the sun and the moon stand for?", "His father and mother", "My Lord has made it true"]
+    ["How many stars did Yusuf see in his dream?", "Eleven", "Yusuf: Eleven stars"],
+    ["Ayah 4: how many stars bowed in Yusuf's dream?", "Eleven stars", "Yusuf: Eleven stars"],
+    ["How many stars did Yusuf see, in 12:4?", "Eleven", "Yusuf: Eleven stars"],
+    ["Ayahs 1-6 say: Yusuf dreamed eleven stars, the sun and the moon bowing to him.", "True", "Yusuf: Eleven stars", "I saw them bowing to me"],
+    ["What did Ya'qub tell him about the dream?", "Do not tell your brothers", "Ya'qub: Do not tell your brothers"],
+    ["Ayah 5: whom did Yaqub tell Yusuf not to tell?", "His brothers", "Ya'qub: Do not tell your brothers"],
+    ["Whom should Yusuf not tell, in 12:5?", "His brothers", "Ya'qub: Do not tell your brothers"],
+    ["What did Yusuf say when they bowed, in 12:100?", "This is the meaning of my dream", "Yusuf: My Lord has made it true"],
+    ["Ayahs 94-104: what are they about?", "The dream comes true", "Yusuf: My Lord has made it true"],
+    ["What did the eleven stars stand for, as the story ends?", "His eleven brothers", "Yusuf: My Lord has made it true"],
+    ["Whom did the sun and the moon stand for?", "His father and mother", "Yusuf: My Lord has made it true"]
   ],
   // Fair measure: taken in full, given less, then given in full, and weighed with a straight balance (83:1-3, 26:181-182, 17:35).
   "sign-measure": [
@@ -439,23 +439,23 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // Ibrahim's dream: the dream, the son's answer, both submitting, the call, and the great ram (37:102-107).
   "sign-ram": [
-    ["What did the son say?", "Do as you are commanded", "Do what you are commanded"],
-    ["What did the son answer?", "Do as you are commanded", "Do what you are commanded"],
-    ["Ayah 102: what did the son tell his father?", "Do as you are told", "Do what you are commanded"],
-    ["What did the son say, in 37:102?", "Do what you are commanded", "Do what you are commanded"],
+    ["What did the son say?", "Do as you are commanded", "Ibrahim's son: Do what you are commanded"],
+    ["What did the son answer?", "Do as you are commanded", "Ibrahim's son: Do what you are commanded"],
+    ["Ayah 102: what did the son tell his father?", "Do as you are told", "Ibrahim's son: Do what you are commanded"],
+    ["What did the son say, in 37:102?", "Do what you are commanded", "Ibrahim's son: Do what you are commanded"],
     ["What did both do, in 37:103?", "Submit to Allah", "When they had both submitted"],
     ["Who called Ibrahim, in 37:104?", "Allah", "O Ibrahim, you have fulfilled the dream"],
     ["What did Ibrahim fulfil, in 37:105?", "The dream", "O Ibrahim, you have fulfilled the dream"],
-    ["Allah stopped the sacrifice of the son.", "True", "O Ibrahim, you have fulfilled the dream", "We ransomed him with a great sacrifice"],
-    ["Ibrahim's son was harmed in the end.", "False", "O Ibrahim, you have fulfilled the dream", "We ransomed him with a great sacrifice"],
-    ["Ayahs 75-113 say: Ibrahim was ready to sacrifice his son; Allah ransomed him.", "True", "When they had both submitted", "We ransomed him with a great sacrifice"],
-    ["What did Allah give in his son's place?", "A great sacrifice", "We ransomed him with a great sacrifice"],
-    ["What did Allah send in place of Ibrahim's son?", "A great sacrifice, a ram", "We ransomed him with a great sacrifice"],
-    ["What did Allah give in place of Ibrahim's son?", "A great sacrifice", "We ransomed him with a great sacrifice"],
-    ["Ayah 107: what did Allah ransom the son with?", "A great sacrifice", "We ransomed him with a great sacrifice"],
-    ["How was the son ransomed, in 37:107?", "With a great sacrifice", "We ransomed him with a great sacrifice"],
-    ["What did he see when he turned, per Ibn Abbas?", "A horned white ram", "We ransomed him with a great sacrifice"],
-    ["Ayahs 75-113: what are they about?", "Ibrahim's sacrifice", "We ransomed him with a great sacrifice"]
+    ["Allah stopped the sacrifice of the son.", "True", "O Ibrahim, you have fulfilled the dream", "We ransomed the son with a great sacrifice"],
+    ["Ibrahim's son was harmed in the end.", "False", "O Ibrahim, you have fulfilled the dream", "We ransomed the son with a great sacrifice"],
+    ["Ayahs 75-113 say: Ibrahim was ready to sacrifice his son; Allah ransomed him.", "True", "When they had both submitted", "We ransomed the son with a great sacrifice"],
+    ["What did Allah give in his son's place?", "A great sacrifice", "We ransomed the son with a great sacrifice"],
+    ["What did Allah send in place of Ibrahim's son?", "A great sacrifice, a ram", "We ransomed the son with a great sacrifice"],
+    ["What did Allah give in place of Ibrahim's son?", "A great sacrifice", "We ransomed the son with a great sacrifice"],
+    ["Ayah 107: what did Allah ransom the son with?", "A great sacrifice", "We ransomed the son with a great sacrifice"],
+    ["How was the son ransomed, in 37:107?", "With a great sacrifice", "We ransomed the son with a great sacrifice"],
+    ["What did he see when he turned, per Ibn Abbas?", "A horned white ram", "We ransomed the son with a great sacrifice"],
+    ["Ayahs 75-113: what are they about?", "Ibrahim's sacrifice", "We ransomed the son with a great sacrifice"]
   ],
   // The qiblah: toward Jerusalem at first, the face turning to the sky, turned toward the Ka'bah, and everywhere (Bukhari 40, 2:144).
   "sign-qiblah": [
@@ -524,82 +524,82 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // Dhul-Qarnayn: the means to all things, to where the sun sets, and to where it rises, on a land with no shelter (18:84-90).
   "sign-west-east": [
-    ["What did Allah give him, in 18:84?", "The means of everything", "We gave him the means to all things"],
+    ["What did Allah give him, in 18:84?", "The means of everything", "Allah gave Dhul-Qarnayn every means"],
     ["How far did he go, per Ibn Kathir?", "The farthest west one could reach", "To where the sun sets"],
     ["What did the eastern people lack, in 18:90?", "Shelter from the sun", "No shelter from the sun"]
   ],
   // Ibrahim's four birds: taken, a part of them on each hill, called, and coming back in haste (2:260).
   "sign-four-birds": [
-    ["How many birds was he told to take?", "Four", "Take four birds"],
-    ["How many birds were there?", "Four", "Take four birds"],
+    ["How many birds was he told to take?", "Four", "Allah: Take four birds"],
+    ["How many birds were there?", "Four", "Allah: Take four birds"],
     ["When he called them, what did the birds do?", "Came flying to him", "Then call them", "They will come to you in haste"],
     ["What happened when Ibrahim called them?", "They came flying to him", "Then call them", "They will come to you in haste"]
   ],
   // The hundred years: the town fallen on its roofs, the hundred years, the food and drink, the bones raised (2:259).
   "sign-hundred-years": [
-    ["How long did the man stay dead, in 2:259?", "A hundred years", "Allah made him die for a hundred years"],
-    ["How long did the man stay dead with his donkey?", "A hundred years", "Allah made him die for a hundred years"],
-    ["How long was the man in ayah 259 dead?", "A hundred years", "Allah made him die for a hundred years"],
+    ["How long did the man stay dead, in 2:259?", "A hundred years", "Allah made the man die for a hundred years"],
+    ["How long did the man stay dead with his donkey?", "A hundred years", "Allah made the man die for a hundred years"],
+    ["How long was the man in ayah 259 dead?", "A hundred years", "Allah made the man die for a hundred years"],
     ["Ayahs 258-260: what are they about?", "Giving life", "We raise the bones, then clothe them with flesh"],
     ["What did he say after seeing it?", "Allah is able to do all things", "Allah is able to do all things"]
   ],
   // Yusuf's shirt: sent with the caravan, its scent, the bearer of good news, and sight come back (12:93, 12:94, 12:96).
   "sign-shirt": [
-    ["What did Yusuf send to his father, in 12:93?", "His shirt", "Take this shirt of mine"],
-    ["What did Yusuf send to make his father see again?", "His shirt", "Take this shirt of mine"],
-    ["What happened when the shirt touched his face, in 12:96?", "His sight returned", "He could see again"]
+    ["What did Yusuf send to his father, in 12:93?", "His shirt", "Yusuf: Take this shirt of mine"],
+    ["What did Yusuf send to make his father see again?", "His shirt", "Yusuf: Take this shirt of mine"],
+    ["What happened when the shirt touched his face, in 12:96?", "His sight returned", "Ya'qub could see again"]
   ],
   // Ibrahim's honored guests: the greeting, the roasted calf, "will you not eat?", and the good news of Ishaq, and after
   // him Ya'qub (11:69 to 11:71, 51:25 to 51:28).
   "sign-guests": [
-    ["Ibrahim answered their greeting with peace too.", "True", "They said Peace; he said Peace"],
-    ["What did the guests say on entering, in 15:52?", "Salam, peace", "They said Peace; he said Peace"],
-    ["What did Ibrahim reply, in 51:25?", "Salamun", "They said Peace; he said Peace"],
-    ["Ayahs 45-60: what are they about?", "Ibrahim's guests", "They said Peace; he said Peace", "He brought a roasted calf"],
-    ["Ayahs 24-46: what are they about?", "Ibrahim's guests", "They said Peace; he said Peace", "He brought a roasted calf"],
-    ["What did Ibrahim serve his guests?", "A fat roasted calf", "He brought a roasted calf"],
-    ["What did Ibrahim serve his guests?", "A roasted calf", "He brought a roasted calf"],
-    ["Ayah 69: what did Ibrahim serve his guests?", "A roasted calf", "He brought a roasted calf"],
-    ["Ayah 26: what did Ibrahim serve his guests?", "A roasted calf", "He brought a roasted calf"],
-    ["What did Ibrahim bring his guests, in 11:69?", "A roasted calf", "He brought a roasted calf"],
-    ["What did Ibrahim bring, in 51:26?", "A roasted calf", "He brought a roasted calf"],
-    ["What did Ibrahim say to his guests, in 51:27?", "Will you not eat?", "Will you not eat?"],
+    ["Ibrahim answered their greeting with peace too.", "True", "They said Peace; Ibrahim said Peace"],
+    ["What did the guests say on entering, in 15:52?", "Salam, peace", "They said Peace; Ibrahim said Peace"],
+    ["What did Ibrahim reply, in 51:25?", "Salamun", "They said Peace; Ibrahim said Peace"],
+    ["Ayahs 45-60: what are they about?", "Ibrahim's guests", "They said Peace; Ibrahim said Peace", "Ibrahim brought a roasted calf"],
+    ["Ayahs 24-46: what are they about?", "Ibrahim's guests", "They said Peace; Ibrahim said Peace", "Ibrahim brought a roasted calf"],
+    ["What did Ibrahim serve his guests?", "A fat roasted calf", "Ibrahim brought a roasted calf"],
+    ["What did Ibrahim serve his guests?", "A roasted calf", "Ibrahim brought a roasted calf"],
+    ["Ayah 69: what did Ibrahim serve his guests?", "A roasted calf", "Ibrahim brought a roasted calf"],
+    ["Ayah 26: what did Ibrahim serve his guests?", "A roasted calf", "Ibrahim brought a roasted calf"],
+    ["What did Ibrahim bring his guests, in 11:69?", "A roasted calf", "Ibrahim brought a roasted calf"],
+    ["What did Ibrahim bring, in 51:26?", "A roasted calf", "Ibrahim brought a roasted calf"],
+    ["What did Ibrahim say to his guests, in 51:27?", "Will you not eat?", "Ibrahim: Will you not eat?"],
     ["What good news did they bring?", "A knowledgeable son", "Good news of a knowing son"],
     ["What good news did Ibrahim's guests bring, in Al-Hijr?", "A knowing son", "Good news of a knowing son"],
     ["Ayah 53: what good news did the guests bring Ibrahim?", "A wise son", "Good news of a knowing son"],
     ["Ayah 28: what news did the guests give Ibrahim?", "A knowing son", "Good news of a knowing son"],
     ["What news did the angels bring, in 15:53?", "A boy with much knowledge", "Good news of a knowing son"],
     ["What news did they give, in 51:28?", "A son having knowledge", "Good news of a knowing son"],
-    ["What news did Sarah receive?", "A son, Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
-    ["Whose birth was announced to Ibrahim's wife, in Hud?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
-    ["Which son was promised, in 11:71?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
-    ["Who was the boy, per Ibn Kathir?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
-    ["Who was the son, per Ibn Kathir?", "Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
-    ["Ayahs 69-83: what are they about?", "News of Ishaq", "Good news of a knowing son", "Ishaq, and after him Ya'qub"],
-    ["Who would come after Ishaq, in the same good news?", "Ya'qub", "Ishaq, and after him Ya'qub"],
-    ["Who would come after Ishaq?", "Ya'qub", "Ishaq, and after him Ya'qub"],
-    ["Ayah 71: who would come after Ishaq?", "Yaqub", "Ishaq, and after him Ya'qub"],
-    ["Who would come after Ishaq, in 11:71?", "Ya'qub", "Ishaq, and after him Ya'qub"]
+    ["What news did Sarah receive?", "A son, Ishaq", "Good news of a knowing son", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Whose birth was announced to Ibrahim's wife, in Hud?", "Ishaq", "Good news of a knowing son", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Which son was promised, in 11:71?", "Ishaq", "Good news of a knowing son", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Who was the boy, per Ibn Kathir?", "Ishaq", "Good news of a knowing son", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Who was the son, per Ibn Kathir?", "Ishaq", "Good news of a knowing son", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Ayahs 69-83: what are they about?", "News of Ishaq", "Good news of a knowing son", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Who would come after Ishaq, in the same good news?", "Ya'qub", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Who would come after Ishaq?", "Ya'qub", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Ayah 71: who would come after Ishaq?", "Yaqub", "Ishaq, and after Ishaq, Ya'qub"],
+    ["Who would come after Ishaq, in 11:71?", "Ya'qub", "Ishaq, and after Ishaq, Ya'qub"]
   ],
   // Asking forgiveness: the rain in abundance, more wealth, gardens and rivers (71:10 to 71:12, 11:52).
   "sign-forgiveness": [
-    ["What did Nuh tell his people to ask Allah for?", "Forgiveness", "Ask your Lord's forgiveness"],
-    ["Ayahs 10-20: what are they about?", "Ask forgiveness", "Ask your Lord's forgiveness"],
-    ["What did Nuh tell them to do in 71:10?", "Ask forgiveness from their Lord", "Ask your Lord's forgiveness"],
-    ["What brings these blessings, per Ibn Kathir?", "Repenting and obeying Allah", "Ask your Lord's forgiveness"],
-    ["Ayahs 50-60 say: Hud told Ad: ask forgiveness, and Allah will send rain.", "True", "Ask your Lord's forgiveness", "He will send rain in abundance"],
-    ["Which is a blessing Nuh promised for istighfar?", "Abundant rain", "He will send rain in abundance"],
-    ["What did Hud say Allah would send if Ad repented?", "Abundant rain", "He will send rain in abundance"],
-    ["Ayahs 50-60: what are they about?", "Hud and the rain", "He will send rain in abundance"],
-    ["What did Hud promise if they repented, in 11:52?", "Abundant rain", "He will send rain in abundance"],
-    ["What did Nuh say asking forgiveness brings?", "Rain, wealth and children", "He will send rain in abundance", "And give you more wealth"],
+    ["What did Nuh tell his people to ask Allah for?", "Forgiveness", "Nuh: Ask your Lord's forgiveness"],
+    ["Ayahs 10-20: what are they about?", "Ask forgiveness", "Nuh: Ask your Lord's forgiveness"],
+    ["What did Nuh tell them to do in 71:10?", "Ask forgiveness from their Lord", "Nuh: Ask your Lord's forgiveness"],
+    ["What brings these blessings, per Ibn Kathir?", "Repenting and obeying Allah", "Nuh: Ask your Lord's forgiveness"],
+    ["Ayahs 50-60 say: Hud told Ad: ask forgiveness, and Allah will send rain.", "True", "Nuh: Ask your Lord's forgiveness", "Allah will send rain in abundance"],
+    ["Which is a blessing Nuh promised for istighfar?", "Abundant rain", "Allah will send rain in abundance"],
+    ["What did Hud say Allah would send if Ad repented?", "Abundant rain", "Allah will send rain in abundance"],
+    ["Ayahs 50-60: what are they about?", "Hud and the rain", "Allah will send rain in abundance"],
+    ["What did Hud promise if they repented, in 11:52?", "Abundant rain", "Allah will send rain in abundance"],
+    ["What did Nuh say asking forgiveness brings?", "Rain, wealth and children", "Allah will send rain in abundance", "And give you more wealth"],
     ["What does 71:12 promise?", "Wealth, children, gardens, rivers", "And give you more wealth", "And make rivers for you"]
   ],
   // The wind for Sulayman: a month's journey each way, gently wherever he willed, and work in thanks (34:12, 34:13, 38:36).
   "sign-wind": [
     ["How far did the wind carry him in a morning?", "A month's journey", "Its morning course, a month's journey"],
     ["The wind's morning trip was a month's journey.", "True", "Its morning course, a month's journey"],
-    ["Where did it go, per Ibn Kathir?", "Wherever in the world he wanted", "Gently, wherever he willed"],
+    ["Where did it go, per Ibn Kathir?", "Wherever in the world he wanted", "Gently, wherever Sulayman directed"],
     ["How should Dawud's family work, in 34:13?", "With thanks", "Work, family of Dawud, in thanks"]
   ],
   // Iram of the pillars, Thamud and Pharaoh, their corruption, the scourge poured on them; your Lord is ever watchful
@@ -616,10 +616,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // The cup put in his brother's bag, the camel's load for whoever brings it, and the bags searched (12:70, 12:72, 12:76).
   "sign-cup": [
-    ["Ayah 70: where was the king's cup placed?", "In Binyamin's bag", "He put the cup in his brother's bag"],
+    ["Ayah 70: where was the king's cup placed?", "In Binyamin's bag", "Yusuf put the cup in his brother's bag"],
     ["What was the reward for finding it, in 12:72?", "A camel load", "Whoever brings it gets a camel's load"],
-    ["Whose bags were searched first, in 12:76?", "The other brothers'", "He began with their bags"],
-    ["Ayahs 69-79 say: Yusuf kept his brother near through a planned search.", "True", "He began with their bags", "Out of his brother's bag"]
+    ["Whose bags were searched first, in 12:76?", "The other brothers'", "Yusuf began with their bags"],
+    ["Ayahs 69-79 say: Yusuf kept his brother near through a planned search.", "True", "Yusuf began with their bags", "Out of Yusuf's brother's bag"]
   ],
   // The bird of clay, a bird by Allah's permission (3:49, 5:110).
   "sign-clay-bird": [
@@ -772,7 +772,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // The shade, the sun its guide (25:45).
   "sign-shade": [
-    ["What did Allah spread, in 25:45?", "The shadow", "He stretches the shade"]
+    ["What did Allah spread, in 25:45?", "The shadow", "Your Lord stretches out the shade"]
   ],
   // The foam that passes away, and what benefits people, which remains (13:17).
   "sign-foam": [
@@ -823,7 +823,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // relatives (Quran 3:92, Sahih al-Bukhari 1461, 4554). (What he gave, and that Bayruha faced the masjid, stay on their
   // usual picture: the garden and the masjid are there from the scene's start.)
   "sign-bayruha": [
-    ["Bayruha was the garden Abu Talhah loved least.", "False", "Bayruha, the garden he loved most"],
+    ["Bayruha was the garden Abu Talhah loved least.", "False", "Bayruha, the garden Abu Talhah loved most"],
     ["To reach true goodness, what should we give?", "Something we love", "Spend from what you love"],
     ["What made him give it?", "The ayah about giving what you love", "Spend from what you love"],
     ["Which ayah made Abu Talhah give his garden?", "Spend from what you love", "Spend from what you love"],
@@ -831,9 +831,9 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Ayahs 81-101: what are they about?", "Give what you love", "Spend from what you love"],
     ["How do you reach al-birr, in 3:92?", "By giving from what you love", "Spend from what you love"],
     ["Ayah 3:92 says we reach righteousness by spending what we love.", "True", "Spend from what you love"],
-    ["Abu Talhah obeyed 3:92 right away.", "True", "Spend from what you love", "He gave it for Allah"],
-    ["Whom did the Prophet ﷺ tell him to give it to?", "His relatives", "Shared among his relatives"],
-    ["Where did the Prophet ﷺ tell him to give it?", "To his relatives", "Shared among his relatives"]
+    ["Abu Talhah obeyed 3:92 right away.", "True", "Spend from what you love", "Abu Talhah gave it for Allah"],
+    ["Whom did the Prophet ﷺ tell him to give it to?", "His relatives", "Shared among Abu Talhah's relatives"],
+    ["Where did the Prophet ﷺ tell him to give it?", "To his relatives", "Shared among Abu Talhah's relatives"]
   ],
   // Zakat al-Fitr: a sa' for every one, young or old, of dates or barley, given before the Eid prayer (Sahih al-Bukhari
   // 1503, 1506).
@@ -864,27 +864,27 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Water for a thirsty dog: he drank from a well, saw a dog licking mud from thirst, filled his shoe with water and
   // gave it a drink; Allah thanked him and forgave him; a reward for any living being (Sahih al-Bukhari 2363, 2466).
   "sign-thirsty-dog": [
-    ["How did the man carry the water?", "In his shoe", "He filled his shoe with water"],
-    ["How did the man carry water up to the dog?", "In his shoe", "He filled his shoe with water", "And gave the dog a drink"],
-    ["How did the man carry water for the dog?", "In his shoe", "He filled his shoe with water", "And gave the dog a drink"],
-    ["What did Allah do for him?", "Thanked and forgave him", "Allah thanked him and forgave him"],
-    ["What did Allah do for the man?", "Forgave him", "Allah thanked him and forgave him"],
-    ["What did Allah do for him?", "Allah thanked him and forgave him", "Allah thanked him and forgave him"],
-    ["Is there reward for kindness to animals?", "Yes, for every living thing", "Allah thanked him and forgave him", "A reward for any living being"],
-    ["There is reward only for kindness to people, not animals.", "False", "Allah thanked him and forgave him", "A reward for any living being"],
-    ["There is a reward for being kind to any living being.", "True", "Allah thanked him and forgave him", "A reward for any living being"]
+    ["How did the man carry the water?", "In his shoe", "The man filled his shoe with water"],
+    ["How did the man carry water up to the dog?", "In his shoe", "The man filled his shoe with water", "And gave the dog a drink"],
+    ["How did the man carry water for the dog?", "In his shoe", "The man filled his shoe with water", "And gave the dog a drink"],
+    ["What did Allah do for him?", "Thanked and forgave him", "Allah thanked and forgave the man"],
+    ["What did Allah do for the man?", "Forgave him", "Allah thanked and forgave the man"],
+    ["What did Allah do for him?", "Allah thanked him and forgave him", "Allah thanked and forgave the man"],
+    ["Is there reward for kindness to animals?", "Yes, for every living thing", "Allah thanked and forgave the man", "A reward for any living being"],
+    ["There is reward only for kindness to people, not animals.", "False", "Allah thanked and forgave the man", "A reward for any living being"],
+    ["There is a reward for being kind to any living being.", "True", "Allah thanked and forgave the man", "A reward for any living being"]
   ],
   // A thorny branch moved out of the way: Allah thanked him and forgave him; and removing harm from the way is charity
   // (Sahih al-Bukhari 652, 2989). ("What did Allah do for him?", "Forgave him" is also asked of the trader who forgave
   // his debtors, so it stays as it is.)
   "sign-thorny-branch": [
-    ["What did the man move off the path?", "A thorny branch", "A thorny branch across the way", "He moved it out of the way"],
-    ["What did he ﷺ tell Abu Barzah to do?", "Remove harm from paths", "He moved it out of the way"],
-    ["You see a thorn on the path. What do you do?", "Move it: that is charity", "He moved it out of the way", "Removing harm from the way is charity"],
-    ["Clearing a path of harm is a good deed.", "True", "Allah thanked him and forgave him", "Removing harm from the way is charity"],
-    ["Moving harm off a path is a good deed to do.", "True", "Allah thanked him and forgave him", "Removing harm from the way is charity"],
-    ["Helping strangers on the road gets reward.", "True", "Allah thanked him and forgave him", "Removing harm from the way is charity"],
-    ["Moving something harmful off the path is a ____.", "charity", "Allah thanked him and forgave him", "Removing harm from the way is charity"]
+    ["What did the man move off the path?", "A thorny branch", "A thorny branch across the way", "The man moved it out of the way"],
+    ["What did he ﷺ tell Abu Barzah to do?", "Remove harm from paths", "The man moved it out of the way"],
+    ["You see a thorn on the path. What do you do?", "Move it: that is charity", "The man moved it out of the way", "Removing harm from the way is charity"],
+    ["Clearing a path of harm is a good deed.", "True", "Allah thanked and forgave the man", "Removing harm from the way is charity"],
+    ["Moving harm off a path is a good deed to do.", "True", "Allah thanked and forgave the man", "Removing harm from the way is charity"],
+    ["Helping strangers on the road gets reward.", "True", "Allah thanked and forgave the man", "Removing harm from the way is charity"],
+    ["Moving something harmful off the path is a ____.", "charity", "Allah thanked and forgave the man", "Removing harm from the way is charity"]
   ],
   // A tree planted or a seed sown: what a bird, a person or an animal eats from it is charity for the one who planted
   // it (Sahih al-Bukhari 2320, 6012).
@@ -899,7 +899,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Umar's land at Khaybar: the land itself kept and its fruit given in charity, never sold, given away or inherited;
   // its keeper may eat from it and feed a friend, storing nothing for himself (Sahih al-Bukhari 2737, 2777).
   "sign-waqf": [
-    ["What is a waqf?", "Property kept for charity forever", "Keep the land itself", "Never sold, gifted or inherited"],
+    ["What is a waqf?", "Property kept for charity forever", "He said: keep the land itself", "Never sold, gifted or inherited"],
     ["What did Umar do with his best land?", "Gave its fruit to charity forever", "And give its fruit in charity", "Never sold, gifted or inherited"],
     ["Umar's land could be sold later.", "False", "Never sold, gifted or inherited"],
     ["What could the keeper do?", "Eat from it and feed a friend", "Its keeper may eat and feed a friend"],
@@ -907,20 +907,20 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // Asking permission three times at Umar's door, going back, and the youngest as the witness (Sahih al-Bukhari 6245).
   "sign-permission": [
-    ["How many times should you ask to come in?", "Three", "He asked permission once", "A third time: no permission given"],
-    ["How many times should you ask to come in?", "Three times", "He asked permission once", "A third time: no permission given"],
-    ["How many times should you ask to enter?", "Three times", "He asked permission once", "A third time: no permission given"],
-    ["Why did Abu Musa leave Umar's door?", "He asked three times, no answer", "He asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to come in?", "Three", "Abu Musa asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to come in?", "Three times", "Abu Musa asked permission once", "A third time: no permission given"],
+    ["How many times should you ask to enter?", "Three times", "Abu Musa asked permission once", "A third time: no permission given"],
+    ["Why did Abu Musa leave Umar's door?", "He asked three times, no answer", "Abu Musa asked permission once", "A third time: no permission given"],
     ["Whose door did Abu Musa knock on?", "Umar's", "At Umar's door"],
-    ["If no one answers after three times, what do you do?", "Go back", "So he went back"],
-    ["What should you do if no one lets you in?", "Go back home", "So he went back"],
-    ["What should you do if you ask to come in three times with no answer?", "Go back home", "So he went back"],
-    ["What should you do if no one allows you in?", "Go back politely", "So he went back"],
-    ["What should you do after three unanswered asks?", "Return home", "So he went back"],
-    ["Abu Musa went back after asking Umar three times.", "True", "So he went back"],
-    ["What did Umar ask Abu Musa to bring?", "A witness to the hadith", "The youngest went with him as witness"],
-    ["Who did Ubayy send as the witness?", "The youngest of them", "The youngest went with him as witness"],
-    ["Who went as Abu Musa's witness?", "Abu Sa'id, the youngest", "The youngest went with him as witness"]
+    ["If no one answers after three times, what do you do?", "Go back", "So Abu Musa went back"],
+    ["What should you do if no one lets you in?", "Go back home", "So Abu Musa went back"],
+    ["What should you do if you ask to come in three times with no answer?", "Go back home", "So Abu Musa went back"],
+    ["What should you do if no one allows you in?", "Go back politely", "So Abu Musa went back"],
+    ["What should you do after three unanswered asks?", "Return home", "So Abu Musa went back"],
+    ["Abu Musa went back after asking Umar three times.", "True", "So Abu Musa went back"],
+    ["What did Umar ask Abu Musa to bring?", "A witness to the hadith", "The youngest went with Abu Musa as witness"],
+    ["Who did Ubayy send as the witness?", "The youngest of them", "The youngest went with Abu Musa as witness"],
+    ["Who went as Abu Musa's witness?", "Abu Sa'id, the youngest", "The youngest went with Abu Musa as witness"]
   ],
   // The first call to prayer in Madinah, and walking calmly to the prayer (Sahih al-Bukhari 604, 636).
   "sign-adhan": [
@@ -965,20 +965,20 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many she-camels did Ka'b have then?", "Two", "Never stronger, never richer"],
     ["Ka'b stayed behind because he was too poor to go.", "False", "Never stronger, never richer"],
     ["How was Ka'b when he stayed behind?", "Stronger and richer than ever", "Never stronger, never richer"],
-    ["What was the weather when the army left for Tabuk?", "Very hot", "Never stronger, never richer", "He kept delaying, and the army left"],
-    ["Why did Ka'b miss the army leaving for Tabuk?", "He kept putting it off", "He kept delaying, and the army left"],
-    ["What does Ka'b's delay teach us?", "Do a good deed now, not later", "He kept delaying, and the army left"],
-    ["The lesson is not to delay good deeds.", "True", "He kept delaying, and the army left"],
-    ["What did Ka'b decide to tell the Prophet ﷺ?", "The plain truth", "He told the plain truth"],
-    ["What did the Prophet ﷺ say about Ka'b?", "He has told the truth", "He told the plain truth"],
-    ["Ka'b said he had a good excuse for staying behind.", "False", "He told the plain truth"],
-    ["What saved Ka'b in the end?", "Telling the truth", "He told the plain truth"],
-    ["What saved Ka'b ibn Malik after Tabuk?", "Telling the truth", "He told the plain truth"],
-    ["Why was Ka'b saved, in his own words?", "He told the truth", "He told the plain truth"],
-    ["How long did people not speak to the three?", "Fifty nights", "Fifty nights, no one spoke to him"],
-    ["How long did the three wait, per Ka'b?", "Fifty nights", "Fifty nights, no one spoke to him"],
-    ["How did the earth feel to the three?", "Narrow, wide as it was", "Fifty nights, no one spoke to him"],
-    ["9:118 says the earth felt narrow to them.", "True", "Fifty nights, no one spoke to him"],
+    ["What was the weather when the army left for Tabuk?", "Very hot", "Never stronger, never richer", "Ka'b: I kept delaying, and the army left"],
+    ["Why did Ka'b miss the army leaving for Tabuk?", "He kept putting it off", "Ka'b: I kept delaying, and the army left"],
+    ["What does Ka'b's delay teach us?", "Do a good deed now, not later", "Ka'b: I kept delaying, and the army left"],
+    ["The lesson is not to delay good deeds.", "True", "Ka'b: I kept delaying, and the army left"],
+    ["What did Ka'b decide to tell the Prophet ﷺ?", "The plain truth", "Ka'b: I told him the plain truth"],
+    ["What did the Prophet ﷺ say about Ka'b?", "He has told the truth", "Ka'b: I told him the plain truth"],
+    ["Ka'b said he had a good excuse for staying behind.", "False", "Ka'b: I told him the plain truth"],
+    ["What saved Ka'b in the end?", "Telling the truth", "Ka'b: I told him the plain truth"],
+    ["What saved Ka'b ibn Malik after Tabuk?", "Telling the truth", "Ka'b: I told him the plain truth"],
+    ["Why was Ka'b saved, in his own words?", "He told the truth", "Ka'b: I told him the plain truth"],
+    ["How long did people not speak to the three?", "Fifty nights", "Ka'b: Fifty nights, no one spoke to me"],
+    ["How long did the three wait, per Ka'b?", "Fifty nights", "Ka'b: Fifty nights, no one spoke to me"],
+    ["How did the earth feel to the three?", "Narrow, wide as it was", "Ka'b: Fifty nights, no one spoke to me"],
+    ["9:118 says the earth felt narrow to them.", "True", "Ka'b: Fifty nights, no one spoke to me"],
     ["Who sent Ka'b the letter?", "The king of Ghassan", "A king's letter went into the oven"],
     ["What did Ka'b do with the letter?", "Burned it in the oven", "A king's letter went into the oven"],
     ["Ka'b left Madinah to join the king.", "False", "A king's letter went into the oven"]
@@ -1004,9 +1004,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // al-Bukhari 5729).
   "sign-plague": [
     ["Why did Umar decide not to enter Sham?", "A sickness had spread there", "Plague had broken out in Sham"],
-    ["What did Umar do before deciding?", "He asked the companions' advice", "He asked them all for counsel"],
-    ["Abu Ubaydah asked: are you running from Allah's decree? What did Umar say?", "From His decree to His decree", "From Allah's decree to Allah's decree"],
-    ["What was Umar's answer?", "From Allah's decree to Allah's decree", "From Allah's decree to Allah's decree"],
+    ["What did Umar do before deciding?", "He asked the companions' advice", "Umar asked them all for counsel"],
+    ["Abu Ubaydah asked: are you running from Allah's decree? What did Umar say?", "From His decree to His decree", "Umar: from Allah's decree to His decree"],
+    ["What was Umar's answer?", "From Allah's decree to Allah's decree", "Umar: from Allah's decree to His decree"],
     ["What did the Prophet ﷺ say about a land with plague?", "Do not go into it", "Do not go to it, nor flee from it"]
   ],
   // A river at the door, bathed in five times a day, like the five prayers (Sahih al-Bukhari 528).
@@ -1015,8 +1015,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What are the five prayers like, per the hadith?", "Bathing in a river", "If a river ran by your door", "And you bathed in it five times a day"],
     ["The Prophet ﷺ compared the five prayers to bathing in a river.", "True", "If a river ran by your door", "And you bathed in it five times a day"],
     ["How many times a day do Muslims pray?", "Five", "And you bathed in it five times a day"],
-    ["What do the prayers wash away?", "Sins", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"],
-    ["What do good deeds do, in 11:114?", "Remove bad deeds", "Not a trace of dirt would be left", "By the five prayers, Allah wipes out sins"]
+    ["What do the prayers wash away?", "Sins", "They said: No trace of dirt would be left", "He said: By five prayers Allah wipes sins"],
+    ["What do good deeds do, in 11:114?", "Remove bad deeds", "They said: No trace of dirt would be left", "He said: By five prayers Allah wipes sins"]
   ],
   // Believers like a building, each part holding up the other; a man came asking, and he ﷺ said: speak up for him, and
   // be rewarded (Sahih al-Bukhari 481, 6026). His laced fingers are only told, never drawn, so they are not asked here.
@@ -1056,8 +1056,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // A good friend like one who carries musk, and a bad friend like one who blows the bellows (Sahih al-Bukhari 5534).
   "sign-musk": [
     ["What is a good friend like, in the hadith?", "One carrying musk", "Like one who carries musk"],
-    ["Even if he gives you nothing, a good friend leaves a good smell.", "True", "Or you find a sweet smell from him"],
-    ["What might a bad friend do, like the bellows?", "Burn your clothes", "He burns your clothes, or you find a bad smell"]
+    ["Even if he gives you nothing, a good friend leaves a good smell.", "True", "Or you get a sweet smell from the carrier"],
+    ["What might a bad friend do, like the bellows?", "Burn your clothes", "Your clothes burn, or you get a bad smell"]
   ],
   // The people who shared a ship: those below would make a hole in their part; stopped, all are saved (Sahih
   // al-Bukhari 2493).
@@ -1076,17 +1076,17 @@ const ASKS: Record<string, readonly Ask[]> = {
   // A loan sent across the sea in a piece of wood, with Allah as witness (Sahih al-Bukhari 2291).
   "sign-log-at-sea": [
     ["Whom did the borrower name as his witness?", "Allah", "A thousand dinars, lent with Allah as witness"],
-    ["How did he send the money when he had no ship?", "Inside a piece of wood in the sea", "Money and a letter, sealed in a piece of wood", "He gave it to the sea, trusting Allah"],
-    ["The lender found the wood and the money inside it.", "True", "The lender took it home for firewood", "He opened it: his money, and the letter"]
+    ["How did he send the money when he had no ship?", "Inside a piece of wood in the sea", "Money and a letter, sealed in a piece of wood", "The borrower threw it in, trusting Allah"],
+    ["The lender found the wood and the money inside it.", "True", "The lender took it home for firewood", "The lender opened it: money and the letter"]
   ],
   // The Quran by heart, like tied camels; and keep reviewing it (Sahih al-Bukhari 5031, 5033).
   "sign-tied-camels": [
     ["What is a hafiz compared to?", "An owner of tied camels", "Is like the owner of tied camels"],
-    ["What happens if the camels are let go?", "They run away", "If he lets them go, they run away"],
+    ["What happens if the camels are let go?", "They run away", "If the owner lets them go, they run away"],
     ["Memorised Quran needs regular review.", "True", "Keep reviewing it: it slips away faster"],
     ["What slips away faster than a camel?", "The Quran we memorised", "Keep reviewing it: it slips away faster"],
     ["What are we told to do?", "Keep reviewing it", "Keep reviewing it: it slips away faster"],
-    ["Once memorised, the Quran never leaves us.", "False", "If he lets them go, they run away", "Keep reviewing it: it slips away faster"]
+    ["Once memorised, the Quran never leaves us.", "False", "If the owner lets them go, they run away", "Keep reviewing it: it slips away faster"]
   ],
   // Be in this world as a stranger or a traveler (Sahih al-Bukhari 6416), like a rider resting in a tree's shade, who
   // then goes on and leaves it (Jami at-Tirmidhi 2377).
@@ -1100,7 +1100,7 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A rider in shade soon moves on.", "True", "Then goes on, and leaves it"],
     ["A traveler does not get too attached to a road stop.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
     ["A traveler does not cling to the road.", "True", "Like a rider who rests in the shade of a tree", "Then goes on, and leaves it"],
-    ["Ibn Umar taught to expect a long life ahead.", "False", "At evening, do not wait for the morning"]
+    ["Ibn Umar taught to expect a long life ahead.", "False", "Ibn Umar: At evening, don't await morning"]
   ],
   // A believer who recites the Quran is like a citron, and one who does not like a date (Sahih al-Bukhari 5020).
   "sign-citron": [
@@ -1110,11 +1110,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // The trader who let off those in hardship, so that Allah might let him off; and Allah forgave him (Sahih al-Bukhari
   // 2078). ("What did Allah do for him?", "Forgave him" is also asked of the thorny branch, so it stays as it is.)
   "sign-forgiving-trader": [
-    ["What did the trader do when a debtor could not pay?", "He forgave him", "He told his helpers: let him off", "So that Allah may let us off"],
-    ["What did the lender do for poor debtors?", "Let them off", "He told his helpers: let him off", "So that Allah may let us off"],
-    ["What did Allah do for the trader?", "Allah forgave him", "And Allah forgave him"],
-    ["Being easy on people in debt is loved by Allah.", "True", "And Allah forgave him"],
-    ["Being gentle with people in debt is loved by Allah.", "True", "And Allah forgave him"]
+    ["What did the trader do when a debtor could not pay?", "He forgave him", "The trader told helpers: let debtors off", "So that Allah may let us off"],
+    ["What did the lender do for poor debtors?", "Let them off", "The trader told helpers: let debtors off", "So that Allah may let us off"],
+    ["What did Allah do for the trader?", "Allah forgave him", "And Allah forgave the trader"],
+    ["Being easy on people in debt is loved by Allah.", "True", "And Allah forgave the trader"],
+    ["Being gentle with people in debt is loved by Allah.", "True", "And Allah forgave the trader"]
   ],
   // Provided for like the birds, which go out in the morning hungry and come back in the evening full (Jami
   // at-Tirmidhi 2344).
@@ -1159,14 +1159,14 @@ const ASKS: Record<string, readonly Ask[]> = {
   // drink, and found it standing by him (Sahih Muslim 2747). (The lesson's question on 42:25 is about the ayah, so it
   // stays as it is.)
   "sign-lost-camel": [
-    ["What did the man lose, per Muslim 2747?", "His camel with food and drink", "A man in a desert, with his camel", "It ran off, with his food and drink"],
-    ["How does Allah feel when we repent, per Muslim 2747?", "More pleased than that man", "Then there it was, standing by him", "Allah is more pleased when we repent"]
+    ["What did the man lose, per Muslim 2747?", "His camel with food and drink", "A man riding a camel in a barren desert", "It ran off with the man's food and drink"],
+    ["How does Allah feel when we repent, per Muslim 2747?", "More pleased than that man", "Then there it was, standing by the man", "Allah is more pleased when we repent"]
   ],
   // A believer is not stung from the same hole twice (Sahih al-Bukhari 6133).
   "sign-stung-twice": [
     ["A believer is not stung twice from...?", "The same hole", "A believer is not stung", "From the same hole twice"],
-    ["What does this teach?", "Learn from what hurt you", "From the same hole twice", "He learns, and keeps away from it"],
-    ["A believer keeps making the same mistake.", "False", "A believer is not stung", "He learns, and keeps away from it"]
+    ["What does this teach?", "Learn from what hurt you", "From the same hole twice", "The believer learns, and keeps away"],
+    ["A believer keeps making the same mistake.", "False", "A believer is not stung", "The believer learns, and keeps away"]
   ],
   // The doors of good: fasting is a shield, charity puts out sins as water puts out fire, and prayer deep in the night
   // (Jami at-Tirmidhi 2616).
@@ -1216,7 +1216,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // "Shall I leave it loose and trust Allah?" "Tie it, and trust Allah" (Jami at-Tirmidhi 2517).
   "sign-tie-camel": [
     ["What did he ﷺ tell the man to do with his camel?", "Tie it, and trust Allah", "Tie it, and trust Allah"],
-    ["What is the lesson about trusting Allah?", "Do your part, then trust Him", "Tie it, and trust Allah", "Do your part, then trust Him"],
+    ["What is the lesson about trusting Allah?", "Do your part, then trust Him", "Tie it, and trust Allah", "Do your part, then trust Allah"],
     ["Trusting Allah means you never need to take care.", "False", "Shall I leave it loose, and trust Allah?", "Tie it, and trust Allah"]
   ],
   // Faith has over seventy, or sixty, branches: the highest is saying there is no god but Allah, the lowest is removing
@@ -1316,9 +1316,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // scene, so it is not asked here.)
   "sign-lamp-out": [
     ["What food did the wife have?", "Only the children's food", "Only the little ones' food: let them sleep"],
-    ["Why did they put out the light?", "So the guest could eat", "And she put out the light", "In the dark he ate, and they slept hungry"],
+    ["Why did they put out the light?", "So the guest could eat", "And she put out the light", "In the dark the guest ate; they did not"],
     ["This story led to the words of 59:9.", "True", "Then Allah revealed 59:9 about them"],
-    ["Why did they put out the lamp?", "So the guest would eat alone", "And she put out the light", "In the dark he ate, and they slept hungry"]
+    ["Why did they put out the lamp?", "So the guest would eat alone", "And she put out the light", "In the dark the guest ate; they did not"]
   ],
   // Busy serving his family, and when the time for prayer came, out to the prayer (Sahih al-Bukhari 676). (Who was
   // asked is in the scene's first words, so it is not asked.)
@@ -1331,8 +1331,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // closer to it, so he was forgiven (Sahih al-Bukhari 3470). (That repentance is open while one lives is not in the
   // scene.)
   "sign-a-span-closer": [
-    ["Where was the man going, in the hadith?", "To a town to repent", "He was told: go to such and such a village"],
-    ["Where did he die?", "On the way to the good village", "On the way, death overtook him"],
+    ["Where was the man going, in the hadith?", "To a town to repent", "The man was told: go to such a village"],
+    ["Where did he die?", "On the way to the good village", "On the way, death overtook the man"],
     ["How much closer was he to the good village?", "One span", "A span closer to that village: forgiven"],
     ["How close was he to the good town?", "One span closer", "A span closer to that village: forgiven"],
     ["What happened to him at the end?", "He was forgiven", "A span closer to that village: forgiven"]
@@ -1348,7 +1348,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // 2277). (In which city is asked on the map.)
   "sign-greeting-stone": [
     ["What did the stone in Makkah use to do?", "Greet him with salam", "A stone would greet him with salam"],
-    ["He ﷺ said he still knew that stone.", "True", "I know that stone, even now"]
+    ["He ﷺ said he still knew that stone.", "True", "He said: I know that stone, even now"]
   ],
   // Rain prayed for in the Friday khutbah, a week of it, then "around us, not on us", and out in the sun (Sahih al-Bukhari
   // 1013).
@@ -1360,7 +1360,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // The blessed water on a journey, and the food heard glorifying Allah (Sahih al-Bukhari 3579). (What flowed is asked
   // on picture cards of water, milk, honey and oil.)
   "sign-blessed-water": [
-    ["What did the Companions hear, in the hadith?", "The food glorifying Allah", "And we heard the food glorify Allah"],
+    ["What did the Companions hear, in the hadith?", "The food glorifying Allah", "Abdullah: we heard the food glorify Allah"],
     ["Whom did he ﷺ say the blessing was from?", "Allah", "Come to the water: the blessing is from Allah"]
   ],
   // Every prophet tended sheep, and he ﷺ tended the sheep of the people of Makkah for a few qirats (Sahih al-Bukhari
@@ -1394,14 +1394,14 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many deeds keep going after death?", "Three", "Except three: a charity that keeps going"],
     ["Which is one of them?", "Knowledge that benefits people", "Or knowledge that people benefit from"],
     ["Planting a tree people use, or building a well, is...", "Ongoing charity", "Except three: a charity that keeps going"],
-    ["Which of these keeps helping a person after death?", "A righteous child's dua", "Or a righteous child who prays for him"],
+    ["Which of these keeps helping a person after death?", "A righteous child's dua", "Or a righteous child praying for the dead"],
     ["How many deeds continue after death in this hadith?", "Three", "Except three: a charity that keeps going"],
     ["Useful knowledge someone left keeps rewarding him.", "True", "Or knowledge that people benefit from"],
     ["How many deeds continue after death, per Muslim 1631?", "Three", "Except three: a charity that keeps going"],
-    ["Which is one of the three, per Muslim 1631?", "A pious child who prays", "Or a righteous child who prays for him"],
+    ["Which is one of the three, per Muslim 1631?", "A pious child who prays", "Or a righteous child praying for the dead"],
     ["How many deeds continue after death?", "Three", "Except three: a charity that keeps going"],
-    ["Which is one of them?", "A child who prays for him", "Or a righteous child who prays for him"],
-    ["Dua for parents stops helping them after they die.", "False", "Or a righteous child who prays for him"]
+    ["Which is one of them?", "A child who prays for him", "Or a righteous child praying for the dead"],
+    ["Dua for parents stops helping them after they die.", "False", "Or a righteous child praying for the dead"]
   ],
   // A good deed intended is written as a full one; done, as ten to seven hundred times or more; a bad deed intended and
   // left, as a full good deed; done, as one bad deed (Sahih al-Bukhari 6491). (What 6:160 counts, and the order that
@@ -1431,7 +1431,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-safa-call": [
     ["What did Quraysh say about his honesty?", "They never heard him lie", "We have never heard you tell a lie"],
     ["What did he call himself to them?", "A plain warner", "I am a plain warner of a severe punishment"],
-    ["Abu Lahab thanked him for the warning.", "False", "Abu Lahab: only for this? And he went away"],
+    ["Abu Lahab thanked him for the warning.", "False", "Abu Lahab said: only for this? and left"],
     ["Where did the Prophet ﷺ call his people from?", "As-Safa", "He climbed as-Safa and called out to Quraysh"],
     ["Why did Quraysh say they would believe him?", "He always told the truth", "We have never heard you tell a lie"],
     ["What did he first ask them?", "Would they believe a warning from him", "If I warned of horsemen, would you believe me?"],
@@ -1440,7 +1440,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Jabir's father died in debt; he ﷺ sat on the dates and prayed for blessing, every lender was paid in full, and
   // thirteen wasqs were left over (Sahih al-Bukhari 2709).
   "sign-jabir-dates": [
-    ["What did Jabir's father leave behind?", "Debts", "Jabir's father died, and he was in debt"],
+    ["What did Jabir's father leave behind?", "Debts", "Jabir's father died and was in debt"],
     ["What did the Prophet ﷺ do with the dates?", "Sat on them and made dua", "He sat on the dates and prayed for blessing"],
     ["How many loads were left after paying everyone?", "Thirteen", "And thirteen wasqs of dates were left over"]
   ],
@@ -1458,30 +1458,30 @@ const ASKS: Record<string, readonly Ask[]> = {
   // believer (Sahih Muslim 2999). (Who is with the patient in 2:153, who is excepted in 11:11, Ayyub, and who narrated
   // it are not in the scene.)
   "sign-good-in-every-state": [
-    ["What does a believer do when something good happens?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does a believer do when something hard happens?", "Is patient", "If harm comes, he is patient: good for him"],
-    ["For a believer, both good and hard times can be good.", "True", "If joy comes, he gives thanks: good for him", "If harm comes, he is patient: good for him"],
-    ["What should a believer do when good comes, in Muslim 2999?", "Be grateful", "If joy comes, he gives thanks: good for him"],
-    ["And when hardship comes?", "Be patient", "If harm comes, he is patient: good for him"],
-    ["What does a believer do when good comes, per the hadith?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does a believer do in trouble, per the hadith?", "Is patient", "If harm comes, he is patient: good for him"],
+    ["What does a believer do when something good happens?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does a believer do when something hard happens?", "Is patient", "In harm, the believer is patient: good"],
+    ["For a believer, both good and hard times can be good.", "True", "In joy, the believer gives thanks: good", "In harm, the believer is patient: good"],
+    ["What should a believer do when good comes, in Muslim 2999?", "Be grateful", "In joy, the believer gives thanks: good"],
+    ["And when hardship comes?", "Be patient", "In harm, the believer is patient: good"],
+    ["What does a believer do when good comes, per the hadith?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does a believer do in trouble, per the hadith?", "Is patient", "In harm, the believer is patient: good"],
     ["Good in every affair is for everyone, not only believers.", "False", "And this is for no one but the believer"],
-    ["What does the believer do when good comes, per the hadith?", "He gives thanks", "If joy comes, he gives thanks: good for him"],
-    ["For the believer, both ease and hardship can be good.", "True", "If joy comes, he gives thanks: good for him", "If harm comes, he is patient: good for him"],
-    ["What does a believer do in good times, in the hadith?", "He thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does a believer do in trouble?", "He is patient", "If harm comes, he is patient: good for him"],
-    ["What does the believer do in joy, in the hadith?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does the believer do in hardship, in the hadith?", "Is patient", "If harm comes, he is patient: good for him"],
+    ["What does the believer do when good comes, per the hadith?", "He gives thanks", "In joy, the believer gives thanks: good"],
+    ["For the believer, both ease and hardship can be good.", "True", "In joy, the believer gives thanks: good", "In harm, the believer is patient: good"],
+    ["What does a believer do in good times, in the hadith?", "He thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does a believer do in trouble?", "He is patient", "In harm, the believer is patient: good"],
+    ["What does the believer do in joy, in the hadith?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does the believer do in hardship, in the hadith?", "Is patient", "In harm, the believer is patient: good"],
     ["In the hadith, every affair of a believer holds good.", "True", "Wonderful: every affair of the believer is good"],
-    ["What does a believer do in joy, in the hadith?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does he do in trouble, in the hadith?", "Endures it patiently", "If harm comes, he is patient: good for him"],
-    ["What does a believer do in good times?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does a believer do in hard times?", "Stays patient", "If harm comes, he is patient: good for him"],
-    ["What does a believer do in happy times?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does he do in trouble?", "Shows patience", "If harm comes, he is patient: good for him"],
+    ["What does a believer do in joy, in the hadith?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does he do in trouble, in the hadith?", "Endures it patiently", "In harm, the believer is patient: good"],
+    ["What does a believer do in good times?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does a believer do in hard times?", "Stays patient", "In harm, the believer is patient: good"],
+    ["What does a believer do in happy times?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does he do in trouble?", "Shows patience", "In harm, the believer is patient: good"],
     ["For a believer, there is good in every affair.", "True", "Wonderful: every affair of the believer is good"],
-    ["What does a believer do when good comes?", "Thanks Allah", "If joy comes, he gives thanks: good for him"],
-    ["What does a believer do in trouble?", "Stays patient", "If harm comes, he is patient: good for him"],
+    ["What does a believer do when good comes?", "Thanks Allah", "In joy, the believer gives thanks: good"],
+    ["What does a believer do in trouble?", "Stays patient", "In harm, the believer is patient: good"],
     ["Every affair holds good for a believer.", "True", "Wonderful: every affair of the believer is good"]
   ],
   // Who most deserves good company: your mother, three times, then your father (Sahih al-Bukhari 5971). (The ayahs of
@@ -1561,7 +1561,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // love; and they had never been so glad (Sahih al-Bukhari 3688). (Whom Anas loved, and 42:18, are not in the scene.)
   "sign-those-you-love": [
     ["What did the Prophet ﷺ promise a man who loved Allah and His Messenger?", "You will be with those you love", "You will be with those you love"],
-    ["The companions were very happy to hear they will be with those they love.", "True", "We had never been so glad"],
+    ["The companions were very happy to hear they will be with those they love.", "True", "Anas: We had never been so glad"],
     ["What did the Prophet ﷺ ask the man back?", "What have you prepared for it?", "What have you prepared for it?"],
     ["What did the man say he had prepared?", "Love of Allah and His Messenger", "Nothing, but I love Allah and His Messenger"],
     ["What was the good news?", "You will be with those you love", "You will be with those you love"],
@@ -1569,7 +1569,7 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What was the good news, per Bukhari 3688?", "You will be with those you love", "You will be with those you love"],
     ["What did the Prophet ﷺ ask the man back?", "What have you prepared?", "What have you prepared for it?"],
     ["What did the man say he had?", "Love of Allah and His Messenger", "Nothing, but I love Allah and His Messenger"],
-    ["The Companions were very glad to hear this answer.", "True", "We had never been so glad"]
+    ["The Companions were very glad to hear this answer.", "True", "Anas: We had never been so glad"]
   ],
   // When he ﷺ finished his prayer he asked forgiveness three times, then said: O Allah, You are Peace, and peace is from
   // You; blessed are You, Owner of Majesty and Honor (Sahih Muslim 591).
@@ -1658,11 +1658,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Two people do the same deed. Can their reward differ?", "Yes, by their intentions", "Deeds are only by intentions", "Each person gets only what he intended"],
     ["What decides the reward of a hijrah?", "The intention behind it", "Deeds are only by intentions", "Each person gets only what he intended"],
     ["Someone who emigrated only to marry gets what?", "Only what he went for", "Whoever emigrated for the world, or to marry", "His emigration is for what he emigrated for"],
-    ["Which companion told the hadith that a hijrah is by intention?", "Umar", "I heard Umar on the minbar say"],
+    ["Which companion told the hadith that a hijrah is by intention?", "Umar", "Alqamah: I heard Umar on the minbar say"],
     ["What does the reward of deeds depend on?", "Intentions", "Deeds are only by intentions"],
     ["What will each person get?", "What he intended", "Each person gets only what he intended"],
     ["Which hadith did Umar teach from the minbar?", "Actions are only by intentions", "Deeds are only by intentions"],
-    ["Who did Alqamah ibn Waqqas hear on the minbar?", "Umar ibn al-Khattab", "I heard Umar on the minbar say"],
+    ["Who did Alqamah ibn Waqqas hear on the minbar?", "Umar ibn al-Khattab", "Alqamah: I heard Umar on the minbar say"],
     ["Which hadith did he hear from Umar?", "Actions are by intentions", "Deeds are only by intentions"]
   ],
   // Two expressions, easy for the tongue to say, but very heavy in the balance and very dear to the Most Merciful:
@@ -1708,22 +1708,22 @@ const ASKS: Record<string, readonly Ask[]> = {
   // not in the scene.)
   "sign-three-signs": [
     ["How many signs of a hypocrite did the Prophet ﷺ name?", "Three", "The signs of a hypocrite are three"],
-    ["Which is a sign of a hypocrite?", "Breaking promises", "Whenever he promises, he always breaks it"],
-    ["Keeping your promise is part of good character.", "True", "Whenever he promises, he always breaks it"],
+    ["Which is a sign of a hypocrite?", "Breaking promises", "The hypocrite always breaks a promise"],
+    ["Keeping your promise is part of good character.", "True", "The hypocrite always breaks a promise"],
     ["How many signs of a hypocrite are in the hadith?", "Three", "The signs of a hypocrite are three"],
-    ["Which is NOT one of the three signs?", "Praying at night", "Whenever he speaks, he tells a lie", "If you trust him, he proves to be dishonest"],
-    ["Keeping promises protects a Muslim from hypocrisy.", "True", "Whenever he promises, he always breaks it"],
-    ["What does a hypocrite do when he promises?", "He breaks it", "Whenever he promises, he always breaks it"],
-    ["Telling lies is one of the hypocrite's signs.", "True", "Whenever he speaks, he tells a lie"],
+    ["Which is NOT one of the three signs?", "Praying at night", "The hypocrite lies whenever speaking", "Trusted, the hypocrite proves dishonest"],
+    ["Keeping promises protects a Muslim from hypocrisy.", "True", "The hypocrite always breaks a promise"],
+    ["What does a hypocrite do when he promises?", "He breaks it", "The hypocrite always breaks a promise"],
+    ["Telling lies is one of the hypocrite's signs.", "True", "The hypocrite lies whenever speaking"],
     ["How many signs of a hypocrite are named?", "Three", "The signs of a hypocrite are three"],
-    ["What does a hypocrite do with promises?", "Breaks them", "Whenever he promises, he always breaks it"],
+    ["What does a hypocrite do with promises?", "Breaks them", "The hypocrite always breaks a promise"],
     ["How many signs of a hypocrite are in Bukhari 33?", "Three", "The signs of a hypocrite are three"],
-    ["What does a hypocrite do when he speaks?", "He tells a lie", "Whenever he speaks, he tells a lie"],
-    ["Breaking promises is a sign of a hypocrite.", "True", "Whenever he promises, he always breaks it"],
-    ["Betraying a trust is one of the three signs.", "True", "If you trust him, he proves to be dishonest"],
-    ["Telling lies is one of the three signs.", "True", "Whenever he speaks, he tells a lie"],
-    ["Which is one of the signs?", "Breaking promises", "Whenever he promises, he always breaks it"],
-    ["Lying is a sign of hypocrisy.", "True", "Whenever he speaks, he tells a lie"]
+    ["What does a hypocrite do when he speaks?", "He tells a lie", "The hypocrite lies whenever speaking"],
+    ["Breaking promises is a sign of a hypocrite.", "True", "The hypocrite always breaks a promise"],
+    ["Betraying a trust is one of the three signs.", "True", "Trusted, the hypocrite proves dishonest"],
+    ["Telling lies is one of the three signs.", "True", "The hypocrite lies whenever speaking"],
+    ["Which is one of the signs?", "Breaking promises", "The hypocrite always breaks a promise"],
+    ["Lying is a sign of hypocrisy.", "True", "The hypocrite lies whenever speaking"]
   ],
   // He who calls to righteousness has a reward like those who adhered to it, without their rewards being diminished;
   // and he who calls to error carries its sin like those who committed it (Sahih Muslim 2674). (What 16:25 and Ibn
@@ -1785,11 +1785,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-dearest-deeds": [
     ["____ on time is a deed Allah loves most.", "Salah", "The prayers at their early fixed times"],
     ["Which deed did the Prophet ﷺ name first as dearest to Allah?", "Prayer on time", "The prayers at their early fixed times"],
-    ["What came second?", "Kindness to parents", "Then, to be good and dutiful to your parents"],
+    ["What came second?", "Kindness to parents", "Then, to be good and dutiful to parents"],
     ["Which deed does Allah love most, per the hadith?", "Prayer on time", "The prayers at their early fixed times"],
-    ["What came next after prayer, per the hadith?", "Kindness to parents", "Then, to be good and dutiful to your parents"],
+    ["What came next after prayer, per the hadith?", "Kindness to parents", "Then, to be good and dutiful to parents"],
     ["Which deed is dearest to Allah, per the hadith?", "Prayer at its early fixed time", "The prayers at their early fixed times"],
-    ["What came next after prayer?", "Being good to parents", "Then, to be good and dutiful to your parents"],
+    ["What came next after prayer?", "Being good to parents", "Then, to be good and dutiful to parents"],
     ["Delaying prayer to the last minute is best.", "False", "The prayers at their early fixed times"]
   ],
   // Truthfulness leads to righteousness and righteousness to Paradise, and a man keeps telling the truth until he is
@@ -1806,11 +1806,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // faults, Allah hides his; Allah helps a servant while he helps his brother; and a path for knowledge is made easy
   // to Paradise (Sahih Muslim 2699a). (Which knowledge is meant, and these lessons, are not in the scene.)
   "sign-ease-a-hardship": [
-    ["Ease someone's hardship. What does Allah do?", "Eases yours on Judgment Day", "Allah relieves him on the Day of Resurrection"],
-    ["How long does Allah help a servant?", "While he helps his brother", "Allah helps him as long as he helps his brother"],
-    ["Hiding a Muslim's faults is also rewarded.", "True", "He who hides a Muslim's faults, Allah hides his"],
-    ["When does Allah help a person?", "While they help their brother", "Allah helps him as long as he helps his brother"],
-    ["What happens when you hide a friend's mistake?", "Allah hides yours", "He who hides a Muslim's faults, Allah hides his"],
+    ["Ease someone's hardship. What does Allah do?", "Eases yours on Judgment Day", "Allah relieves theirs on Resurrection Day"],
+    ["How long does Allah help a servant?", "While he helps his brother", "Allah helps whoever helps their brother"],
+    ["Hiding a Muslim's faults is also rewarded.", "True", "Allah covers whoever covers a Muslim"],
+    ["When does Allah help a person?", "While they help their brother", "Allah helps whoever helps their brother"],
+    ["What happens when you hide a friend's mistake?", "Allah hides yours", "Allah covers whoever covers a Muslim"],
     ["Seeking knowledge makes the path to Jannah easy.", "True", "A path for knowledge, made easy to Paradise"],
     ["Seeking knowledge makes which path easy?", "The path to Jannah", "A path for knowledge, made easy to Paradise"]
   ],
@@ -1873,9 +1873,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // (Sahih al-Bukhari 597). (Sleeping through a prayer, the prayer times, how serious missing one is and 20:14 are
   // not in the scene.)
   "sign-forgotten-prayer": [
-    ["What should one do with a forgotten prayer?", "Pray it when remembered", "He should pray it when he remembers it"],
+    ["What should one do with a forgotten prayer?", "Pray it when remembered", "They should pray it when they remember it"],
     ["Is there another expiation, in the hadith?", "No, only praying it", "There is no expiation except to pray it"],
-    ["If you miss a prayer, pray it as ____ as you can.", "soon", "He should pray it when he remembers it"]
+    ["If you miss a prayer, pray it as ____ as you can.", "soon", "They should pray it when they remember it"]
   ],
   // Whoever has a mustard seed of pride in his heart will not enter Paradise; liking fine clothes and shoes is not
   // pride, for Allah is beautiful and loves beauty; pride is rejecting the truth and looking down on people (Sahih
@@ -1942,15 +1942,15 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Two men abused each other and one became red with anger; if he said: I seek refuge with Allah from Satan, all his
   // anger would go away (Sahih al-Bukhari 3282). (Who narrated it and 7:200 are not in the scene.)
   "sign-refuge-from-anger": [
-    ["What words take anger away, in the hadith?", "I seek refuge with Allah from Shaytan", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
+    ["What words take anger away, in the hadith?", "I seek refuge with Allah from Shaytan", "If the man says: I seek refuge with Allah", "All the man's anger would go away"],
     ["What was happening when the Prophet ﷺ said this?", "Two men were arguing", "Two men abused each other"],
-    ["What word takes anger away, as the Prophet ﷺ said?", "A'udhu billahi minash-shaytan", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
-    ["What does A'udhu billah mean?", "I seek refuge in Allah", "If he says: I seek refuge with Allah from Satan"],
-    ["Anger can come from Shaytan.", "True", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
-    ["What calms anger, in Bukhari 3282?", "Seeking refuge from Shaytan", "If he says: I seek refuge with Allah from Satan", "All his anger would go away"],
+    ["What word takes anger away, as the Prophet ﷺ said?", "A'udhu billahi minash-shaytan", "If the man says: I seek refuge with Allah", "All the man's anger would go away"],
+    ["What does A'udhu billah mean?", "I seek refuge in Allah", "If the man says: I seek refuge with Allah"],
+    ["Anger can come from Shaytan.", "True", "If the man says: I seek refuge with Allah", "All the man's anger would go away"],
+    ["What calms anger, in Bukhari 3282?", "Seeking refuge from Shaytan", "If the man says: I seek refuge with Allah", "All the man's anger would go away"],
     ["What were the two men doing, in the hadith?", "Arguing", "Two men abused each other"],
-    ["What word did the Prophet ﷺ teach, in the hadith?", "I seek refuge with Allah from Satan", "I know a word that would calm him", "If he says: I seek refuge with Allah from Satan"],
-    ["What would happen if he said it, in the hadith?", "His anger would go away", "All his anger would go away"]
+    ["What word did the Prophet ﷺ teach, in the hadith?", "I seek refuge with Allah from Satan", "He said: I know a word to calm the man", "If the man says: I seek refuge with Allah"],
+    ["What would happen if he said it, in the hadith?", "His anger would go away", "All the man's anger would go away"]
   ],
   // In Paradise there is a gate called ar-Rayyan; those who fast enter through it and none but them, and once they
   // have entered it is closed (Sahih al-Bukhari 1896). (How many gates there are and who narrated it are not in the
@@ -1981,11 +1981,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // (Sahih Muslim 2577). (Forgiveness, the wicked not shrinking His dominion, who narrated it, 10:44, 40:17 and Ibn
   // Kathir are not in the scene.)
   "sign-needle-in-the-sea": [
-    ["What has Allah forbidden for Himself, per the hadith?", "Oppression", "I have forbidden oppression for Myself"],
-    ["Allah wrongs people a little now and then.", "False", "I have forbidden oppression for Myself"],
+    ["What has Allah forbidden for Himself, per the hadith?", "Oppression", "Allah: I forbade oppression for Myself"],
+    ["Allah wrongs people a little now and then.", "False", "Allah: I forbade oppression for Myself"],
     ["What happens to Allah's kingdom if He gives everyone what they ask?", "It does not decrease", "That would not decrease what I have", "Any more than a needle decreases the sea"],
-    ["What has Allah forbidden for Himself, in the hadith?", "Oppression", "I have forbidden oppression for Myself"],
-    ["What has Allah forbidden for Himself, per Muslim 2577?", "Injustice", "I have forbidden oppression for Myself"],
+    ["What has Allah forbidden for Himself, in the hadith?", "Oppression", "Allah: I forbade oppression for Myself"],
+    ["What has Allah forbidden for Himself, per Muslim 2577?", "Injustice", "Allah: I forbade oppression for Myself"],
     ["What does Allah say, per Muslim 2577?", "Seek food of Me, I will feed you", "Seek food of Me and I shall feed you"],
     ["What must we seek for guidance?", "Ask Allah for it", "Seek guidance of Me and I shall guide you"]
   ],
@@ -2031,13 +2031,13 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How far apart are two levels?", "Like the sky and the earth", "The distance between each of two grades", "Is like that between the heaven and the earth"],
     ["How many levels does Paradise have, in the hadith?", "One hundred", "Paradise has one hundred grades"],
     ["What should we ask Allah for, in the hadith?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
-    ["What flows from Al-Firdaws, in the hadith?", "The rivers of Paradise", "From it originate the rivers of Paradise"],
+    ["What flows from Al-Firdaws, in the hadith?", "The rivers of Paradise", "Perhaps he said: from it rivers originate"],
     ["How far apart are two grades, in the hadith?", "Like heaven and earth", "The distance between each of two grades", "Is like that between the heaven and the earth"],
-    ["What comes from Al-Firdaws, in the hadith?", "The rivers of Paradise", "From it originate the rivers of Paradise"],
+    ["What comes from Al-Firdaws, in the hadith?", "The rivers of Paradise", "Perhaps he said: from it rivers originate"],
     ["What should we ask Allah for, per the hadith?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
     ["What should we ask Allah for, per Bukhari 2790?", "Al-Firdaws", "When you ask Allah, ask for al-Firdaws"],
     ["How many grades does Paradise have?", "One hundred", "Paradise has one hundred grades"],
-    ["What flows from Al-Firdaws?", "The rivers of Paradise", "From it originate the rivers of Paradise"],
+    ["What flows from Al-Firdaws?", "The rivers of Paradise", "Perhaps he said: from it rivers originate"],
     ["What should we ask Allah for?", "Al-Firdaus", "When you ask Allah, ask for al-Firdaws"],
     ["All of Paradise is one single level.", "False", "Paradise has one hundred grades"]
   ],
@@ -2046,7 +2046,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // when the surah came are not in the scene.)
   "sign-faith-at-the-pleiades": [
     ["What did he say Salman's people would reach?", "Faith, even at the stars", "If faith were at Ath-Thurayya, the Pleiades", "Men, or a man, from these would attain it"],
-    ["How many times was the question asked?", "Three times", "Who are they, O Allah's Messenger?", "I repeated my question thrice"],
+    ["How many times was the question asked?", "Three times", "Abu Hurairah: Who are they?", "I repeated my question thrice"],
     ["Where did the Prophet ﷺ say faith might be?", "At Ath-Thurayya", "If faith were at Ath-Thurayya, the Pleiades"]
   ],
   // Allah made Makkah a sanctuary since the creation of the heavens and the earth, till the Day of Resurrection; its
@@ -2068,8 +2068,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-house-in-paradise": [
     ["What does Allah build for one who builds a masjid?", "A place in Paradise", "Allah would build for him", "A similar place in Paradise"],
     ["What does Allah build for one who builds a masjid?", "A similar place in Paradise", "Allah would build for him", "A similar place in Paradise"],
-    ["What was being rebuilt when the hadith was told?", "The Prophet's ﷺ masjid", "Whoever built a mosque"],
-    ["Which masjid did Uthman rebuild?", "The Prophet's ﷺ masjid", "Whoever built a mosque"],
+    ["What was being rebuilt when the hadith was told?", "The Prophet's ﷺ masjid", "He said: Whoever built a mosque"],
+    ["Which masjid did Uthman rebuild?", "The Prophet's ﷺ masjid", "He said: Whoever built a mosque"],
     ["The masjid should be built for Allah's pleasure.", "True", "Intending Allah's Pleasure"],
     ["The builder should intend Allah's pleasure.", "True", "Intending Allah's Pleasure"]
   ],
@@ -2162,16 +2162,16 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which young person is among them?", "A youth raised worshipping Allah", "A just ruler, a youth brought up in worship"],
     ["Which youth is shaded, per the hadith?", "One raised in worship of Allah", "A just ruler, a youth brought up in worship"],
     ["Which other one is shaded, per Bukhari 660?", "A just ruler", "A just ruler, a youth brought up in worship"],
-    ["How does one of them give charity?", "So secretly the left hand doesn't know", "His left hand knows not what his right gave"],
-    ["How secretly does the man give charity?", "His left hand does not know", "His left hand knows not what his right gave"],
-    ["Charity counts only if people see it.", "False", "His left hand knows not what his right gave"],
-    ["Who weeps among the seven, per Bukhari 660?", "One who remembers Allah alone", "Remembering Allah alone, his tears flow"],
+    ["How does one of them give charity?", "So secretly the left hand doesn't know", "Left hand knows not what the right gave"],
+    ["How secretly does the man give charity?", "His left hand does not know", "Left hand knows not what the right gave"],
+    ["Charity counts only if people see it.", "False", "Left hand knows not what the right gave"],
+    ["Who weeps among the seven, per Bukhari 660?", "One who remembers Allah alone", "One remembers Allah alone, eyes in tears"],
     // The same hadith in Sahih al-Bukhari 1423. (What 2:271 says, and whether giving openly is allowed, are not in the
     // scene.)
-    ["How secret is the charity in Bukhari 1423?", "The left hand doesn't know", "His left hand knows not what his right gave"],
+    ["How secret is the charity in Bukhari 1423?", "The left hand doesn't know", "Left hand knows not what the right gave"],
     ["How many are shaded, per Bukhari 1423?", "Seven", "Allah will give shade to seven"],
     ["Who is the first of the seven named?", "A just ruler", "A just ruler, a youth brought up in worship"],
-    ["Weeping from fear of Allah when alone is praised.", "True", "Remembering Allah alone, his tears flow"]
+    ["Weeping from fear of Allah when alone is praised.", "True", "One remembers Allah alone, eyes in tears"]
   ],
   // Fasting is a shield; if someone fights him, he says: I am fasting; the smell of his mouth is better with Allah than
   // musk; he has left his food and drink for My sake, the fast is for Me; and the fasting person has two joys, at
@@ -2179,17 +2179,17 @@ const ASKS: Record<string, readonly Ask[]> = {
   // not part of the Quran, are not in the scene.)
   "sign-two-joys": [
     ["What did the Prophet ﷺ call fasting?", "A shield", "Fasting is a shield"],
-    ["Someone insults you while fasting. What do you say?", "I am fasting", "If someone fights him, he says: I am fasting"],
-    ["A fasting person should stay calm and avoid fights.", "True", "If someone fights him, he says: I am fasting"],
-    ["Why does Allah love the fasting person?", "He left food and drink for Allah", "He has left his food and drink for My sake"],
+    ["Someone insults you while fasting. What do you say?", "I am fasting", "If someone fights, say twice: I am fasting"],
+    ["A fasting person should stay calm and avoid fights.", "True", "If someone fights, say twice: I am fasting"],
+    ["Why does Allah love the fasting person?", "He left food and drink for Allah", "Allah: they leave food and drink for Me"],
     ["Which deed did Allah say is for Him?", "Fasting", "The fast is for Me, and I will reward it"],
     ["To Allah, a fasting mouth smells better than what?", "Musk", "Better with Allah than the smell of musk"],
     ["Musk is a famous sweet perfume.", "True", "Better with Allah than the smell of musk"],
     ["How many joys does a fasting person have?", "Two", "The fasting person has two joys"],
-    ["When is the fasting person's first joy?", "When breaking the fast", "One at the time of breaking his fast"],
-    ["When is the first joy?", "When breaking the fast", "One at the time of breaking his fast"],
-    ["Feeling happy at iftar is part of the reward.", "True", "One at the time of breaking his fast"],
-    ["When is the second joy?", "When meeting his Lord", "And the other when he will meet his Lord"]
+    ["When is the fasting person's first joy?", "When breaking the fast", "One at the time of breaking the fast"],
+    ["When is the first joy?", "When breaking the fast", "One at the time of breaking the fast"],
+    ["Feeling happy at iftar is part of the reward.", "True", "One at the time of breaking the fast"],
+    ["When is the second joy?", "When meeting his Lord", "And the other, when they meet their Lord"]
   ],
   // When he passed by al-Hijr, he said: do not enter the dwellings of those who wronged themselves unless you enter
   // weeping, lest what befell them befall you; if you do not weep, do not enter. Then he covered his head and hurried
@@ -2216,8 +2216,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How is every child born, in the hadith?", "On the true faith", "Every child is born on the fitrah"],
     ["Children are born already sinful.", "False", "Every child is born on the fitrah"],
     ["Children are born carrying the sins of others.", "False", "Every child is born on the fitrah"],
-    ["Who shapes a child after that?", "The parents", "His parents shape him into another religion"],
-    ["Who can change the child, in the hadith?", "His parents", "His parents shape him into another religion"],
+    ["Who shapes a child after that?", "The parents", "Parents make one Jew, Christian or Magian"],
+    ["Who can change the child, in the hadith?", "His parents", "Parents make one Jew, Christian or Magian"],
     ["What example did he give?", "An animal born whole", "As an animal gives birth to a whole young one"]
   ],
   // No good deeds done on other days are better than those done on these, the first ten days of Dhul-Hijjah; not even
@@ -2239,8 +2239,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // are not in the scene; which bird came has its own picture.)
   "sign-sparrow-and-the-sea": [
     ["What was Musa asked, in the hadith?", "Who is the most learned?", "Musa was asked: who is the most learned?"],
-    ["Why was Musa corrected, in the hadith?", "He did not leave knowledge to Allah", "He said: I am the most learned", "At the two seas is one more learned than you"],
-    ["What did the sparrow's sip stand for?", "How little we know next to Allah", "Our knowledge has not decreased Allah's", "Except as this sparrow decreased the sea"],
+    ["Why was Musa corrected, in the hadith?", "He did not leave knowledge to Allah", "Musa said: I am the most learned", "At the two seas is one more learned than you"],
+    ["What did the sparrow's sip stand for?", "How little we know next to Allah", "Al-Khidr: our knowing lessens not Allah's", "Except as this sparrow decreased the sea"],
     ["What did the Prophet ﷺ wish for Musa?", "That he had been more patient", "If only Musa had been more patient"],
     ["What would more patience have brought, in the hadith?", "More of the story told to us", "If only Musa had been more patient"]
   ],
@@ -2262,11 +2262,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // from me, and give her glad tidings of a house in Paradise of qasab, of hollow pearl, with no noise in it and no toil
   // (Sahih al-Bukhari 3820). (What 15:48 says is not in the scene.)
   "sign-house-of-pearl": [
-    ["Who sent salam to Khadijah?", "Allah, through Jibril", "Give her salam from her Lord and from me"],
+    ["Who sent salam to Khadijah?", "Allah, through Jibril", "Jibril: Salam to her from her Lord and me"],
     ["What was Khadijah bringing when Jibril came?", "A dish of food", "With a dish of food or drink"],
     ["What is her palace in Jannah free of?", "Noise and tiredness", "With no noise in it and no toil"],
     ["What will her palace in Paradise NOT have?", "Noise or tiredness", "With no noise in it and no toil"],
-    ["Who sent salam to Khadijah, along with Jibril?", "Her Lord, Allah", "Give her salam from her Lord and from me"],
+    ["Who sent salam to Khadijah, along with Jibril?", "Her Lord, Allah", "Jibril: Salam to her from her Lord and me"],
     ["What was in Khadijah's palace, in the hadith?", "No noise and no fatigue", "With no noise in it and no toil"]
   ],
   // In Paradise there is a tree in whose shade a rider could travel for a hundred years and not cross it (Sahih
@@ -2332,10 +2332,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   // whom no one notices to give him charity, and who does not stand up to ask people (Sahih al-Bukhari 1479). (What
   // Ibn Kathir says of 51:19 is not in the scene.)
   "sign-the-hidden-poor": [
-    ["Who is the real poor person, per Abu Hurayrah?", "One whose need is hidden", "But the one who does not have enough", "No one notices him, to give him charity"],
-    ["The real poor person, in the hadith, does not beg.", "True", "And he does not stand up to ask people"],
-    ["What does the hadith teach givers to do?", "Look out for quiet need", "But the one who does not have enough", "No one notices him, to give him charity"],
-    ["Who is truly poor, per Bukhari 1479?", "One whose need is unknown", "But the one who does not have enough", "No one notices him, to give him charity"],
+    ["Who is the real poor person, per Abu Hurayrah?", "One whose need is hidden", "But the one who does not have enough", "Whom no one notices, to give charity"],
+    ["The real poor person, in the hadith, does not beg.", "True", "And who does not stand up to ask people"],
+    ["What does the hadith teach givers to do?", "Look out for quiet need", "But the one who does not have enough", "Whom no one notices, to give charity"],
+    ["Who is truly poor, per Bukhari 1479?", "One whose need is unknown", "But the one who does not have enough", "Whom no one notices, to give charity"],
     ["Who is not the poor meant, per Bukhari 1479?", "One who goes round asking", "The poor is not the one who goes around"]
   ],
   // One came to him in very white clothes and asked: tell me of Islam, of iman and of ihsan. Ihsan: worship Allah as if
@@ -2370,14 +2370,14 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who came to ask about Islam, iman and ihsan?", "Jibril, as a man", "Jibril came to teach you your religion"],
     ["Even when we can't see Allah, He sees us.", "True", "And if you do not see Him, He sees you"],
     ["Who came in very white clothes to ask the Prophet ﷺ?", "Jibril", "Jibril came to teach you your religion"],
-    ["Which three did Jibril ask about?", "Islam, Iman and Ihsan", "Tell me of Islam, of iman, of ihsan"],
+    ["Which three did Jibril ask about?", "Islam, Iman and Ihsan", "The man: Tell me of Islam, iman, ihsan"],
     ["Why did Jibril come?", "To teach the Muslims their religion", "Jibril came to teach you your religion"]
   ],
   // Asma: my mother came to me, hoping, and she was a polytheist. I asked: shall I keep ties with her? He said: yes,
   // keep ties with your mother (Sahih al-Bukhari 2620, 5978, 3183). (Whose daughter she was and who linked 60:8 to her
   // story are not in the scene.)
   "sign-keep-ties": [
-    ["Who came to visit Asma?", "Her mother", "My mother came to me, hoping"],
+    ["Who came to visit Asma?", "Her mother", "Asma: My mother came to me, hoping"],
     ["What did the Prophet ﷺ tell Asma?", "Keep good relations with her", "Yes, keep ties with your mother"],
     ["Asma's mother was not a Muslim at the time.", "True", "She was a polytheist"],
     ["What did Asma ask the Prophet ﷺ?", "If she should be kind to her mother", "I asked: shall I keep ties with her?"],
@@ -2396,14 +2396,14 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-fast-of-dawud": [
     ["How did Prophet Dawud fast?", "One day on, one day off", "Fast one day and eat the next"],
     ["Which extra fast is most loved by Allah?", "The fast of Dawud", "That is the fast of Dawud, the best fast"],
-    ["Dawud also prayed part of the night and slept part.", "True", "He slept half the night, prayed a third", "And slept a sixth of it"],
+    ["Dawud also prayed part of the night and slept part.", "True", "Dawud slept half the night, prayed a third", "And slept a sixth of it"],
     ["How did Dawud fast?", "Every other day", "Fast one day and eat the next"],
-    ["How much of the night did Dawud pray?", "A third", "He slept half the night, prayed a third"],
+    ["How much of the night did Dawud pray?", "A third", "Dawud slept half the night, prayed a third"],
     ["Whose fast did the Prophet ﷺ call most loved by Allah?", "Dawud's", "That is the fast of Dawud, the best fast"],
-    ["What did Abdullah ibn Amr plan to do?", "Fast every day, pray all night", "I will fast all day and pray all night"],
+    ["What did Abdullah ibn Amr plan to do?", "Fast every day, pray all night", "Abdullah: I'll fast by day, pray all night"],
     ["What did the Prophet ﷺ tell him?", "Fast and eat, pray and sleep", "You cannot. Fast and eat, pray and sleep"],
     ["Islam asks for balance in worship.", "True", "You cannot. Fast and eat, pray and sleep"],
-    ["What had Abdullah ibn Amr vowed?", "To fast every day", "I will fast all day and pray all night"],
+    ["What had Abdullah ibn Amr vowed?", "To fast every day", "Abdullah: I'll fast by day, pray all night"],
     ["What is the fast of Dawud?", "One day on, one day off", "Fast one day and eat the next"],
     ["Which fast did the Prophet ﷺ call the best?", "The fast of Dawud", "That is the fast of Dawud, the best fast"]
   ],
@@ -2434,12 +2434,12 @@ const ASKS: Record<string, readonly Ask[]> = {
   // door was shut and I heard water; then: I testify, there is no god but Allah. I went back weeping for joy. Make them
   // beloved to the believers (Sahih Muslim 2491). (Who asked for the second du'a is not in the scene.)
   "sign-guided-at-the-door": [
-    ["What did Abu Hurairah ask the Prophet ﷺ?", "To make dua for his mother", "O Allah, guide Abu Hurairah's mother"],
-    ["What happened when he got home?", "His mother became Muslim", "I testify: there is no god but Allah"],
+    ["What did Abu Hurairah ask the Prophet ﷺ?", "To make dua for his mother", "He: O Allah, guide Abu Hurairah's mother"],
+    ["What happened when he got home?", "His mother became Muslim", "My mother: I testify, no god but Allah"],
     ["Abu Hurairah cried a second time, from joy.", "True", "I went back weeping for joy"],
-    ["What does this teach about our parents?", "Keep making dua for them", "O Allah, guide Abu Hurairah's mother"],
-    ["What did the Prophet ﷺ pray for Abu Hurairah and his mother?", "That the believers love them", "Make them beloved to the believers"],
-    ["Abu Hurairah said believers who hear of him love him.", "True", "Make them beloved to the believers"]
+    ["What does this teach about our parents?", "Keep making dua for them", "He: O Allah, guide Abu Hurairah's mother"],
+    ["What did the Prophet ﷺ pray for Abu Hurairah and his mother?", "That the believers love them", "He prayed: make them beloved to believers"],
+    ["Abu Hurairah said believers who hear of him love him.", "True", "He prayed: make them beloved to believers"]
   ],
   // I stand to pray, meaning to make it long; then I hear a child crying, so I make my prayer short, disliking to make
   // it hard for his mother (Sahih al-Bukhari 707).
@@ -2458,24 +2458,24 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How did the revelation begin, per Aishah?", "Good dreams that came true", "Good dreams that came true like daybreak"],
     ["He took food with him for his days of worship.", "True", "He would go alone to the cave of Hira"],
     ["Where was the Prophet ﷺ when the first ayahs came?", "In the cave of Hira", "He would go alone to the cave of Hira", "Until the truth came to him in the cave"],
-    ["What was the first word Jibril said to him?", "Read", "Read! I am not one who reads"]
+    ["What was the first word Jibril said to him?", "Read", "The angel: Read! He said: I cannot read"]
   ],
   // Cover me! Cover me! Khadijah: never, Allah will never disgrace you; you keep ties, carry the weak, help the poor and
   // honor the guest. She took him to her cousin Waraqah: this is the one Allah sent to Musa; none brought the like but
   // met hostility (Sahih al-Bukhari 3). (What 6:112 says and whom his enemies come from are not in the scene.)
   "sign-never-disgrace": [
-    ["What did Khadijah say to comfort him?", "Allah will never disgrace you", "Never! Allah will never disgrace you"],
+    ["What did Khadijah say to comfort him?", "Allah will never disgrace you", "Khadijah: Never! Allah won't disgrace you"],
     ["Which good deed of his did she name?", "Keeping family ties", "You keep ties, you carry the weak"],
-    ["Khadijah supported her husband at a hard time.", "True", "Never! Allah will never disgrace you"],
-    ["What did Khadijah say when he came home afraid?", "Allah will never disgrace you", "Never! Allah will never disgrace you"],
+    ["Khadijah supported her husband at a hard time.", "True", "Khadijah: Never! Allah won't disgrace you"],
+    ["What did Khadijah say when he came home afraid?", "Allah will never disgrace you", "Khadijah: Never! Allah won't disgrace you"],
     ["Which good deed did Khadijah name to comfort him?", "He helps the poor", "You help the poor and honor the guest"],
-    ["What did Khadijah say to calm him?", "Allah will never disgrace you", "Never! Allah will never disgrace you"],
+    ["What did Khadijah say to calm him?", "Allah will never disgrace you", "Khadijah: Never! Allah won't disgrace you"],
     ["Which good deed did Khadijah name?", "Helping the poor", "You help the poor and honor the guest"],
     ["She said he served his guests generously.", "True", "You help the poor and honor the guest"],
-    ["Who was Waraqah to Khadijah?", "Her cousin", "She took him to her cousin Waraqah"],
-    ["To which Messenger did Waraqah say the angel came before?", "Musa", "This is the angel Allah sent to Musa"],
+    ["Who was Waraqah to Khadijah?", "Her cousin", "Khadijah took him to her cousin Waraqah"],
+    ["To which Messenger did Waraqah say the angel came before?", "Musa", "Waraqah: The angel Allah sent to Musa"],
     ["Waraqah said his people would welcome him warmly.", "False", "None brought the like but met hostility"],
-    ["Who told the Prophet ﷺ every messenger faced hostility, per Bukhari 3?", "Waraqah ibn Nawfal", "This is the angel Allah sent to Musa", "None brought the like but met hostility"]
+    ["Who told the Prophet ﷺ every messenger faced hostility, per Bukhari 3?", "Waraqah ibn Nawfal", "Waraqah: The angel Allah sent to Musa", "None brought the like but met hostility"]
   ],
   // Prayer in congregation is better than the prayer of one alone by twenty-seven degrees (Sahih Muslim 650a, Sahih
   // al-Bukhari 645). (Who passed it on, from whom and to whom, is not in the scene.)
@@ -2500,12 +2500,12 @@ const ASKS: Record<string, readonly Ask[]> = {
   // hard, has two rewards (Sahih al-Bukhari 4937, Sahih Muslim 798a). (Who the scribes are, by 56:79, is not in the
   // scene.)
   "sign-skilled-reciter": [
-    ["Who will be with the noble scribes?", "One who masters the Quran", "One recites the Quran, knowing it well", "He is with the noble, righteous scribes"],
-    ["What does one who struggles to recite get?", "A double reward", "He has two rewards"],
-    ["Reciting slowly with difficulty earns nothing.", "False", "He has two rewards"],
-    ["What does one who finds it hard get?", "Two rewards", "He has two rewards"],
-    ["Who is the skilled reciter with?", "The noble angel scribes", "He is with the noble, righteous scribes"],
-    ["Struggling with recitation is a reason to stop.", "False", "One keeps at it, though it is hard", "He has two rewards"]
+    ["Who will be with the noble scribes?", "One who masters the Quran", "One recites the Quran, knowing it well", "That one is with noble, righteous scribes"],
+    ["What does one who struggles to recite get?", "A double reward", "That one has two rewards"],
+    ["Reciting slowly with difficulty earns nothing.", "False", "That one has two rewards"],
+    ["What does one who finds it hard get?", "Two rewards", "That one has two rewards"],
+    ["Who is the skilled reciter with?", "The noble angel scribes", "That one is with noble, righteous scribes"],
+    ["Struggling with recitation is a reason to stop.", "False", "One keeps at it, though it is hard", "That one has two rewards"]
   ],
   // He was asked about fasting on the day of Arafah: it expiates the year gone by and the year to come (Sahih Muslim
   // 1162b). (Its date, the ten best days and the fast of Ashura are not in the scene.)
@@ -2518,18 +2518,18 @@ const ASKS: Record<string, readonly Ask[]> = {
   // angers Allah, paying it no mind, and he falls in Jahannam (Sahih al-Bukhari 6478). (What Ibn Kathir and Alqamah
   // say about it is not in the scene.)
   "sign-one-word": [
-    ["What can one word that pleases Allah do, per Bukhari 6478?", "Raise a person by degrees", "He pays it no mind; Allah raises him ranks"],
+    ["What can one word that pleases Allah do, per Bukhari 6478?", "Raise a person by degrees", "Unmindful; Allah raises the servant ranks"],
     ["A careless word can displease Allah, per Bukhari 6478.", "True", "A servant says a word that angers Allah"],
-    ["What can one pleasing word do, per Bukhari 6478?", "Raise a person in reward", "He pays it no mind; Allah raises him ranks"]
+    ["What can one pleasing word do, per Bukhari 6478?", "Raise a person in reward", "Unmindful; Allah raises the servant ranks"]
   ],
   // Usayd recited al-Baqarah at night; his horse, tied beside him, was startled, and was quiet when he stopped. His
   // son Yahya was near it, and he feared for him. He looked up: like a cloud with lamps in it. Those were angels come
   // near for his voice; had he read on, people would have seen them (Sahih al-Bukhari 5018).
   "sign-lamps-in-the-sky": [
-    ["Which surah was Usayd reciting at night?", "Al-Baqarah", "He recited al-Baqarah at night"],
-    ["What did the horse do when he recited?", "It was startled", "His horse, tied beside him, was startled"],
-    ["Usayd stopped because his son was near the horse.", "True", "He stopped, and the horse was quiet", "His son Yahya was near it; he feared for him"],
-    ["What did Usayd see in the sky?", "A cloud like lamps", "He looked up: like a cloud, with lamps in it"],
+    ["Which surah was Usayd reciting at night?", "Al-Baqarah", "Usayd recited al-Baqarah at night"],
+    ["What did the horse do when he recited?", "It was startled", "Usayd's tied horse was suddenly startled"],
+    ["Usayd stopped because his son was near the horse.", "True", "Usayd stopped, and the horse was quiet", "Usayd's son Yahya was near; Usayd feared"],
+    ["What did Usayd see in the sky?", "A cloud like lamps", "Usayd looked up: like a cloud, with lamps"],
     ["What was the cloud, he ﷺ said?", "Angels come to hear him", "Those were angels, come near for your voice"],
     ["If he had kept reciting, people would have seen them at dawn.", "True", "Had you read on, people would have seen them"]
   ],
@@ -2558,11 +2558,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Paradise. It was Abu Bakr, then Umar, and each praised Allah; then Uthman, with a calamity to strike him, and he
   // said: Allah's help is sought (Sahih al-Bukhari 3693). (Who kept the gate is the one telling it, never named.)
   "sign-the-garden-gate": [
-    ["Who came to the gate before Uthman?", "Abu Bakr and Umar", "It was Abu Bakr, and he praised Allah", "Then it was Umar, and he praised Allah"],
-    ["Who came to the gate second?", "Umar", "Then it was Umar, and he praised Allah"],
-    ["What did Umar do when he heard the good news?", "He praised Allah", "Then it was Umar, and he praised Allah"],
-    ["What came with Uthman's good news of Jannah?", "A trial that would strike him", "Then Uthman: with a calamity to strike him"],
-    ["What did Uthman say when he heard?", "Allah's help is sought", "He praised Allah: Allah's help is sought"]
+    ["Who came to the gate before Uthman?", "Abu Bakr and Umar", "It was Abu Bakr, who praised Allah", "Then it was Umar, who praised Allah"],
+    ["Who came to the gate second?", "Umar", "Then it was Umar, who praised Allah"],
+    ["What did Umar do when he heard the good news?", "He praised Allah", "Then it was Umar, who praised Allah"],
+    ["What came with Uthman's good news of Jannah?", "A trial that would strike him", "Paradise, with a calamity; it was Uthman"],
+    ["What did Uthman say when he heard?", "Allah's help is sought", "Uthman praised Allah: I seek Allah's aid"]
   ],
   // In Yemen, Abu Musa's people got news of his migration and boarded a ship; it took them to the Negus in Abyssinia,
   // where Ja'far and his companions were. They stayed until all left together, and he gave them a share of Khaybar
@@ -2578,9 +2578,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // He served him at home and on journeys for ten years, and he never said to him uff, nor why did you, nor why not
   // (Sahih al-Bukhari 2768 and 6038). (How Abu Talhah was related to Anas is not in the scene.)
   "sign-ten-years-serving": [
-    ["Who brought Anas to serve the Prophet ﷺ?", "Abu Talhah", "Abu Talhah took me to him"],
-    ["How did Abu Talhah describe Anas?", "A wise boy", "Anas is a wise boy; let him serve you"],
-    ["Anas served the Prophet ﷺ only at home.", "False", "I served him at home and on journeys"],
+    ["Who brought Anas to serve the Prophet ﷺ?", "Abu Talhah", "Anas: Abu Talhah took me to him"],
+    ["How did Abu Talhah describe Anas?", "A wise boy", "Abu Talhah: let wise young Anas serve you"],
+    ["Anas served the Prophet ﷺ only at home.", "False", "Anas: I served him at home and on journeys"],
     ["How long did Anas serve the Prophet ﷺ?", "Ten years", "I served him for ten years"],
     ["What did the Prophet ﷺ never say to him?", "Uff", "He never said to me: uff"],
     ["What can we learn for those who help us?", "Be gentle and patient with them", "He never said to me: uff", "Nor: why did you do so, or why not?"],
@@ -2608,16 +2608,16 @@ const ASKS: Record<string, readonly Ask[]> = {
   // (Sahih al-Bukhari 4582, 5050). (Who recited is the one telling it, never named in the scene, so it is not asked
   // here; nor when Ibn Mas'ud became Muslim.)
   "sign-recite-to-me": [
-    ["Why did the Prophet ﷺ ask Ibn Mas'ud to recite?", "He liked to hear the Quran from others", "I love to hear it from another"],
-    ["Why did the Prophet ﷺ want to hear it from him?", "He liked to hear it from others", "I love to hear it from another"],
-    ["Why did the Prophet ﷺ like to hear the Quran from others?", "He said he loved to hear it", "I love to hear it from another"],
+    ["Why did the Prophet ﷺ ask Ibn Mas'ud to recite?", "He liked to hear the Quran from others", "He said: I love to hear it from another"],
+    ["Why did the Prophet ﷺ want to hear it from him?", "He liked to hear it from others", "He said: I love to hear it from another"],
+    ["Why did the Prophet ﷺ like to hear the Quran from others?", "He said he loved to hear it", "He said: I love to hear it from another"],
     ["Which surah did Ibn Mas'ud recite?", "An-Nisa", "So I recited an-Nisa to him"],
     ["Which surah did Ibn Mas'ud recite to the Prophet ﷺ?", "An-Nisa", "So I recited an-Nisa to him"],
     ["At which ayah did he say 'Enough'?", "4:41", "Until I reached its ayah forty-one", "He said: stop"],
     ["The Prophet ﷺ wept when Ibn Mas'ud reached 4:41.", "True", "Until I reached its ayah forty-one", "And his eyes were overflowing with tears"],
     ["What happened to the Prophet ﷺ at ayah 41?", "His eyes filled with tears", "And his eyes were overflowing with tears"],
-    ["The Prophet ﷺ asked Ibn Mas'ud to ____ the Quran to him.", "recite", "He said to me: recite to me"],
-    ["What did the Prophet ﷺ ask Ibn Masud, in the hadith?", "Recite the Quran to me", "He said to me: recite to me"],
+    ["The Prophet ﷺ asked Ibn Mas'ud to ____ the Quran to him.", "recite", "Ibn Mas'ud: he said to me: recite to me"],
+    ["What did the Prophet ﷺ ask Ibn Masud, in the hadith?", "Recite the Quran to me", "Ibn Mas'ud: he said to me: recite to me"],
     ["Which surah did Ibn Masud recite, in the hadith?", "An-Nisa", "So I recited an-Nisa to him"],
     ["What did Ibn Masud see, in the hadith?", "Eyes overflowing with tears", "And his eyes were overflowing with tears"]
   ],
@@ -2636,8 +2636,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who kept advising the Prophet ﷺ about neighbors?", "Jibril", "Jibril kept on advising me"],
     ["What did Jibril keep telling the Prophet ﷺ about?", "Neighbors", "Advising me about the neighbor"],
     ["In Islam, you should be kind to your neighbors.", "True", "Advising me about the neighbor"],
-    ["The Prophet ﷺ thought neighbors might even do what?", "Inherit", "Until I thought he would make him an heir"],
-    ["What did the Prophet ﷺ think Jibril would do?", "Make neighbors heirs", "Until I thought he would make him an heir"]
+    ["The Prophet ﷺ thought neighbors might even do what?", "Inherit", "Till I thought the neighbor would inherit"],
+    ["What did the Prophet ﷺ think Jibril would do?", "Make neighbors heirs", "Till I thought the neighbor would inherit"]
   ],
   // The nearest a servant is to his Lord is when he is in sujud, so make much du'a then (Sahih Muslim 482).
   "sign-closest-in-sujud": [
@@ -2652,19 +2652,19 @@ const ASKS: Record<string, readonly Ask[]> = {
   // (Sahih Muslim 1015). (What 2:168 says stays on its usual picture.)
   "sign-accepts-only-good": [
     ["What does Allah accept, in the hadith?", "Only what is good", "Allah is Good, accepting only what is good"],
-    ["Why was the traveller's dua not answered?", "His food and clothes were unlawful", "His food is unlawful, his drink unlawful", "His clothes unlawful, fed on the unlawful"],
-    ["What can stop a dua being answered, in Muslim 1015?", "Haram food and clothing", "His food is unlawful, his drink unlawful", "His clothes unlawful, fed on the unlawful"]
+    ["Why was the traveller's dua not answered?", "His food and clothes were unlawful", "The man's food is unlawful, drink unlawful", "Clothes unlawful, fed on the unlawful"],
+    ["What can stop a dua being answered, in Muslim 1015?", "Haram food and clothing", "The man's food is unlawful, drink unlawful", "Clothes unlawful, fed on the unlawful"]
   ],
   // He divided a share, and one said it was not for Allah's sake; told of it, he was angry, then said: may Allah have
   // mercy on Musa; he was harmed with more than this, and he was patient (Sahih al-Bukhari 3405). (What 33:69 says
   // stays on its usual picture.)
   "sign-mercy-on-musa": [
     ["Whom did the Prophet ﷺ remember when hurt?", "Musa", "May Allah have mercy on Musa"],
-    ["What did the Prophet ﷺ remember when he was hurt by words?", "Musa's patience", "May Allah have mercy on Musa", "And he was patient"],
-    ["Musa was harmed even more than this.", "True", "He was harmed with more than this"],
-    ["Musa was hurt by his own people and kept patient.", "True", "He was harmed with more than this", "And he was patient"],
-    ["What did Musa do when harmed, in the hadith?", "Endured patiently", "And he was patient"],
-    ["What did Musa do when harmed, per the hadith?", "He endured patiently", "And he was patient"]
+    ["What did the Prophet ﷺ remember when he was hurt by words?", "Musa's patience", "May Allah have mercy on Musa", "And Musa was patient"],
+    ["Musa was harmed even more than this.", "True", "Musa was harmed with more than this"],
+    ["Musa was hurt by his own people and kept patient.", "True", "Musa was harmed with more than this", "And Musa was patient"],
+    ["What did Musa do when harmed, in the hadith?", "Endured patiently", "And Musa was patient"],
+    ["What did Musa do when harmed, per the hadith?", "He endured patiently", "And Musa was patient"]
   ],
   // When he mounted his camel for a journey he said Allahu Akbar three times, then: glory to Him who made this serve us,
   // we could not have done it ourselves, and to our Lord we will return; and when he returned he said them and added:
@@ -2689,9 +2689,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-eight-gates": [
     ["What comes first, in the hadith?", "Doing wudu well", "Whoever does wudu, and does it well"],
     ["What should you say after finishing wudu?", "The shahadah", "Then says: I testify, no god but Allah", "And Muhammad is His slave and Messenger"],
-    ["How many gates of Paradise open for him?", "Eight", "The eight gates of Paradise open for him"],
-    ["What opens for him, in the hadith?", "The eight gates of Paradise", "The eight gates of Paradise open for him"],
-    ["Which gate may he enter, in the hadith?", "Whichever he wishes", "He enters by whichever he wishes"]
+    ["How many gates of Paradise open for him?", "Eight", "The eight gates of Paradise open for them"],
+    ["What opens for him, in the hadith?", "The eight gates of Paradise", "The eight gates of Paradise open for them"],
+    ["Which gate may he enter, in the hadith?", "Whichever he wishes", "They enter by whichever they wish"]
   ],
   // Whoever prays twelve rak'ahs in a day and night, a house is built for him in Paradise; Umm Habibah said: I never
   // left them since (Sahih Muslim 728). (The five prayers and her father are not in the scene.)
@@ -2716,7 +2716,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // news? Do not, lest they rely on it (Sahih al-Bukhari 2856). (Who rode with him is never named in the scene, the
   // donkey has its own picture, and what 4:36 says stays on its usual picture.)
   "sign-right-on-servants": [
-    ["Where was Mu'adh when he was asked?", "Riding behind the Prophet ﷺ", "I rode behind him on a donkey called Ufayr"],
+    ["Where was Mu'adh when he was asked?", "Riding behind the Prophet ﷺ", "Mu'adh: I rode behind him on donkey Ufayr"],
     ["What is Allah's right on His servants?", "Worship Him, join no partner", "To worship Him and join nothing with Him"],
     ["What is Allah's right on His servants?", "To worship Him alone", "To worship Him and join nothing with Him"],
     ["What is Allah's right on His servants, in Bukhari 2856?", "To worship Him alone", "To worship Him and join nothing with Him"],
@@ -2773,10 +2773,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   // them, what the sign after his name stands for, what 33:56 says, and what Abu al-Aliyah and Ibn Kathir explain stay
   // on their usual picture.)
   "sign-ten-blessings": [
-    ["Send one salawat on the Prophet ﷺ. How many blessings does Allah send you?", "Ten", "Allah sends blessings on him ten times"],
-    ["How many blessings for one Salah, in the hadith?", "Ten", "Allah sends blessings on him ten times"],
-    ["How many blessings does Allah send for one?", "Ten", "Allah sends blessings on him ten times"],
-    ["Sending blessings on the Prophet ﷺ brings blessings back to you.", "True", "Allah sends blessings on him ten times"]
+    ["Send one salawat on the Prophet ﷺ. How many blessings does Allah send you?", "Ten", "Allah blesses that person ten times"],
+    ["How many blessings for one Salah, in the hadith?", "Ten", "Allah blesses that person ten times"],
+    ["How many blessings does Allah send for one?", "Ten", "Allah blesses that person ten times"],
+    ["Sending blessings on the Prophet ﷺ brings blessings back to you.", "True", "Allah blesses that person ten times"]
   ],
   // On Friday, in the Fajr prayer, he recited Alif Lam Mim Tanzil, as-Sajdah, and Hal ata 'ala al-insan (Sahih
   // al-Bukhari 891). (The letters 32:1 opens with and the words al-Insan begins with stay on their usual picture.)
@@ -2790,15 +2790,15 @@ const ASKS: Record<string, readonly Ask[]> = {
   // four, from Abdullah ibn Mas'ud, and he began with him, from Salim, freed slave of Abu Hudhayfah, from Ubayy ibn
   // Ka'b and from Mu'adh ibn Jabal (Sahih al-Bukhari 3758).
   "sign-learn-from-four": [
-    ["Who was named first of the four to learn the Quran from?", "Abdullah ibn Mas'ud", "Abdullah ibn Mas'ud, and he began with him"],
+    ["Who was named first of the four to learn the Quran from?", "Abdullah ibn Mas'ud", "Abdullah ibn Mas'ud, whom he named first"],
     ["Which of these was also one of the four?", "Mu'adh ibn Jabal", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
-    ["How many teachers of the Quran did the Prophet ﷺ name?", "Four", "Learn to recite the Quran from four"],
-    ["How many people did the Prophet ﷺ name to learn the Quran from?", "Four", "Learn to recite the Quran from four"],
-    ["Who was NOT one of the four?", "Abu Hurairah", "Abdullah ibn Mas'ud, and he began with him", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
+    ["How many teachers of the Quran did the Prophet ﷺ name?", "Four", "I heard him say: learn the Quran from four"],
+    ["How many people did the Prophet ﷺ name to learn the Quran from?", "Four", "I heard him say: learn the Quran from four"],
+    ["Who was NOT one of the four?", "Abu Hurairah", "Abdullah ibn Mas'ud, whom he named first", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
     ["The Prophet ﷺ trusted Mu'adh to teach the Quran.", "True", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
-    ["Whose name came first among the four Quran teachers?", "Abdullah ibn Mas'ud", "Abdullah ibn Mas'ud, and he began with him"],
-    ["Which of these was NOT one of the four?", "Abu Hurayrah", "Abdullah ibn Mas'ud, and he began with him", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
-    ["The Prophet ﷺ chose Ibn Mas'ud as a teacher of the Quran.", "True", "Abdullah ibn Mas'ud, and he began with him"]
+    ["Whose name came first among the four Quran teachers?", "Abdullah ibn Mas'ud", "Abdullah ibn Mas'ud, whom he named first"],
+    ["Which of these was NOT one of the four?", "Abu Hurayrah", "Abdullah ibn Mas'ud, whom he named first", "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal"],
+    ["The Prophet ﷺ chose Ibn Mas'ud as a teacher of the Quran.", "True", "Abdullah ibn Mas'ud, whom he named first"]
   ],
   // Umar brought Ibn Abbas in with the elders of Badr, and some asked why him, when they had sons like him. He asked
   // them about When Allah's help comes: some said we are told to praise Him and ask forgiveness, and some kept quiet;
@@ -2806,10 +2806,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   // al-Bukhari 4970).
   "sign-young-ibn-abbas": [
     ["Why did Umar seat young Ibn Abbas with the elders?", "For his knowledge", "I said: it is his life's end, made known to him", "Umar said: I know of it only what you say"],
-    ["Which surah did Umar ask the elders about?", "An-Nasr", "He asked about: When Allah's help comes"],
+    ["Which surah did Umar ask the elders about?", "An-Nasr", "Umar asked about Surah an-Nasr"],
     ["What did Ibn Abbas say the surah was telling?", "The Prophet's ﷺ death was near", "I said: it is his life's end, made known to him"],
     ["Why did Umar seat young Ibn Abbas with the elders of Badr?", "Because of his knowledge", "I said: it is his life's end, made known to him", "Umar said: I know of it only what you say"],
-    ["Which surah did Umar ask them about?", "An-Nasr", "He asked about: When Allah's help comes"],
+    ["Which surah did Umar ask them about?", "An-Nasr", "Umar asked about Surah an-Nasr"],
     ["Umar agreed with Ibn Abbas's meaning of the surah.", "True", "Umar said: I know of it only what you say"],
     ["Whom did Umar seat Ibn Abbas with?", "The elders of Badr", "Umar brought me in with the elders of Badr"],
     ["What did Ibn Abbas say the surah signaled?", "The end of the Prophet's ﷺ life", "I said: it is his life's end, made known to him"],
@@ -2820,7 +2820,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // up straight, prostrate until you are at rest, then sit at rest (Sahih al-Bukhari 757). (What is said in ruku, and
   // standing up straight, are also asked of other hadiths, so they stay on their usual picture.)
   "sign-go-back-and-pray": [
-    ["How many times was the man sent back?", "Three", "Go back and pray, for you have not prayed", "Three times; then he said: teach me"],
+    ["How many times was the man sent back?", "Three", "Go back and pray, for you have not prayed", "Three times; then the man said: teach me"],
     ["Example: you bow and stand up in one second. What's wrong?", "You didn't pause in ruku", "Bow until you are at rest bowing"],
     ["What word sums up how to pray?", "Calmly", "Bow until you are at rest bowing", "Prostrate at rest, then sit at rest"],
     ["Which comes first?", "Rise from ruku", "Rise until you stand up straight", "Prostrate at rest, then sit at rest"],
@@ -2832,22 +2832,22 @@ const ASKS: Record<string, readonly Ask[]> = {
   // what Ibn Kathir explains with it stays on its usual picture.)
   "sign-ansar-at-hunayn": [
     ["What three favors did he ﷺ mention, per Bukhari 4330?", "Guided, united, made rich", "I found you astray; Allah guided you through me", "Poor, and Allah made you rich through me"],
-    ["How did the Ansar reply, per Bukhari 4330?", "Allah and His Messenger did us more favor", "Allah and His Messenger did us more favor"],
+    ["How did the Ansar reply, per Bukhari 4330?", "Allah and His Messenger did us more favor", "Ansar: Allah and His Messenger gave more"],
     ["How were the Ansar before, in the hadith?", "Divided into groups", "Divided, and Allah joined you through me"],
     ["The Prophet ﷺ also said Allah made them rich through him.", "True", "Poor, and Allah made you rich through me"]
   ],
   // When one of you sneezes, let him say: Alhamdulillah, and let his brother say to him: Yarhamuk Allah; and he says:
   // Yahdikumullah wa yuslihu balakum (Sahih al-Bukhari 6224).
   "sign-the-sneeze": [
-    ["After sneezing, what should a Muslim say first?", "Alhamdulillah", "Who sneezes, let him say: Alhamdulillah"],
-    ["If someone says Alhamdulillah after sneezing, another Muslim can reply with mercy.", "True", "His brother says to him: Yarhamuk Allah"],
-    ["What is a proper reply to someone's Alhamdulillah after a sneeze?", "Yarhamuk Allah", "His brother says to him: Yarhamuk Allah"],
-    ["What does the one who sneezes say?", "Alhamdulillah", "Who sneezes, let him say: Alhamdulillah"],
-    ["What do you say to someone who sneezed and praised Allah?", "Yarhamukallah", "His brother says to him: Yarhamuk Allah"],
-    ["What does the sneezer say back?", "Yahdikumullah wa yuslihu balakum", "He says: Yahdikumullah wa yuslihu balakum"],
-    ["You sneeze. What do you say?", "Alhamdulillah", "Who sneezes, let him say: Alhamdulillah"],
-    ["Your friend sneezes and says Alhamdulillah. What do you say?", "Yarhamukallah", "His brother says to him: Yarhamuk Allah"],
-    ["The sneezer answers: Yahdikumullahu wa yuslihu balakum.", "True", "He says: Yahdikumullah wa yuslihu balakum"]
+    ["After sneezing, what should a Muslim say first?", "Alhamdulillah", "Who sneezes should say: Alhamdulillah"],
+    ["If someone says Alhamdulillah after sneezing, another Muslim can reply with mercy.", "True", "A brother or friend says: Yarhamuk Allah"],
+    ["What is a proper reply to someone's Alhamdulillah after a sneeze?", "Yarhamuk Allah", "A brother or friend says: Yarhamuk Allah"],
+    ["What does the one who sneezes say?", "Alhamdulillah", "Who sneezes should say: Alhamdulillah"],
+    ["What do you say to someone who sneezed and praised Allah?", "Yarhamukallah", "A brother or friend says: Yarhamuk Allah"],
+    ["What does the sneezer say back?", "Yahdikumullah wa yuslihu balakum", "Sneezer: Yahdikumullah wa yuslihu balakum"],
+    ["You sneeze. What do you say?", "Alhamdulillah", "Who sneezes should say: Alhamdulillah"],
+    ["Your friend sneezes and says Alhamdulillah. What do you say?", "Yarhamukallah", "A brother or friend says: Yarhamuk Allah"],
+    ["The sneezer answers: Yahdikumullahu wa yuslihu balakum.", "True", "Sneezer: Yahdikumullah wa yuslihu balakum"]
   ],
   // Some came, barefoot and poor, all of Mudar, and his face changed at their need; he prayed, spoke and urged charity,
   // from a dinar, a dirham, cloth, wheat, dates, even half a date, till there were two heaps of food and clothes, and
@@ -2855,7 +2855,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-visitors-of-mudar": [
     ["Which tribe were the poor visitors from?", "Mudar", "Some came, barefoot and poor, all of Mudar"],
     ["His face changed when he saw their poverty.", "True", "His face changed, seeing their need"],
-    ["What did people start doing after he recited?", "Giving charity", "From his dinar, dirham, cloth, wheat, dates"],
+    ["What did people start doing after he recited?", "Giving charity", "From dinar, dirham, cloth, wheat, dates"],
     ["What was the smallest gift he mentioned?", "Half a date", "Even if it is half a date"],
     ["Small charity is still valued.", "True", "Even if it is half a date"]
   ],
@@ -2864,8 +2864,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // 1149). (The blank about his steps is also asked of another hadith, and how early he became Muslim is not shown.)
   "sign-steps-in-paradise": [
     ["What did the Prophet ﷺ hear in Paradise?", "Bilal's footsteps", "For I heard your steps ahead of me in Paradise"],
-    ["Which deed did Bilal say he did?", "Praying after every wudu", "He said: whenever I made wudu, night or day", "I prayed with it what was written for me"],
-    ["A small habit, done always, can be very great.", "True", "He said: whenever I made wudu, night or day", "I prayed with it what was written for me"],
+    ["Which deed did Bilal say he did?", "Praying after every wudu", "Bilal: whenever I made wudu, night or day", "I prayed with it what was written for me"],
+    ["A small habit, done always, can be very great.", "True", "Bilal: whenever I made wudu, night or day", "I prayed with it what was written for me"],
     ["When did the Prophet ﷺ ask Bilal about this?", "At the Fajr prayer", "At Fajr he said: Bilal, tell me"]
   ],
   // First came Mus'ab and Ibn Umm Maktum, who taught the people the Quran, then Bilal, Sa'd and Ammar, then Umar with
@@ -2884,7 +2884,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // one guided through you is better than red camels (Sahih al-Bukhari 3701). (Which battle it was has its own map.)
   "sign-red-camels": [
     ["What did everyone hope the night before?", "To be given the flag", "All night they wondered who it would be"],
-    ["What was wrong with Ali that morning?", "His eyes were sore", "Where is Ali? His eyes are sore"],
+    ["What was wrong with Ali that morning?", "His eyes were sore", "Where is Ali? People: Ali's eyes are sore"],
     ["What did the Prophet ﷺ tell Ali to do first?", "Invite them to Islam", "Go calmly, then invite them to Islam"],
     ["The Prophet ﷺ told Ali to rush in fast.", "False", "Go calmly, then invite them to Islam"],
     ["One person guided through you is better than what?", "Red camels", "One guided through you is better than red camels"]
@@ -2896,10 +2896,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-lost-necklace": [
     ["Why did the army stop with no water?", "To look for Aishah's necklace", "At al-Bayda', a necklace of mine was lost", "He stayed to look for it, and the people with him"],
     ["What did Allah send down then?", "The ayah of tayammum", "Then Allah revealed the ayah of tayammum"],
-    ["Usayd said it was not the first blessing from Abu Bakr's family.", "True", "Not your first blessing, family of Abu Bakr"],
+    ["Usayd said it was not the first blessing from Abu Bakr's family.", "True", "Usayd: This is not your first blessing"],
     ["What did Aishah lose on the journey?", "Her necklace", "At al-Bayda', a necklace of mine was lost"],
     ["What did Allah allow when there was no water for wudu?", "Tayammum with clean earth", "Then Allah revealed the ayah of tayammum"],
-    ["Usayd ibn Hudayr called it the first blessing from Abu Bakr's family.", "False", "Not your first blessing, family of Abu Bakr"]
+    ["Usayd ibn Hudayr called it the first blessing from Abu Bakr's family.", "False", "Usayd: This is not your first blessing"]
   ],
   // In Madinah, Abu Bakr and Bilal fell ill with fever; she went in to them and asked how they were, and Bilal longed
   // aloud for a night in a valley of idhkhir. She told him, and he said: O Allah, make us love Madinah as we love Makkah,
@@ -2907,7 +2907,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-love-madinah": [
     ["Who fell ill with fever after the hijrah?", "Abu Bakr and Bilal", "In Madinah, Abu Bakr and Bilal fell ill"],
     ["What did Bilal miss while he was ill?", "Makkah", "Bilal: will I spend a night in a valley of idhkhir?"],
-    ["Who visited them and told the Prophet ﷺ?", "Aishah", "I went in to them: how do you find yourself?", "Aishah: I came to him and told him"],
+    ["Who visited them and told the Prophet ﷺ?", "Aishah", "Aishah: I went to them: how do you feel?", "Aishah: I came to him and told him"],
     ["What did the Prophet ﷺ ask Allah for Madinah?", "To make them love it like Makkah, or more", "Make us love Madinah as Makkah, or more"],
     ["What did he ask Allah to take from Madinah?", "Its fever", "And move its fever to al-Juhfah"],
     ["He also asked Allah to bless Madinah's food.", "True", "Make it healthy, and bless its sa' and its mudd"]
@@ -2917,13 +2917,13 @@ const ASKS: Record<string, readonly Ask[]> = {
   // go to him and say: you are not of the Fire, but of the people of Paradise (Sahih al-Bukhari 3613, 4846).
   "sign-thabit-good-news": [
     ["Who noticed that Thabit was missing?", "The Prophet ﷺ", "He missed Thabit ibn Qays"],
-    ["How did the man find Thabit?", "Sitting sadly with his head down", "He missed Thabit ibn Qays", "A man found him at home, his head lowered"],
-    ["The Prophet ﷺ cared about a companion who went missing.", "True", "He missed Thabit ibn Qays", "A man found him at home, his head lowered"],
-    ["What good news did Thabit get?", "He is of the people of Jannah", "Go to him and say: you are not of the Fire", "But you are of the people of Paradise"],
-    ["Who sent Thabit the good news?", "The Prophet ﷺ", "Go to him and say: you are not of the Fire"],
-    ["Thabit was told he was of the people of the Fire.", "False", "Go to him and say: you are not of the Fire", "But you are of the people of Paradise"],
-    ["Why was Thabit sad, per Bukhari 4846?", "He used to raise his voice", "Bad: he raised his voice above the Prophet's"],
-    ["What news was Thabit given, per Bukhari 4846?", "He is of the people of Paradise", "Go to him and say: you are not of the Fire", "But you are of the people of Paradise"],
+    ["How did the man find Thabit?", "Sitting sadly with his head down", "He missed Thabit ibn Qays", "A man found Thabit at home, head lowered"],
+    ["The Prophet ﷺ cared about a companion who went missing.", "True", "He missed Thabit ibn Qays", "A man found Thabit at home, head lowered"],
+    ["What good news did Thabit get?", "He is of the people of Jannah", "Go to Thabit, say: you are not of the Fire", "But you are of the people of Paradise"],
+    ["Who sent Thabit the good news?", "The Prophet ﷺ", "Go to Thabit, say: you are not of the Fire"],
+    ["Thabit was told he was of the people of the Fire.", "False", "Go to Thabit, say: you are not of the Fire", "But you are of the people of Paradise"],
+    ["Why was Thabit sad, per Bukhari 4846?", "He used to raise his voice", "Thabit: bad, I raised my voice above his"],
+    ["What news was Thabit given, per Bukhari 4846?", "He is of the people of Paradise", "Go to Thabit, say: you are not of the Fire", "But you are of the people of Paradise"],
     ["The Prophet ﷺ noticed when Thabit was missing.", "True", "He missed Thabit ibn Qays"]
   ],
   // He held Umar's hand, and Umar said: you are dearer to me than all but myself; he said: no, until I am dearer to you
@@ -2958,7 +2958,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // ones, al-Baqarah and Al Imran, for they will come like two clouds, or two shades, or two flocks of birds in rows,
   // pleading for their companions; taking it is a blessing, and leaving it a regret (Sahih Muslim 804a).
   "sign-two-bright-ones": [
-    ["The Prophet ﷺ told us to recite the Quran.", "True", "I heard him say: read the Quran"],
+    ["The Prophet ﷺ told us to recite the Quran.", "True", "Abu Umamah heard him say: read the Quran"],
     ["What will the Quran do for its readers?", "Intercede for them", "It will intercede for its companions on the Day"],
     ["On the Last Day, who does the Quran speak up for?", "Those who read it", "It will intercede for its companions on the Day"],
     ["Which are the two bright surahs?", "Al-Baqarah and Al Imran", "Read the bright two: al-Baqarah and Al Imran"],
@@ -2971,8 +2971,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-third-of-the-quran": [
     ["Which surah equals a third of the Quran?", "Al-Ikhlas", "A man heard one recite: Qul huwa Allahu ahad", "It equals a third of the Quran"],
     ["What did the man in the hadith do with Al-Ikhlas?", "He recited it again and again", "A man heard one recite: Qul huwa Allahu ahad", "Repeating it, again and again"],
-    ["The man thought reciting it was not enough.", "True", "In the morning he told him, as if it were little"],
-    ["Al-Ikhlas is a short surah with a great reward.", "True", "In the morning he told him, as if it were little", "It equals a third of the Quran"],
+    ["The man thought reciting it was not enough.", "True", "The man told him, as if it were little"],
+    ["Al-Ikhlas is a short surah with a great reward.", "True", "The man told him, as if it were little", "It equals a third of the Quran"],
     ["What is Al-Ikhlas equal to, says the Prophet ﷺ?", "A third of the Quran", "It equals a third of the Quran"],
     ["How did the companions feel about reciting a third in one night?", "They found it hard", "Can one of you not recite a third in a night?"],
     ["How can you recite a third of the Quran in one night?", "Recite Al-Ikhlas", "Allah, One, as-Samad: a third of the Quran"]
@@ -3005,19 +3005,19 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-a-fair-gift": [
     ["What did the Prophet ﷺ ask An-Nu'man's father?", "Did you give all your sons the same?", "Have you given all your children the same?"],
     ["What did he tell him?", "Fear Allah and be fair to your children", "Fear Allah, and be fair to your children"],
-    ["What did the father do then?", "Took the gift back", "He went back, and took back his gift"],
+    ["What did the father do then?", "Took the gift back", "My father went back, took back his gift"],
     ["What did the Prophet ﷺ ask Nu'man's father?", "Did all your sons get the same?", "Have you given all your children the same?"],
     ["What did he tell parents to be?", "Just to their children", "Fear Allah, and be fair to your children"],
-    ["Nu'man's father took the gift back.", "True", "He went back, and took back his gift"]
+    ["Nu'man's father took the gift back.", "True", "My father went back, took back his gift"]
   ],
   // Sa'd ibn Ubadah's mother died while he was away from her. He said: my mother died while I was away; will it help
   // her if I give anything in charity for her? He said: yes. He said: then I make you witness that my garden al-Mikhraf
   // is charity for her (Sahih al-Bukhari 2756). (What he gave is asked on its own picture card.)
   "sign-garden-in-charity": [
     ["Does charity for a dead parent help them?", "Yes", "He said: yes"],
-    ["Sa'd was with his mother when she died.", "False", "Sa'd's mother died while he was away"],
+    ["Sa'd was with his mother when she died.", "False", "Sa'd's mother died while Sa'd was away"],
     ["Does charity help a parent who died?", "Yes", "He said: yes"],
-    ["We can still do good for our parents after they die.", "True", "He said: yes", "Is charity for her"]
+    ["We can still do good for our parents after they die.", "True", "He said: yes", "al-Mikhraf is charity for her"]
   ],
   // Rights will surely be paid to their owners on the Day of Resurrection, until the hornless sheep gets its due from
   // the horned sheep (Sahih Muslim 2582). (Which animal gets its due is asked on its own picture card, and who disputes,
@@ -3030,9 +3030,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // If he forgets, and eats and drinks, let him complete his fast, for it was Allah who fed him and gave him drink
   // (Sahih al-Bukhari 1933). (What breaks the fast, and keeping away from bad words, are asked of other lessons too.)
   "sign-forgot-and-ate": [
-    ["If you eat because you ____, your fast still counts.", "forgot", "If he forgets, and eats", "Let him complete his fast"],
-    ["You forgot and drank water while fasting. What now?", "Finish your fast", "Let him complete his fast"],
-    ["Eating because you forgot still lets your fast count.", "True", "Let him complete his fast"]
+    ["If you eat because you ____, your fast still counts.", "forgot", "If someone forgets, and eats", "Let that person complete the fast"],
+    ["You forgot and drank water while fasting. What now?", "Finish your fast", "Let that person complete the fast"],
+    ["Eating because you forgot still lets your fast count.", "True", "Let that person complete the fast"]
   ],
   // He kissed al-Hasan ibn Ali while al-Aqra' ibn Habis was sitting with him. Al-Aqra' said: I have ten children, and
   // I have never kissed one of them. He looked at him, then said: whoever is not merciful is not shown mercy (Sahih
@@ -3059,18 +3059,18 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // Umar used to say: Abu Bakr is our master, and he freed our master, meaning Bilal (Sahih al-Bukhari 3754).
   "sign-freed-bilal": [
-    ["In Makkah, Abu Bakr set ____ free.", "Bilal", "And he freed our master", "Meaning Bilal"],
-    ["In Makkah, Abu Bakr set Umar free.", "False", "And he freed our master", "Meaning Bilal"],
-    ["Bilal grew up as a ____ in Makkah.", "slave", "And he freed our master"],
-    ["Bilal grew up as a king in Makkah.", "False", "And he freed our master"],
-    ["Abu Bakr bought Bilal and set him ____.", "free", "And he freed our master"],
+    ["In Makkah, Abu Bakr set ____ free.", "Bilal", "And Abu Bakr freed our master", "Meaning Bilal"],
+    ["In Makkah, Abu Bakr set Umar free.", "False", "And Abu Bakr freed our master", "Meaning Bilal"],
+    ["Bilal grew up as a ____ in Makkah.", "slave", "And Abu Bakr freed our master"],
+    ["Bilal grew up as a king in Makkah.", "False", "And Abu Bakr freed our master"],
+    ["Abu Bakr bought Bilal and set him ____.", "free", "And Abu Bakr freed our master"],
     ["Umar said Abu Bakr freed 'our master'. Who did he mean?", "Bilal", "Meaning Bilal"],
     ["What did Umar call Abu Bakr?", "Our master", "Abu Bakr is our master"],
     ["Who praised Abu Bakr for freeing Bilal?", "Umar", "Umar used to say:"],
-    ["Umar looked down on Bilal because he had been a slave.", "False", "And he freed our master", "Meaning Bilal"],
+    ["Umar looked down on Bilal because he had been a slave.", "False", "And Abu Bakr freed our master", "Meaning Bilal"],
     ["What did Umar call Bilal?", "Our master", "Abu Bakr is our master", "Meaning Bilal"],
-    ["Who freed Bilal?", "Abu Bakr", "Abu Bakr is our master", "And he freed our master"],
-    ["What does Umar's saying teach?", "Faith, not birth, gives honor", "And he freed our master", "Meaning Bilal"],
+    ["Who freed Bilal?", "Abu Bakr", "Abu Bakr is our master", "And Abu Bakr freed our master"],
+    ["What does Umar's saying teach?", "Faith, not birth, gives honor", "And Abu Bakr freed our master", "Meaning Bilal"],
     ["Umar was the one who told this.", "True", "Umar used to say:"]
   ],
   // He sent Amr ibn al-As to lead the army of Dhat as-Salasil. Amr came and asked: who of the people is most beloved
@@ -3137,14 +3137,14 @@ const ASKS: Record<string, readonly Ask[]> = {
   // over him: he is of Ghifar (Sahih al-Bukhari 3861, 3522). (His name Jundub, that he was among the very first, and
   // being told to go back to his people stay on their usual picture: the scene does not show them.)
   "sign-abu-dharr-seeks": [
-    ["Whom did Abu Dharr send to Makkah first?", "His brother", "His brother said: he enjoins good character"],
-    ["Who led Abu Dharr to the Prophet ﷺ?", "Ali", "Ali saw him, and knew he was a stranger", "Follow me, and enter where I enter"],
-    ["What did Abu Dharr do after hearing the Prophet ﷺ?", "Became Muslim on the spot", "He heard him, and became Muslim at once"],
-    ["Abu Dharr bravely called out his Islam at the ____.", "Ka'bah", "He called out the shahadah at the masjid"],
-    ["Where did Abu Dharr declare his Islam aloud?", "In the Masjid al-Haram", "He called out the shahadah at the masjid"],
-    ["Who protected him from the angry people?", "Al-Abbas", "Al-Abbas knelt over him: he is of Ghifar"],
-    ["Abu Dharr grew up with the ____ tribe, outside Makkah.", "Ghifar", "Al-Abbas knelt over him: he is of Ghifar"],
-    ["Abu Dharr grew up with the Quraysh tribe, outside Makkah.", "False", "Al-Abbas knelt over him: he is of Ghifar"]
+    ["Whom did Abu Dharr send to Makkah first?", "His brother", "Abu Dharr's brother: he enjoins good ways"],
+    ["Who led Abu Dharr to the Prophet ﷺ?", "Ali", "Ali saw Abu Dharr and knew: a stranger", "Ali: Follow me, and enter where I enter"],
+    ["What did Abu Dharr do after hearing the Prophet ﷺ?", "Became Muslim on the spot", "Abu Dharr heard him, became Muslim at once"],
+    ["Abu Dharr bravely called out his Islam at the ____.", "Ka'bah", "Abu Dharr called out the shahadah aloud"],
+    ["Where did Abu Dharr declare his Islam aloud?", "In the Masjid al-Haram", "Abu Dharr called out the shahadah aloud"],
+    ["Who protected him from the angry people?", "Al-Abbas", "Al-Abbas knelt over Abu Dharr: of Ghifar!"],
+    ["Abu Dharr grew up with the ____ tribe, outside Makkah.", "Ghifar", "Al-Abbas knelt over Abu Dharr: of Ghifar!"],
+    ["Abu Dharr grew up with the Quraysh tribe, outside Makkah.", "False", "Al-Abbas knelt over Abu Dharr: of Ghifar!"]
   ],
   // Jubayr ibn Mut'im heard him recite at-Tur in Maghrib: were they created by nothing, or were they themselves the
   // creators? Or did they create the heavens and the earth? Nay, but they have no firm belief. My heart was about to fly
@@ -3174,20 +3174,20 @@ const ASKS: Record<string, readonly Ask[]> = {
   // al-Bukhari 3864). We have been mighty since Umar became Muslim (3684). (Where Umar grew up, his daughter Hafsah,
   // that his son told this, and that Ibn Mas'ud said it stay on their usual picture: the scene does not show them.)
   "sign-mighty-since-umar": [
-    ["Why was Umar afraid after he became Muslim?", "His people threatened his life", "Your people claim they will kill me"],
+    ["Why was Umar afraid after he became Muslim?", "His people threatened his life", "Umar: your people claim they will kill me"],
     ["Who gave Umar protection that day?", "Al-As ibn Wa'il", "Umar was at home, in fear", "Al-As said: there is no way to you"],
-    ["What did the crowd do once Umar was protected?", "They went back", "There is no way to him. So they went back"],
-    ["When Umar became Muslim, the Muslims grew ____.", "stronger", "We stayed mighty since Umar became Muslim"],
-    ["What changed for the Muslims when Umar became Muslim?", "They became strong", "We stayed mighty since Umar became Muslim"],
-    ["Umar's Islam made the Muslims weaker.", "False", "We stayed mighty since Umar became Muslim"]
+    ["What did the crowd do once Umar was protected?", "They went back", "Al-As: no way to him. So they went back"],
+    ["When Umar became Muslim, the Muslims grew ____.", "stronger", "Ibn Mas'ud: mighty ever since Umar's Islam"],
+    ["What changed for the Muslims when Umar became Muslim?", "They became strong", "Ibn Mas'ud: mighty ever since Umar's Islam"],
+    ["Umar's Islam made the Muslims weaker.", "False", "Ibn Mas'ud: mighty ever since Umar's Islam"]
   ],
   // Salman visited his brother Abu ad-Darda; Umm ad-Darda said: your brother has no need of this world. Salman would not
   // eat until he ate, told him to sleep at night, and at the end of the night both prayed. Your Lord, your self and your
   // family each have a right on you; and he said: Salman has spoken the truth (Sahih al-Bukhari 1968).
   "sign-every-right": [
     ["Who was Salman's brother in faith in Madinah?", "Abu ad-Darda", "Salman visited his brother Abu ad-Darda"],
-    ["Why was Umm ad-Darda looking uncared for?", "Her husband gave her no time", "Your brother has no need of this world"],
-    ["What was Abu ad-Darda doing too much of?", "Fasting and night prayer", "Salman said: I will not eat until you eat", "At night he got up. Salman said: sleep"],
+    ["Why was Umm ad-Darda looking uncared for?", "Her husband gave her no time", "Umm ad-Darda: no need of this world"],
+    ["What was Abu ad-Darda doing too much of?", "Fasting and night prayer", "Salman said: I will not eat until you eat", "At night Abu ad-Darda rose. Salman: sleep"],
     ["Which three have rights on you, Salman said?", "Your Lord, your body, your family", "Your Lord, self and family each have a right"],
     ["Salman said: give each one who has a right its right.", "True", "Your Lord, self and family each have a right"],
     ["What did the Prophet ﷺ say about Salman's advice?", "Salman spoke the truth", "He said: Salman has spoken the truth"],
@@ -3226,10 +3226,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-rights-of-the-road": [
     ["What did the Prophet ﷺ first say about roads?", "Avoid sitting on them", "Beware of sitting on the roads"],
     ["The companions first said they had to sit by the roads.", "True", "They said: we must, it is where we talk"],
-    ["What is the first right of the road?", "Lowering your gaze", "What is its right? Lowering the gaze"],
+    ["What is the first right of the road?", "Lowering your gaze", "They asked: its right? Lowering the gaze"],
     ["Which of these is a right of the road?", "Returning salam", "Holding back harm, returning the salam"],
     ["What should you do with greetings on the road?", "Return them", "Holding back harm, returning the salam"],
-    ["Which of these is NOT a right of the road?", "Selling food to all", "What is its right? Lowering the gaze", "Enjoining good, and forbidding wrong"]
+    ["Which of these is NOT a right of the road?", "Selling food to all", "They asked: its right? Lowering the gaze", "Enjoining good, and forbidding wrong"]
   ],
   // The buyer and the seller may choose as long as they have not parted; if they tell the truth and make things clear,
   // they are blessed in their sale, and if they hide and lie, its blessing is wiped out (Sahih al-Bukhari 2079). (Who
@@ -3268,7 +3268,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // wanting more stays on its usual picture.)
   "sign-asked-about-blessings": [
     ["What brought them out of their houses?", "Hunger", "What brought you out? They said: hunger"],
-    ["Who fed them?", "A man of the Ansar", "They went with him to a man of the Ansar", "He brought a cluster of fresh and dry dates"],
+    ["Who fed them?", "A man of the Ansar", "They went with him to a man of the Ansar", "The Ansari brought fresh and dry dates"],
     ["What will we be asked about, that Day?", "The blessings we enjoyed", "You will be asked about this blessing"],
     ["Ayah 8: what will we be asked about that Day?", "The blessings we enjoyed", "You will be asked about this blessing"],
     ["Ayahs 5-8: what are they about?", "Asked about blessings", "You will be asked about this blessing"],
@@ -3279,12 +3279,12 @@ const ASKS: Record<string, readonly Ask[]> = {
   // turns to whoever repents (Sahih al-Bukhari 6439). (Until when the race for more distracts, until the graves are
   // visited, stays on its usual picture: the scene does not show graves.)
   "sign-valley-of-gold": [
-    ["With one valley of gold, what would a person want?", "A second valley", "He would love to have two valleys"],
-    ["If man had one valley of gold, what would he want?", "Two valleys", "He would love to have two valleys"],
-    ["Ayahs 1-4: what are they about?", "Wanting more", "He would love to have two valleys"],
-    ["What distracts people until the grave?", "Wanting more and more", "He would love to have two valleys", "Nothing fills his mouth but dust"],
-    ["Ayahs 1-4 say: Wanting more and more distracts you until the grave.", "True", "He would love to have two valleys", "Nothing fills his mouth but dust"],
-    ["More money always makes people feel full.", "False", "Nothing fills his mouth but dust"],
+    ["With one valley of gold, what would a person want?", "A second valley", "The son of Adam would love two valleys"],
+    ["If man had one valley of gold, what would he want?", "Two valleys", "The son of Adam would love two valleys"],
+    ["Ayahs 1-4: what are they about?", "Wanting more", "The son of Adam would love two valleys"],
+    ["What distracts people until the grave?", "Wanting more and more", "The son of Adam would love two valleys", "Nothing fills a person's mouth but dust"],
+    ["Ayahs 1-4 say: Wanting more and more distracts you until the grave.", "True", "The son of Adam would love two valleys", "Nothing fills a person's mouth but dust"],
+    ["More money always makes people feel full.", "False", "Nothing fills a person's mouth but dust"],
     ["Whom does Allah forgive, per the hadith?", "Whoever repents", "And Allah turns to whoever repents"]
   ],
   // Straighten your rows, for straightening the rows is part of establishing the prayer (Sahih al-Bukhari 723). (How
@@ -3316,7 +3316,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // My close friend advised me of three: fasting three days of every month, two rak'ahs of Duha, and to pray witr
   // before I sleep (Sahih al-Bukhari 1981).
   "sign-three-things-to-keep": [
-    ["How many days a month did he ﷺ advise fasting?", "Three", "My close friend advised me of three", "Fasting three days of every month"],
+    ["How many days a month did he ﷺ advise fasting?", "Three", "Abu Hurairah: He advised me of three", "Fasting three days of every month"],
     ["Duha was one of the three things he ﷺ advised.", "True", "Two rak'ahs of Duha"],
     ["The advice also had two rakahs of Duha.", "True", "Two rak'ahs of Duha"],
     ["When should witr be prayed, by this advice?", "Before sleeping", "And to pray witr before I sleep"],
@@ -3356,7 +3356,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Most Merciful, and I love to recite it. Tell him that Allah loves him (Sahih al-Bukhari 7375). (Who told the story,
   // and what ayahs 3-4 say, stay on their usual picture.)
   "sign-loves-al-ikhlas": [
-    ["Why did the man always recite Al-Ikhlas?", "It describes Allah, and he loved it", "Because it describes the Most Merciful", "And I love to recite it"],
+    ["Why did the man always recite Al-Ikhlas?", "It describes Allah, and he loved it", "The man: it describes the Most Merciful", "And I love to recite it"],
     ["What did the Prophet ﷺ say of the man who loved it?", "Allah loves him", "Tell him that Allah loves him"],
     ["What did the Prophet ﷺ say about him?", "Tell him that Allah loves him", "Tell him that Allah loves him"]
   ],
@@ -3375,8 +3375,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Allah has ordered me to recite to you Lam yakun; did He name me? Yes; and he wept (Sahih al-Bukhari 4959). (To
   // whom he was told to recite, by name, and what ayahs 1-5 say, stay on their usual picture.)
   "sign-ubayy-named": [
-    ["What did Ubayy ask?", "Did Allah mention me by name?", "Did He name me?"],
-    ["Ubayy wept when he heard the answer.", "True", "And he wept"]
+    ["What did Ubayy ask?", "Did Allah mention me by name?", "Ubayy: Did Allah name me?"],
+    ["Ubayy wept when he heard the answer.", "True", "And Ubayy wept"]
   ],
   // Whoever fasts Ramadan, then follows it with six of Shawwal, it is like fasting all the time (Sahih Muslim 1164).
   // (Fasting on the day of Eid stays on its usual picture.)
@@ -3393,9 +3393,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-six-rights": [
     ["How many rights did the Prophet ﷺ name, of one Muslim over another?", "Six", "A Muslim's rights on a Muslim are six"],
     ["How many rights does a Muslim have over another in Muslim 2162?", "Six", "A Muslim's rights on a Muslim are six"],
-    ["When a Muslim asks your advice, give it sincerely.", "True", "When he asks your advice, advise him"],
-    ["Your friend is ill. Which right does he have?", "That you visit him", "When he is ill, visit him"],
-    ["Your classmate is sick at home. Which right fits?", "Visit him", "When he is ill, visit him"]
+    ["When a Muslim asks your advice, give it sincerely.", "True", "When a Muslim asks your advice, give it"],
+    ["Your friend is ill. Which right does he have?", "That you visit him", "Visit the Muslim who falls ill"],
+    ["Your classmate is sick at home. Which right fits?", "Visit him", "Visit the Muslim who falls ill"]
   ],
   // Like a man who came to a people: I saw the army with my own eyes; I am the warner, save yourselves! Some obeyed
   // and were saved, some denied him, and the army swept them away (Sahih al-Bukhari 6482). (What he is told to say in
@@ -3410,8 +3410,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // revealed: do not obey them in shirk, but keep company with them kindly (Sahih Muslim 1748c). (Where Sa'd grew up
   // stays on its usual picture.)
   "sign-firm-and-kind": [
-    ["When Sa'd became Muslim, his ____ refused to eat.", "mother", "Sa'd's mother swore never to speak to him", "Nor would she eat or drink"],
-    ["What did she want Sa'd to do, in the hadith?", "Abandon his faith", "Until he disbelieved in his religion"],
+    ["When Sa'd became Muslim, his ____ refused to eat.", "mother", "Umm Sa'd swore never to speak to her son", "Nor would she eat or drink"],
+    ["What did she want Sa'd to do, in the hadith?", "Abandon his faith", "Until Sa'd disbelieved in his religion"],
     ["What did Sa'd's mother do to make him leave Islam?", "Refused to eat or drink", "Nor would she eat or drink"],
     ["What did Sa'd's mother refuse, in the hadith?", "To eat or drink", "Nor would she eat or drink"],
     ["Ayah 29:8 was revealed about Sa'd.", "True", "And We enjoined on man goodness to his parents", "But if they strive to make you join with Me"],
@@ -3430,15 +3430,15 @@ const ASKS: Record<string, readonly Ask[]> = {
   // and he ate only from the work of his hands (Sahih al-Bukhari 3417). (Which book he was given, and that it was not
   // given to Musa, stay on their usual picture: the scene's words do not name it.)
   "sign-dawud-recites": [
-    ["How fast could Dawud recite the Zabur?", "Before his animals were saddled", "He would order his mounts to be saddled", "And recite before they were saddled"],
-    ["When did Dawud finish reciting the Zabur?", "Before his animals were saddled", "He would order his mounts to be saddled", "And recite before they were saddled"],
-    ["How did Dawud earn his food, in the hadith?", "From his own handiwork", "And he ate only from the work of his hands"]
+    ["How fast could Dawud recite the Zabur?", "Before his animals were saddled", "Dawud would order the mounts saddled", "And finish reciting before the saddling"],
+    ["When did Dawud finish reciting the Zabur?", "Before his animals were saddled", "Dawud would order the mounts saddled", "And finish reciting before the saddling"],
+    ["How did Dawud earn his food, in the hadith?", "From his own handiwork", "Dawud ate only from the work of his hands"]
   ],
   // Hakim asked about the good he did in the days of ignorance, charity, freeing a slave and keeping ties: is there
   // any reward in them? You became Muslim with the good you did before (Sahih al-Bukhari 1436).
   "sign-good-kept": [
-    ["What did Hakim ask the Prophet ﷺ?", "If his good before Islam counted", "Good things I did in the days of ignorance", "Is there any reward in them?"],
-    ["What did Hakim ask the Prophet ﷺ?", "If his old good deeds count", "Good things I did in the days of ignorance", "Is there any reward in them?"],
+    ["What did Hakim ask the Prophet ﷺ?", "If his good before Islam counted", "Hakim: Good I did in the days of ignorance", "Is there any reward in them?"],
+    ["What did Hakim ask the Prophet ﷺ?", "If his old good deeds count", "Hakim: Good I did in the days of ignorance", "Is there any reward in them?"],
     ["Hakim kept good ties with his family before Islam.", "True", "Charity, freeing a slave, and keeping ties"],
     ["Which good deed did Hakim do before Islam?", "He gave in charity", "Charity, freeing a slave, and keeping ties"],
     ["What did he ﷺ answer?", "You became Muslim with all that good", "You became Muslim with the good you did before"],
@@ -3465,11 +3465,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // wrong? By holding back his hands (Sahih al-Bukhari 2444).
   "sign-help-your-brother": [
     ["Whom should you help, per Bukhari 2444?", "Your brother, wronged or wrongdoer", "Help your brother, wrongdoer or wronged"],
-    ["How do you help a brother who is wronging others?", "Stop him from doing it", "By holding back his hands"],
-    ["How do you help a brother who wrongs others, per Bukhari 2444?", "Stop him from wronging", "By holding back his hands"],
-    ["Your friend is bullying someone. What fits this lesson?", "Stop your friend", "By holding back his hands"],
-    ["Helping a brother means always taking his side.", "False", "By holding back his hands"],
-    ["Stopping someone from doing wrong is a way of helping him.", "True", "By holding back his hands"]
+    ["How do you help a brother who is wronging others?", "Stop him from doing it", "By holding back the wrongdoer's hands"],
+    ["How do you help a brother who wrongs others, per Bukhari 2444?", "Stop him from wronging", "By holding back the wrongdoer's hands"],
+    ["Your friend is bullying someone. What fits this lesson?", "Stop your friend", "By holding back the wrongdoer's hands"],
+    ["Helping a brother means always taking his side.", "False", "By holding back the wrongdoer's hands"],
+    ["Stopping someone from doing wrong is a way of helping him.", "True", "By holding back the wrongdoer's hands"]
   ],
   // Umm al-Fadl heard Ibn Abbas recite al-Mursalat: my son, your recitation reminded me; it was the last I heard
   // from him; he recited it in the Maghrib prayer (Sahih al-Bukhari 763). (What al-Mursalat's ayahs say stays on
@@ -3502,18 +3502,18 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-abu-ayyub-house": [
     ["Why was Abu Ayyub upset?", "He was walking above the Prophet ﷺ", "We walk above his head!"],
     ["In the end, the Prophet ﷺ moved upstairs.", "True", "So he moved up, and Abu Ayyub down"],
-    ["Why did the Prophet ﷺ not eat the food?", "It had garlic", "He made food for him, with garlic in it", "He was told: he did not eat it"],
+    ["Why did the Prophet ﷺ not eat the food?", "It had garlic", "Abu Ayyub made him food with garlic in it", "Abu Ayyub was told: he did not eat it"],
     ["Is garlic forbidden?", "No", "Is it forbidden? No, but I dislike it"],
-    ["What did Abu Ayyub say?", "I dislike what you dislike", "Then I dislike what you dislike"]
+    ["What did Abu Ayyub say?", "I dislike what you dislike", "Abu Ayyub: Then I dislike what you dislike"]
   ],
   // Al-Miqdad: we will not say as Musa's people said, but we will fight on your right and your left, in front of you
   // and behind you; and his face shone (Sahih al-Bukhari 3952). (That his words recall 5:24 stays on its usual
   // picture: the scene's words do not name it.)
   "sign-miqdad-promise": [
-    ["Whose words did Al-Miqdad refuse to repeat?", "Musa's people", "We will not say as Musa's people said"],
+    ["Whose words did Al-Miqdad refuse to repeat?", "Musa's people", "Al-Miqdad: We won't say as Musa's folk did"],
     ["Where did Al-Miqdad say they would fight?", "On his right, left, front and back", "But we will fight on your right and your left", "And in front of you and behind you"],
-    ["His words made the Prophet's ﷺ face shine with joy.", "True", "I saw his face shine, and it pleased him"],
-    ["How did the Prophet ﷺ react, per Ibn Mas'ud?", "His face shone with joy", "I saw his face shine, and it pleased him"]
+    ["His words made the Prophet's ﷺ face shine with joy.", "True", "Ibn Mas'ud: his face shone; it pleased him"],
+    ["How did the Prophet ﷺ react, per Ibn Mas'ud?", "His face shone with joy", "Ibn Mas'ud: his face shone; it pleased him"]
   ],
   // One of the Muhajirun struck one of the Ansar; each called out to his own side. What is this call of ignorance?
   // Leave it, for it is foul (Sahih al-Bukhari 4905). (Who the Ansar were, and who narrated it, stay on their usual
@@ -3528,13 +3528,13 @@ const ASKS: Record<string, readonly Ask[]> = {
   // not love that Allah forgive you? Yes, by Allah, and he gave again (Sahih al-Bukhari 4750, Quran 24:22). (Which
   // ayah it was, what he said in the end, and what ayahs 21-26 say stay on their usual picture.)
   "sign-abu-bakr-forgives": [
-    ["Whom had Abu Bakr been helping?", "His poor cousin Mistah", "Abu Bakr used to spend on Mistah", "For he was his kin, and poor"],
-    ["Which relative did Abu Bakr swear to stop helping?", "Mistah", "Abu Bakr used to spend on Mistah", "By Allah, I will never spend on him again"],
+    ["Whom had Abu Bakr been helping?", "His poor cousin Mistah", "Abu Bakr used to spend on Mistah", "Mistah was Abu Bakr's kin, and poor"],
+    ["Which relative did Abu Bakr swear to stop helping?", "Mistah", "Abu Bakr used to spend on Mistah", "Abu Bakr: By Allah, I'll never spend again"],
     ["Ayah 22: what should the generous do?", "Pardon and overlook", "Let them pardon and overlook"],
     ["What does Allah ask in 24:22?", "Do you not love that Allah forgives you?", "Would you not love that Allah forgive you?"],
-    ["What did Abu Bakr say when the ayah came?", "I want Allah to forgive me", "Yes, by Allah, I love that Allah forgive me"],
-    ["Abu Bakr stopped helping Mistah forever.", "False", "So he gave Mistah again what he used to"],
-    ["After ayah 22, what did Abu Bakr do for Mistah?", "Helped him again", "So he gave Mistah again what he used to"]
+    ["What did Abu Bakr say when the ayah came?", "I want Allah to forgive me", "Abu Bakr: yes, I want Allah to forgive me"],
+    ["Abu Bakr stopped helping Mistah forever.", "False", "Abu Bakr gave back to Mistah as before"],
+    ["After ayah 22, what did Abu Bakr do for Mistah?", "Helped him again", "Abu Bakr gave back to Mistah as before"]
   ],
   // Between every two calls there is a prayer, three times; for whoever wishes (Sahih al-Bukhari 624). ("How many
   // times did he say it?" stays on its usual picture: lessons on parents ask it about another hadith.)
@@ -3557,13 +3557,13 @@ const ASKS: Record<string, readonly Ask[]> = {
   // picture: the night is there from the scene's start.)
   "sign-two-lights": [
     ["What lit the way for the two companions?", "Two lights like lamps", "With them, like two lamps, lighting the way"],
-    ["What happened when the two men parted?", "Each one kept one light", "When they parted, each had one with him"]
+    ["What happened when the two men parted?", "Each one kept one light", "When they parted, one went with each"]
   ],
   // O Abu Umayr, what did the nughayr do? A little bird he played with (Sahih al-Bukhari 6203). (What pet he had is
   // asked on its picture cards; whose little brother he was stays on its usual picture: the scene's words do not name
   // Anas.)
   "sign-abu-umayr-bird": [
-    ["What does this teach about the Prophet ﷺ?", "He was kind to children", "O Abu Umayr, what did the nughayr do?", "A little bird he played with"]
+    ["What does this teach about the Prophet ﷺ?", "He was kind to children", "O Abu Umayr, what did the nughayr do?", "A little bird Abu Umayr played with"]
   ],
   // When a man spends on his family hoping for its reward, it is a charity for him (Sahih al-Bukhari 55); whatever
   // you spend for Allah's sake, you are rewarded for it, even a morsel you put in your wife's mouth (Sahih al-Bukhari
@@ -3586,9 +3586,9 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["When you hear the adhan, repeat its jokes quietly.", "False", "Say the like of what the caller says"],
     ["What should you do when you hear the adhan?", "Say what the caller says", "Say the like of what the caller says"],
     ["While the adhan is called, what do you say?", "The same words as the caller", "Say the like of what the caller says"],
-    ["We say the du'a when the adhan is finished.", "True", "Whoever says, when he hears the call", "O Allah, Lord of this perfect call"],
-    ["What does the one who says it receive?", "His ﷺ intercession", "My intercession is due for him"],
-    ["What does the Prophet ﷺ promise the one who says this dua?", "His intercession on the Last Day", "My intercession is due for him"]
+    ["We say the du'a when the adhan is finished.", "True", "Whoever says, on hearing the call", "O Allah, Lord of this perfect call"],
+    ["What does the one who says it receive?", "His ﷺ intercession", "My intercession is due for whoever says it"],
+    ["What does the Prophet ﷺ promise the one who says this dua?", "His intercession on the Last Day", "My intercession is due for whoever says it"]
   ],
   // When supper is served and the iqamah is called, start with the supper (Sahih al-Bukhari 671). (What khushu means,
   // why Ibn Kathir cites it with 94:7, and that it does not allow missing the prayer stay on their usual picture.)
@@ -3607,7 +3607,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // He gave each of his Companions seven dates; one of Abu Hurairah's was dry and hard, and none pleased him more, for
   // it made his chewing last long (Sahih al-Bukhari 5411).
   "sign-seven-dates": [
-    ["How many dates did each companion get?", "Seven", "He gave each one seven dates"],
+    ["How many dates did each companion get?", "Seven", "He gave each Companion seven dates"],
     ["Which date did Abu Hurairah like the most?", "The hard one", "He gave me seven: one was dry and hard", "None of them pleased me more than it"],
     ["Abu Hurairah was happy with the hard date.", "True", "None of them pleased me more than it", "For it made my chewing last long"]
   ],
@@ -3615,8 +3615,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // al-Bukhari 5446).
   "sign-two-dates": [
     ["What did Ibn Umar tell people not to do?", "Eat two dates at once", "Do not take two dates at once"],
-    ["When is it fine to take two dates at once?", "When your friends agree", "Unless one asks his brother's permission"],
-    ["Good table manners mean thinking of others too.", "True", "Unless one asks his brother's permission"]
+    ["When is it fine to take two dates at once?", "When your friends agree", "Ibn Umar: unless one's brother permits it"],
+    ["Good table manners mean thinking of others too.", "True", "Ibn Umar: unless one's brother permits it"]
   ],
   // A cup was brought to him; on his right was a boy, the youngest there, and the elders on his left. He asked the boy's
   // permission to give it to the elders; the boy would not give up his share, so he gave it to him (Sahih al-Bukhari
@@ -3672,7 +3672,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-generous-wind": [
     ["When was he ﷺ at his most generous?", "In Ramadan", "And most generous in Ramadan"],
     ["Who met him ﷺ every night of Ramadan?", "Jibril", "Jibril met him every night of Ramadan"],
-    ["What did he ﷺ do with Jibril each night?", "Recite the Quran to him", "He recited the Quran to him"]
+    ["What did he ﷺ do with Jibril each night?", "Recite the Quran to him", "He recited the Quran to Jibril"]
   ],
   // Shall I fast on a journey? Fast if you wish, or do not (Sahih al-Bukhari 1943); on journeys, one fasting did not
   // blame one not fasting, nor the other way (Sahih al-Bukhari 1947). (Who asked and who narrated stay on their usual
@@ -3685,8 +3685,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Did he forbid fasting on Friday? Yes (Sahih al-Bukhari 1984); none of you should fast on Friday, unless with a day
   // before it or after it (Sahih al-Bukhari 1985). (Who answered stays on its usual picture: the words do not name him.)
   "sign-friday-alone": [
-    ["Which day should not be fasted alone?", "Friday", "Did he forbid fasting on Friday? Yes", "None of you should fast on Friday"],
-    ["Which day should not be fasted on its own?", "Friday", "Did he forbid fasting on Friday? Yes", "None of you should fast on Friday"],
+    ["Which day should not be fasted alone?", "Friday", "Jabir: yes, he forbade fasting on Friday", "None of you should fast on Friday"],
+    ["Which day should not be fasted on its own?", "Friday", "Jabir: yes, he forbade fasting on Friday", "None of you should fast on Friday"],
     ["The warning is about fasting Friday on its own.", "True", "None of you should fast on Friday", "Unless with a day before it"],
     ["Fasting Thursday and Friday together is fine.", "True", "Unless with a day before it"],
     ["You want to fast on a Friday. What else?", "Fast the day before or after", "Unless with a day before it", "Or a day after it"]
@@ -3706,7 +3706,7 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Besides food and drink, what should a fasting person leave?", "Lies and bad deeds", "Whoever does not leave false speech", "And acting on it"],
     ["A real fast keeps the tongue clean too.", "True", "Whoever does not leave false speech", "Allah has no need"],
     ["If you fast, it is fine to tell lies.", "False", "Whoever does not leave false speech", "Allah has no need"],
-    ["Whose hunger does Allah have no need of?", "The one who keeps lying and doing wrong", "Whoever does not leave false speech", "That he leave his food and drink"]
+    ["Whose hunger does Allah have no need of?", "The one who keeps lying and doing wrong", "Whoever does not leave false speech", "That such a one leave food and drink"]
   ],
   // We set out with him on a journey on a very hot day, until one put his hand on his head from the heat, and none of us
   // was fasting but him and Ibn Rawahah (Sahih al-Bukhari 1945).
@@ -3735,13 +3735,13 @@ const ASKS: Record<string, readonly Ask[]> = {
   // fast that day (Sahih al-Bukhari 1914).
   "sign-not-before-ramadan": [
     ["What should we not do just before Ramadan?", "Fast a day or two", "With a fast of a day or two"],
-    ["Who may still fast that day?", "One with that habit", "Unless one used to fast that fast", "Then let him fast that day"],
-    ["Someone who always fasts Mondays may fast that Monday.", "True", "Unless one used to fast that fast", "Then let him fast that day"]
+    ["Who may still fast that day?", "One with that habit", "Unless one used to fast that fast", "Then let that person fast that day"],
+    ["Someone who always fasts Mondays may fast that Monday.", "True", "Unless one used to fast that fast", "Then let that person fast that day"]
   ],
   // These are two days he forbade fasting: the day you break your fast, and the day you eat from your sacrifices (Sahih
   // al-Bukhari 1990). (Which Eid is which, and the days after it, stay on their usual picture: the scene names neither.)
   "sign-no-fast-on-eid": [
-    ["Is it allowed to fast on Eid day?", "No, it is forbidden", "These are two days he forbade fasting"]
+    ["Is it allowed to fast on Eid day?", "No, it is forbidden", "Umar: These two days he forbade fasting"]
   ],
   // He ordered fasting the day of Ashura; when Ramadan was made a duty, whoever wished fasted it, and whoever wished did
   // not (Sahih al-Bukhari 2001); no day he sought to fast more than Ashura, and this month, Ramadan (Sahih al-Bukhari
@@ -3760,7 +3760,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Whenever he saw the rain, he would say: O Allah, let it be a strong rain and a fruitful one (Sahih al-Bukhari 1032).
   // (Who told us of this du'a stays on its usual picture: the scene's words do not name Aishah.)
   "sign-rain-dua": [
-    ["What did he say when he saw rain?", "O Allah, a strong fruitful rain", "Let it be a strong rain", "And a fruitful one"],
+    ["What did he say when he saw rain?", "O Allah, a strong fruitful rain", "O Allah, let it be a strong rain", "And a fruitful one"],
     ["We can ask Allah to make rain beneficial.", "True", "And a fruitful one"]
   ],
   // Famine is not that no rain comes to you; famine is that rain comes to you, and comes again, and the earth grows
@@ -3773,7 +3773,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // he followed the water to one in his garden: a third I give in charity, a third we eat, and a third I put back into
   // it (Sahih Muslim 2984a). (What watered the garden stays on its usual picture: the cloud is there from the start.)
   "sign-cloud-and-garden": [
-    ["How much of the harvest did the garden's owner give in charity?", "One third", "A third I give, a third we eat"],
+    ["How much of the harvest did the garden's owner give in charity?", "One third", "Gardener: A third I give, a third we eat"],
     ["The garden's owner put a third of the harvest back into his garden.", "True", "And a third I put back into it"]
   ],
   // On a night of cold and wind, Ibn Umar called the adhan, then said: pray in your homes; he used to tell the caller,
@@ -3786,7 +3786,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // In his lifetime, I built a house with my own hands, to shelter me from the rain and shade me from the sun; none of
   // Allah's creation helped me build it (Sahih al-Bukhari 6302).
   "sign-house-for-rain-and-sun": [
-    ["Ibn Umar built this house during the life of the Prophet ﷺ.", "True", "In his lifetime, I built a house"],
+    ["Ibn Umar built this house during the life of the Prophet ﷺ.", "True", "Ibn Umar: In his lifetime, I built a house"],
     ["Why did Ibn Umar build his house?", "For shelter from rain and sun", "To shelter me from the rain", "And shade me from the sun"],
     ["Who helped Ibn Umar build it?", "Nobody", "None of Allah's creation helped me"]
   ],
@@ -3795,7 +3795,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // are there from the start.)
   "sign-sheep-on-the-hills": [
     ["He grazes his sheep where the rain falls.", "True", "And to where the rain falls"],
-    ["Why will he take his sheep up the mountains?", "To keep his faith safe from trials", "Fleeing with his faith from trials"]
+    ["Why will he take his sheep up the mountains?", "To keep his faith safe from trials", "Fleeing with one's faith from trials"]
   ],
   // When the wind blew hard he said: O Allah, I ask You for its good, and seek refuge in You from its evil; when clouds
   // gathered his look changed, and when it rained it was lifted from him: perhaps, Aishah, it is as 'Ad said (Sahih
@@ -3859,12 +3859,12 @@ const ASKS: Record<string, readonly Ask[]> = {
   // in your family and your wealth, show me the market; Sa'd said: the market of Qaynuqa'; and he came back with
   // dried yogurt and butter (Sahih al-Bukhari 2049, and 2048 in his own telling).
   "sign-show-me-the-market": [
-    ["Abdur-Rahman took half of Sa'd's wealth.", "False", "Allah bless you in your family and wealth"],
+    ["Abdur-Rahman took half of Sa'd's wealth.", "False", "Abdur-Rahman: Allah bless kin and wealth"],
     ["What did Abd ar-Rahman ask for instead of Sa'd's wealth?", "The way to the market", "Show me the market"],
     ["What did Abdur-Rahman ask his new brother for?", "The way to the market", "Show me the market"],
     ["Which market did they show him?", "The market of Qaynuqa'", "Sa'd: the market of Qaynuqa'"],
-    ["Abd ar-Rahman came back from the market with nothing.", "False", "He came back with dried yogurt and butter"],
-    ["What did he bring home from the market?", "Dried yogurt and butter", "He came back with dried yogurt and butter"]
+    ["Abd ar-Rahman came back from the market with nothing.", "False", "Abdur-Rahman brought dried yogurt, butter"],
+    ["What did he bring home from the market?", "Dried yogurt and butter", "Abdur-Rahman brought dried yogurt, butter"]
   ],
   // He bought food from a Jewish man, to be paid at a set time, and pledged his iron armour to him (Sahih al-Bukhari
   // 2068). (What he bought stays on its usual picture: the sacks of grain are there from the start.)
@@ -3884,7 +3884,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-easygoing-trader": [
     ["Who gets Allah's mercy in this hadith?", "One who is easy in trade", "May Allah have mercy on one who is easy"],
     ["Bargaining harshly and rudely is the Sunnah.", "False", "May Allah have mercy on one who is easy"],
-    ["When else should we be easy?", "When asking for a debt back", "And when he asks for what he is owed"]
+    ["When else should we be easy?", "When asking for a debt back", "And when asking for what is owed"]
   ],
   // He forbade selling fruit until it is clearly good; he forbade it to the seller and to the buyer (Sahih al-Bukhari
   // 2194). (Why the rule protects people is not in the scene's words, so it stays on its usual picture.)
@@ -3902,9 +3902,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // The Ansar asked him to divide the palms between them and their brothers; he said: no; then the emigrants did the
   // work of the trees and shared the fruit, and said: we hear and obey (Sahih al-Bukhari 2325).
   "sign-share-the-fruits": [
-    ["What did the Ansar first ask the Prophet ﷺ?", "To divide their palms", "Divide the palms with our brothers"],
-    ["The emigrants worked the trees and shared the fruit.", "True", "You do the work of the trees", "And we share the fruit with you"],
-    ["What did the emigrants answer?", "We listen and obey", "They said: we hear and obey"]
+    ["What did the Ansar first ask the Prophet ﷺ?", "To divide their palms", "Ansar: divide the palms with our brothers"],
+    ["The emigrants worked the trees and shared the fruit.", "True", "Ansar: you do the work of the trees", "And we share the fruit with you"],
+    ["What did the emigrants answer?", "We listen and obey", "Emigrants: we hear and obey"]
   ],
   // Jabir rode a camel that had grown tired; he struck it and made du'a for it, and it went as it had never gone
   // before. Sell it to me for an uqiyah; Jabir sold it and rode it to his family, and he paid him its price; then: take
@@ -3971,15 +3971,15 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // No one plots against the people of Madinah but he melts away, as salt melts in water (Sahih al-Bukhari 1877).
   "sign-salt-in-water": [
-    ["Plotting against the people of Madinah ends well.", "False", "But he melts away"],
-    ["What happens to one who plots against Madinah's people?", "He melts away like salt", "But he melts away", "As salt melts in water"],
+    ["Plotting against the people of Madinah ends well.", "False", "But the plotter melts away"],
+    ["What happens to one who plots against Madinah's people?", "He melts away like salt", "But the plotter melts away", "As salt melts in water"],
     ["What does the plotter melt like, he ﷺ said?", "Salt in water", "As salt melts in water"]
   ],
   // A Bedouin gave him his pledge on Islam; the next day he came with a fever and said: cancel my pledge; he refused
   // three times, and said: Madinah is like a furnace, it drives out its dross and its good shines pure (Sahih
   // al-Bukhari 1883).
   "sign-like-a-furnace": [
-    ["What happened to the Bedouin the day after his pledge?", "He came with a fever", "The next day he came with a fever"],
+    ["What happened to the Bedouin the day after his pledge?", "He came with a fever", "Next day, the Bedouin came with a fever"],
     ["He ﷺ cancelled the Bedouin's pledge at once.", "False", "He refused, three times"],
     ["What is Madinah like, he ﷺ said?", "A furnace", "Madinah is like a furnace"]
   ],
@@ -4040,8 +4040,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // and Umar; and Abu Bakr and Umar were not there (Sahih al-Bukhari 3690).
   "sign-talking-wolf": [
     ["What did the wolf in the story do?", "It spoke to the shepherd", "The wolf turned and said: who guards it"],
-    ["Who did the Prophet ﷺ say believed it with him?", "Abu Bakr and Umar", "I believe it, as do Abu Bakr and Umar"],
-    ["Abu Bakr and Umar were sitting there when he said it.", "False", "I believe it, as do Abu Bakr and Umar", "And Abu Bakr and Umar were not there"]
+    ["Who did the Prophet ﷺ say believed it with him?", "Abu Bakr and Umar", "He said: I, Abu Bakr and Umar believe it"],
+    ["Abu Bakr and Umar were sitting there when he said it.", "False", "He said: I, Abu Bakr and Umar believe it", "And Abu Bakr and Umar were not there"]
   ],
   // In a dream he drew from a well as much as Allah willed; then Ibn Abi Quhafah drew a bucket or two; then it became
   // a huge bucket, and Ibn al-Khattab took it, and none drew like Umar, until the people drank and their camels knelt
@@ -4084,9 +4084,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // walked as if freed from a tether; he said: how did you know it is a ruqyah? You did right; give me a share with you
   // (Sahih al-Bukhari 2276). (What stung the chief stays on its usual picture: the scene does not tell it.)
   "sign-fatihah-cure": [
-    ["Which surah did the companion recite?", "Al-Fatihah", "He blew over him and recited Al-Fatihah"],
-    ["What did the companion recite over him?", "Al-Fatihah", "He blew over him and recited Al-Fatihah"],
-    ["What happened to the chief?", "He got up healed", "As if freed from a tether, he walked"],
+    ["Which surah did the companion recite?", "Al-Fatihah", "One of them blew and recited Al-Fatihah"],
+    ["What did the companion recite over him?", "Al-Fatihah", "One of them blew and recited Al-Fatihah"],
+    ["What happened to the chief?", "He got up healed", "The chief walked as if freed from a tether"],
     ["What did the Prophet ﷺ ask the companion?", "How did you know it is a ruqyah?", "How did you know it is a ruqyah?"],
     ["The Prophet ﷺ said they did right.", "True", "You did right; give me a share with you"]
   ],
@@ -4131,15 +4131,15 @@ const ASKS: Record<string, readonly Ask[]> = {
   // house, and I disliked to keep it overnight, so I shared it out (Sahih al-Bukhari 1430). (Giving zakat to please
   // Allah alone stays on its usual picture: the scene does not tell it.)
   "sign-gold-not-kept-overnight": [
-    ["Once zakat is due, pay it ____.", "soon", "He prayed Asr with us, then hurried", "So I shared it out"]
+    ["Once zakat is due, pay it ____.", "soon", "Uqbah: He prayed Asr with us, then hurried", "So I shared it out"]
   ],
   // A man came into the masjid on a camel, made it kneel there and tied it; he said: I will be hard in asking, so do not
   // be angry; he said: ask whatever you want; did Allah send you to all the people? He said: by Allah, yes; did Allah
   // order that we pray five prayers? Yes; and the man said: I believe in what you have brought (Sahih al-Bukhari 63).
   "sign-dimam-questions": [
-    ["What did Dimam ask before his questions?", "Not to be angry with him", "I will be hard in asking: do not be angry"],
+    ["What did Dimam ask before his questions?", "Not to be angry with him", "The man: I'll ask hard; do not be angry"],
     ["What did the Prophet ﷺ answer him?", "Ask whatever you want", "Ask whatever you want"],
-    ["A person may ask even hard questions about Islam.", "True", "I will be hard in asking: do not be angry", "Ask whatever you want"]
+    ["A person may ask even hard questions about Islam.", "True", "The man: I'll ask hard; do not be angry", "Ask whatever you want"]
   ],
   // He took a camel of a certain age; its owner came asking for it back, and he said: one who has a right has a say;
   // then he gave him back better than its age, and said: the best of you are the best in repaying (Sahih al-Bukhari
@@ -4158,7 +4158,7 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Abu Bakr asked if anyone is called from every gate. What was the answer?", "Yes, and I hope you are", "Yes, and I hope you are one of them"],
     ["Who is called from the gate of prayer?", "Those known for prayer", "The people of prayer: the gate of prayer"],
     ["Which gate is for those who fast?", "Ar-Rayyan", "Of fasting: the gate of fasting, ar-Rayyan"],
-    ["What did Abu Bakr ask?", "Is anyone called from all gates?", "Is anyone called from all of them?"],
+    ["What did Abu Bakr ask?", "Is anyone called from all gates?", "Abu Bakr: Is anyone called from them all?"],
     ["What did Muhammad ﷺ reply?", "Yes, and I hope you are one", "Yes, and I hope you are one of them"]
   ],
   // When the Ash'aris run short on campaign, or food runs low for their families in Madinah, they gather what they have
@@ -4193,21 +4193,21 @@ const ASKS: Record<string, readonly Ask[]> = {
   // picture: he stands in the sun from the scene's start.)
   "sign-vow-in-the-sun": [
     ["Which part of his vow did he ﷺ let him keep?", "His fast", "And to fast", "And sit, and let him complete his fast"],
-    ["Standing in the sun with no shade is worship Allah asks for.", "False", "Abu Isra'il: he vowed to stand, never sit", "Tell him to speak, come into the shade"]
+    ["Standing in the sun with no shade is worship Allah asks for.", "False", "They said: Abu Isra'il vowed to stand", "Tell him to speak, come into the shade"]
   ],
   // Abu Shu'aib invited him as one of five, and a man followed them; he said: you invited me as one of five, and this
   // man has followed us; if you wish, let him in, and if you wish, leave him; he said: rather, I let him in (Sahih
   // al-Bukhari 5434). (How many were invited stays on its usual picture: the five are there from the scene's start.)
   "sign-one-who-followed": [
     ["What did he ﷺ do when another man followed them?", "He asked the host", "You invited me as one of five", "And if you wish, leave him"],
-    ["The host said yes, and the extra man came in.", "True", "Rather, I let him in"]
+    ["The host said yes, and the extra man came in.", "True", "Abu Shu'aib: Rather, I let this man in"]
   ],
   // Ibn Abbas set out water for his wudu; he asked who put it, was told, and said: O Allah, give him understanding of
   // the religion (Sahih al-Bukhari 143). (What Ibn Abbas set out stays on its usual picture: the jug is there from the
   // scene's start.)
   "sign-water-for-wudu": [
-    ["What did the Prophet ﷺ ask Allah to give him?", "Understanding of the religion", "O Allah, give him understanding", "Of the religion"],
-    ["A small kindness earned Ibn Abbas a great dua.", "True", "O Allah, give him understanding", "Of the religion"]
+    ["What did the Prophet ﷺ ask Allah to give him?", "Understanding of the religion", "O Allah, give Ibn Abbas understanding", "Of the religion"],
+    ["A small kindness earned Ibn Abbas a great dua.", "True", "O Allah, give Ibn Abbas understanding", "Of the religion"]
   ],
   // He went round the House on a camel, and each time he came to the Corner he pointed to it with something he had, and
   // said: Allahu akbar (Sahih al-Bukhari 1613). (That he rode a camel stays on its usual picture: the camel is there
@@ -4246,7 +4246,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // (Where they argued stays on its usual picture: the masjid is there from the scene's start.)
   "sign-half-the-debt": [
     ["What did he ﷺ ask Ka'b to do with the debt?", "Drop half of it", "He pointed: drop half of the debt"],
-    ["He ﷺ told the other man to pay the rest straight away.", "True", "Get up and pay him"]
+    ["He ﷺ told the other man to pay the rest straight away.", "True", "He told Ibn Abi Hadrad: get up and pay"]
   ],
   // The folk of Quba fought one another till they threw stones at each other; he was told of it, and said: let us go, to
   // make peace between them (Sahih al-Bukhari 2693).
@@ -4262,7 +4262,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-better-than-a-servant": [
     ["What had Fatimah asked for?", "A servant", "Better for you both than a servant"],
     ["How many times is Allahu Akbar said?", "34", "In bed: Allahu akbar, thirty-four times"],
-    ["When is this dhikr said?", "When going to bed", "He came to us when we had gone to bed", "In bed: Allahu akbar, thirty-four times"],
+    ["When is this dhikr said?", "When going to bed", "Ali: He came to us when we had gone to bed", "In bed: Allahu akbar, thirty-four times"],
     ["The Prophet ﷺ said the dhikr was better than a servant.", "True", "Shall I teach you better than you asked?", "Better for you both than a servant"]
   ],
   // They tied Thumamah to a pillar of the masjid; he asked him: what do you have, Thumamah? and so the next day and the
@@ -4271,8 +4271,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // dearest face of all to him (Sahih al-Bukhari 4372).
   "sign-thumamah-freed": [
     ["What did the Prophet ﷺ say on the third day?", "Set Thumamah free", "Then he said: set Thumamah free"],
-    ["How did Thumamah feel about the Prophet ﷺ after Islam?", "He loved him most of all", "Your face is now the dearest face to me"],
-    ["Kindness can open a person's heart to Islam.", "True", "Then he said: set Thumamah free", "He came in: I testify, no god but Allah"]
+    ["How did Thumamah feel about the Prophet ﷺ after Islam?", "He loved him most of all", "Thumamah: your face is now dearest to me"],
+    ["Kindness can open a person's heart to Islam.", "True", "Then he said: set Thumamah free", "Thumamah: I testify, no god but Allah"]
   ],
   // My likeness and the prophets' before me is a man who built a house, fine and fair, but for one brick's place in a
   // corner; the folk went round it and wondered at it, and said: if only this brick were set! So I am that brick, and I
@@ -4285,14 +4285,14 @@ const ASKS: Record<string, readonly Ask[]> = {
   // He was named al-Khidr because he sat on a white, barren land, and lo, it stirred green behind him (Sahih al-Bukhari
   // 3402). (What kind of land he sat on stays on its usual picture: the white land is there from the scene's start.)
   "sign-green-land": [
-    ["What happened where he sat, in the hadith?", "The land turned green", "He was named al-Khidr", "And lo, it stirred green behind him"],
-    ["Khadra in Arabic means green.", "True", "He was named al-Khidr", "And lo, it stirred green behind him"]
+    ["What happened where he sat, in the hadith?", "The land turned green", "He said: al-Khidr was named so", "And lo, it stirred green behind al-Khidr"],
+    ["Khadra in Arabic means green.", "True", "He said: al-Khidr was named so", "And lo, it stirred green behind al-Khidr"]
   ],
   // Mulaykah invited him to food she made; he ate of it, then said: get up, and let me lead you in prayer. Anas went to
   // their mat, dark from long use, and sprinkled it with water; Anas and the orphan lined up behind him, and the old
   // lady behind them, and he prayed two rak'ahs with them, then left (Sahih al-Bukhari 380).
   "sign-mat-for-prayer": [
-    ["What did Anas do for him ﷺ to pray on?", "He washed an old mat", "I went to our mat, dark from long use", "And sprinkled it with water"],
+    ["What did Anas do for him ﷺ to pray on?", "He washed an old mat", "Anas: I went to our mat, dark from use", "And sprinkled it with water"],
     ["Who lined up with Anas behind him ﷺ?", "An orphan boy", "The orphan and I lined up behind him"],
     ["The old lady stood behind the two boys.", "True", "And the old lady behind us"]
   ],
@@ -4325,7 +4325,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-long-night": [
     ["What did Abu Hurairah call the night of his journey?", "Long and tiring", "O night, how long and tiring!"],
     ["Abu Hurairah's slave ran away from him on the way.", "True", "A slave of mine ran away on the way"],
-    ["What did Abu Hurairah do when his slave came back?", "He freed him for Allah", "I said: he is free, for the sake of Allah"]
+    ["What did Abu Hurairah do when his slave came back?", "He freed him for Allah", "I said: the slave is free for Allah's sake"]
   ],
   // As he sat in the masjid, three came; two came to him, and one went away. One saw a gap in the circle and sat in it,
   // the other sat behind them, and the third turned his back and went. He said: one of them went to Allah, and Allah
@@ -4348,7 +4348,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // and brought them to him. He said: by Allah, I meant not you. So I took the case to him, and he said: yours is what
   // you meant, Yazid, and yours is what you took, Ma'n (Sahih al-Bukhari 1422).
   "sign-what-you-meant": [
-    ["Who ended up with Yazid's charity?", "His own son, Ma'n", "My father Yazid took dinars for charity", "I came, took them, and brought them to him"],
+    ["Who ended up with Yazid's charity?", "His own son, Ma'n", "My father Yazid took dinars for charity", "I took them and brought them to my father"],
     ["What did he ﷺ tell Yazid?", "You get the reward you intended", "He said: yours is what you meant, Yazid"],
     ["Ma'n had to give the coins back.", "False", "And yours is what you took, Ma'n"]
   ],
@@ -4387,7 +4387,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-forgotten-tree": [
     ["Whose father was at the pledge, per Bukhari 4163?", "Sa'id ibn al-Musayyib", "Sa'id said: my father was one who pledged"],
     ["What happened the next year, per Bukhari 4163?", "They forgot the tree", "My father said: next year, we forgot it", "and we could not recognize it"],
-    ["Even the Companions could not find the tree later.", "True", "My father said: next year, we forgot it", "Sa'id said: they did not know it"]
+    ["Even the Companions could not find the tree later.", "True", "My father said: next year, we forgot it", "Sa'id: the Companions did not know it"]
   ],
   // We were in a cave at Mina when Al-Mursalat was revealed to him; he was reciting it, and I took it from him. Suddenly
   // a snake sprang at us, and he said: kill it. We rushed at it, and it got away. He said: it escaped your evil, as you
@@ -4445,9 +4445,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Anas said: we used to pray with him in the scorching heat, and if one of us could not put his face on the earth, he
   // would spread out his garment and prostrate on it (Sahih al-Bukhari 1208).
   "sign-cloth-in-the-heat": [
-    ["Why could some not put their face on the earth?", "Because of the heat", "We used to pray in the scorching heat", "his face on the earth"],
-    ["Anas prayed with him ﷺ even in scorching heat.", "True", "We used to pray in the scorching heat"],
-    ["What did some spread on the hot earth to prostrate on?", "Their clothes", "that one would spread out his garment", "and prostrate on it"]
+    ["Why could some not put their face on the earth?", "Because of the heat", "Anas: We'd pray with him in scorching heat", "their face on the earth"],
+    ["Anas prayed with him ﷺ even in scorching heat.", "True", "Anas: We'd pray with him in scorching heat"],
+    ["What did some spread on the hot earth to prostrate on?", "Their clothes", "that one would spread out their garment", "and prostrate on it"]
   ],
   // Jabir said: Abu Humayd brought a cup of milk from al-Naqi', and he said to him: will you not cover it, even by
   // laying a stick across it? (Sahih al-Bukhari 5605).
@@ -4642,8 +4642,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // ground it and blew on it; what flew off flew, and what stayed we wet and ate (Sahih al-Bukhari 5413).
   "sign-husk-blown": [
     ["How did they clean the barley, with no sieve?", "They blew off the husk", "Sahl said: we ground it and blew on it", "what flew off flew, and what stayed"],
-    ["What did he ﷺ never see, Sahl said?", "White flour", "I asked Sahl: did he eat white flour?", "Sahl said: he never saw white flour"],
-    ["He ﷺ and his companions lived a simple life.", "True", "I asked Sahl: did he eat white flour?", "Sahl said: he never saw a sieve"]
+    ["What did he ﷺ never see, Sahl said?", "White flour", "Abu Hazim: did he eat white flour?", "Sahl said: he never saw white flour"],
+    ["He ﷺ and his companions lived a simple life.", "True", "Abu Hazim: did he eat white flour?", "Sahl said: he never saw a sieve"]
   ],
   // Abu Hurairah said: the Messenger of Allah ﷺ said: the food of two is enough for three, and the food of three is
   // enough for four (Sahih al-Bukhari 5392).
@@ -4717,7 +4717,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   // declared anyone righteous is not in the scene, so it stays as it is.)
   "sign-flowing-spring": [
     ["How did the Ansar share out the emigrants?", "By drawing lots", "The Ansar drew lots to house the Muhajirun"],
-    ["Whose house did Uthman live in?", "Umm al-Ala's", "and Uthman ibn Maz'un fell to us"],
+    ["Whose house did Uthman live in?", "Umm al-Ala's", "Umm al-Ala: Uthman ibn Maz'un fell to us"],
     ["Umm al-Ala nursed him when he was ill.", "True", "We nursed Uthman until his death"],
     ["What did the Prophet ﷺ ask Umm al-Ala?", "How do you know?", "He said: how do you know?"],
     ["What does this teach us?", "Only Allah knows a person's end", "I said: I testify Allah has honored you", "He said: I hope good for him from Allah"],
@@ -4909,11 +4909,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-brother-of-a-muslim": [
     ["You help a friend with what he needs. What does Allah do?", "Meets your needs", "Allah meets his need"],
     ["You know a friend's private mistake. What should you do?", "Cover it", "whoever covers a Muslim, Allah covers him"],
-    ["A Muslim may hand his brother over to someone who harms him.", "False", "he does not wrong him, nor hand him over"],
+    ["A Muslim may hand his brother over to someone who harms him.", "False", "who must not be wronged or handed over"],
     ["What is a Muslim to another Muslim, in the hadith?", "A brother", "A Muslim is a brother of a Muslim"],
     ["What does Allah do for one who screens a Muslim?", "Screens him on Judgment Day", "whoever covers a Muslim, Allah covers him"],
     ["Who fulfils the needs of one who helps his brother?", "Allah", "Allah meets his need"],
-    ["What must a Muslim never do to his brother, per Bukhari 2442?", "Oppress him", "he does not wrong him, nor hand him over"],
+    ["What must a Muslim never do to his brother, per Bukhari 2442?", "Oppress him", "who must not be wronged or handed over"],
     ["What does Allah do for one who meets a brother's needs?", "Meets his needs", "Allah meets his need"],
     ["Whoever covers a Muslim's faults, Allah will cover his.", "True", "whoever covers a Muslim, Allah covers him"]
   ],
@@ -4929,9 +4929,9 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Abu Hurairah said: he said: travel is a piece of torment; it keeps one of you from his food, his drink and his
   // sleep. So when he has done what he came for, let him hurry home to his family (Sahih al-Bukhari 1804).
   "sign-hurry-home": [
-    ["What does travel keep a person from, he ﷺ said?", "Eating, drinking and sleeping well", "it keeps one of you from his food", "and his sleep"],
-    ["When your work on a journey is done, what should you do?", "Hurry back to your family", "let him hurry home to his family"],
-    ["Once your work is done, it is best to stay away a long time.", "False", "let him hurry home to his family"]
+    ["What does travel keep a person from, he ﷺ said?", "Eating, drinking and sleeping well", "it keeps one of you from food", "and from sleep"],
+    ["When your work on a journey is done, what should you do?", "Hurry back to your family", "let one hurry home to one's family"],
+    ["Once your work is done, it is best to stay away a long time.", "False", "let one hurry home to one's family"]
   ],
   // Abu Hurairah said: he said: the people of Yemen have come to you; they are more gentle and soft-hearted. Faith is
   // Yemeni, and wisdom is Yemeni; pride and haughtiness are among the owners of camels, and calm and dignity among the
@@ -5054,11 +5054,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // enough, and whom Allah makes content with what He has given him (Sahih Muslim 1054).
   "sign-content-with-enough": [
     ["Who is successful, in the hadith?", "One who accepted Islam", "has accepted Islam"],
-    ["Who is successful, per the hadith?", "A Muslim given enough and content", "has accepted Islam", "and Allah makes him content with it"],
+    ["Who is successful, per the hadith?", "A Muslim given enough and content", "has accepted Islam", "and whom Allah makes content with it"],
     ["How much provision does the successful one have, in the hadith?", "Sufficient for his needs", "is given just what is enough"],
-    ["Success needs much more than enough.", "False", "is given just what is enough", "and Allah makes him content with it"],
-    ["What did Allah make him feel, in the hadith?", "Content", "and Allah makes him content with it"],
-    ["Who makes the heart content?", "Allah", "and Allah makes him content with it"]
+    ["Success needs much more than enough.", "False", "is given just what is enough", "and whom Allah makes content with it"],
+    ["What did Allah make him feel, in the hadith?", "Content", "and whom Allah makes content with it"],
+    ["Who makes the heart content?", "Allah", "and whom Allah makes content with it"]
   ],
   // Aishah said: he was asked which deeds are most loved by Allah, and he said: the most constant of them, even if they
   // are few; and he said: take on of deeds only what you can bear (Sahih al-Bukhari 6465). (Laylat al-Qadr is not in the

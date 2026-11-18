@@ -472,7 +472,7 @@ function prayAsYouCan(): SignArt {
       { name: "a light on every place of prayer", svg: [mat, cushion, bed].map(([x, y]) => glow(x, y - 1, 6, WARM, 0.16)).join(""), keys: showFrom(0.86, 0.9), loop: { move: "twinkle", ms: 1400, low: 0.7 } }
     ],
     words: [
-      { text: "I asked him about the prayer", from: 0.02, to: 0.24 },
+      { text: "Imran: I asked him about the prayer", from: 0.02, to: 0.24 },
       { text: "Pray while standing", from: 0.26, to: 0.44 },
       { text: "And if you can't, pray while sitting", from: 0.46, to: 0.66 },
       { text: "If you cannot, then pray lying on your side", from: 0.68, to: 1 }
@@ -650,7 +650,7 @@ function intentions(): SignArt {
       { name: "the coins he went for, glinting", svg: sparkle(stall[0] - 1, stall[1] - 5, 1.4, "#FFF3C0") + sparkle(stall[0] + 2.4, stall[1] - 3.6, 1, "#FFF3C0"), keys: showFrom(0.84, 0.86), loop: { move: "twinkle", ms: 800, low: 0.3 } }
     ],
     words: [
-      { text: "I heard Umar on the minbar say", from: 0.02, to: 0.18 },
+      { text: "Alqamah: I heard Umar on the minbar say", from: 0.02, to: 0.18 },
       { text: "Deeds are only by intentions", from: 0.2, to: 0.38 },
       { text: "Each person gets only what he intended", from: 0.4, to: 0.58 },
       { text: "Whoever emigrated for the world, or to marry", from: 0.6, to: 0.8 },

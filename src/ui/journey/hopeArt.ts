@@ -335,9 +335,9 @@ function sevenInTheShade(): SignArt {
       { text: "A just ruler, a youth brought up in worship", from: 0.27, to: 0.38 },
       { text: "One whose heart is attached to the mosques", from: 0.4, to: 0.505 },
       { text: "Two who love each other for Allah's sake", from: 0.52, to: 0.625 },
-      { text: "He refuses, saying: I am afraid of Allah", from: 0.64, to: 0.745 },
-      { text: "His left hand knows not what his right gave", from: 0.76, to: 0.865 },
-      { text: "Remembering Allah alone, his tears flow", from: 0.88, to: 1 }
+      { text: "One refuses, saying: I am afraid of Allah", from: 0.64, to: 0.745 },
+      { text: "Left hand knows not what the right gave", from: 0.76, to: 0.865 },
+      { text: "One remembers Allah alone, eyes in tears", from: 0.88, to: 1 }
     ]
   };
 }
@@ -526,13 +526,13 @@ function twoJoys(): SignArt {
     ],
     words: [
       { text: "Fasting is a shield", from: 0.02, to: 0.125 },
-      { text: "If someone fights him, he says: I am fasting", from: 0.14, to: 0.25 },
-      { text: "He has left his food and drink for My sake", from: 0.27, to: 0.38 },
+      { text: "If someone fights, say twice: I am fasting", from: 0.14, to: 0.25 },
+      { text: "Allah: they leave food and drink for Me", from: 0.27, to: 0.38 },
       { text: "The fast is for Me, and I will reward it", from: 0.4, to: 0.505 },
       { text: "Better with Allah than the smell of musk", from: 0.52, to: 0.625 },
       { text: "The fasting person has two joys", from: 0.64, to: 0.745 },
-      { text: "One at the time of breaking his fast", from: 0.76, to: 0.865 },
-      { text: "And the other when he will meet his Lord", from: 0.88, to: 1 }
+      { text: "One at the time of breaking the fast", from: 0.76, to: 0.865 },
+      { text: "And the other, when they meet their Lord", from: 0.88, to: 1 }
     ]
   };
 }
@@ -723,7 +723,7 @@ function bornOnTheFitrah(): SignArt {
     ],
     words: [
       { text: "Every child is born on the fitrah", from: 0.02, to: 0.24 },
-      { text: "His parents shape him into another religion", from: 0.26, to: 0.48 },
+      { text: "Parents make one Jew, Christian or Magian", from: 0.26, to: 0.48 },
       { text: "As an animal gives birth to a whole young one", from: 0.5, to: 0.74 },
       { text: "Do you find any part of it cut off?", from: 0.76, to: 1 }
     ]
@@ -1036,11 +1036,11 @@ function sparrowAndTheSea(): SignArt {
     ],
     words: [
       { text: "Musa was asked: who is the most learned?", from: 0.02, to: 0.125 },
-      { text: "He said: I am the most learned", from: 0.14, to: 0.25 },
+      { text: "Musa said: I am the most learned", from: 0.14, to: 0.25 },
       { text: "At the two seas is one more learned than you", from: 0.27, to: 0.38 },
       { text: "A boat carried them without fare", from: 0.4, to: 0.505 },
       { text: "A sparrow dipped its beak in the sea", from: 0.52, to: 0.625 },
-      { text: "Our knowledge has not decreased Allah's", from: 0.64, to: 0.745 },
+      { text: "Al-Khidr: our knowing lessens not Allah's", from: 0.64, to: 0.745 },
       { text: "Except as this sparrow decreased the sea", from: 0.76, to: 0.865 },
       { text: "If only Musa had been more patient", from: 0.88, to: 1 }
     ]

@@ -352,7 +352,7 @@ function rightsOfTheRoad(): SignArt {
       { text: "Beware of sitting on the roads", from: 0.02, to: 0.15 },
       { text: "They said: we must, it is where we talk", from: 0.17, to: 0.31 },
       { text: "If you must, give the road its right", from: 0.33, to: 0.47 },
-      { text: "What is its right? Lowering the gaze", from: 0.49, to: 0.63 },
+      { text: "They asked: its right? Lowering the gaze", from: 0.49, to: 0.63 },
       { text: "Holding back harm, returning the salam", from: 0.65, to: 0.79 },
       { text: "Enjoining good, and forbidding wrong", from: 0.81, to: 1 }
     ]
@@ -793,8 +793,8 @@ function askedAboutBlessings(): SignArt {
       { text: "What brought you out? They said: hunger", from: 0.15, to: 0.27 },
       { text: "What brought you out brought me out too", from: 0.29, to: 0.41 },
       { text: "They went with him to a man of the Ansar", from: 0.43, to: 0.55 },
-      { text: "No one today has more honored guests than I", from: 0.57, to: 0.69 },
-      { text: "He brought a cluster of fresh and dry dates", from: 0.71, to: 0.83 },
+      { text: "Ansari: none today has more honored guests", from: 0.57, to: 0.69 },
+      { text: "The Ansari brought fresh and dry dates", from: 0.71, to: 0.83 },
       { text: "You will be asked about this blessing", from: 0.85, to: 1 }
     ]
   };
@@ -895,8 +895,8 @@ function valleyOfGold(): SignArt {
     ],
     words: [
       { text: "If the son of Adam had a valley of gold", from: 0.02, to: 0.23 },
-      { text: "He would love to have two valleys", from: 0.25, to: 0.48 },
-      { text: "Nothing fills his mouth but dust", from: 0.5, to: 0.73 },
+      { text: "The son of Adam would love two valleys", from: 0.25, to: 0.48 },
+      { text: "Nothing fills a person's mouth but dust", from: 0.5, to: 0.73 },
       { text: "And Allah turns to whoever repents", from: 0.75, to: 1 }
     ]
   };

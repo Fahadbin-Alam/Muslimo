@@ -390,10 +390,10 @@ function abuAyyubHouse(): SignArt {
       { text: "He stayed below, and Abu Ayyub above", from: 0.02, to: 0.13 },
       { text: "We walk above his head!", from: 0.15, to: 0.28 },
       { text: "So he moved up, and Abu Ayyub down", from: 0.3, to: 0.48 },
-      { text: "He made food for him, with garlic in it", from: 0.5, to: 0.62 },
-      { text: "He was told: he did not eat it", from: 0.63, to: 0.74 },
+      { text: "Abu Ayyub made him food with garlic in it", from: 0.5, to: 0.62 },
+      { text: "Abu Ayyub was told: he did not eat it", from: 0.63, to: 0.74 },
       { text: "Is it forbidden? No, but I dislike it", from: 0.76, to: 0.88 },
-      { text: "Then I dislike what you dislike", from: 0.89, to: 1 }
+      { text: "Abu Ayyub: Then I dislike what you dislike", from: 0.89, to: 1 }
     ]
   };
 }
@@ -501,10 +501,10 @@ function miqdadPromise(): SignArt {
     ],
     words: [
       { text: "Al-Miqdad came to him as he made du'a", from: 0.02, to: 0.2 },
-      { text: "We will not say as Musa's people said", from: 0.22, to: 0.4 },
+      { text: "Al-Miqdad: We won't say as Musa's folk did", from: 0.22, to: 0.4 },
       { text: "But we will fight on your right and your left", from: 0.42, to: 0.6 },
       { text: "And in front of you and behind you", from: 0.62, to: 0.78 },
-      { text: "I saw his face shine, and it pleased him", from: 0.8, to: 1 }
+      { text: "Ibn Mas'ud: his face shone; it pleased him", from: 0.8, to: 1 }
     ]
   };
 }
@@ -685,12 +685,12 @@ function abuBakrForgives(): SignArt {
     ],
     words: [
       { text: "Abu Bakr used to spend on Mistah", from: 0.02, to: 0.14 },
-      { text: "For he was his kin, and poor", from: 0.16, to: 0.28 },
-      { text: "By Allah, I will never spend on him again", from: 0.3, to: 0.44 },
+      { text: "Mistah was Abu Bakr's kin, and poor", from: 0.16, to: 0.28 },
+      { text: "Abu Bakr: By Allah, I'll never spend again", from: 0.3, to: 0.44 },
       { text: "Let them pardon and overlook", from: 0.46, to: 0.58 },
       { text: "Would you not love that Allah forgive you?", from: 0.6, to: 0.72 },
-      { text: "Yes, by Allah, I love that Allah forgive me", from: 0.74, to: 0.86 },
-      { text: "So he gave Mistah again what he used to", from: 0.88, to: 1 }
+      { text: "Abu Bakr: yes, I want Allah to forgive me", from: 0.74, to: 0.86 },
+      { text: "Abu Bakr gave back to Mistah as before", from: 0.88, to: 1 }
     ]
   };
 }

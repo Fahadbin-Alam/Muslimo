@@ -216,7 +216,7 @@ function promiseOfBahrain(): SignArt {
       { text: "Abu Bakr had a caller call out:", from: 0.39, to: 0.505 },
       { text: "whoever had a promise or a debt,", from: 0.52, to: 0.635 },
       { text: "let him come to us", from: 0.65, to: 0.755 },
-      { text: "I came to him and said: he promised me", from: 0.77, to: 0.875 },
+      { text: "Jabir: I went to Abu Bakr: he promised me", from: 0.77, to: 0.875 },
       { text: "and Abu Bakr scooped out three handfuls", from: 0.89, to: 1 }
     ]
   };
@@ -414,7 +414,7 @@ function covenantKept(): SignArt {
       spark("asking for help: a spark rising from his place", 86, 103.4, 0.895, 0.925)
     ],
     words: [
-      { text: "Nothing kept me from Badr but this:", from: 0.02, to: 0.125 },
+      { text: "Hudhayfah: Only this kept me from Badr:", from: 0.02, to: 0.125 },
       { text: "I went out with my father, Husayl,", from: 0.14, to: 0.245 },
       { text: "and the disbelievers of Quraysh took us", from: 0.26, to: 0.375 },
       { text: "They took from us Allah's covenant", from: 0.39, to: 0.505 },
@@ -597,7 +597,7 @@ function shadeOfTheKabah(): SignArt {
       { name: "given: a soft golden ring about the middle heap", svg: care(128, 101.2, 4.4, 2.4, SOFT_GOLD), keys: showAt(0.94, 0.955), loop: soft }
     ],
     words: [
-      { text: "I came to him in the shade of the Ka'bah", from: 0.02, to: 0.125 },
+      { text: "Abu Dharr: I came to him by the Ka'bah", from: 0.02, to: 0.125 },
       { text: "He said: they are the losers,", from: 0.14, to: 0.245 },
       { text: "by the Lord of the Ka'bah", from: 0.26, to: 0.375 },
       { text: "I said: what is the matter with me?", from: 0.39, to: 0.505 },
@@ -681,7 +681,7 @@ function secretKept(): SignArt {
       { name: "kept: a warm glow about the home", svg: glow(136, 93, 8, WARM, 0.26), keys: showAt(0.88, 0.91) }
     ],
     words: [
-      { text: "He came to me as I played with the boys", from: 0.02, to: 0.14 },
+      { text: "Anas: he came to me as I played with boys", from: 0.02, to: 0.14 },
       { text: "He greeted us and sent me on an errand", from: 0.155, to: 0.275 },
       { text: "and I was late coming to my mother", from: 0.29, to: 0.41 },
       { text: "When I came, she said: what kept you?", from: 0.425, to: 0.545 },
@@ -781,7 +781,7 @@ function blessTheGivers(): SignArt {
       { text: "When folk came to him with their charity,", from: 0.02, to: 0.16 },
       { text: "he said: O Allah, bless the family", from: 0.175, to: 0.315 },
       { text: "of so-and-so", from: 0.33, to: 0.47 },
-      { text: "My father came to him with his charity", from: 0.485, to: 0.625 },
+      { text: "Abdullah: My father came with his charity", from: 0.485, to: 0.625 },
       { text: "He said: O Allah, bless the family", from: 0.64, to: 0.78 },
       { text: "of Abu Awfa", from: 0.795, to: 1 }
     ]

@@ -266,7 +266,7 @@ function dateMountain(): SignArt {
     words: [
       { text: "A date in charity, from honest earnings", from: 0.02, to: 0.26 },
       { text: "Allah accepts only what is honestly earned", from: 0.28, to: 0.48 },
-      { text: "He grows its reward, as you raise a foal", from: 0.5, to: 0.72 },
+      { text: "Allah grows it, as you raise a foal", from: 0.5, to: 0.72 },
       { text: "Until it becomes as big as a mountain", from: 0.74, to: 1 }
     ]
   };
@@ -411,10 +411,10 @@ function deedsContinue(): SignArt {
       )
     ],
     words: [
-      { text: "When a person dies, his deeds come to an end", from: 0.02, to: 0.24 },
+      { text: "When a person dies, their deeds end", from: 0.02, to: 0.24 },
       { text: "Except three: a charity that keeps going", from: 0.26, to: 0.48 },
       { text: "Or knowledge that people benefit from", from: 0.5, to: 0.72 },
-      { text: "Or a righteous child who prays for him", from: 0.74, to: 1 }
+      { text: "Or a righteous child praying for the dead", from: 0.74, to: 1 }
     ]
   };
 }
@@ -615,7 +615,7 @@ function safaCall(): SignArt {
       { text: "If I warned of horsemen, would you believe me?", from: 0.22, to: 0.4 },
       { text: "We have never heard you tell a lie", from: 0.42, to: 0.58 },
       { text: "I am a plain warner of a severe punishment", from: 0.6, to: 0.78 },
-      { text: "Abu Lahab: only for this? And he went away", from: 0.8, to: 1 }
+      { text: "Abu Lahab said: only for this? and left", from: 0.8, to: 1 }
     ]
   };
 }
@@ -762,7 +762,7 @@ function jabirDates(): SignArt {
       )
     ],
     words: [
-      { text: "Jabir's father died, and he was in debt", from: 0.02, to: 0.18 },
+      { text: "Jabir's father died and was in debt", from: 0.02, to: 0.18 },
       { text: "They thought the dates would not cover the debt", from: 0.2, to: 0.38 },
       { text: "He sat on the dates and prayed for blessing", from: 0.4, to: 0.6 },
       { text: "Every lender was paid in full", from: 0.62, to: 0.78 },

@@ -182,8 +182,8 @@ function sevenDates(): SignArt {
       { name: "a warm glow about the place of the one who tells it", svg: wash(teller[0], n(teller[1] - 2.4), 5.6, 4, WARM, 0.2), keys: showFrom(0.72, 0.76), loop: soft }
     ],
     words: [
-      { text: "He shared out dates among his Companions", from: 0.02, to: 0.22 },
-      { text: "He gave each one seven dates", from: 0.24, to: 0.46 },
+      { text: "Abu Hurairah: He shared out dates one day", from: 0.02, to: 0.22 },
+      { text: "He gave each Companion seven dates", from: 0.24, to: 0.46 },
       { text: "He gave me seven: one was dry and hard", from: 0.48, to: 0.68 },
       { text: "None of them pleased me more than it", from: 0.7, to: 0.84 },
       { text: "For it made my chewing last long", from: 0.86, to: 1 }
@@ -312,7 +312,7 @@ function twoDates(): SignArt {
       { text: "Ibn Umar passed by us as we ate", from: 0.34, to: 0.48 },
       { text: "Do not take two dates at once", from: 0.5, to: 0.64 },
       { text: "For he forbade taking two at once", from: 0.66, to: 0.8 },
-      { text: "Unless one asks his brother's permission", from: 0.82, to: 1 }
+      { text: "Ibn Umar: unless one's brother permits it", from: 0.82, to: 1 }
     ]
   };
 }
@@ -428,7 +428,7 @@ function boyOnRight(): SignArt {
       { text: "On his right, a boy, the youngest there", from: 0.18, to: 0.32 },
       { text: "And the elders on his left", from: 0.34, to: 0.46 },
       { text: "Boy, may I give it to the elders?", from: 0.48, to: 0.62 },
-      { text: "I will not give anyone my share from you", from: 0.64, to: 0.8 },
+      { text: "The boy: no one gets my share from you", from: 0.64, to: 0.8 },
       { text: "So he gave it to him", from: 0.82, to: 1 }
     ]
   };

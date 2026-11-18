@@ -166,8 +166,8 @@ function houseInParadise(): SignArt {
     ],
     words: [
       { text: "When people argued too much", from: 0.02, to: 0.15 },
-      { text: "You have talked too much", from: 0.17, to: 0.3 },
-      { text: "Whoever built a mosque", from: 0.32, to: 0.48 },
+      { text: "Uthman: You have talked too much", from: 0.17, to: 0.3 },
+      { text: "He said: Whoever built a mosque", from: 0.32, to: 0.48 },
       { text: "Intending Allah's Pleasure", from: 0.5, to: 0.62 },
       { text: "Allah would build for him", from: 0.64, to: 0.8 },
       { text: "A similar place in Paradise", from: 0.82, to: 1 }

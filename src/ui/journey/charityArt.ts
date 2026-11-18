@@ -170,11 +170,11 @@ function thirstyDog(): SignArt {
       )
     ],
     words: [
-      { text: "Thirsty, he drank from a well", from: 0.02, to: 0.16 },
+      { text: "A thirsty man drank from a well", from: 0.02, to: 0.16 },
       { text: "A dog licking mud from thirst", from: 0.18, to: 0.32 },
-      { text: "He filled his shoe with water", from: 0.34, to: 0.48 },
+      { text: "The man filled his shoe with water", from: 0.34, to: 0.48 },
       { text: "And gave the dog a drink", from: 0.5, to: 0.64 },
-      { text: "Allah thanked him and forgave him", from: 0.66, to: 0.82 },
+      { text: "Allah thanked and forgave the man", from: 0.66, to: 0.82 },
       { text: "A reward for any living being", from: 0.84, to: 1 }
     ]
   };
@@ -301,8 +301,8 @@ function thornyBranch(): SignArt {
     words: [
       { text: "Walking along a way", from: 0.02, to: 0.18 },
       { text: "A thorny branch across the way", from: 0.2, to: 0.4 },
-      { text: "He moved it out of the way", from: 0.42, to: 0.6 },
-      { text: "Allah thanked him and forgave him", from: 0.62, to: 0.8 },
+      { text: "The man moved it out of the way", from: 0.42, to: 0.6 },
+      { text: "Allah thanked and forgave the man", from: 0.62, to: 0.8 },
       { text: "Removing harm from the way is charity", from: 0.82, to: 1 }
     ]
   };
@@ -533,8 +533,8 @@ function waqf(): SignArt {
       }
     ],
     words: [
-      { text: "Land at Khaybar, the best he had", from: 0.02, to: 0.16 },
-      { text: "Keep the land itself", from: 0.18, to: 0.32 },
+      { text: "Umar: I got land at Khaybar, my best ever", from: 0.02, to: 0.16 },
+      { text: "He said: keep the land itself", from: 0.18, to: 0.32 },
       { text: "And give its fruit in charity", from: 0.34, to: 0.48 },
       { text: "Never sold, gifted or inherited", from: 0.5, to: 0.64 },
       { text: "Its keeper may eat and feed a friend", from: 0.66, to: 0.82 },

@@ -169,10 +169,10 @@ function showMeTheMarket(): SignArt {
     words: [
       { text: "He made Abdur-Rahman and Sa'd brothers", from: 0.02, to: 0.17 },
       { text: "Sa'd: I'll share my wealth in two halves", from: 0.19, to: 0.34 },
-      { text: "Allah bless you in your family and wealth", from: 0.36, to: 0.5 },
+      { text: "Abdur-Rahman: Allah bless kin and wealth", from: 0.36, to: 0.5 },
       { text: "Show me the market", from: 0.52, to: 0.64 },
       { text: "Sa'd: the market of Qaynuqa'", from: 0.66, to: 0.8 },
-      { text: "He came back with dried yogurt and butter", from: 0.82, to: 1 }
+      { text: "Abdur-Rahman brought dried yogurt, butter", from: 0.82, to: 1 }
     ]
   };
 }
@@ -562,9 +562,9 @@ function easygoingTrader(): SignArt {
     ],
     words: [
       { text: "May Allah have mercy on one who is easy", from: 0.02, to: 0.24 },
-      { text: "When he sells", from: 0.26, to: 0.48 },
-      { text: "When he buys", from: 0.5, to: 0.72 },
-      { text: "And when he asks for what he is owed", from: 0.74, to: 1 }
+      { text: "When selling", from: 0.26, to: 0.48 },
+      { text: "When buying", from: 0.5, to: 0.72 },
+      { text: "And when asking for what is owed", from: 0.74, to: 1 }
     ]
   };
 }
@@ -978,11 +978,11 @@ function shareTheFruits(): SignArt {
       { name: "we hear and obey: a soft golden ring about the emigrants", svg: oval(16.5, 101, 15, 5.2, SOFT_GOLD), keys: showFrom(0.88, 0.92), loop: soft }
     ],
     words: [
-      { text: "Divide the palms with our brothers", from: 0.02, to: 0.2 },
+      { text: "Ansar: divide the palms with our brothers", from: 0.02, to: 0.2 },
       { text: "He said: no", from: 0.22, to: 0.36 },
-      { text: "You do the work of the trees", from: 0.38, to: 0.58 },
+      { text: "Ansar: you do the work of the trees", from: 0.38, to: 0.58 },
       { text: "And we share the fruit with you", from: 0.6, to: 0.8 },
-      { text: "They said: we hear and obey", from: 0.82, to: 1 }
+      { text: "Emigrants: we hear and obey", from: 0.82, to: 1 }
     ]
   };
 }

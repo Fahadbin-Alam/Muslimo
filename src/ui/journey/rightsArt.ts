@@ -375,11 +375,11 @@ function aFairGift(): SignArt {
     words: [
       { text: "My father gave me a gift", from: 0.02, to: 0.13 },
       { text: "My mother asked for the Prophet as witness", from: 0.15, to: 0.27 },
-      { text: "He went to him: I gave my son a gift", from: 0.29, to: 0.41 },
+      { text: "My father told him: I gave my son a gift", from: 0.29, to: 0.41 },
       { text: "Have you given all your children the same?", from: 0.43, to: 0.55 },
-      { text: "He said: no", from: 0.57, to: 0.69 },
+      { text: "My father said: no", from: 0.57, to: 0.69 },
       { text: "Fear Allah, and be fair to your children", from: 0.71, to: 0.83 },
-      { text: "He went back, and took back his gift", from: 0.85, to: 1 }
+      { text: "My father went back, took back his gift", from: 0.85, to: 1 }
     ]
   };
 }
@@ -469,12 +469,12 @@ function gardenInCharity(): SignArt {
       { name: "for her: a soft light about her home", svg: glow(herHome[0], 91, 10, WARM, 0.3) + care(herHome[0], 97.4, 11, 2.8), keys: showFrom(0.89, 0.94), loop: { move: "twinkle", ms: 1600, low: 0.75 } }
     ],
     words: [
-      { text: "Sa'd's mother died while he was away", from: 0.02, to: 0.15 },
-      { text: "My mother died while I was away", from: 0.17, to: 0.31 },
+      { text: "Sa'd's mother died while Sa'd was away", from: 0.02, to: 0.15 },
+      { text: "Sa'd: My mother died while I was away", from: 0.17, to: 0.31 },
       { text: "Will it help her if I give charity for her?", from: 0.33, to: 0.47 },
       { text: "He said: yes", from: 0.49, to: 0.63 },
-      { text: "I make you witness: my garden al-Mikhraf", from: 0.65, to: 0.79 },
-      { text: "Is charity for her", from: 0.81, to: 1 }
+      { text: "Sa'd: I make you witness: my garden", from: 0.65, to: 0.79 },
+      { text: "al-Mikhraf is charity for her", from: 0.81, to: 1 }
     ]
   };
 }
@@ -663,11 +663,11 @@ function forgotAndAte(): SignArt {
       { name: "a warm glow on its place", svg: glow(at[0], at[1], 6, WARM, 0.36), keys: showFrom(0.88, 0.93), loop: { move: "twinkle", ms: 1700, low: 0.75 } }
     ],
     words: [
-      { text: "If he forgets, and eats", from: 0.02, to: 0.18 },
+      { text: "If someone forgets, and eats", from: 0.02, to: 0.18 },
       { text: "And drinks", from: 0.2, to: 0.38 },
-      { text: "Let him complete his fast", from: 0.4, to: 0.58 },
-      { text: "For it was Allah who fed him", from: 0.6, to: 0.78 },
-      { text: "And gave him drink", from: 0.8, to: 1 }
+      { text: "Let that person complete the fast", from: 0.4, to: 0.58 },
+      { text: "For it was Allah who fed that person", from: 0.6, to: 0.78 },
+      { text: "And gave that person drink", from: 0.8, to: 1 }
     ]
   };
 }

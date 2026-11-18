@@ -103,7 +103,7 @@ function rainDua(): SignArt {
     words: [
       { text: "Whenever he saw the rain", from: 0.02, to: 0.26 },
       { text: "He would say", from: 0.28, to: 0.46 },
-      { text: "Let it be a strong rain", from: 0.48, to: 0.72 },
+      { text: "O Allah, let it be a strong rain", from: 0.48, to: 0.72 },
       { text: "And a fruitful one", from: 0.74, to: 1 }
     ]
   };
@@ -328,8 +328,8 @@ function cloudAndGarden(): SignArt {
       { text: "One in the wilderness heard a voice", from: 0.02, to: 0.16 },
       { text: "In a cloud: water so-and-so's garden", from: 0.18, to: 0.32 },
       { text: "It poured its water on stony ground", from: 0.34, to: 0.48 },
-      { text: "He followed the water to one in his garden", from: 0.5, to: 0.66 },
-      { text: "A third I give, a third we eat", from: 0.68, to: 0.83 },
+      { text: "The man followed the water to a gardener", from: 0.5, to: 0.66 },
+      { text: "Gardener: A third I give, a third we eat", from: 0.68, to: 0.83 },
       { text: "And a third I put back into it", from: 0.85, to: 1 }
     ]
   };
@@ -470,7 +470,7 @@ function houseForRainAndSun(): SignArt {
       { name: "none helped him: a soft golden ring about his place", svg: ring(130, 104, 4.4, "#E8C25A"), keys: showFrom(0.82, 0.88), loop: soft }
     ],
     words: [
-      { text: "In his lifetime, I built a house", from: 0.02, to: 0.24 },
+      { text: "Ibn Umar: In his lifetime, I built a house", from: 0.02, to: 0.24 },
       { text: "To shelter me from the rain", from: 0.26, to: 0.48 },
       { text: "And shade me from the sun", from: 0.5, to: 0.72 },
       { text: "None of Allah's creation helped me", from: 0.74, to: 1 }
@@ -531,9 +531,9 @@ function sheepOnTheHills(): SignArt {
     ],
     words: [
       { text: "Soon a man's best wealth will be sheep", from: 0.02, to: 0.24 },
-      { text: "He follows them to the mountain tops", from: 0.26, to: 0.48 },
+      { text: "The man follows them to the mountain tops", from: 0.26, to: 0.48 },
       { text: "And to where the rain falls", from: 0.5, to: 0.72 },
-      { text: "Fleeing with his faith from trials", from: 0.74, to: 1 }
+      { text: "Fleeing with one's faith from trials", from: 0.74, to: 1 }
     ]
   };
 }

@@ -242,7 +242,7 @@ function threeDays(): SignArt {
     ],
     words: [
       { text: "You fast all the time and pray all night?", from: 0.02, to: 0.2 },
-      { text: "I said: yes", from: 0.22, to: 0.32 },
+      { text: "Abdullah said: yes", from: 0.22, to: 0.32 },
       { text: "Whoever fasts all the time has not fasted", from: 0.34, to: 0.56 },
       { text: "Fasting three days a month", from: 0.58, to: 0.74 },
       { text: "Is like fasting all the time", from: 0.76, to: 1 }
@@ -312,7 +312,7 @@ function notBeforeRamadan(): SignArt {
       { text: "None of you should go before Ramadan", from: 0.02, to: 0.22 },
       { text: "With a fast of a day or two", from: 0.24, to: 0.44 },
       { text: "Unless one used to fast that fast", from: 0.46, to: 0.7 },
-      { text: "Then let him fast that day", from: 0.72, to: 1 }
+      { text: "Then let that person fast that day", from: 0.72, to: 1 }
     ]
   };
 }
@@ -369,8 +369,8 @@ function noFastOnEid(): SignArt {
       { name: "the days of Eid: a warm glow over the gathering", svg: wash(80, 99, 40, 8, WARM, 0.14), keys: showFrom(0.86, 0.91), loop: soft }
     ],
     words: [
-      { text: "I attended the Eid with Umar", from: 0.02, to: 0.2 },
-      { text: "These are two days he forbade fasting", from: 0.22, to: 0.46 },
+      { text: "Abu Ubayd: I attended the Eid with Umar", from: 0.02, to: 0.2 },
+      { text: "Umar: These two days he forbade fasting", from: 0.22, to: 0.46 },
       { text: "The day you break your fast", from: 0.48, to: 0.7 },
       { text: "And the day you eat from your sacrifices", from: 0.72, to: 1 }
     ]
@@ -535,7 +535,7 @@ function milkAtArafah(): SignArt {
     ],
     words: [
       { text: "The people doubted if he fasted at Arafah", from: 0.02, to: 0.22 },
-      { text: "So I sent him a cup of milk", from: 0.24, to: 0.42 },
+      { text: "Maymunah: So I sent him a cup of milk", from: 0.24, to: 0.42 },
       { text: "While he stood at Arafah", from: 0.44, to: 0.58 },
       { text: "He drank from it", from: 0.6, to: 0.74 },
       { text: "And the people were looking", from: 0.76, to: 1 }

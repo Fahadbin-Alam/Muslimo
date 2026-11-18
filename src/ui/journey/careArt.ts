@@ -198,7 +198,7 @@ function kaabaAsItWas(): SignArt {
     words: [
       { text: "He said: when your people built the Ka'bah", from: 0.02, to: 0.125 },
       { text: "they fell short of Ibrahim's foundations", from: 0.14, to: 0.245 },
-      { text: "I said: will you not return it to them?", from: 0.26, to: 0.375 },
+      { text: "Aishah: will you not return it to them?", from: 0.26, to: 0.375 },
       { text: "He said: were your people not so newly", from: 0.39, to: 0.505 },
       { text: "out of disbelief, I would have done it", from: 0.52, to: 0.635 },
       { text: "Ibn Umar said: he did not touch", from: 0.65, to: 0.755 },
@@ -288,10 +288,10 @@ function clothInTheHeat(): SignArt {
       }
     ],
     words: [
-      { text: "We used to pray in the scorching heat", from: 0.02, to: 0.19 },
+      { text: "Anas: We'd pray with him in scorching heat", from: 0.02, to: 0.19 },
       { text: "If one of us could not put", from: 0.21, to: 0.39 },
-      { text: "his face on the earth", from: 0.41, to: 0.59 },
-      { text: "that one would spread out his garment", from: 0.61, to: 0.79 },
+      { text: "their face on the earth", from: 0.41, to: 0.59 },
+      { text: "that one would spread out their garment", from: 0.61, to: 0.79 },
       { text: "and prostrate on it", from: 0.81, to: 1 }
     ]
   };
@@ -827,7 +827,7 @@ function halfASa(): SignArt {
       { text: "When we were told to give charity", from: 0.02, to: 0.125 },
       { text: "we would carry loads for hire", from: 0.14, to: 0.245 },
       { text: "Abu Aqil came with half a sa'", from: 0.26, to: 0.375 },
-      { text: "and someone brought more than him", from: 0.39, to: 0.505 },
+      { text: "and someone brought more than Abu Aqil", from: 0.39, to: 0.505 },
       { text: "The hypocrites said: Allah has no need", from: 0.52, to: 0.635 },
       { text: "of this one's charity", from: 0.65, to: 0.755 },
       { text: "and the other gave only to show off", from: 0.77, to: 0.875 },

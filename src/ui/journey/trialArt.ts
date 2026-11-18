@@ -221,7 +221,7 @@ function river(): SignArt {
       { text: "Put him into the chest", from: 0.02, to: 0.16 },
       { text: "Cast it into the river", from: 0.18, to: 0.3 },
       { text: "Do not fear, do not grieve", from: 0.32, to: 0.46 },
-      { text: "Follow him", from: 0.48, to: 0.6 },
+      { text: "Musa's mother: Follow him", from: 0.48, to: 0.6 },
       { text: "The river cast it on the shore", from: 0.62, to: 0.76 },
       { text: "We returned him to his mother", from: 0.78, to: 1 }
     ]
@@ -320,9 +320,9 @@ function qarun(): SignArt {
     ],
     words: [
       { text: "Treasures with heavy keys", from: 0.02, to: 0.24 },
-      { text: "He went out in his finery", from: 0.26, to: 0.48 },
-      { text: "The earth swallowed his home", from: 0.5, to: 0.74 },
-      { text: "No one could help him", from: 0.76, to: 1 }
+      { text: "Qarun went out in his finery", from: 0.26, to: 0.48 },
+      { text: "The earth swallowed Qarun and his home", from: 0.5, to: 0.74 },
+      { text: "No one could help Qarun", from: 0.76, to: 1 }
     ]
   };
 }
@@ -612,11 +612,11 @@ function yusufDream(): SignArt {
       }))
     ],
     words: [
-      { text: "Eleven stars", from: 0.02, to: 0.24 },
+      { text: "Yusuf: Eleven stars", from: 0.02, to: 0.24 },
       { text: "The sun and the moon", from: 0.26, to: 0.44 },
       { text: "I saw them bowing to me", from: 0.46, to: 0.64 },
-      { text: "Do not tell your brothers", from: 0.66, to: 0.82 },
-      { text: "My Lord has made it true", from: 0.84, to: 1 }
+      { text: "Ya'qub: Do not tell your brothers", from: 0.66, to: 0.82 },
+      { text: "Yusuf: My Lord has made it true", from: 0.84, to: 1 }
     ]
   };
 }

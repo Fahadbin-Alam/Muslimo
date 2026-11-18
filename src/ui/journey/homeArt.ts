@@ -192,7 +192,7 @@ function nearestDoor(): SignArt {
       { name: "a warm glow about the place next door", svg: wash(next[0], n(next[1] - 3.2), 6.4, 4.6, WARM, 0.22), keys: showFrom(0.82, 0.86), loop: soft }
     ],
     words: [
-      { text: "I have two neighbours", from: 0.02, to: 0.26 },
+      { text: "Aishah: I have two neighbours", from: 0.02, to: 0.26 },
       { text: "To which of them shall I give a gift?", from: 0.28, to: 0.56 },
       { text: "To the one whose door is nearer to you", from: 0.58, to: 1 }
     ]
@@ -290,8 +290,8 @@ function twoLights(): SignArt {
     words: [
       { text: "Two of his Companions left him on a dark night", from: 0.02, to: 0.22 },
       { text: "With them, like two lamps, lighting the way", from: 0.24, to: 0.46 },
-      { text: "When they parted, each had one with him", from: 0.48, to: 0.72 },
-      { text: "Until he reached his family", from: 0.74, to: 1 }
+      { text: "When they parted, one went with each", from: 0.48, to: 0.72 },
+      { text: "Until they reached their homes", from: 0.74, to: 1 }
     ]
   };
 }
@@ -410,9 +410,9 @@ function abuUmayrBird(): SignArt {
     ],
     words: [
       { text: "He was the best of people in character", from: 0.02, to: 0.13 },
-      { text: "I had a little brother called Abu Umayr", from: 0.15, to: 0.27 },
+      { text: "Anas: I had a little brother, Abu Umayr", from: 0.15, to: 0.27 },
       { text: "O Abu Umayr, what did the nughayr do?", from: 0.29, to: 0.43 },
-      { text: "A little bird he played with", from: 0.45, to: 0.57 },
+      { text: "A little bird Abu Umayr played with", from: 0.45, to: 0.57 },
       { text: "Sometimes prayer came while he was with us", from: 0.59, to: 0.71 },
       { text: "He had the mat under him swept and sprinkled", from: 0.73, to: 0.85 },
       { text: "He stood, we stood behind him, he led us", from: 0.87, to: 1 }
@@ -594,10 +594,10 @@ function answerTheCall(): SignArt {
     words: [
       { text: "When you hear the call", from: 0.02, to: 0.14 },
       { text: "Say the like of what the caller says", from: 0.16, to: 0.4 },
-      { text: "Whoever says, when he hears the call", from: 0.42, to: 0.56 },
+      { text: "Whoever says, on hearing the call", from: 0.42, to: 0.56 },
       { text: "O Allah, Lord of this perfect call", from: 0.58, to: 0.72 },
       { text: "And of the prayer to be established", from: 0.74, to: 0.85 },
-      { text: "My intercession is due for him", from: 0.86, to: 1 }
+      { text: "My intercession is due for whoever says it", from: 0.86, to: 1 }
     ]
   };
 }

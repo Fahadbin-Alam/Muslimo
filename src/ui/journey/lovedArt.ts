@@ -155,9 +155,9 @@ function dearestDeeds(): SignArt {
       }
     ],
     words: [
-      { text: "Which deed is the dearest to Allah?", from: 0.02, to: 0.24 },
+      { text: "Abdullah: Which deed is dearest to Allah?", from: 0.02, to: 0.24 },
       { text: "The prayers at their early fixed times", from: 0.26, to: 0.62 },
-      { text: "Then, to be good and dutiful to your parents", from: 0.64, to: 1 }
+      { text: "Then, to be good and dutiful to parents", from: 0.64, to: 1 }
     ]
   };
 }
@@ -424,10 +424,10 @@ function easeAHardship(): SignArt {
       { name: "someone's place, easing it", svg: someone(eases[0], eases[1], 2), keys: track({ xy: easesMoves }) }
     ],
     words: [
-      { text: "He who relieves the suffering of a brother", from: 0.02, to: 0.18 },
-      { text: "Allah relieves him on the Day of Resurrection", from: 0.2, to: 0.38 },
-      { text: "He who hides a Muslim's faults, Allah hides his", from: 0.4, to: 0.56 },
-      { text: "Allah helps him as long as he helps his brother", from: 0.58, to: 0.76 },
+      { text: "Whoever relieves a brother's suffering", from: 0.02, to: 0.18 },
+      { text: "Allah relieves theirs on Resurrection Day", from: 0.2, to: 0.38 },
+      { text: "Allah covers whoever covers a Muslim", from: 0.4, to: 0.56 },
+      { text: "Allah helps whoever helps their brother", from: 0.58, to: 0.76 },
       { text: "A path for knowledge, made easy to Paradise", from: 0.78, to: 1 }
     ]
   };
@@ -690,7 +690,7 @@ function giveWhileHealthy(): SignArt {
       )
     ],
     words: [
-      { text: "Which charity is the most superior in reward?", from: 0.02, to: 0.18 },
+      { text: "A man: Which charity is best in reward?", from: 0.02, to: 0.18 },
       { text: "The charity you give while you are healthy", from: 0.2, to: 0.38 },
       { text: "Afraid of poverty and wishing to be wealthy", from: 0.4, to: 0.56 },
       { text: "Do not delay it until death is near", from: 0.58, to: 0.76 },
@@ -965,7 +965,7 @@ function forgottenPrayer(): SignArt {
     ],
     words: [
       { text: "If anyone forgets a prayer", from: 0.02, to: 0.3 },
-      { text: "He should pray it when he remembers it", from: 0.32, to: 0.64 },
+      { text: "They should pray it when they remember it", from: 0.32, to: 0.64 },
       { text: "There is no expiation except to pray it", from: 0.66, to: 1 }
     ]
   };

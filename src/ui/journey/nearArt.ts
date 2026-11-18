@@ -252,7 +252,7 @@ function bestToThePoor(): SignArt {
       { name: "a warm glow about them all", svg: glow(114, 104.4, 8, WARM, 0.27), keys: showAt(0.94, 0.955) }
     ],
     words: [
-      { text: "I pressed my belly to pebbles from hunger", from: 0.02, to: 0.125 },
+      { text: "Abu Hurairah: I pressed my belly to gravel", from: 0.02, to: 0.125 },
       { text: "The best of people to the poor", from: 0.14, to: 0.245 },
       { text: "was Ja'far ibn Abi Talib", from: 0.26, to: 0.375 },
       { text: "Ja'far would take us home and feed us", from: 0.39, to: 0.505 },
@@ -653,7 +653,7 @@ function neverForgot(): SignArt {
       { name: "a warm glow about Abu Hurairah's place", svg: glow(86, 102, 7, WARM, 0.28), keys: showAt(0.94, 0.955) }
     ],
     words: [
-      { text: "I said: I hear many hadith from you", from: 0.02, to: 0.125 },
+      { text: "Abu Hurairah: I hear many hadith from you", from: 0.02, to: 0.125 },
       { text: "but I forget them", from: 0.14, to: 0.245 },
       { text: "He said: spread out your cloak", from: 0.26, to: 0.375 },
       { text: "So I spread it out", from: 0.39, to: 0.505 },
@@ -767,7 +767,7 @@ function twoRewards(): SignArt {
     words: [
       { text: "He said: give, even of your jewellery", from: 0.02, to: 0.125 },
       { text: "Zaynab spent on Abdullah and orphans", from: 0.14, to: 0.245 },
-      { text: "I found a woman of the Ansar at the door", from: 0.26, to: 0.375 },
+      { text: "Zaynab: I met an Ansari woman at the door", from: 0.26, to: 0.375 },
       { text: "Bilal passed by, and we said: ask him", from: 0.39, to: 0.505 },
       { text: "He said: who are they? Bilal said: Zaynab", from: 0.52, to: 0.635 },
       { text: "He said: which Zaynab?", from: 0.65, to: 0.755 },

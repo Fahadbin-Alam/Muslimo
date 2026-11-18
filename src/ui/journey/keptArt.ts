@@ -357,9 +357,9 @@ function dawudRecites(): SignArt {
     ],
     words: [
       { text: "Reciting was made easy for Dawud", from: 0.02, to: 0.24 },
-      { text: "He would order his mounts to be saddled", from: 0.26, to: 0.48 },
-      { text: "And recite before they were saddled", from: 0.5, to: 0.74 },
-      { text: "And he ate only from the work of his hands", from: 0.76, to: 1 }
+      { text: "Dawud would order the mounts saddled", from: 0.26, to: 0.48 },
+      { text: "And finish reciting before the saddling", from: 0.5, to: 0.74 },
+      { text: "Dawud ate only from the work of his hands", from: 0.76, to: 1 }
     ]
   };
 }
@@ -503,7 +503,7 @@ function goodKept(): SignArt {
       { name: "a ring of care about Hakim's place", svg: care(hakim[0], n(hakim[1] + 1.4), 7.4, 3), keys: showFrom(0.9, 0.94) }
     ],
     words: [
-      { text: "Good things I did in the days of ignorance", from: 0.02, to: 0.24 },
+      { text: "Hakim: Good I did in the days of ignorance", from: 0.02, to: 0.24 },
       { text: "Charity, freeing a slave, and keeping ties", from: 0.26, to: 0.5 },
       { text: "Is there any reward in them?", from: 0.52, to: 0.68 },
       { text: "You became Muslim with the good you did before", from: 0.7, to: 1 }
@@ -784,9 +784,9 @@ function helpYourBrother(): SignArt {
     ],
     words: [
       { text: "Help your brother, wrongdoer or wronged", from: 0.02, to: 0.24 },
-      { text: "We help him when he is wronged", from: 0.26, to: 0.48 },
-      { text: "But how do we help him when he does wrong?", from: 0.5, to: 0.7 },
-      { text: "By holding back his hands", from: 0.72, to: 1 }
+      { text: "They said: We help the one who is wronged", from: 0.26, to: 0.48 },
+      { text: "But how do we help the wrongdoer?", from: 0.5, to: 0.7 },
+      { text: "By holding back the wrongdoer's hands", from: 0.72, to: 1 }
     ]
   };
 }

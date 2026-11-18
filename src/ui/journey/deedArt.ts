@@ -137,11 +137,11 @@ function lostCamel(): SignArt {
       )
     ],
     words: [
-      { text: "A man in a desert, with his camel", from: 0.02, to: 0.16 },
-      { text: "It ran off, with his food and drink", from: 0.18, to: 0.34 },
-      { text: "He looked for it, and lost hope", from: 0.36, to: 0.52 },
-      { text: "He lay down in the shade of a tree", from: 0.54, to: 0.68 },
-      { text: "Then there it was, standing by him", from: 0.7, to: 0.84 },
+      { text: "A man riding a camel in a barren desert", from: 0.02, to: 0.16 },
+      { text: "It ran off with the man's food and drink", from: 0.18, to: 0.34 },
+      { text: "The man lost all hope of it", from: 0.36, to: 0.52 },
+      { text: "The man lay down in the shade of a tree", from: 0.54, to: 0.68 },
+      { text: "Then there it was, standing by the man", from: 0.7, to: 0.84 },
       { text: "Allah is more pleased when we repent", from: 0.86, to: 1 }
     ]
   };
@@ -255,7 +255,7 @@ function stungTwice(): SignArt {
       { text: "One came near it, and was stung", from: 0.16, to: 0.34 },
       { text: "A believer is not stung", from: 0.36, to: 0.52 },
       { text: "From the same hole twice", from: 0.54, to: 0.72 },
-      { text: "He learns, and keeps away from it", from: 0.74, to: 1 }
+      { text: "The believer learns, and keeps away", from: 0.74, to: 1 }
     ]
   };
 }

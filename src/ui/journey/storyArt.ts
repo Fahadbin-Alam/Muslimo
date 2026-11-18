@@ -500,7 +500,7 @@ function ants(): SignArt {
       { text: "The valley of the ants", from: 0.02, to: 0.24 },
       { text: "An ant warned the others", from: 0.26, to: 0.48 },
       { text: "Into your homes!", from: 0.5, to: 0.72 },
-      { text: "He smiled and thanked Allah", from: 0.74, to: 1 }
+      { text: "Sulayman smiled and thanked Allah", from: 0.74, to: 1 }
     ]
   };
 }
