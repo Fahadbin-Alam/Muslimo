@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3092);
+    expect(asks.length).toBe(3107);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4502);
+    expect(places).toBe(4522);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -19169,6 +19169,224 @@ describe("where the scene waits and where it stops", () => {
       ],
       9,
       0
+    ]);
+  });
+
+  it("waits on the scenes from a tent like a pearl to one sa' of dates, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-a-tent-like-a-pearl", "sign-every-friday", "sign-a-mountain-of-gold", "sign-three-consecutive-days", "sign-for-the-second-time", "sign-within-seconds", "sign-one-sa-of-dates"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(15);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // A tent is like a hollow pearl: the gardens of Paradise glint, with no tent on the meadow yet, before the next
+    // words; then the tent's shade comes on the meadow and the tent shows, white with a soft sheen like a pearl, its
+    // door opens with a warm light inside, hollow, and glints come on the pearl.
+    expect(shown("What is a believer's tent in Paradise like, he ﷺ said?", ["the tent's shade on the meadow", "a tent like a pearl, white with a soft sheen", "hollow: its door open, a warm light inside", "glints on the pearl"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    // Thirty miles in height: the tent of pearl stands low on the meadow, before the next words; then it rises to its
+    // full height, and glints go up along it.
+    expect([
+      shown("How big is the pearl tent?", ["thirty miles in height: glints up along the tent"]),
+      moved("How big is the pearl tent?", "a tent like a pearl, white with a soft sheen", "scaleY")
+    ]).toEqual([
+      [[0], [1]],
+      [0.42, 1]
+    ]);
+    // On every corner of the tent: the tent of pearl stands at its full height, with glints up along it, before the next
+    // words; then a soft light comes at each of its four corners, the place of one of faith shows at its door, and a
+    // family at each corner. The veils of pearl do not come yet.
+    expect(shown("In every corner of the tent, the believer has a family.", ["on every corner of the tent: a soft light at corner 1", "on every corner of the tent: a soft light at corner 2", "on every corner of the tent: a soft light at corner 3", "on every corner of the tent: a soft light at corner 4", "the place of one of faith, at the tent's door", "a family at corner 1", "a family at corner 2", "a family at corner 3", "a family at corner 4", "that cannot be seen by the others: a veil of pearl over family 1"])).toEqual([
+      [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+    ]);
+    // Every Friday: the places of the folk of Paradise have come to the street, lit along it, before the next words;
+    // then the words say every Friday, and the north wind blows across the street.
+    expect([
+      shown("When do people of Jannah go to the market?", ["a street: a soft light along it", "the north wind: soft strokes blowing across the street"]),
+      moved("When do people of Jannah go to the market?", "a place of the folk of Paradise 1", "x")
+    ]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [68, 68]
+    ]);
+    // And would add to their beauty: the north wind blows across the street and fragrance comes about the places, before
+    // the next words; then a warm glow comes about each of the four places.
+    expect(shown("What happens to them there?", ["fragrance: soft specks about the places", "more beauty: a warm glow about place 1", "more beauty: a warm glow about place 2", "more beauty: a warm glow about place 3", "more beauty: a warm glow about place 4"])).toEqual([
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Their family would say: the places have gone back home with their warm glows, before the next words; then their
+    // families' voices say they have been increased, and glints and a soft golden ring come about the places come home.
+    expect([
+      shown("What do their families say when they return?", ["more beauty: a warm glow about place 1", "increased in beauty: glints about the places come home", "a soft golden ring about the places come home"]),
+      value("every-friday", "a place of the folk of Paradise 1", "x", 0.77),
+      value("every-friday", "their families' voices: you have been increased", "opacity", 0.77),
+      value("every-friday", "their families' voices: you have been increased", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      0,
+      0,
+      1
+    ]);
+    // It will uncover a mountain of gold: the river Euphrates glints by the places present at that time, before the next
+    // words; then its water draws back and the riverbed is laid bare, the treasure of gold shows in it with glints, a
+    // grey ring comes about the treasure and a soft golden ring about the places, taking nothing, and a mountain of gold
+    // rises in the riverbed, with glints over it and a grey ring about its base.
+    expect([
+      shown("What will the Euphrates uncover?", ["the water drawn back: the riverbed laid bare", "the treasure of gold, in the riverbed", "glints over the treasure", "should not take anything of it: a grey ring about the treasure", "taking nothing: a soft golden ring about the places", "a mountain of gold, rising in the riverbed", "glints over the mountain of gold", "a grey ring about the mountain's base"]),
+      moved("What will the Euphrates uncover?", "a mountain of gold, rising in the riverbed", "scaleY")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      [0.08, 1]
+    ]);
+    // Should not take anything of it: the treasure of gold shows in the bared riverbed, with the places present standing
+    // by, before the next words; then the places step toward it, a grey ring comes about the treasure, the places step
+    // back from it, and a soft golden ring comes about them, taking nothing. The mountain of gold does not rise yet.
+    expect([
+      shown("What did the Prophet ﷺ say to do if you are there?", ["should not take anything of it: a grey ring about the treasure", "taking nothing: a soft golden ring about the places", "a mountain of gold, rising in the riverbed"]),
+      value("a-mountain-of-gold", "a place present at that time 1", "x", 0.395),
+      value("a-mountain-of-gold", "a place present at that time 1", "x", 0.5),
+      value("a-mountain-of-gold", "a place present at that time 1", "x", 0.645)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      0,
+      -6,
+      0
+    ]);
+    // Wheat bread for three consecutive days: Aishah's voice has spoken, with nothing on the cloth yet, before the next
+    // words; then a round loaf of wheat bread shows on the cloth with glints; then the three days show: the loaf goes as
+    // the first day gets a small loaf on its tile, comes again and goes as the second day gets one, and the third day
+    // has a grey ring on its tile and on the bare cloth.
+    expect([
+      shown("What did his family not have three days in a row?", ["three consecutive days: day 1", "three consecutive days: day 2", "three consecutive days: day 3", "the first day: a small loaf on its tile", "the second day: a small loaf on its tile", "the third day: a grey ring on its tile", "the third day: a grey ring on the bare cloth"]),
+      value("three-consecutive-days", "Aishah's voice: his family had not eaten", "opacity", 0.1),
+      value("three-consecutive-days", "wheat bread: a round loaf on the cloth", "opacity", 0.35),
+      value("three-consecutive-days", "glints over the loaf", "opacity", 0.35),
+      value("three-consecutive-days", "wheat bread: a round loaf on the cloth", "opacity", 0.47),
+      value("three-consecutive-days", "wheat bread: a round loaf on the cloth", "opacity", 0.505),
+      value("three-consecutive-days", "wheat bread: a round loaf on the cloth", "opacity", 0.59)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1]
+      ],
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ]);
+    // For the second time: the places under the tree have each given the oath, Salamah's among them with its soft golden
+    // ring, before the next words; then his voice calls Salamah, a faint golden line goes from his place to Salamah's,
+    // the way to his place lights, Salamah's voice answers, glints come over Salamah's first ring, his voice says for
+    // the second time, Salamah's place goes to him, and a second soft golden ring and a warm light come about it.
+    expect([
+      shown("Salamah gave the pledge more than once.", ["the first time: a soft golden ring about Salamah's place", "will you not give the oath: the way to his place, lit", "for the first time: glints over Salamah's first ring", "for the second time: a second soft golden ring about Salamah's place", "a warm light about Salamah's place"]),
+      moved("Salamah gave the pledge more than once.", "Salamah's place", "x"),
+      value("for-the-second-time", "his voice: O Salamah", "opacity", 0.4),
+      value("for-the-second-time", "he said to Salamah: a faint golden line from his place to Salamah's", "opacity", 0.4),
+      value("for-the-second-time", "Salamah's voice: I have already given it", "opacity", 0.65),
+      value("for-the-second-time", "his voice: for the second time", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, -23],
+      1,
+      1,
+      1,
+      1
+    ]);
+    // To cultivate the land: the farmer's voice asks, over the bare meadow, before the next words; then the soil turns,
+    // with furrows, and the voice ends.
+    expect(shown("What will the man in Paradise ask Allah to let him do?", ["the farmer's voice: asking leave to sow", "to cultivate the land: the soil turned, with furrows"])).toEqual([
+      [1, 0],
+      [0, 1]
+    ]);
+    // Within seconds the plants will grow: the seeds lie sown in the four furrows, before the next words; then the
+    // plants spring up in every furrow at once, with quick glints over the field, golden ears come on them as they
+    // ripen, and they are harvested, leaving stubble in the furrows. The heaps do not come yet.
+    expect([
+      shown("How fast will his crops grow and ripen?", ["the seeds sown, furrow 1", "the seeds sown, furrow 4", "harvested: stubble left in the furrows", "in heaps like mountains: a heap of grain 1"]),
+      value("within-seconds", "within seconds: the plants growing, furrow 1", "scaleY", 0.45),
+      value("within-seconds", "within seconds: the plants growing, furrow 4", "scaleY", 0.45),
+      value("within-seconds", "within seconds: quick glints over the field", "opacity", 0.45),
+      value("within-seconds", "and ripen: golden ears on the plants", "opacity", 0.56),
+      value("within-seconds", "within seconds: the plants growing, furrow 1", "opacity", 0.613)
+    ]).toEqual([
+      [
+        [1, 1, 0, 0],
+        [0, 0, 1, 0]
+      ],
+      1,
+      1,
+      1,
+      1,
+      0
+    ]);
+    // Be paid one sa' of dates: his voice orders, with a faint golden line from his place to Abu Taybah's, by the
+    // cupping cups, before the next words; then one sa' of dates shows and goes to Abu Taybah, with glints over it.
+    expect([
+      shown("How was Abu Taybah paid?", ["one sa' of dates, going to Abu Taybah", "glints over the sa' of dates"]),
+      moved("How was Abu Taybah paid?", "one sa' of dates, going to Abu Taybah", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 14]
+    ]);
+    // And ordered Abu Taybah's owners: the sa' of dates is with Abu Taybah, before the next words; then a faint golden
+    // line goes to the owners' home, a stack of coins shows by it, Abu Taybah's tax, its top coins go, and a warm light
+    // comes about Abu Taybah's place.
+    expect([
+      shown("What else did he ﷺ do for him?", ["he ordered Abu Taybah's owners: a faint golden line to their home", "Abu Taybah's tax: a stack of coins by the owners' home", "to reduce it: the top coins of the stack", "a warm light about Abu Taybah's place"]),
+      value("one-sa-of-dates", "to reduce it: the top coins of the stack", "opacity", 0.85)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 0, 1]
+      ],
+      1
+    ]);
+    // Be paid: Abu Taybah's cupping cups lie on a little cloth, the cupping done, before the next words; then his voice
+    // orders, a faint golden line goes from his place to Abu Taybah's, and one sa' of dates goes to Abu Taybah, with
+    // glints over it.
+    expect([
+      shown("Workers should be paid for their work.", ["Abu Taybah's cupping cups, on a little cloth", "his voice: he ordered", "a faint golden line from his place to Abu Taybah's", "one sa' of dates, going to Abu Taybah", "glints over the sa' of dates"]),
+      moved("Workers should be paid for their work.", "one sa' of dates, going to Abu Taybah", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 14]
     ]);
   });
 

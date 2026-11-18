@@ -50,7 +50,7 @@ const glints = (list: [number, number][], r = 0.9, fill = "#FFE7A0") => list.map
 const twinkle = (ms = 1300) => ({ move: "twinkle", ms, low: 0.5 }) as const;
 
 /** A palace of Paradise: white, with a golden dome and two white towers, its foot's middle at (x, y), `s` times its size. */
-const palaceOfParadise = (x: number, y: number, s = 1) => {
+export const palaceOfParadise = (x: number, y: number, s = 1) => {
   const k = (v: number) => n(v * s);
   return (
     `<rect x="${n(x - k(4))}" y="${n(y - k(5))}" width="${k(8)}" height="${k(5)}" fill="#FFF8E8"/>` +
@@ -62,12 +62,12 @@ const palaceOfParadise = (x: number, y: number, s = 1) => {
 };
 
 /** A river along `d`: deep water, and a light line on it that runs. */
-const river = (d: string, w = 3, deep = "#6FC3EC") =>
+export const river = (d: string, w = 3, deep = "#6FC3EC") =>
   `<path d="${d}" stroke="${deep}" stroke-width="${w}" fill="none" stroke-linecap="round"/>` +
   `<path d="${d}" stroke="#D6F1FF" stroke-width="${n(w * 0.28)}" fill="none" stroke-dasharray="2.4 3.2" stroke-linecap="round"/>`;
 
 /** A fruit tree, its foot at (x, y), `h` high, with fruit on it. */
-const fruitTree = (x: number, y: number, h: number, fruit = "#F2A93B") => {
+export const fruitTree = (x: number, y: number, h: number, fruit = "#F2A93B") => {
   const cy = y - h * 0.7;
   const r = h * 0.34;
   return (

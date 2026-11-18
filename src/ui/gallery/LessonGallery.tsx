@@ -1495,6 +1495,13 @@ const STATES: State[] = [
   { id: "scene-even-with-one-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-abdur-rahman-wedding" ask="What mahr did" /> },
   { id: "scene-the-right-then-the-right", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-the-right-first" ask="Who got the drink" /> },
   { id: "scene-stung-by-a-scorpion", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-adhkar-perfect-words" ask="When should he" /> },
+  { id: "scene-a-tent-like-a-pearl", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-hoping-paradise-a-tent-of-one-pearl" ask="How big is the pearl tent" /> },
+  { id: "scene-every-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-jannah-market" ask="When do people of Jannah" /> },
+  { id: "scene-a-mountain-of-gold", render: () => <SceneQuestionDemo lessonId="lesson-deep-minorsigns-euphrates" ask="What will the Euphrates" /> },
+  { id: "scene-three-consecutive-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-three-days-bread" ask="What did his family not have" /> },
+  { id: "scene-for-the-second-time", render: () => <SceneQuestionDemo lessonId="lesson-deep-salamah-pledge-once-more" ask="Salamah gave the pledge" /> },
+  { id: "scene-within-seconds", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-hoping-paradise-the-farmer-of-paradise" ask="How fast will his crops" /> },
+  { id: "scene-one-sa-of-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-pay-the-worker" ask="How was Abu Taybah paid" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

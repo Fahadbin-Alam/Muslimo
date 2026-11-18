@@ -5707,6 +5707,58 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-stung-by-a-scorpion": [
     ["When should he have said these words?", "In the evening", "in the evening: I seek refuge"],
     ["You seek refuge in Allah's perfect words from the evil of what He created.", "True", "in the evening: I seek refuge", "from the evil of what He created,"]
+  ],
+  // Abdullah ibn Qais Al-Ash'ari said: he said: a tent is like a hollow pearl which is thirty miles in height, and on
+  // every corner of the tent the believer will have a family that cannot be seen by the others (Sahih al-Bukhari 3243).
+  "sign-a-tent-like-a-pearl": [
+    ["What is a believer's tent in Paradise like, he ﷺ said?", "A hollow pearl", "A tent is like a hollow pearl"],
+    ["How big is the pearl tent?", "Many miles high", "which is thirty miles in height,"],
+    ["In every corner of the tent, the believer has a family.", "True", "and on every corner of the tent", "the believer will have a family"]
+  ],
+  // Anas ibn Malik reported: he said: in Paradise there is a street to which they would come every Friday; the north
+  // wind will blow and would scatter fragrance on their faces and on their clothes and would add to their beauty and
+  // loveliness, and then they would go back to their family, and their family would say to them: by Allah, you have been
+  // increased in beauty and loveliness after leaving us (Sahih Muslim 2833).
+  "sign-every-friday": [
+    ["When do people of Jannah go to the market?", "Every Friday", "every Friday. The north wind will blow"],
+    ["What happens to them there?", "They become more beautiful", "and would add to their beauty,"],
+    ["What do their families say when they return?", "You look even better!", "and their family would say: By Allah,", "you have been increased in beauty."]
+  ],
+  // Abu Hurairah said: he said: soon the river Euphrates will disclose the treasure of gold, so whoever will be present
+  // at that time should not take anything of it; and as Al-A'raj narrated it from Abu Hurairah: it will uncover a
+  // mountain of gold (Sahih al-Bukhari 7119). Its lesson's question on those who fight over it is not asked here, since
+  // the scene does not show it.
+  "sign-a-mountain-of-gold": [
+    ["What will the Euphrates uncover?", "A mountain of gold", "will disclose the treasure of gold,", "a mountain of gold."],
+    ["What did the Prophet ﷺ say to do if you are there?", "Take nothing from it", "so whoever will be present at that time", "should not take anything of it."]
+  ],
+  // Aishah said: his family had not eaten wheat bread to their satisfaction for three consecutive days since his arrival
+  // at Madinah till he died (Sahih al-Bukhari 5416). Its lesson's questions on what this teaches and on who told us are
+  // not asked here: the scene does not show the first, and Aishah's voice comes in its first words.
+  "sign-three-consecutive-days": [
+    ["What did his family not have three days in a row?", "Wheat bread to the full", "wheat bread to their satisfaction", "for three consecutive days"]
+  ],
+  // Salamah said: we gave the oath of allegiance to him under the tree; he said to Salamah: will you not give the oath
+  // of allegiance? Salamah replied: I have already given the oath of allegiance for the first time. He said: for the
+  // second time (Sahih al-Bukhari 7208). Its lesson's questions on where it was given and on what an oath of allegiance
+  // is are not asked here: the tree is there from the start, and the scene does not show the second.
+  "sign-for-the-second-time": [
+    ["Salamah gave the pledge more than once.", "True", "He said to me: O Salamah!", "He said: for the second time."]
+  ],
+  // Abu Hurairah said: he said: a man from among the people of Paradise will request Allah to allow him to cultivate the
+  // land; the man will sow the seeds, and within seconds the plants will grow and ripen and will be harvested and piled
+  // in heaps like mountains (Sahih al-Bukhari 7519). Its lesson's question on what the bedouin said is not asked here,
+  // since the scene does not show it.
+  "sign-within-seconds": [
+    ["What will the man in Paradise ask Allah to let him do?", "Farm the land", "to allow the man to cultivate the land."],
+    ["How fast will his crops grow and ripen?", "Within seconds", "and within seconds the plants will grow", "and ripen and will be harvested"]
+  ],
+  // Anas ibn Malik said: Abu Taybah cupped him, so he ordered that Abu Taybah be paid one sa' of dates, and ordered Abu
+  // Taybah's masters to reduce his tax (Sahih al-Bukhari 2102).
+  "sign-one-sa-of-dates": [
+    ["How was Abu Taybah paid?", "With a sa of dates", "one sa' of dates"],
+    ["What else did he ﷺ do for him?", "Asked to ease his tax", "and ordered Abu Taybah's masters", "to reduce Abu Taybah's tax."],
+    ["Workers should be paid for their work.", "True", "so he ordered that Abu Taybah be paid", "one sa' of dates"]
   ]
 };
 
