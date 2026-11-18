@@ -5320,6 +5320,70 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who heard the Prophet ﷺ say: whoever is not merciful is not shown mercy?", "Jarir ibn Abdullah", "Jarir ibn Abdullah heard him say:"],
     ["How can you hope for Allah's mercy, from this lesson?", "Be merciful to others", "Whoever is not merciful to others", "will not be shown mercy"],
     ["Mercy in Islam is only for your own family.", "False", "Whoever is not merciful to others"]
+  ],
+  // Ibn Abbas said: he said: there are two blessings that many people are deceived into losing: health and free time
+  // (Sahih al-Bukhari 6412). The lesson on Al-'Asr 103:1-2 opens on it too. (The oath by time, the loss in ayah 2, what
+  // those ayahs are about, and good uses of free time are not in the scene, so those stay as they are.)
+  "sign-health-and-free-time": [
+    ["Which two blessings did the Prophet ﷺ say many waste?", "Health and free time", "health and free time"],
+    ["Which two blessings do many people waste?", "Health and free time", "health and free time"],
+    ["Free time is not a blessing.", "False", "health and free time"]
+  ],
+  // Jarir ibn Abdullah said: I gave him the pledge to keep up the prayer, to pay the zakat, and to be sincere to every
+  // Muslim (Sahih al-Bukhari 57).
+  "sign-sincere-to-every-muslim": [
+    ["Who made this promise to the Prophet ﷺ?", "Jarir ibn Abdullah", "Jarir: I gave him the pledge"],
+    ["Which worship was in his pledge?", "Prayer and zakat", "to keep up the prayer, to pay the zakat,"],
+    ["To whom did Jarir pledge sincerity?", "Every Muslim", "and to be sincere to every Muslim"],
+    ["Prayer, zakat, and what else did Jarir promise?", "Sincerity to every Muslim", "and to be sincere to every Muslim"],
+    ["Wishing good for others is part of Islam.", "True", "and to be sincere to every Muslim"],
+    ["Wishing good for other Muslims is part of the religion.", "True", "and to be sincere to every Muslim"]
+  ],
+  // Anas said: he used to say: O Allah, I seek refuge with You from worry and grief, from incapacity and laziness, from
+  // cowardice and miserliness, from being heavily in debt and from being overpowered by men (Sahih al-Bukhari 6369).
+  // Nothing is drawn for Allah, and what refuge is sought from shows as grey signs off to the side.
+  "sign-refuge-from-worry": [
+    ["The Prophet ﷺ used to say this dua himself.", "True", "Anas: he used to say:", "O Allah, I seek refuge with You"],
+    ["Which two feelings does this dua start with?", "Worry and grief", "from worry and grief,"],
+    ["What two feelings does this dua start with?", "Worry and grief", "from worry and grief,"],
+    ["Which of these is also in the dua?", "Laziness", "from incapacity and laziness,"],
+    ["Which of these does it also seek refuge from?", "Laziness", "from incapacity and laziness,"],
+    ["The Prophet ﷺ asked Allah's help against heavy debt.", "True", "from being heavily in debt,"]
+  ],
+  // Abu Hurairah said: he said: a woman is married for four things: her wealth, her family status, her beauty and her
+  // religion; so marry the religious woman (Sahih al-Bukhari 5090). (Character, and what to ask about a match, are not
+  // in the hadith or the scene, so those stay as they are.)
+  "sign-married-for-four": [
+    ["How many reasons for marriage are named?", "Four", "He said: a woman is married for four:"],
+    ["Which of the four did the Prophet ﷺ say to choose?", "Religion", "So marry the religious woman"],
+    ["Beauty is the most important reason to marry.", "False", "So marry the religious woman"],
+    ["A wise marriage choice looks beyond surface things.", "True", "So marry the religious woman"]
+  ],
+  // Aishah said: I never saw a woman I would love to be like more than Sawdah bint Zam'ah. When she grew old, she gave
+  // her day with him to Aishah, so he gave Aishah two days, her own day and Sawdah's day (Sahih Muslim 1463, 1463b).
+  // (That Sawdah married him after Khadijah passed away is not in the scene, so that stays as it is.)
+  "sign-sawdah-gave-her-day": [
+    ["Sawdah and Aishah were enemies.", "False", "Aishah: I never saw a woman I'd love", "to be like more than Sawdah bint Zam'ah"],
+    ["What did Aishah wish about Sawdah?", "To be just like her", "to be like more than Sawdah bint Zam'ah"],
+    ["When did Sawdah give her day to Aishah?", "When she grew old", "When Sawdah grew old,"]
+  ],
+  // Abu Hurairah said: he said: a believing man should not hate a believing woman; if he dislikes one of her traits, he
+  // will be pleased with another (Sahih Muslim 1468b). (Who narrated it, and the dua for a family that brings comfort,
+  // are not in the scene, so those stay as they are.)
+  "sign-pleased-with-another": [
+    ["A believing man should not ____ a believing woman.", "hate", "He said: a believing man should not hate"],
+    ["If one habit bothers you, remember the ____ ones.", "good", "another will please him"],
+    ["If a husband dislikes one trait in his wife, what should he remember?", "He will like another", "another will please him"]
+  ],
+  // Jabir ibn Abdullah said: he said: beware of wrongdoing, for wrongdoing is darkness on the Day of Resurrection; and
+  // beware of stinginess, for stinginess destroyed those before you (Sahih Muslim 2578). Only the wrongdoer shows on the
+  // Day's pale plain. (Who fails in Ta-Ha 20:111, and that Ibn Kathir quotes it under Al-Hashr 59:9, are not in the
+  // scene, so those stay as they are.)
+  "sign-beware-of-wrongdoing": [
+    ["What is oppression on Judgment Day?", "Darkness", "for wrongdoing is darkness"],
+    ["What will wrongdoing become, in the hadith?", "Darkness on that Day", "for wrongdoing is darkness", "on the Day of Resurrection"],
+    ["What else does the hadith warn against?", "Stinginess", "and beware of stinginess,"],
+    ["What destroyed those before us?", "Stinginess", "and beware of stinginess,", "for stinginess destroyed those before you"]
   ]
 };
 
