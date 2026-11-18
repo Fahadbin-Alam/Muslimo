@@ -34,14 +34,14 @@ const FIVE = [
 ] as const;
 
 /** A palm trunk holding up a roof, its middle at x, from y `top` down to the floor at y `foot`. */
-const trunk = (x: number, top: number, foot: number) => {
+export const trunk = (x: number, top: number, foot: number) => {
   let rings = "";
   for (let y = top + 6; y < foot - 2; y += 5) rings += `<path d="M${n(x - 2)} ${y} Q${x} ${n(y + 1.1)} ${n(x + 2)} ${y}" stroke="#7A5232" stroke-width="0.6" fill="none"/>`;
   return `<rect x="${n(x - 2.2)}" y="${top}" width="4.4" height="${n(foot - top)}" rx="1" fill="#A87444"/>` + rings;
 };
 
 /** A roof of palm fronds from x `l` to `r` (a whole number of eights across), from y 31 down to y 40. */
-const fronds = (l: number, r: number) =>
+export const fronds = (l: number, r: number) =>
   `<rect x="${l}" y="31" width="${r - l}" height="9" fill="#8A6440"/>` +
   Array.from({ length: Math.round((r - l) / 8) }, (_, i) => `<path d="M${l + i * 8} 39 L${l + i * 8 + 4} 33 L${l + i * 8 + 8} 39" stroke="#6E8C3A" stroke-width="1.2" fill="none"/>`).join("");
 
