@@ -1529,6 +1529,13 @@ const STATES: State[] = [
   { id: "scene-spend-on-them", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-a-reward-at-home" ask="On whom did Umm Salamah ask" /> },
   { id: "scene-good-in-all-the-ansar", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-ubadah-among-the-best" ask="What was Sa'd's clan called" /> },
   { id: "scene-where-do-you-like-me-to-pray", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-the-home-where-the-host-likes" ask="How did Itban and his people pray" /> },
+  { id: "scene-a-similar-share", render: () => <SceneQuestionDemo lessonId="lesson-deep-hashr2-our-brothers-first" ask="What did the Ansar ask for" /> },
+  { id: "scene-who-will-visit-him", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-ubadah-visiting-sad" ask="How many went with the Prophet" /> },
+  { id: "scene-has-the-prayer-been-reduced", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-forgetting-in-salah-dhul-yadayn-asks" ask="What did Dhul-Yadayn ask him" /> },
+  { id: "scene-one-or-two-handfuls", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-share-with-the-cook" ask="Who should get a share of the food" /> },
+  { id: "scene-charity-on-every-muslim", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-charity-every-day" ask="You have no money at all" /> },
+  { id: "scene-the-honest-storekeeper", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-honest-helper" ask="What must the helper do" /> },
+  { id: "scene-as-long-as-you-were-waiting", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-waiting-counts-as-prayer" ask="What is waiting for the prayer counted as" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

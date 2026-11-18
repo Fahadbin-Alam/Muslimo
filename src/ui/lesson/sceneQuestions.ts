@@ -5965,6 +5965,61 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-where-do-you-like-me-to-pray": [
     ["What did he ﷺ ask Itban inside the house?", "Where Itban liked him to pray", "Where do you like me to pray", "in your house? I pointed to a place"],
     ["How did Itban and his people pray with him ﷺ?", "In a row behind him", "and we aligned behind him,"]
+  ],
+  // Anas ibn Malik said: the Prophet ﷺ called the Ansar in order to give them the territory of Bahrain; they said: no,
+  // unless you give to our emigrant brethren a similar share; he said: if you do not agree to it, then be patient till
+  // you meet me, for after me others will be given preference to you (Sahih al-Bukhari 3794).
+  "sign-a-similar-share": [
+    ["Which land did the Prophet ﷺ offer the Ansar?", "Bahrain", "to give them the territory of Bahrain."],
+    ["What did the Ansar ask for?", "An equal share for the emigrants", "They said: No, unless you give", "to our emigrant brethren a similar share."],
+    ["The Prophet ﷺ told them to be patient until they meet him.", "True", "He said: If you do not agree to it,", "then be patient till you meet me,"]
+  ],
+  // Abdullah ibn Umar said: one of the Ansar greeted the Messenger of Allah ﷺ, who asked him: how is my brother Sa'd ibn
+  // Ubadah?, and then said: who amongst you would visit him? He stood up, and more than ten of us went with him across
+  // the barren land till we came to Sa'd (Sahih Muslim 925).
+  "sign-who-will-visit-him": [
+    ["What did the Prophet ﷺ call Sa'd?", "My brother", "He said: O brother of Ansar, how is", "my brother Sa'd ibn Ubadah?"],
+    ["How many went with the Prophet ﷺ?", "More than ten", "He stood up and we got up along with him,", "and we were more than ten persons."],
+    ["Visiting the sick is a good Sunnah.", "True", "He said: Who amongst you would visit Sa'd?", "till we came to Sa'd."]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ finished one of the evening prayers after two rak'ahs; Abu Bakr and Umar were
+  // present but dared not talk to him; Dhul-Yadayn asked: has the prayer been reduced or have you forgotten?; so he
+  // offered two more rak'ahs, then taslim and the prostrations of Sahu (Sahih al-Bukhari 1229).
+  "sign-has-the-prayer-been-reduced": [
+    ["What did Dhul-Yadayn ask him ﷺ after two rak'ahs?", "Was the prayer reduced, or did you forget?", "Dhul-Yadayn said: Has the prayer", "been reduced or have you forgotten?"],
+    ["How many more rak'ahs did he ﷺ pray to complete it?", "Two rak'ahs", "Dhul-Yadayn said: Has the prayer", "So he offered two more rak'ahs,"],
+    ["Abu Bakr and Umar were present at that prayer.", "True", "Abu Bakr and Umar were present,"]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: when your servant brings your food to you, if you do not ask him to join you,
+  // then at least ask him to take one or two handfuls, for he has suffered from its heat and has taken pains to cook it
+  // nicely (Sahih al-Bukhari 5460).
+  "sign-one-or-two-handfuls": [
+    ["Who should get a share of the food?", "The one who cooked it", "then at least ask him to take", "one or two handfuls,"],
+    ["Why does the cook deserve a share?", "He bore its heat", "for he has suffered from its heat"],
+    ["Inviting the cook to eat with you is even better.", "True", "if you do not ask him to join you,", "then at least ask him to take"]
+  ],
+  // Abu Musa said: the Prophet ﷺ said: on every Muslim there is enjoined Sadaqa; one who has nothing should work with
+  // his hands and give in charity; if he cannot, he should help the oppressed unhappy person; then enjoin what is good;
+  // then refrain from doing evil, for that is a Sadaqa for him (Sahih al-Bukhari 6022). Its lesson's question on who
+  // must give charity is not asked here, since the scene's first words tell it.
+  "sign-charity-on-every-muslim": [
+    ["You have no money at all. What can be your charity?", "Helping someone in need", "If one has nothing? He said: He should", "help the oppressed unhappy person."],
+    ["Even holding back from harm counts as charity.", "True", "Then he should refrain from doing evil."]
+  ],
+  // Abu Musa said: the Prophet ﷺ said: an honest Muslim storekeeper who carries out the orders of his master and pays
+  // fully, with a good heart, what he has been ordered to give, to the one he was ordered to pay, is regarded as one of
+  // the two charitable persons (Sahih al-Bukhari 1438).
+  "sign-the-honest-storekeeper": [
+    ["You hand out your dad's charity in full, and gladly. What are you then?", "One of the two givers", "is regarded as one of the two", "charitable persons."],
+    ["What must the helper do to share the reward?", "Give all of it, gladly", "of his master and pays fully what he", "has been ordered to give with a good heart"],
+    ["Only the person whose money it is gets a reward.", "False", "is regarded as one of the two", "charitable persons."]
+  ],
+  // Anas ibn Malik said: the Prophet ﷺ delayed the Isha prayer until midnight, and having prayed he faced us and said:
+  // the people had prayed and slept but you were in the prayer as long as you were waiting for it (Sahih al-Bukhari
+  // 847). Its lesson's question on which prayer he delayed is not asked here, since the scene's first words tell it.
+  "sign-as-long-as-you-were-waiting": [
+    ["What is waiting for the prayer counted as?", "Being in prayer", "but you were in the prayer", "as long as you were waiting for it."],
+    ["Sitting in the masjid waiting for salah earns reward.", "True", "but you were in the prayer", "as long as you were waiting for it."]
   ]
 };
 
