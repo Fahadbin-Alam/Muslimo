@@ -45,10 +45,22 @@ const banners = {
       <h1 style="font-size:84px">Muslimo</h1>
       <p style="font-size:34px;margin-top:10px">Learn Islam a little every day</p>
       ${chips(20)}</div>`],
+  // LinkedIn company cover: 1128x191 (rendered at 2x). The square logo overlaps the bottom-left.
+  "linkedin-cover": [1128, 191, `
+    <div class="sun" style="width:160px;height:160px;left:840px;top:10px"></div>
+    <div class="dune" style="left:560px;right:-200px;top:150px;height:240px"></div>
+    <img src="${u("store/graphics/source/cover/palm.png")}" style="width:72px;left:975px;top:88px">
+    <img src="${u("store/graphics/source/cover/camel.png")}" style="width:180px;left:820px;top:18px">
+    <div class="txt" style="left:300px;top:0;bottom:0;width:500px">
+      <h1 style="font-size:54px">Muslimo</h1>
+      <p style="font-size:22px;margin-top:4px">Learn Islam a little every day</p>
+      <p style="font-size:15px;margin-top:10px;opacity:.95">Quran · Salah · Sahabah · Hadith · Manners</p></div>`, 2],
 };
 const browser = await chromium.launch({ channel: "chrome" });
-for (const [name, [w, h, body]] of Object.entries(banners)) {
-  const page = await browser.newPage({ viewport: { width: w, height: h } });
+const only = process.argv[2];
+for (const [name, [w, h, body, scale = 1]] of Object.entries(banners)) {
+  if (only && name !== only) continue;
+  const page = await browser.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: scale });
   // Load from a file so the file:// fonts and images are allowed.
   const tmp = `${HERE}/_${name}.html`;
   writeFileSync(tmp, `<html><head><meta charset="utf-8"><style>${css}</style></head><body style="width:${w}px;height:${h}px">${body}</body></html>`);
