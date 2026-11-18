@@ -1536,6 +1536,13 @@ const STATES: State[] = [
   { id: "scene-charity-on-every-muslim", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-charity-every-day" ask="You have no money at all" /> },
   { id: "scene-the-honest-storekeeper", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-honest-helper" ask="What must the helper do" /> },
   { id: "scene-as-long-as-you-were-waiting", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-waiting-counts-as-prayer" ask="What is waiting for the prayer counted as" /> },
+  { id: "scene-drew-me-to-his-right", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-one-follower-stands-right" ask="Where should one follower stand" /> },
+  { id: "scene-they-would-draw-lots", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-adhan-reward-draw-lots" ask="What would people do to win the adhan" /> },
+  { id: "scene-i-swore-to-serve", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahaba-small-stories-jarir-served-anas" ask="Why did Jarir serve Anas" /> },
+  { id: "scene-dearer-than-red-camels", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-manners-of-giving-content-hearts" ask="leave some people out when he gave" /> },
+  { id: "scene-the-scent-bag-of-a-perfumer", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-children-a-pat-on-the-cheek" ask="hand like, Jabir said" /> },
+  { id: "scene-why-so-many-hadith", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-why-so-many" ask="Why do we have so many hadith" /> },
+  { id: "scene-in-the-prayer-one-is-busy", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-amal-salah-busy-with-the-prayer" ask="not answer their salam in the prayer" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

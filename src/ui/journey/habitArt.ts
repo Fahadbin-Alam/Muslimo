@@ -65,7 +65,7 @@ const big = (svg: string, x: number, y: number, k: number) => `<g transform="tra
 const rel = (a: [number, number], b: [number, number]): [number, number] => [n(b[0] - a[0]), n(b[1] - a[1])];
 
 /** A room: its back wall down to y `line`, with a band along its foot, and its floor below. */
-const room = (wall: string, floor: string, line: number) =>
+export const room = (wall: string, floor: string, line: number) =>
   `<rect width="160" height="120" fill="${wall}"/><rect y="${line - 8}" width="160" height="8" fill="#000000" opacity="0.05"/><rect y="${line}" width="160" height="${120 - line}" fill="${floor}"/>` +
   `<path d="M0 ${line} L160 ${line}" stroke="#A07C52" stroke-width="0.8"/>`;
 

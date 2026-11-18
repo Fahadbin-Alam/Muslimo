@@ -30,41 +30,41 @@ import { litWindow } from "./heedArt";
  */
 
 /** A voice that is not his. */
-const ITS_VOICE = "#A8783A";
+export const ITS_VOICE = "#A8783A";
 
 /** The places of the folk: of a town, of a gathering, of a row. */
-const FOLK = "#C39A5A";
+export const FOLK = "#C39A5A";
 
 /** A place at night: a small dashed circle, light on the dark. */
 const LIGHT = "#F3E3C0";
 
 /** Glints at each of `list`, `r` across, in `fill`. */
-const glints = (list: [number, number][], r = 0.9, fill = "#FFE7A0") => list.map(([x, y]) => sparkle(x, y, r, fill)).join("");
+export const glints = (list: [number, number][], r = 0.9, fill = "#FFE7A0") => list.map(([x, y]) => sparkle(x, y, r, fill)).join("");
 
 /** A twinkle, for glints. */
-const twinkle = (ms = 1300) => ({ move: "twinkle", ms, low: 0.5 }) as const;
+export const twinkle = (ms = 1300) => ({ move: "twinkle", ms, low: 0.5 }) as const;
 
 /** A spark that rises from its place from `from` until `to`, `rise` high, and stays there. */
-const sparkStays = (from: number, to: number, rise = 10): SignKeys => ({
+export const sparkStays = (from: number, to: number, rise = 10): SignKeys => ({
   at: [0, from, at3(from + 0.005), to],
   opacity: [0, 0, 1, 1],
   y: [0, 0, -1, -rise]
 });
 
 /** The land from y 61 down, with a few tufts of grass. */
-const plainLand = (fill = "#E2CB9C", tufts: [number, number][] = [[18, 114], [64, 117], [112, 115], [150, 116]]) => landOf(tufts, fill);
+export const plainLand = (fill = "#E2CB9C", tufts: [number, number][] = [[18, 114], [64, 117], [112, 115], [150, 116]]) => landOf(tufts, fill);
 
 /** `svg` drawn `k` times its size about (x, y). */
-const big = (svg: string, x: number, y: number, k: number) => `<g transform="translate(${x} ${y}) scale(${k}) translate(${-x} ${-y})">${svg}</g>`;
+export const big = (svg: string, x: number, y: number, k: number) => `<g transform="translate(${x} ${y}) scale(${k}) translate(${-x} ${-y})">${svg}</g>`;
 
 /** How far it is from `a` to `b`, as [dx, dy]. */
-const rel = (a: [number, number], b: [number, number]): [number, number] => [n(b[0] - a[0]), n(b[1] - a[1])];
+export const rel = (a: [number, number], b: [number, number]): [number, number] => [n(b[0] - a[0]), n(b[1] - a[1])];
 
 /** Dashed places at each of `list`, `r` across, in `color`. */
-const places = (list: [number, number][], r = 1.6, color = FOLK) => list.map(([x, y]) => someone(x, y, r, color)).join("");
+export const places = (list: [number, number][], r = 1.6, color = FOLK) => list.map(([x, y]) => someone(x, y, r, color)).join("");
 
 /** A light mat of palm leaves to sit on, its middle at (x, y), `w` across. */
-const mat = (x: number, y: number, w = 8) =>
+export const mat = (x: number, y: number, w = 8) =>
   `<path d="M${n(x - w / 2)} ${n(y - 1.4)} L${n(x + w / 2)} ${n(y - 1.4)} L${n(x + w / 2 + 1.2)} ${n(y + 1.4)} L${n(x - w / 2 - 1.2)} ${n(y + 1.4)} Z" fill="#E9D7AE"/>` +
   `<path d="M${n(x - w / 2 + 0.6)} ${y} L${n(x + w / 2 - 0.6)} ${y}" stroke="#C9AE7C" stroke-width="0.3"/>`;
 
@@ -73,7 +73,7 @@ const portion = (x: number, y: number, s = 1) =>
   `<path d="M${n(x - 1.6 * s)} ${n(y - 0.4 * s)} Q${x} ${n(y + 0.8 * s)} ${n(x + 1.6 * s)} ${n(y - 0.4 * s)} Z" fill="#B8864A"/><ellipse cx="${x}" cy="${n(y - 0.8 * s)}" rx="${n(1 * s)}" ry="${n(0.5 * s)}" fill="#D9A35E"/>`;
 
 /** An empty bowl of wood, its middle at (x, y). */
-const bowl = (x: number, y: number) =>
+export const bowl = (x: number, y: number) =>
   `<path d="M${n(x - 2.6)} ${n(y - 1.2)} Q${x} ${n(y + 2)} ${n(x + 2.6)} ${n(y - 1.2)} Z" fill="#9A6A38"/><ellipse cx="${x}" cy="${n(y - 1.2)}" rx="2.6" ry="0.6" fill="#6E4A26"/>`;
 
 /** A few dates in a bowl whose middle is at (x, y). */
@@ -81,7 +81,7 @@ const datesIn = (x: number, y: number) =>
   [-1.2, 0, 1.2, -0.6, 0.6].map((dx, i) => `<ellipse cx="${n(x + dx)}" cy="${n(y - 1.6 - (i < 3 ? 0 : 0.8))}" rx="0.7" ry="0.55" fill="${i % 2 ? "#7A2E14" : "#93391B"}"/>`).join("");
 
 /** The words of eight lines, in turn, over the whole scene. */
-const EIGHT = [
+export const EIGHT = [
   [0.02, 0.13],
   [0.142, 0.252],
   [0.264, 0.374],
@@ -93,7 +93,7 @@ const EIGHT = [
 ] as const;
 
 /** The words of seven lines. */
-const SEVEN = [
+export const SEVEN = [
   [0.02, 0.148],
   [0.164, 0.292],
   [0.308, 0.436],
@@ -104,7 +104,7 @@ const SEVEN = [
 ] as const;
 
 /** The words of six lines. */
-const SIX = [
+export const SIX = [
   [0.02, 0.16],
   [0.176, 0.32],
   [0.336, 0.48],
@@ -114,7 +114,7 @@ const SIX = [
 ] as const;
 
 /** Lines of words on the given times. */
-const linesOn = (times: readonly (readonly [number, number])[], lines: string[]) => lines.map((text, i) => ({ text, from: times[i][0], to: times[i][1] }));
+export const linesOn = (times: readonly (readonly [number, number])[], lines: string[]) => lines.map((text, i) => ({ text, from: times[i][0], to: times[i][1] }));
 
 // A similar share. Anas ibn Malik said: the Prophet ﷺ called the Ansar in order to give them the territory of Bahrain;
 // they said: no, unless you give to our emigrant brethren a similar share; he said: if you do not agree to it, then be

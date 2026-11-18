@@ -53,7 +53,7 @@ export const palms = (list: [number, number, number][], of = "Madinah"): SignPar
 export const camel = (x: number, y: number, s: number, left = false) => animalAt("camel", n(x - 50 * s), n(y - 73 * s), s, left);
 
 /** A red camel: the camel of the picture cards with a deep red-brown coat, the finest the Arabs had. */
-const redCamel = (x: number, y: number, s: number, left = false) =>
+export const redCamel = (x: number, y: number, s: number, left = false) =>
   camel(x, y, s, left).replace(/#E2AC62/g, "#C2603A").replace(/#C48A42/g, "#A04C2C").replace(/#9C6A30/g, "#74351C").replace(/#8A5A26/g, "#682C16");
 
 /** A sheep of the picture cards, `s` times its size, with its feet at (x, y). */
