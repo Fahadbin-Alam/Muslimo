@@ -17980,7 +17980,7 @@ describe("where the scene waits and where it stops", () => {
     // And for you the same: the soft golden ring and glints are about the far place, and the line over the rise has
     // faded, before the last words; then the same soft golden ring and the same glints come about the one who prays,
     // with a warm glow. No angel is drawn.
-    for (const prompt of ["What do the angels say, per Muslim 2732?", "Praying for others brings good to you as well.", "Praying for others brings good back to you."]) {
+    for (const prompt of ["What does the angel say, per Muslim 2732?", "Praying for others brings good to you as well.", "Praying for others brings good back to you."]) {
       expect([
         prompt,
         shown(prompt, ["a soft golden ring about the far place", "and for you the same: a soft golden ring about the one who prays", "the same glints over the one who prays", "a warm glow about the one who prays"])

@@ -5420,7 +5420,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-for-an-absent-brother": [
     ["When does an angel pray for you, per Muslim 2732?", "When you pray for a brother in secret", "for his brother behind his back", "and for you the same"],
     ["When is the dua made, per Muslim 2732?", "Behind his back, in his absence", "for his brother behind his back"],
-    ["What do the angels say, per Muslim 2732?", "The same be for you too", "and for you the same"],
+    ["What does the angel say, per Muslim 2732?", "The same be for you too", "and for you the same"],
     ["Praying for others brings good to you as well.", "True", "and for you the same"],
     ["Praying for others brings good back to you.", "True", "and for you the same"]
   ],
