@@ -989,7 +989,14 @@ export type SignKind =
   | "dearer-than-red-camels"
   | "the-scent-bag-of-a-perfumer"
   | "why-so-many-hadith"
-  | "in-the-prayer-one-is-busy";
+  | "in-the-prayer-one-is-busy"
+  | "learn-the-way-i-pray"
+  | "he-has-reminded-me"
+  | "he-turned-and-smiled"
+  | "the-curtain-is-raised"
+  | "his-name-is-al-mundhir"
+  | "a-masjid-in-the-courtyard"
+  | "a-third-adhan-at-az-zawra";
 
 export type SignScene = {
   id: string;
@@ -5273,6 +5280,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Mas'ud said: we used to greet the Prophet ﷺ while he was praying, and he used to answer our greetings. When we returned from an-Najashi, we greeted him, but he did not answer us, and he said: in the prayer one is occupied.",
     sources: [bukhari("1199")]
+  },
+  {
+    id: "sign-learn-the-way-i-pray",
+    kind: "learn-the-way-i-pray",
+    caption:
+      "Abu Hazim ibn Dinar said: some people went to Sahl ibn Sa'd as-Sa'idi and told him that they had different opinions regarding the wood of the pulpit. They asked him about it, and he said: by Allah, I know of what wood the pulpit was made, and no doubt I saw it on the very first day when the Messenger of Allah ﷺ took his seat on it. The Messenger of Allah ﷺ sent for an Ansari woman and said to her: order your carpenter to prepare for me some pieces of wood on which I may sit at the time of addressing the people. So she ordered her carpenter, and he made it from the tamarisk of the forest and brought it. The woman sent it to the Messenger of Allah ﷺ, who ordered it to be placed here. Then I saw the Messenger of Allah ﷺ praying on it and then bowed on it. Then he stepped back, got down and prostrated on the ground near the foot of the pulpit, and again ascended the pulpit. After finishing the prayer he faced the people and said: I have done this so that you may follow me and learn the way I pray.",
+    sources: [bukhari("917")]
+  },
+  {
+    id: "sign-he-has-reminded-me",
+    kind: "he-has-reminded-me",
+    caption:
+      "Aishah said: the Prophet ﷺ heard a man reciting the Quran in the masjid and said: may Allah bestow His mercy on him, as he has reminded me of such-and-such verses of such a surah.",
+    sources: [bukhari("5037")]
+  },
+  {
+    id: "sign-he-turned-and-smiled",
+    kind: "he-turned-and-smiled",
+    caption:
+      "Anas ibn Malik said: while I was walking with the Prophet ﷺ, who was wearing a Najrani outer garment with a thick hem, a bedouin came upon the Prophet ﷺ and pulled his garment so violently that I could recognize the impress of the hem of the garment on his shoulder, caused by the violence of his pull. Then the bedouin said: order for me something from Allah's fortune which you have. He turned to him and smiled, and ordered that a gift be given to him.",
+    sources: [bukhari("3149")]
+  },
+  {
+    id: "sign-the-curtain-is-raised",
+    kind: "the-curtain-is-raised",
+    caption:
+      "Ibn Mas'ud said: the Messenger of Allah ﷺ said to me: the sign that you have been permitted to come in is that the curtain is raised, or that you hear me speaking quietly, until I forbid you.",
+    sources: [muslim("2169a")]
+  },
+  {
+    id: "sign-his-name-is-al-mundhir",
+    kind: "his-name-is-al-mundhir",
+    caption:
+      "Sahl said: when Al-Mundhir ibn Abu Usayd was born, he was brought to the Prophet ﷺ, who placed him on his thigh. While Abu Usayd was sitting there, the Prophet ﷺ was busy with something in his hands, so Abu Usayd told someone to take his son from the thigh of the Prophet ﷺ. When the Prophet ﷺ finished, he said: where is the boy? Abu Usayd replied: we have sent him home. He said: what is his name? Abu Usayd said: so-and-so. He said: no, his name is Al-Mundhir. So he called him Al-Mundhir from that day.",
+    sources: [bukhari("6191")]
+  },
+  {
+    id: "sign-a-masjid-in-the-courtyard",
+    kind: "a-masjid-in-the-courtyard",
+    caption:
+      "Aishah, the wife of the Prophet ﷺ, said: I had seen my parents following Islam since I attained the age of intelligence. Not a day passed but the Prophet ﷺ visited us, both in the mornings and evenings. My father Abu Bakr thought of building a masjid in the courtyard of his house, and he did so. He used to pray and recite the Quran in it. The pagan women and their children used to stand by him and look at him with surprise. Abu Bakr was a soft-hearted person and could not help weeping while reciting the Quran. The chiefs of the Quraysh pagans became afraid of that.",
+    sources: [bukhari("476")]
+  },
+  {
+    id: "sign-a-third-adhan-at-az-zawra",
+    kind: "a-third-adhan-at-az-zawra",
+    caption:
+      "As-Sa'ib ibn Yazid said: in the lifetime of the Messenger of Allah ﷺ, and Abu Bakr and Umar, the adhan for the Jumu'ah prayer used to be pronounced after the imam had taken his seat on the pulpit. But when the people increased in number during the caliphate of Uthman, he introduced a third adhan, and it was pronounced at az-Zawra, and that new state of affairs remained so in the succeeding years.",
+    sources: [bukhari("916"), bukhari("912")]
   }
 ];
 
@@ -7725,7 +7781,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Ibn Ubayy swore he had not said it, but Allah confirmed Zayd.
   "deep-munafiqun2-allah-confirmed-zaid": "sign-zayd-was-truthful",
   // Sawdah gave her day with him to Aishah.
-  "deep-mothers-sawdah-her-day": "sign-sawdah-gave-her-day"
+  "deep-mothers-sawdah-her-day": "sign-sawdah-gave-her-day",
+  // He prayed on the new pulpit of tamarisk, so that they would follow him and learn his prayer.
+  "deep-kids-learning-learn-the-way-i-pray": "sign-learn-the-way-i-pray",
+  // A man reciting in the masjid reminded him of ayahs: may Allah have mercy on him.
+  "deep-book-quran-virtues-a-reciter-reminded-him": "sign-he-has-reminded-me",
+  // A bedouin pulled his garment hard; he turned to him, smiled, and ordered him a gift.
+  "deep-kids-kind-ways-a-smile-for-a-rough-man": "sign-he-turned-and-smiled",
+  // Ibn Mas'ud's sign to come in: the curtain raised, or his quiet voice heard.
+  "deep-manners-salam-and-visitors-a-sign-to-come-in": "sign-the-curtain-is-raised",
+  // Abu Usayd's newborn son was brought to him, and he said: his name is Al-Mundhir.
+  "deep-kids-good-names-his-name-is-al-mundhir": "sign-his-name-is-al-mundhir",
+  // Abu Bakr built a masjid in his courtyard, and wept as he recited the Quran.
+  "sahabi-abu-bakr-worship-and-character": "sign-a-masjid-in-the-courtyard",
+  // The Friday adhan was given when the imam sat on the pulpit; Uthman added a third.
+  "deep-jumuah3-the-friday-adhan": "sign-a-third-adhan-at-az-zawra",
+  // When the people grew in number, Uthman added a third adhan, at az-Zawra.
+  "deep-uthman-third-adhan": "sign-a-third-adhan-at-az-zawra"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
