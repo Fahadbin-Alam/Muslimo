@@ -1,5 +1,6 @@
 import { COURSE, LESSONS_BY_ID } from "../data/course";
 import { FOUNDATION_QUESTION_BANK } from "../data/foundationQuestionBank";
+import { questionSource } from "../services/questionSource";
 import type { Challenge, LessonSource } from "../types";
 
 // Content checks across every question the app ships. Each test collects all
@@ -193,6 +194,25 @@ describe("lesson sources", () => {
       .map((source) => `${source.reference}: ${source.from}`);
     expect(wrong).toEqual([]);
     expect(cited.filter((source) => source.reference === "Sahih Muslim 2732").length).toBeGreaterThan(0);
+  });
+
+  test("the well of Rumah's water for everyone is cited to the hadith that says it", () => {
+    // Bukhari 2778 says Uthman dug Rumah and equipped the army of hardship, each promised Paradise. Only Tirmidhi 3699
+    // says no one could drink from it without paying until he bought it and made it for the rich, the poor and the wayfarer.
+    const water = /\b(water|drink)/i;
+    const on2778 = lessons.filter((lesson) => lesson.learnSource?.reference === "Sahih al-Bukhari 2778");
+    expect(on2778.length).toBeGreaterThan(1);
+    expect(on2778.filter((lesson) => water.test([lesson.learnLine, ...(lesson.learnFacts ?? [])].join(" "))).map((lesson) => lesson.id)).toEqual([]);
+    // Each question is checked on the source its answer sheet shows: a review asks it on its first lesson's source.
+    const said = (challenge: Challenge) =>
+      `${challenge.prompt} ${challenge.choices.find((choice) => choice.id === challenge.correctChoiceId)?.label ?? ""} ${challenge.explanation ?? ""}`;
+    const asked = lessons.flatMap((lesson) =>
+      lesson.challenges
+        .filter((challenge) => /Uthman/.test(said(challenge)) && /\b(well|Rumah)\b/.test(said(challenge)) && water.test(said(challenge)))
+        .map((challenge) => questionSource(challenge, lesson)?.reference)
+    );
+    expect(asked.length).toBeGreaterThan(2);
+    expect([...new Set(asked)]).toEqual(["Jami` at-Tirmidhi 3699"]);
   });
 });
 
