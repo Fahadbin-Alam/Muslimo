@@ -1031,7 +1031,14 @@ export type SignKind =
   | "a-third-of-islam"
   | "ten-years-of-service"
   | "doors-opened-for-it"
-  | "seven-rounds";
+  | "seven-rounds"
+  | "four-words"
+  | "a-dinar-and-a-sheep"
+  | "ten-to-seven-hundred"
+  | "look-below"
+  | "half-of-paradise"
+  | "before-the-row"
+  | "named-by-allah";
 
 export type SignScene = {
   id: string;
@@ -5609,6 +5616,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Umar said: the Prophet ﷺ reached Makkah and performed the seven rounds of the Ka'bah, then offered a two-rak'ah prayer behind Maqam Ibrahim, then performed the seven rounds between Safa and Marwah.",
     sources: [bukhari("1645")]
+  },
+  {
+    id: "sign-four-words",
+    kind: "four-words",
+    caption:
+      "Juwayriyah reported that the Messenger of Allah ﷺ came out in the morning as she was busy in observing her dawn prayer in her place of worship. He came back in the forenoon and she was still sitting there. He said to her: you have been in the same seat since I left you. She said: yes. Thereupon the Messenger of Allah ﷺ said: I recited four words three times after I left you, and if these are to be weighed against what you have recited since morning, these would outweigh them.",
+    sources: [muslim("2726")]
+  },
+  {
+    id: "sign-a-dinar-and-a-sheep",
+    kind: "a-dinar-and-a-sheep",
+    caption:
+      "Urwah reported that the Prophet ﷺ gave him one dinar so as to buy a sheep for him. Urwah bought two sheep for him with the money. Then he sold one of the sheep for one dinar, and brought him one dinar and a sheep. On that, he invoked Allah to bless Urwah in his deals. So Urwah used to gain even if he bought dust.",
+    sources: [bukhari("3642")]
+  },
+  {
+    id: "sign-ten-to-seven-hundred",
+    kind: "ten-to-seven-hundred",
+    caption:
+      "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ said: if a person embraces Islam sincerely, then Allah shall forgive all his past sins, and after that starts the settlement of accounts: the reward of his good deeds will be ten times to seven hundred times for each good deed, and one evil deed will be recorded as it is, unless Allah forgives it.",
+    sources: [bukhari("41")]
+  },
+  {
+    id: "sign-look-below",
+    kind: "look-below",
+    caption:
+      "Abu Hurairah reported the Messenger of Allah ﷺ as saying: look at those who stand at a lower level than you, but don't look at those who stand at a higher level than you, for that is better suited, that you do not disparage Allah's favors.",
+    sources: [muslim("2963c")]
+  },
+  {
+    id: "sign-half-of-paradise",
+    kind: "half-of-paradise",
+    caption:
+      "Abdullah said: while we were in the company of the Prophet ﷺ in a tent, he said: would it please you to be one fourth of the people of Paradise? We said: yes. He said: would it please you to be one third of the people of Paradise? We said: yes. He said: would it please you to be half of the people of Paradise? We said: yes. Thereupon he said: I hope that you will be one half of the people of Paradise, for none will enter Paradise but a Muslim soul, and you people, in comparison to the people who associate others in worship with Allah, are like a white hair on the skin of a black ox, or a black hair on the skin of a red ox.",
+    sources: [bukhari("6528")]
+  },
+  {
+    id: "sign-before-the-row",
+    kind: "before-the-row",
+    caption:
+      "Abu Bakrah said: I reached the Prophet ﷺ in the mosque while he was bowing in prayer, and I too bowed before joining the row. I mentioned it to the Prophet ﷺ, and he said to me: may Allah increase your love for the good, but do not repeat it again.",
+    sources: [bukhari("783")]
+  },
+  {
+    id: "sign-named-by-allah",
+    kind: "named-by-allah",
+    caption:
+      "Anas ibn Malik said: the Prophet of Allah ﷺ said to Ubayy ibn Ka'b: Allah has ordered me to recite Quran to you. Ubayy said: did Allah mention me by name to you? He said: yes. Ubayy said: have I been mentioned by the Lord of the worlds? He said: yes. Then Ubayy burst into tears.",
+    sources: [bukhari("4961")]
   }
 ];
 
@@ -8239,7 +8295,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Allahu akbar kabira: the doors of heaven were opened for these words, and Ibn Umar never left them.
   "deep-prayer-words-of-salah-the-doors-of-heaven-opened": "sign-doors-opened-for-it",
   // Seven rounds of the Ka'bah, two rak'ahs behind Maqam Ibrahim, then seven rounds between Safa and Marwah.
-  "hajj-rites-tawaf": "sign-seven-rounds"
+  "hajj-rites-tawaf": "sign-seven-rounds",
+  // Four words said three times would outweigh all Juwayriyah had recited since dawn.
+  "deep-mothers-juwayriyah-words": "sign-four-words",
+  // With one dinar Urwah bought two sheep and sold one for a dinar; blessed, he gained even buying dust.
+  "notes-sahabah-companions-from-your-notes-7-urwah-ibn-abi-al-jad-al-bariqi": "sign-a-dinar-and-a-sheep",
+  // Islam embraced sincerely: past sins forgiven, good deeds ten to seven hundred times, an evil deed as it is.
+  "deep-book-iman-fresh-start": "sign-ten-to-seven-hundred",
+  // Look at those below you, not those above, so as not to disparage Allah's favors.
+  "deep-patience-look-below": "sign-look-below",
+  // A fourth, a third, then: I hope that you will be one half of the people of Paradise.
+  "deep-waqiah2-half-of-paradise": "sign-half-of-paradise",
+  // Abu Bakrah bowed before joining the row: may Allah increase your love for the good, but do not repeat it.
+  "prayer-review-and-mastery-scenario-block-1": "sign-before-the-row",
+  // Allah named Ubayy to him, and Ubayy burst into tears.
+  "deep-ubayy-named-by-allah": "sign-named-by-allah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
