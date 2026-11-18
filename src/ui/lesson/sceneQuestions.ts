@@ -5557,6 +5557,58 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Truffles are like...?", "Manna", "truffles are like manna,"],
     ["Why are they like manna?", "They grow without planting", "truffles are like manna,"],
     ["What is their water good for?", "The eyes", "and their water", "heals eye diseases."]
+  ],
+  // Aishah said: his mattress was a leather case stuffed with palm fibres (Sahih al-Bukhari 6456).
+  "sign-a-bed-of-leather": [
+    ["Who told us about his mattress?", "Aishah", "Aishah: his mattress"],
+    ["The Prophet ﷺ slept on a very fancy bed.", "False", "was a leather case", "stuffed with palm fibres."],
+    ["What was his ﷺ mattress stuffed with?", "Palm fibres", "stuffed with palm fibres."]
+  ],
+  // Anas said: to the best of my knowledge, he never took his meals in a big tray, nor did he ever eat well-baked thin
+  // bread, nor did he ever eat at a dining table (Sahih al-Bukhari 5386).
+  "sign-never-at-a-table": [
+    ["He ﷺ kept his meals plain and simple.", "True", "he never ate from a big tray,", "nor did he ever eat at a dining table."],
+    ["What kind of bread did he ﷺ not eat?", "Thin, soft bread", "nor did he ever eat well-baked thin bread,"],
+    ["What did he ﷺ never eat at, Anas said?", "A dining table", "nor did he ever eat at a dining table."]
+  ],
+  // Ibn Umar said: I have never missed touching these two stones of the Ka'bah, the Black Stone and the Yemeni Corner,
+  // in crowds or without crowds, since I saw him touching them (Sahih al-Bukhari 1606). No one is drawn: only places,
+  // rings and glints.
+  "sign-the-two-corners": [
+    ["Which two corners did Ibn Umar always touch?", "The Black Stone and the Yemeni Corner", "the Black Stone and the Yemeni Corner,"],
+    ["Ibn Umar followed the sunnah even when it was crowded.", "True", "in crowds or without crowds,"],
+    ["Why did Ibn Umar touch them?", "He saw the Prophet ﷺ touching them", "since I saw him touching them."]
+  ],
+  // Anas said: when he had completed the dawn prayer, the servants of Madinah came to him with utensils containing
+  // water, and no utensil was brought in which he did not dip his hand; at times they came in the cold dawn, and he
+  // dipped his hand in them (Sahih Muslim 2324). No hand is drawn: a golden glint shows in each bowl's water.
+  "sign-vessels-after-fajr": [
+    ["When did the servants bring him ﷺ their water?", "After the Fajr prayer", "Anas: when he finished the dawn prayer,"],
+    ["Who brought vessels of water to him ﷺ after Fajr?", "The servants of Madinah", "the servants of Madinah came to him", "with utensils containing water,"],
+    ["He ﷺ dipped his hand in their water even on cold mornings.", "True", "at times they came in the cold dawn,", "and he dipped his hand in them."]
+  ],
+  // Abu Hurairah said: he was travelling along the road to Makkah and passed a mountain called Jumdan, and said: proceed
+  // on, it is Jumdan; the mufarridun have gone ahead. They said: who are the mufarridun? He said: those males and
+  // females who remember Allah much (Sahih Muslim 2676).
+  "sign-gone-ahead": [
+    ["Where was he ﷺ when he spoke of the mufarridun?", "On the road to Makkah", "Abu Hurairah: he was on the road to Makkah"],
+    ["Who are the mufarridun, he ﷺ said?", "Those who remember Allah much", "He said: those who remember Allah much,"],
+    ["Women who remember Allah much are among the mufarridun too.", "True", "males and females."]
+  ],
+  // Jabir said: I heard him say, during an expedition: make a general practice of wearing sandals, for a man is riding,
+  // as it were, when he wears sandals (Sahih Muslim 2096). No foot is drawn, and no one rides: a camel, no one on it,
+  // goes along beside the one in sandals.
+  "sign-as-if-riding": [
+    ["When did he ﷺ say this?", "On a journey", "Jabir: I heard him say, on an expedition:"],
+    ["Walking in sandals is like...?", "Riding", "for a man is riding, as it were,"],
+    ["Good sandals make long walks easier.", "True", "for a man is riding, as it were,", "when the man wears sandals."]
+  ],
+  // Sahl ibn Sa'd said: I heard him say: the people will be gathered on the Day of Resurrection on a reddish-white land,
+  // like a pure loaf of bread; and Sahl added: that land will have no landmarks for anybody (Sahih al-Bukhari 6521).
+  "sign-like-a-pure-loaf": [
+    ["Who narrated the hadith of the white land?", "Sahl ibn Sa'd", "Sahl: I heard him say:"],
+    ["What will the land of gathering be like?", "A pure loaf of bread", "like a pure loaf of bread."],
+    ["What will the land have, per Sahl?", "No landmarks at all", "Sahl added: no landmarks for anybody."]
   ]
 };
 
