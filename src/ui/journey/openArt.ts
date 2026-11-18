@@ -140,7 +140,7 @@ function theGateOfAbuBakr(): SignArt {
       },
       { name: "Abu Sa'id's place", svg: someone(127, 113, 1.4, LIGHT) },
       { name: "Abu Sa'id's voice: he addressed them", svg: arcs(129.6, 109.6, ITS_VOICE), keys: showFor(0.03, 0.04, 0.075, 0.085), loop: speaking },
-      { name: "Abu Bakr's place, by his gate", svg: someone(abuBakr[0], abuBakr[1], 1.6) },
+      { name: "Abu Bakr's place, by the gate of Abu Bakr", svg: someone(abuBakr[0], abuBakr[1], 1.6) },
       { name: "his voice: he addressed them", svg: arcs(36.6, 100.6, GOLD), keys: showFor(0.14, 0.15, 0.95, 0.96), loop: speaking },
       { name: "with his company: a faint golden line from his place to Abu Bakr's", svg: lookLine(36.6, 103, n(abuBakr[0] - 2), n(abuBakr[1] + 0.4), 92, SOFT_GOLD), keys: showAt(0.28, 0.31) },
       { name: "and wealth: a small sack by Abu Bakr's place", svg: sack(n(abuBakr[0] + 4.6), 106.4, 0.5), keys: showAt(0.3, 0.32) },
@@ -154,7 +154,7 @@ function theGateOfAbuBakr(): SignArt {
         loop: twinkle()
       },
       { name: "the one who favored him most: a warm light about Abu Bakr's place", svg: wash(abuBakr[0], abuBakr[1], 7, 3, "#FFE9B0", 0.22), keys: showAt(0.33, 0.355), loop: soft },
-      { name: "I would have taken Abu Bakr: a soft golden ring about his place", svg: care(abuBakr[0], n(abuBakr[1] + 0.4), 4.6, 2.2, GOLD), keys: showAt(0.545, 0.58), loop: soft },
+      { name: "I would have taken Abu Bakr: a soft golden ring about Abu Bakr's place", svg: care(abuBakr[0], n(abuBakr[1] + 0.4), 4.6, 2.2, GOLD), keys: showAt(0.545, 0.58), loop: soft },
       ...gates.flatMap((x, i): SignPart[] =>
         i === 3 ? [] : [{ name: `should be closed: the door of gate ${i < 3 ? i + 1 : i}`, svg: shutDoor(x, wallFoot), keys: showAt(shutAt[i], at3(shutAt[i] + 0.012)) }]
       ),
@@ -387,7 +387,7 @@ function waterForThePilgrims(): SignArt {
         svg: someone(abbas[0], abbas[1], 1.6, LIGHT),
         keys: goes(0.86, 0.93, atJars[0] - abbas[0], atJars[1] - abbas[1])
       },
-      { name: "Al-Abbas's voice: he asked his permission", svg: arcs(n(abbas[0] + 2.6), n(abbas[1] - 3.4), LIGHT), keys: showFor(0.18, 0.19, 0.28, 0.29), loop: speaking },
+      { name: "Al-Abbas's voice: Al-Abbas asked his permission", svg: arcs(n(abbas[0] + 2.6), n(abbas[1] - 3.4), LIGHT), keys: showFor(0.18, 0.19, 0.28, 0.29), loop: speaking },
       ...goers.map(
         ([x, y], i): SignPart => ({
           name: `a pilgrim's place, going to the House ${i + 1}`,
@@ -590,9 +590,9 @@ const banquet = (x: number, y: number) =>
 // Even with one sheep. Anas said: the Prophet ﷺ saw the traces of Sufra on Abdur-Rahman ibn Awf and said: what is
 // this? Abdur-Rahman said: I have married a woman and have paid gold equal to the weight of a datestone. He said to
 // him: may Allah bless you: offer a wedding banquet even with one sheep (Sahih al-Bukhari 5155; and 5167). No one is
-// drawn: by the homes of Madinah, his place, a golden ring, Anas's place, and Abdur-Rahman's place, with small yellow
-// dots about it, the traces of Sufra. Anas's voice speaks; a faint line goes from his place to Abdur-Rahman's, and his
-// voice asks. Abdur-Rahman's voice answers; a new home's window glows warm; a balance shows, a datestone in one pan and
+// drawn: by the homes of Madinah, his place, a golden ring, Anas's place, and Abdur-Rahman's place. Anas's voice
+// speaks, and small yellow dots come about Abdur-Rahman's place, the traces of Sufra; a faint line goes from his place
+// to Abdur-Rahman's, and his voice asks. Abdur-Rahman's voice answers; a new home's window glows warm; a balance shows, a datestone in one pan and
 // a small piece of gold in the other, level, and glints come over the gold. His voice speaks: a warm light comes about
 // Abdur-Rahman's place, and sparks rise from it. A dish of a wedding banquet shows by the new home, places come to it,
 // one sheep comes and grazes by the home, and a soft golden ring comes about the banquet.
@@ -625,7 +625,7 @@ function evenWithOneSheep(): SignArt {
       { name: "Anas's place", svg: someone(22, 110.4, 1.4, LIGHT) },
       { name: "Anas's voice: he saw", svg: arcs(24.6, 107, ITS_VOICE), keys: showFor(0.03, 0.04, 0.075, 0.085), loop: speaking },
       { name: "Abdur-Rahman's place", svg: someone(abdurRahman[0], abdurRahman[1], 1.6) },
-      { name: "the traces of Sufra: small yellow dots about Abdur-Rahman's place", svg: sufra(abdurRahman[0], abdurRahman[1]), loop: twinkle(1600) },
+      { name: "the traces of Sufra: small yellow dots about Abdur-Rahman's place", svg: sufra(abdurRahman[0], abdurRahman[1]), keys: showAt(0.03, 0.05), loop: twinkle(1600) },
       { name: "he saw: a faint line from his place to Abdur-Rahman's", svg: lookLine(42.4, 105, n(abdurRahman[0] - 2), n(abdurRahman[1] - 1), 98, SOFT_GOLD), keys: showFor(0.04, 0.07, 0.21, 0.22) },
       { name: "his voice: what is this?", svg: arcs(42.6, 102.6, GOLD), keys: showFor(0.14, 0.15, 0.21, 0.22), loop: speaking },
       { name: "Abdur-Rahman's voice: I have married", svg: arcs(n(abdurRahman[0] + 2.6), n(abdurRahman[1] - 3.4), ITS_VOICE), keys: showFor(0.28, 0.29, 0.58, 0.59), loop: speaking },

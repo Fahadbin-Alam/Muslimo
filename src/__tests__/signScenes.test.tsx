@@ -23521,7 +23521,7 @@ describe("the signs in creation, alive", () => {
     expect([
       [at("the-gate-of-abu-bakr", "Abu Sa'id's voice: he addressed them", "opacity", [0.01, 0.06, 0.1]), at("the-gate-of-abu-bakr", "his voice: he addressed them", "opacity", [0.1, 0.2, 0.9, 0.99])],
       [0.26, 0.37].map((t) => all("the-gate-of-abu-bakr", ["with his company: a faint golden line from his place to Abu Bakr's", "and wealth: a small sack by Abu Bakr's place", "glints over the small sack", "the one who favored him most: a warm light about Abu Bakr's place"], t)),
-      at("the-gate-of-abu-bakr", "I would have taken Abu Bakr: a soft golden ring about his place", "opacity", [0.5, 0.62]),
+      at("the-gate-of-abu-bakr", "I would have taken Abu Bakr: a soft golden ring about Abu Bakr's place", "opacity", [0.5, 0.62]),
       [0.66, 0.73, 0.78, 0.85].map((t) => all("the-gate-of-abu-bakr", ["should be closed: the door of gate 1", "should be closed: the door of gate 2", "should be closed: the door of gate 3", "should be closed: the door of gate 4", "should be closed: the door of gate 5"], t)),
       [0.85, 0.97].map((t) => all("the-gate-of-abu-bakr", ["except the gate of Abu Bakr: a warm light in it", "glints about the open gate"], t))
     ]).toEqual([
@@ -23610,7 +23610,7 @@ describe("the signs in creation, alive", () => {
       "so he permitted Al-Abbas."
     ]);
     expect([
-      [at("water-for-the-pilgrims", "Ibn Umar's voice: Al-Abbas asked", "opacity", [0.01, 0.08, 0.16]), at("water-for-the-pilgrims", "Al-Abbas's voice: he asked his permission", "opacity", [0.16, 0.24, 0.33]), at("water-for-the-pilgrims", "the nights of Mina: the tents lit", "opacity", [0.33, 0.45])],
+      [at("water-for-the-pilgrims", "Ibn Umar's voice: Al-Abbas asked", "opacity", [0.01, 0.08, 0.16]), at("water-for-the-pilgrims", "Al-Abbas's voice: Al-Abbas asked his permission", "opacity", [0.16, 0.24, 0.33]), at("water-for-the-pilgrims", "the nights of Mina: the tents lit", "opacity", [0.33, 0.45])],
       [0.49, 0.6].map((t) => many("water-for-the-pilgrims", ["a pilgrim's place, going to the House 1", "a pilgrim's place, going to the House 2", "a pilgrim's place, going to the House 3"], "x", t)),
       [0.64, 0.79].map((t) => all("water-for-the-pilgrims", ["water to drink: glints over the jars", "a cup of water going to a pilgrim's place 1", "a cup of water going to a pilgrim's place 3", "a warm light about the pilgrims' places"], t)),
       at("water-for-the-pilgrims", "a cup of water going to a pilgrim's place 2", "x", [0.68, 0.705, 0.73]),
@@ -23676,13 +23676,13 @@ describe("the signs in creation, alive", () => {
         [0, 0, 1, 1]
       ]
     ]);
-    // Even with one sheep: by the homes of Madinah, his place, a golden ring, Anas's place, and Abdur-Rahman's place, with
-    // the traces of Sufra about it, small yellow dots. Anas's voice speaks; a faint line goes from his place to Abdur-
-    // Rahman's, and his voice asks. Abdur-Rahman's voice answers, and a new home's window glows warm; a balance shows, a
-    // datestone in one pan and a small piece of gold in the other, glints come over the gold, and a soft ring about the
-    // balance. His voice speaks: a warm light comes about Abdur-Rahman's place, and sparks rise from it. A dish of a
-    // wedding banquet shows by the new home, places come to it, one sheep comes by the home, and a soft golden ring comes
-    // about the banquet.
+    // Even with one sheep: by the homes of Madinah, his place, a golden ring, Anas's place, and Abdur-Rahman's place.
+    // Anas's voice speaks, and the traces of Sufra come about Abdur-Rahman's place, small yellow dots; a faint line goes
+    // from his place to Abdur-Rahman's, and his voice asks. Abdur-Rahman's voice answers, and a new home's window glows
+    // warm; a balance shows, a datestone in one pan and a small piece of gold in the other, glints come over the gold, and
+    // a soft ring about the balance. His voice speaks: a warm light comes about Abdur-Rahman's place, and sparks rise from
+    // it. A dish of a wedding banquet shows by the new home, places come to it, one sheep comes by the home, and a soft
+    // golden ring comes about the banquet.
     expect(words("even-with-one-sheep")).toEqual([
       "Anas: he saw the traces of Sufra",
       "on Abdur-Rahman and said: What is this?",
@@ -23694,7 +23694,7 @@ describe("the signs in creation, alive", () => {
       "even with one sheep."
     ]);
     expect([
-      [at("even-with-one-sheep", "Anas's voice: he saw", "opacity", [0.01, 0.06, 0.12]), at("even-with-one-sheep", "he saw: a faint line from his place to Abdur-Rahman's", "opacity", [0.03, 0.1, 0.25]), at("even-with-one-sheep", "his voice: what is this?", "opacity", [0.13, 0.18, 0.25])],
+      [at("even-with-one-sheep", "Anas's voice: he saw", "opacity", [0.01, 0.06, 0.12]), at("even-with-one-sheep", "the traces of Sufra: small yellow dots about Abdur-Rahman's place", "opacity", [0, 0.02, 0.06]), at("even-with-one-sheep", "he saw: a faint line from his place to Abdur-Rahman's", "opacity", [0.03, 0.1, 0.25]), at("even-with-one-sheep", "his voice: what is this?", "opacity", [0.13, 0.18, 0.25])],
       [at("even-with-one-sheep", "Abdur-Rahman's voice: I have married", "opacity", [0.27, 0.45, 0.62]), at("even-with-one-sheep", "I have married: the new home's window, warm", "opacity", [0.27, 0.38])],
       [0.39, 0.5, 0.62].map((t) => all("even-with-one-sheep", ["a balance", "the weight of a datestone: a datestone in one pan", "gold equal to it: a small piece of gold in the other pan", "glints over the gold", "equal: a soft golden ring about the balance"], t)),
       [at("even-with-one-sheep", "his voice: a blessing on Abdur-Rahman", "opacity", [0.63, 0.7, 0.99]), at("even-with-one-sheep", "a warm light about Abdur-Rahman's place", "opacity", [0.63, 0.74]), at("even-with-one-sheep", "blessed: a spark rising from Abdur-Rahman's place 1", "y", [0.67, 0.685, 0.7])],
@@ -23703,6 +23703,7 @@ describe("the signs in creation, alive", () => {
     ]).toEqual([
       [
         [0, 1, 0],
+        [0, 0, 1],
         [0, 1, 0],
         [0, 1, 0]
       ],

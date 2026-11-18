@@ -5658,6 +5658,55 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many times would he ﷺ repeat a sentence?", "Three times", "he used to repeat it thrice"],
     ["Why did he ﷺ repeat it?", "So people understood it well", "so that the people could understand it", "properly from him."],
     ["A good teacher makes sure everyone understands.", "True", "so that the people could understand it", "properly from him."]
+  ],
+  // Abu Sa'id said: he addressed the people: the person who has favored me most of all both with his company and wealth
+  // is Abu Bakr; if I were to take a Khalil other than my Lord, I would have taken Abu Bakr; all the gates of the masjid
+  // should be closed except the gate of Abu Bakr (Sahih al-Bukhari 3654). Its lesson's questions on what khalil means
+  // and why Abu Bakr wept are not asked here, since the scene does not show them.
+  "sign-the-gate-of-abu-bakr": [
+    ["Who did the Prophet ﷺ say had been most generous to him with company and wealth?", "Abu Bakr", "with his company and wealth, is Abu Bakr."],
+    ["Which door to the masjid did the Prophet ﷺ leave open?", "Abu Bakr's", "All the gates of the masjid", "except the gate of Abu Bakr."]
+  ],
+  // Abu Hurairah said: he said: I shall accept the invitation even if I were invited to a meal of a sheep's trotter, and
+  // I shall accept the gift even if it were an arm or a trotter of a sheep (Sahih al-Bukhari 2568).
+  "sign-even-a-trotter": [
+    ["Would he ﷺ accept a very small gift?", "Yes, even a sheep's foot", "I shall accept the invitation", "or a trotter of a sheep."],
+    ["What did he ﷺ say about invitations?", "He would accept them", "I shall accept the invitation", "to a meal of a sheep's trotter,"],
+    ["A small gift from the heart still matters.", "True", "and I shall accept the gift", "or a trotter of a sheep."]
+  ],
+  // Abu Hurairah reported: he said: the best charity is that which is practiced by a wealthy person, and start giving
+  // first to your dependents (Sahih al-Bukhari 1426).
+  "sign-start-with-your-dependents": [
+    ["Whom should you give to first?", "Your dependents", "And start giving first to your dependents."],
+    ["The best charity comes from one who is...?", "Still well off", "is practiced by a wealthy person."],
+    ["Spending on your family is part of charity.", "True", "And start giving first to your dependents."]
+  ],
+  // Anas said: he saw the traces of Sufra on Abdur-Rahman ibn Awf and said: what is this? Abdur-Rahman said: I have
+  // married a woman and have paid gold equal to the weight of a datestone. He said to him: may Allah bless you: offer a
+  // wedding banquet even with one sheep (Sahih al-Bukhari 5155; and 5167). No one is drawn: only places, a balance and a
+  // dish.
+  "sign-even-with-one-sheep": [
+    ["How did the Prophet ﷺ know he had married?", "He saw yellow scent on him", "Anas: he saw the traces of Sufra"],
+    ["What mahr did Abdur-Rahman give?", "Gold the weight of a date stone", "and have paid gold equal to", "the weight of a datestone."],
+    ["What did the Prophet ﷺ tell him to do?", "Give a walimah, even with one sheep", "Offer a wedding banquet", "even with one sheep."],
+    ["What did the Prophet ﷺ tell Abdur-Rahman to give?", "A wedding meal", "Offer a wedding banquet"],
+    ["What was Abdur-Rahman's mahr?", "A date-stone's weight of gold", "and have paid gold equal to", "the weight of a datestone."],
+    ["A walimah must be huge and costly.", "False", "Offer a wedding banquet", "even with one sheep."]
+  ],
+  // Anas said: milk mixed with water was brought to him while a bedouin was on his right and Abu Bakr was on his left;
+  // he drank and then gave to the bedouin and said: the right! The right (Sahih al-Bukhari 5619).
+  "sign-the-right-then-the-right": [
+    ["Who got the drink after the Prophet ﷺ?", "The bedouin on his right", "He drank and then gave to the bedouin"],
+    ["Who sat on his left?", "Abu Bakr", "and Abu Bakr was on his left."],
+    ["When passing drinks round, start with the person on your right.", "True", "He drank and then gave to the bedouin", "and said: The right! The right."]
+  ],
+  // Abu Hurairah reported that a person came to him and said: I was stung by a scorpion during the night. He said: had
+  // you recited these words in the evening: I seek refuge in the Perfect Word of Allah from the evil of what He created,
+  // it would not have done any harm to you (Sahih Muslim 2709a). Its lesson's question on what stung him stays on its
+  // own picture.
+  "sign-stung-by-a-scorpion": [
+    ["When should he have said these words?", "In the evening", "in the evening: I seek refuge"],
+    ["You seek refuge in Allah's perfect words from the evil of what He created.", "True", "in the evening: I seek refuge", "from the evil of what He created,"]
   ]
 };
 
