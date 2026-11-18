@@ -2,7 +2,9 @@
  * The Why lines written from each question's own source (src/data/sourceWhys.json), for questions whose own note only
  * repeats the question. Each one is shown whole after an answer, so it must pass the Why rules unchanged.
  */
+import { lessonForAge } from "../data/ageLevels";
 import { LESSONS_BY_ID } from "../data/course";
+import { ALL_HARD_QUESTIONS } from "../data/hardQuestions";
 import { englishWhy, sourceWhy } from "../ui/lesson/localizedLines";
 import { shortWhy, WHY_MAX } from "../ui/lesson/lessonText";
 
@@ -10,8 +12,13 @@ import { shortWhy, WHY_MAX } from "../ui/lesson/lessonText";
 const WHYS: Record<string, string> = require("../data/sourceWhys.json");
 
 const questions = new Map<string, { prompt: string; answer: string; noted: boolean }>();
-for (const lesson of Object.values(LESSONS_BY_ID)) {
-  for (const challenge of lesson.challenges) {
+// Every question a learner can meet: each lesson, a young child's version of it, and the harder streak questions.
+const challenges = [
+  ...Object.values(LESSONS_BY_ID).flatMap((lesson) => [...lesson.challenges, ...lessonForAge(lesson, "6-9").challenges]),
+  ...ALL_HARD_QUESTIONS
+];
+{
+  for (const challenge of challenges) {
     const answer = challenge.choices.find((choice) => choice.id === challenge.correctChoiceId)?.label ?? "";
     const noted = Boolean(shortWhy({ explanation: challenge.explanation, easierExplanation: challenge.easierExplanation, prompt: challenge.prompt, correctLabel: answer }));
     const key = `${challenge.prompt.trim()}\n${answer.trim()}`;
