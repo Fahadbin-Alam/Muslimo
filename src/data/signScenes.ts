@@ -919,7 +919,14 @@ export type SignKind =
   | "porters-in-the-market"
   | "umrah-in-ramadan"
   | "three-breaths"
-  | "truffles-like-manna";
+  | "truffles-like-manna"
+  | "a-bed-of-leather"
+  | "never-at-a-table"
+  | "the-two-corners"
+  | "vessels-after-fajr"
+  | "gone-ahead"
+  | "as-if-riding"
+  | "like-a-pure-loaf";
 
 export type SignScene = {
   id: string;
@@ -4713,6 +4720,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sa'id ibn Zayd said: I heard the Prophet ﷺ say: truffles are like manna, and their water heals the eyes.",
     sources: [bukhari("5708")]
+  },
+  {
+    id: "sign-a-bed-of-leather",
+    kind: "a-bed-of-leather",
+    caption:
+      "Aishah said: the bed mattress of the Prophet ﷺ was made of a leather case stuffed with palm fibres.",
+    sources: [bukhari("6456")]
+  },
+  {
+    id: "sign-never-at-a-table",
+    kind: "never-at-a-table",
+    caption:
+      "Anas said: to the best of my knowledge, the Prophet ﷺ never took his meals in a big tray, nor did he ever eat well-baked thin bread, nor did he ever eat at a dining table.",
+    sources: [bukhari("5386")]
+  },
+  {
+    id: "sign-the-two-corners",
+    kind: "the-two-corners",
+    caption:
+      "Ibn Umar said: I have never missed touching these two stones of the Ka'bah, the Black Stone and the Yemeni Corner, in crowds or without crowds, since I saw the Prophet ﷺ touching them.",
+    sources: [bukhari("1606")]
+  },
+  {
+    id: "sign-vessels-after-fajr",
+    kind: "vessels-after-fajr",
+    caption:
+      "Anas said: when the Messenger of Allah ﷺ had completed his dawn prayer, the servants of Madinah came to him with utensils containing water, and no utensil was brought in which he did not dip his hand. At times they came in the cold dawn, and he dipped his hand in them.",
+    sources: [muslim("2324")]
+  },
+  {
+    id: "sign-gone-ahead",
+    kind: "gone-ahead",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ was travelling along the road to Makkah and passed a mountain called Jumdan. He said: proceed on, it is Jumdan; the mufarridun have gone ahead. They said: who are the mufarridun, O Messenger of Allah? He said: those males and females who remember Allah much.",
+    sources: [muslim("2676")]
+  },
+  {
+    id: "sign-as-if-riding",
+    kind: "as-if-riding",
+    caption:
+      "Jabir said: I heard the Prophet ﷺ say, during an expedition we went on: make a general practice of wearing sandals, for a man is riding, as it were, when he wears sandals.",
+    sources: [muslim("2096")]
+  },
+  {
+    id: "sign-like-a-pure-loaf",
+    kind: "like-a-pure-loaf",
+    caption:
+      "Sahl ibn Sa'd said: I heard the Prophet ﷺ say: the people will be gathered on the Day of Resurrection on a reddish-white land, like a pure loaf of bread. Sahl added: that land will have no landmarks for anybody.",
+    sources: [bukhari("6521")]
   }
 ];
 
@@ -6999,7 +7055,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Three breaths in a drink, outside the cup.
   "deep-book-food-three-breaths": "sign-three-breaths",
   // Truffles like manna; their water heals the eyes.
-  "deep-book-medicine-truffles": "sign-truffles-like-manna"
+  "deep-book-medicine-truffles": "sign-truffles-like-manna",
+  // His mattress, a leather case stuffed with palm fibres.
+  "deep-book-riqaq-the-simple-bed": "sign-a-bed-of-leather",
+  // No big tray, no well-baked thin bread, no dining table.
+  "deep-kids-table-no-fancy-table": "sign-never-at-a-table",
+  // Ibn Umar never missed touching the two corners, in crowds or without.
+  "deep-hajj-kabah-two-corners": "sign-the-two-corners",
+  // After Fajr he dipped his hand in every bowl of water, even in the cold.
+  "deep-book-fadail-a-hand-in-every-bowl": "sign-vessels-after-fajr",
+  // By Jumdan: the mufarridun have gone ahead.
+  "deep-duas-remembering-allah-always-those-who-have-gone-ahead": "sign-gone-ahead",
+  // Wear sandals: as if riding.
+  "deep-book-dress-wear-sandals": "sign-as-if-riding",
+  // A reddish-white land like a pure loaf, with no landmarks.
+  "deep-ibrahim4-a-white-flat-land": "sign-like-a-pure-loaf"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

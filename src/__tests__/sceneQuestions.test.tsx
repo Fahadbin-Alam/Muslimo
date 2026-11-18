@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3034);
+    expect(asks.length).toBe(3055);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4417);
+    expect(places).toBe(4447);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -18473,6 +18473,233 @@ describe("where the scene waits and where it stops", () => {
         [1, 0, 1, 1]
       ],
       [0, 10.6]
+    ]);
+  });
+
+  it("waits on the scenes from a bed of leather to a land like a pure loaf, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-a-bed-of-leather", "sign-never-at-a-table", "sign-the-two-corners", "sign-vessels-after-fajr", "sign-gone-ahead", "sign-as-if-riding", "sign-like-a-pure-loaf"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(21);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Aishah: nothing has happened yet where it waits; then Aishah's voice speaks, and his mattress shows, lying on the
+    // ground by his home.
+    expect([
+      shown("Who told us about his mattress?", ["his mattress, lying on the ground by his home"]),
+      value("a-bed-of-leather", "Aishah's voice: his mattress", "opacity", 0.2)
+    ]).toEqual([
+      [[0], [1]],
+      1
+    ]);
+    // A leather case stuffed with palm fibres: his mattress lies on the ground by his home, before the next words; then
+    // a tanned hide shows, a faint line goes from it to the mattress and glints come over its leather; glints come about
+    // the fibres at the top of the palm's trunk, tufts of fibre go from the palm into the mattress, its open end shows
+    // the fibres within, and a soft golden ring comes about it. Nothing fine: leather and palm fibre.
+    expect([
+      shown("The Prophet ﷺ slept on a very fancy bed.", ["a leather case: a tanned hide", "stuffed: palm fibres within the mattress's open end", "a soft golden ring about the mattress"]),
+      moved("The Prophet ﷺ slept on a very fancy bed.", "palm fibres, going into the mattress 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -51.5]
+    ]);
+    // Stuffed with palm fibres: the mattress and the tanned hide lie by his home, before the last words; then glints
+    // come about the fibres at the top of the palm's trunk, three tufts of fibre go from the palm into the mattress, its
+    // open end shows the fibres within, and a soft golden ring comes about it.
+    expect([
+      shown("What was his ﷺ mattress stuffed with?", ["stuffed: palm fibres within the mattress's open end", "a soft golden ring about the mattress"]),
+      moved("What was his ﷺ mattress stuffed with?", "palm fibres, going into the mattress 1", "x"),
+      value("a-bed-of-leather", "palm fibres at the top of the palm's trunk: glints", "opacity", 0.7)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -51.5],
+      1
+    ]);
+    // Plain and simple: Anas's voice has spoken, by his home, before the next words; then a big tray of fine dishes
+    // shows faint, and a grey ring comes about it, never his; then well-baked thin bread, faint, with a grey ring; then
+    // a dining table, faint, with a grey ring.
+    expect(shown("He ﷺ kept his meals plain and simple.", ["a big tray of fine dishes, faint", "never his: a grey ring about the big tray", "well-baked thin bread, faint", "never his: a grey ring about the thin bread", "a dining table on four legs, faint", "never his: a grey ring about the dining table"])).toEqual([
+      [0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1]
+    ]);
+    // Well-baked thin bread: the big tray shows faint in its grey ring, before the next words; then well-baked thin
+    // bread shows faint beside it, and a grey ring comes about it, never his.
+    expect(shown("What kind of bread did he ﷺ not eat?", ["well-baked thin bread, faint", "never his: a grey ring about the thin bread"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // At a dining table: the big tray and the thin bread show faint in their grey rings, before the last words; then a
+    // dining table on four legs shows faint, and a grey ring comes about it, never his.
+    expect(shown("What did he ﷺ never eat at, Anas said?", ["a dining table on four legs, faint", "never his: a grey ring about the dining table"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // The Black Stone and the Yemeni Corner: Ibn Umar's place has come round the House, with a glint at each of two
+    // corners, and gone, before the next words; then a soft golden ring comes about the corner of the Black Stone, and
+    // another about the Yemeni Corner.
+    expect(shown("Which two corners did Ibn Umar always touch?", ["the Black Stone: a soft golden ring about its corner", "the Yemeni Corner: a soft golden ring about it"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // In crowds or without crowds: soft golden rings are about the two corners, before the next words; then a crowd's
+    // places press about the House, Ibn Umar's place comes round through them with a glint at the Yemeni Corner and one
+    // at the Black Stone, the crowd goes, the ground about the House lies open and calm, and it comes round again, a
+    // glint at each corner.
+    expect([
+      value("the-two-corners", "in crowds: the places of a crowd about the House", "opacity", 0.5),
+      value("the-two-corners", "in crowds too: a glint at the Yemeni Corner", "opacity", 0.485),
+      value("the-two-corners", "in crowds too: a glint at the Black Stone", "opacity", 0.515),
+      shown("Ibn Umar followed the sunnah even when it was crowded.", ["without crowds: the open ground about the House, calm"]),
+      value("the-two-corners", "without crowds too: a glint at the Yemeni Corner", "opacity", 0.575),
+      value("the-two-corners", "without crowds too: a glint at the Black Stone", "opacity", 0.605)
+    ]).toEqual([
+      1,
+      1,
+      1,
+      [[0], [1]],
+      1,
+      1
+    ]);
+    // Since I saw him: Ibn Umar's place has come round the open House, before the last words; then his place, a golden
+    // ring, as Ibn Umar saw it, comes round the same way, with a glint at the Yemeni Corner and one at the Black Stone,
+    // and a faint golden line goes to it from Ibn Umar's place, which stands back to see.
+    expect([
+      shown("Why did Ibn Umar touch them?", ["as Ibn Umar saw it: his place, a golden ring, going round the House", "he touched the Yemeni Corner: a glint", "he touched the Black Stone: a glint", "since I saw him: a faint golden line from Ibn Umar's place to his"]),
+      moved("Why did Ibn Umar touch them?", "as Ibn Umar saw it: his place, a golden ring, going round the House", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 20.4]
+    ]);
+    // When he finished the dawn prayer: the dawn light is faint where it waits; then it grows, Anas's voice speaks, and
+    // a spark rises from the masjid, the prayer done.
+    expect([
+      shown("When did the servants bring him ﷺ their water?", ["the morning light, growing"]),
+      value("vessels-after-fajr", "Anas's voice: when he finished the dawn prayer", "opacity", 0.06),
+      value("vessels-after-fajr", "the prayer done: a spark rising from the masjid", "opacity", 0.06)
+    ]).toEqual([
+      [[0.4], [1]],
+      1,
+      1
+    ]);
+    // The servants of Madinah: the dawn prayer is done and the light has grown, before the next words; then three places
+    // come along the way from the homes, each with a bowl of water, and wait before his place.
+    expect([
+      shown("Who brought vessels of water to him ﷺ after Fajr?", ["the place of one bringing a bowl of water 1", "its bowl of water 1", "the place of one bringing a bowl of water 2", "its bowl of water 2", "the place of one bringing a bowl of water 3", "its bowl of water 3"]),
+      moved("Who brought vessels of water to him ﷺ after Fajr?", "the place of one bringing a bowl of water 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, -60]
+    ]);
+    // Even in the cold dawn: a golden glint shows in the water of each of the three bowls, before the next words; then a
+    // pale chill comes over the land, and frost on the ground; a fourth place comes with its bowl, and a golden glint
+    // shows in its water too.
+    expect([
+      shown("He ﷺ dipped his hand in their water even on cold mornings.", ["the cold dawn: a pale chill over the land", "frost on the ground", "the place of one bringing a bowl in the cold dawn", "its bowl of water, in the cold dawn", "dipped in, even in the cold: a golden glint in its water"]),
+      moved("He ﷺ dipped his hand in their water even on cold mornings.", "the place of one bringing a bowl in the cold dawn", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, -59]
+    ]);
+    // On the road to Makkah: nothing has happened yet where it waits; then his place, a golden ring, sets off along the
+    // road with the places of three with him, and Abu Hurairah's voice speaks.
+    expect([
+      shown("Where was he ﷺ when he spoke of the mufarridun?", ["Abu Hurairah's voice: he was on the road to Makkah"]),
+      moved("Where was he ﷺ when he spoke of the mufarridun?", "his place, a golden ring, going along the road", "x")
+    ]).toEqual([
+      [[0], [1]],
+      [0, 18]
+    ]);
+    // Those who remember much: the places of some who have gone ahead show faint, far along the road in a soft golden
+    // light, before the next words; then his voice answers, and sparks rise from the places ahead, one after another.
+    expect([
+      shown("Who are the mufarridun, he ﷺ said?", ["his voice: those who remember much"]),
+      value("gone-ahead", "remembering much: a spark rising 1", "opacity", 0.76),
+      value("gone-ahead", "remembering much: a spark rising 2", "opacity", 0.78)
+    ]).toEqual([
+      [[0], [1]],
+      1,
+      1
+    ]);
+    // Males and females: his voice has answered and two sparks have risen from the places ahead, before the last words;
+    // then another spark rises, and a soft golden ring comes about each place ahead.
+    expect([
+      shown("Women who remember Allah much are among the mufarridun too.", ["a soft golden ring about each place ahead"]),
+      value("gone-ahead", "remembering much: a spark rising 3", "opacity", 0.9)
+    ]).toEqual([
+      [[0], [1]],
+      1
+    ]);
+    // On an expedition: nothing has happened yet where it waits, by the rough way; then Jabir's voice speaks, and is
+    // gone.
+    expect(value("as-if-riding", "Jabir's voice: I heard him say", "opacity", 0.1)).toEqual(1);
+    // Riding, as it were: his voice has spoken and a pair of sandals is under the place of one who will walk, before the
+    // next words; then it sets off along the rough way, and a camel, no one on it, goes along beside it at the same
+    // pace, a faint line between them.
+    expect([
+      shown("Walking in sandals is like...?", ["a camel, no one on it, going along beside it", "as if riding: a faint line from the camel to the place"]),
+      moved("Walking in sandals is like...?", "the place of one walking in sandals", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 42]
+    ]);
+    // Easier on the way: a pair of sandals is under the place of one who will walk, before the next words; then it goes
+    // along the rough way of stones and thorns, a camel, no one on it, beside it at the same pace, a faint line between
+    // them, and a soft golden ring comes about the sandals.
+    expect([
+      shown("Good sandals make long walks easier.", ["a camel, no one on it, going along beside it", "as if riding: a faint line from the camel to the place", "a soft golden ring about the sandals"]),
+      moved("Good sandals make long walks easier.", "the place of one walking in sandals", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 88]
+    ]);
+    // Sahl: nothing has happened yet where it waits; then Sahl's voice speaks, and is gone.
+    expect(value("like-a-pure-loaf", "Sahl's voice: I heard him say", "opacity", 0.08)).toEqual(1);
+    // Like a pure loaf: the land of that Day has turned a soft reddish-white, with the places of many gathered on it,
+    // before the next words; then a round loaf of pure flour shows on it, the same soft white, with glints, and glints
+    // come over the land as over the loaf.
+    expect(shown("What will the land of gathering be like?", ["a loaf of pure flour, on the land", "glints over the loaf", "alike: glints over the land, as over the loaf"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // No landmarks: the loaf and the land shine alike, before the last words; then a soft light runs along the bare land
+    // from one side to the other, and nothing stands on it anywhere.
+    expect([
+      value("like-a-pure-loaf", "no landmark: a soft light running along the bare land", "opacity", 0.9),
+      moved("What will the land have, per Sahl?", "no landmark: a soft light running along the bare land", "x")
+    ]).toEqual([
+      1,
+      [0, 128]
     ]);
   });
 
