@@ -1433,6 +1433,13 @@ const STATES: State[] = [
   { id: "scene-the-work-of-his-hands", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-dawud-own-hands" ask="Whose example" /> },
   { id: "scene-every-good-is-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-everyday-every-good" ask="What counts as charity" /> },
   { id: "scene-a-hundred-times-a-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-tahrim2-a-hundred-times" ask="Whom did the Prophet" /> },
+  { id: "scene-close-in-the-rows", render: () => <SceneQuestionDemo lessonId="lesson-deep-saffat1-rows-like-the-angels" ask="How do angels make rows" /> },
+  { id: "scene-zayd-was-truthful", render: () => <SceneQuestionDemo lessonId="lesson-deep-munafiqun1-zaid-heard-the-words" ask="How did Zaid feel" /> },
+  { id: "scene-this-is-my-sunnah", render: () => <SceneQuestionDemo lessonId="lesson-deep-raad4-my-sunnah" ask="he does with fasting" /> },
+  { id: "scene-not-home-at-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-marriage-dont-surprise-them-at-night" ask="when should you not arrive home" /> },
+  { id: "scene-a-charity-for-travellers", render: () => <SceneQuestionDemo lessonId="lesson-deep-nisa3-shorten" ask="call shortening the prayer" /> },
+  { id: "scene-before-you-sleep", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadid1-the-first-and-the-last" ask="What does Al-Akhir mean" /> },
+  { id: "scene-a-secret-not-told", render: () => <SceneQuestionDemo lessonId="lesson-deep-umar-hafsah" ask="Why had Abu Bakr stayed quiet" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
