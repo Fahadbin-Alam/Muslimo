@@ -342,7 +342,7 @@ function trenchRock(): SignArt {
     ],
     words: [
       { text: "Digging the trench, they met a great rock", from: 0.02, to: 0.24 },
-      { text: "None of their spades could break it", from: 0.26, to: 0.48 },
+      { text: "It was hard, so they told him of it", from: 0.26, to: 0.48 },
       { text: "He came, and struck it with the spade", from: 0.5, to: 0.72 },
       { text: "And it became like soft sand", from: 0.74, to: 1 }
     ]
@@ -501,7 +501,7 @@ function chasingHorse(): SignArt {
     words: [
       { text: "On the road to Madinah, a horseman caught up", from: 0.02, to: 0.2 },
       { text: "O Allah, throw him down: and it threw him", from: 0.22, to: 0.42 },
-      { text: "It stood up neighing: order me what you wish", from: 0.44, to: 0.62 },
+      { text: "It rose neighing; Suraqa said: order me", from: 0.44, to: 0.62 },
       { text: "Stay where you are: let no one reach us", from: 0.64, to: 0.8 },
       { text: "Chasing in the morning, guarding by evening", from: 0.82, to: 1 }
     ]

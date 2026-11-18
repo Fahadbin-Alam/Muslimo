@@ -564,7 +564,7 @@ function contentWithEnough(): SignArt {
       { text: "He said: successful is one who", from: 0.02, to: 0.253 },
       { text: "has accepted Islam", from: 0.268, to: 0.501 },
       { text: "is given just what is enough", from: 0.516, to: 0.749 },
-      { text: "and Allah makes him content with it", from: 0.764, to: 1 }
+      { text: "and whom Allah makes content with it", from: 0.764, to: 1 }
     ]
   };
 }

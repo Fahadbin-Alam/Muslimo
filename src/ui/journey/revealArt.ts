@@ -216,7 +216,7 @@ function caveOfHira(): SignArt {
       { text: "He would go alone to the cave of Hira", from: 0.17, to: 0.33 },
       { text: "Worshipping there for many nights", from: 0.35, to: 0.5 },
       { text: "Until the truth came to him in the cave", from: 0.52, to: 0.66 },
-      { text: "Read! I am not one who reads", from: 0.68, to: 0.82 },
+      { text: "The angel: Read! He said: I cannot read", from: 0.68, to: 0.82 },
       { text: "He came back, his heart trembling", from: 0.84, to: 1 }
     ]
   };
@@ -350,11 +350,11 @@ function neverDisgrace(): SignArt {
     ],
     words: [
       { text: "Cover me! Cover me!", from: 0.02, to: 0.13 },
-      { text: "Never! Allah will never disgrace you", from: 0.15, to: 0.27 },
+      { text: "Khadijah: Never! Allah won't disgrace you", from: 0.15, to: 0.27 },
       { text: "You keep ties, you carry the weak", from: 0.29, to: 0.41 },
       { text: "You help the poor and honor the guest", from: 0.43, to: 0.55 },
-      { text: "She took him to her cousin Waraqah", from: 0.57, to: 0.69 },
-      { text: "This is the angel Allah sent to Musa", from: 0.71, to: 0.83 },
+      { text: "Khadijah took him to her cousin Waraqah", from: 0.57, to: 0.69 },
+      { text: "Waraqah: The angel Allah sent to Musa", from: 0.71, to: 0.83 },
       { text: "None brought the like but met hostility", from: 0.85, to: 1 }
     ]
   };
@@ -573,9 +573,9 @@ function skilledReciter(): SignArt {
     ],
     words: [
       { text: "One recites the Quran, knowing it well", from: 0.02, to: 0.23 },
-      { text: "He is with the noble, righteous scribes", from: 0.25, to: 0.48 },
+      { text: "That one is with noble, righteous scribes", from: 0.25, to: 0.48 },
       { text: "One keeps at it, though it is hard", from: 0.5, to: 0.73 },
-      { text: "He has two rewards", from: 0.75, to: 1 }
+      { text: "That one has two rewards", from: 0.75, to: 1 }
     ]
   };
 }
@@ -720,9 +720,9 @@ function oneWord(): SignArt {
     ],
     words: [
       { text: "A servant says a word that pleases Allah", from: 0.02, to: 0.23 },
-      { text: "He pays it no mind; Allah raises him ranks", from: 0.25, to: 0.48 },
+      { text: "Unmindful; Allah raises the servant ranks", from: 0.25, to: 0.48 },
       { text: "A servant says a word that angers Allah", from: 0.5, to: 0.73 },
-      { text: "He pays it no mind; he falls in Jahannam", from: 0.75, to: 1 }
+      { text: "Unmindful; the servant falls in Jahannam", from: 0.75, to: 1 }
     ]
   };
 }

@@ -349,10 +349,10 @@ function goldNotKeptOvernight(): SignArt {
       }))
     ],
     words: [
-      { text: "He prayed Asr with us, then hurried", from: 0.02, to: 0.17 },
+      { text: "Uqbah: He prayed Asr with us, then hurried", from: 0.02, to: 0.17 },
       { text: "He went into the house", from: 0.19, to: 0.34 },
       { text: "And soon came out again", from: 0.36, to: 0.5 },
-      { text: "I had left gold of charity in the house", from: 0.52, to: 0.66 },
+      { text: "When asked, he said: I left charity gold", from: 0.52, to: 0.66 },
       { text: "I disliked to keep it overnight", from: 0.68, to: 0.84 },
       { text: "So I shared it out", from: 0.86, to: 1 }
     ]
@@ -457,13 +457,13 @@ function dimamQuestions(): SignArt {
     ],
     words: [
       { text: "A man came into the masjid on a camel", from: 0.02, to: 0.125 },
-      { text: "He made it kneel there, then tied it", from: 0.14, to: 0.265 },
-      { text: "I will be hard in asking: do not be angry", from: 0.28, to: 0.385 },
+      { text: "The man made it kneel there, then tied it", from: 0.14, to: 0.265 },
+      { text: "The man: I'll ask hard; do not be angry", from: 0.28, to: 0.385 },
       { text: "Ask whatever you want", from: 0.4, to: 0.505 },
       { text: "Did Allah send you to all the people?", from: 0.52, to: 0.625 },
       { text: "He said: by Allah, yes", from: 0.64, to: 0.745 },
       { text: "Did Allah order that we pray five prayers?", from: 0.76, to: 0.865 },
-      { text: "I believe in what you have brought", from: 0.88, to: 1 }
+      { text: "The man: I believe in what you brought", from: 0.88, to: 1 }
     ]
   };
 }
@@ -533,7 +533,7 @@ function repaidBetter(): SignArt {
       { name: "the best in repaying: a warm glow about his place", svg: glow(his[0], n(his[1] - 1), 6.4, WARM, 0.32), keys: showAt(0.83, 0.87), loop: soft }
     ],
     words: [
-      { text: "He took a camel of a certain age", from: 0.02, to: 0.2 },
+      { text: "He took a camel of a certain age on credit", from: 0.02, to: 0.2 },
       { text: "Its owner came, asking for it back", from: 0.22, to: 0.4 },
       { text: "One who has a right has a say", from: 0.42, to: 0.6 },
       { text: "He gave him back better than its age", from: 0.62, to: 0.8 },
@@ -644,7 +644,7 @@ function everyGate(): SignArt {
       { text: "The people of jihad: the gate of jihad", from: 0.4, to: 0.505 },
       { text: "The people of charity: the gate of charity", from: 0.52, to: 0.625 },
       { text: "Of fasting: the gate of fasting, ar-Rayyan", from: 0.64, to: 0.745 },
-      { text: "Is anyone called from all of them?", from: 0.76, to: 0.865 },
+      { text: "Abu Bakr: Is anyone called from them all?", from: 0.76, to: 0.865 },
       { text: "Yes, and I hope you are one of them", from: 0.88, to: 1 }
     ]
   };
@@ -933,8 +933,8 @@ function zamzamDrink(): SignArt {
     ],
     words: [
       { text: "At the drinking place he asked for a drink", from: 0.02, to: 0.17 },
-      { text: "Fadl, bring him a drink from your mother", from: 0.19, to: 0.34 },
-      { text: "They put their hands in it", from: 0.36, to: 0.5 },
+      { text: "Al-Abbas: Fadl, bring him a drink", from: 0.19, to: 0.34 },
+      { text: "Al-Abbas: they put their hands in it", from: 0.36, to: 0.5 },
       { text: "Give me a drink; and he drank from it", from: 0.52, to: 0.66 },
       { text: "He came to Zamzam, where they gave water", from: 0.68, to: 0.84 },
       { text: "Work on, for you are doing a good deed", from: 0.86, to: 1 }

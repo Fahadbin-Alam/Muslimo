@@ -235,7 +235,7 @@ function dearerThanTheWorld(): SignArt {
       { text: "Umar said: I moved my camel on ahead", from: 0.28, to: 0.385 },
       { text: "Afraid Quran would be revealed about me", from: 0.4, to: 0.505 },
       { text: "Soon I heard someone calling me", from: 0.52, to: 0.625 },
-      { text: "Tonight a surah was revealed to me", from: 0.64, to: 0.745 },
+      { text: "He said: A surah revealed to me tonight", from: 0.64, to: 0.745 },
       { text: "Dearer to me than all the sun rises on", from: 0.76, to: 0.865 },
       { text: "We have given you a clear victory", from: 0.88, to: 1 }
     ]
@@ -521,10 +521,10 @@ function fatihahCure(): SignArt {
     words: [
       { text: "A tribe refused to host them as guests", from: 0.02, to: 0.125 },
       { text: "Its chief was stung; nothing helped him", from: 0.14, to: 0.265 },
-      { text: "I won't recite till you set us a reward", from: 0.28, to: 0.385 },
+      { text: "One of them: not till you set us a reward", from: 0.28, to: 0.385 },
       { text: "They agreed on a flock of sheep", from: 0.4, to: 0.505 },
-      { text: "He blew over him and recited Al-Fatihah", from: 0.52, to: 0.625 },
-      { text: "As if freed from a tether, he walked", from: 0.64, to: 0.745 },
+      { text: "One of them blew and recited Al-Fatihah", from: 0.52, to: 0.625 },
+      { text: "The chief walked as if freed from a tether", from: 0.64, to: 0.745 },
       { text: "How did you know it is a ruqyah?", from: 0.76, to: 0.865 },
       { text: "You did right; give me a share with you", from: 0.88, to: 1 }
     ]
@@ -684,7 +684,7 @@ function cloakOnTheThorns(): SignArt {
     ],
     words: [
       { text: "Coming back from Hunayn, with the people", from: 0.02, to: 0.125 },
-      { text: "The people clung to him, asking him", from: 0.14, to: 0.265 },
+      { text: "The bedouins clung to him, asking him", from: 0.14, to: 0.265 },
       { text: "Till they pressed him to a thorny tree", from: 0.28, to: 0.385 },
       { text: "And it snatched his cloak away", from: 0.4, to: 0.505 },
       { text: "He stopped and said: give me my cloak", from: 0.52, to: 0.625 },
@@ -909,8 +909,8 @@ function tailorsGourd(): SignArt {
       }
     ],
     words: [
-      { text: "A tailor invited him to food he made", from: 0.02, to: 0.2 },
-      { text: "I went along with him", from: 0.22, to: 0.4 },
+      { text: "A tailor made food and invited him", from: 0.02, to: 0.2 },
+      { text: "Anas: I went along with him", from: 0.22, to: 0.4 },
       { text: "Barley bread, and broth with gourd in it", from: 0.42, to: 0.6 },
       { text: "I saw him pick the gourd around the dish", from: 0.62, to: 0.8 },
       { text: "I have loved gourd ever since that day", from: 0.82, to: 1 }

@@ -668,11 +668,11 @@ function talkingWolf(): SignArt {
     words: [
       { text: "A shepherd was with his sheep", from: 0.02, to: 0.125 },
       { text: "A wolf attacked and took a sheep", from: 0.14, to: 0.265 },
-      { text: "He went after it until he saved it", from: 0.28, to: 0.385 },
+      { text: "The shepherd chased it and saved it", from: 0.28, to: 0.385 },
       { text: "The wolf turned and said: who guards it", from: 0.4, to: 0.505 },
       { text: "On the day of wild beasts, but me?", from: 0.52, to: 0.625 },
       { text: "The people said: Glory be to Allah!", from: 0.64, to: 0.745 },
-      { text: "I believe it, as do Abu Bakr and Umar", from: 0.76, to: 0.865 },
+      { text: "He said: I, Abu Bakr and Umar believe it", from: 0.76, to: 0.865 },
       { text: "And Abu Bakr and Umar were not there", from: 0.88, to: 1 }
     ]
   };

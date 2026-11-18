@@ -305,11 +305,11 @@ function ram(): SignArt {
       { name: "light of the great sacrifice", svg: glow(121, 58, 24, "#FFFFFF", 0.08), keys: showFrom(0.8, 0.86), loop: { move: "twinkle", ms: 2200, low: 0.6 } }
     ],
     words: [
-      { text: "I saw in a dream", from: 0.02, to: 0.2 },
-      { text: "Do what you are commanded", from: 0.22, to: 0.4 },
+      { text: "Ibrahim: My son, I saw in a dream", from: 0.02, to: 0.2 },
+      { text: "Ibrahim's son: Do what you are commanded", from: 0.22, to: 0.4 },
       { text: "When they had both submitted", from: 0.42, to: 0.56 },
       { text: "O Ibrahim, you have fulfilled the dream", from: 0.58, to: 0.76 },
-      { text: "We ransomed him with a great sacrifice", from: 0.78, to: 1 }
+      { text: "We ransomed the son with a great sacrifice", from: 0.78, to: 1 }
     ]
   };
 }
@@ -623,7 +623,7 @@ function cow(): SignArt {
       { name: "sound, with no blemish", svg: sparkles, keys: showFrom(0.8, 0.86), loop: { move: "twinkle", ms: 1400, low: 0.35 } }
     ],
     words: [
-      { text: "Allah commands you to sacrifice a cow", from: 0.02, to: 0.18 },
+      { text: "Musa: Allah commands you: slaughter a cow", from: 0.02, to: 0.18 },
       { text: "Neither old nor young", from: 0.2, to: 0.38 },
       { text: "Bright yellow, pleasing to see", from: 0.4, to: 0.58 },
       { text: "Not trained to plough or water", from: 0.6, to: 0.78 },

@@ -347,7 +347,7 @@ function sanctuary(): SignArt {
       { text: "Between them are doubtful things", from: 0.34, to: 0.48 },
       { text: "Avoid them: your religion and honour stay safe", from: 0.5, to: 0.64 },
       { text: "Like one grazing around a sanctuary", from: 0.66, to: 0.82 },
-      { text: "Soon he grazes inside it", from: 0.84, to: 1 }
+      { text: "Soon the shepherd grazes inside it", from: 0.84, to: 1 }
     ]
   };
 }
@@ -479,10 +479,10 @@ function musk(): SignArt {
     words: [
       { text: "A good friend, and a bad friend", from: 0.02, to: 0.16 },
       { text: "Like one who carries musk", from: 0.18, to: 0.32 },
-      { text: "He gives you some, or you buy some", from: 0.34, to: 0.48 },
-      { text: "Or you find a sweet smell from him", from: 0.5, to: 0.64 },
+      { text: "You get some as a gift, or you buy some", from: 0.34, to: 0.48 },
+      { text: "Or you get a sweet smell from the carrier", from: 0.5, to: 0.64 },
       { text: "And like one who blows the bellows", from: 0.66, to: 0.82 },
-      { text: "He burns your clothes, or you find a bad smell", from: 0.84, to: 1 }
+      { text: "Your clothes burn, or you get a bad smell", from: 0.84, to: 1 }
     ]
   };
 }

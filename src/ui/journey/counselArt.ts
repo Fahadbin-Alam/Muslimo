@@ -222,9 +222,9 @@ function reciteToMe(): SignArt {
       { name: "a soft light over them both", svg: wash(80, 103.4, 18, 5, WARM, 0.14), keys: showFrom(0.89, 0.94), loop: { move: "twinkle", ms: 2000, low: 0.8 } }
     ],
     words: [
-      { text: "He said to me: recite to me", from: 0.02, to: 0.13 },
+      { text: "Ibn Mas'ud: he said to me: recite to me", from: 0.02, to: 0.13 },
       { text: "Recite to you, when it was revealed to you?", from: 0.15, to: 0.27 },
-      { text: "I love to hear it from another", from: 0.29, to: 0.41 },
+      { text: "He said: I love to hear it from another", from: 0.29, to: 0.41 },
       { text: "So I recited an-Nisa to him", from: 0.43, to: 0.55 },
       { text: "Until I reached its ayah forty-one", from: 0.57, to: 0.69 },
       { text: "He said: stop", from: 0.71, to: 0.83 },
@@ -354,7 +354,7 @@ function theNeighbor(): SignArt {
     words: [
       { text: "Jibril kept on advising me", from: 0.02, to: 0.3 },
       { text: "Advising me about the neighbor", from: 0.32, to: 0.6 },
-      { text: "Until I thought he would make him an heir", from: 0.62, to: 1 }
+      { text: "Till I thought the neighbor would inherit", from: 0.62, to: 1 }
     ]
   };
 }
@@ -543,10 +543,10 @@ function acceptsOnlyGood(): SignArt {
     words: [
       { text: "Allah is Good, accepting only what is good", from: 0.02, to: 0.15 },
       { text: "One who travels long, unkempt and dusty", from: 0.17, to: 0.31 },
-      { text: "He lifts his hands to the sky: O Lord, O Lord", from: 0.33, to: 0.47 },
-      { text: "His food is unlawful, his drink unlawful", from: 0.49, to: 0.63 },
-      { text: "His clothes unlawful, fed on the unlawful", from: 0.65, to: 0.79 },
-      { text: "So how can he be answered?", from: 0.81, to: 1 }
+      { text: "The man raises both hands: O Lord, O Lord", from: 0.33, to: 0.47 },
+      { text: "The man's food is unlawful, drink unlawful", from: 0.49, to: 0.63 },
+      { text: "Clothes unlawful, fed on the unlawful", from: 0.65, to: 0.79 },
+      { text: "So how can such a man be answered?", from: 0.81, to: 1 }
     ]
   };
 }
@@ -627,11 +627,11 @@ function mercyOnMusa(): SignArt {
     words: [
       { text: "He divided a share among them", from: 0.02, to: 0.13 },
       { text: "One said: this was not shared for Allah's sake", from: 0.15, to: 0.27 },
-      { text: "I came to him and told him", from: 0.29, to: 0.41 },
+      { text: "Abdullah: I came to him and told him", from: 0.29, to: 0.41 },
       { text: "He was angry, till I saw it on his face", from: 0.43, to: 0.55 },
       { text: "May Allah have mercy on Musa", from: 0.57, to: 0.69 },
-      { text: "He was harmed with more than this", from: 0.71, to: 0.83 },
-      { text: "And he was patient", from: 0.85, to: 1 }
+      { text: "Musa was harmed with more than this", from: 0.71, to: 0.83 },
+      { text: "And Musa was patient", from: 0.85, to: 1 }
     ]
   };
 }

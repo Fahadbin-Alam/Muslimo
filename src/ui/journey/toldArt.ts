@@ -420,11 +420,11 @@ function logAtSea(): SignArt {
     ],
     words: [
       { text: "A thousand dinars, lent with Allah as witness", from: 0.02, to: 0.16 },
-      { text: "When it was time, he found no ship", from: 0.18, to: 0.32 },
+      { text: "The borrower found no ship in time", from: 0.18, to: 0.32 },
       { text: "Money and a letter, sealed in a piece of wood", from: 0.34, to: 0.48 },
-      { text: "He gave it to the sea, trusting Allah", from: 0.5, to: 0.64 },
+      { text: "The borrower threw it in, trusting Allah", from: 0.5, to: 0.64 },
       { text: "The lender took it home for firewood", from: 0.66, to: 0.82 },
-      { text: "He opened it: his money, and the letter", from: 0.84, to: 1 }
+      { text: "The lender opened it: money and the letter", from: 0.84, to: 1 }
     ]
   };
 }
@@ -529,8 +529,8 @@ function tiedCamels(): SignArt {
     words: [
       { text: "One who has the Quran by heart", from: 0.02, to: 0.18 },
       { text: "Is like the owner of tied camels", from: 0.2, to: 0.38 },
-      { text: "If he keeps them tied, he keeps them", from: 0.4, to: 0.58 },
-      { text: "If he lets them go, they run away", from: 0.6, to: 0.78 },
+      { text: "The owner who keeps them tied keeps them", from: 0.4, to: 0.58 },
+      { text: "If the owner lets them go, they run away", from: 0.6, to: 0.78 },
       { text: "Keep reviewing it: it slips away faster", from: 0.8, to: 1 }
     ]
   };
@@ -695,7 +695,7 @@ function traveler(): SignArt {
       { text: "Or a traveler on his way", from: 0.32, to: 0.46 },
       { text: "Like a rider who rests in the shade of a tree", from: 0.48, to: 0.64 },
       { text: "Then goes on, and leaves it", from: 0.66, to: 0.8 },
-      { text: "At evening, do not wait for the morning", from: 0.82, to: 1 }
+      { text: "Ibn Umar: At evening, don't await morning", from: 0.82, to: 1 }
     ]
   };
 }

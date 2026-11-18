@@ -132,9 +132,9 @@ function dawud(): SignArt {
       { name: "rings shining", svg: glints, keys: showFrom(0.84, 0.88), loop: { move: "twinkle", ms: 1300, low: 0.15 } }
     ],
     words: [
-      { text: "The mountains glorified with him", from: 0.02, to: 0.2 },
+      { text: "The mountains glorified with Dawud", from: 0.02, to: 0.2 },
       { text: "And the birds, gathered", from: 0.22, to: 0.4 },
-      { text: "Iron made soft for him", from: 0.42, to: 0.6 },
+      { text: "Iron made soft for Dawud", from: 0.42, to: 0.6 },
       { text: "Make coats of mail", from: 0.62, to: 0.8 },
       { text: "The rings just right", from: 0.82, to: 1 }
     ]
@@ -402,9 +402,9 @@ function mihrab(): SignArt {
     ],
     words: [
       { text: "In the mihrab", from: 0.02, to: 0.18 },
-      { text: "Each time he came in", from: 0.2, to: 0.38 },
-      { text: "He found provision with her", from: 0.4, to: 0.58 },
-      { text: "It is from Allah", from: 0.6, to: 0.78 },
+      { text: "Each time Zakariyya came in", from: 0.2, to: 0.38 },
+      { text: "Zakariyya found provision with her", from: 0.4, to: 0.58 },
+      { text: "Maryam: It is from Allah", from: 0.6, to: 0.78 },
       { text: "There, Zakariyya called on his Lord", from: 0.8, to: 1 }
     ]
   };

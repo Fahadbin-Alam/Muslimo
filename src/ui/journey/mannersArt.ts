@@ -122,11 +122,11 @@ function permission(): SignArt {
     ],
     words: [
       { text: "At Umar's door", from: 0.02, to: 0.16 },
-      { text: "He asked permission once", from: 0.18, to: 0.32 },
+      { text: "Abu Musa asked permission once", from: 0.18, to: 0.32 },
       { text: "Then a second time", from: 0.34, to: 0.48 },
       { text: "A third time: no permission given", from: 0.5, to: 0.64 },
-      { text: "So he went back", from: 0.66, to: 0.82 },
-      { text: "The youngest went with him as witness", from: 0.84, to: 1 }
+      { text: "So Abu Musa went back", from: 0.66, to: 0.82 },
+      { text: "The youngest went with Abu Musa as witness", from: 0.84, to: 1 }
     ]
   };
 }
@@ -611,8 +611,8 @@ function riverAtTheDoor(): SignArt {
       { text: "If a river ran by your door", from: 0.02, to: 0.18 },
       { text: "And you bathed in it five times a day", from: 0.2, to: 0.4 },
       { text: "Would any dirt be left on you?", from: 0.42, to: 0.6 },
-      { text: "Not a trace of dirt would be left", from: 0.62, to: 0.8 },
-      { text: "By the five prayers, Allah wipes out sins", from: 0.82, to: 1 }
+      { text: "They said: No trace of dirt would be left", from: 0.62, to: 0.8 },
+      { text: "He said: By five prayers Allah wipes sins", from: 0.82, to: 1 }
     ]
   };
 }

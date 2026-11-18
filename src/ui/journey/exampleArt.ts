@@ -334,10 +334,10 @@ function forgivingTrader(): SignArt {
     ],
     words: [
       { text: "A trader used to lend to people", from: 0.02, to: 0.22 },
-      { text: "When one in hardship could not pay him back", from: 0.24, to: 0.42 },
-      { text: "He told his helpers: let him off", from: 0.44, to: 0.6 },
+      { text: "When a debtor in hardship could not pay", from: 0.24, to: 0.42 },
+      { text: "The trader told helpers: let debtors off", from: 0.44, to: 0.6 },
       { text: "So that Allah may let us off", from: 0.62, to: 0.78 },
-      { text: "And Allah forgave him", from: 0.8, to: 1 }
+      { text: "And Allah forgave the trader", from: 0.8, to: 1 }
     ]
   };
 }

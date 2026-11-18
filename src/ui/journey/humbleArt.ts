@@ -452,7 +452,7 @@ function whatYouMeant(): SignArt {
     words: [
       { text: "My father Yazid took dinars for charity", from: 0.02, to: 0.18 },
       { text: "And left them with a man in the masjid", from: 0.195, to: 0.315 },
-      { text: "I came, took them, and brought them to him", from: 0.33, to: 0.45 },
+      { text: "I took them and brought them to my father", from: 0.33, to: 0.45 },
       { text: "My father said: by Allah, I meant not you", from: 0.465, to: 0.585 },
       { text: "So I took the case to him", from: 0.6, to: 0.72 },
       { text: "He said: yours is what you meant, Yazid", from: 0.735, to: 0.855 },

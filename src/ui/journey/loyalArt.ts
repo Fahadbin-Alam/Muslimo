@@ -311,9 +311,9 @@ function greenLand(): SignArt {
       }
     ],
     words: [
-      { text: "He was named al-Khidr", from: 0.02, to: 0.3 },
-      { text: "Because he sat on a white, barren land", from: 0.32, to: 0.62 },
-      { text: "And lo, it stirred green behind him", from: 0.64, to: 1 }
+      { text: "He said: al-Khidr was named so", from: 0.02, to: 0.3 },
+      { text: "Because al-Khidr sat on white, barren land", from: 0.32, to: 0.62 },
+      { text: "And lo, it stirred green behind al-Khidr", from: 0.64, to: 1 }
     ]
   };
 }
@@ -469,7 +469,7 @@ function matForPrayer(): SignArt {
       { text: "Mulaykah invited him to food she made", from: 0.02, to: 0.14 },
       { text: "He ate of it, then said: get up", from: 0.155, to: 0.26 },
       { text: "And let me lead you in prayer", from: 0.275, to: 0.38 },
-      { text: "I went to our mat, dark from long use", from: 0.395, to: 0.52 },
+      { text: "Anas: I went to our mat, dark from use", from: 0.395, to: 0.52 },
       { text: "And sprinkled it with water", from: 0.535, to: 0.64 },
       { text: "The orphan and I lined up behind him", from: 0.655, to: 0.76 },
       { text: "And the old lady behind us", from: 0.775, to: 0.88 },
@@ -770,7 +770,7 @@ function keptForYou(): SignArt {
     words: [
       { text: "He shared out cloaks, gave Makhramah none", from: 0.02, to: 0.165 },
       { text: "Makhramah said: my son, let us go to him", from: 0.18, to: 0.305 },
-      { text: "So I went with him", from: 0.32, to: 0.43 },
+      { text: "Al-Miswar: So I went with my father", from: 0.32, to: 0.43 },
       { text: "My father said: go in and call him for me", from: 0.445, to: 0.57 },
       { text: "He came out to him, wearing one of them", from: 0.585, to: 0.71 },
       { text: "He said: we kept this for you", from: 0.725, to: 0.84 },
@@ -910,14 +910,14 @@ function longNight(): SignArt {
       spark("set free: a spark rising", 114, 99, 0.92, 0.96)
     ],
     words: [
-      { text: "On my way to him I said:", from: 0.02, to: 0.14 },
+      { text: "Abu Hurairah: On my way to him I said:", from: 0.02, to: 0.14 },
       { text: "O night, how long and tiring!", from: 0.155, to: 0.26 },
       { text: "Yet from the land of kufr it saved us", from: 0.275, to: 0.38 },
       { text: "A slave of mine ran away on the way", from: 0.395, to: 0.52 },
       { text: "When I came to him, I gave my pledge", from: 0.535, to: 0.64 },
       { text: "As I was with him, the slave appeared", from: 0.655, to: 0.76 },
       { text: "O Abu Hurairah, here is your slave", from: 0.775, to: 0.88 },
-      { text: "I said: he is free, for the sake of Allah", from: 0.895, to: 1 }
+      { text: "I said: the slave is free for Allah's sake", from: 0.895, to: 1 }
     ]
   };
 }

@@ -396,11 +396,11 @@ function bayruha(): SignArt {
       }))
     ],
     words: [
-      { text: "Bayruha, the garden he loved most", from: 0.02, to: 0.2 },
+      { text: "Bayruha, the garden Abu Talhah loved most", from: 0.02, to: 0.2 },
       { text: "Facing the masjid, its water sweet", from: 0.22, to: 0.42 },
       { text: "Spend from what you love", from: 0.44, to: 0.62 },
-      { text: "He gave it for Allah", from: 0.64, to: 0.8 },
-      { text: "Shared among his relatives", from: 0.82, to: 1 }
+      { text: "Abu Talhah gave it for Allah", from: 0.64, to: 0.8 },
+      { text: "Shared among Abu Talhah's relatives", from: 0.82, to: 1 }
     ]
   };
 }

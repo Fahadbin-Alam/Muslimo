@@ -172,8 +172,8 @@ function lostNecklace(): SignArt {
       { text: "He stayed to look for it, and the people with him", from: 0.29, to: 0.41 },
       { text: "Morning came, and there was no water", from: 0.43, to: 0.55 },
       { text: "Then Allah revealed the ayah of tayammum", from: 0.57, to: 0.69 },
-      { text: "Not your first blessing, family of Abu Bakr", from: 0.71, to: 0.83 },
-      { text: "We raised the camel: the necklace was under it", from: 0.85, to: 1 }
+      { text: "Usayd: This is not your first blessing", from: 0.71, to: 0.83 },
+      { text: "Aishah: We raised the camel and found it", from: 0.85, to: 1 }
     ]
   };
 }
@@ -283,7 +283,7 @@ function loveMadinah(): SignArt {
     ],
     words: [
       { text: "In Madinah, Abu Bakr and Bilal fell ill", from: 0.02, to: 0.13 },
-      { text: "I went in to them: how do you find yourself?", from: 0.15, to: 0.27 },
+      { text: "Aishah: I went to them: how do you feel?", from: 0.15, to: 0.27 },
       { text: "Bilal: will I spend a night in a valley of idhkhir?", from: 0.29, to: 0.41 },
       { text: "Aishah: I came to him and told him", from: 0.43, to: 0.55 },
       { text: "Make us love Madinah as Makkah, or more", from: 0.57, to: 0.69 },
@@ -377,11 +377,11 @@ function thabitGoodNews(): SignArt {
     ],
     words: [
       { text: "He missed Thabit ibn Qays", from: 0.02, to: 0.13 },
-      { text: "A man found him at home, his head lowered", from: 0.15, to: 0.27 },
-      { text: "Bad: he raised his voice above the Prophet's", from: 0.29, to: 0.41 },
-      { text: "So his deeds are lost, and he is of the Fire", from: 0.43, to: 0.55 },
+      { text: "A man found Thabit at home, head lowered", from: 0.15, to: 0.27 },
+      { text: "Thabit: bad, I raised my voice above his", from: 0.29, to: 0.41 },
+      { text: "So my deeds are lost; I am of the Fire", from: 0.43, to: 0.55 },
       { text: "The man came back and told him", from: 0.57, to: 0.69 },
-      { text: "Go to him and say: you are not of the Fire", from: 0.71, to: 0.83 },
+      { text: "Go to Thabit, say: you are not of the Fire", from: 0.71, to: 0.83 },
       { text: "But you are of the people of Paradise", from: 0.85, to: 1 }
     ]
   };
@@ -729,13 +729,13 @@ function twoBrightOnes(): SignArt {
       { name: "the regret: a grey shade about it", svg: wash(136, 105.4, 7, 4.4, GREY, 0.22), keys: showFrom(0.9, 0.93) }
     ],
     words: [
-      { text: "I heard him say: read the Quran", from: 0.02, to: 0.13 },
+      { text: "Abu Umamah heard him say: read the Quran", from: 0.02, to: 0.13 },
       { text: "It will intercede for its companions on the Day", from: 0.15, to: 0.27 },
       { text: "Read the bright two: al-Baqarah and Al Imran", from: 0.29, to: 0.41 },
       { text: "They will come like two clouds, or two shades", from: 0.43, to: 0.55 },
       { text: "Or like two flocks of birds in rows", from: 0.57, to: 0.69 },
       { text: "Pleading for their companions", from: 0.71, to: 0.83 },
-      { text: "Taking it is a blessing, and leaving it a regret", from: 0.85, to: 1 }
+      { text: "Read al-Baqarah: taking it is a blessing", from: 0.85, to: 1 }
     ]
   };
 }
@@ -838,7 +838,7 @@ function thirdOfTheQuran(): SignArt {
     words: [
       { text: "A man heard one recite: Qul huwa Allahu ahad", from: 0.02, to: 0.13 },
       { text: "Repeating it, again and again", from: 0.15, to: 0.27 },
-      { text: "In the morning he told him, as if it were little", from: 0.29, to: 0.41 },
+      { text: "The man told him, as if it were little", from: 0.29, to: 0.41 },
       { text: "By the One in whose hand is my soul", from: 0.43, to: 0.55 },
       { text: "It equals a third of the Quran", from: 0.57, to: 0.69 },
       { text: "Can one of you not recite a third in a night?", from: 0.71, to: 0.83 },

@@ -949,9 +949,9 @@ function shade(): SignArt {
       { name: "palm", svg: palm(58, 97, 50), origin: { x: 58, y: 97 }, loop: { move: "sway", ms: 4600, angle: 1.2 } }
     ],
     words: [
-      { text: "He stretches the shade", from: 0.04, to: 0.38 },
+      { text: "Your Lord stretches out the shade", from: 0.04, to: 0.38 },
       { text: "The sun is its guide", from: 0.4, to: 0.66 },
-      { text: "Then He draws it in, little by little", from: 0.68, to: 1 }
+      { text: "Then Allah draws it in, little by little", from: 0.68, to: 1 }
     ]
   };
 }

@@ -398,13 +398,13 @@ function eightGates(): SignArt {
       { name: "at the gate it wishes: a warm glow", svg: glow(107.4, 42.6, 6, WARM, 0.36), keys: showFrom(0.89, 0.93), loop: { move: "twinkle", ms: 1600, low: 0.75 } }
     ],
     words: [
-      { text: "My turn came to tend the camels", from: 0.02, to: 0.13 },
+      { text: "Uqbah: My turn came to tend the camels", from: 0.02, to: 0.13 },
       { text: "I found him standing, speaking to the people", from: 0.15, to: 0.27 },
       { text: "Whoever does wudu, and does it well", from: 0.29, to: 0.41 },
       { text: "Then says: I testify, no god but Allah", from: 0.43, to: 0.55 },
       { text: "And Muhammad is His slave and Messenger", from: 0.57, to: 0.69 },
-      { text: "The eight gates of Paradise open for him", from: 0.71, to: 0.83 },
-      { text: "He enters by whichever he wishes", from: 0.85, to: 1 }
+      { text: "The eight gates of Paradise open for them", from: 0.71, to: 0.83 },
+      { text: "They enter by whichever they wish", from: 0.85, to: 1 }
     ]
   };
 }
@@ -674,7 +674,7 @@ function rightOnServants(): SignArt {
       ...deeds
     ],
     words: [
-      { text: "I rode behind him on a donkey called Ufayr", from: 0.02, to: 0.13 },
+      { text: "Mu'adh: I rode behind him on donkey Ufayr", from: 0.02, to: 0.13 },
       { text: "Do you know Allah's right on His servants?", from: 0.15, to: 0.27 },
       { text: "I said: Allah and His Messenger know best", from: 0.29, to: 0.41 },
       { text: "To worship Him and join nothing with Him", from: 0.43, to: 0.55 },

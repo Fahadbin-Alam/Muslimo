@@ -380,7 +380,7 @@ function saltInWater(): SignArt {
     ],
     words: [
       { text: "No one plots against Madinah's people", from: 0.02, to: 0.3 },
-      { text: "But he melts away", from: 0.32, to: 0.6 },
+      { text: "But the plotter melts away", from: 0.32, to: 0.6 },
       { text: "As salt melts in water", from: 0.62, to: 1 }
     ]
   };
@@ -560,7 +560,7 @@ function likeAFurnace(): SignArt {
     ],
     words: [
       { text: "A Bedouin gave him his pledge on Islam", from: 0.02, to: 0.18 },
-      { text: "The next day he came with a fever", from: 0.2, to: 0.34 },
+      { text: "Next day, the Bedouin came with a fever", from: 0.2, to: 0.34 },
       { text: "And said: cancel my pledge", from: 0.36, to: 0.48 },
       { text: "He refused, three times", from: 0.5, to: 0.64 },
       { text: "Madinah is like a furnace", from: 0.66, to: 0.8 },

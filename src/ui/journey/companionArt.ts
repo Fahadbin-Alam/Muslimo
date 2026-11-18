@@ -206,9 +206,9 @@ function tabuk(): SignArt {
     ],
     words: [
       { text: "Never stronger, never richer", from: 0.02, to: 0.16 },
-      { text: "He kept delaying, and the army left", from: 0.18, to: 0.32 },
-      { text: "He told the plain truth", from: 0.34, to: 0.48 },
-      { text: "Fifty nights, no one spoke to him", from: 0.5, to: 0.64 },
+      { text: "Ka'b: I kept delaying, and the army left", from: 0.18, to: 0.32 },
+      { text: "Ka'b: I told him the plain truth", from: 0.34, to: 0.48 },
+      { text: "Ka'b: Fifty nights, no one spoke to me", from: 0.5, to: 0.64 },
       { text: "A king's letter went into the oven", from: 0.66, to: 0.82 },
       { text: "O Ka'b ibn Malik, be happy!", from: 0.84, to: 1 }
     ]
@@ -503,9 +503,9 @@ function plague(): SignArt {
     words: [
       { text: "At Sargh, on the way to Sham", from: 0.02, to: 0.16 },
       { text: "Plague had broken out in Sham", from: 0.18, to: 0.32 },
-      { text: "He asked them all for counsel", from: 0.34, to: 0.48 },
+      { text: "Umar asked them all for counsel", from: 0.34, to: 0.48 },
       { text: "We will go back in the morning", from: 0.5, to: 0.64 },
-      { text: "From Allah's decree to Allah's decree", from: 0.66, to: 0.82 },
+      { text: "Umar: from Allah's decree to His decree", from: 0.66, to: 0.82 },
       { text: "Do not go to it, nor flee from it", from: 0.84, to: 1 }
     ]
   };

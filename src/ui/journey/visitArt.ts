@@ -662,7 +662,7 @@ function huskBlown(): SignArt {
       { name: "ate it: a warm glow about the two places", svg: glow(32, 100.4, 8, WARM, 0.28), keys: showAt(0.94, 0.958) }
     ],
     words: [
-      { text: "I asked Sahl: did he eat white flour?", from: 0.02, to: 0.125 },
+      { text: "Abu Hazim: did he eat white flour?", from: 0.02, to: 0.125 },
       { text: "Sahl said: he never saw white flour", from: 0.14, to: 0.245 },
       { text: "I said: did you have sieves then?", from: 0.26, to: 0.375 },
       { text: "Sahl said: he never saw a sieve", from: 0.39, to: 0.505 },
