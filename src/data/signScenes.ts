@@ -933,7 +933,14 @@ export type SignKind =
   | "healing-in-black-cumin"
   | "over-which-the-sun-rises"
   | "brisk-then-walking"
-  | "said-three-times";
+  | "said-three-times"
+  | "the-gate-of-abu-bakr"
+  | "even-a-trotter"
+  | "water-for-the-pilgrims"
+  | "start-with-your-dependents"
+  | "even-with-one-sheep"
+  | "the-right-then-the-right"
+  | "stung-by-a-scorpion";
 
 export type SignScene = {
   id: string;
@@ -4825,6 +4832,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Anas said: whenever the Prophet ﷺ spoke a sentence, he used to repeat it thrice so that the people could understand it properly from him.",
     sources: [bukhari("95")]
+  },
+  {
+    id: "sign-the-gate-of-abu-bakr",
+    kind: "the-gate-of-abu-bakr",
+    caption:
+      "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ addressed the people, and said: the person who has favored me most of all, both with his company and wealth, is Abu Bakr. If I were to take a Khalil other than my Lord, I would have taken Abu Bakr as such. All the gates of the masjid should be closed except the gate of Abu Bakr.",
+    sources: [bukhari("3654")]
+  },
+  {
+    id: "sign-even-a-trotter",
+    kind: "even-a-trotter",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: I shall accept the invitation even if I were invited to a meal of a sheep's trotter, and I shall accept the gift even if it were an arm or a trotter of a sheep.",
+    sources: [bukhari("2568")]
+  },
+  {
+    id: "sign-water-for-the-pilgrims",
+    kind: "water-for-the-pilgrims",
+    caption:
+      "Ibn Umar said: Al-Abbas ibn Abdul-Muttalib asked the permission of the Messenger of Allah ﷺ to let him stay in Makkah during the nights of Mina in order to provide the pilgrims with water to drink, so he permitted him.",
+    sources: [bukhari("1634")]
+  },
+  {
+    id: "sign-start-with-your-dependents",
+    kind: "start-with-your-dependents",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the best charity is that which is practiced by a wealthy person. And start giving first to your dependents.",
+    sources: [bukhari("1426")]
+  },
+  {
+    id: "sign-even-with-one-sheep",
+    kind: "even-with-one-sheep",
+    caption:
+      "Anas said: the Prophet ﷺ saw the traces of Sufra on Abdur-Rahman ibn Awf and said: what is this? Abdur-Rahman said: I have married a woman and have paid gold equal to the weight of a datestone. He said to him: may Allah bless you: offer a wedding banquet even with one sheep.",
+    sources: [bukhari("5155"), bukhari("5167")]
+  },
+  {
+    id: "sign-the-right-then-the-right",
+    kind: "the-right-then-the-right",
+    caption:
+      "Anas ibn Malik said: milk mixed with water was brought to the Messenger of Allah ﷺ while a bedouin was on his right and Abu Bakr was on his left. He drank and then gave to the bedouin and said: the right! The right.",
+    sources: [bukhari("5619")]
+  },
+  {
+    id: "sign-stung-by-a-scorpion",
+    kind: "stung-by-a-scorpion",
+    caption:
+      "Abu Hurairah reported that a person came to the Messenger of Allah ﷺ and said: Messenger of Allah, I was stung by a scorpion during the night. Thereupon he said: had you recited these words in the evening: I seek refuge in the Perfect Word of Allah from the evil of what He created, it would not have done any harm to you.",
+    sources: [muslim("2709a")]
   }
 ];
 
@@ -7139,7 +7195,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Ramal in the first three rounds, walking in the last four.
   "deep-hajj-kabah-ramal": "sign-brisk-then-walking",
   // He said a sentence three times, so that all understood.
-  "deep-book-ilm-said-three-times": "sign-said-three-times"
+  "deep-book-ilm-said-three-times": "sign-said-three-times",
+  // The one who favored him most; all the gates closed but Abu Bakr's.
+  "deep-abubakr-khalil": "sign-the-gate-of-abu-bakr",
+  // He would accept an invitation, and a gift, even of a sheep's trotter.
+  "deep-manners-gifts-even-small": "sign-even-a-trotter",
+  // Al-Abbas stayed in Makkah on the nights of Mina, to give the pilgrims water.
+  "notes-sahabah-companions-from-your-notes-1-abbas-ibn-abd-al-muttalib": "sign-water-for-the-pilgrims",
+  // The best charity is from one well off; start with your dependents.
+  "deep-book-zakat-best-charity-family-first": "sign-start-with-your-dependents",
+  // May Allah bless you: offer a wedding banquet even with one sheep.
+  "deep-abdur-rahman-wedding": "sign-even-with-one-sheep",
+  // Give a banquet, even if with one sheep.
+  "deep-before-marriage-walimah": "sign-even-with-one-sheep",
+  // He drank, then gave to the bedouin on his right: the right, the right.
+  "deep-book-food-the-right-first": "sign-the-right-then-the-right",
+  // Had he said the words in the evening, the scorpion would not have harmed him.
+  "deep-dua-adhkar-perfect-words": "sign-stung-by-a-scorpion"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
