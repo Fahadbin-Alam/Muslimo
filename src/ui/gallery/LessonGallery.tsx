@@ -1475,6 +1475,13 @@ const STATES: State[] = [
   { id: "scene-umrah-in-ramadan", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-umrah-ramadan" ask="Why had the woman" /> },
   { id: "scene-three-breaths", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-three-breaths" ask="Where did he breathe" /> },
   { id: "scene-truffles-like-manna", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-truffles" ask="Why are they like manna" /> },
+  { id: "scene-a-bed-of-leather", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-the-simple-bed" ask="What was his" /> },
+  { id: "scene-never-at-a-table", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-table-no-fancy-table" ask="What did he" /> },
+  { id: "scene-the-two-corners", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-kabah-two-corners" ask="Ibn Umar followed the sunnah" /> },
+  { id: "scene-vessels-after-fajr", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-fadail-a-hand-in-every-bowl" ask="Who brought vessels" /> },
+  { id: "scene-gone-ahead", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-remembering-allah-always-those-who-have-gone-ahead" ask="Who are the mufarridun" /> },
+  { id: "scene-as-if-riding", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-wear-sandals" ask="Walking in sandals" /> },
+  { id: "scene-like-a-pure-loaf", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibrahim4-a-white-flat-land" ask="What will the land of gathering" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
