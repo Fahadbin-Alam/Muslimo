@@ -1595,7 +1595,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which of these is a pillar of Islam?", "Paying zakat", "To offer the prayers, and to pay Zakat"],
     ["Zakat is an extra good deed, not a duty.", "False", "To offer the prayers, and to pay Zakat"],
     ["On how many pillars is Islam built?", "Five", "Islam is built on five"],
-    ["Hajj is one of the five pillars.", "True", "To perform Hajj, and to fast in Ramadan"]
+    ["Hajj is one of the five pillars.", "True", "To perform Hajj, and to fast in Ramadan"],
+    // The lessons on why Hajj and salah matter: how many pillars there are, and what they are called, are not asked
+    // here, since the scene's first words tell them.
+    ["Hajj is one of the five pillars of Islam.", "True", "To perform Hajj, and to fast in Ramadan"]
   ],
   // By Allah, he ﷺ asked Allah's forgiveness and turned to Him in repentance more than seventy times a day (Sahih
   // al-Bukhari 6307). (What 40:55, 47:19 and Ibn Kathir say is not in the scene.)
@@ -1775,7 +1778,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     // The kids' lesson on speaking good or staying quiet.
     ["What should a believer do if they cannot say good?", "Stay quiet", "Should talk what is good or keep quiet"],
     ["How should a believer treat a guest?", "Generously", "Should entertain his guest generously"],
-    ["A believer may hurt a neighbour if annoyed.", "False", "Should not harm his neighbor"]
+    ["A believer may hurt a neighbour if annoyed.", "False", "Should not harm his neighbor"],
+    // The lesson on manners online: walking humbly and disagreeing kindly are not asked here, since the scene does not
+    // show them.
+    ["Online too: say something good, or stay ____.", "quiet", "Should talk what is good or keep quiet"]
   ],
   // Sufyan asked for something about Islam he need ask no one else; he ﷺ said: Say, I affirm my faith in Allah, and
   // then remain steadfast to it (Sahih Muslim 38). (What 11:112, 41:30 and 46:13 say, and what Abu Bakr said, are not
@@ -1820,7 +1826,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["When does Allah help a person?", "While they help their brother", "Allah helps him as long as he helps his brother"],
     ["What happens when you hide a friend's mistake?", "Allah hides yours", "He who hides a Muslim's faults, Allah hides his"],
     ["Seeking knowledge makes the path to Jannah easy.", "True", "A path for knowledge, made easy to Paradise"],
-    ["Seeking knowledge makes which path easy?", "The path to Jannah", "A path for knowledge, made easy to Paradise"]
+    ["Seeking knowledge makes which path easy?", "The path to Jannah", "A path for knowledge, made easy to Paradise"],
+    // The lesson on helping your brother (al-Mujadilah).
+    ["When does Allah help a servant, per Muslim 2699?", "While he helps his brother", "Allah helps him as long as he helps his brother"],
+    ["What happens if you ease someone's hardship?", "Allah eases yours", "Allah relieves him on the Day of Resurrection"],
+    ["Hiding a Muslim's faults is rewarded.", "True", "He who hides a Muslim's faults, Allah hides his"]
   ],
   // No one's deeds will save him, not even the Prophet's, unless Allah has mercy on him; so do good deeds properly,
   // sincerely and moderately, and you will reach your target (Sahih al-Bukhari 6463). (35:35 is not in the scene.)
@@ -2017,7 +2027,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Beating others in a fight makes you truly strong.", "False", "The strong is not the one", "Who overcomes the people by his strength"],
     ["Who is truly strong?", "One who controls himself when angry", "But the strong is the one", "Who controls himself while in anger"],
     ["Winning a fight shows true strength.", "False", "The strong is not the one", "Who overcomes the people by his strength"],
-    ["Who is truly strong, in Bukhari 6114?", "One who controls himself when angry", "But the strong is the one", "Who controls himself while in anger"]
+    ["Who is truly strong, in Bukhari 6114?", "One who controls himself when angry", "But the strong is the one", "Who controls himself while in anger"],
+    // The lesson on anger and restraint: its questions wait from the words before anger shows in him.
+    ["The strong person is the one who controls their ____.", "anger", "But the strong is the one", "Who controls himself while in anger"],
+    ["The strong person is the one who controls their friends.", "False", "But the strong is the one", "Who controls himself while in anger"]
   ],
   // They said Takbir loudly on every high place; he said: be kind to yourselves, you are not calling a deaf or absent
   // one, but an All-Hearer, an All-Seer; say la hawla wa la quwwata illa billah, for it is one of the treasures of
@@ -2275,7 +2288,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What is her palace in Jannah free of?", "Noise and tiredness", "With no noise in it and no toil"],
     ["What will her palace in Paradise NOT have?", "Noise or tiredness", "With no noise in it and no toil"],
     ["Who sent salam to Khadijah, along with Jibril?", "Her Lord, Allah", "Give her salam from her Lord and from me"],
-    ["What was in Khadijah's palace, in the hadith?", "No noise and no fatigue", "With no noise in it and no toil"]
+    ["What was in Khadijah's palace, in the hadith?", "No noise and no fatigue", "With no noise in it and no toil"],
+    // The lesson on Khadijah's support: the salam Jibril brought her.
+    ["Jibril brought Khadijah ____ from Allah.", "salam", "Give her salam from her Lord and from me"],
+    ["Jibril brought Khadijah salam from Allah.", "True", "Give her salam from her Lord and from me"]
   ],
   // In Paradise there is a tree in whose shade a rider could travel for a hundred years and not cross it (Sahih
   // al-Bukhari 3251, 4881). (Who narrated it, the words he said to recite, and what 56:30 promises are not in the
@@ -2483,7 +2499,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who was Waraqah to Khadijah?", "Her cousin", "She took him to her cousin Waraqah"],
     ["To which Messenger did Waraqah say the angel came before?", "Musa", "This is the angel Allah sent to Musa"],
     ["Waraqah said his people would welcome him warmly.", "False", "None brought the like but met hostility"],
-    ["Who told the Prophet ﷺ every messenger faced hostility, per Bukhari 3?", "Waraqah ibn Nawfal", "This is the angel Allah sent to Musa", "None brought the like but met hostility"]
+    ["Who told the Prophet ﷺ every messenger faced hostility, per Bukhari 3?", "Waraqah ibn Nawfal", "This is the angel Allah sent to Musa", "None brought the like but met hostility"],
+    // The lesson on Khadijah's service to the revelation: who his first wife was, and Khadijah's tribe, are not asked
+    // here, since the scene does not show them.
+    ["Khadijah ____ the Prophet ﷺ after the first revelation.", "comforted", "Never! Allah will never disgrace you"]
   ],
   // Prayer in congregation is better than the prayer of one alone by twenty-seven degrees (Sahih Muslim 650a, Sahih
   // al-Bukhari 645). (Who passed it on, from whom and to whom, is not in the scene.)
@@ -2494,7 +2513,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Prayer in congregation is 27 degrees better.", "True", "By twenty-seven degrees"],
     ["How much better is prayer in congregation?", "Twenty seven times", "By twenty-seven degrees"],
     ["What is it compared with?", "Praying alone", "Than the prayer of one alone"],
-    ["Joining the believers in prayer brings great reward.", "True", "By twenty-seven degrees"]
+    ["Joining the believers in prayer brings great reward.", "True", "By twenty-seven degrees"],
+    // The lesson on why praying together matters.
+    ["Praying together is ____ times better than praying alone.", "27", "By twenty-seven degrees"],
+    ["Praying together is 27 times better than praying alone.", "True", "By twenty-seven degrees"]
   ],
   // Whoever recites the last two ayat of Surat al-Baqarah at night, they will be enough for him (Sahih al-Bukhari
   // 5009). (What the ayat 2:284-286 say is not in the scene.)
@@ -2592,7 +2614,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How long did Anas serve the Prophet ﷺ?", "Ten years", "I served him for ten years"],
     ["What did the Prophet ﷺ never say to him?", "Uff", "He never said to me: uff"],
     ["What can we learn for those who help us?", "Be gentle and patient with them", "He never said to me: uff", "Nor: why did you do so, or why not?"],
-    ["The Prophet ﷺ was kind to those who served him.", "True", "He never said to me: uff", "Nor: why did you do so, or why not?"]
+    ["The Prophet ﷺ was kind to those who served him.", "True", "He never said to me: uff", "Nor: why did you do so, or why not?"],
+    // The lesson on Anas's friendship with the Prophet ﷺ: where Anas grew up is not asked here, since the scene's first
+    // words tell it.
+    ["Anas served the Prophet ﷺ for ____ years.", "ten", "I served him for ten years"]
   ],
   // None may cut off a brother over three nights, each turning away when they meet; the better of the two greets
   // first (Sahih al-Bukhari 6077).
@@ -2645,7 +2670,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did Jibril keep telling the Prophet ﷺ about?", "Neighbors", "Advising me about the neighbor"],
     ["In Islam, you should be kind to your neighbors.", "True", "Advising me about the neighbor"],
     ["The Prophet ﷺ thought neighbors might even do what?", "Inherit", "Until I thought he would make him an heir"],
-    ["What did the Prophet ﷺ think Jibril would do?", "Make neighbors heirs", "Until I thought he would make him an heir"]
+    ["What did the Prophet ﷺ think Jibril would do?", "Make neighbors heirs", "Until I thought he would make him an heir"],
+    // The lesson on the rights of neighbors.
+    ["Jibril kept telling the Prophet ﷺ to be kind to ____.", "neighbors", "Advising me about the neighbor"],
+    ["Jibril kept telling the Prophet ﷺ to be kind to kings.", "False", "Advising me about the neighbor"]
   ],
   // The nearest a servant is to his Lord is when he is in sujud, so make much du'a then (Sahih Muslim 482).
   "sign-closest-in-sujud": [
@@ -2741,7 +2769,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Whose prayer is the model for every Muslim?", "The Prophet's ﷺ", "Pray as you have seen me pray"],
     ["How should a Muslim pray?", "As the Prophet ﷺ prayed", "Pray as you have seen me pray"],
     ["The Prophet ﷺ said: pray as you have seen me praying.", "True", "Pray as you have seen me pray"],
-    ["Who did he say should lead their prayer?", "The eldest", "One of you calls the adhan, the eldest leads"]
+    ["Who did he say should lead their prayer?", "The eldest", "One of you calls the adhan, the eldest leads"],
+    // The two lessons on following his way of prayer: getting ready for salah and which prayer comes first are not asked
+    // here, since the scene does not show them, and the call to prayer is asked on its own scene.
+    ["Whose way of praying do we follow?", "The Prophet's ﷺ way", "Pray as you have seen me pray"],
+    ["The Prophet ﷺ said: pray as you have ____ me pray.", "seen", "Pray as you have seen me pray"]
   ],
   // O Aishah, Allah is Gentle and loves gentleness, and He gives for gentleness what He does not give for harshness,
   // nor for anything else besides it (Sahih Muslim 2593). (Whom he said it to is also asked of another hadith, at home
@@ -3512,7 +3544,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-more-merciful": [
     ["Who did he ﷺ compare with Allah's mercy?", "A mother with her child", "Captives were brought, among them a woman", "Than she is to her child"],
     ["Would the mother throw her child into a fire?", "No, never", "Would she throw her child into the fire?", "No, not while she is able not to"],
-    ["Allah's mercy is even greater than a mother's.", "True", "Allah is more merciful to His servants", "Than she is to her child"]
+    ["Allah's mercy is even greater than a mother's.", "True", "Allah is more merciful to His servants", "Than she is to her child"],
+    // The lesson on 33:43, from darkness into light: its questions on the ayah and on Allah's salah are not asked here,
+    // since the scene does not show them.
+    ["Who is more merciful than the mother, in the hadith?", "Allah", "Allah is more merciful to His servants", "Than she is to her child"]
   ],
   // He stayed below and Abu Ayyub above: we walk above his head! So he moved up. Food with garlic came back uneaten:
   // is it forbidden? No, but I dislike it. Then I dislike what you dislike (Sahih Muslim 2053). (Where he stayed stays
@@ -5609,7 +5644,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-the-two-corners": [
     ["Which two corners did Ibn Umar always touch?", "The Black Stone and the Yemeni Corner", "the Black Stone and the Yemeni Corner,"],
     ["Ibn Umar followed the sunnah even when it was crowded.", "True", "in crowds or without crowds,"],
-    ["Why did Ibn Umar touch them?", "He saw the Prophet ﷺ touching them", "since I saw him touching them."]
+    ["Why did Ibn Umar touch them?", "He saw the Prophet ﷺ touching them", "since I saw him touching them."],
+    // The lesson on the two Yemeni corners.
+    ["Which corners did he ﷺ touch?", "The two facing Yemen", "the Black Stone and the Yemeni Corner,", "since I saw him touching them."],
+    ["The Black Stone sits in one of...?", "Those two corners", "the Black Stone and the Yemeni Corner,"],
+    ["Ibn Umar watched closely how he ﷺ did tawaf.", "True", "since I saw him touching them."]
   ],
   // Anas said: when he had completed the dawn prayer, the servants of Madinah came to him with utensils containing
   // water, and no utensil was brought in which he did not dip his hand; at times they came in the cold dawn, and he
@@ -6153,7 +6192,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   // surprise; Abu Bakr was soft-hearted and could not help weeping while reciting the Quran (Sahih al-Bukhari 476). Its
   // lesson's question on the cave of the Hijrah is not asked here, since the scene does not show it.
   "sign-a-masjid-in-the-courtyard": [
-    ["Abu Bakr often ____ when he recited the Quran.", "cried", "Abu Bakr was soft-hearted and could not", "help weeping while reciting the Quran."]
+    ["Abu Bakr often ____ when he recited the Quran.", "cried", "Abu Bakr was soft-hearted and could not", "help weeping while reciting the Quran."],
+    // The lesson on Abu Bakr's masjid by his house: where he first set out for, and why the leaders of Quraysh were
+    // worried, are not asked here, since the scene does not show them.
+    ["What did Abu Bakr build in front of his house?", "A little masjid", "Abu Bakr built a masjid in the courtyard"],
+    ["What happened when Abu Bakr recited the Quran?", "He wept", "Abu Bakr was soft-hearted and could not", "help weeping while reciting the Quran."]
   ],
   // As-Sa'ib ibn Yazid said: in the lifetime of the Prophet ﷺ, Abu Bakr and Umar, the adhan for Jumu'ah was given when
   // the imam sat on the pulpit; in the caliphate of Uthman, when the Muslims increased in number, a third adhan at
@@ -6165,6 +6208,69 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Az-Zawra was a place near the market of Madinah.", "True", "a third adhan at az-Zawra was added,"],
     ["Why did Uthman add another call before Jumu'ah?", "The people had grown in number", "when the Muslims increased in number,", "a third adhan at az-Zawra was added,"],
     ["Where was the new call given?", "At az-Zawra", "a third adhan at az-Zawra was added,"]
+  ],
+  // Jarir said: the Prophet ﷺ did not screen himself from me since I embraced Islam, and whenever he saw me he smiled; I
+  // told him I could not sit firm on horses, and he struck my chest with his hand and said: O Allah, make him firm, and
+  // make him a guiding and rightly guided man (Sahih al-Bukhari 3035; Sahih Muslim 2475a). The question on whether he
+  // ever refused to see Jarir is not asked here, since the scene's first words tell it.
+  "sign-always-a-smile": [
+    ["How did the Prophet ﷺ greet Jarir?", "With a smile", "He would receive me with a smile."],
+    ["What was Jarir's problem with horses?", "He could not sit firm", "I told him I could not sit firm on horses."],
+    ["The Prophet ﷺ made du'a to make Jarir firm.", "True", "He said: O Allah, make him firm,"],
+    ["How did he ﷺ always look at Jarir?", "With a smile", "Whenever he saw me,", "He would receive me with a smile."],
+    ["Smiling at your brother is part of the Sunnah.", "True", "He would receive me with a smile."]
+  ],
+  // Sahl said: a woman brought the Prophet ﷺ a woven burdah with its edging, saying she had woven it with her own hands
+  // for him to wear; he took it, being in need of it, and came out wearing it as his waist-sheet; a man praised it and
+  // asked for it, and the people said he had not done well, since he never turns down a request; the man said he asked
+  // for it to be his shroud, and it was (Sahih al-Bukhari 1277). Its lesson's question on why the man asked for it is
+  // not asked here, since the scene does not show the shroud.
+  "sign-woven-with-her-own-hands": [
+    ["Who made the cloak the woman brought him ﷺ?", "She wove it herself", "With edging, and said: I have woven it", "With my own hands for you to wear."],
+    ["He ﷺ gave away the cloak even though he needed it.", "True", "A man praised it: will you give it to me?", "For he never turns down anybody's request."]
+  ],
+  // Ibn Abbas said: the delegation of Abd al-Qays came to the Prophet ﷺ, who said: welcome, neither in disgrace nor in
+  // regret; they had come from a distant place and asked for something to tell those they left behind; he ordered them
+  // to believe in Allah alone, to pray, to give zakat, to fast Ramadan and to pay the fifth, and said: memorize them,
+  // and tell those you left behind (Sahih al-Bukhari 87). The questions on telling those at home wait from the words
+  // where the delegation asks for it, since those left behind first show there.
+  "sign-tell-those-you-left-behind": [
+    ["What did he ﷺ tell the delegation to do with what they learned?", "Tell the people at home", "Order us to do good, to tell our people.", "Memorize them, tell those you left behind."],
+    ["How did he ﷺ greet them?", "Welcome, no shame and no regret", "Came to him. He said: welcome, O people,", "Neither will you have disgrace nor regret."],
+    ["Sharing what you learn about Islam is part of learning.", "True", "Order us to do good, to tell our people.", "Memorize them, tell those you left behind."]
+  ],
+  // Abdullah ibn Buhaynah said: the Messenger of Allah ﷺ led us in a prayer, prayed two rak'at and got up without
+  // sitting, and the people got up with him; when he was about to finish the prayer and we waited for his taslim, he
+  // said takbir before the taslim, made two prostrations sitting, and then gave the taslim (Sahih al-Bukhari 1224).
+  "sign-he-stood-up-without-sitting": [
+    ["After how many rak'ahs did he ﷺ rise without sitting?", "Two rak'ahs", "Two rak'at, then got up without sitting."],
+    ["What did the people behind him ﷺ do?", "They stood up with him", "The people also got up with him."],
+    ["He ﷺ made two prostrations while sitting, near the end of that prayer.", "True", "Two prostrations sitting, then the taslim."]
+  ],
+  // Abu Musa al-Ash'ari said: my brother and I came from Yemen, and for some time we thought Abdullah ibn Mas'ud was one
+  // of the family of the Prophet ﷺ, because we saw him and his mother go in to the Prophet ﷺ so often (Sahih al-Bukhari
+  // 3763).
+  "sign-like-one-of-his-family": [
+    ["What did Abu Musa first think about Ibn Mas'ud?", "He was from the Prophet's ﷺ family", "Ibn Mas'ud as one of his family members,"],
+    ["Who came into the house with Ibn Mas'ud?", "His mother", "And his mother, very often."],
+    ["Ibn Mas'ud was very close to the Prophet ﷺ.", "True", "Because we used to see him going in,", "And his mother, very often."]
+  ],
+  // Amr ibn Awf said: Abu Ubaidah brought money from Bahrain, and the Ansar heard of it and came to the Fajr prayer;
+  // when he finished, he smiled when he saw them, and said: have the good news, and hope for what will please you; by
+  // Allah, I do not fear poverty for you, but I fear the world will be given to you in abundance as it was to those
+  // before you, and you will compete for it as they did, and it will divert you as it diverted them (Sahih al-Bukhari
+  // 6425).
+  "sign-i-fear-not-poverty": [
+    ["What did he ﷺ fear for us more than poverty?", "The world given in plenty", "But I fear wealth given you in abundance;"],
+    ["What would racing for the world do to us, he ﷺ said?", "Distract us", "You compete for it, and it diverts you."],
+    ["He ﷺ smiled when he saw the Ansar come.", "True", "They came; he smiled when he saw them."]
+  ],
+  // Aishah said: when the Prophet ﷺ came to Makkah, he entered from its higher side and left from its lower side (Sahih
+  // al-Bukhari 1577). Its lesson's question on who told this hadith is not asked here, since the scene's first words
+  // tell it.
+  "sign-from-its-higher-side": [
+    ["From which side did he ﷺ enter Makkah?", "The higher side", "He entered from its higher side,"],
+    ["Did he ﷺ leave the same way?", "No, from the lower side", "And left from its lower side."]
   ]
 };
 

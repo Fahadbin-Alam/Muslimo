@@ -1550,6 +1550,13 @@ const STATES: State[] = [
   { id: "scene-his-name-is-al-mundhir", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-good-names-his-name-is-al-mundhir" ask="name did he" /> },
   { id: "scene-a-masjid-in-the-courtyard", render: () => <SceneQuestionDemo lessonId="lesson-sahabi-abu-bakr-worship-and-character" ask="when he recited the Quran" /> },
   { id: "scene-a-third-adhan-at-az-zawra", render: () => <SceneQuestionDemo lessonId="lesson-deep-uthman-third-adhan" ask="Why did Uthman add another call" /> },
+  { id: "scene-always-a-smile", render: () => <SceneQuestionDemo lessonId="lesson-deep-jarir-always-a-smile" ask="problem with horses" /> },
+  { id: "scene-woven-with-her-own-hands", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-beautiful-character-woven-with-her-own-hands" ask="Who made the cloak" /> },
+  { id: "scene-tell-those-you-left-behind", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-tell-those-at-home" ask="do with what they learned" /> },
+  { id: "scene-he-stood-up-without-sitting", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-forgetting-in-salah-he-stood-up-without-sitting" ask="What did the people behind him" /> },
+  { id: "scene-like-one-of-his-family", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-family" ask="Who came into the house" /> },
+  { id: "scene-i-fear-not-poverty", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-not-poverty-but-plenty" ask="fear for us more than poverty" /> },
+  { id: "scene-from-its-higher-side", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-into-makkah-from-the-top" ask="leave the same way" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
