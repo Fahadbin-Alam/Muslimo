@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3107);
+    expect(asks.length).toBe(3128);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4522);
+    expect(places).toBe(4553);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -19408,6 +19408,221 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1, 1, 1]
       ],
       [0, 14]
+    ]);
+  });
+
+  it("waits on the scenes from the sun from the West to the dates of Ibn Tab, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-the-sun-from-the-west", "sign-like-the-full-moon", "sign-a-white-mule", "sign-the-best-dinar", "sign-the-fruit-garden", "sign-the-firm-handhold", "sign-the-dates-of-ibn-tab"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(21);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The sun rises from the West: night lies over the land with its stars and lit windows, and nothing glows in the
+    // West yet, before the next words; then a glow comes low on the left, in the West, and the sun rises from it as the
+    // night fades into day.
+    expect([
+      shown("Which sign closes the door of new faith, per Bukhari 4635?", ["the West: a glow low on the left", "the sun, rising from the West", "the night sky", "the night over the land", "lit windows"]),
+      moved("Which sign closes the door of new faith, per Bukhari 4635?", "the sun, rising from the West", "y")
+    ]).toEqual([
+      [
+        [0, 0, 1, 1, 1],
+        [1, 1, 0, 0, 0]
+      ],
+      [26, 0]
+    ]);
+    // If it believed not before: grey rings have come about the places that believed only once they saw it, and the
+    // place that believed before keeps its golden ring, before the next words; then a warm light comes about the place
+    // that believed before, with glints over its golden ring.
+    expect(shown("When does faith help, per 6:158?", ["no good will it do: a grey ring about place 1", "no good will it do: a grey ring about place 7", "a soft golden ring about the place that believed before", "it believed before: a warm light about its place", "glints over the golden ring"])).toEqual([
+      [1, 1, 1, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Like the moon when it is full: the first group has come into Paradise through its open gate, five places, with no
+    // round light about them yet, before the next words; then a round light like the full moon comes about each in turn.
+    for (const prompt of ["How will the first group in Jannah look?", "How will the first group shine, per Bukhari 3245?", "How will the first group shine, per Bukhari 3327?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the first group: a place come into Paradise 1", "the first group: a place come into Paradise 5", "like the moon when it is full: a round light about place 1", "like the moon when it is full: a round light about place 3", "like the moon when it is full: a round light about place 5"]),
+        value("like-the-full-moon", "like the moon when it is full: a round light about place 2", "opacity", 0.334),
+        value("like-the-full-moon", "like the moon when it is full: a round light about place 3", "opacity", 0.334)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0, 0],
+          [1, 1, 1, 1, 1]
+        ],
+        1,
+        0
+      ]);
+    }
+    // Their combs of gold and silver: the vessels of gold, two cups and a dish, glint, with no comb yet, before the next
+    // words; then a comb of gold and a comb of silver show by them, with glints.
+    expect(shown("Their combs will be of gold and silver.", ["their vessels of gold: two cups and a dish", "glints over the vessels of gold", "a comb of gold", "a comb of silver", "glints over the combs"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Their sweat will smell like musk: the combs of gold and silver lie by the vessels of gold, before the next words;
+    // then a sweet smell rises from each place in turn.
+    for (const prompt of ["What will their sweat smell like?", "How will their sweat smell?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["a comb of gold", "a comb of silver", "their sweat like musk: a sweet smell rising from place 1", "their sweat like musk: a sweet smell rising from place 5"]),
+        value("like-the-full-moon", "their sweat like musk: a sweet smell rising from place 2", "opacity", 0.75),
+        value("like-the-full-moon", "their sweat like musk: a sweet smell rising from place 3", "opacity", 0.75)
+      ]).toEqual([
+        prompt,
+        [
+          [1, 1, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        1,
+        0
+      ]);
+    }
+    // He did not leave any dirham or dinar: by his home, Amr's voice has told of him, and the ground is bare, before the
+    // next words; then a grey ring comes on the bare ground. His white mule does not show yet.
+    expect([
+      shown("How much money did he ﷺ leave?", ["no dirham or dinar: a grey ring on the bare ground", "his white mule", "a piece of land"]),
+      value("a-white-mule", "Amr's voice: telling of him", "opacity", 0.1)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 0, 0]
+      ],
+      1
+    ]);
+    // Except his white mule: the grey ring lies on the bare ground by his home, before the next words; then his white
+    // mule shows by the home, with a soft white ring about it. The piece of land does not show yet.
+    expect(shown("What colour was his mule?", ["no dirham or dinar: a grey ring on the bare ground", "his white mule", "a soft white ring about the white mule", "a piece of land"])).toEqual([
+      [1, 0, 0, 0],
+      [1, 1, 1, 0]
+    ]);
+    // Which he had given in charity: the piece of land shows with its palms and its edge lit, before the next words;
+    // then a soft golden ring, a warm light and glints come over it.
+    expect(shown("His land was given in charity.", ["a piece of land", "a piece of land: its edge lit", "given in charity: a soft golden ring about the piece of land", "a warm light over the piece of land", "glints over the piece of land"])).toEqual([
+      [1, 1, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // A person spends on his family: a glow has come about the most excellent dinar, still with the one who spends,
+    // before the next words; then it goes to the family's home, and a warm light comes about the home. The second dinar
+    // stays.
+    for (const prompt of ["Which coin is the best?", "Spending on family earns reward."]) {
+      expect([
+        prompt,
+        shown(prompt, ["the most excellent dinar: a glow about it", "on the family: a warm light about the home"]),
+        moved(prompt, "the first dinar", "x"),
+        moved(prompt, "the second dinar", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0],
+          [1, 1]
+        ],
+        [0, -52],
+        [0, 0]
+      ]);
+    }
+    // The dinar a person spends on his animal in Allah's path: the first dinar has gone to the family, whose home has a
+    // warm light, before the next words; then the second dinar goes to the camel by the road, the way along the road
+    // lights up, and a soft light comes about the camel. The third dinar does not go yet.
+    expect([
+      shown("What comes after family in the list?", ["on the family: a warm light about the home", "in the path: the way lit along the road", "a soft light about the camel", "a warm light about the fellows"]),
+      moved("What comes after family in the list?", "the second dinar", "x"),
+      moved("What comes after family in the list?", "the third dinar", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      [0, 24.2],
+      [0, 0]
+    ]);
+    // In the fruit garden of Paradise: the visitor has come to the one who is sick, with a soft golden ring about the
+    // visitor's place, and nothing shows far off yet, before the next words; then the fruit garden of Paradise shows far
+    // off in a soft circle of light, with three fruit trees, a faint golden way to it from the visitor, and glints.
+    for (const prompt of ["Visiting the sick is like being where?", "What is Khurfat al-Jannah?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["remains: a soft golden ring about the visitor's place", "the fruit garden of Paradise, far off: a soft circle of light", "a fruit tree of Paradise 1", "a fruit tree of Paradise 3", "a faint golden way from the visitor to the garden", "glints over the fruit garden"])
+      ]).toEqual([
+        prompt,
+        [
+          [1, 0, 0, 0, 0, 0],
+          [1, 1, 1, 1, 1, 1]
+        ]
+      ]);
+    }
+    // Is supposed to remain in the fruit garden of Paradise: the visitor has come to the one who is sick, with a warm
+    // glow about the visit, before the next words; then a soft golden ring comes about the visitor's place, for it
+    // remains, and the fruit garden of Paradise shows far off, with a faint golden way to it and glints.
+    expect([
+      shown("Visiting the sick brings great reward.", ["a warm glow about the visit", "remains: a soft golden ring about the visitor's place", "the fruit garden of Paradise, far off: a soft circle of light", "a faint golden way from the visitor to the garden", "glints over the fruit garden"]),
+      moved("Visiting the sick brings great reward.", "the place of one who visits the sick", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 0]
+    ]);
+    // A handhold on a post: in the green garden of the dream, Abdullah ibn Salam's voice has begun to tell of it, with
+    // no post yet, before the next words; then a post rises, fixed in the garden, a soft light comes at its top and a
+    // handhold shows there, with glints; a voice asks Abdullah to climb, Abdullah's place goes to the post and climbs
+    // it, and a soft golden ring and a warm light come about Abdullah at the handhold. His place does not show yet.
+    expect([
+      shown("What did he hold in his dream?", ["a post, fixed in the garden", "a handhold, at the top of the post", "glints on the handhold", "got hold of the handhold: a soft golden ring about it", "a warm light about Abdullah's place at the handhold", "his place"]),
+      moved("What did he hold in his dream?", "Abdullah ibn Salam's place", "y"),
+      value("the-firm-handhold", "a voice asking: climb", "opacity", 0.44)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 0]
+      ],
+      [0, -66],
+      1
+    ]);
+    // I interpreted it as the sublimity: the fresh dates of Ibn Tab have been brought to the places in the house, with
+    // glints, before the next words; then sparks rise over the house, one after another, and a soft golden light rises
+    // along its roof. The ring for us and the way for a good ending do not come yet.
+    expect([
+      shown("What did he ﷺ read from his dream for us in this world?", ["glints over the fresh dates", "raised: a soft golden light along the roof", "for us: a soft golden ring about the places", "a good ending: the way from the house, lit"]),
+      moved("What did he ﷺ read from his dream for us in this world?", "raised: a soft golden light along the roof", "y"),
+      value("the-dates-of-ibn-tab", "the sublimity: a spark rising over the house 1", "opacity", 0.53),
+      value("the-dates-of-ibn-tab", "the sublimity: a spark rising over the house 2", "opacity", 0.545),
+      value("the-dates-of-ibn-tab", "the sublimity: a spark rising over the house 3", "opacity", 0.56)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 0, 0]
+      ],
+      [6, 0],
+      1,
+      1,
+      1
+    ]);
+    // A good ending in the Hereafter: the sparks have risen and a soft golden light lies along the roof, before the next
+    // words; then a soft golden ring comes about the places, the way from the house lights up for a good ending, and a
+    // soft warm light shows far off for the Hereafter. The last glints do not come yet.
+    expect(shown("He ﷺ read a good end in the Hereafter from his dream.", ["raised: a soft golden light along the roof", "for us: a soft golden ring about the places", "a good ending: the way from the house, lit", "in the Hereafter: a soft warm light far off", "good: glints over the fresh dates"])).toEqual([
+      [1, 0, 0, 0, 0],
+      [1, 1, 1, 1, 0]
+    ]);
+    // Our religion is good: the soft warm light shows far off for the Hereafter, before the next words; then glints come
+    // over the fresh dates, and a warm glow about the places.
+    expect(shown("What did he ﷺ read from the dates of Ibn Tab?", ["in the Hereafter: a soft warm light far off", "good: glints over the fresh dates", "good: a warm glow about the places"])).toEqual([
+      [1, 0, 0],
+      [1, 1, 1]
     ]);
   });
 

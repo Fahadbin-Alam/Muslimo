@@ -5759,6 +5759,64 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How was Abu Taybah paid?", "With a sa of dates", "one sa' of dates"],
     ["What else did he ﷺ do for him?", "Asked to ease his tax", "and ordered Abu Taybah's masters", "to reduce Abu Taybah's tax."],
     ["Workers should be paid for their work.", "True", "so he ordered that Abu Taybah be paid", "one sa' of dates"]
+  ],
+  // Abu Hurairah said: he said: the Hour will not be established until the sun rises from the West; and when the people
+  // see it, whoever will be living on the earth will have faith, and that is when no good will it do to a soul to
+  // believe then, if it believed not before (Sahih al-Bukhari 4635). Its lessons' questions on who narrated it, on
+  // repentance, on the ayah it is linked to and on the best time to repent are not asked here: Abu Hurairah comes in its
+  // first words, and the scene does not show the others.
+  "sign-the-sun-from-the-west": [
+    ["Which sign closes the door of new faith, per Bukhari 4635?", "The sun rising from the west", "the sun rises from the West;"],
+    ["When does faith help, per 6:158?", "Before the signs come", "then, if it believed not before."]
+  ],
+  // Abu Hurairah said: he said: the first group who will enter Paradise will be like the moon when it is full; their
+  // utensils will be of gold, and their combs of gold and silver, and their sweat will smell like musk; their hearts
+  // will be as if one heart (Sahih al-Bukhari 3245, and 3327). Its lessons' questions on sickness in Paradise and on the
+  // height of its people are not asked here, since the scene does not show them.
+  "sign-like-the-full-moon": [
+    ["How will the first group in Jannah look?", "Like the full moon", "like the moon when it is full."],
+    ["What will their sweat smell like?", "Musk", "and their sweat will smell like musk."],
+    ["How will the first group shine, per Bukhari 3245?", "Like the full moon", "like the moon when it is full."],
+    ["How will their sweat smell?", "Like musk", "and their sweat will smell like musk."],
+    ["Their combs will be of gold and silver.", "True", "and their combs of gold and silver;"],
+    ["How will the first group shine, per Bukhari 3327?", "Like the full moon", "like the moon when it is full."]
+  ],
+  // Amr ibn al-Harith said: when he died, he did not leave any dirham or dinar, a slave or a slave woman, or anything
+  // else except his white mule, his arms and a piece of land which he had given in charity (Sahih al-Bukhari 2739).
+  "sign-a-white-mule": [
+    ["How much money did he ﷺ leave?", "None", "he did not leave any dirham or dinar,"],
+    ["What colour was his mule?", "White", "or anything else except his white mule,"],
+    ["His land was given in charity.", "True", "which he had given in charity."]
+  ],
+  // Thawban reported him as saying: the most excellent dinar is one that a person spends on his family, and the dinar
+  // which he spends on his animal in Allah's path, and the dinar he spends on his companions in Allah's path (Sahih
+  // Muslim 994).
+  "sign-the-best-dinar": [
+    ["Which coin is the best?", "One spent on your family", "a person spends on his family,"],
+    ["Spending on family earns reward.", "True", "a person spends on his family,"],
+    ["What comes after family in the list?", "A mount in Allah's way", "the dinar a person spends on his animal", "in Allah's path, and the dinar"]
+  ],
+  // Thawban reported him as saying: he who visits the sick is supposed to remain in the fruit garden of Paradise. It was
+  // said: what is this Khurfat al-Jannah? He said: it is a place abounding in fruits (Sahih Muslim 2568d).
+  "sign-the-fruit-garden": [
+    ["Visiting the sick is like being where?", "In Paradise's fruit garden", "in the fruit garden of Paradise."],
+    ["What is Khurfat al-Jannah?", "Paradise's fruit garden", "in the fruit garden of Paradise."],
+    ["Visiting the sick brings great reward.", "True", "is supposed to remain", "in the fruit garden of Paradise."]
+  ],
+  // Abdullah ibn Salam said: I saw that a post was fixed in a green garden; at the top of the post there was a handhold;
+  // I was asked to climb, so I climbed it till I got hold of the handhold; and he said: Abdullah will die while still
+  // holding the firm reliable handhold (Sahih al-Bukhari 7010). Its lesson's questions on what the handhold means and on
+  // praising people are not asked here, since the scene does not show them.
+  "sign-the-firm-handhold": [
+    ["What did he hold in his dream?", "A handhold on a pillar", "that a post was fixed in a green garden.", "of the handhold."]
+  ],
+  // Anas ibn Malik reported him as saying: I saw during the night as if we are in the house of Uqbah ibn Rafi', that
+  // there was brought to us the fresh dates of Ibn Tab; I interpreted it as the sublimity for us in the world and good
+  // ending in the Hereafter, and that our religion is good (Sahih Muslim 2270).
+  "sign-the-dates-of-ibn-tab": [
+    ["What did he ﷺ read from his dream for us in this world?", "A high rank", "I interpreted it as the sublimity"],
+    ["What did he ﷺ read from the dates of Ibn Tab?", "Our religion has become good", "our religion is good."],
+    ["He ﷺ read a good end in the Hereafter from his dream.", "True", "for us in the world and good ending", "in the Hereafter, and that"]
   ]
 };
 
