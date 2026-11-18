@@ -5,7 +5,7 @@ import { shamelaUrl } from "./shamelaPages";
 // The building blocks of the deep units (deepUnits.ts and the files it gathers): a lesson card, its questions,
 // and the sources they come from.
 
-type HadithBook = "bukhari" | "muslim" | "tirmidhi" | "abudawud" | "ibnmajah" | "nasai" | "adab" | "ahmad";
+type HadithBook = "bukhari" | "muslim" | "tirmidhi" | "abudawud" | "ibnmajah" | "nasai" | "adab" | "ahmad" | "mishkat";
 
 export type Question =
   | { q: string; a: string; wrong: [string, string, string]; why: string }
@@ -43,9 +43,11 @@ export interface DeepUnit {
  * A hadith on sunnah.com. `highlight` is a phrase of its English text, so the link opens with those words lit up.
  * "adab" is Al-Adab Al-Mufrad, Imam al-Bukhari's book of manners, with the grade sunnah.com gives (al-Albani's).
  * "ahmad" is Musnad Ahmad, with the Darussalam grade sunnah.com gives; only its first books are in English there.
+ * "mishkat" is Mishkat al-Masabih, with al-Albani's grade sunnah.com shows (in Arabic); its English (Robson's) says
+ * "God" and names the book each hadith comes from at its end.
  */
 export function hadith(book: HadithBook, number: string, narrator: string, grade: string, summary: string, highlight?: string): LessonSource {
-  const names: Record<HadithBook, [string, string]> = { bukhari: ["Sahih al-Bukhari", "Imam al-Bukhari"], muslim: ["Sahih Muslim", "Imam Muslim"], tirmidhi: ["Jami at-Tirmidhi", "Imam at-Tirmidhi"], abudawud: ["Sunan Abi Dawud", "Imam Abu Dawud"], ibnmajah: ["Sunan Ibn Majah", "Imam Ibn Majah"], nasai: ["Sunan an-Nasa'i", "Imam an-Nasa'i"], adab: ["Al-Adab Al-Mufrad", "Imam al-Bukhari"], ahmad: ["Musnad Ahmad", "Imam Ahmad"] };
+  const names: Record<HadithBook, [string, string]> = { bukhari: ["Sahih al-Bukhari", "Imam al-Bukhari"], muslim: ["Sahih Muslim", "Imam Muslim"], tirmidhi: ["Jami at-Tirmidhi", "Imam at-Tirmidhi"], abudawud: ["Sunan Abi Dawud", "Imam Abu Dawud"], ibnmajah: ["Sunan Ibn Majah", "Imam Ibn Majah"], nasai: ["Sunan an-Nasa'i", "Imam an-Nasa'i"], adab: ["Al-Adab Al-Mufrad", "Imam al-Bukhari"], ahmad: ["Musnad Ahmad", "Imam Ahmad"], mishkat: ["Mishkat al-Masabih", "al-Khatib at-Tabrizi"] };
   const [collection, collector] = names[book];
   // "3667, 3668": one hadith sunnah.com shows under two numbers; the link goes to the last one, as the reference ends with it.
   const linked = number.split(", ").pop();

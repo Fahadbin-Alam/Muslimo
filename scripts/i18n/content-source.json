@@ -385,6 +385,10 @@
   },
   {
     "kind": "course",
+    "text": "Knowledge like unspent treasure"
+  },
+  {
+    "kind": "course",
     "text": "Wash your hands on waking"
   },
   {
@@ -30141,7 +30145,7 @@
   },
   {
     "kind": "course",
-    "text": "What Allah promises the one who fasts: a shield, forgiveness and joy."
+    "text": "What Allah promises the one who fasts: a shield, forgiveness, joy and intercession."
   },
   {
     "kind": "arabic",
@@ -30338,6 +30342,10 @@
   {
     "kind": "course",
     "text": "Two joys"
+  },
+  {
+    "kind": "course",
+    "text": "Fasting speaks up for you"
   },
   {
     "kind": "course",
@@ -30665,7 +30673,7 @@
   },
   {
     "kind": "course",
-    "text": "An honest zakat collector, giving your best, quiet reciting, time for one in debt, seven hundred times over, and sleep as a gift."
+    "text": "An honest zakat collector, giving your best, quiet reciting, time for one in debt, seven hundred times over, sleep as a gift, and charity as shade."
   },
   {
     "kind": "arabic",
@@ -31026,6 +31034,10 @@
   {
     "kind": "course",
     "text": "Sleep as a gift from Allah"
+  },
+  {
+    "kind": "course",
+    "text": "Shaded by your charity"
   },
   {
     "kind": "course",
@@ -65489,15 +65501,87 @@
   },
   {
     "kind": "lesson",
+    "text": "Can you still remember these about knowledge?"
+  },
+  {
+    "kind": "lesson",
+    "text": "Knowledge that brings no benefit is like treasure never spent."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by Abu Hurairah"
+  },
+  {
+    "kind": "lesson",
+    "text": "Darimi transmitted it"
+  },
+  {
+    "kind": "source",
+    "text": "Mishkat al-Masabih 280"
+  },
+  {
+    "kind": "question",
+    "text": "What is knowledge that brings no benefit like, he ﷺ said?"
+  },
+  {
+    "kind": "question",
+    "text": "A garden always green"
+  },
+  {
+    "kind": "question",
+    "text": "A river always flowing"
+  },
+  {
+    "kind": "question",
+    "text": "A lamp always lit"
+  },
+  {
+    "kind": "question",
+    "text": "A treasure never spent"
+  },
+  {
+    "kind": "question",
+    "text": "Like a treasure from which nothing is expended in the path of Allah, he ﷺ said."
+  },
+  {
+    "kind": "question",
+    "text": "What does the knowledge in his ﷺ likeness lack?"
+  },
+  {
+    "kind": "question",
+    "text": "Ink"
+  },
+  {
+    "kind": "question",
+    "text": "Paper"
+  },
+  {
+    "kind": "question",
+    "text": "Benefit"
+  },
+  {
+    "kind": "question",
+    "text": "Pages"
+  },
+  {
+    "kind": "question",
+    "text": "Knowledge from which no benefit is derived is like an unspent treasure."
+  },
+  {
+    "kind": "question",
+    "text": "Knowledge is meant to be used for good, not only stored."
+  },
+  {
+    "kind": "question",
+    "text": "Unused knowledge is like a treasure from which nothing is spent for Allah."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about knowledge!"
   },
   {
     "kind": "lesson",
     "text": "When you wake up, wash your hands before dipping them in water."
-  },
-  {
-    "kind": "lesson",
-    "text": "Told by Abu Hurairah"
   },
   {
     "kind": "lesson",
@@ -102697,6 +102781,62 @@
   },
   {
     "kind": "lesson",
+    "text": "Fasting and the Quran will intercede for the believer."
+  },
+  {
+    "kind": "lesson",
+    "text": "Fasting kept him from food by day"
+  },
+  {
+    "kind": "source",
+    "text": "Mishkat al-Masabih 1963"
+  },
+  {
+    "kind": "question",
+    "text": "Which two will intercede for a man, he ﷺ said?"
+  },
+  {
+    "kind": "question",
+    "text": "Fasting and the Quran"
+  },
+  {
+    "kind": "question",
+    "text": "Fasting and the Quran intercede for a man, and their intercession is accepted."
+  },
+  {
+    "kind": "question",
+    "text": "What will fasting say it kept him from by day?"
+  },
+  {
+    "kind": "question",
+    "text": "His home and family"
+  },
+  {
+    "kind": "question",
+    "text": "His food and desires"
+  },
+  {
+    "kind": "question",
+    "text": "His work and trade"
+  },
+  {
+    "kind": "question",
+    "text": "His friends and games"
+  },
+  {
+    "kind": "question",
+    "text": "I have kept him away from his food and his passions by day, fasting says."
+  },
+  {
+    "kind": "question",
+    "text": "The intercession of fasting for the one who fasted is accepted."
+  },
+  {
+    "kind": "question",
+    "text": "Then their intercession is accepted, he ﷺ said of fasting and the Quran."
+  },
+  {
+    "kind": "lesson",
     "text": "The last test: everything about the reward of fasting!"
   },
   {
@@ -109306,6 +109446,82 @@
   {
     "kind": "question",
     "text": "He meant to pray at night, so what he intended is written for him."
+  },
+  {
+    "kind": "lesson",
+    "text": "Can you still remember these about how Allah counts charity?"
+  },
+  {
+    "kind": "lesson",
+    "text": "On the Last Day, a believer is shaded by his charity."
+  },
+  {
+    "kind": "lesson",
+    "text": "Told by a Companion of his ﷺ"
+  },
+  {
+    "kind": "lesson",
+    "text": "Sadaqa: charity given for Allah"
+  },
+  {
+    "kind": "source",
+    "text": "Mishkat al-Masabih 1925"
+  },
+  {
+    "kind": "question",
+    "text": "What will shade a believer on the Day of Resurrection?"
+  },
+  {
+    "kind": "question",
+    "text": "The clothes he wore"
+  },
+  {
+    "kind": "question",
+    "text": "The tent he pitched"
+  },
+  {
+    "kind": "question",
+    "text": "The charity he gave"
+  },
+  {
+    "kind": "question",
+    "text": "The house he built"
+  },
+  {
+    "kind": "question",
+    "text": "The believer's shade on that Day will be his sadaqa, he ﷺ said."
+  },
+  {
+    "kind": "question",
+    "text": "What does the word sadaqa mean?"
+  },
+  {
+    "kind": "question",
+    "text": "Prayer said at night"
+  },
+  {
+    "kind": "question",
+    "text": "Fasting kept in Ramadan"
+  },
+  {
+    "kind": "question",
+    "text": "Travel made to Makkah"
+  },
+  {
+    "kind": "question",
+    "text": "Charity given for Allah"
+  },
+  {
+    "kind": "question",
+    "text": "Sadaqa is what a believer gives for Allah, and it will be his shade."
+  },
+  {
+    "kind": "question",
+    "text": "Giving charity now can shade us on the Last Day."
+  },
+  {
+    "kind": "question",
+    "text": "His sadaqa will be the believer's shade on the Day of Resurrection."
   },
   {
     "kind": "lesson",
@@ -193381,10 +193597,6 @@
   },
   {
     "kind": "question",
-    "text": "Paper"
-  },
-  {
-    "kind": "question",
     "text": "Teaching your little brother to pray protects him."
   },
   {
@@ -207294,10 +207506,6 @@
   {
     "kind": "question",
     "text": "Mud"
-  },
-  {
-    "kind": "question",
-    "text": "Ink"
   },
   {
     "kind": "question",
