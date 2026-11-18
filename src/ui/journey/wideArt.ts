@@ -30,7 +30,7 @@ import { stall } from "./tradeArt";
  */
 
 /** The words of five lines. */
-const FIVE = [
+export const FIVE = [
   [0.02, 0.2],
   [0.216, 0.396],
   [0.412, 0.592],
@@ -45,10 +45,10 @@ const landFrom = (top: number, tufts: [number, number][]) =>
     .replace("M0 61 L160 61", `M0 ${top} L160 ${top}`);
 
 /** Low hills far off behind Madinah, a range drawn before the land, so only their tops show over its edge. */
-const farHills = () => peaks([[18, 9, 24], [50, 12, 30], [86, 8, 22], [116, 11, 28], [150, 9, 22]], 67, "#CDB892", false);
+export const farHills = () => peaks([[18, 9, 24], [50, 12, 30], [86, 8, 22], [116, 11, 28], [150, 9, 22]], 67, "#CDB892", false);
 
 /** The masjid of Madinah from inside: its wall, its floor, palm trunks and a roof of palm fronds, the floor from y `foot`. */
-const insideTheMasjid = (foot: number): SignArt["parts"] => [
+export const insideTheMasjid = (foot: number): SignArt["parts"] => [
   { name: "the sky over the masjid", svg: `<rect width="160" height="31" fill="#BFE3FA"/>` },
   { name: "clouds", svg: cloud(44, 16, 0.4, "#FFFFFF", 0.9) + cloud(122, 12, 0.34, "#FFFFFF", 0.85), loop: { move: "slide", ms: 12000 } },
   { name: "the masjid's wall", svg: `<rect x="0" y="40" width="160" height="${foot - 40}" fill="#E5CFA6"/>` + [52, 64, 76, 88].map((y) => `<path d="M0 ${y} L160 ${y}" stroke="#D6BD92" stroke-width="0.5"/>`).join("") },

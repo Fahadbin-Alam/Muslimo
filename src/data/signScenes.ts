@@ -1010,7 +1010,14 @@ export type SignKind =
   | "a-place-made-ready"
   | "a-greeting-not-returned"
   | "fulfil-your-vow"
-  | "too-young-for-the-pledge";
+  | "too-young-for-the-pledge"
+  | "clean-earth-is-enough"
+  | "silence-in-the-prayer"
+  | "a-boy-of-five"
+  | "two-rakahs-on-a-journey"
+  | "lest-you-be-bored"
+  | "the-dearest-places"
+  | "two-men-sneezed";
 
 export type SignScene = {
   id: string;
@@ -5441,6 +5448,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Hisham's mother, Zaynab bint Humayd, took him to the Prophet ﷺ and said: O Messenger of Allah, take the pledge of allegiance from him. He said: he is still too young for the pledge, and he passed his hand over his head and invoked Allah's blessing for him. Zuhrah ibn Ma'bad said that he used to go with his grandfather, Abdullah ibn Hisham, to the market to buy food. Ibn Umar and Ibn az-Zubayr would meet him and say to him: be our partner, for the Prophet ﷺ invoked Allah to bless you. So he would be their partner, and very often he would win a camel's load and send it home.",
     sources: [bukhari("2501")]
+  },
+  {
+    id: "sign-clean-earth-is-enough",
+    kind: "clean-earth-is-enough",
+    caption:
+      "Imran ibn Husayn al-Khuza'i said: the Messenger of Allah ﷺ saw a person sitting aloof and not praying with the people. He asked him: O so and so, what prevented you from offering the prayer with the people? He replied: O Messenger of Allah, I am junub and there is no water. He said: perform tayammum with clean earth, and that will be sufficient for you.",
+    sources: [bukhari("348")]
+  },
+  {
+    id: "sign-silence-in-the-prayer",
+    kind: "silence-in-the-prayer",
+    caption:
+      "Zayd ibn Arqam said: in the lifetime of the Prophet ﷺ we used to speak while praying, and one of us would tell his needs to his companions, till the ayah was revealed: guard strictly your prayers. After that we were ordered to remain silent while praying.",
+    sources: [bukhari("1200")]
+  },
+  {
+    id: "sign-a-boy-of-five",
+    kind: "a-boy-of-five",
+    caption:
+      "Mahmud ibn ar-Rabi' said: when I was a boy of five, I remember, the Prophet ﷺ took water from a bucket with his mouth and threw it on my face.",
+    sources: [bukhari("77")]
+  },
+  {
+    id: "sign-two-rakahs-on-a-journey",
+    kind: "two-rakahs-on-a-journey",
+    caption:
+      "Aishah said: when the prayers were first enjoined, they were of two rak'at each. Later the prayer in a journey was kept as it was, but the prayers for non-travelers were completed.",
+    sources: [bukhari("1090")]
+  },
+  {
+    id: "sign-lest-you-be-bored",
+    kind: "lest-you-be-bored",
+    caption:
+      "Abu Wa'il said: Abdullah used to give a religious talk to the people every Thursday. Once a man said: O Aba Abdur-Rahman, I wish you could preach to us daily. Abdullah replied: the only thing which prevents me from doing so is that I hate to bore you, and I take care of you in preaching by selecting a suitable time, just as the Prophet ﷺ used to do with us, for fear of making us bored.",
+    sources: [bukhari("70")]
+  },
+  {
+    id: "sign-the-dearest-places",
+    kind: "the-dearest-places",
+    caption:
+      "Abu Hurairah reported that the Messenger of Allah ﷺ said: the parts of land dearest to Allah are its masjids, and the parts most hateful to Allah are markets.",
+    sources: [muslim("671")]
+  },
+  {
+    id: "sign-two-men-sneezed",
+    kind: "two-men-sneezed",
+    caption:
+      "Anas ibn Malik said: two men sneezed before the Prophet ﷺ. He said to one of them: may Allah bestow His mercy on you, but he did not say that to the other. On being asked, he said: that one praised Allah, while the other did not praise Allah.",
+    sources: [bukhari("6221")]
   }
 ];
 
@@ -7979,7 +8035,57 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Umar had vowed a night of i'tikaf before Islam; he told him: fulfil your vow.
   "deep-book-oaths-umars-old-vow": "sign-fulfil-your-vow",
   // Abdullah was too young for the pledge; he asked Allah to bless him, and his trade was blessed.
-  "deep-kids-signs-too-young-for-the-pledge": "sign-too-young-for-the-pledge"
+  "deep-kids-signs-too-young-for-the-pledge": "sign-too-young-for-the-pledge",
+  // No water? He told the one who sat apart: perform tayammum with clean earth, and that is enough.
+  "deep-imran-ibn-husayn-earth-instead-of-water": "sign-clean-earth-is-enough",
+  // They once spoke in the prayer, until the ayah came: guard strictly your prayers; then they kept silent.
+  "deep-book-amal-salah-silence-in-the-prayer": "sign-silence-in-the-prayer",
+  // Mahmud remembered, from when he was five, the water he sprayed on his face from a bucket.
+  "deep-kids-children-a-boy-of-five": "sign-a-boy-of-five",
+  // The prayers were first two rak'at each; kept so on a journey, and completed at home.
+  "deep-pray-easy-two-on-a-journey": "sign-two-rakahs-on-a-journey",
+  // Abdullah taught every Thursday, not daily, so as not to bore them, as he had done with them.
+  "deep-book-ilm-never-boring": "sign-lest-you-be-bored",
+  // The parts of land dearest to Allah are its masjids, and the most hateful are markets.
+  "deep-jinn3-dearest-places": "sign-the-dearest-places",
+  // Two sneezed; he wished mercy on the one who praised Allah, and not on the one who did not.
+  "deep-book-adab-the-sneeze": "sign-two-men-sneezed",
+  // Call on Allah humbly: you are not calling a deaf or an absent one.
+  "deep-araf2-call-humbly": "sign-treasure-of-paradise",
+  // Jabir woke from his illness and asked about his wealth, and the ayah of inheritance came.
+  "deep-nisa1-inheritance": "sign-water-for-jabir",
+  // The lost necklace, and the ayah of tayammum that came when there was no water.
+  "deep-nisa1-tayammum": "sign-lost-necklace",
+  // He made Abdur-Rahman and Sa'd brothers, and Sa'd offered half his wealth.
+  "deep-muhajirun-brothers": "sign-show-me-the-market",
+  // No hardship in the religion: the sick may pray sitting, or lying on the side.
+  "deep-hajj3-no-hardship-in-religion": "sign-pray-as-you-can",
+  // He asked Allah's forgiveness more than seventy times a day.
+  "foundation-phrases-rhythm-seeking-forgiveness": "sign-seventy-times",
+  // Allah is pleased with one who says Alhamdulillah for each morsel and each drink.
+  "foundation-home-adab-after-food": "sign-praise-each-bite",
+  // Forbid what is wrong: change it with the hand, the tongue, or the heart.
+  "deep-hud6-people-who-forbid-corruption": "sign-change-it",
+  // Deeds are only by intentions, wudu too.
+  "prayer-wudu-intention-basics": "sign-intentions",
+  // Among the deeds dearest to Allah: to be good and dutiful to parents.
+  "deep-anam3-kind-parents": "sign-dearest-deeds",
+  // Uhud shook under him and Abu Bakr, the Siddiq.
+  "sahabi-abu-bakr-signature-virtue": "sign-uhud-shook",
+  // Allah adds honor to the one who forgives.
+  "deep-shura3-forgive-and-make-peace": "sign-charity-wealth",
+  // A rak'ah done at rest: bowing, standing straight, and prostrating at ease.
+  "prayer-salah-basics-rakah-overview": "sign-go-back-and-pray",
+  // Every lifespan is written; keeping ties of kin brings more provision and a longer life.
+  "deep-fatir1-from-dust-then-pairs": "sign-family-ties",
+  // If someone fights a fasting person, let him say: I am fasting.
+  "fasting-protection-social-pressure": "sign-two-joys",
+  // The fast is a shield: no bad words and no fights.
+  "fasting-protection-tongue-and-character": "sign-two-joys",
+  // The fast is for Allah, and He rewards it.
+  "fasting-purpose-inner-discipline": "sign-two-joys",
+  // Asma bint Umays went to Abyssinia, and he told her: you of the ship have two hijrahs.
+  "notes-sahabah-companions-from-your-notes-3-asma-bint-umays": "sign-two-hijrahs"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

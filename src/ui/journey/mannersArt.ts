@@ -361,7 +361,7 @@ function wetGrain(): SignArt {
 // sparks rise from the well and from the camels.
 
 /** A bucket full of water, its foot's middle at (x, y). */
-const bucket = (x: number, y: number) =>
+export const bucket = (x: number, y: number) =>
   `<path d="M${n(x - 2.2)} ${n(y - 3.4)} L${n(x + 2.2)} ${n(y - 3.4)} L${n(x + 1.7)} ${y} L${n(x - 1.7)} ${y} Z" fill="#7E5A36"/>` +
   `<ellipse cx="${x}" cy="${n(y - 3.4)}" rx="2.2" ry="0.6" fill="#5EB1E4"/>` +
   `<path d="M${n(x - 2)} ${n(y - 3.4)} Q${x} ${n(y - 6.4)} ${n(x + 2)} ${n(y - 3.4)}" stroke="#4E3420" stroke-width="0.4" fill="none"/>`;

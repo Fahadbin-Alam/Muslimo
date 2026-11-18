@@ -1564,6 +1564,13 @@ const STATES: State[] = [
   { id: "scene-a-greeting-not-returned", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-amal-salah-a-greeting-not-returned" ask="How did Jabir feel" /> },
   { id: "scene-fulfil-your-vow", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-umars-old-vow" ask="What had Umar vowed" /> },
   { id: "scene-too-young-for-the-pledge", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-too-young-for-the-pledge" ask="Ibn az-Zubayr ask him" /> },
+  { id: "scene-clean-earth-is-enough", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-earth-instead-of-water" ask="tell him to use" /> },
+  { id: "scene-silence-in-the-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-amal-salah-silence-in-the-prayer" ask="ordered to do in prayer" /> },
+  { id: "scene-a-boy-of-five", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-children-a-boy-of-five" ask="How old was Mahmud" /> },
+  { id: "scene-two-rakahs-on-a-journey", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-easy-two-on-a-journey" ask="Dhuhr on a journey" /> },
+  { id: "scene-lest-you-be-bored", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-never-boring" ask="not teach every day" /> },
+  { id: "scene-the-dearest-places", render: () => <SceneQuestionDemo lessonId="lesson-deep-jinn3-dearest-places" ask="dearest to Allah" /> },
+  { id: "scene-two-men-sneezed", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-the-sneeze" ask="only one man get" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
