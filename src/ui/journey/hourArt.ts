@@ -65,10 +65,11 @@ const puffs = (list: [number, number][], fill: string, opacity: number) =>
 // No one is drawn: the masjid of Madinah, palms, the land, and the sky through a day and into the night, with the seven
 // days of the week as small circles in it. His place and Ibn Umar's place are before the masjid. Ibn Umar's voice tells
 // of it in the morning. The sun climbs to noon, and two sparks rise from their places and stay over the masjid: two
-// rak'ahs before Zuhr. A soft light comes over the masjid: the Zuhr prayer, and two more sparks rise: after it. The days show and
-// Friday lights, more places come to the masjid and its light comes: Jumu'ah, and two more sparks rise. The sun goes
-// down, the sky turns to evening and the masjid's light comes: Maghrib, and two more rise. The night comes, with stars
-// and the moon, and a small light shows at the masjid's door: Isha, and two more rise, five pairs in a row.
+// rak'ahs before Zuhr. A soft light comes over the masjid: the Zuhr prayer, and two more sparks rise: after it. The
+// days show and Friday lights, more places come to the masjid and its light comes: Jumu'ah, and two more sparks rise.
+// The sun goes down, the sky turns to evening and the masjid's light comes: Maghrib, and two more rise. The night
+// comes, with stars and the moon, and a small light shows at the masjid's door: Isha, and two more rise, five pairs in
+// a row.
 function sunnahAroundThePrayers(): SignArt {
   const his: [number, number] = [24, 104.6];
   const ibnUmar: [number, number] = [34, 105.2];
@@ -165,13 +166,13 @@ function sunnahAroundThePrayers(): SignArt {
 
 // Two rewards for Asr. Abu Basrah al-Ghifari said: the Messenger of Allah ﷺ led us in the Asr prayer at al-Mukhammas,
 // and then said: this prayer was presented to those gone before you, but they lost it, and whoever guards it has two
-// rewards; and there is no prayer after it till the onlooker appears, and the onlooker is the star (Sahih Muslim 830).
+// rewards; and there is no prayer after it till the onlooker appears, and the onlooker is the star (Sahih Muslim 830a).
 // No one is drawn: a valley among hills, with acacias, in the afternoon. His place is in front and two rows of places
-// behind him, Abu Basrah's place among them. Abu Basrah's voice tells of it; a spark of the prayer rises from his place,
-// with glints over the rows. His voice speaks. Far off, faint places show, with a small light before them: presented;
-// the small light goes grey and the faint places fade: lost, gone before. A soft golden ring comes about the rows, and
-// two golden lights show over them: two rewards. The sun goes down and the sky turns to evening; nothing rises. Then a
-// star appears, with glints and a soft ring about it: the onlooker.
+// behind him, Abu Basrah's place among them. Abu Basrah's voice tells of it; a spark of the prayer rises from his
+// place, with glints over the rows. His voice speaks. Far off, faint places show, with a small light before them:
+// presented; the small light goes grey and the faint places fade: lost, gone before. A soft golden ring comes about the
+// rows, and two golden lights show over them: two rewards. The sun goes down and the sky turns to evening; nothing
+// rises. Then a star appears, with glints and a soft ring about it: the onlooker.
 function twoRewardsForAsr(): SignArt {
   const his: [number, number] = [100, 101];
   const abuBasrah: [number, number] = [92, 107.4];
@@ -313,13 +314,13 @@ function twoRewardsForAsr(): SignArt {
 
 // Until they make peace. Abu Hurairah reported the Messenger of Allah ﷺ as saying: the gates of Paradise are not opened
 // but on two days, Monday and Thursday, and then every servant who does not associate anything with Allah is granted
-// pardon, except the one who has rancour against his brother; and it is said: look towards both of them until there
-// is reconciliation (Sahih Muslim 2565, where it is said three times). No one is drawn: the land and the sky, with the
+// pardon, except the one who has rancour against his brother; and it is said: look towards both of them until there is
+// reconciliation (Sahih Muslim 2565a, where it is said three times). No one is drawn: the land and the sky, with the
 // seven days of the week as small circles in it, and far off a tall gate with a garden within, in a soft light. Monday
 // and Thursday light, and the gate's doors open. Places stand on the land; a golden glint and a soft golden ring come
 // about each: pardoned, and sparks rise from them. Two places stand apart; a grey jagged line comes between them, and a
-// grey shade about each: rancour, and no glint comes to them. A soft dashed ring comes about the two: waiting. They come
-// together, the grey line and the shades go, and a soft golden ring and glints come about both: reconciled.
+// grey shade about each: rancour, and no glint comes to them. A soft dashed ring comes about the two: waiting. They
+// come together, the grey line and the shades go, and a soft golden ring and glints come about both: reconciled.
 function untilTheyMakePeace(): SignArt {
   const days = [38, 52, 66, 80, 94, 108, 122];
   const monday = days[1];
@@ -563,14 +564,14 @@ function aSujudOfFiftyVerses(): SignArt {
 // Ninety-nine, and one to make a hundred. Abu Hurairah reported the Messenger of Allah ﷺ as saying: if anyone extols
 // Allah after every prayer thirty-three times, and praises Allah thirty-three times, and declares His greatness
 // thirty-three times, ninety-nine times in all, and says to complete a hundred: there is no god but Allah, having no
-// partner with Him, to Him belongs sovereignty and to Him is praise due, and He is Potent over everything, his sins will
-// be forgiven even if these are as abundant as the foam of the sea (Sahih Muslim 597). No one is drawn: inside the
-// masjid, under its roof of palm fronds on palm trunks. Two rows of places sit on the left, and on the right the place
-// of one who says it. Glints over the rows show the prayer, and go. Thirty-three small glints come in a row, then a
-// second row of thirty-three, then a third; a soft golden ring comes about the three rows: ninety-nine, and a small
+// partner with Him, to Him belongs sovereignty and to Him is praise due, and He is Potent over everything, his sins
+// will be forgiven even if these are as abundant as the foam of the sea (Sahih Muslim 597a). No one is drawn: inside
+// the masjid, under its roof of palm fronds on palm trunks. Two rows of places sit on the left, and on the right the
+// place of one who says it. Glints over the rows show the prayer, and go. Thirty-three small glints come in a row, then
+// a second row of thirty-three, then a third; a soft golden ring comes about the three rows: ninety-nine, and a small
 // dashed circle by them. It lights, and a spark rises from the place: the hundredth. Small grey puffs come about the
-// place, like foam: its sins, and they turn white: forgiven; then they melt away, and a soft white ring and glints
-// come about the place.
+// place, like foam: its sins, and they turn white: forgiven; then they melt away, and a soft white ring and glints come
+// about the place.
 function ninetyNineAndOne(): SignArt {
   const foot = 96;
   const one: [number, number] = [116, 106];

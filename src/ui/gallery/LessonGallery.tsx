@@ -1571,6 +1571,13 @@ const STATES: State[] = [
   { id: "scene-lest-you-be-bored", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-never-boring" ask="not teach every day" /> },
   { id: "scene-the-dearest-places", render: () => <SceneQuestionDemo lessonId="lesson-deep-jinn3-dearest-places" ask="dearest to Allah" /> },
   { id: "scene-two-men-sneezed", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-the-sneeze" ask="only one man get" /> },
+  { id: "scene-sunnah-around-the-prayers", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-night-prayer-sunnah-around-the-prayers" ask="sunnah after Isha" /> },
+  { id: "scene-two-rewards-for-asr", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-reward-asr-twice-the-reward" ask="guards Asr gets its reward" /> },
+  { id: "scene-until-they-make-peace", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-until-they-make-peace" ask="gates of Paradise opened" /> },
+  { id: "scene-a-sujud-of-fifty-verses", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-ruku-and-sujud-for-allah-a-sujud-of-fifty-verses" ask="How long was his" /> },
+  { id: "scene-ninety-nine-and-one", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-after-thirty-three" ask="full hundred" /> },
+  { id: "scene-three-things-are-yours", render: () => <SceneQuestionDemo lessonId="lesson-deep-takathur1-three-things-are-yours" ask="really his" /> },
+  { id: "scene-best-people-on-earth", render: () => <SceneQuestionDemo lessonId="lesson-deep-fath1-best-people-on-earth" ask="How many were they" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
