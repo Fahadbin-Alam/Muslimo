@@ -1426,6 +1426,13 @@ const STATES: State[] = [
   { id: "scene-the-best-gift", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-best-gift" ask="best gift a person" /> },
   { id: "scene-content-with-enough", render: () => <SceneQuestionDemo lessonId="lesson-deep-nahl6-content-with-what-allah-gives" ask="How much provision" /> },
   { id: "scene-constant-deeds", render: () => <SceneQuestionDemo lessonId="lesson-deep-maarij3-small-but-constant" ask="Which deeds does Allah love most" /> },
+  { id: "scene-a-group-of-three", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-three-people" ask="What should two of them not do" /> },
+  { id: "scene-four-dearest-words", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-dhikr-four-dearest-words" ask="one of the four" /> },
+  { id: "scene-two-raised-well", render: () => <SceneQuestionDemo lessonId="lesson-deep-children-two-girls" ask="How close will" /> },
+  { id: "scene-a-dua-for-the-sick", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-visit-sick-the-healing-dua" ask="What kind of healing" /> },
+  { id: "scene-the-work-of-his-hands", render: () => <SceneQuestionDemo lessonId="lesson-deep-prophet-dawud-own-hands" ask="Whose example" /> },
+  { id: "scene-every-good-is-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-everyday-every-good" ask="What counts as charity" /> },
+  { id: "scene-a-hundred-times-a-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-tahrim2-a-hundred-times" ask="Whom did the Prophet" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
