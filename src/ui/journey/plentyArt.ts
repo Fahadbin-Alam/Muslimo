@@ -279,7 +279,7 @@ function flockBetweenMountains(): SignArt {
       { text: "he gives as if he did not fear want.", from: 0.508, to: 0.618 },
       { text: "Anas: a man would embrace Islam", from: 0.63, to: 0.74 },
       { text: "wanting only the world, but before long", from: 0.752, to: 0.862 },
-      { text: "Islam became dearer to him than the world", from: 0.874, to: 1 }
+      { text: "Islam was dearer to the man than the world", from: 0.874, to: 1 }
     ]
   };
 }

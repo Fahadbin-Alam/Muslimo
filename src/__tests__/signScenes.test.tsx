@@ -22479,7 +22479,7 @@ describe("the signs in creation, alive", () => {
       "he gives as if he did not fear want.",
       "Anas: a man would embrace Islam",
       "wanting only the world, but before long",
-      "Islam became dearer to him than the world"
+      "Islam was dearer to the man than the world"
     ]);
     expect([
       [at("flock-between-mountains", "Anas's voice: one asked him", "opacity", [0.01, 0.05, 0.13]), at("flock-between-mountains", "its voice: asking him for a flock", "opacity", [0.01, 0.1, 0.252])],
