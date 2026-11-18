@@ -5920,6 +5920,51 @@ const ASKS: Record<string, readonly Ask[]> = {
   // when he said this praise and what he thanked Allah for are not asked here, since the meal shows from the start.
   "sign-satisfied-and-quenched": [
     ["Allah's favor can be fully paid back.", "False", "Your favor cannot be compensated", "or denied."]
+  ],
+  // Ibn Umar said: the Prophet ﷺ did ramal in three rounds, and walked in the remaining four, in Hajj and Umrah (Sahih
+  // al-Bukhari 1604). Its lesson's question on how many rounds ramal is done in is not asked here, since the scene's
+  // first words tell it.
+  "sign-ramal-in-three-rounds": [
+    ["What about the other four rounds?", "Normal walking", "and walked in the remaining four,"],
+    ["A tawaf has seven rounds.", "True", "and walked in the remaining four,"]
+  ],
+  // Aishah said: the Prophet ﷺ used to like to start from the right side on wearing shoes, combing his hair and cleaning
+  // or washing himself, and on doing anything else (Sahih al-Bukhari 168).
+  "sign-start-from-the-right-side": [
+    ["Which side did the Prophet ﷺ like to start with?", "The right", "from the right side on wearing shoes,"],
+    ["Which of these did Aishah name?", "Putting on shoes", "from the right side on wearing shoes,"],
+    ["In wudu we wash the right arm before the left.", "True", "and cleaning or washing himself"]
+  ],
+  // Aishah said: Allah's Messenger ﷺ used to accept gifts and used to give something in return (Sahih al-Bukhari 2585).
+  // Its lesson's questions on what he did when given a gift and on who told of it are not asked here, since the scene's
+  // first words tell them.
+  "sign-something-in-return": [
+    ["Giving something back is part of the sunnah of gifts.", "True", "and used to give something in return."]
+  ],
+  // Zaynab, the daughter of Umm Salamah, said: my mother said: O Messenger of Allah, shall I receive a reward if I spend
+  // for the sustenance of Abu Salamah's offspring, and in fact they are also my sons? He replied: spend on them and you
+  // will get a reward for what you spend on them (Sahih al-Bukhari 1467).
+  "sign-spend-on-them": [
+    ["On whom did Umm Salamah ask about spending?", "Her own sons", "of Abu Salamah's offspring,", "and in fact they are also my sons?"],
+    ["What did he ﷺ say she would get for spending on them?", "A reward", "and you will get a reward"],
+    ["Spending on your own children can bring a reward.", "True", "and you will get a reward", "for what you spend on them."]
+  ],
+  // Abu Humayd said: he said: the best of the Ansar families are the families of Banu an-Najjar, and then that of Banu
+  // Abdul Ash-hal, and then that of Banu al-Harith, and then that of Banu Sa'idah; and there is good in all the families
+  // of the Ansar. Sa'd ibn Ubadah said to him: you have made us the last of them; he replied: isn't it sufficient that
+  // you are regarded amongst the best? (Sahih al-Bukhari 3791).
+  "sign-good-in-all-the-ansar": [
+    ["What was Sa'd's clan called?", "Banu Sa'idah", "are Banu an-Najjar, then Abdul Ash-hal,", "regarded amongst the best?"],
+    ["What did the Prophet ﷺ say about all Ansar homes?", "There is good in all of them", "and there is good in all the families"],
+    ["Sa'd's clan was named among the best.", "True", "Isn't it sufficient that you are", "regarded amongst the best?"]
+  ],
+  // Itban ibn Malik al-Ansari said: he asked permission for entering and I allowed him; he asked: where do you like me
+  // to pray in your house? I pointed to a place which I liked; he stood up for prayer and we aligned behind him, and he
+  // finished the prayer with taslim and we did the same (Sahih al-Bukhari 686). Its lesson's question on whether he
+  // asked permission before coming in is not asked here, since the scene's first words tell it.
+  "sign-where-do-you-like-me-to-pray": [
+    ["What did he ﷺ ask Itban inside the house?", "Where Itban liked him to pray", "Where do you like me to pray", "in your house? I pointed to a place"],
+    ["How did Itban and his people pray with him ﷺ?", "In a row behind him", "and we aligned behind him,"]
   ]
 };
 
