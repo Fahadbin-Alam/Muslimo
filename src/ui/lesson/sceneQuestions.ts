@@ -5163,8 +5163,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // and whose the treasures are, are not in the scene, so those stay as they are.)
   "sign-zayd-was-truthful": [
     ["Who heard the hypocrite and reported him?", "Zaid bin Arqam", "Zayd: I heard Abdullah ibn Ubayy say", "I told my uncle or Umar, who told him"],
-    ["How did Zaid feel when he was not believed?", "Very sad", "He believed him, not me, and I grieved"],
-    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Then he sent for me and recited it", "and said: Allah has confirmed you, O Zayd"]
+    ["How did Zaid feel when he was not believed?", "Very sad", "He believed Ibn Ubayy, not me; I grieved"],
+    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Allah revealed a surah; he read it to me", "and said: Allah has confirmed you, O Zayd"]
   ],
   // Anas ibn Malik said: three came to the homes of his wives, asking about his worship, and when they were told, they
   // thought it little: one said he would pray all night, always; another that he would fast and never break it; another
@@ -5372,8 +5372,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // are not in the scene, so those stay as they are.)
   "sign-pleased-with-another": [
     ["A believing man should not ____ a believing woman.", "hate", "He said: a believing man should not hate"],
-    ["If one habit bothers you, remember the ____ ones.", "good", "another will please him"],
-    ["If a husband dislikes one trait in his wife, what should he remember?", "He will like another", "another will please him"]
+    ["If one habit bothers you, remember the ____ ones.", "good", "another will please the man"],
+    ["If a husband dislikes one trait in his wife, what should he remember?", "He will like another", "another will please the man"]
   ],
   // Jabir ibn Abdullah said: he said: beware of wrongdoing, for wrongdoing is darkness on the Day of Resurrection; and
   // beware of stinginess, for stinginess destroyed those before you (Sahih Muslim 2578). Only the wrongdoer shows on the

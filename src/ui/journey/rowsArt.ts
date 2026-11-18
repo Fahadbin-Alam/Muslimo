@@ -314,8 +314,8 @@ function zaydWasTruthful(): SignArt {
       { text: "don't spend, so they go away from him", from: 0.162, to: 0.289 },
       { text: "I told my uncle or Umar, who told him", from: 0.304, to: 0.431 },
       { text: "Ibn Ubayy and his folk swore they had not", from: 0.446, to: 0.573 },
-      { text: "He believed him, not me, and I grieved", from: 0.588, to: 0.715 },
-      { text: "Then he sent for me and recited it", from: 0.73, to: 0.857 },
+      { text: "He believed Ibn Ubayy, not me; I grieved", from: 0.588, to: 0.715 },
+      { text: "Allah revealed a surah; he read it to me", from: 0.73, to: 0.857 },
       { text: "and said: Allah has confirmed you, O Zayd", from: 0.872, to: 1 }
     ]
   };

@@ -20719,8 +20719,8 @@ describe("the signs in creation, alive", () => {
       "don't spend, so they go away from him",
       "I told my uncle or Umar, who told him",
       "Ibn Ubayy and his folk swore they had not",
-      "He believed him, not me, and I grieved",
-      "Then he sent for me and recited it",
+      "He believed Ibn Ubayy, not me; I grieved",
+      "Allah revealed a surah; he read it to me",
       "and said: Allah has confirmed you, O Zayd"
     ]);
     expect([
@@ -21653,7 +21653,7 @@ describe("the signs in creation, alive", () => {
       "He said: a believing man should not hate",
       "a believing woman;",
       "if the man dislikes one of her traits,",
-      "another will please him"
+      "another will please the man"
     ]);
     expect([
       [0.01, 0.245].map((t) => all("pleased-with-another", ["his voice: should not hate", "a faint golden line from his place toward the home", "faith: a soft golden ring about the first place"], t)),
