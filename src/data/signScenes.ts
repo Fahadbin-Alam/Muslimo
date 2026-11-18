@@ -975,7 +975,14 @@ export type SignKind =
   | "spend-on-them"
   | "i-will-make-you-get-up"
   | "good-in-all-the-ansar"
-  | "where-do-you-like-me-to-pray";
+  | "where-do-you-like-me-to-pray"
+  | "a-similar-share"
+  | "who-will-visit-him"
+  | "has-the-prayer-been-reduced"
+  | "one-or-two-handfuls"
+  | "charity-on-every-muslim"
+  | "the-honest-storekeeper"
+  | "as-long-as-you-were-waiting";
 
 export type SignScene = {
   id: string;
@@ -5161,6 +5168,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Itban ibn Malik al-Ansari said: the Prophet ﷺ asked permission for entering and I allowed him. He asked: where do you like me to pray in your house? I pointed to a place which I liked. He stood up for prayer and we aligned behind him and he finished the prayer with taslim and we did the same.",
     sources: [bukhari("686")]
+  },
+  {
+    id: "sign-a-similar-share",
+    kind: "a-similar-share",
+    caption:
+      "Anas ibn Malik said: once the Prophet ﷺ called the Ansar in order to give them the territory of Bahrain. They said: no, unless you give to our emigrant brethren a similar share. On that he said: if you do not agree to it, then be patient till you meet me, for after me others will be given preference to you.",
+    sources: [bukhari("3794")]
+  },
+  {
+    id: "sign-who-will-visit-him",
+    kind: "who-will-visit-him",
+    caption:
+      "Abdullah ibn Umar said: while we were sitting with the Messenger of Allah ﷺ, a person, one of the Ansar, came to him and greeted him. The Ansari then turned back. Upon this the Messenger of Allah ﷺ said: O brother of Ansar, how is my brother Sa'd ibn Ubadah? He said: he is better. The Messenger of Allah ﷺ said: who amongst you would visit him? He stood up and we also got up along with him, and we were more than ten persons. We had neither shoes with us, nor socks, nor caps, nor shirts. We walked on the barren land till we came to him. The people around him kept away till the Messenger of Allah ﷺ and his Companions with him came near him.",
+    sources: [muslim("925")]
+  },
+  {
+    id: "sign-has-the-prayer-been-reduced",
+    kind: "has-the-prayer-been-reduced",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ offered one of the evening prayers and he finished it after offering two rak'ahs only. He then stood near a piece of wood in front of the masjid and put his hand over it. Abu Bakr and Umar were amongst those who were present, but they dared not talk to him about that, and those who were in a hurry went out. They said: has the prayer been reduced? A man who was called Dhul-Yadayn by the Prophet ﷺ said: has the prayer been reduced or have you forgotten? He said: neither have I forgotten, nor has the prayer been reduced. He said: certainly you have forgotten. So he offered two more rak'ahs and performed taslim and then said takbir and performed a prostration of Sahu like his ordinary prostration or a bit longer, and then raised his head and said takbir, and then put his head down and performed a prostration like his ordinary prostration or a bit longer, and then raised his head and said takbir.",
+    sources: [bukhari("1229")]
+  },
+  {
+    id: "sign-one-or-two-handfuls",
+    kind: "one-or-two-handfuls",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: when your servant brings your food to you, if you do not ask him to join you, then at least ask him to take one or two handfuls, for he has suffered from its heat and has taken pains to cook it nicely.",
+    sources: [bukhari("5460")]
+  },
+  {
+    id: "sign-charity-on-every-muslim",
+    kind: "charity-on-every-muslim",
+    caption:
+      "Abu Musa al-Ash'ari said: the Prophet ﷺ said: on every Muslim there is enjoined Sadaqa. They said: if one has nothing? He said: he should work with his hands so that he may benefit himself and give in charity. They said: if he cannot work or does not work? He said: then he should help the oppressed unhappy person. They said: if he does not do it? He said: then he should enjoin what is good, or he said: what is reasonable. They said: if he does not do that? He said: then he should refrain from doing evil, for that will be considered for him as a Sadaqa.",
+    sources: [bukhari("6022")]
+  },
+  {
+    id: "sign-the-honest-storekeeper",
+    kind: "the-honest-storekeeper",
+    caption:
+      "Abu Musa said: the Prophet ﷺ said: an honest Muslim storekeeper who carries out the orders of his master and pays fully what he has been ordered to give with a good heart and pays to that person to whom he was ordered to pay, is regarded as one of the two charitable persons.",
+    sources: [bukhari("1438")]
+  },
+  {
+    id: "sign-as-long-as-you-were-waiting",
+    kind: "as-long-as-you-were-waiting",
+    caption:
+      "Anas ibn Malik said: once the Prophet ﷺ delayed the Isha prayer until midnight and then came to us. Having prayed he faced us and said: the people had prayed and slept but you were in the prayer as long as you were waiting for it.",
+    sources: [bukhari("847")]
   }
 ];
 
@@ -7567,7 +7623,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Banu Sa'idah came fourth among the best homes of the Ansar, and being among the best is enough.
   "deep-sad-ubadah-among-the-best": "sign-good-in-all-the-ansar",
   // In Itban's house he asked where Itban liked him to pray.
-  "deep-found-sunnahs-of-the-home-where-the-host-likes": "sign-where-do-you-like-me-to-pray"
+  "deep-found-sunnahs-of-the-home-where-the-host-likes": "sign-where-do-you-like-me-to-pray",
+  // Offered the land of Bahrain, the Ansar asked for the same for their emigrant brothers.
+  "deep-hashr2-our-brothers-first": "sign-a-similar-share",
+  // He asked after his brother Sa'd, and more than ten went with him to visit Sa'd, barefoot.
+  "deep-sad-ubadah-visiting-sad": "sign-who-will-visit-him",
+  // Dhul-Yadayn asked if the prayer was shortened or forgotten; two more rak'ahs were prayed.
+  "deep-prayer-forgetting-in-salah-dhul-yadayn-asks": "sign-has-the-prayer-been-reduced",
+  // Give the one who cooked your food a handful or two, for he bore its heat.
+  "deep-book-food-share-with-the-cook": "sign-one-or-two-handfuls",
+  // Every Muslim gives charity: work and give, help, enjoin good, or hold back from harm.
+  "deep-book-adab-charity-every-day": "sign-charity-on-every-muslim",
+  // The honest storekeeper who gives in full and gladly is one of the two givers.
+  "deep-zakat-anyone-honest-helper": "sign-the-honest-storekeeper",
+  // He delayed Isha one night: while you wait for the prayer you are in it.
+  "deep-book-adhan-waiting-counts-as-prayer": "sign-as-long-as-you-were-waiting"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
