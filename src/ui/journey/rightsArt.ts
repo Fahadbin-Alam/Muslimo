@@ -375,11 +375,11 @@ function aFairGift(): SignArt {
     words: [
       { text: "My father gave me a gift", from: 0.02, to: 0.13 },
       { text: "My mother asked for the Prophet as witness", from: 0.15, to: 0.27 },
-      { text: "He went to him: I gave my son a gift", from: 0.29, to: 0.41 },
+      { text: "My father told him: I gave my son a gift", from: 0.29, to: 0.41 },
       { text: "Have you given all your children the same?", from: 0.43, to: 0.55 },
-      { text: "He said: no", from: 0.57, to: 0.69 },
+      { text: "My father said: no", from: 0.57, to: 0.69 },
       { text: "Fear Allah, and be fair to your children", from: 0.71, to: 0.83 },
-      { text: "He went back, and took back his gift", from: 0.85, to: 1 }
+      { text: "My father went back, took back his gift", from: 0.85, to: 1 }
     ]
   };
 }
@@ -469,12 +469,12 @@ function gardenInCharity(): SignArt {
       { name: "for her: a soft light about her home", svg: glow(herHome[0], 91, 10, WARM, 0.3) + care(herHome[0], 97.4, 11, 2.8), keys: showFrom(0.89, 0.94), loop: { move: "twinkle", ms: 1600, low: 0.75 } }
     ],
     words: [
-      { text: "Sa'd's mother died while he was away", from: 0.02, to: 0.15 },
-      { text: "My mother died while I was away", from: 0.17, to: 0.31 },
+      { text: "Sa'd's mother died while Sa'd was away", from: 0.02, to: 0.15 },
+      { text: "Sa'd: My mother died while I was away", from: 0.17, to: 0.31 },
       { text: "Will it help her if I give charity for her?", from: 0.33, to: 0.47 },
       { text: "He said: yes", from: 0.49, to: 0.63 },
-      { text: "I make you witness: my garden al-Mikhraf", from: 0.65, to: 0.79 },
-      { text: "Is charity for her", from: 0.81, to: 1 }
+      { text: "Sa'd: I make you witness: my garden", from: 0.65, to: 0.79 },
+      { text: "al-Mikhraf is charity for her", from: 0.81, to: 1 }
     ]
   };
 }
@@ -663,22 +663,23 @@ function forgotAndAte(): SignArt {
       { name: "a warm glow on its place", svg: glow(at[0], at[1], 6, WARM, 0.36), keys: showFrom(0.88, 0.93), loop: { move: "twinkle", ms: 1700, low: 0.75 } }
     ],
     words: [
-      { text: "If he forgets, and eats", from: 0.02, to: 0.18 },
+      { text: "If someone forgets, and eats", from: 0.02, to: 0.18 },
       { text: "And drinks", from: 0.2, to: 0.38 },
-      { text: "Let him complete his fast", from: 0.4, to: 0.58 },
-      { text: "For it was Allah who fed him", from: 0.6, to: 0.78 },
-      { text: "And gave him drink", from: 0.8, to: 1 }
+      { text: "Let that person complete the fast", from: 0.4, to: 0.58 },
+      { text: "For it was Allah who fed that person", from: 0.6, to: 0.78 },
+      { text: "And gave that person drink", from: 0.8, to: 1 }
     ]
   };
 }
 
 // The kiss of mercy. Abu Hurairah said: the Messenger of Allah ﷺ kissed al-Hasan ibn Ali while al-Aqra' ibn Habis
-// at-Tamimi was sitting with him. Al-Aqra' said: I have ten children, and I have never kissed one of them. The Messenger
-// of Allah ﷺ looked at him, then said: whoever is not merciful is not shown mercy (Sahih al-Bukhari 5997). No one is
-// drawn: by a home, his place is a golden ring, and a small place, al-Hasan's, is beside it; a warm light comes about
-// the small place. Al-Aqra's place comes and sits with him; its voice speaks, ten small places show as it tells of them,
-// and a cool shade comes over them. His look goes to it as a faint golden line; his voice speaks, and a soft light of
-// mercy comes about his place and the small one.
+// at-Tamimi was sitting with him. Al-Aqra' said: I have ten children, and I have never kissed one of them. The
+// Messenger of Allah ﷺ looked at him, then said: whoever is not merciful is not shown mercy (Sahih al-Bukhari 5997).
+// No one is drawn: by a home, his place is a golden ring, and a small place, al-Hasan's, is beside it; a warm light
+// comes about the small place, while al-Aqra's place already sits with him, as the hadith says; a soft ring comes
+// about it; its voice speaks, ten small places show as it tells of them, and a cool shade comes over them. His look
+// goes to it as a faint golden line; his voice speaks, and a soft light of mercy comes about his place and the small
+// one.
 function kissOfMercy(): SignArt {
   const his: [number, number] = [46, 104.6];
   const hasan: [number, number] = [54.4, 104.4];
@@ -698,20 +699,8 @@ function kissOfMercy(): SignArt {
       { name: "a golden ring, his place", svg: ring(his[0], his[1], 2.6, GOLD) },
       { name: "al-Hasan's small place", svg: someone(hasan[0], hasan[1], 1.1) },
       { name: "a kiss of mercy: a warm light about the small place", svg: lightIn(hasan[0], hasan[1], 3.6), keys: showFrom(0.04, 0.08), loop: { move: "twinkle", ms: 1500, low: 0.7 } },
-      {
-        name: "al-Aqra's place, coming to sit with him",
-        svg: someone(aqra[0], aqra[1], 1.6),
-        keys: track({
-          opacity: [
-            [0.16, 0],
-            [0.165, 1]
-          ],
-          xy: [
-            [0.16, 26, -3],
-            [0.21, 0, 0]
-          ]
-        })
-      },
+      { name: "al-Aqra's place, sitting with him", svg: someone(aqra[0], aqra[1], 1.6) },
+      { name: "sitting with him: a soft ring about al-Aqra's place", svg: care(aqra[0], n(aqra[1] + 0.2), 3.6, 2), keys: showFrom(0.16, 0.2), loop: { move: "twinkle", ms: 1600, low: 0.7 } },
       { name: "al-Aqra's voice: ten, and never kissed", svg: arcsLeft(n(aqra[0] - 2.6), n(aqra[1] - 4), VOICE), keys: showWhile(0.3, 0.31, 0.57, 0.58), loop: { move: "twinkle", ms: 900, low: 0.5 } },
       ...ten.map(
         ([x, y], i): SignPart => ({

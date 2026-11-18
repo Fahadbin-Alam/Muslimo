@@ -103,7 +103,7 @@ function rainDua(): SignArt {
     words: [
       { text: "Whenever he saw the rain", from: 0.02, to: 0.26 },
       { text: "He would say", from: 0.28, to: 0.46 },
-      { text: "Let it be a strong rain", from: 0.48, to: 0.72 },
+      { text: "O Allah, let it be a strong rain", from: 0.48, to: 0.72 },
       { text: "And a fruitful one", from: 0.74, to: 1 }
     ]
   };
@@ -328,8 +328,8 @@ function cloudAndGarden(): SignArt {
       { text: "One in the wilderness heard a voice", from: 0.02, to: 0.16 },
       { text: "In a cloud: water so-and-so's garden", from: 0.18, to: 0.32 },
       { text: "It poured its water on stony ground", from: 0.34, to: 0.48 },
-      { text: "He followed the water to one in his garden", from: 0.5, to: 0.66 },
-      { text: "A third I give, a third we eat", from: 0.68, to: 0.83 },
+      { text: "The man followed the water to a gardener", from: 0.5, to: 0.66 },
+      { text: "Gardener: A third I give, a third we eat", from: 0.68, to: 0.83 },
       { text: "And a third I put back into it", from: 0.85, to: 1 }
     ]
   };
@@ -338,12 +338,14 @@ function cloudAndGarden(): SignArt {
 // Praying in one's home on a cold night. Nafi' said: Ibn Umar called the adhan for the prayer on a night of cold and
 // wind, then said: pray in your homes. Then he said: the Messenger of Allah ﷺ used to tell the caller, on a night of
 // cold and rain, to say: pray in your homes (Sahih al-Bukhari 666). No one is drawn: on a cold night, wind blows over
-// the homes, and Ibn Umar's place stands on a rise. His voice calls the adhan, and its call spreads; he says: pray in
-// your homes, and a warm light comes in each home. Then his place, a golden ring, comes by the rise, and a golden way
-// goes from it to the caller; drops fall on the cold night; the caller's voice speaks, and from each home a spark of
-// prayer rises.
+// the homes, and Ibn Umar's place stands on a rise. Ibn Umar's voice calls the adhan, and its call spreads; then
+// pray in your homes, and a warm light comes in each home. Then his place, a golden ring, comes by the rise with the
+// place of his caller beside it, not Ibn Umar's, and a golden way goes from the ring to that caller; drops fall on the
+// cold night; his caller's voice speaks, and from each home a spark of prayer rises.
 function prayInYourHomes(): SignArt {
   const caller: [number, number] = [30, 91.6];
+  // His caller, in his time: beside the golden ring, on the land before the rise.
+  const told: [number, number] = [34, 106];
   const homes: [number, number, number, number][] = [
     [72, 100, 16, 11],
     [96, 103, 16, 11],
@@ -380,13 +382,14 @@ function prayInYourHomes(): SignArt {
       { name: "Ibn Umar's voice: the adhan, then pray in your homes", svg: arcs(33, 89.4), keys: showWhile(0.2, 0.23, 0.5, 0.53), loop: speaking },
       { name: "the adhan: its call spreading", svg: `<circle cx="${caller[0]}" cy="${caller[1]}" r="12" stroke="#F3E3C0" stroke-width="0.5" fill="none" opacity="0.6"/>`, origin: { x: caller[0], y: caller[1] }, keys: { at: [0, 0.21, 0.26, 0.28], scale: [0.2, 0.2, 1, 1], opacity: [0, 0, 1, 0] } },
       { name: "a golden ring, his place", svg: ring(12, 104.4, 2.4, GOLD) + glow(12, 104.4, 4, WARM, 0.2), keys: showFrom(0.51, 0.54) },
-      { name: "he told the caller: a golden way to the caller", svg: way("M14.4 102.2 Q20 94 27.4 92.6", "#E8C25A", 0.9), keys: showFrom(0.55, 0.59) },
+      { name: "his caller's place, by him", svg: someone(told[0], told[1], 1.6, LIGHT), keys: showFrom(0.51, 0.54) },
+      { name: "he told the caller: a golden way to the caller", svg: way(`M14.8 104.8 Q24 101.4 ${n(told[0] - 2.6)} ${n(told[1] - 0.8)}`, "#E8C25A", 0.9), keys: showFrom(0.55, 0.59) },
       { name: "his voice: tell them", svg: arcs(14.6, 100.2, "#E8C25A"), keys: showWhile(0.53, 0.56, 0.66, 0.69), loop: speaking },
       ...shower("a night of cold and wet: drops falling", 0, 160, 36, 104, showFrom(0.68, 0.72), 0, "#9DC0E0"),
       { name: "dark clouds", svg: clouds("#2E3A5C"), loop: { move: "slide", ms: 12000 } },
       { name: "a cold, wet night: the clouds grow heavy", svg: clouds("#3E4A6A"), keys: showFrom(0.67, 0.72), loop: { move: "slide", ms: 12000 } },
       { name: "the cold wind blowing", svg: GUSTS, keys: showFrom(0.03, 0.08), loop: { move: "slide", ms: 2400 } },
-      { name: "the caller's voice: pray in your homes", svg: arcs(33, 89.4), keys: showFrom(0.84, 0.87), loop: speaking },
+      { name: "the caller's voice: pray in your homes", svg: arcs(n(told[0] + 3.4), n(told[1] - 3.4)), keys: showFrom(0.84, 0.87), loop: speaking },
       ...doors.map(([x, y], i): SignPart => spark(`praying at home: a spark rising from a home ${i + 1}`, x, n(y - 6), at3(0.87 + i * 0.015), at3(0.91 + i * 0.015)))
     ],
     words: [
@@ -470,7 +473,7 @@ function houseForRainAndSun(): SignArt {
       { name: "none helped him: a soft golden ring about his place", svg: ring(130, 104, 4.4, "#E8C25A"), keys: showFrom(0.82, 0.88), loop: soft }
     ],
     words: [
-      { text: "In his lifetime, I built a house", from: 0.02, to: 0.24 },
+      { text: "Ibn Umar: In his lifetime, I built a house", from: 0.02, to: 0.24 },
       { text: "To shelter me from the rain", from: 0.26, to: 0.48 },
       { text: "And shade me from the sun", from: 0.5, to: 0.72 },
       { text: "None of Allah's creation helped me", from: 0.74, to: 1 }
@@ -531,9 +534,9 @@ function sheepOnTheHills(): SignArt {
     ],
     words: [
       { text: "Soon a man's best wealth will be sheep", from: 0.02, to: 0.24 },
-      { text: "He follows them to the mountain tops", from: 0.26, to: 0.48 },
+      { text: "The man follows them to the mountain tops", from: 0.26, to: 0.48 },
       { text: "And to where the rain falls", from: 0.5, to: 0.72 },
-      { text: "Fleeing with his faith from trials", from: 0.74, to: 1 }
+      { text: "Fleeing with one's faith from trials", from: 0.74, to: 1 }
     ]
   };
 }

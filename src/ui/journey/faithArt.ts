@@ -168,7 +168,7 @@ function freedBilal(): SignArt {
     words: [
       { text: "Umar used to say:", from: 0.02, to: 0.23 },
       { text: "Abu Bakr is our master", from: 0.25, to: 0.48 },
-      { text: "And he freed our master", from: 0.5, to: 0.73 },
+      { text: "And Abu Bakr freed our master", from: 0.5, to: 0.73 },
       { text: "Meaning Bilal", from: 0.75, to: 1 }
     ]
   };
@@ -465,7 +465,7 @@ function greatestAyah(): SignArt {
     ],
     words: [
       { text: "O Abu al-Mundhir, which ayah is greatest?", from: 0.02, to: 0.15 },
-      { text: "I said: Allah and His Messenger know best", from: 0.17, to: 0.31 },
+      { text: "Ubayy: Allah and His Messenger know best", from: 0.17, to: 0.31 },
       { text: "He asked again: which ayah is greatest?", from: 0.33, to: 0.47 },
       { text: "I said: Allah, there is no god but He", from: 0.49, to: 0.63 },
       { text: "The Living, the Eternal", from: 0.65, to: 0.79 },

@@ -472,10 +472,10 @@ function tieCamel(): SignArt {
       )
     ],
     words: [
-      { text: "A man came, with his camel", from: 0.02, to: 0.18 },
+      { text: "Anas: a man asked about a camel", from: 0.02, to: 0.18 },
       { text: "Shall I leave it loose, and trust Allah?", from: 0.2, to: 0.4 },
       { text: "Tie it, and trust Allah", from: 0.42, to: 0.62 },
-      { text: "Do your part, then trust Him", from: 0.64, to: 1 }
+      { text: "Do your part, then trust Allah", from: 0.64, to: 1 }
     ]
   };
 }
@@ -921,7 +921,7 @@ function jarOfGold(): SignArt {
       { text: "And found in it a jar of gold", from: 0.18, to: 0.32 },
       { text: "Take your gold: I bought only the land", from: 0.34, to: 0.5 },
       { text: "I sold you the land, and all in it", from: 0.52, to: 0.66 },
-      { text: "Marry the girl to the boy", from: 0.68, to: 0.82 },
+      { text: "Their judge: marry the girl to the boy", from: 0.68, to: 0.82 },
       { text: "Spend on them, and give the rest in charity", from: 0.84, to: 1 }
     ]
   };

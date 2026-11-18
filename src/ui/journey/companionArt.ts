@@ -206,9 +206,9 @@ function tabuk(): SignArt {
     ],
     words: [
       { text: "Never stronger, never richer", from: 0.02, to: 0.16 },
-      { text: "He kept delaying, and the army left", from: 0.18, to: 0.32 },
-      { text: "He told the plain truth", from: 0.34, to: 0.48 },
-      { text: "Fifty nights, no one spoke to him", from: 0.5, to: 0.64 },
+      { text: "Ka'b: I kept delaying, and the army left", from: 0.18, to: 0.32 },
+      { text: "Ka'b: I told him the plain truth", from: 0.34, to: 0.48 },
+      { text: "Ka'b: Fifty nights, no one spoke to me", from: 0.5, to: 0.64 },
       { text: "A king's letter went into the oven", from: 0.66, to: 0.82 },
       { text: "O Ka'b ibn Malik, be happy!", from: 0.84, to: 1 }
     ]
@@ -376,9 +376,9 @@ function thawr(): SignArt {
 // and on the dry by Allah's decree? Then Abd ar-Rahman ibn Awf came, and said he heard the Prophet ﷺ say: if you hear
 // of it in a land, do not go to it; and if it breaks out in a land you are in, do not leave it, fleeing from it (Sahih
 // al-Bukhari 5729). No one is drawn: a way comes to the tents at Sargh, and ways come to it from Sham; a sickly haze
-// settles over Sham; voices at the tents in turn; a night, the morning sun, and the way back; a valley with a green
-// side and a dry side, and camels grazing the green; then a way comes with the hadith, the land of the plague is
-// ringed, a way toward it stops outside, and the ways inside stay in.
+// settles over Sham; voices at the tents in turn; a night, and the morning sun; a valley with a green side and a dry
+// side, and camels grazing the green; then a way comes with the hadith, the land of the plague is ringed, a way toward
+// it stops outside, and the ways inside stay in; last, once the hadith is told, the way back to Madinah.
 function plague(): SignArt {
   const hills = peaks(
     [
@@ -480,7 +480,7 @@ function plague(): SignArt {
       { name: "the counsel of the elders of Quraysh: go back", svg: arcsLeft(82, 81.6), keys: showWhile(0.43, 0.44, 0.49, 0.5), loop: { move: "twinkle", ms: 600, low: 0.5 } },
       { name: "a night at Sargh", svg: `<rect width="160" height="120" fill="${NIGHT}" opacity="0.6"/>`, keys: { at: [0, 0.5, 0.515, 0.54, 0.56], opacity: [0, 0, 1, 1, 0] } },
       { name: "the morning sun, rising", svg: `${glow(22, 46, 10, "#FFE2B0", 0.14)}<circle cx="22" cy="46" r="5" fill="#FFD27A"/>`, keys: { at: [0, 0.54, 0.58], opacity: [0, 0, 1], y: [10, 10, 0] } },
-      ...back.map((d, i) => ({ name: `the way back to Madinah, part ${i + 1}`, svg: way(d, BROWN, 1.1), keys: showFrom(at3(0.578 + i * 0.012), at3(0.59 + i * 0.012)) })),
+      ...back.map((d, i) => ({ name: `the way back to Madinah, part ${i + 1}`, svg: way(d, BROWN, 1.1), keys: showFrom(at3(0.936 + i * 0.012), at3(0.946 + i * 0.012)) })),
       { name: "a valley's green side", svg: greenSide, keys: showFrom(0.66, 0.69) },
       { name: "a valley's dry side", svg: drySide, keys: showFrom(0.66, 0.69) },
       { name: "the valley's dry bed", svg: bed, keys: showFrom(0.66, 0.69) },
@@ -503,9 +503,9 @@ function plague(): SignArt {
     words: [
       { text: "At Sargh, on the way to Sham", from: 0.02, to: 0.16 },
       { text: "Plague had broken out in Sham", from: 0.18, to: 0.32 },
-      { text: "He asked them all for counsel", from: 0.34, to: 0.48 },
+      { text: "Umar asked them all for counsel", from: 0.34, to: 0.48 },
       { text: "We will go back in the morning", from: 0.5, to: 0.64 },
-      { text: "From Allah's decree to Allah's decree", from: 0.66, to: 0.82 },
+      { text: "Umar: from Allah's decree to His decree", from: 0.66, to: 0.82 },
       { text: "Do not go to it, nor flee from it", from: 0.84, to: 1 }
     ]
   };

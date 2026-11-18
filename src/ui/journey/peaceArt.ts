@@ -349,7 +349,7 @@ function archersOfAslam(): SignArt {
       { text: "Shoot, I am with the sons of so-and-so", from: 0.38, to: 0.485 },
       { text: "So one of the two sides held back", from: 0.5, to: 0.605 },
       { text: "Why do you not shoot?", from: 0.62, to: 0.725 },
-      { text: "How can we shoot, when you are with them?", from: 0.74, to: 0.845 },
+      { text: "They said: How, when you are with them?", from: 0.74, to: 0.845 },
       { text: "Shoot, and I am with you all", from: 0.86, to: 1 }
     ]
   };
@@ -583,13 +583,13 @@ function halfTheDebt(): SignArt {
       { name: "a warm glow about them both", svg: glow(83, 104, 18, WARM, 0.24), keys: showAt(0.93, 0.96), loop: soft }
     ],
     words: [
-      { text: "In the masjid, Ka'b asked for his debt", from: 0.02, to: 0.13 },
+      { text: "In the masjid, Ka'b asked for a debt", from: 0.02, to: 0.13 },
       { text: "Their voices rose; he heard them at home", from: 0.15, to: 0.27 },
       { text: "He lifted the curtain of his room", from: 0.29, to: 0.41 },
-      { text: "O Ka'b! He said: at your service", from: 0.43, to: 0.55 },
+      { text: "O Ka'b! Ka'b said: at your service", from: 0.43, to: 0.55 },
       { text: "He pointed: drop half of the debt", from: 0.57, to: 0.69 },
       { text: "Ka'b said: I have done so", from: 0.71, to: 0.83 },
-      { text: "Get up and pay him", from: 0.85, to: 1 }
+      { text: "He told Ibn Abi Hadrad: get up and pay", from: 0.85, to: 1 }
     ]
   };
 }
@@ -820,7 +820,7 @@ function betterThanAServant(): SignArt {
     words: [
       { text: "Fatimah complained of the hand mill", from: 0.02, to: 0.125 },
       { text: "She went to him, but did not find him", from: 0.14, to: 0.255 },
-      { text: "He came to us when we had gone to bed", from: 0.27, to: 0.375 },
+      { text: "Ali: He came to us when we had gone to bed", from: 0.27, to: 0.375 },
       { text: "Shall I teach you better than you asked?", from: 0.39, to: 0.495 },
       { text: "In bed: Allahu akbar, thirty-four times", from: 0.51, to: 0.615 },
       { text: "Subhanallah, thirty-three times", from: 0.63, to: 0.735 },
@@ -919,13 +919,13 @@ function thumamahFreed(): SignArt {
       { name: "a warm glow about them both", svg: glow(n((by[0] + tied[0] - 5) / 2), 104, 10, WARM, 0.32), keys: showAt(0.88, 0.92), loop: soft }
     ],
     words: [
-      { text: "They tied him to a pillar of the masjid", from: 0.02, to: 0.13 },
+      { text: "They tied Thumamah to a masjid pillar", from: 0.02, to: 0.13 },
       { text: "What do you have, Thumamah?", from: 0.15, to: 0.29 },
       { text: "Till the next day, and the day after", from: 0.31, to: 0.43 },
       { text: "Then he said: set Thumamah free", from: 0.45, to: 0.56 },
-      { text: "He washed at palms near the masjid", from: 0.58, to: 0.69 },
-      { text: "He came in: I testify, no god but Allah", from: 0.71, to: 0.83 },
-      { text: "Your face is now the dearest face to me", from: 0.85, to: 1 }
+      { text: "Thumamah washed at palms near the masjid", from: 0.58, to: 0.69 },
+      { text: "Thumamah: I testify, no god but Allah", from: 0.71, to: 0.83 },
+      { text: "Thumamah: your face is now dearest to me", from: 0.85, to: 1 }
     ]
   };
 }

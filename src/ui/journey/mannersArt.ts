@@ -122,11 +122,11 @@ function permission(): SignArt {
     ],
     words: [
       { text: "At Umar's door", from: 0.02, to: 0.16 },
-      { text: "He asked permission once", from: 0.18, to: 0.32 },
+      { text: "Abu Musa asked permission once", from: 0.18, to: 0.32 },
       { text: "Then a second time", from: 0.34, to: 0.48 },
       { text: "A third time: no permission given", from: 0.5, to: 0.64 },
-      { text: "So he went back", from: 0.66, to: 0.82 },
-      { text: "The youngest went with him as witness", from: 0.84, to: 1 }
+      { text: "So Abu Musa went back", from: 0.66, to: 0.82 },
+      { text: "The youngest went with Abu Musa as witness", from: 0.84, to: 1 }
     ]
   };
 }
@@ -354,10 +354,11 @@ function wetGrain(): SignArt {
 
 // The well of Rumah. Uthman reminded them that the Prophet ﷺ said: whoever digs the well of Rumah will have Paradise,
 // and he dug it; and he ﷺ said: whoever equips the army of hardship will have Paradise, and he equipped it; and they
-// bore witness to what he said (Sahih al-Bukhari 2778, in its chapter: whoever buys the well of Rumah, his bucket in it
-// is like the buckets of the Muslims, and Uthman bought it). No one is drawn: a dashed way comes to the place of the
-// well and it is dug, and its water rises; ways come to it, and buckets come up full; camels for the army come, and a
-// dashed way comes to them, and saddles and packs are on them; then sparks rise from the well and from the camels.
+// bore witness to what he said (Sahih al-Bukhari 2778). Its water was for all: no one could drink from it without
+// paying until Uthman bought it and made it for the rich, the poor and the wayfarer (Jami at-Tirmidhi 3699). No one is
+// drawn: a dashed way comes to the place of the well and it is dug, and its water rises; ways come to it, and buckets
+// come up full; camels for the army come, and a dashed way comes to them, and saddles and packs are on them; then
+// sparks rise from the well and from the camels.
 
 /** A bucket full of water, its foot's middle at (x, y). */
 const bucket = (x: number, y: number) =>
@@ -611,8 +612,8 @@ function riverAtTheDoor(): SignArt {
       { text: "If a river ran by your door", from: 0.02, to: 0.18 },
       { text: "And you bathed in it five times a day", from: 0.2, to: 0.4 },
       { text: "Would any dirt be left on you?", from: 0.42, to: 0.6 },
-      { text: "Not a trace of dirt would be left", from: 0.62, to: 0.8 },
-      { text: "By the five prayers, Allah wipes out sins", from: 0.82, to: 1 }
+      { text: "They said: No trace of dirt would be left", from: 0.62, to: 0.8 },
+      { text: "He said: By five prayers Allah wipes sins", from: 0.82, to: 1 }
     ]
   };
 }

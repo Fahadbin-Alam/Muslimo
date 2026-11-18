@@ -424,7 +424,7 @@ function tenBlessings(): SignArt {
     ],
     words: [
       { text: "Whoever sends blessings on me once", from: 0.02, to: 0.45 },
-      { text: "Allah sends blessings on him ten times", from: 0.5, to: 1 }
+      { text: "Allah blesses that person ten times", from: 0.5, to: 1 }
     ]
   };
 }
@@ -642,9 +642,9 @@ function learnFromFour(): SignArt {
       )
     ],
     words: [
-      { text: "A man I still love, since I heard him say", from: 0.02, to: 0.17 },
-      { text: "Learn to recite the Quran from four", from: 0.19, to: 0.34 },
-      { text: "Abdullah ibn Mas'ud, and he began with him", from: 0.36, to: 0.53 },
+      { text: "Ibn Amr: I still love Ibn Mas'ud", from: 0.02, to: 0.17 },
+      { text: "I heard him say: learn the Quran from four", from: 0.19, to: 0.34 },
+      { text: "Abdullah ibn Mas'ud, whom he named first", from: 0.36, to: 0.53 },
       { text: "And Salim, freed slave of Abu Hudhayfah", from: 0.55, to: 0.72 },
       { text: "And Ubayy ibn Ka'b, and Mu'adh ibn Jabal", from: 0.74, to: 1 }
     ]
@@ -764,7 +764,7 @@ function youngIbnAbbas(): SignArt {
     words: [
       { text: "Umar brought me in with the elders of Badr", from: 0.02, to: 0.13 },
       { text: "Some said: why him? We have sons like him", from: 0.15, to: 0.27 },
-      { text: "He asked about: When Allah's help comes", from: 0.29, to: 0.41 },
+      { text: "Umar asked about Surah an-Nasr", from: 0.29, to: 0.41 },
       { text: "Some said: we are to praise, ask forgiveness", from: 0.43, to: 0.55 },
       { text: "Some kept quiet and said nothing", from: 0.57, to: 0.69 },
       { text: "I said: it is his life's end, made known to him", from: 0.71, to: 0.83 },

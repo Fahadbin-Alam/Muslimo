@@ -315,7 +315,7 @@ function tiredCamel(): SignArt {
       { text: "He struck it and made du'a for it", from: 0.16, to: 0.27 },
       { text: "It went as it had never gone before", from: 0.29, to: 0.41 },
       { text: "Sell it to me for an uqiyah", from: 0.43, to: 0.55 },
-      { text: "I sold it, and rode it to my family", from: 0.57, to: 0.69 },
+      { text: "Jabir: I sold it, and rode it to my family", from: 0.57, to: 0.69 },
       { text: "He paid me its price", from: 0.71, to: 0.83 },
       { text: "Take your camel: it is your wealth", from: 0.85, to: 1 }
     ]
@@ -962,7 +962,7 @@ function camelIsYours(): SignArt {
       { name: "given: a warm glow about the young camel", svg: wash(at, 97, 13, 9, WARM, 0.16), keys: showAt(0.82, 0.85), loop: soft }
     ],
     words: [
-      { text: "We were with him on a journey", from: 0.02, to: 0.18 },
+      { text: "Ibn Umar: We were with him on a journey", from: 0.02, to: 0.18 },
       { text: "I was on a young camel, hard to handle", from: 0.2, to: 0.4 },
       { text: "He said to Umar: sell it to me", from: 0.42, to: 0.6 },
       { text: "So he bought it", from: 0.62, to: 0.76 },
@@ -1080,7 +1080,7 @@ function searchAtArafah(): SignArt {
       { name: "here: a soft dashed ring about the plain of Arafah", svg: care(124, 101, 36, 8, SOFT_GOLD), keys: showAt(0.83, 0.86), loop: soft }
     ],
     words: [
-      { text: "I lost a camel of mine", from: 0.02, to: 0.18 },
+      { text: "Jubair: I lost a camel of mine", from: 0.02, to: 0.18 },
       { text: "I looked for it on the day of Arafah", from: 0.2, to: 0.4 },
       { text: "I saw him standing at Arafah", from: 0.42, to: 0.62 },
       { text: "By Allah, this one is of the Hums", from: 0.64, to: 0.8 },

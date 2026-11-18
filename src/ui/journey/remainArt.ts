@@ -199,7 +199,7 @@ function forgottenTree(): SignArt {
       { text: "Sa'id said: my father was one who pledged", from: 0.39, to: 0.505 },
       { text: "My father said: next year, we forgot it", from: 0.52, to: 0.635 },
       { text: "and we could not recognize it", from: 0.65, to: 0.755 },
-      { text: "Sa'id said: they did not know it", from: 0.77, to: 0.875 },
+      { text: "Sa'id: the Companions did not know it", from: 0.77, to: 0.875 },
       { text: "yet you know it, so you know better!", from: 0.89, to: 1 }
     ]
   };
@@ -290,7 +290,7 @@ function caveAtMina(): SignArt {
       { name: "saved: a soft ring about the folk", svg: care(80, 99.4, 17, 2.8, SOFT_GOLD), keys: showAt(0.89, 0.91), loop: soft }
     ],
     words: [
-      { text: "We were in a cave at Mina", from: 0.02, to: 0.125 },
+      { text: "Ibn Mas'ud: We were in a cave at Mina", from: 0.02, to: 0.125 },
       { text: "when Al-Mursalat was revealed to him", from: 0.14, to: 0.255 },
       { text: "He was reciting it, and I took it from him", from: 0.27, to: 0.385 },
       { text: "Suddenly a snake sprang at us", from: 0.4, to: 0.505 },
@@ -798,7 +798,7 @@ function carpetsWillCome(): SignArt {
     ],
     words: [
       { text: "He asked: have you got carpets?", from: 0.02, to: 0.125 },
-      { text: "I said: where would we get carpets?", from: 0.14, to: 0.245 },
+      { text: "Jabir: I said: where would we get carpets?", from: 0.14, to: 0.245 },
       { text: "He said: you shall soon have carpets", from: 0.26, to: 0.365 },
       { text: "I would say to my wife:", from: 0.38, to: 0.5 },
       { text: "take your carpets out of my sight", from: 0.515, to: 0.62 },

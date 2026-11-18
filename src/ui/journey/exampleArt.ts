@@ -5,6 +5,9 @@ import { arcs, BROWN, landOf } from "./mannersArt";
 import { at3, showFrom } from "./storyArt";
 import { home } from "./trialArt";
 import { quickSparks, shownWhile, track } from "./toldArt";
+import { someone, wash } from "./worshipArt";
+import { care } from "./daysArt";
+import { greyRing } from "./fastArt";
 import { THING_ART, type ThingKind } from "../lesson/thingArt";
 
 /**
@@ -334,10 +337,10 @@ function forgivingTrader(): SignArt {
     ],
     words: [
       { text: "A trader used to lend to people", from: 0.02, to: 0.22 },
-      { text: "When one in hardship could not pay him back", from: 0.24, to: 0.42 },
-      { text: "He told his helpers: let him off", from: 0.44, to: 0.6 },
+      { text: "When a debtor in hardship could not pay", from: 0.24, to: 0.42 },
+      { text: "The trader told helpers: let debtors off", from: 0.44, to: 0.6 },
       { text: "So that Allah may let us off", from: 0.62, to: 0.78 },
-      { text: "And Allah forgave him", from: 0.8, to: 1 }
+      { text: "And Allah forgave the trader", from: 0.8, to: 1 }
     ]
   };
 }
@@ -825,13 +828,13 @@ function bendingPlant(): SignArt {
 }
 
 // The living and the dead. The Prophet ﷺ said: the likeness of one who remembers his Lord and one who does not
-// remember Him is that of the living and the dead (Sahih al-Bukhari 6407). No one is drawn: at dusk, a voice remembers
-// in one home, and sparks rise from it; a dashed way goes into the other home, where no voice is heard. The home that
-// remembers comes alive: its lamp burns bright, its door glows, and sparks rise and stay over it; the other home's
-// lamp goes out, and it stands dark and still.
+// remember Him is that of the living and the dead (Sahih al-Bukhari 6407). No one is drawn: at dusk, two places stand
+// on the land. A voice remembers by one of them, and sparks rise from it; by the other no voice is heard, and a faint
+// grey ring comes about it. Then a warm glow and a soft golden ring come about the place that remembers, and life rises
+// and stays over it; the other place grows dim, with a grey haze about it, and stands still.
 function remember(): SignArt {
-  const pane = (x: number) => `<rect x="${x}" y="74" width="7" height="7" fill="#4A3424"/>`;
-  const lamp = (x: number) => `<rect x="${x}" y="74" width="7" height="7" fill="#FFD66B"/><path d="M${x + 3.5} 74 L${x + 3.5} 81 M${x} 77.5 L${x + 7} 77.5" stroke="#6B4A2E" stroke-width="0.6"/>`;
+  const rememberer: [number, number] = [50, 98];
+  const other: [number, number] = [112, 98];
   return {
     kind: "remember",
     ms: 11000,
@@ -865,66 +868,60 @@ function remember(): SignArt {
           "#D9BF8E"
         )
       },
-      { name: "the home that remembers", svg: home(44, 92, 34, 24) + pane(49) },
-      { name: "the other home", svg: home(116, 92, 34, 24, "#CFA66F", "#B88A58") + pane(121) },
       {
-        name: "its warmth, all around",
-        svg: glow(48, 80, 28, "#FFD98A", 0.14),
+        name: "the living: a warm glow about the place that remembers",
+        svg: glow(rememberer[0], rememberer[1] - 3, 18, "#FFD98A", 0.16),
         keys: showFrom(0.44, 0.48)
       },
+      { name: "the place of one who remembers", svg: someone(rememberer[0], rememberer[1], 1.8) },
       {
-        name: "the lamp in the home that remembers",
-        svg: lamp(49),
+        name: "the place of one who does not remember",
+        svg: someone(other[0], other[1], 1.8),
         keys: track({
           opacity: [
-            [0.43, 0.55],
-            [0.47, 1]
+            [0.72, 1],
+            [0.78, 0.45]
           ]
         })
       },
-      { name: "its door, glowing", svg: `<path d="M40.4 92 L40.4 86.6 Q42.2 84.4 44 86.6 L44 92 Z" fill="#FFC85A"/>`, keys: showFrom(0.45, 0.48) },
-      {
-        name: "the lamp in the other home",
-        svg: lamp(121),
-        keys: track({
-          opacity: [
-            [0.7, 0.55],
-            [0.74, 0]
-          ]
-        })
-      },
-      { name: "a voice, remembering", svg: arcs(57.6, 77.4), keys: showFrom(0.04, 0.05), loop: { move: "twinkle", ms: 1400, low: 0.45 } },
+      { name: "a voice, remembering", svg: arcs(n(rememberer[0] + 3.4), n(rememberer[1] - 3.4)), keys: showFrom(0.04, 0.05), loop: { move: "twinkle", ms: 1400, low: 0.45 } },
       ...risingSparks(
         "remembrance, rising",
         [
-          [54, 70],
-          [60, 66],
-          [48, 66]
+          [50, 91],
+          [56, 88],
+          [44, 88]
         ],
         0.06,
         0.02,
         { rise: 22 }
       ),
-      { name: "a way into the other home", svg: way("M160 108 C146 106 128 100 115 93", BROWN), keys: showFrom(0.23, 0.27) },
+      { name: "no voice by the other place: a faint grey ring about it", svg: greyRing(other[0], n(other[1] + 0.4), 4.4, 2.2), keys: showFrom(0.23, 0.27) },
+      {
+        name: "alive: a soft golden ring about it",
+        svg: care(rememberer[0], n(rememberer[1] + 0.4), 4.4, 2.2),
+        keys: showFrom(0.45, 0.48),
+        loop: { move: "twinkle", ms: 1600, low: 0.7 }
+      },
       ...risingSparks(
-        "life in it, rising",
+        "life about it, rising",
         [
-          [52, 70],
-          [58, 64],
-          [46, 64],
-          [55, 58]
+          [48, 91],
+          [54, 87],
+          [44, 86],
+          [51, 83]
         ],
         0.48,
         0.02,
         { stay: true, rise: 16 }
       ),
       {
-        name: "the other home, dark and still",
-        svg: `<rect x="99" y="66" width="34" height="26" fill="#2A2238"/>`,
+        name: "the dead: a grey haze about the other place",
+        svg: wash(other[0], n(other[1] - 1), 8, 4.6, "#6E6E6E", 0.14),
         keys: track({
           opacity: [
             [0.71, 0],
-            [0.77, 0.35]
+            [0.77, 1]
           ]
         })
       }

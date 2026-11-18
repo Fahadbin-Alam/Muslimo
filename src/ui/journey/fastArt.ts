@@ -210,7 +210,7 @@ function suhurTwoCalls(): SignArt {
       { text: "Bilal calls the adhan at night", from: 0.02, to: 0.18 },
       { text: "So eat and drink", from: 0.2, to: 0.36 },
       { text: "Until Ibn Umm Maktum calls the adhan", from: 0.38, to: 0.56 },
-      { text: "He would not call until he was told", from: 0.58, to: 0.76 },
+      { text: "Salim: Ibn Umm Maktum waited to be told", from: 0.58, to: 0.76 },
       { text: "Morning has come, morning has come", from: 0.78, to: 1 }
     ]
   };
@@ -477,7 +477,7 @@ function generousWind(): SignArt {
       { text: "He was the most generous of people", from: 0.02, to: 0.16 },
       { text: "And most generous in Ramadan", from: 0.18, to: 0.32 },
       { text: "Jibril met him every night of Ramadan", from: 0.34, to: 0.5 },
-      { text: "He recited the Quran to him", from: 0.52, to: 0.66 },
+      { text: "He recited the Quran to Jibril", from: 0.52, to: 0.66 },
       { text: "More generous than the blowing wind", from: 0.68, to: 1 }
     ]
   };
@@ -543,9 +543,9 @@ function fastOnAJourney(): SignArt {
       { name: "together: a golden ring of care about them all", svg: care(108, 105, 22, 3.8), keys: showFrom(0.86, 0.9) }
     ],
     words: [
-      { text: "Shall I fast on a journey?", from: 0.02, to: 0.16 },
+      { text: "Hamzah: Shall I fast on a journey?", from: 0.02, to: 0.16 },
       { text: "Fast if you wish, or do not if you wish", from: 0.18, to: 0.36 },
-      { text: "We traveled with him", from: 0.38, to: 0.5 },
+      { text: "Anas: We traveled with him", from: 0.38, to: 0.5 },
       { text: "One fasting did not blame one not fasting", from: 0.52, to: 0.74 },
       { text: "Nor one not fasting blame one fasting", from: 0.76, to: 1 }
     ]
@@ -602,7 +602,7 @@ function fridayAlone(): SignArt {
       { name: "two days together: a warm glow over them", svg: wash(130, n(y - 9), 22, 12, WARM, 0.14), keys: showFrom(0.87, 0.9), loop: soft }
     ],
     words: [
-      { text: "Did he forbid fasting on Friday? Yes", from: 0.02, to: 0.24 },
+      { text: "Jabir: yes, he forbade fasting on Friday", from: 0.02, to: 0.24 },
       { text: "None of you should fast on Friday", from: 0.26, to: 0.46 },
       { text: "Unless with a day before it", from: 0.48, to: 0.72 },
       { text: "Or a day after it", from: 0.74, to: 1 }
@@ -722,7 +722,7 @@ function falseSpeech(): SignArt {
       { text: "Whoever does not leave false speech", from: 0.02, to: 0.26 },
       { text: "And acting on it", from: 0.28, to: 0.46 },
       { text: "Allah has no need", from: 0.48, to: 0.66 },
-      { text: "That he leave his food and drink", from: 0.68, to: 1 }
+      { text: "That such a one leave food and drink", from: 0.68, to: 1 }
     ]
   };
 }

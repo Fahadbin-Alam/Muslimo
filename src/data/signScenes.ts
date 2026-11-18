@@ -1013,7 +1013,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-two-gardens",
     kind: "twoGardens",
     caption:
-      "A man had two gardens of grapes, with palms all around them, crops between them and a river flowing between them. But he grew proud and forgot his Lord, and all his fruit was destroyed, his vines fallen on their trellises.",
+      "A man had two gardens of grapes, with palms all around them, crops between them and a river gushing between them. The man entered his garden, unjust to himself, saying he did not think it would ever perish. Then all his fruit was ruined, his vines collapsed on their trellises, and the man wished he had not associated anyone with his Lord.",
     sources: [quran(18, 32), quran(18, 33), quran(18, 35), quran(18, 42)]
   },
   {
@@ -1200,7 +1200,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-ayyub",
     kind: "ayyub",
     caption:
-      "Ayyub called on his Lord: harm has touched me, and You are the Most Merciful of the merciful. Allah answered him and removed his harm: strike the ground with your foot; here is cool water to wash in and to drink. Once, as he bathed, golden locusts fell on him, and he gathered them, for no one can do without Allah's blessing. Allah found him patient: what an excellent servant; he always turned back to Allah.",
+      "Ayyub called on his Lord: harm has touched me, and You are the Most Merciful of the merciful. Allah answered him and removed his harm: strike the ground with your foot; here is cool water to wash in and to drink. The Prophet ﷺ told that once, as Ayyub bathed, golden locusts fell on him, and he gathered them in his clothes. His Lord called him: O Ayyub, have I not made you free of need of what you see? Ayyub said: yes, by Your might, but I cannot do without Your blessing. Allah found him patient: what an excellent servant; he always turned back to Allah.",
     sources: [quran(21, 83), quran(21, 84), quran(38, 42), bukhari("279"), quran(38, 44)]
   },
   {
@@ -1430,7 +1430,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "rumah",
     caption:
       "The Prophet ﷺ said: whoever digs the well of Rumah will have Paradise, and Uthman dug it, and its water was for all the Muslims. And he ﷺ said: whoever equips the army of hardship will have Paradise, and Uthman equipped it.",
-    sources: [bukhari("2778")]
+    sources: [bukhari("2778"), tirmidhi("3699")]
   },
   {
     id: "sign-river-at-the-door",
@@ -1658,7 +1658,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
   {
     id: "sign-trench-rock",
     kind: "trench-rock",
-    caption: "Digging the trench, they came to a great rock no spade could break. The Prophet ﷺ came, hungry as they were, struck it with the spade, and it became like soft sand.",
+    caption: "Digging the trench, they came upon a great hard rock and told the Prophet ﷺ. He came down, a stone tied to his belly after three days without food, took the spade and struck it, and it became like loose sand.",
     sources: [bukhari("4101")]
   },
   {
@@ -2167,7 +2167,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-house-of-pearl",
     kind: "house-of-pearl",
     caption:
-      "Jibril came to the Prophet ﷺ and said: O Messenger of Allah, this is Khadijah coming to you with a dish of food or drink. When she reaches you, convey to her salam from her Lord and from me, and give her glad tidings of a house in Paradise of qasab, hollow pearl, in which there is no noise and no toil.",
+      "Jibril came to the Prophet ﷺ and said: O Messenger of Allah, this is Khadijah coming to you with a dish of broth, or food, or drink. When she reaches you, convey to her salam from her Lord and from me, and give her glad tidings of a house in Paradise of qasab, in which there is no noise and no toil.",
     sources: [bukhari("3820")]
   },
   {
@@ -2612,7 +2612,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-garden-in-charity",
     kind: "garden-in-charity",
     caption:
-      "Ibn Abbas said: the mother of Sa'd ibn Ubadah died while he was away from her. He said: O Messenger of Allah, my mother died while I was away from her; will it help her if I give anything in charity for her? He said: yes. He said: then I make you witness that my garden al-Mikhraf is charity for her.",
+      "Ibn Abbas said: the mother of Sa'd ibn Ubadah died while Sa'd was away from her. Sa'd said: O Messenger of Allah ﷺ, my mother died while I was away from her; will it help her if I give anything in charity for her? The Prophet ﷺ said: yes. Sa'd said: then I make you witness that my garden al-Mikhraf is charity for her.",
     sources: [bukhari("2756")]
   },
   {
@@ -2728,7 +2728,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-rain-and-stars",
     kind: "rain-and-stars",
     caption:
-      "Zayd ibn Khalid al-Juhani said: the Messenger of Allah ﷺ led us in the Fajr prayer at al-Hudaybiyah, after rain in the night. When he finished, he faced the people and said: do you know what your Lord has said? They said: Allah and His Messenger know best. He said: this morning some of My servants believe in Me and some disbelieve. Whoever said: we were given rain by the grace of Allah and His mercy, believes in Me and disbelieves in the star; and whoever said: by such and such a star, disbelieves in Me and believes in the star.",
+      "Zayd ibn Khalid al-Juhani said: the Messenger of Allah ﷺ led us in the Fajr prayer at al-Hudaybiyah, after rain in the night. When he finished, he faced the people and said: do you know what your Lord has said? They said: Allah and His Messenger know best. He said: Allah has said: this morning some of My servants believe in Me and some disbelieve. Whoever said: we were given rain by the grace of Allah and His mercy, believes in Me and disbelieves in the star; and whoever said: by such and such a star, disbelieves in Me and believes in the star.",
     sources: [bukhari("846")]
   },
   {
@@ -3169,7 +3169,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
   {
     id: "sign-rain-dua",
     kind: "rain-dua",
-    caption: "Aishah said: whenever the Messenger of Allah ﷺ saw the rain, he would say: let it be a strong, fruitful rain.",
+    caption: "Aishah said: whenever the Messenger of Allah ﷺ saw the rain, he would say: O Allah, let it be a strong, fruitful rain.",
     sources: [bukhari("1032")]
   },
   {
@@ -3474,7 +3474,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-cloak-on-the-thorns",
     kind: "cloak-on-the-thorns",
     caption:
-      "Jubair ibn Mut'im said that while he was travelling with the Messenger of Allah ﷺ, with the people, on his way back from Hunayn, the people clung to him, asking him, until they pressed him to a samurah tree, which snatched his cloak. The Prophet ﷺ stopped and said: give me my cloak. If I had camels as many as these thorny trees, I would share them out among you, and then you would not find me a miser, a liar or a coward.",
+      "Jubair ibn Mut'im said that while he was with the Messenger of Allah ﷺ, with the people, coming back from Hunayn, the bedouins clung to the Messenger of Allah ﷺ, asking him, until they pressed him to a samurah tree, which snatched his cloak. The Messenger of Allah ﷺ stopped and said: give me my cloak. If I had camels as many as these thorny trees, I would share them out among you, and then you would not find me a miser, a liar or a coward.",
     sources: [bukhari("2821")]
   },
   {
@@ -4048,7 +4048,7 @@ export const SIGN_SCENES: readonly SignScene[] = [
     id: "sign-kings-on-the-sea",
     kind: "kings-on-the-sea",
     caption:
-      "Anas ibn Malik said: the Messenger of Allah ﷺ used to visit Umm Haram bint Milhan, and she would give him food. Once he slept there, then woke up smiling, and she asked: what makes you smile, O Messenger of Allah? He said: some of my ummah were shown to me, going out in the way of Allah, riding the middle of this sea, like kings on thrones. She said: O Messenger of Allah, pray to Allah to make me one of them, and he prayed for her. Then he slept again and woke up smiling, and she asked again, and he said: you are among the first. Umm Haram sailed the sea in the time of Mu'awiyah ibn Abi Sufyan.",
+      "Anas ibn Malik said: the Messenger of Allah ﷺ used to visit Umm Haram bint Milhan, and she would give him food. Once he slept there, then woke up smiling, and she asked: what makes you smile, O Messenger of Allah? He said: some of my ummah were shown to me, going out in the way of Allah, riding the middle of this sea, like kings on thrones. She said: O Messenger of Allah, pray to Allah to make me one of them, and he prayed for her. Then he slept again and woke up smiling, and she asked again what made him smile, and he told her of the same vision: some of my ummah were shown to me, going out in the way of Allah. She said: O Messenger of Allah, pray to Allah to make me one of them. He said: you are among the first. Umm Haram sailed the sea in the time of Mu'awiyah ibn Abi Sufyan.",
     sources: [bukhari("2788"), bukhari("2924")]
   },
   {

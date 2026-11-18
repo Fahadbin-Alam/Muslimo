@@ -252,7 +252,7 @@ function bestToThePoor(): SignArt {
       { name: "a warm glow about them all", svg: glow(114, 104.4, 8, WARM, 0.27), keys: showAt(0.94, 0.955) }
     ],
     words: [
-      { text: "I pressed my belly to pebbles from hunger", from: 0.02, to: 0.125 },
+      { text: "Abu Hurairah: I pressed my belly to gravel", from: 0.02, to: 0.125 },
       { text: "The best of people to the poor", from: 0.14, to: 0.245 },
       { text: "was Ja'far ibn Abi Talib", from: 0.26, to: 0.375 },
       { text: "Ja'far would take us home and feed us", from: 0.39, to: 0.505 },
@@ -269,8 +269,9 @@ function bestToThePoor(): SignArt {
 // Madinah on the left; on the right, two hills with a pass between them, Thaniyyat al-Wada', and the way from Tabuk
 // coming through it. As-Sa'ib's place and the places of the little ones come out from the homes, small glints of
 // gladness over them, and go along the way toward the pass; a soft golden ring comes about the pass, and they go on to
-// its foot. Then his place, a golden ring, comes through the pass along the way from Tabuk, the places of two with him
-// after it; a warm glow comes about the little ones, welcoming him, and a soft golden ring about his place.
+// its foot. Then his place, a golden ring, comes through the pass along the way from Tabuk; a warm glow comes about the
+// little ones, welcoming him, and a soft golden ring about his place. The hadith does not count those who came back
+// with him, so none are drawn.
 function outToWelcome(): SignArt {
   const going = track({
     opacity: [
@@ -340,20 +341,6 @@ function outToWelcome(): SignArt {
           xy: [
             [0.745, 13, -3.6],
             [0.85, 0, 0]
-          ]
-        })
-      },
-      {
-        name: "the places of two with him",
-        svg: someone(124.6, 99.2) + someone(129.6, 97.8),
-        keys: track({
-          opacity: [
-            [0.79, 0],
-            [0.81, 1]
-          ],
-          xy: [
-            [0.79, 6, -1.6],
-            [0.88, 0, 0]
           ]
         })
       },
@@ -653,7 +640,7 @@ function neverForgot(): SignArt {
       { name: "a warm glow about Abu Hurairah's place", svg: glow(86, 102, 7, WARM, 0.28), keys: showAt(0.94, 0.955) }
     ],
     words: [
-      { text: "I said: I hear many hadith from you", from: 0.02, to: 0.125 },
+      { text: "Abu Hurairah: I hear many hadith from you", from: 0.02, to: 0.125 },
       { text: "but I forget them", from: 0.14, to: 0.245 },
       { text: "He said: spread out your cloak", from: 0.26, to: 0.375 },
       { text: "So I spread it out", from: 0.39, to: 0.505 },
@@ -767,7 +754,7 @@ function twoRewards(): SignArt {
     words: [
       { text: "He said: give, even of your jewellery", from: 0.02, to: 0.125 },
       { text: "Zaynab spent on Abdullah and orphans", from: 0.14, to: 0.245 },
-      { text: "I found a woman of the Ansar at the door", from: 0.26, to: 0.375 },
+      { text: "Zaynab: I met an Ansari woman at the door", from: 0.26, to: 0.375 },
       { text: "Bilal passed by, and we said: ask him", from: 0.39, to: 0.505 },
       { text: "He said: who are they? Bilal said: Zaynab", from: 0.52, to: 0.635 },
       { text: "He said: which Zaynab?", from: 0.65, to: 0.755 },

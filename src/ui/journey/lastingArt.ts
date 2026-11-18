@@ -85,9 +85,10 @@ const thirtyThreeDots = (x: number, y: number, gap: number, fill: string) =>
 // about his rebuilding the masjid of the Messenger of Allah ﷺ: you have talked too much. I heard the Prophet ﷺ say:
 // whoever built a mosque, Allah would build for him a similar place in Paradise; a narrator thought he also said:
 // intending Allah's pleasure (Sahih al-Bukhari 450). No one is drawn: by the masjid of mud brick and palm, someone's
-// place, and the places of those who argued, their crooked voices toward him; a voice from him, and a calm comes on
-// them; the old masjid fades as a masjid of stone rises in its place, row by row; a light of intention within him, and
-// it rises; far off, in a light, a place just like it rises in a garden of Paradise; a golden way from him to it.
+// place, and the places of those who argued, their crooked voices toward him; the builder's voice, and theirs stop;
+// nothing is drawn of how they took it, which the hadith does not tell; the old masjid fades as a masjid of stone rises
+// in its place, row by row; a light of intention within him, and it rises; far off, in a light, a place just like it
+// rises in a garden of Paradise; a golden way from him to it.
 function houseInParadise(): SignArt {
   const builder: [number, number] = [54, 103];
   const arguing: [number, number][] = [
@@ -118,8 +119,7 @@ function houseInParadise(): SignArt {
         keys: showWhile(0.03, 0.05, 0.19, 0.21),
         loop: { move: "twinkle", ms: 800, low: 0.4 }
       },
-      { name: "a voice from him: you have talked too much", svg: arcs(builder[0] + 3.4, builder[1] - 3.6, VOICE), keys: showWhile(0.18, 0.19, 0.33, 0.35), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
-      { name: "a calm over those who argued", svg: wash(81, 104, 15, 4.4, "#FFF6D0", 0.16), keys: showFrom(0.21, 0.25) },
+      { name: "the builder's voice: you have talked too much", svg: arcs(builder[0] + 3.4, builder[1] - 3.6, VOICE), keys: showWhile(0.18, 0.19, 0.33, 0.35), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
       { name: "his intention, a light within", svg: glow(builder[0], builder[1], 3.4, WARM, 0.35), keys: showFrom(0.51, 0.55), loop: { move: "twinkle", ms: 1400, low: 0.7 } },
       {
         name: "his intention, rising",
@@ -166,8 +166,8 @@ function houseInParadise(): SignArt {
     ],
     words: [
       { text: "When people argued too much", from: 0.02, to: 0.15 },
-      { text: "You have talked too much", from: 0.17, to: 0.3 },
-      { text: "Whoever built a mosque", from: 0.32, to: 0.48 },
+      { text: "Uthman: You have talked too much", from: 0.17, to: 0.3 },
+      { text: "He said: Whoever built a mosque", from: 0.32, to: 0.48 },
       { text: "Intending Allah's Pleasure", from: 0.5, to: 0.62 },
       { text: "Allah would build for him", from: 0.64, to: 0.8 },
       { text: "A similar place in Paradise", from: 0.82, to: 1 }

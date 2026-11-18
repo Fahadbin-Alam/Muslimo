@@ -277,13 +277,13 @@ function abuDharrSeeks(): SignArt {
       { name: "kept safe: a ring of care about Abu Dharr's place", svg: care(calling[0], n(calling[1] - 1.6), 6, 3.8), keys: showFrom(0.94, 0.97) }
     ],
     words: [
-      { text: "His brother said: he enjoins good character", from: 0.02, to: 0.13 },
-      { text: "He took his waterskin and came to Makkah", from: 0.15, to: 0.27 },
-      { text: "Ali saw him, and knew he was a stranger", from: 0.29, to: 0.41 },
-      { text: "Follow me, and enter where I enter", from: 0.43, to: 0.55 },
-      { text: "He heard him, and became Muslim at once", from: 0.57, to: 0.69 },
-      { text: "He called out the shahadah at the masjid", from: 0.71, to: 0.83 },
-      { text: "Al-Abbas knelt over him: he is of Ghifar", from: 0.85, to: 1 }
+      { text: "Abu Dharr's brother: he enjoins good ways", from: 0.02, to: 0.13 },
+      { text: "Abu Dharr took his waterskin to Makkah", from: 0.15, to: 0.27 },
+      { text: "Ali saw Abu Dharr and knew: a stranger", from: 0.29, to: 0.41 },
+      { text: "Ali: Follow me, and enter where I enter", from: 0.43, to: 0.55 },
+      { text: "Abu Dharr heard him, became Muslim at once", from: 0.57, to: 0.69 },
+      { text: "Abu Dharr called out the shahadah aloud", from: 0.71, to: 0.83 },
+      { text: "Al-Abbas knelt over Abu Dharr: of Ghifar!", from: 0.85, to: 1 }
     ]
   };
 }
@@ -293,11 +293,11 @@ function abuDharrSeeks(): SignArt {
 // heavens and the earth? Nay, but they have no firm belief. Or do they have the treasures of your Lord, or are they the
 // ones in control? My heart was about to fly (Sahih al-Bukhari 4854). No one is drawn: it is evening at the masjid of
 // Madinah; his place is a golden ring before the rows, and his voice recites in gold. Jubayr's place is outside, by its
-// camel, with a grey ring about it; a faint golden line goes to it from his place. With each ayah a golden spark rises:
-// an empty ring shows in the air, with nothing in it; faint grey places show far off; the first stars of the evening
-// come out and a soft light comes along the land; a grey shade comes over the far places, and the grey ring about
-// Jubayr's place goes. Then a warm light comes in Jubayr's place, a small light lifts from it and flutters, and a ring
-// of light comes about it.
+// camel; a faint golden line goes to it from his place. With each ayah a golden spark rises: an empty ring shows in
+// the air, with nothing in it; faint grey places show far off; the first stars of the evening come out and a soft light
+// comes along the land; a grey shade comes over the far places. Then a warm light comes in Jubayr's place, a small
+// light lifts from it and flutters, and a ring of light comes about it. Nothing marks him as not yet Muslim, which this
+// narration does not say.
 function heartAlmostFlew(): SignArt {
   const his: [number, number] = [48, 101];
   const jubayr: [number, number] = [128, 103.4];
@@ -337,7 +337,6 @@ function heartAlmostFlew(): SignArt {
       { name: "his voice, reciting at-Tur", svg: arcs(n(his[0] + 3.6), n(his[1] - 4), GOLD), keys: showFrom(0.03, 0.04), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
       { name: "Jubayr's camel", svg: camel(144, 104.4, 0.14) },
       { name: "Jubayr's place, outside", svg: someone(jubayr[0], jubayr[1], 1.6) },
-      { name: "not yet Muslim: a grey ring about Jubayr's place", svg: care(jubayr[0], jubayr[1], 3.8, 2.1, GREY), keys: track({ opacity: [[0.68, 1], [0.73, 0]] }) },
       { name: "hearing: a faint golden line from his place to Jubayr's", svg: lookLine(n(his[0] + 3), n(his[1] - 2.6), n(jubayr[0] - 2.2), n(jubayr[1] - 1.8), 84), keys: showFrom(0.07, 0.1), loop: { move: "twinkle", ms: 1400, low: 0.6 } },
       ayah(0.18, 1),
       {
@@ -390,8 +389,9 @@ function heartAlmostFlew(): SignArt {
 // on the right the court at Ilya, Heraclius's place in it among the nobles' places. Far off is his golden ring. Abu
 // Sufyan's place goes to the court, its companions' places behind it. Heraclius's voice asks and Abu Sufyan's voice
 // answers: small places come by the far ring, then more; a warm light comes about the ring; a ring of care comes about
-// the far places. Then the letter goes as a golden spark from the far ring to the court, a soft light comes in the
-// court, and a level golden band shows between the two.
+// the far places. His letter had come to Heraclius before he asked, so it is in the court from the start, a small
+// golden glint, no page drawn; when it is read, the glint brightens, a soft light comes in the court, and a level golden
+// band shows between the two.
 function heracliusAsks(): SignArt {
   const heraclius: [number, number] = [127, 96.4];
   const nobles: [number, number][] = [
@@ -466,16 +466,10 @@ function heracliusAsks(): SignArt {
       { name: "never a lie: a warm light about the far ring", svg: warmOn(farRing[0], farRing[1], 5), keys: showFrom(0.49, 0.52), loop: { move: "twinkle", ms: 1500, low: 0.75 } },
       { name: "Heraclius's voice: they are the followers of the messengers", svg: arcsLeft(n(heraclius[0] - 2.6), n(heraclius[1] - 3.8), VOICE), keys: showWhile(0.58, 0.59, 0.71, 0.72), loop: { move: "twinkle", ms: 900, low: 0.5 } },
       { name: "the followers of the messengers: a ring of care about the far places", svg: care(26, 80, 18, 4), keys: showFrom(0.6, 0.64) },
-      { name: "the letter's way, from the far ring to the court", svg: way(`M${farRing[0] + 2} ${farRing[1] + 0.4} L${heraclius[0] - 2} ${heraclius[1] - 8}`, GOLD, 0.6), keys: showFrom(0.71, 0.73) },
       {
-        name: "his letter: a golden spark on its way to the court",
-        svg: glow(farRing[0], farRing[1], 2.4, "#FFE7A0", 0.4) + sparkle(farRing[0], farRing[1], 1.4, "#FFE7A0"),
-        keys: {
-          at: [0, 0.72, 0.725, 0.77, 0.775],
-          opacity: [0, 0, 1, 1, 0],
-          x: [0, 0, 0, n(heraclius[0] - 2 - farRing[0]), n(heraclius[0] - 2 - farRing[0])],
-          y: [0, 0, 0, n(heraclius[1] - 8 - farRing[1]), n(heraclius[1] - 8 - farRing[1])]
-        }
+        name: "his letter, already in the court: a small golden glint",
+        svg: glow(n(heraclius[0] - 2), n(heraclius[1] - 8), 2.4, "#FFE7A0", 0.4) + sparkle(n(heraclius[0] - 2), n(heraclius[1] - 8), 1.4, "#FFE7A0"),
+        keys: { at: [0, 0.72, 0.75], opacity: [0.45, 0.45, 1] }
       },
       { name: "the letter, read: a soft light in the court", svg: wash(127, 92, 20, 7, WARM, 0.14), keys: showFrom(0.77, 0.8), loop: { move: "twinkle", ms: 1600, low: 0.75 } },
       { name: "a word common to us and you: a level golden band between the two", svg: `<path d="M24 86 L104 86" stroke="${GOLD}" stroke-width="1" stroke-linecap="round"/>` + wash(64, 86, 42, 2.4, "#FFE7A0", 0.16), keys: showFrom(0.86, 0.9), loop: { move: "twinkle", ms: 1800, low: 0.75 } }
@@ -485,7 +479,7 @@ function heracliusAsks(): SignArt {
       { text: "Do nobles or the poor follow him? The poor", from: 0.15, to: 0.27 },
       { text: "Increasing or decreasing? I said: increasing", from: 0.29, to: 0.41 },
       { text: "Did you ever accuse him of lying? I said: no", from: 0.43, to: 0.55 },
-      { text: "They are the followers of the messengers", from: 0.57, to: 0.69 },
+      { text: "Heraclius: the messengers' followers", from: 0.57, to: 0.69 },
       { text: "His letter: accept Islam, and be safe", from: 0.71, to: 0.83 },
       { text: "Come to a word common to us and you", from: 0.85, to: 1 }
     ]
@@ -618,12 +612,12 @@ function mightySinceUmar(): SignArt {
     ],
     words: [
       { text: "Umar was at home, in fear", from: 0.02, to: 0.13 },
-      { text: "Your people claim they will kill me", from: 0.15, to: 0.27 },
+      { text: "Umar: your people claim they will kill me", from: 0.15, to: 0.27 },
       { text: "Al-As said: there is no way to you", from: 0.29, to: 0.41 },
       { text: "The people streamed through the whole valley", from: 0.43, to: 0.55 },
       { text: "We want Ibn al-Khattab, who became Muslim", from: 0.57, to: 0.69 },
-      { text: "There is no way to him. So they went back", from: 0.71, to: 0.83 },
-      { text: "We stayed mighty since Umar became Muslim", from: 0.85, to: 1 }
+      { text: "Al-As: no way to him. So they went back", from: 0.71, to: 0.83 },
+      { text: "Ibn Mas'ud: mighty ever since Umar's Islam", from: 0.85, to: 1 }
     ]
   };
 }
@@ -746,9 +740,9 @@ function everyRight(): SignArt {
     ],
     words: [
       { text: "Salman visited his brother Abu ad-Darda", from: 0.02, to: 0.13 },
-      { text: "Your brother has no need of this world", from: 0.14, to: 0.25 },
+      { text: "Umm ad-Darda: no need of this world", from: 0.14, to: 0.25 },
       { text: "Salman said: I will not eat until you eat", from: 0.27, to: 0.42 },
-      { text: "At night he got up. Salman said: sleep", from: 0.44, to: 0.57 },
+      { text: "At night Abu ad-Darda rose. Salman: sleep", from: 0.44, to: 0.57 },
       { text: "At the end of the night, both of them prayed", from: 0.59, to: 0.7 },
       { text: "Your Lord, self and family each have a right", from: 0.72, to: 0.85 },
       { text: "He said: Salman has spoken the truth", from: 0.87, to: 1 }
@@ -818,7 +812,7 @@ function firstMasjid(): SignArt {
       )
     ],
     words: [
-      { text: "Which masjid was built first on earth?", from: 0.02, to: 0.19 },
+      { text: "Abu Dharr: Which masjid was built first?", from: 0.02, to: 0.19 },
       { text: "He said: al-Masjid al-Haram", from: 0.21, to: 0.39 },
       { text: "Then which? He said: al-Masjid al-Aqsa", from: 0.41, to: 0.59 },
       { text: "How long between them? Forty years", from: 0.61, to: 0.79 },
@@ -905,7 +899,7 @@ function rainAndStars(): SignArt {
       { text: "At Hudaybiyah he led Fajr after night rain", from: 0.02, to: 0.15 },
       { text: "Do you know what your Lord has said?", from: 0.17, to: 0.31 },
       { text: "They said: Allah and His Messenger know best", from: 0.33, to: 0.47 },
-      { text: "My servants woke: some believing, some not", from: 0.49, to: 0.63 },
+      { text: "Allah said: some believe in Me, some not", from: 0.49, to: 0.63 },
       { text: "By Allah's grace and mercy: a believer in Me", from: 0.65, to: 0.79 },
       { text: "By such a star: a disbeliever in Me", from: 0.81, to: 1 }
     ]

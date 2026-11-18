@@ -452,7 +452,7 @@ function whatYouMeant(): SignArt {
     words: [
       { text: "My father Yazid took dinars for charity", from: 0.02, to: 0.18 },
       { text: "And left them with a man in the masjid", from: 0.195, to: 0.315 },
-      { text: "I came, took them, and brought them to him", from: 0.33, to: 0.45 },
+      { text: "I took them and brought them to my father", from: 0.33, to: 0.45 },
       { text: "My father said: by Allah, I meant not you", from: 0.465, to: 0.585 },
       { text: "So I took the case to him", from: 0.6, to: 0.72 },
       { text: "He said: yours is what you meant, Yazid", from: 0.735, to: 0.855 },
@@ -474,7 +474,7 @@ const woolCloth = (x: number, y: number, marked: boolean) =>
 // under its roof of palm leaves, his place, a golden ring, prays, a dark cloth with marks with it, and sparks of the
 // prayer rise. Glints show on the marks, a faint grey line goes from them to his place, and his voice speaks. A way
 // shows to Abu Jahm's home, and the cloth goes along it to Abu Jahm's place; a plain cloth comes back from there to
-// his place. A soft glow comes about his place, and a spark of the prayer rises.
+// his place. The hadith ends there, and so does the scene.
 function markedCloth(): SignArt {
   return {
     kind: "marked-cloth",
@@ -538,9 +538,7 @@ function markedCloth(): SignArt {
             [0.85, -59, 0]
           ]
         })
-      },
-      { name: "calm: a soft glow about his place", svg: glow(60, 101, 6, WARM, 0.3), keys: showAt(0.86, 0.9) },
-      spark("the prayer, calm: a spark rising", 60, 96, 0.89, 0.95)
+      }
     ],
     words: [
       { text: "He prayed in a cloth with marks on it", from: 0.02, to: 0.24 },

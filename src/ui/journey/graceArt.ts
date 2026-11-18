@@ -229,10 +229,10 @@ function lampOut(): SignArt {
       )
     ],
     words: [
-      { text: "A hungry guest came: who will host him?", from: 0.02, to: 0.18 },
+      { text: "A hungry man came: who will host this man?", from: 0.02, to: 0.18 },
       { text: "Only the little ones' food: let them sleep", from: 0.2, to: 0.38 },
       { text: "And she put out the light", from: 0.4, to: 0.56 },
-      { text: "In the dark he ate, and they slept hungry", from: 0.58, to: 0.78 },
+      { text: "In the dark the guest ate; they did not", from: 0.58, to: 0.78 },
       { text: "Then Allah revealed 59:9 about them", from: 0.8, to: 1 }
     ]
   };
@@ -411,9 +411,9 @@ function spanCloser(): SignArt {
       )
     ],
     words: [
-      { text: "He killed a hundred, then asked: can I repent?", from: 0.02, to: 0.2 },
-      { text: "He was told: go to such and such a village", from: 0.22, to: 0.4 },
-      { text: "On the way, death overtook him", from: 0.42, to: 0.58 },
+      { text: "A killer of a hundred asked: can I repent?", from: 0.02, to: 0.2 },
+      { text: "The man was told: go to such a village", from: 0.22, to: 0.4 },
+      { text: "On the way, death overtook the man", from: 0.42, to: 0.58 },
       { text: "This village was told: come near; that, go far", from: 0.6, to: 0.78 },
       { text: "A span closer to that village: forgiven", from: 0.8, to: 1 }
     ]
@@ -622,7 +622,7 @@ function greetingStone(): SignArt {
       { text: "In Makkah, before he was sent as a Prophet", from: 0.02, to: 0.22 },
       { text: "A stone would greet him with salam", from: 0.24, to: 0.5 },
       { text: "It greeted him again and again", from: 0.52, to: 0.72 },
-      { text: "I know that stone, even now", from: 0.74, to: 1 }
+      { text: "He said: I know that stone, even now", from: 0.74, to: 1 }
     ]
   };
 }
@@ -964,8 +964,8 @@ function blessedWater(): SignArt {
     words: [
       { text: "On a journey, the water ran short", from: 0.02, to: 0.2 },
       { text: "Come to the water: the blessing is from Allah", from: 0.22, to: 0.42 },
-      { text: "The water flowed, and all came to it", from: 0.44, to: 0.62 },
-      { text: "And we heard the food glorify Allah", from: 0.64, to: 1 }
+      { text: "The water flowed from among his fingers", from: 0.44, to: 0.62 },
+      { text: "Abdullah: we heard the food glorify Allah", from: 0.64, to: 1 }
     ]
   };
 }

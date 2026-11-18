@@ -317,7 +317,7 @@ function sweetestRecitation(): SignArt {
       { name: "a warm light in al-Bara's place", svg: lightIn(bara[0], bara[1], 3.6), keys: showFrom(0.88, 0.92), loop: { move: "twinkle", ms: 1500, low: 0.75 } }
     ],
     words: [
-      { text: "I heard him recite", from: 0.02, to: 0.23 },
+      { text: "Al-Bara: I heard him recite", from: 0.02, to: 0.23 },
       { text: "By the fig and the olive", from: 0.25, to: 0.48 },
       { text: "In the Isha prayer", from: 0.5, to: 0.73 },
       { text: "I never heard a finer voice or recitation", from: 0.75, to: 1 }
@@ -747,7 +747,7 @@ function threeThings(): SignArt {
       { name: "a soft light about the home, through the night", svg: wash(124, 95, 22, 14, "#FFF3C4", 0.07), keys: showFrom(0.93, 0.97), loop: { move: "twinkle", ms: 2000, low: 0.8 } }
     ],
     words: [
-      { text: "My close friend advised me of three", from: 0.02, to: 0.23 },
+      { text: "Abu Hurairah: He advised me of three", from: 0.02, to: 0.23 },
       { text: "Fasting three days of every month", from: 0.25, to: 0.48 },
       { text: "Two rak'ahs of Duha", from: 0.5, to: 0.73 },
       { text: "And to pray witr before I sleep", from: 0.75, to: 1 }
@@ -882,12 +882,12 @@ function askedAboutIslam(): SignArt {
       { name: "he has succeeded: a warm light in the one from Najd", svg: lightIn(back[0], back[1], 3.6), keys: showFrom(0.93, 0.96), loop: { move: "twinkle", ms: 1500, low: 0.75 } }
     ],
     words: [
-      { text: "One came from Najd; we heard his voice", from: 0.02, to: 0.16 },
-      { text: "He came near, asking about Islam", from: 0.18, to: 0.32 },
+      { text: "Talhah: a man of Najd came, loud of voice", from: 0.02, to: 0.16 },
+      { text: "The man came near, asking about Islam", from: 0.18, to: 0.32 },
       { text: "Five prayers in the day and the night", from: 0.34, to: 0.48 },
       { text: "And the fast of Ramadan, and zakat", from: 0.5, to: 0.64 },
       { text: "Anything more? No, unless you wish to", from: 0.66, to: 0.8 },
-      { text: "He has succeeded, if he is truthful", from: 0.82, to: 1 }
+      { text: "He said: the man succeeded, if truthful", from: 0.82, to: 1 }
     ]
   };
 }

@@ -611,7 +611,7 @@ function westEast(): SignArt {
       { name: "no shelter from the sun", svg: heat, keys: showFrom(0.8, 0.86), loop: { move: "bob", ms: 1400, y: -1.2 } }
     ],
     words: [
-      { text: "We gave him the means to all things", from: 0.02, to: 0.18 },
+      { text: "Allah gave Dhul-Qarnayn every means", from: 0.02, to: 0.18 },
       { text: "To where the sun sets", from: 0.2, to: 0.38 },
       { text: "Setting in a murky spring", from: 0.4, to: 0.56 },
       { text: "To where the sun rises", from: 0.58, to: 0.76 },
@@ -723,8 +723,8 @@ function fourBirds(): SignArt {
       }))
     ],
     words: [
-      { text: "Show me how You give life to the dead", from: 0.02, to: 0.18 },
-      { text: "Take four birds", from: 0.2, to: 0.36 },
+      { text: "Ibrahim: Show me how You revive the dead", from: 0.02, to: 0.18 },
+      { text: "Allah: Take four birds", from: 0.2, to: 0.36 },
       { text: "Then put a part of them on each hill", from: 0.38, to: 0.54 },
       { text: "Then call them", from: 0.56, to: 0.7 },
       { text: "They will come to you in haste", from: 0.72, to: 1 }
@@ -861,7 +861,7 @@ function hundredYears(): SignArt {
     ],
     words: [
       { text: "A town fallen on its roofs", from: 0.02, to: 0.16 },
-      { text: "Allah made him die for a hundred years", from: 0.18, to: 0.42 },
+      { text: "Allah made the man die for a hundred years", from: 0.18, to: 0.42 },
       { text: "Your food and drink, unchanged", from: 0.44, to: 0.58 },
       { text: "We raise the bones, then clothe them with flesh", from: 0.6, to: 0.82 },
       { text: "Allah is able to do all things", from: 0.84, to: 1 }
@@ -939,11 +939,11 @@ function shirt(): SignArt {
       { name: "sight come back", svg: glow(138, 74, 24, "#FFF6DC", 0.07), keys: showFrom(0.82, 0.9), loop: { move: "twinkle", ms: 2400, low: 0.7 } }
     ],
     words: [
-      { text: "Take this shirt of mine", from: 0.02, to: 0.16 },
+      { text: "Yusuf: Take this shirt of mine", from: 0.02, to: 0.16 },
       { text: "When the caravan left Egypt", from: 0.18, to: 0.36 },
-      { text: "I find the scent of Yusuf", from: 0.38, to: 0.56 },
+      { text: "Ya'qub: I find the scent of Yusuf", from: 0.38, to: 0.56 },
       { text: "The bearer of good news came", from: 0.58, to: 0.76 },
-      { text: "He could see again", from: 0.78, to: 1 }
+      { text: "Ya'qub could see again", from: 0.78, to: 1 }
     ]
   };
 }

@@ -186,11 +186,11 @@ function houseOfPearl(): SignArt {
       { name: "a calm over the house", svg: wash(far[0], 49, 16, 9, "#FFFBEA", 0.22), keys: showFrom(0.93, 0.96), loop: { move: "twinkle", ms: 1800, low: 0.8 } }
     ],
     words: [
-      { text: "This is Khadijah, coming to you", from: 0.02, to: 0.15 },
+      { text: "Jibril: This is Khadijah, coming to you", from: 0.02, to: 0.15 },
       { text: "With a dish of food or drink", from: 0.17, to: 0.31 },
-      { text: "Give her salam from her Lord and from me", from: 0.33, to: 0.48 },
+      { text: "Jibril: Salam to her from her Lord and me", from: 0.33, to: 0.48 },
       { text: "And glad tidings of a house in Paradise", from: 0.5, to: 0.64 },
-      { text: "Made of qasab, of hollow pearl", from: 0.66, to: 0.8 },
+      { text: "Made of qasab", from: 0.66, to: 0.8 },
       { text: "With no noise in it and no toil", from: 0.82, to: 1 }
     ]
   };
@@ -880,8 +880,8 @@ function theHiddenPoor(): SignArt {
       { text: "The poor is not the one who goes around", from: 0.02, to: 0.18 },
       { text: "For a bite or two, a date or two", from: 0.2, to: 0.38 },
       { text: "But the one who does not have enough", from: 0.4, to: 0.56 },
-      { text: "No one notices him, to give him charity", from: 0.58, to: 0.78 },
-      { text: "And he does not stand up to ask people", from: 0.8, to: 1 }
+      { text: "Whom no one notices, to give charity", from: 0.58, to: 0.78 },
+      { text: "And who does not stand up to ask people", from: 0.8, to: 1 }
     ]
   };
 }

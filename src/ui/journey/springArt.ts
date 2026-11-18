@@ -260,7 +260,7 @@ function flowingSpring(): SignArt {
     ],
     words: [
       { text: "The Ansar drew lots to house the Muhajirun", from: 0.02, to: 0.129 },
-      { text: "and Uthman ibn Maz'un fell to us", from: 0.144, to: 0.253 },
+      { text: "Umm al-Ala: Uthman ibn Maz'un fell to us", from: 0.144, to: 0.253 },
       { text: "We nursed Uthman until his death", from: 0.268, to: 0.377 },
       { text: "I said: I testify Allah has honored you", from: 0.392, to: 0.501 },
       { text: "He said: how do you know?", from: 0.516, to: 0.625 },

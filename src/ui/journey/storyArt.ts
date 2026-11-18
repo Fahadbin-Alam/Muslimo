@@ -500,7 +500,7 @@ function ants(): SignArt {
       { text: "The valley of the ants", from: 0.02, to: 0.24 },
       { text: "An ant warned the others", from: 0.26, to: 0.48 },
       { text: "Into your homes!", from: 0.5, to: 0.72 },
-      { text: "He smiled and thanked Allah", from: 0.74, to: 1 }
+      { text: "Sulayman smiled and thanked Allah", from: 0.74, to: 1 }
     ]
   };
 }
@@ -600,8 +600,9 @@ function ear(x: number, y: number, green: boolean) {
 }
 
 // The king's dream: seven fat cows eaten by seven lean ones, seven green ears and others dry; and its meaning: sow for
-// seven years and leave the grain in its ears, then seven hard years, then a year of rain (Quran 12:43, 12:47 to
-// 12:49). The king and Yusuf are not drawn.
+// seven years and leave the grain in its ears, then seven hard years that eat what was stored but a little, then a
+// year of rain (Quran 12:43, 12:47 to 12:49): in the dry years the sheaves go one by one, and one is left. The king and
+// Yusuf are not drawn.
 function dream(): SignArt {
   const dreamSky = sky("#4F4A8C", "#7D77BE", 64);
   const dreamStars = stars([
@@ -664,7 +665,7 @@ function dream(): SignArt {
       ...sheaves.map((svg, i) => ({
         name: `sheaf ${i + 1}`,
         svg,
-        keys: { at: [0, 0.64 + i * 0.008, 0.66 + i * 0.008, 0.76 + (8 - i) * 0.008, 0.78 + (8 - i) * 0.008], opacity: [0, 0, 1, 1, i < 5 ? 1 : 0] }
+        keys: { at: [0, 0.64 + i * 0.008, 0.66 + i * 0.008, 0.76 + (8 - i) * 0.004, 0.77 + (8 - i) * 0.004], opacity: [0, 0, 1, 1, i ? 0 : 1] }
       })),
       { name: "rain", svg: rainStreaks(), keys: { at: [0, 0.82, 0.86, 0.98, 1], opacity: [0, 0, 1, 1, 0.8] }, loop: { move: "fall", ms: 650 } },
       {

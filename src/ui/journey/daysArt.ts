@@ -308,7 +308,7 @@ function goBackAndPray(): SignArt {
     words: [
       { text: "One came in and prayed, then gave salam", from: 0.02, to: 0.13 },
       { text: "Go back and pray, for you have not prayed", from: 0.15, to: 0.27 },
-      { text: "Three times; then he said: teach me", from: 0.29, to: 0.41 },
+      { text: "Three times; then the man said: teach me", from: 0.29, to: 0.41 },
       { text: "Say takbir, recite what is easy for you", from: 0.43, to: 0.55 },
       { text: "Bow until you are at rest bowing", from: 0.57, to: 0.69 },
       { text: "Rise until you stand up straight", from: 0.71, to: 0.83 },
@@ -449,7 +449,7 @@ function ansarAtHunayn(): SignArt {
       { text: "I found you astray; Allah guided you through me", from: 0.29, to: 0.41 },
       { text: "Divided, and Allah joined you through me", from: 0.43, to: 0.55 },
       { text: "Poor, and Allah made you rich through me", from: 0.57, to: 0.69 },
-      { text: "Allah and His Messenger did us more favor", from: 0.71, to: 0.83 },
+      { text: "Ansar: Allah and His Messenger gave more", from: 0.71, to: 0.83 },
       { text: "They go with sheep and camels; you, with him", from: 0.85, to: 1 }
     ]
   };
@@ -513,9 +513,9 @@ function theSneeze(): SignArt {
       { name: "their affairs set right: a warm glow on both", svg: wash(80, 101.6, 20, 5, WARM, 0.3), keys: showFrom(0.8, 0.88), loop: { move: "twinkle", ms: 1800, low: 0.75 } }
     ],
     words: [
-      { text: "Who sneezes, let him say: Alhamdulillah", from: 0.02, to: 0.3 },
-      { text: "His brother says to him: Yarhamuk Allah", from: 0.32, to: 0.62 },
-      { text: "He says: Yahdikumullah wa yuslihu balakum", from: 0.64, to: 1 }
+      { text: "Who sneezes should say: Alhamdulillah", from: 0.02, to: 0.3 },
+      { text: "A brother or friend says: Yarhamuk Allah", from: 0.32, to: 0.62 },
+      { text: "Sneezer: Yahdikumullah wa yuslihu balakum", from: 0.64, to: 1 }
     ]
   };
 }
@@ -631,9 +631,9 @@ function visitorsOfMudar(): SignArt {
       { text: "Some came, barefoot and poor, all of Mudar", from: 0.02, to: 0.13 },
       { text: "His face changed, seeing their need", from: 0.15, to: 0.27 },
       { text: "He prayed, then spoke and urged charity", from: 0.29, to: 0.41 },
-      { text: "From his dinar, dirham, cloth, wheat, dates", from: 0.43, to: 0.55 },
+      { text: "From dinar, dirham, cloth, wheat, dates", from: 0.43, to: 0.55 },
       { text: "Even if it is half a date", from: 0.57, to: 0.69 },
-      { text: "Till I saw two heaps of food and clothes", from: 0.71, to: 0.83 },
+      { text: "Jarir: I saw two heaps of food and clothes", from: 0.71, to: 0.83 },
       { text: "And his face shone, as if gold", from: 0.85, to: 1 }
     ]
   };
@@ -717,7 +717,7 @@ function stepsInParadise(): SignArt {
       { text: "At Fajr he said: Bilal, tell me", from: 0.02, to: 0.18 },
       { text: "Of the deed you most hope for in Islam", from: 0.2, to: 0.38 },
       { text: "For I heard your steps ahead of me in Paradise", from: 0.4, to: 0.58 },
-      { text: "He said: whenever I made wudu, night or day", from: 0.6, to: 0.78 },
+      { text: "Bilal: whenever I made wudu, night or day", from: 0.6, to: 0.78 },
       { text: "I prayed with it what was written for me", from: 0.8, to: 1 }
     ]
   };
@@ -986,8 +986,8 @@ function redCamels(): SignArt {
       { text: "Tomorrow I will give the flag to one", from: 0.02, to: 0.13 },
       { text: "All night they wondered who it would be", from: 0.15, to: 0.27 },
       { text: "In the morning, each one hoped for it", from: 0.29, to: 0.41 },
-      { text: "Where is Ali? His eyes are sore", from: 0.43, to: 0.55 },
-      { text: "He prayed for him, and he was cured", from: 0.57, to: 0.69 },
+      { text: "Where is Ali? People: Ali's eyes are sore", from: 0.43, to: 0.55 },
+      { text: "He prayed for Ali, and Ali was cured", from: 0.57, to: 0.69 },
       { text: "Go calmly, then invite them to Islam", from: 0.71, to: 0.83 },
       { text: "One guided through you is better than red camels", from: 0.85, to: 1 }
     ]

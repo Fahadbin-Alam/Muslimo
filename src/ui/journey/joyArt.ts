@@ -432,7 +432,7 @@ function heardByAll(): SignArt {
       { text: "and call the adhan, raise your voice", from: 0.392, to: 0.501 },
       { text: "none hears the reach of the caller's voice", from: 0.516, to: 0.625 },
       { text: "jinn, human or thing, but will testify", from: 0.64, to: 0.749 },
-      { text: "for him on the Day of Resurrection", from: 0.764, to: 0.873 },
+      { text: "for the caller on the Day of Resurrection", from: 0.764, to: 0.873 },
       { text: "Abu Sa'id said: I heard it from him", from: 0.888, to: 1 }
     ]
   };
@@ -740,7 +740,7 @@ function blessedMeasures(): SignArt {
     words: [
       { text: "Al-Miqdam said: he said: measure your food", from: 0.02, to: 0.147 },
       { text: "and it will be blessed for you", from: 0.162, to: 0.289 },
-      { text: "He said: O Allah, bless them", from: 0.304, to: 0.431 },
+      { text: "Anas said: he said: O Allah, bless them", from: 0.304, to: 0.431 },
       { text: "in their measure", from: 0.446, to: 0.573 },
       { text: "and bless them in their sa'", from: 0.588, to: 0.715 },
       { text: "and their mudd", from: 0.73, to: 0.857 },

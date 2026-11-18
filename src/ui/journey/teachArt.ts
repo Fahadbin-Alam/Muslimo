@@ -237,12 +237,12 @@ function cameToTeach(): SignArt {
     ],
     words: [
       { text: "One came to him, in very white clothes", from: 0.02, to: 0.125 },
-      { text: "Tell me of Islam, of iman, of ihsan", from: 0.14, to: 0.25 },
+      { text: "The man: Tell me of Islam, iman, ihsan", from: 0.14, to: 0.25 },
       { text: "Ihsan: worship Allah as if you see Him", from: 0.27, to: 0.38 },
       { text: "And if you do not see Him, He sees you", from: 0.4, to: 0.505 },
       { text: "The one asked knows no more than the asker", from: 0.52, to: 0.625 },
       { text: "When herders compete in tall buildings", from: 0.64, to: 0.745 },
-      { text: "Bring him back! But they saw nothing", from: 0.76, to: 0.865 },
+      { text: "Bring the man back! But they saw nothing", from: 0.76, to: 0.865 },
       { text: "Jibril came to teach you your religion", from: 0.88, to: 1 }
     ]
   };
@@ -349,7 +349,7 @@ function keepTies(): SignArt {
       }
     ],
     words: [
-      { text: "My mother came to me, hoping", from: 0.02, to: 0.24 },
+      { text: "Asma: My mother came to me, hoping", from: 0.02, to: 0.24 },
       { text: "She was a polytheist", from: 0.26, to: 0.5 },
       { text: "I asked: shall I keep ties with her?", from: 0.52, to: 0.74 },
       { text: "Yes, keep ties with your mother", from: 0.76, to: 1 }
@@ -488,12 +488,12 @@ function fastOfDawud(): SignArt {
       { name: "the dawn", svg: glow(150, 64, 16, "#FFD9A0", 0.16) + wash(124, 61, 40, 5, "#FFE9C4", 0.18), keys: showFrom(0.88, 0.92) }
     ],
     words: [
-      { text: "I will fast all day and pray all night", from: 0.02, to: 0.125 },
+      { text: "Abdullah: I'll fast by day, pray all night", from: 0.02, to: 0.125 },
       { text: "You cannot. Fast and eat, pray and sleep", from: 0.14, to: 0.3 },
       { text: "Fast one day and eat the next", from: 0.32, to: 0.425 },
       { text: "That is the fast of Dawud, the best fast", from: 0.44, to: 0.54 },
       { text: "Most beloved to Allah is Dawud's prayer", from: 0.56, to: 0.665 },
-      { text: "He slept half the night, prayed a third", from: 0.68, to: 0.82 },
+      { text: "Dawud slept half the night, prayed a third", from: 0.68, to: 0.82 },
       { text: "And slept a sixth of it", from: 0.84, to: 1 }
     ]
   };
@@ -854,13 +854,13 @@ function guidedAtTheDoor(): SignArt {
       { name: "a warm glow on her home", svg: glow(30, 95, 12, WARM, 0.16), keys: showFrom(0.93, 0.96), loop: { move: "twinkle", ms: 1800, low: 0.8 } }
     ],
     words: [
-      { text: "I invited my mother to Islam", from: 0.02, to: 0.13 },
+      { text: "Abu Hurairah: I invited my mother to Islam", from: 0.02, to: 0.13 },
       { text: "She said what I hated; I came weeping", from: 0.15, to: 0.27 },
-      { text: "O Allah, guide Abu Hurairah's mother", from: 0.29, to: 0.41 },
+      { text: "He: O Allah, guide Abu Hurairah's mother", from: 0.29, to: 0.41 },
       { text: "The door was shut, and I heard water", from: 0.43, to: 0.55 },
-      { text: "I testify: there is no god but Allah", from: 0.57, to: 0.69 },
+      { text: "My mother: I testify, no god but Allah", from: 0.57, to: 0.69 },
       { text: "I went back weeping for joy", from: 0.71, to: 0.83 },
-      { text: "Make them beloved to the believers", from: 0.85, to: 1 }
+      { text: "He prayed: make them beloved to believers", from: 0.85, to: 1 }
     ]
   };
 }
