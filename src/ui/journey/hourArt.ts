@@ -28,7 +28,7 @@ import { at3 } from "./storyArt";
  */
 
 /** Two sparks side by side rising from about (x, y) at `from`, to (x + dx, y + dy) by `to`, and staying: two rak'ahs. */
-const twoStay = (name: string, x: number, y: number, from: number, to: number, dx: number, dy: number): SignPart => ({
+export const twoStay = (name: string, x: number, y: number, from: number, to: number, dx: number, dy: number): SignPart => ({
   name,
   svg: sparkle(n(x - 2.2), y, 1.6, "#FFE7A0") + sparkle(n(x + 2.2), y, 1.6, "#FFE7A0"),
   keys:
@@ -47,10 +47,10 @@ const prayedThere = (name: string, x: number, y: number, rx: number, ry: number,
 });
 
 /** A small light, its middle at (x, y). */
-const smallLight = (x: number, y: number, r = 1.1, fill = "#FFE7A0") => `${glow(x, y, n(r * 3.4), fill, 0.22)}<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
+export const smallLight = (x: number, y: number, r = 1.1, fill = "#FFE7A0") => `${glow(x, y, n(r * 3.4), fill, 0.22)}<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}"/>`;
 
 /** A few small round puffs about (x, y), like foam: grey for wrongs, white once they are washed. */
-const puffs = (list: [number, number][], fill: string, opacity: number) =>
+export const puffs = (list: [number, number][], fill: string, opacity: number) =>
   list
     .map(
       ([x, y]) =>
