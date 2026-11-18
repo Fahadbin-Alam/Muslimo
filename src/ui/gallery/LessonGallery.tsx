@@ -1468,6 +1468,13 @@ const STATES: State[] = [
   { id: "scene-the-rope-untied", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-night-prayer-pray-while-fresh" ask="What was the rope for" /> },
   { id: "scene-doors-of-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-day-mosque" ask="Leaving the mosque" /> },
   { id: "scene-from-the-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-wives-charity-from-home" ask="What must she avoid" /> },
+  { id: "scene-flock-between-mountains", render: () => <SceneQuestionDemo lessonId="lesson-deep-how-they-came-to-islam-dearer-than-the-world" ask="What did the man ask his people" /> },
+  { id: "scene-on-foot-to-visit", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-visit-sick-on-foot" ask="How did he" /> },
+  { id: "scene-dates-in-the-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-eating-drinking-dates-at-home" ask="a home with dates will not go hungry" /> },
+  { id: "scene-porters-in-the-market", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-working-to-give" ask="What did they earn" /> },
+  { id: "scene-umrah-in-ramadan", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-umrah-ramadan" ask="Why had the woman" /> },
+  { id: "scene-three-breaths", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-food-three-breaths" ask="Where did he breathe" /> },
+  { id: "scene-truffles-like-manna", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-truffles" ask="Why are they like manna" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
