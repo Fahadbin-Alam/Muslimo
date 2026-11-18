@@ -12,13 +12,26 @@ export function localizedLessonLine(english: Pick<Lesson, "intro" | "title"> & P
   return translateStudyText(getLessonLine(english), language);
 }
 
+// A question whose own note only repeats the question still gets a Why line: one sentence from its own source, written
+// for it and checked against that source (src/data/sourceWhys.json, keyed by the question and its right answer).
+let sourceWhys: Record<string, string> | undefined;
+
+export function sourceWhy(prompt: string, answer: string) {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  sourceWhys ??= require("../../data/sourceWhys.json") as Record<string, string>;
+  return sourceWhys[`${prompt.trim()}\n${answer.trim()}`];
+}
+
 export function englishWhy(challenge: Pick<Challenge, "explanation" | "easierExplanation" | "prompt" | "choices" | "correctChoiceId">) {
-  return shortWhy({
-    explanation: challenge.explanation,
-    easierExplanation: challenge.easierExplanation,
-    prompt: challenge.prompt,
-    correctLabel: challenge.choices.find((choice) => choice.id === challenge.correctChoiceId)?.label ?? ""
-  });
+  const answer = challenge.choices.find((choice) => choice.id === challenge.correctChoiceId)?.label ?? "";
+  return (
+    shortWhy({
+      explanation: challenge.explanation,
+      easierExplanation: challenge.easierExplanation,
+      prompt: challenge.prompt,
+      correctLabel: answer
+    }) ?? sourceWhy(challenge.prompt, answer)
+  );
 }
 
 export function localizedWhy(challenge: Pick<Challenge, "explanation" | "easierExplanation" | "prompt" | "choices" | "correctChoiceId">, language: SupportedLanguage) {
