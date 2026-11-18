@@ -996,7 +996,14 @@ export type SignKind =
   | "the-curtain-is-raised"
   | "his-name-is-al-mundhir"
   | "a-masjid-in-the-courtyard"
-  | "a-third-adhan-at-az-zawra";
+  | "a-third-adhan-at-az-zawra"
+  | "always-a-smile"
+  | "woven-with-her-own-hands"
+  | "tell-those-you-left-behind"
+  | "he-stood-up-without-sitting"
+  | "like-one-of-his-family"
+  | "i-fear-not-poverty"
+  | "from-its-higher-side";
 
 export type SignScene = {
   id: string;
@@ -5329,6 +5336,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "As-Sa'ib ibn Yazid said: in the lifetime of the Messenger of Allah ﷺ, and Abu Bakr and Umar, the adhan for the Jumu'ah prayer used to be pronounced after the imam had taken his seat on the pulpit. But when the people increased in number during the caliphate of Uthman, he introduced a third adhan, and it was pronounced at az-Zawra, and that new state of affairs remained so in the succeeding years.",
     sources: [bukhari("916"), bukhari("912")]
+  },
+  {
+    id: "sign-always-a-smile",
+    kind: "always-a-smile",
+    caption:
+      "Jarir said: the Messenger of Allah ﷺ did not screen himself from me since my embracing Islam, and whenever he saw me he would receive me with a smile. Once I told him that I could not sit firm on horses. He stroked me on the chest with his hand and said: O Allah, make him firm, and make him a guiding and a rightly guided man.",
+    sources: [bukhari("3035"), muslim("2475a")]
+  },
+  {
+    id: "sign-woven-with-her-own-hands",
+    kind: "woven-with-her-own-hands",
+    caption:
+      "Sahl said: a woman brought a woven burdah having edging to the Prophet ﷺ. Then Sahl asked them whether they knew what a burdah is; they said that a burdah is a cloak, and Sahl confirmed their reply. Then the woman said: I have woven it with my own hands, and I have brought it so that you may wear it. The Prophet ﷺ accepted it, and at that time he was in need of it. So he came out wearing it as his waist-sheet. A man praised it and said: will you give it to me? How nice it is! The other people said: you have not done the right thing, as the Prophet ﷺ is in need of it, and you have asked for it when you know that he never turns down anybody's request. The man replied: by Allah, I have not asked for it to wear it, but to make it my shroud. Later it was his shroud.",
+    sources: [bukhari("1277")]
+  },
+  {
+    id: "sign-tell-those-you-left-behind",
+    kind: "tell-those-you-left-behind",
+    caption:
+      "Abu Jamrah said: I was an interpreter between the people and Ibn Abbas. Once Ibn Abbas said that a delegation of the tribe of Abd al-Qays came to the Prophet ﷺ, who asked them: who are the people, or who are the delegates? They replied: we are from the tribe of Rabi'ah. Then he said to them: welcome, O people, or he said: O delegation. Neither will you have disgrace nor will you regret. They said: we have come to you from a distant place, and there is the tribe of the disbelievers of Mudar intervening between you and us, and we cannot come to you except in the sacred month. So please order us to do something good, that we may also inform our people whom we have left behind, and that we may enter Paradise. He ordered them to do four things, and forbade them from four things. He ordered them to believe in Allah alone, the Honorable, the Majestic, and said to them: do you know what is meant by believing in Allah alone? They replied: Allah and His Messenger know better. Thereupon he said: to testify that none has the right to be worshipped but Allah and that Muhammad is the Messenger of Allah, to offer prayers perfectly, to pay zakat, to observe fasts during the month of Ramadan, and to pay al-khumus. He further said: memorize them, and tell them to the people whom you have left behind.",
+    sources: [bukhari("87")]
+  },
+  {
+    id: "sign-he-stood-up-without-sitting",
+    kind: "he-stood-up-without-sitting",
+    caption:
+      "Abdullah ibn Buhaynah said: the Messenger of Allah ﷺ once led us in a prayer and offered two rak'at and got up without sitting. The people also got up with him, and when he was about to finish his prayer, we waited for him to finish the prayer with taslim, but he said takbir before taslim and performed two prostrations while sitting, and then finished the prayer with taslim.",
+    sources: [bukhari("1224")]
+  },
+  {
+    id: "sign-like-one-of-his-family",
+    kind: "like-one-of-his-family",
+    caption:
+      "Abu Musa al-Ash'ari said: my brother and I came from Yemen, and for some time we continued to consider Abdullah ibn Mas'ud as one of the members of the family of the Prophet ﷺ, because we used to see him and his mother going in the house of the Prophet ﷺ very often.",
+    sources: [bukhari("3763")]
+  },
+  {
+    id: "sign-i-fear-not-poverty",
+    kind: "i-fear-not-poverty",
+    caption:
+      "Amr ibn Awf said: the Messenger of Allah ﷺ sent Abu Ubaidah ibn al-Jarrah to Bahrain to collect the jizyah. The Messenger of Allah ﷺ had concluded a peace treaty with the people of Bahrain and appointed al-Ala ibn al-Hadrami as their chief. Abu Ubaidah arrived from Bahrain with the money. The Ansar heard of Abu Ubaidah's arrival, which coincided with the Fajr prayer led by the Messenger of Allah ﷺ. When he finished the prayer, they came to him. He smiled when he saw them and said: I think you have heard of the arrival of Abu Ubaidah, and that he has brought something. They replied: yes, O Messenger of Allah. He said: have the good news, and hope for what will please you. By Allah, I am not afraid that you will become poor, but I am afraid that worldly wealth will be given to you in abundance as it was given to those before you, and you will start competing with each other for it as the previous nations competed for it, and then it will divert you as it diverted them.",
+    sources: [bukhari("6425")]
+  },
+  {
+    id: "sign-from-its-higher-side",
+    kind: "from-its-higher-side",
+    caption:
+      "Aishah said: when the Prophet ﷺ came to Makkah, he entered from its higher side and left from its lower side.",
+    sources: [bukhari("1577")]
   }
 ];
 
@@ -7797,7 +7853,63 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The Friday adhan was given when the imam sat on the pulpit; Uthman added a third.
   "deep-jumuah3-the-friday-adhan": "sign-a-third-adhan-at-az-zawra",
   // When the people grew in number, Uthman added a third adhan, at az-Zawra.
-  "deep-uthman-third-adhan": "sign-a-third-adhan-at-az-zawra"
+  "deep-uthman-third-adhan": "sign-a-third-adhan-at-az-zawra",
+  // Jarir: whenever he saw me, he received me with a smile.
+  "deep-jarir-always-a-smile": "sign-always-a-smile",
+  // He never kept Jarir out, and never looked at him but with a smile.
+  "deep-book-companions-always-a-smile": "sign-always-a-smile",
+  // A woman wove him a cloak; he wore it, and gave it to the one who asked for it.
+  "deep-manners-beautiful-character-woven-with-her-own-hands": "sign-woven-with-her-own-hands",
+  // He taught the delegation of Abd al-Qays, and told them: tell those you left behind.
+  "deep-book-ilm-tell-those-at-home": "sign-tell-those-you-left-behind",
+  // He stood up after two rak'at without sitting, and made two prostrations before the taslim.
+  "deep-prayer-forgetting-in-salah-he-stood-up-without-sitting": "sign-he-stood-up-without-sitting",
+  // Ibn Mas'ud and his mother went in so often that he seemed one of his family.
+  "deep-ibnmasud-family": "sign-like-one-of-his-family",
+  // He did not fear poverty for them, but the world given to them in abundance.
+  "deep-akhirah-wealth-and-next-life-not-poverty-but-plenty": "sign-i-fear-not-poverty",
+  // He entered Makkah from its higher side, and left from its lower side.
+  "deep-book-hajj-into-makkah-from-the-top": "sign-from-its-higher-side",
+  // Al-Bukhari's first hadith, from al-Humaydi: deeds are only by intentions.
+  "deep-tree-humaydi-first-hadith": "sign-intentions",
+  // At Khaybar he gave the flag to Ali.
+  "sahabi-ali-ibn-abi-talib-moments-of-bravery": "sign-red-camels",
+  // Mus'ab came first to Madinah, with Ibn Umm Maktum, to teach.
+  "notes-sahabah-companions-from-your-notes-5-musab-ibn-umair": "sign-madinah-rejoiced",
+  // Allah is more merciful to His servants than a mother to her child.
+  "deep-ahzab2-from-darkness-into-light": "sign-more-merciful",
+  // Jibril kept advising him about the neighbor.
+  "manners-neighbors-and-guests-neighbor-rights": "sign-the-neighbor",
+  // Online too: say what is good, or keep quiet.
+  "manners-public-conduct-online-adab": "sign-good-or-quiet",
+  // Anas served him for ten years.
+  "sahabi-anas-ibn-malik-friendship-with-the-prophet": "sign-ten-years-serving",
+  // Truthfulness leads to righteousness, and righteousness to Paradise.
+  "deep-ahzab2-men-and-women-alike": "sign-truth-leads",
+  // The strong one is the one who controls himself in anger.
+  "manners-emotional-discipline-anger-and-restraint": "sign-real-strength",
+  // Pray as you have seen me pray.
+  "foundation-first-worship-rhythm-follow-the-model": "sign-pray-as-you-saw",
+  // Pray as you have seen me pray.
+  "prayer-salah-basics-follow-the-prophetic-model": "sign-pray-as-you-saw",
+  // Prayer together is better than praying alone by twenty-seven degrees.
+  "prayer-congregational-prayer-why-jamaah-matters": "sign-prayer-together",
+  // Hajj is one of the five on which Islam is built.
+  "hajj-duty-why-hajj-matters": "sign-built-on-five",
+  // Salah is one of the five on which Islam is built.
+  "prayer-salah-basics-why-salah-matters": "sign-built-on-five",
+  // Charity does not lessen wealth.
+  "deep-yasin2-shall-we-feed-them": "sign-charity-wealth",
+  // Allah helps His servant as long as he helps his brother.
+  "deep-mujadila2-help-your-brother": "sign-ease-a-hardship",
+  // Abu Bakr built a masjid by his house, and wept as he recited.
+  "deep-abubakr-masjid-at-home": "sign-a-masjid-in-the-courtyard",
+  // He touched only the two Yemeni corners of the Ka'bah.
+  "deep-book-hajj-the-two-yemeni-corners": "sign-the-two-corners",
+  // Jibril brought Khadijah salam from her Lord.
+  "women-mothers-depth-khadijah-and-support": "sign-house-of-pearl",
+  // Khadijah comforted him after the first revelation: Allah will never disgrace you.
+  "women-virtues-and-legacy-service-to-revelation": "sign-never-disgrace"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
