@@ -968,7 +968,14 @@ export type SignKind =
   | "the-night-at-dhi-tuwa"
   | "the-young-greet-the-old"
   | "a-widow-or-a-poor-person"
-  | "satisfied-and-quenched";
+  | "satisfied-and-quenched"
+  | "ramal-in-three-rounds"
+  | "start-from-the-right-side"
+  | "something-in-return"
+  | "spend-on-them"
+  | "i-will-make-you-get-up"
+  | "good-in-all-the-ansar"
+  | "where-do-you-like-me-to-pray";
 
 export type SignScene = {
   id: string;
@@ -5105,6 +5112,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Umamah said: whenever the Prophet ﷺ finished his meals, he used to say: praise be to Allah Who has satisfied our needs and quenched our thirst. Your favor cannot be compensated or denied.",
     sources: [bukhari("5459")]
+  },
+  {
+    id: "sign-ramal-in-three-rounds",
+    kind: "ramal-in-three-rounds",
+    caption:
+      "Ibn Umar said: the Prophet ﷺ did ramal in three rounds, and walked in the remaining four, in Hajj and Umrah.",
+    sources: [bukhari("1604")]
+  },
+  {
+    id: "sign-start-from-the-right-side",
+    kind: "start-from-the-right-side",
+    caption:
+      "Aishah said: the Prophet ﷺ used to like to start from the right side on wearing shoes, combing his hair and cleaning or washing himself and on doing anything else.",
+    sources: [bukhari("168")]
+  },
+  {
+    id: "sign-something-in-return",
+    kind: "something-in-return",
+    caption:
+      "Aishah said: Allah's Messenger ﷺ used to accept gifts and used to give something in return.",
+    sources: [bukhari("2585")]
+  },
+  {
+    id: "sign-spend-on-them",
+    kind: "spend-on-them",
+    caption:
+      "Zaynab, the daughter of Umm Salamah, said: my mother said: O Messenger of Allah, shall I receive a reward if I spend for the sustenance of Abu Salamah's offspring, and in fact they are also my sons? He replied: spend on them and you will get a reward for what you spend on them.",
+    sources: [bukhari("1467")]
+  },
+  {
+    id: "sign-i-will-make-you-get-up",
+    kind: "i-will-make-you-get-up",
+    caption:
+      "Abdullah ibn Abi Qatadah said: my father said: one night we were traveling with the Prophet ﷺ. He said: I am afraid that you will sleep and miss the prayer. Bilal said: I will make you get up. So all slept and Bilal rested his back against his Rahila and he too was overwhelmed and slept. The Prophet ﷺ got up when the edge of the sun had risen. He said: O Bilal! Get up and pronounce the Adhan for the prayer. He performed ablution and when the sun came up and became bright, he stood up and prayed.",
+    sources: [bukhari("595")]
+  },
+  {
+    id: "sign-good-in-all-the-ansar",
+    kind: "good-in-all-the-ansar",
+    caption:
+      "Abu Humayd said: the Prophet ﷺ said: the best of the Ansar families are the families of Banu an-Najjar, and then that of Banu Abdul Ash-hal, and then that of Banu al-Harith, and then that of Banu Sa'idah; and there is good in all the families of the Ansar. Sa'd ibn Ubadah followed us and said: O Abu Usayd, don't you see that the Prophet ﷺ compared the Ansar and made us the last of them in superiority? Then Sa'd met the Prophet ﷺ and said: O Messenger of Allah, in comparing the Ansar's families as to the degree of superiority, you have made us the last of them. He replied: isn't it sufficient that you are regarded amongst the best?",
+    sources: [bukhari("3791")]
+  },
+  {
+    id: "sign-where-do-you-like-me-to-pray",
+    kind: "where-do-you-like-me-to-pray",
+    caption:
+      "Itban ibn Malik al-Ansari said: the Prophet ﷺ asked permission for entering and I allowed him. He asked: where do you like me to pray in your house? I pointed to a place which I liked. He stood up for prayer and we aligned behind him and he finished the prayer with taslim and we did the same.",
+    sources: [bukhari("686")]
   }
 ];
 
@@ -7497,7 +7553,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Looking after a widow or a poor person is like striving in Allah's cause, or praying all night and fasting all day.
   "deep-zakat-anyone-caring-for-the-poor": "sign-a-widow-or-a-poor-person",
   // After his meals he praised Allah Who satisfied our needs and quenched our thirst.
-  "deep-abu-umamah-thanks-after-eating": "sign-satisfied-and-quenched"
+  "deep-abu-umamah-thanks-after-eating": "sign-satisfied-and-quenched",
+  // In the first three rounds of tawaf he walked briskly, ramal, and walked in the other four.
+  "deep-book-hajj-ramal-in-three-rounds": "sign-ramal-in-three-rounds",
+  // He liked to start with the right: shoes, hair, washing, and everything else.
+  "deep-book-taharah-the-right-side": "sign-start-from-the-right-side",
+  // He accepted gifts and gave something back in return.
+  "deep-manners-gifts-give-back": "sign-something-in-return",
+  // Umm Salamah was rewarded for spending on her own sons, Abu Salamah's children.
+  "deep-zakat-wise-wealth-a-reward-at-home": "sign-spend-on-them",
+  // Bilal promised to wake them for Fajr and slept; plan your day around prayer.
+  "prayer-missed-prayers-build-a-protection-plan": "sign-i-will-make-you-get-up",
+  // Banu Sa'idah came fourth among the best homes of the Ansar, and being among the best is enough.
+  "deep-sad-ubadah-among-the-best": "sign-good-in-all-the-ansar",
+  // In Itban's house he asked where Itban liked him to pray.
+  "deep-found-sunnahs-of-the-home-where-the-host-likes": "sign-where-do-you-like-me-to-pray"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

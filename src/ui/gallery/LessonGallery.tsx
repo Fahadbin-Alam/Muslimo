@@ -1523,6 +1523,12 @@ const STATES: State[] = [
   { id: "scene-the-young-greet-the-old", render: () => <SceneQuestionDemo lessonId="lesson-deep-adab-who-greets-first" ask="A group of three meets a group of ten" /> },
   { id: "scene-a-widow-or-a-poor-person", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-caring-for-the-poor" ask="Whom does Bukhari 5353 tell us" /> },
   { id: "scene-satisfied-and-quenched", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-umamah-thanks-after-eating" ask="Allah's favor can be fully paid back" /> },
+  { id: "scene-ramal-in-three-rounds", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-ramal-in-three-rounds" ask="What about the other four rounds" /> },
+  { id: "scene-start-from-the-right-side", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-the-right-side" ask="Which of these did Aishah name" /> },
+  { id: "scene-something-in-return", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-gifts-give-back" ask="Giving something back is part" /> },
+  { id: "scene-spend-on-them", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-a-reward-at-home" ask="On whom did Umm Salamah ask" /> },
+  { id: "scene-good-in-all-the-ansar", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-ubadah-among-the-best" ask="What was Sa'd's clan called" /> },
+  { id: "scene-where-do-you-like-me-to-pray", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-the-home-where-the-host-likes" ask="How did Itban and his people pray" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
