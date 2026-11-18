@@ -1543,6 +1543,13 @@ const STATES: State[] = [
   { id: "scene-the-scent-bag-of-a-perfumer", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-children-a-pat-on-the-cheek" ask="hand like, Jabir said" /> },
   { id: "scene-why-so-many-hadith", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-hurairah-why-so-many" ask="Why do we have so many hadith" /> },
   { id: "scene-in-the-prayer-one-is-busy", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-amal-salah-busy-with-the-prayer" ask="not answer their salam in the prayer" /> },
+  { id: "scene-learn-the-way-i-pray", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-learning-learn-the-way-i-pray" ask="pray on the minbar" /> },
+  { id: "scene-he-has-reminded-me", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-a-reciter-reminded-him" ask="say about the reciter" /> },
+  { id: "scene-he-turned-and-smiled", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-kind-ways-a-smile-for-a-rough-man" ask="when the man pulled his cloak" /> },
+  { id: "scene-the-curtain-is-raised", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-salam-and-visitors-a-sign-to-come-in" ask="What was one sign that Ibn Mas'ud could come in" /> },
+  { id: "scene-his-name-is-al-mundhir", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-good-names-his-name-is-al-mundhir" ask="name did he" /> },
+  { id: "scene-a-masjid-in-the-courtyard", render: () => <SceneQuestionDemo lessonId="lesson-sahabi-abu-bakr-worship-and-character" ask="when he recited the Quran" /> },
+  { id: "scene-a-third-adhan-at-az-zawra", render: () => <SceneQuestionDemo lessonId="lesson-deep-uthman-third-adhan" ask="Why did Uthman add another call" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
