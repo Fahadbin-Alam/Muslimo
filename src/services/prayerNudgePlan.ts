@@ -128,7 +128,8 @@ const PRAYER_NAMES: Record<SupportedLanguage, Record<PrayerName, string>> = {
   en: PRAYER_LABELS,
   ar: { fajr: "الفجر", dhuhr: "الظهر", asr: "العصر", maghrib: "المغرب", isha: "العشاء" },
   bn: { fajr: "ফজর", dhuhr: "যোহর", asr: "আসর", maghrib: "মাগরিব", isha: "এশা" },
-  ur: { fajr: "فجر", dhuhr: "ظہر", asr: "عصر", maghrib: "مغرب", isha: "عشاء" }
+  ur: { fajr: "فجر", dhuhr: "ظہر", asr: "عصر", maghrib: "مغرب", isha: "عشاء" },
+  id: { fajr: "Subuh", dhuhr: "Zuhur", asr: "Asar", maghrib: "Magrib", isha: "Isya" }
 };
 
 const NUDGE_COPY: Record<SupportedLanguage, Array<{ title: string; body: string }>> = {
@@ -155,6 +156,12 @@ const NUDGE_COPY: Record<SupportedLanguage, Array<{ title: string; body: string 
     { title: "{prayer} کے بعد تھوڑا سا سیکھنا", body: "بسم اللہ! آپ کے راستے پر ایک مختصر سبق انتظار کر رہا ہے۔" },
     { title: "🐪 {prayer} پڑھ لی؟ آپ کا اونٹ تالیاں بجا رہا ہے", body: "کوشش کر رہا ہے، کھروں سے تالی مشکل ہے! ایک سبق سے نیکی جاری رکھیں۔" },
     { title: "{prayer} کے فوراً بعد؟ بہترین وقت", body: "دل پُرسکون ہے اور اونٹ تیار۔ دو منٹ سیکھیں؟" }
+  ],
+  id: [
+    { title: "Setelah {prayer}: satu pelajaran kecil?", body: "Cuma dua menit. Untanya sudah menjaga tempatmu!" },
+    { title: "Sedikit belajar setelah {prayer}", body: "Bismillah! Ada pelajaran singkat menunggu di jalurmu." },
+    { title: "🐪 Sudah salat {prayer}? Untamu bertepuk tangan", body: "Yah, dia berusaha. Kuku unta susah buat tepuk tangan! Lanjutkan kebaikan dengan satu pelajaran." },
+    { title: "Baru selesai {prayer}? Waktunya pas", body: "Hatimu tenang, untamu siap. Belajar dua menit?" }
   ]
 };
 

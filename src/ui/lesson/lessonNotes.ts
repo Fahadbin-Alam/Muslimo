@@ -35,7 +35,7 @@ export function isCredit(fact: string, source: { reference?: string; hadith?: bo
   return (Boolean(source.hadith) && TOLD_BY.test(value)) || GRADE.test(value) || REFERENCE.test(value);
 }
 
-const END_MARK: Record<SupportedLanguage, string> = { en: ".", ar: ".", ur: "۔", bn: "।" };
+const END_MARK: Record<SupportedLanguage, string> = { en: ".", ar: ".", ur: "۔", bn: "।", id: "." };
 /** Already ends a sentence, or ends with a quote or bracket that would look odd with a full stop after it. */
 const ENDED = /[.!?…:;)\]"'”’»؟۔।]$/;
 

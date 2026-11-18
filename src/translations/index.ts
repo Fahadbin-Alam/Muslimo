@@ -21,6 +21,8 @@ function loadHalves(language: SupportedLanguage): Halves | undefined {
       return { content: require("./content/bn.json"), ui: require("./ui/bn.json") };
     case "ur":
       return { content: require("./content/ur.json"), ui: require("./ui/ur.json") };
+    case "id":
+      return { content: require("./content/id.json"), ui: require("./ui/id.json") };
     default:
       return undefined;
   }
