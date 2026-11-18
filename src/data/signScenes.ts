@@ -1017,7 +1017,14 @@ export type SignKind =
   | "two-rakahs-on-a-journey"
   | "lest-you-be-bored"
   | "the-dearest-places"
-  | "two-men-sneezed";
+  | "two-men-sneezed"
+  | "sunnah-around-the-prayers"
+  | "two-rewards-for-asr"
+  | "until-they-make-peace"
+  | "a-sujud-of-fifty-verses"
+  | "ninety-nine-and-one"
+  | "three-things-are-yours"
+  | "best-people-on-earth";
 
 export type SignScene = {
   id: string;
@@ -5497,6 +5504,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Anas ibn Malik said: two men sneezed before the Prophet ﷺ. He said to one of them: may Allah bestow His mercy on you, but he did not say that to the other. On being asked, he said: that one praised Allah, while the other did not praise Allah.",
     sources: [bukhari("6221")]
+  },
+  {
+    id: "sign-sunnah-around-the-prayers",
+    kind: "sunnah-around-the-prayers",
+    caption:
+      "Abdullah ibn Umar said: I offered with the Messenger of Allah ﷺ two rak'at before the Zuhr prayer and two rak'at after the Zuhr prayer, two rak'at after Jumu'ah, Maghrib and Isha.",
+    sources: [bukhari("1169")]
+  },
+  {
+    id: "sign-two-rewards-for-asr",
+    kind: "two-rewards-for-asr",
+    caption:
+      "Abu Basrah al-Ghifari said: the Messenger of Allah ﷺ led us in the Asr prayer at al-Mukhammas, and then said: this prayer was presented to those gone before you, but they lost it, and he who guards it has two rewards in store for him. And no prayer is valid after it till the onlooker appears, and the onlooker is the star.",
+    sources: [muslim("830a")]
+  },
+  {
+    id: "sign-until-they-make-peace",
+    kind: "until-they-make-peace",
+    caption:
+      "Abu Hurairah reported the Messenger of Allah ﷺ as saying: the gates of Paradise are not opened but on two days, Monday and Thursday, and then every servant who does not associate anything with Allah is granted pardon, except the person who has rancour against his brother. And it would be said: look towards both of them until there is reconciliation; look toward both of them until there is reconciliation; look towards both of them until there is reconciliation.",
+    sources: [muslim("2565a")]
+  },
+  {
+    id: "sign-a-sujud-of-fifty-verses",
+    kind: "a-sujud-of-fifty-verses",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ used to offer eleven rak'at, and that was his prayer. He used to prolong the prostration to such an extent that one could recite fifty verses before he would lift his head. He used to pray two rak'at before the Fajr prayer, and then used to lie down on his right side till the call-maker came and informed him about the prayer.",
+    sources: [bukhari("1123")]
+  },
+  {
+    id: "sign-ninety-nine-and-one",
+    kind: "ninety-nine-and-one",
+    caption:
+      "Abu Hurairah reported the Messenger of Allah ﷺ as saying: if anyone extols Allah after every prayer thirty-three times, and praises Allah thirty-three times, and declares His greatness thirty-three times, ninety-nine times in all, and says to complete a hundred: there is no god but Allah, having no partner with Him, to Him belongs sovereignty and to Him is praise due, and He is Potent over everything, his sins will be forgiven even if these are as abundant as the foam of the sea.",
+    sources: [muslim("597a")]
+  },
+  {
+    id: "sign-three-things-are-yours",
+    kind: "three-things-are-yours",
+    caption:
+      "Abu Hurairah reported the Messenger of Allah ﷺ as saying: a servant says: my wealth, my wealth, but out of his wealth three things are only his: whatever he eats and makes use of, or by means of which he dresses himself and it wears out, or he gives as charity, and this is what he stored for himself; and what is beyond this, you are to depart and leave it for other people.",
+    sources: [muslim("2959")]
+  },
+  {
+    id: "sign-best-people-on-earth",
+    kind: "best-people-on-earth",
+    caption:
+      "Jabir ibn Abdullah said: on the day of al-Hudaybiyah, the Messenger of Allah ﷺ said to us: you are the best people on the earth. We were 1400 then. If I could see now, I would have shown you the place of the Tree.",
+    sources: [bukhari("4154")]
   }
 ];
 
@@ -8085,7 +8141,33 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The fast is for Allah, and He rewards it.
   "fasting-purpose-inner-discipline": "sign-two-joys",
   // Asma bint Umays went to Abyssinia, and he told her: you of the ship have two hijrahs.
-  "notes-sahabah-companions-from-your-notes-3-asma-bint-umays": "sign-two-hijrahs"
+  "notes-sahabah-companions-from-your-notes-3-asma-bint-umays": "sign-two-hijrahs",
+  // Ibn Umar prayed two rak'at with him before and after Zuhr, and after Jumu'ah, Maghrib and Isha.
+  "deep-book-night-prayer-sunnah-around-the-prayers": "sign-sunnah-around-the-prayers",
+  // Those before lost the Asr prayer; whoever guards it has its reward twice.
+  "deep-pray-reward-asr-twice-the-reward": "sign-two-rewards-for-asr",
+  // The gates of Paradise open on Monday and Thursday; two at odds are left waiting until they make peace.
+  "deep-manners-making-peace-until-they-make-peace": "sign-until-they-make-peace",
+  // In his night prayer, his prostration lasted as long as it takes to recite fifty verses.
+  "deep-prayer-ruku-and-sujud-for-allah-a-sujud-of-fifty-verses": "sign-a-sujud-of-fifty-verses",
+  // Thirty-three, thirty-three and thirty-three after the prayer, and one more makes a hundred.
+  "deep-pray-after-thirty-three": "sign-ninety-nine-and-one",
+  // Of all one's wealth, only three things are truly one's own: what is eaten, worn, and given.
+  "deep-takathur1-three-things-are-yours": "sign-three-things-are-yours",
+  // At al-Hudaybiyah he told the fourteen hundred: you are the best people on the earth.
+  "deep-fath1-best-people-on-earth": "sign-best-people-on-earth",
+  // Say Bismillah before eating, as he told the boy at his table.
+  "foundation-bismillah": "sign-eat-near",
+  // Eat with the right hand, as he told the boy at his table.
+  "foundation-home-adab-right-hand": "sign-eat-near",
+  // Before eating, say Bismillah, as he told the boy at his table.
+  "foundation-home-adab-table-beginning": "sign-eat-near",
+  // Whoever believes in Allah and the Last Day honors the guest.
+  "manners-neighbors-and-guests-guest-honor": "sign-good-or-quiet",
+  // No one is humble for Allah but Allah raises him up.
+  "aqidah-lived-iman-certainty-and-humility": "sign-charity-wealth",
+  // Three things he advised Abu Hurairah to keep: three fasts a month, Duha, and witr before sleep.
+  "deep-abu-hurairah-three-things": "sign-three-things-to-keep"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
