@@ -5609,6 +5609,55 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who narrated the hadith of the white land?", "Sahl ibn Sa'd", "Sahl: I heard him say:"],
     ["What will the land of gathering be like?", "A pure loaf of bread", "like a pure loaf of bread."],
     ["What will the land have, per Sahl?", "No landmarks at all", "Sahl added: no landmarks for anybody."]
+  ],
+  // Jabir said: my father was martyred on the day of Uhud and left six daughters and some debts; when the dates were
+  // plucked, he went round the biggest heap three times and sat over it, then kept on measuring and giving them, till
+  // Allah cleared all my father's debts, and the heap where he sat was as if not a single date had been taken from it
+  // (Sahih al-Bukhari 2781). No one is drawn: only places, rings and heaps.
+  "sign-the-biggest-heap": [
+    ["What did Jabir's father leave?", "Six daughters and debts", "and left six daughters and some debts."],
+    ["What did he ﷺ do at the dates?", "Went round the biggest heap", "He went round the biggest heap three times"],
+    ["Paying a dead person's debts matters in Islam.", "True", "Then he kept measuring and giving them,", "till Allah cleared all my father's debts."]
+  ],
+  // Jabir said: I came to him regarding my father's debt; when I knocked on the door, he asked: who is that? I replied:
+  // I. He said: I, I? as if he disliked it (Sahih al-Bukhari 6250).
+  "sign-who-is-that": [
+    ["What did Jabir answer when asked who it was?", "Me", "Who is that? I replied: I."],
+    ["He ﷺ was happy with the answer me.", "False", "He said: I, I?", "as if he disliked it."]
+  ],
+  // Aishah said: he used to love sweet edible things and honey (Sahih al-Bukhari 5431). Its lesson's "Who narrated it?"
+  // is not asked here, since the same question and answer are asked of another hadith of Aishah.
+  "sign-sweet-things-and-honey": [
+    ["What did the Prophet ﷺ love, per Aishah?", "Sweet things and honey", "sweet edible things and honey."],
+    ["The Prophet ﷺ disliked honey.", "False", "sweet edible things and honey."]
+  ],
+  // Abu Hurairah said: I heard him saying: there is healing in black cumin for all diseases except death (Sahih
+  // al-Bukhari 5688).
+  "sign-healing-in-black-cumin": [
+    ["What seed did he ﷺ praise for healing?", "The black seed", "There is healing in black cumin"],
+    ["What can the black seed not cure?", "Death", "for all diseases except death."]
+  ],
+  // Abu Hurairah reported him as saying: the uttering of: Exalted is Allah, all praise is due to Allah, there is no god
+  // but Allah, and Allah is the Greatest, is dearer to me than anything over which the sun rises (Sahih Muslim 2695).
+  "sign-over-which-the-sun-rises": [
+    ["Which of these is one of the four?", "Allahu akbar", "The uttering of: Exalted is Allah,", "and Allah is the Greatest,"],
+    ["These four words are dearer to him ﷺ than...?", "All the sun rises over", "is dearer to me than anything", "over which the sun rises."],
+    ["Saying these four words is easy and greatly loved.", "True", "is dearer to me than anything", "over which the sun rises."]
+  ],
+  // Ibn Umar said: when he performed the Tawaf of the Ka'bah, he did Ramal during the first three rounds, and in the
+  // last four rounds he used to walk (Sahih al-Bukhari 1617). No one is drawn: his place is a golden ring going round
+  // the House.
+  "sign-brisk-then-walking": [
+    ["In how many rounds did he ﷺ walk briskly?", "The first three", "he did Ramal during the first three rounds"],
+    ["How many rounds are there in tawaf?", "Seven", "he did Ramal during the first three rounds", "in the last four rounds he used to walk."],
+    ["What is ramal?", "Walking briskly", "he did Ramal during the first three rounds", "in the last four rounds he used to walk."]
+  ],
+  // Anas said: whenever he spoke a sentence, he used to repeat it thrice so that the people could understand it properly
+  // from him (Sahih al-Bukhari 95).
+  "sign-said-three-times": [
+    ["How many times would he ﷺ repeat a sentence?", "Three times", "he used to repeat it thrice"],
+    ["Why did he ﷺ repeat it?", "So people understood it well", "so that the people could understand it", "properly from him."],
+    ["A good teacher makes sure everyone understands.", "True", "so that the people could understand it", "properly from him."]
   ]
 };
 

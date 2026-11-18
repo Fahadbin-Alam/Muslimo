@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3055);
+    expect(asks.length).toBe(3073);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4447);
+    expect(places).toBe(4473);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -18721,6 +18721,238 @@ describe("where the scene waits and where it stops", () => {
     ]).toEqual([
       1,
       [0, 128]
+    ]);
+  });
+
+  it("waits on the scenes from the biggest heap to said three times, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-the-biggest-heap", "sign-who-is-that", "sign-sweet-things-and-honey", "sign-healing-in-black-cumin", "sign-over-which-the-sun-rises", "sign-brisk-then-walking", "sign-said-three-times"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(18);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Six daughters and some debts: Jabir's voice speaks by his home, before the next words; then six small places show
+    // by the home, a grey ring of debts comes about it, and the creditors' places come in for the debts.
+    expect([
+      shown("What did Jabir's father leave?", ["left behind: six small places by the home", "some debts: a grey ring about the home", "the creditors' places, coming for the debts"]),
+      moved("What did Jabir's father leave?", "the creditors' places, coming for the debts", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [30, 0]
+    ]);
+    // Went round the biggest heap: the six small places, the grey ring of debts and the creditors' places are by the
+    // home, before the next words; then his place, a golden ring, goes round the biggest heap three times, a glint at
+    // the end of each round, and sits on it.
+    expect([
+      shown("What did he ﷺ do at the dates?", ["three times: a glint for round 1", "three times: a glint for round 2", "three times: a glint for round 3", "sat over it: his place, a golden ring, on the heap"]),
+      value("the-biggest-heap", "his place, a golden ring, going round the biggest heap", "opacity", 0.337),
+      value("the-biggest-heap", "his place, a golden ring, going round the biggest heap", "x", 0.289)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      1,
+      36
+    ]);
+    // Paying the debts: his place sits on the biggest heap, before the next words; then three measures of dates go from
+    // the heap to the creditors' places, one by one, till the debts are cleared: the grey ring about the home goes, the
+    // creditors' places go, and a warm light comes about the home.
+    expect([
+      shown("Paying a dead person's debts matters in Islam.", ["the debts cleared: a warm light about the home", "some debts: a grey ring about the home", "the creditors' places, coming for the debts"]),
+      moved("Paying a dead person's debts matters in Islam.", "measuring and giving: a measure of dates 1", "x"),
+      value("the-biggest-heap", "measuring and giving: a measure of dates 3", "opacity", 0.55)
+    ]).toEqual([
+      [
+        [0, 1, 1],
+        [1, 0, 0]
+      ],
+      [0, 69.6],
+      1
+    ]);
+    // I: his voice from within asks who is that, before the next words; then it goes, and Jabir's voice answers by the
+    // door: I.
+    expect([
+      shown("What did Jabir answer when asked who it was?", ["his voice from within: who is that?"]),
+      value("who-is-that", "Jabir's voice: I", "opacity", 0.58)
+    ]).toEqual([
+      [[1], [0]],
+      1
+    ]);
+    // Not happy with it: Jabir's voice has answered, and gone, before the next words; then his voice from within says
+    // twice: I, I?, Jabir's answer shows again, faint, and a grey ring comes about it, as if he disliked it.
+    expect([
+      shown("He ﷺ was happy with the answer me.", ["as if he disliked it: Jabir's answer again, faint", "a grey ring about Jabir's answer"]),
+      value("who-is-that", "his voice from within, twice: I, I?", "opacity", 0.69),
+      value("who-is-that", "his voice from within, twice: I, I?", "opacity", 0.71),
+      value("who-is-that", "his voice from within, twice: I, I?", "opacity", 0.73)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1,
+      0,
+      1
+    ]);
+    // Sweet things and honey: Aishah's voice has spoken, and a warm light is about his place, before the last words;
+    // then a dish of halwa shows, with glints, then a jar of honey with glints and a small bee over it, and a soft
+    // golden ring comes about them both.
+    expect(shown("What did the Prophet ﷺ love, per Aishah?", ["sweet edible things: a dish of halwa", "and honey: a jar of honey", "a small bee over the honey", "a soft golden ring about the sweet things and the honey"])).toEqual([
+      [0, 0, 0, 0],
+      [1, 1, 1, 1]
+    ]);
+    // He loved it: a warm light is about his place, before the last words; then the dish of halwa shows, and the jar of
+    // honey, with glints over it and a small bee, in a soft golden ring.
+    expect([
+      shown("The Prophet ﷺ disliked honey.", ["and honey: a jar of honey", "glints over the honey", "a small bee over the honey"]),
+      value("sweet-things-and-honey", "he used to love: a warm light about his place", "opacity", 1)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // The black seed: grey hazes of illness are about three places, and Abu Hurairah's voice has spoken, before the next
+    // words; then his voice speaks, the pods of the black cumin open with black seeds within, the seeds go into a dish,
+    // glints come over them and a soft light of healing comes about them.
+    expect([
+      shown("What seed did he ﷺ praise for healing?", ["his voice: there is healing in black cumin", "the pods open: black seeds within", "black seeds in a dish", "healing: a soft light about the black seeds"]),
+      moved("What seed did he ﷺ praise for healing?", "black seeds going into the dish 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, -19.2]
+    ]);
+    // All diseases except death: the black seeds lie in their dish with a soft light of healing, before the last words;
+    // then the grey haze of illness lifts from each of the three places in turn, and a warm light comes about each.
+    // Nothing is drawn for death.
+    expect(shown("What can the black seed not cure?", ["a grey haze of illness about place 1", "a grey haze of illness about place 2", "a grey haze of illness about place 3", "for all diseases: a warm light about place 1", "for all diseases: a warm light about place 2", "for all diseases: a warm light about place 3"])).toEqual([
+      [1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 1, 1, 1]
+    ]);
+    // One of the four: Abu Hurairah's voice has spoken, before the next words; then his voice speaks the four words, and
+    // with each a glint rises from his place: Exalted is Allah, all praise is due to Allah, there is no god but Allah,
+    // and Allah is the Greatest.
+    expect([
+      shown("Which of these is one of the four?", ["the first of the four: a glint rising from his place", "the second of the four: a glint rising from his place", "the third of the four: a glint rising from his place", "the fourth of the four: a glint rising from his place"]),
+      moved("Which of these is one of the four?", "the fourth of the four: a glint rising from his place", "y"),
+      value("over-which-the-sun-rises", "his voice: the four words", "opacity", 0.4)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, -12],
+      1
+    ]);
+    // All the sun rises over: the four glints have risen from his place, before the next words; then a warm light and a
+    // soft golden ring come about the four, dearer to him, and the sun rises from behind the hills, its light over all
+    // the land and the sea.
+    expect([
+      shown("These four words are dearer to him ﷺ than...?", ["dearer to him: a warm light about the four", "a soft golden ring about the four", "the morning light", "over all the land and the sea: the sun's light"]),
+      moved("These four words are dearer to him ﷺ than...?", "the sun, rising from behind the hills", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [22, 0]
+    ]);
+    // Easy and greatly loved: four short words have risen as four glints, before the next words; then a warm light and a
+    // soft golden ring come about them, dearer to him than anything over which the sun rises.
+    expect(shown("Saying these four words is easy and greatly loved.", ["dearer to him: a warm light about the four", "a soft golden ring about the four", "the sun glinting on the sea"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // The first three: his place, a golden ring, waits by the House, before the next words; then it goes round three
+    // times, quickly, with a bright glint at the end of each round, and no glint yet for the walking rounds.
+    expect([
+      shown("In how many rounds did he ﷺ walk briskly?", ["Ramal, quickly: a bright glint for round 1", "Ramal, quickly: a bright glint for round 2", "Ramal, quickly: a bright glint for round 3", "walking: a soft glint for round 4"]),
+      value("brisk-then-walking", "his place, a golden ring, going round the House", "x", 0.23)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      32
+    ]);
+    // Seven: his place waits by the House, before the next words; then it goes round three times quickly, with a bright
+    // glint for each round, and four times walking, with a soft glint for each: seven glints in all.
+    expect(shown("How many rounds are there in tawaf?", ["Ramal, quickly: a bright glint for round 1", "Ramal, quickly: a bright glint for round 2", "Ramal, quickly: a bright glint for round 3", "walking: a soft glint for round 4", "walking: a soft glint for round 5", "walking: a soft glint for round 6", "walking: a soft glint for round 7"])).toEqual([
+      [0, 0, 0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1, 1, 1]
+    ]);
+    // Walking briskly: his place waits by the House, before the next words; then each of the first three rounds goes by
+    // quickly, a bright glint every short while, and each of the last four slowly, walking, a soft glint every longer
+    // while.
+    expect([
+      value("brisk-then-walking", "Ramal, quickly: a bright glint for round 1", "opacity", 0.26),
+      value("brisk-then-walking", "Ramal, quickly: a bright glint for round 2", "opacity", 0.32),
+      value("brisk-then-walking", "walking: a soft glint for round 4", "opacity", 0.38),
+      value("brisk-then-walking", "walking: a soft glint for round 4", "opacity", 0.569),
+      value("brisk-then-walking", "walking: a soft glint for round 5", "opacity", 0.569),
+      value("brisk-then-walking", "walking: a soft glint for round 5", "opacity", 0.698)
+    ]).toEqual([
+      1,
+      1,
+      0,
+      1,
+      0,
+      1
+    ]);
+    // Three times: his voice has spoken once, with a glint, before the next words; then it speaks the same twice more, a
+    // glint for each: three glints.
+    expect([
+      shown("How many times would he ﷺ repeat a sentence?", ["said once: a glint", "said twice: a glint", "said a third time: a glint"]),
+      value("said-three-times", "his voice: a sentence, three times", "opacity", 0.28),
+      value("said-three-times", "his voice: a sentence, three times", "opacity", 0.33),
+      value("said-three-times", "his voice: a sentence, three times", "opacity", 0.36)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      1,
+      0,
+      1
+    ]);
+    // So that the people could understand it: three glints show, said three times, before the next words; then a soft
+    // light comes on the places near, then further off, then furthest off, a soft golden ring comes about the whole
+    // gathering, and a faint golden line goes from his place to the furthest: properly from him.
+    expect(shown("Why did he ﷺ repeat it?", ["understanding: a soft light on the places near", "understanding: a soft light on the places further off", "understanding: a soft light on the places furthest off", "a soft golden ring about the gathering", "from him: a faint golden line from his place to the furthest"])).toEqual([
+      [0, 0, 0, 0, 0],
+      [1, 1, 1, 1, 1]
+    ]);
+    // Everyone understands: three glints show, before the next words; then light comes on the places near, further off
+    // and furthest off, one after another, till the whole gathering is in a soft golden ring.
+    expect([
+      value("said-three-times", "understanding: a soft light on the places near", "opacity", 0.53),
+      value("said-three-times", "understanding: a soft light on the places furthest off", "opacity", 0.6),
+      shown("A good teacher makes sure everyone understands.", ["understanding: a soft light on the places furthest off", "a soft golden ring about the gathering"])
+    ]).toEqual([
+      1,
+      0,
+      [
+        [0, 0],
+        [1, 1]
+      ]
     ]);
   });
 

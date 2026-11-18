@@ -1482,6 +1482,13 @@ const STATES: State[] = [
   { id: "scene-gone-ahead", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-remembering-allah-always-those-who-have-gone-ahead" ask="Who are the mufarridun" /> },
   { id: "scene-as-if-riding", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-wear-sandals" ask="Walking in sandals" /> },
   { id: "scene-like-a-pure-loaf", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibrahim4-a-white-flat-land" ask="What will the land of gathering" /> },
+  { id: "scene-the-biggest-heap", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-wills-jabirs-fathers-debts" ask="What did he" /> },
+  { id: "scene-who-is-that", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-permission-who-is-it" ask="What did Jabir answer" /> },
+  { id: "scene-sweet-things-and-honey", render: () => <SceneQuestionDemo lessonId="lesson-deep-tahrim1-he-loved-honey" ask="What did the Prophet" /> },
+  { id: "scene-healing-in-black-cumin", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-black-seed" ask="What seed did he" /> },
+  { id: "scene-over-which-the-sun-rises", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dua-dearer-than-the-world" ask="These four words" /> },
+  { id: "scene-brisk-then-walking", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-kabah-ramal" ask="In how many rounds" /> },
+  { id: "scene-said-three-times", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-said-three-times" ask="How many times" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
