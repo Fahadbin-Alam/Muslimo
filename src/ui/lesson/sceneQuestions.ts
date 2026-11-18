@@ -6271,6 +6271,63 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-from-its-higher-side": [
     ["From which side did he ﷺ enter Makkah?", "The higher side", "He entered from its higher side,"],
     ["Did he ﷺ leave the same way?", "No, from the lower side", "And left from its lower side."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ stood up for the prayer and we stood up along with him; a bedouin said
+  // while in the prayer: O Allah, have mercy on me and on Muhammad, and have mercy on no one else along with us; when
+  // the Prophet ﷺ had finished with the taslim, he said to the bedouin: you have narrowed something vast, meaning
+  // Allah's mercy (Sahih al-Bukhari 6010). The question on mercy being wide enough for everyone waits from the words he
+  // said to the bedouin.
+  "sign-you-narrowed-what-is-vast": [
+    ["What did the Bedouin ask for in his du'a?", "Mercy for him and the Prophet ﷺ only", "O Allah, have mercy on me and on him,", "And have mercy on no one else with us."],
+    ["What did he ﷺ tell the Bedouin after the prayer?", "You narrowed something vast", "He said: you narrowed something vast,"],
+    ["Allah's mercy is wide enough for everyone.", "True", "He said: you narrowed something vast,", "Meaning Allah's mercy."]
+  ],
+  // Adi ibn Hatim said: he said: Adi, have you been to al-Hirah? If you should live for a long time, you will see a lady
+  // in a howdah travel from al-Hirah till she does tawaf of the Ka'bah, fearing none but Allah; and Adi said: I saw a
+  // lady in a howdah travel from al-Hirah till she did tawaf of the Ka'bah, fearing none but Allah (Sahih al-Bukhari
+  // 3595). Its lesson's questions on where she travelled from and on the treasures of Khosrau are not asked here, since
+  // the scene's first words name al-Hirah and the scene does not show the treasures.
+  "sign-a-lady-from-al-hirah": [
+    ["The lady went round the Ka'bah fearing no one but Allah.", "True", "Till she does tawaf of the Ka'bah,", "Fearing none but Allah."]
+  ],
+  // Abu Musa said: a son was born to me, and I took him to the Prophet ﷺ, who named him Ibrahim, did tahnik for him with
+  // a date, invoked Allah to bless him and returned him to me; he was Abu Musa's eldest son (Sahih al-Bukhari 5467).
+  "sign-he-named-him-ibrahim": [
+    ["What name did he ﷺ give Abu Musa's son?", "Ibrahim", "He named him Ibrahim,"],
+    ["What did he ﷺ put in the baby's mouth?", "A little soft date", "Did tahnik for him with a date,"],
+    ["He ﷺ asked Allah to bless the baby.", "True", "Invoked Allah to bless him,"]
+  ],
+  // Abu Hurairah said that the Prophet ﷺ said: Allah will prepare for whoever goes to the masjid in the morning and in
+  // the afternoon an honorable place in Paradise, every time he goes in the morning or the afternoon (Sahih al-Bukhari
+  // 662). The question on Fridays waits with how often, since every time he goes is its answer.
+  "sign-a-place-made-ready": [
+    ["What does Allah prepare for whoever goes to the masjid?", "An honored place in Paradise", "An honorable place in Paradise,"],
+    ["How often does Allah prepare it?", "Every time he goes", "Every time he goes, morning or afternoon."],
+    ["Going to the masjid only counts on Fridays.", "False", "Every time he goes, morning or afternoon."]
+  ],
+  // Jabir ibn Abdullah said: he sent me on an errand of his; when I had done it I came back and greeted him, but he did
+  // not reply, and I felt so sorry that only Allah knows it; again I greeted him and he did not reply; again I greeted
+  // him, and he replied and said: what kept me from replying was that I was praying (Sahih al-Bukhari 1217).
+  "sign-a-greeting-not-returned": [
+    ["How did Jabir feel when no answer came?", "Very sorry", "I felt so sorry that only Allah knows it."],
+    ["After the prayer, he ﷺ told Jabir why he had not answered.", "True", "And said: what kept me from replying", "Was that I was praying."],
+    ["Why did he ﷺ not return Jabir's greeting at first?", "He was praying", "Was that I was praying."]
+  ],
+  // Ibn Umar said that Umar said: O Messenger of Allah, I vowed in the pre-Islamic period to stay in i'tikaf one night
+  // in al-Masjid al-Haram; he said: fulfil your vow (Sahih al-Bukhari 6697).
+  "sign-fulfil-your-vow": [
+    ["What had Umar vowed?", "One night of i'tikaf", "To stay in i'tikaf one night"],
+    ["What was he told?", "Fulfil your vow", "He said: fulfil your vow."],
+    ["A good vow should be kept.", "True", "He said: fulfil your vow."]
+  ],
+  // Zaynab bint Humayd took her son Abdullah ibn Hisham to the Prophet ﷺ and said: take the pledge from him; he said: he
+  // is too young, and invoked Allah's blessing for him; Ibn Umar and Ibn az-Zubayr would meet Abdullah at the market and
+  // say: be our partner, for the Prophet ﷺ invoked Allah's blessing for you, and often he would win a camel's load
+  // (Sahih al-Bukhari 2501).
+  "sign-too-young-for-the-pledge": [
+    ["Why did he ﷺ not take the boy's pledge?", "He was still too young", "He said: he is too young for the pledge,"],
+    ["What did Ibn Umar and Ibn az-Zubayr ask him?", "To be their partner", "Be our partner: he asked blessing for you."],
+    ["The boy's trade was often blessed when he grew up.", "True", "Be our partner: he asked blessing for you.", "Often Abdullah would win a camel's load."]
   ]
 };
 

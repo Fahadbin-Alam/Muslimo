@@ -477,7 +477,7 @@ function aGoodCondiment(): SignArt {
 }
 
 /** An acacia tree, its foot at (x, y), `h` high. */
-const acacia = (x: number, y: number, h: number) =>
+export const acacia = (x: number, y: number, h: number) =>
   `<path d="M${x} ${y} L${x} ${n(y - h * 0.62)}" stroke="#7A5A3A" stroke-width="${n(h * 0.06)}" stroke-linecap="round"/>` +
   `<path d="M${x} ${n(y - h * 0.5)} L${n(x - h * 0.24)} ${n(y - h * 0.74)} M${x} ${n(y - h * 0.56)} L${n(x + h * 0.26)} ${n(y - h * 0.78)}" stroke="#7A5A3A" stroke-width="${n(h * 0.04)}" stroke-linecap="round"/>` +
   `<ellipse cx="${x}" cy="${n(y - h * 0.84)}" rx="${n(h * 0.56)}" ry="${n(h * 0.16)}" fill="#7E9A4E"/>` +

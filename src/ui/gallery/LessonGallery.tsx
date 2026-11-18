@@ -1557,6 +1557,13 @@ const STATES: State[] = [
   { id: "scene-like-one-of-his-family", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-family" ask="Who came into the house" /> },
   { id: "scene-i-fear-not-poverty", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-not-poverty-but-plenty" ask="fear for us more than poverty" /> },
   { id: "scene-from-its-higher-side", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-into-makkah-from-the-top" ask="leave the same way" /> },
+  { id: "scene-you-narrowed-what-is-vast", render: () => <SceneQuestionDemo lessonId="lesson-deep-fresh-start-mercy-is-wide" ask="ask for in his du'a" /> },
+  { id: "scene-a-lady-from-al-hirah", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahaba-small-stories-the-lady-from-al-hirah" ask="fearing no one but Allah" /> },
+  { id: "scene-he-named-him-ibrahim", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-good-names-a-baby-named-ibrahim" ask="in the baby's mouth" /> },
+  { id: "scene-a-place-made-ready", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-together-a-place-in-paradise" ask="What does Allah prepare" /> },
+  { id: "scene-a-greeting-not-returned", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-amal-salah-a-greeting-not-returned" ask="How did Jabir feel" /> },
+  { id: "scene-fulfil-your-vow", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-umars-old-vow" ask="What had Umar vowed" /> },
+  { id: "scene-too-young-for-the-pledge", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-signs-too-young-for-the-pledge" ask="Ibn az-Zubayr ask him" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
