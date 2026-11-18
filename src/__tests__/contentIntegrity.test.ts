@@ -177,6 +177,23 @@ describe("lesson sources", () => {
       .map(([reference, narrators]) => `${reference}: ${[...narrators].join(" / ")}`);
     expect(conflicts).toEqual([]);
   });
+
+  test("a hadith whose English page names the wrong narrator names the one its Arabic chain gives", () => {
+    // Sunnah.com's English says "Abu Dharr reported" for Muslim 2732, but its chain is Umm ad-Darda from Abu ad-Darda
+    // (2732b: "my husband"). Bukhari 6288 and 6290 both read "Narrated `Abdullah": 6288 comes through Nafi' from Ibn Umar,
+    // 6290 through Abu Wa'il from Ibn Mas'ud. Every lesson is checked, since same-numbered sources share one id.
+    const chained: Record<string, string> = {
+      "Sahih Muslim 2732": "Abu ad-Darda",
+      "Sahih al-Bukhari 6288": "Abdullah ibn Umar",
+      "Sahih al-Bukhari 6290": "Abdullah ibn Mas'ud"
+    };
+    const cited = lessons.flatMap((lesson) => [...lesson.sources, ...(lesson.learnSource ? [lesson.learnSource] : [])]);
+    const wrong = cited
+      .filter((source) => source.reference && chained[source.reference] && (source.from ?? "").split(";")[0].trim() !== chained[source.reference])
+      .map((source) => `${source.reference}: ${source.from}`);
+    expect(wrong).toEqual([]);
+    expect(cited.filter((source) => source.reference === "Sahih Muslim 2732").length).toBeGreaterThan(0);
+  });
 });
 
 describe("lessons imported from notes", () => {
