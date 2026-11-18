@@ -6107,6 +6107,64 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-in-the-prayer-one-is-busy": [
     ["Why did he ﷺ not answer their salam in the prayer?", "The prayer keeps one busy", "He said: in the prayer one is occupied."],
     ["In the early days, he ﷺ would answer a salam during the prayer.", "True", "while he was praying, and he answered us."]
+  ],
+  // Sahl ibn Sa'd said: he sent for an Ansari woman to have her carpenter make him pieces of wood to sit on, and it was
+  // made from the tamarisk of the forest; he prayed on it and bowed on it, then stepped back, got down and prostrated
+  // near the foot of the pulpit, and went up again, and said: I have done this so that you may follow me and learn the
+  // way I pray (Sahih al-Bukhari 917).
+  "sign-learn-the-way-i-pray": [
+    ["Why did he ﷺ pray on the minbar?", "So people could learn his prayer", "He said: follow me, learn the way I pray."],
+    ["What wood was the minbar made from?", "Tamarisk wood", "It was made from tamarisk of the forest."],
+    ["He ﷺ came down from the minbar to prostrate on the ground.", "True", "then he stepped back, got down, prostrated", "near the foot of the pulpit, and went up."]
+  ],
+  // Aishah said: the Prophet ﷺ heard a man reciting the Quran in the masjid and said: may Allah have mercy on him, he
+  // has reminded me of such-and-such ayahs of such a surah (Sahih al-Bukhari 5037). Its lesson's question on where the
+  // man was reciting is not asked here, since the scene shows him in the masjid from its start.
+  "sign-he-has-reminded-me": [
+    ["What did he ﷺ say about the reciter?", "May Allah have mercy on him", "May Allah have mercy on the man"],
+    ["Hearing others recite can remind us of verses.", "True", "who has reminded me of such-and-such", "ayahs of such a surah."]
+  ],
+  // Anas ibn Malik said: a bedouin pulled his Najrani garment so violently, and said: order for me something from
+  // Allah's fortune which you have; he turned to him and smiled, and ordered a gift for him (Sahih al-Bukhari 3149). Its
+  // lesson's question on the mark on his shoulder is not asked here, since the scene does not show it.
+  "sign-he-turned-and-smiled": [
+    ["What did he ﷺ do when the man pulled his cloak?", "He smiled and gave him a gift", "He turned to the bedouin and smiled,", "and ordered a gift for the bedouin."],
+    ["He ﷺ was gentle even with a rough man.", "True", "He turned to the bedouin and smiled,", "and ordered a gift for the bedouin."]
+  ],
+  // Ibn Mas'ud said: the Messenger of Allah ﷺ said to me: the sign that you have been permitted to come in is that the
+  // curtain is raised, or that you hear me speaking quietly, until I forbid you (Sahih Muslim 2169a). The questions on
+  // his quiet voice and on the sign wait from the first words of the sign, since his voice is heard behind the curtain
+  // as they begin.
+  "sign-the-curtain-is-raised": [
+    ["What was one sign that Ibn Mas'ud could come in?", "The curtain was raised", "to come in is that the curtain is raised,"],
+    ["What other sign could Ibn Mas'ud go by?", "Hearing his ﷺ quiet voice", "The sign that you have been permitted", "or that you hear me speaking quietly,"],
+    ["He ﷺ gave Ibn Mas'ud a special sign to come in.", "True", "The sign that you have been permitted", "to come in is that the curtain is raised,"]
+  ],
+  // Sahl said: Abu Usayd's newborn son was brought to the Prophet ﷺ, who placed him on his thigh; he was busy with
+  // something, so the boy was taken home; when he finished he asked: where is the boy?, and asked his name, and said:
+  // no, his name is Al-Mundhir (Sahih al-Bukhari 6191).
+  "sign-his-name-is-al-mundhir": [
+    ["Where did he ﷺ place the newborn baby?", "On his thigh", "he placed the boy on his thigh."],
+    ["What name did he ﷺ give the baby?", "Al-Mundhir", "He said: no, the boy's name is Al-Mundhir."],
+    ["He ﷺ asked after the baby when he had finished his work.", "True", "He finished and said: where is the boy?"]
+  ],
+  // Aishah said: the Prophet ﷺ visited us every morning and evening; Abu Bakr built a masjid in the courtyard of his
+  // house, where he prayed and recited the Quran, and the pagan women and their children stood by and looked at him with
+  // surprise; Abu Bakr was soft-hearted and could not help weeping while reciting the Quran (Sahih al-Bukhari 476). Its
+  // lesson's question on the cave of the Hijrah is not asked here, since the scene does not show it.
+  "sign-a-masjid-in-the-courtyard": [
+    ["Abu Bakr often ____ when he recited the Quran.", "cried", "Abu Bakr was soft-hearted and could not", "help weeping while reciting the Quran."]
+  ],
+  // As-Sa'ib ibn Yazid said: in the lifetime of the Prophet ﷺ, Abu Bakr and Umar, the adhan for Jumu'ah was given when
+  // the imam sat on the pulpit; in the caliphate of Uthman, when the Muslims increased in number, a third adhan at
+  // az-Zawra was added, and so it remained in the years after (Sahih al-Bukhari 912 and 916). The question on which
+  // prayer the new call was for is not asked here, since the scene's first words tell it.
+  "sign-a-third-adhan-at-az-zawra": [
+    ["When was the adhan called in the Prophet's ﷺ time?", "When the Imam sat on the pulpit", "was given when the imam sat on the pulpit,"],
+    ["Who added another call?", "Uthman", "In the caliphate of Uthman,", "a third adhan at az-Zawra was added,"],
+    ["Az-Zawra was a place near the market of Madinah.", "True", "a third adhan at az-Zawra was added,"],
+    ["Why did Uthman add another call before Jumu'ah?", "The people had grown in number", "when the Muslims increased in number,", "a third adhan at az-Zawra was added,"],
+    ["Where was the new call given?", "At az-Zawra", "a third adhan at az-Zawra was added,"]
   ]
 };
 

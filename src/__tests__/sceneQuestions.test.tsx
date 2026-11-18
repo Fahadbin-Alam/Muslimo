@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3234);
+    expect(asks.length).toBe(3253);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4707);
+    expect(places).toBe(4736);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -20818,6 +20818,213 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, -14]
     ]);
+  });
+
+  it("waits on the scenes from learn the way I pray to a third adhan at az-Zawra, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-learn-the-way-i-pray", "sign-he-has-reminded-me", "sign-he-turned-and-smiled", "sign-the-curtain-is-raised", "sign-his-name-is-al-mundhir", "sign-a-masjid-in-the-courtyard", "sign-a-third-adhan-at-az-zawra"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(19);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // So that you may learn: his place has prayed on the pulpit, prostrated below it and gone up again, with no voice of
+    // his and no light on the rows yet, before the next words; then his voice speaks to those in the masjid, and glints
+    // and a soft light come over the rows.
+    expect(shown("Why did he ﷺ pray on the minbar?", ["his voice: to those in the masjid", "learning the way he prays: glints over the rows", "following him: a soft light over the rows"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // Tamarisk: his voice asks for pieces of wood to sit on, with no light on the trees and no wood in the masjid yet,
+    // before the next words; then a soft light comes over the tamarisk trees of the forest, and three pieces of their
+    // wood come in through the doorway.
+    expect([
+      shown("What wood was the minbar made from?", ["made of tamarisk: a soft light over the trees of the forest", "a piece of tamarisk wood, brought in for the pulpit 1", "a piece of tamarisk wood, brought in for the pulpit 3"]),
+      moved("What wood was the minbar made from?", "a piece of tamarisk wood, brought in for the pulpit 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [65, 0]
+    ]);
+    // Down to prostrate: his place has gone up the pulpit and bowed on it, with no spark below it yet, before the next
+    // words; then it steps back down to the pulpit's base, where a spark rises as it prostrates, and a soft golden ring
+    // comes about the base before it goes up again.
+    expect([
+      shown("He ﷺ came down from the minbar to prostrate on the ground.", ["prostrating below the pulpit: a spark rising", "near the base of the pulpit: a soft golden ring"]),
+      value("learn-the-way-i-pray", "his place: up on the pulpit, bowing, back down to its base, and up again", "x", 0.7),
+      value("learn-the-way-i-pray", "his place: up on the pulpit, bowing, back down to its base, and up again", "y", 0.7)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      -5.6,
+      0.6
+    ]);
+    // May Allah have mercy on him: his voice speaks of the reciter, with no ring and no light about the reciter's place
+    // yet, before the next words; then a soft golden ring and a soft warm light come about it: mercy.
+    expect(shown("What did he ﷺ say about the reciter?", ["mercy: a soft golden ring about the reciter's place", "mercy: a soft warm light about the reciter's place"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // Reminded: mercy has come about the reciter's place, with no glint going to his place yet, before the next words;
+    // then glints go one by one from the recitation to his place, and a soft golden ring and more glints come about it:
+    // the ayahs he was reminded of.
+    expect([
+      shown("Hearing others recite can remind us of verses.", ["reminded: a glint from the recitation to his place 1", "remembered: a soft golden ring about his place", "the ayahs of a surah: more glints over his place"]),
+      moved("Hearing others recite can remind us of verses.", "reminded: a glint from the recitation to his place 1", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 55.2]
+    ]);
+    // He turned and smiled: the bedouin's voice has asked, rough and quick, with no ring and no light about his place
+    // yet, before the next words; then a soft golden ring comes about his place, turned to the bedouin, and a soft warm
+    // light: he smiled; his voice orders a gift, and a sack comes along the road to the bedouin's place, with a soft
+    // golden ring about it.
+    for (const prompt of ["What did he ﷺ do when the man pulled his cloak?", "He ﷺ was gentle even with a rough man."]) {
+      expect([
+        prompt,
+        shown(prompt, ["turned to the bedouin: a soft golden ring about his place", "he smiled: a soft warm light about his place", "his voice: ordering a gift", "given to the bedouin: a soft golden ring about the bedouin's place"]),
+        moved(prompt, "a gift: a sack, brought along the road to the bedouin's place", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [0, -67.6]
+      ]);
+    }
+    // The curtain is raised: his voice has spoken from behind the curtain, which still hangs down over the doorway, with
+    // no way to it yet, before the next words; then the curtain is raised, and a golden way goes from Ibn Mas'ud's place
+    // to the doorway: permitted.
+    expect([
+      moved("What was one sign that Ibn Mas'ud could come in?", "the curtain over the doorway: raised, then let down again", "scaleY"),
+      shown("What was one sign that Ibn Mas'ud could come in?", ["permitted to come in: a golden way to the doorway"])
+    ]).toEqual([
+      [1, 0.14],
+      [[0], [1]]
+    ]);
+    // His quiet voice: Ibn Mas'ud's place is at the door before his words of the sign begin, with no voice of his yet;
+    // then his voice speaks from behind the curtain, the curtain is raised and let down again, and his quiet voice shows
+    // on it, small and soft, with the golden way to the doorway again.
+    expect([
+      shown("What other sign could Ibn Mas'ud go by?", ["his quiet voice: small and soft, on the curtain", "permitted to come in: a golden way to the doorway"]),
+      value("the-curtain-is-raised", "his voice: from behind the curtain", "opacity", 0.3),
+      value("the-curtain-is-raised", "the curtain over the doorway: raised, then let down again", "scaleY", 0.5)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1,
+      0.14
+    ]);
+    // A sign to come in: Ibn Mas'ud's place is at the door before his words of the sign begin, with the curtain down and
+    // no way to it; then the curtain is raised, and a golden way goes from Ibn Mas'ud's place to the doorway.
+    expect([
+      moved("He ﷺ gave Ibn Mas'ud a special sign to come in.", "the curtain over the doorway: raised, then let down again", "scaleY"),
+      shown("He ﷺ gave Ibn Mas'ud a special sign to come in.", ["permitted to come in: a golden way to the doorway"])
+    ]).toEqual([
+      [1, 0.14],
+      [[0], [1]]
+    ]);
+    // On his thigh: the newborn's place has been brought from the home close to his place, with no ring about it yet,
+    // before the next words; then it settles close by his place, and a soft golden ring comes about it: held.
+    expect([
+      shown("Where did he ﷺ place the newborn baby?", ["held close: a soft golden ring about the newborn's place"]),
+      moved("Where did he ﷺ place the newborn baby?", "the newborn's place: brought to him, then taken home", "x")
+    ]).toEqual([
+      [[0], [1]],
+      [-74.2, -77.4]
+    ]);
+    // Al-Mundhir: he has asked the boy's name and Abu Usayd has answered, with no voice of his, no glints and no light
+    // over the newborn's place yet, before the next words; then his voice speaks, and glints and a soft warm light come
+    // over the newborn's place.
+    expect(shown("What name did he ﷺ give the baby?", ["his voice: asking, then naming", "his name is al-Mundhir: glints over the newborn's place", "named: a soft warm light about the newborn's place"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // When he finished: the newborn has been taken home while a soft light shows before his place, busy, before the next
+    // words; then the light goes, for he has finished, and his voice asks.
+    expect([
+      shown("He ﷺ asked after the baby when he had finished his work.", ["busy with something: a soft light before his place"]),
+      value("his-name-is-al-mundhir", "his voice: asking, then naming", "opacity", 0.55)
+    ]).toEqual([
+      [[1], [0]],
+      1
+    ]);
+    // Weeping: Abu Bakr recites in his masjid, and those who stood by look on with surprise, with no ring and no glow
+    // about his place yet, before the next words; then a soft golden ring comes about it, soft-hearted, and a soft blue
+    // glow: weeping as he recited.
+    expect(shown("Abu Bakr often ____ when he recited the Quran.", ["soft-hearted: a soft golden ring about Abu Bakr's place", "weeping as he recited: a soft blue glow about Abu Bakr's place"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // When the imam sat on the pulpit: As-Sa'ib tells of the adhan for Jumu'ah, with the pulpit empty and no voice of
+    // the caller yet, before the next words; then the place of the one who sits on the pulpit goes up its steps, and the
+    // caller's voice is heard.
+    expect([
+      moved("When was the adhan called in the Prophet's ﷺ time?", "the place of the one who sits on the pulpit: up its steps, and down again", "y"),
+      shown("When was the adhan called in the Prophet's ﷺ time?", ["the adhan for Jumu'ah: the caller's voice"])
+    ]).toEqual([
+      [0, -24],
+      [[0], [1]]
+    ]);
+    // In the caliphate of Uthman: so it was in their time, with the town as it was and no voice from az-Zawra yet,
+    // before the next words; then more homes rise in the town, more places come into the rows and the market, a caller's
+    // place shows on the roof of az-Zawra, and its voice calls out over the market.
+    expect([
+      shown("Who added another call?", ["a home more in the town 1", "a place more in the rows 1", "a place more in the market 6", "the caller's place, on the roof of az-Zawra", "a third adhan: a voice calling out from az-Zawra over the market"]),
+      moved("Who added another call?", "a home more in the town 1", "scaleY")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0.1, 1]
+    ]);
+    // The people had grown in number: in the caliphate of Uthman, with the town as it was, before the next words; then
+    // more homes rise in the town, more places come into the rows and the market, and the third adhan is called from
+    // az-Zawra.
+    expect([
+      shown("Why did Uthman add another call before Jumu'ah?", ["a home more in the town 1", "a home more in the town 3", "a place more in the rows 1", "a place more in the rows 8", "a place more in the market 1", "a place more in the market 6", "a third adhan: a voice calling out from az-Zawra over the market"]),
+      moved("Why did Uthman add another call before Jumu'ah?", "a home more in the town 1", "scaleY")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1]
+      ],
+      [0.1, 1]
+    ]);
+    // At az-Zawra, over the market: the town has grown, with no one on the roof of az-Zawra yet, before the next words;
+    // then a caller's place shows on its roof, and its voice calls out over the market.
+    for (const prompt of ["Az-Zawra was a place near the market of Madinah.", "Where was the new call given?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the caller's place, on the roof of az-Zawra", "a third adhan: a voice calling out from az-Zawra over the market"])
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0],
+          [1, 1]
+        ]
+      ]);
+    }
   });
 
   it("goes quickly up to the moment, and plays the moment at the story's pace, never too long", () => {
