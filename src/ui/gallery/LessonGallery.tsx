@@ -1461,6 +1461,13 @@ const STATES: State[] = [
   { id: "scene-for-an-absent-brother", render: () => <SceneQuestionDemo lessonId="lesson-deep-hujurat1-dua-for-an-absent-brother" ask="When is the dua made" /> },
   { id: "scene-none-to-accept-it", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-no-one-will-take-it" ask="What will the man offered" /> },
   { id: "scene-makes-peace", render: () => <SceneQuestionDemo lessonId="lesson-deep-nisa3-secret-talk" ask="One who makes peace" /> },
+  { id: "scene-a-thankful-servant", render: () => <SceneQuestionDemo lessonId="lesson-deep-mughirah-a-thankful-servant" ask="Why did he pray so much" /> },
+  { id: "scene-spend-and-replace", render: () => <SceneQuestionDemo lessonId="lesson-deep-aq-malaikah-two-angels" ask="What does the first angel" /> },
+  { id: "scene-a-garment-left-spread", render: () => <SceneQuestionDemo lessonId="lesson-deep-nahl1-the-hour-comes-suddenly" ask="What will the man with milk" /> },
+  { id: "scene-cold-and-heat", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-rain-cold-and-heat-early-in-the-cold" ask="In very cold weather" /> },
+  { id: "scene-the-rope-untied", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-night-prayer-pray-while-fresh" ask="What was the rope for" /> },
+  { id: "scene-doors-of-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-day-mosque" ask="Leaving the mosque" /> },
+  { id: "scene-from-the-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-wives-charity-from-home" ask="What must she avoid" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
