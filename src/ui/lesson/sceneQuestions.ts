@@ -5071,6 +5071,79 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A small deed done daily is beloved to Allah.", "True", "He said: the most constant", "even if they are few"],
     ["Doing a lot once is better than a little every day.", "False", "He said: the most constant", "even if they are few"],
     ["What else did he advise?", "Do what is in your ability", "and said: take on deeds you can bear"]
+  ],
+  // Abdullah ibn Mas'ud said: he said: when you are three, no two should talk in secret, leaving out the third, until
+  // you are with other people, for that would grieve him (Sahih al-Bukhari 6290; Sahih Muslim 2184). Why it is wrong
+  // waits on the third being left out, where a grey ring comes about it.
+  "sign-a-group-of-three": [
+    ["Three friends sit together. What should two of them not do?", "Whisper and leave one out", "no two should talk in secret", "leaving out the third"],
+    ["Why is it wrong to whisper and leave one person out?", "It can make him sad", "leaving out the third"],
+    ["Two of three may whisper, leaving the third out.", "False", "no two should talk in secret", "leaving out the third"],
+    ["When three sit together, what should two not do?", "Whisper without the third", "no two should talk in secret", "leaving out the third"],
+    ["Why not, per Bukhari 6290?", "It would grieve him", "leaving out the third"],
+    ["Good manners protect others' feelings.", "True", "until you are with other people", "for that would grieve him"],
+    ["When may two talk privately, per Muslim 2184?", "When others join the third", "until you are with other people"],
+    ["What might whispering do to the third?", "Hurt his feelings", "leaving out the third"],
+    ["Islam teaches us to include people nearby.", "True", "until you are with other people", "for that would grieve him"]
+  ],
+  // Samurah ibn Jundub said: he said: the dearest words to Allah are four: Subhan Allah, al-hamdu lillah, la ilaha illa
+  // Allah and Allahu akbar; it does not matter which of them you begin with (Sahih Muslim 2137a).
+  "sign-four-dearest-words": [
+    ["How many are the dearest words to Allah?", "Four", "He said: four words are dearest to Allah"],
+    ["Which is one of the four?", "Alhamdulillah", "Subhan Allah, and al-hamdu lillah"],
+    ["The four words must be said in one fixed order.", "False", "it does not matter which you begin with"],
+    ["How many words are most loved to Allah in this hadith?", "Four", "He said: four words are dearest to Allah"],
+    ["Which of these is one of them?", "Allahu Akbar", "la ilaha illa Allah, and Allahu akbar"],
+    ["You must say them in one fixed order.", "False", "it does not matter which you begin with"]
+  ],
+  // Anas ibn Malik said: he said: whoever looks after two girls until they come of age will come on the Day of
+  // Resurrection, I and he, and he joined his fingers (Sahih Muslim 2631). (Who narrated it is not in the scene's words,
+  // and the two are there from the scene's start, so those stay as they are.)
+  "sign-two-raised-well": [
+    ["How close will the one who raises two girls be to the Prophet ﷺ?", "Like two fingers together", "I and that one, and he joined his fingers"],
+    ["Until when must they be raised well?", "Until they grow up", "until they come of age"],
+    ["What did the Prophet ﷺ show with his fingers?", "Nearness to him", "I and that one, and he joined his fingers"]
+  ],
+  // Aishah said: when he came to one who was ill, he would say: take away the harm, O Lord of the people; heal, for You
+  // are the Healer; there is no healing but Your healing, a healing that leaves no illness (Sahih al-Bukhari 5675).
+  "sign-a-dua-for-the-sick": [
+    ["Whom do we ask for healing in the du'a?", "Allah, Lord of the people", "he said: take away the harm", "O Lord of the people"],
+    ["What kind of healing does the du'a ask for?", "Healing that leaves no illness", "a healing that leaves no illness"],
+    ["Only Allah truly heals.", "True", "heal, for You are the Healer", "there is no healing but Your healing"],
+    ["When did the Prophet ﷺ say this dua?", "When visiting the sick", "When he came to one who was ill"],
+    ["What does the dua call Allah?", "The One Who cures", "heal, for You are the Healer"],
+    ["Which cure does the dua ask for?", "One that leaves no illness", "a healing that leaves no illness"]
+  ],
+  // Al-Miqdam said: he said: no one has ever eaten food better than what he eats from the work of his own hands, and the
+  // Prophet of Allah Dawud used to eat from the work of his hands (Sahih al-Bukhari 2072).
+  "sign-the-work-of-his-hands": [
+    ["What is the best food, the Prophet ﷺ said?", "What you earn with your hands", "better than what one eats", "from the work of one's own hands"],
+    ["Whose example did he ﷺ give?", "Dawud's", "and Allah's Prophet Dawud"],
+    ["Dawud lived off the treasury because he was king.", "False", "used to eat from the work of his hands"],
+    ["What is the best meal, in the hadith?", "One earned by your own hands", "better than what one eats", "from the work of one's own hands"],
+    ["From what did Dawud eat, in the hadith?", "The earnings of his own labour", "used to eat from the work of his hands"],
+    ["Honest work is honoured in Islam.", "True", "better than what one eats", "from the work of one's own hands"]
+  ],
+  // Jabir ibn Abdullah said: he said: every good deed is charity (Sahih al-Bukhari 6021). (Helping one's mother at home
+  // is not in the scene, so it stays as it is.)
+  "sign-every-good-is-charity": [
+    ["What counts as charity?", "Every good deed", "every good deed", "is charity"],
+    ["Can a child with no money give charity?", "Yes, by doing good", "every good deed", "is charity"],
+    ["Charity is only about money.", "False", "every good deed", "is charity"],
+    ["What is every good deed?", "A charity", "is charity"],
+    ["Only rich people can give charity.", "False", "every good deed", "is charity"],
+    ["Which good deeds count as charity?", "Every good deed", "every good deed", "is charity"],
+    ["Only money can be charity.", "False", "every good deed", "is charity"]
+  ],
+  // Al-Agharr al-Muzani said: he said: O people, turn to Allah in repentance, for I turn to Him in repentance a hundred
+  // times a day (Sahih Muslim 2702b; in 2702a: I ask Allah's forgiveness a hundred times a day). (The word that asks
+  // forgiveness is not in the scene's words, so it stays as it is.)
+  "sign-a-hundred-times-a-day": [
+    ["How many times a day did the Prophet ﷺ ask forgiveness?", "A hundred", "to Him a hundred times a day"],
+    ["Only people with big sins need istighfar.", "False", "for I turn in repentance", "to Him a hundred times a day"],
+    ["Whom did the Prophet ﷺ tell to repent?", "All people", "He said: O people, turn to Allah"],
+    ["How many times a day did he repent?", "A hundred", "to Him a hundred times a day"],
+    ["Asking forgiveness often is a Sunnah.", "True", "for I turn in repentance", "to Him a hundred times a day"]
   ]
 };
 
