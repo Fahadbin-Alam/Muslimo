@@ -898,7 +898,14 @@ export type SignKind =
   | "married-for-four"
   | "sawdah-gave-her-day"
   | "pleased-with-another"
-  | "beware-of-wrongdoing";
+  | "beware-of-wrongdoing"
+  | "greet-the-masjid"
+  | "twice-the-blessing"
+  | "a-plain-saddle"
+  | "ill-or-travelling"
+  | "for-an-absent-brother"
+  | "none-to-accept-it"
+  | "makes-peace";
 
 export type SignScene = {
   id: string;
@@ -4545,6 +4552,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jabir ibn Abdullah said that the Messenger of Allah ﷺ said: beware of wrongdoing, for wrongdoing is darkness on the Day of Resurrection; and beware of stinginess, for stinginess destroyed those who were before you.",
     sources: [muslim("2578")]
+  },
+  {
+    id: "sign-greet-the-masjid",
+    kind: "greet-the-masjid",
+    caption:
+      "Abu Qatadah said that the Messenger of Allah ﷺ said: when one of you enters the masjid, let him pray two rak'ahs before he sits.",
+    sources: [bukhari("444"), bukhari("1167")]
+  },
+  {
+    id: "sign-twice-the-blessing",
+    kind: "twice-the-blessing",
+    caption:
+      "Anas ibn Malik said that the Prophet ﷺ said: O Allah, put in Madinah twice the blessing You put in Makkah.",
+    sources: [bukhari("1885")]
+  },
+  {
+    id: "sign-a-plain-saddle",
+    kind: "a-plain-saddle",
+    caption:
+      "Thumamah ibn Abdullah ibn Anas said: Anas made Hajj on a packsaddle, and he was no miser. And he told that the Messenger of Allah ﷺ made Hajj on a packsaddle, and it carried his baggage too.",
+    sources: [bukhari("1517")]
+  },
+  {
+    id: "sign-ill-or-travelling",
+    kind: "ill-or-travelling",
+    caption:
+      "Abu Burdah said: I heard Abu Musa say many times that the Messenger of Allah ﷺ said: when a servant falls ill or travels, there is written for him the like of what he used to do at home and in good health.",
+    sources: [bukhari("2996")]
+  },
+  {
+    id: "sign-for-an-absent-brother",
+    kind: "for-an-absent-brother",
+    caption:
+      "The Messenger of Allah ﷺ said: no Muslim servant prays for his brother behind his back but the angel says: and for you the same.",
+    sources: [muslim("2732")]
+  },
+  {
+    id: "sign-none-to-accept-it",
+    kind: "none-to-accept-it",
+    caption:
+      "Harithah ibn Wahb said: I heard the Prophet ﷺ say: give charity, for a time will come to you when a man walks with his charity and finds no one to accept it. A man will say: had you brought it yesterday, I would have accepted it; but today I have no need of it.",
+    sources: [bukhari("1411"), bukhari("1424")]
+  },
+  {
+    id: "sign-makes-peace",
+    kind: "makes-peace",
+    caption:
+      "Umm Kulthum bint Uqbah said that she heard the Messenger of Allah ﷺ say: the liar is not the one who makes peace between people, passing on good or saying good.",
+    sources: [bukhari("2692")]
   }
 ];
 
@@ -6775,7 +6831,27 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Wrongdoing is darkness on the Day of Resurrection.
   "deep-taha3-beware-of-wrongdoing": "sign-beware-of-wrongdoing",
   // Stinginess destroyed those before.
-  "deep-hashr2-beware-of-stinginess": "sign-beware-of-wrongdoing"
+  "deep-hashr2-beware-of-stinginess": "sign-beware-of-wrongdoing",
+  // Entering a masjid: two rak'ahs before sitting.
+  "deep-pray-extra-greet-masjid": "sign-greet-the-masjid",
+  // Abu Qatadah: two rak'ahs first, then sit.
+  "deep-abu-qatadah-greet-the-masjid": "sign-greet-the-masjid",
+  // His dua: twice Makkah's blessing for Madinah.
+  "deep-hajj-madinah-twice-the-blessing": "sign-twice-the-blessing",
+  // Hajj on a plain packsaddle that carried his baggage.
+  "deep-hajj-as-he-taught-it-a-plain-saddle": "sign-a-plain-saddle",
+  // Ill or travelling: the usual deeds still written.
+  "deep-pray-easy-same-reward": "sign-ill-or-travelling",
+  // Pray for another in secret: and the same for you.
+  "deep-ghafir1-and-the-same-for-you": "sign-for-an-absent-brother",
+  // A dua for an absent brother, and the same for you.
+  "deep-hujurat1-dua-for-an-absent-brother": "sign-for-an-absent-brother",
+  // Give now, before no one will take charity.
+  "deep-zakat-anyone-no-one-will-take-it": "sign-none-to-accept-it",
+  // A time when no one takes the charity carried.
+  "deep-minorsigns-no-one-takes": "sign-none-to-accept-it",
+  // Making peace between people: no liar.
+  "deep-nisa3-secret-talk": "sign-makes-peace"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
