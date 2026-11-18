@@ -45,16 +45,16 @@ const necklace = (x: number, y: number, w = 6) =>
     .join("");
 
 /** A water skin lying empty and limp, its middle at (x, y), tied at its neck on the right. */
-const emptySkin = (x: number, y: number) =>
+export const emptySkin = (x: number, y: number) =>
   `<path d="M${n(x - 4)} ${y} Q${n(x - 4.4)} ${n(y - 2)} ${n(x - 1.6)} ${n(y - 1.8)} Q${n(x + 1.4)} ${n(y - 2.6)} ${n(x + 3.2)} ${n(y - 1.2)} L${n(x + 4.6)} ${n(y - 1.8)} L${n(x + 4.4)} ${n(y - 0.6)} L${n(x + 3.4)} ${n(y - 0.4)} Q${n(x + 2)} ${n(y + 0.6)} ${n(x - 4)} ${y} Z" fill="#9C7A58"/>` +
   `<path d="M${n(x - 2.6)} ${n(y - 1)} Q${x} ${n(y - 0.4)} ${n(x + 2.2)} ${n(y - 1)}" stroke="#7A5A3C" stroke-width="0.3" fill="none"/>`;
 
 /** Dry ground: a few grey cracks in the sand about (x, y). */
-const cracks = (x: number, y: number) =>
+export const cracks = (x: number, y: number) =>
   `<path d="M${n(x - 5)} ${y} L${n(x - 2)} ${n(y - 0.6)} L${n(x)} ${n(y + 0.4)} L${n(x + 3)} ${n(y - 0.4)} M${n(x - 2)} ${n(y - 0.6)} L${n(x - 2.6)} ${n(y - 1.8)} M${n(x)} ${n(y + 0.4)} L${n(x + 0.6)} ${n(y + 1.6)}" stroke="${GREY}" stroke-width="0.4" fill="none" stroke-linecap="round"/>`;
 
 /** Dust shining about a place at (x, y), as after tayammum with clean earth. */
-const dustShining = (x: number, y: number) =>
+export const dustShining = (x: number, y: number) =>
   glow(x, n(y - 0.4), 3.2, "#F3E3C0", 0.4) + sparkle(n(x + 1.8), n(y - 2.2), 0.9, "#E8C27A") + sparkle(n(x - 1.9), n(y - 1.4), 0.7, "#E8C27A");
 
 // The lost necklace. Aishah said: we went out with the Messenger of Allah ﷺ on one of his journeys, until at al-Bayda'
