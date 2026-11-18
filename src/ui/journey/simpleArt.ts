@@ -11,17 +11,18 @@ import { at3 } from "./storyArt";
 import { lookLine } from "./truthArt";
 
 /**
- * Simple: his bed was of leather, stuffed with palm fibre, Aishah said. Anas never knew him to eat from fancy dishes,
- * nor was thin bread baked for him, nor did he eat at a table; they ate on leather mats, Qatadah said. Ibn Umar never
- * left touching the two corners, in hardship or in ease, since he saw him touching them. When he had prayed Fajr, the
- * servants of Madinah brought their vessels of water, and he dipped his hand in each, even in the cold dawn. On the
- * road to Makkah he passed Jumdan and said: go on, the mufarridun have gone ahead: men and women who remember Allah
- * much. Wear sandals often, he said, for a man is still riding as long as he wears sandals. And people will be gathered
- * on the Day of Resurrection on a reddish-white land, like a loaf of pure flour, with no landmark for anyone. Only the
- * land, the sky, buildings, things, plants and animals are drawn. No Prophet, no Companion and no person is ever drawn,
- * not even a hand, a foot or a face, and no one rides: where someone was, a ring or a small dashed circle shows it,
- * where someone went, the circle goes, and a voice is arcs in the air. Nothing comes down from the sky: what is good is
- * a light, glints and a soft golden ring, and what was never his a grey ring. No name or word is written.
+ * Simple: his mattress was a leather case stuffed with palm fibres, Aishah said. Anas never knew him to eat from a big
+ * tray, nor to eat well-baked thin bread, nor to eat at a dining table. Ibn Umar never missed touching the two corners,
+ * in crowds or without crowds, since he saw him touching them. When he had finished the dawn prayer, the servants of
+ * Madinah came with utensils of water, and he dipped his hand in each, even in the cold dawn. On the road to Makkah he
+ * passed Jumdan and said: proceed on, the mufarridun have gone ahead: those males and females who remember Allah much.
+ * Make a general practice of wearing sandals, he said, for a man is riding, as it were, when he wears sandals. And the
+ * people will be gathered on the Day of Resurrection on a reddish-white land, like a pure loaf of bread, with no
+ * landmarks for anybody. Only the land, the sky, buildings, things, plants and animals are drawn. No Prophet, no
+ * Companion and no person is ever drawn, not even a hand, a foot or a face, and no one rides: where someone was, a ring
+ * or a small dashed circle shows it, where someone went, the circle goes, and a voice is arcs in the air. Nothing comes
+ * down from the sky: what is good is a light, glints and a soft golden ring, and what was never his a grey ring. No
+ * name or word is written.
  */
 
 /** Soft gold, for a ring of care that is not his. */
@@ -520,10 +521,10 @@ function vesselsAfterFajr(): SignArt {
 // called Jumdan, and he said: proceed on, it is Jumdan; the mufarridun have gone ahead. They said: who are the
 // mufarridun, O Messenger of Allah? He said: those males and females who remember Allah much (Sahih Muslim 2676). No
 // one is drawn, and no one rides: his place, a golden ring, goes along the road with the places of three with him, Abu
-// Hurairah's voice speaks, and they pass by Jumdan, a mountain by the road. His voice speaks: go on; far ahead along
-// the road the places of some who have gone ahead show, faint, in a soft golden light. The voices of those with him
-// ask; his voice answers, and sparks rise from the places ahead, one after another, remembering, and soft golden rings
-// come about them.
+// Hurairah's voice speaks, and they pass by Jumdan, a mountain by the road. His voice speaks: proceed on; far ahead
+// along the road the places of some who have gone ahead show, faint, in a soft golden light. The voices of those with
+// him ask; his voice answers, and sparks rise from the places ahead, one after another, remembering, and soft golden
+// rings come about them.
 function goneAhead(): SignArt {
   const going = (dx: number): SignPart["keys"] =>
     moves([
