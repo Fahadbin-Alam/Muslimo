@@ -1266,7 +1266,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What happens to one humble for Allah, per Muslim 2588?", "Allah raises his status", "And raises up one who is humble for Him"],
     ["Who is raised in status, in the hadith?", "The humble, for Allah's sake", "And raises up one who is humble for Him"],
     ["Humbling yourself for Allah raises you.", "True", "And raises up one who is humble for Him"],
-    ["Humbling yourself for Allah lowers you.", "False", "And raises up one who is humble for Him"]
+    ["Humbling yourself for Allah lowers you.", "False", "And raises up one who is humble for Him"],
+    // The lesson on forgiving and making peace (42:40): the ayah's questions are not asked here, since the scene does
+    // not show it.
+    ["What does Allah increase for one who forgives, per Muslim 2588?", "His honor", "Allah adds honor to one who forgives"]
   ],
   // The palm trunk he ﷺ stood by cried like a child when he moved to the pulpit, until he came down and held it (Sahih
   // al-Bukhari 3584). (Ibn Kathir's use of it for 59:21 is not in the scene.)
@@ -1342,7 +1345,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   // martyrs, and its four rings would confuse "how many were with him"; the narrator is not asked.)
   "sign-uhud-shook": [
     ["What did the Prophet ﷺ call Abu Bakr that day?", "A siddiq", "On you are a Prophet, a Siddiq and two martyrs"],
-    ["What did the Prophet ﷺ call Uthman on Uhud?", "A martyr", "On you are a Prophet, a Siddiq and two martyrs"]
+    ["What did the Prophet ﷺ call Uthman on Uhud?", "A martyr", "On you are a Prophet, a Siddiq and two martyrs"],
+    // The lesson on Abu Bakr, the truthful one: his trade before Islam is not asked here, since the scene does not show
+    // it.
+    ["Abu Bakr was called ____, the truthful one.", "As-Siddiq", "On you are a Prophet, a Siddiq and two martyrs"]
   ],
   // The stone in Makkah that used to greet him with salam before he was sent, which he knew even after (Sahih Muslim
   // 2277). (In which city is asked on the map.)
@@ -1623,7 +1629,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What brings more provision, in the hadith?", "Keeping ties with relatives", "Then let him keep good relations with his kin"],
     ["What else is prolonged by family ties, in the hadith?", "A person's life", "And that his life be prolonged", "Then let him keep good relations with his kin"],
     ["What brings more wealth and life, per the hadith?", "Good ties with relatives", "Then let him keep good relations with his kin"],
-    ["Cutting off relatives brings barakah.", "False", "Then let him keep good relations with his kin"]
+    ["Cutting off relatives brings barakah.", "False", "Then let him keep good relations with his kin"],
+    // The lesson on 35:11, from dust then pairs: what we were made from has its own picture, and where every lifespan is
+    // recorded is not asked here, since the scene does not show it.
+    ["What should one keep, in the hadith?", "Good ties with relatives", "Then let him keep good relations with his kin"]
   ],
   // Pray standing; if you can't, sitting; if you cannot, lying on your side (Sahih al-Bukhari 1117). (Who narrated it,
   // and why he asked, are not in the scene.)
@@ -1639,7 +1648,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Islam makes prayer easy for the sick.", "True", "And if you can't, pray while sitting", "If you cannot, then pray lying on your side"],
     ["How should one pray first, in the hadith?", "Standing", "Pray while standing"],
     ["What if one cannot sit, in the hadith?", "Pray lying on the side", "If you cannot, then pray lying on your side"],
-    ["Someone who cannot sit may pray lying on their side.", "True", "If you cannot, then pray lying on your side"]
+    ["Someone who cannot sit may pray lying on their side.", "True", "If you cannot, then pray lying on your side"],
+    // The lesson on no hardship in the religion (22:78): the ayah, and how the traveller shortens the prayer, are not
+    // asked here, since the scene does not show them.
+    ["If you cannot stand, how do you pray, per the hadith?", "Sitting", "And if you can't, pray while sitting"]
   ],
   // No fatigue, illness, worry, sadness, hurt or distress befalls a Muslim, even the prick of a thorn, but Allah wipes
   // away some of his sins for it (Sahih al-Bukhari 5641). (What Ibn Kathir says on 11:11 is not in the scene.)
@@ -1762,7 +1774,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["When else should we praise Him, per the hadith?", "While drinking", "And while drinking"],
     ["Small thanks for food can win Allah's pleasure.", "True", "Allah is pleased with His servant", "Who says Alhamdulillah while taking a morsel"],
     ["What pleases Allah at mealtime, per the hadith?", "Saying Alhamdulillah", "Who says Alhamdulillah while taking a morsel"],
-    ["When should we praise Him, per the hadith?", "When eating and drinking", "Who says Alhamdulillah while taking a morsel", "And while drinking"]
+    ["When should we praise Him, per the hadith?", "When eating and drinking", "Who says Alhamdulillah while taking a morsel", "And while drinking"],
+    // The lesson on what we say after we eat: what to say before eating, and on coming home, are not asked here, since
+    // the scene does not show them.
+    ["When you finish eating, say ____.", "Alhamdulillah", "Who says Alhamdulillah while taking a morsel"]
   ],
   // Anybody who believes in Allah and the Last Day should not harm his neighbor, should entertain his guest
   // generously, and should talk what is good or keep quiet (Sahih al-Bukhari 6018).
@@ -1804,7 +1819,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What came next after prayer, per the hadith?", "Kindness to parents", "Then, to be good and dutiful to parents"],
     ["Which deed is dearest to Allah, per the hadith?", "Prayer at its early fixed time", "The prayers at their early fixed times"],
     ["What came next after prayer?", "Being good to parents", "Then, to be good and dutiful to parents"],
-    ["Delaying prayer to the last minute is best.", "False", "The prayers at their early fixed times"]
+    ["Delaying prayer to the last minute is best.", "False", "The prayers at their early fixed times"],
+    // The lesson on kindness to parents (6:151): what comes right after tawhid in the ayah is not asked here, since the
+    // scene does not show it.
+    ["Per Bukhari 527, which deed is dearest to Allah?", "Prayer at its time", "The prayers at their early fixed times"],
+    ["Kindness to parents is ranked near the top of deeds.", "True", "Then, to be good and dutiful to parents"]
   ],
   // Truthfulness leads to righteousness and righteousness to Paradise, and a man keeps telling the truth until he is
   // truthful; falsehood leads to wickedness and wickedness to the Fire (Sahih al-Bukhari 6094). (Who narrated it and
@@ -2041,7 +2060,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["La hawla wa la quwwata illa billah is a treasure of where?", "Paradise", "For it is one of the treasures of Paradise"],
     ["On that journey he ﷺ also said: Allah is not deaf or far away.", "True", "You are not calling a deaf or absent one", "You are calling an All-Hearer, an All-Seer"],
     ["Which words are a treasure of Paradise?", "La hawla wa la quwwata illa billah", "Say: La hawla wa la quwwata illa billah", "For it is one of the treasures of Paradise"],
-    ["Why need they not shout, in the hadith?", "Allah hears and sees all", "You are not calling a deaf or absent one", "You are calling an All-Hearer, an All-Seer"]
+    ["Why need they not shout, in the hadith?", "Allah hears and sees all", "You are not calling a deaf or absent one", "You are calling an All-Hearer, an All-Seer"],
+    // The lesson on calling on Allah humbly and quietly (7:55): its questions on the ayah are not asked here, since the
+    // scene does not show it.
+    ["Why need we not shout, in Bukhari 2992?", "He is not deaf or absent", "You are not calling a deaf or absent one"]
   ],
   // Paradise has one hundred grades, as far apart as the heaven and the earth; when you ask Allah, ask for al-Firdaws,
   // the best and highest part of Paradise, from which its rivers originate (Sahih al-Bukhari 2790). (23:11 and
@@ -2939,7 +2961,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Usayd said it was not the first blessing from Abu Bakr's family.", "True", "Usayd: This is not your first blessing"],
     ["What did Aishah lose on the journey?", "Her necklace", "At al-Bayda', a necklace of mine was lost"],
     ["What did Allah allow when there was no water for wudu?", "Tayammum with clean earth", "Then Allah revealed the ayah of tayammum"],
-    ["Usayd ibn Hudayr called it the first blessing from Abu Bakr's family.", "False", "Usayd: This is not your first blessing"]
+    ["Usayd ibn Hudayr called it the first blessing from Abu Bakr's family.", "False", "Usayd: This is not your first blessing"],
+    // The lesson on tayammum with clean earth: wiping the face and hands, and whose necklace it was in another hadith,
+    // are not asked here, since the scene does not show them.
+    ["What was being searched for when tayammum came down?", "A lost necklace", "At al-Bayda', a necklace of mine was lost", "He stayed to look for it, and the people with him"],
+    ["Tayammum is with clean earth when there is no water.", "True", "Then Allah revealed the ayah of tayammum"]
   ],
   // In Madinah, Abu Bakr and Bilal fell ill with fever; she went in to them and asked how they were, and Bilal longed
   // aloud for a night in a valley of idhkhir. She told him, and he said: O Allah, make us love Madinah as we love Makkah,
@@ -3169,7 +3195,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What comes after the hand, if you cannot?", "The tongue", "If he cannot, then with his tongue"],
     ["What is the weakest faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"],
     ["What is the first way to change a wrong, in Muslim 49?", "With the hand", "Let him change it with his hand"],
-    ["What is the weakest of faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"]
+    ["What is the weakest of faith, in Muslim 49?", "Hating it in the heart", "If he cannot, then with his heart", "And that is the weakest of faith"],
+    // The lesson on those who forbade corruption (11:116): the ayah's questions are not asked here, since the scene does
+    // not show it.
+    ["What is the first way to change evil, per the hadith?", "With the hand", "Let him change it with his hand"]
   ],
   // Abu Dharr sent his brother, who came back and said: I saw him enjoining good character. Abu Dharr took his waterskin
   // and came to Makkah; Ali saw him and knew he was a stranger, then said: follow me, and enter where I enter. He heard
@@ -3917,7 +3946,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did Abdur-Rahman ask his new brother for?", "The way to the market", "Show me the market"],
     ["Which market did they show him?", "The market of Qaynuqa'", "Sa'd: the market of Qaynuqa'"],
     ["Abd ar-Rahman came back from the market with nothing.", "False", "Abdur-Rahman brought dried yogurt, butter"],
-    ["What did he bring home from the market?", "Dried yogurt and butter", "Abdur-Rahman brought dried yogurt, butter"]
+    ["What did he bring home from the market?", "Dried yogurt and butter", "Abdur-Rahman brought dried yogurt, butter"],
+    // The lesson on the Muhajirun and the Ansar made brothers: what he did for each Muhajir, and who became Abd
+    // ar-Rahman's brother, are not asked here, since the scene's first words tell them.
+    ["What did Sa'd offer his new brother?", "Half his wealth", "Sa'd: I'll share my wealth in two halves"]
   ],
   // He bought food from a Jewish man, to be paid at a set time, and pledged his iron armour to him (Sahih al-Bukhari
   // 2068). (What he bought stays on its usual picture: the sacks of grain are there from the start.)
@@ -4674,7 +4706,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-water-for-jabir": [
     ["What did the Prophet ﷺ sprinkle on Jabir?", "His wudu water", "He made wudu", "and poured of its water on me"],
     ["What did Jabir ask about?", "His inheritance", "I said: to whom will my inheritance go?"],
-    ["Visiting the sick is part of the sunnah.", "True", "Jabir said: he came to visit me", "while I was sick and unconscious"]
+    ["Visiting the sick is part of the sunnah.", "True", "Jabir said: he came to visit me", "while I was sick and unconscious"],
+    // The lesson on 4:11, Allah divides the inheritance: why he visited Jabir is not asked here, since Jabir's place
+    // lies sick from the scene's start, nor who came walking with him, since the scene does not show Abu Bakr.
+    ["What did Jabir ask when he woke?", "What to do with his wealth", "I said: to whom will my inheritance go?"]
   ],
   // Anas said: a Jewish youth used to serve him, and fell ill. He came to visit him, sat by his head, and said: accept
   // Islam. The youth looked at his father, who was with him, and his father said: obey Abul-Qasim ﷺ. So he accepted
@@ -6328,6 +6363,63 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Why did he ﷺ not take the boy's pledge?", "He was still too young", "He said: he is too young for the pledge,"],
     ["What did Ibn Umar and Ibn az-Zubayr ask him?", "To be their partner", "Be our partner: he asked blessing for you."],
     ["The boy's trade was often blessed when he grew up.", "True", "Be our partner: he asked blessing for you.", "Often Abdullah would win a camel's load."]
+  ],
+  // Imran ibn Husayn al-Khuza'i said: the Messenger of Allah ﷺ saw a person sitting aloof and not praying with the
+  // people; he asked him: O so and so, what prevented you from offering the prayer with the people? He replied: O
+  // Messenger of Allah, I am junub and there is no water; he said: perform tayammum with clean earth, and that will be
+  // sufficient for you (Sahih al-Bukhari 348).
+  "sign-clean-earth-is-enough": [
+    ["Why did the man not pray with them?", "He had no water for ghusl", "The man replied: I am junub", "And there is no water. He said:"],
+    ["What did the Prophet ﷺ tell him to use?", "Clean earth", "Perform tayammum with clean earth,"],
+    ["Tayammum was enough for him to pray.", "True", "And that will be sufficient for you."]
+  ],
+  // Zayd ibn Arqam said: in the lifetime of the Prophet ﷺ we used to speak while praying, and one of us would tell his
+  // needs to his companions, till the ayah was revealed: guard strictly your prayers; after that we were ordered to
+  // remain silent while praying (Sahih al-Bukhari 1200). Its lesson's true or false on telling one's needs in the prayer
+  // is not asked here, since the scene's first words tell that they spoke while praying.
+  "sign-silence-in-the-prayer": [
+    ["Which ayah did Zayd name for this order?", "Guard strictly the prayers", "Guard strictly your prayers."],
+    ["After 2:238 came down, what were they ordered to do in prayer?", "Remain silent", "Then we were ordered to remain silent."]
+  ],
+  // Mahmud ibn ar-Rabi' said: when I was a boy of five, I remember, the Prophet ﷺ took water from a bucket with his
+  // mouth and threw it on my face (Sahih al-Bukhari 77). Its lesson's true or false on Mahmud remembering it is not
+  // asked here, since the scene's first words tell it.
+  "sign-a-boy-of-five": [
+    ["What did he ﷺ spray on Mahmud's face?", "Water from a bucket", "He took water with his mouth", "And threw it on my face,"],
+    ["How old was Mahmud then?", "Five years old", "When I was a boy of five,"]
+  ],
+  // Aishah said: when the prayers were first enjoined, they were of two rak'at each; later the prayer in a journey was
+  // kept as it was, but the prayers for non-travelers were completed (Sahih al-Bukhari 1090). Its lesson's question on
+  // who told this is not asked here, since the scene's first words name her, nor its true or false on shortening being a
+  // gift that makes travel easier, since the scene does not show it.
+  "sign-two-rakahs-on-a-journey": [
+    ["How many rak'ahs is Dhuhr on a journey?", "Two", "They were of two rak'at each.", "The journey prayer was kept as it was,"]
+  ],
+  // Abu Wa'il said: Abdullah used to give a religious talk to the people every Thursday; once a man said: O Aba
+  // Abdur-Rahman, I wish you could preach to us daily; Abdullah replied: the only thing which prevents me from doing so
+  // is that I hate to bore you, and I take care of you in preaching by selecting a suitable time, just as the Prophet ﷺ
+  // used to do with us, for fear of making us bored (Sahih al-Bukhari 70).
+  "sign-lest-you-be-bored": [
+    ["On which day did Ibn Mas'ud give his talk?", "Every Thursday", "To the people every Thursday."],
+    ["Why did he not teach every day?", "He did not want to bore them", "Is that I hate to bore you;"],
+    ["Ibn Mas'ud picked good times to teach, as the Prophet ﷺ did.", "True", "I pick a suitable time, as he did with us,"]
+  ],
+  // Abu Hurairah reported that the Messenger of Allah ﷺ said: the parts of land dearest to Allah are its masjids, and
+  // the parts most hateful to Allah are markets (Sahih Muslim 671). The true or false on markets being the most loved
+  // waits with the question on the places least loved, since markets being the most hateful is its answer.
+  "sign-the-dearest-places": [
+    ["Which places are dearest to Allah?", "The masjids", "Are its masjids,"],
+    ["Which places are least loved by Allah?", "Markets", "Are markets."],
+    ["Markets are the most loved places to Allah.", "False", "Are markets."]
+  ],
+  // Anas ibn Malik said: two men sneezed before the Prophet ﷺ; he said to one of them: may Allah bestow His mercy on
+  // you, but he did not say that to the other; on being asked, he said: that one praised Allah, while the other did not
+  // praise Allah (Sahih al-Bukhari 6221). The question on what to say when you sneeze waits with why only one was
+  // answered, since the one who praised Allah shows it.
+  "sign-two-men-sneezed": [
+    ["What does yarhamukallah mean?", "May Allah have mercy on you", "He told one: may Allah have mercy on you,"],
+    ["Why did only one man get yarhamukallah?", "He praised Allah", "That one praised Allah,"],
+    ["What do you say when you sneeze?", "Alhamdulillah", "That one praised Allah,"]
   ]
 };
 
