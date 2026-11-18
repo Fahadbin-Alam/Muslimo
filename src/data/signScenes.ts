@@ -905,7 +905,14 @@ export type SignKind =
   | "ill-or-travelling"
   | "for-an-absent-brother"
   | "none-to-accept-it"
-  | "makes-peace";
+  | "makes-peace"
+  | "a-thankful-servant"
+  | "spend-and-replace"
+  | "a-garment-left-spread"
+  | "cold-and-heat"
+  | "the-rope-untied"
+  | "doors-of-mercy"
+  | "from-the-home";
 
 export type SignScene = {
   id: string;
@@ -4601,6 +4608,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Umm Kulthum bint Uqbah said that she heard the Messenger of Allah ﷺ say: the liar is not the one who makes peace between people, passing on good or saying good.",
     sources: [bukhari("2692")]
+  },
+  {
+    id: "sign-a-thankful-servant",
+    kind: "a-thankful-servant",
+    caption:
+      "Al-Mughirah ibn Shu'bah said: the Prophet ﷺ would stand to pray until his feet swelled. It was said to him: Allah has forgiven you what came before of your sins and what is to come. He said: should I not be a thankful servant?",
+    sources: [bukhari("1130"), bukhari("4836"), bukhari("6471")]
+  },
+  {
+    id: "sign-spend-and-replace",
+    kind: "spend-and-replace",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: there is no day on which the servants wake but two angels come down; one of them says: O Allah, give the one who spends something in its place; and the other says: O Allah, give ruin to the one who holds back.",
+    sources: [bukhari("1442")]
+  },
+  {
+    id: "sign-a-garment-left-spread",
+    kind: "a-garment-left-spread",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: the Hour will come while two men have spread a garment between them, and they will not sell it or fold it; while a man goes off with the milk of his she-camel, and does not drink it; while one plasters his trough, and does not water from it; and while one has raised his food to his mouth, and does not eat it.",
+    sources: [bukhari("6506")]
+  },
+  {
+    id: "sign-cold-and-heat",
+    kind: "cold-and-heat",
+    caption:
+      "Anas ibn Malik said: when the cold was hard, the Prophet ﷺ would pray early, and when the heat was hard, he would wait for it to cool, meaning the Jumu'ah.",
+    sources: [bukhari("906")]
+  },
+  {
+    id: "sign-the-rope-untied",
+    kind: "the-rope-untied",
+    caption:
+      "Anas said: the Messenger of Allah ﷺ came into the masjid, and a rope was stretched between two pillars. He said: what is this? They said: it is Zaynab's; she prays, and when she grows weary or tired, she holds on to it. He said: untie it; let one of you pray while fresh, and when weary or tired, let him sit.",
+    sources: [muslim("784a")]
+  },
+  {
+    id: "sign-doors-of-mercy",
+    kind: "doors-of-mercy",
+    caption:
+      "Abu Humayd or Abu Usayd said that the Messenger of Allah ﷺ said: when one of you enters the masjid, let him say: O Allah, open for me the doors of Your mercy; and when he goes out, let him say: O Allah, I ask You of Your bounty.",
+    sources: [muslim("713a")]
+  },
+  {
+    id: "sign-from-the-home",
+    kind: "from-the-home",
+    caption:
+      "Aishah said that the Messenger of Allah ﷺ said: when a woman gives of the food of her home, not wasting it, she has her reward for what she gave, her husband has his reward for what he earned, and the keeper of the store has the same; none of them lessens the reward of another at all.",
+    sources: [bukhari("1425")]
   }
 ];
 
@@ -6851,7 +6907,29 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A time when no one takes the charity carried.
   "deep-minorsigns-no-one-takes": "sign-none-to-accept-it",
   // Making peace between people: no liar.
-  "deep-nisa3-secret-talk": "sign-makes-peace"
+  "deep-nisa3-secret-talk": "sign-makes-peace",
+  // He prayed until his feet swelled: a thankful servant.
+  "deep-muzzammil1-a-thankful-servant": "sign-a-thankful-servant",
+  // Forgiven, yet he stood long at night in thanks.
+  "deep-fath1-a-thankful-servant": "sign-a-thankful-servant",
+  // Al-Mughirah: should I not be a thankful servant?
+  "deep-mughirah-a-thankful-servant": "sign-a-thankful-servant",
+  // Each morning: replace what the giver gave.
+  "deep-aq-malaikah-two-angels": "sign-spend-and-replace",
+  // Spend, and it is replaced.
+  "deep-saba2-spend-and-he-replaces": "sign-spend-and-replace",
+  // The Hour comes suddenly: a sale never finished.
+  "deep-minorsigns-sudden": "sign-a-garment-left-spread",
+  // So sudden: a garment spread and never folded.
+  "deep-nahl1-the-hour-comes-suddenly": "sign-a-garment-left-spread",
+  // In hard cold he prayed early; in hard heat, once it cooled.
+  "deep-prayer-rain-cold-and-heat-early-in-the-cold": "sign-cold-and-heat",
+  // Zaynab's rope untied: pray while fresh, sit when tired.
+  "deep-book-night-prayer-pray-while-fresh": "sign-the-rope-untied",
+  // Going in: the doors of mercy; going out: His bounty.
+  "deep-dua-day-mosque": "sign-doors-of-mercy",
+  // Giving of the home's food: a reward for each, none less.
+  "deep-wives-charity-from-home": "sign-from-the-home"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
