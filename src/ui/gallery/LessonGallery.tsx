@@ -1578,6 +1578,12 @@ const STATES: State[] = [
   { id: "scene-ninety-nine-and-one", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-after-thirty-three" ask="full hundred" /> },
   { id: "scene-three-things-are-yours", render: () => <SceneQuestionDemo lessonId="lesson-deep-takathur1-three-things-are-yours" ask="really his" /> },
   { id: "scene-best-people-on-earth", render: () => <SceneQuestionDemo lessonId="lesson-deep-fath1-best-people-on-earth" ask="How many were they" /> },
+  { id: "scene-many-prostrations", render: () => <SceneQuestionDemo lessonId="lesson-deep-thawban-many-sajdahs" ask="each sajdah do" /> },
+  { id: "scene-haya-is-faith", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-heart-haya" ask="haya part of" /> },
+  { id: "scene-do-not-get-angry", render: () => <SceneQuestionDemo lessonId="lesson-deep-anger-dont-be-angry" ask="asked only once" /> },
+  { id: "scene-a-third-of-islam", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-third" ask="what part of the Muslims" /> },
+  { id: "scene-doors-opened-for-it", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-words-of-salah-the-doors-of-heaven-opened" ask="What was opened" /> },
+  { id: "scene-seven-rounds", render: () => <SceneQuestionDemo lessonId="lesson-hajj-rites-tawaf" ask="walking around the Ka'bah" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

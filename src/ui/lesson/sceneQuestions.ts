@@ -6499,6 +6499,53 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-best-people-on-earth": [
     ["What did the Prophet ﷺ call them, per Bukhari 4154?", "The best people on the earth", "You are the best people on the earth!"],
     ["How many were they, per Bukhari 4154?", "1,400", "We were fourteen hundred then."]
+  ],
+  // Ma'dan ibn Abi Talhah said: I met Thawban, the freed servant of the Messenger of Allah ﷺ, and asked him to tell me
+  // of an act for which Allah will admit me to Paradise; he gave no reply, twice, and the third time he said: I asked
+  // the Messenger of Allah ﷺ about that, and he said: make frequent prostrations before Allah, for you will not make one
+  // prostration without its raising you a degree and removing a sin from you; then Abu ad-Darda gave a reply like
+  // Thawban's (Sahih Muslim 488). Its lesson's true or false on Thawban being a freed servant is not asked here, since
+  // the scene does not show it.
+  "sign-many-prostrations": [
+    ["What deed did Thawban recommend?", "Prostrating often", "Make frequent prostrations to Allah;"],
+    ["What does each sajdah do?", "Raises a level, removes a sin", "Each raises you a degree, removes a sin."]
+  ],
+  // Abdullah ibn Umar said: once the Messenger of Allah ﷺ passed by an Ansari who was admonishing his brother regarding
+  // haya; on that the Messenger of Allah ﷺ said: leave him, as haya is a part of faith (Sahih al-Bukhari 24). Its
+  // lesson's true or false on what haya means is not asked here, since the scene does not show it.
+  "sign-haya-is-faith": [
+    ["A man scolded his brother for being shy. What did he ﷺ say?", "Leave him", "On that he said: leave him,"],
+    ["What is haya part of?", "Faith", "As haya is a part of faith."]
+  ],
+  // Abu Hurairah said: a man said to the Prophet ﷺ: advise me! He said: do not become angry. The man asked again and
+  // again, and he said in each case: do not become angry (Sahih al-Bukhari 6116).
+  "sign-do-not-get-angry": [
+    ["What advice did the man get?", "Do not get angry", "Advise me! He said: do not become angry."],
+    ["The man asked only once.", "False", "The man asked again and again,"],
+    ["How did the Prophet ﷺ answer when the man asked again?", "The same each time", "And he said in each case:", "Do not become angry."]
+  ],
+  // Sa'd ibn Abi Waqqas said: no man embraced Islam before the day on which I embraced Islam, and I remained for seven
+  // days as one third of the then extant Muslims (Sahih al-Bukhari 3727). Its lesson's question on what this shows about
+  // Sa'd, and the two questions of the lesson on his becoming Muslim, are not asked here, since the scene's first words
+  // tell that he was among the very first.
+  "sign-a-third-of-islam": [
+    ["For how many days did Sa'd say this lasted?", "Seven", "And I remained for seven days"],
+    ["Sa'd said he was what part of the Muslims for seven days?", "One third", "As one third of the then extant Muslims."]
+  ],
+  // Ibn Umar said: while we were praying with the Messenger of Allah ﷺ, one among the people said: Allah is truly great,
+  // praise be to Allah in abundance, and glory be to Allah in the morning and the evening; the Messenger of Allah ﷺ
+  // asked who said it, and he said: it surprised me, for the doors of heaven were opened for it; Ibn Umar said: I have
+  // not abandoned them since I heard the Messenger of Allah ﷺ say this (Sahih Muslim 601).
+  "sign-doors-opened-for-it": [
+    ["How did the man's words of praise begin?", "Allahu akbar kabira", "Allah is truly great, praise be to Allah"],
+    ["What was opened for the man's words, he ﷺ said?", "The doors of heaven", "He said: it surprised me, for the doors", "Of heaven were opened for it."],
+    ["Ibn Umar kept saying these words from that day on.", "True", "Ibn Umar: I have not abandoned them since."]
+  ],
+  // Ibn Umar said: the Prophet ﷺ reached Makkah and performed the seven rounds of the Ka'bah, then offered a two-rak'ah
+  // prayer behind Maqam Ibrahim, then performed the seven rounds between Safa and Marwah (Sahih al-Bukhari 1645). Its
+  // lesson's question on what is worn in ihram is not asked here, since the scene does not show it.
+  "sign-seven-rounds": [
+    ["____ means walking around the Ka'bah seven times.", "Tawaf", "And performed seven rounds of the Ka'bah,"]
   ]
 };
 

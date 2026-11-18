@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3372);
+    expect(asks.length).toBe(3385);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(4919);
+    expect(places).toBe(4941);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -22390,6 +22390,207 @@ describe("where the scene waits and where it stops", () => {
       ],
       [40, 76.2],
       1
+    ]);
+  });
+
+  it("waits on the scenes from many prostrations to seven rounds, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight. (The
+    // scene of ten years of service has no question: its lesson's two are on Anas's age, which its first words tell.)
+    const scenes = ["sign-many-prostrations", "sign-haya-is-faith", "sign-do-not-get-angry", "sign-a-third-of-islam", "sign-doors-opened-for-it", "sign-seven-rounds"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(13);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Prostrating often: his voice speaks by his golden ring, with no mat yet, before the next words; then a mat comes,
+    // and a place on it goes low and rises, twice: prostrating often.
+    expect([
+      shown("What deed did Thawban recommend?", ["his voice: make frequent prostrations", "a mat", "a place on the mat, going low and rising: prostrations"]),
+      value("many-prostrations", "a place on the mat, going low and rising: prostrations", "y", 0.63),
+      value("many-prostrations", "a place on the mat, going low and rising: prostrations", "y", 0.67)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      1.8,
+      1.8
+    ]);
+    // Raises a level, removes a sin: the place on the mat has gone low and risen twice, with no stair and no grey puff
+    // yet, before the next words; then a faint stair shows by the mat, a grey puff by the place fades away: a sin
+    // removed, and a small light goes up a step, which lights: raised a degree.
+    expect([
+      shown("What does each sajdah do?", ["degrees: a faint stair by the mat", "a sin: a grey puff by the place on the mat, fading away", "the step it reaches lights"]),
+      moved("What does each sajdah do?", "a small light on the first step, going up a step: raised a degree", "x"),
+      moved("What does each sajdah do?", "a small light on the first step, going up a step: raised a degree", "y"),
+      value("many-prostrations", "a sin: a grey puff by the place on the mat, fading away", "opacity", 0.77)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 0, 1]
+      ],
+      [0, 6],
+      [0, -3],
+      1
+    ]);
+    // Leave him: the Ansari's voice admonishes, and a soft rosy glow is about the place of the one admonished, with no
+    // voice of his yet, before the next words; then his voice speaks: leave him.
+    expect([
+      shown("A man scolded his brother for being shy. What did he ﷺ say?", ["the Ansari's voice: admonishing it regarding haya", "its haya: a soft rosy glow about the place of the one admonished", "his voice: leave him"])
+    ]).toEqual([
+      [
+        [1, 1, 0],
+        [0, 1, 1]
+      ]
+    ]);
+    // Faith: his voice has said leave him, with no light within the place of the one admonished yet, before the last
+    // words; then a light comes within it: faith, and a soft golden ring and glints about it: a part of faith.
+    expect([
+      shown("What is haya part of?", ["his voice: leave him", "faith: a light within the place of the one admonished", "a part of faith: a soft golden ring about it", "glints about it"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // Do not get angry: the asker's place has come to him, with no voice of the asker and none of his yet, before the
+    // next words; then the asker's voice asks, his voice speaks, and a short jagged red line over the asker's place
+    // smooths into a soft wave: calm.
+    expect([
+      shown("What advice did the man get?", ["the asker's voice: advise me", "his voice: do not become angry", "anger: a short jagged red line over the asker's place", "calm: the line smooths into a soft wave"]),
+      moved("What advice did the man get?", "the asker's place, coming to him", "x"),
+      value("do-not-get-angry", "his voice: do not become angry", "opacity", 0.3),
+      value("do-not-get-angry", "anger: a short jagged red line over the asker's place", "opacity", 0.31)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0, 0, 0, 1]
+      ],
+      [-40, -40],
+      1,
+      1
+    ]);
+    // Again and again: the asker has asked once and his voice has answered, the red line smoothed into a soft wave, with
+    // no more asking yet, before the next words; then the asker's voice asks again, three times.
+    expect([
+      shown("The man asked only once.", ["calm: the line smooths into a soft wave", "the asker's voice: asking again 1", "the asker's voice: asking again 2", "the asker's voice: asking again 3"]),
+      [0.43, 0.475, 0.52].map((t) => ["the asker's voice: asking again 1", "the asker's voice: asking again 2", "the asker's voice: asking again 3"].map((name) => value("do-not-get-angry", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 0, 0, 0]
+      ],
+      [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1]
+      ]
+    ]);
+    // The same each time: the asker's voice has asked again three times, with no answer yet, before the next words; then
+    // his voice answers each time, and once more: do not become angry, with a cool soft ring and glints of calm about
+    // the asker's place.
+    expect([
+      shown("How did the Prophet ﷺ answer when the man asked again?", ["his voice: in each case 1", "his voice: in each case 2", "his voice: in each case 3", "his voice: do not become angry, once more", "calm: a cool soft ring about the asker's place", "glints of calm about it"]),
+      [0.625, 0.67, 0.715].map((t) => ["his voice: in each case 1", "his voice: in each case 2", "his voice: in each case 3"].map((name) => value("do-not-get-angry", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 1, 1, 1]
+      ],
+      [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1]
+      ]
+    ]);
+    // Seven days: a spark has risen from Sa'd's place, with no circles in the sky yet, before the next words; then seven
+    // small circles show in the sky and light one after another: seven days.
+    expect([
+      shown("For how many days did Sa'd say this lasted?", ["seven days: seven small circles in the sky", "day 1 lights", "day 2 lights", "day 3 lights", "day 4 lights", "day 5 lights", "day 6 lights", "day 7 lights"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    ]);
+    // One third: the seven days have lit, with no band over Sa'd's place yet, before the last words; then a band in
+    // three parts shows over it, one part lights: one third, and a soft golden ring and glints come about it.
+    expect([
+      shown("Sa'd said he was what part of the Muslims for seven days?", ["day 7 lights", "a band in three parts, over Sa'd's place", "one third: one part lights", "a soft golden ring about the lit third", "glints about the lit third"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ]
+    ]);
+    // Allahu akbar kabira: its voice has begun the words of praise, with no spark from its place yet, before the next
+    // words; then the first spark rises and stays: Allah is truly great.
+    expect([
+      shown("How did the man's words of praise begin?", ["its voice: words of praise", "its words of praise: spark 1, rising and staying, then rising to the doors", "its words of praise: spark 2, rising and staying, then rising to the doors"]),
+      moved("How did the man's words of praise begin?", "its words of praise: spark 1, rising and staying, then rising to the doors", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, -22.4]
+    ]);
+    // The doors of heaven: the three sparks of its words stay over the rows, and no gateway shows far up yet, before the
+    // next words; then a gateway shows far up with its doors shut, the doors open, a light comes within, and the three
+    // sparks rise to the doors, with glints about them.
+    expect([
+      shown("What was opened for the man's words, he ﷺ said?", ["far up, a gateway: its posts and lintel", "the light within the open gateway", "glints about the open doors", "its words of praise: spark 1, rising and staying, then rising to the doors", "its words of praise: spark 2, rising and staying, then rising to the doors", "its words of praise: spark 3, rising and staying, then rising to the doors"]),
+      moved("What was opened for the man's words, he ﷺ said?", "far up, the left door, opening", "scaleX"),
+      moved("What was opened for the man's words, he ﷺ said?", "far up, the right door, opening", "scaleX"),
+      value("doors-opened-for-it", "its words of praise: spark 1, rising and staying, then rising to the doors", "y", 0.81)
+    ]).toEqual([
+      [
+        [0, 0, 0, 1, 1, 1],
+        [1, 1, 1, 0, 0, 0]
+      ],
+      [1, 0.16],
+      [1, 0.16],
+      -82.4
+    ]);
+    // He kept saying them: the doors stand open far up, with no voice of Ibn Umar's yet, before the last words; then Ibn
+    // Umar's voice speaks, and sparks rise from his place, one after another.
+    expect([
+      shown("Ibn Umar kept saying these words from that day on.", ["Ibn Umar's voice: I have not left them since", "he kept saying them: a spark rising from Ibn Umar's place 1", "he kept saying them: a spark rising from Ibn Umar's place 2", "he kept saying them: a spark rising from Ibn Umar's place 3"]),
+      [0.905, 0.925, 0.945].map((t) => ["he kept saying them: a spark rising from Ibn Umar's place 1", "he kept saying them: a spark rising from Ibn Umar's place 2", "he kept saying them: a spark rising from Ibn Umar's place 3"].map((name) => value("doors-opened-for-it", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 0, 0, 0]
+      ],
+      [
+        [1, 0, 0],
+        [0, 1, 0],
+        [0, 0, 1]
+      ]
+    ]);
+    // Tawaf: his place has come by the House, with no round lit yet, before the next words; then it goes round the House
+    // seven times, and a glint lights after each round.
+    expect([
+      shown("____ means walking around the Ka'bah seven times.", ["round 1 of the House: a glint", "round 2 of the House: a glint", "round 3 of the House: a glint", "round 4 of the House: a glint", "round 5 of the House: a glint", "round 6 of the House: a glint", "round 7 of the House: a glint"]),
+      [0.2, 0.3].map((t) => ["round 1 of the House: a glint", "round 2 of the House: a glint", "round 3 of the House: a glint", "round 4 of the House: a glint", "round 5 of the House: a glint", "round 6 of the House: a glint", "round 7 of the House: a glint"].map((name) => value("seven-rounds", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1]
+      ],
+      [
+        [1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0, 0, 0]
+      ]
     ]);
   });
 
