@@ -1269,7 +1269,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Humbling yourself for Allah lowers you.", "False", "And raises up one who is humble for Him"],
     // The lesson on forgiving and making peace (42:40): the ayah's questions are not asked here, since the scene does
     // not show it.
-    ["What does Allah increase for one who forgives, per Muslim 2588?", "His honor", "Allah adds honor to one who forgives"]
+    ["What does Allah increase for one who forgives, per Muslim 2588?", "His honor", "Allah adds honor to one who forgives"],
+    // The lesson on certainty and humility: how belief shows, and staying patient when things get hard, are not asked
+    // here, since the scene does not show them.
+    ["Strong iman makes a person ____, not proud.", "humble", "And raises up one who is humble for Him"]
   ],
   // The palm trunk he ﷺ stood by cried like a child when he moved to the pulpit, until he came down and held it (Sahih
   // al-Bukhari 3584). (Ibn Kathir's use of it for 59:21 is not in the scene.)
@@ -1561,7 +1564,14 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which hand do you eat with?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
     ["You should eat from what is nearest to you on the plate.", "True", "And eat from what is near you"],
     ["Which hand did he ﷺ say to eat with?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
-    ["From which part of the dish should you eat?", "What is nearest to you", "And eat from what is near you"]
+    ["From which part of the dish should you eat?", "What is nearest to you", "And eat from what is near you"],
+    // The lessons on saying Bismillah, on the right hand, and on what we say before we eat: whether Bismillah helps us
+    // remember Allah before an action, and what to say on coming home, are not asked here, since the scene does not show
+    // them.
+    ["What should a Muslim say before eating?", "Bismillah", "O boy! Say Bismillah, eat with your right hand"],
+    ["Which choice fits the sunnah at the table?", "Say Bismillah and eat with your right hand", "O boy! Say Bismillah, eat with your right hand"],
+    ["Which hand do we eat with?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
+    ["Before you eat, say ____.", "Bismillah", "O boy! Say Bismillah, eat with your right hand"]
   ],
   // When will the Hour be? What have you prepared for it? Love of Allah and His Messenger. You will be with those you
   // love; and they had never been so glad (Sahih al-Bukhari 3688). (Whom Anas loved, and 42:18, are not in the scene.)
@@ -1796,7 +1806,9 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["A believer may hurt a neighbour if annoyed.", "False", "Should not harm his neighbor"],
     // The lesson on manners online: walking humbly and disagreeing kindly are not asked here, since the scene does not
     // show them.
-    ["Online too: say something good, or stay ____.", "quiet", "Should talk what is good or keep quiet"]
+    ["Online too: say something good, or stay ____.", "quiet", "Should talk what is good or keep quiet"],
+    // The lesson on honoring a guest: what Jibril kept telling him is asked on the scene of the neighbor.
+    ["A Muslim ____ a guest.", "honors", "Should entertain his guest generously"]
   ],
   // Sufyan asked for something about Islam he need ask no one else; he ﷺ said: Say, I affirm my faith in Allah, and
   // then remain steadfast to it (Sahih Muslim 38). (What 11:112, 41:30 and 46:13 say, and what Abu Bakr said, are not
@@ -3392,7 +3404,12 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Duha was one of the three things he ﷺ advised.", "True", "Two rak'ahs of Duha"],
     ["The advice also had two rakahs of Duha.", "True", "Two rak'ahs of Duha"],
     ["When should witr be prayed, by this advice?", "Before sleeping", "And to pray witr before I sleep"],
-    ["When should witr be prayed, in this advice?", "Before sleeping", "And to pray witr before I sleep"]
+    ["When should witr be prayed, in this advice?", "Before sleeping", "And to pray witr before I sleep"],
+    // The lesson on three things for life: whether Abu Hurairah stopped these deeds when he grew old is not asked here,
+    // since the scene does not show it.
+    ["How many days a month did he fast on this advice?", "Three", "Abu Hurairah: He advised me of three", "Fasting three days of every month"],
+    ["Which prayer did he pray in the late morning?", "Duha", "Two rak'ahs of Duha"],
+    ["When did he pray witr?", "Before sleeping", "And to pray witr before I sleep"]
   ],
   // One from Najd asked about Islam: five prayers in the day and the night, the fast of Ramadan, and zakat; is there
   // more on me? No, unless you do it of your own will. He has succeeded, if he is truthful (Sahih al-Bukhari 46).
@@ -6420,6 +6437,68 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What does yarhamukallah mean?", "May Allah have mercy on you", "He told one: may Allah have mercy on you,"],
     ["Why did only one man get yarhamukallah?", "He praised Allah", "That one praised Allah,"],
     ["What do you say when you sneeze?", "Alhamdulillah", "That one praised Allah,"]
+  ],
+  // Abdullah ibn Umar said: I offered with the Messenger of Allah ﷺ two rak'at before the Zuhr prayer and two rak'at
+  // after the Zuhr prayer, two rak'at after Jumu'ah, Maghrib and Isha (Sahih al-Bukhari 1169). Its lesson's question on
+  // how many after Maghrib is not asked here, since the scene's first words tell of two rak'ahs, and which prayer had
+  // two before and two after is asked on its own picture, in the sky.
+  "sign-sunnah-around-the-prayers": [
+    ["There is a sunnah after Isha.", "True", "And after Isha."]
+  ],
+  // Abu Basrah al-Ghifari said: the Messenger of Allah ﷺ led us in the Asr prayer at al-Mukhammas, and then said: this
+  // prayer was presented to those gone before you, but they lost it, and he who guards it has two rewards in store for
+  // him; and no prayer is valid after it till the onlooker appears, and the onlooker is the star (Sahih Muslim 830a).
+  // The true or false on guarding Asr with care waits with how many times its reward is given, since the two rewards of
+  // the one who guards it show it.
+  "sign-two-rewards-for-asr": [
+    ["What did those before us do with this prayer, he ﷺ said?", "They lost it", "Gone before you, but they lost it,"],
+    ["The one who guards Asr gets its reward how many times?", "Twice", "And whoever guards it has two rewards."],
+    ["Asr is a prayer worth guarding with care.", "True", "And whoever guards it has two rewards."]
+  ],
+  // Abu Hurairah reported the Messenger of Allah ﷺ as saying: the gates of Paradise are not opened but on two days,
+  // Monday and Thursday, and then every servant who does not associate anything with Allah is granted pardon, except the
+  // person who has rancour against his brother; and it would be said: look towards both of them until there is
+  // reconciliation (Sahih Muslim 2565a).
+  "sign-until-they-make-peace": [
+    ["On which two days are the gates of Paradise opened, he ﷺ said?", "Monday and Thursday", "Not opened but on Monday and Thursday,"],
+    ["Whose forgiveness waits until they make peace, he ﷺ said?", "Two who hold a grudge", "Except one with rancour against a brother."],
+    ["Two Muslims at odds are given time to make peace before they are forgiven.", "True", "And it is said: look towards both of them", "Until there is reconciliation."]
+  ],
+  // Aishah said: the Messenger of Allah ﷺ used to offer eleven rak'at, and that was his prayer; he used to prolong the
+  // prostration to such an extent that one could recite fifty verses before he would lift his head; he used to pray two
+  // rak'at before the Fajr prayer, and then used to lie down on his right side till the call-maker came and informed him
+  // about the prayer (Sahih al-Bukhari 1123). Its lesson's question on when he made such long sujud is not asked here,
+  // since the scene's night shows from its start.
+  "sign-a-sujud-of-fifty-verses": [
+    ["His ﷺ sujud at night was long and unhurried.", "True", "He would prolong the prostration such that", "One could recite fifty verses"],
+    ["How long was his ﷺ sujud in the night prayer?", "As long as fifty verses", "One could recite fifty verses"]
+  ],
+  // Abu Hurairah reported the Messenger of Allah ﷺ as saying: if anyone extols Allah after every prayer thirty-three
+  // times, and praises Allah thirty-three times, and declares His greatness thirty-three times, ninety-nine times in
+  // all, and says to complete a hundred: there is no god but Allah, having no partner with Him, to Him belongs
+  // sovereignty and to Him is praise due, and He is Potent over everything, his sins will be forgiven even if these are
+  // as abundant as the foam of the sea (Sahih Muslim 597a).
+  "sign-ninety-nine-and-one": [
+    ["How many times each: Subhanallah, Alhamdulillah, Allahu akbar?", "33", "After every prayer thirty-three times,", "Declares Allah great thirty-three times,"],
+    ["What makes it a full hundred?", "La ilaha illallah...", "There is no god but Allah, no partner..."],
+    ["What is forgiven for it?", "Sins, even like sea foam", "The sins are forgiven, even if as abundant", "As the foam of the sea."]
+  ],
+  // Abu Hurairah reported the Messenger of Allah ﷺ as saying: a servant says: my wealth, my wealth, but out of his
+  // wealth three things are only his: whatever he eats and makes use of, or by means of which he dresses himself and it
+  // wears out, or he gives as charity, and this is what he stored for himself; and what is beyond this, you are to
+  // depart and leave it for other people (Sahih Muslim 2959).
+  "sign-three-things-are-yours": [
+    ["How many things of his wealth are really his?", "Three", "My wealth! But only three things of it are"],
+    ["Which of these is one of the three?", "What he gives in charity", "Or what is given in charity, stored up;"],
+    ["We take all our wealth with us when we die.", "False", "What is beyond this, you are to depart", "And leave it for other people."]
+  ],
+  // Jabir ibn Abdullah said: on the day of al-Hudaybiyah, the Messenger of Allah ﷺ said to us: you are the best people
+  // on the earth; we were 1400 then; if I could see now, I would have shown you the place of the Tree (Sahih al-Bukhari
+  // 4154). Its lesson's true or false on what Ibn Kathir says of their number is not asked here, since the scene does
+  // not show it.
+  "sign-best-people-on-earth": [
+    ["What did the Prophet ﷺ call them, per Bukhari 4154?", "The best people on the earth", "You are the best people on the earth!"],
+    ["How many were they, per Bukhari 4154?", "1,400", "We were fourteen hundred then."]
   ]
 };
 
