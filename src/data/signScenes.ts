@@ -954,7 +954,14 @@ export type SignKind =
   | "the-best-dinar"
   | "the-fruit-garden"
   | "the-firm-handhold"
-  | "the-dates-of-ibn-tab";
+  | "the-dates-of-ibn-tab"
+  | "washed-with-snow-and-hail"
+  | "columns-of-gold-and-silver"
+  | "the-sun-and-the-moon-folded-up"
+  | "the-sheep-and-its-grass"
+  | "two-mudds-of-barley"
+  | "never-missed"
+  | "the-weak-go-early";
 
 export type SignScene = {
   id: string;
@@ -4993,6 +5000,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Anas ibn Malik reported the Messenger of Allah ﷺ as saying: I saw during the night that which a person sees during the sleep, as if we are in the house of Uqbah ibn Rafi', that there was brought to us the fresh dates of Ibn Tab. I interpreted it as the sublimity for us in the world and good ending in the Hereafter, and that our religion is good.",
     sources: [muslim("2270")]
+  },
+  {
+    id: "sign-washed-with-snow-and-hail",
+    kind: "washed-with-snow-and-hail",
+    caption:
+      "Aishah said: the Prophet ﷺ used to say: O Allah, I seek refuge with You from laziness and geriatric old age, from all kinds of sins and from being in debt; from the trial and affliction of the grave and from the punishment in the grave; from the affliction of the Fire and from the punishment of the Fire; and from the evil of the affliction of wealth; and I seek refuge with You from the affliction of poverty, and I seek refuge with You from the affliction of al-Masih ad-Dajjal. O Allah, wash away my sins with the water of snow and hail, and cleanse my heart from all the sins as a white garment is cleansed from the filth, and let there be a long distance between me and my sins, as You made East and West far from each other.",
+    sources: [bukhari("6368")]
+  },
+  {
+    id: "sign-columns-of-gold-and-silver",
+    kind: "columns-of-gold-and-silver",
+    caption:
+      "Abu Hurairah reported the Messenger of Allah ﷺ as saying: the earth will vomit long pieces of its liver like columns of gold and silver, and the murderer will come and say: it was for this that I committed murder. The breaker of family ties will come and say: it was for this that I broke the family ties; and the thief will come and say: it is for this that my hands were cut off. They will then leave it and will not take anything out of it.",
+    sources: [muslim("1013")]
+  },
+  {
+    id: "sign-the-sun-and-the-moon-folded-up",
+    kind: "the-sun-and-the-moon-folded-up",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the sun and the moon will be folded up on the Day of Resurrection.",
+    sources: [bukhari("3200")]
+  },
+  {
+    id: "sign-the-sheep-and-its-grass",
+    kind: "the-sheep-and-its-grass",
+    caption:
+      "Abdullah ibn Umar said: Zayd ibn Amr used to criticize the way Quraysh used to slaughter their animals, and used to say: Allah has created the sheep and He has sent the water for it from the sky, and He has grown the grass for it from the earth; yet you slaughter it in other than the Name of Allah. He used to say so, for he rejected that practice and considered it as something abominable.",
+    sources: [bukhari("3826")]
+  },
+  {
+    id: "sign-two-mudds-of-barley",
+    kind: "two-mudds-of-barley",
+    caption:
+      "Safiyyah bint Shaybah said: the Prophet ﷺ gave a banquet with two mudds of barley on marrying some of his wives.",
+    sources: [bukhari("5172")]
+  },
+  {
+    id: "sign-never-missed",
+    kind: "never-missed",
+    caption:
+      "Aishah said: the Prophet ﷺ never missed four rak'ahs before the Zuhr prayer and two rak'ahs before the Fajr prayer.",
+    sources: [bukhari("1182")]
+  },
+  {
+    id: "sign-the-weak-go-early",
+    kind: "the-weak-go-early",
+    caption:
+      "Ibn Abbas said: I was among those whom the Prophet ﷺ sent on the night of Muzdalifah early, being among the weak members of his family.",
+    sources: [bukhari("1678")]
   }
 ];
 
@@ -7357,7 +7413,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Abdullah ibn Salam dreamt he climbed a post and held the handhold at its top.
   "deep-ibn-salam-the-handhold": "sign-the-firm-handhold",
   // He read good news from the names in his dream of the dates of Ibn Tab.
-  "deep-book-tabir-the-dates-of-ibn-tab": "sign-the-dates-of-ibn-tab"
+  "deep-book-tabir-the-dates-of-ibn-tab": "sign-the-dates-of-ibn-tab",
+  // He asked Allah to wash away his sins with the water of snow and hail.
+  "deep-duas-seeking-refuge-washed-with-snow-and-hail": "sign-washed-with-snow-and-hail",
+  // The earth will bring out columns of gold and silver, and no one will take any of it.
+  "deep-zalzalah1-treasure-nobody-wants": "sign-columns-of-gold-and-silver",
+  // The sun and the moon will be folded up on the Day of Resurrection.
+  "deep-takwir1-sun-and-moon-folded": "sign-the-sun-and-the-moon-folded-up",
+  // Zayd ibn Amr ate only what was slaughtered in Allah's name, for Allah made the sheep, its water and its grass.
+  "deep-said-ibn-zayd-allahs-name": "sign-the-sheep-and-its-grass",
+  // He gave a wedding banquet with two mudds of barley.
+  "deep-marriage-love-simple-walimah": "sign-two-mudds-of-barley",
+  // He never missed four rak'ahs before Zuhr and two before Fajr.
+  "deep-book-night-prayer-never-missed": "sign-never-missed",
+  // Ibn Abbas was among the weak of his family sent early from Muzdalifah.
+  "deep-book-hajj-the-weak-go-early": "sign-the-weak-go-early"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
