@@ -1003,7 +1003,14 @@ export type SignKind =
   | "he-stood-up-without-sitting"
   | "like-one-of-his-family"
   | "i-fear-not-poverty"
-  | "from-its-higher-side";
+  | "from-its-higher-side"
+  | "you-narrowed-what-is-vast"
+  | "a-lady-from-al-hirah"
+  | "he-named-him-ibrahim"
+  | "a-place-made-ready"
+  | "a-greeting-not-returned"
+  | "fulfil-your-vow"
+  | "too-young-for-the-pledge";
 
 export type SignScene = {
   id: string;
@@ -5385,6 +5392,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said: when the Prophet ﷺ came to Makkah, he entered from its higher side and left from its lower side.",
     sources: [bukhari("1577")]
+  },
+  {
+    id: "sign-you-narrowed-what-is-vast",
+    kind: "you-narrowed-what-is-vast",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ stood up for the prayer, and we stood up along with him. Then a bedouin said while in the prayer: O Allah, bestow Your mercy on me and Muhammad only, and do not bestow it on anybody else along with us. When the Prophet ﷺ had finished his prayer with the taslim, he said to the bedouin: you have narrowed something very vast, meaning Allah's mercy.",
+    sources: [bukhari("6010")]
+  },
+  {
+    id: "sign-a-lady-from-al-hirah",
+    kind: "a-lady-from-al-hirah",
+    caption:
+      "Adi ibn Hatim said: while I was with the Prophet ﷺ, a man came and complained to him of destitution and poverty. Then another man came and complained of robbery on the roads. He said: Adi, have you been to al-Hirah? I said: I have not been to it, but I was told about it. He said: if you should live for a long time, you will certainly see that a lady in a howdah travelling from al-Hirah will perform the tawaf of the Ka'bah, fearing none but Allah. Adi later said: I saw a lady in a howdah travelling from al-Hirah till she performed the tawaf of the Ka'bah, fearing none but Allah.",
+    sources: [bukhari("3595")]
+  },
+  {
+    id: "sign-he-named-him-ibrahim",
+    kind: "he-named-him-ibrahim",
+    caption:
+      "Abu Musa said: a son was born to me, and I took him to the Prophet ﷺ, who named him Ibrahim, did tahnik for him with a date, invoked Allah to bless him, and returned him to me. That was Abu Musa's eldest son.",
+    sources: [bukhari("5467")]
+  },
+  {
+    id: "sign-a-place-made-ready",
+    kind: "a-place-made-ready",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: Allah will prepare for him who goes to the masjid in the morning and in the afternoon an honorable place in Paradise with good hospitality, for every going in the morning and in the afternoon.",
+    sources: [bukhari("662")]
+  },
+  {
+    id: "sign-a-greeting-not-returned",
+    kind: "a-greeting-not-returned",
+    caption:
+      "Jabir ibn Abdullah said: the Messenger of Allah ﷺ sent me on an errand of his, and when I had finished it I returned and came to the Prophet ﷺ and greeted him, but he did not return my greeting. I felt so sorry that only Allah knows it, and I said to myself: perhaps the Messenger of Allah ﷺ is angry because I did not come quickly. Then again I greeted him, but he did not reply, and I felt even more sorry than I did the first time. Again I greeted him, and he returned the greeting and said: the thing which prevented me from returning the greeting was that I was praying. And at that time he was on his mount, and his face was not toward the qiblah.",
+    sources: [bukhari("1217")]
+  },
+  {
+    id: "sign-fulfil-your-vow",
+    kind: "fulfil-your-vow",
+    caption:
+      "Ibn Umar said that Umar said: O Messenger of Allah, I vowed to perform i'tikaf for one night in al-Masjid al-Haram during the pre-Islamic period of ignorance. He said: fulfil your vow.",
+    sources: [bukhari("6697")]
+  },
+  {
+    id: "sign-too-young-for-the-pledge",
+    kind: "too-young-for-the-pledge",
+    caption:
+      "Abdullah ibn Hisham's mother, Zaynab bint Humayd, took him to the Prophet ﷺ and said: O Messenger of Allah, take the pledge of allegiance from him. He said: he is still too young for the pledge, and he passed his hand over his head and invoked Allah's blessing for him. Zuhrah ibn Ma'bad said that he used to go with his grandfather, Abdullah ibn Hisham, to the market to buy food. Ibn Umar and Ibn az-Zubayr would meet him and say to him: be our partner, for the Prophet ﷺ invoked Allah to bless you. So he would be their partner, and very often he would win a camel's load and send it home.",
+    sources: [bukhari("2501")]
   }
 ];
 
@@ -7909,7 +7965,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Jibril brought Khadijah salam from her Lord.
   "women-mothers-depth-khadijah-and-support": "sign-house-of-pearl",
   // Khadijah comforted him after the first revelation: Allah will never disgrace you.
-  "women-virtues-and-legacy-service-to-revelation": "sign-never-disgrace"
+  "women-virtues-and-legacy-service-to-revelation": "sign-never-disgrace",
+  // A bedouin asked mercy for himself and him only; he said: you have narrowed something vast.
+  "deep-fresh-start-mercy-is-wide": "sign-you-narrowed-what-is-vast",
+  // Adi lived to see a lady in a howdah travel from al-Hirah to the Ka'bah, fearing none but Allah.
+  "deep-sahaba-small-stories-the-lady-from-al-hirah": "sign-a-lady-from-al-hirah",
+  // He named Abu Musa's son Ibrahim, did tahnik for him with a date and asked Allah to bless him.
+  "deep-kids-good-names-a-baby-named-ibrahim": "sign-he-named-him-ibrahim",
+  // Whoever goes to the masjid morning and afternoon, Allah prepares an honorable place in Paradise for him.
+  "deep-prayer-together-a-place-in-paradise": "sign-a-place-made-ready",
+  // He did not return Jabir's greeting while he prayed, and then told him why.
+  "deep-book-amal-salah-a-greeting-not-returned": "sign-a-greeting-not-returned",
+  // Umar had vowed a night of i'tikaf before Islam; he told him: fulfil your vow.
+  "deep-book-oaths-umars-old-vow": "sign-fulfil-your-vow",
+  // Abdullah was too young for the pledge; he asked Allah to bless him, and his trade was blessed.
+  "deep-kids-signs-too-young-for-the-pledge": "sign-too-young-for-the-pledge"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

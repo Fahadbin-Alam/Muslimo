@@ -431,7 +431,7 @@ function kingsOnTheSea(): SignArt {
 }
 
 /** A closed howdah on a camel's back, the middle of its foot at (x, y), in `cloth` with a gold edge. */
-const howdah = (x: number, y: number, cloth: string, edge: string) =>
+export const howdah = (x: number, y: number, cloth: string, edge: string) =>
   `<path d="M${n(x - 4.2)} ${y} L${n(x - 4.2)} ${n(y - 2.6)} Q${x} ${n(y - 6.4)} ${n(x + 4.2)} ${n(y - 2.6)} L${n(x + 4.2)} ${y} Z" fill="${cloth}"/>` +
   `<path d="M${n(x - 4.2)} ${n(y - 2.6)} Q${x} ${n(y - 6.4)} ${n(x + 4.2)} ${n(y - 2.6)}" stroke="${edge}" stroke-width="0.5" fill="none"/>` +
   `<path d="M${n(x - 4.2)} ${n(y - 0.4)} L${n(x + 4.2)} ${n(y - 0.4)}" stroke="${edge}" stroke-width="0.5"/>` +
