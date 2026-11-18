@@ -31,14 +31,14 @@ const oval = (x: number, y: number, rx: number, ry: number, color: string, width
   `<ellipse cx="${x}" cy="${y}" rx="${rx}" ry="${ry}" stroke="${color}" stroke-width="${width}" fill="none"/>`;
 
 /** A stack of `count` coins, the lowest one's middle at (x, y); `big`: larger, set apart, to be counted on a balance. */
-const coins = (x: number, y: number, count: number, fill = GOLD_COIN, edge = GOLD_EDGE, big = false) =>
+export const coins = (x: number, y: number, count: number, fill = GOLD_COIN, edge = GOLD_EDGE, big = false) =>
   Array.from(
     { length: count },
     (_, i) => `<ellipse cx="${x}" cy="${n(y - i * (big ? 1.5 : 1.1))}" rx="${big ? 2.7 : 2.2}" ry="${big ? 1 : 0.85}" fill="${fill}" stroke="${edge}" stroke-width="0.35"/>`
   ).join("");
 
 /** A clay jar, its foot's middle at (x, y), `s` times its size (8 high). */
-const jar = (x: number, y: number, s = 1, fill = "#B66A3C") => {
+export const jar = (x: number, y: number, s = 1, fill = "#B66A3C") => {
   const p = (dx: number, dy: number) => `${n(x + dx * s)} ${n(y + dy * s)}`;
   return (
     `<path d="M${p(-2.2, 0)} C${p(-3.6, -3)} ${p(-3.4, -5.8)} ${p(-1.6, -6.8)} L${p(-1.4, -8)} L${p(1.4, -8)} L${p(1.6, -6.8)} C${p(3.4, -5.8)} ${p(3.6, -3)} ${p(2.2, 0)} Z" fill="${fill}"/>` +
@@ -47,7 +47,7 @@ const jar = (x: number, y: number, s = 1, fill = "#B66A3C") => {
 };
 
 /** A market stall, its middle at x and `w` wide: a striped awning from y `top`, and its counter's top at y `counter`. */
-const stall = (x: number, w: number, color: string, top = 66, counter = 84) => {
+export const stall = (x: number, w: number, color: string, top = 66, counter = 84) => {
   const l = n(x - w / 2);
   const cols = Math.max(4, Math.round(w / 3));
   const sw = w / cols;
