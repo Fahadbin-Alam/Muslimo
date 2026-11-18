@@ -193,12 +193,12 @@ const GHAFIR_ONE: DeepUnit = {
       line: "Pray for a friend in secret, and an angel prays for you.",
       facts: ["The angel says: the same for you", "So pray for others in secret"],
       quote: q40(7),
-      source: hadith("muslim", "2732", "Abu Dharr", "Sahih", "The Prophet ﷺ said no believer prays for his brother in his absence except that the angels say: The same be for you too.", "There is no believing servant who supplicates for his brother behind his back"),
+      source: hadith("muslim", "2732", "Abu ad-Darda", "Sahih", "The Prophet ﷺ said no believer prays for his brother behind his back except that the angel says: The same be for you too.", "There is no believing servant who supplicates for his brother behind his back"),
       difficulty: 2,
       questions: [
-        { q: "When does an angel pray for you, per Muslim 2732?", a: "When you pray for a brother in secret", wrong: ["When you sleep", "When you shout", "When you eat"], why: "No believing servant supplicates for his brother behind his back except that the angels say: The same be for you too." },
-        { q: "What do the angels say, per Muslim 2732?", a: "The same be for you too", wrong: ["Go away", "Say it again", "Not now"], why: "The angels say: The same be for you too." },
-        { tf: true, q: "Praying for others brings good to you as well.", why: "The angels say: The same be for you too." }
+        { q: "When does an angel pray for you, per Muslim 2732?", a: "When you pray for a brother in secret", wrong: ["When you sleep", "When you shout", "When you eat"], why: "When one prays for his brother behind his back, the angel says: The same be for you too." },
+        { q: "What does the angel say, per Muslim 2732?", a: "The same be for you too", wrong: ["Go away", "Say it again", "Not now"], why: "The angel says: The same be for you too." },
+        { tf: true, q: "Praying for others brings good to you as well.", why: "The angel says: The same be for you too." }
       ]
     },
     {
