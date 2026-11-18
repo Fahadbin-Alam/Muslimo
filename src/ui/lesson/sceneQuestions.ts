@@ -5402,8 +5402,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["He ﷺ made du'a for more blessing in Madinah.", "True", "O Allah, put in Madinah", "of the blessing"]
   ],
   // Thumamah ibn Abdullah ibn Anas said: Anas made Hajj on a packsaddle, and he was no miser; and Anas told that he made
-  // Hajj on a packsaddle, and it carried his baggage too (Sahih al-Bukhari 1517). No one is drawn on a camel. (What a
-  // packsaddle is stays as it is, since one is on Anas's camel from the scene's start.)
+  // Hajj on a packsaddle, and it carried his baggage too (Sahih al-Bukhari 1517). No one is drawn on a camel. (Anas's
+  // camel and its packsaddle show only with the first words, so the first ask waits on them.)
   "sign-a-plain-saddle": [
     ["Anas did his Hajj on a plain saddle as well.", "True", "Thumamah: Anas made Hajj on a packsaddle"],
     ["How many camels carried him ﷺ and his bags?", "One camel for both", "and it carried his baggage too"]

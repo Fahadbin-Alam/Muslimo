@@ -21835,8 +21835,8 @@ describe("the signs in creation, alive", () => {
       ]
     ]);
     // A plain saddle: two ways go toward the Ka'bah under the mountains of Makkah. Thumamah's voice speaks; on the far way
-    // Anas's camel goes with a plain packsaddle on its hump, no one on it, and Anas's place goes with it. A sack goes from
-    // Anas's place to a place in need by the way, and a warm glow comes about it, and glints over Anas's place. Anas's
+    // Anas's camel shows with a plain packsaddle on its hump, no one on it, and goes on, Anas's place going with it. A
+    // warm glow and glints come about Anas's place: no miser, and no deed drawn that the hadith does not tell. Anas's
     // voice speaks, and on the near way his camel shows with the same plain packsaddle, his place, a golden ring, going
     // with it. A soft golden ring and glints come about his packsaddle, and a faint golden line goes to it from Anas's.
     // Then his baggage shows hung on the same packsaddle, with a soft golden ring and glints, and a warm glow comes about
@@ -21849,9 +21849,9 @@ describe("the signs in creation, alive", () => {
       "and it carried his baggage too"
     ]);
     expect([
-      [at("a-plain-saddle", "Thumamah's voice: Anas made Hajj", "opacity", [0.01, 0.2, 0.395]), at("a-plain-saddle", "Anas's camel, a plain packsaddle on it, no one on it", "x", [0.01, 0.2]), at("a-plain-saddle", "Anas ibn Malik's place, going with it", "x", [0.01, 0.2])],
-      [at("a-plain-saddle", "no miser: a sack going from Anas's place to the place in need", "opacity", [0.2, 0.395]), at("a-plain-saddle", "no miser: a sack going from Anas's place to the place in need", "x", [0.2, 0.395])],
-      [0.2, 0.395].map((t) => all("a-plain-saddle", ["a warm glow about the place in need", "glints over Anas's place"], t)),
+      [at("a-plain-saddle", "Thumamah's voice: Anas made Hajj", "opacity", [0.01, 0.2, 0.395]), at("a-plain-saddle", "Anas's camel, a plain packsaddle on it, no one on it", "x", [0.01, 0.2]), at("a-plain-saddle", "Anas ibn Malik's place, going with it", "x", [0.01, 0.2]), at("a-plain-saddle", "Anas's camel, a plain packsaddle on it, no one on it", "opacity", [0.01, 0.2]), at("a-plain-saddle", "Anas ibn Malik's place, going with it", "opacity", [0.01, 0.2])],
+      [at("a-plain-saddle", "no miser: a warm glow about Anas's place", "opacity", [0.2, 0.395]), signArt("a-plain-saddle").parts.filter((each) => /need|sack|dish/.test(each.name)).length],
+      [0.2, 0.395].map((t) => all("a-plain-saddle", ["glints over Anas's place"], t)),
       [at("a-plain-saddle", "Anas's voice: he made Hajj on a packsaddle", "opacity", [0.395, 0.59]), at("a-plain-saddle", "his camel, the same plain packsaddle on it, no one on it", "opacity", [0.395, 0.59]), at("a-plain-saddle", "his camel, the same plain packsaddle on it, no one on it", "x", [0.395, 0.59]), at("a-plain-saddle", "his place, a golden ring, going with it", "x", [0.395, 0.59])],
       [0.59, 0.785].map((t) => all("a-plain-saddle", ["on a packsaddle: a soft golden ring about his packsaddle", "glints over his packsaddle", "alike: a faint golden line from Anas's packsaddle to his"], t)),
       [0.785, 0.97].map((t) => all("a-plain-saddle", ["his baggage, hung on the same packsaddle", "a soft golden ring about his baggage", "glints over his baggage", "a warm glow about his place"], t))
@@ -21859,16 +21859,12 @@ describe("the signs in creation, alive", () => {
       [
         [0, 1, 0],
         [0, 28],
-        [0, 28]
-      ],
-      [
+        [0, 28],
         [0, 1],
-        [0, 11]
+        [0, 1]
       ],
-      [
-        [0, 0],
-        [1, 1]
-      ],
+      [[0, 1], 0],
+      [[0], [1]],
       [
         [0, 1],
         [0, 1],

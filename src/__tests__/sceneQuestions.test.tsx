@@ -17886,16 +17886,19 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, -13]
     ]);
-    // Anas on a plain packsaddle: Anas's camel, a plain packsaddle on it and no one on it, stands on the far way with
-    // Anas's place by it, before the first words; then Thumamah's voice speaks, and the camel and Anas's place go on
-    // along the way toward the Ka'bah. It stops before a sack goes from Anas's place to the place in need.
+    // Anas on a plain packsaddle: nothing is on the far way before the first words, so the packsaddle does not give the
+    // answer away; then Thumamah's voice speaks, and Anas's camel shows, a plain packsaddle on it and no one on it, and
+    // goes on along the way toward the Ka'bah with Anas's place. It stops before a warm glow comes about Anas's place.
     expect([
-      shown("Anas did his Hajj on a plain saddle as well.", ["Thumamah's voice: Anas made Hajj"]),
+      shown("Anas did his Hajj on a plain saddle as well.", ["Thumamah's voice: Anas made Hajj", "Anas's camel, a plain packsaddle on it, no one on it", "Anas ibn Malik's place, going with it"]),
       moved("Anas did his Hajj on a plain saddle as well.", "Anas's camel, a plain packsaddle on it, no one on it", "x"),
       moved("Anas did his Hajj on a plain saddle as well.", "Anas ibn Malik's place, going with it", "x"),
-      value("a-plain-saddle", "no miser: a sack going from Anas's place to the place in need", "opacity", 0.17)
+      value("a-plain-saddle", "no miser: a warm glow about Anas's place", "opacity", 0.17)
     ]).toEqual([
-      [[0], [1]],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
       [0, 28],
       [0, 28],
       0
