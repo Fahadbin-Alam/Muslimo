@@ -947,7 +947,14 @@ export type SignKind =
   | "three-consecutive-days"
   | "for-the-second-time"
   | "within-seconds"
-  | "one-sa-of-dates";
+  | "one-sa-of-dates"
+  | "the-sun-from-the-west"
+  | "like-the-full-moon"
+  | "a-white-mule"
+  | "the-best-dinar"
+  | "the-fruit-garden"
+  | "the-firm-handhold"
+  | "the-dates-of-ibn-tab";
 
 export type SignScene = {
   id: string;
@@ -4937,6 +4944,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Anas ibn Malik said: Abu Taybah cupped the Messenger of Allah ﷺ, so he ordered that Abu Taybah be paid one sa' of dates, and ordered Abu Taybah's masters to reduce his tax.",
     sources: [bukhari("2102")]
+  },
+  {
+    id: "sign-the-sun-from-the-west",
+    kind: "the-sun-from-the-west",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: the Hour will not be established until the sun rises from the West; and when the people see it, then whoever will be living on the surface of the earth will have faith, and that is when no good will it do to a soul to believe then, if it believed not before.",
+    sources: [bukhari("4635")]
+  },
+  {
+    id: "sign-like-the-full-moon",
+    kind: "like-the-full-moon",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: the first group who will enter Paradise will be like the moon when it is full. Their utensils will be of gold and their combs of gold and silver, and their sweat will smell like musk. They will neither have differences nor hatred amongst themselves; their hearts will be as if one heart, and they will be glorifying Allah in the morning and in the evening.",
+    sources: [bukhari("3245"), bukhari("3327")]
+  },
+  {
+    id: "sign-a-white-mule",
+    kind: "a-white-mule",
+    caption:
+      "Amr ibn al-Harith said: when the Messenger of Allah ﷺ died, he did not leave any dirham or dinar, a slave or a slave woman, or anything else except his white mule, his arms and a piece of land which he had given in charity.",
+    sources: [bukhari("2739")]
+  },
+  {
+    id: "sign-the-best-dinar",
+    kind: "the-best-dinar",
+    caption:
+      "Thawban reported the Messenger of Allah ﷺ as saying: the most excellent dinar is one that a person spends on his family, and the dinar which he spends on his animal in Allah's path, and the dinar he spends on his companions in Allah's path.",
+    sources: [muslim("994")]
+  },
+  {
+    id: "sign-the-fruit-garden",
+    kind: "the-fruit-garden",
+    caption:
+      "Thawban reported the Messenger of Allah ﷺ as saying: he who visits the sick is supposed to remain in the fruit garden of Paradise. It was said: Messenger of Allah, what is this Khurfat al-Jannah? He said: it is a place abounding in fruits.",
+    sources: [muslim("2568d")]
+  },
+  {
+    id: "sign-the-firm-handhold",
+    kind: "the-firm-handhold",
+    caption:
+      "Qais ibn Ubadah said: Abdullah ibn Salam said: I saw that a post was fixed in a green garden. At the top of the post there was a handhold, and below it there was a servant. I was asked to climb, so I climbed it till I got hold of the handhold. Then I narrated this dream to the Messenger of Allah ﷺ, and he said: Abdullah will die while still holding the firm reliable handhold.",
+    sources: [bukhari("7010")]
+  },
+  {
+    id: "sign-the-dates-of-ibn-tab",
+    kind: "the-dates-of-ibn-tab",
+    caption:
+      "Anas ibn Malik reported the Messenger of Allah ﷺ as saying: I saw during the night that which a person sees during the sleep, as if we are in the house of Uqbah ibn Rafi', that there was brought to us the fresh dates of Ibn Tab. I interpreted it as the sublimity for us in the world and good ending in the Hereafter, and that our religion is good.",
+    sources: [muslim("2270")]
   }
 ];
 
@@ -7281,7 +7337,27 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A man of Paradise sows, and within seconds his crop is heaped like mountains.
   "deep-akhirah-hoping-paradise-the-farmer-of-paradise": "sign-within-seconds",
   // He had Abu Taybah paid a sa' of dates, and asked Abu Taybah's owners to lessen his tax.
-  "deep-book-trade-pay-the-worker": "sign-one-sa-of-dates"
+  "deep-book-trade-pay-the-worker": "sign-one-sa-of-dates",
+  // When the sun rises from the West, faith that comes only then will not help a soul.
+  "deep-anam3-sun-west": "sign-the-sun-from-the-west",
+  // The Hour will not come until the sun rises from the West.
+  "deep-majorsigns-sun-west": "sign-the-sun-from-the-west",
+  // The first group to enter Paradise will shine like the full moon.
+  "deep-jannah-moon-faces": "sign-like-the-full-moon",
+  // The first group into Paradise will be like the moon when it is full.
+  "deep-rahman3-like-the-full-moon": "sign-like-the-full-moon",
+  // The first group to enter Paradise will glitter like the full moon.
+  "deep-waqiah2-shining-like-the-moon": "sign-like-the-full-moon",
+  // He left no money, only his white mule, his arms, and a piece of land given in charity.
+  "deep-book-wills-what-he-left-behind": "sign-a-white-mule",
+  // The best dinar is the one spent on one's family.
+  "deep-thawban-best-dinar": "sign-the-best-dinar",
+  // One who visits the sick remains in the fruit garden of Paradise.
+  "deep-thawban-garden-of-fruit": "sign-the-fruit-garden",
+  // Abdullah ibn Salam dreamt he climbed a post and held the handhold at its top.
+  "deep-ibn-salam-the-handhold": "sign-the-firm-handhold",
+  // He read good news from the names in his dream of the dates of Ibn Tab.
+  "deep-book-tabir-the-dates-of-ibn-tab": "sign-the-dates-of-ibn-tab"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

@@ -1502,6 +1502,13 @@ const STATES: State[] = [
   { id: "scene-for-the-second-time", render: () => <SceneQuestionDemo lessonId="lesson-deep-salamah-pledge-once-more" ask="Salamah gave the pledge" /> },
   { id: "scene-within-seconds", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-hoping-paradise-the-farmer-of-paradise" ask="How fast will his crops" /> },
   { id: "scene-one-sa-of-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-pay-the-worker" ask="How was Abu Taybah paid" /> },
+  { id: "scene-the-sun-from-the-west", render: () => <SceneQuestionDemo lessonId="lesson-deep-anam3-sun-west" ask="Which sign closes the door" /> },
+  { id: "scene-like-the-full-moon", render: () => <SceneQuestionDemo lessonId="lesson-deep-jannah-moon-faces" ask="How will the first group in Jannah" /> },
+  { id: "scene-a-white-mule", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-wills-what-he-left-behind" ask="What colour was his mule" /> },
+  { id: "scene-the-best-dinar", render: () => <SceneQuestionDemo lessonId="lesson-deep-thawban-best-dinar" ask="Which coin is the best" /> },
+  { id: "scene-the-fruit-garden", render: () => <SceneQuestionDemo lessonId="lesson-deep-thawban-garden-of-fruit" ask="Visiting the sick is like being" /> },
+  { id: "scene-the-firm-handhold", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-salam-the-handhold" ask="What did he hold in his dream" /> },
+  { id: "scene-the-dates-of-ibn-tab", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-tabir-the-dates-of-ibn-tab" ask="What did he ﷺ read from the dates" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
