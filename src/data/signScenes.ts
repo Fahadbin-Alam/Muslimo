@@ -912,7 +912,14 @@ export type SignKind =
   | "cold-and-heat"
   | "the-rope-untied"
   | "doors-of-mercy"
-  | "from-the-home";
+  | "from-the-home"
+  | "flock-between-mountains"
+  | "on-foot-to-visit"
+  | "dates-in-the-home"
+  | "porters-in-the-market"
+  | "umrah-in-ramadan"
+  | "three-breaths"
+  | "truffles-like-manna";
 
 export type SignScene = {
   id: string;
@@ -4657,6 +4664,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said that the Messenger of Allah ﷺ said: when a woman gives of the food of her home, not wasting it, she has her reward for what she gave, her husband has his reward for what he earned, and the keeper of the store has the same; none of them lessens the reward of another at all.",
     sources: [bukhari("1425")]
+  },
+  {
+    id: "sign-flock-between-mountains",
+    kind: "flock-between-mountains",
+    caption:
+      "Anas said: a man asked the Prophet ﷺ for a very large flock, sheep between two mountains, and he gave it to him. He went to his people and said: my people, embrace Islam, for by Allah, Muhammad ﷺ gives as one who does not fear want. Anas said: a man would embrace Islam for the world alone, and before long Islam became dearer to him than the world and all on it.",
+    sources: [muslim("2312b")]
+  },
+  {
+    id: "sign-on-foot-to-visit",
+    kind: "on-foot-to-visit",
+    caption:
+      "Jabir said: the Prophet ﷺ came to visit me while I was sick, and he was riding neither a mule nor a horse.",
+    sources: [bukhari("5664")]
+  },
+  {
+    id: "sign-dates-in-the-home",
+    kind: "dates-in-the-home",
+    caption:
+      "Aishah said that the Messenger of Allah ﷺ said: a family which has dates will not be hungry. He also said: O Aishah, a home with no dates in it, its family will be hungry; he said it two or three times.",
+    sources: [muslim("2046")]
+  },
+  {
+    id: "sign-porters-in-the-market",
+    kind: "porters-in-the-market",
+    caption:
+      "Abu Mas'ud al-Ansari said: whenever the Messenger of Allah ﷺ ordered us to give in charity, we would go to the market and work as porters to earn a mudd, and then give it in charity; and today some of us have a hundred thousand.",
+    sources: [bukhari("1416")]
+  },
+  {
+    id: "sign-umrah-in-ramadan",
+    kind: "umrah-in-ramadan",
+    caption:
+      "Ibn Abbas said that the Messenger of Allah ﷺ asked a woman of the Ansar: what kept you from performing Hajj with us? She said: we had a camel for drawing water; the father of so-and-so and his son rode it, and left one camel for us to draw water with. He said: when Ramadan comes, perform Umrah in it, for an Umrah in Ramadan is equal to a Hajj.",
+    sources: [bukhari("1782")]
+  },
+  {
+    id: "sign-three-breaths",
+    kind: "three-breaths",
+    caption:
+      "Anas said: the Messenger of Allah ﷺ would breathe three times while drinking, outside the vessel, and say: it is more thirst-quenching, healthier and more wholesome. Anas said: so I too breathe three times while drinking.",
+    sources: [muslim("2028b")]
+  },
+  {
+    id: "sign-truffles-like-manna",
+    kind: "truffles-like-manna",
+    caption:
+      "Sa'id ibn Zayd said: I heard the Prophet ﷺ say: truffles are like manna, and their water heals the eyes.",
+    sources: [bukhari("5708")]
   }
 ];
 
@@ -6929,7 +6985,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Going in: the doors of mercy; going out: His bounty.
   "deep-dua-day-mosque": "sign-doors-of-mercy",
   // Giving of the home's food: a reward for each, none less.
-  "deep-wives-charity-from-home": "sign-from-the-home"
+  "deep-wives-charity-from-home": "sign-from-the-home",
+  // A flock between two mountains; then Islam, dearer than the world.
+  "deep-how-they-came-to-islam-dearer-than-the-world": "sign-flock-between-mountains",
+  // He walked to visit Jabir, on no mule and no horse.
+  "deep-manners-visit-sick-on-foot": "sign-on-foot-to-visit",
+  // A home with dates will not go hungry.
+  "deep-found-eating-drinking-dates-at-home": "sign-dates-in-the-home",
+  // Porters in the market, to give a mudd in charity.
+  "deep-zakat-anyone-working-to-give": "sign-porters-in-the-market",
+  // Umrah in Ramadan, equal to a Hajj.
+  "deep-hajj-umrah-ramadan": "sign-umrah-in-ramadan",
+  // Three breaths in a drink, outside the cup.
+  "deep-book-food-three-breaths": "sign-three-breaths",
+  // Truffles like manna; their water heals the eyes.
+  "deep-book-medicine-truffles": "sign-truffles-like-manna"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
