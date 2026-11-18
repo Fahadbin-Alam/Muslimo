@@ -982,7 +982,14 @@ export type SignKind =
   | "one-or-two-handfuls"
   | "charity-on-every-muslim"
   | "the-honest-storekeeper"
-  | "as-long-as-you-were-waiting";
+  | "as-long-as-you-were-waiting"
+  | "drew-me-to-his-right"
+  | "they-would-draw-lots"
+  | "i-swore-to-serve"
+  | "dearer-than-red-camels"
+  | "the-scent-bag-of-a-perfumer"
+  | "why-so-many-hadith"
+  | "in-the-prayer-one-is-busy";
 
 export type SignScene = {
   id: string;
@@ -5217,6 +5224,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Anas ibn Malik said: once the Prophet ﷺ delayed the Isha prayer until midnight and then came to us. Having prayed he faced us and said: the people had prayed and slept but you were in the prayer as long as you were waiting for it.",
     sources: [bukhari("847")]
+  },
+  {
+    id: "sign-drew-me-to-his-right",
+    kind: "drew-me-to-his-right",
+    caption:
+      "Ibn Abbas said: once I passed the night in the house of my aunt Maymunah. The Prophet ﷺ stood for the night prayer, and I joined him and stood on his left side, but he drew me to his right by holding me by the head.",
+    sources: [bukhari("699")]
+  },
+  {
+    id: "sign-they-would-draw-lots",
+    kind: "they-would-draw-lots",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: if the people knew the reward for pronouncing the adhan and for standing in the first row, and found no other way to get that except by drawing lots, they would draw lots; and if they knew the reward of the Zuhr prayer, they would race for it; and if they knew the reward of the Isha and Fajr prayers in congregation, they would come to offer them even if they had to crawl.",
+    sources: [bukhari("615")]
+  },
+  {
+    id: "sign-i-swore-to-serve",
+    kind: "i-swore-to-serve",
+    caption:
+      "Anas ibn Malik said: I set out along with Jarir ibn Abdullah al-Bajali on a journey, and he used to serve me. I said to him: don't do that. Thereupon he said: I have seen the Ansar doing this with the Messenger of Allah ﷺ, and I swore by Allah that whenever I accompany any one of the Ansar, I would serve him. Jarir was older than Anas.",
+    sources: [muslim("2513")]
+  },
+  {
+    id: "sign-dearer-than-red-camels",
+    kind: "dearer-than-red-camels",
+    caption:
+      "Amr ibn Taghlib said: some property was given to the Prophet ﷺ, and he gave it to some people and withheld it from some others. Then he came to know that they were dissatisfied. So he said: I give to one man and leave another, and the one to whom I do not give is dearer to me than the one to whom I give. I give to some people because of the impatience and discontent present in their hearts, and leave other people because of the content and goodness Allah has bestowed on them, and one of them is Amr ibn Taghlib. Amr ibn Taghlib said: the sentence which the Messenger of Allah ﷺ said in my favor is dearer to me than the possession of nice red camels.",
+    sources: [bukhari("7535")]
+  },
+  {
+    id: "sign-the-scent-bag-of-a-perfumer",
+    kind: "the-scent-bag-of-a-perfumer",
+    caption:
+      "Jabir ibn Samurah said: I prayed along with the Messenger of Allah ﷺ the first prayer. He then went to his family, and I also went along with him, when he met some children. He began to pat the cheeks of each one of them. He also patted my cheek, and I experienced a coolness or a fragrance of his hand, as if it had been brought out from the scent bag of a perfumer.",
+    sources: [muslim("2329")]
+  },
+  {
+    id: "sign-why-so-many-hadith",
+    kind: "why-so-many-hadith",
+    caption:
+      "Abu Hurairah said: people say that I have narrated many hadith. Had it not been for two verses in the Quran, I would not have narrated a single hadith. And no doubt our emigrant brothers used to be busy in the market with their business, and our Ansari brothers used to be busy with their property. But I used to stick to the Messenger of Allah ﷺ, contented with what will fill my stomach, and I used to attend that which they used not to attend, and I used to memorize that which they used not to memorize.",
+    sources: [bukhari("118")]
+  },
+  {
+    id: "sign-in-the-prayer-one-is-busy",
+    kind: "in-the-prayer-one-is-busy",
+    caption:
+      "Abdullah ibn Mas'ud said: we used to greet the Prophet ﷺ while he was praying, and he used to answer our greetings. When we returned from an-Najashi, we greeted him, but he did not answer us, and he said: in the prayer one is occupied.",
+    sources: [bukhari("1199")]
   }
 ];
 
@@ -7637,7 +7693,39 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The honest storekeeper who gives in full and gladly is one of the two givers.
   "deep-zakat-anyone-honest-helper": "sign-the-honest-storekeeper",
   // He delayed Isha one night: while you wait for the prayer you are in it.
-  "deep-book-adhan-waiting-counts-as-prayer": "sign-as-long-as-you-were-waiting"
+  "deep-book-adhan-waiting-counts-as-prayer": "sign-as-long-as-you-were-waiting",
+  // Ibn Abbas stood on his left in the night prayer, and was drawn round to his right.
+  "deep-book-adhan-one-follower-stands-right": "sign-drew-me-to-his-right",
+  // If people knew the reward of the adhan and the first row, they would draw lots for it.
+  "deep-pray-adhan-reward-draw-lots": "sign-they-would-draw-lots",
+  // Jarir, though older, served Anas on a journey, for he had sworn to serve the Ansar.
+  "deep-sahaba-small-stories-jarir-served-anas": "sign-i-swore-to-serve",
+  // Some he left to the content in their hearts; Amr held that word dearer than red camels.
+  "deep-zakat-manners-of-giving-content-hearts": "sign-dearer-than-red-camels",
+  // He patted the cheek of each child he met; his hand was as if from a perfumer's bag.
+  "deep-kids-children-a-pat-on-the-cheek": "sign-the-scent-bag-of-a-perfumer",
+  // Others traded and farmed; Abu Hurairah stuck to him and memorized what they did not.
+  "deep-abu-hurairah-why-so-many": "sign-why-so-many-hadith",
+  // Back from an-Najashi, they greeted him in the prayer: in the prayer one is occupied.
+  "deep-book-amal-salah-busy-with-the-prayer": "sign-in-the-prayer-one-is-busy",
+  // Two phrases, light on the tongue and heavy in the balance.
+  "deep-qariah2-two-heavy-words": "sign-two-words",
+  // His du'a for Anas: more wealth, more children, and blessing.
+  "deep-anas-dua": "sign-a-dua-for-anas",
+  // Al-Fatihah: the seven oft-repeated and the great Quran he was given (15:87).
+  "deep-hijr4-seven-oft-repeated": "sign-greatest-surah",
+  // Answer Allah and the Messenger when he calls you (8:24), as Abu Sa'id was told.
+  "deep-anfal2-call-that-gives-life": "sign-greatest-surah",
+  // Whoever believes in Allah and the Last Day should say good or stay quiet.
+  "deep-kids-kindness-speak-good": "sign-good-or-quiet",
+  // Do not make someone stand up to take his seat; make room instead.
+  "deep-adab-your-seat": "sign-make-room",
+  // Al-Bara saw him carry earth from the Trench, dust on his chest.
+  "deep-bara-digging-the-trench": "sign-earth-from-the-trench",
+  // Ibn Ubayy swore he had not said it, but Allah confirmed Zayd.
+  "deep-munafiqun2-allah-confirmed-zaid": "sign-zayd-was-truthful",
+  // Sawdah gave her day with him to Aishah.
+  "deep-mothers-sawdah-her-day": "sign-sawdah-gave-her-day"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

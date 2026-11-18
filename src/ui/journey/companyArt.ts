@@ -71,14 +71,14 @@ const offAt = (spans: [number, number][], quick = 0.005): SignKeys => {
 };
 
 /** A boat with one mast and its sails (hopeArt.ts), the middle of its deck at (x, y). */
-const boat = (x: number, y: number) =>
+export const boat = (x: number, y: number) =>
   `<path d="M${n(x - 18)} ${y} L${n(x + 18)} ${y} L${n(x + 13)} ${n(y + 7)} L${n(x - 13.6)} ${n(y + 7)} Z" fill="#8A5530"/>` +
   `<path d="M${n(x - 17)} ${n(y + 2.4)} L${n(x + 17)} ${n(y + 2.4)} M${n(x - 15.4)} ${n(y + 4.8)} L${n(x + 15)} ${n(y + 4.8)}" stroke="#A86C3C" stroke-width="0.7"/>` +
   `<path d="M${x} ${y} L${x} ${n(y - 26)}" stroke="#6B4226" stroke-width="1.2"/>` +
   `<path d="M${n(x + 1)} ${n(y - 24)} Q${n(x + 14)} ${n(y - 14)} ${n(x + 1)} ${n(y - 3)} Z" fill="#FFFDF5"/><path d="M${n(x - 1)} ${n(y - 22)} Q${n(x - 10)} ${n(y - 13)} ${n(x - 1)} ${n(y - 4)} Z" fill="#F4ECDA"/>`;
 
 /** Short waves in a row at height y, from x to x2, `gap` apart. */
-const waves = (x: number, x2: number, y: number, gap: number, color: string) => {
+export const waves = (x: number, x2: number, y: number, gap: number, color: string) => {
   let d = "";
   for (let at = x; at < x2; at += gap) d += `M${n(at)} ${y} q${n(gap / 4)} -1.4 ${n(gap / 2)} 0 `;
   return `<path d="${d}" stroke="${color}" stroke-width="0.7" fill="none" stroke-linecap="round"/>`;
