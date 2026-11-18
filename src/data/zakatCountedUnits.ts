@@ -1,9 +1,9 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Zakat unit: how Allah counts charity, from Jami at-Tirmidhi, Sunan an-Nasa'i and Sunan Ibn Majah. The
-// honest zakat collector, giving something good and not bad dates, reciting quietly like secret charity, giving one
-// in debt more time, spending in Allah's cause written seven hundred times over, and the sleep of one who meant to
-// pray at night. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
+// One more Zakat unit: how Allah counts charity, from Jami at-Tirmidhi, Sunan an-Nasa'i, Sunan Ibn Majah and
+// Mishkat al-Masabih. The honest zakat collector, giving something good and not bad dates, reciting quietly like
+// secret charity, giving one in debt more time, spending in Allah's cause written seven hundred times over, the
+// sleep of one who meant to pray at night, and charity as the believer's shade on the Last Day. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
 // words to highlight. Points the schools differ on are left out, and none of these hadith is taught anywhere else in
 // the app.
 
@@ -11,7 +11,7 @@ const COUNTED: DeepUnit = {
   key: "zakat-counted-by-allah",
   topicId: "zakat",
   branchId: "zakat-how-allah-counts",
-  branch: { title: "How Allah counts charity", description: "An honest zakat collector, giving your best, quiet reciting, time for one in debt, seven hundred times over, and sleep as a gift." },
+  branch: { title: "How Allah counts charity", description: "An honest zakat collector, giving your best, quiet reciting, time for one in debt, seven hundred times over, sleep as a gift, and charity as shade." },
   name: "how Allah counts charity",
   kind: "skill",
   lessonType: "skill",
@@ -92,6 +92,19 @@ const COUNTED: DeepUnit = {
         { q: "He meant to pray at night but slept till morning. What is written for him?", a: "What he meant to do", wrong: ["Nothing at all", "A bad deed", "Only half a prayer"], why: "What he intended will be recorded for him, he ﷺ said." },
         { q: "What does his sleep become?", a: "A charity from his Lord", wrong: ["A sin", "A wasted night", "A heavy debt"], why: "His sleep is a charity given to him by his Lord, he ﷺ said." },
         { q: "A good intention can be rewarded even when sleep wins.", tf: true, why: "He meant to pray at night, so what he intended is written for him." }
+      ]
+    },
+    {
+      slug: "shaded-by-charity",
+      title: "Shaded by your charity",
+      line: "On the Last Day, a believer is shaded by his charity.",
+      facts: ["Told by a Companion of his ﷺ", "Sadaqa: charity given for Allah"],
+      source: hadith("mishkat", "1925", "Marthad ibn Abdullah, from a Companion", "Sahih (Al-Albani)", "Marthad ibn Abdullah said one of the Companions of the Prophet ﷺ told him he heard him say: the believer's shade on the Day of Resurrection will be his charity. Ahmad transmitted it.", "shade on the day of resurrection will be his sadaqa"),
+      difficulty: 1,
+      questions: [
+        { q: "What will shade a believer on the Day of Resurrection?", a: "The charity he gave", wrong: ["The house he built", "The clothes he wore", "The tent he pitched"], why: "The believer's shade on that Day will be his sadaqa, he ﷺ said." },
+        { q: "What does the word sadaqa mean?", a: "Charity given for Allah", wrong: ["Prayer said at night", "Fasting kept in Ramadan", "Travel made to Makkah"], why: "Sadaqa is what a believer gives for Allah, and it will be his shade." },
+        { q: "Giving charity now can shade us on the Last Day.", tf: true, why: "His sadaqa will be the believer's shade on the Day of Resurrection." }
       ]
     }
   ]
