@@ -734,8 +734,7 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-ten-to-seven-hundred": [/seven hundred|700/i, /\bten\b|10/i],
   "sign-look-below": [/\bless\b/i, /above|\bmore\b/i],
   "sign-half-of-paradise": [/half/i, /Paradise/i],
-  "sign-before-the-row": [/ruku|bow/i, /join|row|late/i],
-  "sign-named-by-allah": [/Ubayy|Ubai/i, /name/i]
+  "sign-before-the-row": [/ruku|bow/i, /join|row|late/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1410,8 +1409,7 @@ const SOURCES: Record<string, string[]> = {
   "sign-ten-to-seven-hundred": ["Sahih al-Bukhari 41"],
   "sign-look-below": ["Sahih Muslim 2963c"],
   "sign-half-of-paradise": ["Sahih al-Bukhari 6528"],
-  "sign-before-the-row": ["Sahih al-Bukhari 783"],
-  "sign-named-by-allah": ["Sahih al-Bukhari 4961"]
+  "sign-before-the-row": ["Sahih al-Bukhari 783"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1435,7 +1433,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1790);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1789);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -29509,8 +29507,8 @@ describe("the signs in creation, alive", () => {
     ]);
   });
 
-  test("the scenes from four words to named by Allah show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
-    const bountyScenes: SignKind[] = ["four-words", "a-dinar-and-a-sheep", "ten-to-seven-hundred", "look-below", "half-of-paradise", "before-the-row", "named-by-allah"];
+  test("the scenes from four words to before the row show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const bountyScenes: SignKind[] = ["four-words", "a-dinar-and-a-sheep", "ten-to-seven-hundred", "look-below", "half-of-paradise", "before-the-row"];
     for (const kind of bountyScenes) {
       for (const each of signArt(kind).parts) {
         const person =
@@ -29884,54 +29882,6 @@ describe("the signs in creation, alive", () => {
       [
         [1, 0],
         [1, 0]
-      ]
-    ]);
-    // Named by Allah: a plain before the masjid of Madinah, with palms and a mat. His place, a golden ring, and Ubayy's
-    // place sit on the mat; Anas's place stands by. Anas's voice tells of it, and his voice speaks to Ubayy: a soft golden
-    // light and glints come between them: the recitation. Ubayy's voice asks, his voice says yes, and a small light shows
-    // over Ubayy's place with a soft golden ring about it: named. Ubayy's voice asks again, his voice says yes again, and
-    // a wider soft light and glints come about Ubayy's place. Ubayy's place trembles softly, and soft pale glints come
-    // about it: moved to tears.
-    expect(words("named-by-allah")).toEqual([
-      "Anas: he said to Ubayy ibn Ka'b: Allah",
-      "Has ordered me to recite Quran to you.",
-      "Ubayy said: did Allah mention me",
-      "By name to you? He said: yes.",
-      "Ubayy said: have I been mentioned by",
-      "The Lord of the worlds? He said: yes.",
-      "Then Ubayy burst into tears."
-    ]);
-    expect([
-      [at("named-by-allah", "Anas's voice: telling of it", "opacity", [0.022, 0.03, 0.094, 0.1]), at("named-by-allah", "his voice: speaking to Ubayy", "opacity", [0.044, 0.05, 0.24, 0.246])],
-      [at("named-by-allah", "the recitation: a soft golden light between them", "opacity", [0.17, 0.186]), at("named-by-allah", "the recitation: glints in the air between them", "opacity", [0.2, 0.214])],
-      [at("named-by-allah", "Ubayy's voice: asking", "opacity", [0.312, 0.318, 0.452, 0.458]), at("named-by-allah", "his voice: yes", "opacity", [0.462, 0.468, 0.53, 0.536]), at("named-by-allah", "named: a small light over Ubayy's place", "opacity", [0.48, 0.49]), at("named-by-allah", "a soft golden ring about Ubayy's place", "opacity", [0.5, 0.512])],
-      [at("named-by-allah", "Ubayy's voice: asking again", "opacity", [0.6, 0.606, 0.742, 0.748]), at("named-by-allah", "his voice: yes, again", "opacity", [0.752, 0.758, 0.82, 0.826]), at("named-by-allah", "a wider soft light about Ubayy's place", "opacity", [0.77, 0.79]), at("named-by-allah", "glints about Ubayy's place", "opacity", [0.796, 0.808])],
-      [at("named-by-allah", "Ubayy's place", "opacity", [0.89, 0.9]), at("named-by-allah", "Ubayy's place, moved to tears: trembling softly", "opacity", [0.89, 0.9]), at("named-by-allah", "soft pale glints about Ubayy's place", "opacity", [0.904, 0.916])]
-    ]).toEqual([
-      [
-        [0, 1, 1, 0],
-        [0, 1, 1, 0]
-      ],
-      [
-        [0, 1],
-        [0, 1]
-      ],
-      [
-        [0, 1, 1, 0],
-        [0, 1, 1, 0],
-        [0, 1],
-        [0, 1]
-      ],
-      [
-        [0, 1, 1, 0],
-        [0, 1, 1, 0],
-        [0, 1],
-        [0, 1]
-      ],
-      [
-        [1, 0],
-        [0, 1],
-        [0, 1]
       ]
     ]);
   });

@@ -1037,8 +1037,7 @@ export type SignKind =
   | "ten-to-seven-hundred"
   | "look-below"
   | "half-of-paradise"
-  | "before-the-row"
-  | "named-by-allah";
+  | "before-the-row";
 
 export type SignScene = {
   id: string;
@@ -5658,13 +5657,6 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Bakrah said: I reached the Prophet ﷺ in the mosque while he was bowing in prayer, and I too bowed before joining the row. I mentioned it to the Prophet ﷺ, and he said to me: may Allah increase your love for the good, but do not repeat it again.",
     sources: [bukhari("783")]
-  },
-  {
-    id: "sign-named-by-allah",
-    kind: "named-by-allah",
-    caption:
-      "Anas ibn Malik said: the Prophet of Allah ﷺ said to Ubayy ibn Ka'b: Allah has ordered me to recite Quran to you. Ubayy said: did Allah mention me by name to you? He said: yes. Ubayy said: have I been mentioned by the Lord of the worlds? He said: yes. Then Ubayy burst into tears.",
-    sources: [bukhari("4961")]
   }
 ];
 
@@ -8307,9 +8299,7 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A fourth, a third, then: I hope that you will be one half of the people of Paradise.
   "deep-waqiah2-half-of-paradise": "sign-half-of-paradise",
   // Abu Bakrah bowed before joining the row: may Allah increase your love for the good, but do not repeat it.
-  "prayer-review-and-mastery-scenario-block-1": "sign-before-the-row",
-  // Allah named Ubayy to him, and Ubayy burst into tears.
-  "deep-ubayy-named-by-allah": "sign-named-by-allah"
+  "prayer-review-and-mastery-scenario-block-1": "sign-before-the-row"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

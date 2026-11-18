@@ -7,7 +7,7 @@ import { GOLD, someone, sun, WARM, wash } from "./worshipArt";
 import { camel, care, farOff, gardenIn, jug, palms, tent, track } from "./daysArt";
 import { soft, spark, speaking } from "./fastArt";
 import { showAt, showFor, SOFT_GOLD } from "./roadArt";
-import { EIGHT, FOLK, glints, ITS_VOICE, linesOn, mat, places, plainLand, SEVEN, SIX, twinkle } from "./shareArt";
+import { EIGHT, FOLK, glints, ITS_VOICE, linesOn, mat, places, plainLand, SIX, twinkle } from "./shareArt";
 import { farHills, insideTheMasjid } from "./wideArt";
 import { GREY } from "./lovedArt";
 import { at3 } from "./storyArt";
@@ -17,13 +17,13 @@ import { puffs, smallLight } from "./hourArt";
 /**
  * The bounty of a good deed: four words said three times that outweigh a whole morning of remembrance; a dinar that
  * came back as a sheep and a dinar, and a trade blessed even in dust; a good deed rewarded ten to seven hundred times
- * and an evil deed only as it is; looking at those below, not those above; hoping to be half of the people of
- * Paradise; Abu Bakrah's eagerness to join the bowing; and Ubayy, named by the Lord of the worlds. Only the land, the
- * sky, buildings, things, plants and animals are drawn. No Prophet, no Companion and no person is ever drawn, not even a
- * hand, a foot, a head, a mouth or a face: where someone was, a ring or a small dashed circle shows it, where someone
- * went, the circle goes, and a voice is arcs in the air. Nothing is drawn for Allah, and nothing comes down from the
- * sky: a prayer or praise is a spark that rises, what is good is a light, glints and a soft golden ring. Paradise is
- * only far off, in a soft circle of light with no sun in it. No name, word or number is written.
+ * and an evil deed only as it is; looking at those below, not those above; hoping to be half of the people of Paradise;
+ * and Abu Bakrah's eagerness to join the bowing. Only the land, the sky, buildings, things, plants and animals are
+ * drawn. No Prophet, no Companion and no person is ever drawn, not even a hand, a foot, a head, a mouth or a face:
+ * where someone was, a ring or a small dashed circle shows it, where someone went, the circle goes, and a voice is arcs
+ * in the air. Nothing is drawn for Allah, and nothing comes down from the sky: a prayer or praise is a spark that
+ * rises, what is good is a light, glints and a soft golden ring. Paradise is only far off, in a soft circle of light
+ * with no sun in it. No name, word or number is written.
  */
 
 /** The pans of a balance hung from (x, 50): three strings and a shallow bowl, its rim on y 61. */
@@ -904,120 +904,6 @@ function beforeTheRow(): SignArt {
   };
 }
 
-// Named by the Lord of the worlds. Anas ibn Malik said: the Prophet of Allah ﷺ said to Ubayy ibn Ka'b: Allah has ordered
-// me to recite the Quran to you. Ubayy said: did Allah mention me by name to you? He said: yes. Ubayy said: have I been
-// mentioned by the Lord of the worlds? He said: yes. Then Ubayy burst into tears (Sahih al-Bukhari 4961). No one is
-// drawn: before the masjid of Madinah, a mat with his place, a golden ring, and Ubayy's place on it, and Anas's place
-// by them. Anas's voice tells of it, and his voice speaks to Ubayy. A soft golden light comes between them, with glints
-// in the air: the recitation. Ubayy's voice asks, and his voice says yes: a small light comes over Ubayy's place, and a
-// soft golden ring about it. Ubayy's voice asks again, and his voice says yes again: a wider soft light and glints come
-// about Ubayy's place. Then Ubayy's place trembles softly, with soft pale glints about it: he burst into tears.
-function namedByAllah(): SignArt {
-  const his: [number, number] = [70, 104];
-  const ubayy: [number, number] = [90, 105];
-  const anas: [number, number] = [32, 108];
-  return {
-    kind: "named-by-allah",
-    ms: 11000,
-    parts: [
-      { name: "sky", svg: sky("#BFE3FA", "#E3F2FB", 62) },
-      { name: "the sun", svg: sun(140, 18) },
-      { name: "a cloud", svg: cloud(44, 24, 0.46, "#FFFFFF", 0.9), loop: { move: "slide", ms: 11000 } },
-      { name: "hills far off", svg: farHills() },
-      { name: "the land", svg: plainLand() },
-      { name: "the masjid of Madinah", svg: madinahMasjid(56, 92, 1) },
-      ...palms(
-        [
-          [24, 94, 13],
-          [126, 94, 14]
-        ],
-        "Madinah"
-      ),
-      { name: "a mat", svg: mat(80, 106.4, 30) },
-      { name: "his place, a golden ring", svg: ring(his[0], his[1], 2.6, GOLD) },
-      {
-        name: "Ubayy's place",
-        svg: someone(ubayy[0], ubayy[1], 1.6, FOLK),
-        keys: track({
-          opacity: [
-            [0.89, 1],
-            [0.9, 0]
-          ]
-        })
-      },
-      { name: "Anas's place", svg: someone(anas[0], anas[1], 1.6, ITS_VOICE) },
-      { name: "Anas's voice: telling of it", svg: arcs(n(anas[0] + 3.2), n(anas[1] - 2.8), ITS_VOICE), keys: showFor(0.022, 0.03, 0.094, 0.1), loop: speaking },
-      { name: "his voice: speaking to Ubayy", svg: arcs(n(his[0] + 3.4), n(his[1] - 2.8), GOLD), keys: showFor(0.044, 0.05, 0.24, 0.246), loop: speaking },
-      { name: "the recitation: a soft golden light between them", svg: wash(80, 102, 14, 6, WARM, 0.16), keys: showAt(0.17, 0.186), loop: soft },
-      {
-        name: "the recitation: glints in the air between them",
-        svg: glints(
-          [
-            [74, 96],
-            [80, 93.6],
-            [86, 96]
-          ],
-          0.9,
-          "#FFE7A0"
-        ),
-        keys: showAt(0.2, 0.214),
-        loop: twinkle()
-      },
-      { name: "Ubayy's voice: asking", svg: arcsLeft(n(ubayy[0] - 3.2), n(ubayy[1] - 2.8), FOLK), keys: showFor(0.312, 0.318, 0.452, 0.458), loop: speaking },
-      { name: "his voice: yes", svg: arcs(n(his[0] + 3.4), n(his[1] - 2.8), GOLD), keys: showFor(0.462, 0.468, 0.53, 0.536), loop: speaking },
-      { name: "named: a small light over Ubayy's place", svg: smallLight(ubayy[0], 97.6, 1), keys: showAt(0.48, 0.49), loop: soft },
-      { name: "a soft golden ring about Ubayy's place", svg: care(ubayy[0], ubayy[1], 5.2, 2.8, SOFT_GOLD), keys: showAt(0.5, 0.512), loop: soft },
-      { name: "Ubayy's voice: asking again", svg: arcsLeft(n(ubayy[0] - 3.2), n(ubayy[1] - 2.8), FOLK), keys: showFor(0.6, 0.606, 0.742, 0.748), loop: speaking },
-      { name: "his voice: yes, again", svg: arcs(n(his[0] + 3.4), n(his[1] - 2.8), GOLD), keys: showFor(0.752, 0.758, 0.82, 0.826), loop: speaking },
-      { name: "a wider soft light about Ubayy's place", svg: wash(ubayy[0], 103, 12, 7, WARM, 0.18), keys: showAt(0.77, 0.79), loop: soft },
-      {
-        name: "glints about Ubayy's place",
-        svg: glints(
-          [
-            [83, 99.6],
-            [97, 99.6],
-            [90, 94.6]
-          ],
-          1.1,
-          "#FFE7A0"
-        ),
-        keys: showAt(0.796, 0.808),
-        loop: twinkle()
-      },
-      {
-        name: "Ubayy's place, moved to tears: trembling softly",
-        svg: someone(ubayy[0], ubayy[1], 1.6, FOLK),
-        origin: { x: ubayy[0], y: ubayy[1] },
-        keys: showAt(0.89, 0.9),
-        loop: { move: "bob", ms: 600, y: 0.35 }
-      },
-      {
-        name: "soft pale glints about Ubayy's place",
-        svg: glints(
-          [
-            [85.6, 101.6],
-            [94.4, 101.6],
-            [87, 108.6],
-            [93, 108.6]
-          ],
-          0.8,
-          "#DDEEFF"
-        ),
-        keys: showAt(0.904, 0.916),
-        loop: twinkle(900)
-      }
-    ],
-    words: linesOn(SEVEN, [
-      "Anas: he said to Ubayy ibn Ka'b: Allah",
-      "Has ordered me to recite Quran to you.",
-      "Ubayy said: did Allah mention me",
-      "By name to you? He said: yes.",
-      "Ubayy said: have I been mentioned by",
-      "The Lord of the worlds? He said: yes.",
-      "Then Ubayy burst into tears."
-    ])
-  };
-}
 
 export const BOUNTY_ART = {
   "four-words": fourWords,
@@ -1025,6 +911,5 @@ export const BOUNTY_ART = {
   "ten-to-seven-hundred": tenToSevenHundred,
   "look-below": lookBelow,
   "half-of-paradise": halfOfParadise,
-  "before-the-row": beforeTheRow,
-  "named-by-allah": namedByAllah
+  "before-the-row": beforeTheRow
 } as const;
