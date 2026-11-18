@@ -299,8 +299,8 @@ function nightWithHudhayfah(): SignArt {
 // Ubayy named. Anas ibn Malik said: the Prophet ﷺ said to Ubayy: Allah has ordered me to recite to you: Those who
 // disbelieved were not (al-Bayyinah 98:1). Ubayy said: and He named me? He said: yes. And Ubayy wept (Sahih al-Bukhari
 // 4959). No one is drawn: by the masjid of Madinah his place is a golden ring, and Ubayy's place sits with it. His voice
-// speaks; Ubayy's voice asks; his voice answers, and a golden glow comes about Ubayy's place. Then golden arcs of his
-// recitation go to Ubayy, soft silver glints shimmer about Ubayy's place, for his weeping, and a warm light comes in it.
+// speaks; Ubayy's voice asks; his voice answers, and a golden glow comes about Ubayy's place. Then soft silver glints
+// shimmer about Ubayy's place, for his weeping on hearing that he was named, and a warm light comes in it.
 function ubayyNamed(): SignArt {
   const his: [number, number] = [58, 104.4];
   const ubayy: [number, number] = [80, 104.2];
@@ -320,7 +320,6 @@ function ubayyNamed(): SignArt {
       { name: "Ubayy's voice: did He name me", svg: arcsLeft(n(ubayy[0] - 3), n(ubayy[1] - 4.2), VOICE), keys: showWhile(0.29, 0.3, 0.52, 0.53), loop: { move: "twinkle", ms: 800, low: 0.5 } },
       { name: "his voice: yes", svg: arcs(n(his[0] + 3.4), n(his[1] - 4.4), VOICE), keys: showWhile(0.53, 0.54, 0.74, 0.75), loop: { move: "twinkle", ms: 900, low: 0.5 } },
       { name: "named: a golden glow about Ubayy's place", svg: wash(ubayy[0], n(ubayy[1] - 2), 8, 6.6, "#FFE9A8", 0.22), keys: showFrom(0.56, 0.6), loop: { move: "twinkle", ms: 1800, low: 0.75 } },
-      { name: "his recitation to Ubayy: golden arcs", svg: arcs(n(his[0] + 3.4), n(his[1] - 4.4), GOLD), keys: showFrom(0.75, 0.77), loop: { move: "twinkle", ms: 1100, low: 0.5 } },
       { name: "Ubayy's weeping: soft silver glints", svg: glints(ubayy[0], n(ubayy[1] - 1)), keys: showFrom(0.77, 0.8), loop: { move: "twinkle", ms: 700, low: 0.3 } },
       { name: "a warm light in Ubayy's place", svg: lightIn(ubayy[0], ubayy[1], 4.4), keys: showFrom(0.84, 0.88), loop: { move: "twinkle", ms: 1500, low: 0.7 } }
     ],

@@ -542,9 +542,10 @@ function twoJoys(): SignArt {
 // you. Then he covered his head and made his speed fast till he crossed the valley (Sahih al-Bukhari 4419). And: if you
 // do not weep, do not enter (Sahih al-Bukhari 433). No one is drawn: in a valley between rocks with fronts carved into
 // them, the dwellings of Thamud; a golden ring, his place, comes along the valley floor, with the places of those with
-// him; his voice, and the doorways show dark and empty; tears show by their places; one turns toward a doorway and
-// turns back; a dark shade over the dwellings, what befell them, and cracks in the rock; a cover comes over the ring, and
-// they all hurry on; last, they cross the valley, and a calm light shows beyond it.
+// him; his voice, and the doorways show dark and empty; tears show by their places; if you do not weep, do not enter:
+// a faint bar shows across each doorway, and no one goes toward them; a dark shade over the dwellings, what befell them,
+// and cracks in the rock; a cover comes over the ring, and they all hurry on; last, they cross the valley, and a calm
+// light shows beyond it.
 function ruinsOfAlHijr(): SignArt {
   const fronts: [number, number, number, number][] = [
     [22, 90, 12, 17],
@@ -597,24 +598,12 @@ function ruinsOfAlHijr(): SignArt {
       },
       { name: "the way along the valley floor", svg: way("M0 101.6 C40 101 90 102 160 100.6", "#B48B5A", 1), keys: showFrom(0.03, 0.08) },
       ...followers.map(([x, y], i): SignPart => ({ name: `the place of one with him ${i + 1}`, svg: someone(x, y, 1.4), keys: going() })),
+      { name: "the place of one more with him", svg: someone(58, 99, 1.4), keys: going() },
       {
-        name: "one who turns toward a doorway, and back",
-        svg: someone(58, 99, 1.4),
-        keys: track({
-          xy: [
-            [0.03, -40, 0],
-            [0.1, 0, 0],
-            [0.44, 0, 0],
-            [0.47, -9, -9.2],
-            [0.5, 0, 0],
-            [0.74, 0, 0],
-            [0.8, 44, 0],
-            [0.86, 44, 0],
-            [0.93, 100, 0]
-          ]
-        })
+        name: "if you do not weep, do not enter: a faint bar across each doorway",
+        svg: fronts.map(([x, y, w, h]) => `<path d="M${n(x - w * 0.16 - 0.6)} ${n(y - h * 0.24)} L${n(x + w * 0.16 + 0.6)} ${n(y - h * 0.24)}" stroke="#E8DCC4" stroke-width="0.8" stroke-linecap="round" opacity="0.9"/>`).join(""),
+        keys: showWhile(0.45, 0.49, 0.74, 0.76)
       },
-      { name: "a way turning back from the doorway", svg: way("M49.8 90.4 C50.6 95.8 53.8 98.6 56.6 99.2", "#9C7A55", 0.9), keys: showWhile(0.47, 0.5, 0.74, 0.76) },
       { name: "a golden ring, his place", svg: ring(leader[0], leader[1], 3, GOLD), keys: going() },
       {
         name: "a cover over his place",
@@ -864,12 +853,12 @@ function bestTenDays(): SignArt {
 // my knowledge and your knowledge have not decreased Allah's knowledge except as much as this sparrow has decreased the
 // sea with its beak. ... The Prophet ﷺ said: may Allah have mercy on Musa; we wish he had been patient, so that more of
 // their story would be told to us (Sahih al-Bukhari 122). Nothing is drawn for Allah, and no one is drawn, not a
-// prophet, not the boy of the story: on a shore, a ring of light, his place, among the places of many; a voice asks
-// from them, and his voice answers; a dashed way goes along the shore to where the two seas meet, and a ring shows
-// there; a boat comes, and the two rings show on it; a sparrow comes to its edge and dips its beak in the sea, once
-// and twice; two small lights show over them, their knowledge, and a light runs over the wide sea; so little on the
-// sparrow's beak, a glint, and the sea shines, as full as before; last, the sparrow flies off, and the boat sails on
-// into a soft mist far off, where faint lights twinkle.
+// prophet, not the boy of the story, and no place is drawn for Musa or for al-Khidr: on a shore, the places of many;
+// a voice asks from them, and a voice answers from among them; a dashed way goes along the shore to where the two seas
+// meet; a boat comes; a sparrow comes to its edge and dips its beak in the sea, once and twice; two small lights show
+// over the boat, their knowledge, and a light runs over the wide sea; so little on the sparrow's beak, a glint, and
+// the sea shines, as full as before; last, the sparrow flies off, and the boat sails on into a soft mist far off,
+// where faint lights twinkle.
 function sparrowAndTheSea(): SignArt {
   const musa: [number, number] = [28, 101];
   const many: [number, number][] = [
@@ -918,10 +907,8 @@ function sparrowAndTheSea(): SignArt {
       { name: "a rock by the meeting of the seas", svg: `<path d="M58 104 C58 98 61 95 65 95 C69 95 72 98 72 104 Z" fill="#8F8B84"/><path d="M61 99.4 C62 97.6 63.4 96.8 65 96.8" stroke="#B4B0A8" stroke-width="1" fill="none" stroke-linecap="round"/>` },
       { name: "the places of many on the shore", svg: many.map(([x, y]) => someone(x, y, 1.4)).join("") },
       { name: "a voice from them, asking", svg: arcs(many[0][0] + 3.4, many[0][1] - 3.4, VOICE), keys: showWhile(0.03, 0.04, 0.15, 0.16), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
-      { name: "his place, a ring of light", svg: ring(musa[0], musa[1], 3, "#FFF3CF") + ring(musa[0], musa[1], 2, GOLD), keys: track({ opacity: [[0.45, 1], [0.47, 0]] }) },
-      { name: "his voice: I am the most learned", svg: arcs(musa[0] + 4, musa[1] - 3.6, VOICE), keys: showWhile(0.15, 0.16, 0.28, 0.29), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
+      { name: "a voice: I am the most learned", svg: arcs(musa[0] + 4, musa[1] - 3.6, VOICE), keys: showWhile(0.15, 0.16, 0.28, 0.29), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
       { name: "a way along the shore to where the seas meet", svg: way(`M${musa[0] + 4} ${musa[1] + 1} C40 104 50 103 ${meeting[0] - 3} ${meeting[1] + 1}`, "#B48B5A", 1), keys: showFrom(0.28, 0.33) },
-      { name: "one more learned: a ring there", svg: ring(meeting[0], meeting[1], 3, "#FFF3CF") + ring(meeting[0], meeting[1], 2, "#8FCBEB"), keys: track({ opacity: [[0.32, 0], [0.35, 1], [0.45, 1], [0.47, 0]] }) },
       {
         name: "a boat, carrying them",
         svg: boat(deck[0], deck[1]),
@@ -940,17 +927,6 @@ function sparrowAndTheSea(): SignArt {
         }),
         loop: bob
       },
-      ...aboard.map(
-        ([x, y], i): SignPart => ({
-          name: i ? "one more learned, on the boat" : "his place, on the boat",
-          svg: ring(x, y, 2.6, "#FFF3CF") + ring(x, y, 1.7, i ? "#8FCBEB" : GOLD),
-          keys: sails([
-            [0.46, 0],
-            [0.475, 1]
-          ]),
-          loop: bob
-        })
-      ),
       {
         name: "a sparrow, on the edge of the boat",
         svg: animalAt("sparrow", edge[0], edge[1], 0.2),

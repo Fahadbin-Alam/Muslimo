@@ -637,7 +637,8 @@ function milkBowl(): SignArt {
 // broken into pieces and butter poured on it; then he said: let ten come in. Ten came in, ate their fill and went out,
 // then ten more, until all had eaten their fill, seventy or eighty men (Sahih al-Bukhari 3578). No one is drawn: a
 // bundle of loaves goes along a small way to the mosque; ways come back with it; the bread is broken on a cloth; ten
-// small dashed circles go in and come out, again and again; and the bread is still there.
+// small dashed circles go in and come out, again and again; and sparks rise, all fed. Nothing is drawn of what was
+// left, which this narration does not tell.
 function breadForSeventy(): SignArt {
   const bundle =
     `<path d="M47 101.6 C46 98 48 95.6 51 95.6 C54 95.6 56 98 55 101.6 Z" fill="#D9C7A0"/>` +
@@ -739,7 +740,6 @@ function breadForSeventy(): SignArt {
       ...group("first", 0.575),
       ...group("second", 0.635),
       ...group("third", 0.695),
-      { name: "the bread, still there", svg: glow(71, 108, 10, "#FFF3C0", 0.1), keys: showFrom(0.84, 0.88), loop: { move: "twinkle", ms: 1200, low: 0.5 } },
       ...risingSparks(
         "all fed, rising",
         [

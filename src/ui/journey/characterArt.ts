@@ -393,11 +393,12 @@ function safeFromHarm(): SignArt {
 
 // A word of refuge for anger. Sulayman ibn Surad said: I was sitting with the Prophet ﷺ when two men abused each other,
 // and the face of one of them became red with anger. The Prophet ﷺ said: I know a word that would calm him if he said
-// it; if he said, I seek refuge with Allah from Satan, all his anger would go away (Sahih al-Bukhari 3282). No one is
-// drawn, not even a face: by the masjid, a golden ring, his place, and one sitting with him; two places, and crooked
-// voices go back and forth; a red glow of anger grows on one of them; a voice from the ring, and a golden light, the
-// word, shows by it; the word goes to the angry place, and a calm voice comes from it; last, the red glow fades, and a
-// calm comes on his place.
+// it; if he said, I seek refuge with Allah from Satan, all his anger would go away. It was told to the angry one, and
+// he said: am I mad? (Sahih al-Bukhari 3282). So he is not drawn saying the word, and his anger is not drawn going. No
+// one is drawn, not even a face: by the masjid, a golden ring, his place, and one sitting with him; two places, and
+// crooked voices go back and forth; a red glow of anger grows on one of them; a voice from the ring, and a golden light,
+// the word, shows by it; the word goes to the angry place and stays by it, the red glow still on it; last, a faint calm
+// shows by the word, what it would bring.
 function refugeFromAnger(): SignArt {
   const ringAt: [number, number] = [34, 99];
   const first: [number, number] = [90, 99];
@@ -425,9 +426,7 @@ function refugeFromAnger(): SignArt {
         keys: track({
           opacity: [
             [0.19, 0],
-            [0.22, 1],
-            [0.78, 1],
-            [0.86, 0]
+            [0.22, 1]
           ],
           scale: [
             [0.19, 0.4],
@@ -443,15 +442,11 @@ function refugeFromAnger(): SignArt {
         keys: track({
           opacity: [
             [0.2, 0],
-            [0.23, 1],
-            [0.78, 1],
-            [0.84, 0]
+            [0.23, 1]
           ],
           scale: [
             [0.2, 1],
-            [0.26, 1.4],
-            [0.78, 1.4],
-            [0.84, 1]
+            [0.26, 1.4]
           ]
         })
       },
@@ -471,8 +466,7 @@ function refugeFromAnger(): SignArt {
         }),
         loop: { move: "twinkle", ms: 1200, low: 0.6 }
       },
-      { name: "a calm voice from him, seeking refuge", svg: arcs(angry[0] + 3.8, angry[1] - 3.6, GOLD), keys: showWhile(0.65, 0.66, 0.69, 0.71), loop: { move: "twinkle", ms: 1000, low: 0.5 } },
-      { name: "a calm on his place", svg: wash(angry[0], angry[1] + 0.6, 10, 3.4, "#FFFBEA", 0.24), keys: showFrom(0.84, 0.88), loop: { move: "twinkle", ms: 1800, low: 0.8 } }
+      { name: "what the word would bring: a faint calm by it", svg: wash(angry[0] - 4, angry[1] - 7, 7, 4.4, "#FFFBEA", 0.22), keys: showFrom(0.84, 0.88), loop: { move: "twinkle", ms: 1800, low: 0.8 } }
     ],
     words: [
       { text: "Two men abused each other", from: 0.02, to: 0.16 },

@@ -113,7 +113,8 @@ const PLAIN = `<rect width="160" height="120" fill="#EEE8F0"/><rect y="70" width
 // with a glint and a glow. A grey haze of hardship comes about the one in need; the other comes to its side, a soft
 // golden ring of care comes, and the haze lifts. Then a wide pale plain, the Day: the one who helped stands on it, a
 // grey haze about it, which lifts in a soft golden glow. Back in Madinah, a small grey mark, a fault, shows by the one
-// in need, and a soft white veil comes over it; and a soft white veil comes about the one who covered it.
+// in need, and a soft white veil comes over it; then the pale plain of that Day comes back, faint, and a soft white veil
+// comes about the one who covered it, for Allah covers him on the Day of Resurrection.
 function brotherOfAMuslim(): SignArt {
   const his: [number, number] = [24, 99.8];
   const inNeed: [number, number] = [60, 102.4];
@@ -228,7 +229,6 @@ function brotherOfAMuslim(): SignArt {
         })
       },
       { name: "covered: a soft white veil over the one in need", svg: wash(n(inNeed[0] - 1.2), n(inNeed[1] + 0.4), 6.4, 3.6, "#FFFFFF", 0.22), keys: showAt(0.915, 0.93) },
-      { name: "covered in turn: a soft white veil about the one who helps", svg: wash(beside[0], n(beside[1] + 0.4), 6, 3.4, "#FFFFFF", 0.22), keys: showAt(0.935, 0.952) },
       {
         name: "that Day: a wide pale plain",
         svg: PLAIN,
@@ -255,7 +255,11 @@ function brotherOfAMuslim(): SignArt {
         })
       },
       { name: "relieved on that Day: a soft golden glow about the one who helped", svg: glow(onThatDay[0], n(onThatDay[1] - 1.4), 7.4, WARM, 0.26), keys: showFor(0.785, 0.815, 0.889, 0.9) },
-      { name: "relieved on that Day: a soft golden ring about the one who helped", svg: care(onThatDay[0], n(onThatDay[1] + 0.5), 3.8, 1.9, SOFT_GOLD), keys: showFor(0.8, 0.815, 0.889, 0.9), loop: soft }
+      { name: "relieved on that Day: a soft golden ring about the one who helped", svg: care(onThatDay[0], n(onThatDay[1] + 0.5), 3.8, 1.9, SOFT_GOLD), keys: showFor(0.8, 0.815, 0.889, 0.9), loop: soft },
+      // Allah covers him on the Day of Resurrection: that Day comes back, faint, for the last veil.
+      { name: "that Day again: the wide pale plain, faint", svg: PLAIN, keys: track({ opacity: [[0.93, 0], [0.946, 0.5]] }) },
+      { name: "the one who covered, on that Day", svg: someone(beside[0], beside[1], 1.5), keys: showAt(0.93, 0.946) },
+      { name: "covered in turn: a soft white veil about the one who helps", svg: wash(beside[0], n(beside[1] + 0.4), 6, 3.4, "#FFFFFF", 0.22), keys: showAt(0.94, 0.955) }
     ],
     words: [
       { text: "A Muslim is a brother of a Muslim", from: 0.02, to: 0.129 },

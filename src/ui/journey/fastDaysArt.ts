@@ -435,7 +435,7 @@ function ashuraAndRamadan(): SignArt {
       { name: "whoever wished fasted it: a warm glow about the two that fast", svg: wash(72, 104.4, 14, 4.4, WARM, 0.2), keys: showFrom(0.36, 0.4), loop: soft },
       ...places.slice(2).map(
         ([x, y], i): SignPart => ({
-          name: `whoever wished did not: dates and a cup by a place ${i + 1}`,
+          name: `whoever wished did not: dates and a cup by a place ${i + 3}`,
           svg: [-1.6, 0, 1.6].map((dx) => date(n(x + dx - 0.4), n(y + 2.2))).join("") + cup(n(x + 3.4), n(y + 2.6)) + drink(n(x + 3.4), n(y + 2.6)),
           keys: showFrom(at3(0.5 + i * 0.02), at3(0.53 + i * 0.02))
         })

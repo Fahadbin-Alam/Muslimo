@@ -68,8 +68,8 @@ const arc = (x1: number, y1: number, x2: number, y2: number, bow: number) => `M$
 // place, a golden ring. From the market, with its stalls, comes the buyer's place, and the buyer's voice speaks. A faint
 // line goes from it back to the seller's stall: coins show on the counter and a small sack, half empty; a grey ring
 // comes about the sack, then about the buyer's place. His voice speaks, and a faint golden line goes from his place to
-// the buyer's. The old trade is gone, and the buyer's place goes back to the stall; its voice speaks there, a soft
-// golden ring comes about it, and a soft golden glow over the counter.
+// the buyer's. The old trade is gone, and the buyer's place goes back to the stall; its voice speaks there, and a soft
+// golden ring comes about it. The hadith tells no outcome after that, so none is drawn.
 function sayNoCheating(): SignArt {
   const his: [number, number] = [34, 101.6];
   const market: [number, number] = [92, 105.6];
@@ -110,8 +110,7 @@ function sayNoCheating(): SignArt {
       { name: "his voice: when you buy", svg: arcs(n(his[0] + 2.4), n(his[1] - 3.6), GOLD), keys: showAt(0.52, 0.53), loop: speaking },
       { name: "his teaching: a faint golden line from his place to the buyer's", svg: way(arc(his[0] + 3, his[1] - 2.6, told[0] - 2.2, told[1] - 2.8, 5), GOLD, 0.6), keys: showFor(0.55, 0.58, 0.64, 0.65) },
       { name: "the buyer's voice at the stall: no cheating", svg: arcs(n(market[0] + 2.2), n(market[1] - 3.8), VOICE), keys: showAt(0.77, 0.78), loop: speaking },
-      { name: "no cheating: a soft golden ring about the buyer's place", svg: care(market[0], n(market[1] + 0.4), 3.2, 1.6, SOFT_GOLD), keys: showAt(0.8, 0.83), loop: soft },
-      { name: "kept safe: a soft golden glow over the counter", svg: glow(112, 94, 8, WARM, 0.22), keys: showAt(0.86, 0.89) }
+      { name: "no cheating: a soft golden ring about the buyer's place", svg: care(market[0], n(market[1] + 0.4), 3.2, 1.6, SOFT_GOLD), keys: showAt(0.8, 0.83), loop: soft }
     ],
     words: [
       { text: "A man told him", from: 0.02, to: 0.253 },

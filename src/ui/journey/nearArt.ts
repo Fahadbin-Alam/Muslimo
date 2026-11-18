@@ -269,8 +269,9 @@ function bestToThePoor(): SignArt {
 // Madinah on the left; on the right, two hills with a pass between them, Thaniyyat al-Wada', and the way from Tabuk
 // coming through it. As-Sa'ib's place and the places of the little ones come out from the homes, small glints of
 // gladness over them, and go along the way toward the pass; a soft golden ring comes about the pass, and they go on to
-// its foot. Then his place, a golden ring, comes through the pass along the way from Tabuk, the places of two with him
-// after it; a warm glow comes about the little ones, welcoming him, and a soft golden ring about his place.
+// its foot. Then his place, a golden ring, comes through the pass along the way from Tabuk; a warm glow comes about the
+// little ones, welcoming him, and a soft golden ring about his place. The hadith does not count those who came back
+// with him, so none are drawn.
 function outToWelcome(): SignArt {
   const going = track({
     opacity: [
@@ -340,20 +341,6 @@ function outToWelcome(): SignArt {
           xy: [
             [0.745, 13, -3.6],
             [0.85, 0, 0]
-          ]
-        })
-      },
-      {
-        name: "the places of two with him",
-        svg: someone(124.6, 99.2) + someone(129.6, 97.8),
-        keys: track({
-          opacity: [
-            [0.79, 0],
-            [0.81, 1]
-          ],
-          xy: [
-            [0.79, 6, -1.6],
-            [0.88, 0, 0]
           ]
         })
       },
