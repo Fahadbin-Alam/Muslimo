@@ -926,7 +926,14 @@ export type SignKind =
   | "vessels-after-fajr"
   | "gone-ahead"
   | "as-if-riding"
-  | "like-a-pure-loaf";
+  | "like-a-pure-loaf"
+  | "the-biggest-heap"
+  | "who-is-that"
+  | "sweet-things-and-honey"
+  | "healing-in-black-cumin"
+  | "over-which-the-sun-rises"
+  | "brisk-then-walking"
+  | "said-three-times";
 
 export type SignScene = {
   id: string;
@@ -4769,6 +4776,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sahl ibn Sa'd said: I heard the Prophet ﷺ say: the people will be gathered on the Day of Resurrection on a reddish-white land, like a pure loaf of bread. Sahl added: that land will have no landmarks for anybody.",
     sources: [bukhari("6521")]
+  },
+  {
+    id: "sign-the-biggest-heap",
+    kind: "the-biggest-heap",
+    caption:
+      "Jabir ibn Abdullah al-Ansari said: my father was martyred on the day of Uhud and left six daughters and some debts to be paid. When the time of plucking the dates came, I went to the Messenger of Allah ﷺ, and he said: go and collect the various kinds of dates and place them separately in heaps. I did, and called him. On seeing him, the creditors started claiming their rights pressingly. When he saw how they behaved, he went round the biggest heap three times and sat over it, and said: call your companions. Then he kept on measuring and giving them, till Allah cleared all my father's debts. By Allah, all the heaps were complete, and I looked at the heap where the Messenger of Allah ﷺ was sitting, as if not a single date had been taken from it.",
+    sources: [bukhari("2781")]
+  },
+  {
+    id: "sign-who-is-that",
+    kind: "who-is-that",
+    caption:
+      "Jabir said: I came to the Prophet ﷺ regarding my father's debt. When I knocked on the door, he asked: who is that? I replied: I. He said: I, I? as if he disliked it.",
+    sources: [bukhari("6250")]
+  },
+  {
+    id: "sign-sweet-things-and-honey",
+    kind: "sweet-things-and-honey",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ used to love sweet edible things and honey.",
+    sources: [bukhari("5431")]
+  },
+  {
+    id: "sign-healing-in-black-cumin",
+    kind: "healing-in-black-cumin",
+    caption:
+      "Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: there is healing in black cumin for all diseases except death.",
+    sources: [bukhari("5688")]
+  },
+  {
+    id: "sign-over-which-the-sun-rises",
+    kind: "over-which-the-sun-rises",
+    caption:
+      "Abu Hurairah reported the Messenger of Allah ﷺ as saying: the uttering of: Exalted is Allah, all praise is due to Allah, there is no god but Allah, and Allah is the Greatest, is dearer to me than anything over which the sun rises.",
+    sources: [muslim("2695")]
+  },
+  {
+    id: "sign-brisk-then-walking",
+    kind: "brisk-then-walking",
+    caption:
+      "Ibn Umar said: when the Prophet ﷺ performed the Tawaf of the Ka'bah, he did Ramal during the first three rounds, and in the last four rounds he used to walk; and while doing the Tawaf between Safa and Marwah, he used to run in the midst of the rain-water passage.",
+    sources: [bukhari("1617")]
+  },
+  {
+    id: "sign-said-three-times",
+    kind: "said-three-times",
+    caption:
+      "Anas said: whenever the Prophet ﷺ spoke a sentence, he used to repeat it thrice so that the people could understand it properly from him.",
+    sources: [bukhari("95")]
   }
 ];
 
@@ -7069,7 +7125,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Wear sandals: as if riding.
   "deep-book-dress-wear-sandals": "sign-as-if-riding",
   // A reddish-white land like a pure loaf, with no landmarks.
-  "deep-ibrahim4-a-white-flat-land": "sign-like-a-pure-loaf"
+  "deep-ibrahim4-a-white-flat-land": "sign-like-a-pure-loaf",
+  // Round the biggest heap three times, till Allah cleared all the debts.
+  "deep-book-wills-jabirs-fathers-debts": "sign-the-biggest-heap",
+  // Who is that? I. I, I? as if he disliked it.
+  "deep-manners-permission-who-is-it": "sign-who-is-that",
+  // He loved sweet things and honey.
+  "deep-tahrim1-he-loved-honey": "sign-sweet-things-and-honey",
+  // Healing in black cumin for all diseases except death.
+  "deep-book-medicine-black-seed": "sign-healing-in-black-cumin",
+  // Four words, dearer than all the sun rises over.
+  "deep-book-dua-dearer-than-the-world": "sign-over-which-the-sun-rises",
+  // Ramal in the first three rounds, walking in the last four.
+  "deep-hajj-kabah-ramal": "sign-brisk-then-walking",
+  // He said a sentence three times, so that all understood.
+  "deep-book-ilm-said-three-times": "sign-said-three-times"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
