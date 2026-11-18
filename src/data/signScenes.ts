@@ -940,7 +940,14 @@ export type SignKind =
   | "start-with-your-dependents"
   | "even-with-one-sheep"
   | "the-right-then-the-right"
-  | "stung-by-a-scorpion";
+  | "stung-by-a-scorpion"
+  | "a-tent-like-a-pearl"
+  | "every-friday"
+  | "a-mountain-of-gold"
+  | "three-consecutive-days"
+  | "for-the-second-time"
+  | "within-seconds"
+  | "one-sa-of-dates";
 
 export type SignScene = {
   id: string;
@@ -4881,6 +4888,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah reported that a person came to the Messenger of Allah ﷺ and said: Messenger of Allah, I was stung by a scorpion during the night. Thereupon he said: had you recited these words in the evening: I seek refuge in the Perfect Word of Allah from the evil of what He created, it would not have done any harm to you.",
     sources: [muslim("2709a")]
+  },
+  {
+    id: "sign-a-tent-like-a-pearl",
+    kind: "a-tent-like-a-pearl",
+    caption:
+      "Abdullah ibn Qais Al-Ash'ari said: the Prophet ﷺ said: a tent is like a hollow pearl which is thirty miles in height, and on every corner of the tent the believer will have a family that cannot be seen by the others.",
+    sources: [bukhari("3243")]
+  },
+  {
+    id: "sign-every-friday",
+    kind: "every-friday",
+    caption:
+      "Anas ibn Malik reported that the Messenger of Allah ﷺ said: in Paradise there is a street to which they would come every Friday. The north wind will blow and would scatter fragrance on their faces and on their clothes and would add to their beauty and loveliness, and then they would go back to their family after having an added lustre to their beauty and loveliness, and their family would say to them: by Allah, you have been increased in beauty and loveliness after leaving us, and they would say: by Allah, you have also increased in beauty and loveliness after us.",
+    sources: [muslim("2833")]
+  },
+  {
+    id: "sign-a-mountain-of-gold",
+    kind: "a-mountain-of-gold",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: soon the river Euphrates will disclose the treasure of gold, so whoever will be present at that time should not take anything of it. Al-A'raj narrated from Abu Hurairah that the Prophet ﷺ said the same, but he said: it will uncover a mountain of gold.",
+    sources: [bukhari("7119")]
+  },
+  {
+    id: "sign-three-consecutive-days",
+    kind: "three-consecutive-days",
+    caption:
+      "Aishah said: the family of Muhammad ﷺ had not eaten wheat bread to their satisfaction for three consecutive days since his arrival at Madinah till he died.",
+    sources: [bukhari("5416")]
+  },
+  {
+    id: "sign-for-the-second-time",
+    kind: "for-the-second-time",
+    caption:
+      "Salamah said: we gave the oath of allegiance to the Prophet ﷺ under the tree. He said to me: O Salamah! Will you not give the oath of allegiance? I replied: O Messenger of Allah, I have already given the oath of allegiance for the first time. He said: for the second time.",
+    sources: [bukhari("7208")]
+  },
+  {
+    id: "sign-within-seconds",
+    kind: "within-seconds",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: a man from among the people of Paradise will request Allah to allow him to cultivate the land. Allah will say to him: haven't you got whatever you desire? The man will reply: yes, but I like to cultivate the land. The man will sow the seeds, and within seconds the plants will grow and ripen and will be harvested and piled in heaps like mountains. Allah will say: take, here you are, O son of Adam, for nothing satisfies you.",
+    sources: [bukhari("7519")]
+  },
+  {
+    id: "sign-one-sa-of-dates",
+    kind: "one-sa-of-dates",
+    caption:
+      "Anas ibn Malik said: Abu Taybah cupped the Messenger of Allah ﷺ, so he ordered that Abu Taybah be paid one sa' of dates, and ordered Abu Taybah's masters to reduce his tax.",
+    sources: [bukhari("2102")]
   }
 ];
 
@@ -7211,7 +7267,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // He drank, then gave to the bedouin on his right: the right, the right.
   "deep-book-food-the-right-first": "sign-the-right-then-the-right",
   // Had he said the words in the evening, the scorpion would not have harmed him.
-  "deep-dua-adhkar-perfect-words": "sign-stung-by-a-scorpion"
+  "deep-dua-adhkar-perfect-words": "sign-stung-by-a-scorpion",
+  // A believer's tent in Paradise is one hollow pearl, with a family at every corner.
+  "deep-akhirah-hoping-paradise-a-tent-of-one-pearl": "sign-a-tent-like-a-pearl",
+  // Every Friday the folk of Paradise come to its street, and go home more beautiful.
+  "deep-jannah-market": "sign-every-friday",
+  // The Euphrates will uncover a mountain of gold: whoever is there should take none of it.
+  "deep-minorsigns-euphrates": "sign-a-mountain-of-gold",
+  // His family never ate wheat bread to the full three days running.
+  "deep-book-food-three-days-bread": "sign-three-consecutive-days",
+  // Under the tree, he asked Salamah to give the oath a second time.
+  "deep-salamah-pledge-once-more": "sign-for-the-second-time",
+  // A man of Paradise sows, and within seconds his crop is heaped like mountains.
+  "deep-akhirah-hoping-paradise-the-farmer-of-paradise": "sign-within-seconds",
+  // He had Abu Taybah paid a sa' of dates, and asked Abu Taybah's owners to lessen his tax.
+  "deep-book-trade-pay-the-worker": "sign-one-sa-of-dates"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

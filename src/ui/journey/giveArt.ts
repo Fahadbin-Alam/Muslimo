@@ -47,11 +47,11 @@ export const basketOfDates = (x: number, y: number) =>
     .join("");
 
 /** A sa', the wooden measure, its foot's middle at (x, y): 8 wide and 6.4 high. */
-const measure = (x: number, y: number) =>
+export const measure = (x: number, y: number) =>
   `<rect x="${n(x - 4)}" y="${n(y - 6.4)}" width="8" height="6.4" fill="#A8743F"/><rect x="${n(x - 4)}" y="${n(y - 4.4)}" width="8" height="0.9" fill="#8A5A2E"/>` +
   `<rect x="${n(x + 0.8)}" y="${n(y - 6.4)}" width="3.2" height="6.4" fill="#000000" opacity="0.1"/><ellipse cx="${x}" cy="${n(y - 6.4)}" rx="4" ry="1.1" fill="#6E4524"/>`;
 /** A sa' heaped with dates, or with barley, over a measure at (x, y). */
-const heapOf = (x: number, y: number, grain: "dates" | "barley") =>
+export const heapOf = (x: number, y: number, grain: "dates" | "barley") =>
   grain === "dates"
     ? `<path d="M${n(x - 4)} ${n(y - 6.4)} Q${x} ${n(y - 11)} ${n(x + 4)} ${n(y - 6.4)} Z" fill="#7E3016"/>` +
       [-2.2, 0, 2.2, -1.1, 1.1, 0].map((dx, i) => `<ellipse cx="${n(x + dx)}" cy="${n(y - 7.4 - (i < 3 ? 0 : i < 5 ? 1.4 : 2.6))}" rx="1" ry="0.75" fill="#A2441F"/>`).join("")
