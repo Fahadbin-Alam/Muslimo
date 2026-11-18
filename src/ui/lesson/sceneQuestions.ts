@@ -5440,6 +5440,69 @@ const ASKS: Record<string, readonly Ask[]> = {
   // from An-Nisa 4:114, which is not in the scene, so those stay as they are.)
   "sign-makes-peace": [
     ["One who makes peace by saying good things is...", "Not a liar", "The liar is not the one who makes peace", "or saying good"]
+  ],
+  // Al-Mughirah ibn Shu'bah said: he would stand to pray until his feet swelled; it was said to him: Allah has forgiven
+  // you what came before and what is to come; and he said: should I not be a thankful servant? (Sahih al-Bukhari 1130,
+  // 4836, 6471). His feet are not drawn: the night goes on as he stands.
+  "sign-a-thankful-servant": [
+    ["What happened to his feet from long prayer?", "They swelled", "until his feet swelled."],
+    ["What happened to his feet, per Bukhari 4836?", "They became swollen", "until his feet swelled."],
+    ["What happened to his feet?", "They swelled", "until his feet swelled."],
+    ["Why did he pray so much?", "To be a thankful servant", "He said: should I not be", "a thankful servant?"],
+    ["Why did he ﷺ pray so long, per Bukhari 4836?", "To be a thankful servant", "He said: should I not be", "a thankful servant?"],
+    ["The Prophet ﷺ prayed long only because people watched him.", "False", "He said: should I not be", "a thankful servant?"],
+    ["Prayer can be a way of thanking Allah for His gifts.", "True", "He said: should I not be", "a thankful servant?"],
+    ["Worship is a way of saying thank you to Allah.", "True", "He said: should I not be", "a thankful servant?"]
+  ],
+  // Abu Hurairah said: he said: there is no day on which the servants wake but two angels come down; one says: O Allah,
+  // give the one who spends something in its place; and the other says: O Allah, give the one who holds back ruin (Sahih
+  // al-Bukhari 1442). No angel is drawn, and nothing comes down. (What Allah does for those who spend, and what He is,
+  // in Saba 34:39, are not in the scene, so those stay as they are.)
+  "sign-spend-and-replace": [
+    ["What does the first angel pray for?", "More for the one who gives", "one says: O Allah, give the one who spends", "something in its place;"],
+    ["What does one angel pray, in the hadith?", "Compensate every spender", "one says: O Allah, give the one who spends", "something in its place;"],
+    ["Charity makes your wealth less in the end.", "False", "one says: O Allah, give the one who spends", "something in its place;"],
+    ["Who does the second angel pray against?", "The one who holds back", "the other says: O Allah, give", "ruin to the one who holds back"]
+  ],
+  // Abu Hurairah said: he said: the Hour will come while two men have spread a garment between them, and they will not
+  // sell it or fold it; while one goes off with the milk of his she-camel, and does not drink it; and while one plasters
+  // his trough, and does not water from it (Sahih al-Bukhari 6506). Nothing is drawn for the Hour. (The best way to be
+  // ready for something sudden is not in the scene, so it stays as it is.)
+  "sign-a-garment-left-spread": [
+    ["What won't two traders manage to do?", "Finish their sale", "and will not sell it or fold it;"],
+    ["What will the two men not finish, in the hadith?", "Folding their garment", "and will not sell it or fold it;"],
+    ["What will the man with milk not do, in the hadith?", "Drink it", "and does not drink it;"],
+    ["How will the Hour come?", "Suddenly", "and does not water from it"],
+    ["The hadith teaches that the Hour will come slowly with long warning.", "False", "and does not water from it"]
+  ],
+  // Anas ibn Malik said: when the cold was hard, he would pray early, and when the heat was hard, he would wait for it
+  // to cool (Sahih al-Bukhari 906). (Which weather made him pray earlier stays as it is, since the frost is there from
+  // the scene's start, and so does who told it, whose name is in the first words.)
+  "sign-cold-and-heat": [
+    ["In very cold weather, he ﷺ used to offer the prayer earlier.", "True", "he would pray early;"]
+  ],
+  // Anas said: he came into the masjid, and a rope was stretched between two pillars. He said: what is this? They said:
+  // it is Zaynab's; she prays, and when she grows tired, she holds on to it. He said: untie it; let one of you pray
+  // while fresh, and when tired, let him sit (Sahih Muslim 784a).
+  "sign-the-rope-untied": [
+    ["What was the rope for?", "Holding on when tired in prayer", "They said: Zaynab's; she prays,", "and when tired, she holds on to it."],
+    ["Islam asks us to pray past our strength.", "False", "He said: untie it.", "and when tired, sit"],
+    ["What did he ﷺ say to do?", "Pray while fresh, stop when tired", "Let one of you pray while fresh,", "and when tired, sit"]
+  ],
+  // Abu Humayd, or Abu Usayd, said: he said: when one of you enters the masjid, let him say: O Allah, open for me the
+  // doors of Your mercy; and when he goes out, let him say: O Allah, I ask You of Your bounty (Sahih Muslim 713a).
+  "sign-doors-of-mercy": [
+    ["Entering the mosque, you ask Allah to open the doors of what?", "His mercy", "the doors of Your mercy;"],
+    ["The same dua is said going in and going out.", "False", "and when he goes out, let him say:", "O Allah, I ask You of Your bounty"],
+    ["Leaving the mosque, you ask Allah for what?", "His bounty", "O Allah, I ask You of Your bounty"]
+  ],
+  // Aishah said: he said: when a woman gives of the food of her home, not wasting it, she has her reward for what she
+  // gave, her husband his for what he earned, and the keeper of the store the same; none of them lessens the reward of
+  // another (Sahih al-Bukhari 1425).
+  "sign-from-the-home": [
+    ["What must she avoid when giving from the home?", "Wasting it", "of her home's food, not wasting it,"],
+    ["A wife gives some of the home's food to the poor. Who is rewarded?", "Both her and her husband", "she has her reward for what she gave,", "her husband his, for what he earned,"],
+    ["One person's reward makes another's smaller.", "False", "none lessens the reward of another"]
   ]
 };
 
