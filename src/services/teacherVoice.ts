@@ -9,7 +9,7 @@ import type { SupportedLanguage } from "../types";
  * letters wrongly. The button is hidden otherwise.
  */
 
-const SPEECH_CODE: Record<SupportedLanguage, string> = { en: "en", bn: "bn", ur: "ur", ar: "ar" };
+const SPEECH_CODE: Record<SupportedLanguage, string> = { en: "en", bn: "bn", ur: "ur", ar: "ar", id: "id" };
 const voices = new Map<SupportedLanguage, Promise<string | null>>();
 /** Voices found already, so a speaker shows from a screen's first frame (no button popping in beside CHECK). */
 const foundVoices = new Map<SupportedLanguage, string>();
@@ -68,7 +68,7 @@ const ARABIC_RUN = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]+[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿�
 /** Text as the voice should say it: ﷺ said in words, and Arabic script dropped for a voice that cannot read it. */
 export function speakable(text: string, language: SupportedLanguage) {
   let spoken = text.replace(/ﷺ/g, ` ${t("peace be upon him", undefined, language)} `);
-  if (language === "en" || language === "bn") {
+  if (language === "en" || language === "bn" || language === "id") {
     spoken = spoken.replace(ARABIC_RUN, " ");
   }
   return spoken

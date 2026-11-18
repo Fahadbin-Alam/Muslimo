@@ -41,7 +41,7 @@ export type ShopItemType =
 export type SocialRelation = "parent" | "friend";
 export type AccountRole = "parent" | "child";
 export type AuthProvider = "password" | "google" | "apple";
-export type SupportedLanguage = "en" | "ar" | "bn" | "ur";
+export type SupportedLanguage = "en" | "ar" | "bn" | "ur" | "id";
 
 export interface ReminderPreferences {
   dailyInactivity: boolean;
