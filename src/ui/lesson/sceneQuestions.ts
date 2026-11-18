@@ -5163,8 +5163,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // and whose the treasures are, are not in the scene, so those stay as they are.)
   "sign-zayd-was-truthful": [
     ["Who heard the hypocrite and reported him?", "Zaid bin Arqam", "Zayd: I heard Abdullah ibn Ubayy say", "I told my uncle or Umar, who told him"],
-    ["How did Zaid feel when he was not believed?", "Very sad", "He believed him, not me, and I grieved"],
-    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Then he sent for me and recited it", "and said: Allah has confirmed you, O Zayd"]
+    ["How did Zaid feel when he was not believed?", "Very sad", "He believed Ibn Ubayy, not me; I grieved"],
+    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Allah revealed a surah; he read it to me", "and said: Allah has confirmed you, O Zayd"]
   ],
   // Anas ibn Malik said: three came to the homes of his wives, asking about his worship, and when they were told, they
   // thought it little: one said he would pray all night, always; another that he would fast and never break it; another
@@ -5372,8 +5372,8 @@ const ASKS: Record<string, readonly Ask[]> = {
   // are not in the scene, so those stay as they are.)
   "sign-pleased-with-another": [
     ["A believing man should not ____ a believing woman.", "hate", "He said: a believing man should not hate"],
-    ["If one habit bothers you, remember the ____ ones.", "good", "another will please him"],
-    ["If a husband dislikes one trait in his wife, what should he remember?", "He will like another", "another will please him"]
+    ["If one habit bothers you, remember the ____ ones.", "good", "another will please the man"],
+    ["If a husband dislikes one trait in his wife, what should he remember?", "He will like another", "another will please the man"]
   ],
   // Jabir ibn Abdullah said: he said: beware of wrongdoing, for wrongdoing is darkness on the Day of Resurrection; and
   // beware of stinginess, for stinginess destroyed those before you (Sahih Muslim 2578). Only the wrongdoer shows on the
@@ -5402,8 +5402,8 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["He ﷺ made du'a for more blessing in Madinah.", "True", "O Allah, put in Madinah", "of the blessing"]
   ],
   // Thumamah ibn Abdullah ibn Anas said: Anas made Hajj on a packsaddle, and he was no miser; and Anas told that he made
-  // Hajj on a packsaddle, and it carried his baggage too (Sahih al-Bukhari 1517). No one is drawn on a camel. (What a
-  // packsaddle is stays as it is, since one is on Anas's camel from the scene's start.)
+  // Hajj on a packsaddle, and it carried his baggage too (Sahih al-Bukhari 1517). No one is drawn on a camel. (Anas's
+  // camel and its packsaddle show only with the first words, so the first ask waits on them.)
   "sign-a-plain-saddle": [
     ["Anas did his Hajj on a plain saddle as well.", "True", "Thumamah: Anas made Hajj on a packsaddle"],
     ["How many camels carried him ﷺ and his bags?", "One camel for both", "and it carried his baggage too"]
@@ -5503,6 +5503,60 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What must she avoid when giving from the home?", "Wasting it", "of her home's food, not wasting it,"],
     ["A wife gives some of the home's food to the poor. Who is rewarded?", "Both her and her husband", "she has her reward for what she gave,", "her husband his, for what he earned,"],
     ["One person's reward makes another's smaller.", "False", "none lessens the reward of another"]
+  ],
+  // Anas said: a man asked him for sheep between two mountains, and he gave them to him; the man came to his people and
+  // said: my people, embrace Islam, for by Allah, he gives as one who does not fear want. Anas said: a man would embrace
+  // Islam wanting only the world, and before long Islam would be dearer to him than the world and all on it (Sahih
+  // Muslim 2312b).
+  "sign-flock-between-mountains": [
+    ["What did the man ask his people to do?", "That they become Muslim", "O people, embrace Islam; by Allah,"],
+    ["Islam can only grow dear to those born Muslim.", "False", "Anas: a man would embrace Islam", "Islam was dearer to the man than the world"],
+    ["What did Islam become for such a man, Anas said?", "Dearer to him than the world", "Islam was dearer to the man than the world"]
+  ],
+  // Jabir said: he came to visit me while I was sick, riding neither a mule nor a horse (Sahih al-Bukhari 5664). No one
+  // is drawn riding: the two stand tied by the masjid while his place walks.
+  "sign-on-foot-to-visit": [
+    ["Who was ill in Bukhari 5664?", "Jabir", "Jabir: he came to visit me", "while I was sick,"],
+    ["How did he ﷺ come to visit Jabir?", "Walking on foot", "and he was riding neither a mule,", "nor a horse."],
+    ["Walking to visit someone shows humility and care.", "True", "and he was riding neither a mule,", "nor a horse."]
+  ],
+  // Aishah said that he said: a family which has dates will not be hungry; and: Aishah, a home with no dates in it, its
+  // family will be hungry; he said it twice or three times (Sahih Muslim 2046). (Which food keeps a family from hunger
+  // stays as it is, since the basket of dates is there from the scene's start, and so does to whom he said it, which a
+  // lesson on another scene asks too.)
+  "sign-dates-in-the-home": [
+    ["He ﷺ said a home with dates will not go hungry.", "True", "will not be hungry."]
+  ],
+  // Abu Mas'ud al-Ansari said: whenever he ordered us to give in charity, one of us would go to the market and work as a
+  // porter to earn a mudd; and today some of them have a hundred thousand (Sahih al-Bukhari 1416).
+  "sign-porters-in-the-market": [
+    ["When told to give charity, what did the poor Sahabah do?", "Worked as porters to earn some", "we used to go to the market", "and get a mudd,"],
+    ["Being poor stopped the Sahabah from giving.", "False", "we used to go to the market", "and get a mudd,"],
+    ["What did they earn, and then give away?", "A mudd of grain", "and get a mudd,"]
+  ],
+  // Ibn Abbas said: he asked a woman of the Ansar: what kept you from Hajj with us? She said: we had a camel for
+  // watering; the father of so-and-so and his son rode it, and left a camel for us to water with. He said: when Ramadan
+  // comes, perform Umrah, for an Umrah in Ramadan is equal to a Hajj (Sahih al-Bukhari 1782). No one is drawn riding.
+  // (That an Umrah in Ramadan does not take the place of the duty of Hajj is not in the scene, so that question stays as
+  // it is.)
+  "sign-umrah-in-ramadan": [
+    ["Why had the woman missed Hajj?", "Her family lacked a camel", "She said: we have a camel;", "to use for irrigation."],
+    ["An Umrah in Ramadan is like what?", "A Hajj", "for Umrah in Ramadan is equal to Hajj"]
+  ],
+  // Anas said: he would breathe three times in the course of a drink, and say: it is more thirst-quenching, healthier
+  // and more wholesome; and Anas said: so I breathe three times in the course of a drink (Sahih Muslim 2028b). No mouth
+  // is drawn: a small puff of breath shows outside the cup.
+  "sign-three-breaths": [
+    ["In how many breaths did he ﷺ drink?", "Three", "Anas: he would breathe three times", "in the course of a drink, and said:"],
+    ["Where did he breathe?", "Outside the cup", "Anas: he would breathe three times", "in the course of a drink, and said:"],
+    ["He said three breaths quench thirst more.", "True", "it is more thirst-quenching,"]
+  ],
+  // Sa'id ibn Zayd said: I heard him say: truffles are like manna, and their water heals the eyes (Sahih al-Bukhari
+  // 5708). Like the manna, they come up without being planted. No eye is drawn.
+  "sign-truffles-like-manna": [
+    ["Truffles are like...?", "Manna", "truffles are like manna,"],
+    ["Why are they like manna?", "They grow without planting", "truffles are like manna,"],
+    ["What is their water good for?", "The eyes", "and their water", "heals eye diseases."]
   ]
 };
 

@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3016);
+    expect(asks.length).toBe(3034);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -129,7 +129,7 @@ describe("which questions are asked on a scene", () => {
     // a review card, which asks how long the hour of du'a is, and its final quiz asks whether to make many du'as on
     // Fridays in place of what is special about that hour (both still asked in their lesson). That review card also
     // asks what to do before Jumu'ah, a question on the scene of getting ready for Friday.
-    expect(places).toBe(4390);
+    expect(places).toBe(4417);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -17865,16 +17865,19 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, -13]
     ]);
-    // Anas on a plain packsaddle: Anas's camel, a plain packsaddle on it and no one on it, stands on the far way with
-    // Anas's place by it, before the first words; then Thumamah's voice speaks, and the camel and Anas's place go on
-    // along the way toward the Ka'bah. It stops before a sack goes from Anas's place to the place in need.
+    // Anas on a plain packsaddle: nothing is on the far way before the first words, so the packsaddle does not give the
+    // answer away; then Thumamah's voice speaks, and Anas's camel shows, a plain packsaddle on it and no one on it, and
+    // goes on along the way toward the Ka'bah with Anas's place. It stops before a warm glow comes about Anas's place.
     expect([
-      shown("Anas did his Hajj on a plain saddle as well.", ["Thumamah's voice: Anas made Hajj"]),
+      shown("Anas did his Hajj on a plain saddle as well.", ["Thumamah's voice: Anas made Hajj", "Anas's camel, a plain packsaddle on it, no one on it", "Anas ibn Malik's place, going with it"]),
       moved("Anas did his Hajj on a plain saddle as well.", "Anas's camel, a plain packsaddle on it, no one on it", "x"),
       moved("Anas did his Hajj on a plain saddle as well.", "Anas ibn Malik's place, going with it", "x"),
-      value("a-plain-saddle", "no miser: a sack going from Anas's place to the place in need", "opacity", 0.17)
+      value("a-plain-saddle", "no miser: a warm glow about Anas's place", "opacity", 0.17)
     ]).toEqual([
-      [[0], [1]],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
       [0, 28],
       [0, 28],
       0
@@ -18276,6 +18279,200 @@ describe("where the scene waits and where it stops", () => {
     expect(shown("One person's reward makes another's smaller.", ["for what was given: a small light by the one who gives", "for what it earned: a small light by it", "the same: a small light by the one who keeps the store", "none lessens another's: three soft golden rings, alike", "glints over all three"])).toEqual([
       [1, 1, 1, 0, 0],
       [1, 1, 1, 1, 1]
+    ]);
+  });
+
+  it("waits on the scenes from a flock between two mountains to truffles like manna, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-flock-between-mountains", "sign-on-foot-to-visit", "sign-dates-in-the-home", "sign-porters-in-the-market", "sign-umrah-in-ramadan", "sign-three-breaths", "sign-truffles-like-manna"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(18);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Embrace Islam: the place of the one who asked has taken the flock to the tents of its tribe, before the next
+    // words; then its voice speaks to them, and three places of the tribe come out of the tents to it.
+    expect([
+      shown("What did the man ask his people to do?", ["its voice to its tribe: embrace Islam", "the place of one of its tribe, coming out 1", "the place of one of its tribe, coming out 2", "the place of one of its tribe, coming out 3"]),
+      moved("What did the man ask his people to do?", "the place of one of its tribe, coming out 1", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [-11, 0]
+    ]);
+    // Before long, dearer than the world: the tribe has come out, glints are over the flock and a warm glow is about his
+    // place, before Anas's words; then Anas's voice speaks, a soft white ring comes about the one who asked as it
+    // embraces Islam, a faint line goes from it to the flock, for the world, and then the line fades, sparks rise from
+    // it, and a soft golden ring and a warm glow come about it: Islam grew dear to one who first came for the world.
+    expect([
+      shown("Islam can only grow dear to those born Muslim.", ["embracing Islam: a soft white ring about it", "a soft golden ring about it", "a warm glow about it"]),
+      moved("Islam can only grow dear to those born Muslim.", "the sun, going on across the sky", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 30]
+    ]);
+    // Dearer than the world: a soft white ring is about the one who embraced Islam, and a faint line goes from it to the
+    // flock, for the world, before the last words; then the line fades, two sparks rise from it, and a soft golden ring
+    // and a warm glow come about it.
+    expect([
+      shown("What did Islam become for such a man, Anas said?", ["for the world: a faint line from it to the flock", "a soft golden ring about it", "a warm glow about it"]),
+      moved("What did Islam become for such a man, Anas said?", "dearer than the world: a spark rising", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [0, -11]
+    ]);
+    // While I was sick: nothing has happened yet where it waits; then Jabir's voice speaks, his place, a golden ring,
+    // walks the way toward Jabir's home, and a grey haze comes about Jabir's place on a mat.
+    expect([
+      shown("Who was ill in Bukhari 5664?", ["sick: a grey haze about Jabir's place"]),
+      moved("Who was ill in Bukhari 5664?", "his place, a golden ring, walking to visit", "x")
+    ]).toEqual([
+      [[0], [1]],
+      [0, 110]
+    ]);
+    // Neither a mule nor a horse: his place has walked the way to Jabir, by the grey haze about Jabir's place, before
+    // the next words; then a soft white ring comes about the mule, left standing, the way he walked shows as a dashed
+    // line, and a soft white ring comes about the horse, left standing too; a warm glow comes about Jabir's place, the
+    // haze goes, and a soft golden ring comes about his place by Jabir. No one rides.
+    for (const prompt of ["How did he ﷺ come to visit Jabir?", "Walking to visit someone shows humility and care."]) {
+      expect([
+        prompt,
+        shown(prompt, ["neither a mule: a soft white ring about the mule", "walking: the way he went, a dashed line", "nor a horse: a soft white ring about the horse", "sick: a grey haze about Jabir's place", "visiting: a warm glow about Jabir's place"]),
+        value("on-foot-to-visit", "his place, a golden ring, walking to visit", "x", 0.485)
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 1, 0],
+          [1, 1, 1, 0, 1]
+        ],
+        110
+      ]);
+    }
+    // Will not be hungry: his voice speaks of a family which has dates, by a home with a basket of dates, before the
+    // next words; then glints come over the dates, a warm glow comes about the family's places, and dates show on a dish
+    // before them.
+    expect(shown("He ﷺ said a home with dates will not go hungry.", ["glints over the basket of dates", "not hungry: a warm glow about the family with dates", "dates on a dish before them"])).toEqual([
+      [0, 0, 0],
+      [1, 1, 1]
+    ]);
+    // Porters, for a mudd: his voice has bidden them give in charity, and a place in need sits by the way with an empty
+    // dish, before the next words; then the teller's place goes to the market, a load is carried from one stall to the
+    // other, a mudd of grain shows, earned, and is carried back to the place in need, and a warm glow comes about it.
+    for (const prompt of ["When told to give charity, what did the poor Sahabah do?", "Being poor stopped the Sahabah from giving."]) {
+      expect([
+        prompt,
+        shown(prompt, ["working as a porter: a load carried from one stall to the other", "a mudd of grain, earned, and carried to the place in need", "given in charity: a warm glow about the place in need"]),
+        moved(prompt, "a mudd of grain, earned, and carried to the place in need", "x")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0],
+          [1, 1, 1]
+        ],
+        [0, -67.8]
+      ]);
+    }
+    // A mudd: the load has been carried between the stalls, before the next words; then a mudd of grain shows by the
+    // teller's place, it is carried back to the place in need, given in charity, and a warm glow comes about it.
+    expect([
+      shown("What did they earn, and then give away?", ["a mudd of grain, earned, and carried to the place in need", "given in charity: a warm glow about the place in need"]),
+      moved("What did they earn, and then give away?", "the place of the one who told it, going to the market and back", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [106, 39]
+    ]);
+    // We had a camel: his voice has asked her what kept her from Hajj, and the way to Makkah shows far off, before her
+    // words; then her voice answers, two places show by the saddled camel and are gone, and the camel goes off up the
+    // way toward Makkah; a soft white ring comes about the other camel, left for watering, which walks on by the well,
+    // drawing the bucket up, and water runs in the channel to the palms. No one is drawn riding.
+    expect([
+      shown("Why had the woman missed Hajj?", ["her voice: we had a camel", "the first camel, saddled, going off up the way", "left for us: a soft white ring about the other camel", "water running in the channel to the palms"]),
+      moved("Why had the woman missed Hajj?", "the other camel, left for watering", "x")
+    ]).toEqual([
+      [
+        [0, 1, 0, 0],
+        [1, 0, 1, 1]
+      ],
+      [0, 10]
+    ]);
+    // Equal to a Hajj: the evening has come, the new moon of Ramadan shows, and the way to Makkah has turned golden as
+    // his voice bids her perform Umrah, before the last words; then a soft golden glow comes about the Ka'bah, and a
+    // soft golden ring about her place.
+    expect(shown("An Umrah in Ramadan is like what?", ["equal to a Hajj: a soft golden glow about the Ka'bah", "a soft golden ring about her place"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+    // Three breaths, outside the cup: his cup is full where it waits; then Anas's voice speaks, and three times the cup
+    // rises to his place and is set down, with a small puff of breath outside it each time, until the water is drunk. No
+    // mouth is drawn.
+    for (const prompt of ["In how many breaths did he ﷺ drink?", "Where did he breathe?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["the water in his cup, drunk"]),
+        value("three-breaths", "his first breath, outside the cup", "opacity", 0.1),
+        value("three-breaths", "his second breath, outside the cup", "opacity", 0.23),
+        value("three-breaths", "his third breath, outside the cup", "opacity", 0.28)
+      ]).toEqual([
+        prompt,
+        [[1], [0]],
+        1,
+        1,
+        1
+      ]);
+    }
+    // More thirst-quenching: the cup has been drunk in three breaths and his voice speaks, before the next words; then a
+    // cool glow comes about his place.
+    expect(shown("He said three breaths quench thirst more.", ["thirst-quenching: a cool glow about his place"])).toEqual([[0], [1]]);
+    // Like manna: Sa'id's voice and his have spoken by the masjid, and the sand lies flat, before the next words; then
+    // low mounds rise in the sand and crack, truffles push up through them, with glints, and more come up on their own,
+    // never planted.
+    for (const prompt of ["Truffles are like...?", "Why are they like manna?"]) {
+      expect([
+        prompt,
+        shown(prompt, ["low mounds of sand, rising", "the mounds cracking", "truffles, pushing up through the sand", "more truffles, coming up on their own"]),
+        moved(prompt, "truffles, pushing up through the sand", "y")
+      ]).toEqual([
+        prompt,
+        [
+          [0, 0, 0, 0],
+          [1, 1, 1, 1]
+        ],
+        [1.6, 0]
+      ]);
+    }
+    // Their water heals the eyes: the truffles are up through the sand, and a place with a grey haze about it waits by
+    // the way, before the next words; then a bowl shows by the truffles and their water fills it, with glints; the bowl
+    // goes to the place, the grey haze fades, a soft white glow and ring come about it, and a soft golden glow over the
+    // truffles. No eye is drawn.
+    expect([
+      shown("What is their water good for?", ["their water, filling the bowl", "a grey haze about that place", "healing: a soft white glow about the place", "a soft white ring about it"]),
+      moved("What is their water good for?", "a bowl by the truffles", "x")
+    ]).toEqual([
+      [
+        [0, 1, 0, 0],
+        [1, 0, 1, 1]
+      ],
+      [0, 10.6]
     ]);
   });
 

@@ -246,8 +246,8 @@ const packsaddled = (x: number, y: number, s: number) => animalAt("camel", n(x -
 // A plain saddle. Thumamah ibn Abdullah ibn Anas said: Anas made Hajj on a packsaddle, and he was no miser; and he told
 // that the Messenger of Allah ﷺ made Hajj on a packsaddle, and it carried his baggage too (Sahih al-Bukhari 1517). No
 // one is drawn, and no one on any camel: two ways go toward the Ka'bah under the mountains of Makkah. Thumamah's voice
-// speaks; on the far way Anas's camel goes with a plain packsaddle on its hump, Anas's place going with it. A sack goes
-// from Anas's place to a place in need by the way, with its empty dish, and a warm glow comes about it: no miser.
+// speaks; on the far way Anas's camel shows, with a plain packsaddle on its hump, and goes on, Anas's place going with
+// it. A warm glow and glints come about Anas's place: no miser (the hadith tells of no deed here, so none is drawn).
 // Anas's voice speaks; on the near way his camel shows, with the same plain packsaddle, his place, a golden ring, going
 // with it. A soft golden ring and glints come about his packsaddle, and a faint golden line goes to it from Anas's:
 // alike. Then his baggage shows hung on that same packsaddle, a soft golden ring and glints come about it, and a warm
@@ -256,7 +256,6 @@ function aPlainSaddle(): SignArt {
   const anasCamel: [number, number] = [12, 91.6];
   const anasWalk = 28;
   const anas: [number, number] = [28, 94.4];
-  const need: [number, number] = [74, 94];
   const hisCamel: [number, number] = [40, 106.6];
   const hisWalk = 56;
   const his: [number, number] = [60, 107.6];
@@ -303,6 +302,10 @@ function aPlainSaddle(): SignArt {
         name: "Anas's camel, a plain packsaddle on it, no one on it",
         svg: packsaddled(anasCamel[0], anasCamel[1], 0.26),
         keys: track({
+          opacity: [
+            [0.03, 0],
+            [0.05, 1]
+          ],
           xy: [
             [0.05, 0, 0],
             [0.15, anasWalk, 0]
@@ -313,29 +316,17 @@ function aPlainSaddle(): SignArt {
         name: "Anas ibn Malik's place, going with it",
         svg: someone(anas[0], anas[1], 1.5),
         keys: track({
+          opacity: [
+            [0.03, 0],
+            [0.05, 1]
+          ],
           xy: [
             [0.05, 0, 0],
             [0.15, anasWalk, 0]
           ]
         })
       },
-      { name: "an empty dish by the place in need", svg: dish(n(need[0] + 4.6), n(need[1] + 1.6)) },
-      { name: "a place in need by the way", svg: someone(need[0], need[1], 1.4) },
-      {
-        name: "no miser: a sack going from Anas's place to the place in need",
-        svg: sack(n(anas[0] + anasWalk + 3.4), n(anas[1] + 1.4), 0.7),
-        keys: track({
-          opacity: [
-            [0.215, 0],
-            [0.225, 1]
-          ],
-          xy: [
-            [0.23, 0, 0],
-            [0.3, n(need[0] - 3.6 - (anas[0] + anasWalk + 3.4)), -0.2]
-          ]
-        })
-      },
-      { name: "a warm glow about the place in need", svg: glow(need[0], need[1], 5, WARM, 0.3), keys: showAt(0.31, 0.33), loop: soft },
+      { name: "no miser: a warm glow about Anas's place", svg: glow(n(anas[0] + anasWalk), anas[1], 5, WARM, 0.3), keys: showAt(0.23, 0.25), loop: soft },
       {
         name: "glints over Anas's place",
         svg: glints(
