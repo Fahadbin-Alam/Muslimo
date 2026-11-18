@@ -5817,6 +5817,58 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did he ﷺ read from his dream for us in this world?", "A high rank", "I interpreted it as the sublimity"],
     ["What did he ﷺ read from the dates of Ibn Tab?", "Our religion has become good", "our religion is good."],
     ["He ﷺ read a good end in the Hereafter from his dream.", "True", "for us in the world and good ending", "in the Hereafter, and that"]
+  ],
+  // Aishah said: he used to say: O Allah, wash away my sins with the water of snow and hail, and cleanse my heart from
+  // all the sins as a white garment is cleansed from the filth, and let there be a long distance between me and my sins,
+  // as You made East and West far from each other (Sahih al-Bukhari 6368). Its lesson's question on seeking refuge from
+  // the trial of poverty is not asked here, since the scene's words leave out that part of the du'a.
+  "sign-washed-with-snow-and-hail": [
+    ["With what did he ﷺ ask Allah to wash away sins?", "Water of snow and hail", "Wash away my sins with the water", "of snow and hail, and cleanse my heart"],
+    ["How far from sins did he ﷺ ask Allah to put him?", "As far as East is from West", "and let there be a long distance", "East and West far from each other."]
+  ],
+  // Abu Hurairah reported him as saying: the earth will vomit long pieces of its liver like columns of gold and silver,
+  // and the murderer will come and say: it was for this that I committed murder; the breaker of family ties will come
+  // and say: it was for this that I broke the family ties; and the thief will come and say: it is for this that my hands
+  // were cut off; they will then leave it and will not take anything out of it (Sahih Muslim 1013).
+  "sign-columns-of-gold-and-silver": [
+    ["What will come out like columns?", "Gold and silver", "vomit long pieces of its liver", "like columns of gold and silver,"],
+    ["What will people do with the treasure?", "Leave it all", "They will then leave it and will not", "take anything out of it."],
+    ["Sinning for money is never worth it.", "True", "and the murderer will come and say:", "take anything out of it."]
+  ],
+  // Abu Hurairah said: he said: the sun and the moon will be folded up on the Day of Resurrection (Sahih al-Bukhari
+  // 3200).
+  "sign-the-sun-and-the-moon-folded-up": [
+    ["What will be folded up, per the hadith?", "The sun and the moon", "The sun and the moon", "will be folded up"],
+    ["When will this happen?", "On the Day of Resurrection", "on the Day of Resurrection."],
+    ["Folded up means losing their light.", "True", "will be folded up"]
+  ],
+  // Abdullah ibn Umar said: Zayd ibn Amr used to criticize the way Quraysh used to slaughter their animals, and used to
+  // say: Allah has created the sheep and He has sent the water for it from the sky, and He has grown the grass for it
+  // from the earth; yet you slaughter it in other than the Name of Allah (Sahih al-Bukhari 3826). Its lesson's questions
+  // on the meat Zayd would not eat and on when he lived are not asked here, since the scene does not show them.
+  "sign-the-sheep-and-its-grass": [
+    ["Who did Zayd say made the sheep and its grass?", "Allah", "and used to say: Allah has created", "the grass for it from the earth;"]
+  ],
+  // Safiyyah bint Shaybah said: he gave a banquet with two mudds of barley on marrying some of his wives (Sahih
+  // al-Bukhari 5172).
+  "sign-two-mudds-of-barley": [
+    ["What was that walimah made of?", "Two mudds of barley", "a banquet with two mudds of barley"],
+    ["What does a walimah of barley teach us?", "Keep it simple, as you can afford", "a banquet with two mudds of barley", "on marrying some of his wives."],
+    ["A walimah only counts if it costs a lot.", "False", "a banquet with two mudds of barley", "on marrying some of his wives."]
+  ],
+  // Aishah said: he never missed four rak'ahs before the Zuhr prayer and two rak'ahs before the Fajr prayer (Sahih
+  // al-Bukhari 1182).
+  "sign-never-missed": [
+    ["How many before Zuhr did he ﷺ keep?", "Four", "Aishah: he never missed four rak'ahs"],
+    ["How many before Fajr?", "Two", "before the Zuhr prayer and two rak'ahs", "before the Fajr prayer."],
+    ["He ﷺ held on to the sunnah before Fajr.", "True", "before the Fajr prayer."]
+  ],
+  // Ibn Abbas said: I was among those whom he sent on the night of Muzdalifah early, being among the weak members of his
+  // family (Sahih al-Bukhari 1678). Its lesson's question on whether Ibn Abbas was a boy then is not asked here, since
+  // the scene does not show it.
+  "sign-the-weak-go-early": [
+    ["Who was sent early from Muzdalifah?", "The weak of his family", "on the night of Muzdalifah early", "among the weak members of his family."],
+    ["What does this show about Islam?", "It eases things for the weak", "on the night of Muzdalifah early", "among the weak members of his family."]
   ]
 };
 

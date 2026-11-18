@@ -1509,6 +1509,13 @@ const STATES: State[] = [
   { id: "scene-the-fruit-garden", render: () => <SceneQuestionDemo lessonId="lesson-deep-thawban-garden-of-fruit" ask="Visiting the sick is like being" /> },
   { id: "scene-the-firm-handhold", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-salam-the-handhold" ask="What did he hold in his dream" /> },
   { id: "scene-the-dates-of-ibn-tab", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-tabir-the-dates-of-ibn-tab" ask="What did he ﷺ read from the dates" /> },
+  { id: "scene-washed-with-snow-and-hail", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-seeking-refuge-washed-with-snow-and-hail" ask="With what did he ﷺ ask Allah" /> },
+  { id: "scene-columns-of-gold-and-silver", render: () => <SceneQuestionDemo lessonId="lesson-deep-zalzalah1-treasure-nobody-wants" ask="What will come out like columns" /> },
+  { id: "scene-the-sun-and-the-moon-folded-up", render: () => <SceneQuestionDemo lessonId="lesson-deep-takwir1-sun-and-moon-folded" ask="What will be folded up" /> },
+  { id: "scene-the-sheep-and-its-grass", render: () => <SceneQuestionDemo lessonId="lesson-deep-said-ibn-zayd-allahs-name" ask="Who did Zayd say made the sheep" /> },
+  { id: "scene-two-mudds-of-barley", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-love-simple-walimah" ask="What was that walimah made of" /> },
+  { id: "scene-never-missed", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-night-prayer-never-missed" ask="How many before Zuhr" /> },
+  { id: "scene-the-weak-go-early", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-the-weak-go-early" ask="Who was sent early from Muzdalifah" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
