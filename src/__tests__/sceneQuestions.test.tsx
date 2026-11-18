@@ -436,13 +436,13 @@ describe("where the scene waits and where it stops", () => {
       [1, 0, 0],
       [0, 1, 1]
     ]);
-    // Who called him: no light from the sky yet; then the light.
-    expect(shown("Who called Ibrahim, in 37:104?", ["light from the sky", "the great ram"])).toEqual([
+    // Who called him: no glints over the hilltop yet; then the glints.
+    expect(shown("Who called Ibrahim, in 37:104?", ["fulfilled: glints over the hilltop", "the great ram"])).toEqual([
       [0, 0],
       [1, 0]
     ]);
     // The ransom: no ram yet; then the great white ram, in its light.
-    expect(shown("What did he see when he turned, per Ibn Abbas?", ["the great ram", "light of the great sacrifice"])).toEqual([
+    expect(shown("What did he see when he turned, per Ibn Abbas?", ["the great ram", "light about the great ram"])).toEqual([
       [0, 0],
       [1, 1]
     ]);
@@ -1370,13 +1370,14 @@ describe("where the scene waits and where it stops", () => {
       [1, 0],
       [1, 1]
     ]);
-    // The way back to Madinah, and no valley yet; then a valley's green and dry sides, with camels grazing on the green.
+    // The morning sun, no way back yet and no valley yet; then a valley's green and dry sides, with camels grazing on
+    // the green.
     for (const prompt of ["Abu Ubaydah asked: are you running from Allah's decree? What did Umar say?", "What was Umar's answer?"]) {
-      expect([prompt, shown(prompt, ["the way back to Madinah, part 2", "a valley's green side", "a valley's dry side", "a camel grazing on the green side 3"])]).toEqual([
+      expect([prompt, shown(prompt, ["the morning sun, rising", "the way back to Madinah, part 2", "a valley's green side", "a valley's dry side", "a camel grazing on the green side 3"])]).toEqual([
         prompt,
         [
-          [1, 0, 0, 0],
-          [1, 1, 1, 1]
+          [1, 0, 0, 0, 0],
+          [1, 0, 1, 1, 1]
         ]
       ]);
     }
@@ -1555,17 +1556,16 @@ describe("where the scene waits and where it stops", () => {
       [1, 0, 0, 0, 0],
       [1, 1, 1, 1, 1]
     ]);
-    // The shared ship: ways below, and no hole yet; then a drill, a hole begun in the lower deck, the sea spurting in.
-    expect(shown("What did the people below want to do?", ["a way on the lower deck 1", "a drill, in the lower deck", "a hole, begun in the lower deck", "the sea, spurting in"])).toEqual([
-      [1, 0, 0, 0],
-      [1, 1, 1, 1]
+    // The shared ship: ways below, and nothing more yet; then a faint dashed ring where they would make a hole.
+    expect(shown("What did the people below want to do?", ["a way on the lower deck 1", "the hole they would make: a faint dashed ring in their part"])).toEqual([
+      [1, 0],
+      [1, 1]
     ]);
-    // The sea spurting in; then a way from above goes down, the hole is stopped, and sparks rise: all are saved.
-    expect(
-      shown("Stopping wrong protects the whole community.", ["a hole, begun in the lower deck", "the sea, spurting in", "a way from above, going down to stop it, part 2", "the hole, stopped", "all of them saved, a spark rising 1"])
-    ).toEqual([
-      [1, 1, 0, 0, 0],
-      [1, 0, 1, 1, 1]
+    // The faint ring of the hole they would make; then a way from above goes down to them, the ring goes, and sparks
+    // rise: all are saved.
+    expect(shown("Stopping wrong protects the whole community.", ["the hole they would make: a faint dashed ring in their part", "a way from above, going down to stop it, part 2", "all of them saved, a spark rising 1"])).toEqual([
+      [1, 0, 0],
+      [0, 1, 1]
     ]);
     // The day of Ashura: the sea before them; then it splits, its walls stand, and a dry path runs through it.
     for (const [prompt, answer] of [
@@ -1924,12 +1924,12 @@ describe("where the scene waits and where it stops", () => {
       ],
       [[1], [1]]
     ]);
-    // The living and the dead: two quiet homes; then a voice remembering in one of them.
-    expect(shown("What does dhikr mean?", ["a voice, remembering", "a way into the other home"])).toEqual([
+    // The living and the dead: two quiet places; then a voice remembering by one of them.
+    expect(shown("What does dhikr mean?", ["a voice, remembering", "no voice by the other place: a faint grey ring about it"])).toEqual([
       [0, 0],
       [1, 0]
     ]);
-    // Both homes dim; then the home that remembers comes alive: its lamp bright, its door glowing, warmth and life rising.
+    // Nothing yet about the place that remembers; then a warm glow and a soft golden ring come about it, and life rises.
     for (const [prompt, answer] of [
       ["Who is like the living, in the hadith?", "One who remembers his Lord"],
       ["Who is like the living, in the hadith?", "One who remembers Allah"],
@@ -1939,24 +1939,22 @@ describe("where the scene waits and where it stops", () => {
       ["Remembering Allah keeps the heart alive.", "True"],
       ["Dhikr keeps the heart alive.", "True"]
     ]) {
-      const { kind, pause, reveal } = asked(prompt, answer);
-      expect([prompt, answer, shown(prompt, ["its warmth, all around", "its door, glowing", "life in it, rising 1", "life in it, rising 4"], answer), [pause, reveal].map((t) => value(kind, "the lamp in the home that remembers", "opacity", t))]).toEqual([
+      expect([prompt, answer, shown(prompt, ["the living: a warm glow about the place that remembers", "alive: a soft golden ring about it", "life about it, rising 1", "life about it, rising 4", "the place of one who remembers"], answer)]).toEqual([
         prompt,
         answer,
         [
-          [0, 0, 0, 0],
-          [1, 1, 1, 1]
-        ],
-        [0.55, 1]
+          [0, 0, 0, 0, 1],
+          [1, 1, 1, 1, 1]
+        ]
       ]);
     }
-    // The other home still dimly lit; then its lamp goes out, and it stands dark and still.
+    // The other place still as it was; then it grows dim, with a grey haze about it, still.
     for (const prompt of ["And the one who never remembers Him?", "Who is like the dead, in the hadith?", "One who does not remember Allah is like what?"]) {
-      expect([prompt, shown(prompt, ["the lamp in the other home", "the other home, dark and still", "its warmth, all around"])]).toEqual([
+      expect([prompt, shown(prompt, ["the place of one who does not remember", "the dead: a grey haze about the other place", "the living: a warm glow about the place that remembers"])]).toEqual([
         prompt,
         [
-          [0.55, 0, 1],
-          [0, 0.35, 1]
+          [1, 0, 1],
+          [0.45, 1, 1]
         ]
       ]);
     }
@@ -2420,7 +2418,7 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, 70]
     ]);
-    // The bread broken on the cloth; then ten come in and go out full, again and again, and the bread is still there.
+    // The bread broken on the cloth; then ten come in and go out full, again and again, and sparks rise, all fed.
     for (const prompt of ["How many men came in to eat at a time?", "Everyone there ate until they were full."]) {
       const { kind, pause, reveal } = asked(prompt);
       expect([prompt, shown(prompt, ["the bread, broken in pieces", "ten, coming in, first", "ten, going out full, third"]), [pause < 0.59 && 0.59 < reveal, value(kind, "ten, coming in, first", "opacity", 0.59)]]).toEqual([
@@ -2432,10 +2430,7 @@ describe("where the scene waits and where it stops", () => {
         [true, 1]
       ]);
     }
-    expect(shown("Everyone there ate until they were full.", ["the bread, still there", "all fed, rising 1"])).toEqual([
-      [0, 0],
-      [1, 1]
-    ]);
+    expect(shown("Everyone there ate until they were full.", ["all fed, rising 1"])).toEqual([[0], [1]]);
     // Night fallen and the door open; then it closes as a voice says Bismillah at it.
     const door = "What should you say as you close the door at night?";
     const { kind: home, pause: open, reveal: closed } = asked(door);
@@ -4218,20 +4213,21 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
-    // Refuge from anger: red with anger, the word still far; then the word comes to him, he seeks refuge, the red goes
-    // and a calm comes on him. What was happening: nothing yet; then the two crooked voices, no red yet. What A'udhu
-    // billah means: the word comes to him while he is still red. The word he taught: no voice and no word yet; then the
-    // word, come. What would happen: still red; then the red is gone, and a calm is on him.
+    // Refuge from anger: red with anger, the word still far; then the word comes to him, and a faint calm shows by it,
+    // what it would bring, while the red stays on him, for he did not say it. What was happening: nothing yet; then the
+    // two crooked voices, no red yet. What A'udhu billah means: the word comes to him while he is still red. The word he
+    // taught: no voice and no word yet; then the word, come. What would happen: no calm yet; then a faint calm by the
+    // word, the red still on him.
     for (const prompt of ["What words take anger away, in the hadith?", "What word takes anger away, as the Prophet ﷺ said?", "Anger can come from Shaytan.", "What calms anger, in Bukhari 3282?"]) {
       expect([
         prompt,
-        shown(prompt, ["a calm voice from him, seeking refuge", "a red glow of anger on him", "a calm on his place"]),
+        shown(prompt, ["a red glow of anger on him", "what the word would bring: a faint calm by it"]),
         moved(prompt, "a word, a golden light", "x")
       ]).toEqual([
         prompt,
         [
-          [0, 1, 0],
-          [0, 0, 1]
+          [1, 0],
+          [1, 1]
         ],
         [-68, 0]
       ]);
@@ -4245,7 +4241,7 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
-    expect([shown("What does A'udhu billah mean?", ["a red glow of anger on him", "a calm on his place"]), moved("What does A'udhu billah mean?", "a word, a golden light", "x")]).toEqual([
+    expect([shown("What does A'udhu billah mean?", ["a red glow of anger on him", "what the word would bring: a faint calm by it"]), moved("What does A'udhu billah mean?", "a word, a golden light", "x")]).toEqual([
       [
         [1, 0],
         [1, 0]
@@ -4259,9 +4255,9 @@ describe("where the scene waits and where it stops", () => {
       ],
       [-68, 0]
     ]);
-    expect(shown("What would happen if he said it, in the hadith?", ["a red glow of anger on him", "his place, red with anger", "a calm on his place"])).toEqual([
+    expect(shown("What would happen if he said it, in the hadith?", ["a red glow of anger on him", "his place, red with anger", "what the word would bring: a faint calm by it"])).toEqual([
       [1, 1, 0],
-      [0, 0, 1]
+      [1, 1, 1]
     ]);
     // The gate ar-Rayyan: no light beyond the gate yet; then it shows. Who enters: no crescents and no golden way yet;
     // then a crescent over each who fasted and a golden way to the gate, no grey way yet. It closes once they have
@@ -4856,8 +4852,8 @@ describe("where the scene waits and where it stops", () => {
       [0, 76]
     ]);
     // The ruins of al-Hijr. How to enter: his voice says do not enter, by the dark empty doorways, and no tears yet;
-    // then tears show by their places. If one does not weep: then one turns toward a doorway and back, and a way shows
-    // turning back from it. In the valley: then a cover comes over his place and it hurries on, till it has crossed the
+    // then tears show by their places. If one does not weep: then a faint bar shows across each doorway, do not enter.
+    // In the valley: then a cover comes over his place and it hurries on, till it has crossed the
     // valley to a calm light beyond.
     for (const prompt of ["How did the Prophet ﷺ say to enter Al-Hijr's homes?", "How did he ﷺ say to enter those homes?", "How should one pass the ruins of the punished, per the hadith?", "How should one enter such places, in the hadith?", "How should we pass places punished by Allah?"]) {
       expect([prompt, shown(prompt, ["his voice: do not enter", "tears by their places"])]).toEqual([
@@ -4868,7 +4864,7 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
-    expect(shown("What if one cannot weep, in the hadith?", ["a way turning back from the doorway"])).toEqual([[0], [1]]);
+    expect(shown("What if one cannot weep, in the hadith?", ["if you do not weep, do not enter: a faint bar across each doorway"])).toEqual([[0], [1]]);
     expect([shown("What did he do in the valley, in Bukhari 4419?", ["a cover over his place"]), moved("What did he do in the valley, in Bukhari 4419?", "a golden ring, his place", "x")]).toEqual([[[0], [1]], [0, 44]]);
     for (const prompt of ["What did the Prophet ﷺ do in that valley?", "He ﷺ covered his head and crossed the valley fast."]) {
       expect([prompt, shown(prompt, ["a cover over his place", "a calm light beyond the valley"]), moved(prompt, "a golden ring, his place", "x")]).toEqual([
@@ -4926,14 +4922,14 @@ describe("where the scene waits and where it stops", () => {
       [0, 36]
     ]);
     // The sparrow and the sea. What Musa was asked: nothing asked yet; then a voice asks. Why he was corrected: then
-    // his voice says: I am the most learned, and a way goes along the shore to a ring where the seas meet, one more
-    // learned. What the sparrow's sip stood for: the sparrow has dipped its beak; then their knowledge shows as two
+    // a voice says: I am the most learned, and a way goes along the shore to where the seas meet, where one more
+    // learned is. What the sparrow's sip stood for: the sparrow has dipped its beak; then their knowledge shows as two
     // small lights, a light runs over the wide sea, so little shows on its beak, and the sea shines as full as before.
     // If only he had been patient: then the boat goes on, and a soft mist shows far off, more of their story, untold.
     expect(shown("What was Musa asked, in the hadith?", ["a voice from them, asking"])).toEqual([[0], [1]]);
-    expect(shown("Why was Musa corrected, in the hadith?", ["his voice: I am the most learned", "a way along the shore to where the seas meet", "one more learned: a ring there"])).toEqual([
-      [0, 0, 0],
-      [0, 1, 1]
+    expect(shown("Why was Musa corrected, in the hadith?", ["a voice: I am the most learned", "a way along the shore to where the seas meet"])).toEqual([
+      [0, 0],
+      [0, 1]
     ]);
     const sea = ["a sparrow, on the edge of the boat", "their knowledge, a small light 1", "their knowledge, a small light 2", "the wide sea, softly shining", "so little on its beak, a glint", "the sea, as full as before, shining"];
     expect(shown("What did the sparrow's sip stand for?", sea)).toEqual([
@@ -7306,19 +7302,19 @@ describe("where the scene waits and where it stops", () => {
       ]);
     }
     // The kiss of mercy. Whom he kissed: no light yet; then a warm light comes about the small place beside his place,
-    // and, asked as in front of al-Aqra', al-Aqra's place comes and sits with him too.
-    const kiss = ["a kiss of mercy: a warm light about the small place", "al-Aqra's place, coming to sit with him"];
+    // and, asked as in front of al-Aqra', a soft ring comes about al-Aqra's place, sitting with him all along.
+    const kiss = ["a kiss of mercy: a warm light about the small place", "sitting with him: a soft ring about al-Aqra's place"];
     expect(shown("Whom did the Prophet ﷺ kiss?", kiss)).toEqual([
       [0, 0],
       [1, 0]
     ]);
     const front = "Whom did the Prophet ﷺ kiss in front of al-Aqra?";
-    expect([shown(front, kiss), moved(front, kiss[1], "x")]).toEqual([
+    expect([shown(front, kiss), shown(front, ["al-Aqra's place, sitting with him"])]).toEqual([
       [
         [0, 0],
         [1, 1]
       ],
-      [26, 0]
+      [[1], [1]]
     ]);
     // How many children al-Aqra' had: its place sitting with him, and no voice yet; then its voice speaks, and ten
     // small places show as it tells of them.
@@ -7711,11 +7707,11 @@ describe("where the scene waits and where it stops", () => {
       ],
       [0, -6]
     ]);
-    // Whether the ayat helped lead him to Islam: the grey ring of one not yet Muslim is about Jubayr's place; then it
-    // goes, and a warm light and a ring of light come about it.
-    expect(shown("Hearing these ayahs helped lead Jubayr to Islam.", ["not yet Muslim: a grey ring about Jubayr's place", "about to fly: a warm light in Jubayr's place", "a ring of light about Jubayr's place"])).toEqual([
-      [1, 0, 0],
-      [0, 1, 1]
+    // Whether the ayat helped lead him to Islam: Jubayr's place is plain; then a warm light and a ring of light come
+    // about it.
+    expect(shown("Hearing these ayahs helped lead Jubayr to Islam.", ["about to fly: a warm light in Jubayr's place", "a ring of light about Jubayr's place"])).toEqual([
+      [0, 0],
+      [1, 1]
     ]);
     // Heraclius asks. Who followed him: no one by the far ring yet; then three small places come by it, the poor, and
     // the places of the next answer have not come yet.
@@ -7740,26 +7736,22 @@ describe("where the scene waits and where it stops", () => {
         ]
       ]);
     }
-    // What the letter invited him to: no letter yet; then its way shows, the letter goes as a golden spark from the far
-    // ring to the court, and a soft light comes in the court, before the level band of the word common to them.
-    expect([
-      shown("What did the letter invite Heraclius to?", ["the letter's way, from the far ring to the court", "the letter, read: a soft light in the court", "a word common to us and you: a level golden band between the two"]),
-      moved("What did the letter invite Heraclius to?", "his letter: a golden spark on its way to the court", "x")
-    ]).toEqual([
-      [
-        [0, 0, 0],
-        [1, 1, 0]
-      ],
-      [0, 99]
+    // What the letter invited him to: the letter is a faint glint in the court, come before; then it brightens as it is
+    // read, and a soft light comes in the court, before the level band of the word common to them.
+    expect(shown("What did the letter invite Heraclius to?", ["his letter, already in the court: a small golden glint", "the letter, read: a soft light in the court", "a word common to us and you: a level golden band between the two"])).toEqual([
+      [0.45, 0, 0],
+      [1, 1, 0]
     ]);
-    // To whom the letter with 3:64 went, and the ayah it invited a king with: no letter yet; then it goes to the court,
-    // and a level golden band shows between the two, a word common to us and you.
+    // To whom the letter with 3:64 went, and the ayah it invited a king with: the letter a faint glint in the court; then
+    // it is read, and a level golden band shows between the two, a word common to us and you.
     for (const prompt of ["To whom did the Prophet ﷺ send a letter with 3:64?", "The Prophet ﷺ used an ayah of the Quran to invite a king."]) {
-      expect([
+      expect([prompt, shown(prompt, ["his letter, already in the court: a small golden glint", "the letter, read: a soft light in the court", "a word common to us and you: a level golden band between the two"])]).toEqual([
         prompt,
-        shown(prompt, ["the letter's way, from the far ring to the court", "the letter, read: a soft light in the court", "a word common to us and you: a level golden band between the two"]),
-        moved(prompt, "his letter: a golden spark on its way to the court", "x")
-      ]).toEqual([prompt, [Array(3).fill(0), Array(3).fill(1)], [0, 99]]);
+        [
+          [0.45, 0, 0],
+          [1, 1, 1]
+        ]
+      ]);
     }
     // Mighty since Umar. Why he was afraid: the grey shade of fear is over his home, and nothing else yet; then his
     // voice speaks, and faint grey places show far off, a threat.
@@ -8583,11 +8575,11 @@ describe("where the scene waits and where it stops", () => {
       [0, 1, 0, 0],
       [1, 0, 0, 0]
     ]);
-    // That Ubayy wept: his voice answers yes, and a golden glow about Ubayy's place; then his recitation comes to Ubayy
-    // as golden arcs, soft silver glints show as Ubayy weeps, and a warm light comes in his place.
-    expect(shown("Ubayy wept when he heard the answer.", ["his recitation to Ubayy: golden arcs", "Ubayy's weeping: soft silver glints", "a warm light in Ubayy's place", "his voice: yes", "named: a golden glow about Ubayy's place"])).toEqual([
-      [0, 0, 0, 1, 1],
-      [1, 1, 1, 0, 1]
+    // That Ubayy wept: his voice answers yes, and a golden glow about Ubayy's place; then soft silver glints show as
+    // Ubayy weeps, and a warm light comes in his place.
+    expect(shown("Ubayy wept when he heard the answer.", ["Ubayy's weeping: soft silver glints", "a warm light in Ubayy's place", "his voice: yes", "named: a golden glow about Ubayy's place"])).toEqual([
+      [0, 0, 1, 1],
+      [1, 1, 0, 1]
     ]);
     // Six of Shawwal. That Shawwal comes after Ramadan, and how many of its days: Ramadan's crescent lit, with the
     // golden line of its fasted days; then Shawwal's crescent lights up, and six of its days are fasted one by one.
@@ -10244,7 +10236,7 @@ describe("where the scene waits and where it stops", () => {
     // two that fast, the rings about the other two fade, and dates and a cup come by each of them.
     expect([
       value("ashura-and-ramadan", "the month of Ramadan: a golden light on it", "opacity", 0.32),
-      shown("After Ramadan was made a duty, Ashura became...?", ["whoever wished fasted it: a warm glow about the two that fast", "fasting Ashura: a soft golden ring about a place 1", "fasting Ashura: a soft golden ring about a place 3", "whoever wished did not: dates and a cup by a place 1", "whoever wished did not: dates and a cup by a place 2"])
+      shown("After Ramadan was made a duty, Ashura became...?", ["whoever wished fasted it: a warm glow about the two that fast", "fasting Ashura: a soft golden ring about a place 1", "fasting Ashura: a soft golden ring about a place 3", "whoever wished did not: dates and a cup by a place 3", "whoever wished did not: dates and a cup by a place 4"])
     ]).toEqual([
       1,
       [
@@ -13099,37 +13091,25 @@ describe("where the scene waits and where it stops", () => {
     ]);
     // The cloth with marks. That one should pray where little distracts: his place has prayed, the cloth with marks by
     // it, sparks rising, before his words; then glints show on the marks, a faint grey line goes from them to his place,
-    // and his voice speaks; a way shows to Abu Jahm's home, the cloth goes along it, a plain cloth comes back to his
-    // place, and a soft glow comes about it.
+    // and his voice speaks; a way shows to Abu Jahm's home, the cloth goes along it, and a plain cloth comes back to his
+    // place.
     expect([
-      shown("Pray where little distracts you.", ["its marks: glints on them", "the way to Abu Jahm's home", "a plain cloth", "calm: a soft glow about his place"]),
+      shown("Pray where little distracts you.", ["its marks: glints on them", "the way to Abu Jahm's home", "a plain cloth"]),
       moved("Pray where little distracts you.", "the cloth with marks, with his place", "x"),
       value("marked-cloth", "drawing his mind: a faint grey line from the marks to his place", "opacity", 0.4),
       value("marked-cloth", "his voice: its marks drew my mind", "opacity", 0.35)
     ]).toEqual([
       [
-        [0, 0, 0, 0],
-        [0, 1, 1, 1]
+        [0, 0, 0],
+        [0, 1, 1]
       ],
       [0, 62],
       1,
       1
     ]);
     // What he asked for instead: the cloth with marks has gone along the way to Abu Jahm's place, before the last words;
-    // then a plain cloth shows there and comes back to his place, a soft glow comes about it, and a spark of the prayer
-    // rises.
-    expect([
-      shown("What did he ﷺ ask for instead?", ["a plain cloth", "calm: a soft glow about his place"]),
-      moved("What did he ﷺ ask for instead?", "a plain cloth", "x"),
-      value("marked-cloth", "the prayer, calm: a spark rising", "opacity", 0.92)
-    ]).toEqual([
-      [
-        [0, 0],
-        [1, 1]
-      ],
-      [0, -59],
-      1
-    ]);
+    // then a plain cloth shows there and comes back to his place.
+    expect([shown("What did he ﷺ ask for instead?", ["a plain cloth"]), moved("What did he ﷺ ask for instead?", "a plain cloth", "x")]).toEqual([[[0], [1]], [0, -59]]);
     // The date stones. That Asma worked hard for her family: waits at the scene's start, her place by az-Zubair's land,
     // a basket of date stones over it; then it carries them along the long way to her house and sets them down, goes
     // back, and brings them again; a faint line of one farsakh shows, a golden line grows over two thirds of it, and the
@@ -14105,16 +14085,16 @@ describe("where the scene waits and where it stops", () => {
       [44, 66]
     ]);
     // That he was coming back from Tabuk: the little ones are at the pass, with its soft golden ring, before the last
-    // words; then his place comes along the way from Tabuk, through the pass, with the places of two with him, a warm
-    // glow comes about the little ones, welcoming him, and a soft golden ring about his place: back from Tabuk.
+    // words; then his place comes along the way from Tabuk, through the pass, a warm glow comes about the little ones,
+    // welcoming him, and a soft golden ring about his place: back from Tabuk.
     expect([
-      shown("He ﷺ was coming back from Tabuk.", ["his place, a golden ring", "the places of two with him", "welcoming him: a warm glow about the little ones", "back from Tabuk: a soft golden ring about his place"]),
+      shown("He ﷺ was coming back from Tabuk.", ["his place, a golden ring", "welcoming him: a warm glow about the little ones", "back from Tabuk: a soft golden ring about his place"]),
       value("out-to-welcome", "Thaniyyat al-Wada': a soft golden ring about the pass", "opacity", 0.72),
       moved("He ﷺ was coming back from Tabuk.", "his place, a golden ring", "x")
     ]).toEqual([
       [
-        [0, 0, 0, 0],
-        [1, 1, 1, 1]
+        [0, 0, 0],
+        [1, 1, 1]
       ],
       1,
       [13, 0]
@@ -15794,18 +15774,18 @@ describe("where the scene waits and where it stops", () => {
     }
     // What to do about a Muslim's fault, and what Allah does for one who covers it: on the wide pale plain of that Day,
     // a soft golden ring is about the one who helped, before the last words; then the plain goes, a small grey mark, a
-    // fault, shows by the one in need, a soft white veil comes over it, and a soft white veil comes about the one who
-    // helps.
+    // fault, shows by the one in need, a soft white veil comes over it, then that Day comes back, faint, and a soft white
+    // veil comes about the one who helps.
     for (const prompt of ["You know a friend's private mistake. What should you do?", "What does Allah do for one who screens a Muslim?", "Whoever covers a Muslim's faults, Allah will cover his."]) {
       expect([
         prompt,
-        shown(prompt, ["that Day: a wide pale plain", "relieved on that Day: a soft golden ring about the one who helped", "a fault: a small grey mark by the one in need", "covered: a soft white veil over the one in need", "covered in turn: a soft white veil about the one who helps"]),
+        shown(prompt, ["that Day: a wide pale plain", "relieved on that Day: a soft golden ring about the one who helped", "a fault: a small grey mark by the one in need", "covered: a soft white veil over the one in need", "covered in turn: a soft white veil about the one who helps", "that Day again: the wide pale plain, faint"]),
         value("brother-of-a-muslim", "a fault: a small grey mark by the one in need", "opacity", 0.915)
       ]).toEqual([
         prompt,
         [
-          [1, 1, 0, 0, 0],
-          [0, 0, 0, 1, 1]
+          [1, 1, 0, 0, 0, 0],
+          [0, 0, 0, 1, 1, 0.5]
         ],
         1
       ]);
@@ -16237,19 +16217,18 @@ describe("where the scene waits and where it stops", () => {
     ]);
     // What he was told to say when buying: grey rings are about the half-empty sack and the buyer's place, before the
     // next words; then his voice speaks, a faint golden line goes from his place to the buyer's, the old trade goes, the
-    // buyer's place goes back to the stall, its voice speaks there, a soft golden ring comes about it, and a soft golden
-    // glow over the counter.
+    // buyer's place goes back to the stall, its voice speaks there, and a soft golden ring comes about it.
     for (const prompt of ["What was he told to say when buying?", "Islam protects people from being tricked in trade."]) {
       expect([
         prompt,
-        shown(prompt, ["cheated: a grey ring about the small sack", "often cheated: a grey ring about the buyer's place", "his voice: when you buy", "the buyer's voice at the stall: no cheating", "no cheating: a soft golden ring about the buyer's place", "kept safe: a soft golden glow over the counter"]),
+        shown(prompt, ["cheated: a grey ring about the small sack", "often cheated: a grey ring about the buyer's place", "his voice: when you buy", "the buyer's voice at the stall: no cheating", "no cheating: a soft golden ring about the buyer's place"]),
         value("say-no-cheating", "his teaching: a faint golden line from his place to the buyer's", "opacity", 0.6),
         moved(prompt, "the buyer's place", "x")
       ]).toEqual([
         prompt,
         [
-          [1, 1, 0, 0, 0, 0],
-          [0, 0, 1, 1, 1, 1]
+          [1, 1, 0, 0, 0],
+          [0, 0, 1, 1, 1]
         ],
         1,
         [-42, 0]

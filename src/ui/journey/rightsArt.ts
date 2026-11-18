@@ -673,12 +673,13 @@ function forgotAndAte(): SignArt {
 }
 
 // The kiss of mercy. Abu Hurairah said: the Messenger of Allah ﷺ kissed al-Hasan ibn Ali while al-Aqra' ibn Habis
-// at-Tamimi was sitting with him. Al-Aqra' said: I have ten children, and I have never kissed one of them. The Messenger
-// of Allah ﷺ looked at him, then said: whoever is not merciful is not shown mercy (Sahih al-Bukhari 5997). No one is
-// drawn: by a home, his place is a golden ring, and a small place, al-Hasan's, is beside it; a warm light comes about
-// the small place. Al-Aqra's place comes and sits with him; its voice speaks, ten small places show as it tells of them,
-// and a cool shade comes over them. His look goes to it as a faint golden line; his voice speaks, and a soft light of
-// mercy comes about his place and the small one.
+// at-Tamimi was sitting with him. Al-Aqra' said: I have ten children, and I have never kissed one of them. The
+// Messenger of Allah ﷺ looked at him, then said: whoever is not merciful is not shown mercy (Sahih al-Bukhari 5997).
+// No one is drawn: by a home, his place is a golden ring, and a small place, al-Hasan's, is beside it; a warm light
+// comes about the small place, while al-Aqra's place already sits with him, as the hadith says; a soft ring comes
+// about it; its voice speaks, ten small places show as it tells of them, and a cool shade comes over them. His look
+// goes to it as a faint golden line; his voice speaks, and a soft light of mercy comes about his place and the small
+// one.
 function kissOfMercy(): SignArt {
   const his: [number, number] = [46, 104.6];
   const hasan: [number, number] = [54.4, 104.4];
@@ -698,20 +699,8 @@ function kissOfMercy(): SignArt {
       { name: "a golden ring, his place", svg: ring(his[0], his[1], 2.6, GOLD) },
       { name: "al-Hasan's small place", svg: someone(hasan[0], hasan[1], 1.1) },
       { name: "a kiss of mercy: a warm light about the small place", svg: lightIn(hasan[0], hasan[1], 3.6), keys: showFrom(0.04, 0.08), loop: { move: "twinkle", ms: 1500, low: 0.7 } },
-      {
-        name: "al-Aqra's place, coming to sit with him",
-        svg: someone(aqra[0], aqra[1], 1.6),
-        keys: track({
-          opacity: [
-            [0.16, 0],
-            [0.165, 1]
-          ],
-          xy: [
-            [0.16, 26, -3],
-            [0.21, 0, 0]
-          ]
-        })
-      },
+      { name: "al-Aqra's place, sitting with him", svg: someone(aqra[0], aqra[1], 1.6) },
+      { name: "sitting with him: a soft ring about al-Aqra's place", svg: care(aqra[0], n(aqra[1] + 0.2), 3.6, 2), keys: showFrom(0.16, 0.2), loop: { move: "twinkle", ms: 1600, low: 0.7 } },
       { name: "al-Aqra's voice: ten, and never kissed", svg: arcsLeft(n(aqra[0] - 2.6), n(aqra[1] - 4), VOICE), keys: showWhile(0.3, 0.31, 0.57, 0.58), loop: { move: "twinkle", ms: 900, low: 0.5 } },
       ...ten.map(
         ([x, y], i): SignPart => ({

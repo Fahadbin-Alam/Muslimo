@@ -267,9 +267,8 @@ function ram(): SignArt {
   const lamp = `${glow(40, 96, 10, "#FFD27A", 0.14)}<circle cx="40" cy="97" r="0.9" fill="#FFE29A"/>`;
   const dreamLight = glow(40, 72, 20, "#FFE9A8", 0.1) + sparkle(30, 70, 2) + sparkle(50, 64, 2.4) + sparkle(40, 56, 1.8) + sparkle(46, 76, 1.4);
   const way = `<path d="M58 99 C74 98 86 94 96 88 C104 83 110 78 118 74" stroke="#FFF3CF" stroke-width="1.4" stroke-dasharray="2 2.4" fill="none" stroke-linecap="round"/>`;
-  const rays =
-    `<path d="M100 0 L108 0 L121 70 Z" fill="#FFF6DC" opacity="0.22"/><path d="M116 0 L126 0 L121 70 Z" fill="#FFF6DC" opacity="0.26"/>` +
-    `<path d="M134 0 L142 0 L121 70 Z" fill="#FFF6DC" opacity="0.22"/>`;
+  // The dream fulfilled: glints over the hilltop, where they are; nothing comes down from the sky.
+  const glints = sparkle(112, 62, 2) + sparkle(121, 55, 2.6) + sparkle(130, 62, 2) + sparkle(115, 49, 1.5) + sparkle(127, 48, 1.5);
   const birds = [
     [20, 30],
     [27, 26],
@@ -300,9 +299,9 @@ function ram(): SignArt {
       { name: "the dream", svg: dreamLight, keys: showWhile(0.04, 0.1, 0.2, 0.24), loop: { move: "twinkle", ms: 1600, low: 0.5 } },
       { name: "the way up the hill", svg: way, keys: showWhile(0.24, 0.32, 0.42, 0.48) },
       { name: "light on the hilltop", svg: glow(121, 70, 22, "#FFF4D6", 0.09), keys: showFrom(0.44, 0.52), loop: { move: "twinkle", ms: 2600, low: 0.75 } },
-      { name: "light from the sky", svg: rays, keys: { at: [0, 0.58, 0.64, 0.78, 0.86], opacity: [0, 0, 1, 1, 0.45] }, loop: { move: "twinkle", ms: 2000, low: 0.7 } },
+      { name: "fulfilled: glints over the hilltop", svg: glints, keys: { at: [0, 0.58, 0.64, 0.78, 0.86], opacity: [0, 0, 1, 1, 0.45] }, loop: { move: "twinkle", ms: 2000, low: 0.7 } },
       { name: "the great ram", svg: ramAt(101, n(72 - 73 * 0.4), 0.4), keys: showFrom(0.78, 0.84), origin: { x: 121, y: 71 }, loop: { move: "bob", ms: 2400, rotate: 1.2 } },
-      { name: "light of the great sacrifice", svg: glow(121, 58, 24, "#FFFFFF", 0.08), keys: showFrom(0.8, 0.86), loop: { move: "twinkle", ms: 2200, low: 0.6 } }
+      { name: "light about the great ram", svg: glow(121, 58, 24, "#FFFFFF", 0.08), keys: showFrom(0.8, 0.86), loop: { move: "twinkle", ms: 2200, low: 0.6 } }
     ],
     words: [
       { text: "Ibrahim: My son, I saw in a dream", from: 0.02, to: 0.2 },
@@ -365,8 +364,8 @@ function qiblah(): SignArt {
   const palms = palm(46, 97, 20) + palm(36, 99, 14) + palm(114, 97, 18) + palm(124, 99, 13);
   const toJerusalem = `<path d="M56 89 C46 86 38 78 30 70" stroke="#F2C14E" stroke-width="1.3" stroke-dasharray="1.8 2" fill="none" stroke-linecap="round"/>`;
   const toKabah = `<path d="M104 89 C116 86 126 79 136 72" stroke="#F2C14E" stroke-width="1.3" stroke-dasharray="1.8 2" fill="none" stroke-linecap="round"/>`;
-  const rays =
-    `<path d="M66 8 L72 8 L80 76 Z" fill="#FFF6DC" opacity="0.3"/><path d="M77 8 L83 8 L80 76 Z" fill="#FFF6DC" opacity="0.34"/><path d="M88 8 L94 8 L80 76 Z" fill="#FFF6DC" opacity="0.3"/>`;
+  // His face turning to the sky, in hope: a spark rising from the masjid; nothing comes down from the sky.
+  const hope = glow(96, 74, 5, "#FFF1C4", 0.3) + sparkle(96, 74, 2.4);
   // The others: a tent in the desert, Jerusalem's own houses, and a house on the way to Makkah, each shown in its turn,
   // at "wherever you are", facing Jerusalem as all had, and turning toward the Ka'bah.
   const others = [
@@ -391,7 +390,7 @@ function qiblah(): SignArt {
       { name: "palms of Madinah", svg: palms, origin: { x: 80, y: 98 }, loop: { move: "sway", ms: 3400, angle: 0.6 } },
       ...others.filter((other) => other.place).map((other) => ({ name: other.name, svg: other.place })),
       { name: "the masjid in Madinah", svg: masjid },
-      { name: "light from the sky", svg: rays, keys: showWhile(0.24, 0.3, 0.44, 0.5), loop: { move: "twinkle", ms: 1300, low: 0.45 } },
+      { name: "turning toward the sky: a spark rising from the masjid", svg: hope, keys: { at: [0, 0.24, 0.3, 0.44, 0.5], opacity: [0, 0, 1, 1, 0], y: [0, 0, -6, -30, -30] }, loop: { move: "twinkle", ms: 1300, low: 0.45 } },
       { name: "the arrow of the qiblah", svg: arrowAt(80, 60, 1), origin: { x: 80, y: 60 }, keys: { at: [0, 0.04, 0.1, 0.48, 0.53, 0.56, 0.58], opacity: [0, 0, 1, 1, 1, 1, 1], rotate: [0, 0, 0, 0, 150, 186, 180] } },
       ...others.map((other) => ({ name: `the qiblah of ${other.name}`, svg: arrowAt(other.arrow[0], other.arrow[1], 0.36), origin: { x: other.arrow[0], y: other.arrow[1] }, keys: turn(other.from) }))
     ],

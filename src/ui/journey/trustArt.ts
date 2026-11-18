@@ -438,7 +438,7 @@ const bundleOutline = (x: number, y: number) =>
 // two sheep of the zakat come with it. His voice speaks: a faint golden way goes from the zakat to the masjid, and a
 // gift, a bundle with a glint, shows by Ibn al-Lutbiyyah's place. His voice speaks, and a grey ring comes about the
 // gift. A home shows far off, and a faint place by its door: had he sat at home; a faint bundle shows by it and fades:
-// no gift would have come. A spark rises from his place, then three, one after another.
+// no gift would have come. A spark rises from his place, then two more, one after another: three times in all.
 function giftsToTheCollector(): SignArt {
   const his: [number, number] = [30, 99.6];
   const from: [number, number] = [40.4, 101.2];
@@ -535,14 +535,13 @@ function giftsToTheCollector(): SignArt {
       },
       { name: "a spark rising from his place", svg: sparkle(his[0], n(his[1] - 3.2), 1.4, SPARK), keys: sparkRising(0.77, 0.825, 10), loop: speaking },
       ...quickSparks(
-        "three times: a spark",
+        "the second and third time: a spark",
         [
-          [26.6, 95],
-          [30, 94],
-          [33.4, 95]
+          [27.4, 94.6],
+          [32.6, 94.6]
         ],
         0.889,
-        0.02
+        0.025
       )
     ],
     words: [

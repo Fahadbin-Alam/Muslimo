@@ -492,8 +492,9 @@ function musk(): SignArt {
 // wanted water, went by those above, and said: if we made a hole in our part, we would not trouble those above us. If
 // they leave them to what they want, they all perish; and if they stop them, they are saved, and all of them are saved
 // (Sahih al-Bukhari 2493). No one is drawn: the ship sails in, cut away to show its two decks; dashed ways on each
-// deck; a way goes up from below, and a bucket goes down to the sea and up; a voice below, and a hole is begun in the
-// lower deck, the sea spurting in; then a way comes down from above to it, the hole is stopped, and sparks rise.
+// deck; a way goes up from below, and a bucket goes down to the sea and up; a voice below, and a faint dashed ring
+// shows where they would make a hole, only what they said, for this hadith tells of no hole made; then a way comes down
+// from above to them, the faint ring goes, and sparks rise.
 function sharedShip(): SignArt {
   const origin = { x: 80, y: 86 };
   const loop = { move: "bob" as const, ms: 3200, y: 0.6 };
@@ -558,17 +559,14 @@ function sharedShip(): SignArt {
       },
       { name: "water in the bucket", svg: `<path d="M140.5 93 L143.5 93" stroke="#5BB0EA" stroke-width="0.8"/>`, keys: { at: [0, 0.52, 0.522, 0.53, 0.56], opacity: [0, 0, 1, 1, 1], y: [0, 0, 0, 0, -26] }, ...onShip },
       { name: "a voice below: let us make a hole", svg: arcs(55.6, 85.6), keys: showWhile(0.63, 0.64, 0.7, 0.71), ...onShip },
-      { name: "a drill, in the lower deck", svg: `<path d="M62 82.6 L62 91.4" stroke="#C9CDD2" stroke-width="0.7"/><path d="M59 82.6 L65 82.6" stroke="#B48A5A" stroke-width="1.1" stroke-linecap="round"/>`, keys: showWhile(0.7, 0.71, 0.88, 0.89), ...onShip },
-      { name: "a hole, begun in the lower deck", svg: `<ellipse cx="62" cy="91.8" rx="1.7" ry="0.6" fill="#1A2E44"/>`, keys: showFrom(0.72, 0.73), ...onShip },
       {
-        name: "the sea, spurting in",
-        svg: `<path d="M62 91.4 Q60.6 88.4 59 87.8 M62 91.4 Q62.4 87.8 63 86.8 M62 91.4 Q63.6 88.6 65.2 88.4" stroke="#7CC4F0" stroke-width="0.7" fill="none" stroke-linecap="round"/><circle cx="58.4" cy="88.6" r="0.5" fill="#7CC4F0"/><circle cx="65.8" cy="89.2" r="0.5" fill="#7CC4F0"/>`,
-        keys: showWhile(0.74, 0.76, 0.88, 0.89),
+        name: "the hole they would make: a faint dashed ring in their part",
+        svg: `<ellipse cx="62" cy="91.8" rx="2.4" ry="0.9" stroke="#8FA3B8" stroke-width="0.45" stroke-dasharray="0.8 0.6" fill="none"/>`,
+        keys: showWhile(0.7, 0.73, 0.88, 0.89),
         ...onShip
       },
       { name: "a way from above, going down to stop it, part 1", svg: way("M83 63.6 C90 63.8 98.6 64.6 98.6 68 L98.6 89.6", WAY, 0.9), keys: showFrom(0.83, 0.86), ...onShip },
       { name: "a way from above, going down to stop it, part 2", svg: way("M98.6 90.4 C90 90.8 78 90.8 66 90.6", WAY, 0.9), keys: showFrom(0.86, 0.88), ...onShip },
-      { name: "the hole, stopped", svg: `<rect x="59.2" y="91" width="5.6" height="1.6" rx="0.3" fill="#D9A86A"/>`, keys: showFrom(0.89, 0.9), ...onShip },
       { name: "the sea in front", svg: frontSea },
       { name: "near waves", svg: nearWaves, loop: { move: "slide", ms: 4600 } },
       ...risingSparks(
