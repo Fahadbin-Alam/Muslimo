@@ -5869,6 +5869,57 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-the-weak-go-early": [
     ["Who was sent early from Muzdalifah?", "The weak of his family", "on the night of Muzdalifah early", "among the weak members of his family."],
     ["What does this show about Islam?", "It eases things for the weak", "on the night of Muzdalifah early", "among the weak members of his family."]
+  ],
+  // Abu Hurairah said: he said: do not set out on a journey except for three masjids: al-Masjid al-Haram, the masjid of
+  // Allah's Messenger ﷺ, and the masjid of al-Aqsa (Sahih al-Bukhari 1189). Its lesson's question on which masjid is in
+  // Jerusalem is not asked here, since it has its own map.
+  "sign-except-for-three-masjids": [
+    ["How many masjids are named for travel?", "Three", "except for three masjids:"],
+    ["Al-Masjid al-Haram is in Makkah.", "True", "al-Masjid al-Haram,"]
+  ],
+  // On a rainy day Ibn Abbas said to his mu'adhdhin: say: pray in your houses; and he said: it was done by one who was
+  // much better than I; no doubt, the Jumu'ah prayer is compulsory, but I dislike to put you to task by bringing you out
+  // walking in mud and slush (Sahih al-Bukhari 901). Its lesson's question on who told his mu'adhdhin to say it is not
+  // asked here, since the scene's first words name him.
+  "sign-pray-in-your-houses": [
+    ["What did Ibn Abbas not want people to walk through?", "Mud and slush", "bringing you out walking in mud and slush."],
+    ["Ibn Abbas said one much better than he had done the same.", "True", "Ibn Abbas said: It was done by one", "who was much better than I."]
+  ],
+  // Abu Dharr said: I went out at night and found him walking all alone; he said: O Abu Dharr, come here! and then: the
+  // rich are in fact the poor on the Day of Resurrection, except him whom Allah gives wealth which he gives to his
+  // right, left, front and back, and does good deeds with it (Sahih al-Bukhari 6443).
+  "sign-right-left-front-and-back": [
+    ["What did he ﷺ say about those with much wealth?", "They will have little that Day", "The rich are in fact the poor", "on the Day of Resurrection except him"],
+    ["Which rich person is the exception?", "One who gives his wealth out", "on the Day of Resurrection except him", "to his right, left, front and back,"],
+    ["Abu Dharr walked with the Prophet ﷺ one night.", "True", "found him walking all alone.", "He said: O Abu Dharr, come here!"]
+  ],
+  // Nafi' said: on reaching the sanctuary of Makkah, Ibn Umar used to stop reciting talbiyah, and then he would pass the
+  // night at Dhi Tuwa and then offer the Fajr prayer and take a bath, and he used to say that the Prophet ﷺ used to do
+  // the same (Sahih al-Bukhari 1573).
+  "sign-the-night-at-dhi-tuwa": [
+    ["Where did Ibn Umar spend the night before Makkah?", "At Dhi Tuwa", "and then would pass the night", "at Dhi Tuwa and then offer"],
+    ["What did Ibn Umar do after Fajr, before entering?", "He took a bath", "the Fajr prayer and take a bath."],
+    ["Ibn Umar said the Prophet ﷺ did the same.", "True", "Ibn Umar used to say that the Prophet", "used to do the same."]
+  ],
+  // Abu Hurairah said: he said: the young should greet the old, the passer by should greet the sitting one, and the
+  // small group of persons should greet the large group of persons (Sahih al-Bukhari 6231).
+  "sign-the-young-greet-the-old": [
+    ["You walk past an old man sitting. Who greets first?", "You do", "The young should greet the old,", "the sitting one,"],
+    ["A group of three meets a group of ten. Who greets first?", "The group of three", "and the small group of persons should", "greet the large group of persons."],
+    ["The one sitting greets the one walking by.", "False", "the passer by should greet", "the sitting one,"]
+  ],
+  // Abu Hurairah said: he said: the one who looks after a widow or a poor person is like a mujahid who fights for
+  // Allah's cause, or like him who performs prayers all the night and fasts all the day (Sahih al-Bukhari 5353).
+  "sign-a-widow-or-a-poor-person": [
+    ["Looking after a widow or a poor person is like what?", "Praying all night and fasting all day", "or like him who performs prayers", "all the night and fasts all the day."],
+    ["Whom does Bukhari 5353 tell us to look after?", "A widow or a poor person", "The one who looks after a widow", "or a poor person is like a mujahid"],
+    ["Helping the needy can be as great as long worship.", "True", "or like him who performs prayers", "all the night and fasts all the day."]
+  ],
+  // Abu Umamah said: whenever he finished his meals, he used to say: praise be to Allah Who has satisfied our needs and
+  // quenched our thirst; Your favor cannot be compensated or denied (Sahih al-Bukhari 5459). Its lesson's questions on
+  // when he said this praise and what he thanked Allah for are not asked here, since the meal shows from the start.
+  "sign-satisfied-and-quenched": [
+    ["Allah's favor can be fully paid back.", "False", "Your favor cannot be compensated", "or denied."]
   ]
 };
 
