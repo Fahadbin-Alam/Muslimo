@@ -344,13 +344,13 @@ const HUJURAT_ONE: DeepUnit = {
     {
       slug: "dua-for-an-absent-brother",
       title: "Praying for a brother",
-      line: "Pray for him in secret, and angels say: the same for you.",
+      line: "Pray for him in secret; the angel says: the same for you.",
       facts: ["A secret dua", "The angel says Amin"],
       quote: q49(10),
-      source: hadith("muslim", "2732", "Abu Dharr", "Sahih", "The Prophet ﷺ said no believer prays for his brother behind his back except that the angels say: The same be for you too.", "the Angels do not say: The same be for you too"),
+      source: hadith("muslim", "2732", "Abu ad-Darda", "Sahih", "The Prophet ﷺ said no believer prays for his brother behind his back except that the angel says: The same be for you too.", "There is no believing servant who supplicates for his brother behind his back"),
       difficulty: 1,
       questions: [
-        { q: "What do the angels say, per Muslim 2732?", a: "The same be for you too", wrong: ["Nothing", "Pray louder", "Go home"], why: "The Angels do not say: The same be for you too." },
+        { q: "What does the angel say, per Muslim 2732?", a: "The same be for you too", wrong: ["Nothing", "Pray louder", "Go home"], why: "The angel says: The same be for you too." },
         { q: "When is the dua made, per Muslim 2732?", a: "Behind his back, in his absence", wrong: ["Only in front of him", "Only at Hajj", "Only on Friday"], why: "He who supplicates for his brother behind his back." },
         { tf: true, q: "Praying for others brings good back to you.", why: "The same be for you too." }
       ]
