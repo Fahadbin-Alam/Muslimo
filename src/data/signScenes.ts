@@ -1024,7 +1024,14 @@ export type SignKind =
   | "a-sujud-of-fifty-verses"
   | "ninety-nine-and-one"
   | "three-things-are-yours"
-  | "best-people-on-earth";
+  | "best-people-on-earth"
+  | "many-prostrations"
+  | "haya-is-faith"
+  | "do-not-get-angry"
+  | "a-third-of-islam"
+  | "ten-years-of-service"
+  | "doors-opened-for-it"
+  | "seven-rounds";
 
 export type SignScene = {
   id: string;
@@ -5553,6 +5560,55 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jabir ibn Abdullah said: on the day of al-Hudaybiyah, the Messenger of Allah ﷺ said to us: you are the best people on the earth. We were 1400 then. If I could see now, I would have shown you the place of the Tree.",
     sources: [bukhari("4154")]
+  },
+  {
+    id: "sign-many-prostrations",
+    kind: "many-prostrations",
+    caption:
+      "Ma'dan ibn Abi Talhah said: I met Thawban, the freed servant of the Messenger of Allah ﷺ, and asked him to tell me of an act for which, if I do it, Allah will admit me to Paradise. He gave no reply. I asked again, and he gave no reply. I asked him a third time, and he said: I asked the Messenger of Allah ﷺ about that, and he said: make frequent prostrations before Allah, for you will not make one prostration without its raising you a degree and removing a sin from you. Ma'dan said: then I met Abu ad-Darda and asked him, and he gave me a reply like Thawban's.",
+    sources: [muslim("488")]
+  },
+  {
+    id: "sign-haya-is-faith",
+    kind: "haya-is-faith",
+    caption:
+      "Abdullah ibn Umar said: once the Messenger of Allah ﷺ passed by an Ansari who was admonishing his brother regarding haya. On that the Messenger of Allah ﷺ said: leave him, as haya is a part of faith.",
+    sources: [bukhari("24")]
+  },
+  {
+    id: "sign-do-not-get-angry",
+    kind: "do-not-get-angry",
+    caption:
+      "Abu Hurairah said: a man said to the Prophet ﷺ: advise me! He said: do not become angry. The man asked again and again, and he said in each case: do not become angry.",
+    sources: [bukhari("6116")]
+  },
+  {
+    id: "sign-a-third-of-islam",
+    kind: "a-third-of-islam",
+    caption:
+      "Sa'd ibn Abi Waqqas said: no man embraced Islam before the day on which I embraced Islam, and I remained for seven days as one third of the then extant Muslims.",
+    sources: [bukhari("3727")]
+  },
+  {
+    id: "sign-ten-years-of-service",
+    kind: "ten-years-of-service",
+    caption:
+      "Anas ibn Malik said: I was ten years old when the Messenger of Allah ﷺ arrived at Madinah. My mother and aunts used to urge me to serve the Prophet ﷺ regularly, and I served him for ten years.",
+    sources: [bukhari("5166")]
+  },
+  {
+    id: "sign-doors-opened-for-it",
+    kind: "doors-opened-for-it",
+    caption:
+      "Ibn Umar said: while we were praying with the Messenger of Allah ﷺ, one among the people said: Allah is truly great, praise be to Allah in abundance, and glory be to Allah in the morning and the evening. The Messenger of Allah ﷺ said: who said such and such a word? A man among the people said: it is I, Messenger of Allah. He said: it surprised me, for the doors of heaven were opened for it. Ibn Umar said: I have not abandoned them since I heard the Messenger of Allah ﷺ say this.",
+    sources: [muslim("601")]
+  },
+  {
+    id: "sign-seven-rounds",
+    kind: "seven-rounds",
+    caption:
+      "Ibn Umar said: the Prophet ﷺ reached Makkah and performed the seven rounds of the Ka'bah, then offered a two-rak'ah prayer behind Maqam Ibrahim, then performed the seven rounds between Safa and Marwah.",
+    sources: [bukhari("1645")]
   }
 ];
 
@@ -8167,7 +8223,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   // No one is humble for Allah but Allah raises him up.
   "aqidah-lived-iman-certainty-and-humility": "sign-charity-wealth",
   // Three things he advised Abu Hurairah to keep: three fasts a month, Duha, and witr before sleep.
-  "deep-abu-hurairah-three-things": "sign-three-things-to-keep"
+  "deep-abu-hurairah-three-things": "sign-three-things-to-keep",
+  // Asked three times, Thawban told Ma'dan: make frequent prostrations; each raises a degree and removes a sin.
+  "deep-thawban-many-sajdahs": "sign-many-prostrations",
+  // He told the Ansari to leave his brother be, as haya is a part of faith.
+  "deep-hadith-heart-haya": "sign-haya-is-faith",
+  // Asked for advice again and again, he said each time: do not become angry.
+  "deep-anger-dont-be-angry": "sign-do-not-get-angry",
+  // For seven days Sa'd was one third of the Muslims of that time.
+  "deep-sad-third": "sign-a-third-of-islam",
+  // Sa'd became Muslim early, and for seven days was one third of the Muslims.
+  "sahabi-sad-ibn-abi-waqqas-accepting-islam": "sign-a-third-of-islam",
+  // Anas was ten when he came to Madinah, and served him for ten years.
+  "sahabi-anas-ibn-malik-makkah-years": "sign-ten-years-of-service",
+  // Allahu akbar kabira: the doors of heaven were opened for these words, and Ibn Umar never left them.
+  "deep-prayer-words-of-salah-the-doors-of-heaven-opened": "sign-doors-opened-for-it",
+  // Seven rounds of the Ka'bah, two rak'ahs behind Maqam Ibrahim, then seven rounds between Safa and Marwah.
+  "hajj-rites-tawaf": "sign-seven-rounds"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
