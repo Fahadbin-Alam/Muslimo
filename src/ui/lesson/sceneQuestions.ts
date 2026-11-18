@@ -5384,6 +5384,62 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What will wrongdoing become, in the hadith?", "Darkness on that Day", "for wrongdoing is darkness", "on the Day of Resurrection"],
     ["What else does the hadith warn against?", "Stinginess", "and beware of stinginess,"],
     ["What destroyed those before us?", "Stinginess", "and beware of stinginess,", "for stinginess destroyed those before you"]
+  ],
+  // Abu Qatadah said: he said: when one of you enters the masjid, let him pray two rak'ahs before he sits (Sahih
+  // al-Bukhari 444, 1167).
+  "sign-greet-the-masjid": [
+    ["You walk into a masjid. What first?", "Pray two rak'ahs", "When one of you enters the masjid,", "let him pray two rak'ahs"],
+    ["When are they prayed?", "Before sitting down", "before sitting"],
+    ["The masjid has its own greeting prayer.", "True", "let him pray two rak'ahs"],
+    ["What do we do before sitting in a masjid?", "Pray two rak'ahs", "let him pray two rak'ahs"],
+    ["How many rak'ahs are prayed?", "Two", "let him pray two rak'ahs"],
+    ["You should sit first, then pray later.", "False", "let him pray two rak'ahs", "before sitting"]
+  ],
+  // Anas said: he said: O Allah, put in Madinah twice the blessing You put in Makkah (Sahih al-Bukhari 1885). (Which
+  // city he named keeps its pictures.)
+  "sign-twice-the-blessing": [
+    ["What did he ﷺ ask Allah to give Madinah?", "Twice Makkah's blessing", "twice what You put in Makkah", "of the blessing"],
+    ["He ﷺ made du'a for more blessing in Madinah.", "True", "O Allah, put in Madinah", "of the blessing"]
+  ],
+  // Thumamah ibn Abdullah ibn Anas said: Anas made Hajj on a packsaddle, and he was no miser; and Anas told that he made
+  // Hajj on a packsaddle, and it carried his baggage too (Sahih al-Bukhari 1517). No one is drawn on a camel. (What a
+  // packsaddle is stays as it is, since one is on Anas's camel from the scene's start.)
+  "sign-a-plain-saddle": [
+    ["Anas did his Hajj on a plain saddle as well.", "True", "Thumamah: Anas made Hajj on a packsaddle"],
+    ["How many camels carried him ﷺ and his bags?", "One camel for both", "and it carried his baggage too"]
+  ],
+  // Abu Burdah said: I heard Abu Musa say many times: he said: when a servant falls ill or travels, there is written for
+  // him the like of what he used to do at home and in good health (Sahih al-Bukhari 2996).
+  "sign-ill-or-travelling": [
+    ["What does the sick person get for deeds he used to do?", "The same reward", "there is written for him the like", "of what the servant used to do"],
+    ["Who else keeps that reward?", "The traveller", "When a servant falls ill or travels,", "there is written for him the like"],
+    ["Allah still writes the good habits of someone who becomes ill.", "True", "When a servant falls ill or travels,", "of what the servant used to do"]
+  ],
+  // He said: no Muslim servant prays for his brother behind his back but the angel says: and for you the same (Sahih
+  // Muslim 2732). No angel is drawn.
+  "sign-for-an-absent-brother": [
+    ["When does an angel pray for you, per Muslim 2732?", "When you pray for a brother in secret", "for his brother behind his back", "and for you the same"],
+    ["When is the dua made, per Muslim 2732?", "Behind his back, in his absence", "for his brother behind his back"],
+    ["What do the angels say, per Muslim 2732?", "The same be for you too", "and for you the same"],
+    ["Praying for others brings good to you as well.", "True", "and for you the same"],
+    ["Praying for others brings good back to you.", "True", "and for you the same"]
+  ],
+  // Harithah ibn Wahb said: I heard him say: give charity, for a time will come to you when a man walks with his charity
+  // and finds none to accept it; a man will say: had you brought it yesterday, I would have accepted it, but today I
+  // have no need of it (Sahih al-Bukhari 1411, 1424).
+  "sign-none-to-accept-it": [
+    ["What did the Prophet ﷺ say to do because of this?", "Give charity now", "Give charity, for a time will come to you"],
+    ["Why give charity now, says Bukhari 1411?", "A time will come when no one takes it", "when a man walks with his charity", "and finds none to accept it."],
+    ["There will always be someone to give to, so we can wait.", "False", "when a man walks with his charity", "and finds none to accept it."],
+    ["What will happen to charity near the Hour?", "No one will need it", "when a man walks with his charity", "and finds none to accept it."],
+    ["What will the man offered charity say?", "I would have taken it yesterday", "A man will say: had you brought it", "yesterday, I would have accepted it,"],
+    ["The poor man will say: if you had brought it yesterday...", "True", "A man will say: had you brought it", "yesterday, I would have accepted it,"]
+  ],
+  // Umm Kulthum bint Uqbah said that she heard him say: the liar is not the one who makes peace between people, passing
+  // on good or saying good (Sahih al-Bukhari 2692). (Which secret talk is good, and how much of it has good in it, are
+  // from An-Nisa 4:114, which is not in the scene, so those stay as they are.)
+  "sign-makes-peace": [
+    ["One who makes peace by saying good things is...", "Not a liar", "The liar is not the one who makes peace", "or saying good"]
   ]
 };
 

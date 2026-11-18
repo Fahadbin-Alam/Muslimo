@@ -1454,6 +1454,13 @@ const STATES: State[] = [
   { id: "scene-sawdah-gave-her-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-sawdah-loved" ask="When did Sawdah give" /> },
   { id: "scene-pleased-with-another", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-dislike-one-trait" ask="If a husband dislikes" /> },
   { id: "scene-beware-of-wrongdoing", render: () => <SceneQuestionDemo lessonId="lesson-deep-taha3-beware-of-wrongdoing" ask="What will wrongdoing become" /> },
+  { id: "scene-greet-the-masjid", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-qatadah-greet-the-masjid" ask="How many rak'ahs" /> },
+  { id: "scene-twice-the-blessing", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-madinah-twice-the-blessing" ask="ask Allah to give Madinah" /> },
+  { id: "scene-a-plain-saddle", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-as-he-taught-it-a-plain-saddle" ask="How many camels" /> },
+  { id: "scene-ill-or-travelling", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-easy-same-reward" ask="Who else keeps" /> },
+  { id: "scene-for-an-absent-brother", render: () => <SceneQuestionDemo lessonId="lesson-deep-hujurat1-dua-for-an-absent-brother" ask="When is the dua made" /> },
+  { id: "scene-none-to-accept-it", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-anyone-no-one-will-take-it" ask="What will the man offered" /> },
+  { id: "scene-makes-peace", render: () => <SceneQuestionDemo lessonId="lesson-deep-nisa3-secret-talk" ask="One who makes peace" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
