@@ -26711,7 +26711,7 @@ describe("the signs in creation, alive", () => {
     expect([
       [0.03, 0.08].map((t) => many("i-swore-to-serve", ["Anas's place, coming along the road to the halt", "Jarir's place: coming to the halt, then serving"], "x", t)),
       [at("i-swore-to-serve", "Jarir's place: coming to the halt, then serving", "x", [0.145, 0.165, 0.17, 0.2]), at("i-swore-to-serve", "a jug of water, brought to Anas's place", "x", [0.17, 0.2])],
-      [at("i-swore-to-serve", "Anas's voice: don't do that", "opacity", [0.266, 0.274, 0.326, 0.334]), at("i-swore-to-serve", "Jarir's voice: I have seen the Ansar", "opacity", [0.388, 0.396, 0.57, 0.578])],
+      [at("i-swore-to-serve", "Anas's voice: don't do that", "opacity", [0.266, 0.274, 0.386, 0.392]), at("i-swore-to-serve", "Jarir's voice: I have seen the Ansar", "opacity", [0.388, 0.396, 0.57, 0.578])],
       [[0.39, 0.4, 0.41, 0.42].map((t) => all("i-swore-to-serve", ["far off in Madinah: a soft light", "far off in Madinah: the places of the Ansar about his place"], t)), at("i-swore-to-serve", "far off in Madinah: a dish going to his place", "opacity", [0.51, 0.52]), at("i-swore-to-serve", "far off in Madinah: a dish going to his place", "x", [0.52, 0.56])],
       at("i-swore-to-serve", "Jarir's oath: a soft golden ring about Jarir's place", "opacity", [0.64, 0.66]),
       [at("i-swore-to-serve", "Jarir's place: coming to the halt, then serving", "x", [0.755, 0.775, 0.78, 0.81]), at("i-swore-to-serve", "a dish of dates, brought to Anas's place", "x", [0.78, 0.81]), at("i-swore-to-serve", "Anas, one of the Ansar: a glint over Anas's place", "opacity", [0.81, 0.82])],
@@ -26933,8 +26933,8 @@ describe("the signs in creation, alive", () => {
     // places of those with him behind it, and two palms; far off is the sea, with the land of an-Najashi beyond it. A
     // spark of his prayer rises; their voices greet him, and his voice answers. A boat comes back across the sea, and the
     // places of two who returned from an-Najashi come along the long way to the place of prayer. Their voices greet him
-    // again; a soft golden ring comes about his place, occupied in the prayer, and another spark rises; and after the
-    // prayer his voice speaks.
+    // again, and another spark of his prayer rises; after the prayer his voice speaks, and a soft golden ring comes about
+    // his place: in the prayer one is occupied.
     expect(words("in-the-prayer-one-is-busy")).toEqual([
       "Ibn Mas'ud: we used to greet him",
       "while he was praying, and he answered us.",
@@ -26944,10 +26944,10 @@ describe("the signs in creation, alive", () => {
     ]);
     expect([
       [at("in-the-prayer-one-is-busy", "his prayer: a spark rising", "y", [0.035, 0.06]), at("in-the-prayer-one-is-busy", "their voices: greeting him", "opacity", [0.07, 0.08, 0.15, 0.16])],
-      at("in-the-prayer-one-is-busy", "his voice: answering their greeting", "opacity", [0.23, 0.24, 0.34, 0.35]),
+      at("in-the-prayer-one-is-busy", "his voice: answering their greeting", "opacity", [0.23, 0.24, 0.412, 0.42]),
       [at("in-the-prayer-one-is-busy", "a boat, coming back across the sea", "x", [0.415, 0.46]), [0.46, 0.47].map((t) => all("in-the-prayer-one-is-busy", ["the place of one who returned from an-Najashi 1", "the place of one who returned from an-Najashi 2"], t)), [0.47, 0.5, 0.54, 0.546].map((t) => many("in-the-prayer-one-is-busy", ["the place of one who returned from an-Najashi 1", "the place of one who returned from an-Najashi 2"], "x", t))],
-      [at("in-the-prayer-one-is-busy", "their voices: greeting him again", "opacity", [0.612, 0.62, 0.72, 0.73]), at("in-the-prayer-one-is-busy", "occupied in the prayer: a soft golden ring about his place", "opacity", [0.64, 0.66]), at("in-the-prayer-one-is-busy", "his prayer: another spark rising", "y", [0.665, 0.69])],
-      at("in-the-prayer-one-is-busy", "his voice: after the prayer", "opacity", [0.81, 0.82])
+      [at("in-the-prayer-one-is-busy", "their voices: greeting him again", "opacity", [0.612, 0.62, 0.72, 0.73]), at("in-the-prayer-one-is-busy", "his prayer: another spark rising", "y", [0.665, 0.69])],
+      [at("in-the-prayer-one-is-busy", "his voice: after the prayer", "opacity", [0.81, 0.82]), at("in-the-prayer-one-is-busy", "occupied in the prayer: a soft golden ring about his place", "opacity", [0.83, 0.85])]
     ]).toEqual([
       [
         [-1, -10],
@@ -26969,10 +26969,12 @@ describe("the signs in creation, alive", () => {
       ],
       [
         [0, 1, 1, 0],
-        [0, 1],
         [-1, -10]
       ],
-      [0, 1]
+      [
+        [0, 1],
+        [0, 1]
+      ]
     ]);
   });
 

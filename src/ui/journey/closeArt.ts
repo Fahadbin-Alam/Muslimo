@@ -428,7 +428,7 @@ function iSworeToServe(): SignArt {
           ]
         })
       },
-      { name: "Anas's voice: don't do that", svg: arcs(n(anas[0] + 3), n(anas[1] - 2.4), ITS_VOICE), keys: showFor(0.266, 0.274, 0.326, 0.334), loop: speaking },
+      { name: "Anas's voice: don't do that", svg: arcs(n(anas[0] + 3), n(anas[1] - 2.4), ITS_VOICE), keys: showFor(0.266, 0.274, 0.386, 0.392), loop: speaking },
       { name: "Jarir's voice: I have seen the Ansar", svg: arcsLeft(n(beside[0] - 4.6), n(beside[1] - 3), FOLK), keys: showFor(0.388, 0.396, 0.57, 0.578), loop: speaking },
       { name: "far off in Madinah: a soft light", svg: wash(far[0], far[1], 12, 4, WARM, 0.18), keys: showAt(0.39, 0.41), loop: soft },
       {
@@ -905,7 +905,7 @@ function inThePrayerOneIsBusy(): SignArt {
       { name: "the places of those with him", svg: places(behind, 1.6) },
       { name: "his prayer: a spark rising", svg: sparkle(his[0], n(his[1] - 5.2), 1.5, "#FFE7A0"), keys: sparkStays(0.03, 0.06), loop: twinkle(900) },
       { name: "their voices: greeting him", svg: arcs(n(behind[2][0] + 2.6), n(behind[2][1] - 3), ITS_VOICE), keys: showFor(0.07, 0.08, 0.15, 0.16), loop: speaking },
-      { name: "his voice: answering their greeting", svg: arcsLeft(n(his[0] - 3.4), n(his[1] - 2.6), GOLD), keys: showFor(0.23, 0.24, 0.34, 0.35), loop: speaking },
+      { name: "his voice: answering their greeting", svg: arcsLeft(n(his[0] - 3.4), n(his[1] - 2.6), GOLD), keys: showFor(0.23, 0.24, 0.412, 0.42), loop: speaking },
       {
         name: "a boat, coming back across the sea",
         svg: big(boat(150, 56), 150, 56, 0.16),
@@ -935,9 +935,9 @@ function inThePrayerOneIsBusy(): SignArt {
         })
       ),
       { name: "their voices: greeting him again", svg: arcsLeft(n(back[1][0] - 3), n(back[1][1] - 3), ITS_VOICE), keys: showFor(0.612, 0.62, 0.72, 0.73), loop: speaking },
-      { name: "occupied in the prayer: a soft golden ring about his place", svg: care(his[0], his[1], 5.4, 3.6, SOFT_GOLD), keys: showAt(0.64, 0.66), loop: soft },
       { name: "his prayer: another spark rising", svg: sparkle(n(his[0] + 2.6), n(his[1] - 5.6), 1.4, "#FFE7A0"), keys: sparkStays(0.66, 0.69), loop: twinkle(900) },
-      { name: "his voice: after the prayer", svg: arcs(n(his[0] + 3.6), n(his[1] - 2.6), GOLD), keys: showAt(0.81, 0.82), loop: speaking }
+      { name: "his voice: after the prayer", svg: arcs(n(his[0] + 3.6), n(his[1] - 2.6), GOLD), keys: showAt(0.81, 0.82), loop: speaking },
+      { name: "occupied in the prayer: a soft golden ring about his place", svg: care(his[0], his[1], 5.4, 3.6, SOFT_GOLD), keys: showAt(0.83, 0.85), loop: soft }
     ],
     words: linesOn(FIVE, [
       "Ibn Mas'ud: we used to greet him",

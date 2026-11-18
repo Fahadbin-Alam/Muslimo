@@ -1686,7 +1686,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How are the two phrases, in the hadith?", "Easy to say, heavy on the Scale", "Two expressions, easy for the tongue to say", "But very heavy in the balance"],
     ["Which phrase is one of them?", "SubhanAllah wa bihamdihi", "Subhan Allah al-Azim", "Subhan Allah wa bihamdihi"],
     ["How are the two phrases on the scale?", "Very heavy", "But very heavy in the balance"],
-    ["They are dear to the Most Merciful.", "True", "And very dear to the Most Merciful"]
+    ["They are dear to the Most Merciful.", "True", "And very dear to the Most Merciful"],
+    // The lesson on al-Qari'ah's two heavy words: how the two words are on the tongue is not asked here, since the
+    // scene's first words tell it.
+    ["How are they in the Balance?", "Very heavy", "But very heavy in the balance"],
+    ["Which of these is one of the two phrases?", "Subhan Allah al-Azim", "Subhan Allah al-Azim"]
   ],
   // Cleanliness is half of faith, Alhamdulillah fills the scale, prayer is a light, charity is proof and endurance is a
   // brightness (Sahih Muslim 223).
@@ -1767,7 +1771,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["The same hadith also says to honor whom?", "Your guest", "Should entertain his guest generously"],
     ["What should a believer say, per the hadith?", "What is good, or stay quiet", "Should talk what is good or keep quiet"],
     ["How should a believer treat his guest?", "Generously", "Should entertain his guest generously"],
-    ["Harming a neighbor is fine if he is a stranger.", "False", "Should not harm his neighbor"]
+    ["Harming a neighbor is fine if he is a stranger.", "False", "Should not harm his neighbor"],
+    // The kids' lesson on speaking good or staying quiet.
+    ["What should a believer do if they cannot say good?", "Stay quiet", "Should talk what is good or keep quiet"],
+    ["How should a believer treat a guest?", "Generously", "Should entertain his guest generously"],
+    ["A believer may hurt a neighbour if annoyed.", "False", "Should not harm his neighbor"]
   ],
   // Sufyan asked for something about Islam he need ask no one else; he ﷺ said: Say, I affirm my faith in Allah, and
   // then remain steadfast to it (Sahih Muslim 38). (What 11:112, 41:30 and 46:13 say, and what Abu Bakr said, are not
@@ -3219,7 +3227,10 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should we do instead?", "Make room and spread out", "But make room, and spread out"],
     ["Ayah 11: what should we do when asked to make room?", "Make room", "But make room, and spread out"],
     ["Ayahs 7-13: what are they about?", "Make room", "But make room, and spread out"],
-    ["Ibn Umar disliked taking a seat someone left for him.", "True", "Ibn Umar disliked sitting where one rose"]
+    ["Ibn Umar disliked taking a seat someone left for him.", "True", "Ibn Umar disliked sitting where one rose"],
+    // The lesson on not taking someone's seat: what not to do when you come late, and moving someone to sit in his
+    // place, are not asked here, since the scene's first words tell them.
+    ["What should people in a gathering do for someone new?", "Make room for him", "But make room, and spread out"]
   ],
   // Beware of sitting on the roads. They said: we cannot do without it. If you must, give the road its right: lowering
   // the gaze, holding back harm, returning the salam, and enjoining good and forbidding wrong (Sahih al-Bukhari 2465).
@@ -3340,7 +3351,14 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Which surah did the Prophet ﷺ call the greatest in the Quran?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds"],
     ["What was the Prophet ﷺ given with the Quran, in Al-Hijr?", "Seven oft-repeated ayahs", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
     ["Ayahs 80-99: what are they about?", "Seven oft-repeated", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
-    ["What are the 'seven oft-repeated' verses?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"]
+    ["What are the 'seven oft-repeated' verses?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
+    // The lessons on the seven oft-repeated (al-Hijr 87) and on the call that gives life (al-Anfal 24).
+    ["What was the Prophet ﷺ given, in 15:87?", "Seven of the Mathani", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
+    ["Which surah is the seven Mathani, in the hadith?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds", "The seven oft-repeated, and the great Quran"],
+    ["What did the Prophet ﷺ call Al-Fatihah in the hadith of Ibn al-Mu'alla?", "The greatest surah", "I will teach you the greatest surah"],
+    ["What does 8:24 tell believers to do?", "Answer Allah and the Messenger ﷺ", "Answer Allah and the Messenger when he calls"],
+    ["What did the Prophet ﷺ then teach Abu Sa'id, in Bukhari 4647?", "The greatest surah", "I will teach you the greatest surah"],
+    ["Which surah did he name the greatest?", "Al-Fatihah", "All praise is for Allah, Lord of the worlds"]
   ],
   // Umar came to the Black Stone and kissed it, and said: I know that you are a stone; you neither harm nor benefit.
   // Had I not seen the Prophet ﷺ kiss you, I would not have kissed you (Sahih al-Bukhari 1597).
@@ -4784,7 +4802,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-a-dua-for-anas": [
     ["Anas's mother, ____, brought him to serve the Prophet ﷺ.", "Umm Sulaym", "Umm Sulaym said: Anas is your servant"],
     ["Anas's mother, Umm Sulaym, brought him to serve the Prophet ﷺ.", "True", "Umm Sulaym said: Anas is your servant"],
-    ["The Prophet ﷺ prayed for Anas to have wealth and many ____.", "children", "and his children"]
+    ["The Prophet ﷺ prayed for Anas to have wealth and many ____.", "children", "and his children"],
+    // The lesson on his du'a for Anas: who asked him for it is not asked here, since the scene's first words tell it.
+    ["What did he ask Allah to increase for Anas?", "His wealth and children", "He said: O Allah, increase his wealth", "and his children"],
+    ["He also asked Allah to bless what He gave Anas.", "True", "and bless him in what You give him"]
   ],
   // Hudhayfah said: al-Aqib and as-Sayyid, the two of Najran, came and said: send with us a trustworthy man, and send
   // none with us but one trustworthy. He said: I will send with you one truly trustworthy. He said: stand up, Abu
@@ -5164,7 +5185,11 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-zayd-was-truthful": [
     ["Who heard the hypocrite and reported him?", "Zaid bin Arqam", "Zayd: I heard Abdullah ibn Ubayy say", "I told my uncle or Umar, who told him"],
     ["How did Zaid feel when he was not believed?", "Very sad", "He believed Ibn Ubayy, not me; I grieved"],
-    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Allah revealed a surah; he read it to me", "and said: Allah has confirmed you, O Zayd"]
+    ["Allah revealed Al-Munafiqun and confirmed Zaid.", "True", "Allah revealed a surah; he read it to me", "and said: Allah has confirmed you, O Zayd"],
+    // The lesson on Allah confirming Zaid (al-Munafiqun).
+    ["What did Ibn Ubay do when asked?", "Swore he did not say it", "Ibn Ubayy and his folk swore they had not"],
+    ["What did the Prophet ﷺ tell Zaid?", "Allah confirmed your words", "and said: Allah has confirmed you, O Zayd"],
+    ["Ayah 63:7 came down about Ibn Ubay's words.", "True", "Allah revealed a surah; he read it to me"]
   ],
   // Anas ibn Malik said: three came to the homes of his wives, asking about his worship, and when they were told, they
   // thought it little: one said he would pray all night, always; another that he would fast and never break it; another
@@ -5312,7 +5337,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Whose verses did the Prophet ﷺ recite at the Trench?", "Ibn Rawahah's", "I heard him chant Ibn Rawahah's words:"],
     ["What did the verses say?", "Without You we would not be guided", "O Allah, without You we'd not be guided"],
     ["The Prophet ﷺ carried earth with the companions.", "True", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"],
-    ["Ayahs 9-20: what are they about?", "The Battle of the Trench", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"]
+    ["Ayahs 9-20: what are they about?", "The Battle of the Trench", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"],
+    // The lesson on al-Bara and the Trench.
+    ["What was the Prophet ﷺ carrying?", "Earth from the trench", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"],
+    ["What did he ask Allah for?", "Calm and firm feet", "So send calm on us; make our feet firm"],
+    ["The Prophet ﷺ worked alongside his companions.", "True", "Al-Bara: on the day of the Confederates", "he dug the trench; I saw him carry earth"]
   ],
   // Jarir ibn Abdullah said: he said: whoever is not merciful to others will not be shown mercy (Sahih al-Bukhari 6013).
   // The thirsty sheep given water shows mercy is for all, not only for one's own family.
@@ -5365,7 +5394,10 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-sawdah-gave-her-day": [
     ["Sawdah and Aishah were enemies.", "False", "Aishah: I never saw a woman I'd love", "to be like more than Sawdah bint Zam'ah"],
     ["What did Aishah wish about Sawdah?", "To be just like her", "to be like more than Sawdah bint Zam'ah"],
-    ["When did Sawdah give her day to Aishah?", "When she grew old", "When Sawdah grew old,"]
+    ["When did Sawdah give her day to Aishah?", "When she grew old", "When Sawdah grew old,"],
+    // The lesson on Sawdah's gift: how he chose which wife went on a journey, and why Sawdah gave her day, are not asked
+    // here, since the scene does not show them.
+    ["What did Sawdah give to Aishah?", "Her day and night", "she gave her day to Aishah"]
   ],
   // Abu Hurairah said: he said: a believing man should not hate a believing woman; if he dislikes one of her traits, he
   // will be pleased with another (Sahih Muslim 1468b). (Who narrated it, and the dua for a family that brings comfort,
@@ -6020,6 +6052,61 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-as-long-as-you-were-waiting": [
     ["What is waiting for the prayer counted as?", "Being in prayer", "but you were in the prayer", "as long as you were waiting for it."],
     ["Sitting in the masjid waiting for salah earns reward.", "True", "but you were in the prayer", "as long as you were waiting for it."]
+  ],
+  // Ibn Abbas said: once I passed the night in the house of my aunt Maymunah; the Prophet ﷺ stood for the night prayer,
+  // and I joined him and stood on his left side, but he drew me to his right by holding me by the head (Sahih al-Bukhari
+  // 699). Its lesson's question on whether Ibn Abbas was a boy is not asked here, since the scene does not show it.
+  "sign-drew-me-to-his-right": [
+    ["Where should one follower stand?", "On the imam's right", "and drew me to his right."],
+    ["Whose house was this in?", "Maimunah's", "in the house of my aunt Maymunah."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: if the people knew the reward of the adhan and the first row, and
+  // found no other way to get it but by drawing lots, they would draw lots; they would race to the Zuhr prayer, and come
+  // to Isha and Fajr even if they had to crawl (Sahih al-Bukhari 615).
+  "sign-they-would-draw-lots": [
+    ["Which row has a great reward?", "The first row", "of the adhan and of the first row,"],
+    ["What would people do to win the adhan?", "Draw lots", "but by drawing lots, they would draw lots;"],
+    ["For Isha and Fajr together, people would come even crawling.", "True", "if they knew the reward of Isha and Fajr", "they would come even if they had to crawl."]
+  ],
+  // Anas ibn Malik said: Jarir ibn Abdullah served me on a journey; I said to him: don't do that; he said: I have seen
+  // the Ansar doing this with the Messenger of Allah ﷺ, and I swore by Allah to serve any one of the Ansar I accompany;
+  // and Jarir was older than Anas (Sahih Muslim 2513).
+  "sign-i-swore-to-serve": [
+    ["What did Anas first tell Jarir?", "Do not do that", "I said to Jarir: Don't do that."],
+    ["Why did Jarir serve Anas on the journey?", "He saw how the Ansar honored him ﷺ", "Jarir said: I have seen the Ansar", "doing this with him,"],
+    ["Jarir swore to serve any of the Ansar he traveled with.", "True", "and I swore by Allah to serve", "any one of the Ansar I accompany."]
+  ],
+  // Amr ibn Taghlib said: the Prophet ﷺ gave some property to some people and withheld it from others, and said: the one
+  // I leave is dearer to me than the one I give; I leave some to the content and goodness Allah has put in their hearts,
+  // and Amr ibn Taghlib is one of them; and Amr said: that word of the Messenger of Allah ﷺ is dearer to me than nice
+  // red camels (Sahih al-Bukhari 7535).
+  "sign-dearer-than-red-camels": [
+    ["Why did he ﷺ leave some people out when he gave?", "Their hearts were content", "I leave some for what Allah has bestowed:", "content and goodness; Amr is one of them."],
+    ["Amr said his ﷺ words were dearer to him than what?", "Red camels", "Amr: his word is dearer than red camels."],
+    ["The one he ﷺ left out was dearer to him than the one he gave.", "True", "the one I leave is dearer to me."]
+  ],
+  // Jabir ibn Samurah said: I prayed the first prayer with the Messenger of Allah ﷺ; on his way to his family some
+  // children met him, and he patted the cheeks of each one of them, and mine too, and I felt a coolness or a fragrance
+  // of his hand, as if it had been brought out from the scent bag of a perfumer (Sahih Muslim 2329).
+  "sign-the-scent-bag-of-a-perfumer": [
+    ["What did he ﷺ do when the children met him?", "Patted each one's cheek", "he began to pat the cheeks of each one."],
+    ["What was his ﷺ hand like, Jabir said?", "As if from a perfume bag", "or a fragrance, as if it had been brought", "out from the scent bag of a perfumer."],
+    ["He ﷺ left some of the children out.", "False", "he began to pat the cheeks of each one."]
+  ],
+  // Abu Hurairah said: people say that I have narrated many hadith; but for two verses of the Quran I would not have
+  // narrated a single one; the emigrants were busy in the market and the Ansar with their property, but I stuck to the
+  // Messenger of Allah ﷺ, content with what filled my stomach, and memorized what they did not (Sahih al-Bukhari 118).
+  // Its lesson's question on what those ayahs warn against is not asked here, since the scene does not tell the ayahs.
+  "sign-why-so-many-hadith": [
+    ["Why do we have so many hadith from Abu Hurairah?", "He stayed close to the Prophet ﷺ", "but I stuck to him, content with"],
+    ["What kept the Ansar busy?", "Their farms", "the Ansar were busy with their property;"]
+  ],
+  // Abdullah ibn Mas'ud said: we used to greet the Prophet ﷺ while he was praying, and he answered us; when we returned
+  // from an-Najashi, we greeted him, but he did not answer us, and he said: in the prayer one is occupied (Sahih
+  // al-Bukhari 1199). Its lesson's question on who an-Najashi was is not asked here, since the scene does not tell it.
+  "sign-in-the-prayer-one-is-busy": [
+    ["Why did he ﷺ not answer their salam in the prayer?", "The prayer keeps one busy", "He said: in the prayer one is occupied."],
+    ["In the early days, he ﷺ would answer a salam during the prayer.", "True", "while he was praying, and he answered us."]
   ]
 };
 
