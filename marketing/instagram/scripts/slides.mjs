@@ -72,6 +72,24 @@ const slides = [
    <p style="margin-top:60px;font-size:36px;opacity:.95">📱 iPhone coming soon</p></div></body>`],
  ...quiz("07-quiz-bilal","Who freed Bilal?",["Umar","Abu Bakr","Uthman"],1,
    "Sahih al-Bukhari 3754 · narrated by Jabir ibn Abdullah","Umar used to say: “Abu Bakr is our master, and he freed our master,” meaning Bilal.","Sahabah quiz"),
+ // Update post, Nov 2026: what the API credit built (pairs with LinkedIn post 2; no AI names, no error counts).
+ ["09-update-1", `<body class="sun"><div class="pad" style="align-items:center;text-align:center">
+   <span class="tag" style="align-self:center">✨ What's new</span>
+   <h1 style="margin-top:40px;font-size:96px">$250 of API credit.<br>Here's what it built.</h1><p style="margin-top:28px">A tiny team, a lot of care 💚</p></div>
+   <img src="${u("store/graphics/source/cover/camel.png")}" style="position:absolute;width:600px;left:240px;top:620px">
+   <div style="position:absolute;left:-200px;right:-200px;bottom:-560px;height:760px;border-radius:50%;background:#F7D58A"></div>${foot("Swipe →")}</body>`],
+ ["09-update-2", `<body class="green"><div class="pad"><h2>Every language, checked</h2>
+   <div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">✅</span><p style="font:44px/1.25 NunB">Every lesson read through in Bangla</p></div><div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">✅</span><p style="font:44px/1.25 NunB">…in Urdu</p></div><div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">✅</span><p style="font:44px/1.25 NunB">…and in Arabic</p></div><div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">🎬</span><p style="font:44px/1.25 NunB">Every story scene and its questions reviewed in all 4 languages</p></div><div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">🛍️</span><p style="font:44px/1.25 NunB">Our Google Play page now in Bangla, Urdu and Arabic too</p></div></div>${foot()}</body>`],
+ ["09-update-3", `<body class="green"><div class="pad"><h2>Wrong answer? Learn why</h2><p style="margin-top:20px">A short “why” for 4,400+ questions</p></div>${shot("04-feedback",380,600)}</body>`],
+ ["09-update-4", `<body class="cream"><div class="pad"><span class="tag" style="background:#FF9F45;border-color:#FF9F45;color:#fff">Sources first</span>
+   <h2 style="margin-top:50px;color:#3B2A1A">Checked against the real sources</h2>
+   <div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">🔎</span><p style="font:44px/1.25 NunB">540 lesson sources linked to the exact line of the ayah or hadith</p></div><div style="display:flex;gap:26px;align-items:flex-start;margin-top:34px"><span style="font-size:58px;line-height:1">📖</span><p style="font:44px/1.25 NunB">968 Quran and hadith translation lines double-checked against trusted sources</p></div>
+   <p style="margin-top:60px;font:40px/1.3 NunB;color:#8a6a45">The tools help us move fast. The sources stay the same: the Quran, Bukhari, Muslim and trusted tafsir.</p></div>${foot()}</body>`],
+ ["09-update-5", `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center">
+   <img src="${u("store/graphics/google-play/icon-512.png")}" style="width:260px;border-radius:60px;border:8px solid #fff;box-shadow:0 20px 50px rgba(0,0,0,.25)">
+   <h2 style="margin-top:50px">Coming next</h2>
+   <p style="margin-top:30px">🌏 Indonesian, after a native check<br>🍎 iPhone, in sha Allah</p>
+   <p style="margin-top:60px;font:48px Baloo">📲 Free on Android now</p><p style="margin-top:14px;font-size:36px">Search “Muslimo” on Google Play</p></div></body>`],
  ["04-hadith-smile", `<body class="green"><div class="pad"><span class="tag">Daily hadith</span>
    <h2 style="margin-top:60px">Even a smile counts</h2>
    <div class="quote">“Don't consider anything insignificant out of good things even if it is that you meet your brother with a cheerful countenance.”</div>
