@@ -734,7 +734,13 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-ten-to-seven-hundred": [/seven hundred|700/i, /\bten\b|10/i],
   "sign-look-below": [/\bless\b/i, /above|\bmore\b/i],
   "sign-half-of-paradise": [/half/i, /Paradise/i],
-  "sign-before-the-row": [/ruku|bow/i, /join|row|late/i]
+  "sign-before-the-row": [/ruku|bow/i, /join|row|late/i],
+  "sign-a-bows-length": [/\bbow\b/i, /Jannah|Paradise/i],
+  "sign-better-and-softer": [/silk/i, /Sa'd/i],
+  "sign-better-to-wait": [/in front of/i, /wait/i],
+  "sign-give-respite": [/debtor/i, /time|respite/i],
+  "sign-seven-pebbles": [/seven/i, /pebbles?/i],
+  "sign-the-pillar-he-chose": [/pillar/i, /Salamah/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1409,7 +1415,13 @@ const SOURCES: Record<string, string[]> = {
   "sign-ten-to-seven-hundred": ["Sahih al-Bukhari 41"],
   "sign-look-below": ["Sahih Muslim 2963c"],
   "sign-half-of-paradise": ["Sahih al-Bukhari 6528"],
-  "sign-before-the-row": ["Sahih al-Bukhari 783"]
+  "sign-before-the-row": ["Sahih al-Bukhari 783"],
+  "sign-a-bows-length": ["Sahih al-Bukhari 3253"],
+  "sign-better-and-softer": ["Sahih al-Bukhari 3802"],
+  "sign-better-to-wait": ["Sahih al-Bukhari 510"],
+  "sign-give-respite": ["Sahih Muslim 1563a"],
+  "sign-seven-pebbles": ["Sahih al-Bukhari 1751"],
+  "sign-the-pillar-he-chose": ["Sahih al-Bukhari 502"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1433,7 +1445,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1789);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1795);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -29882,6 +29894,374 @@ describe("the signs in creation, alive", () => {
       [
         [1, 0],
         [1, 0]
+      ]
+    ]);
+  });
+
+  test("the scenes from a bow's length to the pillar he chose show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const betterScenes: SignKind[] = ["a-bows-length", "better-and-softer", "better-to-wait", "give-respite", "seven-pebbles", "the-pillar-he-chose"];
+    for (const kind of betterScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, and nothing comes down from the sky: a du'a is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const all = (kind: SignKind, list: string[], t: number) => list.map((name) => Math.round(shown(kind, name, t) * 1000) / 1000 + 0);
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    const many = (kind: SignKind, list: string[], key: "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", t: number) => list.map((name) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // A bow's length: a wide land in the dim light before sunrise, with hills, a river, a town far off and palms. His
+    // place, a golden ring, is on the land, and Abu Hurairah's place by it. Abu Hurairah's voice tells of it, and his
+    // voice speaks. Paradise shows far off, a soft circle of light with a garden in it, and a small patch of light in its
+    // garden: a place in it; a short curved line under the patch, as long as it: equal to a bow of one of you. Glints come
+    // about the patch: better, and a soft light passes over the whole land: the whole earth. The sun rises over the land,
+    // crosses the sky by day and sets; the land dims again, and a soft golden ring comes about the small place: better
+    // than all of it.
+    expect(words("a-bows-length")).toEqual([
+      "Abu Hurairah: he said:",
+      "A place in Paradise equal to",
+      "An arrow bow of one of you",
+      "Is better than the whole earth",
+      "On which the sun rises and sets."
+    ]);
+    expect([
+      [at("a-bows-length", "Abu Hurairah's voice: telling of it", "opacity", [0.022, 0.03, 0.074, 0.08]), at("a-bows-length", "his voice: a place in Paradise", "opacity", [0.086, 0.092, 0.6, 0.606])],
+      [at("a-bows-length", "Paradise, far off: a soft circle of light with a garden in it", "opacity", [0.19, 0.205]), at("a-bows-length", "a place in Paradise: a small patch of light in its garden", "opacity", [0.25, 0.262])],
+      [at("a-bows-length", "equal to an arrow bow of one of you: a short curved line under it, as long as it", "opacity", [0.36, 0.372])],
+      [at("a-bows-length", "better: glints about the small place", "opacity", [0.52, 0.53]), at("a-bows-length", "the whole earth: a soft light passing over all of the land", "opacity", [0.556, 0.57, 0.6, 0.614])],
+      [at("a-bows-length", "the dim light before sunrise, over the land", "opacity", [0.69, 0.74]), at("a-bows-length", "the sky by day", "opacity", [0.69, 0.74]), at("a-bows-length", "the sun: rising, crossing the sky and setting", "x", [0.68, 0.82, 0.955]), at("a-bows-length", "the sun: rising, crossing the sky and setting", "y", [0.68, 0.82, 0.955])],
+      [at("a-bows-length", "the sky at sunset", "opacity", [0.9, 0.95]), at("a-bows-length", "the dim light before sunrise, over the land", "opacity", [0.9, 0.95]), at("a-bows-length", "better than all of it: a soft golden ring about the small place", "opacity", [0.94, 0.955])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [1, 0],
+        [0, 1],
+        [0, 38, 86],
+        [0, -50, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Better and softer: the masjid of Madinah, a palm and the open ground before it. His place, a golden ring, is there,
+    // their places about it, and Al-Bara's place a little apart. Al-Bara's voice tells of it; a place comes in with a
+    // silken cloth, rosy and shining, and lays it before his place: a present to him, then steps aside. Two places come
+    // close to the cloth, and soft ripples show on it: touching it, and glints come about it, with their voice: admiring
+    // its softness. His voice speaks. Paradise shows far off, a soft circle of light with a garden in it, and two soft
+    // white cloths in its garden: the handkerchiefs of Sa'd ibn Mu'adh, and a soft golden ring and glints come about them:
+    // better and softer.
+    expect(words("better-and-softer")).toEqual([
+      "Al-Bara: a silken cloth was given",
+      "As a present to him.",
+      "His companions started touching it",
+      "And admiring its softness.",
+      "He said: are you admiring its softness?",
+      "The handkerchiefs of Sa'd ibn Mu'adh",
+      "Are better and softer than it."
+    ]);
+    expect([
+      [at("better-and-softer", "Al-Bara's voice: telling of it", "opacity", [0.022, 0.03, 0.1, 0.106]), at("better-and-softer", "a place bringing the silken cloth, then stepping aside", "opacity", [0.03, 0.042]), at("better-and-softer", "the silken cloth: rosy and shining, a present to him", "x", [0.165, 0.215, 0.235]), at("better-and-softer", "a place bringing the silken cloth, then stepping aside", "x", [0.165, 0.215, 0.25])],
+      [many("better-and-softer", ["a place coming close to the cloth 1", "a place coming close to the cloth 2"], "x", 0.306), many("better-and-softer", ["a place coming close to the cloth 1", "a place coming close to the cloth 2"], "x", 0.34), at("better-and-softer", "touching it: soft ripples on the silken cloth", "opacity", [0.344, 0.356])],
+      [at("better-and-softer", "admiring its softness: glints about the silken cloth", "opacity", [0.446, 0.456]), at("better-and-softer", "their voice: admiring it", "opacity", [0.46, 0.466, 0.524, 0.53])],
+      [at("better-and-softer", "his voice: are you admiring its softness", "opacity", [0.585, 0.591, 0.95, 0.956])],
+      [at("better-and-softer", "Paradise, far off: a soft circle of light with a garden in it", "opacity", [0.725, 0.74]), at("better-and-softer", "the handkerchiefs of Sa'd ibn Mu'adh: two soft white cloths in its garden", "opacity", [0.765, 0.777])],
+      [at("better-and-softer", "better and softer: a soft golden ring about them", "opacity", [0.865, 0.877]), at("better-and-softer", "better and softer: glints about them", "opacity", [0.885, 0.895])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [62, 8, 0],
+        [0, -54, -22]
+      ],
+      [
+        [0, 0],
+        [6, -6],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Better to wait: a lane of Madinah between Zayd's home and Abu Juhaim's home, and a mat on the ground before it.
+    // Zayd's voice sends Busr's place along the lane to Abu Juhaim, and Busr's voice asks. A place on the mat shows, with
+    // a small light within it: one praying. Abu Juhaim's voice tells of it, with golden glints: his words. A dashed way
+    // shows across the space in front of the one praying, and a passer's place at its far end. A large grey shadow comes
+    // over the way in front: the magnitude of the sin. The passer's place comes along the way and stops short of the
+    // front, and forty small marks show, a row of ten after another: forty. A spark rises from the one praying, the grey
+    // shadow fades, and a soft golden ring comes about the waiting place: better.
+    expect(words("better-to-wait")).toEqual([
+      "Zayd ibn Khalid sent Busr to Abu Juhaim",
+      "To ask about a person passing in front",
+      "Of another person who was praying.",
+      "Abu Juhaim: he said: if the person",
+      "Who passes in front of another person",
+      "In prayer knew the magnitude of his sin,",
+      "He would prefer to wait for forty",
+      "Rather than to pass in front of him."
+    ]);
+    expect([
+      [at("better-to-wait", "Zayd's voice: sending Busr", "opacity", [0.022, 0.03, 0.058, 0.064]), at("better-to-wait", "Busr's way along the lane", "opacity", [0.066, 0.078]), at("better-to-wait", "Busr's place, going to Abu Juhaim", "x", [0.07, 0.09, 0.142, 0.2])],
+      [at("better-to-wait", "Busr's voice: asking", "opacity", [0.204, 0.21, 0.326, 0.332]), at("better-to-wait", "one praying: a place on the mat", "opacity", [0.268, 0.282]), at("better-to-wait", "at prayer: a small light within that place", "opacity", [0.29, 0.3])],
+      [at("better-to-wait", "Abu Juhaim's voice: telling his words", "opacity", [0.39, 0.396, 0.95, 0.956]), at("better-to-wait", "his words, as Abu Juhaim heard them: golden glints over the voice", "opacity", [0.41, 0.42, 0.95, 0.956])],
+      [at("better-to-wait", "the space in front of the one praying: a dashed way across it", "opacity", [0.51, 0.522]), at("better-to-wait", "a passer's place: coming along the way, and waiting short of the front", "opacity", [0.53, 0.542])],
+      [at("better-to-wait", "the magnitude of the sin: a large grey shadow on the way in front", "opacity", [0.632, 0.65])],
+      [at("better-to-wait", "a passer's place: coming along the way, and waiting short of the front", "x", [0.752, 0.78]), all("better-to-wait", ["forty: a row of ten small marks by the waiting place 1", "forty: a row of ten small marks by the waiting place 2", "forty: a row of ten small marks by the waiting place 3", "forty: a row of ten small marks by the waiting place 4"], 0.785), all("better-to-wait", ["forty: a row of ten small marks by the waiting place 1", "forty: a row of ten small marks by the waiting place 2", "forty: a row of ten small marks by the waiting place 3", "forty: a row of ten small marks by the waiting place 4"], 0.8), all("better-to-wait", ["forty: a row of ten small marks by the waiting place 1", "forty: a row of ten small marks by the waiting place 2", "forty: a row of ten small marks by the waiting place 3", "forty: a row of ten small marks by the waiting place 4"], 0.82)],
+      [at("better-to-wait", "the prayer: a spark rising from the one praying", "y", [0.876, 0.91]), at("better-to-wait", "the magnitude of the sin: a large grey shadow on the way in front", "opacity", [0.92, 0.94]), at("better-to-wait", "better: a soft golden ring about the waiting place", "opacity", [0.944, 0.956])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [0, 12, 12, 78]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, -40],
+        [0, 0, 0, 0],
+        [1, 1, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, -11],
+        [1, 0],
+        [0, 1]
+      ]
+    ]);
+    // Give respite: a lane of Madinah between Abu Qatadah's home and the debtor's home, and a dinar over the lane between
+    // them: the debt. Abu Qatadah's place goes to the debtor's door, and Abu Qatadah's voice asks for it; the debtor's
+    // place goes in at its door and is gone, and Abu Qatadah's place goes back. The sun goes on: later on. Abu Qatadah's
+    // place comes again, and the debtor's place comes out; the debtor's voice speaks, and an empty bag shows by it: hard
+    // up. Abu Qatadah's voice tells of it, with golden glints: his words. A soft pale ring comes about the debtor's place,
+    // and Abu Qatadah's place steps back: respite. The dinar fades away, with glints where it was: remitted, and a soft
+    // golden ring comes about Abu Qatadah's place.
+    expect(words("give-respite")).toEqual([
+      "Abu Qatadah demanded from his debtor,",
+      "Who disappeared. Later on, Abu Qatadah",
+      "Found the debtor, who said: I am hard up.",
+      "Abu Qatadah: I heard him saying:",
+      "He who loves that Allah saves him from",
+      "The torments of the Day of Resurrection",
+      "Should give respite to the insolvent",
+      "Or remit."
+    ]);
+    expect([
+      [at("give-respite", "Abu Qatadah's place: going to the debtor, back, again, and stepping back", "x", [0.022, 0.058]), at("give-respite", "Abu Qatadah's voice: asking for the debt", "opacity", [0.062, 0.068, 0.084, 0.09]), at("give-respite", "the debt: a dinar over the lane, between them", "opacity", [0.07, 0.08])],
+      [at("give-respite", "the debtor's place: going in at its door, and coming out again", "opacity", [0.145, 0.17, 0.3, 0.31]), at("give-respite", "the debtor's place: going in at its door, and coming out again", "x", [0.145, 0.168, 0.29, 0.308]), at("give-respite", "Abu Qatadah's place: going to the debtor, back, again, and stepping back", "x", [0.175, 0.205, 0.266, 0.298]), at("give-respite", "the sun, going on: later on", "x", [0.15, 0.21])],
+      [at("give-respite", "the debtor's voice: I am hard up", "opacity", [0.312, 0.318, 0.39, 0.396]), at("give-respite", "hard up: an empty bag by the debtor's place", "opacity", [0.32, 0.33])],
+      [at("give-respite", "Abu Qatadah's voice: I heard him saying", "opacity", [0.39, 0.396, 0.756, 0.762]), at("give-respite", "his words, as Abu Qatadah heard them: golden glints over the voice", "opacity", [0.41, 0.42, 0.756, 0.762])],
+      [at("give-respite", "respite for the one hard up: a soft pale ring about the debtor's place", "opacity", [0.756, 0.768]), at("give-respite", "Abu Qatadah's place: going to the debtor, back, again, and stepping back", "x", [0.775, 0.81])],
+      [at("give-respite", "the debt: a dinar over the lane, between them", "opacity", [0.878, 0.9]), at("give-respite", "remitted: glints where the debt was", "opacity", [0.9, 0.91]), at("give-respite", "relief: a soft golden ring about Abu Qatadah's place", "opacity", [0.92, 0.932])]
+    ]).toEqual([
+      [
+        [0, 68],
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [1, 0, 0, 1],
+        [0, 14, 14, 0],
+        [68, 0, 0, 68],
+        [0, 40]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [68, 58]
+      ],
+      [
+        [1, 0],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Seven pebbles: the valley of Mina between its hills, white tents far off, and three Jamrahs on the valley floor,
+    // each a stone pillar in a low basin. Salim's voice tells of it. Seven small stones show by Ibn Umar's place, and a
+    // soft ring about the first Jamrah. The stones go one by one into its basin, each with a small glint over Ibn Umar's
+    // place: a Takbir for every pebble. That place goes ahead to the level ground and a soft light comes about it: facing
+    // the Qibla; Ibn Umar's voice speaks and two sparks rise slowly: a long du'a. The place goes to the middle Jamrah,
+    // seven stones show in its basin, and it goes to the left; a spark rises. It goes into the middle of the valley below
+    // the Jamrat-ul-Aqaba, seven stones show in its basin, and it goes on without staying. Ibn Umar's voice speaks, and a
+    // faint golden dashed way shows along the whole way: as Ibn Umar had seen it done.
+    expect(words("seven-pebbles")).toEqual([
+      "Salim: Ibn Umar used to do Rami",
+      "Of the Jamrat-ud-Dunya with seven stones,",
+      "Reciting Takbir on throwing every pebble.",
+      "Then Ibn Umar would stand facing the Qibla",
+      "For a long time to invoke.",
+      "Then Rami of the Jamrat-ul-Wusta,",
+      "Then of the Jamrat-ul-Aqaba;",
+      "Ibn Umar: I saw him doing like this."
+    ]);
+    expect([
+      [at("seven-pebbles", "Salim's voice: telling of it", "opacity", [0.022, 0.03, 0.074, 0.08])],
+      [all("seven-pebbles", ["a pebble, thrown into the basin of the Jamrat-ud-Dunya 1", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 2", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 3", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 4", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 5", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 6", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 7"], 0.14), all("seven-pebbles", ["a pebble, thrown into the basin of the Jamrat-ud-Dunya 1", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 2", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 3", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 4", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 5", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 6", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 7"], 0.152), at("seven-pebbles", "the Jamrat-ud-Dunya: a soft ring about it", "opacity", [0.16, 0.172, 0.19, 0.2])],
+      [at("seven-pebbles", "Ibn Umar's voice: a Takbir with every pebble", "opacity", [0.252, 0.258, 0.364, 0.37]), many("seven-pebbles", ["a pebble, thrown into the basin of the Jamrat-ud-Dunya 1", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 2", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 3", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 4", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 5", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 6", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 7"], "y", 0.3), all("seven-pebbles", ["a Takbir with pebble 1: a small glint over Ibn Umar's place", "a Takbir with pebble 2: a small glint over Ibn Umar's place", "a Takbir with pebble 3: a small glint over Ibn Umar's place", "a Takbir with pebble 4: a small glint over Ibn Umar's place", "a Takbir with pebble 5: a small glint over Ibn Umar's place", "a Takbir with pebble 6: a small glint over Ibn Umar's place", "a Takbir with pebble 7: a small glint over Ibn Umar's place"], 0.3), many("seven-pebbles", ["a pebble, thrown into the basin of the Jamrat-ud-Dunya 1", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 2", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 3", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 4", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 5", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 6", "a pebble, thrown into the basin of the Jamrat-ud-Dunya 7"], "y", 0.37), all("seven-pebbles", ["a Takbir with pebble 1: a small glint over Ibn Umar's place", "a Takbir with pebble 2: a small glint over Ibn Umar's place", "a Takbir with pebble 3: a small glint over Ibn Umar's place", "a Takbir with pebble 4: a small glint over Ibn Umar's place", "a Takbir with pebble 5: a small glint over Ibn Umar's place", "a Takbir with pebble 6: a small glint over Ibn Umar's place", "a Takbir with pebble 7: a small glint over Ibn Umar's place"], 0.37), all("seven-pebbles", ["a Takbir with pebble 1: a small glint over Ibn Umar's place", "a Takbir with pebble 2: a small glint over Ibn Umar's place", "a Takbir with pebble 3: a small glint over Ibn Umar's place", "a Takbir with pebble 4: a small glint over Ibn Umar's place", "a Takbir with pebble 5: a small glint over Ibn Umar's place", "a Takbir with pebble 6: a small glint over Ibn Umar's place", "a Takbir with pebble 7: a small glint over Ibn Umar's place"], 0.426)],
+      [at("seven-pebbles", "Ibn Umar's place: to the level ground, the middle Jamrah, the valley, and on", "x", [0.42, 0.46]), at("seven-pebbles", "Ibn Umar's place: to the level ground, the middle Jamrah, the valley, and on", "y", [0.42, 0.46]), at("seven-pebbles", "facing the Qibla: a soft light about Ibn Umar's place", "opacity", [0.466, 0.476])],
+      [at("seven-pebbles", "Ibn Umar's voice: a long du'a", "opacity", [0.538, 0.544, 0.594, 0.6]), at("seven-pebbles", "Ibn Umar's long du'a: a spark rising slowly 1", "y", [0.545, 0.575]), at("seven-pebbles", "Ibn Umar's long du'a: a spark rising slowly 2", "y", [0.566, 0.598])],
+      [at("seven-pebbles", "facing the Qibla: a soft light about Ibn Umar's place", "opacity", [0.65, 0.656]), at("seven-pebbles", "Ibn Umar's place: to the level ground, the middle Jamrah, the valley, and on", "x", [0.65, 0.668, 0.684, 0.7]), at("seven-pebbles", "seven stones in the basin of the Jamrat-ul-Wusta", "opacity", [0.672, 0.68]), at("seven-pebbles", "Ibn Umar's du'a at the middle ground: a spark rising", "y", [0.7, 0.715])],
+      [at("seven-pebbles", "Ibn Umar's place: to the level ground, the middle Jamrah, the valley, and on", "x", [0.765, 0.785]), at("seven-pebbles", "seven stones in the basin of the Jamrat-ul-Aqaba", "opacity", [0.79, 0.798]), at("seven-pebbles", "Ibn Umar's place: to the level ground, the middle Jamrah, the valley, and on", "x", [0.805, 0.83])],
+      [at("seven-pebbles", "Ibn Umar's voice: I saw him doing like this", "opacity", [0.884, 0.89, 0.95, 0.956]), at("seven-pebbles", "as Ibn Umar had seen it done: a faint golden way along the whole way", "opacity", [0.9, 0.915])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [-8, -8, -8, 0, 0, 0, 0],
+        [1, 1, 1, 0, 0, 0, 0],
+        [-8, -8, -8, -8, -8, -8, -8],
+        [1, 1, 1, 1, 1, 1, 1],
+        [0, 0, 0, 0, 0, 0, 0]
+      ],
+      [
+        [0, -32],
+        [0, 6],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, -11],
+        [0, -11]
+      ],
+      [
+        [1, 0],
+        [-32, -42, -42, -66],
+        [0, 1],
+        [0, -11]
+      ],
+      [
+        [-66, -90],
+        [0, 1],
+        [-90, -124]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ]
+    ]);
+    // The pillar he chose: inside the masjid, under its roof of palm fronds on palm trunks. Yazid's place and Salamah's
+    // place come in; Yazid's voice tells of it. Salamah's place goes to the middle palm trunk and stands before it, a
+    // small light within it and a spark rising: Salamah's prayer. A soft ring comes about the base of the trunk: the
+    // pillar, and Yazid's voice asks. Two more sparks rise from Salamah's place: always. Salamah's voice replies, and a
+    // golden ring shows about the same spot: his place, as Salamah saw it, and a spark rises from it. A soft golden ring
+    // comes about the whole trunk, with glints at its base: that pillar.
+    expect(words("the-pillar-he-chose")).toEqual([
+      "Yazid: I used to accompany",
+      "Salamah ibn al-Akwa', who used to pray",
+      "Behind the pillar. I said: O Abu Muslim!",
+      "I see you always seeking to pray",
+      "Behind this pillar. Salamah replied:",
+      "I saw him always seeking to pray",
+      "Near that pillar."
+    ]);
+    expect([
+      [at("the-pillar-he-chose", "Yazid's place, coming in", "opacity", [0.03, 0.042]), at("the-pillar-he-chose", "Salamah's place, coming in and standing before the pillar", "opacity", [0.03, 0.042]), at("the-pillar-he-chose", "Yazid's voice: telling of it", "opacity", [0.05, 0.056, 0.1, 0.106])],
+      [at("the-pillar-he-chose", "Yazid's place, coming in", "x", [0.165, 0.21]), at("the-pillar-he-chose", "Salamah's place, coming in and standing before the pillar", "x", [0.165, 0.21]), at("the-pillar-he-chose", "Salamah's place, coming in and standing before the pillar", "y", [0.165, 0.21]), at("the-pillar-he-chose", "at prayer: a small light within Salamah's place", "opacity", [0.214, 0.224]), at("the-pillar-he-chose", "Salamah's prayer: a spark rising", "y", [0.222, 0.25])],
+      [at("the-pillar-he-chose", "the pillar: a soft ring about the base of the palm trunk", "opacity", [0.305, 0.317]), at("the-pillar-he-chose", "Yazid's voice: O Abu Muslim", "opacity", [0.33, 0.336, 0.585, 0.591])],
+      [at("the-pillar-he-chose", "always: Salamah's prayer there again, a spark rising 1", "y", [0.446, 0.48]), at("the-pillar-he-chose", "always: Salamah's prayer there again, a spark rising 2", "y", [0.49, 0.525])],
+      [at("the-pillar-he-chose", "Salamah's voice: I saw him", "opacity", [0.6, 0.606, 0.95, 0.956])],
+      [at("the-pillar-he-chose", "his place, as Salamah saw it: a golden ring about the same spot", "opacity", [0.725, 0.74]), at("the-pillar-he-chose", "always seeking to pray there: a spark rising from his place", "y", [0.75, 0.8])],
+      [at("the-pillar-he-chose", "that pillar: a soft golden ring about the whole palm trunk", "opacity", [0.865, 0.877]), at("the-pillar-he-chose", "that pillar: glints at its base", "opacity", [0.885, 0.895])]
+    ]).toEqual([
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [46, 0],
+        [58, 0],
+        [4, 0],
+        [0, 1],
+        [0, -11]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, -11],
+        [0, -11]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, -11]
+      ],
+      [
+        [0, 1],
+        [0, 1]
       ]
     ]);
   });

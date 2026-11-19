@@ -6595,6 +6595,54 @@ const ASKS: Record<string, readonly Ask[]> = {
   // what the first question asks.
   "sign-before-the-row": [
     ["Late, and the imam is bowing? Say Allahu akbar and ____.", "join", "While he was bowing in prayer, and I too", "Bowed before joining the row."]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: a place in Paradise equal to an arrow bow of one of you is better than the
+  // whole earth on which the sun rises and sets (Sahih al-Bukhari 3253). Its lesson's true or false on the smallest
+  // place in Jannah is not asked here, since it asks again what the second question asks.
+  "sign-a-bows-length": [
+    ["How much of Jannah is better than the whole world?", "A space as small as a bow", "A place in Paradise equal to", "An arrow bow of one of you"],
+    ["What is that small place in Jannah better than?", "All the sun rises and sets on", "Is better than the whole earth", "On which the sun rises and sets."]
+  ],
+  // Al-Bara said: a silken cloth was given as a present to the Prophet ﷺ; his companions started touching it and
+  // admiring its softness, and he said: are you admiring its softness? The handkerchiefs of Sa'd ibn Mu'adh are better
+  // and softer than it (Sahih al-Bukhari 3802). Its lesson's question on what the companions admired is not asked here,
+  // since the scene's first words name the silken cloth.
+  "sign-better-and-softer": [
+    ["What of Sa'd's is better in Paradise?", "His handkerchiefs", "The handkerchiefs of Sa'd ibn Mu'adh", "Are better and softer than it."],
+    ["The best things of this world are small next to Paradise.", "True", "Are better and softer than it."]
+  ],
+  // Zayd ibn Khalid sent Busr ibn Sa'id to Abu Juhaim to ask what he had heard about a person passing in front of one
+  // who was praying, and Abu Juhaim said: the Messenger of Allah ﷺ said: if the person who passes in front of another
+  // person in prayer knew the magnitude of his sin, he would prefer to wait for forty rather than to pass in front of
+  // him (Sahih al-Bukhari 510).
+  "sign-better-to-wait": [
+    ["What would the passer prefer, if he knew his sin?", "To wait instead", "He would prefer to wait for forty"],
+    ["Someone is praying between you and the door. What fits his ﷺ words?", "Wait until he finishes", "He would prefer to wait for forty", "Rather than to pass in front of him."],
+    ["Passing in front of someone who is praying is a small matter.", "False", "In prayer knew the magnitude of his sin,"]
+  ],
+  // Abu Qatadah demanded from his debtor, who disappeared; later on he found him, and he said: I am hard up. Abu Qatadah
+  // said: I heard the Messenger of Allah ﷺ saying: he who loves that Allah saves him from the torments of the Day of
+  // Resurrection should give respite to the insolvent or remit (Sahih Muslim 1563a). Its lesson's question on ayah 2:280
+  // is not asked here, since the scene shows the hadith and not the ayah.
+  "sign-give-respite": [
+    ["What is even better than waiting?", "Forgiving the debt", "Or remit."],
+    ["What does Muslim 1563a promise the lender who gives time?", "Relief on the Day of Resurrection", "He who loves that Allah saves him from", "Or remit."]
+  ],
+  // Salim said: Ibn Umar used to throw seven small stones at the Jamrat-ud-Dunya, reciting Takbir on every pebble, then
+  // stand facing the Qibla for a long time to invoke; then he threw at the Jamrat-ul-Wusta, then at the Jamrat-ul-Aqaba
+  // without staying by it, and he would say: I saw the Prophet ﷺ doing like this (Sahih al-Bukhari 1751).
+  "sign-seven-pebbles": [
+    ["How many pebbles are thrown at a pillar each time?", "Seven", "Of the Jamrat-ud-Dunya with seven stones,"],
+    ["What is said with each pebble?", "Allahu akbar", "Reciting Takbir on throwing every pebble."],
+    ["What did Ibn Umar do after the first pillar?", "Made long du'a facing the qiblah", "Then Ibn Umar would stand facing the Qibla", "For a long time to invoke."]
+  ],
+  // Yazid ibn Abi Ubayd said: Salamah ibn al-Akwa' used to pray behind the pillar near where the copies of the Quran
+  // were kept; I said: O Abu Muslim! I see you always seeking to pray behind this pillar. He replied: I saw the
+  // Messenger of Allah ﷺ always seeking to pray near that pillar (Sahih al-Bukhari 502). Its lesson's true or false on
+  // Salamah following even the place is not asked here, since it asks again what the first question asks.
+  "sign-the-pillar-he-chose": [
+    ["Why did Salamah pray by that pillar?", "To follow the Sunnah", "I saw him always seeking to pray", "Near that pillar."],
+    ["What did Yazid call Salamah?", "Abu Muslim", "Behind the pillar. I said: O Abu Muslim!"]
   ]
 };
 
