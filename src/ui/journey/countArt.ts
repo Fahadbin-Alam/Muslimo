@@ -504,7 +504,7 @@ function truestWords(): SignArt {
         keys: showAt(0.2, 0.22),
         loop: twinkle()
       },
-      { name: "Labid's words: a voice by the old camp", svg: arcs(54, 84, "#8A6E5A"), keys: showFor(0.4, 0.406, 0.62, 0.626), loop: speaking },
+      { name: "Labid's words: a voice by the old camp", svg: arcs(54, 84, "#8A6E5A"), keys: showFor(0.4, 0.406, 0.7, 0.706), loop: speaking },
       {
         name: "evening coming",
         svg: `<rect width="160" height="120" fill="#2E3D6E"/>`,
@@ -567,7 +567,7 @@ function ifYouDoNotKnow(): SignArt {
       { name: "what it knows: small lights in its place", svg: glints([[n(knows[0] - 0.6), n(knows[1] - 3.8)], [n(knows[0] - 2.6), n(knows[1] - 2.4)]], 0.9), keys: showAt(0.09, 0.11), loop: twinkle() },
       { name: "its voice, soft and golden: saying it", svg: arcs(n(knows[0] + 3.2), n(knows[1] - 2.8), SOFT_GOLD), keys: showFor(0.2, 0.206, 0.25, 0.256), loop: speaking },
       { name: "not knowing: a faint dashed ring about the other", svg: faintRing(not[0], n(not[1] + 0.6), 5.6, 2.4), keys: showFor(0.32, 0.34, 0.62, 0.64) },
-      { name: "its voice, soft: saying who knows better", svg: arcs(n(not[0] + 3.2), n(not[1] - 2.8), "#FFF3CF"), keys: showFor(0.456, 0.462, 0.51, 0.516), loop: speaking },
+      { name: "its voice, soft: saying who knows better", svg: arcs(n(not[0] + 3.2), n(not[1] - 2.8), "#FFF3CF"), keys: showFor(0.456, 0.462, 0.6, 0.606), loop: speaking },
       { name: "a soft golden ring about it", svg: care(not[0], n(not[1] + 0.6), 6, 2.6, SOFT_GOLD), keys: showAt(0.518, 0.532), loop: soft },
       { name: "a sign of knowledge: small lights come in its place too", svg: glints([[n(not[0] - 0.6), n(not[1] - 3.8)], [n(not[0] - 2.6), n(not[1] - 2.4)]], 0.9), keys: showAt(0.62, 0.64), loop: twinkle() },
       {

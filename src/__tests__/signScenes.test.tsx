@@ -33992,7 +33992,7 @@ describe("the signs in creation, alive", () => {
     ]);
     expect([
       [at("truest-words", "Abu Hurairah's voice: telling of it", "opacity", [0.022, 0.028, 0.08, 0.086]), at("truest-words", "his voice, soft and golden", "opacity", [0.09, 0.096, 0.95, 0.956]), at("truest-words", "the most true words: glints about his voice", "opacity", [0.2, 0.22])],
-      [at("truest-words", "Labid's words: a voice by the old camp", "opacity", [0.4, 0.406, 0.62, 0.626])],
+      [at("truest-words", "Labid's words: a voice by the old camp", "opacity", [0.4, 0.406, 0.7, 0.706])],
       [at("truest-words", "a desert flower, fading 1", "opacity", [0.7, 0.76]), at("truest-words", "a desert flower, fading 2", "opacity", [0.71, 0.77]), at("truest-words", "marks in the sand, fading", "opacity", [0.72, 0.8]), at("truest-words", "a desert flower, fading 3", "opacity", [0.72, 0.78]), at("truest-words", "a desert flower, fading 4", "opacity", [0.73, 0.79]), at("truest-words", "the tents of an old camp, wearing away", "opacity", [0.74, 0.86]), at("truest-words", "dry stalks where the flowers were", "opacity", [0.74, 0.8]), at("truest-words", "the sun, low, then setting", "y", [0.8, 0.9, 0.94]), at("truest-words", "evening coming", "opacity", [0.84, 0.92]), at("truest-words", "the sun, low, then setting", "opacity", [0.9, 0.94]), at("truest-words", "the first stars of the evening", "opacity", [0.92, 0.95])]
     ]).toEqual([
       [
@@ -34035,7 +34035,7 @@ describe("the signs in creation, alive", () => {
       [at("if-you-do-not-know", "Ibn Mas'ud's voice: speaking to those there", "opacity", [0.024, 0.03, 0.95, 0.956]), at("if-you-do-not-know", "what it knows: small lights in its place", "opacity", [0.09, 0.11])],
       [at("if-you-do-not-know", "its voice, soft and golden: saying it", "opacity", [0.2, 0.206, 0.25, 0.256])],
       [at("if-you-do-not-know", "not knowing: a faint dashed ring about the other", "opacity", [0.32, 0.34, 0.62, 0.64])],
-      [at("if-you-do-not-know", "its voice, soft: saying who knows better", "opacity", [0.456, 0.462, 0.51, 0.516]), at("if-you-do-not-know", "a soft golden ring about it", "opacity", [0.518, 0.532])],
+      [at("if-you-do-not-know", "its voice, soft: saying who knows better", "opacity", [0.456, 0.462, 0.6, 0.606]), at("if-you-do-not-know", "a soft golden ring about it", "opacity", [0.518, 0.532])],
       [at("if-you-do-not-know", "a sign of knowledge: small lights come in its place too", "opacity", [0.62, 0.64])],
       [at("if-you-do-not-know", "glints over both places", "opacity", [0.9, 0.92]), at("if-you-do-not-know", "a soft golden ring about all who sit there", "opacity", [0.93, 0.95])]
     ]).toEqual([
