@@ -1608,6 +1608,12 @@ const STATES: State[] = [
   { id: "scene-too-drowsy-to-pray", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-calm-and-focus-drowsy-in-prayer" ask="drowsy person do" /> },
   { id: "scene-take-it-without-greed", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-take-it-without-greed" ask="take what you are given" /> },
   { id: "scene-made-up-in-shaban", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-ease-aishah-shaban" ask="busy" /> },
+  { id: "scene-the-two-to-follow", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-sunnah-the-two-to-follow" ask="share out among the Muslims" /> },
+  { id: "scene-to-her-uncles", render: () => <SceneQuestionDemo lessonId="lesson-deep-wives-maymunah" ask="undo what Maymunah did" /> },
+  { id: "scene-two-rewards-for-a-judge", render: () => <SceneQuestionDemo lessonId="lesson-deep-anbiya3-judge-two-rewards" ask="tries hard and is right" /> },
+  { id: "scene-not-grown-impatient", render: () => <SceneQuestionDemo lessonId="lesson-deep-hud3-my-lord-is-near" ask="stops a dua" /> },
+  { id: "scene-do-not-withhold", render: () => <SceneQuestionDemo lessonId="lesson-deep-asma-give-freely" ask="hold back charity" /> },
+  { id: "scene-not-built-for-this", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-masjid-sunnahs-not-for-lost-things" ask="calling for a lost thing" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
