@@ -1127,7 +1127,13 @@ export type SignKind =
   | "host-him-anyway"
   | "two-brothers"
   | "best-of-the-earth"
-  | "the-first-fruit";
+  | "the-first-fruit"
+  | "quicker-than-that"
+  | "not-the-face-of-a-liar"
+  | "camp-off-the-road"
+  | "like-the-saddle-post"
+  | "milk-silver-or-the-way"
+  | "the-seat-of-honor";
 
 export type SignScene = {
   id: string;
@@ -6374,6 +6380,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: when the people saw the first fruit, they would bring it to the Messenger of Allah ﷺ. When he took it, he would say: O Allah, bless for us our fruits, and bless for us our city, and bless for us our sa' and our mudd. Then he would call the smallest young child he saw and give him that fruit.",
     sources: [tirmidhi("3454")]
+  },
+  {
+    id: "sign-quicker-than-that",
+    kind: "quicker-than-that",
+    caption:
+      "Abdullah ibn Amr said: the Messenger of Allah ﷺ passed by us while we were repairing a hut of ours, so he said: what is this? We said: it has become weak, so we are repairing it. He said: I do not think but that the matter is more fleeting than that.",
+    sources: [tirmidhi("2335")]
+  },
+  {
+    id: "sign-not-the-face-of-a-liar",
+    kind: "not-the-face-of-a-liar",
+    caption:
+      "Abdullah ibn Salam said: when the Messenger of Allah ﷺ arrived in Madinah, the people came out to meet him. It was said that the Messenger of Allah ﷺ had arrived, so I went among the people to get a look at him. When I gazed upon the face of the Messenger of Allah ﷺ, I knew that this face was not the face of a liar. The first thing that he spoke about was that he said: O you people! Spread the salam, feed, and perform salat while the people are sleeping; you will enter Paradise with salam.",
+    sources: [tirmidhi("2485")]
+  },
+  {
+    id: "sign-camp-off-the-road",
+    kind: "camp-off-the-road",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: when you travel through fertile land, then give the camels their fill of the land, and when you travel through drought, then hasten while they are fresh, and when you camp late, then stay away from the road, for indeed it is the route of the beasts and the abode of poisonous vermin in the night.",
+    sources: [tirmidhi("2858")]
+  },
+  {
+    id: "sign-like-the-saddle-post",
+    kind: "like-the-saddle-post",
+    caption:
+      "Talhah ibn Ubaydullah said: the Messenger of Allah ﷺ said: when one of you placed something like the post of the camel saddle in front of him, then let him perform salat and not concern himself with who passes beyond that.",
+    sources: [tirmidhi("335")]
+  },
+  {
+    id: "sign-milk-silver-or-the-way",
+    kind: "milk-silver-or-the-way",
+    caption:
+      "Al-Bara ibn Azib said: the Messenger of Allah ﷺ said: whoever gives someone some milk or silver, or guides him through a strait, then he will have the reward similar to freeing a slave.",
+    sources: [tirmidhi("1957")]
+  },
+  {
+    id: "sign-the-seat-of-honor",
+    kind: "the-seat-of-honor",
+    caption:
+      "Abu Mas'ud said: the Messenger of Allah ﷺ said: a man is not led in his dominion, and his seat of honor in his house is not sat in without his permission.",
+    sources: [tirmidhi("2772")]
   }
 ];
 
@@ -9205,7 +9253,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Makkah, the best of Allah's earth and the most beloved of it to Allah.
   "deep-hajj-makkah-the-beloved-city-the-best-of-allahs-earth": "sign-best-of-the-earth",
   // The first fruit: his dua for their fruits, city and measures, then the fruit to the smallest child.
-  "deep-duas-from-the-sunnah-the-first-fruit": "sign-the-first-fruit"
+  "deep-duas-from-the-sunnah-the-first-fruit": "sign-the-first-fruit",
+  // They were mending their hut: the matter is more fleeting than that.
+  "deep-akhirah-this-world-life-is-short": "sign-quicker-than-that",
+  // His face was not the face of a liar, and his first words in Madinah: spread the salam, feed, and pray at night.
+  "deep-anbiya1-spread-salam": "sign-not-the-face-of-a-liar",
+  "deep-ibn-salam-not-a-liars-face": "sign-not-the-face-of-a-liar",
+  "deep-yunus1-not-the-face-of-a-liar": "sign-not-the-face-of-a-liar",
+  // Let the camels graze on fertile land, hasten in drought, and camp away from the road at night.
+  "deep-manners-staying-safe-camp-off-the-road": "sign-camp-off-the-road",
+  // Something like the post of a camel saddle in front, and pray without minding who passes beyond it.
+  "deep-prayer-sutrah-like-the-back-of-a-saddle": "sign-like-the-saddle-post",
+  // Milk, silver, or showing someone the way: a reward like freeing a slave.
+  "deep-kids-helping-people-show-someone-the-way": "sign-milk-silver-or-the-way",
+  // A man is not led in his own home, and his seat of honor is not sat in without his leave.
+  "deep-found-sunnahs-of-the-home-the-hosts-own-seat": "sign-the-seat-of-honor"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
