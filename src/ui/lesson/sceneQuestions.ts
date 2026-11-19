@@ -6742,7 +6742,49 @@ const ASKS: Record<string, readonly Ask[]> = {
   // Yahya, a narrator, said: she used to be busy serving the Prophet ﷺ (Sahih al-Bukhari 1950). Its lesson's question on
   // the month she made them up in is not asked here, since it has its own picture of the months; nor its true or false
   // on Sha'ban coming before the next Ramadan, since the scene's words do not say it.
-  "sign-made-up-in-shaban": [["Why was she busy, said a narrator?", "Serving the Prophet ﷺ", "Yahya said: she was busy serving him."]]
+  "sign-made-up-in-shaban": [["Why was she busy, said a narrator?", "Serving the Prophet ﷺ", "Yahya said: she was busy serving him."]],
+  // Abu Wa'il said: I sat with Shaybah in this masjid, and he said: Umar sat with me here and said: I mean to share out
+  // all the gold and silver in it among the Muslims. I said: you cannot do that. He said: why? I said: your two
+  // companions did not do it. He said: they are the two whom one must follow (Sahih al-Bukhari 7275).
+  "sign-the-two-to-follow": [
+    ["What did Umar wish to share out among the Muslims?", "The gold and silver of the Ka'bah", "All the gold and silver in it among the"],
+    ["Why did Shaybah say Umar should not do it?", "His two companions did not do it", "Umar said: why? I said: your two", "Companions did not do it. Umar said:"],
+    ["Umar told Shaybah he would share out the gold anyway.", "False", "Companions did not do it. Umar said:", "They are the two whom one must follow."]
+  ],
+  // Kurayb said that Maymunah freed a slave-girl without asking the Prophet ﷺ; on her day with him she told him, and
+  // he said: have you? She said yes. He said: had you given her to your maternal uncles, your reward would have been
+  // greater (Sahih al-Bukhari 2592). Its lesson's question on what Maymunah did is not asked here, since the scene's
+  // first words say it; nor its true or false on a wife giving from her own money, since the scene's words do not
+  // say it.
+  "sign-to-her-uncles": [["Did the Prophet ﷺ undo what Maymunah did?", "No", "Have you really? She said yes. He said:", "Given her to one of your maternal uncles."]],
+  // Amr ibn al-As heard the Messenger of Allah ﷺ say: when a judge does his best and is right, he has two rewards; and
+  // when he does his best and is wrong, he has one reward (Sahih al-Bukhari 7352). Its lesson's question on Dawud's
+  // verdict is not asked here, since its answer is from the tafsir of ayah 21:79, and the scene shows the hadith.
+  "sign-two-rewards-for-a-judge": [
+    ["What does a judge who tries hard and is right get?", "Two rewards", "Receive a double reward; and if he gives"],
+    ["A judge who tries hard but errs still gets a reward.", "True", "And it is wrong, even then he will get", "A reward."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: the supplication of every one of you is granted as long as he
+  // does not grow impatient and say: I made du'a and it was not granted (Sahih Muslim 2735). Its lesson's question on
+  // how Salih described his Lord is not asked here, since its answer is from ayah 11:61, and the scene shows the hadith;
+  // nor its true or false on saying I prayed but got no answer, since it asks again what the question before it asks.
+  "sign-not-grown-impatient": [["What stops a dua from being answered, per the hadith?", "Growing impatient", "Does not grow impatient and say:"]],
+  // Asma said: I said: O Messenger of Allah, I have nothing but what Az-Zubair brings in to me; may I give in charity?
+  // He said: give in charity, and do not withhold it, lest it be withheld from you (Sahih al-Bukhari 2590). Its
+  // lesson's true or false on even a little charity being worth giving is not asked here, since the scene's words do
+  // not say it.
+  "sign-do-not-withhold": [
+    ["What did Asma ask the Prophet ﷺ?", "May I give charity?", "To me by Az-Zubair. May I give in charity?"],
+    ["What happens if we hold back charity?", "Allah holds back from us", "Withhold it; otherwise Allah will", "Withhold it back from you."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: whoever hears a man calling out in the masjid for something
+  // he has lost, let him say: may Allah not return it to you, for the masjids were not built for this (Sahih Muslim
+  // 568a). Its lesson's true or false on masjids being built for calling out about lost things is not asked here, since
+  // it asks again what the question before it asks.
+  "sign-not-built-for-this": [
+    ["What should you say to one calling for a lost thing in the masjid?", "May Allah not return it to you", "May Allah not restore it to you, for the"],
+    ["Why not call out for lost things in the masjid?", "Masjids were not built for this", "Masjids were not built for this."]
+  ]
 };
 
 /** How long before the end of its last moment the scene stops, so that moment's words still show. */
