@@ -495,19 +495,24 @@ const at = (t: number, i: number) => Number((t + i * 0.02).toFixed(3));
 // mat for the prayer and bedding by the wall. The place of one who prays stands on the mat; soft blue specks come over
 // it, and it sways: drowsy. It goes to the bedding and a soft blue comes over it: asleep; the moon goes across the
 // window, and the blue lifts: its slumber over, and a soft pale ring comes about it. Then a faint place shows on the mat
-// with the blue specks: one who prays drowsy; a soft golden voice and a grey one come from it in turn: it does not know
-// which it asks. They fade, the faint place fades, and a soft golden ring comes about the place that rested.
+// with the blue specks: one who prays drowsy; a soft golden voice and a grey one come from it in turn, then both
+// together, fainter: it does not know which it asks. A soft golden ring comes about the place that rested.
 function tooDrowsyToPray(): SignArt {
   const mat: [number, number] = [74, 97.6];
   const bed: [number, number] = [124, 104];
+  // A voice shown in turn at the given times, then both together, fainter, at the end: it does not know which it asks.
   const inTurn = (shown: [number, number][]) =>
     track({
-      opacity: shown.flatMap(([from, hide]): [number, number][] => [
-        [from, 0],
-        [Number((from + 0.006).toFixed(3)), 1],
-        [hide, 1],
-        [Number((hide + 0.006).toFixed(3)), 0]
-      ])
+      opacity: [
+        ...shown.flatMap(([from, hide]): [number, number][] => [
+          [from, 0],
+          [Number((from + 0.006).toFixed(3)), 1],
+          [hide, 1],
+          [Number((hide + 0.006).toFixed(3)), 0]
+        ]),
+        [0.88, 0],
+        [0.892, 0.6]
+      ]
     });
   return {
     kind: "too-drowsy-to-pray",
@@ -555,9 +560,7 @@ function tooDrowsyToPray(): SignArt {
         keys: track({
           opacity: [
             [0.53, 0],
-            [0.544, 0.55],
-            [0.876, 0.55],
-            [0.888, 0]
+            [0.544, 0.55]
           ]
         })
       },
@@ -572,7 +575,7 @@ function tooDrowsyToPray(): SignArt {
       },
       {
         name: "or a bad thing for oneself: a grey voice from it, in turn",
-        svg: arcs(n(mat[0] + 3.4), n(mat[1] - 2.8), "#9A98A8"),
+        svg: arcsLeft(n(mat[0] - 3.2), n(mat[1] - 2.8), "#9A98A8"),
         keys: inTurn([
           [0.646, 0.674],
           [0.714, 0.742],

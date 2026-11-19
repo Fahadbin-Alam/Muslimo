@@ -1602,6 +1602,12 @@ const STATES: State[] = [
   { id: "scene-every-year", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-once" ask="How often is Hajj" /> },
   { id: "scene-in-seven-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-amr-seven-days" ask="shortest time" /> },
   { id: "scene-not-for-those-who-ask", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-judging-fairly-not-for-those-who-ask" ask="authority of ruling" /> },
+  { id: "scene-better-than-an-earth-full", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-weddings-and-new-homes-better-than-an-earth-full" ask="two men" /> },
+  { id: "scene-a-day-for-the-women", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-said-a-day-for-women" ask="ask for" /> },
+  { id: "scene-on-the-very-edge", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj1-edge-sons-and-foals" ask="call Islam good" /> },
+  { id: "scene-too-drowsy-to-pray", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-calm-and-focus-drowsy-in-prayer" ask="drowsy person do" /> },
+  { id: "scene-take-it-without-greed", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-take-it-without-greed" ask="take what you are given" /> },
+  { id: "scene-made-up-in-shaban", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-ease-aishah-shaban" ask="busy" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

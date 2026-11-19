@@ -30868,8 +30868,8 @@ describe("the signs in creation, alive", () => {
     // bedding. The place of one who prays stands on the mat; soft blue specks come over it, and it sways: drowsy. It goes
     // to the bedding and a soft blue comes over it: asleep; the moon goes across the window, and the blue lifts: its slumber
     // over, with a soft pale ring about it. A faint place shows on the mat with the blue specks: one who prays drowsy; a
-    // soft golden voice and a grey one come from it in turn: it does not know which it asks. They fade, the faint place
-    // fades, and a soft golden ring comes about the place that rested.
+    // soft golden voice and a grey one come from it in turn, then both together, fainter: it does not know which it asks.
+    // A soft golden ring comes about the place that rested.
     expect(words("too-drowsy-to-pray")).toEqual([
       "Aishah: he said: if one of you is drowsy",
       "While praying, he should go to bed till",
@@ -30880,8 +30880,8 @@ describe("the signs in creation, alive", () => {
     expect([
       [at("too-drowsy-to-pray", "drowsy: soft blue specks over the place on the mat", "opacity", [0.08, 0.092, 0.256, 0.268]), at("too-drowsy-to-pray", "the place of one who prays: on the mat, swaying, then going to the bedding", "x", [0.11, 0.122, 0.134, 0.146, 0.27, 0.33])],
       [at("too-drowsy-to-pray", "the place of one who prays: on the mat, swaying, then going to the bedding", "y", [0.27, 0.33]), at("too-drowsy-to-pray", "asleep: a soft blue over the place on the bedding", "opacity", [0.34, 0.352, 0.5, 0.512])],
-      [at("too-drowsy-to-pray", "the moon, through the window: going across as the night goes on", "x", [0.42, 0.5]), at("too-drowsy-to-pray", "the moon, through the window: going across as the night goes on", "y", [0.42, 0.5]), at("too-drowsy-to-pray", "its slumber over: a soft pale ring about the place on the bedding", "opacity", [0.516, 0.528, 0.9, 0.912]), at("too-drowsy-to-pray", "one who prays drowsy: a faint place on the mat, with the blue specks", "opacity", [0.53, 0.544, 0.876, 0.888])],
-      [at("too-drowsy-to-pray", "asking for forgiveness: a soft golden voice from it, in turn", "opacity", [0.612, 0.618, 0.64, 0.646, 0.68, 0.686, 0.708, 0.714, 0.808, 0.814, 0.836, 0.842]), at("too-drowsy-to-pray", "or a bad thing for oneself: a grey voice from it, in turn", "opacity", [0.646, 0.652, 0.674, 0.68, 0.714, 0.72, 0.742, 0.748, 0.842, 0.848, 0.87, 0.876])],
+      [at("too-drowsy-to-pray", "the moon, through the window: going across as the night goes on", "x", [0.42, 0.5]), at("too-drowsy-to-pray", "the moon, through the window: going across as the night goes on", "y", [0.42, 0.5]), at("too-drowsy-to-pray", "its slumber over: a soft pale ring about the place on the bedding", "opacity", [0.516, 0.528, 0.9, 0.912]), at("too-drowsy-to-pray", "one who prays drowsy: a faint place on the mat, with the blue specks", "opacity", [0.53, 0.544])],
+      [at("too-drowsy-to-pray", "asking for forgiveness: a soft golden voice from it, in turn", "opacity", [0.612, 0.618, 0.64, 0.646, 0.68, 0.686, 0.708, 0.714, 0.808, 0.814, 0.836, 0.842, 0.88, 0.892]), at("too-drowsy-to-pray", "or a bad thing for oneself: a grey voice from it, in turn", "opacity", [0.646, 0.652, 0.674, 0.68, 0.714, 0.72, 0.742, 0.748, 0.842, 0.848, 0.87, 0.876, 0.88, 0.892])],
       [at("too-drowsy-to-pray", "the better way: a soft golden ring about the place that rested", "opacity", [0.9, 0.912])]
     ]).toEqual([
       [
@@ -30896,11 +30896,11 @@ describe("the signs in creation, alive", () => {
         [0, 14],
         [0, -10],
         [0, 1, 1, 0],
-        [0, 0.55, 0.55, 0]
+        [0, 0.55]
       ],
       [
-        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0],
-        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0]
+        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0.6],
+        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0.6]
       ],
       [
         [0, 1]
