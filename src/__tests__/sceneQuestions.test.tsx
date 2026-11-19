@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3700);
+    expect(asks.length).toBe(3712);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5392);
+    expect(places).toBe(5408);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -27150,6 +27150,173 @@ describe("where the scene waits and where it stops", () => {
         [0, 0, 0, 0, 0, 0, 0, 0, 0],
         [1, 1, 1, 1, 1, 1, 1, 1, 1]
       ]
+    ]);
+  });
+
+  it("waits on the scenes from Ghifar and Aslam to a thousand good deeds, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-ghifar-and-aslam", "sign-kingdom-at-evening", "sign-a-vow-changes-nothing", "sign-a-bath-every-seven-days", "sign-a-thousand-good-deeds"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(12);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Ghifar: nothing shows over the tents of Ghifar yet, before the words begin; then his voice speaks far off, a soft
+    // golden glow comes over the tents of Ghifar, pardon, and glints show over them. Nothing shows about the tents of
+    // Aslam yet.
+    expect([
+      shown("Which tribe did Allah forgive?", ["pardon: a soft golden glow over the tents of Ghifar", "and glints over the tents of Ghifar", "safety: a soft golden ring about the tents of Aslam"]),
+      value("ghifar-and-aslam", "his voice, soft and golden, far off", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      1
+    ]);
+    // Aslam: Abu Dharr's voice has told of it, and his voice has named Ghifar, and nothing shows over the tents yet,
+    // before the next words; then a soft golden glow comes over the tents of Ghifar, pardon, and a soft golden ring comes
+    // about the tents of Aslam: safety.
+    expect([
+      shown("Which tribe was given safety?", ["pardon: a soft golden glow over the tents of Ghifar", "and glints over the tents of Ghifar", "safety: a soft golden ring about the tents of Aslam"]),
+      value("ghifar-and-aslam", "his voice, soft and golden, far off", "opacity", 0.32)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // Allah: nothing of the evening shows yet, before the words begin; then the whole Kingdom comes upon evening, a dusk
+    // over all of it, and night; then the sun of the morning rises from behind the hills, and a soft morning light comes
+    // over all of it. Nothing is drawn for Allah.
+    expect([
+      shown("Who does the whole kingdom belong to, as we start the day?", ["the evening sky", "the whole Kingdom at evening: a dusk over all of it", "the whole Kingdom at morning: a soft morning light over all of it"]),
+      moved("Who does the whole kingdom belong to, as we start the day?", "the sun of the morning, rising from behind the hills", "y"),
+      value("kingdom-at-evening", "the whole Kingdom at evening: a dusk over all of it", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [0, 0, 1]
+      ],
+      [0, -36],
+      1
+    ]);
+    // True: the evening sky has come and Abdullah's voice has told of it, and his voice has not spoken yet, before the
+    // next words; then his voice speaks, and a dusk comes over the whole Kingdom: we have entered upon evening.
+    expect([
+      shown("In the evening you say Amsayna, we have reached the evening.", ["his voice, soft and golden", "the whole Kingdom at evening: a dusk over all of it"]),
+      value("kingdom-at-evening", "the evening sky", "opacity", 0.13)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1
+    ]);
+    // No, it changes nothing, and false: Ibn Umar's voice asks whether people were forbidden to make vows, and no vow is
+    // made yet, before the next words; then his voice answers, the miser's voice makes a vow, and a grey dashed ring comes
+    // about it: it neither hastens nor delays anything. The miser's box stays shut.
+    expect([
+      shown("Does a vow bring something sooner?", ["his voice, soft and golden", "the miser's voice: a vow", "it neither hastens nor delays anything: a grey dashed ring about the vow"]),
+      shown("Making a vow forces Allah to give us what we want.", ["it neither hastens nor delays anything: a grey dashed ring about the vow", "the box's lid, shut"]),
+      value("a-vow-changes-nothing", "Ibn Umar's voice: asking", "opacity", 0.32)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 1],
+        [1, 1]
+      ],
+      1
+    ]);
+    // The miser: the miser's voice has made its vow and its box of wealth is shut, before the next words; then the box's
+    // lid opens, and some of the wealth goes out of it, coin by coin: taken out.
+    expect([
+      shown("Who loses wealth through vows?", ["the box's lid, open, and the wealth in it", "the box's lid, shut", "some of the wealth taken out: a coin 1, going out of the box", "some of the wealth taken out: a coin 2, going out of the box", "some of the wealth taken out: a coin 3, going out of the box"]),
+      moved("Who loses wealth through vows?", "some of the wealth taken out: a coin 1, going out of the box", "x"),
+      value("a-vow-changes-nothing", "the miser's voice: a vow", "opacity", 0.64)
+    ]).toEqual([
+      [
+        [0, 1, 0, 0, 0],
+        [1, 0, 1, 1, 1]
+      ],
+      [0, -12],
+      1
+    ]);
+    // Allah's right: no place stands by the homes yet, before the words begin; then his voice speaks far off, and a place
+    // comes by each home in turn: every Muslim. Nothing is drawn for Allah.
+    expect([
+      shown("Whose right is this bath?", ["every Muslim: a place by home 1", "every Muslim: a place by home 2", "every Muslim: a place by home 3", "every Muslim: a place by home 4"]),
+      value("a-bath-every-seven-days", "his voice, soft and golden, far off", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // Once in seven days: a place stands by each home, and no golden dot is in the sky yet, before the next words; then
+    // seven soft golden dots show in the sky, one by one, and steam rises over each basin, the bath, and glints of clean
+    // water show over them.
+    expect([
+      shown("At least how often should a Muslim bathe?", ["seven days: a soft golden dot 1 in the sky", "seven days: a soft golden dot 2 in the sky", "seven days: a soft golden dot 3 in the sky", "seven days: a soft golden dot 4 in the sky", "seven days: a soft golden dot 5 in the sky", "seven days: a soft golden dot 6 in the sky", "seven days: a soft golden dot 7 in the sky", "the bath: steam rising over each basin", "and glints of clean water over each basin"]),
+      value("a-bath-every-seven-days", "every Muslim: a place by home 4", "opacity", 0.66)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // A thousand good deeds: his voice speaks to those sitting with him, and no light is in the sky yet, before the next
+    // words; then twenty-five small lights show in the sky, row by row, a hundred tasbihat, and golden sparks rise and are
+    // kept: a thousand good deeds written. Then grey specks come over them as the evil deeds are named, to be wiped away.
+    expect([
+      shown("How many good deeds are written for a hundred tasbih?", ["a hundred tasbihat: twenty-five small lights in the sky, row 1", "a hundred tasbihat: twenty-five small lights in the sky, row 2", "a hundred tasbihat: twenty-five small lights in the sky, row 3", "a hundred tasbihat: twenty-five small lights in the sky, row 4", "a thousand good deeds: a golden spark 1, rising and kept", "a thousand good deeds: a golden spark 2, rising and kept", "a thousand good deeds: a golden spark 3, rising and kept", "a thousand good deeds: a golden spark 4, rising and kept", "a thousand good deeds: a golden spark 5, rising and kept", "a thousand good deeds: a golden spark 6, rising and kept", "a thousand good deeds: a golden spark 7, rising and kept", "a thousand good deeds: a golden spark 8, rising and kept", "a thousand good deeds: a golden spark 9, rising and kept", "a thousand good deeds: a golden spark 10, rising and kept", "and a thousand evil deeds: grey specks over them, then wiped away"]),
+      moved("How many good deeds are written for a hundred tasbih?", "a thousand good deeds: a golden spark 1, rising and kept", "y"),
+      value("a-thousand-good-deeds", "his voice, soft and golden", "opacity", 0.117)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      [0, -44],
+      1
+    ]);
+    // A man sitting with him: no ring is about the places of those sitting with him yet, before the words begin; then a
+    // soft ring comes about the place of one of them, and its voice asks how.
+    expect([
+      shown("Who asked how one could earn them?", ["the one who asked: a soft ring about its place", "the voice of the one who asked how"])
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // True: Sa'd's voice has told of it, and his voice speaks to those sitting with him, before the next words; then his
+    // voice asks whether one of them is unable to attain a thousand good deeds, and a soft ring comes about the place of
+    // the one who asks.
+    expect([
+      shown("He ﷺ asked if anyone was unable to earn a thousand good deeds.", ["his voice, soft and golden", "the one who asked: a soft ring about its place"]),
+      value("a-thousand-good-deeds", "his voice, soft and golden", "opacity", 0.2)
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      1
     ]);
   });
 

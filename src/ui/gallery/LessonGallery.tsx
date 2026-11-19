@@ -1726,6 +1726,11 @@ const STATES: State[] = [
   { id: "scene-leaving-early-from-jam", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-sawdah-early" ask="Why did she ask to leave" /> },
   { id: "scene-talbina", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-talbina" ask="What food did Aishah" /> },
   { id: "scene-colors-like-the-earth", render: () => <SceneQuestionDemo lessonId="lesson-deep-rum2-colors-like-the-earth" ask="From how much of the earth" /> },
+  { id: "scene-ghifar-and-aslam", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-companions-ghifar-and-aslam" ask="Which tribe did Allah forgive" /> },
+  { id: "scene-kingdom-at-evening", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-adhkar-kingdom" ask="Who does the whole kingdom belong to" /> },
+  { id: "scene-a-vow-changes-nothing", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-a-vow-changes-nothing" ask="Who loses wealth" /> },
+  { id: "scene-a-bath-every-seven-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-prayer-a-bath-every-week" ask="At least how often" /> },
+  { id: "scene-a-thousand-good-deeds", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-easy-words-a-thousand-good-deeds" ask="How many good deeds are written" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

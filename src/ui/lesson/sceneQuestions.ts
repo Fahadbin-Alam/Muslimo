@@ -7643,6 +7643,46 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["From how much of the earth was Adam made, in the hadith?", "A handful from all of it", "Handful from all of the earth. So the"],
     ["Why do people differ in color, in the hadith?", "They are like the earth", "Children of Adam come in accordance with", "The earth: some of them come red, and"],
     ["The hadith names red, white and black people.", "True", "Children of Adam come in accordance with", "White and black, and between that."]
+  ],
+  // Abu Dharr said: the Messenger of Allah ﷺ said: Ghifar, to whom Allah granted pardon, and Aslam, to whom Allah
+  // granted safety (Sahih Muslim 2514a). Its lesson's question on who carried this good news to his people is not asked
+  // here, since the scene's words leave that part out.
+  "sign-ghifar-and-aslam": [
+    ["Which tribe did Allah forgive?", "Ghifar", "Abu Dharr: he said: Ghifar, to whom Allah", "Granted pardon, and Aslam, to whom Allah"],
+    ["Which tribe was given safety?", "Aslam", "Granted pardon, and Aslam, to whom Allah", "Granted safety."]
+  ],
+  // Abdullah said: when it was evening, the Messenger of Allah ﷺ used to supplicate: we have entered upon evening, and
+  // so, too, the whole Kingdom of Allah has entered upon evening. Praise is due to Allah. There is no god but Allah, the
+  // One having no partner with Him. ... And when it was morning he said like this: we entered upon morning, and the
+  // whole Kingdom of Allah entered upon morning (Sahih Muslim 2723b). Its lesson's question on what is asked for in this
+  // dhikr is not asked here, since the scene's words leave that part out.
+  "sign-kingdom-at-evening": [
+    ["Who does the whole kingdom belong to, as we start the day?", "Allah", "Abdullah: when it was evening, he used", "Allah entered upon morning."],
+    ["In the evening you say Amsayna, we have reached the evening.", "True", "To supplicate: we have entered upon", "Evening, and so, too, the whole Kingdom"]
+  ],
+  // Sa'id ibn al-Harith heard Ibn Umar saying: weren't people forbidden to make vows? The Prophet ﷺ said: a vow neither
+  // hastens nor delays anything, but by the making of vows, some of the wealth of a miser is taken out (Sahih al-Bukhari
+  // 6692).
+  "sign-a-vow-changes-nothing": [
+    ["Does a vow bring something sooner?", "No, it changes nothing", "Vows? He said: a vow neither hastens nor", "Delays anything, but by the making of"],
+    ["Who loses wealth through vows?", "The miser", "Vows, some of the wealth of a miser is", "Taken out."],
+    ["Making a vow forces Allah to give us what we want.", "False", "Vows? He said: a vow neither hastens nor", "Delays anything, but by the making of"]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: it is Allah's right on every Muslim that he should take a bath at least once
+  // in seven days (Sahih al-Bukhari 898). Its lesson's true-or-false question on keeping clean is not asked here, since
+  // it is on the whole hadith.
+  "sign-a-bath-every-seven-days": [
+    ["Whose right is this bath?", "Allah's right", "Abu Hurairah: he said: it is Allah's", "Right on every Muslim that he should"],
+    ["At least how often should a Muslim bathe?", "Once in seven days", "Take a bath once in seven days."]
+  ],
+  // Sa'd said: the Messenger of Allah ﷺ said to those sitting with him: is one of you incapable of attaining a thousand
+  // good deeds? So a questioner among those seated with him asked him: how can one of us earn a thousand good deeds? He
+  // said: when one of you recites a hundred tasbihat, a thousand good deeds are written for him, and a thousand evil
+  // deeds are wiped away from him (Jami at-Tirmidhi 3463).
+  "sign-a-thousand-good-deeds": [
+    ["How many good deeds are written for a hundred tasbih?", "A thousand good deeds", "Is one of you incapable of attaining a", "Are written for him, and a thousand evil"],
+    ["Who asked how one could earn them?", "A man sitting with him", "Sa'd: he said to those sitting with him:", "Among those seated with him asked him:"],
+    ["He ﷺ asked if anyone was unable to earn a thousand good deeds.", "True", "Is one of you incapable of attaining a", "Thousand good deeds? So a questioner"]
   ]
 };
 
