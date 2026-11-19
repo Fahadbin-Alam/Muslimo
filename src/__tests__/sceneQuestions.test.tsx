@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3473);
+    expect(asks.length).toBe(3480);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5068);
+    expect(places).toBe(5077);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -23969,6 +23969,142 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1, 1, 0]
       ],
       [-12.9, -12.9],
+      1
+    ]);
+  });
+
+  it("waits on the scenes from swearing to sell to no gold or silver vessels, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-swearing-to-sell", "sign-look-below-you", "sign-nap-after-jumuah", "sign-at-all-moments", "sign-the-hibra", "sign-gold-and-silver"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(7);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Sell the goods: Abu Hurairah's voice has told what he heard, and the buyer's place has come along the pale dashed
+    // way to the stall, with no word from the seller yet, before the next words; then the seller's voice speaks, quick
+    // and grey: the swearing, the buyer's place steps closer, the jar goes from the counter to the buyer: the goods, and
+    // coins go from the buyer to the counter: the price. It stops before the blessing is taken away.
+    expect([
+      shown("What does swearing a lot help a seller do?", ["the price: coins going from the buyer to the counter, then dwindling", "the blessing taken away: a grey dashed ring about the coins"]),
+      moved("What does swearing a lot help a seller do?", "the buyer's place: coming to the stall, then stepping closer", "x"),
+      moved("What does swearing a lot help a seller do?", "the goods: a jar going from the counter to the buyer", "x"),
+      moved("What does swearing a lot help a seller do?", "the price: coins going from the buyer to the counter, then dwindling", "x"),
+      value("swearing-to-sell", "the swearing: the seller's voice, quick and grey", "opacity", 0.34)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [64, 68],
+      [0, -12],
+      [0, 19.6],
+      1
+    ]);
+    // Allah's blessing: the goods have gone to the buyer and the price to the counter, the coins still bright, before
+    // the next words; then the coins dwindle, and a grey dashed ring comes about them: the blessing taken away.
+    expect([
+      shown("What does it take away?", ["the price: coins going from the buyer to the counter, then dwindling", "the blessing taken away: a grey dashed ring about the coins"]),
+      moved("What does it take away?", "the goods: a jar going from the counter to the buyer", "x")
+    ]).toEqual([
+      [
+        [1, 0],
+        [0.35, 1]
+      ],
+      [-12, -12]
+    ]);
+    // Think of those with less: the place of one given more shows at the large home's door with many coins by it, and a
+    // faint dotted line goes to it from the one who looks, with no one at the small home yet, before the next words;
+    // then the dotted line goes the other way, to the small home, the place of one who has less shows there, and a soft
+    // golden ring comes about the one who looks.
+    expect([
+      shown("You see a friend with a new phone. What fits this hadith?", ["the place of one given more, at the large home's door", "more in property: many coins by the large home", "looking at the one given more: a faint dotted line to it", "also looking at the one below: a faint dotted line the other way, to the small home", "the place of one who has less, at the small home", "looking at the one below too: a soft golden ring about the one who looks"])
+    ]).toEqual([
+      [
+        [1, 1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 1, 1]
+      ]
+    ]);
+    // Took an afternoon nap: the sun has risen toward its height, the places on both sides have gone to the masjid
+    // early, sparks have risen from the rows: the prayer, and the places have come back, with no shade or mats yet,
+    // before the next words; then the shade of the palms shows with mats in it, the sun goes on into the afternoon, and
+    // the places rest there.
+    expect([
+      shown("What did they do after the Jumu'ah prayer?", ["the afternoon nap: the shade of the palms, with mats in it", "Anas's place and those beside it: to the masjid early, then back to rest", "the places from the right: to the masjid early, then back to rest"]),
+      moved("What did they do after the Jumu'ah prayer?", "the sun: rising toward its height, then going on into the afternoon", "x"),
+      moved("What did they do after the Jumu'ah prayer?", "Anas's place and those beside it: to the masjid early, then back to rest", "x"),
+      moved("What did they do after the Jumu'ah prayer?", "the places from the right: to the masjid early, then back to rest", "x"),
+      value("nap-after-jumuah", "Anas's place and those beside it: to the masjid early, then back to rest", "x", 0.3),
+      value("nap-after-jumuah", "the prayer: a spark rising from the rows on the left", "opacity", 0.38)
+    ]).toEqual([
+      [
+        [0, 1, 1],
+        [1, 0.7, 0.7]
+      ],
+      [36, 94],
+      [20, 20],
+      [-20, -20],
+      46,
+      1
+    ]);
+    // At all moments: Aishah's voice has told of it, and the dawn has turned to day with the sun up, with no word from
+    // his place yet, before the next words; then his voice, soft and golden, remembers in the morning, at midday, toward
+    // evening and at night, a spark rising from his place each time, while the sun goes down and sets and the night
+    // comes with its stars and the moon, and a soft golden ring comes about his place.
+    expect([
+      shown("When did he ﷺ remember Allah, Aishah said?", ["the dawn sky, turning to day", "the evening sky", "the night sky", "stars", "the moon", "at all moments: a soft golden ring about his place"]),
+      moved("When did he ﷺ remember Allah, Aishah said?", "the sun: rising, at its height, going down, and setting", "x"),
+      [0.5, 0.61, 0.72, 0.85].map((t) => ["his voice, soft and golden, remembering: in the morning, at midday, toward evening and at night", "in the morning: a spark rising from his place", "at midday: a spark rising from his place", "toward evening: a spark rising from his place", "at night: a spark rising from his place"].map((name) => value("at-all-moments", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1]
+      ],
+      [18, 126],
+      [
+        [1, 1, 0, 0, 0],
+        [1, 0, 1, 0, 0],
+        [1, 0, 0, 1, 0],
+        [1, 0, 0, 0, 1]
+      ]
+    ]);
+    // The Hibra: Anas's voice has told of it, and the line for clothes shows with a plain white cloth and a dark woollen
+    // cloak on it, with nothing more on it yet, before the next words; then the Hibra, a striped cloth, is put on the
+    // line, glints and a soft golden ring come about it: the most beloved garment, a soft golden way goes to it from his
+    // place: to him, to wear, and glints and a soft golden ring come about his place.
+    expect([
+      shown("Which garment did he ﷺ love most?", ["a plain white cloth on the line", "a dark woollen cloak on the line", "the Hibra: a striped cloth, put on the line", "the most beloved garment: glints about the Hibra", "the most beloved garment: a soft golden ring about the Hibra", "to him, to wear: a soft golden way from his place to the Hibra", "glints about his place", "a soft golden ring about his place"]),
+      value("the-hibra", "Anas's voice: telling of it", "opacity", 0.1)
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // Eating from gold and silver vessels: Hudhayfah's voice has told what he heard, with no vessel of gold or silver
+    // yet, before the next words; then cups of gold and silver show and a grey dashed ring comes about them: do not
+    // drink in them, and plates of gold and silver show and a grey dashed ring comes about them: do not eat in them. It
+    // stops with both still there, before they go away.
+    expect([
+      shown("What did the Prophet ﷺ forbid, per Bukhari 5426?", ["cups of gold and silver: showing, then going away", "do not drink in them: a grey dashed ring about the cups", "plates of gold and silver: showing, then going away", "do not eat in them: a grey dashed ring about the plates", "for us: a soft golden ring about the sitting places"]),
+      moved("What did the Prophet ﷺ forbid, per Bukhari 5426?", "cups of gold and silver: showing, then going away", "x"),
+      value("gold-and-silver", "Hudhayfah's voice: telling what he heard", "opacity", 0.06)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0]
+      ],
+      [0, 0],
       1
     ]);
   });
