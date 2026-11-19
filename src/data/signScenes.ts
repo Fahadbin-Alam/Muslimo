@@ -1163,7 +1163,13 @@ export type SignKind =
   | "even-a-little"
   | "glad-and-sad"
   | "hajj-is-arafah"
-  | "only-by-allah";
+  | "only-by-allah"
+  | "keep-the-sick-apart"
+  | "safe-next-door"
+  | "hajj-at-seven"
+  | "be-brothers"
+  | "keep-ties-when-cut"
+  | "say-bismillah-and-eat";
 
 export type SignScene = {
   id: string;
@@ -6662,6 +6668,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sa'd ibn Ubaidah said that Ibn Umar heard a man saying: no, by the Ka'bah. So Ibn Umar said: nothing is sworn by other than Allah, for I heard the Messenger of Allah ﷺ say: whoever swears by other than Allah, he has committed disbelief or shirk.",
     sources: [tirmidhi("1535")]
+  },
+  {
+    id: "sign-keep-the-sick-apart",
+    kind: "keep-the-sick-apart",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: the cattle suffering from a disease should not be mixed up with healthy cattle.",
+    sources: [bukhari("5771")]
+  },
+  {
+    id: "sign-safe-next-door",
+    kind: "safe-next-door",
+    caption:
+      "Abu Shuraih said: the Prophet ﷺ said: by Allah, he does not believe! By Allah, he does not believe! By Allah, he does not believe! It was said: who is that, O Messenger of Allah? He said: that person whose neighbor does not feel safe from his evil.",
+    sources: [bukhari("6016")]
+  },
+  {
+    id: "sign-hajj-at-seven",
+    kind: "hajj-at-seven",
+    caption:
+      "As-Sa'ib ibn Yazid said: I was made to perform Hajj with the Messenger of Allah ﷺ, and I was a seven-year-old boy then.",
+    sources: [bukhari("1858")]
+  },
+  {
+    id: "sign-be-brothers",
+    kind: "be-brothers",
+    caption:
+      "Anas ibn Malik said: the Messenger of Allah ﷺ said: do not hate one another, nor be jealous of one another; and do not desert one another, but O Allah's worshipers! Be brothers! And it is unlawful for a Muslim to desert his brother Muslim for more than three nights.",
+    sources: [bukhari("6076")]
+  },
+  {
+    id: "sign-keep-ties-when-cut",
+    kind: "keep-ties-when-cut",
+    caption:
+      "Abdullah ibn Amr said: the Prophet ﷺ said: al-Wasil is not the one who recompenses the good done to him by his relatives, but al-Wasil is the one who keeps good relations with those relatives who had severed the bond of kinship with him.",
+    sources: [bukhari("5991")]
+  },
+  {
+    id: "sign-say-bismillah-and-eat",
+    kind: "say-bismillah-and-eat",
+    caption:
+      "Aishah said: the people said: O Messenger of Allah, here are people who have recently embraced Islam, and they bring meat, and we do not know whether they had mentioned Allah's Name or not. He said: you should mention Allah's Name and eat.",
+    sources: [bukhari("7398")]
   }
 ];
 
@@ -9567,7 +9615,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The Hajj is Arafah: whoever reaches Jam before Fajr has attended the Hajj.
   "deep-hajj-arafah": "sign-hajj-is-arafah",
   // Swear by none but Allah: swearing by other than Allah is disbelief or shirk.
-  "deep-yusuf6-swear-only-by-allah": "sign-only-by-allah"
+  "deep-yusuf6-swear-only-by-allah": "sign-only-by-allah",
+  // Sick animals are not brought among healthy ones.
+  "deep-book-medicine-keep-sick-apart": "sign-keep-the-sick-apart",
+  // By Allah, he does not believe: the one whose neighbor is not safe from his harm.
+  "deep-neighbors-safe-neighbor": "sign-safe-next-door",
+  // As-Sa'ib went on Hajj with him when he was seven years old.
+  "deep-kids-children-hajj-at-seven": "sign-hajj-at-seven",
+  // Do not hate or desert one another; be brothers, and never desert a brother for more than three nights.
+  "deep-hujurat2-no-shunning": "sign-be-brothers",
+  // Al-Wasil keeps ties even with the relatives who cut him off.
+  "deep-muhammad2-keep-ties-with-those-who-cut": "sign-keep-ties-when-cut",
+  // Not sure the meat new Muslims bring was named over? Mention Allah's name, and eat.
+  "deep-intro-starting-out-say-bismillah-and-eat": "sign-say-bismillah-and-eat"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

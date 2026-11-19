@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3674);
+    expect(asks.length).toBe(3688);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5355);
+    expect(places).toBe(5375);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -26776,6 +26776,202 @@ describe("where the scene waits and where it stops", () => {
         [0, 0],
         [1, 1]
       ]
+    ]);
+  });
+
+  it("waits on the scenes from keeping the sick apart to saying Bismillah and eating, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-keep-the-sick-apart", "sign-safe-next-door", "sign-hajj-at-seven", "sign-be-brothers", "sign-keep-ties-when-cut", "sign-say-bismillah-and-eat"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(14);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Sick animals, and true: Abu Hurairah's voice has told of it, and a sheep has come from the right to the lane, before
+    // the next words; then a soft blue-grey ring comes about it: it is sick; and a grey dashed ring comes about the lane
+    // to the fold: it is not to be mixed with the healthy ones. Glints show over the healthy sheep, and a soft golden ring
+    // comes about the place that kept the sick one apart.
+    expect([
+      shown("What should not be mixed with healthy animals?", ["sick: a soft blue-grey ring about the sheep from the right", "not to be mixed: a grey dashed ring about the lane to the fold", "glints over the healthy sheep", "kept apart: a soft golden ring about the place that keeps the sick sheep"]),
+      shown("Taking care to stop sickness spreading is good.", ["sick: a soft blue-grey ring about the sheep from the right", "not to be mixed: a grey dashed ring about the lane to the fold", "glints over the healthy sheep", "kept apart: a soft golden ring about the place that keeps the sick sheep"]),
+      value("keep-the-sick-apart", "a sheep from the right, sick, coming to the lane and stopping there", "x", 0.32)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      -26
+    ]);
+    // Three: Abu Shuraih's voice has told of it and his voice has begun, and no grey dot shows yet, before the next words;
+    // then three times a small grey dot shows by his voice: three times he said it.
+    expect([
+      shown("How many times did he say 'he does not believe'?", ["said once: a small grey dot by his voice", "said a second time: a second small grey dot", "said a third time: a third small grey dot"]),
+      value("safe-next-door", "his voice, soft and golden, far off", "opacity", 0.16)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // One whose neighbor is not safe from him: the voice of one by him has asked who, and his voice speaks again, before
+    // the next words; then grey specks go from the place on the left to the place next door, harm; that place draws back
+    // to its door, a soft blue-grey ring comes about it, not safe, and a heavy grey ring comes about the place the harm
+    // came from.
+    expect([
+      shown("Whose faith did the Prophet ﷺ warn about?", ["harm: a grey speck 1, from the place on the left to the place next door", "harm: a grey speck 2, from the place on the left to the place next door", "harm: a grey speck 3, from the place on the left to the place next door", "not safe: a soft blue-grey ring about the place next door", "does not believe: a heavy grey ring about the place the harm came from"]),
+      moved("Whose faith did the Prophet ﷺ warn about?", "the place next door, drawing back to its door", "x"),
+      moved("Whose faith did the Prophet ﷺ warn about?", "the place next door, drawing back to its door", "y"),
+      value("safe-next-door", "its voice, asking who", "opacity", 0.64)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, 2.2],
+      [0, -3.4],
+      0
+    ]);
+    // Seven years old: the young place has come with the one who brought him, a soft light is about the Ka'bah, and a
+    // faint golden way goes from the young place to his place, before the next words; then seven small soft golden dots
+    // show over the young place, one by one, and a soft golden ring comes about it.
+    expect([
+      shown("How old was As-Sa'ib on that Hajj?", ["seven years: a soft golden dot 1 over the young place", "seven years: a soft golden dot 2 over the young place", "seven years: a soft golden dot 3 over the young place", "seven years: a soft golden dot 4 over the young place", "seven years: a soft golden dot 5 over the young place", "seven years: a soft golden dot 6 over the young place", "seven years: a soft golden dot 7 over the young place", "a soft golden ring about the young place"]),
+      value("hajj-at-seven", "with him: a faint golden way from the young place to his place", "opacity", 0.66)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // True: As-Sa'ib's voice tells of it, and no young place has come yet, before the next words; then the young place
+    // comes from the right with the one who brought him, and a faint golden way goes from it to his place: with him.
+    expect([
+      shown("Children went on Hajj with him ﷺ too.", ["As-Sa'ib's young place, small, coming from the right", "with him: a faint golden way from the young place to his place"]),
+      moved("Children went on Hajj with him ﷺ too.", "As-Sa'ib's young place, small, coming from the right", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -28]
+    ]);
+    // Brothers: the two places have gone apart, each to its home, a grey dashed way between them, before the next words;
+    // then they come back together, and a soft golden ring comes about them.
+    expect([
+      shown("What should Allah's servants be, per Bukhari 6076?", ["together as one: a soft golden ring about the two places"]),
+      moved("What should Allah's servants be, per Bukhari 6076?", "the place of one Muslim, going to its home on the left and back", "x"),
+      value("be-brothers", "deserting: a grey dashed way between the two places", "opacity", 0.382)
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      [-42, 0],
+      1
+    ]);
+    // Three nights, and false: the two places have gone apart again, a grey dashed way between them, and no crescent shows
+    // in the sky yet, before the next words; then three pale crescents show, one by one: three nights; the grey way goes,
+    // they come back together, and the soft golden ring comes about them.
+    expect([
+      shown("How long at most may a Muslim not speak to his brother?", ["three nights: a pale crescent 1 in the sky", "three nights: a pale crescent 2 in the sky", "three nights: a pale crescent 3 in the sky", "together as one: a soft golden ring about the two places"]),
+      shown("Holding a grudge for years is fine in Islam.", ["three nights: a pale crescent 1 in the sky", "three nights: a pale crescent 2 in the sky", "three nights: a pale crescent 3 in the sky", "glints over the two places together"]),
+      value("be-brothers", "deserting: a grey dashed way between the two places", "opacity", 0.76)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // Only returning good done to you: Abdullah's voice has told of it, and nothing has gone between the homes yet, before
+    // the next words; then a basket of dates goes from the relatives to the one on the left: good done to it; and a jar
+    // goes back: repaid.
+    expect([
+      shown("What is not enough, per Bukhari 5991?", ["good done to it: a basket of dates, from its relatives to it", "repaid: a jar, from it back to its relatives"]),
+      moved("What is not enough, per Bukhari 5991?", "good done to it: a basket of dates, from its relatives to it", "x"),
+      moved("What is not enough, per Bukhari 5991?", "repaid: a jar, from it back to its relatives", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -66],
+      [0, 53]
+    ]);
+    // One who keeps ties with those who cut him: the basket has come and the jar has gone back, before the next words;
+    // then a soft light comes about the one on the left, al-Wasil; the relatives turn back to their home, and a grey
+    // dashed way shows between the homes; then it goes to them with a sack, a faint golden way shows between the homes,
+    // and a soft golden ring comes about its place.
+    expect([
+      shown("Who truly keeps ties, per Bukhari 5991?", ["al-Wasil: a soft light about its place, going with it", "the ties kept: a faint golden way between the homes", "it keeps the ties: a soft golden ring about its place"]),
+      moved("Who truly keeps ties, per Bukhari 5991?", "the place of the one on the left, going to its relatives", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 76]
+    ]);
+    // People new to Islam: Aishah's voice has told of it and their voice asks him, and no one has come along the lane yet,
+    // before the next words; then the places of three new to Islam come along it, and a dish of meat they bring is set
+    // down before those who asked.
+    expect([
+      shown("Who were bringing the meat?", ["the places of three new to Islam, coming along the lane"]),
+      moved("Who were bringing the meat?", "the places of three new to Islam, coming along the lane", "x"),
+      value("say-bismillah-and-eat", "their voice: asking him", "opacity", 0.16)
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      [0, 44],
+      1
+    ]);
+    // False: the dish has been set down, and no ring is about it yet, before the next words; then a grey dashed ring comes
+    // about it: they do not know.
+    expect([
+      shown("They knew for sure that Allah's name was said on the meat.", ["not known: a grey dashed ring about the dish"])
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ]
+    ]);
+    // Say Allah's name and eat: the grey ring is about the dish and his voice speaks, before the next words; then their
+    // voices say Bismillah, soft and golden, glints rise from the dish, a piece of it goes to each of them, and a soft
+    // golden ring comes about their places.
+    expect([
+      shown("What did he ﷺ tell them to do with the meat?", ["Bismillah: a glint 1, rising from the dish", "a soft golden ring about the places of those who asked"]),
+      moved("What did he ﷺ tell them to do with the meat?", "and eat: a piece of the meat, going to the place of one who asked 1", "x"),
+      value("say-bismillah-and-eat", "not known: a grey dashed ring about the dish", "opacity", 0.8),
+      value("say-bismillah-and-eat", "Bismillah: their voices, soft and golden", "opacity", 0.86)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 9.1],
+      1,
+      1
     ]);
   });
 
