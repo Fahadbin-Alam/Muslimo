@@ -1720,6 +1720,12 @@ const STATES: State[] = [
   { id: "scene-be-brothers", render: () => <SceneQuestionDemo lessonId="lesson-deep-hujurat2-no-shunning" ask="How long at most may a Muslim" /> },
   { id: "scene-keep-ties-when-cut", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhammad2-keep-ties-with-those-who-cut" ask="Who truly keeps ties" /> },
   { id: "scene-say-bismillah-and-eat", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-starting-out-say-bismillah-and-eat" ask="Who were bringing the meat" /> },
+  { id: "scene-four-umrahs-one-hajj", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-umrah-four" ask="make Umrah" /> },
+  { id: "scene-hajj-on-his-behalf", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-for-parent" ask="Why couldn't her father" /> },
+  { id: "scene-last-at-the-house", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-the-farewell-tawaf" ask="What is the last rite" /> },
+  { id: "scene-leaving-early-from-jam", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-sawdah-early" ask="Why did she ask to leave" /> },
+  { id: "scene-talbina", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-talbina" ask="What food did Aishah" /> },
+  { id: "scene-colors-like-the-earth", render: () => <SceneQuestionDemo lessonId="lesson-deep-rum2-colors-like-the-earth" ask="From how much of the earth" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
