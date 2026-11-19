@@ -6546,6 +6546,55 @@ const ASKS: Record<string, readonly Ask[]> = {
   // lesson's question on what is worn in ihram is not asked here, since the scene does not show it.
   "sign-seven-rounds": [
     ["____ means walking around the Ka'bah seven times.", "Tawaf", "And performed seven rounds of the Ka'bah,"]
+  ],
+  // Juwayriyah reported that the Messenger of Allah ﷺ came out in the morning as she was busy in observing her dawn
+  // prayer in her place of worship; he came back in the forenoon and she was still sitting there, and he said: I recited
+  // four words three times after I left you, and if these are to be weighed against what you have recited since morning,
+  // these would outweigh them (Sahih Muslim 2726). Its lesson's question on how long she sat is not asked here, since
+  // the dawn shows from the start, nor the one on the words themselves, since the scene does not show them.
+  "sign-four-words": [
+    ["How many times did he say the four phrases?", "Three times", "He said: I recited four words three times"],
+    ["What does the hadith teach about dhikr?", "Choosing deep words brings great reward", "After I left you; if weighed against", "These would outweigh them."]
+  ],
+  // Urwah reported that the Prophet ﷺ gave him one dinar to buy a sheep for him; Urwah bought two sheep with it, sold
+  // one of them for one dinar, and brought him one dinar and a sheep; he invoked Allah to bless Urwah in his deals, and
+  // Urwah used to gain even if he bought dust (Sahih al-Bukhari 3642). Its lesson's question of who this is is not asked
+  // here, since the scene's first words name Urwah.
+  "sign-a-dinar-and-a-sheep": [
+    ["What is Urwah ibn Abi al-Ja'd al-Bariqi known for?", "The Prophet ﷺ blessed his trade: even dust would earn him profit.", "He invoked Allah to bless Urwah's deals;", "So Urwah used to gain, even buying dust."]
+  ],
+  // Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ said: if a person embraces Islam sincerely, then Allah shall
+  // forgive all his past sins, and after that starts the settlement of accounts: the reward of his good deeds will be
+  // ten times to seven hundred times for each good deed, and one evil deed will be recorded as it is, unless Allah
+  // forgives it (Sahih al-Bukhari 41).
+  "sign-ten-to-seven-hundred": [
+    ["Someone sincerely accepts Islam. What about his past sins?", "Allah forgives them", "Islam sincerely, Allah shall forgive", "All the past sins; after that starts"],
+    ["After that, a good deed can be rewarded up to...?", "Seven hundred times", "To seven hundred times for each good deed,"],
+    ["One bad deed is written as ten bad deeds.", "False", "And one evil deed will be recorded"]
+  ],
+  // Abu Hurairah reported the Messenger of Allah ﷺ as saying: look at those who stand at a lower level than you, but
+  // don't look at those who stand at a higher level than you, for that is better suited, that you do not disparage
+  // Allah's favors (Sahih Muslim 2963c). Its lesson's true or false on looking at those with less is not asked here,
+  // since it asks again what the first question asks.
+  "sign-look-below": [
+    ["To stay thankful, whom should you look at?", "Those who have less", "Who stand at a lower level than you,"],
+    ["What does looking only at those above you lead to?", "Belittling Allah's blessings", "For that is better suited, that you", "Do not disparage Allah's favors."]
+  ],
+  // Abdullah said: in a tent the Prophet ﷺ asked: would it please you to be one fourth of the people of Paradise? then
+  // one third, then half, and each time we said yes; he said: I hope that you will be one half of the people of
+  // Paradise, and compared to those who associate others in worship with Allah, you are like a white hair on the skin of
+  // a black ox (Sahih al-Bukhari 6528). Its lesson's question on who alone enters Paradise is not asked here, since the
+  // scene's words leave it out.
+  "sign-half-of-paradise": [
+    ["What did he ﷺ ask about first?", "One fourth", "One fourth of the people of Paradise?"],
+    ["What did he ﷺ hope, per Bukhari 6528?", "We are half of Paradise", "He said: I hope that you will be one half", "Of the people of Paradise; compared to"]
+  ],
+  // Abu Bakrah said: I reached the Prophet ﷺ in the mosque while he was bowing in prayer, and I too bowed before joining
+  // the row; I mentioned it to the Prophet ﷺ, and he said to me: may Allah increase your love for the good, but do not
+  // repeat it again (Sahih al-Bukhari 783). Its lesson's true or false on waiting is not asked here, since it asks again
+  // what the first question asks.
+  "sign-before-the-row": [
+    ["Late, and the imam is bowing? Say Allahu akbar and ____.", "join", "While he was bowing in prayer, and I too", "Bowed before joining the row."]
   ]
 };
 

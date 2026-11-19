@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3385);
+    expect(asks.length).toBe(3396);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(4941);
+    expect(places).toBe(4958);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -22591,6 +22591,177 @@ describe("where the scene waits and where it stops", () => {
         [1, 0, 0, 0, 0, 0, 0],
         [1, 1, 1, 1, 0, 0, 0]
       ]
+    ]);
+  });
+
+  it("waits on the scenes from four words to before the row, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-four-words", "sign-a-dinar-and-a-sheep", "sign-ten-to-seven-hundred", "sign-look-below", "sign-half-of-paradise", "sign-before-the-row"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(11);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Three times: his place is back and a soft golden ring is about her place, still sitting there, with no voice of
+    // his and no golden glints yet, before the next words; then his voice speaks, and four golden glints show three
+    // times, one after another.
+    expect([
+      shown("How many times did he say the four phrases?", ["his voice: four words, three times", "the four words, said once: four golden glints", "the four words, said twice: four golden glints", "the four words, said a third time: four golden glints"]),
+      [0.535, 0.55, 0.565].map((t) => ["the four words, said once: four golden glints", "the four words, said twice: four golden glints", "the four words, said a third time: four golden glints"].map((name) => value("four-words", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [1, 0, 0],
+        [1, 1, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Choosing deep words brings great reward: the four words have shown three times, with no balance yet, before the
+    // next words; then a balance shows, what she recited goes into its left pan and the four words into its right pan,
+    // which goes down: they outweigh it, with a soft light and glints about it.
+    expect([
+      shown("What does the hadith teach about dhikr?", ["a balance: its stand", "a balance: its crossbar", "a balance: the left pan", "a balance: the right pan", "what she recited, in the left pan: small pale glints", "outweighing: a soft light and glints about the right pan"]),
+      moved("What does the hadith teach about dhikr?", "a balance: its crossbar", "rotate"),
+      moved("What does the hadith teach about dhikr?", "a balance: the right pan", "y"),
+      moved("What does the hadith teach about dhikr?", "the four words, said once: four golden glints", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, 10],
+      [0, 2.1],
+      [0, -11.5]
+    ]);
+    // His trade blessed, even in dust: Urwah's place is back with a sheep and the dinar has gone to his place, with no
+    // du'a yet, before the next words; then his voice makes the du'a, a soft golden ring and glints come about Urwah's
+    // place: blessing, and a small heap of dust shows, with a dinar rising from it to Urwah: gain, even buying dust.
+    expect([
+      shown("What is Urwah ibn Abi al-Ja'd al-Bariqi known for?", ["his voice: the du'a", "blessing in Urwah's deals: a soft golden ring about Urwah's place", "blessing: glints about Urwah's place", "a small heap of dust by Urwah's place", "gain, even buying dust: a dinar rising from the heap to Urwah", "gain: glints about Urwah's place"]),
+      moved("What is Urwah ibn Abi al-Ja'd al-Bariqi known for?", "gain, even buying dust: a dinar rising from the heap to Urwah", "x"),
+      moved("What is Urwah ibn Abi al-Ja'd al-Bariqi known for?", "gain, even buying dust: a dinar rising from the heap to Urwah", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1]
+      ],
+      [0, -12],
+      [0, -6]
+    ]);
+    // Allah forgives them: grey puffs, its past sins, are about the place of one who embraces Islam, with a small light
+    // within it, before the next words; then a soft golden ring comes about it: sincerely, and once it has come the grey
+    // puffs fade away: forgiven.
+    expect([
+      shown("Someone sincerely accepts Islam. What about his past sins?", ["its past sins: grey puffs about its place, fading away", "sincerely: a soft golden ring about its place"]),
+      [0.17, 0.2].map((t) => value("ten-to-seven-hundred", "its past sins: grey puffs about its place, fading away", "opacity", t))
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      [1, 0]
+    ]);
+    // Seven hundred times: one row of ten glints is in the golden circle, ten times, before the next words; then six
+    // more rows come one after another, and a soft golden ring about the full circle: up to seven hundred.
+    expect([
+      shown("After that, a good deed can be rewarded up to...?", ["ten times: a row of ten glints in the golden circle", "up to seven hundred: another row of glints 1", "up to seven hundred: another row of glints 2", "up to seven hundred: another row of glints 3", "up to seven hundred: another row of glints 4", "up to seven hundred: another row of glints 5", "up to seven hundred: another row of glints 6", "up to seven hundred: a soft golden ring about the full circle"]),
+      [0.64, 0.67, 0.69].map((t) => ["up to seven hundred: another row of glints 1", "up to seven hundred: another row of glints 2", "up to seven hundred: another row of glints 3", "up to seven hundred: another row of glints 4", "up to seven hundred: another row of glints 5", "up to seven hundred: another row of glints 6"].map((name) => value("ten-to-seven-hundred", name, "opacity", t)))
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1]
+      ],
+      [
+        [1, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ]
+    ]);
+    // False: the golden circle is full and the grey circle is empty, before the next words; then one grey puff rises
+    // into the grey circle, and a dashed grey ring comes about the one puff: recorded as it is.
+    expect([
+      shown("One bad deed is written as ten bad deeds.", ["an evil deed: a grey puff rising from its place to the grey circle", "as it is: a dashed grey ring about the one grey puff"]),
+      moved("One bad deed is written as ten bad deeds.", "an evil deed: a grey puff rising from its place to the grey circle", "y")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, -62]
+    ]);
+    // Those who have less: his voice speaks, with no way to any level yet, before the next words; then a dashed way goes
+    // down to the place by the small tent, and a soft ring comes about it: those at a lower level.
+    expect([
+      shown("To stay thankful, whom should you look at?", ["looking lower: a dashed way down to the place by the tent", "those at a lower level: a soft ring about the place by the tent", "looking higher: a grey dashed way up to the large home, fading away"])
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ]
+    ]);
+    // Belittling Allah's blessings: the grey way up to the large home has faded away, with nothing about the modest home
+    // yet, before the next words; then glints come about the modest home and its things, a soft golden ring about Abu
+    // Hurairah's place, a spark rises from it: thankful, and a soft warm light comes over the modest home: favors not
+    // disparaged.
+    expect([
+      shown("What does looking only at those above you lead to?", ["looking higher: a grey dashed way up to the large home, fading away", "its own blessings: glints about the modest home and its things", "a soft golden ring about Abu Hurairah's place", "favors not disparaged: a soft warm light over the modest home"]),
+      value("look-below", "thankful: a spark rising from Abu Hurairah's place", "opacity", 0.84)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      1
+    ]);
+    // One fourth: his voice asks, with nothing in the sky yet, before the next words; then Paradise shows far off, a
+    // soft circle of light with a garden in it, and a band in four parts under it: one part lights.
+    expect([
+      shown("What did he ﷺ ask about first?", ["Paradise, far off: a soft circle of light with a garden in it", "a band in four parts, under Paradise", "one fourth: one part lights", "a band in three parts", "a band in two halves"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 0, 0]
+      ]
+    ]);
+    // Half of Paradise: the band under Paradise shows three parts, one lit, and their voice has said yes again, before
+    // the next words; then his voice speaks, the band shows two halves and one lights, with a soft golden ring and
+    // glints about it, and a soft golden ring comes about Paradise far off.
+    expect([
+      shown("What did he ﷺ hope, per Bukhari 6528?", ["a band in three parts", "his voice: I hope", "a band in two halves", "one half: one half lights", "a soft golden ring about the lit half", "glints about the lit half", "a soft golden ring about Paradise far off"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1, 1]
+      ]
+    ]);
+    // Join: Abu Bakrah's place has come in at the door, hurrying, while his place and the row still stand, before the
+    // next words; then his place and the row go low: bowing, and Abu Bakrah's place goes low before the row, with a
+    // small grey dashed ring where it bowed, and on to the row, low, along a short grey dashed way: joining.
+    expect([
+      shown("Late, and the imam is bowing? Say Allahu akbar and ____.", ["where Abu Bakrah bowed, before the row: a small grey dashed ring", "its way to the row, low: a short grey dashed way"]),
+      moved("Late, and the imam is bowing? Say Allahu akbar and ____.", "his place, a golden ring, in front", "y"),
+      moved("Late, and the imam is bowing? Say Allahu akbar and ____.", "the row behind him", "y"),
+      moved("Late, and the imam is bowing? Say Allahu akbar and ____.", "Abu Bakrah's place: in at the door, hurrying, going low before the row", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 1],
+      [0, 1],
+      [30, 62]
     ]);
   });
 
