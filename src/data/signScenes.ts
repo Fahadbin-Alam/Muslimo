@@ -1103,7 +1103,13 @@ export type SignKind =
   | "sweet-and-green"
   | "brothers-to-come"
   | "two-sermons"
-  | "umrah-to-umrah";
+  | "umrah-to-umrah"
+  | "best-generation"
+  | "camels-can-reach"
+  | "simple-path"
+  | "passing-thoughts"
+  | "together-at-muzdalifah"
+  | "best-day";
 
 export type SignScene = {
   id: string;
@@ -6184,6 +6190,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Messenger of Allah ﷺ said: Umrah is an expiation for the sins committed, and the reward of Hajj Mabrur is nothing except Paradise.",
     sources: [bukhari("1773")]
+  },
+  {
+    id: "sign-best-generation",
+    kind: "best-generation",
+    caption:
+      "Imran ibn Husayn said: the Messenger of Allah ﷺ said: the best of my followers are those living in my generation, and then those who will follow the latter. Imran said: I do not remember whether he mentioned two or three generations after his generation. Then he added: there will come after you people who will bear witness without being asked to do so, and will be treacherous and untrustworthy, and they will vow and never fulfill their vows, and fatness will appear among them.",
+    sources: [bukhari("3650")]
+  },
+  {
+    id: "sign-camels-can-reach",
+    kind: "camels-can-reach",
+    caption:
+      "Abdullah ibn Mas'ud said: by Allah, other than Whom none has the right to be worshipped, there is no surah revealed in Allah's Book but I know at what place it was revealed, and there is no ayah revealed in Allah's Book but I know about whom it was revealed. And if I know that there is somebody who knows Allah's Book better than I, and he is at a place that camels can reach, I would go to him.",
+    sources: [bukhari("5002")]
+  },
+  {
+    id: "sign-simple-path",
+    kind: "simple-path",
+    caption:
+      "Jabir said: an-Nu'man ibn Qawqal came to the Prophet ﷺ and said: would I enter Paradise if I say the obligatory prayers, deny myself that which is forbidden, and treat as lawful what has been made permissible? The Prophet ﷺ replied in the affirmative.",
+    sources: [muslim("15a")]
+  },
+  {
+    id: "sign-passing-thoughts",
+    kind: "passing-thoughts",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: Allah has accepted my invocation to forgive what whispers in the hearts of my followers, unless they put it to action or utter it.",
+    sources: [bukhari("2528"), muslim("127a")]
+  },
+  {
+    id: "sign-together-at-muzdalifah",
+    kind: "together-at-muzdalifah",
+    caption:
+      "Abu Ayyub al-Ansari said: the Messenger of Allah ﷺ offered the Maghrib and Isha prayers together at Muzdalifah.",
+    sources: [bukhari("1674")]
+  },
+  {
+    id: "sign-best-day",
+    kind: "best-day",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: the best day on which the sun has risen is Friday; on it Adam was created, on it he was made to enter Paradise, and on it he was expelled from it.",
+    sources: [muslim("854")]
   }
 ];
 
@@ -8962,7 +9010,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Two sermons on Friday, sitting between them, reciting the Quran and reminding the people.
   "deep-jumuah3-khutbah-standing": "sign-two-sermons",
   // Umrah to Umrah wipes out the sins between them, and an accepted Hajj has no reward but Paradise.
-  "deep-hajj-mabrur": "sign-umrah-to-umrah"
+  "deep-hajj-mabrur": "sign-umrah-to-umrah",
+  // The best of his followers are his own generation, then those who follow them; later ones will not keep their vows.
+  "deep-imran-ibn-husayn-the-best-generation": "sign-best-generation",
+  // Ibn Mas'ud knew where every surah was revealed, and would go wherever camels can reach to learn from one who knew more.
+  "deep-tree-ibn-masud-every-ayah": "sign-camels-can-reach",
+  // An-Nu'man ibn Qawqal: the obligatory prayers, the forbidden kept away from and the lawful taken as lawful; yes, Paradise.
+  "deep-book-iman-the-simple-path": "sign-simple-path",
+  // What whispers in the hearts is forgiven, unless it is put to action or said.
+  "deep-qaf2-thoughts-forgiven": "sign-passing-thoughts",
+  "deep-book-iman-passing-thoughts": "sign-passing-thoughts",
+  // He prayed Maghrib and Isha together at Muzdalifah.
+  "deep-book-hajj-maghrib-and-isha-together": "sign-together-at-muzdalifah",
+  // The best day on which the sun has risen is Friday.
+  "deep-days-friday": "sign-best-day",
+  "deep-jumuah3-the-best-day": "sign-best-day"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3524);
+    expect(asks.length).toBe(3538);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5143);
+    expect(places).toBe(5164);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -24834,6 +24834,201 @@ describe("where the scene waits and where it stops", () => {
       [
         [1, 1, 0, 0],
         [1, 1, 1, 1]
+      ]
+    ]);
+  });
+
+  it("waits on the scenes from the best generation to the best day, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-best-generation", "sign-camels-can-reach", "sign-simple-path", "sign-passing-thoughts", "sign-together-at-muzdalifah", "sign-best-day"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(14);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The Prophet's ﷺ own: his voice speaks, with no ring yet about his generation, before the next words; then a soft
+    // golden ring comes about it, with glints: the best. It stops before the next generation comes along the way.
+    expect([
+      shown("Which generation is the best?", ["the best: a soft golden ring about his generation", "and glints over it", "a home of the next generation, along the way", "the places of those who follow them"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 0, 0]
+      ]
+    ]);
+    // False: the places of those who follow them are there, with no third generation yet and Imran's voice not yet
+    // speaking, before the next words; then Imran's voice: he does not remember, the places of a third generation come,
+    // and the faint dotted places of a fourth come and go: two or three.
+    expect([
+      shown("Imran was sure how many generations were named.", ["the places of those who follow them", "Imran's voice: I do not remember", "the places of a third generation", "or three: the faint dotted places of a fourth, coming and going"]),
+      value("best-generation", "Imran's voice: I do not remember", "opacity", 0.4)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 0, 1, 1]
+      ],
+      1
+    ]);
+    // Their vows: the places of those who come later are there, a grey dashed ring about them, with no rings of vows
+    // yet, before the last words; then small soft golden rings of their vows come by them, fade, and are left broken
+    // and grey.
+    expect([
+      shown("What will some later people fail to keep?", ["without being asked: a grey dashed ring about them", "their vows: small soft golden rings by them", "never fulfilled: the rings left broken and grey"]),
+      value("best-generation", "their vows: small soft golden rings by them", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 0, 1]
+      ],
+      1
+    ]);
+    // Where it came down: small lights of what he knows are about his place, with no way going anywhere yet, before the
+    // next words; then faint soft golden ways go to Makkah and to Madinah, and soft lights come on over them. It stops
+    // before the places of about whom show.
+    expect([
+      shown("What did Ibn Mas'ud say he knew about every surah?", ["what he knows: a small light about his place 5", "a faint soft golden way to Makkah", "a faint soft golden way to Madinah", "where it was revealed: a soft light over Makkah", "and a soft light over Madinah", "faint places by them, far off"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 0]
+      ]
+    ]);
+    // Travel to him to learn: the place of one who knows more shows far off, a long way to it, with no camel yet and
+    // his place still by his home, before the last words; then a camel comes by his home and walks along the way, his
+    // place goes along beside it to the far place, and a soft golden ring comes about the two.
+    expect([
+      shown("What would he do if someone knew the Quran better?", ["a long way across the dunes, to that place", "a camel, by his home, walking along the way", "a soft golden ring about the two places, together"]),
+      moved("What would he do if someone knew the Quran better?", "Ibn Mas'ud's place, by it, going along beside the camel", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 94]
+    ]);
+    // The obligatory ones: Ibn Qawqal's place has come to him and asks, faint Paradise far off, with no spark yet,
+    // before the next words; then sparks of the obligatory prayers rise from its place, one after another, and a heap
+    // of grey stones shows by it: what is forbidden.
+    expect([
+      shown("Which prayers did An-Nu'man promise to keep?", ["Paradise far off, faint: what it asked about", "Ibn Qawqal's voice: asking", "the obligatory prayers: a spark rising 1", "what is forbidden: a heap of grey stones", "what is permitted: dates and a jug of water"]),
+      moved("Which prayers did An-Nu'man promise to keep?", "Ibn Qawqal's place: coming to him", "x"),
+      value("simple-path", "the obligatory prayers: a spark rising 1", "opacity", 0.32),
+      value("simple-path", "the obligatory prayers: a spark rising 5", "opacity", 0.37)
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 1, 0]
+      ],
+      [-48, -48],
+      1,
+      1
+    ]);
+    // Yes: Ibn Qawqal's place has asked and is by the dates and the jug, a soft light on them, with Paradise still
+    // faint, before the last words; then his voice, soft and golden, replies, Paradise shows bright, and a soft golden
+    // ring comes about Ibn Qawqal's place, with glints.
+    expect([
+      shown("What did the Prophet ﷺ answer him?", ["Ibn Qawqal's voice: asking", "and a soft light on them", "Paradise far off, bright", "a soft golden ring about Ibn Qawqal's place", "and glints over it"], "Yes"),
+      value("simple-path", "his voice, soft and golden: replying yes", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [0, 1, 0, 0, 0],
+        [0, 1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // Allah forgives it: his voice speaks, with no spark and no light yet, before the next words; then a spark of his
+    // invocation rises and a soft light comes over the lane: forgiveness. It stops before any grey flicker shows.
+    expect([
+      shown("A bad thought pops into your head, and you push it away. What then?", ["his invocation: a spark rising", "to forgive: a soft light over the lane", "what whispers within: a grey flicker in the one who keeps still, fading", "what whispers within: a grey flicker in the one who does it"]),
+      value("passing-thoughts", "his invocation: a spark rising", "opacity", 0.3)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0, 1, 0, 0]
+      ],
+      1
+    ]);
+    // Whispers in the heart not acted on: the soft light is over the lane, with no grey flicker yet, before the next
+    // words; then a grey flicker shows in each of the two places: what whispers within; the one who does it speaks and
+    // goes on, while in the one who keeps still the flicker fades and a soft golden ring comes about it.
+    expect([
+      shown("What does Allah forgive, per Bukhari 2528?", ["to forgive: a soft light over the lane", "what whispers within: a grey flicker in the one who keeps still, fading", "what whispers within: a grey flicker in the one who does it", "forgiven: a soft golden ring about the one who keeps still"]),
+      value("passing-thoughts", "what whispers within: a grey flicker in the one who keeps still, fading", "opacity", 0.7)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 0, 1, 1]
+      ],
+      1
+    ]);
+    // When you say or do it: a grey flicker shows in each place, both still, with no grey voice yet, before the last
+    // words; then the one who does it speaks, a quick grey voice, goes along a grey dashed way, and a grey dashed ring
+    // comes about it.
+    expect([
+      shown("When does a bad thought become a deed?", ["uttering it: its quick grey voice", "a grey dashed way on, past the homes", "putting it to action: a grey dashed ring about it"]),
+      moved("When does a bad thought become a deed?", "the place of one who does it", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, 28]
+    ]);
+    // When acted on or spoken: the same moment; its grey flicker stays with the one who does it as it goes, and the one
+    // who keeps still gets a soft golden ring.
+    expect([
+      shown("When does a bad thought count, per Bukhari 2528?", ["what whispers within: a grey flicker in the one who does it", "uttering it: its quick grey voice", "putting it to action: a grey dashed ring about it", "forgiven: a soft golden ring about the one who keeps still"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // Maghrib and Isha: the places of the pilgrims have come into the plain in the evening, the sun still low, with no
+    // spark yet, before the next words; then the sun sets, night falls, a spark of the Maghrib prayer rises from his
+    // place, and right after it a spark of the Isha prayer; two small lights stay side by side, and a soft golden ring
+    // comes about the two. It stops before the ring about all the places.
+    expect([
+      shown("Which prayers were joined at Muzdalifah?", ["the sun, low, then setting behind the hills", "night falling", "the Maghrib prayer: a spark rising", "and the Isha prayer with it: a spark rising", "together: two small lights side by side, where the sparks rose", "and a soft golden ring about the two", "at Muzdalifah: a soft golden ring about all the places"]),
+      value("together-at-muzdalifah", "the Maghrib prayer: a spark rising", "opacity", 0.5),
+      value("together-at-muzdalifah", "and the Isha prayer with it: a spark rising", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0, 0],
+        [0, 0.8, 0, 0, 1, 1, 0]
+      ],
+      1,
+      1
+    ]);
+    // Friday: the sun has risen over the hills and the day has come, with no glow about it yet, before the last words;
+    // then a soft golden glow spreads about the sun, glints come about it, a warm light comes over the town, glints
+    // over the masjid and the homes, and small lights in the places.
+    expect([
+      shown("Which day is the best the sun rises on?", ["the sky of the day, coming", "the soft golden glow of the best day, about the sun", "glints about the sun", "a warm light over the town", "glints over the masjid and the homes", "small lights in the places"]),
+      moved("Which day is the best the sun rises on?", "the sun, rising over the hills", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, 0]
+    ]);
+    // The other lesson's question on the best day waits and stops at the same moment.
+    expect([
+      shown("What is the best day the sun rises on?", ["the soft golden glow of the best day, about the sun", "small lights in the places"])
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
       ]
     ]);
   });
