@@ -1139,7 +1139,13 @@ export type SignKind =
   | "clean-and-scented"
   | "pleased-collector"
   | "invited-while-fasting"
-  | "best-companion";
+  | "best-companion"
+  | "deep-in-debt"
+  | "water-and-sidr"
+  | "hajj-for-this-one"
+  | "no-pride-in-him"
+  | "pass-it-on"
+  | "seven-times-for-the-sick";
 
 export type SignScene = {
   id: string;
@@ -6470,6 +6476,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Amr said: the Messenger of Allah ﷺ said: the companion who is the best to Allah is the one who is best to his companion, and the neighbor that is the best to Allah is the one that is best to his neighbor.",
     sources: [tirmidhi("1944")]
+  },
+  {
+    id: "sign-deep-in-debt",
+    kind: "deep-in-debt",
+    caption:
+      "Abu Sa'id al-Khudri said: during the time of the Messenger of Allah ﷺ, a man suffered a loss on fruits, resulting in more debt. The Messenger of Allah ﷺ said: give him charity. So the people gave him charity, but it did not cover his debt. So the Messenger of Allah ﷺ said to his creditors: take what you have, and there is nothing for you but that.",
+    sources: [tirmidhi("655")]
+  },
+  {
+    id: "sign-water-and-sidr",
+    kind: "water-and-sidr",
+    caption:
+      "Qais ibn Asim said that he accepted Islam, and the Prophet ﷺ ordered him to perform ghusl with water and sidr.",
+    sources: [tirmidhi("605")]
+  },
+  {
+    id: "sign-hajj-for-this-one",
+    kind: "hajj-for-this-one",
+    caption:
+      "Jabir ibn Abdullah said: a woman held a boy of hers up for the Messenger of Allah ﷺ and said: O Messenger of Allah, is there Hajj for this one? He said: yes, and you will be rewarded.",
+    sources: [tirmidhi("924")]
+  },
+  {
+    id: "sign-no-pride-in-him",
+    kind: "no-pride-in-him",
+    caption:
+      "Jubayr ibn Mut'im said: they told me that I was proud, while I rode a donkey, wore a cloak, and I milked the sheep. And the Messenger of Allah ﷺ said to me: whoever does these, then there is no pride in him.",
+    sources: [tirmidhi("2001")]
+  },
+  {
+    id: "sign-pass-it-on",
+    kind: "pass-it-on",
+    caption:
+      "Abdullah ibn Mas'ud said: I heard the Messenger of Allah ﷺ saying: may Allah gladden a man who hears something from us, so he conveys it as he heard it. Perhaps the one it is conveyed to is more understanding than the one who heard it.",
+    sources: [tirmidhi("2657")]
+  },
+  {
+    id: "sign-seven-times-for-the-sick",
+    kind: "seven-times-for-the-sick",
+    caption:
+      "Ibn Abbas said: the Prophet ﷺ said: there is no Muslim worshiper who visits one who is ill, other than at the time of death, and he says seven times: I ask Allah the Magnificent, Lord of the Magnificent Throne, to cure you, except when he will be cured.",
+    sources: [tirmidhi("2083")]
   }
 ];
 
@@ -9327,7 +9375,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Answer an invitation to eat; if fasting, make du'a for them.
   "deep-fasting-suhur-to-iftar-invited-while-fasting": "sign-invited-while-fasting",
   // The best companion and the best neighbor are the ones best to their companion and neighbor.
-  "deep-manners-getting-along-best-companion": "sign-best-companion"
+  "deep-manners-getting-along-best-companion": "sign-best-companion",
+  // A man whose debt grew was given charity, and those he owed took what there was.
+  "deep-zakat-stories-of-charity-a-man-deep-in-debt": "sign-deep-in-debt",
+  // Qais accepted Islam and was told to bathe with water and sidr.
+  "deep-intro-starting-out-a-bath-to-begin": "sign-water-and-sidr",
+  // A woman held up her little boy: there is Hajj for him, and she is rewarded.
+  "deep-hajj-pilgrims-way-children-on-hajj": "sign-hajj-for-this-one",
+  // Riding a donkey, wearing a plain cloak and milking the sheep: no pride in him.
+  "deep-humility-no-pride-in-him": "sign-no-pride-in-him",
+  // May Allah gladden the one who passes on what he heard, just as he heard it.
+  "deep-growing-in-faith-pass-it-on": "sign-pass-it-on",
+  // Visiting the ill and asking seven times for their cure.
+  "deep-duas-for-others-seven-times-for-the-sick": "sign-seven-times-for-the-sick"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

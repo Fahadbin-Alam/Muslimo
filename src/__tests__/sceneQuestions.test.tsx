@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3615);
+    expect(asks.length).toBe(3632);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5271);
+    expect(places).toBe(5295);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -26044,6 +26044,213 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1, 1]
       ],
       [0, 10]
+    ]);
+  });
+
+  it("waits on the scenes from a man deep in debt to seven times for the sick, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-deep-in-debt", "sign-water-and-sidr", "sign-hajj-for-this-one", "sign-no-pride-in-him", "sign-pass-it-on", "sign-seven-times-for-the-sick"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(17);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // He lost money on fruit: the stall of the market stands empty, with no fruit on it yet, before the next words; then
+    // baskets of fruit show on it and spoil.
+    expect([
+      shown("Why did the man fall into debt?", ["a basket of the fruit, fresh 1", "a loss on the fruit: the same basket, spoiled 1"])
+    ]).toEqual([
+      [
+        [0, 0],
+        [0, 1]
+      ]
+    ]);
+    // Give him charity: the fruit has spoiled, with his voice not yet heard, before the next words; then a grey ring of
+    // debt grows about the place of the one whose fruit it was, and his voice speaks, soft and golden.
+    expect([
+      shown("What did he ﷺ tell the people to do?", ["his voice, soft and golden: give him charity", "more debt: a grey dashed ring about its place, growing"])
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // False: the silver coins of charity have come to the one in debt, the grey ring about its place still wide, before
+    // the next words; then the ring grows a little smaller, but it stays: the debt is not covered.
+    expect([
+      moved("The charity paid off all of the man's debt.", "more debt: a grey dashed ring about its place, growing", "scale"),
+      shown("The charity paid off all of the man's debt.", ["more debt: a grey dashed ring about its place, growing", "charity: silver coins from it 1"])
+    ]).toEqual([
+      [1.5, 1.25],
+      [
+        [1, 1],
+        [1, 1]
+      ]
+    ]);
+    // Take a bath: Qais's place has come, a soft golden ring about it, with no water yet, before the next words; then his
+    // voice speaks, soft and golden, and a basin of water shows, glints on it.
+    expect([
+      shown("What did he ﷺ tell Qais to do when he accepted Islam?", ["he accepts Islam: a soft golden ring about Qais's place", "ghusl with water: a basin of it", "glints on the water"]),
+      value("water-and-sidr", "his voice, soft and golden: he ordered him", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // Sidr: the basin of water is there, with no leaves by it, before the next words; then leaves of sidr are set by it on
+    // a small dish and go into the water, Qais's place goes behind a cloth to wash and comes out, and a clear soft light
+    // and a soft golden ring come about it.
+    expect([
+      shown("What did Qais bathe with, besides water?", ["a small dish by it", "sidr: leaves of the lote tree, going into the water", "the water, with the sidr in it", "a cloth, hung for cover", "fresh and clean: a clear soft light about Qais's place", "a soft golden ring about it"]),
+      moved("What did Qais bathe with, besides water?", "sidr: leaves of the lote tree, going into the water", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, -13]
+    ]);
+    // If he could do Hajj: her little one is held up, and her voice has not spoken yet, before the next words; then her
+    // voice asks, and stops before his answer.
+    expect([
+      shown("What did the mother ask about her boy?", ["her voice: is there Hajj for this one?"]),
+      value("hajj-for-this-one", "her voice: is there Hajj for this one?", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [0],
+        [0]
+      ],
+      1
+    ]);
+    // His mother, and true: her voice has asked, with no answer yet, before the next words; then his voice answers, soft
+    // and golden: a soft golden ring comes about her little one, it is set down again, and a soft golden ring comes about
+    // her place, glints over them.
+    expect([
+      shown("Who else gets a reward for the child's Hajj?", ["yes: a soft golden ring about her little one", "and you will be rewarded: a soft golden ring about her place", "glints over them"]),
+      shown("Children can go on Hajj too.", ["yes: a soft golden ring about her little one", "and you will be rewarded: a soft golden ring about her place", "glints over them"]),
+      moved("Who else gets a reward for the child's Hajj?", "the small place of her little one, then held up", "y"),
+      value("hajj-for-this-one", "his voice, soft and golden: yes", "opacity", 0.75)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [-5.2, 0],
+      1
+    ]);
+    // A donkey: no donkey is by the home yet, before the next words; then a donkey shows by it, and Jubayr's place goes
+    // along the lane with it, no one on it.
+    expect([
+      shown("What did Jubayr say he rode?", ["the donkey he rode, no one on it"]),
+      moved("What did Jubayr say he rode?", "the donkey he rode, no one on it", "x"),
+      moved("What did Jubayr say he rode?", "Jubayr's place, going with it, then to the sheep", "x")
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      [0, -30],
+      [0, -30]
+    ]);
+    // True: Jubayr's place has gone along the lane with the donkey, with no bowl under the sheep, before the next words;
+    // then the plain cloak goes with Jubayr's place to the sheep, and a bowl under it fills with milk.
+    expect([
+      shown("Jubayr said he milked the sheep.", ["a bowl under it", "milked: milk in the bowl"]),
+      moved("Jubayr said he milked the sheep.", "Jubayr's place, going with it, then to the sheep", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [-30, -43]
+    ]);
+    // There is no pride in him: his voice has spoken, and the grey ring is still about Jubayr's place, before the next
+    // words; then the grey ring goes, and a soft golden ring comes about Jubayr's place, glints over it.
+    expect([
+      shown("What did he ﷺ say of one who does these things?", ["they say he is proud: a grey dashed ring about Jubayr's place", "a soft golden ring about Jubayr's place", "glints over it"]),
+      value("no-pride-in-him", "his voice, soft and golden: there is no pride in him", "opacity", 0.7)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      1
+    ]);
+    // Gladness: his voice speaks, and none of those sitting has heard anything yet, before the next words; then glints go
+    // from it to one of them, and a soft golden light comes about its place.
+    expect([
+      shown("What did he ﷺ ask Allah to give such a person?", ["what it hears: a glint 1, then passed on just as it was", "gladness: a soft golden light about its place"]),
+      value("pass-it-on", "his voice, soft and golden: a du'a of gladness", "opacity", 0.2)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1
+    ]);
+    // Just as we heard it: the one who heard sits with the glints it heard, before the next words; then it goes along the
+    // lane to the far home, its voice speaks, and the same glints go from it to the other place, just as they were.
+    expect([
+      moved("How should we pass on what we hear from him ﷺ?", "the place of one who hears, then going along the lane to pass it on", "x"),
+      moved("How should we pass on what we hear from him ﷺ?", "what it hears: a glint 1, then passed on just as it was", "x"),
+      value("pass-it-on", "its voice, passing it on", "opacity", 0.53)
+    ]).toEqual([
+      [0, 52],
+      [9, 75],
+      1
+    ]);
+    // True: the glints have reached the other place, with no light about it yet, before the next words; then a small clear
+    // light comes about it and grows clear and wide, and a soft golden ring comes about it.
+    expect([
+      shown("The one who hears it next may understand it better.", ["understanding: a clear light about its place, growing", "a soft golden ring about it"]),
+      moved("The one who hears it next may understand it better.", "understanding: a clear light about its place, growing", "scale")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [1, 1.7]
+    ]);
+    // Seven, and true: the one who visits has come to the one who is ill, with no voice and no glints yet, before the next
+    // words; then its voice speaks, soft, and seven glints come one after another.
+    expect([
+      shown("How many times does the visitor say the du'a?", ["its voice, soft: asking for the cure", "seven times: a glint 1, rising", "seven times: a glint 7, rising"]),
+      shown("We can make du'a for a sick friend when we visit.", ["its voice, soft: asking for the cure", "seven times: a glint 1, rising", "seven times: a glint 7, rising"]),
+      value("seven-times-for-the-sick", "the place of one who visits, going to it", "x", 0.436)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      72
+    ]);
+    // Allah, Lord of the Throne, and nothing is drawn for the Throne: the glints of the du'a have not risen yet, before
+    // the next words; then they rise and fade, and its voice stops.
+    expect([
+      moved("Whom do we ask to cure the sick person?", "seven times: a glint 1, rising", "y"),
+      value("seven-times-for-the-sick", "seven times: a glint 1, rising", "opacity", 0.65)
+    ]).toEqual([
+      [0, -10],
+      1
     ]);
   });
 

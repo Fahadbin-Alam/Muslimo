@@ -7380,6 +7380,52 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who is the best companion in Allah's sight?", "The one best to his companion", "Who is the best to Allah is the one who", "Is best to his companion. And the"],
     ["Who is the best neighbor in Allah's sight?", "The one best to his neighbor", "Neighbor that is the best to Allah is the", "One that is best to his neighbor."],
     ["Being good to your neighbor raises you in Allah's sight.", "True", "Neighbor that is the best to Allah is the", "One that is best to his neighbor."]
+  ],
+  // Abu Sa'id al-Khudri said: during the time of the Messenger of Allah ﷺ, a man suffered a loss on fruits, resulting in
+  // more debt. The Messenger of Allah ﷺ said: give him charity. So the people gave him charity, but it did not cover his
+  // debt. So the Messenger of Allah ﷺ said to his creditors: take what you have, and there is nothing for you but that
+  // (Jami at-Tirmidhi 655).
+  "sign-deep-in-debt": [
+    ["Why did the man fall into debt?", "He lost money on fruit", "Suffered a loss on fruits, resulting in"],
+    ["What did he ﷺ tell the people to do?", "Give him charity", "More debt. He said: give him charity."],
+    ["The charity paid off all of the man's debt.", "False", "But it did not cover his debt."]
+  ],
+  // Qais ibn Asim said that he accepted Islam, and the Prophet ﷺ ordered him to perform ghusl with water and sidr
+  // (Jami at-Tirmidhi 605). Its lesson's question on what ghusl means is not asked here, since the scene's words do not
+  // say it.
+  "sign-water-and-sidr": [
+    ["What did he ﷺ tell Qais to do when he accepted Islam?", "Take a bath", "Ordered him to perform ghusl with water"],
+    ["What did Qais bathe with, besides water?", "Sidr, lote tree leaves", "And sidr."]
+  ],
+  // Jabir ibn Abdullah said: a woman held a boy of hers up for the Messenger of Allah ﷺ and said: O Messenger of Allah,
+  // is there Hajj for this one? He said: yes, and you will be rewarded (Jami at-Tirmidhi 924).
+  "sign-hajj-for-this-one": [
+    ["What did the mother ask about her boy?", "If he could do Hajj", "Him and said: is there Hajj for this one?"],
+    ["Who else gets a reward for the child's Hajj?", "His mother", "He said: yes, and you will be rewarded."],
+    ["Children can go on Hajj too.", "True", "He said: yes, and you will be rewarded."]
+  ],
+  // Jubayr ibn Mut'im said: they told me that I was proud, while I rode a donkey, wore a cloak, and I milked the sheep.
+  // And the Messenger of Allah ﷺ said to me: whoever does these, then there is no pride in him (Jami at-Tirmidhi 2001).
+  "sign-no-pride-in-him": [
+    ["What did Jubayr say he rode?", "A donkey", "Was proud, while I rode a donkey, wore a"],
+    ["Jubayr said he milked the sheep.", "True", "Cloak, and I milked the sheep. And he"],
+    ["What did he ﷺ say of one who does these things?", "There is no pride in him", "There is no pride in him."]
+  ],
+  // Abdullah ibn Mas'ud said: I heard the Messenger of Allah ﷺ saying: may Allah gladden a man who hears something from
+  // us, so he conveys it as he heard it. Perhaps the one it is conveyed to is more understanding than the one who heard
+  // it (Jami at-Tirmidhi 2657).
+  "sign-pass-it-on": [
+    ["What did he ﷺ ask Allah to give such a person?", "Gladness", "Gladden a man who hears something from"],
+    ["How should we pass on what we hear from him ﷺ?", "Just as we heard it", "Us, so he conveys it as he heard it."],
+    ["The one who hears it next may understand it better.", "True", "Perhaps the one it is conveyed to is more", "Understanding than the one who heard it."]
+  ],
+  // Ibn Abbas said: the Prophet ﷺ said: there is no Muslim worshiper who visits one who is ill, other than at the time
+  // of death, and he says seven times: I ask Allah the Magnificent, Lord of the Magnificent Throne, to cure you, except
+  // when he will be cured (Jami at-Tirmidhi 2083).
+  "sign-seven-times-for-the-sick": [
+    ["How many times does the visitor say the du'a?", "Seven", "Says seven times: I ask Allah the"],
+    ["Whom do we ask to cure the sick person?", "Allah, Lord of the Throne", "Says seven times: I ask Allah the", "Throne to cure you, except when he will"],
+    ["We can make du'a for a sick friend when we visit.", "True", "Says seven times: I ask Allah the"]
   ]
 };
 
