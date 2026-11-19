@@ -1638,6 +1638,12 @@ const STATES: State[] = [
   { id: "scene-two-cases", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-knowledge-two-people" ask="worth copying" /> },
   { id: "scene-before-that-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-before-that-day" ask="someone you wronged" /> },
   { id: "scene-rinse-after-milk", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-eating-drinking-rinse-after-milk" ask="after milk" /> },
+  { id: "scene-curse-parents", render: () => <SceneQuestionDemo lessonId="lesson-deep-anam2-curse-parents" ask="curse his own parents" /> },
+  { id: "scene-borrow-to-repay", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-trust-borrow-only-to-pay-back" ask="when you borrow" /> },
+  { id: "scene-good-word", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-good-word-omen" ask="What is fal" /> },
+  { id: "scene-deed-for-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-questions-they-asked-a-deed-for-paradise" ask="What did the man ask" /> },
+  { id: "scene-shorten-the-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-make-it-easy" ask="keep the prayer short" /> },
+  { id: "scene-best-character", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-heart-best-character" ask="best people" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
