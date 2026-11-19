@@ -1596,6 +1596,12 @@ const STATES: State[] = [
   { id: "scene-give-respite", render: () => <SceneQuestionDemo lessonId="lesson-deep-baqarah3-give-time" ask="promise the lender" /> },
   { id: "scene-seven-pebbles", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-stoning" ask="said with each pebble" /> },
   { id: "scene-the-pillar-he-chose", render: () => <SceneQuestionDemo lessonId="lesson-deep-salamah-the-pillar-he-chose" ask="Why did Salamah" /> },
+  { id: "scene-raised-by-this-book", render: () => <SceneQuestionDemo lessonId="lesson-deep-mujadila2-raised-by-this-book" ask="about this Book" /> },
+  { id: "scene-his-real-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-muzzammil4-your-real-wealth" ask="own wealth, per the hadith" /> },
+  { id: "scene-umar-knew-adi", render: () => <SceneQuestionDemo lessonId="lesson-deep-sahaba-small-stories-umar-knew-adi" ask="broke their promises" /> },
+  { id: "scene-every-year", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-once" ask="How often is Hajj" /> },
+  { id: "scene-in-seven-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-amr-seven-days" ask="shortest time" /> },
+  { id: "scene-not-for-those-who-ask", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-judging-fairly-not-for-those-who-ask" ask="authority of ruling" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
