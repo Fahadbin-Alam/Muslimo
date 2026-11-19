@@ -1073,7 +1073,13 @@ export type SignKind =
   | "most-quarrelsome"
   | "never-said-no"
   | "for-you-and-against-them"
-  | "glad-tidings-now";
+  | "glad-tidings-now"
+  | "swearing-to-sell"
+  | "look-below-you"
+  | "nap-after-jumuah"
+  | "at-all-moments"
+  | "the-hibra"
+  | "gold-and-silver";
 
 export type SignScene = {
   id: string;
@@ -5945,6 +5951,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Dharr said: it was said to the Messenger of Allah ﷺ: what is your opinion about the person who has done good deeds and the people praise him? He said: it is glad tidings for a believer.",
     sources: [muslim("2642")]
+  },
+  {
+    id: "sign-swearing-to-sell",
+    kind: "swearing-to-sell",
+    caption:
+      "Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: the swearing may persuade the buyer to purchase the goods, but that will be deprived of Allah's blessing.",
+    sources: [bukhari("2087")]
+  },
+  {
+    id: "sign-look-below-you",
+    kind: "look-below-you",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: if anyone of you looked at a person who was made superior to him in property and appearance, then he should also look at the one who is inferior to him.",
+    sources: [bukhari("6490")]
+  },
+  {
+    id: "sign-nap-after-jumuah",
+    kind: "nap-after-jumuah",
+    caption:
+      "Anas said: we used to offer the Jumu'ah prayer early and then have the afternoon nap.",
+    sources: [bukhari("940")]
+  },
+  {
+    id: "sign-at-all-moments",
+    kind: "at-all-moments",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ used to remember Allah at all moments.",
+    sources: [muslim("373")]
+  },
+  {
+    id: "sign-the-hibra",
+    kind: "the-hibra",
+    caption:
+      "Anas ibn Malik said: the most beloved garment to the Prophet ﷺ to wear was the Hibra.",
+    sources: [bukhari("5813")]
+  },
+  {
+    id: "sign-gold-and-silver",
+    kind: "gold-and-silver",
+    caption:
+      "Hudhayfah said: I heard the Prophet ﷺ saying: do not drink in silver or golden vessels, and do not eat in plates of such metals, for such things are for the unbelievers in this worldly life and for us in the Hereafter.",
+    sources: [bukhari("5426")]
   }
 ];
 
@@ -8661,7 +8709,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // If the imam prays correctly, he and the people are rewarded; if he errs, the people keep the reward and the sin is his.
   "deep-book-adhan-the-imams-mistake": "sign-for-you-and-against-them",
   // When people praise one for a good deed, that is early glad tidings for a believer.
-  "deep-yunus3-good-news-now": "sign-glad-tidings-now"
+  "deep-yunus3-good-news-now": "sign-glad-tidings-now",
+  // Swearing may help sell the goods, but it takes away the blessing.
+  "deep-book-trade-swearing-to-sell": "sign-swearing-to-sell",
+  // When you see one given more, look also at one who has less.
+  "deep-book-riqaq-look-below-you": "sign-look-below-you",
+  // They prayed the Jumu'ah early, then took the afternoon nap.
+  "deep-found-sunnahs-of-the-home-a-nap-after-jumuah": "sign-nap-after-jumuah",
+  // He remembered Allah at all moments, Aishah said.
+  "deep-duas-remembering-allah-always-at-all-moments": "sign-at-all-moments",
+  // The garment he loved most to wear was the Hibra.
+  "deep-book-dress-the-hibra-cloth": "sign-the-hibra",
+  // Do not drink or eat from gold and silver vessels: they are for us in the Hereafter.
+  "deep-zukhruf2-gold-is-not-the-goal": "sign-gold-and-silver"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
