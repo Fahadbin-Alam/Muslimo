@@ -1649,6 +1649,12 @@ const STATES: State[] = [
   { id: "scene-virtue-and-vice", render: () => <SceneQuestionDemo lessonId="lesson-deep-anam3-sin-open-secret" ask="What is virtue" /> },
   { id: "scene-covered-at-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-allah-covered-it" ask="Who did Allah cover" /> },
   { id: "scene-upper-hand", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-umamah-the-upper-hand" ask="Which hand" /> },
+  { id: "scene-despite-the-odds", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-erases-sins-raises-ranks" ask="Which wudu" /> },
+  { id: "scene-while-hearts-agree", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-quran-virtues-recite-while-hearts-agree" ask="keep reciting" /> },
+  { id: "scene-sweet-and-green", render: () => <SceneQuestionDemo lessonId="lesson-deep-yunus1-successors-in-the-land" ask="describe the world" /> },
+  { id: "scene-brothers-to-come", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-our-brothers" ask="call his brothers" /> },
+  { id: "scene-two-sermons", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah3-khutbah-standing" ask="recited the Quran" /> },
+  { id: "scene-umrah-to-umrah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-mabrur" ask="reward of a Hajj" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

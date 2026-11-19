@@ -25,7 +25,7 @@ import { GREY } from "./lovedArt";
  */
 
 /** A pulpit of three steps facing right, its foot's left at (x, y). */
-const pulpit = (x: number, y: number) =>
+export const pulpit = (x: number, y: number) =>
   `<path d="M${x} ${y} L${n(x + 6)} ${y} L${n(x + 6)} ${n(y - 2)} L${n(x + 4)} ${n(y - 2)} L${n(x + 4)} ${n(y - 4)} L${n(x + 2)} ${n(y - 4)} L${n(x + 2)} ${n(y - 6)} L${x} ${n(y - 6)} Z" fill="#8E6A42"/><path d="M${x} ${n(y - 6)} L${x} ${n(y - 9)}" stroke="#8E6A42" stroke-width="0.7"/>`;
 
 /** A faint dashed coin, its middle at (x, y): an offer not to be made. */
