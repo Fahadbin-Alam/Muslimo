@@ -1507,7 +1507,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many times was the mother named?", "Three", "Your mother. Then who? Your mother", "Then who? Your mother"],
     ["Who came after the mother, in the hadith?", "Your father", "Then who? Your father"],
     ["How many times did the Prophet ﷺ say your mother?", "Three", "Your mother. Then who? Your mother", "Then who? Your mother"],
-    ["Who came fourth, per Bukhari 5971?", "Your father", "Then who? Your father"]
+    ["Who came fourth, per Bukhari 5971?", "Your father", "Then who? Your father"],
+    // The first Manners lesson on honoring your mother asks these two on this scene too. Its question on how to treat
+    // your mother is not asked here, since the scene does not say it.
+    ["Who did the Prophet ﷺ mention first when asked about the best companionship?", "Your mother", "Your mother. Then who? Your mother"],
+    ["Islam teaches that mothers have a very high right to care and kindness.", "True", "Your mother. Then who? Your mother", "Then who? Your mother"]
   ],
   // Do not think little of any good deed, even meeting your brother with a cheerful face (Sahih Muslim 2626). (To whom he
   // said it, and what 31:18 and Ibn Kathir say, are not in the scene.)
@@ -1571,7 +1575,11 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should a Muslim say before eating?", "Bismillah", "O boy! Say Bismillah, eat with your right hand"],
     ["Which choice fits the sunnah at the table?", "Say Bismillah and eat with your right hand", "O boy! Say Bismillah, eat with your right hand"],
     ["Which hand do we eat with?", "The right hand", "O boy! Say Bismillah, eat with your right hand"],
-    ["Before you eat, say ____.", "Bismillah", "O boy! Say Bismillah, eat with your right hand"]
+    ["Before you eat, say ____.", "Bismillah", "O boy! Say Bismillah, eat with your right hand"],
+    // The first Manners lesson on eating asks these two on this scene too. Its question on good table manners is not
+    // asked here, since its answer, eating calmly, is not all said.
+    ["Which is the best way to begin eating?", "Say Bismillah", "O boy! Say Bismillah, eat with your right hand"],
+    ["Using the right hand for eating is part of the Prophetic teaching.", "True", "O boy! Say Bismillah, eat with your right hand"]
   ],
   // When will the Hour be? What have you prepared for it? Love of Allah and His Messenger. You will be with those you
   // love; and they had never been so glad (Sahih al-Bukhari 3688). (Whom Anas loved, and 42:18, are not in the scene.)
@@ -7780,6 +7788,28 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the Ansar ask him ﷺ to pray for?", "That their followers count as Ansar", "Will you invoke Allah to let our", "Followers be considered from us?"],
     ["What did the Ansar say every prophet has?", "His own followers", "Messenger, every prophet has his own", "Followers and we have followed you. So"],
     ["He ﷺ made the du'a that the Ansar asked for.", "True", "So he invoked Allah accordingly."]
+  ],
+  // Abu Dharr said: I asked the Prophet ﷺ about the best deeds, and I said: if I cannot afford to do that? He said:
+  // help the weak or do good for a person who cannot work for himself. I said: if I cannot do that? He said: refrain
+  // from harming others, for this will be regarded as a charitable deed for your own good (Sahih al-Bukhari 2518).
+  "sign-and-if-i-cannot": [
+    ["What did Abu Dharr keep asking him ﷺ?", "And if I cannot?", "I said: if I cannot afford to do that?", "I said: if I cannot do that? He said:"],
+    ["What did he ﷺ say keeping harm away counts as?", "Charity for yourself", "Will be regarded as a charitable deed", "For your own good."],
+    ["Helping someone who cannot do his work is a good deed.", "True", "He said: help the weak or do good for a", "Person who cannot work for himself."]
+  ],
+  // Al-Mughirah ibn Shu'bah said: the Prophet ﷺ said: Allah has forbidden for you to be undutiful to your mothers, not
+  // to pay the rights of the others, and to beg of men. And Allah has hated for you vain, useless talk, or that you
+  // talk too much about others, to ask too many questions, and to waste the wealth (Sahih al-Bukhari 2408).
+  "sign-forbidden-and-disliked": [
+    ["Who did Allah forbid us to be undutiful to?", "Our mothers", "For you to be undutiful to your mothers,"],
+    ["Which of these does Allah dislike?", "Wasting wealth", "Questions, and to waste the wealth."],
+    ["Idle talk about others is loved by Allah.", "False", "To beg of men. And Allah has hated for you", "Much about others, to ask too many"]
+  ],
+  // Abu Juhayfah said: the Messenger of Allah ﷺ said: I do not take my meals while leaning (Sahih al-Bukhari 5398).
+  // Its lesson's question on who heard him say it is not asked here, since it asks who told it, and nor is its true or
+  // false question on sitting humbly, since the scene does not say it.
+  "sign-not-while-leaning": [
+    ["How did the Prophet ﷺ not eat?", "Leaning back", "While leaning."]
   ]
 };
 
