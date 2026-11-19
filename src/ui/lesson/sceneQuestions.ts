@@ -6869,6 +6869,45 @@ const ASKS: Record<string, readonly Ask[]> = {
   // questions on ayah 10:64 are not asked here, since their answers are from the ayah, and the scene shows the hadith.
   "sign-glad-tidings-now": [
     ["What is people praising your good deed, per the hadith?", "Early glad tidings", "It is glad tidings for a believer."]
+  ],
+  // Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: the swearing may persuade the buyer to purchase the
+  // goods, but that will be deprived of Allah's blessing (Sahih al-Bukhari 2087). Its lesson's true or false on honest
+  // selling is not asked here, since the scene's words do not say it.
+  "sign-swearing-to-sell": [
+    ["What does swearing a lot help a seller do?", "Sell the goods", "The swearing may persuade the buyer", "To purchase the goods but that will be"],
+    ["What does it take away?", "Allah's blessing", "Deprived of Allah's blessing."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: if anyone of you looked at a person who was made superior to
+  // him in property and appearance, then he should also look at the one who is inferior to him (Sahih al-Bukhari 6490).
+  // Its lesson's question on the two things named is not asked here, since the scene's words leave out appearance, nor
+  // its true or false on thanking Allah, since the scene's words do not say it.
+  "sign-look-below-you": [
+    ["You see a friend with a new phone. What fits this hadith?", "Think of those with less", "Then he should also look at the one", "Who is inferior to him."]
+  ],
+  // Anas said: we used to offer the Jumu'ah prayer early and then have the afternoon nap (Sahih al-Bukhari 940). Its
+  // lesson's question on the prayer before the nap is not asked here, since its answer is in the scene's first words,
+  // nor its true or false on what Anas said, since it asks again what its first question asks.
+  "sign-nap-after-jumuah": [
+    ["What did they do after the Jumu'ah prayer?", "Took an afternoon nap", "The afternoon nap."]
+  ],
+  // Aishah said: the Messenger of Allah ﷺ used to remember Allah at all moments (Sahih Muslim 373). Its lesson's
+  // question on what dhikr is is not asked here, since the scene's words do not say it, nor its true or false on dhikr
+  // after the prayers, since it asks again what its first question asks.
+  "sign-at-all-moments": [
+    ["When did he ﷺ remember Allah, Aishah said?", "At all moments", "Allah at all moments."]
+  ],
+  // Anas ibn Malik said: the most beloved garment to the Prophet ﷺ to wear was the Hibra (Sahih al-Bukhari 5813). Its
+  // lesson's question on where the Hibra came from is not asked here, since the scene's words do not say it, nor its
+  // true or false on who told of it, since its answer is in the scene's first words.
+  "sign-the-hibra": [
+    ["Which garment did he ﷺ love most?", "The Hibra", "To him to wear was the Hibra."]
+  ],
+  // Hudhayfah said: I heard the Prophet ﷺ saying: do not drink in silver or golden vessels, and do not eat in plates of
+  // such metals, for such things are for the unbelievers in this worldly life and for us in the Hereafter (Sahih
+  // al-Bukhari 5426). Its lesson's two questions on ayah 43:35 are not asked here, since their answers are from the
+  // ayah, and the scene shows the hadith.
+  "sign-gold-and-silver": [
+    ["What did the Prophet ﷺ forbid, per Bukhari 5426?", "Eating from gold and silver vessels", "Drink in silver or golden vessels,", "And do not eat in plates of such metals,"]
   ]
 };
 

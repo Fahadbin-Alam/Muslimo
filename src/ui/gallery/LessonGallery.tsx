@@ -1626,6 +1626,12 @@ const STATES: State[] = [
   { id: "scene-never-said-no", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-never-said-no" ask="never say" /> },
   { id: "scene-for-you-and-against-them", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-the-imams-mistake" ask="makes a mistake" /> },
   { id: "scene-glad-tidings-now", render: () => <SceneQuestionDemo lessonId="lesson-deep-yunus3-good-news-now" ask="praising your good deed" /> },
+  { id: "scene-swearing-to-sell", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-swearing-to-sell" ask="help a seller do" /> },
+  { id: "scene-look-below-you", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-look-below-you" ask="a new phone" /> },
+  { id: "scene-nap-after-jumuah", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-the-home-a-nap-after-jumuah" ask="after the Jumu'ah prayer" /> },
+  { id: "scene-at-all-moments", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-remembering-allah-always-at-all-moments" ask="remember Allah, Aishah said" /> },
+  { id: "scene-the-hibra", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-the-hibra-cloth" ask="love most" /> },
+  { id: "scene-gold-and-silver", render: () => <SceneQuestionDemo lessonId="lesson-deep-zukhruf2-gold-is-not-the-goal" ask="per Bukhari 5426" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
