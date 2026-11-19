@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3489);
+    expect(asks.length).toBe(3502);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5094);
+    expect(places).toBe(5111);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -24280,6 +24280,226 @@ describe("where the scene waits and where it stops", () => {
       [0, 0],
       [-10, 0],
       1
+    ]);
+  });
+
+  it("waits on the scenes from cursing one's parents to the best manners, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-curse-parents", "sign-borrow-to-repay", "sign-good-word", "sign-deed-for-paradise", "sign-shorten-the-prayer", "sign-best-character"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(13);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // By abusing another's parents: his voice, soft and golden, is telling how, with one of each home still by its door,
+    // before the next words; then they come out into the lane, the voice of the first is quick and grey, and a grey
+    // dashed way goes from it to an older one of the other home, which dims; the voice of the other is quick and grey
+    // back, grey dashed ways go from it to the two older ones of the first home, and each dims; and a grey dashed ring
+    // comes about the first, who brought it on its own.
+    expect([
+      shown("How does a man curse his own parents, per Bukhari 5973?", ["the abuse: a grey dashed way to an older one of the other home", "an older one of the other home, by its door, dimming", "the abuse back: a grey dashed way to an older one of the first home", "an older one of the first home, by its door, dimming", "and more: a grey dashed way to the other older one of the first home", "the other older one of the first home, dimming", "a great sin: a grey dashed ring about the first, who brought it on its own"]),
+      moved("How does a man curse his own parents, per Bukhari 5973?", "the place of one of the first home: coming out into the lane", "x"),
+      moved("How does a man curse his own parents, per Bukhari 5973?", "the place of one of the other home: coming out into the lane", "x"),
+      value("curse-parents", "his voice, soft and golden: telling how", "opacity", 0.58),
+      value("curse-parents", "abusing: the voice of the first, quick and grey", "opacity", 0.7),
+      value("curse-parents", "abusing back: the voice of the other, quick and grey", "opacity", 0.85)
+    ]).toEqual([
+      [
+        [0, 1, 0, 1, 0, 1, 0],
+        [1, 0.45, 1, 0.45, 1, 0.45, 1]
+      ],
+      [0, 18],
+      [0, -18],
+      1,
+      1,
+      1
+    ]);
+    // Pay it back: a soft golden way has shown from the one who lends, and coins have gone along it to the first: taken,
+    // with no ring about it yet, before the next words; then a soft golden ring comes about it: meaning to repay. It
+    // stops before the coins go back.
+    expect([
+      shown("What should you mean to do when you borrow?", ["taking it: a soft golden way from the one who lends", "meaning to repay: a soft golden ring about it", "repaid: a spark rising from the one who repaid", "taking it: a grey dashed way to the other"]),
+      moved("What should you mean to do when you borrow?", "coins taken: going to the one who means to repay, and back", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 0, 0]
+      ],
+      [44, 44]
+    ]);
+    // False: the coins have gone back along the soft golden way, and a spark has risen from the one who repaid, with no
+    // grey way yet, before the next words; then a grey dashed way shows to the other, coins go along it and fade away
+    // there: spoiled, a grey dashed ring comes about the other, and its place dims.
+    expect([
+      shown("Borrowing with no plan to give it back is fine.", ["meaning to repay: a soft golden ring about it", "taking it: a grey dashed way to the other", "spoiling it: coins going to the other, and fading away", "spoiled: a grey dashed ring about the other", "the place of one who takes it, meaning to spoil it: dimming"]),
+      moved("Borrowing with no plan to give it back is fine.", "coins taken: going to the one who means to repay, and back", "x"),
+      moved("Borrowing with no plan to give it back is fine.", "spoiling it: coins going to the other, and fading away", "x"),
+      value("borrow-to-repay", "spoiling it: coins going to the other, and fading away", "opacity", 0.7),
+      value("borrow-to-repay", "repaid: a spark rising from the one who repaid", "opacity", 0.58)
+    ]).toEqual([
+      [
+        [1, 0, 1, 0, 1],
+        [1, 1, 0, 1, 0.45]
+      ],
+      [0, 0],
+      [0, 82.8],
+      1,
+      1
+    ]);
+    // True: his voice, soft and golden, has begun, with the traveller and the bird still, before the next words; then
+    // the traveller sets out along the way, and the bird flies up, across the way, to another palm; a faint dotted line
+    // of looking goes from the traveller to it, and a grey dashed ring comes about the bird: no Tiyara, no omen in it;
+    // and the voice of the others asks what the Fal is. It stops before the Fal is told.
+    expect([
+      shown("Hoping for good is better than fearing bad omens.", ["his voice, soft and golden: no Tiyara", "taking an omen: a faint dotted line of looking from the traveller to the bird", "no Tiyara: a grey dashed ring about the bird, no omen in it", "the voice of the others: what is the Fal?", "the place of someone ahead on the way"]),
+      moved("Hoping for good is better than fearing bad omens.", "the place of a traveller: setting out along the way", "x"),
+      moved("Hoping for good is better than fearing bad omens.", "a bird on a palm: flying up, across the way, to another palm", "x"),
+      value("good-word", "the voice of the others: what is the Fal?", "opacity", 0.6)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0],
+        [0, 1, 1, 0, 0]
+      ],
+      [0, 20],
+      [0, 36],
+      1
+    ]);
+    // A good word you hear: the voice of the others has asked what the Fal is, with no one ahead on the way yet, before
+    // the next words; then his voice, soft and golden, tells, the place of someone shows ahead on the way, its voice,
+    // soft and golden, speaks to the traveller: a good word, and a soft golden ring and glints come about the traveller
+    // who heard it.
+    expect([
+      shown("What is fal?", ["the voice of the others: what is the Fal?", "the place of someone ahead on the way", "the best omen: a soft golden ring about the traveller who heard it", "and glints about it", "no Tiyara: a grey dashed ring about the bird, no omen in it"]),
+      value("good-word", "his voice, soft and golden: telling what the Fal is", "opacity", 0.78),
+      value("good-word", "a good word: its voice, soft and golden, to the traveller", "opacity", 0.85)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [0, 1, 1, 1, 1]
+      ],
+      1,
+      1
+    ]);
+    // A deed for Paradise: the place of someone who asked has come along to him, with no voice from it yet, before the
+    // next words; then its voice asks for a deed, and the voice of the others begins: what is the matter? It stops
+    // before his voice answers.
+    expect([
+      shown("What did the man ask him ﷺ for?", ["its voice: tell me of a deed", "the voice of the others: what is the matter?", "his voice, soft and golden: answering"]),
+      moved("What did the man ask him ﷺ for?", "the place of someone who asked: coming along to him", "x"),
+      value("deed-for-paradise", "its voice: tell me of a deed", "opacity", 0.2)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [0, 1, 0]
+      ],
+      [-52, -52],
+      1
+    ]);
+    // True: the voice of the others is asking what is the matter with him, with no answer from him yet, before the next
+    // words; then his voice, soft and golden, answers: he has something to ask. It stops before any spark rises.
+    expect([
+      shown("He ﷺ said the man had a real need to ask.", ["the voice of the others: what is the matter?", "his voice, soft and golden: answering", "worshipping: a spark rising from the one who asked", "with no partner: a soft golden ring about the one who asked"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 0, 0]
+      ]
+    ]);
+    // Keeping ties with family: his voice, soft and golden, has told of worship with no partner, the prayer and the
+    // zakat, a spark rising from the one who asked, sparks from the masjid and coins going to someone in need, with
+    // nothing yet toward the home of the kin, before the next words; then a soft golden way goes from the one who asked
+    // to the home of its kin, and small lights come on their places: good relations.
+    expect([
+      shown("Which of these was in his ﷺ answer?", ["with no partner: a soft golden ring about the one who asked", "good relations: a soft golden way from the one who asked to the home of its kin", "kept: small lights on the places of the kin", "his voice, soft and golden: answering"]),
+      moved("Which of these was in his ﷺ answer?", "the zakat: coins going from the one who asked to someone in need", "x"),
+      value("deed-for-paradise", "worshipping: a spark rising from the one who asked", "opacity", 0.67),
+      value("deed-for-paradise", "the prayer: a spark rising from the masjid", "opacity", 0.78)
+    ]).toEqual([
+      [
+        [1, 0, 0, 1],
+        [1, 1, 1, 0]
+      ],
+      [5.8, 5.8],
+      1,
+      1
+    ]);
+    // The imam made it too long: the place of someone kept away has come to him, with no voice from it yet and the sun
+    // still, before the next words; then its voice speaks, and the sun goes a long way: the prayer prolonged. It stops
+    // before his voice speaks.
+    expect([
+      shown("Why did a man miss the group prayer?", ["its voice: I may not attend the prayer", "his voice, strong and golden: more furious than on any day"]),
+      moved("Why did a man miss the group prayer?", "the sun, going a long way: the prayer prolonged", "x"),
+      moved("Why did a man miss the group prayer?", "the sun, going a long way: the prayer prolonged", "y")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0, 30],
+      [0, 10]
+    ]);
+    // True: his voice, strong and golden, has begun, with nothing yet about the one leading, before the next words; then
+    // a grey dashed ring comes about the one leading, and a place of the rows goes away along a grey dashed way: made to
+    // dislike it. It stops before the ring fades.
+    expect([
+      shown("Making good deeds too hard can push people away from them.", ["his voice, strong and golden: more furious than on any day", "making others dislike it: a grey dashed ring about the one leading, then fading", "a grey dashed way going away from the rows", "shortening it: a soft golden ring about the one leading"]),
+      moved("Making good deeds too hard can push people away from them.", "the place of one of the rows: made to dislike it, going away", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      [0, 26]
+    ]);
+    // The sick, weak and busy pray too: the grey ring has faded and a soft golden ring has come about the one leading:
+    // shortening it, with nothing yet on the places of the rows, before the next words; then a pale glow comes on one
+    // place: the sick, a soft light on a smaller, fainter one: the weak, and a sack by another: the needy, with work to
+    // do.
+    expect([
+      shown("Why should an imam keep the prayer short?", ["making others dislike it: a grey dashed ring about the one leading, then fading", "shortening it: a soft golden ring about the one leading", "the sick: a pale glow on its place", "the weak: a soft light on its place", "the needy, with work to do: a sack by its place"]),
+      moved("Why should an imam keep the prayer short?", "the place of one of the rows: made to dislike it, going away", "x")
+    ]).toEqual([
+      [
+        [0, 1, 0, 0, 0],
+        [0, 1, 1, 1, 1]
+      ],
+      [26, 26]
+    ]);
+    // Those with the best character: his voice, soft and golden, has spoken with glints about it, never grey, with
+    // nothing yet along the lane, before the next words; then one place speaks softly to another, and a small light
+    // comes on that one; another gives dates to someone; and soft golden rings and glints come about the two who were
+    // kind.
+    expect([
+      shown("Who are the best people, he ﷺ said?", ["his voice, soft and golden, never bad", "spoken to kindly: a small light on the other", "the best manners: soft golden rings about the two who were kind", "and glints about them"]),
+      moved("Who are the best people, he ﷺ said?", "giving: dates going to someone", "x"),
+      value("best-character", "speaking softly: its voice, to the other", "opacity", 0.6)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      [0, 10],
+      1
+    ]);
+    // The same, asked as in its other lesson: it waits and stops where the question before it does.
+    expect([
+      shown("Who are the best of us, per the hadith?", ["his voice, soft and golden, never bad", "spoken to kindly: a small light on the other", "the best manners: soft golden rings about the two who were kind", "and glints about them"]),
+      moved("Who are the best of us, per the hadith?", "giving: dates going to someone", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      [0, 10]
     ]);
   });
 
