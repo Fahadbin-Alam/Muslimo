@@ -4993,8 +4993,9 @@ export default function TopicApp() {
           onSkip={finishWelcome}
         />
         <AgeSheet
-          // Waits for the welcome and for an open log in, then asks once (sign-up asks it first, see openAccountSheet).
-          visible={hasUser && !ageGroup && !welcomeVisible && !accountModalVisible}
+          // Waits for the language, the welcome and an open log in, then asks once (sign-up asks it first, see
+          // openAccountSheet). Opened under the language sheet, it would show as it slid away when the welcome comes up.
+          visible={hasUser && !ageGroup && !welcomeVisible && !accountModalVisible && (ageBeforeSignUp || !languageModalVisible)}
           onSave={(group) => {
             setStoredItem("sira-path-age-group", group);
             setAgeGroup(group);
