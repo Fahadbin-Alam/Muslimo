@@ -1673,6 +1673,12 @@ const STATES: State[] = [
   { id: "scene-swear-by-allah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-swear-by-allah-or-be-quiet" ask="Who may we swear by" /> },
   { id: "scene-two-rakahs-at-mina", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-two-rakahs-at-mina" ask="How many rak'ahs did he" /> },
   { id: "scene-let-her-go", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-marriage-let-her-go-to-the-masjid" ask="If a wife asks" /> },
+  { id: "scene-the-cat-at-the-water", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animals-the-cat-and-the-water" ask="What did Abu Qatadah do" /> },
+  { id: "scene-feed-a-fasting-person", render: () => <SceneQuestionDemo lessonId="lesson-deep-fast-suhur-feed" ask="What do you get for feeding" /> },
+  { id: "scene-host-him-anyway", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-beautiful-character-host-him-anyway" ask="What did the man want" /> },
+  { id: "scene-two-brothers", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-two-brothers" ask="Why might the working brother" /> },
+  { id: "scene-best-of-the-earth", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-makkah-the-beloved-city-the-best-of-allahs-earth" ask="What did he ﷺ call Makkah" /> },
+  { id: "scene-the-first-fruit", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-from-the-sunnah-the-first-fruit" ask="Who did he ﷺ give the first fruit" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

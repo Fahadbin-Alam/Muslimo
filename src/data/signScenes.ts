@@ -1121,7 +1121,13 @@ export type SignKind =
   | "the-istikharah"
   | "swear-by-allah"
   | "two-rakahs-at-mina"
-  | "let-her-go";
+  | "let-her-go"
+  | "the-cat-at-the-water"
+  | "feed-a-fasting-person"
+  | "host-him-anyway"
+  | "two-brothers"
+  | "best-of-the-earth"
+  | "the-first-fruit";
 
 export type SignScene = {
   id: string;
@@ -6326,6 +6332,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "let-her-go",
     caption: "Abdullah ibn Umar said: the Prophet ﷺ said: if the wife of anyone of you asks permission to go to the mosque, he should not forbid her.",
     sources: [bukhari("5238")]
+  },
+  {
+    id: "sign-the-cat-at-the-water",
+    kind: "the-cat-at-the-water",
+    caption:
+      "Kabshah bint Ka'b said: Abu Qatadah visited, and I poured water for him to use for wudu. A cat came to drink, so he lowered the container until it drank. He saw me looking and said: are you surprised, my niece? I said: yes. He said: the Messenger of Allah ﷺ said: it is not impure; it is only one of those that roam around among you.",
+    sources: [tirmidhi("92")]
+  },
+  {
+    id: "sign-feed-a-fasting-person",
+    kind: "feed-a-fasting-person",
+    caption:
+      "Zayd ibn Khalid al-Juhani said: the Messenger of Allah ﷺ said: whoever provides the food for a fasting person to break his fast with, then for him is the same reward as his, without anything being diminished from the reward of the fasting person.",
+    sources: [tirmidhi("807")]
+  },
+  {
+    id: "sign-host-him-anyway",
+    kind: "host-him-anyway",
+    caption:
+      "The father of Abu al-Ahwas said: I said: O Messenger of Allah, I stayed with a man who did not entertain me nor behave hospitably with me. Then he came to stay with me; shall I reciprocate the same to him? He ﷺ said: no, entertain him.",
+    sources: [tirmidhi("2006")]
+  },
+  {
+    id: "sign-two-brothers",
+    kind: "two-brothers",
+    caption:
+      "Anas ibn Malik said: there were two brothers in the time of the Prophet ﷺ. One of them used to come to the Prophet ﷺ, and the other had some business. The businessman among them complained to the Prophet ﷺ about his brother, and he said: perhaps you are provided for because of him.",
+    sources: [tirmidhi("2345")]
+  },
+  {
+    id: "sign-best-of-the-earth",
+    kind: "best-of-the-earth",
+    caption:
+      "Abdullah ibn Adi ibn al-Hamra said: I saw the Messenger of Allah ﷺ standing at al-Hazwarah, and he said: by Allah, you are the best of Allah's earth, and the most beloved of Allah's earth to Allah, and if it were not that I was expelled from you, I would not have left.",
+    sources: [tirmidhi("3925")]
+  },
+  {
+    id: "sign-the-first-fruit",
+    kind: "the-first-fruit",
+    caption:
+      "Abu Hurairah said: when the people saw the first fruit, they would bring it to the Messenger of Allah ﷺ. When he took it, he would say: O Allah, bless for us our fruits, and bless for us our city, and bless for us our sa' and our mudd. Then he would call the smallest young child he saw and give him that fruit.",
+    sources: [tirmidhi("3454")]
   }
 ];
 
@@ -9144,7 +9192,20 @@ export const SIGN_LESSONS: Record<string, string> = {
   // At Mina he led them in two rak'ahs, though they were more and safer than ever.
   "deep-book-hajj-two-rakahs-at-mina": "sign-two-rakahs-at-mina",
   // If a wife asks to go to the masjid, do not forbid her.
-  "deep-book-marriage-let-her-go-to-the-masjid": "sign-let-her-go"
+  "deep-book-marriage-let-her-go-to-the-masjid": "sign-let-her-go",
+  // A cat drank from the water for wudu: it is not impure, one of those that roam around among us.
+  "deep-kids-animals-the-cat-and-the-water": "sign-the-cat-at-the-water",
+  // Whoever gives a fasting person food to break the fast gets the same reward, and nothing of the faster's is lessened.
+  "deep-fast-suhur-feed": "sign-feed-a-fasting-person",
+  "ramadan-feed-a-fasting-person": "sign-feed-a-fasting-person",
+  // Host him, even if he did not host you.
+  "deep-manners-beautiful-character-host-him-anyway": "sign-host-him-anyway",
+  // One brother came to learn and one worked: perhaps you are provided for because of him.
+  "deep-akhirah-wealth-and-next-life-two-brothers": "sign-two-brothers",
+  // Makkah, the best of Allah's earth and the most beloved of it to Allah.
+  "deep-hajj-makkah-the-beloved-city-the-best-of-allahs-earth": "sign-best-of-the-earth",
+  // The first fruit: his dua for their fruits, city and measures, then the fruit to the smallest child.
+  "deep-duas-from-the-sunnah-the-first-fruit": "sign-the-first-fruit"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
