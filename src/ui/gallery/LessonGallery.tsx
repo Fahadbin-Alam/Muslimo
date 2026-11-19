@@ -1620,6 +1620,12 @@ const STATES: State[] = [
   { id: "scene-two-groups-of-advisors", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-what-allah-has-written-two-kinds-of-advisers" ask="groups of advisers" /> },
   { id: "scene-till-you-see-me", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-stand-calmly-for-iqamah" ask="get up for the prayer" /> },
   { id: "scene-help-and-recommend", render: () => <SceneQuestionDemo lessonId="lesson-deep-nisa2-intercede" ask="needy man came" /> },
+  { id: "scene-halal-or-haram", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-halal-or-haram-money" ask="stop caring about" /> },
+  { id: "scene-delay-by-the-wealthy", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-trust-dont-keep-them-waiting" ask="delays is doing what" /> },
+  { id: "scene-most-quarrelsome", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-the-most-quarrelsome" ask="most hated" /> },
+  { id: "scene-never-said-no", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-never-said-no" ask="never say" /> },
+  { id: "scene-for-you-and-against-them", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-the-imams-mistake" ask="makes a mistake" /> },
+  { id: "scene-glad-tidings-now", render: () => <SceneQuestionDemo lessonId="lesson-deep-yunus3-good-news-now" ask="praising your good deed" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
