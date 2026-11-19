@@ -1697,6 +1697,12 @@ const STATES: State[] = [
   { id: "scene-no-pride-in-him", render: () => <SceneQuestionDemo lessonId="lesson-deep-humility-no-pride-in-him" ask="What did Jubayr say he rode" /> },
   { id: "scene-pass-it-on", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-pass-it-on" ask="How should we pass on" /> },
   { id: "scene-seven-times-for-the-sick", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-for-others-seven-times-for-the-sick" ask="How many times does the visitor" /> },
+  { id: "scene-sit-and-eat", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-foods-he-ate-sit-and-eat" ask="What was Abu Musa eating" /> },
+  { id: "scene-a-year-for-each-step", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah3-a-year-for-each-step" ask="What is the reward for each step" /> },
+  { id: "scene-thank-people-too", render: () => <SceneQuestionDemo lessonId="lesson-deep-duha3-thank-people-too" ask="What should we do when someone helps" /> },
+  { id: "scene-a-third-for-food", render: () => <SceneQuestionDemo lessonId="lesson-deep-araf2-a-third" ask="How should the stomach be shared" /> },
+  { id: "scene-begin-with-yourself", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-answered-begin-with-yourself" ask="Whom did he ﷺ begin with" /> },
+  { id: "scene-musk-the-best-scent", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-looking-neat-musk-the-best-scent" ask="What kind of thing is musk" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
