@@ -1049,7 +1049,13 @@ export type SignKind =
   | "umar-knew-adi"
   | "every-year"
   | "in-seven-days"
-  | "not-for-those-who-ask";
+  | "not-for-those-who-ask"
+  | "better-than-an-earth-full"
+  | "a-day-for-the-women"
+  | "on-the-very-edge"
+  | "too-drowsy-to-pray"
+  | "take-it-without-greed"
+  | "made-up-in-shaban";
 
 export type SignScene = {
   id: string;
@@ -5753,6 +5759,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Musa said: two men from my tribe and I entered upon the Prophet ﷺ. One of the two men said: O Messenger of Allah, appoint me as a governor, and so did the second. He said: we do not assign the authority of ruling to those who ask for it, nor to those who are keen to have it.",
     sources: [bukhari("7149")]
+  },
+  {
+    id: "sign-better-than-an-earth-full",
+    kind: "better-than-an-earth-full",
+    caption:
+      "Sahl said: a man passed by the Messenger of Allah ﷺ, and he asked: what do you say about this one? They replied: if he asks for a lady's hand, he ought to be given her in marriage; if he intercedes, his intercession should be accepted; and if he speaks, he should be listened to. He kept silent. Then a man from among the poor Muslims passed by, and he asked: what do you say about this one? They replied: if he asks for a lady's hand, he does not deserve to be married; if he intercedes, his intercession should not be accepted; and if he speaks, he should not be listened to. The Messenger of Allah ﷺ said: this poor man is better than so many of the first as filling the earth.",
+    sources: [bukhari("5091")]
+  },
+  {
+    id: "sign-a-day-for-the-women",
+    kind: "a-day-for-the-women",
+    caption:
+      "Abu Sa'id al-Khudri said: some women requested the Prophet ﷺ to fix a day for them, as the men were taking all his time. On that he promised them one day for religious lessons and commandments.",
+    sources: [bukhari("101")]
+  },
+  {
+    id: "sign-on-the-very-edge",
+    kind: "on-the-very-edge",
+    caption:
+      "Ibn Abbas said, regarding the ayah (Quran 22:11): a man used to come to Madinah, and if his wife gave birth to a boy and his mares produced offspring, he would say: this religion is good; but if his wife did not give birth to a child and his mares produced no offspring, he would say: this religion is bad.",
+    sources: [bukhari("4742")]
+  },
+  {
+    id: "sign-too-drowsy-to-pray",
+    kind: "too-drowsy-to-pray",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ said: if anyone of you feels drowsy while praying, he should go to bed till his slumber is over, because in praying while drowsy one does not know whether one is asking for forgiveness or for a bad thing for oneself.",
+    sources: [bukhari("212")]
+  },
+  {
+    id: "sign-take-it-without-greed",
+    kind: "take-it-without-greed",
+    caption:
+      "Umar said: the Messenger of Allah ﷺ used to give me something, but I would say to him: would you give it to one poorer and more needy than I? He said to me: take it. If you are given something from this property without asking for it or having greed for it, take it; and if not given, do not run for it.",
+    sources: [bukhari("1473")]
+  },
+  {
+    id: "sign-made-up-in-shaban",
+    kind: "made-up-in-shaban",
+    caption:
+      "Aishah said: sometimes I missed some days of Ramadan, but could not fast in lieu of them except in the month of Sha'ban. Yahya, a narrator, said: she used to be busy serving the Prophet ﷺ.",
+    sources: [bukhari("1950")]
   }
 ];
 
@@ -8419,7 +8467,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Recite the whole Quran in a month; for one who can do more, in seven days, and not in less.
   "deep-ibn-amr-seven-days": "sign-in-seven-days",
   // Two men asked to be made governors: the authority of ruling is not given to those who ask for it or are keen on it.
-  "deep-manners-judging-fairly-not-for-those-who-ask": "sign-not-for-those-who-ask"
+  "deep-manners-judging-fairly-not-for-those-who-ask": "sign-not-for-those-who-ask",
+  // A poor Muslim they would not marry or listen to is better than an earth full of the one they praised.
+  "deep-marriage-weddings-and-new-homes-better-than-an-earth-full": "sign-better-than-an-earth-full",
+  // The women asked for a day of their own, as the men took all his time; he gave them a day of lessons.
+  "deep-abu-said-a-day-for-women": "sign-a-day-for-the-women",
+  // The women asked for a day to learn, and he promised them one, and taught them on it.
+  "deep-quranwomen-women-ask-a-day": "sign-a-day-for-the-women",
+  // One called the religion good when a son and foals came, and bad when they did not.
+  "deep-hajj1-edge-sons-and-foals": "sign-on-the-very-edge",
+  // One drowsy at prayer should sleep first, for he may not know whether he asks forgiveness or harm.
+  "deep-prayer-calm-and-focus-drowsy-in-prayer": "sign-too-drowsy-to-pray",
+  // What comes without asking or greed, take it; what does not come, do not run after it.
+  "deep-zakat-wise-wealth-take-it-without-greed": "sign-take-it-without-greed",
+  // Aishah made up her missed days of Ramadan in Sha'ban, busy as she was serving him.
+  "deep-fast-ease-aishah-shaban": "sign-made-up-in-shaban"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

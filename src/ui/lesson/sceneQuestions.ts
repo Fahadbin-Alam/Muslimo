@@ -6696,7 +6696,53 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the two men ask him ﷺ for?", "To be made governors", "Appoint me as a governor,", "And so did the second. He said:"],
     ["To whom does he ﷺ not give the authority of ruling?", "Those who ask for it", "To those who ask for it,"],
     ["Being keen to have power does not win a post from him ﷺ.", "True", "Nor to those who are keen to have it."]
-  ]
+  ],
+  // Sahl said: a man passed by the Messenger of Allah ﷺ, and he asked: what do you say about this one? They said: if he
+  // proposes, he ought to be married; if he intercedes, his intercession accepted; and if he speaks, he listened to. He
+  // kept silent; then a poor Muslim passed by, and they said the opposite of him. The Messenger of Allah ﷺ said: this
+  // poor man is better than an earth full of the like of the first (Sahih al-Bukhari 5091).
+  "sign-better-than-an-earth-full": [
+    ["Which of the two men did he ﷺ say was better?", "The poor Muslim", "He said: this poor man is better than", "An earth full of the likes of the first."],
+    ["What did people say if the first man proposed?", "He should be given in marriage", "If he proposes, he should be married;"],
+    ["People said the poor man would not be listened to.", "True", "They: not to be married, nor heard."]
+  ],
+  // Abu Sa'id al-Khudri said: the women said to the Prophet ﷺ: the men have taken all your time from us, so fix a day
+  // for us of your own. He promised them a day on which he met them, and he taught them and gave them commands (Sahih
+  // al-Bukhari 101). Two lessons open on this scene, and each asks its own questions on it.
+  "sign-a-day-for-the-women": [
+    ["What did the women ask for?", "A day of lessons for them", "So fix a day of yours for us."],
+    ["Did the Prophet ﷺ agree?", "Yes, he gave them a day", "He promised them a day and met them;"],
+    ["Women in the Prophet's ﷺ time learned the religion.", "True", "He gave them lessons and commandments."],
+    ["What did the women ask the Prophet ﷺ for?", "A day to learn", "So fix a day of yours for us."],
+    ["Why did the women ask?", "The men took all his time", "The men have taken all your time,"],
+    ["The Prophet ﷺ said no to the women.", "False", "He promised them a day and met them;"]
+  ],
+  // Ibn Abbas said, about the ayah (Quran 22:11): a man would come to Madinah; if his wife gave birth to a boy and his
+  // mares had foals, he would say: this religion is good; and if not, he would say: this religion is bad (Sahih
+  // al-Bukhari 4742). Its lesson's question on where these men came to is not asked here, since the scene's first words
+  // say it; nor its true or false on faith that depends on getting what we want, since the scene's words do not say it.
+  "sign-on-the-very-edge": [["When did such a man call Islam good, per Ibn Abbas?", "When he got sons and foals", "If the man's wife gave birth to a boy", "The man said: this religion is good."]],
+  // Aishah said: the Messenger of Allah ﷺ said: if one of you is drowsy while praying, let him go to bed till his
+  // slumber is over, for one who prays drowsy does not know whether he is asking for forgiveness or for a bad thing for
+  // himself (Sahih al-Bukhari 212). Its lesson's true or false on whether a drowsy person always knows what he asks is
+  // not asked here, since it asks again what the question before it asks.
+  "sign-too-drowsy-to-pray": [
+    ["What should a drowsy person do, he ﷺ said?", "Sleep until it passes", "While praying, he should go to bed till", "His slumber is over; for praying drowsy,"],
+    ["Why is praying while drowsy a problem?", "He may not know what he asks", "One does not know whether one asks for", "Forgiveness, or a bad thing for oneself."]
+  ],
+  // Umar said: the Messenger of Allah ﷺ used to give me something, and I would say: give it to one poorer than me. He
+  // said: take it; if you are given something of this wealth without asking for it or having greed for it, take it; and
+  // if not given, do not run for it (Sahih al-Bukhari 1473).
+  "sign-take-it-without-greed": [
+    ["What did Umar ask him ﷺ to do with the gift?", "Give it to someone poorer", "Would say: give it to one poorer than me."],
+    ["When should you take what you are given, he ﷺ said?", "If you did not ask or crave it", "Of this wealth without asking for it", "Or having greed for it, take it;"],
+    ["He ﷺ said to run after wealth that is not given to you.", "False", "And if not given, do not run for it."]
+  ],
+  // Aishah said: sometimes I missed some days of Ramadan, but could not make them up except in the month of Sha'ban.
+  // Yahya, a narrator, said: she used to be busy serving the Prophet ﷺ (Sahih al-Bukhari 1950). Its lesson's question on
+  // the month she made them up in is not asked here, since it has its own picture of the months; nor its true or false
+  // on Sha'ban coming before the next Ramadan, since the scene's words do not say it.
+  "sign-made-up-in-shaban": [["Why was she busy, said a narrator?", "Serving the Prophet ﷺ", "Yahya said: she was busy serving him."]]
 };
 
 /** How long before the end of its last moment the scene stops, so that moment's words still show. */
