@@ -38,7 +38,7 @@ const someone = (x: number, y: number, r = 1.5, color = VOICE) =>
 const sun = (x: number, y: number) => `${glow(x, y, 10, "#FFF0C0", 0.12)}<circle cx="${x}" cy="${y}" r="4.6" fill="#FFE07A"/>`;
 
 /** The Ka'bah, small and far: a black cube with its gold band, its foot's middle at (x, y), `s` times 8 wide. */
-const kaaba = (x: number, y: number, s = 1) => {
+export const kaaba = (x: number, y: number, s = 1) => {
   const w = 8 * s;
   const h = 7.4 * s;
   const l = n(x - w / 2);

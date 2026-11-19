@@ -27,7 +27,7 @@ const SOFT_GOLD = "#E8C25A";
  * A horse of the picture cards, `s` times its size, its feet at (x, y); `lean`: its belly drawn slimmer, as horses
  * made lean for racing; `coat`: its near and far sides in other colors.
  */
-const horseAt = (x: number, y: number, s: number, left = false, lean = false, coat?: [string, string]) => {
+export const horseAt = (x: number, y: number, s: number, left = false, lean = false, coat?: [string, string]) => {
   let svg = animalAt("horse", n(x - 50 * s), n(y - 73 * s), s, left);
   if (lean) svg = svg.replace('cx="44" cy="41" rx="21" ry="10"', 'cx="44" cy="39.8" rx="21" ry="7.8"');
   return coat ? svg.replace(/#A2622F/g, coat[0]).replace(/#80491F/g, coat[1]) : svg;

@@ -1097,7 +1097,13 @@ export type SignKind =
   | "sent-as-mercy"
   | "virtue-and-vice"
   | "covered-at-night"
-  | "upper-hand";
+  | "upper-hand"
+  | "despite-the-odds"
+  | "while-hearts-agree"
+  | "sweet-and-green"
+  | "brothers-to-come"
+  | "two-sermons"
+  | "umrah-to-umrah";
 
 export type SignScene = {
   id: string;
@@ -6136,6 +6142,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Umamah said: the Messenger of Allah ﷺ said: O son of Adam, it is better for you if you spend your surplus, but if you withhold it, it is evil for you. There is no reproach for you for a living. And begin with your dependents; and the upper hand is better than the lower hand.",
     sources: [muslim("1036")]
+  },
+  {
+    id: "sign-despite-the-odds",
+    kind: "despite-the-odds",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: should I not suggest to you that by which Allah obliterates the sins and elevates the ranks? They said: yes, Messenger of Allah. He said: performing the ablution thoroughly despite odds, more paces towards the mosque, and waiting for the next prayer after observing a prayer, and that is mindfulness.",
+    sources: [muslim("251a")]
+  },
+  {
+    id: "sign-while-hearts-agree",
+    kind: "while-hearts-agree",
+    caption:
+      "Jundub said: the Prophet ﷺ said: recite the Quran as long as you agree about its interpretation, but when you have any difference of opinion, then you should stop reciting it.",
+    sources: [bukhari("5061")]
+  },
+  {
+    id: "sign-sweet-and-green",
+    kind: "sweet-and-green",
+    caption:
+      "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ said: the world is sweet and green, and verily Allah is going to install you as vicegerent in it in order to see how you act.",
+    sources: [muslim("2742")]
+  },
+  {
+    id: "sign-brothers-to-come",
+    kind: "brothers-to-come",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: I love to see my brothers. They said: aren't we your brothers? He said: you are my companions, and our brothers are those who have, so far, not come into the world. They said: how would you recognise those persons of your Ummah who have not yet been born? He said: supposing a man had horses with white blazes on foreheads and legs among horses which were all black, tell me, would he not recognise his own horses? They said: certainly. He said: they would come with white faces and arms and legs owing to ablution.",
+    sources: [muslim("249a")]
+  },
+  {
+    id: "sign-two-sermons",
+    kind: "two-sermons",
+    caption:
+      "Jabir ibn Samurah said: the Apostle of Allah ﷺ gave two sermons between which he sat, recited the Quran and exhorted the people.",
+    sources: [muslim("862")]
+  },
+  {
+    id: "sign-umrah-to-umrah",
+    kind: "umrah-to-umrah",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: Umrah is an expiation for the sins committed, and the reward of Hajj Mabrur is nothing except Paradise.",
+    sources: [bukhari("1773")]
   }
 ];
 
@@ -8901,7 +8949,20 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A sin Allah screened at night, and in the morning its doer tells of it: all are forgiven but those who make it public.
   "deep-book-adab-allah-covered-it": "sign-covered-at-night",
   // Spending the surplus is good, withholding it evil; begin with your dependents; the upper hand is better.
-  "deep-abu-umamah-the-upper-hand": "sign-upper-hand"
+  "deep-abu-umamah-the-upper-hand": "sign-upper-hand",
+  // The ablution done thoroughly when it is hard, more paces to the masjid, waiting for the next prayer: sins wiped out, ranks raised.
+  "deep-book-taharah-erases-sins-raises-ranks": "sign-despite-the-odds",
+  // Recite the Quran while the hearts agree on it, and get up from it when you differ.
+  "deep-book-quran-virtues-recite-while-hearts-agree": "sign-while-hearts-agree",
+  // The world is sweet and green, and Allah makes you successors in it to see how you act.
+  "deep-yunus1-successors-in-the-land": "sign-sweet-and-green",
+  "deep-anam3-successors-tested": "sign-sweet-and-green",
+  // His brothers who have not come yet, known by the brightness of the ablution, as a man knows his horses with white blazes.
+  "deep-book-taharah-our-brothers": "sign-brothers-to-come",
+  // Two sermons on Friday, sitting between them, reciting the Quran and reminding the people.
+  "deep-jumuah3-khutbah-standing": "sign-two-sermons",
+  // Umrah to Umrah wipes out the sins between them, and an accepted Hajj has no reward but Paradise.
+  "deep-hajj-mabrur": "sign-umrah-to-umrah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
