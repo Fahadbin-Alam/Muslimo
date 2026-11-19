@@ -7281,6 +7281,59 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-the-first-fruit": [
     ["Along with their fruits, what did he ﷺ ask Allah to bless?", "Their city", "Bless for us our city, and bless for us"],
     ["Who did he ﷺ give the first fruit to?", "The smallest child he saw", "The smallest young child he saw and", "Give him that fruit."]
+  ],
+  // Abdullah ibn Amr said: the Messenger of Allah ﷺ passed by us while we were repairing a hut of ours, so he said: what
+  // is this? We said: it has become weak, so we are repairing it. He said: I do not think but that the matter is more
+  // fleeting than that (Jami at-Tirmidhi 2335). Its lesson's questions on what passes faster than a hut grows weak and
+  // on life being short are not asked here, since the scene's words do not say life.
+  "sign-quicker-than-that": [
+    ["What was being repaired when he ﷺ passed by?", "A hut", "We were repairing a hut of ours, so he"]
+  ],
+  // Abdullah ibn Salam said: when the Messenger of Allah ﷺ arrived in Madinah, the people came out to meet him. It was
+  // said that the Messenger of Allah ﷺ had arrived, so I went among the people to get a look at him. When I gazed upon
+  // the face of the Messenger of Allah ﷺ, I knew that this face was not the face of a liar. The first thing that he
+  // spoke about was that he said: O you people! Spread the salam, feed, and perform salat while the people are sleeping;
+  // you will enter Paradise with salam (Jami at-Tirmidhi 2485). All three lessons that open on this scene ask their
+  // questions here, but for the two on Surah Yunus 10:17, which are on the ayah, not the hadith.
+  "sign-not-the-face-of-a-liar": [
+    ["Abdullah ibn Salam knew the face was not a liar's face.", "True", "This face was not the face of a liar. The"],
+    ["What did Abdullah see in the Prophet's ﷺ face?", "Truthfulness", "This face was not the face of a liar. The"],
+    ["What did the Prophet ﷺ say first in Madinah?", "Spread the salam", "He said: O you people! Spread the salam,"],
+    ["Which deed was among the first words?", "Spread the salam", "He said: O you people! Spread the salam,"],
+    ["When should we pray, in the hadith?", "While people sleep", "Feed, and perform salat while the people", "Are sleeping."],
+    ["He told people to pray while others sleep.", "True", "Feed, and perform salat while the people", "Are sleeping."],
+    ["What was first taught in Madinah, per the hadith?", "Spread salam, feed, pray at night", "He said: O you people! Spread the salam,", "Are sleeping."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: when you travel through fertile land, then give the camels their
+  // fill of the land, and when you travel through drought, then hasten while they are fresh, and when you camp late,
+  // then stay away from the road, for indeed it is the route of the beasts and the abode of poisonous vermin in the
+  // night (Jami at-Tirmidhi 2858).
+  "sign-camp-off-the-road": [
+    ["On fertile land, he ﷺ said to let the camels graze.", "True", "Through fertile land, then give the", "Camels their fill of the land, and when"],
+    ["Camping at night, where should travellers stay?", "Away from the road", "Late, then stay away from the road, for"],
+    ["Why is the road unsafe at night?", "Animals and stinging creatures use it", "Indeed it is the route of the beasts and", "Night."]
+  ],
+  // Talhah ibn Ubaydullah said: the Messenger of Allah ﷺ said: when one of you placed something like the post of the
+  // camel saddle in front of him, then let him perform salat and not concern himself with who passes beyond that (Jami
+  // at-Tirmidhi 335).
+  "sign-like-the-saddle-post": [
+    ["Something like what should be in front of you, he ﷺ said?", "The post of a camel saddle", "Something like the post of the camel", "Saddle in front of him, then let him"],
+    ["With a sutrah in front, one need not mind who passes beyond it.", "True", "Perform salat and not concern himself", "With who passes beyond that."],
+    ["Once your sutrah is in front, whose passing need not worry you?", "Those beyond it", "With who passes beyond that."]
+  ],
+  // Al-Bara ibn Azib said: the Messenger of Allah ﷺ said: whoever gives someone some milk or silver, or guides him
+  // through a strait, then he will have the reward similar to freeing a slave (Jami at-Tirmidhi 1957).
+  "sign-milk-silver-or-the-way": [
+    ["Which of these did he ﷺ say brings that reward?", "Giving milk or silver", "Gives someone some milk or silver, or"],
+    ["Helping someone find their way is a good deed.", "True", "Guides him through a strait, then he", "A slave."],
+    ["What reward is it to show a lost person the way?", "Like freeing a slave", "Will have the reward similar to freeing", "A slave."]
+  ],
+  // Abu Mas'ud said: the Messenger of Allah ﷺ said: a man is not led in his dominion, and his seat of honor in his house
+  // is not sat in without his permission (Jami at-Tirmidhi 2772).
+  "sign-the-seat-of-honor": [
+    ["Where should a guest not sit without the host's leave?", "In his seat of honor", "In his dominion, and his seat of honor", "In his house is not sat in without his"],
+    ["Whose permission is needed to sit in that seat?", "The man of the house", "In his house is not sat in without his", "Permission."],
+    ["A guest may take the host's seat of honor without asking.", "False", "In his house is not sat in without his", "Permission."]
   ]
 };
 
