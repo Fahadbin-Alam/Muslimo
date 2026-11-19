@@ -1655,6 +1655,12 @@ const STATES: State[] = [
   { id: "scene-brothers-to-come", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-our-brothers" ask="call his brothers" /> },
   { id: "scene-two-sermons", render: () => <SceneQuestionDemo lessonId="lesson-deep-jumuah3-khutbah-standing" ask="recited the Quran" /> },
   { id: "scene-umrah-to-umrah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-mabrur" ask="reward of a Hajj" /> },
+  { id: "scene-best-generation", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-the-best-generation" ask="fail to keep" /> },
+  { id: "scene-camels-can-reach", render: () => <SceneQuestionDemo lessonId="lesson-deep-tree-ibn-masud-every-ayah" ask="knew the Quran better" /> },
+  { id: "scene-simple-path", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-iman-the-simple-path" ask="Which prayers did" /> },
+  { id: "scene-passing-thoughts", render: () => <SceneQuestionDemo lessonId="lesson-deep-qaf2-thoughts-forgiven" ask="What does Allah forgive" /> },
+  { id: "scene-together-at-muzdalifah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-maghrib-and-isha-together" ask="joined at Muzdalifah" /> },
+  { id: "scene-best-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-days-friday" ask="Which day is the best" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

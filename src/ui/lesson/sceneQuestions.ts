@@ -7085,6 +7085,56 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-umrah-to-umrah": [
     ["What does one Umrah to the next do?", "Wipes the sins between them", "Expiation for the sins committed."],
     ["What is the reward of a Hajj mabrur?", "Paradise", "Nothing except Paradise."]
+  ],
+  // Imran ibn Husayn said that the Messenger of Allah ﷺ said: the best of my followers are those living in my
+  // generation, and then those who will follow the latter; Imran did not remember whether he mentioned two or three
+  // generations after his; there will come after you people who will bear witness without being asked to do so, and
+  // they will vow and never fulfill their vows (Sahih al-Bukhari 3650). Its lesson's question per Muslim 2533 is not
+  // asked here, since that is another hadith, nor its questions on who comes after them in goodness (in Muslim 2533's
+  // words) and on Ibn Kathir, since the scene's words do not say them.
+  "sign-best-generation": [
+    ["Which generation is the best?", "The Prophet's ﷺ own", "Are those living in my generation, and"],
+    ["Imran was sure how many generations were named.", "False", "Imran: I do not remember whether he", "Mentioned two or three generations after"],
+    ["What will some later people fail to keep?", "Their vows", "Will vow and never fulfill their vows."]
+  ],
+  // Abdullah ibn Mas'ud said: there is no surah revealed in Allah's Book but I know at what place it was revealed, and
+  // no ayah but I know about whom it was revealed; and if I know that there is somebody who knows Allah's Book better
+  // than I, at a place that camels can reach, I would go to him (Sahih al-Bukhari 5002). Its lesson's question on a
+  // great scholar wanting to learn more is not asked here, since it is on the whole hadith, not one moment of it.
+  "sign-camels-can-reach": [
+    ["What did Ibn Mas'ud say he knew about every surah?", "Where it came down", "Allah's Book but I know at what place it", "Was revealed; and there is no ayah"],
+    ["What would he do if someone knew the Quran better?", "Travel to him to learn", "Camels can reach, I would go to him."]
+  ],
+  // Jabir said that an-Nu'man ibn Qawqal came to the Prophet ﷺ and said: would I enter Paradise if I say the obligatory
+  // prayers, deny myself that which is forbidden, and treat as lawful what has been made permissible? The Prophet ﷺ
+  // replied in the affirmative (Sahih Muslim 15a). Its lesson's question on keeping the basics well is not asked here,
+  // since it is on the whole hadith, not one moment of it.
+  "sign-simple-path": [
+    ["Which prayers did An-Nu'man promise to keep?", "The obligatory ones", "Say the obligatory prayers and deny"],
+    ["What did the Prophet ﷺ answer him?", "Yes", "He replied in the affirmative."]
+  ],
+  // Abu Hurairah said that the Prophet ﷺ said: Allah has accepted my invocation to forgive what whispers in the hearts
+  // of my followers, unless they put it to action or utter it (Sahih al-Bukhari 2528; and Sahih Muslim 127a). Its
+  // lessons' questions on Allah's mercy about thoughts never acted on (on the whole hadith, not one moment of it) and
+  // on Ibn Kathir (the scene's words do not say it) are not asked here.
+  "sign-passing-thoughts": [
+    ["A bad thought pops into your head, and you push it away. What then?", "Allah forgives it", "Accepted my invocation to forgive what"],
+    ["What does Allah forgive, per Bukhari 2528?", "Whispers in the heart not acted on", "Whispers in the hearts of my followers,", "Unless they put it to action, or utter it."],
+    ["When does a bad thought become a deed?", "When you say or do it", "Unless they put it to action, or utter it."],
+    ["When does a bad thought count, per Bukhari 2528?", "When acted on or spoken", "Unless they put it to action, or utter it."]
+  ],
+  // Abu Ayyub al-Ansari said that the Messenger of Allah ﷺ offered the Maghrib and Isha prayers together at Muzdalifah
+  // (Sahih al-Bukhari 1674). Its lesson's question on what Muzdalifah comes after is not asked here, since the scene's
+  // words do not say it, nor its question on who told this hadith, since its answer is in the scene's first words.
+  "sign-together-at-muzdalifah": [
+    ["Which prayers were joined at Muzdalifah?", "Maghrib and Isha", "Maghrib and Isha prayers together"]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: the best day on which the sun has risen is Friday (Sahih
+  // Muslim 854). Its lessons' questions on who was created on a Friday and on the Last Hour are not asked here, since
+  // the scene's words do not say them.
+  "sign-best-day": [
+    ["Which day is the best the sun rises on?", "Friday", "Which the sun has risen is Friday."],
+    ["What is the best day the sun rises on?", "Friday", "Which the sun has risen is Friday."]
   ]
 };
 
