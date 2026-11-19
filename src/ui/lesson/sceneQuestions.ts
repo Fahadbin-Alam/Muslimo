@@ -6953,6 +6953,55 @@ const ASKS: Record<string, readonly Ask[]> = {
   // their answers are in the scene's first words.
   "sign-rinse-after-milk": [
     ["Why did he ﷺ rinse his mouth after milk?", "Milk has fat in it", "Mouth and said: it has fat."]
+  ],
+  // Abdullah ibn Amr said that the Messenger of Allah ﷺ said: it is one of the greatest sins that a man should curse
+  // his parents; it was asked: O Messenger of Allah, how does a man curse his parents?; he said: the man abuses the
+  // father of another man, and the latter abuses the father of the former and abuses his mother (Sahih al-Bukhari
+  // 5973). Its lesson's questions on what the hadith calls it and on who told it are not asked here, since their
+  // answers are in the scene's first words.
+  "sign-curse-parents": [
+    ["How does a man curse his own parents, per Bukhari 5973?", "By abusing another's parents", "The man abuses the father of another", "The former and abuses his mother."]
+  ],
+  // Abu Hurairah said that the Prophet ﷺ said: whoever takes the money of the people with the intention of repaying
+  // it, Allah will repay it on his behalf, and whoever takes it in order to spoil it, then Allah will spoil him (Sahih
+  // al-Bukhari 2387). Its lesson's question on who helps the one who means to repay is not asked here, since its answer
+  // is in the words its first question shows.
+  "sign-borrow-to-repay": [
+    ["What should you mean to do when you borrow?", "Pay it back", "Intention of repaying it, Allah will"],
+    ["Borrowing with no plan to give it back is fine.", "False", "Takes it in order to spoil it, then", "Allah will spoil him."]
+  ],
+  // Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: there is no Tiyara, and the best omen is the Fal; they
+  // asked: what is the Fal?; he said: a good word that one of you hears (Sahih al-Bukhari 5754). Its lesson's question
+  // on a black cat is not asked here, since the scene's words do not say it.
+  "sign-good-word": [
+    ["Hoping for good is better than fearing bad omens.", "True", "Is no Tiyara, and the best omen is the", "Fal. They asked: what is the Fal? He"],
+    ["What is fal?", "A good word you hear", "Said: a good word that one of you hears."]
+  ],
+  // Abu Ayyub said that a man said to the Prophet ﷺ: tell me of such a deed as will make me enter Paradise; the people
+  // said: what is the matter with him?; the Prophet ﷺ said: he has something to ask; you should worship Allah and do
+  // not ascribe any partners to Him, offer prayer perfectly, pay the Zakat and keep good relations with your kith and
+  // kin (Sahih al-Bukhari 1396).
+  "sign-deed-for-paradise": [
+    ["What did the man ask him ﷺ for?", "A deed for Paradise", "Such a deed as will make me enter", "Paradise. The people said: what is the"],
+    ["He ﷺ said the man had a real need to ask.", "True", "Matter with him? He said: he has", "Something to ask. You should worship"],
+    ["Which of these was in his ﷺ answer?", "Keeping ties with family", "And keep good relations with your kin."]
+  ],
+  // Abu Mas'ud al-Ansari said: a man said: O Messenger of Allah, I may not attend the prayer because so and so prolongs
+  // the prayer when he leads us for it; I never saw the Prophet ﷺ more furious in giving advice than he was on that
+  // day; he said: O people, some of you make others dislike good deeds, so whoever leads the people in prayer should
+  // shorten it, because among them there are the sick, the weak and the needy (Sahih al-Bukhari 90).
+  "sign-shorten-the-prayer": [
+    ["Why did a man miss the group prayer?", "The imam made it too long", "The prayer because so and so prolongs"],
+    ["Making good deeds too hard can push people away from them.", "True", "Of you make others dislike good deeds. So"],
+    ["Why should an imam keep the prayer short?", "The sick, weak and busy pray too", "The sick, the weak and the needy."]
+  ],
+  // Abdullah ibn Amr said: the Prophet ﷺ never used bad language, and he used to say: the best amongst you are those
+  // who have the best manners and character (Sahih al-Bukhari 3559). Its lessons' questions on whether he used bad words
+  // and on what he never used are not asked here, since their answers are in the scene's first words, nor their true or
+  // false questions on good manners, since each asks again what the question before it asks.
+  "sign-best-character": [
+    ["Who are the best people, he ﷺ said?", "Those with the best character", "Amongst you are those who have the best", "Manners and character."],
+    ["Who are the best of us, per the hadith?", "Those with the best character", "Amongst you are those who have the best", "Manners and character."]
   ]
 };
 

@@ -1085,7 +1085,13 @@ export type SignKind =
   | "two-faced"
   | "two-cases"
   | "before-that-day"
-  | "rinse-after-milk";
+  | "rinse-after-milk"
+  | "curse-parents"
+  | "borrow-to-repay"
+  | "good-word"
+  | "deed-for-paradise"
+  | "shorten-the-prayer"
+  | "best-character";
 
 export type SignScene = {
   id: string;
@@ -6041,6 +6047,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: the Messenger of Allah ﷺ drank milk, rinsed his mouth and said: it has fat.",
     sources: [bukhari("211")]
+  },
+  {
+    id: "sign-curse-parents",
+    kind: "curse-parents",
+    caption:
+      "Abdullah ibn Amr said: the Messenger of Allah ﷺ said: it is one of the greatest sins that a man should curse his parents. It was asked: O Messenger of Allah, how does a man curse his parents? He said: the man abuses the father of another man, and the latter abuses the father of the former and abuses his mother.",
+    sources: [bukhari("5973")]
+  },
+  {
+    id: "sign-borrow-to-repay",
+    kind: "borrow-to-repay",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: whoever takes the money of the people with the intention of repaying it, Allah will repay it on his behalf, and whoever takes it in order to spoil it, then Allah will spoil him.",
+    sources: [bukhari("2387")]
+  },
+  {
+    id: "sign-good-word",
+    kind: "good-word",
+    caption:
+      "Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: there is no Tiyara, and the best omen is the Fal. They asked: what is the Fal? He said: a good word that one of you hears.",
+    sources: [bukhari("5754")]
+  },
+  {
+    id: "sign-deed-for-paradise",
+    kind: "deed-for-paradise",
+    caption:
+      "Abu Ayyub said: a man said to the Prophet ﷺ: tell me of such a deed as will make me enter Paradise. The people said: what is the matter with him? What is the matter with him? The Prophet ﷺ said: he has something to ask. You should worship Allah and do not ascribe any partners to Him, offer prayer perfectly, pay the Zakat and keep good relations with your kith and kin.",
+    sources: [bukhari("1396")]
+  },
+  {
+    id: "sign-shorten-the-prayer",
+    kind: "shorten-the-prayer",
+    caption:
+      "Abu Mas'ud al-Ansari said: a man said: O Messenger of Allah, I may not attend the prayer because so and so prolongs the prayer when he leads us for it. I never saw the Prophet ﷺ more furious in giving advice than he was on that day. He said: O people! Some of you make others dislike good deeds. So whoever leads the people in prayer should shorten it, because among them there are the sick, the weak and the needy.",
+    sources: [bukhari("90")]
+  },
+  {
+    id: "sign-best-character",
+    kind: "best-character",
+    caption:
+      "Abdullah ibn Amr said: the Prophet ﷺ never used bad language, and he used to say: the best amongst you are those who have the best manners and character.",
+    sources: [bukhari("3559")]
   }
 ];
 
@@ -8781,7 +8829,20 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Ask forgiveness for a wrong now, before the Day when there will be no money.
   "deep-manners-making-peace-before-that-day": "sign-before-that-day",
   // He drank milk, rinsed his mouth and said: it has fat.
-  "deep-found-eating-drinking-rinse-after-milk": "sign-rinse-after-milk"
+  "deep-found-eating-drinking-rinse-after-milk": "sign-rinse-after-milk",
+  // To abuse another's father and mother is to bring abuse on one's own parents: one of the greatest sins.
+  "deep-anam2-curse-parents": "sign-curse-parents",
+  // Take money only meaning to repay it: Allah repays for one who means to, and spoils one who means to spoil it.
+  "deep-kids-trust-borrow-only-to-pay-back": "sign-borrow-to-repay",
+  // No bad omen; the best omen is the Fal, a good word one hears.
+  "deep-book-medicine-good-word-omen": "sign-good-word",
+  // A deed for Paradise: worship Allah alone, pray, give zakat and keep good relations with your kin.
+  "deep-intro-questions-they-asked-a-deed-for-paradise": "sign-deed-for-paradise",
+  // Whoever leads the prayer should shorten it, for among them are the sick, the weak and the needy.
+  "deep-book-ilm-make-it-easy": "sign-shorten-the-prayer",
+  // He never used bad language; the best are those with the best manners and character.
+  "deep-hadith-heart-best-character": "sign-best-character",
+  "deep-qalam1-best-in-character": "sign-best-character"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
