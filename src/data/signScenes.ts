@@ -1181,7 +1181,13 @@ export type SignKind =
   | "what-the-muhrim-wears"
   | "a-vow-changes-nothing"
   | "a-bath-every-seven-days"
-  | "a-thousand-good-deeds";
+  | "a-thousand-good-deeds"
+  | "wiping-over-the-socks"
+  | "into-a-lizards-hole"
+  | "lead-him-by-the-hand"
+  | "green-and-sweet"
+  | "bound-to-money"
+  | "two-sandals-two-straps";
 
 export type SignScene = {
   id: string;
@@ -6806,6 +6812,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sa'd said: the Messenger of Allah ﷺ said to those sitting with him: is one of you incapable of attaining a thousand good deeds? So a questioner among those seated with him asked him: how can one of us earn a thousand good deeds? He said: when one of you recites a hundred tasbihat, a thousand good deeds are written for him, and a thousand evil deeds are wiped away from him.",
     sources: [tirmidhi("3463")]
+  },
+  {
+    id: "sign-wiping-over-the-socks",
+    kind: "wiping-over-the-socks",
+    caption:
+      "Shurayh ibn Hani said: I came to Aishah to ask her about wiping over the socks. She said: you better ask the son of Abu Talib, for he used to travel with the Messenger of Allah ﷺ. We asked him and he said: the Messenger of Allah ﷺ stipulated three days and three nights for a traveller and one day and one night for the resident.",
+    sources: [muslim("276a")]
+  },
+  {
+    id: "sign-into-a-lizards-hole",
+    kind: "into-a-lizards-hole",
+    caption:
+      "Abu Sa'id al-Khudri said: the Prophet ﷺ said: you will follow the ways of those nations who were before you, span by span and cubit by cubit, so much so that even if they entered a hole of a mastigure, you would follow them.",
+    sources: [bukhari("7320")]
+  },
+  {
+    id: "sign-lead-him-by-the-hand",
+    kind: "lead-him-by-the-hand",
+    caption:
+      "Ibn Abbas said: while the Prophet ﷺ was performing Tawaf of the Ka'bah, he passed by a person who had tied his hands to another person with a rope or string or something like that. The Prophet ﷺ cut it with his own hands and said: lead him by the hand.",
+    sources: [bukhari("1620"), bukhari("6702")]
+  },
+  {
+    id: "sign-green-and-sweet",
+    kind: "green-and-sweet",
+    caption:
+      "Hakim ibn Hizam said: I asked the Prophet ﷺ and he gave me, and then again I asked him and he gave me, and then again I asked him and he gave me, and he then said: this wealth is green and sweet, and whoever takes it without greed, Allah will bless it for him, but whoever takes it with greed, Allah will not bless it for him, and he will be like the one who eats but is never satisfied. And the upper hand is better than the lower hand.",
+    sources: [bukhari("6441"), bukhari("1472")]
+  },
+  {
+    id: "sign-bound-to-money",
+    kind: "bound-to-money",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: perish the slave of Dinar, Dirham, Qatifa, and Khamisa, for if he is given, he is pleased; otherwise he is dissatisfied.",
+    sources: [bukhari("6435")]
+  },
+  {
+    id: "sign-two-sandals-two-straps",
+    kind: "two-sandals-two-straps",
+    caption:
+      "Isa ibn Tahman said: Anas ibn Malik brought out for us two sandals having two straps. Thabit al-Bunani said: these were the sandals of the Prophet ﷺ.",
+    sources: [bukhari("5858")]
   }
 ];
 
@@ -9747,7 +9795,23 @@ export const SIGN_LESSONS: Record<string, string> = {
   // It is Allah's right on every Muslim to bathe at least once in seven days.
   "deep-book-prayer-a-bath-every-week": "sign-a-bath-every-seven-days",
   // A hundred tasbihat: a thousand good deeds written, and a thousand evil deeds wiped away.
-  "deep-duas-easy-words-a-thousand-good-deeds": "sign-a-thousand-good-deeds"
+  "deep-duas-easy-words-a-thousand-good-deeds": "sign-a-thousand-good-deeds",
+  // Wiping over leather socks: three days and nights for the traveller, one day and night at home.
+  "deep-book-taharah-wiping-the-khuff": "sign-wiping-over-the-socks",
+  // You will follow the ways of those before you, span by span, even into a lizard's hole.
+  "deep-jathiyah1-do-not-copy-blindly": "sign-into-a-lizards-hole",
+  // In tawaf he cut the rope that tied one man to another, and said: lead him by the hand.
+  "deep-hajj-spirit-lead-him-by-the-hand": "sign-lead-him-by-the-hand",
+  // He cut the rope of a man tied in tawaf: no hurting yourself in worship.
+  "deep-book-oaths-no-hurting-yourself": "sign-lead-him-by-the-hand",
+  // This wealth is green and sweet: blessed for the one who takes it without greed.
+  "deep-book-riqaq-green-and-sweet": "sign-green-and-sweet",
+  // Hakim asked three times and was given; wealth is like sweet fresh fruit, and the upper hand is better.
+  "deep-hakim-the-upper-hand": "sign-green-and-sweet",
+  // The slave of money is pleased only when given, and dissatisfied otherwise.
+  "deep-book-riqaq-slave-of-money": "sign-bound-to-money",
+  // Anas brought out two sandals with two straps: the sandals of the Prophet ﷺ.
+  "deep-found-sunnahs-of-clothing-sandals-with-two-straps": "sign-two-sandals-two-straps"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

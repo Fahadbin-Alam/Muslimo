@@ -1731,6 +1731,12 @@ const STATES: State[] = [
   { id: "scene-a-vow-changes-nothing", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-a-vow-changes-nothing" ask="Who loses wealth" /> },
   { id: "scene-a-bath-every-seven-days", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-prayer-a-bath-every-week" ask="At least how often" /> },
   { id: "scene-a-thousand-good-deeds", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-easy-words-a-thousand-good-deeds" ask="How many good deeds are written" /> },
+  { id: "scene-wiping-over-the-socks", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-taharah-wiping-the-khuff" ask="How long may a traveller" /> },
+  { id: "scene-into-a-lizards-hole", render: () => <SceneQuestionDemo lessonId="lesson-deep-jathiyah1-do-not-copy-blindly" ask="Into what hole" /> },
+  { id: "scene-lead-him-by-the-hand", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-spirit-lead-him-by-the-hand" ask="What did he ﷺ see during tawaf" /> },
+  { id: "scene-green-and-sweet", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-green-and-sweet" ask="How did the Prophet ﷺ describe wealth" /> },
+  { id: "scene-bound-to-money", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-slave-of-money" ask="What makes the slave of money happy" /> },
+  { id: "scene-two-sandals-two-straps", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-clothing-sandals-with-two-straps" ask="How many straps" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
