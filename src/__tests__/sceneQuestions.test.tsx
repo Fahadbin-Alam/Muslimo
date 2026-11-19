@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3502);
+    expect(asks.length).toBe(3511);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5111);
+    expect(places).toBe(5124);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -24500,6 +24500,150 @@ describe("where the scene waits and where it stops", () => {
         [0, 1, 1, 1]
       ],
       [0, 10]
+    ]);
+  });
+
+  it("waits on the scenes from cutting family ties to the upper hand, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-cut-ties", "sign-sent-as-mercy", "sign-virtue-and-vice", "sign-covered-at-night", "sign-upper-hand"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(9);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // One who cuts off relatives: his voice, soft and golden, has begun, with the soft golden way of kinship still
+    // between the two homes, before the next words; then it fades, a grey dashed way broken in the middle shows where it
+    // was, the one of the first home turns away from its kin, and a grey dashed ring comes about it.
+    expect([
+      shown("Who will not enter Paradise, says Bukhari 5984?", ["the bond of kinship: a soft golden way between the two, fading", "severed: a grey dashed way, broken in the middle", "a grey dashed ring about the one who severed the bond"]),
+      moved("Who will not enter Paradise, says Bukhari 5984?", "the place of one of the first home: turning away from its kin", "x"),
+      value("cut-ties", "his voice, soft and golden", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [0, -12],
+      1
+    ]);
+    // I was sent as mercy: the voice of the one who asked has asked, with no reply from him yet, before the next words;
+    // then his voice, soft and golden, replies, never grey, a soft golden ring comes about his place, a soft light
+    // spreads wide from it over all the land, small lights come on the places far off, and glints over the homes.
+    expect([
+      shown("What did the Prophet ﷺ say when asked to curse?", ["the asker's voice: asking", "his voice, soft and golden, never grey: replying", "a soft golden ring about his place", "mercy: a soft light spreading wide from his place over all the land", "small lights on the places far off", "and glints over the homes far off"]),
+      moved("What did the Prophet ﷺ say when asked to curse?", "mercy: a soft light spreading wide from his place over all the land", "scale"),
+      value("sent-as-mercy", "the asker's voice: asking", "opacity", 0.2),
+      value("sent-as-mercy", "his voice, soft and golden, never grey: replying", "opacity", 0.6)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 1, 1, 1, 1]
+      ],
+      [0.16, 1],
+      1,
+      1
+    ]);
+    // Good character: his voice, soft and golden, has begun, with nothing yet along the lane, before the next words;
+    // then one place speaks softly to another, a small light comes on that one, and a soft golden ring about the one who
+    // was kind. It stops before any grey flicker shows.
+    expect([
+      shown("What is virtue, per Muslim 2553?", ["a kind way: its voice, soft, to the other", "spoken to kindly: a small light on the other", "virtue: a soft golden ring about the one who was kind", "what rankles within: a grey flicker in its place"]),
+      value("virtue-and-vice", "his voice, soft and golden: replying", "opacity", 0.32),
+      value("virtue-and-vice", "a kind way: its voice, soft, to the other", "opacity", 0.4)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0, 1, 1, 0]
+      ],
+      1,
+      1
+    ]);
+    // What troubles your heart: the one who was kind has its soft golden ring, with no grey flicker yet, before the next
+    // words; then a grey flicker shows in another place: what rankles within. It stops before the looks come and it goes
+    // off.
+    expect([
+      shown("What is sin, per Muslim 2553?", ["virtue: a soft golden ring about the one who was kind", "what rankles within: a grey flicker in its place", "others coming to know of it: faint dotted lines of looking from them", "vice: a grey dashed ring about it"]),
+      moved("What is sin, per Muslim 2553?", "the place of one more along the lane: going off away from the looks", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 0, 0]
+      ],
+      [0, 0]
+    ]);
+    // A man who sinned at night: his voice, soft and golden, has begun, with no night yet, before the next words; then
+    // night comes, a grey flicker shows in the place before the first home: a sin at night, a soft shade comes about it,
+    // and the flicker dims: screened. It stops before morning comes.
+    expect([
+      shown("Who did Allah cover in this hadith?", ["the night sky, and then morning", "a sin at night: a grey flicker in its place, dimming, and showing again", "screened: a soft shade about its place, and then fading away", "telling of it: its voice, quick and grey, to so-and-so"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 0.35, 1, 0]
+      ]
+    ]);
+    // Told people his sin: it is still night, and the soft shade is about the one who sinned, before the next words;
+    // then morning comes, the shade still about it, its voice, quick and grey, speaks to so-and-so, and a grey dashed
+    // way goes to it. It stops before the shade fades.
+    expect([
+      shown("What did the man do in the morning?", ["the night sky, and then morning", "screened: a soft shade about its place, and then fading away", "a grey dashed way from it to so-and-so", "made public: a grey dashed ring about it"]),
+      value("covered-at-night", "telling of it: its voice, quick and grey, to so-and-so", "opacity", 0.75)
+    ]).toEqual([
+      [
+        [1, 1, 0, 0],
+        [0, 1, 1, 0]
+      ],
+      1
+    ]);
+    // False: grey dashed rings have come about the coins held back and the one who held them back, with nothing yet
+    // about the few coins the first keeps, before the next words; then a soft light comes about them: no reproach for a
+    // living, coins go to its dependents, and small lights come on them.
+    expect([
+      shown("Keeping what you need to live is blamed.", ["withheld: a grey dashed ring about the coins of the other home", "evil for it: a grey dashed ring about the one who withholds", "no reproach for a living: a soft light about the few coins it keeps", "small lights on its dependents", "the better: a soft golden ring about the one who gave"]),
+      moved("Keeping what you need to live is blamed.", "beginning with its dependents: coins going to them", "x")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 0]
+      ],
+      [0, -7]
+    ]);
+    // Your dependents: a soft light has come about the few coins the first keeps, with no coins gone to its dependents
+    // yet, before the next words; then coins go to them, and small lights come on them.
+    expect([
+      shown("Whom should you begin your charity with?", ["no reproach for a living: a soft light about the few coins it keeps", "small lights on its dependents", "the better: a soft golden ring about the one who gave"]),
+      moved("Whom should you begin your charity with?", "beginning with its dependents: coins going to them", "x"),
+      moved("Whom should you begin your charity with?", "beginning with its dependents: coins going to them", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, -7],
+      [0, 4.8]
+    ]);
+    // The upper, giving hand: the coins have gone to the one in need and to the dependents, with no ring yet about the
+    // one who gave, before the next words; then a soft golden ring comes about it, and glints.
+    expect([
+      shown("Which hand is better?", ["small lights on its dependents", "the better: a soft golden ring about the one who gave", "and glints about it"]),
+      moved("Which hand is better?", "the surplus: coins going to the one in need", "x"),
+      value("upper-hand", "his voice, soft and golden", "opacity", 0.8)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      [27.4, 27.4],
+      1
     ]);
   });
 
