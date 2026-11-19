@@ -1709,6 +1709,11 @@ const STATES: State[] = [
   { id: "scene-haya-beautifies", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-haya-and-gentle-manners-haya-makes-it-beautiful" ask="What does haya do" /> },
   { id: "scene-the-test-of-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-the-test-of-this-ummah" ask="What did he ﷺ call the test" /> },
   { id: "scene-not-a-target", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animals-not-a-target" ask="What must never be used" /> },
+  { id: "scene-a-hundred-times", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-asking-forgiveness-a-hundred-times-in-one-sitting" ask="How many times could they count" /> },
+  { id: "scene-never-take-it-back", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-manners-of-giving-never-take-back" ask="Why did Umar not buy" /> },
+  { id: "scene-even-a-little", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-manners-of-giving-even-a-little" ask="What did he ﷺ say she could give" /> },
+  { id: "scene-glad-and-sad", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-glad-and-sad" ask="How does a believer feel about his bad deeds" /> },
+  { id: "scene-only-by-allah", render: () => <SceneQuestionDemo lessonId="lesson-deep-yusuf6-swear-only-by-allah" ask="What did the man swear by" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

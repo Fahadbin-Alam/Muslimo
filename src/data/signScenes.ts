@@ -1157,7 +1157,13 @@ export type SignKind =
   | "two-loved-traits"
   | "haya-beautifies"
   | "the-test-of-wealth"
-  | "not-a-target";
+  | "not-a-target"
+  | "a-hundred-times"
+  | "never-take-it-back"
+  | "even-a-little"
+  | "glad-and-sad"
+  | "hajj-is-arafah"
+  | "only-by-allah";
 
 export type SignScene = {
   id: string;
@@ -6614,6 +6620,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: the Messenger of Allah ﷺ prohibited taking a living thing as a shooting target.",
     sources: [tirmidhi("1475")]
+  },
+  {
+    id: "sign-a-hundred-times",
+    kind: "a-hundred-times",
+    caption:
+      "Ibn Umar said: in one sitting of the Messenger of Allah ﷺ, one could count that he said a hundred times, before he would get up: O my Lord, forgive me, and accept my repentance; verily, You are the Oft-Returning, the Most Forgiving.",
+    sources: [tirmidhi("3434")]
+  },
+  {
+    id: "sign-never-take-it-back",
+    kind: "never-take-it-back",
+    caption:
+      "Ibn Umar said that Umar gave a horse to be used in the cause of Allah. Then he saw it being sold, so he wanted to buy it, but the Prophet ﷺ said: do not take back what you have given in charity.",
+    sources: [tirmidhi("668")]
+  },
+  {
+    id: "sign-even-a-little",
+    kind: "even-a-little",
+    caption:
+      "Umm Bujaid said: O Messenger of Allah, there is a needy person who stands outside my door, but I cannot find anything to give to him. So the Messenger of Allah ﷺ said to her: if you do not find anything to give him except a burnt trotter, then hand it over to him.",
+    sources: [tirmidhi("665")]
+  },
+  {
+    id: "sign-glad-and-sad",
+    kind: "glad-and-sad",
+    caption:
+      "Ibn Umar said: Umar gave a khutbah to us at al-Jabiyah. He said: O you people, indeed I have stood among you as the Messenger of Allah ﷺ stood among us, and he said: ... whoever rejoices with his good deeds and grieves over his evil deeds, then that is the believer among you.",
+    sources: [tirmidhi("2165")]
+  },
+  {
+    id: "sign-hajj-is-arafah",
+    kind: "hajj-is-arafah",
+    caption:
+      "Abd ar-Rahman ibn Ya'mar said that some people of Najd came to the Messenger of Allah ﷺ while he was at Arafat. They were questioning him, so he ordered a caller to proclaim: the Hajj is Arafah. Whoever came to Jam during the night, before the time of Fajr, then he has attended the Hajj.",
+    sources: [tirmidhi("889")]
+  },
+  {
+    id: "sign-only-by-allah",
+    kind: "only-by-allah",
+    caption:
+      "Sa'd ibn Ubaidah said that Ibn Umar heard a man saying: no, by the Ka'bah. So Ibn Umar said: nothing is sworn by other than Allah, for I heard the Messenger of Allah ﷺ say: whoever swears by other than Allah, he has committed disbelief or shirk.",
+    sources: [tirmidhi("1535")]
   }
 ];
 
@@ -9507,7 +9555,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Every ummah has its test, and the test of his ummah is wealth.
   "deep-akhirah-wealth-and-next-life-the-test-of-this-ummah": "sign-the-test-of-wealth",
   // Never take a living thing as a target to shoot at.
-  "deep-kids-animals-not-a-target": "sign-not-a-target"
+  "deep-kids-animals-not-a-target": "sign-not-a-target",
+  // In one sitting, he asked forgiveness a hundred times, before he got up.
+  "deep-duas-asking-forgiveness-a-hundred-times-in-one-sitting": "sign-a-hundred-times",
+  // What you give in charity, do not take back, even by buying it.
+  "deep-zakat-manners-of-giving-never-take-back": "sign-never-take-it-back",
+  // Give the needy at your door, even a little: a burnt trotter.
+  "deep-zakat-manners-of-giving-even-a-little": "sign-even-a-little",
+  // Glad of good deeds and sad over bad ones: that is the believer.
+  "deep-growing-in-faith-glad-and-sad": "sign-glad-and-sad",
+  // The Hajj is Arafah: whoever reaches Jam before Fajr has attended the Hajj.
+  "deep-hajj-arafah": "sign-hajj-is-arafah",
+  // Swear by none but Allah: swearing by other than Allah is disbelief or shirk.
+  "deep-yusuf6-swear-only-by-allah": "sign-only-by-allah"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

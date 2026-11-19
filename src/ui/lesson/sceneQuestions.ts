@@ -7510,6 +7510,48 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-not-a-target": [
     ["What must never be used as a target?", "A living thing", "Taking a living thing as", "A shooting target."],
     ["Using a bird as a target for fun is allowed.", "False", "Taking a living thing as", "A shooting target."]
+  ],
+  // Ibn Umar said: in one sitting of the Messenger of Allah ﷺ, one could count that he said a hundred times, before he
+  // would get up: O my Lord, forgive me, and accept my repentance; verily, You are the Oft-Returning, the Most Forgiving
+  // (Jami at-Tirmidhi 3434). Its lesson's question on what he called Allah is not asked here, since its words leave that
+  // part out.
+  "sign-a-hundred-times": [
+    ["How many times could they count it in one sitting?", "One hundred times", "Count that he said a hundred times,"],
+    ["Besides forgiveness, what did he ﷺ ask Allah to accept?", "His tawbah", "Forgive me, and accept my repentance."]
+  ],
+  // Ibn Umar said that Umar gave a horse to be used in the cause of Allah. Then he saw it being sold, so he wanted to
+  // buy it, but the Prophet ﷺ said: do not take back what you have given in charity (Jami at-Tirmidhi 668). Its lesson's
+  // question on what Umar gave is not asked here, since it has its own pictures.
+  "sign-never-take-it-back": [
+    ["Why did Umar not buy his horse back?", "He ﷺ told him not to", "But he said: do not take back what"],
+    ["Buying back your own charity is a good idea.", "False", "But he said: do not take back what", "You have given in charity."]
+  ],
+  // Umm Bujaid said: O Messenger of Allah, there is a needy person who stands outside my door, but I cannot find
+  // anything to give to him. So the Messenger of Allah ﷺ said to her: if you do not find anything to give him except a
+  // burnt trotter, then hand it over to him (Jami at-Tirmidhi 665).
+  "sign-even-a-little": [
+    ["Who stood at Umm Bujaid's door?", "A needy person", "Needy person who stands outside my"],
+    ["What did he ﷺ say she could give, if nothing else?", "A burnt sheep's foot", "Find anything to give except a burnt", "Trotter, then hand it over."],
+    ["If you have only a little, you should give nothing.", "False", "Find anything to give except a burnt", "Trotter, then hand it over."]
+  ],
+  // Ibn Umar said: Umar gave a khutbah to us at al-Jabiyah. He said: O you people, indeed I have stood among you as the
+  // Messenger of Allah ﷺ stood among us, and he said: ... whoever rejoices with his good deeds and grieves over his evil
+  // deeds, then that is the believer among you (Jami at-Tirmidhi 2165).
+  "sign-glad-and-sad": [
+    ["How does a believer feel about his good deeds?", "Glad of them", "Whoever rejoices with his good deeds", "Then that is the believer among you."],
+    ["How does a believer feel about his bad deeds?", "Sad over them", "And grieves over his evil deeds,", "Then that is the believer among you."],
+    ["Feeling sad after a sin is a sign of faith.", "True", "And grieves over his evil deeds,", "Then that is the believer among you."]
+  ],
+  // The Hajj is Arafah (Jami at-Tirmidhi 889): its lesson's questions are not asked on its scene, since the scene shows
+  // Arafah from the start, its words do not say the day, and the third question is on another hadith.
+
+  // Sa'd ibn Ubaidah said that Ibn Umar heard a man saying: no, by the Ka'bah. So Ibn Umar said: nothing is sworn by
+  // other than Allah, for I heard the Messenger of Allah ﷺ say: whoever swears by other than Allah, he has committed
+  // disbelief or shirk (Jami at-Tirmidhi 1535).
+  "sign-only-by-allah": [
+    ["What did the man swear by?", "The Ka'bah", "Saying: no, by the Ka'bah. So Ibn Umar"],
+    ["By whom alone may we swear?", "Allah", "Said: nothing is sworn by other than", "Allah, for I heard him say: whoever"],
+    ["Swearing by a holy place is fine in Islam.", "False", "Said: nothing is sworn by other than", "Committed disbelief or shirk."]
   ]
 };
 
