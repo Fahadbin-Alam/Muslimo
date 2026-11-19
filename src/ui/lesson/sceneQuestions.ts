@@ -6831,6 +6831,44 @@ const ASKS: Record<string, readonly Ask[]> = {
   // ayah, and the scene shows the hadith.
   "sign-help-and-recommend": [
     ["What did the Prophet ﷺ tell his companions when a needy man came?", "Recommend him, and be rewarded", "He used to say: help and recommend him,", "And you will receive the reward for it."]
+  ],
+  // Abu Hurairah said that the Prophet ﷺ said: a time will come when one will not care how one gains one's money,
+  // legally or illegally (Sahih al-Bukhari 2059). Its lesson's true or false on checking that one's money is halal,
+  // and its question on how a Muslim should earn, are not asked here, since the scene's words do not say them.
+  "sign-halal-or-haram": [
+    ["What did he ﷺ warn people would stop caring about?", "Whether money is halal", "When one will not care how one gains", "One's money, legally or illegally."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: procrastination in repaying debts by a wealthy person is injustice
+  // (Sahih al-Bukhari 2400). Its lesson's question on a borrowed book is not asked here, since the scene's words do not
+  // say it, nor its true or false on making someone wait, since it asks again what the question before it asks.
+  "sign-delay-by-the-wealthy": [
+    ["One who can pay back but delays is doing what?", "Wrongdoing", "Is injustice."]
+  ],
+  // Aishah said that the Prophet ﷺ said: the most hated person in the sight of Allah is the most quarrelsome person
+  // (Sahih al-Bukhari 2457). Its lesson's question on who reported it is not asked here, since its answer is in the
+  // scene's first words, nor its true or false on arguing to win, since it asks again what the question before it asks.
+  "sign-most-quarrelsome": [
+    ["Which person is most hated in the sight of Allah, he ﷺ said?", "The most quarrelsome person", "In the sight of Allah is", "The most quarrelsome person."]
+  ],
+  // Jabir said: never was the Prophet ﷺ asked for a thing to be given for which his answer was no (Sahih al-Bukhari
+  // 6034). Its lesson's question on lending a pencil is not asked here, since the scene's words do not say it, nor its
+  // true or false on his generosity, since it asks again what the question before it asks.
+  "sign-never-said-no": [
+    ["What did he ﷺ never say when asked for something?", "No", "For a thing to be given", "For which his answer was 'no'."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: if the imam leads the prayer correctly, then he and you will
+  // receive the rewards, but if he makes a mistake, then you will receive the reward for the prayer and the sin will be
+  // his (Sahih al-Bukhari 694). Its lesson's true or false on the imam's trust is not asked here, since the scene's
+  // words do not say it.
+  "sign-for-you-and-against-them": [
+    ["If the imam prays well, who is rewarded?", "The imam and the people", "Leads the prayer correctly, then he", "And you will receive the rewards, but"],
+    ["If the imam makes a mistake, who loses?", "Only the imam", "Receive the reward for the prayer", "And the sin will be his."]
+  ],
+  // Abu Dharr said: it was said to the Messenger of Allah ﷺ: what is your opinion about the person who has done good
+  // deeds and the people praise him? He said: it is glad tidings for a believer (Sahih Muslim 2642). Its lesson's two
+  // questions on ayah 10:64 are not asked here, since their answers are from the ayah, and the scene shows the hadith.
+  "sign-glad-tidings-now": [
+    ["What is people praising your good deed, per the hadith?", "Early glad tidings", "It is glad tidings for a believer."]
   ]
 };
 

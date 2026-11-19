@@ -48,6 +48,8 @@ describe("welcome: sign in at the start", () => {
     await render(<TopicApp />);
     await screen.findByTestId("learn-path-foundation", {}, { timeout: 5000 });
     expect(screen.queryByTestId("welcome-sheet")).toBeNull();
+    // Nor is the age asked under the language: it would still be sliding away when the welcome comes up.
+    expect(screen.queryByTestId("age-sheet")).toBeNull();
 
     await press("language-save");
     expect(screen.getByTestId("welcome-sheet")).toBeTruthy();
