@@ -7426,6 +7426,48 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many times does the visitor say the du'a?", "Seven", "Says seven times: I ask Allah the"],
     ["Whom do we ask to cure the sick person?", "Allah, Lord of the Throne", "Says seven times: I ask Allah the", "Throne to cure you, except when he will"],
     ["We can make du'a for a sick friend when we visit.", "True", "Says seven times: I ask Allah the"]
+  ],
+  // Zahdam al-Jarmi said: I entered upon Abu Musa while he was eating chicken, and he said: sit and eat, for indeed I
+  // saw the Messenger of Allah ﷺ eating it (Jami at-Tirmidhi 1826).
+  "sign-sit-and-eat": [
+    ["What was Abu Musa eating when Zahdam came in?", "Chicken", "Abu Musa while he was eating chicken,"],
+    ["Why did Abu Musa say to Zahdam: sit and eat?", "He had seen him ﷺ eat it", "Indeed I saw him eating it."],
+    ["Abu Musa saw him ﷺ eat chicken.", "True", "Indeed I saw him eating it."]
+  ],
+  // Aws ibn Aws said: the Messenger of Allah ﷺ said to me: whoever performs ghusl on Friday, and goes early, arriving
+  // early, gets close and listens and is silent, there will be for him in every step he takes the reward of a year of
+  // fasting and standing (Jami at-Tirmidhi 496).
+  "sign-a-year-for-each-step": [
+    ["Where should he sit?", "Close to the Imam", "Early, arriving early, gets close and"],
+    ["Listening silently is part of earning this reward.", "True", "Listens and is silent, there will be for"],
+    ["What is the reward for each step?", "A year of fasting and prayer", "Of a year of fasting and standing."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: whoever is not grateful to the people, he is not grateful to Allah
+  // (Jami at-Tirmidhi 1954). Its lesson's true or false question on thanking people as part of thanking Allah is not
+  // asked here, since a lesson on Sunan Abi Dawud 4811 asks it too.
+  "sign-thank-people-too": [
+    ["What should we do when someone helps us?", "Thank them", "Grateful to the people, he is not"],
+    ["Who has not thanked Allah, per the hadith?", "One who does not thank people", "Grateful to the people, he is not", "Grateful to Allah."]
+  ],
+  // Al-Miqdam ibn Ma'dikarib said: I heard the Messenger of Allah ﷺ saying: the human does not fill any container that
+  // is worse than his stomach. It is sufficient for the son of Adam to eat what will support his back. If this is not
+  // possible, then a third for food, a third for drink, and a third for his breath (Jami at-Tirmidhi 2380). Its lesson's
+  // question on 7:31 is not asked here, since it is on an ayah.
+  "sign-a-third-for-food": [
+    ["What is the worst container to fill, in Tirmidhi 2380?", "The stomach", "Stomach. It is sufficient for the son of"],
+    ["How should the stomach be shared, if one eats more?", "A third food, drink and breath", "If this is not possible, then a third for", "His breath."]
+  ],
+  // Ubayy ibn Ka'b said that whenever the Messenger of Allah ﷺ would mention someone and supplicate for him, he would
+  // begin with himself (Jami at-Tirmidhi 3385). Who told it is not asked here, since its first line names him.
+  "sign-begin-with-yourself": [
+    ["Whom did he ﷺ begin with, when making du'a for someone?", "With himself first", "Him, he would begin with himself."],
+    ["You can ask Allah for yourself and for others in one du'a.", "True", "Him, he would begin with himself."]
+  ],
+  // Abu Sa'id said that the Prophet ﷺ was asked about musk, and he said: it is the best of your perfumes
+  // (Jami at-Tirmidhi 992). What he called the best of our perfumes is not asked here, since its first line names musk.
+  "sign-musk-the-best-scent": [
+    ["What kind of thing is musk?", "A perfume", "And he said: it is the best of your", "Perfumes."],
+    ["He ﷺ called musk the best of perfumes.", "True", "And he said: it is the best of your", "Perfumes."]
   ]
 };
 
