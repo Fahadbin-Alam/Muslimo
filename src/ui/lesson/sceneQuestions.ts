@@ -6643,6 +6643,59 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-the-pillar-he-chose": [
     ["Why did Salamah pray by that pillar?", "To follow the Sunnah", "I saw him always seeking to pray", "Near that pillar."],
     ["What did Yazid call Salamah?", "Abu Muslim", "Behind the pillar. I said: O Abu Muslim!"]
+  ],
+  // Amir ibn Wathilah reported that Nafi' ibn Abd al-Harith met Umar at Usfan, and Umar had employed him as collector in
+  // Makkah. Umar said: whom have you appointed as collector over the people of the valley? He said: Ibn Abza, one of our
+  // freed slaves; he is well versed in the Book of Allah, the Exalted and Great. Umar said: so the Prophet ﷺ said: by
+  // this Book, Allah would exalt some peoples and degrade others (Sahih Muslim 817).
+  "sign-raised-by-this-book": [
+    ["Who was put in charge of the valley people?", "Ibn Abza, a freed slave", "Nafi': Ibn Abza. Umar: who is Ibn Abza?", "Nafi': one of our freed slaves."],
+    ["Why was he chosen?", "He knew the Book of Allah", "Nafi': he is well versed in Allah's Book."],
+    ["What did the Prophet ﷺ say about this Book?", "Allah raises some by it", "Umar: he said: by this Book Allah would", "Exalt some peoples and degrade others."]
+  ],
+  // Abdullah said: the Prophet ﷺ said: who among you considers the wealth of his heirs dearer to him than his own
+  // wealth? They replied: O Messenger of Allah, there is none among us but loves his own wealth more. He said: so his
+  // wealth is whatever he spends during his life, while the wealth of his heirs is whatever he leaves after his death
+  // (Sahih al-Bukhari 6442). Its lesson's true or false on money kept until death is not asked here, since it asks again
+  // what the two questions before it ask.
+  "sign-his-real-wealth": [
+    ["What is a person's own wealth, per the hadith?", "What he spends in good", "He said: so his wealth is what he spends"],
+    ["Whose wealth is what he leaves behind?", "His heirs", "During his life, and his heirs' wealth", "Is whatever he leaves."]
+  ],
+  // Adi ibn Hatim said: we came to Umar in a delegation, and he started calling the men one by one, calling each by his
+  // name. I said: don't you know me, O chief of the Believers? He said: yes, you embraced Islam when they disbelieved;
+  // you came when they ran away; you fulfilled your promises when they broke theirs; and you recognized it when they
+  // denied it. Adi said: I therefore don't care (Sahih al-Bukhari 4394).
+  "sign-umar-knew-adi": [
+    ["How did Umar call the men of the delegation?", "One by one, by name", "Umar called the men one by one, by name."],
+    ["What did Umar say Adi did when the others broke their promises?", "He kept his promises", "You came when they ran away; you fulfilled", "Your promises when they broke theirs;"],
+    ["Umar said Adi accepted Islam when others disbelieved.", "True", "You embraced Islam when they disbelieved;"]
+  ],
+  // Abu Hurairah reported: the Messenger of Allah ﷺ addressed us and said: O people, Allah has made Hajj obligatory for
+  // you, so perform Hajj. A person said: Messenger of Allah, every year? He kept quiet, and the person repeated it
+  // thrice, whereupon the Messenger of Allah ﷺ said: if I were to say yes, it would become obligatory, and you would not
+  // be able to do it. Then he said: leave me with what I have left to you (Sahih Muslim 1337). Its lesson's question on
+  // who must go to Hajj is not asked here, since its answer is from ayah 3:97, and the scene shows the hadith and not
+  // the ayah.
+  "sign-every-year": [
+    ["How often is Hajj a duty?", "Once in a lifetime", "Every year? He kept quiet, and the person", "Leave me with what I have left to you."],
+    ["Why didn't the Prophet ﷺ say 'every year'?", "It would be too hard for us", "He said: if I were to say yes, it would", "Become obligatory; you would not be able."]
+  ],
+  // Abdullah ibn Amr said: the Messenger of Allah ﷺ said to me: recite the whole Quran in one month's time. I said: but
+  // I have power. He said: then finish the recitation of the Quran in seven days, and do not finish it in less than this
+  // period (Sahih al-Bukhari 5054). Its lesson's true or false on steady worship we can keep is not asked here, since
+  // the scene's words do not say it.
+  "sign-in-seven-days": [
+    ["What was the first advice for finishing the Quran?", "Once a month", "Recite the whole Quran in one month."],
+    ["What was the shortest time he was allowed?", "Seven days", "He said: then finish it in seven days,", "And do not finish it in less than this."]
+  ],
+  // Abu Musa said: two men from my tribe and I entered upon the Prophet ﷺ. One of the two men said: O Messenger of
+  // Allah, appoint me as a governor, and so did the second. He said: we do not assign the authority of ruling to those
+  // who ask for it, nor to those who are keen to have it (Sahih al-Bukhari 7149).
+  "sign-not-for-those-who-ask": [
+    ["What did the two men ask him ﷺ for?", "To be made governors", "Appoint me as a governor,", "And so did the second. He said:"],
+    ["To whom does he ﷺ not give the authority of ruling?", "Those who ask for it", "To those who ask for it,"],
+    ["Being keen to have power does not win a post from him ﷺ.", "True", "Nor to those who are keen to have it."]
   ]
 };
 
