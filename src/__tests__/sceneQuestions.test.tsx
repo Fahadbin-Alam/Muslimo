@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3646);
+    expect(asks.length).toBe(3661);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5316);
+    expect(places).toBe(5337);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -26436,6 +26436,172 @@ describe("where the scene waits and where it stops", () => {
       ],
       [-36, -36],
       1
+    ]);
+  });
+
+  it("waits on the scenes from Friday to Friday to not a target, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-from-friday-to-friday", "sign-last-part-of-the-night", "sign-two-loved-traits", "sign-haya-beautifies", "sign-the-test-of-wealth", "sign-not-a-target"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(15);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The five daily prayers: Abu Hurairah's voice has told of it, with nothing rising from the masjid yet, before the
+    // next words; then five glints rise from the masjid one after another, and a soft golden ring comes about it, goes,
+    // and comes again: Jumu'ah to Jumu'ah.
+    expect([
+      shown("Besides Jumu'ah, what else wipes away sins between?", ["the five prayers: a glint 1, rising from the masjid", "the five prayers: a glint 2, rising from the masjid", "the five prayers: a glint 3, rising from the masjid", "the five prayers: a glint 4, rising from the masjid", "the five prayers: a glint 5, rising from the masjid", "Jumu'ah to Jumu'ah: a soft golden ring about the masjid, then again"]),
+      moved("Besides Jumu'ah, what else wipes away sins between?", "the five prayers: a glint 1, rising from the masjid", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, -7]
+    ]);
+    // True: the five glints have risen and the ring has come about the masjid again, while the grey specks are still about
+    // the place, before the next words; then the specks fade one by one, and a clear light comes about the place:
+    // atonement.
+    expect([
+      shown("Jumu'ah to Jumu'ah wipes out the sins between them.", ["small sins: a grey speck 1 about its place, then wiped away", "small sins: a grey speck 2 about its place, then wiped away", "small sins: a grey speck 3 about its place, then wiped away", "small sins: a grey speck 4 about its place, then wiped away", "atonement: a clear soft light about its place"])
+    ]).toEqual([
+      [
+        [1, 1, 1, 1, 0],
+        [0, 0, 0, 0, 1]
+      ]
+    ]);
+    // The major sins: the place is clear of its specks, with nothing far off yet, before the next words; then a heavy grey
+    // ring shows far off, and the place stays far from it, a soft golden ring about it and glints over it.
+    expect([
+      shown("What must a person keep away from, for this?", ["the major sins: a heavy grey ring, far off", "kept away: a soft golden ring about its place", "glints over it"])
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // In the last part of the night: the moon has not moved on yet, before the next words; then it moves on across the
+    // sky, never down, as the night passes into its last part.
+    expect([
+      moved("When is the Lord closest to His servant?", "the moon, moving on across the sky as the night passes", "x"),
+      moved("When is the Lord closest to His servant?", "the moon, moving on across the sky as the night passes", "y")
+    ]).toEqual([
+      [0, 28],
+      [0, 0]
+    ]);
+    // Remember Allah, and true: the moon has moved on and the place before the home still rests, before the next words;
+    // then the window is lit, the place is awake with a soft light about it, and glints rise from it as it remembers
+    // Allah, and at the end a soft golden ring comes about it.
+    expect([
+      shown("What did he ﷺ say to do in the last part of the night?", ["the place of one before its home, resting, then awake", "in that hour: the window of the home, lit", "awake: a soft light about its place", "remembering: a glint 1, rising", "remembering: a glint 2, rising", "remembering: a glint 3, rising"]),
+      moved("What did he ﷺ say to do in the last part of the night?", "remembering: a glint 1, rising", "y"),
+      shown("The last part of the night is a special time to remember Allah.", ["a soft golden ring about its place"])
+    ]).toEqual([
+      [
+        [0.45, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1]
+      ],
+      [0, -9],
+      [
+        [0],
+        [1]
+      ]
+    ]);
+    // Forbearance, and false: al-Ashajj's place has come at an even pace, his voice speaks and a soft golden ring is about
+    // it, loved, with nothing more yet, before the next words; then a calm soft light comes about it, and glints show one
+    // by one, evenly, along the way it came.
+    expect([
+      shown("Which trait of al-Ashajj did Allah love?", ["forbearance: a calm soft light about it", "deliberateness: a glint 1 along its way, evenly", "deliberateness: a glint 4 along its way, evenly"]),
+      shown("Rushing in anger is a trait Allah loves.", ["forbearance: a calm soft light about it", "deliberateness: a glint 1 along its way, evenly", "deliberateness: a glint 4 along its way, evenly"]),
+      value("two-loved-traits", "loved: a soft golden ring about al-Ashajj's place", "opacity", 0.742),
+      value("two-loved-traits", "his voice, soft and golden: two traits in you", "opacity", 0.742)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1,
+      1
+    ]);
+    // Spoil it, and true: the garden on the left is fresh, before the next words; then the voice by it speaks, harsh and
+    // grey, its flowers go grey and droop, and a grey dashed ring comes about it.
+    expect([
+      shown("What do rude and ugly words do to anything?", ["a garden on the left, its flowers fresh", "marred: its flowers grey and drooping", "a grey dashed ring about it"]),
+      shown("Rude words can make a good thing ugly.", ["a garden on the left, its flowers fresh", "marred: its flowers grey and drooping", "a grey dashed ring about it"])
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ],
+      [
+        [1, 0, 0],
+        [0, 1, 1]
+      ]
+    ]);
+    // Makes it beautiful: a soft rosy light is about the place by the right garden and over it, its flowers still small,
+    // before the next words; then the garden comes into full bloom, glints over it, and a soft golden ring comes about it.
+    expect([
+      shown("What does haya do to anything it is in?", ["a garden on the right, its flowers small", "beautified: the garden in full bloom", "glints over it", "a soft golden ring about it"]),
+      value("haya-beautifies", "al-haya in it: a soft rosy light over the garden", "opacity", 0.742)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      1
+    ]);
+    // True: his voice speaks, with no ring about any ummah yet, before the next words; then a grey dashed ring comes about
+    // each ummah in turn, his ummah too, and nothing shows before his ummah yet.
+    expect([
+      shown("Every ummah is given its own test.", ["a fitnah for every ummah: a grey dashed ring about the first", "a fitnah for every ummah: a grey dashed ring about the second", "a fitnah for his ummah too: a grey dashed ring about it", "wealth: coins of gold and silver before his ummah"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ]
+    ]);
+    // Wealth: before the next words nothing shows before his ummah; then coins of gold and silver show before it, and a
+    // grey dashed ring comes about them.
+    expect([
+      shown("What did he ﷺ call the test of his ummah?", ["wealth: coins of gold and silver before his ummah", "its test: a grey dashed ring about the coins"])
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // A living thing, and false: the sparrow is on the palm on the left, before the next words; then it flies to the board
+    // and sits on it, a grey dashed ring comes about it, not as a target, then the ring goes and it flies on, free, to the
+    // palm on the right, a soft golden ring about it there.
+    expect([
+      moved("What must never be used as a target?", "a living thing: a sparrow, flying to the board, then on, free", "x"),
+      moved("Using a bird as a target for fun is allowed.", "a living thing: a sparrow, flying to the board, then on, free", "x"),
+      shown("What must never be used as a target?", ["not as a target: a grey dashed ring about it", "free: a soft golden ring about it"]),
+      value("not-a-target", "not as a target: a grey dashed ring about it", "opacity", 0.6),
+      value("not-a-target", "a living thing: a sparrow, flying to the board, then on, free", "x", 0.6)
+    ]).toEqual([
+      [0, 114],
+      [0, 114],
+      [
+        [0, 0],
+        [0, 1]
+      ],
+      1,
+      60
     ]);
   });
 
