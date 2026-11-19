@@ -1067,7 +1067,13 @@ export type SignKind =
   | "keep-some-of-your-wealth"
   | "two-groups-of-advisors"
   | "till-you-see-me"
-  | "help-and-recommend";
+  | "help-and-recommend"
+  | "halal-or-haram"
+  | "delay-by-the-wealthy"
+  | "most-quarrelsome"
+  | "never-said-no"
+  | "for-you-and-against-them"
+  | "glad-tidings-now";
 
 export type SignScene = {
   id: string;
@@ -5897,6 +5903,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Burda ibn Abu Musa said that his father said: whenever a beggar came to the Messenger of Allah ﷺ, or he was asked for something, he used to say: help and recommend him, and you will receive the reward for it.",
     sources: [bukhari("1432")]
+  },
+  {
+    id: "sign-halal-or-haram",
+    kind: "halal-or-haram",
+    caption:
+      "Abu Hurairah said that the Prophet ﷺ said: a time will come when one will not care how one gains one's money, legally or illegally.",
+    sources: [bukhari("2059")]
+  },
+  {
+    id: "sign-delay-by-the-wealthy",
+    kind: "delay-by-the-wealthy",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: procrastination in repaying debts by a wealthy person is injustice.",
+    sources: [bukhari("2400")]
+  },
+  {
+    id: "sign-most-quarrelsome",
+    kind: "most-quarrelsome",
+    caption:
+      "Aishah said that the Prophet ﷺ said: the most hated person in the sight of Allah is the most quarrelsome person.",
+    sources: [bukhari("2457")]
+  },
+  {
+    id: "sign-never-said-no",
+    kind: "never-said-no",
+    caption:
+      "Jabir said: never was the Prophet ﷺ asked for a thing to be given for which his answer was 'no'.",
+    sources: [bukhari("6034")]
+  },
+  {
+    id: "sign-for-you-and-against-them",
+    kind: "for-you-and-against-them",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: if the imam leads the prayer correctly, then he and you will receive the rewards, but if he makes a mistake, then you will receive the reward for the prayer and the sin will be his.",
+    sources: [bukhari("694")]
+  },
+  {
+    id: "sign-glad-tidings-now",
+    kind: "glad-tidings-now",
+    caption:
+      "Abu Dharr said: it was said to the Messenger of Allah ﷺ: what is your opinion about the person who has done good deeds and the people praise him? He said: it is glad tidings for a believer.",
+    sources: [muslim("2642")]
   }
 ];
 
@@ -8601,7 +8649,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // When the iqamah is called, do not stand until you see him, and stand calmly.
   "deep-book-adhan-stand-calmly-for-iqamah": "sign-till-you-see-me",
   // When one in need came, he would say: help and recommend him, and you will receive the reward for it.
-  "deep-nisa2-intercede": "sign-help-and-recommend"
+  "deep-nisa2-intercede": "sign-help-and-recommend",
+  // A time will come when one will not care how one gains one's money, lawfully or unlawfully.
+  "deep-book-trade-halal-or-haram-money": "sign-halal-or-haram",
+  // When one who is able to pay delays repaying a debt, that is injustice.
+  "deep-kids-trust-dont-keep-them-waiting": "sign-delay-by-the-wealthy",
+  // The most hated person in the sight of Allah is the most quarrelsome person.
+  "deep-manners-making-peace-the-most-quarrelsome": "sign-most-quarrelsome",
+  // Never was he asked for a thing to be given and answered no.
+  "deep-kids-helping-people-never-said-no": "sign-never-said-no",
+  // If the imam prays correctly, he and the people are rewarded; if he errs, the people keep the reward and the sin is his.
+  "deep-book-adhan-the-imams-mistake": "sign-for-you-and-against-them",
+  // When people praise one for a good deed, that is early glad tidings for a believer.
+  "deep-yunus3-good-news-now": "sign-glad-tidings-now"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
