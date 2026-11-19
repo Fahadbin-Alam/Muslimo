@@ -46,7 +46,7 @@ const FOUR = [
 ] as const;
 
 /** A quick grey voice: arcs that flicker fast. */
-const QUICK = { move: "twinkle", ms: 420, low: 0.35 } as const;
+export const QUICK = { move: "twinkle", ms: 420, low: 0.35 } as const;
 
 /** Gold and silver, for vessels. */
 const GOLDEN = ["#E3B23C", "#B8862A"] as const;
@@ -66,7 +66,7 @@ const clayCup = (x: number, y: number) =>
   `<path d="M${n(x - 1.5)} ${n(y - 3)} L${n(x + 1.5)} ${n(y - 3)} L${n(x + 1.1)} ${y} L${n(x - 1.1)} ${y} Z" fill="#A0703F"/><path d="M${n(x - 1.5)} ${n(y - 3)} L${n(x + 1.5)} ${n(y - 3)}" stroke="#7E5530" stroke-width="0.4"/>`;
 
 /** A faint dotted line of looking, along `d`. */
-const looking = (d: string) => `<path d="${d}" stroke="#FFF6DA" stroke-width="0.7" stroke-dasharray="0.5 1.3" stroke-linecap="round" fill="none"/>`;
+export const looking = (d: string) => `<path d="${d}" stroke="#FFF6DA" stroke-width="0.7" stroke-dasharray="0.5 1.3" stroke-linecap="round" fill="none"/>`;
 
 /** A cloth hanging from a line, its top's middle at (x, y), 5 wide and `h` long. */
 const hanging = (x: number, y: number, fill: string, edge: string, h = 7) =>
