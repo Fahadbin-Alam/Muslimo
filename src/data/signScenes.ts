@@ -1133,7 +1133,13 @@ export type SignKind =
   | "camp-off-the-road"
   | "like-the-saddle-post"
   | "milk-silver-or-the-way"
-  | "the-seat-of-honor";
+  | "the-seat-of-honor"
+  | "is-there-hajj-for-me"
+  | "zamzam-to-take-home"
+  | "clean-and-scented"
+  | "pleased-collector"
+  | "invited-while-fasting"
+  | "best-companion";
 
 export type SignScene = {
   id: string;
@@ -6422,6 +6428,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Mas'ud said: the Messenger of Allah ﷺ said: a man is not led in his dominion, and his seat of honor in his house is not sat in without his permission.",
     sources: [tirmidhi("2772")]
+  },
+  {
+    id: "sign-is-there-hajj-for-me",
+    kind: "is-there-hajj-for-me",
+    caption:
+      "Urwah ibn Mudarris at-Ta'i said: I came to the Messenger of Allah ﷺ at Muzdalifah when he left for the salat. I said: O Messenger of Allah, I came from the two mountains of Tai, wearing out my mount and exhausting myself. By Allah, I did not leave a sand dune without stopping on it. So is there Hajj for me? The Messenger of Allah ﷺ said: whoever attends this salat of ours, and stays here with us until departing, while he has stood during the night or the day before that at Arafat, then he has completed his Hajj.",
+    sources: [tirmidhi("891")]
+  },
+  {
+    id: "sign-zamzam-to-take-home",
+    kind: "zamzam-to-take-home",
+    caption:
+      "Urwah said that Aishah would carry some Zamzam water, and she would say: indeed the Messenger of Allah ﷺ would carry it.",
+    sources: [tirmidhi("963")]
+  },
+  {
+    id: "sign-clean-and-scented",
+    kind: "clean-and-scented",
+    caption:
+      "Aishah said: the Prophet ﷺ ordered the construction of masjids in all Dur, and that they be kept clean and scented.",
+    sources: [tirmidhi("594")]
+  },
+  {
+    id: "sign-pleased-collector",
+    kind: "pleased-collector",
+    caption:
+      "Jarir said: the Prophet ﷺ said: when the charity collector comes to you, then he should not depart from you except while pleased.",
+    sources: [tirmidhi("647")]
+  },
+  {
+    id: "sign-invited-while-fasting",
+    kind: "invited-while-fasting",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: when one of you is invited to eat then let him respond, if he is fasting then let him pray. Meaning: supplicate.",
+    sources: [tirmidhi("780")]
+  },
+  {
+    id: "sign-best-companion",
+    kind: "best-companion",
+    caption:
+      "Abdullah ibn Amr said: the Messenger of Allah ﷺ said: the companion who is the best to Allah is the one who is best to his companion, and the neighbor that is the best to Allah is the one that is best to his neighbor.",
+    sources: [tirmidhi("1944")]
   }
 ];
 
@@ -9267,7 +9315,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Milk, silver, or showing someone the way: a reward like freeing a slave.
   "deep-kids-helping-people-show-someone-the-way": "sign-milk-silver-or-the-way",
   // A man is not led in his own home, and his seat of honor is not sat in without his leave.
-  "deep-found-sunnahs-of-the-home-the-hosts-own-seat": "sign-the-seat-of-honor"
+  "deep-found-sunnahs-of-the-home-the-hosts-own-seat": "sign-the-seat-of-honor",
+  // Urwah came from far and reached them at Muzdalifah: whoever attends this prayer, having stood at Arafat, has completed his Hajj.
+  "deep-hajj-treasures-of-the-haram-is-there-hajj-for-me": "sign-is-there-hajj-for-me",
+  // Aishah carried Zamzam water home, for he would carry it.
+  "deep-hajj-treasures-of-the-haram-zamzam-to-take-home": "sign-zamzam-to-take-home",
+  // Masjids built among the homes, kept clean and scented.
+  "deep-prayer-masjid-sunnahs-clean-and-scented": "sign-clean-and-scented",
+  // The zakat collector should leave you only while pleased.
+  "deep-zakat-manners-of-giving-pleased-collector": "sign-pleased-collector",
+  // Answer an invitation to eat; if fasting, make du'a for them.
+  "deep-fasting-suhur-to-iftar-invited-while-fasting": "sign-invited-while-fasting",
+  // The best companion and the best neighbor are the ones best to their companion and neighbor.
+  "deep-manners-getting-along-best-companion": "sign-best-companion"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
