@@ -1079,7 +1079,13 @@ export type SignKind =
   | "nap-after-jumuah"
   | "at-all-moments"
   | "the-hibra"
-  | "gold-and-silver";
+  | "gold-and-silver"
+  | "feared-debt"
+  | "visit-the-sick"
+  | "two-faced"
+  | "two-cases"
+  | "before-that-day"
+  | "rinse-after-milk";
 
 export type SignScene = {
   id: string;
@@ -5993,6 +5999,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Hudhayfah said: I heard the Prophet ﷺ saying: do not drink in silver or golden vessels, and do not eat in plates of such metals, for such things are for the unbelievers in this worldly life and for us in the Hereafter.",
     sources: [bukhari("5426")]
+  },
+  {
+    id: "sign-feared-debt",
+    kind: "feared-debt",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ used to invoke Allah in the prayer saying: O Allah, I seek refuge with you from all sins, and from being in debt. Someone said: very often you seek refuge with Allah from being in debt. He replied: if a person is in debt, he tells lies when he speaks, and breaks his promises when he promises.",
+    sources: [bukhari("2397")]
+  },
+  {
+    id: "sign-visit-the-sick",
+    kind: "visit-the-sick",
+    caption:
+      "Ibn Abbas said: the Prophet ﷺ went to visit a sick Bedouin. Whenever the Prophet ﷺ went to a patient, he used to say to him: don't worry, if Allah will, it will be expiation.",
+    sources: [bukhari("5656")]
+  },
+  {
+    id: "sign-two-faced",
+    kind: "two-faced",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the worst people in the Sight of Allah on the Day of Resurrection will be the double faced people who appear to some people with one face and to other people with another face.",
+    sources: [bukhari("6058")]
+  },
+  {
+    id: "sign-two-cases",
+    kind: "two-cases",
+    caption:
+      "Abdullah ibn Mas'ud said: the Prophet ﷺ said: do not wish to be like anyone except in two cases: a person whom Allah has given wealth and he spends it righteously, and the one whom Allah has given wisdom and he acts according to it and teaches it to others.",
+    sources: [bukhari("73")]
+  },
+  {
+    id: "sign-before-that-day",
+    kind: "before-that-day",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: whoever has oppressed another person concerning his reputation or anything else, he should beg him to forgive him before the Day of Resurrection when there will be no money.",
+    sources: [bukhari("2449")]
+  },
+  {
+    id: "sign-rinse-after-milk",
+    kind: "rinse-after-milk",
+    caption:
+      "Ibn Abbas said: the Messenger of Allah ﷺ drank milk, rinsed his mouth and said: it has fat.",
+    sources: [bukhari("211")]
   }
 ];
 
@@ -8721,7 +8769,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The garment he loved most to wear was the Hibra.
   "deep-book-dress-the-hibra-cloth": "sign-the-hibra",
   // Do not drink or eat from gold and silver vessels: they are for us in the Hereafter.
-  "deep-zukhruf2-gold-is-not-the-goal": "sign-gold-and-silver"
+  "deep-zukhruf2-gold-is-not-the-goal": "sign-gold-and-silver",
+  // He often sought refuge from debt, for one in debt lies when he speaks and breaks his promises.
+  "deep-duas-seeking-refuge-why-he-feared-debt": "sign-feared-debt",
+  // Visiting the sick, he would say: don't worry, if Allah wills it is expiation.
+  "deep-manners-visit-sick-la-bas": "sign-visit-the-sick",
+  // The worst on the Day of Resurrection are the double faced: one face to some, another to others.
+  "deep-manners-beautiful-character-one-face-for-everyone": "sign-two-faced",
+  // Wish to be like no one except two: one who spends wealth rightly, and one who acts on wisdom and teaches it.
+  "deep-hadith-knowledge-two-people": "sign-two-cases",
+  // Ask forgiveness for a wrong now, before the Day when there will be no money.
+  "deep-manners-making-peace-before-that-day": "sign-before-that-day",
+  // He drank milk, rinsed his mouth and said: it has fat.
+  "deep-found-eating-drinking-rinse-after-milk": "sign-rinse-after-milk"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

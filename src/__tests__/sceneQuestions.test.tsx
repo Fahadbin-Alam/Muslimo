@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3480);
+    expect(asks.length).toBe(3489);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5077);
+    expect(places).toBe(5094);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -24105,6 +24105,180 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1, 1, 0]
       ],
       [0, 0],
+      1
+    ]);
+  });
+
+  it("waits on the scenes from why he feared debt to rinsing after milk, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-feared-debt", "sign-visit-the-sick", "sign-two-faced", "sign-two-cases", "sign-before-that-day", "sign-rinse-after-milk"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(9);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // True: his voice has sought refuge in the prayer, a spark has risen and a soft golden ring of refuge has come about
+    // his place, with no one asking yet, before the next words; then the place of someone who asked shows by him, its
+    // voice asks: very often you seek refuge from debt, and his voice begins to reply. It stops before anyone in debt
+    // shows.
+    expect([
+      shown("He ﷺ often sought refuge with Allah from debt.", ["the place of someone who asked, by him", "the asker's voice: very often you seek refuge from debt", "his voice, soft and golden: replying", "the place of one in debt, far off in the town"]),
+      value("feared-debt", "refuge: a soft golden ring about his place", "opacity", 0.43),
+      value("feared-debt", "the asker's voice: very often you seek refuge from debt", "opacity", 0.55)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 0, 1, 0]
+      ],
+      1,
+      1
+    ]);
+    // Lie and break promises: his voice, soft and golden, is replying, with no one in debt in the town yet, before the
+    // next words; then the place of one in debt and the place of the one owed show, coins go from the one owed to the
+    // one in debt, its voice is quick and grey: lies, a pale line of a promise goes toward the one owed and breaks, its
+    // halves going apart and fading, and a grey dashed ring comes about the one in debt.
+    expect([
+      shown("What can debt lead a person to do, he ﷺ said?", ["the place of one in debt, far off in the town", "the place of the one owed", "in debt: coins going from the one owed to the one in debt", "lies when speaking: the voice of the one in debt, quick and grey", "a promise: a pale line toward the one owed, its first half, then breaking", "a promise: a pale line toward the one owed, its second half, then breaking", "promises broken: a grey dashed ring about the place of the one in debt"]),
+      moved("What can debt lead a person to do, he ﷺ said?", "in debt: coins going from the one owed to the one in debt", "x"),
+      moved("What can debt lead a person to do, he ﷺ said?", "a promise: a pale line toward the one owed, its first half, then breaking", "x"),
+      moved("What can debt lead a person to do, he ﷺ said?", "a promise: a pale line toward the one owed, its second half, then breaking", "x"),
+      value("feared-debt", "lies when speaking: the voice of the one in debt, quick and grey", "opacity", 0.85)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 0, 0.25, 0.25, 1]
+      ],
+      [0, -23.8],
+      [0, -3],
+      [0, 3],
+      1
+    ]);
+    // No harm, it is a cleansing: his place has gone along the pale dashed way to the tent and sits by the sick Bedouin,
+    // a soft golden ring of care about them both, and the pale glow of the sickness is still full, before the next
+    // words; then his voice, soft and golden, speaks: don't worry, the pale glow softens and fades, and a soft light
+    // comes on the Bedouin's place: expiation.
+    expect([
+      shown("What did he ﷺ say to comfort the sick?", ["the sickness: a pale glow on the Bedouin's place, softening, then fading", "expiation: a soft light on the Bedouin's place", "visiting the sick: a soft golden ring of care about them both"]),
+      moved("What did he ﷺ say to comfort the sick?", "his place, a golden ring: going to visit the sick Bedouin, and sitting by him", "x"),
+      value("visit-the-sick", "his voice, soft and golden: don't worry", "opacity", 0.7),
+      value("visit-the-sick", "the sickness: a pale glow on the Bedouin's place, softening, then fading", "opacity", 0.7)
+    ]).toEqual([
+      [
+        [1, 0, 1],
+        [0, 1, 1]
+      ],
+      [80, 80],
+      1,
+      0.55
+    ]);
+    // The two-faced: Abu Hurairah's voice has told what he said, and a grey place has shown between the two sides, with
+    // no ring about it yet, before the next words; then a grey dashed ring comes about it: the worst. It stops before it
+    // goes to either side.
+    expect([
+      shown("Who will be the worst people in Allah's sight on the Day of Resurrection?", ["the place of the two-sided one, grey: showing, going to some, then to the others", "the worst: a grey dashed ring about the two-sided one, going with it", "one way with some: the two-sided one turning warm by them", "another way with others: the two-sided one turning cool by them"]),
+      moved("Who will be the worst people in Allah's sight on the Day of Resurrection?", "the place of the two-sided one, grey: showing, going to some, then to the others", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 0, 0]
+      ],
+      [0, 0]
+    ]);
+    // Shows one face to some, another to others: the grey place stands between the two sides with a grey dashed ring
+    // about it, before the next words; then it goes to the places on one side, turns warm, and its voice is warm with
+    // them; it turns grey again, goes to the places on the other side, turns cool, and its voice is cool with them, the
+    // grey dashed ring going with it.
+    expect([
+      shown("What does a two-faced person do?", ["the place of the two-sided one, grey: showing, going to some, then to the others", "one way with some: the two-sided one turning warm by them", "another way with others: the two-sided one turning cool by them", "the worst: a grey dashed ring about the two-sided one, going with it"]),
+      moved("What does a two-faced person do?", "the place of the two-sided one, grey: showing, going to some, then to the others", "x"),
+      moved("What does a two-faced person do?", "the worst: a grey dashed ring about the two-sided one, going with it", "x"),
+      [0.62, 0.9].map((t) => ["one way with some: the two-sided one turning warm by them", "its voice with them, warm", "another way with others: the two-sided one turning cool by them", "its voice with them, cool"].map((name) => value("two-faced", name, "opacity", t))),
+      value("two-faced", "the place of the two-sided one, grey: showing, going to some, then to the others", "x", 0.62)
+    ]).toEqual([
+      [
+        [1, 0, 0, 1],
+        [0, 0, 1, 1]
+      ],
+      [0, 30],
+      [0, 30],
+      [
+        [1, 1, 0, 0],
+        [0, 0, 1, 1]
+      ],
+      -36
+    ]);
+    // One who spends it rightly: faint dotted lines of looking go to the two, and coins show by the first: wealth, with
+    // nothing given yet, before the next words; then coins go from it to someone in need, and a spark rises: spending it
+    // in the right. It stops before anything shows on the second.
+    expect([
+      shown("Which rich person is worth copying?", ["two cases: faint dotted lines of looking from the one who wishes to the two", "wealth: coins by the one given it", "spending it: coins going from the one given wealth to someone in need", "wisdom: a soft light on the one given it"]),
+      moved("Which rich person is worth copying?", "spending it: coins going from the one given wealth to someone in need", "x"),
+      value("two-cases", "in the right: a spark rising from the one given wealth", "opacity", 0.58)
+    ]).toEqual([
+      [
+        [1, 1, 0, 0],
+        [1, 1, 1, 0]
+      ],
+      [0, -26.2],
+      1
+    ]);
+    // One who acts on it and teaches it: coins have gone from the first to someone in need, with no light on the second
+    // yet, before the next words; then a soft light comes on the second: wisdom, a spark rises: acting by it, its voice,
+    // soft and golden, speaks to the others, small lights come on them: teaching it, and soft golden rings come about
+    // the two.
+    expect([
+      shown("Whose wisdom should we wish for?", ["wisdom: a soft light on the one given it", "taught: small lights on the places of the others", "the two to wish to be like: soft golden rings about them"]),
+      moved("Whose wisdom should we wish for?", "spending it: coins going from the one given wealth to someone in need", "x"),
+      value("two-cases", "acting by it: a spark rising from the one given wisdom", "opacity", 0.73),
+      value("two-cases", "teaching it: its voice, soft and golden, to the others", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [-26.2, -26.2],
+      1,
+      1
+    ]);
+    // Now, before the Day comes: the voice of the one who wronged has been quick and grey, a grey dashed way has gone to
+    // the one wronged, whose place has dimmed, and the one who wronged has gone to it, with the coins still by its home,
+    // before the next words; then its voice asks to be forgiven, and the coins fade away: no money.
+    expect([
+      shown("When should you ask forgiveness from someone you wronged?", ["money: coins by the home of the one who wronged, fading away", "the wrong: a grey dashed way to the one wronged", "the place of the one wronged, dimming"]),
+      moved("When should you ask forgiveness from someone you wronged?", "the place of the one who wronged: going to the one wronged", "x"),
+      value("before-that-day", "its voice, asking to be forgiven", "opacity", 0.7)
+    ]).toEqual([
+      [
+        [1, 1, 0.45],
+        [0, 1, 0.45]
+      ],
+      [64, 64],
+      1
+    ]);
+    // Milk has fat in it: the bowl of milk has gone to his place and back with less milk in it, and the cup of water has
+    // gone to his place, its water used, with no word from him yet, before the next words; then the cup goes back, his
+    // voice, soft and golden, speaks, and glints of fat show on the milk.
+    expect([
+      shown("Why did he ﷺ rinse his mouth after milk?", ["he drank milk: the milk in the bowl, less", "rinsing: the water in the cup, used", "fat: glints on the milk"]),
+      moved("Why did he ﷺ rinse his mouth after milk?", "the bowl of milk: going to his place, and back", "x"),
+      moved("Why did he ﷺ rinse his mouth after milk?", "the cup of water: going to his place, and back", "x"),
+      value("rinse-after-milk", "his voice, soft and golden: it has fat", "opacity", 0.8)
+    ]).toEqual([
+      [
+        [0.6, 0, 0],
+        [0.6, 0, 1]
+      ],
+      [0, 0],
+      [-10, 0],
       1
     ]);
   });

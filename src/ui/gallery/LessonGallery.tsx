@@ -1632,6 +1632,12 @@ const STATES: State[] = [
   { id: "scene-at-all-moments", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-remembering-allah-always-at-all-moments" ask="remember Allah, Aishah said" /> },
   { id: "scene-the-hibra", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-dress-the-hibra-cloth" ask="love most" /> },
   { id: "scene-gold-and-silver", render: () => <SceneQuestionDemo lessonId="lesson-deep-zukhruf2-gold-is-not-the-goal" ask="per Bukhari 5426" /> },
+  { id: "scene-feared-debt", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-seeking-refuge-why-he-feared-debt" ask="lead a person to do" /> },
+  { id: "scene-visit-the-sick", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-visit-sick-la-bas" ask="comfort the sick" /> },
+  { id: "scene-two-faced", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-beautiful-character-one-face-for-everyone" ask="a two-faced person do" /> },
+  { id: "scene-two-cases", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-knowledge-two-people" ask="worth copying" /> },
+  { id: "scene-before-that-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-making-peace-before-that-day" ask="someone you wronged" /> },
+  { id: "scene-rinse-after-milk", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-eating-drinking-rinse-after-milk" ask="after milk" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
