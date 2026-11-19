@@ -7,9 +7,9 @@ battle friends, and let a parent follow a child's progress.
 - **App:** Expo / React Native, one TypeScript codebase for Android, iOS and the web.
 - **API (optional):** FastAPI + SQLAlchemy over SQLite (local) or PostgreSQL (production), for accounts, cloud
   backup of progress, and the social features.
-- **Status:** in active development since April 2026. Android build 14 is live on a Google Play track
-  ([site/app-version.json](site/app-version.json)); iOS 1.0.0 was rejected once by App Review and the two issues
-  are fixed. The API is set up to deploy to Render with Neon Postgres ([render.yaml](render.yaml)). Details: "Deployment and
+- **Status:** in active development since April 2026. Android build 18 is out on Google Play
+  ([site/app-version.json](site/app-version.json), and the store link in [site/index.html](site/index.html)); iOS
+  1.0.0 was rejected once by App Review, the two issues are fixed, and the site says the iPhone app is in final review. The API is set up to deploy to Render with Neon Postgres ([render.yaml](render.yaml)). Details: "Deployment and
   release" in [docs/architecture.md](docs/architecture.md).
 
 ## Screenshots
@@ -30,6 +30,9 @@ battle friends, and let a parent follow a child's progress.
    or one that was offline for a week, never lose finished lessons or XP.
 4. **Social features** (Crew, Family links, friend battles, invite codes, the Ummah ranking) are server routes over
    their own tables.
+5. **Newsletter:** people join from `site/newsletter.html` (confirmed by email) or the tick box in the app's
+   Settings; the list is the `newsletter_subscribers` table and mail goes out through Brevo
+   (`backend/app/api/routes/newsletter.py`, `backend/app/core/brevo.py`).
 
 The full walkthrough, with a diagram, the SQL schema, the deployment setup and release status, is in
 [docs/architecture.md](docs/architecture.md).
@@ -114,7 +117,7 @@ apps, and opens the web build in a headless browser on every pull request and ev
 | [backend/migrations](backend/migrations) | Alembic migrations |
 | [backend/tests](backend/tests) | API tests |
 | [scripts](scripts) | Obsidian notes importer, asset and store tooling, CI helpers |
-| [store](store), [site](site) | Store listings and the GitHub Pages site (privacy policy, terms, stats page) |
+| [store](store), [site](site) | Store listings and the GitHub Pages site (privacy policy, terms, newsletter sign-up, stats page) |
 
 ## Writing lessons from Obsidian notes
 

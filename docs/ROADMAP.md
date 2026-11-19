@@ -18,8 +18,8 @@ From the repository alone (the dashboards hold the rest; see "Deployment and rel
 | | State | Next step | Evidence |
 | --- | --- | --- | --- |
 | API | Configured: a Render Docker web service on the free plan, redeployed on every push, with a Neon Postgres database | Confirm it answers `GET /api/health` with `"database": "postgresql+psycopg"`; see item 8 | `render.yaml`, `backend/Dockerfile`, `docs/hosting.md` |
-| iOS | 1.0.0 was rejected by App Review under guidelines 4 and 5.1.2(i); both fixed on `main` | Build, resubmit, and set `"ios"` in `site/app-version.json` once it's on the App Store | `src/ui/screens/AppleSignInButton.native.tsx`, `src/services/monetization.native.ts`, `site/app-version.json`, `docs/release.md` |
-| Android | Build 14 is live on a Play track; uploads go to the internal track as drafts | Closed test with 12 testers for 14 days (new personal accounts), then production | `site/app-version.json`, `eas.json`, `docs/release.md` |
+| iOS | 1.0.0 was rejected by App Review under guidelines 4 and 5.1.2(i); both fixed on `main`, and the site says it's in final review | Once it's approved, set `"ios"` in `site/app-version.json` and turn the App Store box in `site/index.html` into a link | `src/ui/screens/AppleSignInButton.native.tsx`, `src/services/monetization.native.ts`, `site/index.html`, `site/app-version.json`, `docs/release.md` |
+| Android | Build 18 is out on Google Play (`site/index.html` links the store page); `eas submit` still uploads to the internal track as a draft | Promote each new build from internal to production in Play Console, then raise `"android"` in `site/app-version.json` | `site/index.html`, `site/app-version.json`, `eas.json`, `docs/release.md` |
 | Store checklist | "Production API served over HTTPS" still marked as needed before release | Tick it once the API URL is in the production EAS environment | `store/README.md`, `src/config/backend.ts` |
 
 ## Summary
@@ -37,11 +37,10 @@ From the repository alone (the dashboards hold the rest; see "Deployment and rel
 | 9 | [Outdated Swagger file](#9-delete-the-outdated-swagger-file) | S | It describes an API that doesn't exist |
 | 10 | [Smaller clean-ups](#10-smaller-clean-ups) | S each | N+1 queries, an old fallback, the 5,400-line `TopicApp.tsx` |
 
-Fixed on the `claude/muslimo-fixes-v2` branch (exported as `patches-v2`), so not on this list once it's merged:
-removing the old `backend/server.js` (its social login accepted any token), the lesson-completion XP hole, sync value
-validation, the catalog `GROUP BY`, client subscription sync only in development, the Ummah ranking in SQL with an
-index, a request-body size limit, the `socialHub` cap, and unknown store products granting nothing. Until the merge,
-all of these are still open on `main`.
+Already fixed by the `claude/backend-security-fixes` branch, so not on this list: removing the old
+`backend/server.js` (its social login accepted any token), the lesson-completion XP hole, sync value validation, the
+catalog `GROUP BY`, client subscription sync only in development, the Ummah ranking in SQL with an index, a
+request-body size limit, the `socialHub` cap, and unknown store products granting nothing.
 
 ## 1. Wire the app to the learning endpoints
 
@@ -201,7 +200,7 @@ INTEGER columns and doesn't enforce foreign keys by default, so Postgres-only er
 **Effort: M (S if the API stays on one process). Why:** `backend/app/core/rate_limit.py` keeps attempts in a
 per-process dictionary of deques. The Dockerfile runs one Uvicorn process, so that's correct today. But with two
 instances, or `--workers 2`, every limit is silently multiplied, and a restart resets them. It protects log-in
-(10 per 15 minutes per email, `routes/auth.py`), family and invite codes, adding friends and analytics.
+(10 per 15 minutes per email, `routes/auth.py`), family and invite codes, adding friends, analytics and newsletter sign-ups (`routes/newsletter.py`).
 
 **What to do:**
 

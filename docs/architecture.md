@@ -246,17 +246,18 @@ sequenceDiagram
 | Sign up | `POST /api/auth/register` (`routes/auth.py`) | INSERT `users` (PBKDF2 hash), INSERT `auth_sessions` |
 | Log in | `POST /api/auth/login`, rate limited 10 per email per 15 min | SELECT `users` by email, DELETE expired + INSERT `auth_sessions` |
 | Google / Apple | `POST /api/auth/social`; ID token verified against the provider's JWKS (`core/social_tokens.py`) | `users`, `auth_sessions` |
-| Delete account | `DELETE /api/profile/me` (`routes/profile.py`) | DELETE `users` (ORM cascades), `family_links` |
+| Delete account | `DELETE /api/profile/me` (`routes/profile.py`) | DELETE `users` (ORM cascades), `family_links`, `newsletter_subscribers` (`forget_newsletter`, which also removes the Brevo contact) |
 | Family link | `POST /api/family/code` on the child's phone, `POST /api/family/kids` on the parent's | `family_link_codes` (6 chars, 24 h, one use), `family_links` |
 | Friend battle | `POST /api/battles`, `/accept`, `/score` (`routes/battles.py`) | `friend_battles` (both play the same `seed`; scores hidden until both played) |
 | Invite code | `POST /api/invites/redeem`, `/claim` (`routes/invites.py`) | `invites` (code = base-31 user id + check letter) |
 | Ummah ranking | `POST /api/ummah/rankings` (`routes/ummah.py`) | `users.ummah_ranked` / `ummah_trophies` (copied from `ummah_json`), `ORDER BY ... LIMIT 50` + `COUNT(*)` on `ix_users_ummah_ranking` |
 | Purchase | RevenueCat > `POST /api/subscriptions/revenuecat/webhook` (shared secret, `hmac.compare_digest`) | `subscription_entitlements`, `event_logs` |
 | Owner stats | `GET /api/admin/stats` with `X-Admin-Key` (`routes/admin.py`) | aggregate reads of `users`, `subscription_entitlements`, `invites` |
+| Newsletter | `POST /api/newsletter/subscribe` (website; 3 per email per hour, confirmed from an emailed link via `/confirm`), `PUT /api/newsletter/me` (the app's Settings tick box; Kid accounts refused), `/api/admin/newsletter*` with `X-Admin-Key` (`routes/newsletter.py`, `core/brevo.py`) | `newsletter_subscribers` (token stored as a hash, like sessions) |
 
 ## Data model
 
-Source of truth: `backend/app/models.py` (SQLAlchemy 2.0 declarative). There are 18 tables in three groups.
+Source of truth: `backend/app/models.py` (SQLAlchemy 2.0 declarative). There are 19 tables in four groups.
 
 ```mermaid
 erDiagram
@@ -269,6 +270,7 @@ erDiagram
   users ||--o{ invites : "inviter / invitee"
   users ||--o{ subscription_entitlements : has
   users ||--o{ event_logs : emits
+  users ||--o| newsletter_subscribers : "opts in"
   users ||--o{ user_progress : "per lesson"
   users ||--o{ question_attempts : answers
   users ||--o{ review_queue : "missed questions"
@@ -287,6 +289,8 @@ erDiagram
    `user_low_id < user_high_id`), `friend_battles`, `family_links`, `family_link_codes`, `invites`.
 3. **Catalog and normalized learning (not used by the app yet):** `topics`, `branches`, `lessons`, `questions`,
    `lesson_resources`, `user_progress`, `question_attempts`, `review_queue`.
+4. **Newsletter:** `newsletter_subscribers` (one row per email; `user_id` is set when the learner joined from the
+   app, and website sign-ups have none).
 
 ### Why one wide `users` row with JSON columns?
 
@@ -437,6 +441,21 @@ CREATE TABLE event_logs (
   created_at    TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
+CREATE TABLE newsletter_subscribers (
+  id               SERIAL PRIMARY KEY,
+  email            VARCHAR(255) NOT NULL,                             -- unique index
+  status           VARCHAR(20)  NOT NULL,                             -- index; app default 'pending', then 'subscribed' / 'unsubscribed'
+  source           VARCHAR(20)  NOT NULL,                             -- 'website' | 'app'
+  language         VARCHAR(16)  NOT NULL,                             -- app default 'en'
+  user_id          INTEGER REFERENCES users(id) ON DELETE CASCADE,    -- index; NULL for website sign-ups
+  token_hash       VARCHAR(128) NOT NULL,                             -- unique index; SHA-256 of the confirm/unsubscribe link secret
+  confirm_sent_at  TIMESTAMPTZ,
+  confirmed_at     TIMESTAMPTZ,
+  unsubscribed_at  TIMESTAMPTZ,
+  created_at       TIMESTAMPTZ NOT NULL DEFAULT now(),
+  updated_at       TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
 -- Catalog, seeded by backend/app/catalog_seed.py on every deploy (13 topics, 85 branches, 1,261 lessons, 2,009 questions)
 CREATE TABLE topics (
   id SERIAL PRIMARY KEY, title VARCHAR(120) NOT NULL, slug VARCHAR(120) NOT NULL,   -- unique index on slug
@@ -532,7 +551,7 @@ SELECT * FROM friendships WHERE user_id = :other AND friend_id = :me;
 | --- | --- | --- |
 | Passwords | PBKDF2-SHA256 (passlib), min 8 chars | `core/security.py`, `schemas.AuthRegisterInput` |
 | Sessions | 48 random bytes (`secrets.token_urlsafe`), stored as SHA-256, 30-day expiry, expired rows deleted at next login | `core/security.py`, `routes/auth.py` |
-| Guessing | 10 logins per email / 15 min; 10 family or invite codes per account / 15 min; 30 friend adds per hour | `core/rate_limit.py` (in memory, one process) |
+| Guessing | 10 logins per email / 15 min; 10 family or invite codes per account / 15 min; 30 friend adds per hour; 3 newsletter sign-ups per email per hour | `core/rate_limit.py` (in memory, one process) |
 | Social login | RS256 only, `aud`, `iss`, `exp` and verified email checked against Google/Apple JWKS | `core/social_tokens.py` |
 | Takeover of an unverified email sign-up | a later verified Google/Apple sign-in for that email clears the password and signs out every session | `routes/auth.py`, `social_login` |
 | Premium | only the RevenueCat webhook (shared secret, constant-time compare) grants it in production; a product missing from `STORE_PRODUCT_PLANS` grants nothing and is logged | `routes/subscriptions.py`, `core/subscriptions.py` |
@@ -552,13 +571,13 @@ the Render, EAS and App Store Connect / Play Console dashboards, so check there 
 | Piece | Setup | Defined in |
 | --- | --- | --- |
 | API | One Render web service, `muslimo-api`, `runtime: docker`, built from `backend/Dockerfile` with the repository root as context. **Free plan**: it sleeps after 15 idle minutes and takes up to a minute to wake. Health check `GET /api/health`; `autoDeploy: true` redeploys on every push | `render.yaml` |
-| Settings and secrets | `SIRA_ENVIRONMENT=production` is set by the blueprint and by the image. `SIRA_DATABASE_URL`, `SIRA_REVENUECAT_WEBHOOK_AUTH`, `SIRA_GOOGLE_CLIENT_IDS_RAW` and `SIRA_ADMIN_KEY` are `sync: false`: typed into the Render dashboard, never stored in git | `render.yaml`, `backend/Dockerfile`, `backend/app/core/config.py` |
+| Settings and secrets | `SIRA_ENVIRONMENT=production` is set by the blueprint and by the image. `SIRA_DATABASE_URL`, `SIRA_REVENUECAT_WEBHOOK_AUTH`, `SIRA_GOOGLE_CLIENT_IDS_RAW`, `SIRA_ADMIN_KEY`, `SIRA_BREVO_API_KEY` and `SIRA_BREVO_LIST_ID` are `sync: false`: typed into the Render dashboard, never stored in git | `render.yaml`, `backend/Dockerfile`, `backend/app/core/config.py` |
 | Database | **Not part of the blueprint.** A free Neon Postgres project (0.5 GB) in AWS US East, next to Render's Virginia region, connected through `SIRA_DATABASE_URL`. Render's own free Postgres is deleted after 30 days, so it isn't used. `config.py` rewrites `postgres://` / `postgresql://` to `postgresql+psycopg://` | `render.yaml` (top comment), `docs/hosting.md`, `backend/app/core/config.py` |
 | Container start | `python:3.12-slim`, runs as the non-root user `sira`. Every start runs `backend/scripts/bootstrap.py` (`alembic upgrade head`, then the idempotent catalog seed), then Uvicorn on `$PORT` with `--proxy-headers` | `backend/Dockerfile`, `backend/scripts/bootstrap.py` |
 | App builds | Expo EAS, project `ae9b976c-...` owned by `fahadbin.alam`. `eas.json` profiles: **development** (dev client, internal distribution, sandbox purchases), **preview** (internal distribution, Android APK, sandbox purchases), **production** (Android App Bundle, build number auto-incremented, version source remote). `requireCommit: true`; Node 22.22.0 | `eas.json`, `app.json` |
 | API address in the app | `EXPO_PUBLIC_API_BASE_URL`, set per EAS environment with `eas env:create` (it isn't in `eas.json`). A release build without it is offline-only and never calls `localhost` | `src/config/backend.ts`, `docs/hosting.md` (step 4) |
 | Store upload | `eas submit` (production profile): Android goes to the Play **internal** track as a **draft**, using a service-account key in `secrets/` (git-ignored). There's no iOS `submit` block, so `eas submit --platform ios` uses EAS's defaults | `eas.json`, `.gitignore`, `docs/release.md` |
-| Website | `site/` is published to GitHub Pages by `.github/workflows/pages.yml` on pushes to `main` that touch it (skipped until `site/site.config.json` is filled in). The log-in page and the owner's stats page call `https://muslimo-api.onrender.com` | `.github/workflows/pages.yml`, `site/log-in.html`, `site/stats.html` |
+| Website | `site/` is published to GitHub Pages by `.github/workflows/pages.yml` on pushes to `main` that touch it (skipped until `site/site.config.json` is filled in). The log-in page, the newsletter page and the owner's stats page call `https://muslimo-api.onrender.com` | `.github/workflows/pages.yml`, `site/log-in.html`, `site/newsletter.html`, `site/stats.html` |
 
 ### What CI checks, and what it doesn't
 
@@ -566,7 +585,7 @@ the Render, EAS and App Store Connect / Play Console dashboards, so check there 
 
 | Job | What it runs |
 | --- | --- |
-| `app` | Node 22, `npm ci`, `npm run typecheck` (`tsc --noEmit`), `npm test -- --ci` (Jest, 170 test files), `node --test scripts/obsidian-import/lib.test.mjs`, `expo export` for Android and iOS, then `scripts/check-release-config.mjs` (version format, bundle ids, iOS export-compliance flag, privacy manifest, blocked Android permissions) |
+| `app` | Node 22, `npm ci`, `npm run typecheck` (`tsc --noEmit`), `npm test -- --ci` (Jest, 178 test files), `node --test scripts/obsidian-import/lib.test.mjs`, `expo export` for Android and iOS, then `scripts/check-release-config.mjs` (version format, bundle ids, iOS export-compliance flag, privacy manifest, blocked Android permissions) |
 | `web-smoke` | `expo export --platform web`, then `scripts/smoke-web.mjs` opens the build in headless Chromium (Playwright) and fails if the first screen doesn't render |
 | `backend` | Python 3.12, `pip install -r backend/requirements-dev.txt`, `python -m pytest backend/tests -q` (FastAPI `TestClient` on a throwaway SQLite file, `backend/tests/conftest.py`) |
 
@@ -580,8 +599,8 @@ the Render dashboard.
 | | Status | Evidence |
 | --- | --- | --- |
 | Version | `1.0.0`; bundle id and package `com.islamiclearning.muslimo` | `app.json`, `scripts/check-release-config.mjs` |
-| App Store (iOS) | Version 1.0.0 went to App Review and was rejected for two reasons, both fixed on `main` (PR #690): guideline 4 (use Apple's own Sign in with Apple button) and guideline 5.1.2(i) (don't show Google's personalised-ads consent form on iPhone). The repository doesn't show a resubmission or an approval, and `site/app-version.json` still has `"ios": { "build": 0 }`, which `docs/release.md` says stays 0 until the iPhone app is on the App Store | `src/ui/screens/AppleSignInButton.native.tsx`, `src/__tests__/appleSignInButton.test.tsx`, `src/services/monetization.native.ts`, `site/app-version.json`, `docs/release.md` |
-| Google Play | `site/app-version.json` sets Android to build 14, and `docs/release.md` says that number goes up only once a build is live in the store. The repository doesn't record which track (internal or closed testing) or a production release; new personal Play accounts need a 12-tester, 14-day closed test first | `site/app-version.json`, `eas.json`, `docs/release.md` |
+| App Store (iOS) | Version 1.0.0 went to App Review and was rejected for two reasons, both fixed on `main` (PR #690): guideline 4 (use Apple's own Sign in with Apple button) and guideline 5.1.2(i) (don't show Google's personalised-ads consent form on iPhone). The website now says the iPhone app "is in final review with the App Store" (`site/index.html`, PR #718); `site/app-version.json` still has `"ios": { "build": 0 }`, which `docs/release.md` says stays 0 until the iPhone app is on the App Store | `src/ui/screens/AppleSignInButton.native.tsx`, `src/__tests__/appleSignInButton.test.tsx`, `src/services/monetization.native.ts`, `site/index.html`, `site/app-version.json`, `docs/release.md` |
+| Google Play | Out on Google Play: `site/index.html` says "Muslimo is out now on Google Play" and links the store page (PR #718), and `site/app-version.json` sets Android to build 18, which `docs/release.md` says goes up only once a build is live in the store | `site/index.html`, `site/app-version.json`, `eas.json`, `docs/release.md` |
 | Still open in the store checklist | "Production API served over HTTPS: Needed before release" | `store/README.md` |
 | Users | The repository has no user numbers (the owner's stats page reads them live), so don't quote any | `site/stats.html` |
 

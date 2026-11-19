@@ -58,4 +58,6 @@ python -m backend.scripts.bootstrap
   every start ([Dockerfile](Dockerfile)).
 - Google and Apple sign-in verify the provider's ID token ([app/core/social_tokens.py](app/core/social_tokens.py)).
 - Purchases arrive from RevenueCat's webhook (`/api/subscriptions/revenuecat/webhook`).
+- Newsletter mail goes out through Brevo when `SIRA_BREVO_API_KEY` is set ([app/core/brevo.py](app/core/brevo.py));
+  without it sign-ups are still saved ([app/api/routes/newsletter.py](app/api/routes/newsletter.py)).
 - Hosting steps: [docs/hosting.md](../docs/hosting.md). Data flow and schema: [docs/architecture.md](../docs/architecture.md).

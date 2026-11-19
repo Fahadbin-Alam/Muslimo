@@ -5,12 +5,11 @@ Questions an interviewer is likely to ask about this project, with short answers
 [ROADMAP.md](ROADMAP.md) lists what's still missing before launch, with effort estimates.
 Answers are written in the first person so you can practise saying them; put them in your own words.
 
-Several fixes mentioned below came from a code review and are on the `claude/muslimo-fixes-v2` branch (exported as
-`patches-v2`), not yet on `main` (664f7c8): removing the old `backend/server.js` (its social login accepted any
-token), the lesson-completion XP hole, the sync validation, the catalog `GROUP BY`, the fail-closed subscription
-sync, the Ummah ranking in SQL, the request-body limit, the `socialHub` cap, and unknown store products granting
-nothing. Until they're merged, those holes are still on `main`. Once merged, say they were found in review, and make
-sure you can explain each fix without notes.
+Several fixes mentioned below came from a code review and were merged from the `claude/backend-security-fixes`
+branch: removing the old `backend/server.js` (its social login accepted any token), the lesson-completion XP hole,
+the sync validation, the catalog `GROUP BY`, the fail-closed subscription sync, the Ummah ranking in SQL, the
+request-body limit, the `socialHub` cap, and unknown store products granting nothing. Say they were found in review,
+and make sure you can explain each fix without notes.
 
 ## The 60-second version
 
@@ -23,7 +22,7 @@ sure you can explain each fix without notes.
 > tests and 170 Jest test files, and CI on every pull request. The API is configured to deploy to Render with Neon
 > Postgres, and iOS 1.0.0 has been through App Review once: it was rejected for two issues, which I've fixed.
 
-Numbers worth knowing: 44 API routes, 18 tables, 12 Alembic migrations, a 4-second sync debounce, a 5,000 XP-per-day
+Numbers worth knowing: 53 API routes, 19 tables, 13 Alembic migrations, a 4-second sync debounce, a 5,000 XP-per-day
 cap, sessions that last 30 days.
 
 ## Questions
@@ -132,9 +131,10 @@ alerts, and making Render wait for green CI.
 
 Say only what you can show. The repository shows: iOS 1.0.0 went through App Review and was rejected for two
 reasons, both fixed on `main` (Apple's own Sign in with Apple button, `src/ui/screens/AppleSignInButton.native.tsx`;
-no personalised-ads consent form on iPhone, `src/services/monetization.native.ts`). `site/app-version.json` shows
-Android build 14 live on a Play track and iOS not yet on the App Store. Whether the resubmission is approved, which Play track
-the builds are on, and any user numbers are in App Store Connect, Play Console and the stats page, not the code. Check
+no personalised-ads consent form on iPhone, `src/services/monetization.native.ts`). Android is out
+on Google Play: `site/index.html` links the store page and `site/app-version.json` is at build 18. The site says the
+iPhone app is in final review with the App Store, and `site/app-version.json` keeps iOS at build 0 until it's out.
+Whether the review passes, and any user numbers, are in App Store Connect, Play Console and the stats page, not the code. Check
 them the day before and say exactly that. The rejection is a good story: what Apple flagged, why, and the fix.
 
 ### 13. What breaks first at 100,000 users?
