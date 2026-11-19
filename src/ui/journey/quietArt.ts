@@ -40,7 +40,7 @@ const sitting = (x: number, y: number, r = 1.6, color = ITS_VOICE) =>
   `<ellipse cx="${n(x)}" cy="${n(y + r * 0.38)}" rx="${r}" ry="${n(r * 0.62)}" stroke="${color}" stroke-width="0.8" stroke-dasharray="1 0.8" fill="none"/>`;
 
 /** A sneeze: a small puff of air beside a place at (x, y), to its right, or to its left when `left`. */
-const puff = (x: number, y: number, left = false) => {
+export const puff = (x: number, y: number, left = false) => {
   const s = left ? -1 : 1;
   return (
     [
@@ -55,7 +55,7 @@ const puff = (x: number, y: number, left = false) => {
 };
 
 /** A puff that shows at `from`, grows and is gone by `gone`. */
-const puffKeys = (from: number, gone: number) =>
+export const puffKeys = (from: number, gone: number) =>
   track({
     opacity: [
       [from, 0],

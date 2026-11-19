@@ -1091,7 +1091,13 @@ export type SignKind =
   | "good-word"
   | "deed-for-paradise"
   | "shorten-the-prayer"
-  | "best-character";
+  | "best-character"
+  | "cut-ties"
+  | "best-teacher"
+  | "sent-as-mercy"
+  | "virtue-and-vice"
+  | "covered-at-night"
+  | "upper-hand";
 
 export type SignScene = {
   id: string;
@@ -6089,6 +6095,47 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Amr said: the Prophet ﷺ never used bad language, and he used to say: the best amongst you are those who have the best manners and character.",
     sources: [bukhari("3559")]
+  },
+  {
+    id: "sign-cut-ties",
+    kind: "cut-ties",
+    caption: "Jubayr ibn Mut'im said that he heard the Prophet ﷺ saying: the person who severs the bond of kinship will not enter Paradise.",
+    sources: [bukhari("5984")]
+  },
+  {
+    id: "sign-best-teacher",
+    kind: "best-teacher",
+    caption:
+      "Mu'awiya ibn al-Hakam said: while I was praying with the Messenger of Allah ﷺ, a man in the company sneezed. I said: Allah have mercy on you! The people stared at me with disapproving looks. When the Messenger of Allah ﷺ had said the prayer, and I declare that neither before him nor after him have I seen a leader who gave better instruction than he, I swear that he did not scold, beat or revile me, but said: talking to persons is not fitting during the prayer, for it consists of glorifying Allah, declaring His Greatness, and recitation of the Quran.",
+    sources: [muslim("537a")]
+  },
+  {
+    id: "sign-sent-as-mercy",
+    kind: "sent-as-mercy",
+    caption:
+      "Abu Hurairah said: it was said to the Messenger of Allah ﷺ: invoke curse upon the polytheists, whereupon he said: I have not been sent as the invoker of curse, but I have been sent as mercy.",
+    sources: [muslim("2599")]
+  },
+  {
+    id: "sign-virtue-and-vice",
+    kind: "virtue-and-vice",
+    caption:
+      "An-Nawwas ibn Sam'an al-Ansari said: I asked the Messenger of Allah ﷺ about virtue and vice. He said: virtue is a kind disposition, and vice is what rankles in your heart and that you disapprove that people should come to know of it.",
+    sources: [muslim("2553")]
+  },
+  {
+    id: "sign-covered-at-night",
+    kind: "covered-at-night",
+    caption:
+      "Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: all the sins of my followers will be forgiven except those of the Mujahirin. An example of such disclosure is that a person commits a sin at night and though Allah screens it from the public, then he comes in the morning, and says: O so-and-so, I did such-and-such deed yesterday, though he spent his night screened by his Lord, and in the morning he removes Allah's screen from himself.",
+    sources: [bukhari("6069")]
+  },
+  {
+    id: "sign-upper-hand",
+    kind: "upper-hand",
+    caption:
+      "Abu Umamah said: the Messenger of Allah ﷺ said: O son of Adam, it is better for you if you spend your surplus, but if you withhold it, it is evil for you. There is no reproach for you for a living. And begin with your dependents; and the upper hand is better than the lower hand.",
+    sources: [muslim("1036")]
   }
 ];
 
@@ -8842,7 +8889,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-book-ilm-make-it-easy": "sign-shorten-the-prayer",
   // He never used bad language; the best are those with the best manners and character.
   "deep-hadith-heart-best-character": "sign-best-character",
-  "deep-qalam1-best-in-character": "sign-best-character"
+  "deep-qalam1-best-in-character": "sign-best-character",
+  // Whoever severs the bond of kinship will not enter Paradise.
+  "deep-book-adab-cutting-ties": "sign-cut-ties",
+  // Talking is not fitting in the prayer: the best of teachers, who did not scold the one who spoke in it.
+  "prayer-invalidators-of-salah-what-invalidates-salah": "sign-best-teacher",
+  // Asked to curse the polytheists, he said: I was not sent to curse, but sent as mercy.
+  "deep-anbiya3-mercy-to-worlds": "sign-sent-as-mercy",
+  // Virtue is good character, and vice what rankles within and one hates people to know of.
+  "deep-anam3-sin-open-secret": "sign-virtue-and-vice",
+  // A sin Allah screened at night, and in the morning its doer tells of it: all are forgiven but those who make it public.
+  "deep-book-adab-allah-covered-it": "sign-covered-at-night",
+  // Spending the surplus is good, withholding it evil; begin with your dependents; the upper hand is better.
+  "deep-abu-umamah-the-upper-hand": "sign-upper-hand"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
