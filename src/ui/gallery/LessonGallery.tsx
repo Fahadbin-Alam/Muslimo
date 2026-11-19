@@ -1714,6 +1714,12 @@ const STATES: State[] = [
   { id: "scene-even-a-little", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-manners-of-giving-even-a-little" ask="What did he ﷺ say she could give" /> },
   { id: "scene-glad-and-sad", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-glad-and-sad" ask="How does a believer feel about his bad deeds" /> },
   { id: "scene-only-by-allah", render: () => <SceneQuestionDemo lessonId="lesson-deep-yusuf6-swear-only-by-allah" ask="What did the man swear by" /> },
+  { id: "scene-keep-the-sick-apart", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-medicine-keep-sick-apart" ask="What should not be mixed" /> },
+  { id: "scene-safe-next-door", render: () => <SceneQuestionDemo lessonId="lesson-deep-neighbors-safe-neighbor" ask="Whose faith did the Prophet" /> },
+  { id: "scene-hajj-at-seven", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-children-hajj-at-seven" ask="How old was As-Sa'ib" /> },
+  { id: "scene-be-brothers", render: () => <SceneQuestionDemo lessonId="lesson-deep-hujurat2-no-shunning" ask="How long at most may a Muslim" /> },
+  { id: "scene-keep-ties-when-cut", render: () => <SceneQuestionDemo lessonId="lesson-deep-muhammad2-keep-ties-with-those-who-cut" ask="Who truly keeps ties" /> },
+  { id: "scene-say-bismillah-and-eat", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-starting-out-say-bismillah-and-eat" ask="Who were bringing the meat" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
