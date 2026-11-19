@@ -1187,7 +1187,13 @@ export type SignKind =
   | "lead-him-by-the-hand"
   | "green-and-sweet"
   | "bound-to-money"
-  | "two-sandals-two-straps";
+  | "two-sandals-two-straps"
+  | "smoothing-the-ground-once"
+  | "two-grow-old"
+  | "through-the-poor"
+  | "their-own-work"
+  | "inside-the-kabah"
+  | "their-followers-too";
 
 export type SignScene = {
   id: string;
@@ -6854,6 +6860,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Isa ibn Tahman said: Anas ibn Malik brought out for us two sandals having two straps. Thabit al-Bunani said: these were the sandals of the Prophet ﷺ.",
     sources: [bukhari("5858")]
+  },
+  {
+    id: "sign-smoothing-the-ground-once",
+    kind: "smoothing-the-ground-once",
+    caption:
+      "Mu'ayqib said: the Prophet ﷺ talked about a man leveling the earth on prostrating, and said: if you have to do so, then do it once.",
+    sources: [bukhari("1207")]
+  },
+  {
+    id: "sign-two-grow-old",
+    kind: "two-grow-old",
+    caption:
+      "Anas ibn Malik said: the Messenger of Allah ﷺ said: the son of Adam grows old, and so also two grow old with him: love for wealth and a long life.",
+    sources: [bukhari("6421")]
+  },
+  {
+    id: "sign-through-the-poor",
+    kind: "through-the-poor",
+    caption:
+      "Mus'ab ibn Sa'd said: once Sa'd thought that he was superior to those who were below him in rank. On that the Prophet ﷺ said: you gain no victory or livelihood except through the poor amongst you.",
+    sources: [bukhari("2896")]
+  },
+  {
+    id: "sign-their-own-work",
+    kind: "their-own-work",
+    caption:
+      "Aishah said: the companions of the Messenger of Allah ﷺ used to practice manual labor, so their sweat used to smell, and they were advised to take a bath.",
+    sources: [bukhari("2071")]
+  },
+  {
+    id: "sign-inside-the-kabah",
+    kind: "inside-the-kabah",
+    caption:
+      "Nafi' said: whenever Ibn Umar entered the Ka'bah, he used to walk straight, keeping the door at his back, and used to proceed on till about three cubits from the wall in front of him, and then he would offer the prayer there, aiming at the place where the Messenger of Allah ﷺ prayed, as Bilal had told him.",
+    sources: [bukhari("1599")]
+  },
+  {
+    id: "sign-their-followers-too",
+    kind: "their-followers-too",
+    caption:
+      "Zayd ibn Arqam said: the Ansar said: O Messenger of Allah, every prophet has his own followers, and we have followed you. So will you invoke Allah to let our followers be considered from us? So he invoked Allah accordingly.",
+    sources: [bukhari("3787")]
   }
 ];
 
@@ -9811,7 +9859,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The slave of money is pleased only when given, and dissatisfied otherwise.
   "deep-book-riqaq-slave-of-money": "sign-bound-to-money",
   // Anas brought out two sandals with two straps: the sandals of the Prophet ﷺ.
-  "deep-found-sunnahs-of-clothing-sandals-with-two-straps": "sign-two-sandals-two-straps"
+  "deep-found-sunnahs-of-clothing-sandals-with-two-straps": "sign-two-sandals-two-straps",
+  // Smoothing the ground in sujud: if you have to, then do it once.
+  "deep-book-amal-salah-smoothing-the-ground-once": "sign-smoothing-the-ground-once",
+  // The son of Adam grows old, and two wishes grow old with him: love of wealth and a long life.
+  "deep-takathur1-growing-old-with-wishes": "sign-two-grow-old",
+  // Sa'd thought himself above others: help and provision come through the poor.
+  "deep-kids-helping-people-help-through-the-poor": "sign-through-the-poor",
+  // The companions did their own manual work, and were told to take a bath.
+  "deep-book-trade-working-hands": "sign-their-own-work",
+  // Ibn Umar prayed inside the Ka'bah where the Prophet ﷺ prayed, as Bilal had told him.
+  "deep-hajj-kabah-inside-the-kabah": "sign-inside-the-kabah",
+  // The Ansar asked that their followers be counted as from them, and he ﷺ made the du'a.
+  "deep-ansar-their-followers": "sign-their-followers-too"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

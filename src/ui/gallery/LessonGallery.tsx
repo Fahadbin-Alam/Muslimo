@@ -1737,6 +1737,12 @@ const STATES: State[] = [
   { id: "scene-green-and-sweet", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-green-and-sweet" ask="How did the Prophet ﷺ describe wealth" /> },
   { id: "scene-bound-to-money", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-riqaq-slave-of-money" ask="What makes the slave of money happy" /> },
   { id: "scene-two-sandals-two-straps", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-clothing-sandals-with-two-straps" ask="How many straps" /> },
+  { id: "scene-smoothing-the-ground-once", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-amal-salah-smoothing-the-ground-once" ask="If you must smooth the ground" /> },
+  { id: "scene-two-grow-old", render: () => <SceneQuestionDemo lessonId="lesson-deep-takathur1-growing-old-with-wishes" ask="Which two wishes" /> },
+  { id: "scene-through-the-poor", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-help-through-the-poor" ask="Because of whom" /> },
+  { id: "scene-their-own-work", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-trade-working-hands" ask="What were they told to do" /> },
+  { id: "scene-inside-the-kabah", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-kabah-inside-the-kabah" ask="Who told Ibn Umar" /> },
+  { id: "scene-their-followers-too", render: () => <SceneQuestionDemo lessonId="lesson-deep-ansar-their-followers" ask="What did the Ansar ask" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
