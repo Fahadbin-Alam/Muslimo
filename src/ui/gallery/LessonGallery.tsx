@@ -1703,6 +1703,12 @@ const STATES: State[] = [
   { id: "scene-a-third-for-food", render: () => <SceneQuestionDemo lessonId="lesson-deep-araf2-a-third" ask="How should the stomach be shared" /> },
   { id: "scene-begin-with-yourself", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-answered-begin-with-yourself" ask="Whom did he ﷺ begin with" /> },
   { id: "scene-musk-the-best-scent", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-looking-neat-musk-the-best-scent" ask="What kind of thing is musk" /> },
+  { id: "scene-from-friday-to-friday", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-coming-to-jumuah-from-friday-to-friday" ask="What must a person keep away from" /> },
+  { id: "scene-last-part-of-the-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-dua-answered-last-part-of-night" ask="When is the Lord closest" /> },
+  { id: "scene-two-loved-traits", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-haya-and-gentle-manners-a-trait-allah-loves" ask="Which trait of al-Ashajj" /> },
+  { id: "scene-haya-beautifies", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-haya-and-gentle-manners-haya-makes-it-beautiful" ask="What does haya do" /> },
+  { id: "scene-the-test-of-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-the-test-of-this-ummah" ask="What did he ﷺ call the test" /> },
+  { id: "scene-not-a-target", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animals-not-a-target" ask="What must never be used" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

@@ -7468,6 +7468,48 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-musk-the-best-scent": [
     ["What kind of thing is musk?", "A perfume", "And he said: it is the best of your", "Perfumes."],
     ["He ﷺ called musk the best of perfumes.", "True", "And he said: it is the best of your", "Perfumes."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: the five prayers, and Jumu'ah to Jumu'ah, are atonement for what
+  // is between them, as long as the major sins have not been committed (Jami at-Tirmidhi 214).
+  "sign-from-friday-to-friday": [
+    ["Besides Jumu'ah, what else wipes away sins between?", "The five daily prayers", "The five prayers, and Jumu'ah to Jumu'ah,", "Are atonement for what is between them,"],
+    ["Jumu'ah to Jumu'ah wipes out the sins between them.", "True", "Are atonement for what is between them,"],
+    ["What must a person keep away from, for this?", "The major sins", "As long as the major sins", "Have not been committed."]
+  ],
+  // Amr ibn Abasah said that he heard the Prophet ﷺ say: the closest that the Lord is to a worshipper is during the last
+  // part of the night, so if you are able to be of those who remember Allah in that hour, then do so (Jami at-Tirmidhi
+  // 3579).
+  "sign-last-part-of-the-night": [
+    ["When is the Lord closest to His servant?", "In the last part of the night", "Worshipper is during the last part of", "The night, so if you are able to be of"],
+    ["What did he ﷺ say to do in the last part of the night?", "Remember Allah", "Those who remember Allah in that hour,"],
+    ["The last part of the night is a special time to remember Allah.", "True", "Those who remember Allah in that hour,", "Then do so."]
+  ],
+  // Ibn Abbas said that the Messenger of Allah ﷺ said to al-Ashajj of Abd al-Qais: indeed there are two traits in you
+  // that Allah loves: forbearance, and deliberateness (Jami at-Tirmidhi 2011). Its lesson's question on what forbearance
+  // is is not asked here, since its words do not say it.
+  "sign-two-loved-traits": [
+    ["Which trait of al-Ashajj did Allah love?", "Forbearance", "Forbearance, and deliberateness."],
+    ["Rushing in anger is a trait Allah loves.", "False", "Forbearance, and deliberateness."]
+  ],
+  // Anas said: the Messenger of Allah ﷺ said: al-fuhsh is not present in anything but it mars it, and al-haya is not
+  // present in anything but it beautifies it (Jami at-Tirmidhi 1974).
+  "sign-haya-beautifies": [
+    ["What do rude and ugly words do to anything?", "Spoil it", "Anything but it mars it, and al-haya is"],
+    ["Rude words can make a good thing ugly.", "True", "Anything but it mars it, and al-haya is"],
+    ["What does haya do to anything it is in?", "Makes it beautiful", "Beautifies it."]
+  ],
+  // Ka'b ibn Iyad said: the Prophet ﷺ said: indeed there is a fitnah for every ummah, and the fitnah for my ummah is
+  // wealth (Jami at-Tirmidhi 2336). Its lesson's question on what fitnah means is not asked here, since its words do not
+  // say it.
+  "sign-the-test-of-wealth": [
+    ["Every ummah is given its own test.", "True", "A fitnah for every ummah, and the fitnah"],
+    ["What did he ﷺ call the test of his ummah?", "Wealth", "For my ummah is wealth."]
+  ],
+  // Ibn Abbas said: the Messenger of Allah ﷺ prohibited taking a living thing as a shooting target (Jami at-Tirmidhi
+  // 1475). Who told it is not asked here, since its first line names him.
+  "sign-not-a-target": [
+    ["What must never be used as a target?", "A living thing", "Taking a living thing as", "A shooting target."],
+    ["Using a bird as a target for fun is allowed.", "False", "Taking a living thing as", "A shooting target."]
   ]
 };
 
