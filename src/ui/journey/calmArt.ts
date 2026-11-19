@@ -194,7 +194,7 @@ function notWhileAngry(): SignArt {
           [6, 91, 7],
           [44, 91.4, 6.4]
         ],
-        "by Abu Bakrah's home"
+        "Abu Bakrah's home"
       ),
       { name: "the long way to Sijistan", svg: way("M38 100.6 Q62 92.4 88 93 T116 99", "#C9A66E", 0.9) },
       { name: "a shade on posts in Sijistan, where the judging is", svg: shade(125, 30, 84, 102) },
@@ -411,7 +411,7 @@ function theIstikharah(): SignArt {
           [120, 88, 8],
           [156, 88.6, 7.4]
         ],
-        "by the field"
+        "the field"
       ),
       { name: "the way to the market", svg: way(`M${one[0]} ${n(one[1] + 1.2)} Q92 99 86 94`, "#C9A66E", 0.9) },
       { name: "the way to the field", svg: way(`M${one[0]} ${n(one[1] + 1.2)} Q122 100 136 94`, "#C9A66E", 0.9) },
