@@ -7736,6 +7736,50 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who brought out the two sandals?", "Anas ibn Malik", "Isa ibn Tahman: Anas ibn Malik brought"],
     ["How many straps did the sandals have?", "Two straps", "Out for us, two sandals having two straps."],
     ["Thabit al-Bunani said these were the sandals of the Prophet ﷺ.", "True", "Thabit al-Bunani said: these were the", "Sandals of the Prophet."]
+  ],
+  // Mu'ayqib said: the Prophet ﷺ talked about a man leveling the earth on prostrating, and said: if you have to do so,
+  // then do it once (Sahih al-Bukhari 1207).
+  "sign-smoothing-the-ground-once": [
+    ["If you must smooth the ground in sujud, how often?", "Once", "If you have to do so, then do it once."],
+    ["What was the man doing where he prostrated?", "Leveling the ground", "Mu'ayqib: he talked about a man leveling", "The earth on prostrating, and said:"],
+    ["Smoothing the ground many times in sujud is the sunnah.", "False", "If you have to do so, then do it once."]
+  ],
+  // Anas ibn Malik said: the Messenger of Allah ﷺ said: the son of Adam grows old, and so also two grow old with him:
+  // love for wealth and a long life (Sahih al-Bukhari 6421). Its lesson's true or false question on old people and greed
+  // is not asked here, since the scene does not say it.
+  "sign-two-grow-old": [
+    ["Which two wishes grow with age?", "Love of wealth and long life", "With him: love for wealth and a long life."],
+    ["What happens to these wishes as man ages?", "They grow old with him", "Grows old and so also two grow old", "With him: love for wealth and a long life."]
+  ],
+  // Mus'ab ibn Sa'd said: once Sa'd thought that he was superior to those who were below him in rank. On that the
+  // Prophet ﷺ said: you gain no victory or livelihood except through the poor amongst you (Sahih al-Bukhari 2896). Its
+  // lesson's true or false question on being rich is not asked here, since the scene does not say it.
+  "sign-through-the-poor": [
+    ["Because of whom are we helped and given food, he ﷺ said?", "The poor among us", "Through the poor amongst you."],
+    ["What did he ﷺ teach about people who have less?", "They bring help to us", "You gain no victory or livelihood except", "Through the poor amongst you."]
+  ],
+  // Aishah said: the companions of the Messenger of Allah ﷺ used to practice manual labor, so their sweat used to smell,
+  // and they were advised to take a bath (Sahih al-Bukhari 2071). Its lesson's true or false question on working with
+  // your hands is not asked here, since the scene does not say it.
+  "sign-their-own-work": [
+    ["What kind of work did the companions do?", "Work with their hands", "Messenger used to practice manual labor,"],
+    ["What were they told to do after sweating?", "Take a bath", "Were advised to take a bath."]
+  ],
+  // Nafi' said: whenever Ibn Umar entered the Ka'bah, he used to walk straight, keeping the door at his back, and used
+  // to proceed on till about three cubits from the wall in front of him, and then he would offer the prayer there,
+  // aiming at the place where the Messenger of Allah ﷺ prayed, as Bilal had told him (Sahih al-Bukhari 1599). Its
+  // lesson's true or false question on the Sahabah is not asked here, since the scene does not say it.
+  "sign-inside-the-kabah": [
+    ["Where did Ibn Umar pray inside the Ka'bah?", "Where the Prophet ﷺ had prayed", "Aiming at the place where Allah's", "Messenger prayed, as Bilal had told him."],
+    ["Who told Ibn Umar the exact place?", "Bilal", "Messenger prayed, as Bilal had told him."]
+  ],
+  // Zayd ibn Arqam said: the Ansar said: O Messenger of Allah, every prophet has his own followers, and we have followed
+  // you. So will you invoke Allah to let our followers be considered from us? So he invoked Allah accordingly (Sahih
+  // al-Bukhari 3787).
+  "sign-their-followers-too": [
+    ["What did the Ansar ask him ﷺ to pray for?", "That their followers count as Ansar", "Will you invoke Allah to let our", "Followers be considered from us?"],
+    ["What did the Ansar say every prophet has?", "His own followers", "Messenger, every prophet has his own", "Followers and we have followed you. So"],
+    ["He ﷺ made the du'a that the Ansar asked for.", "True", "So he invoked Allah accordingly."]
   ]
 };
 
