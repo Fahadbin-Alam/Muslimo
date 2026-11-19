@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3600);
+    expect(asks.length).toBe(3615);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5250);
+    expect(places).toBe(5271);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -25846,6 +25846,204 @@ describe("where the scene waits and where it stops", () => {
         [0, 1, 1]
       ],
       [98, 112]
+    ]);
+  });
+
+  it("waits on the scenes from the Hajj at Muzdalifah to the best companion, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-is-there-hajj-for-me", "sign-zamzam-to-take-home", "sign-clean-and-scented", "sign-pleased-collector", "sign-invited-while-fasting", "sign-best-companion"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(15);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // True: Urwah's place has come with the camel along the long way from the two mountains far off, both still upright,
+    // before the next words; then the camel stoops, worn out, and Urwah's place grows faint: exhausted.
+    expect([
+      moved("Urwah had tired out his camel to reach Hajj.", "the camel he wore out, no one on it", "rotate"),
+      shown("Urwah had tired out his camel to reach Hajj.", ["Urwah's place, coming with it, then faint, worn out, then joining the rows"])
+    ]).toEqual([
+      [0, 12],
+      [
+        [1],
+        [0.55]
+      ]
+    ]);
+    // Is there Hajj for me: Urwah's voice speaks, with no answer yet, before the next words; then it stops, and his voice
+    // answers, soft and golden.
+    expect([
+      shown("What did Urwah ask the Prophet ﷺ?", ["Urwah's voice: is there Hajj for me?", "his voice, soft and golden: whoever attends this prayer of ours"])
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ]
+    ]);
+    // Zamzam water: Aishah's place is by the well of Zamzam, with no waterskin yet, before the next words; then light
+    // shows on the water of Zamzam, a waterskin is filled and goes with her along the road to Madinah, and her voice
+    // speaks.
+    expect([
+      shown("What did Aishah carry with her?", ["a waterskin of Zamzam, filled, then going with her", "Aishah's voice: indeed he would carry it"]),
+      moved("What did Aishah carry with her?", "Aishah's place, by the well, then going to Madinah", "x"),
+      value("zamzam-to-take-home", "light on the water of Zamzam", "opacity", 0.39)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 64],
+      1
+    ]);
+    // He used to carry it, and true: Aishah has brought the waterskin to Madinah, with no one else going that way yet,
+    // before the next words; then his place, a golden ring, goes the same way with a waterskin, and a soft golden ring
+    // comes about Aishah's place.
+    expect([
+      shown("Why did Aishah carry Zamzam water?", ["he would carry it: his place, a golden ring, going the same way with a waterskin", "a soft golden ring about Aishah's place"]),
+      shown("Carrying Zamzam water home follows his ﷺ way.", ["he would carry it: his place, a golden ring, going the same way with a waterskin", "a soft golden ring about Aishah's place"]),
+      moved("Why did Aishah carry Zamzam water?", "he would carry it: his place, a golden ring, going the same way with a waterskin", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [0, 44]
+    ]);
+    // Clean and scented, and true: the masjids have risen among the homes, the dust still on the plot before the masjid,
+    // before the next words; then one who sweeps clears the dust away, glints show on the clean ground, a flask of scent
+    // is set by its door, soft curls of scent go up, a sweet soft light comes about the door, and a soft golden ring about
+    // the masjid.
+    expect([
+      shown("How did he ﷺ want masjids to be kept?", ["the dust on the plot", "clean: glints on the ground before it", "a flask of scent, set by its door", "scented: soft curls of scent going up", "a sweet soft light about the door", "a soft golden ring about the masjid"]),
+      shown("He ﷺ ordered that masjids be kept clean and scented.", ["the dust on the plot", "clean: glints on the ground before it", "a flask of scent, set by its door", "scented: soft curls of scent going up", "a sweet soft light about the door", "a soft golden ring about the masjid"]),
+      moved("How did he ﷺ want masjids to be kept?", "a broom, sweeping", "x"),
+      value("clean-and-scented", "the masjid, rising among the homes", "scaleY", 0.66)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1]
+      ],
+      [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1]
+      ],
+      [0, 28],
+      1
+    ]);
+    // False: the collector has come with his camel, with nothing given yet, before the next words; then he is welcomed
+    // with a mat and food, the share that is due goes to him, and he goes back pleased, a soft golden ring with him,
+    // glints at the home and a soft golden ring about the place of the one whose home it is.
+    expect([
+      moved("Arguing until the zakat collector leaves upset fits the Sunnah.", "a sheep of the flock, the share that is due 1", "x"),
+      moved("Arguing until the zakat collector leaves upset fits the Sunnah.", "the collector's place, coming, then going back", "x"),
+      shown("Arguing until the zakat collector leaves upset fits the Sunnah.", ["pleased: a soft golden ring about the collector's place, going with it", "glints at the home", "a soft golden ring about its place"]),
+      value("pleased-collector", "a mat, spread for him", "opacity", 0.6)
+    ]).toEqual([
+      [0, -78],
+      [0, -50],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // Pleased with you: the collector sits at the mat with food set before him, the share given, before the next words;
+    // then the mat and food go, and he goes back with a soft golden ring about him: pleased.
+    expect([
+      shown("How should the zakat collector leave you?", ["a mat, spread for him", "food and a drink, set before him", "pleased: a soft golden ring about the collector's place, going with it", "glints at the home", "a soft golden ring about its place"]),
+      moved("How should the zakat collector leave you?", "the collector's place, coming, then going back", "x")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [0, 0, 1, 1, 1]
+      ],
+      [0, -50]
+    ]);
+    // Accept the invitation: the one invited is still at its home, with no call yet, before the next words; then the one
+    // who invites calls, a faint golden way shows, the one invited comes to the meal along it, and a dish is set before
+    // it.
+    expect([
+      moved("What should you do when invited to eat?", "the place of the one invited, coming to the meal", "x"),
+      shown("What should you do when invited to eat?", ["the dish set before the one invited, staying as it was"]),
+      value("invited-while-fasting", "its voice, warm: calling to the meal", "opacity", 0.32)
+    ]).toEqual([
+      [0, -62],
+      [
+        [0],
+        [1]
+      ],
+      1
+    ]);
+    // False: the one invited is still at its home before the next words; then it comes to the meal, and, fasting, a soft
+    // golden ring about it, it makes du'a for them.
+    expect([
+      moved("A fasting person should refuse every invitation.", "the place of the one invited, coming to the meal", "x"),
+      shown("A fasting person should refuse every invitation.", ["the dish set before the one invited, staying as it was", "he is fasting: a soft golden ring about its place", "its voice, soft: making du'a for them"])
+    ]).toEqual([
+      [0, -62],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Make du'a for your host: the one invited has come to the meal, its dish before it, before the next words; then the
+    // others eat and their food goes, its dish stays as it was and a soft golden ring shows about it: fasting. Its voice
+    // makes du'a, glints go up from it and over to the home of the one who invites, and a soft golden ring comes about
+    // that place.
+    expect([
+      shown("If you are fasting at the meal, what should you do?", ["the dish set before the one invited, staying as it was", "the food on it, going as they eat 1", "the food on it, going as they eat 2", "he is fasting: a soft golden ring about its place", "its voice, soft: making du'a for them", "a soft golden ring about the place of the one who invites"]),
+      moved("If you are fasting at the meal, what should you do?", "glints going up from it, and over to the home of the one who invites", "x")
+    ]).toEqual([
+      [
+        [1, 1, 1, 0, 0, 0],
+        [1, 0, 0, 1, 1, 1]
+      ],
+      [0, -42]
+    ]);
+    // The one best to his companion: the two who travel have come along the road with their camel, before the next words;
+    // then a cloth is spread in the shade, one sits the other in the shade on it, a cup of water and then a few dates go
+    // to it, and a soft golden ring comes about the one who gave.
+    expect([
+      shown("Who is the best companion in Allah's sight?", ["a cloth, spread in the shade", "a cup of water, going to the one in the shade", "a few dates, going to it after", "a soft golden ring about the one who gave"]),
+      moved("Who is the best companion in Allah's sight?", "the place of the one with it, then sitting in the shade", "x"),
+      moved("Who is the best companion in Allah's sight?", "a cup of water, going to the one in the shade", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 7],
+      [0, 13.4]
+    ]);
+    // The one best to his neighbor, and true: no one has come out of the first home yet, before the next words; then the
+    // one in it comes out of its door, a dish of food goes along the lane to the home next door, glints show at that door,
+    // and a soft golden ring comes about the one who sent it.
+    expect([
+      shown("Who is the best neighbor in Allah's sight?", ["the place of the one in the first home, coming out of its door", "a dish of food, by it, then going along the lane to the home next door", "glints at the door next door", "a soft golden ring about the one who sent it"]),
+      shown("Being good to your neighbor raises you in Allah's sight.", ["the place of the one in the first home, coming out of its door", "a dish of food, by it, then going along the lane to the home next door", "glints at the door next door", "a soft golden ring about the one who sent it"]),
+      moved("Who is the best neighbor in Allah's sight?", "a dish of food, by it, then going along the lane to the home next door", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 10]
     ]);
   });
 

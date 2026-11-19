@@ -7334,6 +7334,52 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Where should a guest not sit without the host's leave?", "In his seat of honor", "In his dominion, and his seat of honor", "In his house is not sat in without his"],
     ["Whose permission is needed to sit in that seat?", "The man of the house", "In his house is not sat in without his", "Permission."],
     ["A guest may take the host's seat of honor without asking.", "False", "In his house is not sat in without his", "Permission."]
+  ],
+  // Urwah ibn Mudarris at-Ta'i said: I came to the Messenger of Allah ﷺ at Muzdalifah when he left for the salat. I
+  // said: O Messenger of Allah, I came from the two mountains of Tai, wearing out my mount and exhausting myself. By
+  // Allah, I did not leave a sand dune without stopping on it. So is there Hajj for me? The Messenger of Allah ﷺ said:
+  // whoever attends this salat of ours, and stays here with us until departing, while he has stood during the night or
+  // the day before that at Arafat, then he has completed his Hajj (Jami at-Tirmidhi 891). Its lesson's question on where
+  // Urwah reached him is not asked here, since it is asked on pictures of the places.
+  "sign-is-there-hajj-for-me": [
+    ["Urwah had tired out his camel to reach Hajj.", "True", "Tai, wearing out my mount and exhausting"],
+    ["What did Urwah ask the Prophet ﷺ?", "Is there Hajj for me?", "Myself. So is there Hajj for me? He said:"]
+  ],
+  // Urwah said that Aishah would carry some Zamzam water, and she would say: indeed the Messenger of Allah ﷺ would carry
+  // it (Jami at-Tirmidhi 963).
+  "sign-zamzam-to-take-home": [
+    ["What did Aishah carry with her?", "Zamzam water", "Zamzam water, and she would say:"],
+    ["Why did Aishah carry Zamzam water?", "He ﷺ used to carry it", "Indeed he would carry it."],
+    ["Carrying Zamzam water home follows his ﷺ way.", "True", "Indeed he would carry it."]
+  ],
+  // Aishah said: the Prophet ﷺ ordered the construction of masjids in all Dur, and that they be kept clean and scented
+  // (Jami at-Tirmidhi 594). Its lesson's question on what scented means is not asked here, since the scene's words do
+  // not say it.
+  "sign-clean-and-scented": [
+    ["How did he ﷺ want masjids to be kept?", "Clean and scented", "Clean and scented."],
+    ["He ﷺ ordered that masjids be kept clean and scented.", "True", "Clean and scented."]
+  ],
+  // Jarir said: the Prophet ﷺ said: when the charity collector comes to you, then he should not depart from you except
+  // while pleased (Jami at-Tirmidhi 647). Its lesson's question on who told the hadith is not asked here, since the
+  // first line names him.
+  "sign-pleased-collector": [
+    ["Arguing until the zakat collector leaves upset fits the Sunnah.", "False", "Comes to you, then he should not depart", "From you except while pleased."],
+    ["How should the zakat collector leave you?", "Pleased with you", "From you except while pleased."]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: when one of you is invited to eat then let him respond, if he is fasting then
+  // let him pray. Meaning: supplicate (Jami at-Tirmidhi 780).
+  "sign-invited-while-fasting": [
+    ["What should you do when invited to eat?", "Accept the invitation", "Is invited to eat then let him respond,"],
+    ["A fasting person should refuse every invitation.", "False", "Is invited to eat then let him respond,", "If he is fasting then let him pray."],
+    ["If you are fasting at the meal, what should you do?", "Make du'a for your host", "If he is fasting then let him pray.", "Meaning: supplicate."]
+  ],
+  // Abdullah ibn Amr said: the Messenger of Allah ﷺ said: the companion who is the best to Allah is the one who is best
+  // to his companion, and the neighbor that is the best to Allah is the one that is best to his neighbor
+  // (Jami at-Tirmidhi 1944).
+  "sign-best-companion": [
+    ["Who is the best companion in Allah's sight?", "The one best to his companion", "Who is the best to Allah is the one who", "Is best to his companion. And the"],
+    ["Who is the best neighbor in Allah's sight?", "The one best to his neighbor", "Neighbor that is the best to Allah is the", "One that is best to his neighbor."],
+    ["Being good to your neighbor raises you in Allah's sight.", "True", "Neighbor that is the best to Allah is the", "One that is best to his neighbor."]
   ]
 };
 
