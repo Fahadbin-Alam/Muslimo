@@ -35566,12 +35566,12 @@ describe("the signs in creation, alive", () => {
         [0, 1]
       ]
     ]);
-    // No pride in him: Jubayr's home, a donkey by it, a line with a plain cloak hung on it and a sheep; the places of
-    // those who said he was proud on the right, and his place, a golden ring, on the left. Jubayr's voice tells of it,
-    // and the voices of the others speak, quick and grey: a grey dashed ring comes about Jubayr's place. His place goes
-    // along the lane with the donkey, no one on it; the plain cloak goes with his place; he goes to the sheep, and a
-    // bowl under it fills with milk. His voice speaks, soft and golden: the grey ring goes, and a soft golden ring
-    // comes about Jubayr's place.
+    // No pride in him: Jubayr's home, a line with a plain cloak hung on it and a sheep; the places of those who said he
+    // was proud on the right, and his place, a golden ring, on the left. Jubayr's voice tells of it, and the voices of
+    // the others speak, quick and grey: a grey dashed ring comes about Jubayr's place. A donkey shows by the home, and
+    // Jubayr's place goes along the lane with it, no one on it; the plain cloak goes with Jubayr's place; it goes to
+    // the sheep, and a bowl under it fills with milk. His voice speaks, soft and golden: the grey ring goes, and a soft
+    // golden ring comes about Jubayr's place.
     expect(words("no-pride-in-him")).toEqual([
       "Jubayr ibn Mut'im: they told me that I",
       "Was proud, while I rode a donkey, wore a",
@@ -35581,7 +35581,7 @@ describe("the signs in creation, alive", () => {
     ]);
     expect([
       [at("no-pride-in-him", "Jubayr's voice: telling of it", "opacity", [0.024, 0.03, 0.094, 0.1]), at("no-pride-in-him", "their voices, quick and grey", "opacity", [0.1, 0.106, 0.23, 0.236]), at("no-pride-in-him", "they say he is proud: a grey dashed ring about Jubayr's place", "opacity", [0.22, 0.235])],
-      [at("no-pride-in-him", "the donkey he rode, no one on it", "x", [0.25, 0.33]), at("no-pride-in-him", "Jubayr's place, going with it, then to the sheep", "x", [0.25, 0.33])],
+      [at("no-pride-in-him", "the donkey he rode, no one on it", "opacity", [0.216, 0.226]), at("no-pride-in-him", "the donkey he rode, no one on it", "x", [0.25, 0.33]), at("no-pride-in-him", "Jubayr's place, going with it, then to the sheep", "x", [0.25, 0.33])],
       [at("no-pride-in-him", "a plain cloak, hung on it, then worn: going with his place", "scale", [0.416, 0.45]), at("no-pride-in-him", "Jubayr's place, going with it, then to the sheep", "x", [0.46, 0.49]), at("no-pride-in-him", "a bowl under it", "opacity", [0.495, 0.505]), at("no-pride-in-him", "milked: milk in the bowl", "opacity", [0.51, 0.55])],
       [at("no-pride-in-him", "his voice, soft and golden: there is no pride in him", "opacity", [0.62, 0.626, 0.75, 0.756])],
       [at("no-pride-in-him", "they say he is proud: a grey dashed ring about Jubayr's place", "opacity", [0.81, 0.83]), at("no-pride-in-him", "a soft golden ring about Jubayr's place", "opacity", [0.86, 0.875]), at("no-pride-in-him", "glints over it", "opacity", [0.88, 0.895])]
@@ -35592,6 +35592,7 @@ describe("the signs in creation, alive", () => {
         [0, 1]
       ],
       [
+        [0, 1],
         [0, -30],
         [0, -30]
       ],

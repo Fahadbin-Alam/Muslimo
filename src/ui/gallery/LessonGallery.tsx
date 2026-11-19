@@ -1691,6 +1691,12 @@ const STATES: State[] = [
   { id: "scene-pleased-collector", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-manners-of-giving-pleased-collector" ask="How should the zakat collector" /> },
   { id: "scene-invited-while-fasting", render: () => <SceneQuestionDemo lessonId="lesson-deep-fasting-suhur-to-iftar-invited-while-fasting" ask="If you are fasting at the meal" /> },
   { id: "scene-best-companion", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-getting-along-best-companion" ask="Who is the best neighbor" /> },
+  { id: "scene-deep-in-debt", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-stories-of-charity-a-man-deep-in-debt" ask="Why did the man fall into debt" /> },
+  { id: "scene-water-and-sidr", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-starting-out-a-bath-to-begin" ask="What did Qais bathe with" /> },
+  { id: "scene-hajj-for-this-one", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-pilgrims-way-children-on-hajj" ask="Who else gets a reward" /> },
+  { id: "scene-no-pride-in-him", render: () => <SceneQuestionDemo lessonId="lesson-deep-humility-no-pride-in-him" ask="What did Jubayr say he rode" /> },
+  { id: "scene-pass-it-on", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-pass-it-on" ask="How should we pass on" /> },
+  { id: "scene-seven-times-for-the-sick", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-for-others-seven-times-for-the-sick" ask="How many times does the visitor" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

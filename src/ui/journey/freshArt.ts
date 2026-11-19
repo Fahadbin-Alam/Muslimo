@@ -382,12 +382,12 @@ function hajjForThisOne(): SignArt {
 
 // No pride in him. Jubayr ibn Mut'im said: they told me that I was proud, while I rode a donkey, wore a cloak, and I
 // milked the sheep. And the Messenger of Allah ﷺ said to me: whoever does these, then there is no pride in him (Jami
-// at-Tirmidhi 2001). No one is drawn: Jubayr's home, a donkey by it, a line with a plain cloak hung on it and a sheep;
-// the places of those who said he was proud on the right, and his place, a golden ring, on the left. Jubayr's voice
-// tells of it, and the voices of the others speak, quick and grey: a grey dashed ring comes about Jubayr's place. His
-// place goes along the lane with the donkey, no one on it; the plain cloak goes with his place; he goes to the sheep,
-// and a bowl under it fills with milk. His voice speaks, soft and golden: the grey ring goes, and a soft golden ring
-// comes about Jubayr's place.
+// at-Tirmidhi 2001). No one is drawn: Jubayr's home, a line with a plain cloak hung on it and a sheep; the places of
+// those who said he was proud on the right, and his place, a golden ring, on the left. Jubayr's voice tells of it, and
+// the voices of the others speak, quick and grey: a grey dashed ring comes about Jubayr's place. A donkey shows by the
+// home, and Jubayr's place goes along the lane with it, no one on it; the plain cloak goes with Jubayr's place; it goes
+// to the sheep, and a bowl under it fills with milk. His voice speaks, soft and golden: the grey ring goes, and a soft
+// golden ring comes about Jubayr's place.
 function noPrideInHim(): SignArt {
   const jubayr: [number, number] = [94, 104.4];
   const donkeyAt: [number, number] = [108, 106.2];
@@ -442,7 +442,7 @@ function noPrideInHim(): SignArt {
       { name: "a sheep by the home", svg: sheep(sheepAt[0], sheepAt[1], 0.09), origin: { x: sheepAt[0], y: sheepAt[1] }, loop: { move: "bob", ms: 2600, y: 0.3 } },
       { name: "a bowl under it", svg: bowl(bowlAt[0], bowlAt[1]), keys: showAt(0.495, 0.505) },
       { name: "milked: milk in the bowl", svg: milkIn(bowlAt[0], bowlAt[1]), keys: showAt(0.51, 0.55) },
-      { name: "the donkey he rode, no one on it", svg: donkey(donkeyAt[0], donkeyAt[1], 0.11, true), keys: track({ xy: [[0.25, 0, 0], [0.33, rode, 0]] }) },
+      { name: "the donkey he rode, no one on it", svg: donkey(donkeyAt[0], donkeyAt[1], 0.11, true), keys: track({ opacity: [[0.216, 0], [0.226, 1]], xy: [[0.25, 0, 0], [0.33, rode, 0]] }) },
       { name: "Jubayr's place, going with it, then to the sheep", svg: someone(jubayr[0], jubayr[1], 1.5, JUBAYR), keys: track({ xy: goes }) },
       { name: "they say he is proud: a grey dashed ring about Jubayr's place", svg: care(jubayr[0], n(jubayr[1] + 0.6), 4, 2, GREYED), keys: track({ opacity: [[0.22, 0], [0.235, 1], [0.81, 1], [0.83, 0]], xy: goes }) },
       { name: "Jubayr's voice: telling of it", svg: arcsLeft(n(jubayr[0] - 2.4), n(jubayr[1] - 3.2), JUBAYR), keys: showFor(0.024, 0.03, 0.094, 0.1), loop: speaking },
