@@ -7552,6 +7552,52 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did the man swear by?", "The Ka'bah", "Saying: no, by the Ka'bah. So Ibn Umar"],
     ["By whom alone may we swear?", "Allah", "Said: nothing is sworn by other than", "Allah, for I heard him say: whoever"],
     ["Swearing by a holy place is fine in Islam.", "False", "Said: nothing is sworn by other than", "Committed disbelief or shirk."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: the cattle suffering from a disease should not be mixed up with
+  // healthy cattle (Sahih al-Bukhari 5771). Its lesson's question on a class with a stomach bug is not asked here, since
+  // the scene's words do not say its answer.
+  "sign-keep-the-sick-apart": [
+    ["What should not be mixed with healthy animals?", "Sick animals", "Suffering from a disease should not be", "Mixed up with healthy cattle."],
+    ["Taking care to stop sickness spreading is good.", "True", "Suffering from a disease should not be", "Mixed up with healthy cattle."]
+  ],
+  // Abu Shuraih said: the Prophet ﷺ said: by Allah, he does not believe! By Allah, he does not believe! By Allah, he
+  // does not believe! It was said: who is that, O Messenger of Allah? He said: that person whose neighbor does not feel
+  // safe from his evil (Sahih al-Bukhari 6016). Its lesson's true-or-false question on praying a lot is not asked here,
+  // since the scene's words do not say its answer.
+  "sign-safe-next-door": [
+    ["Whose faith did the Prophet ﷺ warn about?", "One whose neighbor is not safe from him", "That person whose neighbor does not", "Feel safe from his evil."],
+    ["How many times did he say 'he does not believe'?", "Three", "Not believe! By Allah, he does not", "Believe! By Allah, he does not believe!"]
+  ],
+  // As-Sa'ib ibn Yazid said: I was made to perform Hajj with the Messenger of Allah ﷺ, and I was a seven-year-old boy
+  // then (Sahih al-Bukhari 1858). Its lesson's question on whom he went with is not asked here, since the scene shows
+  // his place from the start.
+  "sign-hajj-at-seven": [
+    ["How old was As-Sa'ib on that Hajj?", "Seven years old", "Seven-year-old boy then."],
+    ["Children went on Hajj with him ﷺ too.", "True", "Perform Hajj with him, and I was a", "Seven-year-old boy then."]
+  ],
+  // Anas ibn Malik said: the Messenger of Allah ﷺ said: do not hate one another, nor be jealous of one another; and do
+  // not desert one another, but O Allah's worshipers! Be brothers! And it is unlawful for a Muslim to desert his brother
+  // Muslim for more than three nights (Sahih al-Bukhari 6076).
+  "sign-be-brothers": [
+    ["How long at most may a Muslim not speak to his brother?", "Three nights", "Than three nights."],
+    ["What should Allah's servants be, per Bukhari 6076?", "Brothers", "But O Allah's worshipers! Be brothers!"],
+    ["Holding a grudge for years is fine in Islam.", "False", "And it is unlawful for a Muslim to", "Than three nights."]
+  ],
+  // Abdullah ibn Amr said: the Prophet ﷺ said: al-Wasil is not the one who recompenses the good done to him by his
+  // relatives, but al-Wasil is the one who keeps good relations with those relatives who had severed the bond of kinship
+  // with him (Sahih al-Bukhari 5991). Its lesson's true-or-false question is not asked here, since it is on another
+  // hadith.
+  "sign-keep-ties-when-cut": [
+    ["Who truly keeps ties, per Bukhari 5991?", "One who keeps ties with those who cut him", "Al-Wasil is the one who keeps good", "Severed the bond of kinship with him."],
+    ["What is not enough, per Bukhari 5991?", "Only returning good done to you", "Not the one who recompenses the good", "Done to him by his relatives, but"]
+  ],
+  // Aishah said: the people said: O Messenger of Allah, here are people who have recently embraced Islam, and they bring
+  // meat, and we do not know whether they had mentioned Allah's Name or not. He said: you should mention Allah's Name
+  // and eat (Sahih al-Bukhari 7398).
+  "sign-say-bismillah-and-eat": [
+    ["Who were bringing the meat?", "People new to Islam", "Are people who have recently embraced", "Islam, and they bring meat, and we do"],
+    ["What did he ﷺ tell them to do with the meat?", "Say Allah's name and eat", "Should mention Allah's Name and eat."],
+    ["They knew for sure that Allah's name was said on the meat.", "False", "Not know whether they had mentioned", "Allah's Name or not. He said: you"]
   ]
 };
 
