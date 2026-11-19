@@ -1043,7 +1043,13 @@ export type SignKind =
   | "better-to-wait"
   | "give-respite"
   | "seven-pebbles"
-  | "the-pillar-he-chose";
+  | "the-pillar-he-chose"
+  | "raised-by-this-book"
+  | "his-real-wealth"
+  | "umar-knew-adi"
+  | "every-year"
+  | "in-seven-days"
+  | "not-for-those-who-ask";
 
 export type SignScene = {
   id: string;
@@ -5705,6 +5711,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Yazid ibn Abi Ubayd said: I used to accompany Salamah ibn al-Akwa', and he used to pray behind the pillar which was near the place where the copies of the Quran were kept. I said: O Abu Muslim! I see you always seeking to pray behind this pillar. He replied: I saw the Messenger of Allah ﷺ always seeking to pray near that pillar.",
     sources: [bukhari("502")]
+  },
+  {
+    id: "sign-raised-by-this-book",
+    kind: "raised-by-this-book",
+    caption:
+      "Amir ibn Wathilah reported that Nafi' ibn Abd al-Harith met Umar at Usfan, and Umar had employed him as collector in Makkah. Umar said to him: whom have you appointed as collector over the people of the valley? He said: Ibn Abza. Umar said: who is Ibn Abza? He said: he is one of our freed slaves. Umar said: so you have appointed a freed slave over them? He said: he is well versed in the Book of Allah, the Exalted and Great, and he is well versed in the commandments and injunctions. Umar said: so the Prophet ﷺ said: by this Book, Allah would exalt some peoples and degrade others.",
+    sources: [muslim("817")]
+  },
+  {
+    id: "sign-his-real-wealth",
+    kind: "his-real-wealth",
+    caption:
+      "Abdullah said: the Prophet ﷺ said: who among you considers the wealth of his heirs dearer to him than his own wealth? They replied: O Messenger of Allah, there is none among us but loves his own wealth more. He said: so his wealth is whatever he spends during his life, while the wealth of his heirs is whatever he leaves after his death.",
+    sources: [bukhari("6442")]
+  },
+  {
+    id: "sign-umar-knew-adi",
+    kind: "umar-knew-adi",
+    caption:
+      "Adi ibn Hatim said: we came to Umar in a delegation. He started calling the men one by one, calling each by his name. I said to him: don't you know me, O chief of the Believers? He said: yes, you embraced Islam when they disbelieved; you came when they ran away; you fulfilled your promises when they broke theirs; and you recognized it when they denied it. On that, Adi said: I therefore don't care.",
+    sources: [bukhari("4394")]
+  },
+  {
+    id: "sign-every-year",
+    kind: "every-year",
+    caption:
+      "Abu Hurairah reported: the Messenger of Allah ﷺ addressed us and said: O people, Allah has made Hajj obligatory for you, so perform Hajj. Thereupon a person said: Messenger of Allah, every year? He kept quiet, and the person repeated it thrice, whereupon the Messenger of Allah ﷺ said: if I were to say yes, it would become obligatory, and you would not be able to do it. Then he said: leave me with what I have left to you. When I command you to do anything, do it as much as it lies in your power, and when I forbid you to do anything, then abandon it.",
+    sources: [muslim("1337")]
+  },
+  {
+    id: "sign-in-seven-days",
+    kind: "in-seven-days",
+    caption:
+      "Abdullah ibn Amr said: the Messenger of Allah ﷺ said to me: recite the whole Quran in one month's time. I said: but I have power. He said: then finish the recitation of the Quran in seven days, and do not finish it in less than this period.",
+    sources: [bukhari("5054")]
+  },
+  {
+    id: "sign-not-for-those-who-ask",
+    kind: "not-for-those-who-ask",
+    caption:
+      "Abu Musa said: two men from my tribe and I entered upon the Prophet ﷺ. One of the two men said: O Messenger of Allah, appoint me as a governor, and so did the second. He said: we do not assign the authority of ruling to those who ask for it, nor to those who are keen to have it.",
+    sources: [bukhari("7149")]
   }
 ];
 
@@ -8359,7 +8407,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Ibn Umar threw seven pebbles at each Jamrah with a Takbir for each, stood long in du'a, and said: I saw it done so.
   "deep-hajj-stoning": "sign-seven-pebbles",
   // Salamah always sought to pray by one pillar, for he had seen him always seeking to pray near it.
-  "deep-salamah-the-pillar-he-chose": "sign-the-pillar-he-chose"
+  "deep-salamah-the-pillar-he-chose": "sign-the-pillar-he-chose",
+  // Ibn Abza, a freed slave, was put over the valley for knowing the Book of Allah: by it Allah exalts some and degrades others.
+  "deep-mujadila2-raised-by-this-book": "sign-raised-by-this-book",
+  // A person's own wealth is what he spends in his life; what he leaves is his heirs' wealth.
+  "deep-muzzammil4-your-real-wealth": "sign-his-real-wealth",
+  // Umar knew Adi: he embraced Islam, came, kept his promises and recognized the truth when his people did not.
+  "deep-sahaba-small-stories-umar-knew-adi": "sign-umar-knew-adi",
+  // Asked thrice whether Hajj is every year, he kept quiet: had he said yes, it would be obligatory, and too hard.
+  "deep-hajj-once": "sign-every-year",
+  // Recite the whole Quran in a month; for one who can do more, in seven days, and not in less.
+  "deep-ibn-amr-seven-days": "sign-in-seven-days",
+  // Two men asked to be made governors: the authority of ruling is not given to those who ask for it or are keen on it.
+  "deep-manners-judging-fairly-not-for-those-who-ask": "sign-not-for-those-who-ask"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
