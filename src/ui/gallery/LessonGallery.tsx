@@ -1667,6 +1667,12 @@ const STATES: State[] = [
   { id: "scene-if-you-do-not-know", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad4-allah-knows-best" ask="What should one who does not know" /> },
   { id: "scene-a-third-is-much", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-a-third" ask="Why not give away more" /> },
   { id: "scene-modesty-brings-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-modesty-brings-good" ask="What does modesty bring" /> },
+  { id: "scene-not-while-angry", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-judging-fairly-not-while-angry" ask="When must a judge not judge" /> },
+  { id: "scene-quiet-in-the-khutbah", render: () => <SceneQuestionDemo lessonId="lesson-deep-pray-jumuah-quiet" ask="Talking in the khutbah" /> },
+  { id: "scene-the-istikharah", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-and-the-prayer-the-istikharah" ask="How many rak'ahs are prayed" /> },
+  { id: "scene-swear-by-allah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-swear-by-allah-or-be-quiet" ask="Who may we swear by" /> },
+  { id: "scene-two-rakahs-at-mina", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-two-rakahs-at-mina" ask="How many rak'ahs did he" /> },
+  { id: "scene-let-her-go", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-marriage-let-her-go-to-the-masjid" ask="If a wife asks" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

@@ -1115,7 +1115,13 @@ export type SignKind =
   | "truest-words"
   | "if-you-do-not-know"
   | "a-third-is-much"
-  | "modesty-brings-good";
+  | "modesty-brings-good"
+  | "not-while-angry"
+  | "quiet-in-the-khutbah"
+  | "the-istikharah"
+  | "swear-by-allah"
+  | "two-rakahs-at-mina"
+  | "let-her-go";
 
 export type SignScene = {
   id: string;
@@ -6279,6 +6285,47 @@ export const SIGN_SCENES: readonly SignScene[] = [
     kind: "modesty-brings-good",
     caption: "Imran ibn Husayn said: the Prophet ﷺ said: modesty brings forth nothing but goodness.",
     sources: [muslim("37a"), bukhari("6117")]
+  },
+  {
+    id: "sign-not-while-angry",
+    kind: "not-while-angry",
+    caption:
+      "Abdur Rahman ibn Abi Bakrah said: Abu Bakrah wrote to his son who was in Sijistan: do not judge between two persons when you are angry, for I heard the Prophet ﷺ saying: a judge should not judge between two persons while he is in an angry mood.",
+    sources: [bukhari("7158")]
+  },
+  {
+    id: "sign-quiet-in-the-khutbah",
+    kind: "quiet-in-the-khutbah",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: when the Imam is delivering the khutbah, and you ask your companion to keep quiet and listen, then no doubt you have done an evil act.",
+    sources: [bukhari("934")]
+  },
+  {
+    id: "sign-the-istikharah",
+    kind: "the-istikharah",
+    caption:
+      "Jabir ibn Abdullah said: the Prophet ﷺ used to teach us the way of doing istikharah in all matters, as he taught us the surahs of the Quran. He said: if anyone of you thinks of doing any job, he should offer a two-rak'ah prayer other than the compulsory ones and say: O Allah! I ask guidance from Your knowledge, and power from Your might, and I ask for Your great blessings. You are capable and I am not. You know and I do not, and You know the unseen.",
+    sources: [bukhari("1166")]
+  },
+  {
+    id: "sign-swear-by-allah",
+    kind: "swear-by-allah",
+    caption:
+      "Ibn Umar said: the Messenger of Allah ﷺ met Umar ibn al-Khattab, who was going with a group of camel-riders and swearing by his father, and said: Lo! Allah forbids you to swear by your fathers, so whoever has to take an oath, he should swear by Allah or keep quiet.",
+    sources: [bukhari("6646")]
+  },
+  {
+    id: "sign-two-rakahs-at-mina",
+    kind: "two-rakahs-at-mina",
+    caption:
+      "Harithah ibn Wahb al-Khuza'i said: the Prophet ﷺ led us in a two-rak'ah prayer at Mina, although our number was more than ever and we were in better security than ever.",
+    sources: [bukhari("1656")]
+  },
+  {
+    id: "sign-let-her-go",
+    kind: "let-her-go",
+    caption: "Abdullah ibn Umar said: the Prophet ﷺ said: if the wife of anyone of you asks permission to go to the mosque, he should not forbid her.",
+    sources: [bukhari("5238")]
   }
 ];
 
@@ -9085,7 +9132,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-book-wills-one-third-is-a-lot": "sign-a-third-is-much",
   // Modesty brings nothing but good.
   "deep-imran-ibn-husayn-modesty-brings-good": "sign-modesty-brings-good",
-  "deep-haya-only-good": "sign-modesty-brings-good"
+  "deep-haya-only-good": "sign-modesty-brings-good",
+  // A judge should not judge between two persons while he is angry.
+  "deep-manners-judging-fairly-not-while-angry": "sign-not-while-angry",
+  // Even telling another to keep quiet while the khutbah is given is idle talk.
+  "deep-pray-jumuah-quiet": "sign-quiet-in-the-khutbah",
+  // The istikharah: two rak'ahs, then asking Allah to guide, for He knows and we do not.
+  "deep-duas-and-the-prayer-the-istikharah": "sign-the-istikharah",
+  // Swear by Allah or keep quiet, never by your fathers.
+  "deep-book-oaths-swear-by-allah-or-be-quiet": "sign-swear-by-allah",
+  // At Mina he led them in two rak'ahs, though they were more and safer than ever.
+  "deep-book-hajj-two-rakahs-at-mina": "sign-two-rakahs-at-mina",
+  // If a wife asks to go to the masjid, do not forbid her.
+  "deep-book-marriage-let-her-go-to-the-masjid": "sign-let-her-go"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
