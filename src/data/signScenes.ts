@@ -1175,7 +1175,13 @@ export type SignKind =
   | "last-at-the-house"
   | "leaving-early-from-jam"
   | "talbina"
-  | "colors-like-the-earth";
+  | "colors-like-the-earth"
+  | "ghifar-and-aslam"
+  | "kingdom-at-evening"
+  | "what-the-muhrim-wears"
+  | "a-vow-changes-nothing"
+  | "a-bath-every-seven-days"
+  | "a-thousand-good-deeds";
 
 export type SignScene = {
   id: string;
@@ -6758,6 +6764,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: indeed Allah Most High created Adam from a handful that He took from all of the earth. So the children of Adam come in accordance with the earth: some of them come red, and white and black, and between that.",
     sources: [tirmidhi("2955")]
+  },
+  {
+    id: "sign-ghifar-and-aslam",
+    kind: "ghifar-and-aslam",
+    caption:
+      "Abu Dharr said: the Messenger of Allah ﷺ said: Ghifar, to whom Allah granted pardon, and Aslam, to whom Allah granted safety.",
+    sources: [muslim("2514a")]
+  },
+  {
+    id: "sign-kingdom-at-evening",
+    kind: "kingdom-at-evening",
+    caption:
+      "Abdullah said: when it was evening, the Messenger of Allah ﷺ used to supplicate: we have entered upon evening, and so, too, the whole Kingdom of Allah has entered upon evening. Praise is due to Allah. There is no god but Allah, the One having no partner with Him. ... And when it was morning he said like this: we entered upon morning, and the whole Kingdom of Allah entered upon morning.",
+    sources: [muslim("2723b")]
+  },
+  {
+    id: "sign-what-the-muhrim-wears",
+    kind: "what-the-muhrim-wears",
+    caption:
+      "Abdullah ibn Umar said: a man asked: O Messenger of Allah, what kind of clothes should a Muhrim wear? The Messenger of Allah ﷺ replied: he should not wear a shirt, a turban, trousers, a headcloak or leather socks, except if he can find no slippers; then he may wear leather socks after cutting off what might cover the ankles. And he should not wear clothes which are scented with saffron or wars.",
+    sources: [bukhari("1542")]
+  },
+  {
+    id: "sign-a-vow-changes-nothing",
+    kind: "a-vow-changes-nothing",
+    caption:
+      "Sa'id ibn al-Harith heard Ibn Umar saying: weren't people forbidden to make vows? The Prophet ﷺ said: a vow neither hastens nor delays anything, but by the making of vows, some of the wealth of a miser is taken out.",
+    sources: [bukhari("6692")]
+  },
+  {
+    id: "sign-a-bath-every-seven-days",
+    kind: "a-bath-every-seven-days",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: it is Allah's right on every Muslim that he should take a bath at least once in seven days.",
+    sources: [bukhari("898")]
+  },
+  {
+    id: "sign-a-thousand-good-deeds",
+    kind: "a-thousand-good-deeds",
+    caption:
+      "Sa'd said: the Messenger of Allah ﷺ said to those sitting with him: is one of you incapable of attaining a thousand good deeds? So a questioner among those seated with him asked him: how can one of us earn a thousand good deeds? He said: when one of you recites a hundred tasbihat, a thousand good deeds are written for him, and a thousand evil deeds are wiped away from him.",
+    sources: [tirmidhi("3463")]
   }
 ];
 
@@ -9687,7 +9735,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Aishah recommended talbina: disliked, yet beneficial.
   "deep-book-medicine-talbina": "sign-talbina",
   // Adam was made from a handful from all the earth, so his children come in its colors.
-  "deep-rum2-colors-like-the-earth": "sign-colors-like-the-earth"
+  "deep-rum2-colors-like-the-earth": "sign-colors-like-the-earth",
+  // Ghifar, granted pardon, and Aslam, granted safety.
+  "deep-book-companions-ghifar-and-aslam": "sign-ghifar-and-aslam",
+  // At evening, and again at morning: we have entered upon it, and so has the whole Kingdom of Allah.
+  "deep-dua-adhkar-kingdom": "sign-kingdom-at-evening",
+  // In ihram, no shirt, turban, trousers, hooded cloak or leather socks, unless no slippers are found.
+  "hajj-lessons-humility": "sign-what-the-muhrim-wears",
+  // A vow neither hastens nor delays anything; through it, some wealth is taken out of a miser.
+  "deep-book-oaths-a-vow-changes-nothing": "sign-a-vow-changes-nothing",
+  // It is Allah's right on every Muslim to bathe at least once in seven days.
+  "deep-book-prayer-a-bath-every-week": "sign-a-bath-every-seven-days",
+  // A hundred tasbihat: a thousand good deeds written, and a thousand evil deeds wiped away.
+  "deep-duas-easy-words-a-thousand-good-deeds": "sign-a-thousand-good-deeds"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
