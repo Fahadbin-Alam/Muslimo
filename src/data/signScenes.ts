@@ -1169,7 +1169,13 @@ export type SignKind =
   | "hajj-at-seven"
   | "be-brothers"
   | "keep-ties-when-cut"
-  | "say-bismillah-and-eat";
+  | "say-bismillah-and-eat"
+  | "four-umrahs-one-hajj"
+  | "hajj-on-his-behalf"
+  | "last-at-the-house"
+  | "leaving-early-from-jam"
+  | "talbina"
+  | "colors-like-the-earth";
 
 export type SignScene = {
   id: string;
@@ -6710,6 +6716,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said: the people said: O Messenger of Allah, here are people who have recently embraced Islam, and they bring meat, and we do not know whether they had mentioned Allah's Name or not. He said: you should mention Allah's Name and eat.",
     sources: [bukhari("7398")]
+  },
+  {
+    id: "sign-four-umrahs-one-hajj",
+    kind: "four-umrahs-one-hajj",
+    caption:
+      "Qatadah said: I asked Anas how many times the Prophet ﷺ had performed Umrah. He replied: four times. ... I asked: how many times did he perform Hajj? He replied: once.",
+    sources: [bukhari("1778")]
+  },
+  {
+    id: "sign-hajj-on-his-behalf",
+    kind: "hajj-on-his-behalf",
+    caption:
+      "Ibn Abbas said: a woman from the tribe of Khath'am came and said: O Messenger of Allah, the obligation of Hajj enjoined by Allah on His devotees has become due on my father, and he is old and weak, and he cannot sit firm on the mount; may I perform Hajj on his behalf? He replied: yes, you may. That was during the Farewell Hajj.",
+    sources: [bukhari("1513")]
+  },
+  {
+    id: "sign-last-at-the-house",
+    kind: "last-at-the-house",
+    caption:
+      "Ibn Abbas said: the people were ordered to perform the Tawaf of the Ka'bah as the last thing before leaving Makkah, except the women in their period, who were excused.",
+    sources: [bukhari("1755")]
+  },
+  {
+    id: "sign-leaving-early-from-jam",
+    kind: "leaving-early-from-jam",
+    caption:
+      "Aishah said: Sawdah asked the permission of the Prophet ﷺ to leave earlier on the night of Jam', for she was a heavy and very slow woman, and he gave her permission.",
+    sources: [bukhari("1680")]
+  },
+  {
+    id: "sign-talbina",
+    kind: "talbina",
+    caption:
+      "Hisham's father said: Aishah used to recommend at-talbina and used to say: it is disliked, although it is beneficial.",
+    sources: [bukhari("5690")]
+  },
+  {
+    id: "sign-colors-like-the-earth",
+    kind: "colors-like-the-earth",
+    caption:
+      "Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: indeed Allah Most High created Adam from a handful that He took from all of the earth. So the children of Adam come in accordance with the earth: some of them come red, and white and black, and between that.",
+    sources: [tirmidhi("2955")]
   }
 ];
 
@@ -9627,7 +9675,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Al-Wasil keeps ties even with the relatives who cut him off.
   "deep-muhammad2-keep-ties-with-those-who-cut": "sign-keep-ties-when-cut",
   // Not sure the meat new Muslims bring was named over? Mention Allah's name, and eat.
-  "deep-intro-starting-out-say-bismillah-and-eat": "sign-say-bismillah-and-eat"
+  "deep-intro-starting-out-say-bismillah-and-eat": "sign-say-bismillah-and-eat",
+  // Qatadah asked Anas: he made Umrah four times, and Hajj once.
+  "deep-hajj-umrah-four": "sign-four-umrahs-one-hajj",
+  // A woman of Khath'am may perform Hajj for her father, too old to sit firm on the mount.
+  "deep-hajj-for-parent": "sign-hajj-on-his-behalf",
+  // The Tawaf of the Ka'bah is the last thing before leaving Makkah.
+  "deep-book-hajj-the-farewell-tawaf": "sign-last-at-the-house",
+  // Sawdah, who was slow, was given leave to go on earlier from Jam' at night.
+  "deep-mothers-sawdah-early": "sign-leaving-early-from-jam",
+  // Aishah recommended talbina: disliked, yet beneficial.
+  "deep-book-medicine-talbina": "sign-talbina",
+  // Adam was made from a handful from all the earth, so his children come in its colors.
+  "deep-rum2-colors-like-the-earth": "sign-colors-like-the-earth"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
