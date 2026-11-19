@@ -806,7 +806,13 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-simple-path": [/\bparadise\b/i, /\bhalal\b/i, /\bharam\b/i],
   "sign-passing-thoughts": [/\bthoughts\b/i, /\bforgives?\b/i, /\bdeeds\b/i],
   "sign-together-at-muzdalifah": [/\bmuzdalifah\b/i, /\bmaghrib\b/i, /\bisha\b/i],
-  "sign-best-day": [/\bfriday\b/i, /\bbest day\b/i]
+  "sign-best-day": [/\bfriday\b/i, /\bbest day\b/i],
+  "sign-counted-from-arrival": [/\bcalendar\b/i, /\bhijrah\b/i, /\bcounting\b/i],
+  "sign-every-tribe-hurried": [/\btribes?\b/i, /\bmakkah\b/i, /\bconquer/i],
+  "sign-truest-words": [/\blabid\b/i, /\bpoet/i, /\bpass|\bperish/i],
+  "sign-if-you-do-not-know": [/allah knows (best|better)/i, /ibn mas'?ud/i, /do not know/i],
+  "sign-a-third-is-much": [/\bthird\b/i, /\bheirs\b/i, /\bwill\b/i],
+  "sign-modesty-brings-good": [/\bmodesty\b|\bhaya\b/i, /\bgood\b/i, /\bimran\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1553,7 +1559,13 @@ const SOURCES: Record<string, string[]> = {
   "sign-simple-path": ["Sahih Muslim 15a"],
   "sign-passing-thoughts": ["Sahih al-Bukhari 2528", "Sahih Muslim 127a"],
   "sign-together-at-muzdalifah": ["Sahih al-Bukhari 1674"],
-  "sign-best-day": ["Sahih Muslim 854"]
+  "sign-best-day": ["Sahih Muslim 854"],
+  "sign-counted-from-arrival": ["Sahih al-Bukhari 3934"],
+  "sign-every-tribe-hurried": ["Sahih al-Bukhari 4302"],
+  "sign-truest-words": ["Sahih al-Bukhari 3841"],
+  "sign-if-you-do-not-know": ["Sahih al-Bukhari 4809"],
+  "sign-a-third-is-much": ["Sahih al-Bukhari 1295", "Sahih al-Bukhari 2743"],
+  "sign-modesty-brings-good": ["Sahih Muslim 37a", "Sahih al-Bukhari 6117"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1577,7 +1589,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1866);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1874);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -33827,6 +33839,324 @@ describe("the signs in creation, alive", () => {
         [0, 1, 1, 0]
       ],
       [
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+  });
+
+  test("the scenes from the count of the years to modesty show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const countScenes: SignKind[] = ["counted-from-arrival", "every-tribe-hurried", "truest-words", "if-you-do-not-know", "a-third-is-much", "modesty-brings-good"];
+    for (const kind of countScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, no book or page is drawn, and nothing comes down from the sky: a deed is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Counted from his arrival: Madinah on the left, its homes and palms; the hills of Makkah on the right, with the
+    // Ka'bah; a road between them. His place, a golden ring, is in Makkah, and Sahl's place and the places of those
+    // with him are in Madinah; Sahl's voice tells of it. A faint dashed line comes across the sky, where the count of
+    // the months and years will go, and a faint dashed circle at its start. A soft light comes about his place in
+    // Makkah: the day he was sent, and the start of the count stays empty. Then his place goes along the road to
+    // Madinah, and a soft golden ring comes about Madinah: his arrival. Evening comes, the new crescent shows at the
+    // start of the count, and then crescents one after another along it: counted from then on.
+    expect(words("counted-from-arrival")).toEqual([
+      "Sahl ibn Sa'd: his companions did not take",
+      "As a starting date for the Muslim calendar",
+      "The day he had been sent as an Apostle,",
+      "But the day of his arrival at Madinah."
+    ]);
+    expect([
+      [at("counted-from-arrival", "Sahl ibn Sa'd's voice: telling of it", "opacity", [0.022, 0.028, 0.18, 0.186])],
+      [at("counted-from-arrival", "where the count of the months and years will go: a faint dashed line across the sky", "opacity", [0.25, 0.28]), at("counted-from-arrival", "the start of the count, over Madinah: a faint dashed circle", "opacity", [0.29, 0.31, 0.872, 0.88])],
+      [at("counted-from-arrival", "the day he was sent: a soft light about his place, in Makkah", "opacity", [0.5, 0.52])],
+      [at("counted-from-arrival", "his place, a golden ring, in Makkah, then going along the road to Madinah", "x", [0.69, 0.72, 0.75, 0.78, 0.81]), at("counted-from-arrival", "his place, a golden ring, in Makkah, then going along the road to Madinah", "y", [0.69, 0.72, 0.75, 0.78, 0.81]), at("counted-from-arrival", "his arrival: a soft golden ring about Madinah", "opacity", [0.815, 0.83]), at("counted-from-arrival", "the sun, setting at evening", "y", [0.82, 0.85, 0.87]), at("counted-from-arrival", "evening coming over the land", "opacity", [0.83, 0.87]), at("counted-from-arrival", "the sun, setting at evening", "opacity", [0.85, 0.87]), at("counted-from-arrival", "the new crescent at the start of the count, over Madinah: the first month counted", "opacity", [0.875, 0.885]), at("counted-from-arrival", "counted from then on: a crescent along the line 2", "opacity", [0.89, 0.896]), at("counted-from-arrival", "counted from then on: a crescent along the line 3", "opacity", [0.9, 0.906]), at("counted-from-arrival", "counted from then on: a crescent along the line 4", "opacity", [0.91, 0.916]), at("counted-from-arrival", "counted from then on: a crescent along the line 5", "opacity", [0.92, 0.926]), at("counted-from-arrival", "counted from then on: a crescent along the line 6", "opacity", [0.93, 0.936]), at("counted-from-arrival", "counted from then on: a crescent along the line 7", "opacity", [0.94, 0.946]), at("counted-from-arrival", "counted from then on: a crescent along the line 8", "opacity", [0.95, 0.956])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, -21, -42, -62, -82],
+        [0, 4.6, 6, 5, 2],
+        [0, 1],
+        [0, 21.6, 36],
+        [0, 0.42],
+        [1, 0],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Every tribe hurried: the hills of Makkah with the Ka'bah and its homes, the faint places of Quraysh by them; the
+    // camps of the tribes about it; and Amr's tribe by a pool of water, Amr's place among them. Amr's voice tells of
+    // it. A faint dashed ring comes about each camp: waiting; and a faint ring about Makkah: what they waited for. The
+    // tribes' voices speak. Then a soft golden light comes over Makkah, glints about the Ka'bah, and the ring about it
+    // turns soft and golden: it is opened. One camp after another, quickly, their places step toward Makkah and a soft
+    // golden ring comes about them. Last, a way shows from Amr's camp toward Makkah, Salamah's place hurries along it
+    // before the rest of his tribe, and a soft golden ring comes about it.
+    expect(words("every-tribe-hurried")).toEqual([
+      "Amr ibn Salamah: the Arabs delayed their",
+      "Conversion to Islam till the Conquest.",
+      "They used to say: Leave him and his",
+      "People Quraysh: if he overpowers them",
+      "Then he is a true Prophet. So, when",
+      "Makkah was conquered, then every tribe",
+      "Rushed to embrace Islam, and my father",
+      "Hurried to embrace Islam before my tribe."
+    ]);
+    expect([
+      [at("every-tribe-hurried", "Amr ibn Salamah's voice: telling of it", "opacity", [0.022, 0.028, 0.092, 0.098]), at("every-tribe-hurried", "delayed: a faint dashed ring about the tribe on the left, waiting", "opacity", [0.07, 0.09, 0.76, 0.77]), at("every-tribe-hurried", "delayed: a faint dashed ring about the tribe on the right, waiting", "opacity", [0.07, 0.09, 0.775, 0.785]), at("every-tribe-hurried", "delayed: a faint dashed ring about the tribe in front, waiting", "opacity", [0.07, 0.09, 0.79, 0.8]), at("every-tribe-hurried", "Amr's tribe, delayed too: a faint dashed ring about them, waiting", "opacity", [0.074, 0.094])],
+      [at("every-tribe-hurried", "what they waited for: a faint ring about Makkah", "opacity", [0.17, 0.19, 0.69, 0.7])],
+      [at("every-tribe-hurried", "the tribes' voices: leave him to Quraysh", "opacity", [0.27, 0.276, 0.578, 0.584])],
+      [at("every-tribe-hurried", "Makkah opened: a soft golden light over Makkah", "opacity", [0.65, 0.68]), at("every-tribe-hurried", "and glints about the Ka'bah", "opacity", [0.68, 0.7]), at("every-tribe-hurried", "the ring about Makkah, soft and golden now", "opacity", [0.69, 0.71])],
+      [at("every-tribe-hurried", "the places of that tribe, on the left, stepping toward Makkah", "x", [0.76, 0.78]), at("every-tribe-hurried", "the places of that tribe, on the left, stepping toward Makkah", "y", [0.76, 0.78]), at("every-tribe-hurried", "hurrying to Islam: a soft golden ring about the tribe on the left", "opacity", [0.772, 0.784]), at("every-tribe-hurried", "the places of that tribe, on the right, stepping toward Makkah", "x", [0.775, 0.795]), at("every-tribe-hurried", "the places of that tribe, on the right, stepping toward Makkah", "y", [0.775, 0.795]), at("every-tribe-hurried", "hurrying to Islam: a soft golden ring about the tribe on the right", "opacity", [0.787, 0.799]), at("every-tribe-hurried", "the places of that tribe, in front, stepping toward Makkah", "x", [0.79, 0.81]), at("every-tribe-hurried", "the places of that tribe, in front, stepping toward Makkah", "y", [0.79, 0.81]), at("every-tribe-hurried", "hurrying to Islam: a soft golden ring about the tribe in front", "opacity", [0.802, 0.814])],
+      [at("every-tribe-hurried", "the way from Amr's camp, toward Makkah", "opacity", [0.878, 0.888]), at("every-tribe-hurried", "Salamah's place, among Amr's tribe, hurrying along the way before the rest of them", "x", [0.89, 0.915, 0.94]), at("every-tribe-hurried", "Salamah's place, among Amr's tribe, hurrying along the way before the rest of them", "y", [0.89, 0.915, 0.94]), at("every-tribe-hurried", "hurrying to Islam first: a soft golden ring about Salamah's place", "opacity", [0.944, 0.958])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 4],
+        [0, -1],
+        [0, 1],
+        [0, -4],
+        [0, -1],
+        [0, 1],
+        [0, 4],
+        [0, -2],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, -5.4, -12],
+        [0, -7, -14],
+        [0, 1]
+      ]
+    ]);
+    // The truest words: the desert in the late afternoon, the tents of an old camp, marks in the sand and desert
+    // flowers; his place, a golden ring, and Abu Hurairah's place by it. Abu Hurairah's voice tells of it, and his
+    // voice, soft and golden, speaks; glints come about it. Labid's words: a voice by the old camp. Then everything
+    // there passes: the flowers fade and only dry stalks are left, the marks in the sand fade, the tents wear away, the
+    // sun sets, and evening comes, with its first stars. Nothing is drawn for Allah.
+    expect(words("truest-words")).toEqual([
+      "Abu Hurairah: he said: the most true words",
+      "Said by a poet was the words of Labid:",
+      "Everything except Allah is perishable."
+    ]);
+    expect([
+      [at("truest-words", "Abu Hurairah's voice: telling of it", "opacity", [0.022, 0.028, 0.08, 0.086]), at("truest-words", "his voice, soft and golden", "opacity", [0.09, 0.096, 0.95, 0.956]), at("truest-words", "the most true words: glints about his voice", "opacity", [0.2, 0.22])],
+      [at("truest-words", "Labid's words: a voice by the old camp", "opacity", [0.4, 0.406, 0.62, 0.626])],
+      [at("truest-words", "a desert flower, fading 1", "opacity", [0.7, 0.76]), at("truest-words", "a desert flower, fading 2", "opacity", [0.71, 0.77]), at("truest-words", "marks in the sand, fading", "opacity", [0.72, 0.8]), at("truest-words", "a desert flower, fading 3", "opacity", [0.72, 0.78]), at("truest-words", "a desert flower, fading 4", "opacity", [0.73, 0.79]), at("truest-words", "the tents of an old camp, wearing away", "opacity", [0.74, 0.86]), at("truest-words", "dry stalks where the flowers were", "opacity", [0.74, 0.8]), at("truest-words", "the sun, low, then setting", "y", [0.8, 0.9, 0.94]), at("truest-words", "evening coming", "opacity", [0.84, 0.92]), at("truest-words", "the sun, low, then setting", "opacity", [0.9, 0.94]), at("truest-words", "the first stars of the evening", "opacity", [0.92, 0.95])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0.22],
+        [0, 1],
+        [0, 18.6, 26],
+        [0, 0.38],
+        [1, 0],
+        [0, 1]
+      ]
+    ]);
+    // If you do not know: a room, its window, mats, and Ibn Mas'ud's place, with the places of those who came to him
+    // sitting about it; his voice speaks. Small lights show over the place of one who knows, and its voice, soft and
+    // golden, says it. A faint dashed ring shows about the place of one who does not know; its voice says that Allah
+    // knows better, and a soft golden ring comes about it. Then small lights come over that place too, for that is
+    // knowledge, and the faint ring fades. Glints come over both, and a soft golden ring about all who sit there.
+    expect(words("if-you-do-not-know")).toEqual([
+      "Ibn Mas'ud: O people! If somebody knows",
+      "Something, he can say it, but if he does",
+      "Not know it, he should say,",
+      "Allah knows better, for it is a sign of",
+      "Having knowledge to say about",
+      "Something which one does not know,",
+      "Allah knows better."
+    ]);
+    expect([
+      [at("if-you-do-not-know", "Ibn Mas'ud's voice: speaking to those there", "opacity", [0.024, 0.03, 0.95, 0.956]), at("if-you-do-not-know", "what it knows: small lights in its place", "opacity", [0.09, 0.11])],
+      [at("if-you-do-not-know", "its voice, soft and golden: saying it", "opacity", [0.2, 0.206, 0.25, 0.256])],
+      [at("if-you-do-not-know", "not knowing: a faint dashed ring about the other", "opacity", [0.32, 0.34, 0.62, 0.64])],
+      [at("if-you-do-not-know", "its voice, soft: saying who knows better", "opacity", [0.456, 0.462, 0.51, 0.516]), at("if-you-do-not-know", "a soft golden ring about it", "opacity", [0.518, 0.532])],
+      [at("if-you-do-not-know", "a sign of knowledge: small lights come in its place too", "opacity", [0.62, 0.64])],
+      [at("if-you-do-not-know", "glints over both places", "opacity", [0.9, 0.92]), at("if-you-do-not-know", "a soft golden ring about all who sit there", "opacity", [0.93, 0.95])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // A third is much: Makkah, its hills and the Ka'bah, Sa'd's lodging, and his place by it, faint with illness. His
+    // place, a golden ring, comes to visit him, and Sa'd's voice speaks. His wealth shows in three heaps of gold, then
+    // his one heir, a small place by his lodging, and the places of the poor further off. Two-thirds: a faint dashed
+    // ring about two heaps, and no: a grey dashed ring. Half: a faint dashed line through the middle heap, and no: a
+    // grey dashed ring. One-third: a soft golden ring about one heap, and it goes along a soft golden way to the poor,
+    // with glints. The rest of the gold goes to his heir, with glints and a soft golden ring: left wealthy.
+    expect(words("a-third-is-much")).toEqual([
+      "Sa'd: in the year of the last Hajj I",
+      "Became seriously ill. I am wealthy and",
+      "Have no inheritors except a daughter.",
+      "Should I give two-thirds in charity?",
+      "He said: No. I asked: Half? He said: No.",
+      "Then he added: One-third, and even",
+      "One-third is much. You'd better leave",
+      "Your inheritors wealthy rather than",
+      "Leaving them poor, begging others."
+    ]);
+    expect([
+      [at("a-third-is-much", "his place, a golden ring, coming to visit him", "x", [0.03, 0.055, 0.08]), at("a-third-is-much", "his place, a golden ring, coming to visit him", "y", [0.03, 0.055, 0.08])],
+      [at("a-third-is-much", "Sa'd's voice: asking", "opacity", [0.13, 0.136, 0.51, 0.516]), at("a-third-is-much", "his wealth: a heap of gold in three heaps, two of them here, later going to his heir", "opacity", [0.17, 0.19]), at("a-third-is-much", "and the third heap of his wealth: one-third, later going to the poor", "opacity", [0.17, 0.19])],
+      [at("a-third-is-much", "his one heir: a small place by his lodging", "opacity", [0.27, 0.29])],
+      [at("a-third-is-much", "the places of the poor, further off", "opacity", [0.34, 0.36]), at("a-third-is-much", "two-thirds: a faint dashed ring about two of the heaps", "opacity", [0.37, 0.385, 0.452, 0.46])],
+      [at("a-third-is-much", "no: a grey dashed ring about the two heaps", "opacity", [0.452, 0.46, 0.478, 0.484]), at("a-third-is-much", "his voice, soft and golden", "opacity", [0.455, 0.461, 0.96, 0.966]), at("a-third-is-much", "half: a faint dashed line through the middle heap", "opacity", [0.484, 0.49, 0.512, 0.518]), at("a-third-is-much", "no: a grey dashed ring about half of the gold", "opacity", [0.5, 0.506, 0.512, 0.518])],
+      [at("a-third-is-much", "one-third: a soft golden ring about one heap", "opacity", [0.575, 0.59])],
+      [at("a-third-is-much", "a soft golden way from it to the poor", "opacity", [0.68, 0.69]), at("a-third-is-much", "and the third heap of his wealth: one-third, later going to the poor", "x", [0.69, 0.71, 0.73]), at("a-third-is-much", "and the third heap of his wealth: one-third, later going to the poor", "y", [0.69, 0.71, 0.73]), at("a-third-is-much", "one-third: a soft golden ring about one heap", "x", [0.69, 0.71, 0.73]), at("a-third-is-much", "one-third: a soft golden ring about one heap", "y", [0.69, 0.71, 0.73]), at("a-third-is-much", "it is much: glints over it, by the poor", "opacity", [0.73, 0.74])],
+      [at("a-third-is-much", "his wealth: a heap of gold in three heaps, two of them here, later going to his heir", "x", [0.79, 0.83]), at("a-third-is-much", "his wealth: a heap of gold in three heaps, two of them here, later going to his heir", "y", [0.79, 0.83]), at("a-third-is-much", "left wealthy: glints over his heir's place", "opacity", [0.832, 0.846])],
+      [at("a-third-is-much", "and a soft golden ring about his heir's place", "opacity", [0.888, 0.9])]
+    ]).toEqual([
+      [
+        [0, -28, -58],
+        [0, 3, 5]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 18, 36],
+        [0, -1.6, -1.4],
+        [0, 18, 36],
+        [0, -1.6, -1.4],
+        [0, 1]
+      ],
+      [
+        [0, -42],
+        [0, 1.4],
+        [0, 1]
+      ],
+      [
+        [0, 1]
+      ]
+    ]);
+    // Modesty brings good: a lane between the homes of Madinah, with palms; his place, a golden ring, and Imran's place
+    // by it. Imran's voice tells of it, and his voice, soft and golden, speaks. The place of one with modesty goes
+    // gently along the lane and stops to greet the places of others passing the other way, its voice soft and low. Then
+    // goodness: small flowers come up along its way, glints over them, a soft golden ring comes about it, small lights
+    // in the places it greeted, and a warm light over the lane.
+    expect(words("modesty-brings-good")).toEqual([
+      "Imran: he said: modesty brings forth",
+      "Nothing but goodness."
+    ]);
+    expect([
+      [at("modesty-brings-good", "Imran's voice: telling of it", "opacity", [0.022, 0.028, 0.1, 0.106]), at("modesty-brings-good", "the place of one with modesty, going gently along the side of the lane", "x", [0.08, 0.3, 0.34, 0.4]), at("modesty-brings-good", "the place of one with modesty, going gently along the side of the lane", "y", [0.08, 0.3, 0.34, 0.4]), at("modesty-brings-good", "the places of others, passing the other way", "x", [0.1, 0.38]), at("modesty-brings-good", "the places of others, passing the other way", "y", [0.1, 0.38]), at("modesty-brings-good", "his voice, soft and golden", "opacity", [0.11, 0.116, 0.9, 0.906]), at("modesty-brings-good", "its voice, soft and low: a greeting", "opacity", [0.3, 0.306, 0.334, 0.34])],
+      [at("modesty-brings-good", "goodness: a small flower along its way 1", "opacity", [0.54, 0.56]), at("modesty-brings-good", "goodness: a small flower along its way 2", "opacity", [0.556, 0.576]), at("modesty-brings-good", "goodness: a small flower along its way 3", "opacity", [0.572, 0.592]), at("modesty-brings-good", "goodness: a small flower along its way 4", "opacity", [0.588, 0.608]), at("modesty-brings-good", "glints over them", "opacity", [0.62, 0.66]), at("modesty-brings-good", "a soft golden ring about it", "opacity", [0.68, 0.7]), at("modesty-brings-good", "small lights in the places it passed", "opacity", [0.74, 0.78]), at("modesty-brings-good", "a warm light over the lane", "opacity", [0.8, 0.84])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 44, 44, 56],
+        [0, 0.2, 0.2, 0],
+        [0, -64],
+        [0, 0.4],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1],
         [0, 1],
         [0, 1],
         [0, 1],
