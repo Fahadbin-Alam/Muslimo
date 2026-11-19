@@ -1685,6 +1685,12 @@ const STATES: State[] = [
   { id: "scene-like-the-saddle-post", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-like-the-back-of-a-saddle" ask="Once your sutrah is in front" /> },
   { id: "scene-milk-silver-or-the-way", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-show-someone-the-way" ask="Which of these did he ﷺ say brings" /> },
   { id: "scene-the-seat-of-honor", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-the-home-the-hosts-own-seat" ask="Where should a guest not sit" /> },
+  { id: "scene-is-there-hajj-for-me", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-treasures-of-the-haram-is-there-hajj-for-me" ask="What did Urwah ask" /> },
+  { id: "scene-zamzam-to-take-home", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-treasures-of-the-haram-zamzam-to-take-home" ask="What did Aishah carry" /> },
+  { id: "scene-clean-and-scented", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-masjid-sunnahs-clean-and-scented" ask="How did he ﷺ want masjids" /> },
+  { id: "scene-pleased-collector", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-manners-of-giving-pleased-collector" ask="How should the zakat collector" /> },
+  { id: "scene-invited-while-fasting", render: () => <SceneQuestionDemo lessonId="lesson-deep-fasting-suhur-to-iftar-invited-while-fasting" ask="If you are fasting at the meal" /> },
+  { id: "scene-best-companion", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-getting-along-best-companion" ask="Who is the best neighbor" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
