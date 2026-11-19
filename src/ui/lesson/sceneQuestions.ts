@@ -7041,6 +7041,50 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Keeping what you need to live is blamed.", "False", "You. There is no reproach for you for a", "Living. And begin with your dependents;"],
     ["Whom should you begin your charity with?", "Your dependents", "Living. And begin with your dependents;"],
     ["Which hand is better?", "The upper, giving hand", "And the upper hand is better than the", "Lower hand."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: should I not suggest to you that by which Allah obliterates
+  // the sins and elevates the ranks? They said: yes, Messenger of Allah. He said: performing the ablution thoroughly
+  // despite odds, more paces towards the mosque, and waiting for the next prayer after observing a prayer (Sahih Muslim
+  // 251a).
+  "sign-despite-the-odds": [
+    ["Which wudu did he ﷺ name?", "Full wudu, even when hard", "Performing the ablution thoroughly", "Despite odds, more paces towards the"],
+    ["What else wipes out sins in this hadith?", "Many steps to the masjid", "Despite odds, more paces towards the", "Mosque, and waiting for the next prayer"],
+    ["Waiting for the next prayer after praying is one of the three.", "True", "Mosque, and waiting for the next prayer", "After observing a prayer."]
+  ],
+  // Jundub said that the Prophet ﷺ said: recite the Quran as long as you agree about its interpretation, but when you
+  // have any difference of opinion, then you should stop reciting it (Sahih al-Bukhari 5061).
+  "sign-while-hearts-agree": [
+    ["When do we keep reciting together?", "While our hearts agree", "As long as you agree about its"],
+    ["When should we stop for a while?", "When we start to argue", "Interpretation, but when you have any", "Difference of opinion, then you should"],
+    ["Arguing over the Quran is a good way to study it.", "False", "Difference of opinion, then you should", "Stop reciting it."]
+  ],
+  // Abu Sa'id al-Khudri said that the Messenger of Allah ﷺ said: the world is sweet and green, and verily Allah is going
+  // to install you as vicegerent in it in order to see how you act (Sahih Muslim 2742). Its lessons' other questions
+  // are not asked here, since they are on ayahs the scene does not show (10:13, 10:14 and 6:165).
+  "sign-sweet-and-green": [
+    ["How did the hadith describe the world?", "Sweet and green", "Sweet and green and verily Allah is"]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: I love to see my brothers. They said: aren't we your
+  // brothers? He said: you are my companions, and our brothers are those who have, so far, not come into the world; as
+  // a man knows his horses with white blazes among horses all black, so they would come with white faces and arms and
+  // legs owing to ablution (Sahih Muslim 249a).
+  "sign-brothers-to-come": [
+    ["What did he ﷺ call the people with him?", "His companions", "Brothers? He said: you are my companions,"],
+    ["Who did he ﷺ call his brothers?", "Believers who came after him", "And our brothers are those who have, so", "Far, not come into the world. Supposing"],
+    ["How will he ﷺ know his Ummah on that Day?", "By the brightness of wudu", "Come with white faces owing to ablution."]
+  ],
+  // Jabir ibn Samurah said: the Apostle of Allah ﷺ gave two sermons between which he sat, recited the Quran and exhorted
+  // the people (Sahih Muslim 862). Its lesson's question on how many sermons is not asked here, since its answer is in
+  // the scene's first words, nor its question on Ibn Kathir, since the scene's words do not say it.
+  "sign-two-sermons": [
+    ["He recited the Quran in the sermons.", "True", "Sermons between which he sat, recited", "The Quran and exhorted the people."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: Umrah is an expiation for the sins committed (between it and
+  // the one before), and the reward of Hajj Mabrur is nothing except Paradise (Sahih al-Bukhari 1773). Its lesson's
+  // question on the best jihad for women is not asked here, since the scene's words do not say it.
+  "sign-umrah-to-umrah": [
+    ["What does one Umrah to the next do?", "Wipes the sins between them", "Expiation for the sins committed."],
+    ["What is the reward of a Hajj mabrur?", "Paradise", "Nothing except Paradise."]
   ]
 };
 
