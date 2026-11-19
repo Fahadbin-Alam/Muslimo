@@ -1584,6 +1584,12 @@ const STATES: State[] = [
   { id: "scene-a-third-of-islam", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-third" ask="what part of the Muslims" /> },
   { id: "scene-doors-opened-for-it", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-words-of-salah-the-doors-of-heaven-opened" ask="What was opened" /> },
   { id: "scene-seven-rounds", render: () => <SceneQuestionDemo lessonId="lesson-hajj-rites-tawaf" ask="walking around the Ka'bah" /> },
+  { id: "scene-four-words", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-juwayriyah-words" ask="How many times did he say" /> },
+  { id: "scene-a-dinar-and-a-sheep", render: () => <SceneQuestionDemo lessonId="lesson-notes-sahabah-companions-from-your-notes-7-urwah-ibn-abi-al-jad-al-bariqi" ask="Urwah ibn Abi" /> },
+  { id: "scene-ten-to-seven-hundred", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-iman-fresh-start" ask="rewarded up to" /> },
+  { id: "scene-look-below", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-look-below" ask="whom should you look at" /> },
+  { id: "scene-half-of-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-waqiah2-half-of-paradise" ask="ask about first" /> },
+  { id: "scene-before-the-row", render: () => <SceneQuestionDemo lessonId="lesson-prayer-review-and-mastery-scenario-block-1" ask="the imam is bowing" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
