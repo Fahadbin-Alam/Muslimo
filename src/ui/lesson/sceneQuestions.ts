@@ -7229,6 +7229,58 @@ const ASKS: Record<string, readonly Ask[]> = {
   // first words) and on women coming to the masjid in his time (the scene's words do not say it) are not asked here.
   "sign-let-her-go": [
     ["If a wife asks to go to the masjid, the husband should...?", "Not forbid her", "Mosque, he should not forbid her."]
+  ],
+  // Kabshah bint Ka'b said: Abu Qatadah visited, and I poured water for him to use for wudu. A cat came to drink, so he
+  // lowered the container until it drank. He saw me looking and said: are you surprised, my niece? I said: yes. He said:
+  // the Messenger of Allah ﷺ said: it is not impure; it is only one of those that roam around among you (Jami
+  // at-Tirmidhi 92).
+  "sign-the-cat-at-the-water": [
+    ["What did Abu Qatadah do when the cat came?", "He tilted the vessel for it", "Lowered the container until it drank."],
+    ["A cat makes water impure when it drinks from it.", "False", "Abu Qatadah: he said: it is not impure,"],
+    ["What did the Prophet ﷺ say about cats?", "They roam around among us", "It is only one of those that roam", "Around among you."]
+  ],
+  // Zayd ibn Khalid al-Juhani said: the Messenger of Allah ﷺ said: whoever provides the food for a fasting person to
+  // break his fast with, then for him is the same reward as his, without anything being diminished from the reward of
+  // the fasting person (Jami at-Tirmidhi 807). Both lessons that open on this scene ask their questions here.
+  "sign-feed-a-fasting-person": [
+    ["Sharing iftar food with others earns reward.", "True", "To break his fast with, then for him is", "The same reward as his, without anything"],
+    ["What do you get for feeding someone at iftar?", "The same reward as his fast", "The same reward as his, without anything"],
+    ["You give a fasting person iftar. What do you get?", "The same reward", "The same reward as his, without anything"],
+    ["Does the fasting person lose some reward?", "No, nothing is cut", "Being diminished from the reward of the", "Fasting person."],
+    ["Sharing iftar takes away some of the fasting person's reward.", "False", "Being diminished from the reward of the", "Fasting person."]
+  ],
+  // The father of Abu al-Ahwas said: I said: O Messenger of Allah, I stayed with a man who did not entertain me nor
+  // behave hospitably with me. Then he came to stay with me; shall I reciprocate the same to him? He ﷺ said: no,
+  // entertain him (Jami at-Tirmidhi 2006). Its lesson's question on letting his wealth be seen on him is not asked here,
+  // since the scene leaves that part of the hadith out.
+  "sign-host-him-anyway": [
+    ["What did the man want to do to the host who had not hosted him?", "Treat him the same way", "Reciprocate the same to him? He said:"],
+    ["What did he ﷺ tell the man to do?", "Host him well", "No, entertain him."]
+  ],
+  // Anas ibn Malik said: there were two brothers in the time of the Prophet ﷺ. One of them used to come to the
+  // Prophet ﷺ, and the other had some business. The businessman among them complained to the Prophet ﷺ about his
+  // brother, and he said: perhaps you are provided for because of him (Jami at-Tirmidhi 2345). Its lesson's question on
+  // helping one who seeks knowledge is not asked here, since it is on the whole hadith, not one moment of it.
+  "sign-two-brothers": [
+    ["What did one brother do while the other worked?", "He kept coming to the Prophet ﷺ", "Them used to come to him, and the other"],
+    ["Why might the working brother be given provision?", "Because of his brother", "Provided for because of him."]
+  ],
+  // Abdullah ibn Adi ibn al-Hamra said: I saw the Messenger of Allah ﷺ standing at al-Hazwarah, and he said: by Allah,
+  // you are the best of Allah's earth, and the most beloved of Allah's earth to Allah, and if it were not that I was
+  // expelled from you, I would not have left (Jami at-Tirmidhi 3925).
+  "sign-best-of-the-earth": [
+    ["What did he ﷺ call Makkah?", "The best of Allah's earth", "Are the best of Allah's earth, and the"],
+    ["Makkah is the land most beloved to Allah.", "True", "Most beloved of Allah's earth to Allah,"],
+    ["What made him ﷺ leave Makkah, he said?", "Being driven out", "And if it were not that I was expelled"]
+  ],
+  // Abu Hurairah said: when the people saw the first fruit, they would bring it to the Messenger of Allah ﷺ. When he
+  // took it, he would say: O Allah, bless for us our fruits, and bless for us our city, and bless for us our sa' and our
+  // mudd. Then he would call the smallest young child he saw and give him that fruit (Jami at-Tirmidhi 3454). Its
+  // lesson's question on what Ibrahim asked for Makkah is not asked here, since the scene leaves that part of the hadith
+  // out.
+  "sign-the-first-fruit": [
+    ["Along with their fruits, what did he ﷺ ask Allah to bless?", "Their city", "Bless for us our city, and bless for us"],
+    ["Who did he ﷺ give the first fruit to?", "The smallest child he saw", "The smallest young child he saw and", "Give him that fruit."]
   ]
 };
 
