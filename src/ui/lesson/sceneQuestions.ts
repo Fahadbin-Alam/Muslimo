@@ -7183,6 +7183,52 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-modesty-brings-good": [
     ["What does modesty bring?", "Nothing but good", "Nothing but goodness."],
     ["What does haya bring?", "Only good", "Nothing but goodness."]
+  ],
+  // Abdur Rahman ibn Abi Bakrah said: Abu Bakrah wrote to his son who was in Sijistan: do not judge between two
+  // persons when you are angry, for I heard the Prophet ﷺ saying: a judge should not judge between two persons while he is
+  // in an angry mood (Sahih al-Bukhari 7158).
+  "sign-not-while-angry": [
+    ["Whom did Abu Bakrah write the advice to?", "His son", "Son who was in Sijistan: do not judge"],
+    ["When must a judge not judge between two people?", "While he is angry", "Between two persons when you are angry,"],
+    ["Abu Bakrah heard the Prophet ﷺ forbid judging in anger.", "True", "For I heard him saying: a judge should", "Is in an angry mood."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: when the Imam is delivering the khutbah, and you ask your
+  // companion to keep quiet and listen, then no doubt you have done an evil act (Sahih al-Bukhari 934). Its lesson's
+  // questions on what to do when a friend talks in the khutbah and on what we should do in it are not asked here, since
+  // they are on the whole hadith, not one moment of it.
+  "sign-quiet-in-the-khutbah": [
+    ["Talking in the khutbah is fine if it's short.", "False", "No doubt you have done an evil act."]
+  ],
+  // Jabir ibn Abdullah said: the Prophet ﷺ used to teach us the way of doing istikharah in all matters, as he taught
+  // us the surahs of the Quran. He said: if anyone of you thinks of doing any job, he should offer a two-rak'ah prayer
+  // other than the compulsory ones and say: O Allah! I ask guidance from Your knowledge, and power from Your might, and I
+  // ask for Your great blessings. You are capable and I am not. You know and I do not, and You know the unseen (Sahih
+  // al-Bukhari 1166).
+  "sign-the-istikharah": [
+    ["In what matters did he ﷺ teach the istikharah?", "In all matters", "The way of doing istikharah, in all", "Matters as he taught us the surahs of"],
+    ["How many rak'ahs are prayed for the istikharah?", "Two, besides the obligatory", "A two-rak'ah prayer other than the", "Compulsory ones and say: O Allah! I ask"],
+    ["In the istikharah we say: You know and I do not.", "True", "Guidance from Your knowledge. You know", "And I do not and You know the unseen."]
+  ],
+  // Ibn Umar said: the Messenger of Allah ﷺ met Umar ibn al-Khattab, who was swearing by his father, and said: Lo!
+  // Allah forbids you to swear by your fathers, so whoever has to take an oath, he should swear by Allah or keep quiet
+  // (Sahih al-Bukhari 6646). Its lesson's question on who was swearing by his father is not asked here, since its answer is
+  // in the scene's first words.
+  "sign-swear-by-allah": [
+    ["Swearing by your father is fine in Islam.", "False", "Forbids you to swear by your fathers, so"],
+    ["Who may we swear by?", "Allah only", "Swear by Allah or keep quiet."]
+  ],
+  // Harithah ibn Wahb said: the Prophet ﷺ led us in a two-rak'ah prayer at Mina, although our number was more than ever
+  // and we were in better security than ever (Sahih al-Bukhari 1656). Its lesson's question on shortening the prayer being
+  // a gift, not only for fear, is not asked here, since it is on the whole hadith, not one moment of it.
+  "sign-two-rakahs-at-mina": [
+    ["How many rak'ahs did he ﷺ pray at Mina?", "Two", "Two-rak'ah prayer at Mina although our"],
+    ["Were they in danger then?", "No, safer than ever", "In better security than ever."]
+  ],
+  // Ibn Umar said that the Prophet ﷺ said: if the wife of anyone of you asks permission to go to the mosque, he should
+  // not forbid her (Sahih al-Bukhari 5238). Its lesson's questions on who told this hadith (its answer is in the scene's
+  // first words) and on women coming to the masjid in his time (the scene's words do not say it) are not asked here.
+  "sign-let-her-go": [
+    ["If a wife asks to go to the masjid, the husband should...?", "Not forbid her", "Mosque, he should not forbid her."]
   ]
 };
 
