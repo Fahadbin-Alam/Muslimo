@@ -7598,6 +7598,51 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Who were bringing the meat?", "People new to Islam", "Are people who have recently embraced", "Islam, and they bring meat, and we do"],
     ["What did he ﷺ tell them to do with the meat?", "Say Allah's name and eat", "Should mention Allah's Name and eat."],
     ["They knew for sure that Allah's name was said on the meat.", "False", "Not know whether they had mentioned", "Allah's Name or not. He said: you"]
+  ],
+  // Qatadah said: I asked Anas how many times the Prophet ﷺ had performed Umrah. He replied: four times. ... I asked:
+  // how many times did he perform Hajj? He replied: once (Sahih al-Bukhari 1778). Its lesson's question on who answered
+  // is not asked here, since the scene's words name him from the start.
+  "sign-four-umrahs-one-hajj": [
+    ["How many times did he ﷺ make Umrah?", "Four", "Four times. I asked: how many times did"],
+    ["How many times did he ﷺ make Hajj?", "Once", "He perform Hajj? Anas replied: once."]
+  ],
+  // Ibn Abbas said: a woman from the tribe of Khath'am came and said: O Messenger of Allah, the obligation of Hajj
+  // enjoined by Allah on His devotees has become due on my father, and he is old and weak, and he cannot sit firm on the
+  // mount; may I perform Hajj on his behalf? He replied: yes, you may. That was during the Farewell Hajj (Sahih
+  // al-Bukhari 1513). Its lesson's question on what this shows about family is not asked here, since the scene's words
+  // do not say its answer.
+  "sign-hajj-on-his-behalf": [
+    ["Why couldn't her father go himself?", "He was too old to ride", "Father, and he is old and weak, and he", "Cannot sit firm on the mount; may I"],
+    ["What did the Prophet ﷺ answer?", "Yes, do Hajj for him", "Yes, you may."]
+  ],
+  // Ibn Abbas said: the people were ordered to perform the Tawaf of the Ka'bah as the last thing before leaving Makkah,
+  // except the women in their period, who were excused (Sahih al-Bukhari 1755). Its lesson's question on who is excused
+  // is not asked here, since the scene's words leave that part out.
+  "sign-last-at-the-house": [
+    ["What is the last rite before leaving Makkah?", "The farewell tawaf", "To perform the Tawaf of the Ka'bah as", "The last thing, before leaving."],
+    ["The farewell tawaf is done on arrival in Makkah.", "False", "To perform the Tawaf of the Ka'bah as", "The last thing, before leaving."]
+  ],
+  // Aishah said: Sawdah asked the permission of the Prophet ﷺ to leave earlier on the night of Jam', for she was a heavy
+  // and very slow woman, and he gave her permission (Sahih al-Bukhari 1680). Its lesson's question on where she asked to
+  // leave early is asked on its own pictures, and its question on what this teaches is not asked here, since the scene's
+  // words do not say its answer.
+  "sign-leaving-early-from-jam": [
+    ["Why did she ask to leave before the crowds?", "She moved slowly", "And she was a very slow woman."]
+  ],
+  // Hisham's father said: Aishah used to recommend at-talbina and used to say: it is disliked, although it is beneficial
+  // (Sahih al-Bukhari 5690). Its lesson's true-or-false question on medicine is not asked here, since the scene's words
+  // do not call it medicine.
+  "sign-talbina": [
+    ["What food did Aishah recommend for the sick?", "Talbina", "Recommend at-talbina and used to say:"],
+    ["What did she say about its taste?", "Disliked, but beneficial", "It is disliked, although it is beneficial."]
+  ],
+  // Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: indeed Allah Most High created Adam from a handful that He
+  // took from all of the earth. So the children of Adam come in accordance with the earth: some of them come red, and
+  // white and black, and between that (Jami at-Tirmidhi 2955).
+  "sign-colors-like-the-earth": [
+    ["From how much of the earth was Adam made, in the hadith?", "A handful from all of it", "Handful from all of the earth. So the"],
+    ["Why do people differ in color, in the hadith?", "They are like the earth", "Children of Adam come in accordance with", "The earth: some of them come red, and"],
+    ["The hadith names red, white and black people.", "True", "Children of Adam come in accordance with", "White and black, and between that."]
   ]
 };
 
