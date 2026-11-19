@@ -1037,7 +1037,13 @@ export type SignKind =
   | "ten-to-seven-hundred"
   | "look-below"
   | "half-of-paradise"
-  | "before-the-row";
+  | "before-the-row"
+  | "a-bows-length"
+  | "better-and-softer"
+  | "better-to-wait"
+  | "give-respite"
+  | "seven-pebbles"
+  | "the-pillar-he-chose";
 
 export type SignScene = {
   id: string;
@@ -5657,6 +5663,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Bakrah said: I reached the Prophet ﷺ in the mosque while he was bowing in prayer, and I too bowed before joining the row. I mentioned it to the Prophet ﷺ, and he said to me: may Allah increase your love for the good, but do not repeat it again.",
     sources: [bukhari("783")]
+  },
+  {
+    id: "sign-a-bows-length",
+    kind: "a-bows-length",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: a place in Paradise equal to an arrow bow of one of you is better than the whole earth on which the sun rises and sets.",
+    sources: [bukhari("3253")]
+  },
+  {
+    id: "sign-better-and-softer",
+    kind: "better-and-softer",
+    caption:
+      "Al-Bara said: a silken cloth was given as a present to the Prophet ﷺ. His companions started touching it and admiring its softness. He said: are you admiring its softness? The handkerchiefs of Sa'd ibn Mu'adh are better and softer than it.",
+    sources: [bukhari("3802")]
+  },
+  {
+    id: "sign-better-to-wait",
+    kind: "better-to-wait",
+    caption:
+      "Busr ibn Sa'id reported that Zayd ibn Khalid sent him to Abu Juhaim to ask him what he had heard from the Messenger of Allah ﷺ about a person passing in front of another person who was praying. Abu Juhaim replied: the Messenger of Allah ﷺ said: if the person who passes in front of another person in prayer knew the magnitude of his sin, he would prefer to wait for forty rather than to pass in front of him. Abu an-Nadr said: I do not remember exactly whether he said forty days, months or years.",
+    sources: [bukhari("510")]
+  },
+  {
+    id: "sign-give-respite",
+    kind: "give-respite",
+    caption:
+      "Abdullah ibn Abi Qatadah reported that Abu Qatadah demanded from his debtor, but he disappeared; later on he found him, and he said: I am hard up financially. Upon this Abu Qatadah said: I heard the Messenger of Allah ﷺ saying: he who loves that Allah saves him from the torments of the Day of Resurrection should give respite to the insolvent or remit.",
+    sources: [muslim("1563a")]
+  },
+  {
+    id: "sign-seven-pebbles",
+    kind: "seven-pebbles",
+    caption:
+      "Salim said: Ibn Umar used to do Rami of the Jamrat-ud-Dunya with seven small stones and used to recite Takbir on throwing every pebble. He then would go ahead till he reached the level ground, where he would stand facing the Qibla for a long time to invoke while raising his hands. Then he would do Rami of the Jamrat-ul-Wusta, and then he would go to the left towards the middle ground, where he would stand facing the Qibla. He would remain standing there for a long period to invoke while raising his hands, and would stand there for a long period. Then he would do Rami of the Jamrat-ul-Aqaba from the middle of the valley, but he would not stay by it, and then he would leave and say: I saw the Prophet ﷺ doing like this.",
+    sources: [bukhari("1751")]
+  },
+  {
+    id: "sign-the-pillar-he-chose",
+    kind: "the-pillar-he-chose",
+    caption:
+      "Yazid ibn Abi Ubayd said: I used to accompany Salamah ibn al-Akwa', and he used to pray behind the pillar which was near the place where the copies of the Quran were kept. I said: O Abu Muslim! I see you always seeking to pray behind this pillar. He replied: I saw the Messenger of Allah ﷺ always seeking to pray near that pillar.",
+    sources: [bukhari("502")]
   }
 ];
 
@@ -8299,7 +8347,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A fourth, a third, then: I hope that you will be one half of the people of Paradise.
   "deep-waqiah2-half-of-paradise": "sign-half-of-paradise",
   // Abu Bakrah bowed before joining the row: may Allah increase your love for the good, but do not repeat it.
-  "prayer-review-and-mastery-scenario-block-1": "sign-before-the-row"
+  "prayer-review-and-mastery-scenario-block-1": "sign-before-the-row",
+  // A place in Paradise the length of a bow is better than all the earth on which the sun rises and sets.
+  "deep-akhirah-light-space-of-a-bow": "sign-a-bows-length",
+  // A silken cloth was admired: the handkerchiefs of Sa'd ibn Mu'adh are better and softer than it.
+  "deep-sad-muadh-handkerchiefs": "sign-better-and-softer",
+  // Knowing his sin, one who passes in front of a person praying would rather wait forty than pass.
+  "deep-prayer-sutrah-better-to-wait": "sign-better-to-wait",
+  // Abu Qatadah's debtor was hard up: whoever loves to be saved on the Day should give respite or remit.
+  "deep-baqarah3-give-time": "sign-give-respite",
+  // Ibn Umar threw seven pebbles at each Jamrah with a Takbir for each, stood long in du'a, and said: I saw it done so.
+  "deep-hajj-stoning": "sign-seven-pebbles",
+  // Salamah always sought to pray by one pillar, for he had seen him always seeking to pray near it.
+  "deep-salamah-the-pillar-he-chose": "sign-the-pillar-he-chose"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

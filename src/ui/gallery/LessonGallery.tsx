@@ -1590,6 +1590,12 @@ const STATES: State[] = [
   { id: "scene-look-below", render: () => <SceneQuestionDemo lessonId="lesson-deep-patience-look-below" ask="whom should you look at" /> },
   { id: "scene-half-of-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-waqiah2-half-of-paradise" ask="ask about first" /> },
   { id: "scene-before-the-row", render: () => <SceneQuestionDemo lessonId="lesson-prayer-review-and-mastery-scenario-block-1" ask="the imam is bowing" /> },
+  { id: "scene-a-bows-length", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-light-space-of-a-bow" ask="How much of Jannah" /> },
+  { id: "scene-better-and-softer", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-muadh-handkerchiefs" ask="What of Sa'd's" /> },
+  { id: "scene-better-to-wait", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-better-to-wait" ask="passer prefer" /> },
+  { id: "scene-give-respite", render: () => <SceneQuestionDemo lessonId="lesson-deep-baqarah3-give-time" ask="promise the lender" /> },
+  { id: "scene-seven-pebbles", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-stoning" ask="said with each pebble" /> },
+  { id: "scene-the-pillar-he-chose", render: () => <SceneQuestionDemo lessonId="lesson-deep-salamah-the-pillar-he-chose" ask="Why did Salamah" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
