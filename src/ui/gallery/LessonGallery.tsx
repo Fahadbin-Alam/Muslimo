@@ -1644,6 +1644,11 @@ const STATES: State[] = [
   { id: "scene-deed-for-paradise", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-questions-they-asked-a-deed-for-paradise" ask="What did the man ask" /> },
   { id: "scene-shorten-the-prayer", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-ilm-make-it-easy" ask="keep the prayer short" /> },
   { id: "scene-best-character", render: () => <SceneQuestionDemo lessonId="lesson-deep-hadith-heart-best-character" ask="best people" /> },
+  { id: "scene-cut-ties", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-cutting-ties" ask="will not enter Paradise" /> },
+  { id: "scene-sent-as-mercy", render: () => <SceneQuestionDemo lessonId="lesson-deep-anbiya3-mercy-to-worlds" ask="asked to curse" /> },
+  { id: "scene-virtue-and-vice", render: () => <SceneQuestionDemo lessonId="lesson-deep-anam3-sin-open-secret" ask="What is virtue" /> },
+  { id: "scene-covered-at-night", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adab-allah-covered-it" ask="Who did Allah cover" /> },
+  { id: "scene-upper-hand", render: () => <SceneQuestionDemo lessonId="lesson-deep-abu-umamah-the-upper-hand" ask="Which hand" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
