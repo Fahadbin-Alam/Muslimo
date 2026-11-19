@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3661);
+    expect(asks.length).toBe(3674);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5337);
+    expect(places).toBe(5355);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -26602,6 +26602,180 @@ describe("where the scene waits and where it stops", () => {
       ],
       1,
       60
+    ]);
+  });
+
+  it("waits on the scenes from a hundred times to only by Allah, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-a-hundred-times", "sign-never-take-it-back", "sign-even-a-little", "sign-glad-and-sad", "sign-hajj-is-arafah", "sign-only-by-allah"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(13);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // One hundred times: Ibn Umar's voice has told of it, and nothing is counted yet, before the next words; then his
+    // voice speaks, soft and golden, and the count shows above the mat, a row of ten soft golden dots at a time, ten rows:
+    // a hundred.
+    expect([
+      shown("How many times could they count it in one sitting?", ["the count: a row 1 of ten soft golden dots", "the count: a row 2 of ten soft golden dots", "the count: a row 3 of ten soft golden dots", "the count: a row 4 of ten soft golden dots", "the count: a row 5 of ten soft golden dots", "the count: a row 6 of ten soft golden dots", "the count: a row 7 of ten soft golden dots", "the count: a row 8 of ten soft golden dots", "the count: a row 9 of ten soft golden dots", "the count: a row 10 of ten soft golden dots", "his voice, soft and golden: asking forgiveness"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+      ]
+    ]);
+    // His tawbah: the count of a hundred shows with a soft golden ring about it, all in one sitting, and nothing rises
+    // from his place yet, before the next words; then glints rise from his place, his du'a, and a soft golden ring comes
+    // about it.
+    expect([
+      shown("Besides forgiveness, what did he ﷺ ask Allah to accept?", ["his du'a: a glint 1, rising from his place", "his du'a: a glint 2, rising from his place", "his du'a: a glint 3, rising from his place", "a soft golden ring about his place"]),
+      moved("Besides forgiveness, what did he ﷺ ask Allah to accept?", "his du'a: a glint 1, rising from his place", "y"),
+      value("a-hundred-times", "a hundred, in one sitting: a soft golden ring about the count", "opacity", 0.742)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, -9],
+      1
+    ]);
+    // He told him not to, and false: the horse is being sold, coins on the stall's table, and Umar's place has come to the
+    // market to buy it back, before the next words; then his voice speaks, soft and golden, and a grey dashed ring comes
+    // about the coins: not to be bought back. Umar's place goes back home, glints come over the horse, still given, and a
+    // soft golden ring comes about Umar's place.
+    expect([
+      shown("Why did Umar not buy his horse back?", ["his voice, soft and golden: do not take it back", "not to be bought back: a grey dashed ring about the coins"]),
+      shown("Buying back your own charity is a good idea.", ["not to be bought back: a grey dashed ring about the coins", "still given: glints over the horse", "a soft golden ring about Umar's place"]),
+      moved("Buying back your own charity is a good idea.", "Umar's place, going toward the market, then back home", "x"),
+      value("never-take-it-back", "Umar's place, going toward the market, then back home", "x", 0.77),
+      value("never-take-it-back", "being sold: coins on the stall's table", "opacity", 0.6)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [46, 0],
+      46,
+      1
+    ]);
+    // A needy person: Umm Bujaid's voice speaks, and no one has come along the lane yet, before the next words; then the
+    // place of one in need comes along the lane to her door.
+    expect([
+      shown("Who stood at Umm Bujaid's door?", ["the place of one in need, coming along the lane to her door"]),
+      moved("Who stood at Umm Bujaid's door?", "the place of one in need, coming along the lane to her door", "x"),
+      value("even-a-little", "Umm Bujaid's voice: telling him", "opacity", 0.16)
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      [0, 25],
+      1
+    ]);
+    // A burnt sheep's foot, and false: the bowl by her is empty, a grey dashed ring about it, nothing to give, and his
+    // voice speaks, before the next words; then a burnt trotter, small and dark, shows in the bowl, the ring goes, and it
+    // is handed over to the place at the door; a soft golden ring comes about that place, given, and glints over hers.
+    expect([
+      shown("What did he ﷺ say she could give, if nothing else?", ["a burnt trotter, small and dark: in the bowl, then handed over", "given: a soft golden ring about the place at the door", "glints over her place"]),
+      shown("If you have only a little, you should give nothing.", ["a burnt trotter, small and dark: in the bowl, then handed over", "given: a soft golden ring about the place at the door", "glints over her place"]),
+      moved("What did he ﷺ say she could give, if nothing else?", "a burnt trotter, small and dark: in the bowl, then handed over", "x"),
+      value("even-a-little", "an empty bowl by her", "opacity", 0.64),
+      value("even-a-little", "nothing to give: a grey dashed ring about the bowl", "opacity", 0.64),
+      value("even-a-little", "nothing to give: a grey dashed ring about the bowl", "opacity", 1)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -17],
+      1,
+      1,
+      0
+    ]);
+    // Glad of them: Umar's place stands among them with a soft light about it, and far off his place shows by the masjid
+    // as his voice speaks, before the next words; then a glint shows by the place, a good deed, and a warm golden light
+    // comes about it: glad.
+    expect([
+      shown("How does a believer feel about his good deeds?", ["a good deed: a glint by its place", "glad of its good deeds: a warm golden light about its place"]),
+      value("glad-and-sad", "standing among them: a soft light about Umar's place", "opacity", 0.58),
+      value("glad-and-sad", "far off: his place, a golden ring, by it", "opacity", 0.58)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1,
+      1
+    ]);
+    // Sad over them, and true: the warm golden light is about the place, glad of its good deeds, before the next words;
+    // then a grey speck shows by it, a bad deed, and a soft blue-grey ring comes about it: sad over it; then a soft golden
+    // ring comes about it, and glints over it: that is faith.
+    expect([
+      shown("How does a believer feel about his bad deeds?", ["a bad deed: a grey speck by its place", "sad over its bad deeds: a soft blue-grey ring about its place", "that is faith: a soft golden ring about its place", "glints over it"]),
+      shown("Feeling sad after a sin is a sign of faith.", ["a bad deed: a grey speck by its place", "sad over its bad deeds: a soft blue-grey ring about its place", "that is faith: a soft golden ring about its place", "glints over it"]),
+      value("glad-and-sad", "glad of its good deeds: a warm golden light about its place", "opacity", 0.724)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // The Ka'bah: Sa'd's voice has told of it, and nothing shows far off yet, before the next words; then a grey voice
+    // speaks by the place of the one who swore, no, by the Ka'bah, and the Ka'bah shows far off: what it swore by.
+    expect([
+      shown("What did the man swear by?", ["far off: the Ka'bah, what it swore by"]),
+      value("only-by-allah", "its voice, grey: no, by the Ka'bah", "opacity", 0.16),
+      value("only-by-allah", "its voice, grey: no, by the Ka'bah", "opacity", 0.22)
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      0,
+      1
+    ]);
+    // Allah, and false: the grey voice has spoken and the Ka'bah shows far off, before the next words; then Ibn Umar's
+    // voice answers it, and far off the masjid of Madinah shows, his place by it, a golden ring, and his voice, soft and
+    // golden; nothing is drawn for Allah. Then a grey dashed ring comes about the place of the one who swore, not to be
+    // done, and a heavy grey ring: disbelief or shirk. The Ka'bah stays far off, with no ring about it.
+    expect([
+      shown("By whom alone may we swear?", ["far off: the masjid of Madinah", "far off: his place, a golden ring, by it", "his voice, soft and golden, far off"]),
+      value("only-by-allah", "Ibn Umar's voice: answering it", "opacity", 0.32),
+      value("only-by-allah", "Ibn Umar's voice: answering it", "opacity", 0.45),
+      shown("Swearing by a holy place is fine in Islam.", ["not to be done: a grey dashed ring about its place", "disbelief or shirk: a heavy grey ring about it"])
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      0,
+      1,
+      [
+        [0, 0],
+        [1, 1]
+      ]
     ]);
   });
 
