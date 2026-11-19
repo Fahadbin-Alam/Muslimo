@@ -1145,7 +1145,13 @@ export type SignKind =
   | "hajj-for-this-one"
   | "no-pride-in-him"
   | "pass-it-on"
-  | "seven-times-for-the-sick";
+  | "seven-times-for-the-sick"
+  | "sit-and-eat"
+  | "a-year-for-each-step"
+  | "thank-people-too"
+  | "a-third-for-food"
+  | "begin-with-yourself"
+  | "musk-the-best-scent";
 
 export type SignScene = {
   id: string;
@@ -6518,6 +6524,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: the Prophet ﷺ said: there is no Muslim worshiper who visits one who is ill, other than at the time of death, and he says seven times: I ask Allah the Magnificent, Lord of the Magnificent Throne, to cure you, except when he will be cured.",
     sources: [tirmidhi("2083")]
+  },
+  {
+    id: "sign-sit-and-eat",
+    kind: "sit-and-eat",
+    caption:
+      "Zahdam al-Jarmi said: I entered upon Abu Musa while he was eating chicken, and he said: sit and eat, for indeed I saw the Messenger of Allah ﷺ eating it.",
+    sources: [tirmidhi("1826")]
+  },
+  {
+    id: "sign-a-year-for-each-step",
+    kind: "a-year-for-each-step",
+    caption:
+      "Aws ibn Aws said: the Messenger of Allah ﷺ said to me: whoever performs ghusl on Friday, and goes early, arriving early, gets close and listens and is silent, there will be for him in every step he takes the reward of a year of fasting and standing.",
+    sources: [tirmidhi("496")]
+  },
+  {
+    id: "sign-thank-people-too",
+    kind: "thank-people-too",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: whoever is not grateful to the people, he is not grateful to Allah.",
+    sources: [tirmidhi("1954")]
+  },
+  {
+    id: "sign-a-third-for-food",
+    kind: "a-third-for-food",
+    caption:
+      "Al-Miqdam ibn Ma'dikarib said: I heard the Messenger of Allah ﷺ saying: the human does not fill any container that is worse than his stomach. It is sufficient for the son of Adam to eat what will support his back. If this is not possible, then a third for food, a third for drink, and a third for his breath.",
+    sources: [tirmidhi("2380")]
+  },
+  {
+    id: "sign-begin-with-yourself",
+    kind: "begin-with-yourself",
+    caption:
+      "Ubayy ibn Ka'b said that whenever the Messenger of Allah ﷺ would mention someone and supplicate for him, he would begin with himself.",
+    sources: [tirmidhi("3385")]
+  },
+  {
+    id: "sign-musk-the-best-scent",
+    kind: "musk-the-best-scent",
+    caption:
+      "Abu Sa'id said that the Prophet ﷺ was asked about musk, and he said: it is the best of your perfumes.",
+    sources: [tirmidhi("992")]
   }
 ];
 
@@ -9387,7 +9435,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // May Allah gladden the one who passes on what he heard, just as he heard it.
   "deep-growing-in-faith-pass-it-on": "sign-pass-it-on",
   // Visiting the ill and asking seven times for their cure.
-  "deep-duas-for-others-seven-times-for-the-sick": "sign-seven-times-for-the-sick"
+  "deep-duas-for-others-seven-times-for-the-sick": "sign-seven-times-for-the-sick",
+  // Abu Musa ate chicken and told Zahdam to sit and eat, for he had seen him eat it.
+  "deep-found-foods-he-ate-sit-and-eat": "sign-sit-and-eat",
+  // Bathing on Friday, going early, sitting close and listening in silence: a year's reward for each step.
+  "deep-jumuah3-a-year-for-each-step": "sign-a-year-for-each-step",
+  // Whoever is not grateful to people is not grateful to Allah.
+  "deep-duha3-thank-people-too": "sign-thank-people-too",
+  // No container is worse to fill than the stomach: a third for food, a third for drink, a third for breath.
+  "deep-araf2-a-third": "sign-a-third-for-food",
+  // Making du'a for someone, he began with himself.
+  "deep-dua-answered-begin-with-yourself": "sign-begin-with-yourself",
+  // Musk is the best of perfumes.
+  "deep-found-looking-neat-musk-the-best-scent": "sign-musk-the-best-scent"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

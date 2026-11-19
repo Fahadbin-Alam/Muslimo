@@ -65,7 +65,7 @@ const ILL = "#8E98A6";
 const along = (list: [number, number][], times: number[]): [number, number, number][] => list.map(([x, y], i) => [times[i], n(x - list[0][0]), n(y - list[0][1])]);
 
 /** A lane along the given points, the places going along it a little above its middle. */
-const lane = (list: [number, number][], fill = "#D3BB8A") =>
+export const lane = (list: [number, number][], fill = "#D3BB8A") =>
   `<path d="M${list.map(([x, y]) => `${x} ${n(y + 1.2)}`).join(" L")}" stroke="${fill}" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round" fill="none" opacity="0.75"/>`;
 
 /** A sheep of the picture cards, `s` times its size, with its feet at (x, y). */
@@ -98,7 +98,7 @@ const basin = (x: number, y: number) =>
   `<ellipse cx="${x}" cy="${n(y - 4)}" rx="7" ry="1.2" fill="#7E6447"/><ellipse cx="${x}" cy="${n(y - 4)}" rx="6.2" ry="0.9" fill="#7FB8DA"/>`;
 
 /** A cloth hung on two poles for cover, from x1 to x2, from `top` down to `foot`. */
-const screen = (x1: number, x2: number, top: number, foot: number) =>
+export const screen = (x1: number, x2: number, top: number, foot: number) =>
   `<path d="M${x1} ${foot} L${x1} ${n(top - 1)} M${x2} ${foot} L${x2} ${n(top - 1)}" stroke="#7E6447" stroke-width="0.8"/>` +
   `<path d="M${x1} ${top} L${x2} ${top} L${n(x2 - 0.4)} ${n(foot - 2)} Q${n((x1 + x2) / 2)} ${n(foot - 1.2)} ${n(x1 + 0.4)} ${n(foot - 2)} Z" fill="#E6D6B4"/>` +
   `<path d="M${n(x1 + (x2 - x1) / 3)} ${n(top + 0.6)} L${n(x1 + (x2 - x1) / 3)} ${n(foot - 1.8)} M${n(x1 + ((x2 - x1) * 2) / 3)} ${n(top + 0.6)} L${n(x1 + ((x2 - x1) * 2) / 3)} ${n(foot - 1.8)}" stroke="#CDB98E" stroke-width="0.4"/>`;
