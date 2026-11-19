@@ -22,6 +22,8 @@ concurrency:
 
 jobs:
   deploy:
+    # GitHub Pages only serves public repos on a free plan; once this repo is private the public-copy job is the site.
+    if: ${{ !github.event.repository.private }}
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -50,3 +52,40 @@ jobs:
       - id: deployment
         if: steps.config.outputs.ready == 'true'
         uses: actions/deploy-pages@v4
+
+  # Copies every site change to fahadbin-alam.github.io/Muslimo/ in the always-public Fahadbin-Alam.github.io repo,
+  # so the same addresses (privacy, delete-account, app-version.json, ...) keep working once this repo is private.
+  # Needs the USER_SITE_TOKEN secret: a token that can write to that repo. Without it the job skips quietly.
+  public-copy:
+    runs-on: ubuntu-latest
+    env:
+      USER_SITE_TOKEN: ${{ secrets.USER_SITE_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - id: config
+        run: |
+          if [ -z "$USER_SITE_TOKEN" ]; then
+            echo "::notice::USER_SITE_TOKEN is not set, so the public copy was not updated."
+          elif node -e 'const c=require("./site/site.config.json"); process.exit(Object.values(c).every((v) => String(v).trim()) ? 0 : 1)'; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+      - if: steps.config.outputs.ready == 'true'
+        run: node scripts/build-site.mjs
+      - name: Copy the site into Fahadbin-Alam.github.io/Muslimo/
+        if: steps.config.outputs.ready == 'true'
+        run: |
+          git clone --depth 1 "https://x-access-token:${USER_SITE_TOKEN}@github.com/Fahadbin-Alam/Fahadbin-Alam.github.io.git" /tmp/user-site
+          mkdir -p /tmp/user-site/Muslimo
+          rsync -a --delete --exclude .nojekyll _site/ /tmp/user-site/Muslimo/
+          cd /tmp/user-site
+          git add -A Muslimo
+          if git diff --cached --quiet; then
+            echo "The public copy is already up to date."
+          else
+            git -c user.name="github-actions[bot]" -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "Update /Muslimo/ from Muslimo ${GITHUB_SHA::7}"
+            git push origin HEAD:main
+          fi
