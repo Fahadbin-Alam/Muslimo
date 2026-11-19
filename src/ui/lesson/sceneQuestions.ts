@@ -7002,6 +7002,45 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-best-character": [
     ["Who are the best people, he ﷺ said?", "Those with the best character", "Amongst you are those who have the best", "Manners and character."],
     ["Who are the best of us, per the hadith?", "Those with the best character", "Amongst you are those who have the best", "Manners and character."]
+  ],
+  // Jubayr ibn Mut'im said that he heard the Prophet ﷺ saying: the person who severs the bond of kinship will not enter
+  // Paradise (Sahih al-Bukhari 5984). Its lesson's question on a cousin who has not spoken to you is not asked here,
+  // since the scene's words do not say it, nor its question on who told it, since its answer is in the scene's first
+  // words.
+  "sign-cut-ties": [
+    ["Who will not enter Paradise, says Bukhari 5984?", "One who cuts off relatives", "The person who severs the bond of", "Kinship will not enter Paradise."]
+  ],
+  // Abu Hurairah said: it was said to the Messenger of Allah ﷺ: invoke curse upon the polytheists, whereupon he said: I
+  // have not been sent as the invoker of curse, but I have been sent as mercy (Sahih Muslim 2599). Its lesson's question
+  // on 21:107 is not asked here, since it is on an ayah the scene does not show, nor its true or false question on one
+  // tribe, since the scene's words do not say it.
+  "sign-sent-as-mercy": [
+    ["What did the Prophet ﷺ say when asked to curse?", "I was sent as mercy", "He said: I have not been sent as the", "As mercy."]
+  ],
+  // An-Nawwas ibn Sam'an al-Ansari said: I asked the Messenger of Allah ﷺ about virtue and vice; he said: virtue is a
+  // kind disposition, and vice is what rankles in your heart and that you disapprove that people should come to know of
+  // it (Sahih Muslim 2553). Its lesson's question on 6:120 is not asked here, since it is on an ayah the scene does not
+  // show.
+  "sign-virtue-and-vice": [
+    ["What is virtue, per Muslim 2553?", "Good character", "Virtue is a kind disposition and vice is"],
+    ["What is sin, per Muslim 2553?", "What troubles your heart", "What rankles in your heart and that you"]
+  ],
+  // Abu Hurairah said: I heard the Messenger of Allah ﷺ saying: all the sins of my followers will be forgiven except
+  // those of the Mujahirin; an example is that a person commits a sin at night, and though Allah screens it, then he
+  // comes in the morning and says: O so-and-so, I did such-and-such deed yesterday; and in the morning he removes
+  // Allah's screen from himself (Sahih al-Bukhari 6069). Its lesson's true or false question on repenting quietly is not
+  // asked here, since the scene's words do not say it.
+  "sign-covered-at-night": [
+    ["Who did Allah cover in this hadith?", "A man who sinned at night", "Is that a person commits a sin at night", "And though Allah screens it, then he comes"],
+    ["What did the man do in the morning?", "Told people his sin", "In the morning, and says: O so-and-so, I", "Did such-and-such deed yesterday, and in"]
+  ],
+  // Abu Umamah said: the Messenger of Allah ﷺ said: O son of Adam, it is better for you if you spend your surplus, but
+  // if you withhold it, it is evil for you; there is no reproach for you for a living; and begin with your dependents;
+  // and the upper hand is better than the lower hand (Sahih Muslim 1036).
+  "sign-upper-hand": [
+    ["Keeping what you need to live is blamed.", "False", "You. There is no reproach for you for a", "Living. And begin with your dependents;"],
+    ["Whom should you begin your charity with?", "Your dependents", "Living. And begin with your dependents;"],
+    ["Which hand is better?", "The upper, giving hand", "And the upper hand is better than the", "Lower hand."]
   ]
 };
 
