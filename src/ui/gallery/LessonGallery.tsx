@@ -1679,6 +1679,12 @@ const STATES: State[] = [
   { id: "scene-two-brothers", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-wealth-and-next-life-two-brothers" ask="Why might the working brother" /> },
   { id: "scene-best-of-the-earth", render: () => <SceneQuestionDemo lessonId="lesson-deep-hajj-makkah-the-beloved-city-the-best-of-allahs-earth" ask="What did he ﷺ call Makkah" /> },
   { id: "scene-the-first-fruit", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-from-the-sunnah-the-first-fruit" ask="Who did he ﷺ give the first fruit" /> },
+  { id: "scene-quicker-than-that", render: () => <SceneQuestionDemo lessonId="lesson-deep-akhirah-this-world-life-is-short" ask="What was being repaired" /> },
+  { id: "scene-not-the-face-of-a-liar", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibn-salam-not-a-liars-face" ask="What did Abdullah see" /> },
+  { id: "scene-camp-off-the-road", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-staying-safe-camp-off-the-road" ask="Camping at night" /> },
+  { id: "scene-like-the-saddle-post", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-sutrah-like-the-back-of-a-saddle" ask="Once your sutrah is in front" /> },
+  { id: "scene-milk-silver-or-the-way", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-show-someone-the-way" ask="Which of these did he ﷺ say brings" /> },
+  { id: "scene-the-seat-of-honor", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-sunnahs-of-the-home-the-hosts-own-seat" ask="Where should a guest not sit" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
