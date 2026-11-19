@@ -1061,7 +1061,13 @@ export type SignKind =
   | "two-rewards-for-a-judge"
   | "not-grown-impatient"
   | "do-not-withhold"
-  | "not-built-for-this";
+  | "not-built-for-this"
+  | "brother-of-a-believer"
+  | "short-and-eloquent"
+  | "keep-some-of-your-wealth"
+  | "two-groups-of-advisors"
+  | "till-you-see-me"
+  | "help-and-recommend";
 
 export type SignScene = {
   id: string;
@@ -5849,6 +5855,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Messenger of Allah ﷺ said: if anyone hears a man crying out in the masjid about something he has lost, he should say: may Allah not restore it to you, for the masjids were not built for this.",
     sources: [muslim("568a")]
+  },
+  {
+    id: "sign-brother-of-a-believer",
+    kind: "brother-of-a-believer",
+    caption:
+      "Uqbah ibn Amir said on the pulpit that the Messenger of Allah ﷺ said: a believer is the brother of a believer, so it is not lawful for a believer to outbid his brother, and he should not propose an engagement when his brother has thus proposed, until he gives it up.",
+    sources: [muslim("1414")]
+  },
+  {
+    id: "sign-short-and-eloquent",
+    kind: "short-and-eloquent",
+    caption:
+      "Abu Wa'il said: Ammar delivered to us the sermon. It was short and eloquent. When he descended, we said to him: O Abu al-Yaqzan, you have delivered a short and eloquent sermon; would that you had lengthened it. He said: I have heard the Messenger of Allah ﷺ saying: the lengthening of prayer by a man and the shortness of the sermon is the sign of his understanding. So lengthen the prayer and shorten the sermon, for there is charm in expression.",
+    sources: [muslim("869")]
+  },
+  {
+    id: "sign-keep-some-of-your-wealth",
+    kind: "keep-some-of-your-wealth",
+    caption:
+      "Ka'b ibn Malik said, at the end of his narration: as a proof of my true repentance, I shall give up all my property for the sake of Allah and His Messenger. The Prophet ﷺ said: keep some of your wealth, for that is better for you.",
+    sources: [bukhari("6690")]
+  },
+  {
+    id: "sign-two-groups-of-advisors",
+    kind: "two-groups-of-advisors",
+    caption:
+      "Abu Sa'id al-Khudri said that the Prophet ﷺ said: no caliph is appointed but has two groups of advisors: one group advises him to do good and urges him to adopt it, and the other group advises him to do bad and urges him to adopt it; and the protected is the one whom Allah protects.",
+    sources: [bukhari("6611")]
+  },
+  {
+    id: "sign-till-you-see-me",
+    kind: "till-you-see-me",
+    caption:
+      "Abdullah ibn Abi Qatada said: my father said: the Messenger of Allah ﷺ said: if the iqamah is pronounced, then do not stand for the prayer till you see me, and do it calmly.",
+    sources: [bukhari("638")]
+  },
+  {
+    id: "sign-help-and-recommend",
+    kind: "help-and-recommend",
+    caption:
+      "Abu Burda ibn Abu Musa said that his father said: whenever a beggar came to the Messenger of Allah ﷺ, or he was asked for something, he used to say: help and recommend him, and you will receive the reward for it.",
+    sources: [bukhari("1432")]
   }
 ];
 
@@ -8541,7 +8589,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Asma had only what Az-Zubair gave her; give, he said, and do not hold it back, lest it be held back from you.
   "deep-asma-give-freely": "sign-do-not-withhold",
   // To one crying out in the masjid for a lost thing, say: may Allah not return it; masjids were not built for this.
-  "deep-prayer-masjid-sunnahs-not-for-lost-things": "sign-not-built-for-this"
+  "deep-prayer-masjid-sunnahs-not-for-lost-things": "sign-not-built-for-this",
+  // A believer is a believer's brother: he does not outbid him, nor propose over his proposal until he gives it up.
+  "deep-uqbah-brother-of-a-believer": "sign-brother-of-a-believer",
+  // Ammar's khutbah was short and eloquent: a long prayer and a short sermon are a sign of understanding.
+  "deep-ammar-short-khutbah": "sign-short-and-eloquent",
+  // Ka'b wished to give up all his property in repentance, and was told: keep some of your wealth, it is better for you.
+  "deep-book-oaths-keep-some-of-your-wealth": "sign-keep-some-of-your-wealth",
+  // Every caliph has two groups of advisors, one urging good and one urging bad; the protected is whom Allah protects.
+  "deep-aqidah-what-allah-has-written-two-kinds-of-advisers": "sign-two-groups-of-advisors",
+  // When the iqamah is called, do not stand until you see him, and stand calmly.
+  "deep-book-adhan-stand-calmly-for-iqamah": "sign-till-you-see-me",
+  // When one in need came, he would say: help and recommend him, and you will receive the reward for it.
+  "deep-nisa2-intercede": "sign-help-and-recommend"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

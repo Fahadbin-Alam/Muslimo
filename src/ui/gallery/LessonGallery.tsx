@@ -1614,6 +1614,12 @@ const STATES: State[] = [
   { id: "scene-not-grown-impatient", render: () => <SceneQuestionDemo lessonId="lesson-deep-hud3-my-lord-is-near" ask="stops a dua" /> },
   { id: "scene-do-not-withhold", render: () => <SceneQuestionDemo lessonId="lesson-deep-asma-give-freely" ask="hold back charity" /> },
   { id: "scene-not-built-for-this", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-masjid-sunnahs-not-for-lost-things" ask="calling for a lost thing" /> },
+  { id: "scene-brother-of-a-believer", render: () => <SceneQuestionDemo lessonId="lesson-deep-uqbah-brother-of-a-believer" ask="brother's sale" /> },
+  { id: "scene-short-and-eloquent", render: () => <SceneQuestionDemo lessonId="lesson-deep-ammar-short-khutbah" ask="should be long" /> },
+  { id: "scene-keep-some-of-your-wealth", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-oaths-keep-some-of-your-wealth" ask="want to give away" /> },
+  { id: "scene-two-groups-of-advisors", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-what-allah-has-written-two-kinds-of-advisers" ask="groups of advisers" /> },
+  { id: "scene-till-you-see-me", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-adhan-stand-calmly-for-iqamah" ask="get up for the prayer" /> },
+  { id: "scene-help-and-recommend", render: () => <SceneQuestionDemo lessonId="lesson-deep-nisa2-intercede" ask="needy man came" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

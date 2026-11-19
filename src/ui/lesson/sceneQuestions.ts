@@ -6784,6 +6784,53 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-not-built-for-this": [
     ["What should you say to one calling for a lost thing in the masjid?", "May Allah not return it to you", "May Allah not restore it to you, for the"],
     ["Why not call out for lost things in the masjid?", "Masjids were not built for this", "Masjids were not built for this."]
+  ],
+  // Uqbah ibn Amir said on the pulpit that the Messenger of Allah ﷺ said: a believer is the brother of a believer, so it
+  // is not lawful for a believer to outbid his brother, and he should not propose an engagement when his brother has
+  // thus proposed, until he gives it up (Sahih Muslim 1414).
+  "sign-brother-of-a-believer": [
+    ["What is a believer to another believer?", "His brother", "He said: a believer is the brother"],
+    ["What must you not do in your brother's sale?", "Outbid him", "For a believer to outbid his brother,"],
+    ["You may propose marriage over your brother's proposal.", "False", "And he should not propose an engagement", "When his brother has thus proposed"]
+  ],
+  // Abu Wa'il said: Ammar gave us a short and eloquent khutbah, and said: I heard the Messenger of Allah ﷺ say: a long
+  // prayer and a short khutbah are a sign of a man's understanding, so lengthen the prayer and shorten the khutbah
+  // (Sahih Muslim 869).
+  "sign-short-and-eloquent": [
+    ["What kind of khutbah did Ammar give?", "Short and clear", "The sermon. It was short and eloquent."],
+    ["What should be long, the prayer or the khutbah?", "The prayer", "The lengthening of prayer by a man"],
+    ["A short khutbah is a sign of understanding.", "True", "The sign of his understanding."]
+  ],
+  // Ka'b ibn Malik said, at the end of his narration: as a proof of my true repentance, I shall give up all my property
+  // for the sake of Allah and His Messenger; and the Prophet ﷺ said: keep some of your wealth, for that is better for
+  // you (Sahih al-Bukhari 6690). Its lesson's true or false on leaving ourselves with nothing is not asked here, since
+  // it asks again what the question before it asks.
+  "sign-keep-some-of-your-wealth": [
+    ["What did Ka'b want to give away?", "All his property", "True repentance, I shall give up all my", "Property for the sake of Allah."],
+    ["What was he told?", "Keep some of your wealth", "He said: keep some of your wealth,"]
+  ],
+  // Abu Sa'id al-Khudri said that the Prophet ﷺ said: no caliph is appointed but has two groups of advisers, one
+  // advising him to do good and urging him to it, and the other advising him to do bad and urging him to it; and the
+  // protected is the one whom Allah protects (Sahih al-Bukhari 6611).
+  "sign-two-groups-of-advisors": [
+    ["How many groups of advisers does every caliph have?", "Two groups", "No caliph is appointed but has two", "Groups of advisors: one group advises him"],
+    ["One group of advisers urges good, and the other urges bad.", "True", "Groups of advisors: one group advises him", "Bad and urges him to adopt it;"],
+    ["Who is truly protected, he ﷺ said?", "The one Allah protects", "And the protected is the one", "Whom Allah protects."]
+  ],
+  // Abdullah ibn Abi Qatada said that his father said: the Messenger of Allah ﷺ said: if the iqamah is pronounced, do
+  // not stand for the prayer till you see me, and do it calmly (Sahih al-Bukhari 638). Its lesson's true or false on
+  // calmness being part of the manners of prayer is not asked here, since it asks again what the question before it
+  // asks.
+  "sign-till-you-see-me": [
+    ["When did they stand?", "When they saw him ﷺ", "Till you see me,"],
+    ["How should we get up for the prayer?", "Calmly", "And do it calmly."]
+  ],
+  // Abu Burda ibn Abu Musa said that his father said: whenever one in need came to the Messenger of Allah ﷺ, or he was
+  // asked for something, he used to say: help and recommend him, and you will receive the reward for it (Sahih
+  // al-Bukhari 1432). Its lesson's two questions on ayah 4:85 are not asked here, since their answers are from the
+  // ayah, and the scene shows the hadith.
+  "sign-help-and-recommend": [
+    ["What did the Prophet ﷺ tell his companions when a needy man came?", "Recommend him, and be rewarded", "He used to say: help and recommend him,", "And you will receive the reward for it."]
   ]
 };
 
