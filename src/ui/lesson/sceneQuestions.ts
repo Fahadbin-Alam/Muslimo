@@ -6908,6 +6908,51 @@ const ASKS: Record<string, readonly Ask[]> = {
   // ayah, and the scene shows the hadith.
   "sign-gold-and-silver": [
     ["What did the Prophet ﷺ forbid, per Bukhari 5426?", "Eating from gold and silver vessels", "Drink in silver or golden vessels,", "And do not eat in plates of such metals,"]
+  ],
+  // Aishah said: the Messenger of Allah ﷺ used to invoke Allah in the prayer saying: O Allah, I seek refuge with you from
+  // all sins, and from being in debt; someone said: very often you seek refuge with Allah from being in debt; he
+  // replied: if a person is in debt, he tells lies when he speaks, and breaks his promises when he promises (Sahih
+  // al-Bukhari 2397). Its lesson's question on when he sought refuge is not asked here, since the masjid and his place
+  // before it show from the start.
+  "sign-feared-debt": [
+    ["He ﷺ often sought refuge with Allah from debt.", "True", "Debt. Someone said: very often you seek", "Refuge from being in debt. He replied:"],
+    ["What can debt lead a person to do, he ﷺ said?", "Lie and break promises", "If a person is in debt, he tells lies", "When he speaks, and breaks his promises."]
+  ],
+  // Ibn Abbas said: the Prophet ﷺ went to visit a sick Bedouin; whenever the Prophet ﷺ went to a patient, he used to
+  // say to him: don't worry, if Allah will, it will be expiation (Sahih al-Bukhari 5656). Its lesson's question on what
+  // an illness can do is not asked here, since it asks again what its first question asks, nor its true or false on
+  // kind words, since the scene's words do not say it.
+  "sign-visit-the-sick": [
+    ["What did he ﷺ say to comfort the sick?", "No harm, it is a cleansing", "He used to say: don't worry,", "If Allah will, it will be expiation."]
+  ],
+  // Abu Hurairah said that the Prophet ﷺ said: the worst people in the Sight of Allah on the Day of Resurrection will be
+  // the double faced people who appear to some people with one face and to other people with another face (Sahih
+  // al-Bukhari 6058). Its lesson's true or false on two faces is not asked here, since it asks again what its first
+  // question asks.
+  "sign-two-faced": [
+    ["Who will be the worst people in Allah's sight on the Day of Resurrection?", "The two-faced", "Resurrection will be the double faced"],
+    ["What does a two-faced person do?", "Shows one face to some, another to others", "People who appear to some people with", "Another face."]
+  ],
+  // Abdullah ibn Mas'ud said that the Prophet ﷺ said: do not wish to be like anyone except in two cases: a person whom
+  // Allah has given wealth and he spends it righteously, and the one whom Allah has given wisdom and he acts according to
+  // it and teaches it to others (Sahih al-Bukhari 73). Its lesson's true or false on teaching is not asked here, since
+  // it asks again what its question on wisdom asks.
+  "sign-two-cases": [
+    ["Which rich person is worth copying?", "One who spends it rightly", "And he spends it righteously; the one"],
+    ["Whose wisdom should we wish for?", "One who acts on it and teaches it", "Whom Allah has given wisdom and he acts", "According to it and teaches it to others."]
+  ],
+  // Abu Hurairah said that the Messenger of Allah ﷺ said: whoever has oppressed another person concerning his reputation
+  // or anything else, he should beg him to forgive him before the Day of Resurrection when there will be no money (Sahih
+  // al-Bukhari 2449). Its lesson's question on what is taken on that Day is not asked here, since the scene's words leave
+  // it out, nor its true or false on a good name, since the scene's words do not say it.
+  "sign-before-that-day": [
+    ["When should you ask forgiveness from someone you wronged?", "Now, before the Day comes", "Beg him to forgive him before the Day of", "Resurrection when there will be no money."]
+  ],
+  // Ibn Abbas said: the Messenger of Allah ﷺ drank milk, rinsed his mouth and said: it has fat (Sahih al-Bukhari 211).
+  // Its lesson's question on what he did after drinking milk and its true or false on rinsing are not asked here, since
+  // their answers are in the scene's first words.
+  "sign-rinse-after-milk": [
+    ["Why did he ﷺ rinse his mouth after milk?", "Milk has fat in it", "Mouth and said: it has fat."]
   ]
 };
 
