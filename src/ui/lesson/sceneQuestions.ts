@@ -7683,6 +7683,59 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["How many good deeds are written for a hundred tasbih?", "A thousand good deeds", "Is one of you incapable of attaining a", "Are written for him, and a thousand evil"],
     ["Who asked how one could earn them?", "A man sitting with him", "Sa'd: he said to those sitting with him:", "Among those seated with him asked him:"],
     ["He ﷺ asked if anyone was unable to earn a thousand good deeds.", "True", "Is one of you incapable of attaining a", "Thousand good deeds? So a questioner"]
+  ],
+  // Shurayh ibn Hani said: I came to Aishah to ask her about wiping over the socks. She said: you better ask the son of
+  // Abu Talib, for he used to travel with the Messenger of Allah ﷺ. We asked him and he said: the Messenger of Allah ﷺ
+  // stipulated three days and three nights for a traveller and one day and one night for the resident (Sahih Muslim
+  // 276a).
+  "sign-wiping-over-the-socks": [
+    ["How long may a traveller wipe over leather socks?", "Three days and nights", "Messenger of Allah stipulated three days", "And three nights for a traveller and"],
+    ["And someone at home?", "One day and night", "One day and one night for the resident."],
+    ["Whom did Aishah send Shurayh to ask?", "Ali ibn Abi Talib", "She said: you better ask the son of Abu", "Talib, for he used to travel with the"]
+  ],
+  // Abu Sa'id al-Khudri said: the Prophet ﷺ said: you will follow the ways of those nations who were before you, span by
+  // span and cubit by cubit, so much so that even if they entered a hole of a mastigure, you would follow them (Sahih
+  // al-Bukhari 7320). Its lesson's question on 45:18 is not asked here, since it is on an ayah.
+  "sign-into-a-lizards-hole": [
+    ["How closely would people copy, per Bukhari 7320?", "Span by span, cubit by cubit", "Were before you, span by span and cubit", "By cubit, so much so that even if they"],
+    ["Into what hole would they follow?", "A lizard's hole", "Entered a hole of a mastigure, you would"]
+  ],
+  // Ibn Abbas said: while the Prophet ﷺ was performing Tawaf of the Ka'bah, he passed by a person who had tied his hands
+  // to another person with a rope or string or something like that. The Prophet ﷺ cut it with his own hands and said:
+  // lead him by the hand (Sahih al-Bukhari 1620 and 6702). Its second lesson's question on where the man was is not
+  // asked here, since the Ka'bah shows from the start, nor its true or false question on hard ways, since it is on the
+  // whole hadith.
+  "sign-lead-him-by-the-hand": [
+    ["What did he ﷺ see during tawaf?", "A man tied to another by a rope", "Person who had tied his hands to another", "Person with a rope or string or"],
+    ["What did he ﷺ do with the rope?", "Cut it with his own hands", "Something like that. He cut it with his", "Own hands and said: lead him by the hand."],
+    ["What did he ﷺ say to do instead?", "Lead him by the hand", "Own hands and said: lead him by the hand."],
+    ["What did he ﷺ do to the rope?", "Cut it off", "Something like that. He cut it with his"]
+  ],
+  // Hakim ibn Hizam said: I asked the Prophet ﷺ and he gave me, and then again I asked him and he gave me, and then
+  // again I asked him and he gave me, and he then said: this wealth is green and sweet, and whoever takes it without
+  // greed, Allah will bless it for him, but whoever takes it with greed, Allah will not bless it for him, and he will be
+  // like the one who eats but is never satisfied. And the upper hand is better than the lower hand (Sahih al-Bukhari
+  // 6441 and 1472). Its lessons' questions on which hand is better are not asked here, since the scene's words leave the
+  // upper hand out (it has a scene of its own), nor the one on what Hakim did after that day, since the scene does not
+  // say it.
+  "sign-green-and-sweet": [
+    ["How did the Prophet ﷺ describe wealth?", "Green and sweet", "Is green and sweet, and whoever takes"],
+    ["One who takes wealth greedily is like...?", "One who eats and is never full", "Greed, he will be like the one who eats", "But is never satisfied."],
+    ["Wealth taken with greed is blessed.", "False", "For him, but whoever takes it with", "But is never satisfied."]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: perish the slave of Dinar, Dirham, Qatifa, and Khamisa, for if he is given,
+  // he is pleased; otherwise he is dissatisfied (Sahih al-Bukhari 6435). Its lesson's true or false question on a
+  // believer's heart is not asked here, since it is on the whole hadith.
+  "sign-bound-to-money": [
+    ["What makes the slave of money happy?", "Only being given things", "For if he is given, he is pleased;"],
+    ["What happens when he is not given?", "He is unhappy", "Otherwise, he is dissatisfied."]
+  ],
+  // Isa ibn Tahman said: Anas ibn Malik brought out for us two sandals having two straps. Thabit al-Bunani said: these
+  // were the sandals of the Prophet ﷺ (Sahih al-Bukhari 5858).
+  "sign-two-sandals-two-straps": [
+    ["Who brought out the two sandals?", "Anas ibn Malik", "Isa ibn Tahman: Anas ibn Malik brought"],
+    ["How many straps did the sandals have?", "Two straps", "Out for us, two sandals having two straps."],
+    ["Thabit al-Bunani said these were the sandals of the Prophet ﷺ.", "True", "Thabit al-Bunani said: these were the", "Sandals of the Prophet."]
   ]
 };
 
