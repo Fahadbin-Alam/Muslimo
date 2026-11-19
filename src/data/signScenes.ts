@@ -1055,7 +1055,13 @@ export type SignKind =
   | "on-the-very-edge"
   | "too-drowsy-to-pray"
   | "take-it-without-greed"
-  | "made-up-in-shaban";
+  | "made-up-in-shaban"
+  | "the-two-to-follow"
+  | "to-her-uncles"
+  | "two-rewards-for-a-judge"
+  | "not-grown-impatient"
+  | "do-not-withhold"
+  | "not-built-for-this";
 
 export type SignScene = {
   id: string;
@@ -5801,6 +5807,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said: sometimes I missed some days of Ramadan, but could not fast in lieu of them except in the month of Sha'ban. Yahya, a narrator, said: she used to be busy serving the Prophet ﷺ.",
     sources: [bukhari("1950")]
+  },
+  {
+    id: "sign-the-two-to-follow",
+    kind: "the-two-to-follow",
+    caption:
+      "Abu Wa'il said: I sat with Shaybah in this masjid, and he said: Umar once sat beside me here as you are now sitting, and said: I feel like distributing all the gold and silver that are in it among the Muslims. I said: you cannot do that. Umar said: why? I said: your two companions did not do it. Umar said: they are the two persons whom one must follow.",
+    sources: [bukhari("7275")]
+  },
+  {
+    id: "sign-to-her-uncles",
+    kind: "to-her-uncles",
+    caption:
+      "Kurayb, the freed slave of Ibn Abbas, said that Maymunah bint al-Harith told him that she freed a slave-girl without taking the permission of the Prophet ﷺ. On the day when it was her turn to be with him, she said: do you know, O Messenger of Allah, that I have freed my slave-girl? He said: have you really? She replied yes. He said: you would have got more reward if you had given her to one of your maternal uncles.",
+    sources: [bukhari("2592")]
+  },
+  {
+    id: "sign-two-rewards-for-a-judge",
+    kind: "two-rewards-for-a-judge",
+    caption:
+      "Amr ibn al-As said that he heard the Messenger of Allah ﷺ saying: if a judge gives a verdict according to the best of his knowledge and his verdict is correct, he will receive a double reward; and if he gives a verdict according to the best of his knowledge and his verdict is wrong, even then he will get a reward.",
+    sources: [bukhari("7352")]
+  },
+  {
+    id: "sign-not-grown-impatient",
+    kind: "not-grown-impatient",
+    caption:
+      "Abu Hurairah said that the Messenger of Allah ﷺ said: the supplication of every one of you is granted if he does not grow impatient and says: I supplicated but it was not granted.",
+    sources: [muslim("2735")]
+  },
+  {
+    id: "sign-do-not-withhold",
+    kind: "do-not-withhold",
+    caption:
+      "Asma said: once I said: O Messenger of Allah, I have no property except what has been given to me by Az-Zubair. May I give in charity? He said: give in charity and do not withhold it; otherwise Allah will withhold it back from you.",
+    sources: [bukhari("2590")]
+  },
+  {
+    id: "sign-not-built-for-this",
+    kind: "not-built-for-this",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: if anyone hears a man crying out in the masjid about something he has lost, he should say: may Allah not restore it to you, for the masjids were not built for this.",
+    sources: [muslim("568a")]
   }
 ];
 
@@ -8481,7 +8529,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // What comes without asking or greed, take it; what does not come, do not run after it.
   "deep-zakat-wise-wealth-take-it-without-greed": "sign-take-it-without-greed",
   // Aishah made up her missed days of Ramadan in Sha'ban, busy as she was serving him.
-  "deep-fast-ease-aishah-shaban": "sign-made-up-in-shaban"
+  "deep-fast-ease-aishah-shaban": "sign-made-up-in-shaban",
+  // Umar wished to share out the Ka'bah's gold and silver, and held back: the two before him had not done it.
+  "deep-aqidah-sunnah-the-two-to-follow": "sign-the-two-to-follow",
+  // Maymunah freed her slave-girl; had she given her to her maternal uncles, her reward would have been more.
+  "deep-wives-maymunah": "sign-to-her-uncles",
+  // A judge who does his best has two rewards when he is right, and still one when he is wrong.
+  "deep-anbiya3-judge-two-rewards": "sign-two-rewards-for-a-judge",
+  // A du'a is granted as long as one does not grow impatient and say: I made du'a and it was not granted.
+  "deep-hud3-my-lord-is-near": "sign-not-grown-impatient",
+  // Asma had only what Az-Zubair gave her; give, he said, and do not hold it back, lest it be held back from you.
+  "deep-asma-give-freely": "sign-do-not-withhold",
+  // To one crying out in the masjid for a lost thing, say: may Allah not return it; masjids were not built for this.
+  "deep-prayer-masjid-sunnahs-not-for-lost-things": "sign-not-built-for-this"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
