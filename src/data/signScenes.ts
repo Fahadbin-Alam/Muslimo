@@ -1151,7 +1151,13 @@ export type SignKind =
   | "thank-people-too"
   | "a-third-for-food"
   | "begin-with-yourself"
-  | "musk-the-best-scent";
+  | "musk-the-best-scent"
+  | "from-friday-to-friday"
+  | "last-part-of-the-night"
+  | "two-loved-traits"
+  | "haya-beautifies"
+  | "the-test-of-wealth"
+  | "not-a-target";
 
 export type SignScene = {
   id: string;
@@ -6566,6 +6572,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Sa'id said that the Prophet ﷺ was asked about musk, and he said: it is the best of your perfumes.",
     sources: [tirmidhi("992")]
+  },
+  {
+    id: "sign-from-friday-to-friday",
+    kind: "from-friday-to-friday",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: the five prayers, and Jumu'ah to Jumu'ah, are atonement for what is between them, as long as the major sins have not been committed.",
+    sources: [tirmidhi("214")]
+  },
+  {
+    id: "sign-last-part-of-the-night",
+    kind: "last-part-of-the-night",
+    caption:
+      "Amr ibn Abasah said that he heard the Prophet ﷺ say: the closest that the Lord is to a worshipper is during the last part of the night, so if you are able to be of those who remember Allah in that hour, then do so.",
+    sources: [tirmidhi("3579")]
+  },
+  {
+    id: "sign-two-loved-traits",
+    kind: "two-loved-traits",
+    caption:
+      "Ibn Abbas said that the Messenger of Allah ﷺ said to al-Ashajj of Abd al-Qais: indeed there are two traits in you that Allah loves: forbearance, and deliberateness.",
+    sources: [tirmidhi("2011")]
+  },
+  {
+    id: "sign-haya-beautifies",
+    kind: "haya-beautifies",
+    caption:
+      "Anas said: the Messenger of Allah ﷺ said: al-fuhsh is not present in anything but it mars it, and al-haya is not present in anything but it beautifies it.",
+    sources: [tirmidhi("1974")]
+  },
+  {
+    id: "sign-the-test-of-wealth",
+    kind: "the-test-of-wealth",
+    caption:
+      "Ka'b ibn Iyad said: the Prophet ﷺ said: indeed there is a fitnah for every ummah, and the fitnah for my ummah is wealth.",
+    sources: [tirmidhi("2336")]
+  },
+  {
+    id: "sign-not-a-target",
+    kind: "not-a-target",
+    caption:
+      "Ibn Abbas said: the Messenger of Allah ﷺ prohibited taking a living thing as a shooting target.",
+    sources: [tirmidhi("1475")]
   }
 ];
 
@@ -9447,7 +9495,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Making du'a for someone, he began with himself.
   "deep-dua-answered-begin-with-yourself": "sign-begin-with-yourself",
   // Musk is the best of perfumes.
-  "deep-found-looking-neat-musk-the-best-scent": "sign-musk-the-best-scent"
+  "deep-found-looking-neat-musk-the-best-scent": "sign-musk-the-best-scent",
+  // The five prayers, and Jumu'ah to Jumu'ah, wipe away what is between them, as long as major sins are kept away from.
+  "deep-prayer-coming-to-jumuah-from-friday-to-friday": "sign-from-friday-to-friday",
+  // The Lord is closest to a worshipper in the last part of the night: remember Allah in that hour.
+  "deep-dua-answered-last-part-of-night": "sign-last-part-of-the-night",
+  // Two traits Allah loves: forbearance, and deliberateness.
+  "deep-manners-haya-and-gentle-manners-a-trait-allah-loves": "sign-two-loved-traits",
+  // Rudeness mars anything it is in, and haya beautifies it.
+  "deep-manners-haya-and-gentle-manners-haya-makes-it-beautiful": "sign-haya-beautifies",
+  // Every ummah has its test, and the test of his ummah is wealth.
+  "deep-akhirah-wealth-and-next-life-the-test-of-this-ummah": "sign-the-test-of-wealth",
+  // Never take a living thing as a target to shoot at.
+  "deep-kids-animals-not-a-target": "sign-not-a-target"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
