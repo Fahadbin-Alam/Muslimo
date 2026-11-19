@@ -746,7 +746,13 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-umar-knew-adi": [/\bAdi\b/, /\bUmar\b/],
   "sign-every-year": [/Hajj/i, /every year/i],
   "sign-in-seven-days": [/seven days/i, /month/i],
-  "sign-not-for-those-who-ask": [/governors?|authority of ruling/i, /\bask/i]
+  "sign-not-for-those-who-ask": [/governors?|authority of ruling/i, /\bask/i],
+  "sign-better-than-an-earth-full": [/\bpoor\b/i, /earth full/i],
+  "sign-a-day-for-the-women": [/\bwomen\b/i, /\bday\b/i],
+  "sign-on-the-very-edge": [/Ibn Abbas/, /Islam good|good only/i],
+  "sign-too-drowsy-to-pray": [/drows/i, /sleep/i],
+  "sign-take-it-without-greed": [/greed|chase/i, /\bask/i],
+  "sign-made-up-in-shaban": [/Sha'ban/i, /Ramadan/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1433,7 +1439,13 @@ const SOURCES: Record<string, string[]> = {
   "sign-umar-knew-adi": ["Sahih al-Bukhari 4394"],
   "sign-every-year": ["Sahih Muslim 1337"],
   "sign-in-seven-days": ["Sahih al-Bukhari 5054"],
-  "sign-not-for-those-who-ask": ["Sahih al-Bukhari 7149"]
+  "sign-not-for-those-who-ask": ["Sahih al-Bukhari 7149"],
+  "sign-better-than-an-earth-full": ["Sahih al-Bukhari 5091"],
+  "sign-a-day-for-the-women": ["Sahih al-Bukhari 101"],
+  "sign-on-the-very-edge": ["Sahih al-Bukhari 4742"],
+  "sign-too-drowsy-to-pray": ["Sahih al-Bukhari 212"],
+  "sign-take-it-without-greed": ["Sahih al-Bukhari 1473"],
+  "sign-made-up-in-shaban": ["Sahih al-Bukhari 1950"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1457,7 +1469,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1801);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1808);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -30662,6 +30674,325 @@ describe("the signs in creation, alive", () => {
         [0, 1]
       ],
       [
+        [0, 1]
+      ]
+    ]);
+  });
+
+  test("the scenes from better than an earth full to made up in Sha'ban show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const edgeScenes: SignKind[] = ["better-than-an-earth-full", "a-day-for-the-women", "on-the-very-edge", "too-drowsy-to-pray", "take-it-without-greed", "made-up-in-shaban"];
+    for (const kind of edgeScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, no book or page is drawn, and nothing comes down from the sky: a deed is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Better than an earth full: the masjid of Madinah, his place, their places about him, a home on the left and a road
+    // across the land. The first one's place comes along the road and stops; his voice asks, and a soft pale ring comes
+    // about it. Their voice answers: a dashed way goes from it to the home's door, which lights; its voice speaks, and soft
+    // golden rings come about their places: heard. It goes on its way, and the poor Muslim's place comes along the road and
+    // stays. Their voice answers again: a grey dashed way goes to the door, which stays dark, and its voice is faint and
+    // grey. His voice speaks, and a soft golden ring comes about the poor one's place; places like the first fill the land,
+    // then grow pale, and glints come about the poor one's place.
+    expect(words("better-than-an-earth-full")).toEqual([
+      "Sahl: a man passed by him. He asked:",
+      "What do you say about this one? They:",
+      "If he proposes, he should be married;",
+      "If he intercedes or speaks, he is heard.",
+      "He kept silent; a poor Muslim passed by.",
+      "They: not to be married, nor heard.",
+      "He said: this poor man is better than",
+      "An earth full of the likes of the first."
+    ]);
+    expect([
+      [at("better-than-an-earth-full", "the first one's place: coming along the road, then going on its way", "x", [0.03, 0.086, 0.514, 0.546, 0.556]), at("better-than-an-earth-full", "his voice: what do you say about this one", "opacity", [0.07, 0.076, 0.19, 0.196])],
+      [at("better-than-an-earth-full", "the one in question: a soft pale ring about the first one's place", "opacity", [0.16, 0.172, 0.508, 0.514]), at("better-than-an-earth-full", "their voice: what they say of the first one", "opacity", [0.2, 0.206, 0.45, 0.456])],
+      [at("better-than-an-earth-full", "proposing: a dashed way from the first one's place to the door of the home", "opacity", [0.27, 0.282, 0.508, 0.514]), at("better-than-an-earth-full", "to be married: the door of the home, lit", "opacity", [0.29, 0.302, 0.508, 0.514])],
+      [at("better-than-an-earth-full", "the first one's voice: interceding and speaking", "opacity", [0.39, 0.396, 0.45, 0.456]), at("better-than-an-earth-full", "heard: soft golden rings about their places", "opacity", [0.41, 0.422, 0.508, 0.514])],
+      [at("better-than-an-earth-full", "the poor Muslim's place: coming along the road, and staying", "x", [0.53, 0.574]), at("better-than-an-earth-full", "the first one's place: coming along the road, then going on its way", "opacity", [0.546, 0.556])],
+      [at("better-than-an-earth-full", "their voice: what they say of the poor one", "opacity", [0.634, 0.64, 0.694, 0.7]), at("better-than-an-earth-full", "not to be married: a grey dashed way from the poor one's place to the door, which stays dark", "opacity", [0.65, 0.662, 0.756, 0.768]), at("better-than-an-earth-full", "nor heard: the poor one's voice, faint and grey", "opacity", [0.668, 0.68, 0.756, 0.768])],
+      [at("better-than-an-earth-full", "his voice: this one is better", "opacity", [0.756, 0.762, 0.95, 0.956]), at("better-than-an-earth-full", "better: a soft golden ring about the poor one's place", "opacity", [0.79, 0.802])],
+      [at("better-than-an-earth-full", "an earth full of the likes of the first: places filling the land", "opacity", [0.88, 0.9, 0.928, 0.94]), at("better-than-an-earth-full", "better than all of them: glints about the poor one's place", "opacity", [0.93, 0.942])]
+    ]).toEqual([
+      [
+        [-64, 0, 0, 45.7, 60],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [-64, 0],
+        [1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 0.5, 0.5, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0.4],
+        [0, 1]
+      ]
+    ]);
+    // A day for the women: the masjid of Madinah, his place with places crowding about him, Abu Sa'id's place, and on
+    // the right the places of those who asked. Abu Sa'id's voice tells of it, and their voice speaks. Two more places come
+    // to crowd about him, and a soft pale ring comes about him and the crowd: all his time. A soft pale ring comes about
+    // those who asked: a day for them. His voice promises; night falls and lifts, the crowd goes, a new day's sun rises, and
+    // his place goes over to them. His voice speaks, with golden glints, sparks rise from their places, and a soft golden
+    // ring comes about them.
+    expect(words("a-day-for-the-women")).toEqual([
+      "Abu Sa'id: the women said to him:",
+      "The men have taken all your time,",
+      "So fix a day of yours for us.",
+      "He promised them a day and met them;",
+      "He gave them lessons and commandments."
+    ]);
+    expect([
+      [at("a-day-for-the-women", "Abu Sa'id's voice: telling of it", "opacity", [0.024, 0.03, 0.08, 0.086]), at("a-day-for-the-women", "the voice of those who asked: a day for us", "opacity", [0.12, 0.126, 0.546, 0.552])],
+      [at("a-day-for-the-women", "two more places, coming to crowd about him", "opacity", [0.226, 0.24, 0.656, 0.672]), at("a-day-for-the-women", "all his time taken: a soft pale ring about him and the crowd", "opacity", [0.25, 0.262, 0.656, 0.668])],
+      [at("a-day-for-the-women", "a day for them: a soft pale ring about the places of those who asked", "opacity", [0.44, 0.452, 0.84, 0.852])],
+      [at("a-day-for-the-women", "his voice: promising them a day", "opacity", [0.612, 0.618, 0.642, 0.648]), at("a-day-for-the-women", "the sun of that day, gone with the night", "opacity", [0.652, 0.672]), at("a-day-for-the-women", "a night, falling and lifting: over the sky", "opacity", [0.652, 0.672, 0.69, 0.71]), at("a-day-for-the-women", "a night, falling and lifting: over the land", "opacity", [0.652, 0.672, 0.69, 0.71]), at("a-day-for-the-women", "the places crowding about him, gone with the night", "opacity", [0.656, 0.672]), at("a-day-for-the-women", "the day promised: its sun, rising", "opacity", [0.69, 0.7]), at("a-day-for-the-women", "the day promised: its sun, rising", "y", [0.69, 0.7, 0.74]), at("a-day-for-the-women", "his place, a golden ring: going over to the places of those who asked", "x", [0.706, 0.744]), at("a-day-for-the-women", "his place, a golden ring: going over to the places of those who asked", "y", [0.706, 0.744])],
+      [at("a-day-for-the-women", "his voice: lessons and commands", "opacity", [0.81, 0.816, 0.95, 0.956]), at("a-day-for-the-women", "his lessons: golden glints over his voice", "opacity", [0.826, 0.838, 0.95, 0.956]), at("a-day-for-the-women", "taught: a soft golden ring about the places of those who asked", "opacity", [0.84, 0.852]), at("a-day-for-the-women", "learned: a spark rising from the places of those who asked 1", "opacity", [0.85, 0.855, 0.895, 0.9]), at("a-day-for-the-women", "learned: a spark rising from the places of those who asked 1", "y", [0.85, 0.855, 0.895, 0.9]), at("a-day-for-the-women", "learned: a spark rising from the places of those who asked 2", "opacity", [0.87, 0.875, 0.915, 0.92]), at("a-day-for-the-women", "learned: a spark rising from the places of those who asked 2", "y", [0.87, 0.875, 0.915, 0.92]), at("a-day-for-the-women", "learned: a spark rising from the places of those who asked 3", "opacity", [0.89, 0.895, 0.935, 0.94]), at("a-day-for-the-women", "learned: a spark rising from the places of those who asked 3", "y", [0.89, 0.895, 0.935, 0.94])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [1, 0],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [1, 0],
+        [0, 1],
+        [22, 17.6, 0],
+        [0, 70],
+        [0, -1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1],
+        [0, 1, 1, 0],
+        [0, -1, -10, -11],
+        [0, 1, 1, 0],
+        [0, -1, -10, -11],
+        [0, 1, 1, 0],
+        [0, -1, -10, -11]
+      ]
+    ]);
+    // On the very edge: a road over the land to Madinah, with its masjid and palms, a home there, and a paddock with two
+    // mares. The place of the one who came comes along the road to the home. A small place shows at its door, with a small
+    // light: a newborn; two foals come by the mares. Its voice speaks, and a soft warm glow comes about its place. Then the
+    // other way: the newborn and the foals fade, and grey dashed rings show where they were; its voice speaks in grey, its
+    // place sways this way and that, unsteady, and a grey dashed ring comes about it.
+    expect(words("on-the-very-edge")).toEqual([
+      "Ibn Abbas: a man would come to Madinah.",
+      "If the man's wife gave birth to a boy",
+      "And the man's mares had foals,",
+      "The man said: this religion is good.",
+      "But if no child was born, and no foals,",
+      "The man said: this religion is bad."
+    ]);
+    expect([
+      [at("on-the-very-edge", "the place of the one who came: coming along the road, then unsteady", "x", [0.03, 0.1, 0.84, 0.856, 0.872, 0.888, 0.904, 0.92])],
+      [at("on-the-very-edge", "a newborn: a small place at the door of the home", "opacity", [0.19, 0.202, 0.66, 0.672]), at("on-the-very-edge", "a newborn: a small light at the door", "opacity", [0.2, 0.212, 0.66, 0.672])],
+      [at("on-the-very-edge", "the mares had foals: a foal 1", "opacity", [0.35, 0.362, 0.68, 0.692]), at("on-the-very-edge", "the mares had foals: a foal 2", "opacity", [0.37, 0.382, 0.68, 0.692])],
+      [at("on-the-very-edge", "the voice of the one who came: this religion is good", "opacity", [0.5, 0.506, 0.594, 0.6]), at("on-the-very-edge", "pleased: a soft warm glow about the place of the one who came", "opacity", [0.51, 0.522, 0.66, 0.672])],
+      [at("on-the-very-edge", "none born: a grey dashed ring at the door", "opacity", [0.69, 0.702]), at("on-the-very-edge", "no foals: grey dashed rings by the mares", "opacity", [0.71, 0.722])],
+      [at("on-the-very-edge", "the voice of the one who came: this religion is bad", "opacity", [0.82, 0.826, 0.93, 0.936]), at("on-the-very-edge", "on the very edge: a grey dashed ring about the place of the one who came", "opacity", [0.93, 0.942])]
+    ]).toEqual([
+      [
+        [-86, 0, 0, -1.6, 1.6, -1.4, 1.2, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ]
+    ]);
+    // Too drowsy to pray: a room at night, a window with its stars and the moon, a lamp, a mat for the prayer and
+    // bedding. The place of one who prays stands on the mat; soft blue specks come over it, and it sways: drowsy. It goes
+    // to the bedding and a soft blue comes over it: asleep; the moon goes across the window, and the blue lifts: its slumber
+    // over, with a soft pale ring about it. A faint place shows on the mat with the blue specks: one who prays drowsy; a
+    // soft golden voice and a grey one come from it in turn, then both together, fainter: it does not know which it asks.
+    // A soft golden ring comes about the place that rested.
+    expect(words("too-drowsy-to-pray")).toEqual([
+      "Aishah: he said: if one of you is drowsy",
+      "While praying, he should go to bed till",
+      "His slumber is over; for praying drowsy,",
+      "One does not know whether one asks for",
+      "Forgiveness, or a bad thing for oneself."
+    ]);
+    expect([
+      [at("too-drowsy-to-pray", "drowsy: soft blue specks over the place on the mat", "opacity", [0.08, 0.092, 0.256, 0.268]), at("too-drowsy-to-pray", "the place of one who prays: on the mat, swaying, then going to the bedding", "x", [0.11, 0.122, 0.134, 0.146, 0.27, 0.33])],
+      [at("too-drowsy-to-pray", "the place of one who prays: on the mat, swaying, then going to the bedding", "y", [0.27, 0.33]), at("too-drowsy-to-pray", "asleep: a soft blue over the place on the bedding", "opacity", [0.34, 0.352, 0.5, 0.512])],
+      [at("too-drowsy-to-pray", "the moon, through the window: going across as the night goes on", "x", [0.42, 0.5]), at("too-drowsy-to-pray", "the moon, through the window: going across as the night goes on", "y", [0.42, 0.5]), at("too-drowsy-to-pray", "its slumber over: a soft pale ring about the place on the bedding", "opacity", [0.516, 0.528, 0.9, 0.912]), at("too-drowsy-to-pray", "one who prays drowsy: a faint place on the mat, with the blue specks", "opacity", [0.53, 0.544])],
+      [at("too-drowsy-to-pray", "asking for forgiveness: a soft golden voice from it, in turn", "opacity", [0.612, 0.618, 0.64, 0.646, 0.68, 0.686, 0.708, 0.714, 0.808, 0.814, 0.836, 0.842, 0.88, 0.892]), at("too-drowsy-to-pray", "or a bad thing for oneself: a grey voice from it, in turn", "opacity", [0.646, 0.652, 0.674, 0.68, 0.714, 0.72, 0.742, 0.748, 0.842, 0.848, 0.87, 0.876, 0.88, 0.892])],
+      [at("too-drowsy-to-pray", "the better way: a soft golden ring about the place that rested", "opacity", [0.9, 0.912])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, -0.8, 0.8, 0, 0, 50]
+      ],
+      [
+        [0, 5.8],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 14],
+        [0, -10],
+        [0, 1, 1, 0],
+        [0, 0.55]
+      ],
+      [
+        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0.6],
+        [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0.6]
+      ],
+      [
+        [0, 1]
+      ]
+    ]);
+    // Take it without greed: the masjid of Madinah, his place before it, and Umar's place. Coins go from his place to
+    // Umar's. Umar's voice speaks: a poorer place shows far off, and a dashed way goes to it. His voice speaks: the way
+    // fades, and a soft golden ring comes about Umar's place and the coins: take it. Coins come by themselves along a dashed
+    // way from far off to Umar's place, which stays where it is, and a soft golden ring and glints come about them. Far off,
+    // coins show that do not come; a grey dashed way toward them shows and fades, and glints come about Umar's place.
+    expect(words("take-it-without-greed")).toEqual([
+      "Umar: he would give me something, and I",
+      "Would say: give it to one poorer than me.",
+      "He said: take it. If you are given some",
+      "Of this wealth without asking for it",
+      "Or having greed for it, take it;",
+      "And if not given, do not run for it."
+    ]);
+    expect([
+      [at("take-it-without-greed", "his gift: coins, going from his place to Umar's", "opacity", [0.04, 0.05]), at("take-it-without-greed", "his gift: coins, going from his place to Umar's", "x", [0.05, 0.1]), at("take-it-without-greed", "his gift: coins, going from his place to Umar's", "y", [0.05, 0.1]), at("take-it-without-greed", "Umar's voice: give it to one poorer than me", "opacity", [0.104, 0.11, 0.274, 0.28])],
+      [at("take-it-without-greed", "one poorer: a place far off on the left", "opacity", [0.19, 0.202]), at("take-it-without-greed", "to the poorer one: a dashed way from Umar's place to it", "opacity", [0.21, 0.222, 0.36, 0.372])],
+      [at("take-it-without-greed", "his voice: take it", "opacity", [0.34, 0.346, 0.95, 0.956]), at("take-it-without-greed", "take it: a soft golden ring about Umar's place and the coins", "opacity", [0.38, 0.392])],
+      [at("take-it-without-greed", "the way it comes: dashed, from far off to Umar's place", "opacity", [0.5, 0.512, 0.7, 0.712]), at("take-it-without-greed", "something of this wealth: coins coming by themselves", "opacity", [0.5, 0.51]), at("take-it-without-greed", "something of this wealth: coins coming by themselves", "x", [0.51, 0.58]), at("take-it-without-greed", "something of this wealth: coins coming by themselves", "y", [0.51, 0.58])],
+      [at("take-it-without-greed", "taken without greed: a soft golden ring and glints about the coins that came", "opacity", [0.68, 0.692])],
+      [at("take-it-without-greed", "not given: coins far off, that do not come", "opacity", [0.82, 0.832]), at("take-it-without-greed", "do not run for it: a grey dashed way toward them, that fades", "opacity", [0.85, 0.862, 0.9, 0.912]), at("take-it-without-greed", "Umar's place stays where it is: glints about it", "opacity", [0.92, 0.932])]
+    ]).toEqual([
+      [
+        [0, 1],
+        [22, 0],
+        [-3, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [74, 0],
+        [5.6, 0]
+      ],
+      [
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0],
+        [0, 1]
+      ]
+    ]);
+    // Made up in Sha'ban: across the sky the twelve months as crescents, from Ramadan to Sha'ban; below, a home of
+    // Madinah, his place and Aishah's. Aishah's voice tells of it. Ramadan's crescent lights, and three small grey marks
+    // show under it: days missed. A soft ring goes along the months with the marks under it, still grey; Sha'ban's crescent
+    // lights, the marks come under it and turn golden, and a spark rises: made up. Then Aishah's place goes back and forth,
+    // busy, with glints, and a soft golden ring comes about it.
+    expect(words("made-up-in-shaban")).toEqual([
+      "Aishah: I missed some days of Ramadan,",
+      "But could not make them up except",
+      "In the month of Sha'ban.",
+      "Yahya said: she was busy serving him."
+    ]);
+    expect([
+      [at("made-up-in-shaban", "Aishah's voice: telling of it", "opacity", [0.03, 0.036, 0.204, 0.21]), at("made-up-in-shaban", "Ramadan: its crescent, lit", "opacity", [0.06, 0.072]), at("made-up-in-shaban", "days of Ramadan missed: three small grey marks, carried along the months", "opacity", [0.12, 0.132, 0.6, 0.612])],
+      [at("made-up-in-shaban", "the months going by: a soft ring along the crescents", "opacity", [0.27, 0.28, 0.56, 0.572]), at("made-up-in-shaban", "days of Ramadan missed: three small grey marks, carried along the months", "x", [0.28, 0.44, 0.54, 0.56]), at("made-up-in-shaban", "the months going by: a soft ring along the crescents", "x", [0.28, 0.44, 0.54, 0.56])],
+      [at("made-up-in-shaban", "Sha'ban: its crescent, lit", "opacity", [0.52, 0.532]), at("made-up-in-shaban", "made up in Sha'ban: the marks, golden", "opacity", [0.6, 0.612]), at("made-up-in-shaban", "made up: a spark rising from the days fasted", "opacity", [0.62, 0.625, 0.675, 0.68]), at("made-up-in-shaban", "made up: a spark rising from the days fasted", "y", [0.62, 0.625, 0.675, 0.68])],
+      [at("made-up-in-shaban", "Aishah's place: busy, going back and forth", "x", [0.77, 0.79, 0.81, 0.83, 0.85, 0.87, 0.89]), at("made-up-in-shaban", "Aishah's place: busy, going back and forth", "y", [0.77, 0.79, 0.81, 0.83, 0.85, 0.87, 0.89]), at("made-up-in-shaban", "busy serving him: glints about the way between the door and his place", "opacity", [0.79, 0.802, 0.95, 0.956]), at("made-up-in-shaban", "busy serving him: a soft golden ring about Aishah's place", "opacity", [0.91, 0.922])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 120, 120, 132],
+        [0, 120, 120, 132]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1, 1, 0],
+        [0, -1, -10, -11]
+      ],
+      [
+        [0, -12, 0, -12, 0, -12, 0],
+        [0, -3, 0, -3, 0, -3, 0],
+        [0, 1, 1, 0],
         [0, 1]
       ]
     ]);
