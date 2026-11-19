@@ -7135,6 +7135,54 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-best-day": [
     ["Which day is the best the sun rises on?", "Friday", "Which the sun has risen is Friday."],
     ["What is the best day the sun rises on?", "Friday", "Which the sun has risen is Friday."]
+  ],
+  // Sahl ibn Sa'd said: the companions did not take as a starting date for the Muslim calendar the day the Prophet ﷺ
+  // had been sent as an Apostle, or the day of his death, but the day of his arrival at Madinah (Sahih al-Bukhari 3934).
+  // Its lesson's questions on Hafsah and on collecting the Quran are not asked here, since the scene's words do not say
+  // them.
+  "sign-counted-from-arrival": [
+    ["Umar began counting the Islamic years from the ____.", "Hijrah", "But the day of his arrival at Madinah."]
+  ],
+  // Amr ibn Salamah said: the Arabs delayed their conversion to Islam till the Conquest; they used to say: leave him
+  // and his people; if he overpowers them, then he is a true Prophet. So when Makkah was conquered, every tribe rushed to
+  // embrace Islam, and my father hurried to embrace Islam before the rest of my tribe (Sahih al-Bukhari 4302).
+  "sign-every-tribe-hurried": [
+    ["What were the tribes waiting for?", "The Conquest of Makkah", "Conversion to Islam till the Conquest."],
+    ["What happened when Makkah was conquered?", "Every tribe rushed to Islam", "Makkah was conquered, then every tribe", "Rushed to embrace Islam, and my father"],
+    ["Amr bin Salamah's father hurried to accept Islam.", "True", "Hurried to embrace Islam before my tribe."]
+  ],
+  // Abu Hurairah said that the Prophet ﷺ said: the most true words said by a poet are the words of Labid: everything
+  // except Allah is perishable (Sahih al-Bukhari 3841). Its lesson's question on 55:26-27 is not asked here, since it is
+  // on an ayah.
+  "sign-truest-words": [
+    ["Whose words did he ﷺ call most true?", "Labid's", "Said by a poet was the words of Labid:"],
+    ["What did Labid say?", "All but Allah will perish", "Everything except Allah is perishable."]
+  ],
+  // Abdullah ibn Mas'ud said: O people! If somebody knows something, he can say it, but if he does not know it, he
+  // should say: Allah knows better, for it is a sign of having knowledge to say about something which one does not know:
+  // Allah knows better (Sahih al-Bukhari 4809). Its lesson's question on the ayah he cited is not asked here, since the
+  // scene's words do not say it.
+  "sign-if-you-do-not-know": [
+    ["What should one who does not know say?", "Allah knows better", "Allah knows better, for it is a sign of"],
+    ["What is saying it a sign of, per Ibn Masud?", "Having knowledge", "Having knowledge to say about"]
+  ],
+  // Sa'd ibn Abi Waqqas said: in the year of the last Hajj I became seriously ill; I asked: should I give two-thirds
+  // of my property in charity? He said: no. Half? He said: no. Then he added: one-third, and even one-third is much; you'd
+  // better leave your inheritors wealthy rather than leaving them poor, begging others (Sahih al-Bukhari 1295; and Ibn
+  // Abbas's report of it, 2743). Its lessons' questions on when Sa'd was ill (its answer is in the scene's first words),
+  // on what Ibn Abbas advised (the scene's words do not say it) and on willing all one's wealth away (on the whole hadith,
+  // not one moment of it) are not asked here.
+  "sign-a-third-is-much": [
+    ["How much did the Prophet ﷺ allow Sa'd to give away in his will?", "One third", "Then he added: One-third, and even"],
+    ["Why not give away more?", "Better to leave heirs rich than poor", "One-third is much. You'd better leave", "Leaving them poor, begging others."],
+    ["What is the most a will can give away?", "One third", "Then he added: One-third, and even"]
+  ],
+  // Imran ibn Husayn said that the Prophet ﷺ said: modesty brings forth nothing but goodness (Sahih Muslim 37a; and
+  // Sahih al-Bukhari 6117). Its lessons' questions on why Imran was upset, on the Arabic word for modesty, on what haya is
+  // and on haya keeping one from bad deeds are not asked here, since the scene's words do not say them.
+  "sign-modesty-brings-good": [
+    ["What does modesty bring?", "Nothing but good", "Nothing but goodness."],
+    ["What does haya bring?", "Only good", "Nothing but goodness."]
   ]
 };
 

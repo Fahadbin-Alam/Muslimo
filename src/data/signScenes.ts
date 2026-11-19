@@ -1109,7 +1109,13 @@ export type SignKind =
   | "simple-path"
   | "passing-thoughts"
   | "together-at-muzdalifah"
-  | "best-day";
+  | "best-day"
+  | "counted-from-arrival"
+  | "every-tribe-hurried"
+  | "truest-words"
+  | "if-you-do-not-know"
+  | "a-third-is-much"
+  | "modesty-brings-good";
 
 export type SignScene = {
   id: string;
@@ -6232,6 +6238,47 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Hurairah said: the Messenger of Allah ﷺ said: the best day on which the sun has risen is Friday; on it Adam was created, on it he was made to enter Paradise, and on it he was expelled from it.",
     sources: [muslim("854")]
+  },
+  {
+    id: "sign-counted-from-arrival",
+    kind: "counted-from-arrival",
+    caption:
+      "Sahl ibn Sa'd said: the companions did not take as a starting date for the Muslim calendar the day the Prophet ﷺ had been sent as an Apostle, or the day of his death, but the day of his arrival at Madinah.",
+    sources: [bukhari("3934")]
+  },
+  {
+    id: "sign-every-tribe-hurried",
+    kind: "every-tribe-hurried",
+    caption:
+      "Amr ibn Salamah said: the Arabs delayed their conversion to Islam till the Conquest. They used to say: leave him and his people; if he overpowers them, then he is a true Prophet. So when Makkah was conquered, every tribe rushed to embrace Islam, and my father hurried to embrace Islam before the rest of my tribe.",
+    sources: [bukhari("4302")]
+  },
+  {
+    id: "sign-truest-words",
+    kind: "truest-words",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: the most true words said by a poet are the words of Labid: verily, everything except Allah is perishable. And Umayyah ibn Abi as-Salt was about to become a Muslim.",
+    sources: [bukhari("3841")]
+  },
+  {
+    id: "sign-if-you-do-not-know",
+    kind: "if-you-do-not-know",
+    caption:
+      "Abdullah ibn Mas'ud said: O people! If somebody knows something, he can say it, but if he does not know it, he should say: Allah knows better, for it is a sign of having knowledge to say about something which one does not know: Allah knows better.",
+    sources: [bukhari("4809")]
+  },
+  {
+    id: "sign-a-third-is-much",
+    kind: "a-third-is-much",
+    caption:
+      "Sa'd ibn Abi Waqqas said: in the year of the last Hajj I became seriously ill, and the Messenger of Allah ﷺ used to visit me. I told him: I am reduced to this state because of illness, and I am wealthy and have no inheritors except a daughter. Should I give two-thirds of my property in charity? He said: no. I asked: half? He said: no. Then he added: one-third, and even one-third is much. You'd better leave your inheritors wealthy rather than leaving them poor, begging others.",
+    sources: [bukhari("1295"), bukhari("2743")]
+  },
+  {
+    id: "sign-modesty-brings-good",
+    kind: "modesty-brings-good",
+    caption: "Imran ibn Husayn said: the Prophet ﷺ said: modesty brings forth nothing but goodness.",
+    sources: [muslim("37a"), bukhari("6117")]
   }
 ];
 
@@ -9024,7 +9071,21 @@ export const SIGN_LESSONS: Record<string, string> = {
   "deep-book-hajj-maghrib-and-isha-together": "sign-together-at-muzdalifah",
   // The best day on which the sun has risen is Friday.
   "deep-days-friday": "sign-best-day",
-  "deep-jumuah3-the-best-day": "sign-best-day"
+  "deep-jumuah3-the-best-day": "sign-best-day",
+  // His companions counted the years from his arrival at Madinah, not from the day he was sent.
+  "sahabi-umar-ibn-al-khattab-after-the-prophet": "sign-counted-from-arrival",
+  // The Arabs waited for Makkah; when it was conquered, every tribe rushed to embrace Islam.
+  "deep-nasr1-waiting-for-makkah": "sign-every-tribe-hurried",
+  // The truest words a poet said are Labid's: everything except Allah is perishable.
+  "deep-rahman2-everything-but-allah-passes": "sign-truest-words",
+  // Whoever does not know should say Allah knows better, for that is a sign of knowledge.
+  "deep-sad4-allah-knows-best": "sign-if-you-do-not-know",
+  // One-third, and even one-third is much; better to leave the heirs wealthy than poor.
+  "deep-sad-a-third": "sign-a-third-is-much",
+  "deep-book-wills-one-third-is-a-lot": "sign-a-third-is-much",
+  // Modesty brings nothing but good.
+  "deep-imran-ibn-husayn-modesty-brings-good": "sign-modesty-brings-good",
+  "deep-haya-only-good": "sign-modesty-brings-good"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

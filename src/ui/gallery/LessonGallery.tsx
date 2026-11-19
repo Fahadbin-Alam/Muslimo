@@ -1661,6 +1661,12 @@ const STATES: State[] = [
   { id: "scene-passing-thoughts", render: () => <SceneQuestionDemo lessonId="lesson-deep-qaf2-thoughts-forgiven" ask="What does Allah forgive" /> },
   { id: "scene-together-at-muzdalifah", render: () => <SceneQuestionDemo lessonId="lesson-deep-book-hajj-maghrib-and-isha-together" ask="joined at Muzdalifah" /> },
   { id: "scene-best-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-days-friday" ask="Which day is the best" /> },
+  { id: "scene-counted-from-arrival", render: () => <SceneQuestionDemo lessonId="lesson-sahabi-umar-ibn-al-khattab-after-the-prophet" ask="Umar began counting" /> },
+  { id: "scene-every-tribe-hurried", render: () => <SceneQuestionDemo lessonId="lesson-deep-nasr1-waiting-for-makkah" ask="What happened when Makkah" /> },
+  { id: "scene-truest-words", render: () => <SceneQuestionDemo lessonId="lesson-deep-rahman2-everything-but-allah-passes" ask="What did Labid say" /> },
+  { id: "scene-if-you-do-not-know", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad4-allah-knows-best" ask="What should one who does not know" /> },
+  { id: "scene-a-third-is-much", render: () => <SceneQuestionDemo lessonId="lesson-deep-sad-a-third" ask="Why not give away more" /> },
+  { id: "scene-modesty-brings-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-imran-ibn-husayn-modesty-brings-good" ask="What does modesty bring" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
