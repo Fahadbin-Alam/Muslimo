@@ -1197,7 +1197,11 @@ export type SignKind =
   | "and-if-i-cannot"
   | "abu-bakrs-trade"
   | "forbidden-and-disliked"
-  | "not-while-leaning";
+  | "not-while-leaning"
+  | "parable-of-the-path"
+  | "closing-a-sitting"
+  | "rush-to-good-deeds"
+  | "no-dua-wasted";
 
 export type SignScene = {
   id: string;
@@ -6934,6 +6938,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Juhayfah said: the Messenger of Allah ﷺ said: I do not take my meals while leaning.",
     sources: [bukhari("5398")]
+  },
+  {
+    id: "sign-parable-of-the-path",
+    kind: "parable-of-the-path",
+    caption:
+      "An-Nawwas ibn Sam'an said: the Messenger of Allah ﷺ said: Allah has made a parable of the straight path: at the sides of the path there are walls with open doors, each door having a curtain. There is a caller at the head of the path calling, and a caller above it calling. The doors on the sides of the path are the Hudud of Allah, the limits He has set; no one breaches the Hudud of Allah except that curtain is lifted.",
+    sources: [tirmidhi("2859")]
+  },
+  {
+    id: "sign-closing-a-sitting",
+    kind: "closing-a-sitting",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: whoever sits in a sitting and engages in much empty, meaningless speech, and then says before getting up from that sitting of his: Subhanaka Allahumma wa bihamdika, ashhadu an la ilaha illa anta, astaghfiruka wa atubu ilaik (glory is to You, O Allah, and praise; I bear witness that there is none worthy of worship except You; I seek Your forgiveness, and I repent to You), whatever occurred in that sitting would be forgiven to him.",
+    sources: [tirmidhi("3433")]
+  },
+  {
+    id: "sign-rush-to-good-deeds",
+    kind: "rush-to-good-deeds",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: rush to do good deeds. A Fitnah will occur that is like a portion of the dark night: morning will come upon a man as a believer, who will be a disbeliever in the evening, and evening will come upon a believer, who will be a disbeliever in the morning. One of them will sell his religion for goods of the world.",
+    sources: [tirmidhi("2195")]
+  },
+  {
+    id: "sign-no-dua-wasted",
+    kind: "no-dua-wasted",
+    caption:
+      "Jabir ibn Abdullah said: the Messenger of Allah ﷺ said: there is none who utters a supplication, except that Allah gives him what he asked, or prevents evil from him that is equal to it, as long as he does not supplicate for something evil, or the cutting of ties of the womb.",
+    sources: [tirmidhi("3381")]
   }
 ];
 
@@ -9921,7 +9953,15 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Eating with adab: say Bismillah, eat with your right hand, and eat from what is near you.
   "manners-eating": "sign-eat-near",
   // Abu Ubaydah met Umar at Sargh and told him of the plague in Sham.
-  "sahabi-abu-ubaydah-ibn-al-jarrah-leadership-and-decisions": "sign-plague"
+  "sahabi-abu-ubaydah-ibn-al-jarrah-leadership-and-decisions": "sign-plague",
+  // A parable of the straight path: walls at its sides with open doors, a curtain on each door, and callers calling.
+  "deep-aqidah-steady-on-the-path-a-parable-of-the-path": "sign-parable-of-the-path",
+  // Before getting up from a sitting of much idle talk, say: Subhanaka Allahumma wa bihamdika.
+  "deep-manners-gatherings-closing-a-sitting": "sign-closing-a-sitting",
+  // Rush to good deeds, before trials like portions of the dark night.
+  "deep-akhirah-holding-on-in-trials-rush-to-good-deeds": "sign-rush-to-good-deeds",
+  // No du'a is wasted: Allah gives what was asked, or keeps away a harm like it.
+  "deep-dua-answered-no-dua-wasted": "sign-no-dua-wasted"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
