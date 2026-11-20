@@ -7969,6 +7969,50 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What was he ﷺ doing when the stranger came?", "Giving a khutbah", "Allah while he was delivering a Khutbah,"],
     ["What did he ﷺ do for the man who did not know his religion?", "Stopped and taught him", "Allah stopped his Khutbah and turned to", "Teach me what Allah has taught him, then"],
     ["After teaching him, he ﷺ finished his khutbah.", "True", "He went and completed his Khutbah."]
+  ],
+  // Shurayh ibn Hani said: I said to Aishah: tell me, what was the first thing that the Messenger of Allah ﷺ did when
+  // he entered upon you? She said: the first thing he would do would be to use the tooth stick (Sunan Ibn Majah 290).
+  "sign-the-siwak-first": [
+    ["What did he ﷺ do first on coming home?", "Used the siwak", "Would do would be to use the tooth stick."],
+    ["A siwak is a small stick for cleaning the teeth.", "True", "Would do would be to use the tooth stick."]
+  ],
+  // Aishah said to the Prophet ﷺ: all of your wives have a kunyah except me. He said: you are Umm Abdullah (Sunan Ibn
+  // Majah 3739).
+  "sign-you-are-umm-abdullah": [
+    ["What did Aishah say all his other wives had?", "A kunyah", "Wives have a kunyah except me."],
+    ["Aishah said she was the only wife without a kunyah.", "True", "Wives have a kunyah except me."],
+    ["What kunyah did he ﷺ give Aishah?", "Umm Abdullah", "He said: you are Umm Abdullah."]
+  ],
+  // Abdullah ibn Amr said: it was said to the Messenger of Allah ﷺ: which of the people is best? He said: everyone who
+  // is pure of heart and sincere in speech. They said: sincere in speech, we know what this is, but what is pure of
+  // heart? He said: it is pious and pure, with no sin, injustice, rancor or envy in it (Sunan Ibn Majah 4216).
+  "sign-pure-of-heart": [
+    ["Which people did he ﷺ call the best?", "The pure-hearted and truthful", "Is best? He said: everyone who is pure", "Of heart and sincere in speech. They"],
+    ["What is not found in a pure heart, he ﷺ said?", "Sin, hatred or envy", "Said: it is pious and pure, with no sin,", "Injustice, rancor or envy in it."],
+    ["A pure heart has no envy in it.", "True", "Injustice, rancor or envy in it."]
+  ],
+  // Ibn Abbas said: on the morning of Aqabah, when he was atop his she-camel, the Messenger of Allah ﷺ said: pick up
+  // some pebbles for me. So I picked up seven pebbles for him. He began to toss them in his hand, saying: throw
+  // something like these. Then he said: O people, beware of exaggeration in religious matters, for those who came
+  // before you were doomed because of exaggeration in religious matters (Sunan Ibn Majah 3029).
+  "sign-pebbles-like-these": [
+    ["What did he ﷺ warn the people about at Hajj?", "Going to extremes in religion", "He said: O people, beware of exaggeration", "In religious matters, for those who came"],
+    ["Going to extremes in religion is a good thing.", "False", "He said: O people, beware of exaggeration"],
+    ["Why must we beware of going to extremes?", "Extremes ruined people before us", "In religious matters, for those who came", "Exaggeration in religious matters."]
+  ],
+  // Mu'awiyah said: the Messenger of Allah ﷺ said: do not be demanding when asking. If one of you asks me for anything
+  // and I give it reluctantly, there will be no blessing in it (Sunan an-Nasa'i 2593).
+  "sign-do-not-be-demanding": [
+    ["How should you not be when you ask, he ﷺ said?", "Pushy and demanding", "Mu'awiyah: he said: do not be demanding", "When asking. If one of you asks me for"],
+    ["What is missing from a gift given unwillingly?", "Blessing", "There will be no blessing in it."],
+    ["Pressing someone hard to give you something brings blessing.", "False", "There will be no blessing in it."]
+  ],
+  // Abdullah ibn Mas'ud said that Abu Bakr and Umar gave him the glad tidings that the Messenger of Allah ﷺ had said:
+  // whoever would like to recite the Quran as fresh as when it was revealed, let him recite it like Ibn Umm Abd (Sunan
+  // Ibn Majah 138).
+  "sign-as-fresh-as-revealed": [
+    ["Who brought Ibn Mas'ud the good news?", "Abu Bakr and Umar", "Abu Bakr and Umar gave Ibn Mas'ud the", "Glad tidings that the Messenger of"],
+    ["Ibn Mas'ud recited the Quran as fresh as when it was revealed.", "True", "Recite the Quran as fresh as when it", "Ibn Umm Abd."]
   ]
 };
 
