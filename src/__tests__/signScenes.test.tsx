@@ -38888,7 +38888,7 @@ describe("the signs in creation, alive", () => {
       "Then you have done something bad."
     ]);
     expect([
-      [at("what-your-neighbors-say", "Ibn Mas'ud's voice: telling of it", "opacity", [0.024, 0.03, 0.06, 0.066]), at("what-your-neighbors-say", "its voice: asking", "opacity", [0.15, 0.156, 0.33, 0.336]), at("what-your-neighbors-say", "his voice, soft and golden", "opacity", [0.39, 0.396, 0.96, 0.966])],
+      [at("what-your-neighbors-say", "Ibn Mas'ud's voice: telling of it", "opacity", [0.024, 0.03, 0.06, 0.066]), at("what-your-neighbors-say", "its voice: asking, until his voice answers", "opacity", [0.15, 0.156, 0.386, 0.392]), at("what-your-neighbors-say", "his voice, soft and golden", "opacity", [0.39, 0.396, 0.96, 0.966])],
       [at("what-your-neighbors-say", "the places of those next door to the one who asked, coming out by their homes", "opacity", [0.4, 0.41]), at("what-your-neighbors-say", "their voices, soft and golden, toward it: you have done well", "opacity", [0.52, 0.526, 0.58, 0.586]), at("what-your-neighbors-say", "then you have done well: a soft golden ring about its place", "opacity", [0.64, 0.652]), at("what-your-neighbors-say", "and glints over it", "opacity", [0.66, 0.67])],
       [at("what-your-neighbors-say", "the places of those next door to the other, coming out by their homes", "opacity", [0.68, 0.69]), at("what-your-neighbors-say", "their voices, grey, toward it: you have done something bad", "opacity", [0.76, 0.766, 0.826, 0.832]), at("what-your-neighbors-say", "then you have done something bad: a grey dashed ring about its place", "opacity", [0.89, 0.902])]
     ]).toEqual([
@@ -38912,9 +38912,9 @@ describe("the signs in creation, alive", () => {
     // Patient with the folk, and no one is drawn: in Madinah, two stalls of the market, and among the places of the
     // folk before them the place of one who mixes with them; on a hill apart, the place of another, alone; his place, a
     // golden ring, and Ibn Umar's place. Ibn Umar's voice tells of it, and his voice, soft and golden, speaks. Grey
-    // jagged marks of annoyance come toward the place among the folk from two sides, and are gone; a soft golden ring
-    // comes about it: patience, then a soft golden light and glints: a greater reward. A soft light picks out the place
-    // apart on the hill, and a smaller soft golden ring comes about it.
+    // jagged marks of annoyance come to the place among the folk from two sides and stay by it; a soft golden ring
+    // comes about it, patience, and the marks are gone; then a soft golden light and glints: a greater reward. A soft
+    // light picks out the place apart on the hill, and a smaller soft golden ring comes about it.
     expect(words("patient-with-people")).toEqual([
       "Ibn Umar: he said: the believer who mixes",
       "With people and bears their annoyance",
@@ -38925,8 +38925,8 @@ describe("the signs in creation, alive", () => {
     ]);
     expect([
       [at("patient-with-people", "Ibn Umar's voice: telling of it", "opacity", [0.024, 0.03, 0.06, 0.066]), at("patient-with-people", "his voice, soft and golden", "opacity", [0.066, 0.072, 0.96, 0.966])],
-      [at("patient-with-people", "annoyance: grey jagged marks coming toward its place from one side, then gone", "opacity", [0.19, 0.196, 0.226, 0.234]), at("patient-with-people", "annoyance: grey jagged marks coming toward its place from one side, then gone", "x", [0.19, 0.222]), at("patient-with-people", "annoyance: grey jagged marks coming toward its place from the other side, then gone", "opacity", [0.236, 0.242, 0.272, 0.28]), at("patient-with-people", "annoyance: grey jagged marks coming toward its place from the other side, then gone", "x", [0.236, 0.268])],
-      [at("patient-with-people", "with patience: a soft golden ring about its place", "opacity", [0.34, 0.352]), at("patient-with-people", "a greater reward: a soft golden light about its place", "opacity", [0.37, 0.41]), at("patient-with-people", "and glints over it", "opacity", [0.42, 0.43])],
+      [at("patient-with-people", "annoyance: grey jagged marks coming to its place from one side, borne with patience", "opacity", [0.19, 0.196]), at("patient-with-people", "annoyance: grey jagged marks coming to its place from one side, borne with patience", "x", [0.19, 0.222]), at("patient-with-people", "annoyance: grey jagged marks coming to its place from the other side, borne with patience", "opacity", [0.236, 0.242]), at("patient-with-people", "annoyance: grey jagged marks coming to its place from the other side, borne with patience", "x", [0.236, 0.268])],
+      [at("patient-with-people", "with patience: a soft golden ring about its place", "opacity", [0.34, 0.352]), at("patient-with-people", "annoyance: grey jagged marks coming to its place from one side, borne with patience", "opacity", [0.34, 0.352]), at("patient-with-people", "annoyance: grey jagged marks coming to its place from the other side, borne with patience", "opacity", [0.34, 0.352]), at("patient-with-people", "a greater reward: a soft golden light about its place", "opacity", [0.37, 0.41]), at("patient-with-people", "and glints over it", "opacity", [0.42, 0.43])],
       [at("patient-with-people", "a soft light picking out the place apart on the hill", "opacity", [0.5, 0.52, 0.58, 0.6]), at("patient-with-people", "its reward: a smaller soft golden ring about its place", "opacity", [0.83, 0.842])]
     ]).toEqual([
       [
@@ -38934,13 +38934,15 @@ describe("the signs in creation, alive", () => {
         [0, 1, 1, 0]
       ],
       [
-        [0, 1, 1, 0],
+        [0, 1],
         [-10, 0],
-        [0, 1, 1, 0],
+        [0, 1],
         [10, 0]
       ],
       [
         [0, 1],
+        [1, 0],
+        [1, 0],
         [0, 1],
         [0, 1]
       ],

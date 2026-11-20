@@ -414,7 +414,7 @@ function whatYourNeighborsSay(): SignArt {
       ...palms([[99, 88, 9]], "Madinah"),
       ...homes.map((x, i): SignPart => ({ name: `a home ${i + 1}`, svg: home(x, 96, 14, 10) })),
       { name: "the place of the one who asked, by its home", svg: someone(asked[0], asked[1], 1.5, ASKED) },
-      { name: "its voice: asking", svg: arcs(n(asked[0] + 2.4), n(asked[1] - 3.2), ASKED), keys: voice([[0.15, 0.33]]), loop: speaking },
+      { name: "its voice: asking, until his voice answers", svg: arcs(n(asked[0] + 2.4), n(asked[1] - 3.2), ASKED), keys: voice([[0.15, 0.386]]), loop: speaking },
       { name: "the place of the other one, by its home", svg: someone(other[0], other[1], 1.5, OTHER) },
       { name: "the places of those next door to the one who asked, coming out by their homes", svg: nextToAsked.map(([x, y]) => someone(x, y, 1.4, NEXT_DOOR)).join(""), keys: showAt(0.4, 0.41) },
       { name: "their voices, soft and golden, toward it: you have done well", svg: toward(nextToAsked, SOFT_GOLD), keys: showFor(0.52, 0.526, 0.58, 0.586), loop: speaking },
@@ -454,9 +454,10 @@ function whatYourNeighborsSay(): SignArt {
 // not put up with their annoyance (Sunan Ibn Majah 4032). No one is drawn: in Madinah, two stalls of the market, and
 // among the places of the folk before them the place of one who mixes with them; on a hill apart, the place of
 // another, alone; his place, a golden ring, and Ibn Umar's place on the left. Ibn Umar's voice tells of it, and his
-// voice, soft and golden, speaks. Grey jagged marks of annoyance come toward the place among the folk from two sides,
-// and are gone; a soft golden ring comes about it: patience, then a soft golden light and glints: a greater reward. A
-// soft light picks out the place apart on the hill, and a smaller soft golden ring comes about it.
+// voice, soft and golden, speaks. Grey jagged marks of annoyance come to the place among the folk from two sides and
+// stay by it; a soft golden ring comes about it, patience, and the marks are gone; then a soft golden light and
+// glints: a greater reward. A soft light picks out the place apart on the hill, and a smaller soft golden ring comes
+// about it.
 function patientWithPeople(): SignArt {
   const ibnUmar: [number, number] = [10, 106.4];
   const his: [number, number] = [26, 101.2];
@@ -488,14 +489,14 @@ function patientWithPeople(): SignArt {
       { name: "the place of one who mixes with the folk", svg: someone(mixes[0], mixes[1], 1.6, MIXES) },
       { name: "the place of one apart, alone on the hill", svg: someone(apart[0], apart[1], 1.6, APART) },
       {
-        name: "annoyance: grey jagged marks coming toward its place from one side, then gone",
+        name: "annoyance: grey jagged marks coming to its place from one side, borne with patience",
         svg: annoyance(n(mixes[0] - 5.4), n(mixes[1] + 0.2)),
         keys: track({
           opacity: [
             [0.19, 0],
             [0.196, 1],
-            [0.226, 1],
-            [0.234, 0]
+            [0.34, 1],
+            [0.352, 0]
           ],
           xy: [
             [0.19, -10, -1.4],
@@ -504,14 +505,14 @@ function patientWithPeople(): SignArt {
         })
       },
       {
-        name: "annoyance: grey jagged marks coming toward its place from the other side, then gone",
+        name: "annoyance: grey jagged marks coming to its place from the other side, borne with patience",
         svg: annoyance(n(mixes[0] + 5.6), n(mixes[1] + 0.2)),
         keys: track({
           opacity: [
             [0.236, 0],
             [0.242, 1],
-            [0.272, 1],
-            [0.28, 0]
+            [0.34, 1],
+            [0.352, 0]
           ],
           xy: [
             [0.236, 10, -1.4],

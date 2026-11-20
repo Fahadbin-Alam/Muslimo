@@ -1754,6 +1754,12 @@ const STATES: State[] = [
   { id: "scene-most-merciful-of-my-nation", render: () => <SceneQuestionDemo lessonId="lesson-deep-muadh-halal-haram" ask="the most merciful of the ummah" /> },
   { id: "scene-what-an-excellent-man", render: () => <SceneQuestionDemo lessonId="lesson-deep-praised-by-name-what-an-excellent-man" ask="How many men named Mu'adh" /> },
   { id: "scene-best-to-his-family", render: () => <SceneQuestionDemo lessonId="lesson-deep-spouses-best-to-family" ask="say was best to his family" /> },
+  { id: "scene-forgiveness-for-the-first-row", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-little-extras-forgiveness-for-the-first-row" ask="for the second row too" /> },
+  { id: "scene-keep-sheep", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animal-manners-blessing-in-sheep" ask="say is in sheep" /> },
+  { id: "scene-mix-it-with-charity", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-rights-of-others-charity-mixed-with-trade" ask="tell the merchants to mix" /> },
+  { id: "scene-what-your-neighbors-say", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-short-words-to-live-by-what-your-neighbors-say" ask="say to listen to" /> },
+  { id: "scene-patient-with-people", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-getting-along-patient-with-people" ask="bear with patience" /> },
+  { id: "scene-beautiful-voices", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-reciting-quran-beautiful-voices" ask="When should we make our voices" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
