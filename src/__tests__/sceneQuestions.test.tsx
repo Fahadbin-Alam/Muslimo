@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3754);
+    expect(asks.length).toBe(3766);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5465);
+    expect(places).toBe(5483);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -27890,6 +27890,194 @@ describe("where the scene waits and where it stops", () => {
         [1, 0],
         [0, 1]
       ]
+    ]);
+  });
+
+  it("waits on the scenes from the parable of the straight path to no du'a being wasted before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-parable-of-the-path", "sign-closing-a-sitting", "sign-rush-to-good-deeds", "sign-no-dua-wasted"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(12);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // A curtain: the walls stand at the sides of the path, and no door shows in them yet, before the next words; then open
+    // doors show in the walls, and a curtain hangs on each door.
+    expect([
+      shown("In the parable, what hangs over each open door?", ["open doors in the walls", "a curtain on each door", "a curtain on the near door on the right"]),
+      value("parable-of-the-path", "a wall at the left side of the path", "opacity", 0.335)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // The limits Allah has set: the curtains hang on the doors and the callers call, and the one who walks the path is
+    // still where it stood, before the next words; then it goes on along the path, the doors are picked out in light, and
+    // a grey dashed edge comes about each door: the limits.
+    expect([
+      shown("What are the open doors at the sides of the path?", ["the limits: a grey dashed edge about each door", "a caller at the head of the path, where it begins, calling", "and a caller above it, calling"]),
+      moved("What are the open doors at the sides of the path?", "the place of one who walks the path, going along it", "y"),
+      value("parable-of-the-path", "the doors on the sides of the path, picked out in light", "opacity", 0.72)
+    ]).toEqual([
+      [
+        [0, 1, 1],
+        [1, 1, 1]
+      ],
+      [-13, -24],
+      1
+    ]);
+    // True: the open doors and their curtains show, and no one calls yet, before the next words; then a caller calls at
+    // the head of the path, where it begins, and a caller above it calls too.
+    expect([
+      shown("Callers call out on the straight path.", ["a curtain on each door", "a caller at the head of the path, where it begins, calling", "and a caller above it, calling"])
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Before getting up: grey arcs of empty talk show in the sitting, and no way out of it shows yet, before the next
+    // words; then more grey arcs of talk come, much of it, and a faint way shows out of the sitting.
+    expect([
+      shown("When do we say Subhanaka Allahumma wa bihamdika, in Tirmidhi 3433?", ["empty, meaningless talk in the sitting: grey arcs", "much of it: more grey arcs of talk", "before getting up: a faint way out of the sitting"])
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Forgiveness: the three sparks of the words have risen from the place of one who sits, and no ring is about it yet,
+    // before the next words; then the grey arcs of talk go, it goes along the way out of the sitting, and a soft golden
+    // ring comes about its place, with glints: forgiven.
+    expect([
+      shown("What does saying it before rising bring?", ["the words said: a spark rising 3", "empty, meaningless talk in the sitting: grey arcs", "much of it: more grey arcs of talk", "forgiven: a soft golden ring about its place", "and glints over it"]),
+      moved("What does saying it before rising bring?", "the place of one who sits in the sitting", "x")
+    ]).toEqual([
+      [
+        [1, 1, 1, 0, 0],
+        [1, 0, 0, 1, 1]
+      ],
+      [0, 34]
+    ]);
+    // True: two sparks of the words have risen from the place of one who sits, and its voice says them, before the next
+    // words; then the third spark rises, and its voice ends with them.
+    expect([
+      shown("The words end with: astaghfiruka wa atubu ilayk.", ["the words said: a spark rising 2", "the words said: a spark rising 3", "its voice, soft and golden, saying the words"]),
+      moved("The words end with: astaghfiruka wa atubu ilayk.", "the words said: a spark rising 3", "y")
+    ]).toEqual([
+      [
+        [1, 0, 1],
+        [1, 1, 0]
+      ],
+      [0, -9]
+    ]);
+    // Good deeds: the folk stand still, and his voice has not spoken yet, when it waits at the start; then his voice
+    // speaks, the folk hurry on, and a spark rises from each of them, one after another, and fades: good deeds.
+    expect([
+      shown("What did he ﷺ tell us to rush to, before the trials?", ["his voice, soft and golden"]),
+      moved("What did he ﷺ tell us to rush to, before the trials?", "the place of one of the folk, hurrying 1", "x"),
+      moved("What did he ﷺ tell us to rush to, before the trials?", "good deeds: a spark rising from one of the folk 1", "y"),
+      value("rush-to-good-deeds", "good deeds: a spark rising from one of the folk 2", "opacity", 0.16)
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      [0, 16],
+      [0, -10],
+      1
+    ]);
+    // From morning to evening: a cloud is in the sky, and no night has come over the land, before the next words; then the
+    // trial comes like a portion of the dark night, and the land grows dim. A small sun shows over the first home, with a
+    // soft golden ring about its place: a believer in the morning. Then a small crescent shows over it, and a grey dashed
+    // ring comes about its place: a disbeliever by the evening.
+    expect([
+      shown("How quickly will some people change in that trial?", ["a cloud", "a trial like a portion of the dark night 1", "a trial like a portion of the dark night 3", "the land grown dim under the trial", "evening: a small crescent over the first home", "faith gone: a grey dashed ring about its place"]),
+      moved("How quickly will some people change in that trial?", "a trial like a portion of the dark night 1", "x"),
+      value("rush-to-good-deeds", "morning: a small sun over the first home", "opacity", 0.4),
+      value("rush-to-good-deeds", "faith: a soft golden ring about its place", "opacity", 0.42)
+    ]).toEqual([
+      [
+        [1, 0, 0, 0, 0, 0],
+        [0, 1, 1, 1, 1, 1]
+      ],
+      [-14, 0],
+      1,
+      1
+    ]);
+    // True: a grey dashed ring is about the other's place, and nothing has gone into the stall yet, before the next words;
+    // then a small light, its religion, goes from the place before the stall into it, coins, cloth and a jar come out of
+    // the stall to it, and a grey dashed ring comes about it and its goods.
+    expect([
+      shown("Some people will sell their religion for goods of the world.", ["faith gone: a grey dashed ring about the other's place", "goods of the world: coins, cloth and a jar, coming out of the stall to it", "a grey dashed ring about it and its goods"]),
+      moved("Some people will sell their religion for goods of the world.", "goods of the world: coins, cloth and a jar, coming out of the stall to it", "x"),
+      value("rush-to-good-deeds", "his religion: a small light by its place, going into the stall", "y", 0.82)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      [-6.4, 0],
+      -10.4
+    ]);
+    // Allah gives it, or keeps a harm away: the places stand by their homes, and no du'a has risen yet, before the next
+    // words; then a spark rises from the first place, and one from the second too. A basket of dates comes by the first,
+    // with glints: given what it asked. Grey jagged marks of harm come toward the second and are gone, and a soft golden
+    // ring comes about its place: kept away.
+    expect([
+      shown("What happens when a believer makes du'a?", ["its du'a: a spark rising", "its du'a: a spark rising too", "given what it asked: a basket of dates by its place", "glints over the basket", "kept away: a soft golden ring about the second's place"]),
+      moved("What happens when a believer makes du'a?", "its du'a: a spark rising", "y"),
+      moved("What happens when a believer makes du'a?", "evil: grey jagged marks of harm coming toward it, then gone", "x"),
+      value("no-dua-wasted", "evil: grey jagged marks of harm coming toward it, then gone", "opacity", 0.45)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [0, -9],
+      [12, 0],
+      1
+    ]);
+    // A du'a for a sin: the first is given and the second kept from harm, and the third has not asked yet, before the next
+    // words; then grey arcs rise from its place, asking for something evil, and a grey dashed ring comes about that
+    // asking; they rise again, to cut the ties, and a grey dashed ring comes about the way to its kin.
+    expect([
+      shown("Which du'a did he ﷺ say is not answered?", ["kept away: a soft golden ring about the second's place", "a grey dashed ring about that asking", "a grey dashed ring about the way"]),
+      value("no-dua-wasted", "its asking for something evil, and to cut the ties: grey arcs rising", "opacity", 0.64),
+      value("no-dua-wasted", "its asking for something evil, and to cut the ties: grey arcs rising", "opacity", 0.7),
+      value("no-dua-wasted", "its asking for something evil, and to cut the ties: grey arcs rising", "opacity", 0.86)
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      0,
+      1,
+      1
+    ]);
+    // True: the two sparks of du'a have risen, and nothing has come by either place yet, before the next words; then a
+    // basket of dates comes by the first, with glints, grey jagged marks of harm come toward the second and are gone, and
+    // a soft golden ring comes about its place: kept away.
+    expect([
+      shown("A du'a can be answered by keeping a harm away from you.", ["its du'a: a spark rising too", "given what it asked: a basket of dates by its place", "glints over the basket", "kept away: a soft golden ring about the second's place"]),
+      moved("A du'a can be answered by keeping a harm away from you.", "evil: grey jagged marks of harm coming toward it, then gone", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [5, 0]
     ]);
   });
 
