@@ -942,7 +942,8 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-nights-without-supper": [/\bsupper\b/i, /\bbarley bread\b/i, /\bnights in a row\b/i],
   "sign-the-black-arak-fruit": [/\barak\b/i, /\bblack fruit\b/i, /\bshepherd\b/i],
   "sign-praying-and-sleeping": [/\bpraying\b/i, /\bsleeping\b/i, /\bAnas\b/],
-  "sign-riches-with-piety": [/\bpiety\b/i, /\bgood health\b/i, /\bgood cheer\b/i]
+  "sign-riches-with-piety": [/\bpiety\b/i, /\bgood health\b/i, /\bgood cheer\b/i],
+  "sign-feather-in-the-wind": [/\bfeather\b/i, /\bheart\b/i, /\bwind\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1821,7 +1822,8 @@ const SOURCES: Record<string, string[]> = {
   "sign-nights-without-supper": ["Jami at-Tirmidhi 2360"],
   "sign-the-black-arak-fruit": ["Sahih al-Bukhari 3406"],
   "sign-praying-and-sleeping": ["Sunan an-Nasa'i 1627"],
-  "sign-riches-with-piety": ["Sunan Ibn Majah 2141"]
+  "sign-riches-with-piety": ["Sunan Ibn Majah 2141"],
+  "sign-feather-in-the-wind": ["Sunan Ibn Majah 88"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1845,7 +1847,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(2012);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(2013);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -40360,6 +40362,62 @@ describe("the signs in creation, alive", () => {
       [
         [0, 1],
         [0, 1]
+      ]
+    ]);
+  });
+
+  test("the scene of a feather in the wind shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no heart", () => {
+    const kind: SignKind = "feather-in-the-wind";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, nothing comes down from the sky, and no heart is
+    // drawn: only the land, the sky, the wind and a feather.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(hearts?|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // A feather in the wind: the open desert, wide sand under a clear sky, with low dunes and a few dry tufts far apart;
+    // on the left his place, a golden ring, and Abu Musa's place by it. Abu Musa's voice tells of it, and his voice,
+    // soft and golden, speaks. A feather shows, lying still on the sand, only once the heart is named and the feather
+    // is said. Then the wind comes over the desert, and the feather is blown about: it lifts and goes across the sand,
+    // up and down, turning over and over, until it comes down far off, turned over.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abu Musa al-Ash'ari: the Messenger of", "Allah said: the likeness of the heart", "Is that of a feather blown about by", "The wind in the desert."]);
+    const feather = "a feather, lying on the sand, then blown about by the wind";
+    const wind = "the wind, blowing over the desert";
+    expect([
+      [at("al-Ash'ari's voice: telling of it", "opacity", [0.02, 0.026, 0.21, 0.216]), at("his voice, soft and golden", "opacity", [0.3, 0.306, 0.96, 0.966])],
+      [at(feather, "opacity", [0.496, 0.53, 0.55]), at(feather, "x", [0.55, 0.77]), at(feather, "y", [0.55, 0.77]), at(wind, "opacity", [0.742, 0.765, 0.775])],
+      [at(feather, "x", [0.77, 0.81, 0.89, 0.96, 1]), at(feather, "y", [0.77, 0.81, 0.89, 0.96, 1])],
+      [at(feather, "rotate", [0.77, 0.96, 1]), at(feather, "scaleY", [0.8, 0.84, 0.92, 0.96, 1])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 0, 1],
+        [0, 0],
+        [0, 0],
+        [0, 0, 1]
+      ],
+      [
+        [0, 14, 46, 78, 78],
+        [0, -12, -16, 0, 0]
+      ],
+      [
+        [0, 360, 360],
+        [1, -1, 1, -1, -1]
       ]
     ]);
   });

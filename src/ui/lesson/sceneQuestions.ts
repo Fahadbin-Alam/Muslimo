@@ -8144,6 +8144,14 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["There is nothing wrong with being rich for one who has piety.", "True", "Nothing wrong with being rich for one", "Who has piety, but good health for one"],
     ["For one who has piety, what is better than riches?", "Good health", "Who has piety, but good health for one", "Who has piety is better than riches, and"],
     ["What did he ﷺ call being of good cheer?", "One of the blessings", "Being of good cheer is a blessing."]
+  ],
+  // A feather in the wind. Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: the likeness of the heart is that
+  // of a feather blown about by the wind in the desert (Sunan Ibn Majah 88). The feather shows only after the heart is
+  // named, and the wind only after the feather is.
+  "sign-feather-in-the-wind": [
+    ["What did he ﷺ say the heart is like?", "A feather", "Is that of a feather blown about by"],
+    ["What blows the feather about?", "The wind", "The wind in the desert."],
+    ["He ﷺ likened the heart to a feather the wind blows about.", "True", "The wind in the desert."]
   ]
 };
 

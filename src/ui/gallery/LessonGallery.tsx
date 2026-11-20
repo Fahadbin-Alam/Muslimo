@@ -1790,6 +1790,7 @@ const STATES: State[] = [
   { id: "scene-the-black-arak-fruit", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-foods-he-ate-the-black-arak-fruit" ask="Which arak fruit" /> },
   { id: "scene-praying-and-sleeping", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-the-balanced-way-praying-and-sleeping" ask="doing at night" /> },
   { id: "scene-riches-with-piety", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-riches-with-piety" ask="better than riches" /> },
+  { id: "scene-feather-in-the-wind", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-steady-on-the-path-a-feather-in-the-wind" ask="blows the feather" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

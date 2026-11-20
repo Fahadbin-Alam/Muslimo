@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3875);
+    expect(asks.length).toBe(3878);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -149,8 +149,12 @@ describe("which questions are asked on a scene", () => {
     // now has eight lessons: its final quiz asks whether he ﷺ ate fresh dates with snake cucumbers, what Abu Musa was
     // eating when Zahdam came in, what their bread was most of the time, and whether there was no prophet who was not a
     // shepherd, in place of who saw him ﷺ eat them, whether Abu Musa saw him ﷺ eat chicken, and what his ﷺ family went
-    // without. Every one of them is still asked in its own lesson.
-    expect(places).toBe(5642);
+    // without. Every one of them is still asked in its own lesson. "Steady on the straight path" now has eight lessons:
+    // its final quiz asks what the open doors at the sides of the path are, whether being bent by trials means a
+    // believer has lost his faith, and whether he ﷺ likened the heart to a feather the wind blows about, in place of what
+    // hangs over each open door and what the plant does when the wind stops. Every one of them is still asked in its own
+    // lesson.
+    expect(places).toBe(5646);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -29470,6 +29474,55 @@ describe("where the scene waits and where it stops", () => {
         [0, 0],
         [1, 1]
       ]
+    ]);
+  });
+
+  it("waits on the scene of a feather in the wind before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-feather-in-the-wind");
+    expect(asks.length).toBe(3);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("feather-in-the-wind", ask.from, ask.to)!)) {
+        for (const part of signArt("feather-in-the-wind").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // A feather: no feather and no wind while it waits, once the heart is named; then the feather shows, lying still on
+    // the sand.
+    const feather = "a feather, lying on the sand, then blown about by the wind";
+    const wind = "the wind, blowing over the desert";
+    expect([shown("What did he ﷺ say the heart is like?", [feather, wind]), moved("What did he ﷺ say the heart is like?", feather, "x")]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ],
+      [0, 0]
+    ]);
+    // The wind: the feather lies still on the sand, with no wind, before the next words; then the wind comes over the
+    // desert, and the feather is blown far off, turning over and over.
+    expect([
+      shown("What blows the feather about?", [feather, wind]),
+      moved("What blows the feather about?", feather, "x"),
+      moved("What blows the feather about?", feather, "rotate"),
+      shown("He ﷺ likened the heart to a feather the wind blows about.", [feather, wind]),
+      moved("He ﷺ likened the heart to a feather the wind blows about.", feather, "scaleY")
+    ]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [0, 78],
+      [0, 360],
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [1, -1]
     ]);
   });
 

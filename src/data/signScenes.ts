@@ -1241,7 +1241,8 @@ export type SignKind =
   | "nights-without-supper"
   | "the-black-arak-fruit"
   | "praying-and-sleeping"
-  | "riches-with-piety";
+  | "riches-with-piety"
+  | "feather-in-the-wind";
 
 export type SignScene = {
   id: string;
@@ -7286,6 +7287,13 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Mu'adh ibn Abdullah ibn Khubaib reported from his father that his uncle said: we were sitting in a gathering when the Prophet ﷺ came. One of us said: we see that you are of good cheer today. He said: yes, praise is to Allah. Then the people talked about being rich, and he said: there is nothing wrong with being rich for one who has piety, but good health for one who has piety is better than riches, and being of good cheer is a blessing.",
     sources: [ibnMajah("2141")]
+  },
+  {
+    id: "sign-feather-in-the-wind",
+    kind: "feather-in-the-wind",
+    caption:
+      "Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: the likeness of the heart is that of a feather blown about by the wind in the desert.",
+    sources: [ibnMajah("88")]
   }
 ];
 
@@ -10365,7 +10373,9 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Praying and sleeping: whenever they wished, they could see him ﷺ praying at night, and sleeping.
   "deep-aqidah-the-balanced-way-praying-and-sleeping": "sign-praying-and-sleeping",
   // Riches with piety: no harm in riches for one who has piety, but good health is better, and good cheer a blessing.
-  "deep-zakat-wise-wealth-riches-with-piety": "sign-riches-with-piety"
+  "deep-zakat-wise-wealth-riches-with-piety": "sign-riches-with-piety",
+  // A feather in the wind: the heart is like a feather that the wind blows about in the desert.
+  "deep-aqidah-steady-on-the-path-a-feather-in-the-wind": "sign-feather-in-the-wind"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
