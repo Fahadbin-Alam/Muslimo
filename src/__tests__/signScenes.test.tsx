@@ -929,7 +929,13 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-as-you-are-able": [/\bable\b/i, /\bpledge\b/i, /\bUmaymah\b/],
   "sign-the-best-provision": [/\brighteous wife\b/i, /\bprovisions?\b/i, /\bthis world\b/i],
   "sign-or-as-he-said": [/\bor as (he|the Messenger)\b/i, /\bAnas\b/, /\bibn Sirin\b/i],
-  "sign-we-have-grown-old": [/\bgrown old\b/i, /\bZaid ibn Arqam\b/, /\bhadith\b/i]
+  "sign-we-have-grown-old": [/\bgrown old\b/i, /\bZaid ibn Arqam\b/, /\bhadith\b/i],
+  "sign-a-share-for-the-house": [/\ba share\b/i, /\bhouse\b/i, /\bprayer\b/i],
+  "sign-charity-for-each-day": [/\bmore time\b/i, /\beach day\b/i, /\bdifficulty\b|\bhardship\b/i],
+  "sign-two-for-a-relative": [/\brelative\b/i, /\btwo\b/i, /\bties of kinship\b|\bfamily ties\b/i],
+  "sign-whoever-leads-to-good": [/\bleads (someone )?to good\b/i, /\bthe one who does it\b/i, /\bride\b/i],
+  "sign-under-the-protection": [/\bmorning prayer\b/i, /\bprotection\b/i, /\bSamurah\b/],
+  "sign-an-oath-not-a-claim": [/\bclaim(ed)?\b/i, /\boath\b/i, /\bIbn Abbas\b/]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1795,7 +1801,13 @@ const SOURCES: Record<string, string[]> = {
   "sign-as-you-are-able": ["Sunan an-Nasa'i 4190"],
   "sign-the-best-provision": ["Sunan Ibn Majah 1855"],
   "sign-or-as-he-said": ["Sunan Ibn Majah 24"],
-  "sign-we-have-grown-old": ["Sunan Ibn Majah 25"]
+  "sign-we-have-grown-old": ["Sunan Ibn Majah 25"],
+  "sign-a-share-for-the-house": ["Sunan Ibn Majah 1376"],
+  "sign-charity-for-each-day": ["Sunan Ibn Majah 2418"],
+  "sign-two-for-a-relative": ["Sunan an-Nasa'i 2582"],
+  "sign-whoever-leads-to-good": ["Jami at-Tirmidhi 2670"],
+  "sign-under-the-protection": ["Sunan Ibn Majah 3946"],
+  "sign-an-oath-not-a-claim": ["Sunan Ibn Majah 2321"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1819,7 +1831,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1999);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(2005);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -39717,6 +39729,295 @@ describe("the signs in creation, alive", () => {
       ],
       [
         [0, 1]
+      ]
+    ]);
+  });
+
+  test("the scenes from a share for the house to an oath, not a claim show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const leadScenes: SignKind[] = ["a-share-for-the-house", "charity-for-each-day", "two-for-a-relative", "whoever-leads-to-good", "under-the-protection", "an-oath-not-a-claim"];
+    for (const kind of leadScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky: a deed is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // A share for the house, and no one is drawn: the masjid of Madinah on the left, with his place before it, and
+    // Abu Sa'id's place; a home on the right. Abu Sa'id's voice tells of it, and his voice speaks. The place of one of
+    // the folk, its prayer finished, goes from the masjid to the home, and a prayer mat shows at its door: a soft light
+    // comes about the place on the mat, a share of that prayer. Then something good in the house: a soft golden light
+    // about the home, a light in its window, a soft golden ring about it and glints over it; and the light on the mat grows.
+    expect(words("a-share-for-the-house")).toEqual([
+      "Abu Sa'id: he said: when anyone of you",
+      "Has finished his prayer, let him give his",
+      "House a share of that, for Allah will",
+      "Put something good in his house because",
+      "Of that prayer."
+    ]);
+    expect([
+      [at("a-share-for-the-house", "Abu Sa'id's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("a-share-for-the-house", "his voice, soft and golden", "opacity", [0.07, 0.076, 0.96, 0.966])],
+      [at("a-share-for-the-house", "the place of one of the folk: its prayer finished, going from the masjid to the home", "x", [0.23, 0.36])],
+      [at("a-share-for-the-house", "a prayer mat at the door of the home", "opacity", [0.42, 0.44]), at("a-share-for-the-house", "a share of that prayer: a soft light about the place on the mat, growing", "opacity", [0.44, 0.46, 0.82, 0.85])],
+      [at("a-share-for-the-house", "something good in the house: a soft golden light about the home", "opacity", [0.62, 0.66]), at("a-share-for-the-house", "and a soft golden ring about the home", "opacity", [0.64, 0.66]), at("a-share-for-the-house", "and glints over it", "opacity", [0.7, 0.71])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [[0, 86.2]],
+      [
+        [0, 1],
+        [0, 0.6, 0.6, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Charity for each day: a home on the left, and by it the place of one who gives respite, with its sack. Buraidah's
+    // voice tells of it, and his voice speaks. The place of one in difficulty comes with its sack empty, the voice of
+    // the one who gives says, softly, more time, and that place goes on its way. Then the sun goes over the sky, day
+    // after day, and for each day a gold coin with a soft light comes by the place of the one who gave respite.
+    expect(words("charity-for-each-day")).toEqual(["Buraidah: he said: whoever gives", "Respite to one in difficulty will have", "An act of charity for each day."]);
+    expect([
+      [at("charity-for-each-day", "Buraidah's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("charity-for-each-day", "his voice, soft and golden", "opacity", [0.07, 0.076, 0.96, 0.966])],
+      [
+        at("charity-for-each-day", "the place of one in difficulty, with its sack empty: coming, and then going on its way", "x", [0.1, 0.2, 0.52, 0.62]),
+        at("charity-for-each-day", "the place of one in difficulty, with its sack empty: coming, and then going on its way", "opacity", [0.1, 0.12, 0.6, 0.62]),
+        at("charity-for-each-day", "its voice, soft: more time", "opacity", [0.4, 0.406, 0.5, 0.506])
+      ],
+      [at("charity-for-each-day", "the sun, going over the sky: the days going by", "x", [0.7, 0.74, 0.742, 0.79, 0.8, 0.84, 0.842, 0.89]), at("charity-for-each-day", "the sun, going over the sky: the days going by", "opacity", [0.73, 0.74, 0.742, 0.752])],
+      [
+        at("charity-for-each-day", "an act of charity for a day: a gold coin with a soft light by the place of the one who gave respite 1", "opacity", [0.69, 0.7]),
+        at("charity-for-each-day", "an act of charity for a day: a gold coin with a soft light by the place of the one who gave respite 2", "opacity", [0.79, 0.8]),
+        at("charity-for-each-day", "an act of charity for a day: a gold coin with a soft light by the place of the one who gave respite 3", "opacity", [0.89, 0.9])
+      ]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [66, 0, 0, 66],
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 50, -50, 0, 0, 50, -50, 0],
+        [1, 0, 0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Two for a relative: the place of the one who gives in the middle, a poor one's place on the left of it and a
+    // relative's place on the right, by a home. Salman's voice tells of it, and his voice speaks. A coin goes to the poor
+    // one, and a soft golden ring comes about its place: charity. A coin goes to the relative, and a soft golden ring
+    // comes about its place: charity; then a second ring, soft rose, and a soft rose thread from the one who gives:
+    // the ties of kinship, kept; and glints over the relative's place: two things.
+    expect(words("two-for-a-relative")).toEqual(["Salman ibn Amir: he said: giving charity", "To a poor person is charity, and to a", "Relative is two things, charity and", "Upholding the ties of kinship."]);
+    expect([
+      [at("two-for-a-relative", "Salman's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("two-for-a-relative", "his voice, soft and golden", "opacity", [0.07, 0.076, 0.96, 0.966])],
+      [at("two-for-a-relative", "charity: a coin going from the one who gives to the poor one", "x", [0.28, 0.33]), at("two-for-a-relative", "charity: a soft golden ring about the poor one's place", "opacity", [0.34, 0.36])],
+      [at("two-for-a-relative", "and to the relative: a coin going from the one who gives to the relative", "x", [0.53, 0.58]), at("two-for-a-relative", "charity: a soft golden ring about the relative's place", "opacity", [0.59, 0.61])],
+      [
+        at("two-for-a-relative", "and upholding the ties of kinship: a second ring, soft rose, about the relative's place", "opacity", [0.77, 0.79]),
+        at("two-for-a-relative", "and a soft rose thread from the one who gives to the relative: the ties of kinship, kept", "opacity", [0.79, 0.82]),
+        at("two-for-a-relative", "and glints over the relative's place: two things", "opacity", [0.86, 0.87])
+      ]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, -28.6],
+        [0, 1]
+      ],
+      [
+        [0, 27.8],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Whoever leads to good, and no one is drawn, and no one is on the camel: in the town, his place, a golden ring,
+    // with Anas's place on the left and a home on the right, by the place of one who gives. Anas's voice tells of it.
+    // The place of one who asks comes to his place, and its voice asks for a mount; his voice answers: he has nothing
+    // to mount it on. His voice speaks again, a soft golden dashed way shows to the place of the one who gives, and the
+    // place of the one who asked goes on it. The voice of the one who gives answers, and a camel comes to it, with no one
+    // on it; then the camel goes with the place of the one who asked, back to his place, and its voice tells him of it.
+    // His voice speaks: a soft golden ring comes about his place, the one who leads to good, then about the place of the
+    // one who gives, the one who does it, and glints over both.
+    expect(words("whoever-leads-to-good")).toEqual([
+      "Anas: a man came to the Prophet to get a",
+      "Mount, but he did not have anything to",
+      "Mount the man on with him. So the man",
+      "Was led to another person to give him a",
+      "Mount. The man came to the Prophet to",
+      "Inform him about that, and he said:",
+      "Whoever leads to good is like the one",
+      "Who does it."
+    ]);
+    expect([
+      [
+        at("whoever-leads-to-good", "Anas's voice: telling of it", "opacity", [0.012, 0.018, 0.05, 0.056]),
+        at("whoever-leads-to-good", "the place of the one who asked: coming to his place, going on the way, and coming back", "x", [0.02, 0.064]),
+        at("whoever-leads-to-good", "its voice: asking for a mount", "opacity", [0.066, 0.072, 0.094, 0.1])
+      ],
+      [at("whoever-leads-to-good", "his voice, soft and golden", "opacity", [0.14, 0.146, 0.22, 0.226, 0.27, 0.276, 0.33, 0.336]), at("whoever-leads-to-good", "the way he showed: a soft golden dashed way to the place of the one who gives", "opacity", [0.28, 0.3])],
+      [
+        at("whoever-leads-to-good", "the place of the one who asked: coming to his place, going on the way, and coming back", "x", [0.3, 0.345]),
+        at("whoever-leads-to-good", "its voice: answering, and giving a mount", "opacity", [0.39, 0.396, 0.45, 0.456]),
+        at("whoever-leads-to-good", "a mount: a camel, with no one on it, coming to the one who gives, and then going with the place of the one who asked", "opacity", [0.4, 0.41]),
+        at("whoever-leads-to-good", "a mount: a camel, with no one on it, coming to the one who gives, and then going with the place of the one who asked", "x", [0.41, 0.46])
+      ],
+      [
+        at("whoever-leads-to-good", "the place of the one who asked: coming to his place, going on the way, and coming back", "x", [0.515, 0.59]),
+        at("whoever-leads-to-good", "a mount: a camel, with no one on it, coming to the one who gives, and then going with the place of the one who asked", "x", [0.515, 0.59]),
+        at("whoever-leads-to-good", "its voice again: telling him of it", "opacity", [0.64, 0.646, 0.7, 0.706])
+      ],
+      [
+        at("whoever-leads-to-good", "his voice, soft and golden", "opacity", [0.71, 0.716, 0.96, 0.966]),
+        at("whoever-leads-to-good", "the one who leads to good: a soft golden ring about his place", "opacity", [0.77, 0.79]),
+        at("whoever-leads-to-good", "is like the one who does it: a soft golden ring about the place of the one who gives", "opacity", [0.89, 0.91]),
+        at("whoever-leads-to-good", "and glints over both", "opacity", [0.93, 0.94])
+      ]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [-40, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0, 0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 48],
+        [0, 1, 1, 0],
+        [0, 1],
+        [15, 0]
+      ],
+      [
+        [48, 6],
+        [0, -48],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Under the protection: the night over Madinah, with stars, and a lamp's light at the door of the masjid; his place
+    // before it and Samurah's place. Samurah's voice tells of it, and his voice speaks. The dawn comes: the night lifts,
+    // the stars fade, the lamp's light goes, and the places of the folk come to the masjid. Then a soft golden ring comes
+    // about each of their places, one after another: under the protection; and glints over them. No sun is drawn, as
+    // the morning prayer is before the sun rises.
+    expect(words("under-the-protection")).toEqual(["Samurah ibn Jundub: he said: whoever", "Offers the morning prayer is under the", "Protection of Allah, the Mighty and", "Sublime."]);
+    expect([
+      [at("under-the-protection", "Samurah's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("under-the-protection", "his voice, soft and golden", "opacity", [0.07, 0.076, 0.96, 0.966])],
+      [
+        at("under-the-protection", "the night sky, giving way to the dawn", "opacity", [0.28, 0.42]),
+        at("under-the-protection", "stars, fading", "opacity", [0.28, 0.38]),
+        at("under-the-protection", "a lamp's light at the door of the masjid, going at dawn", "opacity", [0.3, 0.4]),
+        at("under-the-protection", "the night over the land, lifting", "opacity", [0.28, 0.42])
+      ],
+      [at("under-the-protection", "the place of one of the folk, coming at dawn to the masjid 1", "opacity", [0.28, 0.3]), at("under-the-protection", "the place of one of the folk, coming at dawn to the masjid 4", "x", [0.28, 0.38])],
+      [
+        at("under-the-protection", "under the protection: a soft golden ring about each of their places 1", "opacity", [0.53, 0.545]),
+        at("under-the-protection", "under the protection: a soft golden ring about each of their places 4", "opacity", [0.59, 0.605]),
+        at("under-the-protection", "and glints over them", "opacity", [0.78, 0.79])
+      ]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [1, 0],
+        [1, 0],
+        [1, 0],
+        [1, 0]
+      ],
+      [
+        [0, 1],
+        [64, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    expect(signArt("under-the-protection").parts.filter((each) => /\bsun\b/i.test(each.name))).toEqual([]);
+    // An oath, not a claim: the place of one the claim is made against on the right, by a home, with its property:
+    // sacks and coins; the places of those who claim on the left. Ibn Abbas's voice tells of it, and his voice speaks.
+    // Those who claim come near and their voices, grey, claim, and a ring of grey dashes comes about them: what they
+    // claimed. A soft light comes about the place of the one the claim is made against, its voice swears an oath, and a
+    // soft golden ring comes about its place and its property: kept. The grey ring goes, and those who claim go back.
+    expect(words("an-oath-not-a-claim")).toEqual([
+      "Ibn Abbas: he said: if the people were",
+      "Given what they claimed, some would have",
+      "Claimed the lives and property of men.",
+      "But the one the claim is made against is",
+      "Obliged to swear an oath."
+    ]);
+    expect([
+      [at("an-oath-not-a-claim", "Ibn Abbas's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("an-oath-not-a-claim", "his voice, soft and golden", "opacity", [0.07, 0.076, 0.96, 0.966])],
+      [
+        at("an-oath-not-a-claim", "the place of one who claims, coming near, and then going back 1", "x", [0.22, 0.28]),
+        at("an-oath-not-a-claim", "their voices, grey: claiming", "opacity", [0.29, 0.296, 0.55, 0.556]),
+        at("an-oath-not-a-claim", "what they claimed: a ring of grey dashes about those who claim, going when they go back", "opacity", [0.43, 0.45])
+      ],
+      [at("an-oath-not-a-claim", "the one the claim is made against: a soft light about its place", "opacity", [0.62, 0.64]), at("an-oath-not-a-claim", "its voice: swearing an oath", "opacity", [0.81, 0.816, 0.95, 0.956])],
+      [
+        at("an-oath-not-a-claim", "its property, kept: a soft golden ring about its place and its property", "opacity", [0.86, 0.88]),
+        at("an-oath-not-a-claim", "what they claimed: a ring of grey dashes about those who claim, going when they go back", "opacity", [0.88, 0.9]),
+        at("an-oath-not-a-claim", "the place of one who claims, coming near, and then going back 3", "x", [0.88, 0.94])
+      ]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 18],
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [1, 0],
+        [18, 0]
       ]
     ]);
   });
