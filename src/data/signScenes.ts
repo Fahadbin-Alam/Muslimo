@@ -1217,7 +1217,13 @@ export type SignKind =
   | "faith-then-the-quran"
   | "nothing-like-fasting"
   | "umm-sulaims-words"
-  | "a-stranger-asks";
+  | "a-stranger-asks"
+  | "the-siwak-first"
+  | "you-are-umm-abdullah"
+  | "pure-of-heart"
+  | "pebbles-like-these"
+  | "do-not-be-demanding"
+  | "as-fresh-as-revealed";
 
 export type SignScene = {
   id: string;
@@ -7094,6 +7100,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Rifa'ah said: I came to the Messenger of Allah ﷺ while he was delivering a Khutbah, and said: O Messenger of Allah, a stranger has come to ask about his religion, for he does not know what his religion is. The Messenger of Allah ﷺ stopped delivering his Khutbah and turned to me. A chair was brought. The Messenger of Allah ﷺ sat down on it and started to teach me what Allah has taught him, then he went and completed his Khutbah.",
     sources: [nasai("5377")]
+  },
+  {
+    id: "sign-the-siwak-first",
+    kind: "the-siwak-first",
+    caption:
+      "Shurayh ibn Hani said: I said to Aishah: tell me, what was the first thing that the Messenger of Allah ﷺ did when he entered upon you? She said: the first thing he would do would be to use the tooth stick.",
+    sources: [ibnMajah("290")]
+  },
+  {
+    id: "sign-you-are-umm-abdullah",
+    kind: "you-are-umm-abdullah",
+    caption:
+      "Aishah said to the Prophet ﷺ: all of your wives have a kunyah except me. He said: you are Umm Abdullah.",
+    sources: [ibnMajah("3739")]
+  },
+  {
+    id: "sign-pure-of-heart",
+    kind: "pure-of-heart",
+    caption:
+      "Abdullah ibn Amr said: it was said to the Messenger of Allah ﷺ: which of the people is best? He said: everyone who is pure of heart and sincere in speech. They said: sincere in speech, we know what this is, but what is pure of heart? He said: it is pious and pure, with no sin, injustice, rancor or envy in it.",
+    sources: [ibnMajah("4216")]
+  },
+  {
+    id: "sign-pebbles-like-these",
+    kind: "pebbles-like-these",
+    caption:
+      "Ibn Abbas said: on the morning of Aqabah, when he was atop his she-camel, the Messenger of Allah ﷺ said: pick up some pebbles for me. So I picked up seven pebbles for him. He began to toss them in his hand, saying: throw something like these. Then he said: O people, beware of exaggeration in religious matters, for those who came before you were doomed because of exaggeration in religious matters.",
+    sources: [ibnMajah("3029")]
+  },
+  {
+    id: "sign-do-not-be-demanding",
+    kind: "do-not-be-demanding",
+    caption:
+      "Mu'awiyah said: the Messenger of Allah ﷺ said: do not be demanding when asking. If one of you asks me for anything and I give it reluctantly, there will be no blessing in it.",
+    sources: [nasai("2593")]
+  },
+  {
+    id: "sign-as-fresh-as-revealed",
+    kind: "as-fresh-as-revealed",
+    caption:
+      "Abdullah ibn Mas'ud said that Abu Bakr and Umar gave him the glad tidings that the Messenger of Allah ﷺ had said: whoever would like to recite the Quran as fresh as when it was revealed, let him recite it like Ibn Umm Abd.",
+    sources: [ibnMajah("138")]
   }
 ];
 
@@ -10125,7 +10173,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Umm Sulaim's words: glorify, praise and magnify ten times each, then ask.
   "deep-duas-and-the-prayer-umm-sulaims-words": "sign-umm-sulaims-words",
   // A stranger asks: he stopped his khutbah to teach him his religion, then completed it.
-  "deep-growing-in-faith-a-stranger-asks": "sign-a-stranger-asks"
+  "deep-growing-in-faith-a-stranger-asks": "sign-a-stranger-asks",
+  // The siwak first: on coming home, the first thing he would do was use the tooth stick.
+  "deep-marriage-faith-at-home-the-siwak-first": "sign-the-siwak-first",
+  // Umm Abdullah: Aishah had no kunyah, and he said: you are Umm Abdullah.
+  "deep-mothers-aishah-umm-abdullah": "sign-you-are-umm-abdullah",
+  // The best people: the pure of heart and sincere in speech, with no sin, rancor or envy.
+  "deep-intro-questions-they-asked-the-best-people": "sign-pure-of-heart",
+  // Beware of going to extremes: throw pebbles like these, and beware of exaggeration in religion.
+  "deep-aqidah-the-balanced-way-beware-of-extremes": "sign-pebbles-like-these",
+  // Do not push when asking: what is given reluctantly has no blessing in it.
+  "deep-zakat-not-asking-people-do-not-push-when-asking": "sign-do-not-be-demanding",
+  // As fresh as it came down: recite the Quran like Ibn Umm Abd.
+  "deep-ibnmasud-fresh-as-revealed": "sign-as-fresh-as-revealed"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
