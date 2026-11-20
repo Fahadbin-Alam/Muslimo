@@ -1760,6 +1760,12 @@ const STATES: State[] = [
   { id: "scene-what-your-neighbors-say", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-short-words-to-live-by-what-your-neighbors-say" ask="say to listen to" /> },
   { id: "scene-patient-with-people", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-getting-along-patient-with-people" ask="bear with patience" /> },
   { id: "scene-beautiful-voices", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-reciting-quran-beautiful-voices" ask="When should we make our voices" /> },
+  { id: "scene-pay-the-worker", render: () => <SceneQuestionDemo lessonId="lesson-deep-honesty-pay-the-worker" ask="When should a worker be paid" /> },
+  { id: "scene-oil-from-a-blessed-tree", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-eating-drinking-oil-from-a-blessed-tree" ask="praise olive oil" /> },
+  { id: "scene-faith-then-the-quran", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-faith-then-the-quran" ask="learn before the Quran" /> },
+  { id: "scene-nothing-like-fasting", render: () => <SceneQuestionDemo lessonId="lesson-deep-fasting-making-the-most-of-ramadan-nothing-like-fasting" ask="tell Abu Umamah to take to" /> },
+  { id: "scene-umm-sulaims-words", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-and-the-prayer-umm-sulaims-words" ask="How many times is each one said" /> },
+  { id: "scene-a-stranger-asks", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-a-stranger-asks" ask="do for the man who did not know" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
