@@ -8048,6 +8048,47 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["Why did Zaid ibn Arqam hold back from narrating?", "He had grown old and forgotten", "Messenger of Allah. Zaid said: we have", "Grown old and have forgotten, and ahadith"],
     ["What is narrating his ﷺ words, Zaid ibn Arqam said?", "Something difficult", "From the Messenger of Allah is difficult."],
     ["Zaid ibn Arqam said narrating his ﷺ words is easy.", "False", "From the Messenger of Allah is difficult."]
+  ],
+  // Abu Sa'id al-Khudri said: the Prophet ﷺ said: when anyone of you has finished his prayer, let him give his house a
+  // share of that, for Allah will put something good in his house because of that prayer (Sunan Ibn Majah 1376).
+  "sign-a-share-for-the-house": [
+    ["What should your house get from your prayer?", "A share of it", "House a share of that, for Allah will"],
+    ["What does Allah put in a house that gets a share of prayer?", "Something good", "Put something good in his house because", "Of that prayer."],
+    ["All prayer should be kept out of the home.", "False", "House a share of that, for Allah will"]
+  ],
+  // Buraidah al-Aslami said: the Prophet ﷺ said: whoever gives respite to one in difficulty will have an act of charity
+  // for each day (Sunan Ibn Majah 2418).
+  "sign-charity-for-each-day": [
+    ["Giving more time to one in difficulty is charity how often?", "For each day", "An act of charity for each day."],
+    ["Being patient with someone who owes you is a kind of charity.", "True", "An act of charity for each day."]
+  ],
+  // Salman ibn Amir said: the Prophet ﷺ said: giving charity to a poor person is charity, and to a relative is two
+  // things, charity and upholding the ties of kinship (Sunan an-Nasa'i 2582).
+  "sign-two-for-a-relative": [
+    ["How many rewards for charity to a relative?", "Two", "Relative is two things, charity and", "Upholding the ties of kinship."],
+    ["What are the two rewards?", "Charity and family ties", "Relative is two things, charity and", "Upholding the ties of kinship."]
+  ],
+  // Anas ibn Malik said: a man came to the Prophet ﷺ to get a mount, but he did not have anything to mount him on with
+  // him. So he was led to another person to give him a mount. He came to the Prophet ﷺ to inform him about that, and he
+  // said: whoever leads to good, he is like the one who does it (Jami at-Tirmidhi 2670).
+  "sign-whoever-leads-to-good": [
+    ["What did the man come to the Prophet ﷺ for?", "Something to ride", "Anas: a man came to the Prophet to get a", "Mount, but he did not have anything to"],
+    ["Whoever leads someone to good is like whom, he ﷺ said?", "The one who does it", "Whoever leads to good is like the one", "Who does it."],
+    ["Sending someone to a person who can help is a good deed.", "True", "Whoever leads to good is like the one", "Who does it."]
+  ],
+  // Samurah ibn Jundub said: the Prophet ﷺ said: whoever offers the morning prayer, he is under the protection of Allah,
+  // the Mighty and Sublime (Sunan Ibn Majah 3946).
+  "sign-under-the-protection": [
+    ["Whose protection is the one who prays it under?", "Allah's", "Protection of Allah, the Mighty and", "Sublime."],
+    ["Praying Fajr leaves a person without any protection.", "False", "Protection of Allah, the Mighty and", "Sublime."]
+  ],
+  // Ibn Abbas said: the Messenger of Allah ﷺ said: if the people were given what they claimed, some would have claimed
+  // the lives and property of men. But the one the claim is made against is obliged to swear an oath (Sunan Ibn Majah
+  // 2321).
+  "sign-an-oath-not-a-claim": [
+    ["What would happen if people got whatever they claimed?", "Some would claim others' lives", "Given what they claimed, some would have", "Claimed the lives and property of men."],
+    ["Who must swear an oath, he ﷺ said?", "The one the claim is against", "But the one the claim is made against is", "Obliged to swear an oath."],
+    ["A claim alone is enough to take a man's property.", "False", "But the one the claim is made against is", "Obliged to swear an oath."]
   ]
 };
 
