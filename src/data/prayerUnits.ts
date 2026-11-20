@@ -54,6 +54,32 @@ const REWARD: DeepUnit = {
       ]
     },
     {
+      slug: "the-steps-of-bani-salama",
+      title: "The steps of Bani Salama",
+      line: "Each step to the masjid is rewarded, so Bani Salama stayed.",
+      facts: ["Told by Anas ibn Malik", "They wanted to move near the masjid", "He ﷺ did not want Madinah left empty"],
+      source: hadith("bukhari", "1887", "Anas ibn Malik", "Sahih", "Anas said: Bani Salama wanted to move near the masjid, but the Messenger of Allah ﷺ did not like Madinah to be left empty. He ﷺ said: O people of Bani Salama, do you not think you will be rewarded for your steps to the masjid? So they stayed in their old places.", "you will be rewarded for your footsteps which you take towards the mosque"),
+      difficulty: 1,
+      questions: [
+        { q: "Where did Bani Salama want to move?", a: "Near the masjid", wrong: ["To Makkah", "Near the market", "Out of Madinah"], why: "Bani Salama intended to shift near the mosque, Anas said." },
+        { q: "What did he ﷺ say Bani Salama are rewarded for?", a: "Their steps to the masjid", wrong: ["Their big houses", "Their fast camels", "Their long talks"], why: "You will be rewarded for your footsteps towards the mosque, he ﷺ said." },
+        { q: "Bani Salama stayed in their old homes.", tf: true, why: "So, they stayed at their old places, Anas said." }
+      ]
+    },
+    {
+      slug: "like-a-familys-joy",
+      title: "Like a family's joy",
+      line: "Allah is happy with those who keep coming to the masjid.",
+      facts: ["Told by Abu Hurairah", "To pray and to remember Allah", "Like a family when its absent one comes home"],
+      source: hadith("ibnmajah", "800", "Abu Hurairah", "Sahih (Darussalam)", "Abu Hurairah said: the Prophet ﷺ said: a Muslim does not keep coming to the masjids to pray and remember Allah, but Allah is happy with him, just as the family of one who is away is happy when he comes back to them.", "Allah feels happy with him just as the family of one who is absent feels happy when he comes back to them"),
+      difficulty: 2,
+      questions: [
+        { q: "Why does the regular masjid-goer keep coming, he ﷺ said?", a: "To pray and remember Allah", wrong: ["To buy and sell", "To find lost things", "To rest from the sun"], why: "A Muslim regularly attends the mosques to pray and remember Allah, he ﷺ said." },
+        { q: "Allah's happiness with him is like whose joy?", a: "A family whose absent one returns", wrong: ["A trader who sold it all", "A traveler setting out", "A farmer at harvest"], why: "Just as the family of one who is absent feels happy when he comes back, he ﷺ said." },
+        { q: "Allah is happy with the one who keeps coming to the masjid.", tf: true, why: "Allah feels happy with him, like a family whose absent one comes home, he ﷺ said." }
+      ]
+    },
+    {
       slug: "two-cool",
       title: "The two cool prayers",
       line: "Whoever prays the two cool prayers, Fajr and Asr, enters Jannah.",

@@ -1,15 +1,16 @@
 import { hadith, type DeepUnit } from "./deepKit";
 
-// One more Zakat unit: being wise with wealth, from Sahih al-Bukhari and Sunan Abi Dawud. Sharing what is spare, who
-// comes first when you spend, a goat lent for its milk, Thawban's promise never to beg, a reward for spending on your
-// own children, and taking what comes without greed. Every card is one sahih or hasan hadith with its number, narrator
-// and grade, and its exact English words to highlight, and none of them is taught anywhere else in the app.
+// One more Zakat unit: being wise with wealth, from Sahih al-Bukhari, Sunan Abi Dawud and Sunan Ibn Majah. Sharing
+// what is spare, who comes first when you spend, a goat lent for its milk, Thawban's promise never to beg, a reward for
+// spending on your own children, taking what comes without greed, and riches that do no harm with piety, though good
+// health is better. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English
+// words to highlight, and none of them is taught anywhere else in the app.
 
 const WEALTH: DeepUnit = {
   key: "zakat-wise-wealth",
   topicId: "zakat",
   branchId: "zakat-wise-wealth",
-  branch: { title: "Wise with wealth", description: "Sharing what is spare, yourself first, a goat lent for its milk, Thawban's promise, a reward for your own children, and taking without greed." },
+  branch: { title: "Wise with wealth", description: "Sharing what is spare, yourself first, a goat lent for its milk, Thawban's promise, a reward for your own children, taking without greed, and riches with piety." },
   name: "being wise with wealth",
   kind: "skill",
   lessonType: "skill",
@@ -90,6 +91,20 @@ const WEALTH: DeepUnit = {
         { q: "What did Umar ask him ﷺ to do with the gift?", a: "Give it to someone poorer", wrong: ["Add more to it", "Sell it in the market", "Keep it for later"], why: "Would you give it to a poorer and more needy one than I? Umar said." },
         { q: "When should you take what you are given, he ﷺ said?", a: "If you did not ask or crave it", wrong: ["Only if it is gold", "Only on Fridays", "Never at all"], why: "Without asking for it or having greed for it, take it, he ﷺ said." },
         { q: "He ﷺ said to run after wealth that is not given to you.", tf: false, why: "No. If you are not given wealth, do not run after it, he ﷺ said." }
+      ]
+    },
+    {
+      // The page says "he spoke to the people about being rich", where the Arabic says the people talked about it.
+      slug: "riches-with-piety",
+      title: "Riches with piety",
+      line: "Riches do no harm with piety, but good health is better.",
+      facts: ["They sat in a gathering with him ﷺ", "He ﷺ came to them in good cheer"],
+      source: hadith("ibnmajah", "2141", "Mu'adh ibn Abdullah ibn Khubaib, from his father, from his uncle", "Sahih (Darussalam)", "Mu'adh ibn Abdullah ibn Khubaib reported from his father that his uncle said: we were sitting in a gathering when the Prophet ﷺ came. One of us said: we see that you are of good cheer today. He ﷺ said: yes, praise is to Allah. Then the people talked about being rich, and he ﷺ said: there is nothing wrong with being rich for one who has piety, but good health for one who has piety is better than riches, and being of good cheer is a blessing.", "good health for one who has piety is better than riches"),
+      difficulty: 2,
+      questions: [
+        { q: "For one who has piety, what is better than riches?", a: "Good health", wrong: ["More riches", "A big house", "Many camels"], why: "Good health for one who has piety is better than riches, he ﷺ said." },
+        { q: "What did he ﷺ call being of good cheer?", a: "One of the blessings", wrong: ["A waste of time", "A sign of weakness", "Something to hide"], why: "Being of good cheer is a blessing, he ﷺ said, on a day he was in good cheer." },
+        { q: "There is nothing wrong with being rich for one who has piety.", tf: true, why: "He ﷺ said so when the people talked about riches, and he called good health better." }
       ]
     }
   ]

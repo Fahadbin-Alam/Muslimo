@@ -1932,6 +1932,19 @@ const ALI: DeepUnit = {
         { q: "What did Ali say when asked 'then you?'", a: "I am one of the Muslims", wrong: ["Yes, me", "Ask Umar", "I am the best"], why: "This was his humility." },
         { q: "Who asked Ali this?", a: "His son Muhammad", wrong: ["His son Husayn", "Fatimah", "Ibn Abbas"], why: "Known as Muhammad ibn al-Hanafiyyah." }
       ]
+    },
+    {
+      slug: "a-bucket-for-a-date",
+      title: "A bucket for a date",
+      line: "Ali drew water for dates: one bucket for one good date.",
+      facts: ["Told by Ali ibn Abi Talib", "One bucket of water, one date", "He asked for good, dried dates"],
+      source: hadith("ibnmajah", "2447", "Ali ibn Abi Talib", "Sahih (Darussalam)", "Ali said: I used to draw water, one bucket for a date, and I asked that they be good, dried dates.", "used to draw water, one bucket for a date"),
+      difficulty: 1,
+      questions: [
+        { q: "What did Ali get for each bucket of water?", a: "One date", wrong: ["A loaf of bread", "A cup of milk", "A bowl of barley"], why: "I used to draw water, one bucket for a date, Ali said." },
+        { q: "What kind of dates did Ali ask for?", a: "Good dried dates", wrong: ["Any dates at all", "Soft fresh dates", "Small broken dates"], why: "I stipulated that they should be good quality, dried dates, Ali said." },
+        { q: "Ali drew water to earn dates.", tf: true, why: "Ali said he drew water, one bucket for a date, and asked for good dates." }
+      ]
     }
   ]
 };
