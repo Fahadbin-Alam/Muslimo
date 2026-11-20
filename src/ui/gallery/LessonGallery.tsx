@@ -1772,6 +1772,11 @@ const STATES: State[] = [
   { id: "scene-pebbles-like-these", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-the-balanced-way-beware-of-extremes" ask="warn the people about at Hajj" /> },
   { id: "scene-do-not-be-demanding", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-not-asking-people-do-not-push-when-asking" ask="missing from a gift given unwillingly" /> },
   { id: "scene-as-fresh-as-revealed", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-fresh-as-revealed" ask="brought Ibn Mas'ud the good news" /> },
+  { id: "scene-provision-will-reach-you", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-what-allah-has-written-your-provision-will-reach-you" ask="every soul receive before it dies" /> },
+  { id: "scene-as-you-are-able", render: () => <SceneQuestionDemo lessonId="lesson-deep-mumtahanah4-as-much-as-you-can" ask="add to their pledge" /> },
+  { id: "scene-the-best-provision", render: () => <SceneQuestionDemo lessonId="lesson-notes-hadith-hadith-from-your-notes-2-sunan-ibn-majah-1855" ask="best provision in this world" /> },
+  { id: "scene-or-as-he-said", render: () => <SceneQuestionDemo lessonId="lesson-deep-careful-with-his-words-or-as-he-said" ask="Anas say after narrating" /> },
+  { id: "scene-we-have-grown-old", render: () => <SceneQuestionDemo lessonId="lesson-deep-careful-with-his-words-we-have-grown-old" ask="hold back from narrating" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3827);
+    expect(asks.length).toBe(3839);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5568);
+    expect(places).toBe(5583);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -28867,6 +28867,172 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1]
       ],
       1
+    ]);
+  });
+
+  it("waits on the scenes from your provision will reach you to we have grown old before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-provision-will-reach-you", "sign-as-you-are-able", "sign-the-best-provision", "sign-or-as-he-said", "sign-we-have-grown-old"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(12);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // All its provision: the places of the folk have no sack by them yet, before the next words; then a sack of provision
+    // comes along the land to two of them, each with a soft golden ring, and the third place's sack is on its way,
+    // stopped.
+    expect([
+      shown("What will every soul receive before it dies, he ﷺ said?", ["its provision: a sack coming along the land to its place 1", "its provision: a sack coming along the land to its place 2", "its provision: a sack coming slowly along the land to its place, stopping on the way 3", "all its provision, received: a soft golden ring about the place and its sack 1", "all its provision, received: a soft golden ring about the place and its sack 2", "all its provision, received: a soft golden ring about the place and its sack 3"]),
+      moved("What will every soul receive before it dies, he ﷺ said?", "its provision: a sack coming slowly along the land to its place, stopping on the way 3", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1, 0]
+      ],
+      [26, 13]
+    ]);
+    // True: no sack has come yet, before the next words; then the sack for the place on the way comes slowly, stopping on
+    // the way, and reaches it all the same, with a soft golden ring.
+    expect([
+      shown("Provision may be slow, but it will still reach you.", ["its provision: a sack coming slowly along the land to its place, stopping on the way 3", "all its provision, received: a soft golden ring about the place and its sack 3"]),
+      moved("Provision may be slow, but it will still reach you.", "its provision: a sack coming slowly along the land to its place, stopping on the way 3", "x"),
+      value("provision-will-reach-you", "its provision: a sack coming slowly along the land to its place, stopping on the way 3", "x", 0.48)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [26, 0],
+      13
+    ]);
+    // Moderately, taking only what is lawful: his voice has begun and nothing has moved, before the next words; then one
+    // place goes calmly toward the market and on to it, a soft light comes on the first stall, and a small sack goes from
+    // it to the place; the other stall's goods are not ringed with grey yet.
+    expect([
+      shown("How should we seek a living, he ﷺ said?", ["what is permissible: a soft light on the first stall", "what is permissible, taken: a small sack going from the first stall to the place", "what is forbidden: a ring of grey dashes about the goods of the other stall"]),
+      moved("How should we seek a living, he ﷺ said?", "the place of one of the folk 3: going calmly toward the market, and then on to it", "x"),
+      value("provision-will-reach-you", "the place of one of the folk 3: going calmly toward the market, and then on to it", "x", 0.4)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, 38],
+      14
+    ]);
+    // As much as you are able: the group has given the pledge, and no ring is about their places yet, before the next
+    // words; then his voice answers, and a soft golden ring comes about each of their places, one after another, with
+    // glints.
+    expect([
+      shown("What did the Prophet ﷺ add to their pledge?", ["in as much as you can and are able: a soft golden ring about each of their places 1", "in as much as you can and are able: a soft golden ring about each of their places 3", "in as much as you can and are able: a soft golden ring about each of their places 5", "and glints over them"]),
+      value("as-you-are-able", "his voice, soft and golden: answering them", "opacity", 0.6)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      1
+    ]);
+    // A righteous wife: a soft light is on the goods of the market, and no place shows at the door of the home yet, before
+    // the next words; then a place shows at the door, a righteous one, with a soft light, a soft golden ring and glints,
+    // and the light on the goods grows faint beside it.
+    expect([
+      shown("What is the best provision in this world?", ["a righteous one's place, at the door of the home", "the best provision: a soft light about it", "and a soft golden ring about it", "and glints over it", "this world is but provisions: a soft light on the goods, growing faint beside the best of them"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 0.4]
+      ]
+    ]);
+    // False: the light is on the goods, coins among them, before the next words; then the best provision shows at the door
+    // of the home, and the light on the goods grows faint beside it.
+    expect([
+      shown("The Prophet ﷺ said money is the best thing to have in this world.", ["this world is but provisions: a soft light on the goods, growing faint beside the best of them", "a righteous one's place, at the door of the home", "and a soft golden ring about it"])
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [0.4, 1, 1]
+      ]
+    ]);
+    // Or as he said: Anas has narrated a hadith and finished it, and his voice is quiet, before the next words; then
+    // Anas's voice speaks again, and a soft golden ring of care comes about Anas's place, with glints.
+    expect([
+      shown("What would Anas say after narrating a hadith?", ["Anas's voice: narrating a hadith, and finishing it", "care with his words: a soft golden ring about Anas's place", "and glints over it"]),
+      value("or-as-he-said", "Anas's voice again: or as he said", "opacity", 0.8)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [0, 1, 1]
+      ],
+      1
+    ]);
+    // Whenever he finished a hadith: it waits before anything; then Ibn Sirin's voice tells of it, and Anas's voice
+    // narrates a hadith and stops: finished; the ring of care has not come yet.
+    expect([
+      shown("When would Anas add: or as he ﷺ said?", ["Anas's voice: narrating a hadith, and finishing it", "care with his words: a soft golden ring about Anas's place"]),
+      value("or-as-he-said", "Ibn Sirin's voice: telling of it", "opacity", 0.06),
+      value("or-as-he-said", "Anas's voice: narrating a hadith, and finishing it", "opacity", 0.3)
+    ]).toEqual([
+      [
+        [0, 0],
+        [0, 0]
+      ],
+      1,
+      1
+    ]);
+    // True: Anas's voice is quiet, before the next words; then it speaks again: or as he said, and a soft golden ring of
+    // care comes about Anas's place.
+    expect([
+      shown("Anas was careful when he passed on the words of the Messenger ﷺ.", ["care with his words: a soft golden ring about Anas's place", "and glints over it"]),
+      value("or-as-he-said", "Anas's voice again: or as he said", "opacity", 0.7)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1
+    ]);
+    // He had grown old and forgotten: Abdur-Rahman and those with him have asked, and the small soft lights are by Zaid's
+    // place, before the next words; then Zaid's voice answers, a soft silver ring comes about Zaid's place, and the small
+    // lights fade, one after another.
+    expect([
+      shown("Why did Zaid ibn Arqam hold back from narrating?", ["Zaid's voice: answering", "grown old: a soft silver ring about Zaid's place", "what Zaid had heard from him: a small soft light by Zaid's place, fading: forgotten 1", "what Zaid had heard from him: a small soft light by Zaid's place, fading: forgotten 3", "a weighty matter: a ring of care, deep gold, about Zaid's place"])
+    ]).toEqual([
+      [
+        [0, 0, 1, 1, 0],
+        [1, 1, 0, 0, 0]
+      ]
+    ]);
+    // Something difficult: no ring of care is about Zaid's place yet, before the next words; then a ring of care, deep
+    // gold, comes about it: a weighty matter.
+    expect([
+      shown("What is narrating his ﷺ words, Zaid ibn Arqam said?", ["a weighty matter: a ring of care, deep gold, about Zaid's place", "grown old: a soft silver ring about Zaid's place"]),
+      value("we-have-grown-old", "Zaid's voice: answering", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [0, 1],
+        [1, 1]
+      ],
+      1
+    ]);
+    // False: Zaid has grown old and forgotten, before the next words; then a ring of care, deep gold, comes about Zaid's
+    // place: a weighty matter, not an easy one.
+    expect([
+      shown("Zaid ibn Arqam said narrating his ﷺ words is easy.", ["a weighty matter: a ring of care, deep gold, about Zaid's place", "what Zaid had heard from him: a small soft light by Zaid's place, fading: forgotten 2"])
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 0]
+      ]
     ]);
   });
 

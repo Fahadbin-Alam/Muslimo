@@ -8013,6 +8013,41 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-as-fresh-as-revealed": [
     ["Who brought Ibn Mas'ud the good news?", "Abu Bakr and Umar", "Abu Bakr and Umar gave Ibn Mas'ud the", "Glad tidings that the Messenger of"],
     ["Ibn Mas'ud recited the Quran as fresh as when it was revealed.", "True", "Recite the Quran as fresh as when it", "Ibn Umm Abd."]
+  ],
+  // Jabir ibn Abdullah said: the Messenger of Allah ﷺ said: O people, fear Allah and be moderate in seeking a living,
+  // for no soul will die until it has received all its provision, even if it is slow in coming. So fear Allah and be
+  // moderate in seeking provision; take that which is permissible and leave that which is forbidden (Sunan Ibn Majah
+  // 2144).
+  "sign-provision-will-reach-you": [
+    ["What will every soul receive before it dies, he ﷺ said?", "All its provision", "No soul will die until it has received", "All its provision, even if it is slow"],
+    ["Provision may be slow, but it will still reach you.", "True", "No soul will die until it has received", "In coming. So fear Allah and be"],
+    ["How should we seek a living, he ﷺ said?", "Moderately, taking only what is lawful", "And be moderate in seeking a living, for", "That which is permissible and leave"]
+  ],
+  // Umaymah bint Ruqayqah said: we gave pledge to the Messenger of Allah ﷺ among a group of women, and he said to us:
+  // in as much as you can and are able (Sunan an-Nasa'i 4190).
+  "sign-as-you-are-able": [
+    ["What did the Prophet ﷺ add to their pledge?", "As much as you are able", "Said to us: in as much as you can and", "Are able."]
+  ],
+  // Abdullah ibn Amr said: the Messenger of Allah ﷺ said: this world is but provisions, and there is no provision in
+  // this world better than a righteous wife (Sunan Ibn Majah 1855).
+  "sign-the-best-provision": [
+    ["What is the best provision in this world?", "A righteous wife", "Righteous wife."],
+    ["The Prophet ﷺ said money is the best thing to have in this world.", "False", "Righteous wife."]
+  ],
+  // Muhammad ibn Sirin said: whenever Anas ibn Malik finished narrating a hadith from the Messenger of Allah ﷺ, he
+  // would say: or as the Messenger of Allah ﷺ said (Sunan Ibn Majah 24).
+  "sign-or-as-he-said": [
+    ["What would Anas say after narrating a hadith?", "Or as he ﷺ said", "Messenger of Allah, Anas would say: or", "As the Messenger of Allah said."],
+    ["When would Anas add: or as he ﷺ said?", "Whenever he finished a hadith", "Ibn Sirin: whenever Anas ibn Malik", "Finished narrating a hadith from the"],
+    ["Anas was careful when he passed on the words of the Messenger ﷺ.", "True", "Messenger of Allah, Anas would say: or", "As the Messenger of Allah said."]
+  ],
+  // Abdur-Rahman ibn Abi Laila said: we said to Zaid ibn Arqam: tell us a hadith from the Messenger of Allah ﷺ. He
+  // said: we have grown old and have forgotten, and ahadith from the Messenger of Allah ﷺ is difficult (Sunan Ibn
+  // Majah 25).
+  "sign-we-have-grown-old": [
+    ["Why did Zaid ibn Arqam hold back from narrating?", "He had grown old and forgotten", "Messenger of Allah. Zaid said: we have", "Grown old and have forgotten, and ahadith"],
+    ["What is narrating his ﷺ words, Zaid ibn Arqam said?", "Something difficult", "From the Messenger of Allah is difficult."],
+    ["Zaid ibn Arqam said narrating his ﷺ words is easy.", "False", "From the Messenger of Allah is difficult."]
   ]
 };
 

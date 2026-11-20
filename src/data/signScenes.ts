@@ -1223,7 +1223,12 @@ export type SignKind =
   | "pure-of-heart"
   | "pebbles-like-these"
   | "do-not-be-demanding"
-  | "as-fresh-as-revealed";
+  | "as-fresh-as-revealed"
+  | "provision-will-reach-you"
+  | "as-you-are-able"
+  | "the-best-provision"
+  | "or-as-he-said"
+  | "we-have-grown-old";
 
 export type SignScene = {
   id: string;
@@ -7142,6 +7147,41 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Mas'ud said that Abu Bakr and Umar gave him the glad tidings that the Messenger of Allah ﷺ had said: whoever would like to recite the Quran as fresh as when it was revealed, let him recite it like Ibn Umm Abd.",
     sources: [ibnMajah("138")]
+  },
+  {
+    id: "sign-provision-will-reach-you",
+    kind: "provision-will-reach-you",
+    caption:
+      "Jabir ibn Abdullah said: the Messenger of Allah ﷺ said: O people, fear Allah and be moderate in seeking a living, for no soul will die until it has received all its provision, even if it is slow in coming. So fear Allah and be moderate in seeking provision; take that which is permissible and leave that which is forbidden.",
+    sources: [ibnMajah("2144")]
+  },
+  {
+    id: "sign-as-you-are-able",
+    kind: "as-you-are-able",
+    caption:
+      "Umaymah bint Ruqayqah said: we gave pledge to the Messenger of Allah ﷺ among a group of women, and he said to us: in as much as you can and are able.",
+    sources: [nasai("4190")]
+  },
+  {
+    id: "sign-the-best-provision",
+    kind: "the-best-provision",
+    caption:
+      "Abdullah ibn Amr said: the Messenger of Allah ﷺ said: this world is but provisions, and there is no provision in this world better than a righteous wife.",
+    sources: [ibnMajah("1855")]
+  },
+  {
+    id: "sign-or-as-he-said",
+    kind: "or-as-he-said",
+    caption:
+      "Muhammad ibn Sirin said: whenever Anas ibn Malik finished narrating a hadith from the Messenger of Allah ﷺ, he would say: or as the Messenger of Allah ﷺ said.",
+    sources: [ibnMajah("24")]
+  },
+  {
+    id: "sign-we-have-grown-old",
+    kind: "we-have-grown-old",
+    caption:
+      "Abdur-Rahman ibn Abi Laila said: we said to Zaid ibn Arqam: tell us a hadith from the Messenger of Allah ﷺ. He said: we have grown old and have forgotten, and ahadith from the Messenger of Allah ﷺ is difficult.",
+    sources: [ibnMajah("25")]
   }
 ];
 
@@ -10185,7 +10225,17 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Do not push when asking: what is given reluctantly has no blessing in it.
   "deep-zakat-not-asking-people-do-not-push-when-asking": "sign-do-not-be-demanding",
   // As fresh as it came down: recite the Quran like Ibn Umm Abd.
-  "deep-ibnmasud-fresh-as-revealed": "sign-as-fresh-as-revealed"
+  "deep-ibnmasud-fresh-as-revealed": "sign-as-fresh-as-revealed",
+  // Your provision will reach you: no soul dies before it has all its provision, so seek it moderately, taking what is lawful.
+  "deep-aqidah-what-allah-has-written-your-provision-will-reach-you": "sign-provision-will-reach-you",
+  // As much as you can: the pledge he ﷺ took, in as much as they could and were able.
+  "deep-mumtahanah4-as-much-as-you-can": "sign-as-you-are-able",
+  // A righteous wife: no provision of this world is better.
+  "notes-hadith-hadith-from-your-notes-2-sunan-ibn-majah-1855": "sign-the-best-provision",
+  // Or as he ﷺ said: after each hadith, Anas would add: or as the Messenger of Allah ﷺ said.
+  "deep-careful-with-his-words-or-as-he-said": "sign-or-as-he-said",
+  // We have grown old: Zaid ibn Arqam held back, for narrating his ﷺ words is a weighty matter.
+  "deep-careful-with-his-words-we-have-grown-old": "sign-we-have-grown-old"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
