@@ -7810,6 +7810,42 @@ const ASKS: Record<string, readonly Ask[]> = {
   // false question on sitting humbly, since the scene does not say it.
   "sign-not-while-leaning": [
     ["How did the Prophet ﷺ not eat?", "Leaning back", "While leaning."]
+  ],
+  // An-Nawwas ibn Sam'an said: the Messenger of Allah ﷺ said: Allah has made a parable of the straight path: at the
+  // sides of the path there are walls with open doors, each door having a curtain. There is a caller at the head of
+  // the path calling, and a caller above it calling. The doors on the sides of the path are the Hudud of Allah, the
+  // limits He has set; no one breaches the Hudud of Allah except that curtain is lifted (Jami at-Tirmidhi 2859).
+  "sign-parable-of-the-path": [
+    ["In the parable, what hangs over each open door?", "A curtain", "Open doors, each door having a curtain."],
+    ["What are the open doors at the sides of the path?", "The limits Allah has set", "The doors on the sides of the path are the", "Hudud of Allah; no one breaches the Hudud"],
+    ["Callers call out on the straight path.", "True", "There is a caller at the head of the path", "Calling, and a caller above it calling."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: whoever sits in a sitting and engages in much empty, meaningless
+  // speech, and then says before getting up from that sitting of his: Subhanaka Allahumma wa bihamdika, ashhadu an la
+  // ilaha illa anta, astaghfiruka wa atubu ilaik (glory is to You, O Allah, and praise; I bear witness that there is
+  // none worthy of worship except You; I seek Your forgiveness, and I repent to You), whatever occurred in that
+  // sitting would be forgiven to him (Jami at-Tirmidhi 3433).
+  "sign-closing-a-sitting": [
+    ["When do we say Subhanaka Allahumma wa bihamdika, in Tirmidhi 3433?", "Before getting up from a sitting", "Meaningless speech and then says before", "Getting up from that sitting of his:"],
+    ["What does saying it before rising bring?", "Forgiveness for that sitting", "Whatever occurred in that sitting would", "Be forgiven to him."],
+    ["The words end with: astaghfiruka wa atubu ilayk.", "True", "Astaghfiruka wa atubu ilaik,"]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: rush to do good deeds. A Fitnah will occur that is like a
+  // portion of the dark night: morning will come upon a man as a believer, who will be a disbeliever in the evening,
+  // and evening will come upon a believer, who will be a disbeliever in the morning. One of them will sell his
+  // religion for goods of the world (Jami at-Tirmidhi 2195).
+  "sign-rush-to-good-deeds": [
+    ["What did he ﷺ tell us to rush to, before the trials?", "Good deeds", "Abu Hurairah: he said: rush to do good", "Deeds. A Fitnah will occur that is like"],
+    ["How quickly will some people change in that trial?", "From morning to evening", "A portion of the dark night, morning will", "Be a disbeliever in the evening, and"],
+    ["Some people will sell their religion for goods of the world.", "True", "Of them will sell his religion for goods", "Of the world."]
+  ],
+  // Jabir ibn Abdullah said: the Messenger of Allah ﷺ said: there is none who utters a supplication, except that Allah
+  // gives him what he asked, or prevents evil from him that is equal to it, as long as he does not supplicate for
+  // something evil, or the cutting of ties of the womb (Jami at-Tirmidhi 3381).
+  "sign-no-dua-wasted": [
+    ["What happens when a believer makes du'a?", "Allah gives it, or keeps a harm away", "Utters a supplication, except that Allah", "From him that is equal to it – as long"],
+    ["Which du'a did he ﷺ say is not answered?", "A du'a for a sin", "As he does not supplicate for something", "Evil, or the cutting of ties of the womb."],
+    ["A du'a can be answered by keeping a harm away from you.", "True", "Gives him what he asked, or prevents evil", "From him that is equal to it – as long"]
   ]
 };
 
