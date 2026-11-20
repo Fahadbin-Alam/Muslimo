@@ -38688,8 +38688,8 @@ describe("the signs in creation, alive", () => {
     ]);
     expect([
       [at("best-to-his-family", "Aishah's voice: telling of it", "opacity", [0.03, 0.036, 0.08, 0.086]), at("best-to-his-family", "his voice, soft and golden", "opacity", [0.086, 0.092, 0.96, 0.966])],
-      [at("best-to-his-family", "the place of one of you, coming home", "x", [0.12, 0.2]), at("best-to-his-family", "the place of one of you, coming home", "y", [0.12, 0.2]), at("best-to-his-family", "a basket of dates, brought home and set down by the other's place", "x", [0.2, 0.36, 0.38]), at("best-to-his-family", "a basket of dates, brought home and set down by the other's place", "y", [0.36, 0.38])],
-      [at("best-to-his-family", "the best to his spouse: a soft golden ring about the two places", "opacity", [0.4, 0.412]), at("best-to-his-family", "a soft warm light over their home", "opacity", [0.42, 0.44]), at("best-to-his-family", "glints over their home", "opacity", [0.45, 0.46])],
+      [at("best-to-his-family", "the place of one of you, coming home", "opacity", [0.36, 0.38]), at("best-to-his-family", "the place of one of you, coming home", "x", [0.36, 0.44]), at("best-to-his-family", "the place of one of you, coming home", "y", [0.36, 0.44]), at("best-to-his-family", "a basket of dates, brought home and set down by the other's place", "opacity", [0.36, 0.38]), at("best-to-his-family", "a basket of dates, brought home and set down by the other's place", "x", [0.44, 0.46, 0.48]), at("best-to-his-family", "a basket of dates, brought home and set down by the other's place", "y", [0.46, 0.48])],
+      [at("best-to-his-family", "the best to his spouse: a soft golden ring about the two places", "opacity", [0.5, 0.512]), at("best-to-his-family", "a soft warm light over their home", "opacity", [0.52, 0.54]), at("best-to-his-family", "glints over their home", "opacity", [0.55, 0.56])],
       [at("best-to-his-family", "a soft warm light over his rooms", "opacity", [0.69, 0.71]), at("best-to-his-family", "a soft golden ring about his rooms", "opacity", [0.73, 0.742]), at("best-to-his-family", "and glints over them", "opacity", [0.76, 0.77])]
     ]).toEqual([
       [
@@ -38697,8 +38697,10 @@ describe("the signs in creation, alive", () => {
         [0, 1, 1, 0]
       ],
       [
+        [0, 1],
         [36, 0],
         [5, 0],
+        [0, 1],
         [0, 0, 17.4],
         [0, -1.4]
       ],

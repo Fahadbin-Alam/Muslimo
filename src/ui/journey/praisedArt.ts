@@ -479,9 +479,13 @@ function bestToHisFamily(): SignArt {
         name: "the place of one of you, coming home",
         svg: someone(you[0], you[1], 1.6, YOU),
         keys: track({
+          opacity: [
+            [0.36, 0],
+            [0.38, 1]
+          ],
           xy: [
-            [0.12, comes[0], comes[1]],
-            [0.2, 0, 0]
+            [0.36, comes[0], comes[1]],
+            [0.44, 0, 0]
           ]
         })
       },
@@ -489,16 +493,20 @@ function bestToHisFamily(): SignArt {
         name: "a basket of dates, brought home and set down by the other's place",
         svg: basketOfDates(basketAt[0], basketAt[1]),
         keys: track({
+          opacity: [
+            [0.36, 0],
+            [0.38, 1]
+          ],
           xy: [
-            [0.12, comes[0], comes[1]],
-            [0.2, 0, 0],
-            [0.36, 0, 0],
-            [0.38, setDown[0], setDown[1]]
+            [0.36, comes[0], comes[1]],
+            [0.44, 0, 0],
+            [0.46, 0, 0],
+            [0.48, setDown[0], setDown[1]]
           ]
         })
       },
-      { name: "the best to his spouse: a soft golden ring about the two places", svg: care(n((you[0] + spouse[0]) / 2), 102.4, 13, 4, SOFT_GOLD), keys: showAt(0.4, 0.412), loop: soft },
-      { name: "a soft warm light over their home", svg: glow(homeAt[0], n(homeAt[1] - 8), 15, "#FFE7A0", 0.08), keys: showAt(0.42, 0.44), loop: soft },
+      { name: "the best to his spouse: a soft golden ring about the two places", svg: care(n((you[0] + spouse[0]) / 2), 102.4, 13, 4, SOFT_GOLD), keys: showAt(0.5, 0.512), loop: soft },
+      { name: "a soft warm light over their home", svg: glow(homeAt[0], n(homeAt[1] - 8), 15, "#FFE7A0", 0.08), keys: showAt(0.52, 0.54), loop: soft },
       {
         name: "glints over their home",
         svg: glints(
@@ -508,7 +516,7 @@ function bestToHisFamily(): SignArt {
           ],
           1.1
         ),
-        keys: showAt(0.45, 0.46),
+        keys: showAt(0.55, 0.56),
         loop: twinkle()
       },
       { name: "a soft warm light over his rooms", svg: glow(n(roomsAt[0] + 15.2), n(roomsAt[1] - 6), 17, "#FFE7A0", 0.09), keys: showAt(0.69, 0.71), loop: soft },
