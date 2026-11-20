@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3766);
+    expect(asks.length).toBe(3779);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5483);
+    expect(places).toBe(5502);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -28078,6 +28078,186 @@ describe("where the scene waits and where it stops", () => {
         [1, 1, 1, 1]
       ],
       [5, 0]
+    ]);
+  });
+
+  it("waits on the scenes from a missed night portion to the best of you to his wives before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-missed-at-night", "sign-most-merciful-of-my-nation", "sign-what-an-excellent-man", "sign-best-to-his-family"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(13);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Between Fajr and Zuhr: it is still night, with stars, and the place of one who slept is dim, when it waits; then the
+    // night goes and the dawn comes, a soft light shows at the masjid, the Fajr prayer, and the place wakes and recites as
+    // the sun rises; the sun climbs high, and a soft light shows at the masjid again: the Zuhr prayer.
+    expect([
+      shown("When can you make up a missed night portion, he ﷺ said?", ["the night sky, until the dawn", "stars", "the place of one who slept, by its home: dim until it wakes", "the Zuhr prayer: a soft light at the masjid"]),
+      moved("When can you make up a missed night portion, he ﷺ said?", "the sun, rising and then high: from the Fajr prayer to the Zuhr prayer", "y"),
+      value("missed-at-night", "the Fajr prayer: a soft light at the masjid", "opacity", 0.44),
+      value("missed-at-night", "its voice, soft and golden, reciting", "opacity", 0.5)
+    ]).toEqual([
+      [
+        [1, 1, 0.42, 0],
+        [0, 0, 1, 1]
+      ],
+      [34, 0],
+      1,
+      1
+    ]);
+    // As if he recited it at night: the spark written for it has risen from its place, and nothing of the night is about
+    // it yet, before the next words; then a soft round of the night, with small stars, comes about the spark, and a soft
+    // golden ring with glints comes about its place.
+    expect([
+      shown("How is it written for him, he ﷺ said?", ["written for it: a spark rising from its place", "as if in the night: a soft round of the night about the spark, with small stars", "a soft golden ring about its place", "and glints over it"])
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // False: the dawn has come, and its section, missed, is still a faint dashed light by its place, before the next
+    // words; then it recites, the light of its section fills, golden, a spark rises from its place, written for it, and a
+    // soft round of the night comes about the spark.
+    expect([
+      shown("If you sleep through your night portion, its reward is lost for good.", ["the dawn: a soft warm light low over the hills", "its section, missed: a faint dashed light by its place", "recited: the light of its section, filled and golden", "written for it: a spark rising from its place", "as if in the night: a soft round of the night about the spark, with small stars"]),
+      moved("If you sleep through your night portion, its reward is lost for good.", "written for it: a spark rising from its place", "y")
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [0, 0, 1, 1, 1]
+      ],
+      [0, -10]
+    ]);
+    // What is halal and haram: rings are about the places of Abu Bakr and Umar, and nothing shows by Mu'adh's place yet,
+    // before the next words; then a short way edged in soft gold shows by it, the lawful, then one with a grey dashed
+    // edge, the unlawful, and a soft golden ring comes about his place.
+    expect([
+      shown("What did Mu'adh know best of all?", ["Abu Bakr: a soft golden ring about his place", "the most severe concerning the order: a strong ring about Umar's place", "the lawful: a short way by Mu'adh's place, edged in soft gold", "the unlawful: a short way by Mu'adh's place, with a grey dashed edge", "Mu'adh: a soft golden ring about his place"])
+    ]).toEqual([
+      [
+        [1, 1, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ]
+    ]);
+    // Abu Bakr: his voice has begun to speak, and no ring is about any place yet, before the next words; then a soft
+    // golden ring comes about Abu Bakr's place, and a soft warm light spreads from it over the places of his nation.
+    expect([
+      shown("Whom did the Prophet ﷺ call the most merciful of the ummah?", ["his voice, soft and golden", "Abu Bakr: a soft golden ring about his place", "the most merciful of his nation to his nation: a soft warm light, spreading from Abu Bakr's place over theirs"]),
+      moved("Whom did the Prophet ﷺ call the most merciful of the ummah?", "the most merciful of his nation to his nation: a soft warm light, spreading from Abu Bakr's place over theirs", "scale")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ],
+      [0.25, 1]
+    ]);
+    // Ubayy ibn Ka'b: a soft golden ring is about Zayd's place, and nothing shows by Ubayy's place yet, before the next
+    // words; then a soft golden ring comes about Ubayy's place, and his voice, soft and golden, recites.
+    expect([
+      shown("Who was the best reciter of the ummah?", ["Zayd: a soft golden ring about his place", "Ubayy: a soft golden ring about his place", "the best reciter: Ubayy's voice, soft and golden, reciting"])
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Zayd ibn Thabit: a sack of wealth to be shared shows, and no ring is about Zayd's place yet, before the next words;
+    // then a soft golden ring comes about Zayd's place, and the shares of the wealth go to the homes.
+    expect([
+      shown("Who knew inheritance best?", ["wealth to be shared: a sack", "Zayd: a soft golden ring about his place", "inheritance: a share of the wealth, going to a home 1", "inheritance: a share of the wealth, going to a home 3"]),
+      moved("Who knew inheritance best?", "inheritance: a share of the wealth, going to a home 2", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [-4.6, 0]
+    ]);
+    // False: no ring is about Zayd's place or Ubayy's yet, before the next words; then Zayd's ring and the shares come, a
+    // soft golden ring comes about Ubayy's place, and his voice, soft and golden, recites: the best reciter.
+    expect([
+      shown("Ubayy was famous for poetry, not the Quran.", ["Zayd: a soft golden ring about his place", "Ubayy: a soft golden ring about his place", "the best reciter: Ubayy's voice, soft and golden, reciting"])
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Abu Bakr: his voice has begun to speak, and no ring is about any of the seven places yet, before the next words;
+    // then a soft golden ring comes about Abu Bakr's place, and a spark rises from it: praised.
+    expect([
+      shown("Whom did he ﷺ name first as an excellent man?", ["his voice, soft and golden", "Abu Bakr: a soft golden ring about his place", "Umar: a soft golden ring about his place"]),
+      moved("Whom did he ﷺ name first as an excellent man?", "praised: a spark rising from Abu Bakr's place", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 0]
+      ],
+      [0, -8]
+    ]);
+    // Two men: rings are about five of the places, and none about the two places of Mu'adh yet, before the next words;
+    // then a soft golden ring comes about Mu'adh ibn Jabal's place, and later one about Mu'adh ibn Amr's place, each with
+    // a spark rising, and glints come over them all.
+    expect([
+      shown("How many men named Mu'adh are in his ﷺ list?", ["Thabit: a soft golden ring about his place", "Mu'adh ibn Jabal: a soft golden ring about his place", "Mu'adh ibn Amr: a soft golden ring about his place", "glints over them all"]),
+      moved("How many men named Mu'adh are in his ﷺ list?", "praised: a spark rising from Mu'adh ibn Amr's place", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, -8]
+    ]);
+    // True: rings are about the places of Abu Bakr, Umar and Abu Ubaydah, and none about Usayd's place yet, before the
+    // next words; then a soft golden ring comes about Usayd's place, and a spark rises from it.
+    expect([
+      shown("Usaid ibn Hudair was among the men he ﷺ praised.", ["Abu Ubaydah: a soft golden ring about his place", "Usayd: a soft golden ring about his place"]),
+      moved("Usaid ibn Hudair was among the men he ﷺ praised.", "praised: a spark rising from Usayd's place", "y")
+    ]).toEqual([
+      [
+        [1, 0],
+        [1, 1]
+      ],
+      [0, -8]
+    ]);
+    // The best to his family: the place of the one married to one of you is by their home, and no one has come home yet,
+    // before the next words; then the place of one of you comes home with a basket of dates and sets it down by the
+    // other's place, and a soft golden ring comes about the two places, with a soft warm light over their home, and
+    // glints.
+    expect([
+      shown("Who is the best of you, in this saying?", ["the place of one of you, coming home", "a basket of dates, brought home and set down by the other's place", "the best to his spouse: a soft golden ring about the two places", "a soft warm light over their home", "glints over their home"]),
+      moved("Who is the best of you, in this saying?", "the place of one of you, coming home", "x"),
+      moved("Who is the best of you, in this saying?", "a basket of dates, brought home and set down by the other's place", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ],
+      [36, 0],
+      [36, 17.4]
+    ]);
+    // He himself: no one has come home yet, before the next words; then their home is lit, and a soft warm light comes
+    // over his rooms by the masjid, and a soft golden ring about them, with glints.
+    expect([
+      shown("Who did the Prophet ﷺ say was best to his family?", ["a soft warm light over their home", "a soft warm light over his rooms", "a soft golden ring about his rooms", "and glints over them"]),
+      value("best-to-his-family", "a soft warm light over his rooms", "opacity", 0.66)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      0
     ]);
   });
 
