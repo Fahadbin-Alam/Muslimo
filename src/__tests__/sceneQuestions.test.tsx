@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3743);
+    expect(asks.length).toBe(3754);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5452);
+    expect(places).toBe(5465);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -2861,7 +2861,9 @@ describe("where the scene waits and where it stops", () => {
     // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
     const scenes = ["sign-good-in-every-state", "sign-your-mother", "sign-cheerful-face", "sign-learn-and-teach", "sign-one-body", "sign-eat-near", "sign-those-you-love"];
     const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
-    expect(asks.length).toBe(92);
+    // The first Manners lessons on honoring your mother and on eating now open on two of these scenes, so four of their
+    // own questions are asked here too.
+    expect(asks.length).toBe(96);
     for (const ask of asks) {
       const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
       for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
@@ -27728,6 +27730,166 @@ describe("where the scene waits and where it stops", () => {
         [1, 1]
       ],
       -12
+    ]);
+  });
+
+  it("waits on the scenes from and if I cannot to not while leaning, and on the scenes of the first lessons of Manners, before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-and-if-i-cannot", "sign-forbidden-and-disliked", "sign-not-while-leaning"];
+    // The lessons' own questions on the scenes of the first Manners lessons, now on their scenes too.
+    const core = ["Who did the Prophet ﷺ mention first when asked about the best companionship?", "Islam teaches that mothers have a very high right to care and kindness.", "Which is the best way to begin eating?", "Using the right hand for eating is part of the Prophetic teaching."];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId) || core.includes(each.prompt));
+    expect(asks.length).toBe(11);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // And if I cannot: Abu Dharr has asked what the best deed is, and no purse shows by his place yet, before the next
+    // words; then an empty purse shows by it, he cannot afford it, the sack is taken along the way to the weak one's door,
+    // the basket by the other place fills with dates, and he asks again.
+    expect([
+      shown("What did Abu Dharr keep asking him ﷺ?", ["cannot afford it: an empty purse by Abu Dharr's place", "helped: a soft golden ring about the weak one's place", "good done for it: the basket filled with dates"]),
+      moved("What did Abu Dharr keep asking him ﷺ?", "a heavy sack set down far from its home, then taken along the way to its door", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -26]
+    ]);
+    // A charity for yourself: the harm by Abu Dharr's place is ringed in grey and the others are kept from it, and nothing
+    // rises from his place yet, before the next words; then a spark rises from it, a charitable deed, and a soft golden
+    // ring comes about it, with glints: for your own good.
+    expect([
+      shown("What did he ﷺ say keeping harm away counts as?", ["a charitable deed: a spark rising from Abu Dharr's place", "for your own good: a soft golden ring about Abu Dharr's own place", "and glints over it"]),
+      moved("What did he ﷺ say keeping harm away counts as?", "a charitable deed: a spark rising from Abu Dharr's place", "y"),
+      value("and-if-i-cannot", "kept from harm: a soft golden ring about the places of others", "opacity", 0.74)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -10],
+      1
+    ]);
+    // True: the empty purse is by Abu Dharr's place, and the sack still lies far from the weak one's home, before the next
+    // words; then it is taken along the way to its door, a soft golden ring comes about the weak one's place, the basket
+    // by the place of one who cannot work fills with dates, and a soft golden ring comes about it too.
+    expect([
+      shown("Helping someone who cannot do his work is a good deed.", ["helped: a soft golden ring about the weak one's place", "good done for it: the basket filled with dates", "a soft golden ring about its place and its basket"]),
+      moved("Helping someone who cannot do his work is a good deed.", "a heavy sack set down far from its home, then taken along the way to its door", "y"),
+      value("and-if-i-cannot", "cannot afford it: an empty purse by Abu Dharr's place", "opacity", 0.252)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      [0, -6.6],
+      1
+    ]);
+    // Our mothers: the place by her is still by her home, and no ring is about it, before the next words; then it turns
+    // away from her and goes, and a grey dashed ring comes about it.
+    expect([
+      shown("Who did Allah forbid us to be undutiful to?", ["a grey dashed ring about the place gone from her"]),
+      moved("Who did Allah forbid us to be undutiful to?", "undutiful: the place by her, turning away from her and going", "x")
+    ]).toEqual([
+      [
+        [0],
+        [1]
+      ],
+      [0, 8.6]
+    ]);
+    // Wasting wealth: the five small arcs of asking show, and nothing has rolled out of the open purse yet, before the
+    // next words; then a grey dashed ring comes about the asking, coins roll out of the purse and are lost, and a grey
+    // dashed ring comes about the wealth wasted.
+    expect([
+      shown("Which of these does Allah dislike?", ["a grey dashed ring about its asking", "wasted: a coin rolling out of the purse and lost 1", "wasted: a coin rolling out of the purse and lost 4", "a grey dashed ring about the wealth wasted"]),
+      moved("Which of these does Allah dislike?", "wasted: a coin rolling out of the purse and lost 1", "x"),
+      value("forbidden-and-disliked", "too many questions: a small arc of asking 5", "opacity", 0.868)
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 0.45, 0.45, 1]
+      ],
+      [0, -6.4],
+      1
+    ]);
+    // False: the place with the empty bowl is at the first door, and the two places are not talking yet, before the next
+    // words; then it goes to the next door, with a grey dashed ring about it, voices go back and forth between the two, a
+    // grey dashed ring comes about them, and their voices go on about the third.
+    expect([
+      shown("Idle talk about others is loved by Allah.", ["a grey dashed ring about it at the next door", "vain, useless talk: voices going back and forth between them", "a grey dashed ring about the two who talk", "too much about others: their voices going on about the third"]),
+      moved("Idle talk about others is loved by Allah.", "begging: a place with an empty bowl, going from one door to the next", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 22]
+    ]);
+    // Leaning back: the meal is on the cloth, its dates and its bread, and no ring is about the cushion yet, before the
+    // next words; then a grey dashed ring comes about the cushion beside his place, upright by the meal, and the meal is
+    // eaten.
+    expect([
+      shown("How did the Prophet ﷺ not eat?", ["not while leaning: a grey dashed ring about the cushion", "a date on the cloth 1", "a date on the cloth 3"]),
+      moved("How did the Prophet ﷺ not eat?", "bread on the cloth, growing less", "scaleX")
+    ]).toEqual([
+      [
+        [0, 1, 1],
+        [1, 0, 0]
+      ],
+      [1, 0.6]
+    ]);
+    // Your mother, first: someone has asked who most deserves his kindness, and no light is above the first one at home
+    // yet, before the next words; then his voice answers twice, a glow comes on the first one, and a light comes above it
+    // each time. The third light waits for the next words.
+    expect([
+      shown("Who did the Prophet ﷺ mention first when asked about the best companionship?", ["a glow on the first one", "a light above the first one 1", "a light above the first one 2", "a light above the first one 3"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [0.7, 1, 1, 0]
+      ]
+    ]);
+    // True: no light is above the first one yet, before the next words; then the glow on the first one grows, and three
+    // lights come above it, one by one, before anything comes on the next one.
+    expect([
+      shown("Islam teaches that mothers have a very high right to care and kindness.", ["a glow on the first one", "a light above the first one 1", "a light above the first one 3", "a glow on the next one"])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0]
+      ]
+    ]);
+    // Say Bismillah: the reaches go round the dish, and his voice has not spoken yet, before the next words; then the
+    // reaches go, his voice teaches, a small voice says Bismillah, and it rises.
+    expect([
+      shown("Which is the best way to begin eating?", ["a reach, around the left of the dish", "a voice from his place, teaching", "a small voice, saying Bismillah", "Bismillah, rising 1"]),
+      moved("Which is the best way to begin eating?", "Bismillah, rising 1", "y")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [0, 1, 1, 1]
+      ],
+      [0, -10]
+    ]);
+    // True: the reaches go round the dish, and his voice has not spoken yet, before the next words; then the reaches go,
+    // and his voice teaches.
+    expect([
+      shown("Using the right hand for eating is part of the Prophetic teaching.", ["a reach, around the left of the dish", "a voice from his place, teaching"])
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ]
     ]);
   });
 

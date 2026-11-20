@@ -1193,7 +1193,11 @@ export type SignKind =
   | "through-the-poor"
   | "their-own-work"
   | "inside-the-kabah"
-  | "their-followers-too";
+  | "their-followers-too"
+  | "and-if-i-cannot"
+  | "abu-bakrs-trade"
+  | "forbidden-and-disliked"
+  | "not-while-leaning";
 
 export type SignScene = {
   id: string;
@@ -6902,6 +6906,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Zayd ibn Arqam said: the Ansar said: O Messenger of Allah, every prophet has his own followers, and we have followed you. So will you invoke Allah to let our followers be considered from us? So he invoked Allah accordingly.",
     sources: [bukhari("3787")]
+  },
+  {
+    id: "sign-and-if-i-cannot",
+    kind: "and-if-i-cannot",
+    caption:
+      "Abu Dharr said: I asked the Prophet ﷺ about the best deeds, and I said: if I cannot afford to do that? He said: help the weak or do good for a person who cannot work for himself. I said: if I cannot do that? He said: refrain from harming others, for this will be regarded as a charitable deed for your own good.",
+    sources: [bukhari("2518")]
+  },
+  {
+    id: "sign-abu-bakrs-trade",
+    kind: "abu-bakrs-trade",
+    caption:
+      "Aishah said: when Abu Bakr as-Siddiq was chosen Caliph, he said: my people know that my profession was not incapable of providing sustenance to my family. And as I will be busy serving the Muslim nation, my family will eat from the National Treasury of Muslims, and I will practice the profession of serving the Muslims.",
+    sources: [bukhari("2070")]
+  },
+  {
+    id: "sign-forbidden-and-disliked",
+    kind: "forbidden-and-disliked",
+    caption:
+      "Al-Mughirah ibn Shu'bah said: the Prophet ﷺ said: Allah has forbidden for you to be undutiful to your mothers, not to pay the rights of the others, and to beg of men. And Allah has hated for you vain, useless talk, or that you talk too much about others, to ask too many questions, and to waste the wealth.",
+    sources: [bukhari("2408")]
+  },
+  {
+    id: "sign-not-while-leaning",
+    kind: "not-while-leaning",
+    caption:
+      "Abu Juhayfah said: the Messenger of Allah ﷺ said: I do not take my meals while leaning.",
+    sources: [bukhari("5398")]
   }
 ];
 
@@ -9871,7 +9903,25 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Ibn Umar prayed inside the Ka'bah where the Prophet ﷺ prayed, as Bilal had told him.
   "deep-hajj-kabah-inside-the-kabah": "sign-inside-the-kabah",
   // The Ansar asked that their followers be counted as from them, and he ﷺ made the du'a.
-  "deep-ansar-their-followers": "sign-their-followers-too"
+  "deep-ansar-their-followers": "sign-their-followers-too",
+  // Abu Dharr kept asking: and if I cannot? Keep your harm from people: a charity for yourself.
+  "deep-intro-questions-they-asked-and-if-i-cannot": "sign-and-if-i-cannot",
+  // Abu Bakr's trade fed his family; chosen Caliph, he served the Muslims, and his family ate from the Treasury.
+  "sahabi-abu-bakr-before-islam": "sign-abu-bakrs-trade",
+  // What Allah forbade for us, and what He dislikes for us.
+  "deep-mughirah-forbidden-and-disliked": "sign-forbidden-and-disliked",
+  // He did not eat while leaning.
+  "deep-book-food-not-leaning": "sign-not-while-leaning",
+  // Spread Salam: feed people, and greet those you know and those you do not know.
+  "manners-salam": "sign-feed-and-greet",
+  // Truthfulness leads to righteousness, and righteousness leads to Paradise.
+  "manners-truthful": "sign-truth-leads",
+  // Honor your mother: your mother, then your mother, then your mother, then your father.
+  "manners-mother": "sign-your-mother",
+  // Eating with adab: say Bismillah, eat with your right hand, and eat from what is near you.
+  "manners-eating": "sign-eat-near",
+  // Abu Ubaydah met Umar at Sargh and told him of the plague in Sham.
+  "sahabi-abu-ubaydah-ibn-al-jarrah-leadership-and-decisions": "sign-plague"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

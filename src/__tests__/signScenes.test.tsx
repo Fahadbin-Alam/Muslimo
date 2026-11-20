@@ -37,7 +37,7 @@ const LANGUAGES = ["en", "bn", "ur", "ar"] as const;
 const ALL = { includeHiddenElements: true };
 const scene = (id: string) => SIGN_SCENES.find((each) => each.id === id)!;
 
-/** What a lesson says, from its title to its questions. */
+/** What a lesson says, from its title to its questions, and the summary of its source, shown on its learn page. */
 function lessonText(lesson: Lesson) {
   return [
     lesson.title,
@@ -48,11 +48,15 @@ function lessonText(lesson: Lesson) {
     lesson.explanationContent,
     lesson.keyTakeaway,
     lesson.storyMoment,
-    ...lesson.challenges.map((challenge) => challenge.prompt)
+    ...lesson.challenges.map((challenge) => challenge.prompt),
+    lesson.learnSource?.summary
   ]
     .filter(Boolean)
     .join(" ");
 }
+
+/** Each lesson by its node: most lessons' ids are "lesson-" and their node, but not the first of some units (lesson-salam is manners-salam). */
+const LESSONS_BY_NODE = new Map((Object.values(LESSONS_BY_ID) as Lesson[]).map((lesson) => [lesson.nodeId, lesson]));
 
 function lessonSources(lesson: Lesson): LessonSource[] {
   return [lesson.learnSource, ...lesson.sources, ...(lesson.learnDeeper?.sources ?? []), ...lesson.challenges.map((challenge) => challenge.source)].filter(Boolean) as LessonSource[];
@@ -890,7 +894,11 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-through-the-poor": [/\bthe poor\b/i, /\bMus'ab\b/i, /\bhelp/i],
   "sign-their-own-work": [/\bwith their hands\b/i, /\bbathe\b/i, /\bcompanions\b/i],
   "sign-inside-the-kabah": [/\binside the Ka'bah\b/i, /\bIbn Umar\b/i, /\bBilal\b/i],
-  "sign-their-followers-too": [/\bAnsar\b/i, /\bfollowers\b/i, /\bdu'a\b/i]
+  "sign-their-followers-too": [/\bAnsar\b/i, /\bfollowers\b/i, /\bdu'a\b/i],
+  "sign-and-if-i-cannot": [/\bif I cannot\b/i, /\bharm\b/i, /\bAbu Dharr\b/i],
+  "sign-abu-bakrs-trade": [/\bAbu Bakr\b/i, /\btrade/i, /\bcaliph\b/i],
+  "sign-forbidden-and-disliked": [/\bforb(id|ade|idden)\b/i, /\bdislikes?\b/i, /\bmothers\b/i],
+  "sign-not-while-leaning": [/\bleaning\b/i, /\beat\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1721,7 +1729,11 @@ const SOURCES: Record<string, string[]> = {
   "sign-through-the-poor": ["Sahih al-Bukhari 2896"],
   "sign-their-own-work": ["Sahih al-Bukhari 2071"],
   "sign-inside-the-kabah": ["Sahih al-Bukhari 1599"],
-  "sign-their-followers-too": ["Sahih al-Bukhari 3787"]
+  "sign-their-followers-too": ["Sahih al-Bukhari 3787"],
+  "sign-and-if-i-cannot": ["Sahih al-Bukhari 2518"],
+  "sign-abu-bakrs-trade": ["Sahih al-Bukhari 2070"],
+  "sign-forbidden-and-disliked": ["Sahih al-Bukhari 2408"],
+  "sign-not-while-leaning": ["Sahih al-Bukhari 5398"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1745,9 +1757,9 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(1957);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(1966);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
-      const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
+      const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
       const found = signForLesson(lesson!)!;
       expect([nodeId, found?.scene.id, found?.lessonSlug]).toEqual([nodeId, id, nodeId]);
@@ -37983,6 +37995,239 @@ describe("the signs in creation, alive", () => {
         [0, 1]
       ]
     ]);
+  });
+
+  test("the scenes from asking what if one cannot to not eating while leaning show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const serveScenes: SignKind[] = ["and-if-i-cannot", "abu-bakrs-trade", "forbidden-and-disliked", "not-while-leaning"];
+    for (const kind of serveScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky: a deed is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Asking what if one cannot, and no hand is drawn: in Madinah, the masjid far off; his place, a golden ring, and
+    // Abu Dharr's place before it; the home of one who is weak, a heavy sack set down far from it; the home of one who
+    // cannot work for himself, an empty basket by it; and the places of others. Abu Dharr's voice asks, and an empty
+    // purse shows by his place. His voice, soft and golden, speaks: the sack goes along a faint way to the weak one's
+    // door, and a soft golden ring comes about the weak one's place; the basket fills with dates, and a soft golden
+    // ring comes about the place of the one who cannot work. Abu Dharr's voice asks again, and his voice speaks: grey
+    // jagged marks of harm show by Abu Dharr's place, a grey dashed ring comes about them, and they are gone; a soft
+    // golden ring comes about the places of others. A spark rises from Abu Dharr's place, and a soft golden ring comes
+    // about his own place, with glints over it.
+    expect(words("and-if-i-cannot")).toEqual([
+      "Abu Dharr: I asked: what is the best deed?",
+      "I said: if I cannot afford to do that?",
+      "He said: help the weak or do good for a",
+      "Person who cannot work for himself.",
+      "I said: if I cannot do that? He said:",
+      "Refrain from harming others, for this",
+      "Will be regarded as a charitable deed",
+      "For your own good."
+    ]);
+    expect([
+      [at("and-if-i-cannot", "Abu Dharr's voice: asking", "opacity", [0.024, 0.03, 0.09, 0.096]), at("and-if-i-cannot", "cannot afford it: an empty purse by Abu Dharr's place", "opacity", [0.15, 0.162])],
+      [at("and-if-i-cannot", "his voice, soft and golden", "opacity", [0.268, 0.274, 0.46, 0.466]), at("and-if-i-cannot", "help the weak: a faint way from the sack to its door", "opacity", [0.272, 0.278, 0.336, 0.342]), at("and-if-i-cannot", "a heavy sack set down far from its home, then taken along the way to its door", "x", [0.28, 0.326]), at("and-if-i-cannot", "a heavy sack set down far from its home, then taken along the way to its door", "y", [0.28, 0.326]), at("and-if-i-cannot", "helped: a soft golden ring about the weak one's place", "opacity", [0.33, 0.342])],
+      [at("and-if-i-cannot", "good done for it: the basket filled with dates", "opacity", [0.392, 0.42]), at("and-if-i-cannot", "a soft golden ring about its place and its basket", "opacity", [0.432, 0.444])],
+      [at("and-if-i-cannot", "Abu Dharr's voice: asking", "opacity", [0.512, 0.518, 0.55, 0.556]), at("and-if-i-cannot", "his voice, soft and golden", "opacity", [0.556, 0.562, 0.96, 0.966])],
+      [at("and-if-i-cannot", "harm: grey jagged marks by Abu Dharr's place", "opacity", [0.634, 0.642, 0.684, 0.696]), at("and-if-i-cannot", "refrain from harming: a grey dashed ring about them", "opacity", [0.648, 0.656, 0.684, 0.696]), at("and-if-i-cannot", "kept from harm: a soft golden ring about the places of others", "opacity", [0.698, 0.71])],
+      [at("and-if-i-cannot", "a charitable deed: a spark rising from Abu Dharr's place", "opacity", [0.756, 0.761]), at("and-if-i-cannot", "a charitable deed: a spark rising from Abu Dharr's place", "y", [0.761, 0.83]), at("and-if-i-cannot", "for your own good: a soft golden ring about Abu Dharr's own place", "opacity", [0.878, 0.89]), at("and-if-i-cannot", "and glints over it", "opacity", [0.9, 0.91])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, -26],
+        [0, -6.6],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [-1, -10],
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Abu Bakr's trade, and no hand is drawn: in Madinah, the masjid far off; Abu Bakr's place before his stall, with
+    // its goods; the home of his family and their places; the storehouse of the Treasury with its sacks and coins; the
+    // places of the Muslims; and Aishah's place. Aishah's voice tells of it. A faint golden way shows from the places
+    // of the Muslims to Abu Bakr's place, and a soft golden ring comes about it: chosen. His voice speaks: glints show
+    // over the goods of his stall, a basket of dates goes from it to his family's home, and a soft golden ring comes
+    // about their places. His place goes along the way to the places of the Muslims, in two steps. Glints show over the
+    // storehouse of the Treasury, and a sack goes from it to his family's home. A soft golden ring comes about his
+    // place and theirs together, and a spark rises from his place.
+    expect(words("abu-bakrs-trade")).toEqual([
+      "Aishah: when Abu Bakr as-Siddiq was",
+      "Chosen Caliph, he said: my people know",
+      "That my profession was not incapable of",
+      "Providing sustenance to my family. And",
+      "As I will be busy serving the Muslim",
+      "Nation, my family will eat from the",
+      "National Treasury, and I will practice",
+      "The profession of serving the Muslims."
+    ]);
+    expect([
+      [at("abu-bakrs-trade", "Aishah's voice: telling of it", "opacity", [0.024, 0.03, 0.09, 0.096])],
+      [at("abu-bakrs-trade", "chosen: a faint golden way from the places of the Muslims to Abu Bakr's place", "opacity", [0.15, 0.164]), at("abu-bakrs-trade", "chosen: a soft golden ring about Abu Bakr's place", "opacity", [0.172, 0.184]), at("abu-bakrs-trade", "Abu Bakr's voice", "opacity", [0.19, 0.196, 0.96, 0.966])],
+      [at("abu-bakrs-trade", "his profession: glints over the goods of his stall", "opacity", [0.27, 0.278]), at("abu-bakrs-trade", "sustenance for his family: a basket of dates, going from his stall to their home", "opacity", [0.39, 0.396]), at("abu-bakrs-trade", "sustenance for his family: a basket of dates, going from his stall to their home", "x", [0.398, 0.44]), at("abu-bakrs-trade", "sustenance for his family: a basket of dates, going from his stall to their home", "y", [0.398, 0.44]), at("abu-bakrs-trade", "a soft golden ring about the places of his family", "opacity", [0.446, 0.458])],
+      [at("abu-bakrs-trade", "Abu Bakr's place: going from his stall to the places of the Muslims", "x", [0.512, 0.58, 0.634, 0.7]), at("abu-bakrs-trade", "Abu Bakr's place: going from his stall to the places of the Muslims", "y", [0.512, 0.58, 0.634, 0.7]), at("abu-bakrs-trade", "chosen: a soft golden ring about Abu Bakr's place", "x", [0.512, 0.7]), at("abu-bakrs-trade", "Abu Bakr's voice", "x", [0.512, 0.7])],
+      [at("abu-bakrs-trade", "the Treasury: glints over its storehouse", "opacity", [0.756, 0.764]), at("abu-bakrs-trade", "his family will eat from it: a sack going from the Treasury to their home", "opacity", [0.766, 0.772]), at("abu-bakrs-trade", "his family will eat from it: a sack going from the Treasury to their home", "x", [0.774, 0.826])],
+      [at("abu-bakrs-trade", "serving the Muslims: a soft golden ring about his place and theirs together", "opacity", [0.878, 0.89]), at("abu-bakrs-trade", "a spark rising from his place, among them", "opacity", [0.9, 0.905]), at("abu-bakrs-trade", "a spark rising from his place, among them", "y", [0.905, 0.96])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 15.4],
+        [0, -6],
+        [0, 1]
+      ],
+      [
+        [0, 54, 54, 90.4],
+        [0, 0.8, 0.8, 0.4],
+        [0, 90.4],
+        [0, 90.4]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, -28.6]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [-1, -8]
+      ]
+    ]);
+    // Forbidden and disliked, and nothing is drawn for Allah: in Madinah, the masjid far off; his place, a golden ring,
+    // al-Mughirah's place, and six small sights, each of a thing not to be done. Al-Mughirah's voice tells of it, and
+    // his voice, soft and golden, speaks. The place by an elder's home goes away from her, and a grey dashed ring comes
+    // about it; a faint way shows from a sack to the place whose right it is, but the sack stays, and a grey dashed
+    // ring comes about it; a place with an empty bowl goes from one door to the next, and a grey dashed ring comes
+    // about it; voices go back and forth between two places, a grey dashed ring comes about them, and their voices go
+    // on about a third; small arcs of asking rise from a place, one after another, and a grey dashed ring comes about
+    // them; coins roll out of a purse and are lost, and a grey dashed ring comes about them.
+    expect(words("forbidden-and-disliked")).toEqual([
+      "Al-Mughirah: he said: Allah has forbidden",
+      "For you to be undutiful to your mothers,",
+      "Not to pay the rights of the others, and",
+      "To beg of men. And Allah has hated for you",
+      "Vain, useless talk, or that you talk too",
+      "Much about others, to ask too many",
+      "Questions, and to waste the wealth."
+    ]);
+    expect([
+      [at("forbidden-and-disliked", "al-Mughirah's voice: telling of it", "opacity", [0.024, 0.03, 0.06, 0.066]), at("forbidden-and-disliked", "his voice, soft and golden", "opacity", [0.066, 0.072, 0.96, 0.966])],
+      [at("forbidden-and-disliked", "undutiful: the place by her, turning away from her and going", "x", [0.17, 0.22]), at("forbidden-and-disliked", "undutiful: the place by her, turning away from her and going", "y", [0.17, 0.22]), at("forbidden-and-disliked", "a grey dashed ring about the place gone from her", "opacity", [0.228, 0.24])],
+      [at("forbidden-and-disliked", "a faint way from the sack to the place whose right it is", "opacity", [0.312, 0.32]), at("forbidden-and-disliked", "withheld: a grey dashed ring about the sack, staying where it is", "opacity", [0.34, 0.352])],
+      [at("forbidden-and-disliked", "begging: a place with an empty bowl, going from one door to the next", "x", [0.456, 0.5]), at("forbidden-and-disliked", "a grey dashed ring about it at the next door", "opacity", [0.506, 0.518])],
+      [at("forbidden-and-disliked", "vain, useless talk: voices going back and forth between them", "opacity", [0.6, 0.61]), at("forbidden-and-disliked", "a grey dashed ring about the two who talk", "opacity", [0.66, 0.672]), at("forbidden-and-disliked", "too much about others: their voices going on about the third", "opacity", [0.744, 0.752])],
+      [at("forbidden-and-disliked", "too many questions: a small arc of asking 1", "opacity", [0.77, 0.776]), at("forbidden-and-disliked", "too many questions: a small arc of asking 5", "opacity", [0.818, 0.824]), at("forbidden-and-disliked", "a grey dashed ring about its asking", "opacity", [0.888, 0.898])],
+      [at("forbidden-and-disliked", "wasted: a coin rolling out of the purse and lost 1", "opacity", [0.9, 0.904, 0.93, 0.942]), at("forbidden-and-disliked", "wasted: a coin rolling out of the purse and lost 1", "x", [0.904, 0.94]), at("forbidden-and-disliked", "wasted: a coin rolling out of the purse and lost 4", "x", [0.904, 0.94]), at("forbidden-and-disliked", "a grey dashed ring about the wealth wasted", "opacity", [0.948, 0.958])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 8.6],
+        [0, 1.8],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 22],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1, 1, 0.45],
+        [0, -6.4],
+        [0, 11],
+        [0, 1]
+      ]
+    ]);
+    // Not while leaning, and no hand is drawn: in Madinah, the masjid far off; his place, a golden ring, by a cloth
+    // with bread and dates on it, a cushion to lean on beside it, and Abu Juhayfah's place. Abu Juhayfah's voice tells
+    // of it, and his voice, soft and golden, speaks: a soft warm light comes over the meal. A grey dashed ring comes
+    // about the cushion: not while leaning. The dates go, one by one, and the bread grows less.
+    expect(words("not-while-leaning")).toEqual([
+      "Abu Juhayfah: Allah's Messenger said:",
+      "I do not take my meals",
+      "While leaning."
+    ]);
+    expect([
+      [at("not-while-leaning", "Abu Juhayfah's voice: telling of it", "opacity", [0.024, 0.03, 0.264, 0.27]), at("not-while-leaning", "his voice, soft and golden", "opacity", [0.35, 0.356, 0.96, 0.966]), at("not-while-leaning", "my meals: a soft warm light over the meal", "opacity", [0.36, 0.372])],
+      [at("not-while-leaning", "not while leaning: a grey dashed ring about the cushion", "opacity", [0.676, 0.688]), at("not-while-leaning", "a date on the cloth 1", "opacity", [0.72, 0.728]), at("not-while-leaning", "a date on the cloth 3", "opacity", [0.8, 0.808]), at("not-while-leaning", "bread on the cloth, growing less", "scaleX", [0.84, 0.86])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [1, 0],
+        [1, 0],
+        [1, 0.6]
+      ]
+    ]);
+  });
+
+  test("the first lessons of Manners, whose ids are not lesson- and their node, open on the scenes of their own hadith", () => {
+    const opens = (id: string) => signForLesson(LESSONS_BY_ID[id] as Lesson)?.scene.id;
+    expect(["lesson-salam", "lesson-truthful", "lesson-mother", "lesson-eating"].map(opens)).toEqual(["sign-feed-and-greet", "sign-truth-leads", "sign-your-mother", "sign-eat-near"]);
   });
 
   test("every word and caption is translated in every language", () => {
