@@ -3,15 +3,15 @@ import { hadith, type DeepUnit } from "./deepKit";
 // One more Aqidah unit: the balanced way, from Sunan Ibn Majah, Sahih Muslim, Sahih al-Bukhari, Sunan Abi Dawud and
 // Sunan an-Nasa'i. Beware of going to extremes in religion, the ruin of those who go too far, a vow of hardship that
 // he ﷺ turned into a fast kept well, a good way and moderation as a part of prophethood, his ﷺ prayer and khutbah of
-// moderate length, and a du'a for balance in wealth and in poverty. Every card is one sahih or hasan hadith with its
-// number, narrator and grade, and its exact English words to highlight. Points the schools differ on are left out,
-// and none of these hadith is taught anywhere else in the app.
+// moderate length, a du'a for balance in wealth and in poverty, and nights when he ﷺ was seen praying and was seen
+// sleeping. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words
+// to highlight. Points the schools differ on are left out, and none of these hadith is taught anywhere else in the app.
 
 const BALANCED: DeepUnit = {
   key: "aqidah-the-balanced-way",
   topicId: "aqidah",
   branchId: "aqidah-the-balanced-way",
-  branch: { title: "The balanced way", description: "No going to extremes, a vow made easy, a good way and moderation, a prayer of moderate length, and a du'a for balance." },
+  branch: { title: "The balanced way", description: "No going to extremes, a vow made easy, a good way and moderation, a prayer of moderate length, a du'a for balance, and praying and sleeping." },
   name: "the balanced way",
   kind: "skill",
   lessonType: "skill",
@@ -92,6 +92,19 @@ const BALANCED: DeepUnit = {
         { q: "When does Ammar's du'a ask Allah to keep us balanced?", a: "In wealth and in poverty", wrong: ["Only on journeys", "Only in Ramadan", "Only at night"], why: "I ask You to make me moderate in times of wealth and poverty, the du'a says." },
         { q: "When does the du'a ask to speak the truth?", a: "When pleased and when angry", wrong: ["Only when it is easy", "Only to our friends", "Only in the masjid"], why: "I ask You to make me true in speech in times of pleasure and of anger, it goes on." },
         { q: "Ammar ibn Yasir learned the du'a from the Prophet ﷺ.", tf: true, why: "He said them in his prayer, as du'as he heard from the Messenger of Allah ﷺ." }
+      ]
+    },
+    {
+      slug: "praying-and-sleeping",
+      title: "Praying and sleeping",
+      line: "At night he ﷺ both prayed and slept.",
+      facts: ["Told by Anas ibn Malik", "They could see him ﷺ praying at night", "They could see him ﷺ sleeping, too"],
+      source: hadith("nasai", "1627", "Anas ibn Malik", "Sahih (Darussalam)", "Anas said: every time we wanted to see the Messenger of Allah ﷺ praying at night, we saw him, and every time we wanted to see him sleeping, we saw him.", "and every time we wanted to see him sleeping, we saw him"),
+      difficulty: 1,
+      questions: [
+        { q: "When could they see him ﷺ praying at night, Anas said?", a: "Whenever they wished", wrong: ["Only on Fridays", "Only in Ramadan", "Only once a year"], why: "Every time we wanted to see him praying at night, we saw him, Anas said." },
+        { q: "What else could they see him ﷺ doing at night?", a: "Sleeping", wrong: ["Trading in the market", "Riding to Makkah", "Eating a feast"], why: "And every time we wanted to see him sleeping, we saw him, Anas said." },
+        { q: "Anas could see him ﷺ sleeping at night, too.", tf: true, why: "Anas saw him ﷺ praying at night, and sleeping, whenever he wanted to." }
       ]
     }
   ]

@@ -8119,6 +8119,31 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did his ﷺ family often go without, many nights in a row?", "Supper", "And his family did not have supper,"],
     ["What was their bread most of the time?", "Barley bread", "Barley bread."],
     ["His ﷺ family always had plenty of food for supper.", "False", "And his family did not have supper,"]
+  ],
+  // Jabir ibn Abdullah said: we were with Allah's Messenger ﷺ picking the fruits of the arak trees, and Allah's
+  // Messenger ﷺ said: pick the black fruit, for it is the best. The Companions asked: were you a shepherd? He replied:
+  // there was no prophet who was not a shepherd (Sahih al-Bukhari 3406).
+  "sign-the-black-arak-fruit": [
+    ["Which arak fruit did he ﷺ tell them to pick?", "The black fruit", "And Allah's Messenger said: pick the", "Black fruit, for it is the best. The"],
+    ["What did he ﷺ say about the black arak fruit?", "That it is the best", "Black fruit, for it is the best. The"],
+    ["He ﷺ said there was no prophet who was not a shepherd.", "True", "He replied: there was no prophet who", "Was not a shepherd."]
+  ],
+  // Anas said: every time we wanted to see the Messenger of Allah ﷺ praying at night, we saw him, and every time we
+  // wanted to see him sleeping, we saw him (Sunan an-Nasa'i 1627). The first question waits at the start: it asks when
+  // at night, as the night sky shows from the start.
+  "sign-praying-and-sleeping": [
+    ["When could they see him ﷺ praying at night, Anas said?", "Whenever they wished", "Anas: every time we wanted to see the", "Saw him, and every time we wanted to"],
+    ["What else could they see him ﷺ doing at night?", "Sleeping", "See him sleeping, we saw him."],
+    ["Anas could see him ﷺ sleeping at night, too.", "True", "See him sleeping, we saw him."]
+  ],
+  // Mu'adh ibn Abdullah ibn Khubaib reported from his father that his uncle said: we were sitting in a gathering, and the
+  // Prophet ﷺ came. Then the people talked about being rich, and he ﷺ said: there is nothing wrong with being rich for
+  // one who has piety, but good health for one who has piety is better than riches, and being of good cheer is a
+  // blessing (Sunan Ibn Majah 2141).
+  "sign-riches-with-piety": [
+    ["There is nothing wrong with being rich for one who has piety.", "True", "Nothing wrong with being rich for one", "Who has piety, but good health for one"],
+    ["For one who has piety, what is better than riches?", "Good health", "Who has piety, but good health for one", "Who has piety is better than riches, and"],
+    ["What did he ﷺ call being of good cheer?", "One of the blessings", "Being of good cheer is a blessing."]
   ]
 };
 

@@ -1238,7 +1238,10 @@ export type SignKind =
   | "the-steps-of-bani-salama"
   | "like-a-familys-joy"
   | "a-bucket-for-a-date"
-  | "nights-without-supper";
+  | "nights-without-supper"
+  | "the-black-arak-fruit"
+  | "praying-and-sleeping"
+  | "riches-with-piety";
 
 export type SignScene = {
   id: string;
@@ -7262,6 +7265,27 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: the Messenger of Allah ﷺ would spend many consecutive nights while his family did not have supper, and most of the time their bread was barley bread.",
     sources: [tirmidhi("2360")]
+  },
+  {
+    id: "sign-the-black-arak-fruit",
+    kind: "the-black-arak-fruit",
+    caption:
+      "Jabir ibn Abdullah said: we were with the Messenger of Allah ﷺ picking the fruits of the arak trees, and the Messenger of Allah ﷺ said: pick the black fruit, for it is the best. The Companions asked: were you a shepherd? He said: there was no prophet who was not a shepherd.",
+    sources: [bukhari("3406")]
+  },
+  {
+    id: "sign-praying-and-sleeping",
+    kind: "praying-and-sleeping",
+    caption:
+      "Anas ibn Malik said: every time we wanted to see the Messenger of Allah ﷺ praying at night, we saw him, and every time we wanted to see him sleeping, we saw him.",
+    sources: [nasai("1627")]
+  },
+  {
+    id: "sign-riches-with-piety",
+    kind: "riches-with-piety",
+    caption:
+      "Mu'adh ibn Abdullah ibn Khubaib reported from his father that his uncle said: we were sitting in a gathering when the Prophet ﷺ came. One of us said: we see that you are of good cheer today. He said: yes, praise is to Allah. Then the people talked about being rich, and he said: there is nothing wrong with being rich for one who has piety, but good health for one who has piety is better than riches, and being of good cheer is a blessing.",
+    sources: [ibnMajah("2141")]
   }
 ];
 
@@ -10335,7 +10359,13 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A bucket for a date: Ali drew water, one bucket for one good, dried date.
   "deep-ali-a-bucket-for-a-date": "sign-a-bucket-for-a-date",
   // Nights without supper: many nights in a row his ﷺ family had no supper, and their bread was mostly barley bread.
-  "deep-found-foods-he-ate-nights-without-supper": "sign-nights-without-supper"
+  "deep-found-foods-he-ate-nights-without-supper": "sign-nights-without-supper",
+  // The black arak fruit: pick the black fruit, he ﷺ said, for it is the best; and every prophet was a shepherd.
+  "deep-found-foods-he-ate-the-black-arak-fruit": "sign-the-black-arak-fruit",
+  // Praying and sleeping: whenever they wished, they could see him ﷺ praying at night, and sleeping.
+  "deep-aqidah-the-balanced-way-praying-and-sleeping": "sign-praying-and-sleeping",
+  // Riches with piety: no harm in riches for one who has piety, but good health is better, and good cheer a blessing.
+  "deep-zakat-wise-wealth-riches-with-piety": "sign-riches-with-piety"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

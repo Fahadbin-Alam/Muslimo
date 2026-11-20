@@ -30,7 +30,7 @@ const THREE = [
 ] as const;
 
 /** The words of seven lines. */
-const SEVEN = [
+export const SEVEN = [
   [0.02, 0.15],
   [0.166, 0.29],
   [0.306, 0.43],
@@ -67,10 +67,10 @@ const spoken = (spans: [number, number][]) =>
   ]);
 
 /** A voice that speaks from `on` until `off`, for each pair. */
-const voice = (spans: [number, number][]) => track({ opacity: spoken(spans) });
+export const voice = (spans: [number, number][]) => track({ opacity: spoken(spans) });
 
 /** The sky, the sun, a cloud, the far hills and the land (as in leadArt). */
-const aDay = (sunAt: [number, number], cloudAt: [number, number]): SignPart[] => [
+export const aDay = (sunAt: [number, number], cloudAt: [number, number]): SignPart[] => [
   { name: "sky", svg: sky("#BFE3FA", "#E6F2F8", 62) },
   { name: "the sun", svg: sun(sunAt[0], sunAt[1]) },
   { name: "a cloud", svg: cloud(cloudAt[0], cloudAt[1], 0.42, "#FFFFFF", 0.85), loop: { move: "slide" as const, ms: 9000 } },

@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3866);
+    expect(asks.length).toBe(3875);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -138,8 +138,19 @@ describe("which questions are asked on a scene", () => {
     // in sujud and whether Asr is worth guarding, and its review card no longer asks how many times the Asr reward is
     // given. "Foods he ﷺ ate" now has seven lessons, so it gets a review card, which asks why Abu Musa said to Zahdam:
     // sit and eat; its final quiz now asks who saw him ﷺ eat fresh dates with snake cucumbers, and whether Abu Musa saw
-    // him ﷺ eat chicken, in its place. Every one of them is still asked in its own lesson.
-    expect(places).toBe(5625);
+    // him ﷺ eat chicken, in its place. Every one of them is still asked in its own lesson. "The balanced way" and "Wise
+    // with wealth" now have seven lessons each, so each gets a review card. The balanced way's card asks which part of
+    // his vow he ﷺ let him keep, and whether going to extremes in religion is a good thing; its final quiz now asks
+    // whether standing in the sun with no shade is worship Allah asks for, what he ﷺ warned the people about at Hajj,
+    // and when they could see him ﷺ praying at night. Wise with wealth's card asks what Allah gives for one of the
+    // forty deeds, on whom Umm Salamah asked about spending, and when to take what you are given; its final quiz now
+    // asks whether the narrators easily counted the forty deeds, what she would get for spending on them, whether he ﷺ
+    // said to run after wealth not given to you, and what is better than riches for one who has piety. "Foods he ﷺ ate"
+    // now has eight lessons: its final quiz asks whether he ﷺ ate fresh dates with snake cucumbers, what Abu Musa was
+    // eating when Zahdam came in, what their bread was most of the time, and whether there was no prophet who was not a
+    // shepherd, in place of who saw him ﷺ eat them, whether Abu Musa saw him ﷺ eat chicken, and what his ﷺ family went
+    // without. Every one of them is still asked in its own lesson.
+    expect(places).toBe(5642);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -29355,6 +29366,108 @@ describe("where the scene waits and where it stops", () => {
     expect([shown("What was their bread most of the time?", [dish, bread])]).toEqual([
       [
         [1, 0],
+        [1, 1]
+      ]
+    ]);
+  });
+
+  it("waits on the scenes of the black arak fruit, praying and sleeping, and riches with piety before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-the-black-arak-fruit", "sign-praying-and-sleeping", "sign-riches-with-piety"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(9);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // The black fruit, and that it is the best: green, red and black fruit have gone into the baskets, with no light
+    // about the black fruit on the trees and no glints, before the next words; then a soft light comes about the black
+    // fruit, with glints over them.
+    const best = [1, 2].flatMap((tree) => [`the best: a soft light about the black fruit of the tree ${tree}`, `and glints over the black fruit of the tree ${tree}`]);
+    expect([
+      shown("Which arak fruit did he ﷺ tell them to pick?", best),
+      shown("What did he ﷺ say about the black arak fruit?", best),
+      moved("Which arak fruit did he ﷺ tell them to pick?", "picking: a fruit of the tree 2, going into its basket 3", "y")
+    ]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [7.3, 7.3]
+    ]);
+    // True: the sheep show far off, and his voice is quiet, before the next words; then his voice speaks again.
+    expect([
+      shown("He ﷺ said there was no prophet who was not a shepherd.", ["sheep far off, grazing", "his voice, soft and golden"]),
+      value("the-black-arak-fruit", "his voice, soft and golden", "opacity", 0.8)
+    ]).toEqual([
+      [
+        [1, 0],
+        [1, 0]
+      ],
+      1
+    ]);
+    // Whenever they wished: nothing of the prayer yet while it waits at the start; then a soft golden light comes about
+    // his place on the mat, and sparks rise from it.
+    const prayer = ["the night prayer: a soft golden light about his place on the mat", "and a spark rising from it 1", "and a spark rising from it 3"];
+    expect([shown("When could they see him ﷺ praying at night, Anas said?", prayer)]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Sleeping: his place is on the mat, with the light and the sparks, and no hush over his home, before the next
+    // words; then the light and the sparks go, his place goes to the door of his home, and a soft blue hush comes over it.
+    const his = "his place, a golden ring: on the mat, then going to the door of his home";
+    const asleep = "asleep: a soft blue hush over his home";
+    expect([
+      shown("What else could they see him ﷺ doing at night?", [...prayer, asleep]),
+      moved("What else could they see him ﷺ doing at night?", his, "x"),
+      shown("Anas could see him ﷺ sleeping at night, too.", [asleep])
+    ]).toEqual([
+      [
+        [1, 1, 1, 0],
+        [0, 0, 0, 1]
+      ],
+      [0, 24.2],
+      [[0], [1]]
+    ]);
+    // True, nothing wrong with riches: the coins show with no ring about them, before the next words; then a soft golden
+    // ring comes about the coins, and a soft light about their places: piety. Good health does not show yet.
+    const coins = "riches: coins in the middle of the gathering";
+    const ring = "nothing wrong: a soft golden ring about the coins";
+    const piety = "piety: a soft light about their places";
+    const health = "good health, better than riches: a soft green light about their places";
+    expect([shown("There is nothing wrong with being rich for one who has piety.", [coins, ring, piety, health])]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 0]
+      ]
+    ]);
+    // Good health: the ring about the coins, with no light about their places, before the next words; then a soft light
+    // about them (piety), and a soft green light, wider than the ring (good health, better than riches).
+    expect([shown("For one who has piety, what is better than riches?", [ring, piety, health])]).toEqual([
+      [
+        [1, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // One of the blessings: no glints and no light about his place, before the next words; then glints over the
+    // gathering, and a soft golden light about his place: good cheer.
+    expect([shown("What did he ﷺ call being of good cheer?", ["a blessing: glints over the gathering", "his good cheer: a soft golden light about his place"])]).toEqual([
+      [
+        [0, 0],
         [1, 1]
       ]
     ]);
