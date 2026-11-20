@@ -943,7 +943,8 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-the-black-arak-fruit": [/\barak\b/i, /\bblack fruit\b/i, /\bshepherd\b/i],
   "sign-praying-and-sleeping": [/\bpraying\b/i, /\bsleeping\b/i, /\bAnas\b/],
   "sign-riches-with-piety": [/\bpiety\b/i, /\bgood health\b/i, /\bgood cheer\b/i],
-  "sign-feather-in-the-wind": [/\bfeather\b/i, /\bheart\b/i, /\bwind\b/i]
+  "sign-feather-in-the-wind": [/\bfeather\b/i, /\bheart\b/i, /\bwind\b/i],
+  "sign-the-truth-you-know": [/\btruth\b/i, /\bfear of people\b/i, /\bsermon\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1823,7 +1824,8 @@ const SOURCES: Record<string, string[]> = {
   "sign-the-black-arak-fruit": ["Sahih al-Bukhari 3406"],
   "sign-praying-and-sleeping": ["Sunan an-Nasa'i 1627"],
   "sign-riches-with-piety": ["Sunan Ibn Majah 2141"],
-  "sign-feather-in-the-wind": ["Sunan Ibn Majah 88"]
+  "sign-feather-in-the-wind": ["Sunan Ibn Majah 88"],
+  "sign-the-truth-you-know": ["Sunan Ibn Majah 4007"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1847,7 +1849,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(2013);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(2014);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -40418,6 +40420,56 @@ describe("the signs in creation, alive", () => {
       [
         [0, 360, 360],
         [1, -1, 1, -1, -1]
+      ]
+    ]);
+  });
+
+  test("the scene of the truth you know shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no masjid", () => {
+    const kind: SignKind = "the-truth-you-know";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky. Where the sermon
+    // was is not told, so no masjid and no minbar is drawn: only the land, the sky and palms.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The truth you know: his place, a golden ring, on the left, and before him the places of those who sat for the
+    // sermon, in two rows, Abu Sa'id's among them. Abu Sa'id's voice tells of it, and his place rises: he stood up. His
+    // voice, soft and golden, speaks. Once the fear of people is named, a soft grey hush comes over the place of one of
+    // them; it goes with "should not prevent". Once the truth is named, a soft golden light comes about that place, its
+    // voice speaks, and glints show over it.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abu Sa'id: the Messenger of Allah", "Stood up to deliver a sermon, and one", "Of the things he said was: fear of people", "Should not prevent a man from speaking", "The truth, if the man knows it."]);
+    const hush = "awe of others: a soft grey hush over the place of one who knows the truth";
+    const light = "the truth it knows: a soft golden light about its place";
+    expect([
+      [at("Abu Sa'id's voice: telling of it", "opacity", [0.02, 0.026, 0.164, 0.17]), at("his place, a golden ring: standing up to give the sermon", "y", [0.08, 0.14]), at("his voice, soft and golden", "opacity", [0.24, 0.246, 0.96, 0.966])],
+      [at(hush, "opacity", [0.412, 0.45, 0.47, 0.66, 0.68]), at(light, "opacity", [0.788, 0.83, 0.85])],
+      [at("its voice: speaking the truth", "opacity", [0.86, 0.866, 0.95, 0.956]), at("and glints over it", "opacity", [0.88, 0.89, 1])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, -2.6],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, 0, 1, 1, 0],
+        [0, 0, 1]
+      ],
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1]
       ]
     ]);
   });

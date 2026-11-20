@@ -2,15 +2,15 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Manners unit: words of a believer, from Sahih Muslim, Sunan Abi Dawud, Sunan Ibn Majah and Sahih
 // al-Bukhari. No cursing a fever, no boasting about forefathers, a humble and generous servant, a just word to an
-// unjust ruler, the believer's generous heart, and kind words for those learning to recite. Every card is one sahih or
-// hasan hadith with its number, narrator and grade, and its exact English words to highlight. None of these hadith is
-// taught anywhere else in the app.
+// unjust ruler, the believer's generous heart, kind words for those learning to recite, and the truth one knows, which
+// fear of people should not hold back. Every card is one sahih or hasan hadith with its number, narrator and grade, and
+// its exact English words to highlight. None of these hadith is taught anywhere else in the app.
 
 const BELIEVER_WORDS: DeepUnit = {
   key: "manners-words-of-a-believer",
   topicId: "manners",
   branchId: "manners-words-of-a-believer",
-  branch: { title: "Words of a believer", description: "No cursing a fever, no boasting of forefathers, a humble servant, a just word to a ruler, a generous heart, and recite, all is good." },
+  branch: { title: "Words of a believer", description: "No cursing a fever, no boasting of forefathers, a humble servant, a just word to a ruler, a generous heart, recite, all is good, and the truth you know." },
   name: "words of a believer",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +91,19 @@ const BELIEVER_WORDS: DeepUnit = {
         { q: "What did he ﷺ say to them as they recited?", a: "Recite, all is good", wrong: ["Rest, then eat", "Go home to sleep", "Sit in a circle"], why: "He said: Recite, all is well, Jabir said of the Bedouins and non-Arabs." },
         { q: "Who were among those reciting the Quran?", a: "Bedouins and non-Arabs", wrong: ["Kings and princes", "Traders from Sham", "Sailors from Yemen"], why: "There were among us bedouins and the non-Arabs, Jabir ibn Abdullah said." },
         { q: "He ﷺ praised the recitation of Bedouins and non-Arabs.", tf: true, why: "Recite, all is well, he ﷺ said to the Bedouins and non-Arabs reciting." }
+      ]
+    },
+    {
+      slug: "the-truth-you-know",
+      title: "The truth you know",
+      line: "Fear of people should not stop a man speaking the truth.",
+      facts: ["Told by Abu Sa'id al-Khudri", "He ﷺ said it in a sermon", "Haybah: awe of people"],
+      source: hadith("ibnmajah", "4007", "Abu Sa'id al-Khudri", "Sahih (Darussalam)", "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ stood up to give a sermon, and among what he said was: fear of people should not stop a man from speaking the truth, if he knows it. Then Abu Sa'id wept and said: by Allah, we have seen things that made us afraid.", "fear of people should not prevent a man from speaking the truth, if he knows it"),
+      difficulty: 2,
+      questions: [
+        { q: "What should not stop a man from speaking the truth, he ﷺ said?", a: "Fear of people", wrong: ["A long journey", "Hunger and thirst", "The heat of the day"], why: "Fear of people should not prevent the truth, he ﷺ said in a sermon he stood to give." },
+        { q: "Which truth should fear of people not stop a man from saying?", a: "The truth he knows", wrong: ["The rumor he heard", "The guess he made", "The secret he was told"], why: "Fear of people should not keep a man from the truth he knows, he ﷺ said in a sermon." },
+        { q: "He ﷺ taught this in a sermon he stood to give.", tf: true, why: "He ﷺ stood up to give a sermon, and this was among what he said, Abu Sa'id said." }
       ]
     }
   ]

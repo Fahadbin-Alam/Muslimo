@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3878);
+    expect(asks.length).toBe(3881);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -153,8 +153,9 @@ describe("which questions are asked on a scene", () => {
     // its final quiz asks what the open doors at the sides of the path are, whether being bent by trials means a
     // believer has lost his faith, and whether he ﷺ likened the heart to a feather the wind blows about, in place of what
     // hangs over each open door and what the plant does when the wind stops. Every one of them is still asked in its own
-    // lesson.
-    expect(places).toBe(5646);
+    // lesson. "Words of a believer" now has seven lessons, so it gets a review card, and its final quiz asks one question
+    // from each lesson, among them what should not stop a man from speaking the truth.
+    expect(places).toBe(5650);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -29523,6 +29524,49 @@ describe("where the scene waits and where it stops", () => {
         [1, 1]
       ],
       [1, -1]
+    ]);
+  });
+
+  it("waits on the scene of the truth you know before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-the-truth-you-know");
+    expect(asks.length).toBe(3);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("the-truth-you-know", ask.from, ask.to)!)) {
+        for (const part of signArt("the-truth-you-know").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    const hush = "awe of others: a soft grey hush over the place of one who knows the truth";
+    const light = "the truth it knows: a soft golden light about its place";
+    const glints = "and glints over it";
+    // The sermon: his place has not yet risen and his voice has not yet spoken while it waits; then his place rises and
+    // his voice speaks, before anything of what he said shows.
+    expect([
+      moved("He ﷺ taught this in a sermon he stood to give.", "his place, a golden ring: standing up to give the sermon", "y"),
+      shown("He ﷺ taught this in a sermon he stood to give.", ["his voice, soft and golden", hush, light])
+    ]).toEqual([
+      [0, -2.6],
+      [
+        [0, 0, 0],
+        [1, 0, 0]
+      ]
+    ]);
+    // The fear of people: no hush while it waits; then a soft grey hush over the place of one who knows the truth.
+    expect(shown("What should not stop a man from speaking the truth, he ﷺ said?", [hush, light, glints])).toEqual([
+      [0, 0, 0],
+      [1, 0, 0]
+    ]);
+    // The truth he knows: the hush has gone and nothing shows yet about that place while it waits; then a soft golden
+    // light comes about it, with glints.
+    expect(shown("Which truth should fear of people not stop a man from saying?", [hush, light, glints])).toEqual([
+      [0, 0, 0],
+      [0, 1, 1]
     ]);
   });
 
