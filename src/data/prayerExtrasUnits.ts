@@ -33,7 +33,7 @@ const EXTRAS: DeepUnit = {
       title: "Forgiveness for the first row",
       line: "He ﷺ asked forgiveness for the first row three times.",
       facts: ["Told by Al-Irbad ibn Sariyah", "Three times for the first row", "Fewer times for the second row"],
-      source: hadith("ibnmajah", "996", "Al-Irbad ibn Sariyah", "Sahih (Al-Albani)", "Al-Irbad ibn Sariyah said: the Messenger of Allah ﷺ used to ask forgiveness for the first row three times, and for the second row twice.", "used to ask for forgiveness for the first row three times"),
+      source: hadith("ibnmajah", "996", "Al-Irbad ibn Sariyah", "Sahih (Al-Albani)", "Al-Irbad ibn Sariyah said: the Messenger of Allah ﷺ used to ask forgiveness for the first row three times, and for the second row once.", "used to ask for forgiveness for the first row three times"),
       difficulty: 1,
       questions: [
         { q: "For which row did he ﷺ ask forgiveness three times?", a: "The first row", wrong: ["The last row", "The second row", "The middle row"], why: "He used to ask for forgiveness for the first row three times, Al-Irbad said." },

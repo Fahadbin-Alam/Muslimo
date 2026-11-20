@@ -1,4 +1,4 @@
-import { bukhari, muslim, quran, tirmidhi, type MapSource } from "./seerahMap";
+import { bukhari, ibnMajah, muslim, nasai, quran, tirmidhi, type MapSource } from "./seerahMap";
 
 /**
  * The signs in creation, alive. The lessons about the ayahs that ask us to look at Allah's signs in the world open on
@@ -1205,7 +1205,13 @@ export type SignKind =
   | "missed-at-night"
   | "most-merciful-of-my-nation"
   | "what-an-excellent-man"
-  | "best-to-his-family";
+  | "best-to-his-family"
+  | "forgiveness-for-the-first-row"
+  | "keep-sheep"
+  | "mix-it-with-charity"
+  | "what-your-neighbors-say"
+  | "patient-with-people"
+  | "beautiful-voices";
 
 export type SignScene = {
   id: string;
@@ -6998,6 +7004,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Aishah said: the Messenger of Allah ﷺ said: the best of you is the best to his wives, and I am the best of you to my wives.",
     sources: [tirmidhi("3895")]
+  },
+  {
+    id: "sign-forgiveness-for-the-first-row",
+    kind: "forgiveness-for-the-first-row",
+    caption:
+      "Al-Irbad ibn Sariyah said: the Messenger of Allah ﷺ used to ask for forgiveness for the first row three times, and for the second row once.",
+    sources: [ibnMajah("996")]
+  },
+  {
+    id: "sign-keep-sheep",
+    kind: "keep-sheep",
+    caption:
+      "Umm Hani said: the Prophet ﷺ said to her: keep sheep, for in them is blessing.",
+    sources: [ibnMajah("2304")]
+  },
+  {
+    id: "sign-mix-it-with-charity",
+    kind: "mix-it-with-charity",
+    caption:
+      "Qays ibn Abi Gharazah said: at the time of the Messenger of Allah ﷺ we used to be called brokers, but the Messenger of Allah ﷺ passed by us and called us by a name that was better than that. He said: O merchants, selling involves oaths and idle talk, so mix some charity with it.",
+    sources: [ibnMajah("2145")]
+  },
+  {
+    id: "sign-what-your-neighbors-say",
+    kind: "what-your-neighbors-say",
+    caption:
+      "Abdullah ibn Mas'ud said: a man said to the Messenger of Allah ﷺ: how can I know when I have done well and when I have done something bad? The Prophet ﷺ said: if you hear your neighbors saying that you have done well, then you have done well, and if you hear them saying that you have done something bad, then you have done something bad.",
+    sources: [ibnMajah("4223")]
+  },
+  {
+    id: "sign-patient-with-people",
+    kind: "patient-with-people",
+    caption:
+      "Ibn Umar said: the Messenger of Allah ﷺ said: the believer who mixes with people and bears their annoyance with patience will have a greater reward than the believer who does not mix with people and does not put up with their annoyance.",
+    sources: [ibnMajah("4032")]
+  },
+  {
+    id: "sign-beautiful-voices",
+    kind: "beautiful-voices",
+    caption:
+      "Al-Bara ibn Azib said: the Messenger of Allah ﷺ said: make your voices beautiful when you recite Quran.",
+    sources: [nasai("1016")]
   }
 ];
 
@@ -10005,7 +10053,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // The best of you is the best to his family, and he was the best to his.
   "deep-spouses-best-to-family": "sign-best-to-his-family",
   // Dignity for both spouses: the best of you is the best to his wives.
-  "marriage-rights-and-trust-mutual-dignity": "sign-best-to-his-family"
+  "marriage-rights-and-trust-mutual-dignity": "sign-best-to-his-family",
+  // Forgiveness for the first row: he asked it three times for the first row, and for the second once.
+  "deep-prayer-little-extras-forgiveness-for-the-first-row": "sign-forgiveness-for-the-first-row",
+  // Blessing in sheep: keep sheep, for in them is blessing, he said to Umm Hani.
+  "deep-kids-animal-manners-blessing-in-sheep": "sign-keep-sheep",
+  // Charity mixed with trade: O merchants, mix some charity with your selling.
+  "deep-manners-rights-of-others-charity-mixed-with-trade": "sign-mix-it-with-charity",
+  // What your neighbors say: if they say you did well, then you did well.
+  "deep-intro-short-words-to-live-by-what-your-neighbors-say": "sign-what-your-neighbors-say",
+  // Patient with people: the believer who mixes with people and bears their annoyance has a greater reward.
+  "deep-manners-getting-along-patient-with-people": "sign-patient-with-people",
+  // Beautiful voices: make your voices beautiful when you recite the Quran.
+  "deep-found-reciting-quran-beautiful-voices": "sign-beautiful-voices"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
