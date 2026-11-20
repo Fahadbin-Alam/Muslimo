@@ -253,11 +253,11 @@ function payTheWorker(): SignArt {
 // Oil from a blessed tree. Umar said: the Messenger of Allah ﷺ said: season with olive oil and anoint yourselves with
 // it, for it comes from a blessed tree (Sunan Ibn Majah 3319). The words leave out the page's "(your food)". No one is
 // drawn: a home in Madinah, a mat before it with a loaf on its dish and a jar of olive oil, and by them the place of one
-// at its home; on a hill on the right, an olive tree; his place, a golden ring, and Umar's place on the left. Umar's
-// voice tells of it, and his voice, soft and golden, speaks. A drop of oil goes from the jar onto the loaf, and a soft
+// at its home; a hill on the right; his place, a golden ring, and Umar's place on the left. Umar's voice tells of it,
+// and his voice, soft and golden, speaks. A drop of oil goes from the jar onto the loaf, and a soft
 // golden sheen comes on it: seasoned. Another drop goes to the place of the one at its home, and a soft shining ring
-// comes about it: anointed. A soft golden light comes about the olive tree, glints over it and a soft golden ring
-// about it: a blessed tree.
+// comes about it: anointed. An olive tree shows on the hill as it is told, a soft golden light comes about it, glints
+// over it and a soft golden ring about it: a blessed tree.
 function oilFromABlessedTree(): SignArt {
   const homeAt: [number, number] = [70, 98];
   const loaf: [number, number] = [64, 103.4];
@@ -277,7 +277,7 @@ function oilFromABlessedTree(): SignArt {
       { name: "a loaf on its dish, on the mat", svg: loafOnDish(loaf[0], loaf[1]) },
       { name: "a jar of olive oil, on the mat", svg: jar(jarAt[0], jarAt[1], 0.7) },
       { name: "a blessed tree: a soft golden light about the olive tree", svg: wash(n(tree[0] + 0.2), n(tree[1] - 16), 15, 13, "#FFE2A8", 0.14), keys: showAt(0.72, 0.76), loop: soft },
-      { name: "an olive tree, on the hill", svg: oliveTree(tree[0], tree[1], 1.3), origin: { x: tree[0], y: tree[1] }, loop: { move: "sway", ms: 6000, angle: 0.8 } },
+      { name: "an olive tree on the hill, showing as it is told", svg: oliveTree(tree[0], tree[1], 1.3), origin: { x: tree[0], y: tree[1] }, keys: showAt(0.69, 0.71), loop: { move: "sway", ms: 6000, angle: 0.8 } },
       {
         name: "olive oil from the jar, onto the loaf",
         svg: drop(mouth[0], mouth[1]),

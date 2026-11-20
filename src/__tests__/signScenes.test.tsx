@@ -39063,11 +39063,11 @@ describe("the signs in creation, alive", () => {
       ]
     ]);
     // Oil from a blessed tree, and no one is drawn: a home, and on a mat before it a loaf on its dish and a jar of
-    // olive oil, and the place of one at its home; an olive tree on a hill on the right; his place, a golden ring, and
-    // Umar's place. Umar's voice tells of it, and his voice, soft and golden, speaks. Olive oil goes from the jar onto
-    // the loaf, and a soft golden sheen comes on it: seasoned. Olive oil goes from the jar to the place of the one at
-    // its home, and a soft shining ring with glints comes about it: anointed. A soft golden light comes about the olive
-    // tree, glints over it, and a soft golden ring about it: a blessed tree.
+    // olive oil, and the place of one at its home; a hill on the right; his place, a golden ring, and Umar's place.
+    // Umar's voice tells of it, and his voice, soft and golden, speaks. Olive oil goes from the jar onto the loaf, and
+    // a soft golden sheen comes on it: seasoned. Olive oil goes from the jar to the place of the one at its home, and a
+    // soft shining ring with glints comes about it: anointed. An olive tree shows on the hill as it is told, a soft
+    // golden light comes about it, glints over it, and a soft golden ring about it: a blessed tree.
     expect(words("oil-from-a-blessed-tree")).toEqual([
       "Umar: he said: season with olive oil",
       "And anoint yourselves with it, for it",
@@ -39077,7 +39077,7 @@ describe("the signs in creation, alive", () => {
       [at("oil-from-a-blessed-tree", "Umar's voice: telling of it", "opacity", [0.03, 0.036, 0.1, 0.106]), at("oil-from-a-blessed-tree", "his voice, soft and golden", "opacity", [0.106, 0.112, 0.96, 0.966])],
       [at("oil-from-a-blessed-tree", "olive oil from the jar, onto the loaf", "opacity", [0.14, 0.146, 0.2, 0.206]), at("oil-from-a-blessed-tree", "olive oil from the jar, onto the loaf", "y", [0.146, 0.2]), at("oil-from-a-blessed-tree", "seasoned: a soft golden sheen on the loaf", "opacity", [0.2, 0.24])],
       [at("oil-from-a-blessed-tree", "olive oil from the jar, to its place", "opacity", [0.4, 0.406, 0.46, 0.466]), at("oil-from-a-blessed-tree", "olive oil from the jar, to its place", "x", [0.406, 0.46]), at("oil-from-a-blessed-tree", "anointed: a soft shining ring about its place", "opacity", [0.47, 0.49]), at("oil-from-a-blessed-tree", "and glints by it", "opacity", [0.5, 0.51])],
-      [at("oil-from-a-blessed-tree", "a blessed tree: a soft golden light about the olive tree", "opacity", [0.72, 0.76]), at("oil-from-a-blessed-tree", "glints over the olive tree", "opacity", [0.78, 0.79]), at("oil-from-a-blessed-tree", "a soft golden ring about the olive tree", "opacity", [0.84, 0.852])]
+      [at("oil-from-a-blessed-tree", "an olive tree on the hill, showing as it is told", "opacity", [0.69, 0.71]), at("oil-from-a-blessed-tree", "a blessed tree: a soft golden light about the olive tree", "opacity", [0.72, 0.76]), at("oil-from-a-blessed-tree", "glints over the olive tree", "opacity", [0.78, 0.79]), at("oil-from-a-blessed-tree", "a soft golden ring about the olive tree", "opacity", [0.84, 0.852])]
     ]).toEqual([
       [
         [0, 1, 1, 0],
@@ -39095,6 +39095,7 @@ describe("the signs in creation, alive", () => {
         [0, 1]
       ],
       [
+        [0, 1],
         [0, 1],
         [0, 1],
         [0, 1]
