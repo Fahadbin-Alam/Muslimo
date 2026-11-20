@@ -7846,6 +7846,42 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What happens when a believer makes du'a?", "Allah gives it, or keeps a harm away", "Utters a supplication, except that Allah", "From him that is equal to it – as long"],
     ["Which du'a did he ﷺ say is not answered?", "A du'a for a sin", "As he does not supplicate for something", "Evil, or the cutting of ties of the womb."],
     ["A du'a can be answered by keeping a harm away from you.", "True", "Gives him what he asked, or prevents evil", "From him that is equal to it – as long"]
+  ],
+  // Umar ibn al-Khattab said: the Messenger of Allah ﷺ said: whoever slept, missing his section or some of it, then he
+  // recited it between the Fajr prayer and the Zuhr prayer, it is written for him as if he had recited it in the night
+  // (Jami at-Tirmidhi 581).
+  "sign-missed-at-night": [
+    ["When can you make up a missed night portion, he ﷺ said?", "Between Fajr and Zuhr", "Section or some of it, then he", "The Zuhr prayer, it is written for him"],
+    ["How is it written for him, he ﷺ said?", "As if he recited it at night", "As if he had recited it in the night."],
+    ["If you sleep through your night portion, its reward is lost for good.", "False", "Recited it between the Fajr prayer and", "As if he had recited it in the night."]
+  ],
+  // Anas ibn Malik said: the Messenger of Allah ﷺ said: the most merciful of my nation to my nation is Abu Bakr, and
+  // the most severe of them concerning the order of Allah is Umar, and the most truly modest of them is Uthman ibn
+  // Affan. The most knowledgeable of them concerning the lawful and unlawful is Mu'adh ibn Jabal, the most
+  // knowledgeable of them concerning inheritance is Zayd ibn Thabit, the best reciter among them is Ubayy ibn Ka'b,
+  // and every nation has a trustworthy one, and the trustworthy one of this nation is Abu Ubaydah ibn al-Jarrah (Jami
+  // at-Tirmidhi 3790).
+  "sign-most-merciful-of-my-nation": [
+    ["What did Mu'adh know best of all?", "What is halal and haram", "Of them concerning the lawful and", "Unlawful is Mu'adh bin Jabal, the most"],
+    ["Whom did the Prophet ﷺ call the most merciful of the ummah?", "Abu Bakr", "Nation to my nation is Abu Bakr, and the"],
+    ["Who was the best reciter of the ummah?", "Ubayy ibn Ka'b", "Reciter among them is Ubayy bin Ka'b."],
+    ["Who knew inheritance best?", "Zayd ibn Thabit", "Inheritance is Zaid bin Thabit, the best"],
+    ["Ubayy was famous for poetry, not the Quran.", "False", "Inheritance is Zaid bin Thabit, the best", "Reciter among them is Ubayy bin Ka'b."]
+  ],
+  // Abu Hurairah said: the Messenger of Allah ﷺ said: what an excellent man is Abu Bakr, what an excellent man is
+  // Umar, what an excellent man is Abu Ubaydah ibn al-Jarrah, what an excellent man is Usayd ibn Hudayr, what an
+  // excellent man is Thabit ibn Qays ibn Shammas, what an excellent man is Mu'adh ibn Jabal, and what an excellent man
+  // is Mu'adh ibn Amr ibn al-Jamuh (Jami at-Tirmidhi 3795).
+  "sign-what-an-excellent-man": [
+    ["Whom did he ﷺ name first as an excellent man?", "Abu Bakr", "Man is Abu Bakr, what an excellent man is"],
+    ["How many men named Mu'adh are in his ﷺ list?", "Two men", "Shammas, what an excellent man is Mu'adh", "Mu'adh bin Amr bin Al-Jamuh."],
+    ["Usaid ibn Hudair was among the men he ﷺ praised.", "True", "Man is Usaid bin Hudair, what an"]
+  ],
+  // Aishah said: the Messenger of Allah ﷺ said: the best of you is the best to his wives, and I am the best of you to
+  // my wives (Jami at-Tirmidhi 3895).
+  "sign-best-to-his-family": [
+    ["Who is the best of you, in this saying?", "The best to his family", "The best to his wives, and I am the"],
+    ["Who did the Prophet ﷺ say was best to his family?", "He himself", "The best to his wives, and I am the", "Best of you to my wives."]
   ]
 };
 

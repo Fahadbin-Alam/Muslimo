@@ -1201,7 +1201,11 @@ export type SignKind =
   | "parable-of-the-path"
   | "closing-a-sitting"
   | "rush-to-good-deeds"
-  | "no-dua-wasted";
+  | "no-dua-wasted"
+  | "missed-at-night"
+  | "most-merciful-of-my-nation"
+  | "what-an-excellent-man"
+  | "best-to-his-family";
 
 export type SignScene = {
   id: string;
@@ -6966,6 +6970,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Jabir ibn Abdullah said: the Messenger of Allah ﷺ said: there is none who utters a supplication, except that Allah gives him what he asked, or prevents evil from him that is equal to it, as long as he does not supplicate for something evil, or the cutting of ties of the womb.",
     sources: [tirmidhi("3381")]
+  },
+  {
+    id: "sign-missed-at-night",
+    kind: "missed-at-night",
+    caption:
+      "Umar ibn al-Khattab said: the Messenger of Allah ﷺ said: whoever slept, missing his section or some of it, then he recited it between the Fajr prayer and the Zuhr prayer, it is written for him as if he had recited it in the night.",
+    sources: [tirmidhi("581")]
+  },
+  {
+    id: "sign-most-merciful-of-my-nation",
+    kind: "most-merciful-of-my-nation",
+    caption:
+      "Anas ibn Malik said: the Messenger of Allah ﷺ said: the most merciful of my nation to my nation is Abu Bakr, and the most severe of them concerning the order of Allah is Umar, and the most truly modest of them is Uthman ibn Affan. The most knowledgeable of them concerning the lawful and unlawful is Mu'adh ibn Jabal, the most knowledgeable of them concerning inheritance is Zayd ibn Thabit, the best reciter among them is Ubayy ibn Ka'b, and every nation has a trustworthy one, and the trustworthy one of this nation is Abu Ubaydah ibn al-Jarrah.",
+    sources: [tirmidhi("3790")]
+  },
+  {
+    id: "sign-what-an-excellent-man",
+    kind: "what-an-excellent-man",
+    caption:
+      "Abu Hurairah said: the Messenger of Allah ﷺ said: what an excellent man is Abu Bakr, what an excellent man is Umar, what an excellent man is Abu Ubaydah ibn al-Jarrah, what an excellent man is Usayd ibn Hudayr, what an excellent man is Thabit ibn Qays ibn Shammas, what an excellent man is Mu'adh ibn Jabal, and what an excellent man is Mu'adh ibn Amr ibn al-Jamuh.",
+    sources: [tirmidhi("3795")]
+  },
+  {
+    id: "sign-best-to-his-family",
+    kind: "best-to-his-family",
+    caption:
+      "Aishah said: the Messenger of Allah ﷺ said: the best of you is the best to his wives, and I am the best of you to my wives.",
+    sources: [tirmidhi("3895")]
   }
 ];
 
@@ -9961,7 +9993,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Rush to good deeds, before trials like portions of the dark night.
   "deep-akhirah-holding-on-in-trials-rush-to-good-deeds": "sign-rush-to-good-deeds",
   // No du'a is wasted: Allah gives what was asked, or keeps away a harm like it.
-  "deep-dua-answered-no-dua-wasted": "sign-no-dua-wasted"
+  "deep-dua-answered-no-dua-wasted": "sign-no-dua-wasted",
+  // Slept through your night portion? Recite it between Fajr and Zuhr, and it is written as if recited at night.
+  "deep-prayer-night-sunnahs-missed-at-night": "sign-missed-at-night",
+  // Abu Bakr the most merciful of the ummah, and Mu'adh the one who knew halal and haram best.
+  "deep-muadh-halal-haram": "sign-most-merciful-of-my-nation",
+  // Zayd knew inheritance best, and Ubayy was the best reciter of the ummah.
+  "deep-ubayy-best-reciter": "sign-most-merciful-of-my-nation",
+  // What an excellent man: seven Companions praised by name, from Abu Bakr to the two named Mu'adh.
+  "deep-praised-by-name-what-an-excellent-man": "sign-what-an-excellent-man",
+  // The best of you is the best to his family, and he was the best to his.
+  "deep-spouses-best-to-family": "sign-best-to-his-family",
+  // Dignity for both spouses: the best of you is the best to his wives.
+  "marriage-rights-and-trust-mutual-dignity": "sign-best-to-his-family"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
