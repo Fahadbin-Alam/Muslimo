@@ -1766,6 +1766,12 @@ const STATES: State[] = [
   { id: "scene-nothing-like-fasting", render: () => <SceneQuestionDemo lessonId="lesson-deep-fasting-making-the-most-of-ramadan-nothing-like-fasting" ask="tell Abu Umamah to take to" /> },
   { id: "scene-umm-sulaims-words", render: () => <SceneQuestionDemo lessonId="lesson-deep-duas-and-the-prayer-umm-sulaims-words" ask="How many times is each one said" /> },
   { id: "scene-a-stranger-asks", render: () => <SceneQuestionDemo lessonId="lesson-deep-growing-in-faith-a-stranger-asks" ask="do for the man who did not know" /> },
+  { id: "scene-the-siwak-first", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-faith-at-home-the-siwak-first" ask="do first on coming home" /> },
+  { id: "scene-you-are-umm-abdullah", render: () => <SceneQuestionDemo lessonId="lesson-deep-mothers-aishah-umm-abdullah" ask="all his other wives had" /> },
+  { id: "scene-pure-of-heart", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-questions-they-asked-the-best-people" ask="call the best" /> },
+  { id: "scene-pebbles-like-these", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-the-balanced-way-beware-of-extremes" ask="warn the people about at Hajj" /> },
+  { id: "scene-do-not-be-demanding", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-not-asking-people-do-not-push-when-asking" ask="missing from a gift given unwillingly" /> },
+  { id: "scene-as-fresh-as-revealed", render: () => <SceneQuestionDemo lessonId="lesson-deep-ibnmasud-fresh-as-revealed" ask="brought Ibn Mas'ud the good news" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
