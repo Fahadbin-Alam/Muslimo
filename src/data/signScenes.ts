@@ -1211,7 +1211,13 @@ export type SignKind =
   | "mix-it-with-charity"
   | "what-your-neighbors-say"
   | "patient-with-people"
-  | "beautiful-voices";
+  | "beautiful-voices"
+  | "pay-the-worker"
+  | "oil-from-a-blessed-tree"
+  | "faith-then-the-quran"
+  | "nothing-like-fasting"
+  | "umm-sulaims-words"
+  | "a-stranger-asks";
 
 export type SignScene = {
   id: string;
@@ -7046,6 +7052,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Al-Bara ibn Azib said: the Messenger of Allah ﷺ said: make your voices beautiful when you recite Quran.",
     sources: [nasai("1016")]
+  },
+  {
+    id: "sign-pay-the-worker",
+    kind: "pay-the-worker",
+    caption:
+      "Ibn Umar said: the Messenger of Allah ﷺ said: give the worker his wages before his sweat dries.",
+    sources: [ibnMajah("2443")]
+  },
+  {
+    id: "sign-oil-from-a-blessed-tree",
+    kind: "oil-from-a-blessed-tree",
+    caption:
+      "Umar ibn al-Khattab said: the Messenger of Allah ﷺ said: season with olive oil and anoint yourselves with it, for it comes from a blessed tree.",
+    sources: [ibnMajah("3319")]
+  },
+  {
+    id: "sign-faith-then-the-quran",
+    kind: "faith-then-the-quran",
+    caption:
+      "Jundub ibn Abdullah said: we were with the Prophet ﷺ, and we were strong youths, so we learned faith before we learned Quran. Then we learned Quran, and our faith increased thereby.",
+    sources: [ibnMajah("61")]
+  },
+  {
+    id: "sign-nothing-like-fasting",
+    kind: "nothing-like-fasting",
+    caption:
+      "Abu Umamah said: I came to the Messenger of Allah ﷺ and said: tell me of something that I may take from you. He said: take to fasting, for there is nothing like it.",
+    sources: [nasai("2220")]
+  },
+  {
+    id: "sign-umm-sulaims-words",
+    kind: "umm-sulaims-words",
+    caption:
+      "Anas ibn Malik said: Umm Sulaim came to the Prophet ﷺ and said: teach me some words that I may supplicate with during my prayer. He said: glorify Allah ten times, and praise Him ten times, and magnify Him ten times, then ask Him for what you need; He will say: yes, yes.",
+    sources: [nasai("1299")]
+  },
+  {
+    id: "sign-a-stranger-asks",
+    kind: "a-stranger-asks",
+    caption:
+      "Abu Rifa'ah said: I came to the Messenger of Allah ﷺ while he was delivering a Khutbah, and said: O Messenger of Allah, a stranger has come to ask about his religion, for he does not know what his religion is. The Messenger of Allah ﷺ stopped delivering his Khutbah and turned to me. A chair was brought. The Messenger of Allah ﷺ sat down on it and started to teach me what Allah has taught him, then he went and completed his Khutbah.",
+    sources: [nasai("5377")]
   }
 ];
 
@@ -10065,7 +10113,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Patient with people: the believer who mixes with people and bears their annoyance has a greater reward.
   "deep-manners-getting-along-patient-with-people": "sign-patient-with-people",
   // Beautiful voices: make your voices beautiful when you recite the Quran.
-  "deep-found-reciting-quran-beautiful-voices": "sign-beautiful-voices"
+  "deep-found-reciting-quran-beautiful-voices": "sign-beautiful-voices",
+  // Pay the worker: give the worker his wages before his sweat dries.
+  "deep-honesty-pay-the-worker": "sign-pay-the-worker",
+  // Oil from a blessed tree: season with olive oil and anoint yourselves with it.
+  "deep-found-eating-drinking-oil-from-a-blessed-tree": "sign-oil-from-a-blessed-tree",
+  // Faith, then the Quran: the strong youths learned faith first, and the Quran made it grow.
+  "deep-growing-in-faith-faith-then-the-quran": "sign-faith-then-the-quran",
+  // Nothing like fasting: take to fasting, for there is nothing like it.
+  "deep-fasting-making-the-most-of-ramadan-nothing-like-fasting": "sign-nothing-like-fasting",
+  // Umm Sulaim's words: glorify, praise and magnify ten times each, then ask.
+  "deep-duas-and-the-prayer-umm-sulaims-words": "sign-umm-sulaims-words",
+  // A stranger asks: he stopped his khutbah to teach him his religion, then completed it.
+  "deep-growing-in-faith-a-stranger-asks": "sign-a-stranger-asks"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
