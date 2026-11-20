@@ -8152,6 +8152,15 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What did he ﷺ say the heart is like?", "A feather", "Is that of a feather blown about by"],
     ["What blows the feather about?", "The wind", "The wind in the desert."],
     ["He ﷺ likened the heart to a feather the wind blows about.", "True", "The wind in the desert."]
+  ],
+  // The truth you know. Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ stood up to deliver a sermon, and one of the
+  // things he said was: fear of people should not prevent a man from speaking the truth, if he knows it (Sunan Ibn
+  // Majah 4007). The hush over the place of one who knows shows only once the fear of people is named, and the light
+  // about it only once the truth is.
+  "sign-the-truth-you-know": [
+    ["What should not stop a man from speaking the truth, he ﷺ said?", "Fear of people", "Of the things he said was: fear of people"],
+    ["Which truth should fear of people not stop a man from saying?", "The truth he knows", "The truth, if the man knows it."],
+    ["He ﷺ taught this in a sermon he stood to give.", "True", "Abu Sa'id: the Messenger of Allah", "Stood up to deliver a sermon, and one"]
   ]
 };
 
