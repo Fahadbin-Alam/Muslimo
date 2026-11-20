@@ -3,15 +3,16 @@ import { hadith, type DeepUnit } from "./deepKit";
 // One more Aqidah unit: keeping iman steady, from Jami at-Tirmidhi, Sahih al-Bukhari, Sunan Ibn Majah, Sunan Abi Dawud
 // and Imam al-Bukhari's book of manners, Al-Adab al-Mufrad. A parable of the straight path with open doors, the believer
 // who bends like a tender plant, the hardest illness, the hidden shirk of showing off in prayer, shirk more hidden than
-// the movement of ants and the du'a against it, hope and fear together at the end, and bad whispers in the heart. Every
-// card is one sahih or hasan hadith with its number, narrator and grade, and its exact English words to highlight.
-// Points the schools differ on are left out, and no other question in the app asks about any of them.
+// the movement of ants and the du'a against it, hope and fear together at the end, bad whispers in the heart, and the
+// heart like a feather the wind blows about in the desert. Every card is one sahih or hasan hadith with its number,
+// narrator and grade, and its exact English words to highlight. Points the schools differ on are left out, and no
+// other question in the app asks about any of them.
 
 const STEADY: DeepUnit = {
   key: "aqidah-steady-on-the-path",
   topicId: "aqidah",
   branchId: "aqidah-steady-on-the-path",
-  branch: { title: "Steady on the straight path", description: "A parable of the path, a plant that bends, the hardest illness, hidden showing off, shirk more hidden than ants, hope with fear, and bad whispers in the heart." },
+  branch: { title: "Steady on the straight path", description: "A parable of the path, a plant that bends, the hardest illness, hidden showing off, shirk more hidden than ants, hope with fear, bad whispers in the heart, and a feather in the wind." },
   name: "steady on the straight path",
   kind: "skill",
   lessonType: "skill",
@@ -105,6 +106,19 @@ const STEADY: DeepUnit = {
         { q: "What did he ﷺ say three times on hearing this?", a: "Allahu akbar", wrong: ["SubhanAllah", "Astaghfirullah", "Bismillah"], why: "Allah is Most Great, Allah is Most Great, Allah is Most Great, he ﷺ said." },
         { q: "What had Shaytan's plot been brought down to?", a: "Mere whispers", wrong: ["A great army", "A strong rope", "A locked door"], why: "Praise be to Allah Who has reduced the guile of the devil to evil prompting." },
         { q: "The man would rather burn to charcoal than speak his bad thoughts.", tf: true, why: "He would rather be reduced to charcoal than speak about them, the man said." }
+      ]
+    },
+    {
+      slug: "a-feather-in-the-wind",
+      title: "A feather in the wind",
+      line: "The heart is like a feather blown about by the wind.",
+      facts: ["Told by Abu Musa al-Ash'ari", "A feather in the desert, blown about by the wind"],
+      source: hadith("ibnmajah", "88", "Abu Musa al-Ash'ari", "Sahih (Darussalam)", "Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: the likeness of the heart is that of a feather blown about by the wind in the desert.", "The likeness of the heart is that of a feather blown about by the wind in the desert"),
+      difficulty: 1,
+      questions: [
+        { q: "What did he ﷺ say the heart is like?", a: "A feather", wrong: ["A tall mountain", "A heavy iron gate", "A deep well"], why: "The likeness of the heart is that of a feather, he ﷺ said, blown about in the desert." },
+        { q: "What blows the feather about?", a: "The wind", wrong: ["A river", "The rain", "A herd of camels"], why: "A feather blown about by the wind in the desert, he ﷺ said of the heart." },
+        { q: "He ﷺ likened the heart to a feather the wind blows about.", tf: true, why: "Abu Musa said he ﷺ likened the heart to a feather blown about in the desert." }
       ]
     }
   ]

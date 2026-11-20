@@ -8089,6 +8089,69 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What would happen if people got whatever they claimed?", "Some would claim others' lives", "Given what they claimed, some would have", "Claimed the lives and property of men."],
     ["Who must swear an oath, he ﷺ said?", "The one the claim is against", "But the one the claim is made against is", "Obliged to swear an oath."],
     ["A claim alone is enough to take a man's property.", "False", "But the one the claim is made against is", "Obliged to swear an oath."]
+  ],
+  // Anas said: Bani Salama intended to shift near the mosque, but the Messenger of Allah ﷺ disliked to see Madinah
+  // vacated and said: O people of Bani Salama, don't you think that you will be rewarded for your footsteps which you
+  // take towards the mosque? So they stayed at their old places (Sahih al-Bukhari 1887).
+  "sign-the-steps-of-bani-salama": [
+    ["Where did Bani Salama want to move?", "Near the masjid", "Anas: Bani Salama intended to shift near", "The mosque but Allah's Messenger disliked"],
+    ["What did he ﷺ say Bani Salama are rewarded for?", "Their steps to the masjid", "That you will be rewarded for your", "Footsteps you take towards the mosque?"],
+    ["Bani Salama stayed in their old homes.", "True", "So, they stayed at their old places."]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: a Muslim does not regularly attend the mosques to perform prayer and remember
+  // Allah, but Allah feels happy with him, just as the family of one who is absent feels happy when he comes back to
+  // them (Sunan Ibn Majah 800). The true or false waits before the third line, whose Arabic already says Allah is happy.
+  "sign-like-a-familys-joy": [
+    ["Why does the regular masjid-goer keep coming, he ﷺ said?", "To pray and remember Allah", "Regularly attend the mosques to perform", "Prayer and remember Allah, but Allah"],
+    ["Allah's happiness with him is like whose joy?", "A family whose absent one returns", "Family of one who is absent feels happy", "When the absent one comes back to them."],
+    ["Allah is happy with the one who keeps coming to the masjid.", "True", "Prayer and remember Allah, but Allah", "Feels happy with the Muslim just as the"]
+  ],
+  // Ali said: I used to draw water, one bucket for a date, and I stipulated that they should be good quality, dried
+  // dates (Sunan Ibn Majah 2447).
+  "sign-a-bucket-for-a-date": [
+    ["What did Ali get for each bucket of water?", "One date", "Ali: I used to draw water, one bucket for", "A date, and I stipulated that they should"],
+    ["What kind of dates did Ali ask for?", "Good dried dates", "Be good quality, dried dates."],
+    ["Ali drew water to earn dates.", "True", "Ali: I used to draw water, one bucket for", "A date, and I stipulated that they should"]
+  ],
+  // Ibn Abbas said: the Messenger of Allah ﷺ would spend many consecutive nights while his family did not have supper,
+  // and most of the time their bread was barley bread (Jami at-Tirmidhi 2360).
+  "sign-nights-without-supper": [
+    ["What did his ﷺ family often go without, many nights in a row?", "Supper", "And his family did not have supper,"],
+    ["What was their bread most of the time?", "Barley bread", "Barley bread."],
+    ["His ﷺ family always had plenty of food for supper.", "False", "And his family did not have supper,"]
+  ],
+  // Jabir ibn Abdullah said: we were with Allah's Messenger ﷺ picking the fruits of the arak trees, and Allah's
+  // Messenger ﷺ said: pick the black fruit, for it is the best. The Companions asked: were you a shepherd? He replied:
+  // there was no prophet who was not a shepherd (Sahih al-Bukhari 3406).
+  "sign-the-black-arak-fruit": [
+    ["Which arak fruit did he ﷺ tell them to pick?", "The black fruit", "And Allah's Messenger said: pick the", "Black fruit, for it is the best. The"],
+    ["What did he ﷺ say about the black arak fruit?", "That it is the best", "Black fruit, for it is the best. The"],
+    ["He ﷺ said there was no prophet who was not a shepherd.", "True", "He replied: there was no prophet who", "Was not a shepherd."]
+  ],
+  // Anas said: every time we wanted to see the Messenger of Allah ﷺ praying at night, we saw him, and every time we
+  // wanted to see him sleeping, we saw him (Sunan an-Nasa'i 1627). The first question waits at the start: it asks when
+  // at night, as the night sky shows from the start.
+  "sign-praying-and-sleeping": [
+    ["When could they see him ﷺ praying at night, Anas said?", "Whenever they wished", "Anas: every time we wanted to see the", "Saw him, and every time we wanted to"],
+    ["What else could they see him ﷺ doing at night?", "Sleeping", "See him sleeping, we saw him."],
+    ["Anas could see him ﷺ sleeping at night, too.", "True", "See him sleeping, we saw him."]
+  ],
+  // Mu'adh ibn Abdullah ibn Khubaib reported from his father that his uncle said: we were sitting in a gathering, and the
+  // Prophet ﷺ came. Then the people talked about being rich, and he ﷺ said: there is nothing wrong with being rich for
+  // one who has piety, but good health for one who has piety is better than riches, and being of good cheer is a
+  // blessing (Sunan Ibn Majah 2141).
+  "sign-riches-with-piety": [
+    ["There is nothing wrong with being rich for one who has piety.", "True", "Nothing wrong with being rich for one", "Who has piety, but good health for one"],
+    ["For one who has piety, what is better than riches?", "Good health", "Who has piety, but good health for one", "Who has piety is better than riches, and"],
+    ["What did he ﷺ call being of good cheer?", "One of the blessings", "Being of good cheer is a blessing."]
+  ],
+  // A feather in the wind. Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: the likeness of the heart is that
+  // of a feather blown about by the wind in the desert (Sunan Ibn Majah 88). The feather shows only after the heart is
+  // named, and the wind only after the feather is.
+  "sign-feather-in-the-wind": [
+    ["What did he ﷺ say the heart is like?", "A feather", "Is that of a feather blown about by"],
+    ["What blows the feather about?", "The wind", "The wind in the desert."],
+    ["He ﷺ likened the heart to a feather the wind blows about.", "True", "The wind in the desert."]
   ]
 };
 
