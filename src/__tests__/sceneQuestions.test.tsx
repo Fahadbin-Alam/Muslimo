@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3839);
+    expect(asks.length).toBe(3854);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -133,7 +133,7 @@ describe("which questions are asked on a scene", () => {
     // "Hadith about knowledge" now has seven lessons, so it gets a review card, which asks what Allah gives someone He
     // wants good for, and its final quiz also asks who gives, whether only scholars may share what they know and which
     // path seeking knowledge makes easy (all still asked in their lessons).
-    expect(places).toBe(5583);
+    expect(places).toBe(5606);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -29033,6 +29033,204 @@ describe("where the scene waits and where it stops", () => {
         [0, 0],
         [1, 0]
       ]
+    ]);
+  });
+
+  it("waits on the scenes from a share for the house to an oath, not a claim before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on these scenes waits or stops, nothing is halfway through moving or coming into sight.
+    const scenes = ["sign-a-share-for-the-house", "sign-charity-for-each-day", "sign-two-for-a-relative", "sign-whoever-leads-to-good", "sign-under-the-protection", "sign-an-oath-not-a-claim"];
+    const asks = sceneAsks().filter((each) => scenes.includes(each.sceneId));
+    expect(asks.length).toBe(15);
+    for (const ask of asks) {
+      const kind = SIGN_SCENES.find((each) => each.id === ask.sceneId)!.kind;
+      for (const t of Object.values(sceneMoment(kind, ask.from, ask.to)!)) {
+        for (const part of signArt(kind).parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // A share of it: the place of one of the folk has come from the masjid to the home, and there is no mat at its door
+    // yet, before the next words; then a prayer mat shows at the door, and a soft light comes about the place on it: a
+    // share of that prayer. Nothing good is about the home yet.
+    expect([
+      shown("What should your house get from your prayer?", ["a prayer mat at the door of the home", "a share of that prayer: a soft light about the place on the mat, growing", "something good in the house: a soft golden light about the home"]),
+      moved("What should your house get from your prayer?", "the place of one of the folk: its prayer finished, going from the masjid to the home", "x")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 0.6, 0]
+      ],
+      [86.2, 86.2]
+    ]);
+    // Something good: the share of prayer is lit on the mat, and nothing is about the home yet, before the next words;
+    // then a soft golden light comes about the home, a light in its window, a soft golden ring about it and glints over
+    // it, and the light on the mat grows.
+    expect([
+      shown("What does Allah put in a house that gets a share of prayer?", [
+        "something good in the house: a soft golden light about the home",
+        "and a light in the window of the home",
+        "and a soft golden ring about the home",
+        "and glints over it",
+        "a share of that prayer: a soft light about the place on the mat, growing"
+      ])
+    ]).toEqual([
+      [
+        [0, 0, 0, 0, 0.6],
+        [1, 1, 1, 1, 1]
+      ]
+    ]);
+    // False: no mat and no light at the door of the home, before the next words; then the prayer mat and its soft light:
+    // the house gets a share of that prayer.
+    expect([shown("All prayer should be kept out of the home.", ["a share of that prayer: a soft light about the place on the mat, growing", "a prayer mat at the door of the home"])]).toEqual([
+      [
+        [0, 0],
+        [0.6, 1]
+      ]
+    ]);
+    // For each day: respite has been given and the one in difficulty has gone on its way, and no coin is by the place
+    // of the one who gave respite, before the next words; then the sun goes over the sky, day after day, and for each
+    // day a gold coin with a soft light comes by that place.
+    const coins = [1, 2, 3].map((each) => `an act of charity for a day: a gold coin with a soft light by the place of the one who gave respite ${each}`);
+    expect([
+      shown("Giving more time to one in difficulty is charity how often?", coins),
+      value("charity-for-each-day", "the sun, going over the sky: the days going by", "x", 0.74),
+      value("charity-for-each-day", "the sun, going over the sky: the days going by", "x", 0.84)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      50,
+      50
+    ]);
+    // True: the one who gives respite has said, softly, more time, and no coin has come yet, before the next words; then
+    // an act of charity for each day.
+    expect([shown("Being patient with someone who owes you is a kind of charity.", coins), value("charity-for-each-day", "its voice, soft: more time", "opacity", 0.45)]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      1
+    ]);
+    // Two: the coin has gone to the poor one, with a soft golden ring, and none to the relative, before the next words;
+    // then a coin goes to the relative, with a soft golden ring, a second ring, soft rose, and glints: two things.
+    expect([
+      shown("How many rewards for charity to a relative?", [
+        "charity: a soft golden ring about the poor one's place",
+        "charity: a soft golden ring about the relative's place",
+        "and upholding the ties of kinship: a second ring, soft rose, about the relative's place",
+        "and glints over the relative's place: two things"
+      ]),
+      moved("How many rewards for charity to a relative?", "and to the relative: a coin going from the one who gives to the relative", "x")
+    ]).toEqual([
+      [
+        [1, 0, 0, 0],
+        [1, 1, 1, 1]
+      ],
+      [0, 27.8]
+    ]);
+    // Charity and family ties: no ring is about the relative's place, before the next words; then a soft golden ring,
+    // charity, and a second ring, soft rose, with a soft rose thread from the one who gives: the ties of kinship, kept.
+    expect([
+      shown("What are the two rewards?", [
+        "charity: a soft golden ring about the relative's place",
+        "and upholding the ties of kinship: a second ring, soft rose, about the relative's place",
+        "and a soft rose thread from the one who gives to the relative: the ties of kinship, kept"
+      ])
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ]
+    ]);
+    // Something to ride: it waits before anything; then the place of the one who asked comes to his place, its voice asks
+    // for a mount, and his voice answers; no camel is drawn yet.
+    expect([
+      moved("What did the man come to the Prophet ﷺ for?", "the place of the one who asked: coming to his place, going on the way, and coming back", "x"),
+      shown("What did the man come to the Prophet ﷺ for?", ["a mount: a camel, with no one on it, coming to the one who gives, and then going with the place of the one who asked"]),
+      value("whoever-leads-to-good", "its voice: asking for a mount", "opacity", 0.08)
+    ]).toEqual([[-40, 0], [[0], [0]], 1]);
+    // The one who does it: the place of the one who asked has come back with the camel, and no ring is about any place,
+    // before the next words; then a soft golden ring comes about his place, the one who leads to good, and about the place
+    // of the one who gives, the one who does it, with glints over both.
+    expect([
+      shown("Whoever leads someone to good is like whom, he ﷺ said?", [
+        "the one who leads to good: a soft golden ring about his place",
+        "is like the one who does it: a soft golden ring about the place of the one who gives",
+        "and glints over both"
+      ]),
+      value("whoever-leads-to-good", "the place of the one who asked: coming to his place, going on the way, and coming back", "x", 0.752)
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [1, 1, 1]
+      ],
+      6
+    ]);
+    // True: no ring yet, before the next words; then the one who gives is like the one who leads to good.
+    expect([shown("Sending someone to a person who can help is a good deed.", ["is like the one who does it: a soft golden ring about the place of the one who gives", "and glints over both"])]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ]
+    ]);
+    // Allah's: the folk have come at dawn, and no ring is about their places, before the next words; then a soft golden
+    // ring comes about each of their places, one after another: under the protection; and glints over them.
+    const rings = [1, 2, 3, 4].map((each) => `under the protection: a soft golden ring about each of their places ${each}`);
+    expect([shown("Whose protection is the one who prays it under?", [...rings, "and glints over them"])]).toEqual([
+      [
+        [0, 0, 0, 0, 0],
+        [1, 1, 1, 1, 1]
+      ]
+    ]);
+    // False: no ring yet, before the next words; then each place is under the protection.
+    expect([shown("Praying Fajr leaves a person without any protection.", rings)]).toEqual([
+      [
+        [0, 0, 0, 0],
+        [1, 1, 1, 1]
+      ]
+    ]);
+    // Some would claim others' lives: those who claim have not moved, before the next words; then they come near, their
+    // voices, grey, claim, and a ring of grey dashes comes about them: what they claimed.
+    expect([
+      shown("What would happen if people got whatever they claimed?", ["their voices, grey: claiming", "what they claimed: a ring of grey dashes about those who claim, going when they go back"]),
+      moved("What would happen if people got whatever they claimed?", "the place of one who claims, coming near, and then going back 2", "x"),
+      value("an-oath-not-a-claim", "their voices, grey: claiming", "opacity", 0.4)
+    ]).toEqual([
+      [
+        [0, 0],
+        [0, 1]
+      ],
+      [0, 18],
+      1
+    ]);
+    // The one the claim is against: no light is about its place, before the next words; then a soft light, its voice
+    // swears an oath, and a soft golden ring comes about its place and its property: kept.
+    expect([
+      shown("Who must swear an oath, he ﷺ said?", ["the one the claim is made against: a soft light about its place", "its property, kept: a soft golden ring about its place and its property"]),
+      value("an-oath-not-a-claim", "its voice: swearing an oath", "opacity", 0.9)
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      1
+    ]);
+    // False: the grey ring is about those who claim, near the property, before the next words; then the oath is sworn, the
+    // property is kept, the grey ring goes, and those who claim go back.
+    expect([
+      shown("A claim alone is enough to take a man's property.", ["what they claimed: a ring of grey dashes about those who claim, going when they go back", "its property, kept: a soft golden ring about its place and its property"]),
+      moved("A claim alone is enough to take a man's property.", "the place of one who claims, coming near, and then going back 1", "x")
+    ]).toEqual([
+      [
+        [1, 0],
+        [0, 1]
+      ],
+      [18, 0]
     ]);
   });
 

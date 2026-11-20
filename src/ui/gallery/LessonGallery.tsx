@@ -1777,6 +1777,12 @@ const STATES: State[] = [
   { id: "scene-the-best-provision", render: () => <SceneQuestionDemo lessonId="lesson-notes-hadith-hadith-from-your-notes-2-sunan-ibn-majah-1855" ask="best provision in this world" /> },
   { id: "scene-or-as-he-said", render: () => <SceneQuestionDemo lessonId="lesson-deep-careful-with-his-words-or-as-he-said" ask="Anas say after narrating" /> },
   { id: "scene-we-have-grown-old", render: () => <SceneQuestionDemo lessonId="lesson-deep-careful-with-his-words-we-have-grown-old" ask="hold back from narrating" /> },
+  { id: "scene-a-share-for-the-house", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-faith-at-home-a-share-for-the-house" ask="house get from your prayer" /> },
+  { id: "scene-charity-for-each-day", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-counted-by-allah-time-for-the-debtor" ask="charity how often" /> },
+  { id: "scene-two-for-a-relative", render: () => <SceneQuestionDemo lessonId="lesson-deep-balad2-double-reward-for-relatives" ask="How many rewards" /> },
+  { id: "scene-whoever-leads-to-good", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-leading-to-good" ask="come to the Prophet" /> },
+  { id: "scene-under-the-protection", render: () => <SceneQuestionDemo lessonId="lesson-deep-intro-short-words-to-live-by-under-allahs-protection" ask="Whose protection" /> },
+  { id: "scene-an-oath-not-a-claim", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-judging-fairly-more-than-a-claim" ask="got whatever they claimed" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

@@ -1228,7 +1228,13 @@ export type SignKind =
   | "as-you-are-able"
   | "the-best-provision"
   | "or-as-he-said"
-  | "we-have-grown-old";
+  | "we-have-grown-old"
+  | "a-share-for-the-house"
+  | "charity-for-each-day"
+  | "two-for-a-relative"
+  | "whoever-leads-to-good"
+  | "under-the-protection"
+  | "an-oath-not-a-claim";
 
 export type SignScene = {
   id: string;
@@ -7182,6 +7188,48 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdur-Rahman ibn Abi Laila said: we said to Zaid ibn Arqam: tell us a hadith from the Messenger of Allah ﷺ. He said: we have grown old and have forgotten, and ahadith from the Messenger of Allah ﷺ is difficult.",
     sources: [ibnMajah("25")]
+  },
+  {
+    id: "sign-a-share-for-the-house",
+    kind: "a-share-for-the-house",
+    caption:
+      "Abu Sa'id al-Khudri said: the Prophet ﷺ said: when anyone of you has finished his prayer, let him give his house a share of that, for Allah will put something good in his house because of that prayer.",
+    sources: [ibnMajah("1376")]
+  },
+  {
+    id: "sign-charity-for-each-day",
+    kind: "charity-for-each-day",
+    caption:
+      "Buraidah al-Aslami said: the Prophet ﷺ said: whoever gives respite to one in difficulty will have an act of charity for each day. Whoever gives him respite after payment becomes due will have an act of charity equal to the amount of the loan for each day.",
+    sources: [ibnMajah("2418")]
+  },
+  {
+    id: "sign-two-for-a-relative",
+    kind: "two-for-a-relative",
+    caption:
+      "Salman ibn Amir said: the Prophet ﷺ said: giving charity to a poor person is charity, and to a relative is two things, charity and upholding the ties of kinship.",
+    sources: [nasai("2582")]
+  },
+  {
+    id: "sign-whoever-leads-to-good",
+    kind: "whoever-leads-to-good",
+    caption:
+      "Anas ibn Malik said: a man came to the Prophet ﷺ to get a mount, but he did not have anything to mount him on with him. So he was led to another person to give him a mount. He came to the Prophet ﷺ to inform him about that, and he said: whoever leads to good, he is like the one who does it.",
+    sources: [tirmidhi("2670")]
+  },
+  {
+    id: "sign-under-the-protection",
+    kind: "under-the-protection",
+    caption:
+      "Samurah ibn Jundub said: the Prophet ﷺ said: whoever offers the morning prayer, he is under the protection of Allah, the Mighty and Sublime.",
+    sources: [ibnMajah("3946")]
+  },
+  {
+    id: "sign-an-oath-not-a-claim",
+    kind: "an-oath-not-a-claim",
+    caption:
+      "Ibn Abbas said: the Messenger of Allah ﷺ said: if the people were given what they claimed, some would have claimed the lives and property of men. But the one the claim is made against is obliged to swear an oath.",
+    sources: [ibnMajah("2321")]
   }
 ];
 
@@ -10235,7 +10283,19 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Or as he ﷺ said: after each hadith, Anas would add: or as the Messenger of Allah ﷺ said.
   "deep-careful-with-his-words-or-as-he-said": "sign-or-as-he-said",
   // We have grown old: Zaid ibn Arqam held back, for narrating his ﷺ words is a weighty matter.
-  "deep-careful-with-his-words-we-have-grown-old": "sign-we-have-grown-old"
+  "deep-careful-with-his-words-we-have-grown-old": "sign-we-have-grown-old",
+  // A share for the house: give your house a share of your prayer, and Allah puts good in it.
+  "deep-marriage-faith-at-home-a-share-for-the-house": "sign-a-share-for-the-house",
+  // Give the debtor more time: each day of respite to one in difficulty is an act of charity.
+  "deep-zakat-counted-by-allah-time-for-the-debtor": "sign-charity-for-each-day",
+  // Double reward for relatives: charity to a relative is two things, charity and keeping the ties of kinship.
+  "deep-balad2-double-reward-for-relatives": "sign-two-for-a-relative",
+  // Leading someone to good: whoever leads to good is like the one who does it.
+  "deep-kids-helping-people-leading-to-good": "sign-whoever-leads-to-good",
+  // Under Allah's protection: whoever offers the morning prayer is under the protection of Allah.
+  "deep-intro-short-words-to-live-by-under-allahs-protection": "sign-under-the-protection",
+  // More than a claim: people are not given what they claim; the one the claim is made against must swear an oath.
+  "deep-manners-judging-fairly-more-than-a-claim": "sign-an-oath-not-a-claim"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
