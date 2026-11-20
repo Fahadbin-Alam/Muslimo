@@ -7882,6 +7882,93 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-best-to-his-family": [
     ["Who is the best of you, in this saying?", "The best to his family", "The best to his wives, and I am the"],
     ["Who did the Prophet ﷺ say was best to his family?", "He himself", "The best to his wives, and I am the", "Best of you to my wives."]
+  ],
+  // Al-Irbad ibn Sariyah said: the Messenger of Allah ﷺ used to ask for forgiveness for the first row three times, and
+  // for the second row once (Sunan Ibn Majah 996).
+  "sign-forgiveness-for-the-first-row": [
+    ["For which row did he ﷺ ask forgiveness three times?", "The first row", "For the first row three times"],
+    ["Did he ﷺ ask forgiveness for the second row too?", "Yes, but fewer times", "And for the second row once."],
+    ["He ﷺ asked forgiveness for the first row more than the second.", "True", "And for the second row once."]
+  ],
+  // Umm Hani said: the Prophet ﷺ said to her: keep sheep, for in them is blessing (Sunan Ibn Majah 2304).
+  "sign-keep-sheep": [
+    ["What did he ﷺ say is in sheep?", "Blessing", "For in them is blessing!"],
+    ["He ﷺ said there is blessing in keeping sheep.", "True", "For in them is blessing!"]
+  ],
+  // Qays ibn Abi Gharazah said: at the time of the Messenger of Allah ﷺ we used to be called brokers, but the
+  // Messenger of Allah ﷺ passed by us and called us by a name that was better than that. He said: O merchants, selling
+  // involves oaths and idle talk, so mix some charity with it (Sunan Ibn Majah 2145).
+  "sign-mix-it-with-charity": [
+    ["What did he ﷺ tell the merchants to mix with selling?", "Some charity", "Some charity with it."],
+    ["Selling can bring idle talk and false oaths.", "True", "Involves oaths and idle talk, so mix"]
+  ],
+  // Abdullah ibn Mas'ud said: a man said to the Messenger of Allah ﷺ: how can I know when I have done well and when I
+  // have done something bad? The Prophet ﷺ said: if you hear your neighbors saying that you have done well, then you
+  // have done well, and if you hear them saying that you have done something bad, then you have done something bad
+  // (Sunan Ibn Majah 4223).
+  "sign-what-your-neighbors-say": [
+    ["What did the man want to know?", "How to know if he did well", "Of Allah: how can I know when I have done", "Well and when I have done something bad?"],
+    ["Who did he ﷺ say to listen to?", "Your neighbors", "He said: if you hear your neighbors"],
+    ["If neighbors say you did badly, he ﷺ said you did badly.", "True", "Saying that you have done something bad,", "Then you have done something bad."]
+  ],
+  // Ibn Umar said: the Messenger of Allah ﷺ said: the believer who mixes with people and bears their annoyance with
+  // patience will have a greater reward than the believer who does not mix with people and does not put up with their
+  // annoyance (Sunan Ibn Majah 4032).
+  "sign-patient-with-people": [
+    ["Which believer has the greater reward?", "One who mixes and is patient", "Ibn Umar: he said: the believer who mixes", "With patience will have a greater reward"],
+    ["What does that believer bear with patience?", "The annoyance of people", "With people and bears their annoyance"],
+    ["The patient believer who mixes with people has the greater reward.", "True", "With patience will have a greater reward"]
+  ],
+  // Al-Bara ibn Azib said: the Messenger of Allah ﷺ said: make your voices beautiful when you recite Quran (Sunan
+  // an-Nasa'i 1016).
+  "sign-beautiful-voices": [
+    ["How did he ﷺ tell us to recite the Quran?", "In beautiful voices", "Make your voices beautiful", "When you recite Quran."],
+    ["When should we make our voices beautiful, he ﷺ said?", "When we recite the Quran", "When you recite Quran."],
+    ["We should recite the Quran in our most beautiful voice.", "True", "Make your voices beautiful", "When you recite Quran."]
+  ],
+  // Ibn Umar said: the Messenger of Allah ﷺ said: give the worker his wages before his sweat dries (Sunan Ibn Majah
+  // 2443).
+  "sign-pay-the-worker": [
+    ["When should a worker be paid?", "Before his sweat dries", "Before his sweat dries."],
+    ["Making a worker wait for his pay is good manners.", "False", "Before his sweat dries."]
+  ],
+  // Umar ibn al-Khattab said: the Messenger of Allah ﷺ said: season with olive oil and anoint yourselves with it, for
+  // it comes from a blessed tree (Sunan Ibn Majah 3319).
+  "sign-oil-from-a-blessed-tree": [
+    ["Why did he ﷺ praise olive oil?", "From a blessed tree", "Comes from a blessed tree."],
+    ["Besides eating it, what did he ﷺ say to do with it?", "Rub it on the body", "And anoint yourselves with it, for it"]
+  ],
+  // Jundub ibn Abdullah said: we were with the Prophet ﷺ, and we were strong youths, so we learned faith before we
+  // learned Quran. Then we learned Quran, and our faith increased thereby (Sunan Ibn Majah 61).
+  "sign-faith-then-the-quran": [
+    ["What did the young Companions learn before the Quran?", "Faith", "Faith before we learned Quran."],
+    ["What did learning the Quran do to their faith?", "Made it grow", "Increased thereby."],
+    ["Jundub and his friends were strong young men then.", "True", "We were strong youths, so we learned"]
+  ],
+  // Abu Umamah said: I came to the Messenger of Allah ﷺ and said: tell me of something that I may take from you. He
+  // said: take to fasting, for there is nothing like it (Sunan an-Nasa'i 2220).
+  "sign-nothing-like-fasting": [
+    ["What did he ﷺ tell Abu Umamah to take to?", "Fasting", "He said: take to fasting, for there"],
+    ["What is like fasting, he ﷺ told Abu Umamah?", "Nothing at all", "Is nothing like it."],
+    ["Abu Umamah asked him ﷺ for something to take and keep.", "True", "Allah and said: tell me of something", "That I may take from you."]
+  ],
+  // Anas ibn Malik said: Umm Sulaim came to the Prophet ﷺ and said: teach me some words that I may supplicate with
+  // during my prayer. He said: glorify Allah ten times, and praise Him ten times, and magnify Him ten times, then ask
+  // Him for what you need; He will say: yes, yes (Sunan an-Nasa'i 1299).
+  "sign-umm-sulaims-words": [
+    ["How many times is each one said, he ﷺ taught?", "Ten times each", "He said: glorify Allah ten times, and", "Praise ten times, and magnify ten times,"],
+    ["Who asked him ﷺ for words to say in her prayer?", "Umm Sulaim", "Anas: Umm Sulaim came to the Prophet"],
+    ["After the ten of each, she was told to ask for her needs.", "True", "Then ask for what you need."]
+  ],
+  // Abu Rifa'ah said: I came to the Messenger of Allah ﷺ while he was delivering a Khutbah, and said: O Messenger of
+  // Allah, a stranger has come to ask about his religion, for he does not know what his religion is. The Messenger of
+  // Allah ﷺ stopped delivering his Khutbah and turned to me. A chair was brought. The Messenger of Allah ﷺ sat down on
+  // it and started to teach me what Allah has taught him, then he went and completed his Khutbah (Sunan an-Nasa'i
+  // 5377).
+  "sign-a-stranger-asks": [
+    ["What was he ﷺ doing when the stranger came?", "Giving a khutbah", "Allah while he was delivering a Khutbah,"],
+    ["What did he ﷺ do for the man who did not know his religion?", "Stopped and taught him", "Allah stopped his Khutbah and turned to", "Teach me what Allah has taught him, then"],
+    ["After teaching him, he ﷺ finished his khutbah.", "True", "He went and completed his Khutbah."]
   ]
 };
 
