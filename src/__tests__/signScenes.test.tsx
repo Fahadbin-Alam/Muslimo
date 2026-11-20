@@ -935,7 +935,11 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-two-for-a-relative": [/\brelative\b/i, /\btwo\b/i, /\bties of kinship\b|\bfamily ties\b/i],
   "sign-whoever-leads-to-good": [/\bleads (someone )?to good\b/i, /\bthe one who does it\b/i, /\bride\b/i],
   "sign-under-the-protection": [/\bmorning prayer\b/i, /\bprotection\b/i, /\bSamurah\b/],
-  "sign-an-oath-not-a-claim": [/\bclaim(ed)?\b/i, /\boath\b/i, /\bIbn Abbas\b/]
+  "sign-an-oath-not-a-claim": [/\bclaim(ed)?\b/i, /\boath\b/i, /\bIbn Abbas\b/],
+  "sign-the-steps-of-bani-salama": [/\bBani Salama\b/, /\bsteps\b/i, /\bmasjid\b/i],
+  "sign-like-a-familys-joy": [/\bmasjid\b/i, /\bhappy\b/i, /\babsent one\b/i],
+  "sign-a-bucket-for-a-date": [/\bbucket\b/i, /\bdates?\b/i, /\bAli\b/],
+  "sign-nights-without-supper": [/\bsupper\b/i, /\bbarley bread\b/i, /\bnights in a row\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1807,7 +1811,11 @@ const SOURCES: Record<string, string[]> = {
   "sign-two-for-a-relative": ["Sunan an-Nasa'i 2582"],
   "sign-whoever-leads-to-good": ["Jami at-Tirmidhi 2670"],
   "sign-under-the-protection": ["Sunan Ibn Majah 3946"],
-  "sign-an-oath-not-a-claim": ["Sunan Ibn Majah 2321"]
+  "sign-an-oath-not-a-claim": ["Sunan Ibn Majah 2321"],
+  "sign-the-steps-of-bani-salama": ["Sahih al-Bukhari 1887"],
+  "sign-like-a-familys-joy": ["Sunan Ibn Majah 800"],
+  "sign-a-bucket-for-a-date": ["Sunan Ibn Majah 2447"],
+  "sign-nights-without-supper": ["Jami at-Tirmidhi 2360"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1831,7 +1839,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(2005);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(2009);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -40020,6 +40028,183 @@ describe("the signs in creation, alive", () => {
         [18, 0]
       ]
     ]);
+  });
+
+  test("the scenes from the steps of Bani Salama to nights without supper show each moment in its order, and draw no Prophet, no Companion, no person, no hand and no face", () => {
+    const stepsScenes: SignKind[] = ["the-steps-of-bani-salama", "like-a-familys-joy", "a-bucket-for-a-date", "nights-without-supper"];
+    for (const kind of stepsScenes) {
+      for (const each of signArt(kind).parts) {
+        const person =
+          /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|faces?|hands?|fingers?|arms?|feet|foot|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+        expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+      }
+      // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky: a deed is a spark that rises.
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => /\b(rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+      expect([
+        kind,
+        signArt(kind)
+          .parts.filter((each) => each.loop?.move === "fall")
+          .map((each) => each.name)
+      ]).toEqual([kind, []]);
+    }
+    const words = (kind: SignKind) => signArt(kind).words.map((word) => word.text);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (kind: SignKind, name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The steps of Bani Salama, and no one is drawn: the masjid of Madinah on the left, with his place before it, and
+    // Anas's place; on the right, far off, the old homes of Bani Salama with their places. Anas's voice tells of it, and
+    // faint rings show near the masjid: where they wished to move. His voice speaks. One of their places goes along the
+    // land to the masjid, its steps showing behind it one after another, and a glint comes over each step: rewarded.
+    // Then it goes back to its home, the faint rings go, and a soft golden ring comes about each of their places.
+    expect(words("the-steps-of-bani-salama")).toEqual([
+      "Anas: Bani Salama intended to shift near",
+      "The mosque but Allah's Messenger disliked",
+      "To see Madinah vacated and said: O the",
+      "People of Bani Salama! Don't you think",
+      "That you will be rewarded for your",
+      "Footsteps you take towards the mosque?",
+      "So, they stayed at their old places."
+    ]);
+    const walker = "the place of one of Bani Salama, going to the masjid and back to its home";
+    expect([
+      [at("the-steps-of-bani-salama", "Anas's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("the-steps-of-bani-salama", "where Bani Salama wished to move, near the masjid: faint rings", "opacity", [0.07, 0.09])],
+      [at("the-steps-of-bani-salama", "his voice, soft and golden", "opacity", [0.38, 0.386, 0.8, 0.806])],
+      [
+        at("the-steps-of-bani-salama", walker, "x", [0.588, 0.672]),
+        at("the-steps-of-bani-salama", "a step towards the masjid 1", "opacity", [0.601, 0.607]),
+        at("the-steps-of-bani-salama", "a step towards the masjid 8", "opacity", [0.662, 0.668])
+      ],
+      [at("the-steps-of-bani-salama", "rewarded: a glint over a step 1", "opacity", [0.73, 0.736]), at("the-steps-of-bani-salama", "rewarded: a glint over a step 8", "opacity", [0.8, 0.806])],
+      [
+        at("the-steps-of-bani-salama", walker, "x", [0.87, 0.95]),
+        at("the-steps-of-bani-salama", "where Bani Salama wished to move, near the masjid: faint rings", "opacity", [0.87, 0.89]),
+        at("the-steps-of-bani-salama", "they stayed at their old places: a soft golden ring about each 2", "opacity", [0.952, 0.966])
+      ]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 0.5]
+      ],
+      [[0, 1, 1, 0]],
+      [
+        [0, -88],
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [-88, 0],
+        [0.5, 0],
+        [0, 1]
+      ]
+    ]);
+    // Like a family's joy: the masjid of Madinah on the left, with his place and Abu Hurairah's; the home of a Muslim,
+    // and on the right the home of a family. Abu Hurairah's voice tells of it, and his voice speaks. The place of the
+    // Muslim goes from its home to the masjid, and a soft light comes at the door of the masjid: prayer and remembrance.
+    // A soft golden ring comes about its place, with glints over it. The places of the family show by their home, and
+    // far off the place of their absent one; it comes back to them, and a soft light and glints come over them.
+    expect(words("like-a-familys-joy")).toEqual([
+      "Abu Hurairah: he said: a Muslim does not",
+      "Regularly attend the mosques to perform",
+      "Prayer and remember Allah, but Allah",
+      "Feels happy with the Muslim just as the",
+      "Family of one who is absent feels happy",
+      "When the absent one comes back to them."
+    ]);
+    const absent = "the place of the one who is absent, far off, coming back to them";
+    expect([
+      [at("like-a-familys-joy", "Abu Hurairah's voice: telling of it", "opacity", [0.02, 0.026, 0.06, 0.066]), at("like-a-familys-joy", "his voice, soft and golden", "opacity", [0.07, 0.076, 0.96, 0.966])],
+      [at("like-a-familys-joy", "the place of the Muslim, going to the masjid", "x", [0.18, 0.26]), at("like-a-familys-joy", "prayer and remembrance: a soft light at the door of the masjid", "opacity", [0.34, 0.36])],
+      [at("like-a-familys-joy", "happy with the Muslim: a soft golden ring about its place", "opacity", [0.5, 0.52]), at("like-a-familys-joy", "and glints over it", "opacity", [0.55, 0.56])],
+      [at("like-a-familys-joy", "the place of one of the family 2", "opacity", [0.66, 0.68]), at("like-a-familys-joy", absent, "opacity", [0.7, 0.72]), at("like-a-familys-joy", absent, "x", [0.82, 0.9])],
+      [at("like-a-familys-joy", "the family's joy: a soft light about their places", "opacity", [0.91, 0.93]), at("like-a-familys-joy", "and glints over them", "opacity", [0.93, 0.94])]
+    ]).toEqual([
+      [
+        [0, 1, 1, 0],
+        [0, 1, 1, 0]
+      ],
+      [
+        [0, -37.2],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1],
+        [0, -32]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // A bucket for a date: a well of stones among palms, with a frame of wood, a wheel, a rope and a bucket; Ali's place
+    // by it, and a dish. Ali's voice tells of it. The bucket goes down into the well and comes up full, three times, and
+    // each time it comes up a date shows on the dish. Then a soft light comes about the dates, with glints: good quality.
+    expect(words("a-bucket-for-a-date")).toEqual(["Ali: I used to draw water, one bucket for", "A date, and I stipulated that they should", "Be good quality, dried dates."]);
+    const bucket = "the bucket, going down into the well and coming up full";
+    expect([
+      [at("a-bucket-for-a-date", "Ali's voice: telling of it", "opacity", [0.02, 0.026, 0.96, 0.966])],
+      [at("a-bucket-for-a-date", bucket, "y", [0.05, 0.09, 0.1, 0.15]), at("a-bucket-for-a-date", "the rope, going down and up", "scaleY", [0.05, 0.09, 0.1, 0.15]), at("a-bucket-for-a-date", "a date for a bucket 1", "opacity", [0.155, 0.163])],
+      [at("a-bucket-for-a-date", bucket, "y", [0.17, 0.21, 0.22, 0.27]), at("a-bucket-for-a-date", "a date for a bucket 2", "opacity", [0.275, 0.283])],
+      [at("a-bucket-for-a-date", bucket, "y", [0.34, 0.38, 0.39, 0.44]), at("a-bucket-for-a-date", "a date for a bucket 3", "opacity", [0.445, 0.453])],
+      [at("a-bucket-for-a-date", "good quality: a soft light about the dates", "opacity", [0.68, 0.7]), at("a-bucket-for-a-date", "and glints over them", "opacity", [0.72, 0.73])]
+    ]).toEqual([
+      [[0, 1, 1, 0]],
+      [
+        [0, 10, 10, 0],
+        [1, 2.515, 2.515, 1],
+        [0, 1]
+      ],
+      [
+        [0, 10, 10, 0],
+        [0, 1]
+      ],
+      [
+        [0, 10, 10, 0],
+        [0, 1]
+      ],
+      [
+        [0, 1],
+        [0, 1]
+      ]
+    ]);
+    // Nights without supper: it is night over Madinah, with stars, dark hills and dark homes; his home, with his place at
+    // its door and the places of his family by it; Ibn Abbas's place on the left. Ibn Abbas's voice tells of it. The moon
+    // goes over the sky, night after night, three times. Then an empty dish shows before their places: no supper; then
+    // loaves of barley bread show by it. No sun is drawn, and no lamp is lit.
+    expect(words("nights-without-supper")).toEqual(["Ibn Abbas: the Messenger of Allah", "Would spend many consecutive nights", "And his family did not have supper,", "And most of the time their bread was", "Barley bread."]);
+    const moon = "the moon, going over the sky: night after night";
+    expect([
+      [at("nights-without-supper", "Ibn Abbas's voice: telling of it", "opacity", [0.02, 0.026, 0.96, 0.966])],
+      [at("nights-without-supper", moon, "x", [0.09, 0.128, 0.165, 0.167]), at("nights-without-supper", moon, "opacity", [0.09, 0.1, 0.155, 0.165])],
+      [at("nights-without-supper", moon, "x", [0.22, 0.255, 0.29, 0.292, 0.295, 0.33, 0.365]), at("nights-without-supper", moon, "opacity", [0.22, 0.23, 0.28, 0.29, 0.295, 0.305, 0.355, 0.365])],
+      [at("nights-without-supper", "no supper: an empty dish before their places", "opacity", [0.42, 0.44])],
+      [at("nights-without-supper", "their bread: loaves of barley bread", "opacity", [0.81, 0.83])]
+    ]).toEqual([
+      [[0, 1, 1, 0]],
+      [
+        [66, 0, -66, 66],
+        [0, 1, 1, 0]
+      ],
+      [
+        [66, 0, -66, 66, 66, 0, -66],
+        [0, 1, 1, 0, 0, 1, 1, 0]
+      ],
+      [[0, 1]],
+      [[0, 1]]
+    ]);
+    expect(signArt("nights-without-supper").parts.filter((each) => /\b(sun|lamp)\b/i.test(each.name))).toEqual([]);
   });
 
   test("every word and caption is translated in every language", () => {

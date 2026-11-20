@@ -1234,7 +1234,11 @@ export type SignKind =
   | "two-for-a-relative"
   | "whoever-leads-to-good"
   | "under-the-protection"
-  | "an-oath-not-a-claim";
+  | "an-oath-not-a-claim"
+  | "the-steps-of-bani-salama"
+  | "like-a-familys-joy"
+  | "a-bucket-for-a-date"
+  | "nights-without-supper";
 
 export type SignScene = {
   id: string;
@@ -7230,6 +7234,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Ibn Abbas said: the Messenger of Allah ﷺ said: if the people were given what they claimed, some would have claimed the lives and property of men. But the one the claim is made against is obliged to swear an oath.",
     sources: [ibnMajah("2321")]
+  },
+  {
+    id: "sign-the-steps-of-bani-salama",
+    kind: "the-steps-of-bani-salama",
+    caption:
+      "Anas ibn Malik said: Bani Salama intended to move near the mosque, but the Messenger of Allah ﷺ disliked to see Madinah vacated and said: O people of Bani Salama, don't you think that you will be rewarded for your footsteps which you take towards the mosque? So they stayed at their old places.",
+    sources: [bukhari("1887")]
+  },
+  {
+    id: "sign-like-a-familys-joy",
+    kind: "like-a-familys-joy",
+    caption:
+      "Abu Hurairah said: the Prophet ﷺ said: a Muslim does not regularly attend the mosques to perform prayer and remember Allah, but Allah feels happy with him, just as the family of one who is absent feels happy when he comes back to them.",
+    sources: [ibnMajah("800")]
+  },
+  {
+    id: "sign-a-bucket-for-a-date",
+    kind: "a-bucket-for-a-date",
+    caption:
+      "Ali ibn Abi Talib said: I used to draw water, one bucket for a date, and I stipulated that they should be good quality, dried dates.",
+    sources: [ibnMajah("2447")]
+  },
+  {
+    id: "sign-nights-without-supper",
+    kind: "nights-without-supper",
+    caption:
+      "Ibn Abbas said: the Messenger of Allah ﷺ would spend many consecutive nights while his family did not have supper, and most of the time their bread was barley bread.",
+    sources: [tirmidhi("2360")]
   }
 ];
 
@@ -10295,7 +10327,15 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Under Allah's protection: whoever offers the morning prayer is under the protection of Allah.
   "deep-intro-short-words-to-live-by-under-allahs-protection": "sign-under-the-protection",
   // More than a claim: people are not given what they claim; the one the claim is made against must swear an oath.
-  "deep-manners-judging-fairly-more-than-a-claim": "sign-an-oath-not-a-claim"
+  "deep-manners-judging-fairly-more-than-a-claim": "sign-an-oath-not-a-claim",
+  // The steps of Bani Salama: each step to the masjid is rewarded, so Bani Salama stayed at their old homes.
+  "deep-pray-reward-the-steps-of-bani-salama": "sign-the-steps-of-bani-salama",
+  // Like a family's joy: Allah is happy with the one who keeps coming to the masjid, as a family whose absent one returns.
+  "deep-pray-reward-like-a-familys-joy": "sign-like-a-familys-joy",
+  // A bucket for a date: Ali drew water, one bucket for one good, dried date.
+  "deep-ali-a-bucket-for-a-date": "sign-a-bucket-for-a-date",
+  // Nights without supper: many nights in a row his ﷺ family had no supper, and their bread was mostly barley bread.
+  "deep-found-foods-he-ate-nights-without-supper": "sign-nights-without-supper"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

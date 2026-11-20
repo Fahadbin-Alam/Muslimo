@@ -8089,6 +8089,36 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What would happen if people got whatever they claimed?", "Some would claim others' lives", "Given what they claimed, some would have", "Claimed the lives and property of men."],
     ["Who must swear an oath, he ﷺ said?", "The one the claim is against", "But the one the claim is made against is", "Obliged to swear an oath."],
     ["A claim alone is enough to take a man's property.", "False", "But the one the claim is made against is", "Obliged to swear an oath."]
+  ],
+  // Anas said: Bani Salama intended to shift near the mosque, but the Messenger of Allah ﷺ disliked to see Madinah
+  // vacated and said: O people of Bani Salama, don't you think that you will be rewarded for your footsteps which you
+  // take towards the mosque? So they stayed at their old places (Sahih al-Bukhari 1887).
+  "sign-the-steps-of-bani-salama": [
+    ["Where did Bani Salama want to move?", "Near the masjid", "Anas: Bani Salama intended to shift near", "The mosque but Allah's Messenger disliked"],
+    ["What did he ﷺ say Bani Salama are rewarded for?", "Their steps to the masjid", "That you will be rewarded for your", "Footsteps you take towards the mosque?"],
+    ["Bani Salama stayed in their old homes.", "True", "So, they stayed at their old places."]
+  ],
+  // Abu Hurairah said: the Prophet ﷺ said: a Muslim does not regularly attend the mosques to perform prayer and remember
+  // Allah, but Allah feels happy with him, just as the family of one who is absent feels happy when he comes back to
+  // them (Sunan Ibn Majah 800). The true or false waits before the third line, whose Arabic already says Allah is happy.
+  "sign-like-a-familys-joy": [
+    ["Why does the regular masjid-goer keep coming, he ﷺ said?", "To pray and remember Allah", "Regularly attend the mosques to perform", "Prayer and remember Allah, but Allah"],
+    ["Allah's happiness with him is like whose joy?", "A family whose absent one returns", "Family of one who is absent feels happy", "When the absent one comes back to them."],
+    ["Allah is happy with the one who keeps coming to the masjid.", "True", "Prayer and remember Allah, but Allah", "Feels happy with the Muslim just as the"]
+  ],
+  // Ali said: I used to draw water, one bucket for a date, and I stipulated that they should be good quality, dried
+  // dates (Sunan Ibn Majah 2447).
+  "sign-a-bucket-for-a-date": [
+    ["What did Ali get for each bucket of water?", "One date", "Ali: I used to draw water, one bucket for", "A date, and I stipulated that they should"],
+    ["What kind of dates did Ali ask for?", "Good dried dates", "Be good quality, dried dates."],
+    ["Ali drew water to earn dates.", "True", "Ali: I used to draw water, one bucket for", "A date, and I stipulated that they should"]
+  ],
+  // Ibn Abbas said: the Messenger of Allah ﷺ would spend many consecutive nights while his family did not have supper,
+  // and most of the time their bread was barley bread (Jami at-Tirmidhi 2360).
+  "sign-nights-without-supper": [
+    ["What did his ﷺ family often go without, many nights in a row?", "Supper", "And his family did not have supper,"],
+    ["What was their bread most of the time?", "Barley bread", "Barley bread."],
+    ["His ﷺ family always had plenty of food for supper.", "False", "And his family did not have supper,"]
   ]
 };
 

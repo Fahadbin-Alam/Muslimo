@@ -2,15 +2,16 @@ import { hadith, type DeepUnit } from "./deepKit";
 
 // One more Foundations unit: foods he ﷺ ate, from Sunan Abi Dawud, Sahih al-Bukhari and Jami at-Tirmidhi. Melon with
 // fresh dates, fresh dates with cucumber, chicken, cheese at Tabuk cut after saying Allah's name, butter and dates on a
-// visit, and old dates looked over before eating. Every card is one sahih or hasan hadith with its number, narrator and
-// grade, and its exact English words to highlight. Points the schools differ on are left out, and none of these hadith
-// is taught anywhere else in the app.
+// visit, old dates looked over before eating, and many nights in a row when his ﷺ family had no supper and their bread
+// was mostly barley bread. Every card is one sahih or hasan hadith with its number, narrator and grade, and its exact
+// English words to highlight. Points the schools differ on are left out, and none of these hadith is taught anywhere
+// else in the app.
 
 const FOODS: DeepUnit = {
   key: "found-foods-he-ate",
   topicId: "foundation",
   branchId: "foundation-foods-he-ate",
-  branch: { title: "Foods he ﷺ ate", description: "Melon and cucumber with fresh dates, chicken, cheese at Tabuk, butter and dates, and old dates looked over." },
+  branch: { title: "Foods he ﷺ ate", description: "Melon and cucumber with fresh dates, chicken, cheese at Tabuk, butter and dates, old dates looked over, and nights without supper." },
   name: "foods he ﷺ ate",
   kind: "skill",
   lessonType: "skill",
@@ -91,6 +92,19 @@ const FOODS: DeepUnit = {
         { q: "Who told how he ﷺ looked over old dates?", a: "Anas ibn Malik", wrong: ["Abu Bakrah", "Ka'b ibn Malik", "Usamah ibn Zayd"], why: "Anas ibn Malik told it, in Sunan Abi Dawud 3832, graded sahih by Al-Albani." },
         { q: "What did he ﷺ take out of the old dates?", a: "The worms", wrong: ["The sand", "The salt", "The honey"], why: "He began to examine them and remove the worms from them, Anas said." },
         { q: "When old dates were brought, he ﷺ looked them over.", tf: true, why: "When he ﷺ was brought some old dates, he began to examine them, Anas said." }
+      ]
+    },
+    {
+      slug: "nights-without-supper",
+      title: "Nights without supper",
+      line: "Many nights in a row, his ﷺ family had no supper.",
+      facts: ["Told by Ibn Abbas", "Their bread was mostly barley bread"],
+      source: hadith("tirmidhi", "2360", "Ibn Abbas", "Sahih (Darussalam)", "Ibn Abbas said: the Messenger of Allah ﷺ would spend many nights in a row while his family had no supper, and most of the time their bread was barley bread.", "would spend many consecutive nights and his family did not have supper"),
+      difficulty: 2,
+      questions: [
+        { q: "What did his ﷺ family often go without, many nights in a row?", a: "Supper", wrong: ["Sleep", "Their clothes", "Their home"], why: "Many nights in a row his ﷺ family did not have supper, Ibn Abbas said." },
+        { q: "What was their bread most of the time?", a: "Barley bread", wrong: ["White wheat bread", "Sweet honey cakes", "Rice"], why: "His ﷺ family often had no supper, and their bread was mostly barley, Ibn Abbas said." },
+        { q: "His ﷺ family always had plenty of food for supper.", tf: false, why: "No. Many nights in a row his ﷺ family did not have supper, Ibn Abbas said." }
       ]
     }
   ]
