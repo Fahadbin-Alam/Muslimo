@@ -1242,7 +1242,8 @@ export type SignKind =
   | "the-black-arak-fruit"
   | "praying-and-sleeping"
   | "riches-with-piety"
-  | "feather-in-the-wind";
+  | "feather-in-the-wind"
+  | "the-truth-you-know";
 
 export type SignScene = {
   id: string;
@@ -7294,6 +7295,13 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Musa al-Ash'ari said: the Messenger of Allah ﷺ said: the likeness of the heart is that of a feather blown about by the wind in the desert.",
     sources: [ibnMajah("88")]
+  },
+  {
+    id: "sign-the-truth-you-know",
+    kind: "the-truth-you-know",
+    caption:
+      "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ stood up to deliver a sermon, and one of the things he said was: fear of people should not prevent a man from speaking the truth, if he knows it.",
+    sources: [ibnMajah("4007")]
   }
 ];
 
@@ -10375,7 +10383,9 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Riches with piety: no harm in riches for one who has piety, but good health is better, and good cheer a blessing.
   "deep-zakat-wise-wealth-riches-with-piety": "sign-riches-with-piety",
   // A feather in the wind: the heart is like a feather that the wind blows about in the desert.
-  "deep-aqidah-steady-on-the-path-a-feather-in-the-wind": "sign-feather-in-the-wind"
+  "deep-aqidah-steady-on-the-path-a-feather-in-the-wind": "sign-feather-in-the-wind",
+  // The truth you know: fear of people should not stop a man from speaking the truth, if he knows it.
+  "deep-manners-words-of-a-believer-the-truth-you-know": "sign-the-truth-you-know"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
