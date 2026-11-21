@@ -3,6 +3,7 @@ import { Platform } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import TopicApp from "./src/TopicApp";
 import { hydrateAppStorage } from "./src/services/appStorage";
+import { prepareStartLanguage } from "./src/services/startLanguage";
 import { installWebAlert } from "./src/services/webAlert";
 import { PhoneFrame, useAppFonts } from "./src/ui";
 import Gallery from "./src/ui/gallery/Gallery";
@@ -19,7 +20,11 @@ export default function App() {
   const fontsReady = useAppFonts();
 
   useEffect(() => {
-    void hydrateAppStorage().then(() => setStorageReady(true));
+    // The learner's language's lesson text is a file of its own, read before the first screen (startLanguage.ts).
+    void hydrateAppStorage()
+      .then(() => prepareStartLanguage())
+      .catch(() => undefined)
+      .then(() => setStorageReady(true));
   }, []);
 
   if (!fontsReady) {

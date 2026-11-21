@@ -77,6 +77,9 @@
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/scripts/jest/setup.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "^(\\.\\./translations|\\.)/contentFiles$": "<rootDir>/src/translations/contentFiles.jest.ts"
+    }
   }
 }

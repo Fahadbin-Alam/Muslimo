@@ -300,6 +300,7 @@ import { addToAlbum, albumPictureIds, useAlbum } from "./services/pictureAlbum";
 import { setsFinishedBy, type AlbumSet } from "./data/albumSets";
 import { isUpdateAvailable, openStore } from "./services/appUpdate";
 import { maybeAskForRating } from "./services/ratingPrompt";
+import { ensureLanguage, isLanguageReady } from "./translations";
 import { attemptOrder, ExerciseView, LearnCard, LessonComplete, LessonScreen, OrderGame, HarderSheet, QuitSheet, QuizComplete, isPlayablePractice, lessonStars } from "./ui/lesson";
 import { getBranchArabic, getLessonArabic, getNodeArabic, getTopicArabic, isFirstUseOfWord, surahArabicName } from "./data/arabicTerms";
 import { questionSource, shortReference } from "./services/questionSource";
@@ -1142,7 +1143,25 @@ export default function TopicApp() {
   }, [activeAssessment, assessmentOwnerKey, practiceResult, state.loading]);
 
 
-  const currentLanguage = normalizeLanguage(state.user?.preferredLanguage ?? startLanguage);
+  // A language's lesson text is read from its own file (src/translations/index.ts): until a newly picked one is
+  // ready, the app stays in the language it was showing, then switches all at once.
+  const wantedLanguage = normalizeLanguage(state.user?.preferredLanguage ?? startLanguage);
+  const shownLanguageRef = useRef<SupportedLanguage>(DEFAULT_LANGUAGE);
+  const [, setLanguageFilesRead] = useState(0);
+  if (isLanguageReady(wantedLanguage)) {
+    shownLanguageRef.current = wantedLanguage;
+  }
+  const currentLanguage = shownLanguageRef.current;
+  useEffect(() => {
+    if (isLanguageReady(wantedLanguage)) return;
+    let live = true;
+    void ensureLanguage(wantedLanguage).then((ready) => {
+      if (live && ready) setLanguageFilesRead((count) => count + 1);
+    });
+    return () => {
+      live = false;
+    };
+  }, [wantedLanguage]);
   // t() reads the active language, so set it before any child renders.
   setActiveLanguage(currentLanguage);
   const strings = useMemo(() => getUiStrings(currentLanguage), [currentLanguage]);
