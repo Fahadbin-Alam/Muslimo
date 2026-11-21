@@ -131,3 +131,38 @@ def test_client_sync_is_blocked_in_production(client, auth_headers, monkeypatch)
     )
 
     assert response.status_code == 403
+
+
+def test_store_products_map_to_plans_and_unknown_ones_to_nothing():
+    from backend.app.core.subscriptions import plan_for_store_product
+
+    assert plan_for_store_product("membership_yearly:yearly") == "premium_yearly"
+    assert plan_for_store_product("no_ads_monthly") == "no_ads_monthly"
+    assert plan_for_store_product("membership_lifetime") is None
+    assert plan_for_store_product("") is None
+    assert plan_for_store_product(None) is None
+
+
+def test_an_unknown_product_grants_nothing_and_is_logged(client, auth_headers, webhook_secret, caplog):
+    user_id = me(client, auth_headers)["id"]
+
+    with caplog.at_level("WARNING", logger="backend.app.api.routes.subscriptions"):
+        response = send(client, user_id, "INITIAL_PURCHASE", product_id="membership_lifetime")
+
+    assert response.status_code == 200
+    assert response.json() == {"ok": True, "applied": False}
+    user = me(client, auth_headers)
+    assert user["activeSubscriptionId"] is None
+    assert user["hearts"]["unlimited"] is False
+    assert client.get("/api/subscriptions/entitlements", headers=auth_headers).json() == []
+    assert any("membership_lifetime" in record.getMessage() for record in caplog.records)
+
+
+def test_a_change_to_an_unknown_product_keeps_the_current_plan(client, auth_headers, webhook_secret):
+    user_id = me(client, auth_headers)["id"]
+    send(client, user_id, "INITIAL_PURCHASE", product_id="no_ads_monthly:monthly", entitlement_ids=["no_ads"])
+
+    changed = send(client, user_id, "PRODUCT_CHANGE", product_id="no_ads_monthly:monthly", new_product_id="mystery_plan")
+
+    assert changed.json() == {"ok": True, "applied": False}
+    assert me(client, auth_headers)["activeSubscriptionId"] == "no_ads_monthly"

@@ -392,6 +392,32 @@ def parse_timestamp(value: Any) -> Optional[datetime]:
     return as_utc(parsed)
 
 
+# Postgres INTEGER columns hold at most this; a bigger number (or a string) failed the whole save with a 500.
+# SQLite stores anything, which is why the tests never caught it.
+INT_COLUMN_MAX = 2_147_483_647
+ACCOUNT_ROLES = {"child", "parent"}
+
+
+def clean_int(value: Any, fallback: int) -> int:
+    """A whole number from the app that is not negative and fits an INTEGER column; anything else keeps `fallback`."""
+    return value if isinstance(value, int) and not isinstance(value, bool) and 0 <= value <= INT_COLUMN_MAX else fallback
+
+
+def clean_bool(value: Any, fallback: bool) -> bool:
+    return value if isinstance(value, bool) else fallback
+
+
+def clean_text(value: Any, fallback: Optional[str], max_length: int) -> Optional[str]:
+    """A non-empty string that fits its String(n) column; anything else keeps `fallback`."""
+    return value if isinstance(value, str) and 0 < len(value) <= max_length else fallback
+
+
+def clean_dict(value: Any, fallback: Any) -> Dict[str, Any]:
+    # An empty dict keeps the saved one, as before. A list or string is refused: the session payload reads these
+    # back as objects, and one bad save would have failed every later /api/session for that account.
+    return value if isinstance(value, dict) and value else (fallback if isinstance(fallback, dict) else {})
+
+
 def clean_display_name(value: Any) -> Optional[str]:
     if not isinstance(value, str):
         return None
@@ -415,20 +441,29 @@ def apply_frontend_state(user: User, snapshot: Dict[str, Any], *, social_hub: Op
     joined, stars and total XP keep the higher number, and an older streak or league week never replaces a newer one.
     Spendable things (gems, hearts) and settings take the latest copy.
     """
-    hearts = snapshot.get("hearts") or {}
+    # Every value that lands in a typed column is checked first: a wrong type or an out-of-range number keeps the
+    # saved value instead of failing the save (see clean_int and friends above).
+    hearts = snapshot.get("hearts")
+    hearts = hearts if isinstance(hearts, dict) else {}
     user.display_name = clean_display_name(snapshot.get("displayName")) or user.display_name
     # The username is the server's (it is unique, e.g. ali2); the app's own guess from the email is never taken.
-    user.account_role = snapshot.get("accountRole") or user.account_role
-    user.preferred_language = snapshot.get("preferredLanguage") or user.preferred_language
-    user.sound_enabled = snapshot.get("soundEffectsEnabled", user.sound_enabled)
-    user.reduced_sound = snapshot.get("reducedSoundEffects", user.reduced_sound)
-    user.skipped_foundation = snapshot.get("foundationAssessmentSkipped", user.skipped_foundation)
-    user.review_heart_restore_used = snapshot.get("reviewHeartRestoreUsed", user.review_heart_restore_used)
+    role = snapshot.get("accountRole")
+    user.account_role = role if role in ACCOUNT_ROLES else user.account_role
+    user.preferred_language = clean_text(snapshot.get("preferredLanguage"), user.preferred_language, 16)
+    user.sound_enabled = clean_bool(snapshot.get("soundEffectsEnabled"), user.sound_enabled)
+    user.reduced_sound = clean_bool(snapshot.get("reducedSoundEffects"), user.reduced_sound)
+    user.skipped_foundation = clean_bool(snapshot.get("foundationAssessmentSkipped"), user.skipped_foundation)
+    user.review_heart_restore_used = clean_bool(snapshot.get("reviewHeartRestoreUsed"), user.review_heart_restore_used)
     phone_streak_date = snapshot.get("lastStreakDate")
     server_streak_date = user.last_streak_date
     if not (isinstance(phone_streak_date, str) and isinstance(server_streak_date, str) and phone_streak_date[:10] < server_streak_date[:10]):
-        user.streak_days = snapshot.get("streakDays", user.streak_days)
-        user.last_streak_date = snapshot.get("lastStreakDate", user.last_streak_date)
+        user.streak_days = clean_int(snapshot.get("streakDays"), user.streak_days)
+        if "lastStreakDate" in snapshot:
+            # null clears the date (a reset streak); a malformed one keeps the saved date.
+            if phone_streak_date is None:
+                user.last_streak_date = None
+            elif parse_local_date(phone_streak_date):
+                user.last_streak_date = phone_streak_date[:10]
     phone_total = snapshot.get("totalXp")
     if isinstance(phone_total, int) and not isinstance(phone_total, bool):
         user.total_xp = max(min(phone_total, max_total_xp(user)), user.total_xp or 0)
@@ -437,13 +472,13 @@ def apply_frontend_state(user: User, snapshot: Dict[str, Any], *, social_hub: Op
     refill_date = parse_local_date(hearts.get("lastRefillDate"))
     if refill_date:
         user.last_heart_refill_at = refill_date
-    user.daily_goal_xp = snapshot.get("dailyGoalXp", user.daily_goal_xp)
-    user.gems = snapshot.get("gems", user.gems)
-    user.hearts_current = hearts.get("current", user.hearts_current)
-    user.hearts_max = hearts.get("max", user.hearts_max)
+    user.daily_goal_xp = clean_int(snapshot.get("dailyGoalXp"), user.daily_goal_xp)
+    user.gems = clean_int(snapshot.get("gems"), user.gems)
+    user.hearts_current = clean_int(hearts.get("current"), user.hearts_current)
+    user.hearts_max = clean_int(hearts.get("max"), user.hearts_max)
     # Unlimited hearts come only from a paid plan the store confirmed (the webhook), never from the app's copy.
-    user.reminder_preferences_json = snapshot.get("reminderPreferences") or user.reminder_preferences_json or {}
-    user.learner_profile_json = snapshot.get("learnerProfile") or user.learner_profile_json or {}
+    user.reminder_preferences_json = clean_dict(snapshot.get("reminderPreferences"), user.reminder_preferences_json)
+    user.learner_profile_json = clean_dict(snapshot.get("learnerProfile"), user.learner_profile_json)
     user.completed_lesson_ids_json = union_ids(user.completed_lesson_ids_json, snapshot.get("completedLessonIds"))
     user.completed_node_ids_json = union_ids(user.completed_node_ids_json, snapshot.get("completedNodeIds"))
     user.claimed_reward_ids_json = union_ids(user.claimed_reward_ids_json, snapshot.get("claimedRewardIds"))

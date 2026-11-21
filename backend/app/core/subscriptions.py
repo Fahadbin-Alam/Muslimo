@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 
 SUBSCRIPTION_PLANS: List[Dict[str, Any]] = [
@@ -87,9 +87,10 @@ STORE_PRODUCT_PLANS: Dict[str, str] = {
 }
 
 
-def plan_for_store_product(product_id: str | None) -> str:
+def plan_for_store_product(product_id: str | None) -> Optional[str]:
+    """The plan a store product buys, or None for a product not listed above, which must grant nothing."""
     base_id = (product_id or "").split(":", 1)[0]
-    return STORE_PRODUCT_PLANS.get(base_id, "premium_monthly")
+    return STORE_PRODUCT_PLANS.get(base_id)
 
 
 def entitlement_for_plan(plan_id: str | None) -> str:
