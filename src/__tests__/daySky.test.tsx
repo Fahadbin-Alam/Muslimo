@@ -223,7 +223,7 @@ describe("each prayer's time in the sky: its data", () => {
   });
 
   test("every lesson with a sky is a real lesson about that time, and opens on it", () => {
-    expect(Object.keys(DAY_SKY_LESSONS).length).toBe(233);
+    expect(Object.keys(DAY_SKY_LESSONS).length).toBe(232);
     for (const [nodeId, id] of Object.entries(DAY_SKY_LESSONS)) {
       const lesson = LESSONS_BY_ID[`lesson-${nodeId}`] as Lesson | undefined;
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);

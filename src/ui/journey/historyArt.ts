@@ -218,7 +218,7 @@ function elephant(): SignArt {
 }
 
 /** A camel of the caravan with its load, its box's corner at (x, y), `s` times a card's camel; `left`: facing left. */
-function loaded(x: number, y: number, s: number, left: boolean) {
+export function loaded(x: number, y: number, s: number, left: boolean) {
   const hump = left ? x + 100 * s - 40 * s : x + 40 * s;
   const top = y + 26 * s;
   return (

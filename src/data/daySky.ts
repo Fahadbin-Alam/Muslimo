@@ -524,7 +524,6 @@ export const DAY_SKY_LESSONS: Record<string, string> = {
   "deep-prayer-night-sunnahs-wake-the-sleepers": "sky-night-prayer",
   "deep-prayer-night-sunnahs-sleep-early-rise-late": "sky-night-prayer",
   "deep-prayer-night-sunnahs-sitting-then-standing": "sky-night-prayer",
-  "deep-prayer-night-sunnahs-a-middle-voice": "sky-night-prayer",
   "deep-prayer-night-sunnahs-loud-or-quiet": "sky-night-prayer",
   "deep-prayer-night-sunnahs-final-quiz": "sky-night-prayer",
   "deep-book-night-prayer-a-deed-done-always": "sky-night-prayer",
