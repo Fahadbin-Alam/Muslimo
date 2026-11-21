@@ -366,6 +366,7 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What happened to Qarun?", "The earth swallowed him", "The earth swallowed Qarun and his home"],
     ["What happened to Qarun, in 28:81?", "The earth swallowed him", "The earth swallowed Qarun and his home"],
     ["Could his wealth save him?", "No, it could not", "The earth swallowed Qarun and his home"],
+    ["Did their wealth save them, per Ibn Kathir?", "No", "The earth swallowed Qarun and his home"],
     ["No group could help him against Allah.", "True", "No one could help Qarun"]
   ],
   // The well of Madyan: two women holding back their flock, Musa watering for them, then his call in the shade (28:23, 28:24).
@@ -768,6 +769,7 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // The water we drink (56:68 to 56:70).
   "sign-water": [
+    ["What could Allah make the water, in 56:70?", "Salty", "Sweet, not salty"],
     ["What does 56:70 ask at the end?", "Why do you not give thanks?", "So give thanks"]
   ],
   // The shade, the sun its guide (25:45).

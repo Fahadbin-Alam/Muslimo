@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3881);
+    expect(asks.length).toBe(3883);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -155,7 +155,7 @@ describe("which questions are asked on a scene", () => {
     // hangs over each open door and what the plant does when the wind stops. Every one of them is still asked in its own
     // lesson. "Words of a believer" now has seven lessons, so it gets a review card, and its final quiz asks one question
     // from each lesson, among them what should not stop a man from speaking the truth.
-    expect(places).toBe(5650);
+    expect(places).toBe(5652);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
