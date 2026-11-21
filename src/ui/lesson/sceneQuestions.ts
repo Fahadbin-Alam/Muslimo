@@ -8220,7 +8220,38 @@ const ASKS: Record<string, readonly Ask[]> = {
   "sign-make-them-laugh": [
     ["How were the man's parents when he left home?", "They were weeping", "On emigration, and I left my parents", "Weeping. He said: return to them"],
     ["What did he ﷺ tell the man to do?", "Go back and make them laugh", "Weeping. He said: return to them", "And make them laugh as you made them weep."]
-  ]
+  ],
+  // Into the shade. Qays said: his father came while the Messenger of Allah ﷺ was addressing, and stood in the sun; he
+  // ordered him, and he shifted to the shade (Sunan Abi Dawud 4822). His place comes only once it is said that he stood
+  // in the sun, and goes into the shade only once that is said. Whether he ﷺ cared that those with him were comfortable
+  // is not told in so many words, so it is not asked here.
+  "sign-into-the-shade": [
+    ["Where did the man stand while he ﷺ was speaking?", "In the sun", "Qays's father stood in the sun."],
+    ["What did he ﷺ tell the man to do?", "Move into the shade", "He gave an order, and Qays's father", "Shifted to the shade."]
+  ],
+  // Butter and dates. Abdullah ibn Busr said: the Messenger of Allah ﷺ came to visit us, and we offered him butter and
+  // dates, for he liked butter and dates (Sunan Abi Dawud 3837). The butter and dates show only once they are named, and
+  // the glints of his liking them only once that is said. That he ﷺ came to visit them is told in the first words, so
+  // it is not asked here.
+  "sign-butter-and-dates": [
+    ["What did Abdullah ibn Busr's family offer him ﷺ?", "Butter and dates", "Butter and dates,"],
+    ["Why did they offer him ﷺ butter and dates?", "He liked butter and dates", "For he liked butter and dates."]
+  ],
+  // Camp close together. Abu Tha'labah al-Khushani said: when the people encamped, they scattered in the glens and wadis;
+  // the Messenger of Allah ﷺ said: your scattering in these glens and wadis is only of the devil; after that they kept
+  // close together when they encamped (Sunan Abi Dawud 2628). The tents show only once it is said where they scattered,
+  // and come in close only once that is said.
+  "sign-camp-close-together": [
+    ["When they camped, where had the people spread out?", "In the valleys and passes", "The glens and wadis. He said:"],
+    ["He ﷺ said spreading out in the valleys was from Shaytan.", "True", "Your scattering in these glens and", "Wadis is only of the devil."],
+    ["After his words, how did they camp?", "Close together", "They afterwards kept close together", "When they encamped."]
+  ],
+  // Blessed early mornings. Sakhr al-Ghamidi said: the Prophet ﷺ said: O Allah, bless my people in their early mornings;
+  // Sakhr was a merchant who sent off his merchandise at the beginning of the day, and he became rich (Sunan Abi Dawud
+  // 2606). The goods heaped by his home show only once it is said that he became rich. Which part of the day he ﷺ asked
+  // Allah to bless is not asked here: the scene is night until the dawn, and the night would point to a wrong answer,
+  // "Late at night". Whether he sent out groups at the start of the day is left out of the scene, so it is not asked.
+  "sign-blessed-early-mornings": [["Sakhr sent his goods out early in the day. What happened to him?", "He grew very rich", "And became rich and had much wealth."]]
 };
 
 /** How long before the end of its last moment the scene stops, so that moment's words still show. */

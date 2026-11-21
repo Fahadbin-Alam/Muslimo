@@ -1250,7 +1250,11 @@ export type SignKind =
   | "four-creatures"
   | "travel-by-night"
   | "the-doors-side"
-  | "make-them-laugh";
+  | "make-them-laugh"
+  | "into-the-shade"
+  | "butter-and-dates"
+  | "camp-close-together"
+  | "blessed-early-mornings";
 
 export type SignScene = {
   id: string;
@@ -7357,6 +7361,34 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abdullah ibn Amr said: a man came to the Messenger of Allah ﷺ and said: I came to you to take the oath of allegiance to you on emigration, and I left my parents weeping. He said: return to them and make them laugh as you made them weep.",
     sources: [abuDawud("2528")]
+  },
+  {
+    id: "sign-into-the-shade",
+    kind: "into-the-shade",
+    caption:
+      "Qays said: his father came while the Messenger of Allah ﷺ was addressing, and stood in the sun. He ordered him, and he shifted to the shade.",
+    sources: [abuDawud("4822")]
+  },
+  {
+    id: "sign-butter-and-dates",
+    kind: "butter-and-dates",
+    caption:
+      "Abdullah ibn Busr said: the Messenger of Allah ﷺ came to visit us, and we offered him butter and dates, for he liked butter and dates.",
+    sources: [abuDawud("3837")]
+  },
+  {
+    id: "sign-camp-close-together",
+    kind: "camp-close-together",
+    caption:
+      "Abu Tha'labah al-Khushani said: when the people encamped, they scattered in the glens and wadis. The Messenger of Allah ﷺ said: your scattering in these glens and wadis is only of the devil. After that, whenever they encamped, they kept so close together that it used to be said: if a cloth were spread over them, it would cover them all.",
+    sources: [abuDawud("2628")]
+  },
+  {
+    id: "sign-blessed-early-mornings",
+    kind: "blessed-early-mornings",
+    caption:
+      "Sakhr al-Ghamidi said: the Prophet ﷺ said: O Allah, bless my people in their early mornings. Sakhr was a merchant, and he would send off his merchandise at the beginning of the day, and he became rich and had much wealth.",
+    sources: [abuDawud("2606")]
   }
 ];
 
@@ -10454,7 +10486,15 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Stand to one side: at a door he ﷺ stood by its side, not in front, and gave salam twice, for doors had no curtains.
   "deep-manners-salam-and-visitors-stand-to-one-side": "sign-the-doors-side",
   // Make them laugh again: he ﷺ sent back the one who left his parents weeping, to make them laugh.
-  "deep-marriage-family-ties-make-them-laugh": "sign-make-them-laugh"
+  "deep-marriage-family-ties-make-them-laugh": "sign-make-them-laugh",
+  // Into the shade: he ﷺ had the one who stood in the sun, while he spoke, move into the shade.
+  "deep-manners-gatherings-into-the-shade": "sign-into-the-shade",
+  // Butter and dates: on a visit he ﷺ was offered butter and dates, for he liked them.
+  "deep-found-foods-he-ate-butter-and-dates": "sign-butter-and-dates",
+  // Camp close together: scattering in the glens and wadis is of the devil, so they kept close together.
+  "deep-found-journey-camp-close-together": "sign-camp-close-together",
+  // Blessed early mornings: O Allah, bless my people in their early mornings; Sakhr sent his goods out early and grew rich.
+  "deep-found-journey-blessed-early-mornings": "sign-blessed-early-mornings"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };

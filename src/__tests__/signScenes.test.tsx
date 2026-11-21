@@ -951,7 +951,11 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-four-creatures": [/\bhoopoes?\b/i, /\bbees\b/i, /\bfour creatures\b/i],
   "sign-travel-by-night": [/\btravelling by night\b/i, /\bearth\b/i, /\bduljah\b/i],
   "sign-the-doors-side": [/\bdoor\b/i, /\bcurtains\b/i, /\bone side\b/i],
-  "sign-make-them-laugh": [/\blaugh\b/i, /\bweeping\b/i, /\bparents\b/i]
+  "sign-make-them-laugh": [/\blaugh\b/i, /\bweeping\b/i, /\bparents\b/i],
+  "sign-into-the-shade": [/\bshade\b/i, /\bsun\b/i, /\bQays\b/i],
+  "sign-butter-and-dates": [/\bbutter\b/i, /\bdates\b/i, /\bIbn Busr\b/i],
+  "sign-camp-close-together": [/\bcamp(ed|ing)?\b/i, /\bclose together\b/i, /\bvalleys\b/i],
+  "sign-blessed-early-mornings": [/\bearly mornings?\b/i, /\bSakhr\b/i, /\brich\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1839,7 +1843,11 @@ const SOURCES: Record<string, string[]> = {
   "sign-four-creatures": ["Sunan Abi Dawud 5267"],
   "sign-travel-by-night": ["Sunan Abi Dawud 2571"],
   "sign-the-doors-side": ["Sunan Abi Dawud 5186"],
-  "sign-make-them-laugh": ["Sunan Abi Dawud 2528"]
+  "sign-make-them-laugh": ["Sunan Abi Dawud 2528"],
+  "sign-into-the-shade": ["Sunan Abi Dawud 4822"],
+  "sign-butter-and-dates": ["Sunan Abi Dawud 3837"],
+  "sign-camp-close-together": ["Sunan Abi Dawud 2628"],
+  "sign-blessed-early-mornings": ["Sunan Abi Dawud 2606"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1863,7 +1871,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(2021);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(2025);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -40806,6 +40814,175 @@ describe("the signs in creation, alive", () => {
       [0, 1]
     ]);
   });
+  test("the scene of the one moved into the shade shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "into-the-shade";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Into the shade: under a shelter of palm fronds is its shade, with his ﷺ place, and his voice, soft and golden, speaks.
+    // Only once it is said that Qays's father stood in the sun does his place come, and stop in the open, the sun's
+    // warmth about it; once it is said that he shifted to the shade, it goes in under the shelter, and the warmth goes.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Qays's father came when the Messenger", "Of Allah was addressing.", "Qays's father stood in the sun.", "He gave an order, and Qays's father", "Shifted to the shade."]);
+    expect([
+      at("Qays's voice: telling of it", "opacity", [0.02, 0.026, 0.164, 0.17]),
+      at("his voice, soft and golden: addressing", "opacity", [0.216, 0.222, 0.98, 0.986]),
+      at("the place of the one who came: coming to stand in the sun, then shifting into the shade", "opacity", [0.42, 0.44]),
+      at("the place of the one who came: coming to stand in the sun, then shifting into the shade", "x", [0.42, 0.52, 0.81, 0.92]),
+      at("the sun's warmth about the place of the one who came", "opacity", [0.5, 0.53, 0.81, 0.86])
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1],
+      [-66, 0, 0, 58],
+      [0, 1, 1, 0]
+    ]);
+  });
+
+  test("the scene of the butter and dates he liked shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "butter-and-dates";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Butter and dates: Ibn Busr's voice tells of it, and his ﷺ place, a golden ring, comes along the way to the home.
+    // Only once it is said what they offered him do the cloth, the bowl of butter and the plate of dates show; once it is
+    // said that he liked them, golden glints show over them.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abdullah ibn Busr: the Messenger", "Of Allah came to visit us,", "And we offered him", "Butter and dates,", "For he liked butter and dates."]);
+    expect([
+      at("Ibn Busr's voice: telling of it", "opacity", [0.02, 0.026, 0.98, 0.986]),
+      at("his place, a golden ring: coming to visit", "x", [0.23, 0.36]),
+      at("a cloth spread, with a bowl of butter and a plate of dates", "opacity", [0.62, 0.66]),
+      at("golden glints over the butter and dates", "opacity", [0.82, 0.85])
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [0, 56],
+      [0, 1],
+      [0, 1]
+    ]);
+  });
+
+  test("the scene of camping close together shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "camp-close-together";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Camping close together: Abu Tha'labah's voice tells of it. Only once it is said where they scattered do the tents
+    // show, far apart, in the glens and down the wadis. His ﷺ voice, soft and golden, speaks; once it is said that they
+    // kept close together, the tents come in close about his place.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abu Tha'labah al-Khushani: when the", "People encamped, they scattered in", "The glens and wadis. He said:", "Your scattering in these glens and", "Wadis is only of the devil.", "They afterwards kept close together", "When they encamped."]);
+    expect([
+      at("Abu Tha'labah's voice: telling of it", "opacity", [0.02, 0.026, 0.39, 0.396, 0.74, 0.746]),
+      at("a tent 1: scattered, then close together", "opacity", [0.31, 0.33]),
+      at("a tent 1: scattered, then close together", "x", [0.75, 0.83]),
+      at("a tent 4: scattered, then close together", "opacity", [0.37, 0.39]),
+      at("a tent 4: scattered, then close together", "y", [0.75, 0.83]),
+      at("his voice, soft and golden", "opacity", [0.452, 0.458, 0.704, 0.71])
+    ]).toEqual([
+      [0, 1, 1, 0, 0, 1],
+      [0, 1],
+      [0, 36],
+      [0, 1],
+      [0, -5.8],
+      [0, 1, 1, 0]
+    ]);
+  });
+
+  test("the scene of the blessed early mornings shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "blessed-early-mornings";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The blessed early mornings: at night, Sakhr's voice begins it, and his ﷺ voice gives the du'a, its spark rising.
+    // Once he says "in their early mornings", the night goes, the dawn comes and the sun rises. Once it is said that
+    // Sakhr sent off his merchandise, his laden camels go off along the way; once it is said that he became rich, goods
+    // are heaped by his home, and glints show over them.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Sakhr al-Ghamidi: the Prophet said:", "O Allah, bless my people", "In their early mornings.", "Sakhr was a merchant, and would send off", "Merchandise at the beginning of the day,", "And became rich and had much wealth."]);
+    expect([
+      at("Sakhr's voice: telling of it", "opacity", [0.02, 0.026, 0.15, 0.156]),
+      at("his voice, soft and golden: the du'a", "opacity", [0.18, 0.186, 0.46, 0.466]),
+      at("the du'a: a spark rising", "opacity", [0.19, 0.195, 0.285, 0.29]),
+      at("the du'a: a spark rising", "y", [0.19, 0.29]),
+      at("the night, before the dawn", "opacity", [0.34, 0.44]),
+      at("stars", "opacity", [0.34, 0.4]),
+      at("the sun, rising", "opacity", [0.36, 0.4]),
+      at("the sun, rising", "y", [0.36, 0.44]),
+      at("Sakhr's laden camels: standing by his home, then going off at the start of the day", "x", [0.66, 0.77]),
+      at("goods heaped by Sakhr's home", "opacity", [0.83, 0.87]),
+      at("and glints over them", "opacity", [0.9, 0.93])
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, -11],
+      [1, 0],
+      [1, 0],
+      [0, 1],
+      [8, 0],
+      [0, 104],
+      [0, 1],
+      [0, 1]
+    ]);
+  });
+
   test("every word and caption is translated in every language", () => {
     const words = [...SIGN_SCENES.map((each) => each.caption), ...signWords(), "Source", "Plays the scene again"];
     expect(words.length).toBeGreaterThan(45);

@@ -1798,6 +1798,10 @@ const STATES: State[] = [
   { id: "scene-four-creatures", render: () => <SceneQuestionDemo lessonId="lesson-deep-naml2-do-not-harm-the-hoopoe" ask="How many creatures" /> },
   { id: "scene-the-doors-side", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-salam-and-visitors-stand-to-one-side" ask="stand at someone's door" /> },
   { id: "scene-make-them-laugh", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-family-ties-make-them-laugh" ask="when he left home" /> },
+  { id: "scene-into-the-shade", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-gatherings-into-the-shade" ask="Where did the man stand" /> },
+  { id: "scene-butter-and-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-foods-he-ate-butter-and-dates" ask="family offer him" /> },
+  { id: "scene-camp-close-together", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-camp-close-together" ask="how did they camp" /> },
+  { id: "scene-blessed-early-mornings", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-blessed-early-mornings" ask="What happened to him" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },
