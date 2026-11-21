@@ -8163,6 +8163,63 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should not stop a man from speaking the truth, he ﷺ said?", "Fear of people", "Of the things he said was: fear of people"],
     ["Which truth should fear of people not stop a man from saying?", "The truth he knows", "The truth, if the man knows it."],
     ["He ﷺ taught this in a sermon he stood to give.", "True", "Abu Sa'id: the Messenger of Allah", "Stood up to deliver a sermon, and one"]
+  ],
+  // The rooster. Zayd ibn Khalid said: the Prophet ﷺ said: do not curse the rooster, for it awakens for prayer (Sunan Abi
+  // Dawud 5101). The ring of care comes only once he says not to curse it, and the rooster crows, the windows light up
+  // and the sparks of prayer rise only once it is said that it wakes people for prayer. Who heard it is not asked here:
+  // its answer is the scene's first words.
+  "sign-do-not-curse-the-rooster": [
+    ["Why should you never curse the rooster?", "It wakes people for prayer", "For it awakens for prayer."],
+    ["Cursing a rooster is fine if it is noisy.", "False", "Do not curse the rooster,"]
+  ],
+  // The thin camel. Sahl ibn al-Hanzaliyyah said: the Messenger of Allah ﷺ came upon an emaciated camel and said: fear
+  // Allah regarding these dumb animals; ride them when they are in good condition (Sunan Abi Dawud 2548). The thin camel
+  // shows only once he comes upon it, the ring of care only once he names these animals, and the camel in good condition
+  // only last.
+  "sign-the-thin-camel": [
+    ["What kind of camel did he ﷺ come upon?", "A very thin camel", "Of Allah came upon an emaciated camel"],
+    ["What should we do about animals that cannot speak?", "Fear Allah in how we treat them", "And said: fear Allah regarding", "These animals. Ride them when they"],
+    ["Animals should be ridden only when they are fit and strong.", "True", "These animals. Ride them when they", "Are in good condition."]
+  ],
+  // The mother bird. Abdullah ibn Mas'ud said: on a journey we saw a bird with her two young ones, and we captured her
+  // young ones; the bird came and began to spread its wings, and the Messenger of Allah ﷺ came and said: who grieved this
+  // for its young ones? Return its young ones to it (Sunan Abi Dawud 2675). The bird and her young show only once they
+  // are seen, and the young go back to the nest only once he says to return them. The ants' village burnt with fire,
+  // told after it, is not in the scene, so it is not asked here.
+  "sign-the-mother-bird": [
+    ["What did the people take from the mother bird?", "Her two young ones", "We saw a bird with her two young ones,", "And we captured her young ones."],
+    ["What did he ﷺ tell them to do?", "Give her young back", "Return its young ones to it."]
+  ],
+  // Four creatures. Abdullah ibn Abbas said: the Prophet ﷺ prohibited to kill four creatures: ants, bees, hoopoes, and
+  // sparrow-hawks (Sunan Abi Dawud 5267). None of the four shows until they are named. Which of them are in An-Naml is
+  // not told on the scene, so it is not asked here.
+  "sign-four-creatures": [
+    ["How many creatures did the Prophet ﷺ forbid killing?", "Four", "Prohibited to kill four creatures:"],
+    ["Bees are among the creatures protected.", "True", "Ants, bees, hoopoes, and sparrow-hawks."]
+  ],
+  // Travel by night. Anas said: the Messenger of Allah ﷺ said: keep to travelling by night, for the earth is traversed
+  // (more easily) by night (Sunan Abi Dawud 2571). Its lesson's questions are not asked on its scene: why, and whether
+  // the road feels shorter, since the scene's words leave out "more easily"; and what ad-duljah means, since its Arabic
+  // words only name ad-duljah and do not say what it is.
+
+  // The door's side. Abdullah ibn Busr said: when the Messenger of Allah ﷺ came to some people's door, he did not face it
+  // squarely, but faced the right or left corner, and said: peace be upon you! peace be upon you! That was because there
+  // were no curtains on the doors at that time (Sunan Abi Dawud 5186). His place stops short of the door until it is said
+  // that he did not face it, his voice gives the greeting only once it is said, and the arch about the open doorway shows
+  // only once the curtains are named.
+  "sign-the-doors-side": [
+    ["Where did he ﷺ stand at someone's door?", "By its right or left side", "He did not face it squarely, but faced", "The right or left corner, and said:"],
+    ["Why did he ﷺ stand to one side?", "Doors had no curtains then", "That was because there were no curtains", "On the doors of the house at that time."],
+    ["He ﷺ said salam at the door of the people he visited.", "True", "Peace be upon you! Peace be upon you!"]
+  ],
+  // Make them laugh. Abdullah ibn Amr said: a man came to the Messenger of Allah ﷺ and said: I came to you to take the
+  // oath of allegiance to you on emigration, and I left my parents weeping; he said: return to them and make them laugh
+  // as you made them weep (Sunan Abi Dawud 2528). The tears show only once the weeping is named, and the one who came
+  // goes back only once he is told to. Whether making parents happy is a good deed is not told in so many words, so it
+  // is not asked here.
+  "sign-make-them-laugh": [
+    ["How were the man's parents when he left home?", "They were weeping", "On emigration, and I left my parents", "Weeping. He said: return to them"],
+    ["What did he ﷺ tell the man to do?", "Go back and make them laugh", "Weeping. He said: return to them", "And make them laugh as you made them weep."]
   ]
 };
 

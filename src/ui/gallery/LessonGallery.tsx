@@ -1792,6 +1792,12 @@ const STATES: State[] = [
   { id: "scene-riches-with-piety", render: () => <SceneQuestionDemo lessonId="lesson-deep-zakat-wise-wealth-riches-with-piety" ask="better than riches" /> },
   { id: "scene-feather-in-the-wind", render: () => <SceneQuestionDemo lessonId="lesson-deep-aqidah-steady-on-the-path-a-feather-in-the-wind" ask="blows the feather" /> },
   { id: "scene-the-truth-you-know", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-words-of-a-believer-the-truth-you-know" ask="Which truth should" /> },
+  { id: "scene-do-not-curse-the-rooster", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animals-the-rooster" ask="never curse the rooster" /> },
+  { id: "scene-the-thin-camel", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animals-the-thin-camel" ask="What kind of camel" /> },
+  { id: "scene-the-mother-bird", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-animals-the-mother-bird" ask="take from the mother bird" /> },
+  { id: "scene-four-creatures", render: () => <SceneQuestionDemo lessonId="lesson-deep-naml2-do-not-harm-the-hoopoe" ask="How many creatures" /> },
+  { id: "scene-the-doors-side", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-salam-and-visitors-stand-to-one-side" ask="stand at someone's door" /> },
+  { id: "scene-make-them-laugh", render: () => <SceneQuestionDemo lessonId="lesson-deep-marriage-family-ties-make-them-laugh" ask="when he left home" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

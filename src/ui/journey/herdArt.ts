@@ -490,7 +490,7 @@ function alAdba(): SignArt {
 }
 
 /** A rooster, its feet at (x, y), `s` times its size, facing right: dark green tail feathers, a red comb and wattle, and a beak. */
-const rooster = (x: number, y: number, s: number) =>
+export const rooster = (x: number, y: number, s: number) =>
   `<g transform="translate(${x} ${y}) scale(${s})">` +
   `<path d="M-2.6 -5.6 Q-7.4 -9.6 -6.4 -14.2 Q-4.6 -10.4 -1.6 -8.4 Z" fill="#2F4A3A"/>` +
   `<path d="M-2.8 -5 Q-8.6 -6.4 -8.8 -11.4 Q-5.6 -8.4 -2 -7.4 Z" fill="#3E6B4E"/>` +
