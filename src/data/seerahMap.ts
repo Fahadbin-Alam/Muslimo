@@ -167,6 +167,7 @@ export const muslim = (number: string): MapSource => ({ reference: `Sahih Muslim
 export const tirmidhi = (number: string): MapSource => ({ reference: `Jami at-Tirmidhi ${number}`, url: `https://sunnah.com/tirmidhi:${number}` });
 export const nasai = (number: string): MapSource => ({ reference: `Sunan an-Nasa'i ${number}`, url: `https://sunnah.com/nasai:${number}` });
 export const ibnMajah = (number: string): MapSource => ({ reference: `Sunan Ibn Majah ${number}`, url: `https://sunnah.com/ibnmajah:${number}` });
+export const abuDawud = (number: string): MapSource => ({ reference: `Sunan Abi Dawud ${number}`, url: `https://sunnah.com/abudawud:${number}` });
 export const quran = (surah: number, ayah: number): MapSource => ({ reference: `Quran ${surah}:${ayah}`, url: `https://quran.com/${surah}/${ayah}` });
 
 /** The road between Madinah and Makkah, inland, as its bends (north to south). */

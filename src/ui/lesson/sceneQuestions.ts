@@ -8163,7 +8163,136 @@ const ASKS: Record<string, readonly Ask[]> = {
     ["What should not stop a man from speaking the truth, he ﷺ said?", "Fear of people", "Of the things he said was: fear of people"],
     ["Which truth should fear of people not stop a man from saying?", "The truth he knows", "The truth, if the man knows it."],
     ["He ﷺ taught this in a sermon he stood to give.", "True", "Abu Sa'id: the Messenger of Allah", "Stood up to deliver a sermon, and one"]
-  ]
+  ],
+  // The rooster. Zayd ibn Khalid said: the Prophet ﷺ said: do not curse the rooster, for it awakens for prayer (Sunan Abi
+  // Dawud 5101). The ring of care comes only once he says not to curse it, and the rooster crows, the windows light up
+  // and the sparks of prayer rise only once it is said that it wakes people for prayer. Who heard it is not asked here:
+  // its answer is the scene's first words.
+  "sign-do-not-curse-the-rooster": [
+    ["Why should you never curse the rooster?", "It wakes people for prayer", "For it awakens for prayer."],
+    ["Cursing a rooster is fine if it is noisy.", "False", "Do not curse the rooster,"]
+  ],
+  // The thin camel. Sahl ibn al-Hanzaliyyah said: the Messenger of Allah ﷺ came upon an emaciated camel and said: fear
+  // Allah regarding these dumb animals; ride them when they are in good condition (Sunan Abi Dawud 2548). The thin camel
+  // shows only once he comes upon it, the ring of care only once he names these animals, and the camel in good condition
+  // only last.
+  "sign-the-thin-camel": [
+    ["What kind of camel did he ﷺ come upon?", "A very thin camel", "Of Allah came upon an emaciated camel"],
+    ["What should we do about animals that cannot speak?", "Fear Allah in how we treat them", "And said: fear Allah regarding", "These animals. Ride them when they"],
+    ["Animals should be ridden only when they are fit and strong.", "True", "These animals. Ride them when they", "Are in good condition."]
+  ],
+  // The mother bird. Abdullah ibn Mas'ud said: on a journey we saw a bird with her two young ones, and we captured her
+  // young ones; the bird came and began to spread its wings, and the Messenger of Allah ﷺ came and said: who grieved this
+  // for its young ones? Return its young ones to it (Sunan Abi Dawud 2675). The bird and her young show only once they
+  // are seen, and the young go back to the nest only once he says to return them. The ants' village burnt with fire,
+  // told after it, is not in the scene, so it is not asked here.
+  "sign-the-mother-bird": [
+    ["What did the people take from the mother bird?", "Her two young ones", "We saw a bird with her two young ones,", "And we captured her young ones."],
+    ["What did he ﷺ tell them to do?", "Give her young back", "Return its young ones to it."]
+  ],
+  // Four creatures. Abdullah ibn Abbas said: the Prophet ﷺ prohibited to kill four creatures: ants, bees, hoopoes, and
+  // sparrow-hawks (Sunan Abi Dawud 5267). None of the four shows until they are named. Which of them are in An-Naml is
+  // not told on the scene, so it is not asked here.
+  "sign-four-creatures": [
+    ["How many creatures did the Prophet ﷺ forbid killing?", "Four", "Prohibited to kill four creatures:"],
+    ["Bees are among the creatures protected.", "True", "Ants, bees, hoopoes, and sparrow-hawks."]
+  ],
+  // Travel by night. Anas said: the Messenger of Allah ﷺ said: keep to travelling by night, for the earth is traversed
+  // (more easily) by night (Sunan Abi Dawud 2571). Its lesson's questions are not asked on its scene: why, and whether
+  // the road feels shorter, since the scene's words leave out "more easily"; and what ad-duljah means, since its Arabic
+  // words only name ad-duljah and do not say what it is.
+
+  // The door's side. Abdullah ibn Busr said: when the Messenger of Allah ﷺ came to some people's door, he did not face it
+  // squarely, but faced the right or left corner, and said: peace be upon you! peace be upon you! That was because there
+  // were no curtains on the doors at that time (Sunan Abi Dawud 5186). His place stops short of the door until it is said
+  // that he did not face it, his voice gives the greeting only once it is said, and the arch about the open doorway shows
+  // only once the curtains are named.
+  "sign-the-doors-side": [
+    ["Where did he ﷺ stand at someone's door?", "By its right or left side", "He did not face it squarely, but faced", "The right or left corner, and said:"],
+    ["Why did he ﷺ stand to one side?", "Doors had no curtains then", "That was because there were no curtains", "On the doors of the house at that time."],
+    ["He ﷺ said salam at the door of the people he visited.", "True", "Peace be upon you! Peace be upon you!"]
+  ],
+  // Make them laugh. Abdullah ibn Amr said: a man came to the Messenger of Allah ﷺ and said: I came to you to take the
+  // oath of allegiance to you on emigration, and I left my parents weeping; he said: return to them and make them laugh
+  // as you made them weep (Sunan Abi Dawud 2528). The tears show only once the weeping is named, and the one who came
+  // goes back only once he is told to. Whether making parents happy is a good deed is not told in so many words, so it
+  // is not asked here.
+  "sign-make-them-laugh": [
+    ["How were the man's parents when he left home?", "They were weeping", "On emigration, and I left my parents", "Weeping. He said: return to them"],
+    ["What did he ﷺ tell the man to do?", "Go back and make them laugh", "Weeping. He said: return to them", "And make them laugh as you made them weep."]
+  ],
+  // Into the shade. Qays said: his father came while the Messenger of Allah ﷺ was addressing, and stood in the sun; he
+  // ordered him, and he shifted to the shade (Sunan Abi Dawud 4822). His place comes only once it is said that he stood
+  // in the sun, and goes into the shade only once that is said. Whether he ﷺ cared that those with him were comfortable
+  // is not told in so many words, so it is not asked here.
+  "sign-into-the-shade": [
+    ["Where did the man stand while he ﷺ was speaking?", "In the sun", "Qays's father stood in the sun."],
+    ["What did he ﷺ tell the man to do?", "Move into the shade", "He gave an order, and Qays's father", "Shifted to the shade."]
+  ],
+  // Butter and dates. Abdullah ibn Busr said: the Messenger of Allah ﷺ came to visit us, and we offered him butter and
+  // dates, for he liked butter and dates (Sunan Abi Dawud 3837). The butter and dates show only once they are named, and
+  // the glints of his liking them only once that is said. That he ﷺ came to visit them is told in the first words, so
+  // it is not asked here.
+  "sign-butter-and-dates": [
+    ["What did Abdullah ibn Busr's family offer him ﷺ?", "Butter and dates", "Butter and dates,"],
+    ["Why did they offer him ﷺ butter and dates?", "He liked butter and dates", "For he liked butter and dates."]
+  ],
+  // Camp close together. Abu Tha'labah al-Khushani said: when the people encamped, they scattered in the glens and wadis;
+  // the Messenger of Allah ﷺ said: your scattering in these glens and wadis is only of the devil; after that they kept
+  // close together when they encamped (Sunan Abi Dawud 2628). The tents show only once it is said where they scattered,
+  // and come in close only once that is said.
+  "sign-camp-close-together": [
+    ["When they camped, where had the people spread out?", "In the valleys and passes", "The glens and wadis. He said:"],
+    ["He ﷺ said spreading out in the valleys was from Shaytan.", "True", "Your scattering in these glens and", "Wadis is only of the devil."],
+    ["After his words, how did they camp?", "Close together", "They afterwards kept close together", "When they encamped."]
+  ],
+  // Blessed early mornings. Sakhr al-Ghamidi said: the Prophet ﷺ said: O Allah, bless my people in their early mornings;
+  // Sakhr was a merchant who sent off his merchandise at the beginning of the day, and he became rich (Sunan Abi Dawud
+  // 2606). The goods heaped by his home show only once it is said that he became rich. Which part of the day he ﷺ asked
+  // Allah to bless is not asked here: the scene is night until the dawn, and the night would point to a wrong answer,
+  // "Late at night". Whether he sent out groups at the start of the day is left out of the scene, so it is not asked.
+  "sign-blessed-early-mornings": [["Sakhr sent his goods out early in the day. What happened to him?", "He grew very rich", "And became rich and had much wealth."]],
+  // A little higher, a little lower. Abu Qatadah said: the Prophet ﷺ went out at night and found Abu Bakr praying in a
+  // low voice, and passed Umar praying in a loud voice; then he told Abu Bakr to raise his voice a little, and Umar to
+  // lower his a little (Sunan Abi Dawud 1329). Abu Bakr's low voice shows only once it is said; nothing of why Umar was
+  // loud shows before he says it; and their voices grow and shrink only once he ﷺ tells them to.
+  "sign-a-middle-voice": [
+    ["Abu Bakr prayed at night in a low voice.", "True", "And found Abu Bakr praying in a low voice,"],
+    ["Why did Umar pray in a loud voice?", "To wake the sleepy and drive Shaytan away", "Umar said: I was awakening the drowsy", "And driving away the Devil."],
+    ["What did he ﷺ tell Abu Bakr about his voice?", "Raise it a little", "The Prophet said: Raise your voice", "A little, Abu Bakr, and he said to Umar:"]
+  ],
+  // Salam, then may I come in? Rib'i said: a man of Banu Amir asked the Prophet ﷺ for permission while he was in the
+  // house, saying: may I enter? He told his servant to teach him to say: peace be upon you, may I enter? The man said it,
+  // and he ﷺ gave him permission, and he entered (Sunan Abi Dawud 5177). Its voice asks only once that is said, and its
+  // place goes in only once it is said that he entered.
+  "sign-may-i-enter": [
+    ["What had the man said at the door?", "May I come in?", "Saying: May I enter?"],
+    ["Which words did he ﷺ want the man to add?", "As-salamu alaykum", "Say: Peace be upon you. May I enter?"],
+    ["He ﷺ let the man in once he said salam.", "True", "He gave permission, and the man entered."]
+  ],
+  // Sent by Quraysh. Abu Rafi' said: Quraysh sent me to the Messenger of Allah ﷺ; when I saw him, Islam was cast into my
+  // heart, and I said I would never go back to them. He said: I do not break a covenant or keep envoys; go back, and if
+  // you still feel as you do now, come back. So I went, then came to the Prophet ﷺ and became Muslim (Sunan Abi Dawud
+  // 2758). His place goes back and comes again only once that is said. Who sent Abu Rafi' is told in the first words, so
+  // it is not asked here.
+  "sign-sent-by-quraysh": [
+    ["Why did he ﷺ send Abu Rafi' back at first?", "He never broke a covenant", "He replied: I do not break a covenant"],
+    ["Abu Rafi' never came back to the Prophet ﷺ.", "False", "Come back. So I went away, and then came", "To the Prophet and accepted Islam."]
+  ],
+  // A question at sea. Abu Hurairah said: a man asked the Messenger of Allah ﷺ: we travel on the sea and take a little
+  // water with us; if we use it for wudu, we go thirsty; can we make wudu with sea water? He said: its water is pure
+  // (Sunan Abi Dawud 83). The glints on the water show only once he ﷺ answers. Whether they could make wudu with sea
+  // water is answered by the same words as what he said of its water, so only the second is asked here.
+  "sign-a-question-at-sea": [
+    ["Why did the man not want to use his water for wudu?", "They would be thirsty", "Ablution, we would suffer from thirst."],
+    ["What did he ﷺ say about the water of the sea?", "Its water is pure", "The Messenger replied: Its water is pure."]
+  ],
+  // He sat with her. Anas ibn Malik said: a woman came to the Messenger of Allah ﷺ with a need; he said to her: sit in the
+  // corner of any street you wish, and I shall sit with you; so she sat, and he ﷺ sat with her (Sunan Abi Dawud 4818).
+  // The marks at the corners show only once he says it. How long he stayed with her is not asked here: the scene leaves
+  // out "till she fulfilled her need", which one of those who told it did not tell. Whether he made time for her is not
+  // asked either: his words "I shall sit with you" tell it before its answer.
+  "sign-he-sat-with-her": [["Where did he ﷺ tell the woman to sit?", "Any street corner she liked", "He said to her: Mother of so and so, sit", "In the corner of any street you wish,"]]
 };
 
 /** How long before the end of its last moment the scene stops, so that moment's words still show. */

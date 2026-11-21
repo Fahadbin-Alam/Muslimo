@@ -1,4 +1,4 @@
-import { bukhari, ibnMajah, muslim, nasai, quran, tirmidhi, type MapSource } from "./seerahMap";
+import { abuDawud, bukhari, ibnMajah, muslim, nasai, quran, tirmidhi, type MapSource } from "./seerahMap";
 
 /**
  * The signs in creation, alive. The lessons about the ayahs that ask us to look at Allah's signs in the world open on
@@ -1243,7 +1243,23 @@ export type SignKind =
   | "praying-and-sleeping"
   | "riches-with-piety"
   | "feather-in-the-wind"
-  | "the-truth-you-know";
+  | "the-truth-you-know"
+  | "do-not-curse-the-rooster"
+  | "the-thin-camel"
+  | "the-mother-bird"
+  | "four-creatures"
+  | "travel-by-night"
+  | "the-doors-side"
+  | "make-them-laugh"
+  | "into-the-shade"
+  | "butter-and-dates"
+  | "camp-close-together"
+  | "blessed-early-mornings"
+  | "a-middle-voice"
+  | "may-i-enter"
+  | "sent-by-quraysh"
+  | "a-question-at-sea"
+  | "he-sat-with-her";
 
 export type SignScene = {
   id: string;
@@ -7302,6 +7318,117 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Abu Sa'id al-Khudri said: the Messenger of Allah ﷺ stood up to deliver a sermon, and one of the things he said was: fear of people should not prevent a man from speaking the truth, if he knows it.",
     sources: [ibnMajah("4007")]
+  },
+  {
+    id: "sign-do-not-curse-the-rooster",
+    kind: "do-not-curse-the-rooster",
+    caption: "Zayd ibn Khalid said: the Prophet ﷺ said: do not curse the rooster, for it awakens for prayer.",
+    sources: [abuDawud("5101")]
+  },
+  {
+    id: "sign-the-thin-camel",
+    kind: "the-thin-camel",
+    caption:
+      "Sahl ibn al-Hanzaliyyah said: the Messenger of Allah ﷺ came upon an emaciated camel and said: fear Allah regarding these animals, which cannot speak. Ride them when they are in good condition.",
+    sources: [abuDawud("2548")]
+  },
+  {
+    id: "sign-the-mother-bird",
+    kind: "the-mother-bird",
+    caption:
+      "Abdullah ibn Mas'ud said: we were with the Messenger of Allah ﷺ on a journey, and he went off for a need. We saw a bird with her two young ones, and we took her young ones. The bird came and began to spread its wings. The Prophet ﷺ came and said: who has grieved this bird for its young ones? Return its young ones to it.",
+    sources: [abuDawud("2675")]
+  },
+  {
+    id: "sign-four-creatures",
+    kind: "four-creatures",
+    caption:
+      "Abdullah ibn Abbas said: the Prophet ﷺ prohibited killing four creatures: ants, bees, hoopoes and sparrow-hawks.",
+    sources: [abuDawud("5267")]
+  },
+  {
+    id: "sign-travel-by-night",
+    kind: "travel-by-night",
+    caption:
+      "Anas ibn Malik said: the Messenger of Allah ﷺ said: keep to travelling by night, for the earth is traversed by night.",
+    sources: [abuDawud("2571")]
+  },
+  {
+    id: "sign-the-doors-side",
+    kind: "the-doors-side",
+    caption:
+      "Abdullah ibn Busr said: when the Messenger of Allah ﷺ came to some people's door, he did not face it squarely, but faced the right or left corner, and said: peace be upon you! peace be upon you! That was because there were no curtains on the doors at that time.",
+    sources: [abuDawud("5186")]
+  },
+  {
+    id: "sign-make-them-laugh",
+    kind: "make-them-laugh",
+    caption:
+      "Abdullah ibn Amr said: a man came to the Messenger of Allah ﷺ and said: I came to you to take the oath of allegiance to you on emigration, and I left my parents weeping. He said: return to them and make them laugh as you made them weep.",
+    sources: [abuDawud("2528")]
+  },
+  {
+    id: "sign-into-the-shade",
+    kind: "into-the-shade",
+    caption:
+      "Qays said: his father came while the Messenger of Allah ﷺ was addressing, and stood in the sun. He ordered him, and he shifted to the shade.",
+    sources: [abuDawud("4822")]
+  },
+  {
+    id: "sign-butter-and-dates",
+    kind: "butter-and-dates",
+    caption:
+      "Abdullah ibn Busr said: the Messenger of Allah ﷺ came to visit us, and we offered him butter and dates, for he liked butter and dates.",
+    sources: [abuDawud("3837")]
+  },
+  {
+    id: "sign-camp-close-together",
+    kind: "camp-close-together",
+    caption:
+      "Abu Tha'labah al-Khushani said: when the people encamped, they scattered in the glens and wadis. The Messenger of Allah ﷺ said: your scattering in these glens and wadis is only of the devil. After that, whenever they encamped, they kept so close together that it used to be said: if a cloth were spread over them, it would cover them all.",
+    sources: [abuDawud("2628")]
+  },
+  {
+    id: "sign-blessed-early-mornings",
+    kind: "blessed-early-mornings",
+    caption:
+      "Sakhr al-Ghamidi said: the Prophet ﷺ said: O Allah, bless my people in their early mornings. Sakhr was a merchant, and he would send off his merchandise at the beginning of the day, and he became rich and had much wealth.",
+    sources: [abuDawud("2606")]
+  },
+  {
+    id: "sign-a-middle-voice",
+    kind: "a-middle-voice",
+    caption:
+      "Abu Qatadah said: the Prophet ﷺ went out one night and found Abu Bakr praying in a low voice, and he passed Umar ibn al-Khattab, who was praying in a raised voice. When they both came to the Prophet ﷺ, he said: Abu Bakr, I passed by you while you were praying in a low voice. Abu Bakr said: I made the One I was speaking to hear me, O Messenger of Allah. He said to Umar: I passed by you while you were praying in a loud voice. Umar said: O Messenger of Allah, I was awakening the drowsy and driving away the Devil. The Prophet ﷺ said: Abu Bakr, raise your voice a little; and he said to Umar: lower your voice a little.",
+    sources: [abuDawud("1329")]
+  },
+  {
+    id: "sign-may-i-enter",
+    kind: "may-i-enter",
+    caption:
+      "Rib'i ibn Hirash said: a man of Banu Amir told us that he asked the Prophet ﷺ for permission while he was in a house, saying: may I enter? The Prophet ﷺ said to his servant: go out to this man and teach him how to ask permission; tell him to say: peace be upon you, may I enter? The man heard it and said: peace be upon you, may I enter? The Prophet ﷺ gave him permission, and he entered.",
+    sources: [abuDawud("5177")]
+  },
+  {
+    id: "sign-sent-by-quraysh",
+    kind: "sent-by-quraysh",
+    caption:
+      "Abu Rafi' said: Quraysh sent me to the Messenger of Allah ﷺ, and when I saw the Messenger of Allah ﷺ, Islam was cast into my heart, and I said: O Messenger of Allah, by Allah, I will never go back to them. The Messenger of Allah ﷺ said: I do not break a covenant, nor do I keep envoys; but go back, and if you still feel what you feel now, come back. So I went, then I came to the Prophet ﷺ and became Muslim.",
+    sources: [abuDawud("2758")]
+  },
+  {
+    id: "sign-a-question-at-sea",
+    kind: "a-question-at-sea",
+    caption:
+      "Abu Hurairah said: a man asked the Messenger of Allah ﷺ: O Messenger of Allah, we travel on the sea and take only a little water with us; if we use it for wudu, we will go thirsty. Can we make wudu with sea water? The Messenger of Allah ﷺ said: its water is pure.",
+    sources: [abuDawud("83")]
+  },
+  {
+    id: "sign-he-sat-with-her",
+    kind: "he-sat-with-her",
+    caption:
+      "Anas ibn Malik said: a woman came to the Messenger of Allah ﷺ and said: O Messenger of Allah, I have a need with you. He said to her: mother of so and so, sit in the corner of any street you wish, and I shall sit with you. So she sat, and the Prophet ﷺ sat with her.",
+    sources: [abuDawud("4818")]
   }
 ];
 
@@ -10385,7 +10512,40 @@ export const SIGN_LESSONS: Record<string, string> = {
   // A feather in the wind: the heart is like a feather that the wind blows about in the desert.
   "deep-aqidah-steady-on-the-path-a-feather-in-the-wind": "sign-feather-in-the-wind",
   // The truth you know: fear of people should not stop a man from speaking the truth, if he knows it.
-  "deep-manners-words-of-a-believer-the-truth-you-know": "sign-the-truth-you-know"
+  "deep-manners-words-of-a-believer-the-truth-you-know": "sign-the-truth-you-know",
+  // Do not curse the rooster: it wakes people up for prayer.
+  "deep-kids-animals-the-rooster": "sign-do-not-curse-the-rooster",
+  // The thin camel: fear Allah about animals that cannot speak, and ride them only when they are in good condition.
+  "deep-kids-animals-the-thin-camel": "sign-the-thin-camel",
+  // The mother bird: her young ones were taken, she came spreading her wings, and he ﷺ said to give them back to her.
+  "deep-kids-animals-the-mother-bird": "sign-the-mother-bird",
+  // Animals not to be harmed: he ﷺ forbade killing four creatures: ants, bees, hoopoes and sparrow-hawks.
+  "deep-naml2-do-not-harm-the-hoopoe": "sign-four-creatures",
+  // Travelling by night: keep to travelling by night, for the earth is crossed more easily by night.
+  "deep-found-journey-travel-by-night": "sign-travel-by-night",
+  // Stand to one side: at a door he ﷺ stood by its side, not in front, and gave salam twice, for doors had no curtains.
+  "deep-manners-salam-and-visitors-stand-to-one-side": "sign-the-doors-side",
+  // Make them laugh again: he ﷺ sent back the one who left his parents weeping, to make them laugh.
+  "deep-marriage-family-ties-make-them-laugh": "sign-make-them-laugh",
+  // Into the shade: he ﷺ had the one who stood in the sun, while he spoke, move into the shade.
+  "deep-manners-gatherings-into-the-shade": "sign-into-the-shade",
+  // Butter and dates: on a visit he ﷺ was offered butter and dates, for he liked them.
+  "deep-found-foods-he-ate-butter-and-dates": "sign-butter-and-dates",
+  // Camp close together: scattering in the glens and wadis is of the devil, so they kept close together.
+  "deep-found-journey-camp-close-together": "sign-camp-close-together",
+  // Blessed early mornings: O Allah, bless my people in their early mornings; Sakhr sent his goods out early and grew rich.
+  "deep-found-journey-blessed-early-mornings": "sign-blessed-early-mornings",
+  // A little higher, a little lower: he ﷺ heard Abu Bakr's low voice and Umar's loud one at night, and asked for a middle voice.
+  // (It opened on the night sky, which shows when the night prayer is but not this story; it now opens on its own scene.)
+  "deep-prayer-night-sunnahs-a-middle-voice": "sign-a-middle-voice",
+  // Salam, then may I come in?: the one who asked to come in was taught to say the salam first, then let in.
+  "deep-manners-salam-and-visitors-salam-then-may-i-come-in": "sign-may-i-enter",
+  // Cast into his heart: Abu Rafi', sent by Quraysh, was sent back, for he ﷺ never broke a covenant, and came back Muslim.
+  "deep-how-they-came-to-islam-cast-into-his-heart": "sign-sent-by-quraysh",
+  // A question at sea: asked about wudu with sea water, he ﷺ said its water is pure.
+  "deep-kids-learning-a-question-at-sea": "sign-a-question-at-sea",
+  // He sat with her: he ﷺ let a woman who needed him choose any street corner, and sat with her there.
+  "deep-kids-helping-people-he-sat-with-her": "sign-he-sat-with-her"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
