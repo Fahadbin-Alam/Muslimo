@@ -1,5 +1,6 @@
 import { getBranchArabic, getNodeArabic, getTopicArabic, type ArabicTerm } from "../data/arabicTerms";
 import { getTopicCopy, LANGUAGE_OPTIONS, t } from "../i18n";
+import { ensureLanguage, isLanguageReady } from "../translations";
 import type { LearningSection, SupportedLanguage, TopicId } from "../types";
 
 // The topic picker's search: topics, units (a Companion, a surah) and lessons, found by their names in every
@@ -199,7 +200,10 @@ export function searchLanguages(text: string, learnerLanguage: SupportedLanguage
 export function createCourseSearch(sections: readonly LearningSection[]) {
   let languages: SupportedLanguage[] = [];
   let index: Entry[] = [];
-  const indexFor = (wanted: readonly SupportedLanguage[]) => {
+  const indexFor = (asked: readonly SupportedLanguage[]) => {
+    // A language whose lesson text has not been read yet starts reading now and joins at the next letter typed.
+    const wanted = asked.filter((language) => isLanguageReady(language));
+    asked.filter((language) => !isLanguageReady(language)).forEach((language) => void ensureLanguage(language));
     if (wanted.every((language) => languages.includes(language))) return index;
     languages = LANGUAGES.filter((language) => languages.includes(language) || wanted.includes(language));
     index = buildTopicSearchIndex(sections, languages);

@@ -28,3 +28,6 @@ _site/
 targets/*/Assets.xcassets/
 # The widget sources are not a generated native project.
 !widgets/android/
+
+# Copied from src/translations/content by metro.config.js at every bundle.
+assets/languages/

@@ -1,51 +1,90 @@
 import type { SupportedLanguage } from "../types";
+import { contentNow, loadContent } from "./contentFiles";
 
 // English text -> translated text. `ui/` holds the app's screens; `content/` holds lessons, topics and
-// placement questions (see scripts/i18n). Each language loads only when someone picks it (or searches: the search
-// finds names in every language). A language is over 140,000 lines, so its two halves are read where they are,
-// never copied into one object: a merged copy would hold every line twice, on top of the files themselves.
+// placement questions (see scripts/i18n). The screens' lines are part of the app. A language's lesson text is a file
+// of its own (contentFiles.ts), read only when someone picks the language (or searches in its letters): until it has
+// been read, translationOf finds only the screens' lines. App.tsx reads the learner's language before the first
+// screen, and TopicApp waits for a newly picked one before it switches (ensureLanguage). The two halves are read
+// where they are, never copied into one object: a merged copy would hold every line twice.
 export type TranslationCatalog = Record<string, string>;
 
-type Halves = { ui: TranslationCatalog; content: TranslationCatalog };
-
 const EMPTY_CATALOG: TranslationCatalog = {};
-const loaded: Partial<Record<SupportedLanguage, Halves>> = {};
+const uiLoaded: Partial<Record<SupportedLanguage, TranslationCatalog>> = {};
+const contentLoaded: Partial<Record<SupportedLanguage, TranslationCatalog>> = {};
+const contentPending: Partial<Record<SupportedLanguage, Promise<boolean>>> = {};
 const merged: Partial<Record<SupportedLanguage, TranslationCatalog>> = {};
 const own = Object.prototype.hasOwnProperty;
 
-function loadHalves(language: SupportedLanguage): Halves | undefined {
+function loadUi(language: SupportedLanguage): TranslationCatalog | undefined {
   switch (language) {
     case "ar":
-      return { content: require("./content/ar.json"), ui: require("./ui/ar.json") };
+      return require("./ui/ar.json");
     case "bn":
-      return { content: require("./content/bn.json"), ui: require("./ui/bn.json") };
+      return require("./ui/bn.json");
     case "ur":
-      return { content: require("./content/ur.json"), ui: require("./ui/ur.json") };
+      return require("./ui/ur.json");
     case "id":
-      return { content: require("./content/id.json"), ui: require("./ui/id.json") };
+      return require("./ui/id.json");
     default:
       return undefined;
   }
 }
 
-function halvesOf(language: SupportedLanguage): Halves | undefined {
+function uiOf(language: SupportedLanguage): TranslationCatalog | undefined {
   if (language === "en") {
     return undefined;
   }
 
-  return (loaded[language] ??= loadHalves(language));
+  return (uiLoaded[language] ??= loadUi(language));
+}
+
+function contentOf(language: SupportedLanguage): TranslationCatalog | undefined {
+  if (language === "en") {
+    return undefined;
+  }
+
+  return (contentLoaded[language] ??= contentNow(language));
+}
+
+/** True once the language's lesson text has been read (English always is). */
+export function isLanguageReady(language: SupportedLanguage): boolean {
+  return language === "en" || uiOf(language) === undefined || contentOf(language) !== undefined;
+}
+
+/**
+ * Reads the language's lesson text, once. Resolves true when it is ready; false when the file could not be read
+ * (the app then shows those lines in English, and a later call tries again).
+ */
+export function ensureLanguage(language: SupportedLanguage): Promise<boolean> {
+  if (isLanguageReady(language)) {
+    return Promise.resolve(true);
+  }
+
+  return (contentPending[language] ??= loadContent(language).then(
+    (catalog) => {
+      contentLoaded[language] = catalog;
+      delete merged[language];
+      return true;
+    },
+    () => {
+      delete contentPending[language];
+      return false;
+    }
+  ));
 }
 
 /** The language's text for an English line, or undefined when it has none. A screen's line wins over a lesson's. */
 export function translationOf(language: SupportedLanguage, text: string): string | undefined {
-  const halves = halvesOf(language);
-  if (!halves) {
+  const ui = uiOf(language);
+  if (!ui) {
     return undefined;
   }
-  if (own.call(halves.ui, text)) {
-    return halves.ui[text];
+  if (own.call(ui, text)) {
+    return ui[text];
   }
-  return own.call(halves.content, text) ? halves.content[text] : undefined;
+  const content = contentOf(language);
+  return content && own.call(content, text) ? content[text] : undefined;
 }
 
 /**
@@ -53,15 +92,15 @@ export function translationOf(language: SupportedLanguage, text: string): string
  * first time it is asked for: the app reads single lines with translationOf instead.
  */
 export function getCatalog(language: SupportedLanguage): TranslationCatalog {
-  const halves = halvesOf(language);
-  if (!halves) {
+  const ui = uiOf(language);
+  if (!ui) {
     return EMPTY_CATALOG;
   }
 
-  return (merged[language] ??= { ...halves.content, ...halves.ui });
+  return (merged[language] ??= { ...(contentOf(language) ?? EMPTY_CATALOG), ...ui });
 }
 
-/** The languages whose text is in memory now (for the test that the app opens without the ones it does not show). */
+/** The languages whose lesson text is in memory now (for the test that the app opens without the ones it does not show). */
 export function loadedLanguages(): SupportedLanguage[] {
-  return (Object.keys(loaded) as SupportedLanguage[]).filter((language) => loaded[language]);
+  return (Object.keys(contentLoaded) as SupportedLanguage[]).filter((language) => contentLoaded[language]);
 }
