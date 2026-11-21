@@ -299,6 +299,7 @@ import { canSprint, sprintCards, useSprintRecord } from "./services/swipeSprint"
 import { addToAlbum, albumPictureIds, useAlbum } from "./services/pictureAlbum";
 import { setsFinishedBy, type AlbumSet } from "./data/albumSets";
 import { isUpdateAvailable, openStore } from "./services/appUpdate";
+import { maybeAskForRating } from "./services/ratingPrompt";
 import { attemptOrder, ExerciseView, LearnCard, LessonComplete, LessonScreen, OrderGame, HarderSheet, QuitSheet, QuizComplete, isPlayablePractice, lessonStars } from "./ui/lesson";
 import { getBranchArabic, getLessonArabic, getNodeArabic, getTopicArabic, isFirstUseOfWord, surahArabicName } from "./data/arabicTerms";
 import { questionSource, shortReference } from "./services/questionSource";
@@ -928,6 +929,8 @@ export default function TopicApp() {
   // Each new try at a surah in Memorize surahs has its tiles in another order.
   const memorizeTriesRef = useRef(new Map<string, number>());
   const lastFullScreenAdAtRef = useRef(0);
+  // A lesson with no ad and no plans offer after it may ask for a rating on the way out (services/ratingPrompt).
+  const ratingMomentRef = useRef(false);
   // Everyone picks an age once, at the start. The answer stays on this device: it sets how hard lessons are for young
   // learners (lessonForAge) and, on phones, which ads may show.
   const needsAgeCheck = Platform.OS !== "web" && monetizationMode !== "disabled";
@@ -2884,13 +2887,27 @@ export default function TopicApp() {
   // The complete screen's CONTINUE (next lesson) or back to the path. When the plans are due they open over the path
   // first, and NO THANKS starts the next lesson.
   function leaveLessonComplete(next?: LearningNodeView) {
+    const finished = lessonCompleteSummary;
     setLessonCompleteSummary(undefined);
+    const ratingMoment = ratingMomentRef.current;
+    ratingMomentRef.current = false;
 
     if (planOfferDueRef.current) {
       planOfferDueRef.current = false;
       dispatch({ type: "close_lesson_complete" });
       openPlanOffer("lessons", next);
       return;
+    }
+
+    if (ratingMoment && state.user && finished && !finished.memorize) {
+      const moment = {
+        streakDays: state.user.streakDays,
+        lessonsDone: state.user.completedLessonIds.length,
+        accuracy: finished.accuracy,
+        kidsMode
+      };
+      // After the screen has changed, so the box opens over the path or the next lesson, not over the card.
+      setTimeout(() => void maybeAskForRating(moment), 800);
     }
 
     if (next) {
@@ -2952,6 +2969,7 @@ export default function TopicApp() {
 
   function maybeShowLessonBreakAd(user: UserProfile) {
     lessonsFinishedRef.current += 1;
+    ratingMomentRef.current = false;
 
     // One break at a time: when the plans are due they take this lesson's break instead of the ad.
     if (shouldOfferPlansAfterLesson(lessonsFinishedRef.current, planOfferCheck(user))) {
@@ -2959,11 +2977,14 @@ export default function TopicApp() {
       return;
     }
 
-    if (shouldShowLessonBreakAd(lessonsFinishedRef.current, isPremiumUser(user), Date.now() - lastFullScreenAdAtRef.current)) {
-      void monetizationClient.showLessonBreakAd().then((shown) => {
-        if (shown) lastFullScreenAdAtRef.current = Date.now();
-      });
+    if (!shouldShowLessonBreakAd(lessonsFinishedRef.current, isPremiumUser(user), Date.now() - lastFullScreenAdAtRef.current)) {
+      ratingMomentRef.current = true;
+      return;
     }
+
+    void monetizationClient.showLessonBreakAd().then((shown) => {
+      if (shown) lastFullScreenAdAtRef.current = Date.now();
+    });
   }
 
   /** True once the item was bought (or its video watched). */
