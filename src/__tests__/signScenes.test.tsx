@@ -955,7 +955,12 @@ const ABOUT: Record<string, RegExp[]> = {
   "sign-into-the-shade": [/\bshade\b/i, /\bsun\b/i, /\bQays\b/i],
   "sign-butter-and-dates": [/\bbutter\b/i, /\bdates\b/i, /\bIbn Busr\b/i],
   "sign-camp-close-together": [/\bcamp(ed|ing)?\b/i, /\bclose together\b/i, /\bvalleys\b/i],
-  "sign-blessed-early-mornings": [/\bearly mornings?\b/i, /\bSakhr\b/i, /\brich\b/i]
+  "sign-blessed-early-mornings": [/\bearly mornings?\b/i, /\bSakhr\b/i, /\brich\b/i],
+  "sign-a-middle-voice": [/\bvoice\b/i, /\bAbu Bakr\b/i, /\bUmar\b/i],
+  "sign-may-i-enter": [/\bpermission\b/i, /\bas-salamu alaykum\b/i, /\bBanu Amir\b/i],
+  "sign-sent-by-quraysh": [/\bQuraysh\b/i, /\bcovenant\b/i, /\bAbu Rafi'/i],
+  "sign-a-question-at-sea": [/\bsea\b/i, /\bwudu\b/i, /\bpure\b/i],
+  "sign-he-sat-with-her": [/\bstreet\b/i, /\bsit\b/i, /\bAnas\b/i]
 };
 
 const SOURCES: Record<string, string[]> = {
@@ -1847,7 +1852,12 @@ const SOURCES: Record<string, string[]> = {
   "sign-into-the-shade": ["Sunan Abi Dawud 4822"],
   "sign-butter-and-dates": ["Sunan Abi Dawud 3837"],
   "sign-camp-close-together": ["Sunan Abi Dawud 2628"],
-  "sign-blessed-early-mornings": ["Sunan Abi Dawud 2606"]
+  "sign-blessed-early-mornings": ["Sunan Abi Dawud 2606"],
+  "sign-a-middle-voice": ["Sunan Abi Dawud 1329"],
+  "sign-may-i-enter": ["Sunan Abi Dawud 5177"],
+  "sign-sent-by-quraysh": ["Sunan Abi Dawud 2758"],
+  "sign-a-question-at-sea": ["Sunan Abi Dawud 83"],
+  "sign-he-sat-with-her": ["Sunan Abi Dawud 4818"]
 };
 
 const part = (kind: SignKind, name: string): SignPart => {
@@ -1871,7 +1881,7 @@ describe("the signs in creation, alive", () => {
   });
 
   test("every lesson with a scene is a real lesson about its sign, and opens on it", () => {
-    expect(Object.keys(SIGN_LESSONS).length).toBe(2025);
+    expect(Object.keys(SIGN_LESSONS).length).toBe(2030);
     for (const [nodeId, id] of Object.entries(SIGN_LESSONS)) {
       const lesson = LESSONS_BY_NODE.get(nodeId);
       expect([nodeId, Boolean(lesson)]).toEqual([nodeId, true]);
@@ -40979,6 +40989,240 @@ describe("the signs in creation, alive", () => {
       [8, 0],
       [0, 104],
       [0, 1],
+      [0, 1]
+    ]);
+  });
+
+  test("the scene of the low voice and the loud voice shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "a-middle-voice";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The low voice and the loud voice: at night, Abu Qatadah's voice tells of it, and his ﷺ place, a golden ring, goes
+    // out by Abu Bakr's home. Only once it is said that Abu Bakr prays in a low voice do its two small arcs show, his
+    // prayer's spark rising; once it is said that he ﷺ passed Umar, the ring goes on by Umar's home, where Umar's loud
+    // voice, four bold arcs, shows, his prayer's spark rising. Both then come to him; Umar's voice tells why. His ﷺ voice
+    // speaks to Abu Bakr, and only then does Abu Bakr's voice grow a little; then to Umar, and only then does Umar's grow
+    // a little smaller.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abu Qatadah: the Prophet went out at night", "And found Abu Bakr praying in a low voice,", "And he passed Umar ibn al-Khattab, who", "Was praying in a loud voice.", "Umar said: I was awakening the drowsy", "And driving away the Devil.", "The Prophet said: Raise your voice", "A little, Abu Bakr, and he said to Umar:", "Lower your voice a little."]);
+    expect([
+      at("Abu Qatadah's voice: telling of it", "opacity", [0.02, 0.026, 0.43, 0.436]),
+      at("his place, a golden ring: going out at night, by Abu Bakr's home, then Umar's", "x", [0.02, 0.1, 0.235, 0.3, 0.452, 0.49]),
+      at("Abu Bakr's voice, low: two small, thin arcs", "opacity", [0.125, 0.131, 0.452, 0.458]),
+      at("Abu Bakr's prayer: a spark rising", "y", [0.128, 0.19]),
+      at("Umar's voice, loud: four large, bold arcs", "opacity", [0.236, 0.242, 0.452, 0.458]),
+      at("Umar's prayer: a spark rising", "y", [0.24, 0.3]),
+      at("Abu Bakr's place: praying, then coming to him", "x", [0.452, 0.49]),
+      at("Umar's place: praying, then coming to him", "x", [0.452, 0.49]),
+      at("Umar's voice: telling why", "opacity", [0.494, 0.5, 0.65, 0.656]),
+      at("his voice, soft and golden: to Abu Bakr", "opacity", [0.67, 0.676, 0.8, 0.806]),
+      at("Abu Bakr's low voice again, growing a little", "opacity", [0.778, 0.786]),
+      at("Abu Bakr's low voice again, growing a little", "scale", [0.79, 0.83]),
+      at("his voice, soft and golden: to Umar", "opacity", [0.81, 0.816, 0.98, 0.986]),
+      at("Umar's loud voice again, growing a little smaller", "opacity", [0.886, 0.894]),
+      at("Umar's loud voice again, growing a little smaller", "scale", [0.9, 0.94])
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [0, -34.2, -34.2, 37.8, 37.8, 1.8],
+      [0, 1, 1, 0],
+      [0, -11],
+      [0, 1, 1, 0],
+      [0, -11],
+      [0, 43],
+      [0, -41],
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1],
+      [1, 1.6],
+      [0, 1, 1, 0],
+      [0, 1],
+      [1, 0.66]
+    ]);
+  });
+
+  test("the scene of salam, then may I come in shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "may-i-enter";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Salam, then may I come in: by day, the place of the one of Banu Amir comes along the lane to the home, its doorway
+    // open, his ﷺ place inside with the one who served in his home. Only once it is said that the man asked "May I
+    // enter?" does its voice ask; his ﷺ voice then speaks to the one who served. Only once it is said that the man said
+    // it does its voice ask again; his ﷺ voice gives leave, and only once it is said that the man entered does its place
+    // go in, and a soft golden arch and glints show about the doorway.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["A man of Banu Amir asked the Prophet for", "Permission when he was in the house,", "Saying: May I enter?", "He said to his servant: Go out and teach", "This man how to ask permission:", "Say: Peace be upon you. May I enter?", "The man heard it and said: Peace be upon", "You! May I enter?", "He gave permission, and the man entered."]);
+    expect([
+      at("the place of the one of Banu Amir: coming to the home, and at last going in", "x", [0.02, 0.1, 0.934, 0.97]),
+      at("the voice of the one of Banu Amir: asking to come in", "opacity", [0.234, 0.24, 0.32, 0.326, 0.67, 0.676, 0.84, 0.846]),
+      at("his voice, soft and golden: to the one who served in his home", "opacity", [0.343, 0.349, 0.65, 0.656]),
+      at("his voice, soft and golden: giving leave", "opacity", [0.886, 0.892, 0.93, 0.936]),
+      at("a soft golden arch about the doorway, and glints", "opacity", [0.965, 0.985])
+    ]).toEqual([
+      [0, 72, 72, 84.8],
+      [0, 1, 1, 0, 0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1]
+    ]);
+  });
+
+  test("the scene of the one Quraysh sent shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "sent-by-quraysh";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // The one Quraysh sent: Abu Rafi's voice tells of it as his place comes along the road from the homes of Quraysh to
+    // his ﷺ home. Once it is said that Islam was cast into his heart, a warm light shows about his place. His ﷺ voice
+    // answers; only once it is said that Abu Rafi' went away does his place go back along the road, then come again, and
+    // his Islam rises, a spark.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abu Rafi': the Quraysh sent me to the", "Messenger of Allah, and when I saw him,", "Islam was cast into my heart, so I said:", "I shall never return to them.", "He replied: I do not break a covenant", "Or imprison messengers, but return, and", "If you feel the same as you do just now,", "Come back. So I went away, and then came", "To the Prophet and accepted Islam."]);
+    expect([
+      at("Abu Rafi's voice: telling of it", "opacity", [0.02, 0.026, 0.43, 0.436, 0.81, 0.816, 0.98, 0.986]),
+      at("Abu Rafi's place: coming, going back, and coming again", "x", [0.03, 0.19, 0.805, 0.85, 0.87, 0.935]),
+      at("a warm light about Abu Rafi's place: Islam, come into him", "opacity", [0.24, 0.27]),
+      at("his voice, soft and golden: answering", "opacity", [0.452, 0.458, 0.8, 0.806]),
+      at("Abu Rafi's Islam: a spark rising", "opacity", [0.94, 0.945, 0.985, 0.99]),
+      at("Abu Rafi's Islam: a spark rising", "y", [0.94, 0.99])
+    ]).toEqual([
+      [0, 1, 1, 0, 0, 1, 1, 0],
+      [0, 80, 80, 4, 4, 80],
+      [0, 1],
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, -11]
+    ]);
+  });
+
+  test("the scene of a question at sea shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "a-question-at-sea";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // A question at sea: by the shore, Abu Hurairah's voice begins it, and the voice of the one who asked speaks. Once it
+    // is said that they travel on the sea, a boat shows, rocking; once it is said that they take a little water with
+    // them, a small jar shows on its deck. His ﷺ voice answers, and only once it is said that its water is pure do a
+    // clear shimmer and glints show over the water of the sea.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Abu Hurairah: a man asked the Messenger", "Of Allah: Messenger of Allah, we travel", "On the sea and take a small quantity of", "Water with us. If we use this for", "Ablution, we would suffer from thirst.", "Can we perform ablution with sea water?", "The Messenger replied: Its water is pure."]);
+    expect([
+      at("Abu Hurairah's voice: telling of it", "opacity", [0.02, 0.026, 0.146, 0.152]),
+      at("the voice of the one who asked", "opacity", [0.164, 0.17, 0.84, 0.846]),
+      at("a boat on the sea, rocking", "opacity", [0.31, 0.34]),
+      at("a small jar of water on its deck", "opacity", [0.455, 0.48]),
+      at("his voice, soft and golden: answering", "opacity", [0.888, 0.894, 0.98, 0.986]),
+      at("a clear shimmer over the water of the sea", "opacity", [0.9, 0.94]),
+      at("glints over the water of the sea", "opacity", [0.92, 0.95])
+    ]).toEqual([
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1],
+      [0, 1],
+      [0, 1, 1, 0],
+      [0, 1],
+      [0, 1]
+    ]);
+  });
+
+  test("the scene of sitting with her at a street corner shows each moment in its order, and draws no Prophet, no Companion, no person, no hand, no face and no one on an animal", () => {
+    const kind: SignKind = "he-sat-with-her";
+    for (const each of signArt(kind).parts) {
+      const person =
+        /\b(prophet|messenger|man|men|woman|women|person|people|king|queen|helpers?|servants?|angels?|child|children|boys?|girls?|baby|mother|father|parents?|son|sons|daughter|uncle|faces?|hands?|fingers?|arms?|feet|foot|head|shoulder|chest|bod(y|ies)|neighbou?rs?|guests?|wife|husband|riders?|believers?|friends?|companions?|brothers?|teachers?|students?|teeth|mouth|lips?|tongues?|eyes?|belly|devils?|satan|shaytan|imam|leader|ruler|master|Musa|Moses|Jibril|Gabriel|Muhammad|buyers?|sellers?|judges?|shepherds?|herdsman|owner|travell?er|stranger)\b/i;
+      expect([kind, each.name, person.test(each.name)]).toEqual([kind, each.name, false]);
+    }
+    // Nothing is drawn for Allah, no book, page or letter is drawn, and nothing comes down from the sky.
+    expect(
+      signArt(kind)
+        .parts.filter((each) => /\b(masjids?|mosques?|minarets?|minbar|pulpit|rays?|beams?|books?|pages?|letters?|mushaf|pens?|ink|scrolls?|tablets?|lightning|storm|fire|flames?|rain|hell|jahannam|mihrab|niche)\b|coming down|sent down|from the sky|Allah|divine|heaven|sacrific|slaughter/i.test(each.name))
+        .map((each) => each.name)
+    ).toEqual([]);
+    expect(
+      signArt(kind)
+        .parts.filter((each) => each.loop?.move === "fall")
+        .map((each) => each.name)
+    ).toEqual([]);
+    // Values are rounded to a thousandth (and -0 made 0), so a point reached by adding up moves reads as the number it is.
+    const at = (name: string, key: "opacity" | "x" | "y" | "scale" | "scaleX" | "scaleY" | "rotate", times: number[]) => times.map((t) => Math.round(value(kind, name, key, t) * 1000) / 1000 + 0);
+    // Sitting with her: Anas's voice begins it, the place of the one who came with her need comes along the lane in
+    // front, and her voice asks. His ﷺ voice answers; only once it is said "in the corner of any street you wish" do soft
+    // golden marks show at the corners where the lanes meet. Once it is said that she sat, her place goes to sit at a
+    // corner; once it is said that he ﷺ also sat with her, his place goes to sit with her, and a warm glow shows about
+    // the two.
+    expect(signArt(kind).words.map((word) => word.text)).toEqual(["Anas ibn Malik: a woman came to the", "Messenger of Allah and said: Messenger of", "Allah, I have some need with you.", "He said to her: Mother of so and so, sit", "In the corner of any street you wish,", "And I shall sit with you.", "So she sat, and the Messenger of Allah", "Also sat with her."]);
+    expect([
+      at("Anas's voice: telling of it", "opacity", [0.02, 0.026, 0.135, 0.141, 0.756, 0.762, 0.98, 0.986]),
+      at("the place of the one who came with her need: coming, and sitting at a corner", "x", [0.03, 0.12, 0.76, 0.82]),
+      at("her voice: asking", "opacity", [0.15, 0.156, 0.36, 0.366]),
+      at("his voice, soft and golden: answering", "opacity", [0.39, 0.396, 0.735, 0.741]),
+      at("soft golden marks at the corners where the lanes meet", "opacity", [0.52, 0.55]),
+      at("his place, a golden ring: going to sit with her", "x", [0.88, 0.94]),
+      at("a warm glow about the two at the corner", "opacity", [0.95, 0.98])
+    ]).toEqual([
+      [0, 1, 1, 0, 0, 1, 1, 0],
+      [0, -58, -58, -34.4],
+      [0, 1, 1, 0],
+      [0, 1, 1, 0],
+      [0, 1],
+      [0, 31.2],
       [0, 1]
     ]);
   });

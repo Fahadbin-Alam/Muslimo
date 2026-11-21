@@ -1802,6 +1802,11 @@ const STATES: State[] = [
   { id: "scene-butter-and-dates", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-foods-he-ate-butter-and-dates" ask="family offer him" /> },
   { id: "scene-camp-close-together", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-camp-close-together" ask="how did they camp" /> },
   { id: "scene-blessed-early-mornings", render: () => <SceneQuestionDemo lessonId="lesson-deep-found-journey-blessed-early-mornings" ask="What happened to him" /> },
+  { id: "scene-a-middle-voice", render: () => <SceneQuestionDemo lessonId="lesson-deep-prayer-night-sunnahs-a-middle-voice" ask="tell Abu Bakr" /> },
+  { id: "scene-may-i-enter", render: () => <SceneQuestionDemo lessonId="lesson-deep-manners-salam-and-visitors-salam-then-may-i-come-in" ask="Which words did he" /> },
+  { id: "scene-sent-by-quraysh", render: () => <SceneQuestionDemo lessonId="lesson-deep-how-they-came-to-islam-cast-into-his-heart" ask="send Abu Rafi' back" /> },
+  { id: "scene-a-question-at-sea", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-learning-a-question-at-sea" ask="about the water of the sea" /> },
+  { id: "scene-he-sat-with-her", render: () => <SceneQuestionDemo lessonId="lesson-deep-kids-helping-people-he-sat-with-her" ask="tell the woman to sit" /> },
   // Month questions on the year: Ashura in Muharram; Sha'ban, answered wrong (the right month turns green, its moon full).
   { id: "month", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" /> },
   { id: "month-picked", render: () => <MonthQuestionDemo lessonId="lesson-deep-days-ashura" ask="Ashura is in" pick="right" /> },

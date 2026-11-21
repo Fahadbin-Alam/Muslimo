@@ -8251,7 +8251,48 @@ const ASKS: Record<string, readonly Ask[]> = {
   // 2606). The goods heaped by his home show only once it is said that he became rich. Which part of the day he ﷺ asked
   // Allah to bless is not asked here: the scene is night until the dawn, and the night would point to a wrong answer,
   // "Late at night". Whether he sent out groups at the start of the day is left out of the scene, so it is not asked.
-  "sign-blessed-early-mornings": [["Sakhr sent his goods out early in the day. What happened to him?", "He grew very rich", "And became rich and had much wealth."]]
+  "sign-blessed-early-mornings": [["Sakhr sent his goods out early in the day. What happened to him?", "He grew very rich", "And became rich and had much wealth."]],
+  // A little higher, a little lower. Abu Qatadah said: the Prophet ﷺ went out at night and found Abu Bakr praying in a
+  // low voice, and passed Umar praying in a loud voice; then he told Abu Bakr to raise his voice a little, and Umar to
+  // lower his a little (Sunan Abi Dawud 1329). Abu Bakr's low voice shows only once it is said; nothing of why Umar was
+  // loud shows before he says it; and their voices grow and shrink only once he ﷺ tells them to.
+  "sign-a-middle-voice": [
+    ["Abu Bakr prayed at night in a low voice.", "True", "And found Abu Bakr praying in a low voice,"],
+    ["Why did Umar pray in a loud voice?", "To wake the sleepy and drive Shaytan away", "Umar said: I was awakening the drowsy", "And driving away the Devil."],
+    ["What did he ﷺ tell Abu Bakr about his voice?", "Raise it a little", "The Prophet said: Raise your voice", "A little, Abu Bakr, and he said to Umar:"]
+  ],
+  // Salam, then may I come in? Rib'i said: a man of Banu Amir asked the Prophet ﷺ for permission while he was in the
+  // house, saying: may I enter? He told his servant to teach him to say: peace be upon you, may I enter? The man said it,
+  // and he ﷺ gave him permission, and he entered (Sunan Abi Dawud 5177). Its voice asks only once that is said, and its
+  // place goes in only once it is said that he entered.
+  "sign-may-i-enter": [
+    ["What had the man said at the door?", "May I come in?", "Saying: May I enter?"],
+    ["Which words did he ﷺ want the man to add?", "As-salamu alaykum", "Say: Peace be upon you. May I enter?"],
+    ["He ﷺ let the man in once he said salam.", "True", "He gave permission, and the man entered."]
+  ],
+  // Sent by Quraysh. Abu Rafi' said: Quraysh sent me to the Messenger of Allah ﷺ; when I saw him, Islam was cast into my
+  // heart, and I said I would never go back to them. He said: I do not break a covenant or keep envoys; go back, and if
+  // you still feel as you do now, come back. So I went, then came to the Prophet ﷺ and became Muslim (Sunan Abi Dawud
+  // 2758). His place goes back and comes again only once that is said. Who sent Abu Rafi' is told in the first words, so
+  // it is not asked here.
+  "sign-sent-by-quraysh": [
+    ["Why did he ﷺ send Abu Rafi' back at first?", "He never broke a covenant", "He replied: I do not break a covenant"],
+    ["Abu Rafi' never came back to the Prophet ﷺ.", "False", "Come back. So I went away, and then came", "To the Prophet and accepted Islam."]
+  ],
+  // A question at sea. Abu Hurairah said: a man asked the Messenger of Allah ﷺ: we travel on the sea and take a little
+  // water with us; if we use it for wudu, we go thirsty; can we make wudu with sea water? He said: its water is pure
+  // (Sunan Abi Dawud 83). The glints on the water show only once he ﷺ answers. Whether they could make wudu with sea
+  // water is answered by the same words as what he said of its water, so only the second is asked here.
+  "sign-a-question-at-sea": [
+    ["Why did the man not want to use his water for wudu?", "They would be thirsty", "Ablution, we would suffer from thirst."],
+    ["What did he ﷺ say about the water of the sea?", "Its water is pure", "The Messenger replied: Its water is pure."]
+  ],
+  // He sat with her. Anas ibn Malik said: a woman came to the Messenger of Allah ﷺ with a need; he said to her: sit in the
+  // corner of any street you wish, and I shall sit with you; so she sat, and he ﷺ sat with her (Sunan Abi Dawud 4818).
+  // The marks at the corners show only once he says it. How long he stayed with her is not asked here: the scene leaves
+  // out "till she fulfilled her need", which one of those who told it did not tell. Whether he made time for her is not
+  // asked either: his words "I shall sit with you" tell it before its answer.
+  "sign-he-sat-with-her": [["Where did he ﷺ tell the woman to sit?", "Any street corner she liked", "He said to her: Mother of so and so, sit", "In the corner of any street you wish,"]]
 };
 
 /** How long before the end of its last moment the scene stops, so that moment's words still show. */

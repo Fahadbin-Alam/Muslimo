@@ -79,7 +79,7 @@ describe("which questions are asked on a scene", () => {
     const asks = sceneAsks();
     // Each one was read with its scene: its right answer is what the moment shows, and the scene before it does not
     // show it. A question changed in the course fails here until it is read again.
-    expect(asks.length).toBe(3905);
+    expect(asks.length).toBe(3916);
     let places = 0;
     for (const ask of asks) {
       const found = ALL_CHALLENGES.filter(({ challenge }) => challenge.prompt === ask.prompt && rightOf(challenge) === ask.answer);
@@ -160,8 +160,13 @@ describe("which questions are asked on a scene", () => {
     // what he ﷺ told the man to do. Of the eight questions on the four scenes of moving into the shade, butter and dates,
     // camping close together and the blessed early mornings, four are asked again in a review or a final quiz: where the
     // man stood while he ﷺ was speaking, what he ﷺ told him to do, what Abdullah ibn Busr's family offered him ﷺ, and
-    // whether he ﷺ said spreading out in the valleys was from Shaytan.
-    expect(places).toBe(5683);
+    // whether he ﷺ said spreading out in the valleys was from Shaytan. Of the eleven questions on the five scenes of
+    // the low voice and the loud voice, salam then may I come in, the one Quraysh sent, a question at sea and sitting
+    // with her at a street corner, seven are asked again in a review or a final quiz: why Umar prayed in a loud voice,
+    // what he ﷺ told Abu Bakr about his voice, which words he ﷺ wanted the man to add, whether he ﷺ let the man in once
+    // he said salam, why he ﷺ sent Abu Rafi' back at first, what he ﷺ said about the water of the sea, and where he ﷺ
+    // told the woman to sit.
+    expect(places).toBe(5701);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
@@ -29838,6 +29843,178 @@ describe("where the scene waits and where it stops", () => {
         [0, 0],
         [1, 1]
       ]
+    ]);
+  });
+
+  it("waits on the scene of the low voice and the loud voice before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-a-middle-voice");
+    expect(asks.length).toBe(3);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("a-middle-voice", ask.from, ask.to)!)) {
+        for (const part of signArt("a-middle-voice").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Abu Bakr's low voice: its two small arcs have not shown while it waits, and his ﷺ place has come by Abu Bakr's home;
+    // then they show.
+    expect([shown("Abu Bakr prayed at night in a low voice.", ["Abu Bakr's voice, low: two small, thin arcs"]), moved("Abu Bakr prayed at night in a low voice.", "his place, a golden ring: going out at night, by Abu Bakr's home, then Umar's", "x")]).toEqual([
+      [[0], [1]],
+      [-34.2, -34.2]
+    ]);
+    // Why Umar was loud: while it waits, Umar is still praying in his loud voice by his home, and has not told why; then
+    // he has come to him ﷺ, his loud arcs gone, and his voice is telling it.
+    expect([shown("Why did Umar pray in a loud voice?", ["Umar's voice: telling why", "Umar's voice, loud: four large, bold arcs"]), moved("Why did Umar pray in a loud voice?", "Umar's place: praying, then coming to him", "x")]).toEqual([
+      [
+        [0, 1],
+        [1, 0]
+      ],
+      [0, -41]
+    ]);
+    // What he ﷺ told Abu Bakr: his voice has not spoken to Abu Bakr, and Abu Bakr's voice has not shown again, while it
+    // waits; then Abu Bakr's voice shows again, grown a little, and Umar's has not yet grown smaller.
+    expect([
+      shown("What did he ﷺ tell Abu Bakr about his voice?", ["his voice, soft and golden: to Abu Bakr", "Abu Bakr's low voice again, growing a little", "Umar's loud voice again, growing a little smaller"]),
+      moved("What did he ﷺ tell Abu Bakr about his voice?", "Abu Bakr's low voice again, growing a little", "scale")
+    ]).toEqual([
+      [
+        [0, 0, 0],
+        [0, 1, 0]
+      ],
+      [1, 1.6]
+    ]);
+  });
+
+  it("waits on the scene of salam, then may I come in before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-may-i-enter");
+    expect(asks.length).toBe(3);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("may-i-enter", ask.from, ask.to)!)) {
+        for (const part of signArt("may-i-enter").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // What the man said: the voice of the one of Banu Amir has not asked while it waits, its place already at the door;
+    // then it asks.
+    const voice = "the voice of the one of Banu Amir: asking to come in";
+    const place = "the place of the one of Banu Amir: coming to the home, and at last going in";
+    expect([shown("What had the man said at the door?", [voice]), moved("What had the man said at the door?", place, "x")]).toEqual([
+      [[0], [1]],
+      [72, 72]
+    ]);
+    // Which words to add: his ﷺ voice speaks to the one who served while it waits and once answered (the words tell it),
+    // and the man has not yet said them, nor been let in.
+    expect(shown("Which words did he ﷺ want the man to add?", ["his voice, soft and golden: to the one who served in his home", voice, "a soft golden arch about the doorway, and glints"])).toEqual([
+      [1, 0, 0],
+      [1, 0, 0]
+    ]);
+    // Let in: its place is still at the door, with no arch or glints, while it waits; then it has gone in, and the soft
+    // golden arch and glints show about the doorway.
+    expect([shown("He ﷺ let the man in once he said salam.", ["a soft golden arch about the doorway, and glints"]), moved("He ﷺ let the man in once he said salam.", place, "x")]).toEqual([
+      [[0], [1]],
+      [72, 84.8]
+    ]);
+  });
+
+  it("waits on the scene of the one Quraysh sent before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-sent-by-quraysh");
+    expect(asks.length).toBe(2);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("sent-by-quraysh", ask.from, ask.to)!)) {
+        for (const part of signArt("sent-by-quraysh").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Why he was sent back: his ﷺ voice has not answered while it waits; then it answers, and Abu Rafi's place is still by
+    // his home.
+    const place = "Abu Rafi's place: coming, going back, and coming again";
+    expect([shown("Why did he ﷺ send Abu Rafi' back at first?", ["his voice, soft and golden: answering"]), moved("Why did he ﷺ send Abu Rafi' back at first?", place, "x")]).toEqual([
+      [[0], [1]],
+      [80, 80]
+    ]);
+    // Whether he came back: his place is still by his ﷺ home, with no spark of his Islam, while it waits; the moment sends
+    // it back along the road and brings it again, and the spark rises.
+    const back = asked("Abu Rafi' never came back to the Prophet ﷺ.");
+    expect([
+      [value(back.kind, place, "x", back.pause), value(back.kind, place, "x", 0.86), value(back.kind, place, "x", back.reveal)],
+      [value(back.kind, "Abu Rafi's Islam: a spark rising", "opacity", back.pause), value(back.kind, "Abu Rafi's Islam: a spark rising", "opacity", 0.96)]
+    ]).toEqual([
+      [80, 4, 80],
+      [0, 1]
+    ]);
+  });
+
+  it("waits on the scene of a question at sea before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-a-question-at-sea");
+    expect(asks.length).toBe(2);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("a-question-at-sea", ask.from, ask.to)!)) {
+        for (const part of signArt("a-question-at-sea").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Why not use their water: the boat and the small jar on its deck show, and the one who asked is speaking, while it
+    // waits and once answered (the words tell it); nothing of his ﷺ answer about the sea shows.
+    expect(shown("Why did the man not want to use his water for wudu?", ["a small jar of water on its deck", "the voice of the one who asked", "his voice, soft and golden: answering", "a clear shimmer over the water of the sea"])).toEqual([
+      [1, 1, 0, 0],
+      [1, 1, 0, 0]
+    ]);
+    // What he ﷺ said of its water: no shimmer or glints over the sea while it waits; then both show.
+    expect(shown("What did he ﷺ say about the water of the sea?", ["a clear shimmer over the water of the sea", "glints over the water of the sea"])).toEqual([
+      [0, 0],
+      [1, 1]
+    ]);
+  });
+
+  it("waits on the scene of sitting with her at a street corner before anything of the answer shows, and shows it once answered, at rest", () => {
+    // Wherever a question on this scene waits or stops, nothing is halfway through moving or coming into sight.
+    const asks = sceneAsks().filter((each) => each.sceneId === "sign-he-sat-with-her");
+    expect(asks.length).toBe(1);
+    for (const ask of asks) {
+      for (const t of Object.values(sceneMoment("he-sat-with-her", ask.from, ask.to)!)) {
+        for (const part of signArt("he-sat-with-her").parts) {
+          for (const [key, values] of Object.entries(part.keys ?? {})) {
+            if (key === "at") continue;
+            const at = (time: number) => keyAt(part.keys!.at, values as number[], Math.min(1, Math.max(0, time)));
+            expect([ask.prompt, t, part.name, key, at(t) === at(t - 0.004) || at(t) === at(t + 0.004)]).toEqual([ask.prompt, t, part.name, key, true]);
+          }
+        }
+      }
+    }
+    // Where she was told to sit: his ﷺ voice has not answered, and no marks show at the corners, while it waits; then his
+    // voice answers and the soft golden marks show where the lanes meet, and her place has not yet gone to one.
+    expect([
+      shown("Where did he ﷺ tell the woman to sit?", ["his voice, soft and golden: answering", "soft golden marks at the corners where the lanes meet"]),
+      moved("Where did he ﷺ tell the woman to sit?", "the place of the one who came with her need: coming, and sitting at a corner", "x")
+    ]).toEqual([
+      [
+        [0, 0],
+        [1, 1]
+      ],
+      [-58, -58]
     ]);
   });
 

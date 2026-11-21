@@ -58,7 +58,7 @@ const IBN_ABBAS = "#8EA8D6";
 const HIS_FAMILY = "#B8A8DA";
 
 /** How a voice that speaks from `on` until `off`, for each pair, shows and goes. */
-const spoken = (spans: [number, number][]) =>
+export const spoken = (spans: [number, number][]) =>
   spans.flatMap(([on, off]): [number, number][] => [
     [on, 0],
     [at3(on + 0.006), 1],

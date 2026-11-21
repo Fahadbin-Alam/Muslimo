@@ -1254,7 +1254,12 @@ export type SignKind =
   | "into-the-shade"
   | "butter-and-dates"
   | "camp-close-together"
-  | "blessed-early-mornings";
+  | "blessed-early-mornings"
+  | "a-middle-voice"
+  | "may-i-enter"
+  | "sent-by-quraysh"
+  | "a-question-at-sea"
+  | "he-sat-with-her";
 
 export type SignScene = {
   id: string;
@@ -7389,6 +7394,41 @@ export const SIGN_SCENES: readonly SignScene[] = [
     caption:
       "Sakhr al-Ghamidi said: the Prophet ﷺ said: O Allah, bless my people in their early mornings. Sakhr was a merchant, and he would send off his merchandise at the beginning of the day, and he became rich and had much wealth.",
     sources: [abuDawud("2606")]
+  },
+  {
+    id: "sign-a-middle-voice",
+    kind: "a-middle-voice",
+    caption:
+      "Abu Qatadah said: the Prophet ﷺ went out one night and found Abu Bakr praying in a low voice, and he passed Umar ibn al-Khattab, who was praying in a raised voice. When they both came to the Prophet ﷺ, he said: Abu Bakr, I passed by you while you were praying in a low voice. Abu Bakr said: I made the One I was speaking to hear me, O Messenger of Allah. He said to Umar: I passed by you while you were praying in a loud voice. Umar said: O Messenger of Allah, I was awakening the drowsy and driving away the Devil. The Prophet ﷺ said: Abu Bakr, raise your voice a little; and he said to Umar: lower your voice a little.",
+    sources: [abuDawud("1329")]
+  },
+  {
+    id: "sign-may-i-enter",
+    kind: "may-i-enter",
+    caption:
+      "Rib'i ibn Hirash said: a man of Banu Amir told us that he asked the Prophet ﷺ for permission while he was in a house, saying: may I enter? The Prophet ﷺ said to his servant: go out to this man and teach him how to ask permission; tell him to say: peace be upon you, may I enter? The man heard it and said: peace be upon you, may I enter? The Prophet ﷺ gave him permission, and he entered.",
+    sources: [abuDawud("5177")]
+  },
+  {
+    id: "sign-sent-by-quraysh",
+    kind: "sent-by-quraysh",
+    caption:
+      "Abu Rafi' said: Quraysh sent me to the Messenger of Allah ﷺ, and when I saw the Messenger of Allah ﷺ, Islam was cast into my heart, and I said: O Messenger of Allah, by Allah, I will never go back to them. The Messenger of Allah ﷺ said: I do not break a covenant, nor do I keep envoys; but go back, and if you still feel what you feel now, come back. So I went, then I came to the Prophet ﷺ and became Muslim.",
+    sources: [abuDawud("2758")]
+  },
+  {
+    id: "sign-a-question-at-sea",
+    kind: "a-question-at-sea",
+    caption:
+      "Abu Hurairah said: a man asked the Messenger of Allah ﷺ: O Messenger of Allah, we travel on the sea and take only a little water with us; if we use it for wudu, we will go thirsty. Can we make wudu with sea water? The Messenger of Allah ﷺ said: its water is pure.",
+    sources: [abuDawud("83")]
+  },
+  {
+    id: "sign-he-sat-with-her",
+    kind: "he-sat-with-her",
+    caption:
+      "Anas ibn Malik said: a woman came to the Messenger of Allah ﷺ and said: O Messenger of Allah, I have a need with you. He said to her: mother of so and so, sit in the corner of any street you wish, and I shall sit with you. So she sat, and the Prophet ﷺ sat with her.",
+    sources: [abuDawud("4818")]
   }
 ];
 
@@ -10494,7 +10534,18 @@ export const SIGN_LESSONS: Record<string, string> = {
   // Camp close together: scattering in the glens and wadis is of the devil, so they kept close together.
   "deep-found-journey-camp-close-together": "sign-camp-close-together",
   // Blessed early mornings: O Allah, bless my people in their early mornings; Sakhr sent his goods out early and grew rich.
-  "deep-found-journey-blessed-early-mornings": "sign-blessed-early-mornings"
+  "deep-found-journey-blessed-early-mornings": "sign-blessed-early-mornings",
+  // A little higher, a little lower: he ﷺ heard Abu Bakr's low voice and Umar's loud one at night, and asked for a middle voice.
+  // (It opened on the night sky, which shows when the night prayer is but not this story; it now opens on its own scene.)
+  "deep-prayer-night-sunnahs-a-middle-voice": "sign-a-middle-voice",
+  // Salam, then may I come in?: the one who asked to come in was taught to say the salam first, then let in.
+  "deep-manners-salam-and-visitors-salam-then-may-i-come-in": "sign-may-i-enter",
+  // Cast into his heart: Abu Rafi', sent by Quraysh, was sent back, for he ﷺ never broke a covenant, and came back Muslim.
+  "deep-how-they-came-to-islam-cast-into-his-heart": "sign-sent-by-quraysh",
+  // A question at sea: asked about wudu with sea water, he ﷺ said its water is pure.
+  "deep-kids-learning-a-question-at-sea": "sign-a-question-at-sea",
+  // He sat with her: he ﷺ let a woman who needed him choose any street corner, and sat with her there.
+  "deep-kids-helping-people-he-sat-with-her": "sign-he-sat-with-her"
 };
 
 export type LessonSign = { scene: SignScene; lessonSlug: string };
