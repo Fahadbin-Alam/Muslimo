@@ -39,6 +39,9 @@ class Settings(BaseSettings):
     site_url: str = "https://fahadbin-alam.github.io/Muslimo"
     # Slows down guessing of passwords and codes (see core/rate_limit.py). Tests turn it off.
     rate_limit_enabled: bool = True
+    # Largest request body accepted, in bytes; bigger ones get 413 before any route reads them (core/body_limit.py).
+    # A full profile sync is the biggest legitimate body (up to 256 KB of extra state plus the rest). 0 turns it off.
+    max_request_body_bytes: int = 1024 * 1024
 
     model_config = SettingsConfigDict(
         env_file=".env",

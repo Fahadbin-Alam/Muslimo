@@ -1,10 +1,10 @@
 from __future__ import annotations
 
 from datetime import datetime
-from typing import List, Optional
+from typing import Any, List, Optional, Tuple
 
-from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, func
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, Index, Integer, String, Text, UniqueConstraint, false, func
+from sqlalchemy.orm import Mapped, mapped_column, relationship, validates
 
 from backend.app.db.base import Base
 
@@ -68,6 +68,10 @@ class User(Base, TimestampMixin):
     # The app's Ummah tab: {trophies, best, battles, wins, nickname, joined, icons, icon, secrets, hints, hadith};
     # see src/services/ummah.ts. Only joined learners show on the ranking, by nickname.
     ummah_json: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)
+    # Copies of ummah_json's trophies and "joined with a nickname", kept in step by _copy_ummah_rank_fields below,
+    # so the ranking can ORDER BY and COUNT in SQL on an index (ix_users_ummah_ranking) instead of reading every row.
+    ummah_trophies: Mapped[int] = mapped_column(Integer, default=0, server_default="0", nullable=False)
+    ummah_ranked: Mapped[bool] = mapped_column(Boolean, default=False, server_default=false(), nullable=False)
     social_hub_json: Mapped[dict] = mapped_column(JSON, default=dict, nullable=False)
     # Everything else on the app's profile that has no column of its own (quiz scores, Ramadan days, the review
     # deck, streak freezes, and fields later builds add), so it survives a new phone without a migration each time.
@@ -82,6 +86,24 @@ class User(Base, TimestampMixin):
     event_logs: Mapped[List["EventLog"]] = relationship(back_populates="user", cascade="all, delete-orphan")
     following: Mapped[List["Friendship"]] = relationship(foreign_keys="Friendship.user_id", cascade="all, delete-orphan")
     followers: Mapped[List["Friendship"]] = relationship(foreign_keys="Friendship.friend_id", cascade="all, delete-orphan", overlaps="friend")
+
+    @validates("ummah_json")
+    def _copy_ummah_rank_fields(self, _key: str, value: Any) -> Any:
+        self.ummah_trophies, self.ummah_ranked = ummah_rank_fields(value)
+        return value
+
+
+def ummah_rank_fields(ummah: Any) -> Tuple[int, bool]:
+    """(trophies, ranked) for an Ummah state: ranked means joined with a nickname, the rule the ranking always had."""
+    if not isinstance(ummah, dict):
+        return 0, False
+    trophies = ummah.get("trophies")
+    count = trophies if isinstance(trophies, int) and not isinstance(trophies, bool) and trophies > 0 else 0
+    return count, bool(ummah.get("joined")) and bool(ummah.get("nickname"))
+
+
+# Most trophies first, ties to the older account: the order the Ummah ranking reads in (routes/ummah.py).
+Index("ix_users_ummah_ranking", User.ummah_ranked, User.ummah_trophies.desc(), User.id)
 
 
 class Friendship(Base):

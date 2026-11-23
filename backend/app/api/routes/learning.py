@@ -19,10 +19,15 @@ def record_question_attempt(question_id: int, payload: QuestionAttemptInput, db:
     if not question:
         raise HTTPException(status_code=404, detail="Question not found.")
 
+    # Where the question sits comes from the catalog, not from the request: an attempt can never be filed under
+    # another lesson, or point at a topic or branch id that doesn't exist (a foreign-key error on Postgres).
+    lesson = db.get(Lesson, question.lesson_id)
+    branch = db.get(Branch, lesson.branch_id) if lesson else None
+
     attempt = QuestionAttempt(
         user_id=user.id,
         question_id=question.id,
-        lesson_id=payload.lesson_id,
+        lesson_id=question.lesson_id,
         selected_answer_json=payload.selected_answer_json,
         is_correct=payload.is_correct,
         response_time_ms=payload.response_time_ms,
@@ -40,9 +45,9 @@ def record_question_attempt(question_id: int, payload: QuestionAttemptInput, db:
         if not queue_item:
             queue_item = ReviewQueueItem(
                 user_id=user.id,
-                topic_id=payload.topic_id,
-                branch_id=payload.branch_id,
-                lesson_id=payload.lesson_id,
+                topic_id=branch.topic_id if branch else None,
+                branch_id=branch.id if branch else None,
+                lesson_id=question.lesson_id,
                 question_id=question.id,
                 priority=3,
                 failure_count=1,
@@ -73,22 +78,29 @@ def complete_lesson(lesson_slug: str, payload: LessonCompletionInput, db: DbSess
         progress = UserProgress(user_id=user.id, topic_id=topic.id if topic else None, branch_id=branch.id if branch else None, lesson_id=lesson.id, xp_earned=0, best_score=0)
         db.add(progress)
 
+    now = datetime.now(timezone.utc)
     progress.status = payload.status
     progress.mastery_score = payload.mastery_score
-    progress.xp_earned = max(progress.xp_earned, payload.xp_earned or lesson.xp_reward)
     progress.best_score = max(progress.best_score, payload.best_score)
-    progress.last_seen_at = datetime.now(timezone.utc)
-    progress.completed_at = datetime.now(timezone.utc) if payload.status == "completed" else progress.completed_at
+    progress.last_seen_at = now
 
-    completed_lessons = set(user.completed_lesson_ids_json or [])
-    completed_lessons.add(lesson.slug)
-    user.completed_lesson_ids_json = sorted(completed_lessons)
-    user.total_xp += payload.xp_earned or lesson.xp_reward
-    user.last_learning_at = datetime.now(timezone.utc)
+    gained = 0
+    if payload.status == "completed":
+        # The lesson's own reward is the most it can pay, and only a first (or better) finish pays. Before, every
+        # call added xpEarned again, so one request in a loop could top the league and friend rankings.
+        earned = min(payload.xp_earned or lesson.xp_reward, lesson.xp_reward)
+        gained = max(0, earned - (progress.xp_earned or 0))
+        progress.xp_earned = (progress.xp_earned or 0) + gained
+        progress.completed_at = now
+        completed_lessons = set(user.completed_lesson_ids_json or [])
+        completed_lessons.add(lesson.slug)
+        user.completed_lesson_ids_json = sorted(completed_lessons)
+        user.total_xp = (user.total_xp or 0) + gained
+    user.last_learning_at = now
 
     db.add(user)
     db.commit()
-    return {"ok": True, "progressId": progress.id}
+    return {"ok": True, "progressId": progress.id, "xpGained": gained}
 
 
 @router.get("/review-queue", response_model=list[ReviewQueueRead])

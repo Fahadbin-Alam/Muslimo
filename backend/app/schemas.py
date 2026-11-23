@@ -1,9 +1,33 @@
 from __future__ import annotations
 
+import json
 from datetime import datetime
-from typing import Any, Dict, List, Literal, Optional
+from typing import Annotated, Any, Dict, List, Literal, Optional
 
-from pydantic import BaseModel, ConfigDict, EmailStr, Field
+from pydantic import AfterValidator, BaseModel, ConfigDict, EmailStr, Field, field_validator
+
+
+# socialHub is the app's old on-device crew (SocialHubState in src/types.ts: two lists), stored as sent in
+# users.social_hub_json. The crew now lives in the friendships table and the app sends both lists empty, so these
+# limits only stop one account from storing megabytes of arbitrary JSON.
+SOCIAL_HUB_KEYS = ("connections", "battleHistory")
+SOCIAL_HUB_MAX_ITEMS = 200
+SOCIAL_HUB_MAX_BYTES = 64 * 1024
+
+
+def check_social_hub(value: Dict[str, Any]) -> Dict[str, Any]:
+    unknown = set(value) - set(SOCIAL_HUB_KEYS)
+    if unknown:
+        raise ValueError(f"socialHub takes only {', '.join(SOCIAL_HUB_KEYS)}")
+    for key, items in value.items():
+        if not isinstance(items, list) or len(items) > SOCIAL_HUB_MAX_ITEMS or not all(isinstance(item, dict) for item in items):
+            raise ValueError(f"socialHub.{key} must be a list of at most {SOCIAL_HUB_MAX_ITEMS} objects")
+    if len(json.dumps(value, default=str)) > SOCIAL_HUB_MAX_BYTES:
+        raise ValueError(f"socialHub is larger than {SOCIAL_HUB_MAX_BYTES} bytes")
+    return value
+
+
+SocialHubInput = Annotated[Dict[str, Any], AfterValidator(check_social_hub)]
 
 
 class AuthRegisterInput(BaseModel):
@@ -13,7 +37,7 @@ class AuthRegisterInput(BaseModel):
     role: Optional[Literal["child", "parent"]] = None
     reminder_preferences: Dict[str, Any] = Field(default_factory=dict, alias="reminderPreferences")
     user: Dict[str, Any]
-    social_hub: Dict[str, Any] = Field(default_factory=dict, alias="socialHub")
+    social_hub: SocialHubInput = Field(default_factory=dict, alias="socialHub")
 
 
 class AuthLoginInput(BaseModel):
@@ -31,7 +55,7 @@ class SocialLoginInput(BaseModel):
     role: Optional[Literal["child", "parent"]] = None
     reminder_preferences: Dict[str, Any] = Field(default_factory=dict, alias="reminderPreferences")
     user: Dict[str, Any]
-    social_hub: Dict[str, Any] = Field(default_factory=dict, alias="socialHub")
+    social_hub: SocialHubInput = Field(default_factory=dict, alias="socialHub")
 
 
 class RemoteAccountRead(BaseModel):
@@ -59,7 +83,7 @@ class ProfileUpdateInput(BaseModel):
 
 
 class SocialUpdateInput(BaseModel):
-    social_hub: Dict[str, Any] = Field(default_factory=dict, alias="socialHub")
+    social_hub: SocialHubInput = Field(default_factory=dict, alias="socialHub")
 
 
 class TopicRead(BaseModel):
@@ -164,20 +188,25 @@ class LessonDetailRead(BaseModel):
 
 
 class LessonCompletionInput(BaseModel):
-    status: str = "completed"
-    mastery_score: int = Field(default=100, alias="masteryScore")
-    xp_earned: int = Field(default=0, alias="xpEarned")
-    best_score: int = Field(default=100, alias="bestScore")
+    # Bounded so a request can't store a value the Postgres columns reject (String(40), INTEGER) or a negative score.
+    status: str = Field(default="completed", min_length=1, max_length=40)
+    mastery_score: int = Field(default=100, ge=0, le=100, alias="masteryScore")
+    # 0 means "the lesson's own reward". More than the lesson's reward is never paid (see routes/learning.py).
+    xp_earned: int = Field(default=0, ge=0, le=100_000, alias="xpEarned")
+    best_score: int = Field(default=100, ge=0, le=100, alias="bestScore")
 
     model_config = ConfigDict(populate_by_name=True)
 
 
 class QuestionAttemptInput(BaseModel):
-    lesson_id: int = Field(alias="lessonId")
+    # lessonId, topicId and branchId are accepted for older builds but ignored: the server reads them from the
+    # question itself (routes/learning.py).
+    lesson_id: Optional[int] = Field(default=None, alias="lessonId")
     selected_answer_json: Dict[str, Any] = Field(default_factory=dict, alias="selectedAnswerJson")
     is_correct: bool = Field(alias="isCorrect")
-    response_time_ms: Optional[int] = Field(default=None, alias="responseTimeMs")
-    confidence_rating: Optional[int] = Field(default=None, alias="confidenceRating")
+    # At most a day in milliseconds, well inside a Postgres INTEGER.
+    response_time_ms: Optional[int] = Field(default=None, ge=0, le=86_400_000, alias="responseTimeMs")
+    confidence_rating: Optional[int] = Field(default=None, ge=0, le=100, alias="confidenceRating")
     topic_id: Optional[int] = Field(default=None, alias="topicId")
     branch_id: Optional[int] = Field(default=None, alias="branchId")
 
@@ -235,8 +264,20 @@ class SubscriptionSyncInput(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
 
 
+# An analytics event is a name and a few fields; this keeps one request from storing megabytes in event_logs.
+EVENT_PAYLOAD_MAX_BYTES = 16 * 1024
+
+
 class EventLogInput(BaseModel):
-    event_type: str = Field(alias="eventType")
+    # event_logs.event_type is String(120).
+    event_type: str = Field(alias="eventType", min_length=1, max_length=120)
     payload_json: Dict[str, Any] = Field(default_factory=dict, alias="payloadJson")
 
     model_config = ConfigDict(populate_by_name=True)
+
+    @field_validator("payload_json")
+    @classmethod
+    def payload_is_small(cls, value: Dict[str, Any]) -> Dict[str, Any]:
+        if len(json.dumps(value, default=str)) > EVENT_PAYLOAD_MAX_BYTES:
+            raise ValueError(f"payloadJson is larger than {EVENT_PAYLOAD_MAX_BYTES} bytes")
+        return value

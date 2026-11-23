@@ -16,6 +16,7 @@ from backend.app.api.routes.learning import router as learning_router
 from backend.app.api.routes.newsletter import router as newsletter_router
 from backend.app.api.routes.profile import router as profile_router
 from backend.app.api.routes.subscriptions import router as subscriptions_router
+from backend.app.core.body_limit import BodySizeLimitMiddleware
 from backend.app.core.config import settings
 
 
@@ -23,6 +24,8 @@ STATS_PAGE_ORIGIN = "https://fahadbin-alam.github.io"
 
 app = FastAPI(title=settings.app_name, version="2.0.0")
 
+# Added before CORS so CORS wraps it and a 413 still carries the CORS headers a browser needs to read it.
+app.add_middleware(BodySizeLimitMiddleware, max_bytes=settings.max_request_body_bytes)
 app.add_middleware(
     CORSMiddleware,
     # The owner's stats page (site/stats.html) lives on GitHub Pages, so that origin is always allowed.

@@ -51,15 +51,13 @@ Bootstrap everything:
 python -m backend.scripts.bootstrap
 ```
 
-## Production Direction
+## Production
 
-For production:
-- set `SIRA_DATABASE_URL` to PostgreSQL
-- keep running Alembic migrations
-- move secret config to environment variables or a secrets manager
-- replace placeholder social-login stubs with real provider verification
-- wire subscription sync to RevenueCat or direct store webhooks
-
-## Legacy Note
-
-- [server.js](server.js) is still in the repo as the old lightweight backend, but it is now a legacy fallback, not the main direction.
+- Settings come from `SIRA_*` environment variables; every one is listed in [.env.example](.env.example).
+- `SIRA_DATABASE_URL` points at PostgreSQL; the Docker image runs `alembic upgrade head` and the catalog seed on
+  every start ([Dockerfile](Dockerfile)).
+- Google and Apple sign-in verify the provider's ID token ([app/core/social_tokens.py](app/core/social_tokens.py)).
+- Purchases arrive from RevenueCat's webhook (`/api/subscriptions/revenuecat/webhook`).
+- Newsletter mail goes out through Brevo when `SIRA_BREVO_API_KEY` is set ([app/core/brevo.py](app/core/brevo.py));
+  without it sign-ups are still saved ([app/api/routes/newsletter.py](app/api/routes/newsletter.py)).
+- Hosting steps: [docs/hosting.md](../docs/hosting.md). Data flow and schema: [docs/architecture.md](../docs/architecture.md).
