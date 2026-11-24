@@ -1920,6 +1920,26 @@ const STATES: State[] = [
       />
     )
   },
+  {
+    // Auto went up a step with this lesson (challengeLevel.ts): the next questions get harder.
+    id: "complete-harder-now",
+    render: () => (
+      <LessonComplete
+        title={salam.title}
+        xp={salam.xpReward}
+        stars={3}
+        streakDays={5}
+        harderNow
+        perfect
+        nextTitle="Next"
+        mascotVariant="girl"
+        accent={FOUNDATION_ACCENT}
+        playSounds={false}
+        onContinue={noop}
+        onBackToPath={noop}
+      />
+    )
+  },
   { id: "quit", render: () => <QuitDemo /> },
   // Every lesson teacher, in the clothes of its topic (src/ui/lesson/Teacher.tsx).
   {

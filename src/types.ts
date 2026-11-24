@@ -257,6 +257,11 @@ export interface UserProfile {
    * Picking a difficulty in Settings starts it again from 0.
    */
   challengeBoost?: number;
+  /**
+   * Stars (1 to 3) of the learner's latest lessons, oldest first, at most 5 (challengeLevel.ts): on Auto, nearly
+   * all perfect makes lessons a step harder, a struggle makes them a step easier.
+   */
+  recentStars?: number[];
 }
 
 /** One story read in story mode. */

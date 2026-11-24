@@ -188,7 +188,7 @@ describe("Settings", () => {
   it("lets the learner pick Auto, Easy, Hard or Really hard", async () => {
     const onSelectDifficulty = jest.fn();
     await render(<SettingsSheet {...props} difficulty="auto" onSelectDifficulty={onSelectDifficulty} />);
-    expect(screen.getByText("Gets harder as your streak grows.")).toBeTruthy();
+    expect(screen.getByText("Gets harder as you learn and get answers right.")).toBeTruthy();
     fireEvent.press(screen.getByTestId("settings-difficulty-really-hard"));
     expect(onSelectDifficulty).toHaveBeenCalledWith("really_hard");
   });
