@@ -20,6 +20,7 @@ import { EID_TIERS } from "./tiers/eidTiers";
 import { RAMADAN_TIERS } from "./tiers/ramadanTiers";
 import { INTRO_TIERS } from "./tiers/introTiers";
 import { WOMEN_TIERS } from "./tiers/womenTiers";
+import { SCHOLARS_TIERS } from "./tiers/scholarsTiers";
 
 /**
  * Harder ways to ask the same question (Fahad, 2026-11-24: "for the same answer, rewrite it in a harder way", a few
@@ -46,7 +47,7 @@ export type TierEntry = {
   expert?: TierVersion;
 };
 
-export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2, ...PRAYER_TIERS_3, ...PRAYER_TIERS_4, ...FASTING_TIERS, ...ZAKAT_TIERS, ...HAJJ_TIERS, ...AQIDAH_TIERS, ...MANNERS_TIERS, ...AKHIRAH_TIERS, ...DUAS_TIERS, ...HADITH_TIERS, ...MARRIAGE_TIERS, ...EID_TIERS, ...RAMADAN_TIERS, ...INTRO_TIERS, ...WOMEN_TIERS };
+export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2, ...PRAYER_TIERS_3, ...PRAYER_TIERS_4, ...FASTING_TIERS, ...ZAKAT_TIERS, ...HAJJ_TIERS, ...AQIDAH_TIERS, ...MANNERS_TIERS, ...AKHIRAH_TIERS, ...DUAS_TIERS, ...HADITH_TIERS, ...MARRIAGE_TIERS, ...EID_TIERS, ...RAMADAN_TIERS, ...INTRO_TIERS, ...WOMEN_TIERS, ...SCHOLARS_TIERS };
 
 /** The tier a challenge level asks: Normal up to 1, Harder at 2 and 3, Expert at 4 and 5. */
 export function tierForLevel(level: number): Tier {
