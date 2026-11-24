@@ -12,6 +12,7 @@ import { ZAKAT_TIERS } from "./tiers/zakatTiers";
 import { HAJJ_TIERS } from "./tiers/hajjTiers";
 import { AQIDAH_TIERS } from "./tiers/aqidahTiers";
 import { MANNERS_TIERS } from "./tiers/mannersTiers";
+import { AKHIRAH_TIERS } from "./tiers/akhirahTiers";
 
 /**
  * Harder ways to ask the same question (Fahad, 2026-11-24: "for the same answer, rewrite it in a harder way", a few
@@ -38,7 +39,7 @@ export type TierEntry = {
   expert?: TierVersion;
 };
 
-export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2, ...PRAYER_TIERS_3, ...PRAYER_TIERS_4, ...FASTING_TIERS, ...ZAKAT_TIERS, ...HAJJ_TIERS, ...AQIDAH_TIERS, ...MANNERS_TIERS };
+export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2, ...PRAYER_TIERS_3, ...PRAYER_TIERS_4, ...FASTING_TIERS, ...ZAKAT_TIERS, ...HAJJ_TIERS, ...AQIDAH_TIERS, ...MANNERS_TIERS, ...AKHIRAH_TIERS };
 
 /** The tier a challenge level asks: Normal up to 1, Harder at 2 and 3, Expert at 4 and 5. */
 export function tierForLevel(level: number): Tier {
