@@ -34,7 +34,7 @@ const partial = (file, name) => {
 };
 
 for (const file of readdirSync(siteDir)) {
-  if (file === "site.config.json" || file === "partials") {
+  if (file === "site.config.json" || file === "partials" || file === "links.json") {
     continue;
   }
 
@@ -64,8 +64,74 @@ for (const file of readdirSync(siteDir)) {
   writeFileSync(join(outDir, file), html);
 }
 
+buildTrackingLinks();
+
 copyFileSync(join(root, "assets", "icon.png"), join(outDir, "icon.png"));
 copyFileSync(join(root, "assets", "favicon.png"), join(outDir, "favicon.png"));
 writeFileSync(join(outDir, ".nojekyll"), "");
+
+// Short tracking links from site/links.json: go/<name>/index.html sends the visitor to the store at once
+// (Google Play with utm tags, so Play Console shows installs per source) and, without waiting, asks the server
+// to count one click. iPhones go to the App Store link once it is filled in, else the home page's "coming soon".
+function buildTrackingLinks() {
+  const links = JSON.parse(readFileSync(join(siteDir, "links.json"), "utf8"));
+  const names = Object.keys(links.sources || {});
+  const bad = names.filter((name) => !/^[a-z0-9][a-z0-9-]{0,31}$/.test(name));
+  if (bad.length > 0) {
+    console.error(`site/links.json: use only lowercase letters, numbers and dashes in link names (${bad.join(", ")}).`);
+    process.exit(1);
+  }
+  const published = { playStoreUrl: links.playStoreUrl, appStoreUrl: links.appStoreUrl, links: [] };
+  for (const name of names) {
+    const { medium = "social", label = name } = links.sources[name];
+    const referrer = `utm_source=${name}&utm_medium=${medium}&utm_campaign=muslimo-link`;
+    const play = `${links.playStoreUrl}&referrer=${encodeURIComponent(referrer)}`;
+    let iphone = links.iphoneSoonPage;
+    if (String(links.appStoreUrl || "").trim()) {
+      const appStore = new URL(links.appStoreUrl);
+      appStore.searchParams.set("ct", name);
+      appStore.searchParams.set("mt", "8");
+      iphone = appStore.toString();
+    }
+    const target = { play, iphone, api: `${links.clickApi}?s=${name}` };
+    const page = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Muslimo: Learn Islam Daily</title>
+  <meta property="og:title" content="Muslimo: Learn Islam Daily">
+  <meta property="og:description" content="Learn the Quran, hadith, the Prophets and Islamic history in a few minutes a day. Free.">
+  <meta property="og:image" content="https://fahadbin-alam.github.io/Muslimo/icon.png">
+  <link rel="icon" href="../../favicon.png">
+  <noscript><meta http-equiv="refresh" content="0; url=${escapeHtml(play)}"></noscript>
+  <script>
+    (function () {
+      var t = ${JSON.stringify(target)};
+      var ua = navigator.userAgent || "";
+      var ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      var phone = ios ? "ios" : /Android/i.test(ua) ? "android" : "other";
+      var ping = t.api + "&p=" + phone;
+      // Count the click without waiting: the browser sends it even after the page has moved on.
+      try { if (!(navigator.sendBeacon && navigator.sendBeacon(ping))) throw 0; }
+      catch (e) { try { fetch(ping, { method: "POST", mode: "no-cors", keepalive: true }); } catch (e2) {} }
+      location.replace(ios ? t.iphone : t.play);
+    })();
+  </script>
+</head>
+<body style="font-family:system-ui,sans-serif;text-align:center;padding:48px 16px">
+  <p>Opening Muslimo…</p>
+  <p><a href="${escapeHtml(play)}">Get it on Google Play</a></p>
+</body>
+</html>
+`;
+    mkdirSync(join(outDir, "go", name), { recursive: true });
+    writeFileSync(join(outDir, "go", name, "index.html"), page);
+    published.links.push({ name, label, medium, path: `go/${name}` });
+  }
+  // The stats page reads this list to show every link with a copy button.
+  writeFileSync(join(outDir, "links.json"), JSON.stringify(published, null, 2));
+}
 
 console.log(`Built ${readdirSync(outDir).length} files into _site/`);

@@ -13,6 +13,7 @@ from backend.app.api.routes.friends import router as friends_router
 from backend.app.api.routes.invites import router as invites_router
 from backend.app.api.routes.ummah import router as ummah_router
 from backend.app.api.routes.learning import router as learning_router
+from backend.app.api.routes.links import router as links_router
 from backend.app.api.routes.newsletter import router as newsletter_router
 from backend.app.api.routes.profile import router as profile_router
 from backend.app.api.routes.subscriptions import router as subscriptions_router
@@ -55,3 +56,4 @@ app.include_router(subscriptions_router, prefix="/api")
 app.include_router(analytics_router, prefix="/api")
 app.include_router(admin_router, prefix="/api")
 app.include_router(newsletter_router, prefix="/api")
+app.include_router(links_router, prefix="/api")
