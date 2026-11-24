@@ -512,7 +512,6 @@
   "Not quite. Try again!": "Belum tepat. Coba lagi!",
   "Not right": "Tidak benar",
   "Not yet!": "Belum!",
-  "Nothing found. Try another name.": "Tidak ada yang ditemukan. Coba nama lain.",
   "Nothing to restore": "Tidak ada yang bisa dipulihkan",
   "Nothing to skip yet.": "Belum ada yang bisa dilewati.",
   "Notifications are off": "Notifikasi mati",
@@ -668,7 +667,6 @@
   "Scholars": "Ulama",
   "Scroll down": "Gulir ke bawah",
   "Scroll up": "Gulir ke atas",
-  "Search topics and people": "Cari topik dan tokoh",
   "Search your city": "Cari kotamu",
   "Secret clue": "Petunjuk rahasia",
   "Secret found! +{count} dates": "Rahasia ditemukan! +{count} kurma",
@@ -1075,5 +1073,15 @@
   "Want it harder?": "Mau lebih sulit?",
   "Tougher questions from now on. You can change it in Settings.": "Mulai sekarang pertanyaan lebih sulit. Kamu bisa mengubahnya di Pengaturan.",
   "Yes, make it harder": "Ya, buat lebih sulit",
-  "Keep it as it is": "Biarkan seperti ini"
+  "Keep it as it is": "Biarkan seperti ini",
+  "Search hadith, ayahs and lessons": "Cari hadis, ayat, dan pelajaran",
+  "Search": "Cari",
+  "Search hadith, ayahs, topics, lessons": "Cari hadis, ayat, topik, pelajaran",
+  "Try:": "Coba:",
+  "Search {text}": "Cari {text}",
+  "Ayah": "Ayat",
+  "Narrated by {name}": "Diriwayatkan oleh {name}",
+  "Go to the lesson: {lesson}": "Buka pelajaran: {lesson}",
+  "Read it in the source": "Baca di sumbernya",
+  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "Tidak ditemukan. Coba kata lain, atau nomor hadis seperti Bukhari 1."
 }

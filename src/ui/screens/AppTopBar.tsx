@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, useWindowDimensions, View } from "react-native";
 import { Icon } from "../Icon";
 import { StatChip } from "../StatChip";
 import { Tappable } from "../Tappable";
@@ -23,6 +23,8 @@ export type AppTopBarProps = {
   hearts: { current: number; max: number; unlimited: boolean };
   /** Tap the topic button. */
   onOpenTopics: () => void;
+  /** Tap the magnifier: search hadith, ayahs, topics and lessons. Leave out to hide it. */
+  onOpenSearch?: () => void;
   /** Tap gems or hearts. */
   onOpenShop: () => void;
   /** Tap the flame. Default: a small sheet that says how the streak works. */
@@ -52,6 +54,7 @@ export function AppTopBar({
   gems,
   hearts,
   onOpenTopics,
+  onOpenSearch,
   onOpenShop,
   onStreak,
   dailySeen = false,
@@ -62,6 +65,9 @@ export function AppTopBar({
   topInset = 0
 }: AppTopBarProps) {
   const palette = topicPalette(accent);
+  // A small phone (320 wide) fits the magnifier too by leaving out the topic button's menu mark and some padding.
+  const { width } = useWindowDimensions();
+  const narrow = Boolean(onOpenSearch) && width < 370;
   const [streakOpen, setStreakOpen] = useState(false);
   const [dailyOpen, setDailyOpen] = useState(false);
   // The book wears a red dot until today's card is opened.
@@ -92,7 +98,7 @@ export function AppTopBar({
 
   return (
     <View style={[styles.bar, { paddingTop: topInset }]} testID="app-top-bar">
-      <View style={styles.row}>
+      <View style={[styles.row, narrow ? styles.rowNarrow : null]}>
         <Tappable
           onPress={onOpenTopics}
           sound="node_tap"
@@ -104,13 +110,29 @@ export function AppTopBar({
           // A raised button with a menu mark, so it reads as "tap me for all the topics", not a picture.
           style={[styles.topicButton, { backgroundColor: palette.light, borderColor: palette.soft, borderBottomColor: palette.lip }]}
         >
-          <View style={styles.menuMark} testID="top-bar-menu-mark">
-            <Icon name="menu" size={18} color={palette.lip} />
-          </View>
+          {narrow ? null : (
+            <View style={styles.menuMark} testID="top-bar-menu-mark">
+              <Icon name="menu" size={18} color={palette.lip} />
+            </View>
+          )}
           <View style={styles.emblem}>
             <Icon name={worldIcon(topicId)} size={24} />
           </View>
         </Tappable>
+        {onOpenSearch ? (
+          <Tappable
+            onPress={onOpenSearch}
+            sound="node_tap"
+            pressScale={0.92}
+            hitSlop={6}
+            accessibilityLabel={t("Search hadith, ayahs and lessons")}
+            accessibilityRole="button"
+            testID="top-bar-search"
+            style={[styles.searchButton, narrow ? styles.searchButtonNarrow : null, { backgroundColor: palette.light, borderColor: palette.soft, borderBottomColor: palette.lip }]}
+          >
+            <Icon name="search" size={22} />
+          </Tappable>
+        ) : null}
 
         {/* Counts are formatted as on the Shop card and the Me tab: "1,000", "12,345", then "120k", so they always fit. */}
         <View style={styles.stats}>
@@ -206,6 +228,23 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     borderWidth: 2,
     borderBottomWidth: 4
+  },
+  rowNarrow: {
+    paddingHorizontal: 8
+  },
+  searchButtonNarrow: {
+    width: 38,
+    marginStart: 6
+  },
+  searchButton: {
+    width: 42,
+    height: 42,
+    marginStart: 8,
+    borderRadius: 14,
+    borderWidth: 2,
+    borderBottomWidth: 4,
+    alignItems: "center",
+    justifyContent: "center"
   },
   menuMark: {
     width: 22,
