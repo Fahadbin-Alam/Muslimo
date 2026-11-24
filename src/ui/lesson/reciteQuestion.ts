@@ -316,6 +316,9 @@ function lessonsQuoting(ayahKey: string) {
   if (!quoting) {
     quoting = new Map();
     for (const node of allNodes) {
+      // Read Arabic quotes an ayah only for the word it takes from it: a learner still learning the letters is not
+      // asked which ayah comes next.
+      if (node.topicId === "read_arabic") continue;
       for (const lessonId of node.lessonIds) {
         const quote = LESSONS_BY_ID[lessonId]?.quote;
         const key = quote && isArabicOnly(quote.text) ? parseQuranReference(quote.reference) : null;

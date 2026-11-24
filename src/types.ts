@@ -16,6 +16,7 @@ export type TopicId =
   | "eid"
   | "akhirah"
   | "duas"
+  | "read_arabic"
   | "sahihayn"
   | "ramadan"
   | "intro";

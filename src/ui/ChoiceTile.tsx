@@ -107,6 +107,13 @@ export const LONG_LABEL = 80;
 const ARABIC_LONG = 20;
 const ARABIC_COMPACT = 22;
 const ARABIC = 24;
+/** A letter, a syllable or a short word alone (Read Arabic's "Which letter is Ba?"): big and in the middle, so its dots and marks are clear. */
+const ARABIC_LETTER = 34;
+const ARABIC_LETTER_COMPACT = 30;
+const BASE_LETTERS = /[\u0621-\u064A\u0671]/g;
+function isLetterLabel(label: string) {
+  return !/\s/.test(label.trim()) && (label.match(BASE_LETTERS)?.length ?? 0) <= 3;
+}
 
 /** Big answer tile. Pops when selected, shakes when wrong. Text always wraps. */
 export function ChoiceTile(props: ChoiceTileProps) {
@@ -167,6 +174,7 @@ const TileFace = memo(function TileFace({
 
   const translateY = press.interpolate({ inputRange: [0, 1], outputRange: [0, LIP - 1] });
   const arabic = isArabicOnly(label);
+  const letter = arabic && isLetterLabel(label);
   const square = layout === "square";
   const long = smallText || (longProp ?? label.length > LONG_LABEL);
   const labelSize = long ? styles.labelLong : compact ? styles.labelCompact : null;
@@ -192,11 +200,11 @@ const TileFace = memo(function TileFace({
       ) : null}
       {arabic ? (
         <ArabicText
-          size={(!quranWord && isQuranText(label)) || smallText ? ARABIC_LONG : compact ? ARABIC_COMPACT : ARABIC}
+          size={letter ? (compact ? ARABIC_LETTER_COMPACT : ARABIC_LETTER) : (!quranWord && isQuranText(label)) || smallText ? ARABIC_LONG : compact ? ARABIC_COMPACT : ARABIC}
           weight="bold"
           quran={quranWord || isQuranText(label)}
           color={look.text}
-          align={square ? "center" : "right"}
+          align={square || letter ? "center" : "right"}
           style={square ? styles.squareLabel : styles.rowLabel}
         >
           {label}
