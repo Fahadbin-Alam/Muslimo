@@ -7,6 +7,7 @@ import {
   findNodeByLessonId
 } from "../data/course";
 import { lessonForAge } from "../data/ageLevels";
+import { challengesAtTier, tierForLevel } from "../data/questionTiers";
 import { challengeLevel, EXTRA_QUESTIONS, HARD_BANK_FROM, mixAgeFor, SWAP_TRUE_FALSE_FROM, withRecentStars, type ChallengeLevel } from "../data/challengeLevel";
 import { HARD_QUESTIONS } from "../data/hardQuestions";
 import { asksSameLine, givesAway as namesAnswerOf, withoutGiveaways } from "../data/scalableCurriculum";
@@ -119,7 +120,11 @@ export const learningApi: IslamicLearningApi = {
 
     // The question mix for the learner's age (or the one "Easy" asks), then harder as their streak and lessons
     // done grow, or at the difficulty they picked (challengeLevel.ts).
-    const asked = lessonAtLevel(lessonForAge(lesson, mixAgeFor(user, ageGroup)), user, challengeLevel(user, ageGroup));
+    const level = challengeLevel(user, ageGroup);
+    const leveled = lessonAtLevel(lessonForAge(lesson, mixAgeFor(user, ageGroup)), user, level);
+    // Questions that have harder wordings (questionTiers.ts) are asked in the one for the level: Harder from level 2,
+    // Expert from 4. Deeper in a topic, a learner of 13 or over past the first level is asked a step harder still.
+    const asked = { ...leveled, challenges: challengesAtTier(leveled.challenges, tierForLevel(level > 0 && ageGroup !== "6-9" && ageGroup !== "10-12" ? level + deepStep(lesson.id) : level)) };
     // Then, at the end, a couple of questions missed before that are due to come back (spaced review).
     const progressiveLesson = withMissedQuestions(prepareLessonForSession(asked), user);
 
@@ -1782,6 +1787,12 @@ function prepareLessonForSession(lesson: Lesson): Lesson {
   };
 
   return buildGuidedLesson(sourcedLesson, node);
+}
+
+// A lesson in the last part of its topic (getLessonTier "hard") asks its reworded questions a step harder.
+function deepStep(lessonId: string) {
+  const node = findNodeByLessonId(lessonId);
+  return node && !UNRAMPED_TOPICS.has(node.topicId) && getLessonTier(node) === "hard" ? 1 : 0;
 }
 
 function getLessonTier(node: LearningNode): LessonTier {

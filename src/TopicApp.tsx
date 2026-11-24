@@ -56,7 +56,8 @@ import {
   LIBRARY_TOPICS,
   harderQuestions
 } from "./api/islamicLearningApi";
-import { challengeLevel, HARDER_OFFER_AFTER, nextLevel, type ChallengeLevel } from "./data/challengeLevel";
+import { challengeLevel, HARDER_OFFER_AFTER, nextLevel, TOP_LEVEL, type ChallengeLevel } from "./data/challengeLevel";
+import { atTier, tierForLevel } from "./data/questionTiers";
 import { cleanReviewCards } from "./services/reviewDeck";
 import { ReviewBanner } from "./ui/screens/ReviewBanner";
 import { StartScreen } from "./ui/StartScreen";
@@ -302,7 +303,7 @@ import { setsFinishedBy, type AlbumSet } from "./data/albumSets";
 import { isUpdateAvailable, openStore } from "./services/appUpdate";
 import { maybeAskForRating } from "./services/ratingPrompt";
 import { ensureLanguage, isLanguageReady } from "./translations";
-import { attemptOrder, ExerciseView, LearnCard, LessonComplete, LessonScreen, OrderGame, QuitSheet, QuizComplete, isPlayablePractice, lessonStars } from "./ui/lesson";
+import { attemptOrder, ExerciseView, LearnCard, LessonComplete, LessonScreen, OrderGame, HarderSheet, QuitSheet, QuizComplete, isPlayablePractice, lessonStars } from "./ui/lesson";
 import { getBranchArabic, getLessonArabic, getNodeArabic, getTopicArabic, isFirstUseOfWord, surahArabicName } from "./data/arabicTerms";
 import { questionSource, shortReference } from "./services/questionSource";
 import { openSource } from "./services/sourceLink";
@@ -496,6 +497,12 @@ interface AppState {
   lessonLevel?: ChallengeLevel;
   /** Times this lesson has got harder, for the "Getting harder!" badge. */
   climbs: number;
+  /** The level the lesson started at, before its first step up: a wrong answer never eases below it. */
+  lessonStart?: ChallengeLevel;
+  /** The learner said yes to "Want it harder?" in this lesson: every later run of right answers climbs on its own. */
+  harderChosen: boolean;
+  /** The learner said no to "Want it harder?" in this lesson, so it stays as it is and does not ask again. */
+  harderDeclined: boolean;
   /** Ids of the harder questions added in this lesson: a wrong answer takes the ones still waiting out. */
   climbIds: string[];
   loading: boolean;
@@ -529,8 +536,9 @@ type Action =
   | { type: "apply_user_latest"; update: (user: UserProfile) => UserProfile }
   | { type: "sync_premium"; premium: PremiumStatus }
   | { type: "reset_lesson" }
-  | { type: "make_harder"; challenges: LessonSession["lesson"]["challenges"]; level: ChallengeLevel }
-  | { type: "make_easier"; level: ChallengeLevel };
+  | { type: "make_harder"; challenges: LessonSession["lesson"]["challenges"]; level: ChallengeLevel; from: ChallengeLevel; user?: UserProfile }
+  | { type: "make_easier"; level: ChallengeLevel }
+  | { type: "keep_difficulty" };
 
 // The newsletter tick box in Settings reads and saves the choice on the server.
 const NEWSLETTER_LINK = { load: fetchNewsletterChoice, save: setNewsletterChoice };
@@ -553,6 +561,9 @@ const initialState: AppState = {
   lessonLevel: undefined,
   climbs: 0,
   climbIds: [],
+  lessonStart: undefined,
+  harderChosen: false,
+  harderDeclined: false,
   loading: true
 };
 
@@ -573,7 +584,10 @@ const NO_LESSON = {
   missedChallengeIds: [] as string[],
   lessonLevel: undefined as ChallengeLevel | undefined,
   climbs: 0,
-  climbIds: [] as string[]
+  climbIds: [] as string[],
+  lessonStart: undefined as ChallengeLevel | undefined,
+  harderChosen: false,
+  harderDeclined: false
 };
 
 // How long the app waits for the server's copy of a signed-in learner before opening on the phone's own copy.
@@ -723,14 +737,23 @@ function reducer(state: AppState, action: Action): AppState {
       const start = state.activeSession.lesson.challenges.length;
       const added: FlowStep[] = action.challenges.map((_, offset) => ({ index: start + offset, attempt: 0 }));
       const queue = [...state.lessonQueue.slice(0, state.stepIndex + 1), ...added, ...state.lessonQueue.slice(state.stepIndex + 1)];
+      // The questions still to come are asked in their harder wording, when they have one (questionTiers.ts).
+      const tier = tierForLevel(action.level);
+      const asked = askedIndexes(state.lessonQueue, state.stepIndex);
+      const challenges = [...state.activeSession.lesson.challenges, ...action.challenges].map((challenge, index) =>
+        asked.has(index) ? challenge : atTier(challenge, tier)
+      );
       return {
         ...state,
+        ...(action.user ? { user: action.user } : {}),
         lessonLevel: action.level,
+        lessonStart: state.lessonStart ?? action.from,
+        harderChosen: true,
         climbs: state.climbs + 1,
-        climbIds: [...state.climbIds, ...action.challenges.map((challenge) => challenge.id)],
+        climbIds: [...state.climbIds, ...challenges.slice(start).map((challenge) => challenge.id)],
         activeSession: {
           ...state.activeSession,
-          lesson: { ...state.activeSession.lesson, challenges: [...state.activeSession.lesson.challenges, ...action.challenges] }
+          lesson: { ...state.activeSession.lesson, challenges }
         },
         lessonQueue: queue,
         lessonTotal: state.lessonTotal + added.length
@@ -741,16 +764,30 @@ function reducer(state: AppState, action: Action): AppState {
       const challenges = state.activeSession?.lesson.challenges ?? [];
       const harder = new Set(state.climbIds);
       const eased = withoutWaitingQuestions(state.lessonQueue, state.stepIndex, (index) => harder.has(challenges[index]?.id ?? ""));
+      // The questions still to come go back to the wording for the eased level.
+      const tier = tierForLevel(action.level);
+      const asked = askedIndexes(state.lessonQueue, state.stepIndex);
       return {
         ...state,
         lessonLevel: action.level,
+        activeSession: state.activeSession && {
+          ...state.activeSession,
+          lesson: { ...state.activeSession.lesson, challenges: challenges.map((challenge, index) => (asked.has(index) ? challenge : atTier(challenge, tier))) }
+        },
         lessonQueue: eased.queue,
         lessonTotal: Math.max(0, state.lessonTotal - eased.removed)
       };
     }
+    case "keep_difficulty":
+      return { ...state, harderDeclined: true };
     default:
       return state;
   }
+}
+
+/** The questions already asked (or on screen now), by their index in lesson.challenges: their wording stays. */
+function askedIndexes(queue: FlowStep[], position: number) {
+  return new Set(queue.slice(0, position + 1).flatMap((step) => (isQuestionStep(step) ? [step.index] : [])));
 }
 
 /** The lesson screen a step is shown on. */
@@ -906,6 +943,9 @@ export default function TopicApp() {
   const [settingsSoundEnabled, setSettingsSoundEnabled] = useState(true);
   const [settingsDifficulty, setSettingsDifficulty] = useState<DifficultyChoice>("auto");
   const [settingsReducedSound, setSettingsReducedSound] = useState(false);
+  // "Want it harder?" is open: how many were right in a row when it opened (kept while the sheet slides away).
+  const [harderOfferOpen, setHarderOfferOpen] = useState(false);
+  const [harderInARow, setHarderInARow] = useState(0);
   const [crew, setCrew] = useState<CrewState>({ status: "idle" });
   const [inviteEmail, setInviteEmail] = useState("");
   const [rankings, setRankings] = useState<RankingsState>({ status: "idle" });
@@ -2526,10 +2566,16 @@ export default function TopicApp() {
       return;
     }
 
-    // Every few right first time in a row: the lesson gets harder on its own, the harder questions next.
+    // After a few right first time in a row: "Want it harder?" the first time; once they said yes, every later run
+    // makes the lesson harder on its own, the harder questions next.
     const climb = harderClimb();
+    if (climb && !state.harderChosen) {
+      setHarderInARow(state.rightInARow);
+      setHarderOfferOpen(true);
+      return;
+    }
     if (climb) {
-      dispatch({ type: "make_harder", challenges: climb.extras, level: climb.level });
+      dispatch({ type: "make_harder", challenges: climb.extras, level: climb.level, from: climb.from });
       challengeStartedAtRef.current = Date.now();
       dispatch({ type: "next_challenge" });
       return;
@@ -2553,12 +2599,41 @@ export default function TopicApp() {
   // away. None on the last step, or when there is nothing harder to ask.
   function harderClimb() {
     const session = state.activeSession;
-    if (!state.user || !session || !climbsInLesson(session)) return undefined;
+    if (!state.user || !session || !climbsInLesson(session) || state.harderDeclined) return undefined;
     if (state.answerState !== "correct" || state.rightInARow < HARDER_OFFER_AFTER || state.rightInARow % HARDER_OFFER_AFTER !== 0) return undefined;
     if (isLastLessonStep(state.lessonQueue, state.stepIndex)) return undefined;
-    const level = nextLevel(currentLessonLevel(state.user));
+    const from = currentLessonLevel(state.user);
+    const level = nextLevel(from);
+    if (level === from) return undefined;
     const extras = harderQuestions(session.lesson, state.user, level);
-    return extras.length ? { extras, level } : undefined;
+    // Something harder to ask: new harder questions, or questions still to come that have a harder wording.
+    const asked = askedIndexes(state.lessonQueue, state.stepIndex);
+    const tier = tierForLevel(level);
+    const reworded = session.lesson.challenges.some((challenge, index) => !asked.has(index) && atTier(challenge, tier).id !== challenge.id);
+    return extras.length || reworded ? { extras, level, from } : undefined;
+  }
+
+  // "Want it harder?": yes makes this lesson harder now (and every later run climbs on its own), and the next lessons
+  // a step harder too; no keeps it as it is, and the lesson does not ask again.
+  function chooseHarder(harder: boolean) {
+    setHarderOfferOpen(false);
+    const user = state.user;
+    if (!user) return;
+    if (!harder) {
+      dispatch({ type: "keep_difficulty" });
+      void continueLesson(user);
+      return;
+    }
+    const climb = harderClimb();
+    const nextUser = { ...user, challengeBoost: Math.min(TOP_LEVEL, (user.challengeBoost ?? 0) + 1) };
+    if (!climb) {
+      dispatch({ type: "apply_user", user: nextUser });
+      void continueLesson(nextUser);
+      return;
+    }
+    dispatch({ type: "make_harder", challenges: climb.extras, level: climb.level, from: climb.from, user: nextUser });
+    challengeStartedAtRef.current = Date.now();
+    dispatch({ type: "next_challenge" });
   }
 
   // A wrong answer eases off: a step back down (never below where the lesson started), and the harder questions
@@ -2566,7 +2641,7 @@ export default function TopicApp() {
   function easeOff(user: UserProfile) {
     const session = state.activeSession;
     if (!session || !climbsInLesson(session) || state.lessonLevel === undefined) return;
-    const start = challengeLevel(user, ageGroup);
+    const start = state.lessonStart ?? challengeLevel(user, ageGroup);
     dispatch({ type: "make_easier", level: Math.max(start, state.lessonLevel - 1) as ChallengeLevel });
   }
 
@@ -4272,6 +4347,14 @@ export default function TopicApp() {
       overlay={
         <>
           {quitSheet}
+          <HarderSheet
+            visible={harderOfferOpen}
+            inARow={harderInARow}
+            mascotVariant={lessonMascot}
+            accent={lessonAccent}
+            onHarder={() => chooseHarder(true)}
+            onKeep={() => chooseHarder(false)}
+          />
         </>
       }
     >

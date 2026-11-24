@@ -33,13 +33,14 @@ import { challengeLevel, HARDER_OFFER_AFTER } from "../data/challengeLevel";
 import { COURSE, LESSONS_BY_ID } from "../data/course";
 import { getStoredItem, setStoredItem } from "../services/appStorage";
 import type { Challenge, LearningNodeView, UserProfile } from "../types";
-import { questionOnScreen, toQuestion } from "./lessonDriver";
+import { questionOnScreen, toQuestion, withHarder } from "./lessonDriver";
 import { makeUser } from "./testUtils";
 import { withoutWaitingQuestions } from "../services/lessonQueue";
 import { ComboBadge } from "../ui/lesson/LessonHeader";
 
-// Fahad: "while they're doing the questions it gets harder and harder". In a lesson, every few right in a row, the
-// lesson steps up on its own (harder questions next); a wrong answer eases it off again.
+// Fahad: "while they're doing the questions it gets harder and harder", and "ask them, do you want it harder or not,
+// after 3 questions". In a lesson, after a few right in a row it asks "Want it harder?"; after a yes every later run
+// steps up on its own (harder questions, harder wordings); a wrong answer eases it off again.
 
 const PROFILE_KEY = "sira-path-user-profile";
 // The sheet stays drawn while it slides away, without taking taps.
@@ -124,59 +125,7 @@ describe("harderQuestions", () => {
 });
 
 describe("a lesson getting harder as the learner answers", () => {
-  // Every harder question this lesson could add, at each level.
-  const anyHarder = (lesson: Parameters<typeof harderQuestions>[0], user: UserProfile) =>
-    [1, 2, 3, 4, 5].flatMap((level) => harderQuestions(lesson, user, level as 1 | 2 | 3 | 4 | 5, 6));
-
-  it(`steps up on its own after every ${HARDER_OFFER_AFTER} right in a row, harder questions next`, async () => {
-    const user = learner();
-    const session = await startLesson(user);
-    const extras = harderQuestions(session.lesson, user, 1);
-    const all = [...session.lesson.challenges, ...extras];
-    expect(extras.length).toBeGreaterThan(0);
-
-    await answerRight(all, HARDER_OFFER_AFTER - 1);
-    await press("feedback-continue");
-    expect(screen.queryByTestId("harder-badge")).toBeNull();
-    await answerRight(all, 1);
-    await press("feedback-continue");
-    // Nothing to answer first: the harder question comes straight away (with a "Getting harder!" badge, below).
-    await toQuestion();
-    expect(extras.map((challenge) => challenge.id)).toContain(questionOnScreen(all)?.id);
-    // It is this lesson that gets harder: the saved difficulty is not changed.
-    expect(savedUser().challengeBoost ?? 0).toBe(0);
-
-    const pool = [...session.lesson.challenges, ...anyHarder(session.lesson, user)];
-    for (let turn = 0; turn < 80 && !screen.queryByTestId("lesson-complete"); turn += 1) {
-      await toQuestion();
-      const shown = questionOnScreen(pool);
-      if (!shown) break;
-      await press(`choice-${shown.correctChoiceId}`);
-      await press("exercise-check");
-      await press("feedback-continue");
-    }
-    expect(screen.getByTestId("lesson-complete")).toBeTruthy();
-  });
-
-  it("eases off after a wrong answer: the harder questions still waiting are not asked", async () => {
-    const user = learner();
-    const session = await startLesson(user);
-    const extras = harderQuestions(session.lesson, user, 1);
-    expect(extras.length).toBeGreaterThanOrEqual(2);
-    const all = [...session.lesson.challenges, ...extras];
-
-    await answerRight(all, HARDER_OFFER_AFTER);
-    await press("feedback-continue");
-    await toQuestion();
-    const first = questionOnScreen(all)!;
-    expect(extras.map((challenge) => challenge.id)).toContain(first.id);
-    const wrong = first.choices.find((choice) => choice.id !== first.correctChoiceId)!;
-    await press(`choice-${wrong.id}`);
-    await press("exercise-check");
-    await press("feedback-continue");
-
-    const waiting = extras.filter((challenge) => challenge.id !== first.id).map((challenge) => challenge.id);
-    const pool = [...session.lesson.challenges, ...anyHarder(session.lesson, user)];
+  async function playToEnd(pool: Challenge[], onTurn?: () => void) {
     const seen: string[] = [];
     for (let turn = 0; turn < 80 && !screen.queryByTestId("lesson-complete"); turn += 1) {
       await toQuestion();
@@ -186,7 +135,74 @@ describe("a lesson getting harder as the learner answers", () => {
       await press(`choice-${shown.correctChoiceId}`);
       await press("exercise-check");
       await press("feedback-continue");
+      onTurn?.();
     }
+    return seen;
+  }
+
+  it(`asks "Want it harder?" after ${HARDER_OFFER_AFTER} right in a row; YES makes it harder now and keeps climbing`, async () => {
+    const user = learner();
+    const session = await startLesson(user);
+    const extras = harderQuestions(session.lesson, user, 1);
+    const pool = withHarder(session.lesson, user);
+    expect(extras.length).toBeGreaterThan(0);
+
+    await answerRight(pool, HARDER_OFFER_AFTER - 1);
+    await press("feedback-continue");
+    expect(offerOpen()).toBe(false);
+    await answerRight(pool, 1);
+    await press("feedback-continue");
+    expect(offerOpen()).toBe(true);
+    expect(screen.getByText(`${HARDER_OFFER_AFTER} right in a row!`)).toBeTruthy();
+
+    await press("harder-yes");
+    // The harder question comes straight away, and the next lessons start a step harder.
+    await toQuestion();
+    expect(extras.map((challenge) => challenge.id)).toContain(questionOnScreen(pool)?.id);
+    expect(savedUser().challengeBoost).toBe(1);
+
+    // It never asks again: later runs climb on their own.
+    await playToEnd(pool, () => expect(offerOpen()).toBe(false));
+    expect(screen.getByTestId("lesson-complete")).toBeTruthy();
+  });
+
+  it("stays as it is after KEEP IT AS IT IS, and does not ask again", async () => {
+    const user = learner();
+    const session = await startLesson(user);
+    const pool = withHarder(session.lesson, user);
+
+    await answerRight(pool, HARDER_OFFER_AFTER);
+    await press("feedback-continue");
+    await press("harder-no");
+    expect(savedUser().challengeBoost ?? 0).toBe(0);
+
+    const seen = await playToEnd(pool, () => expect(offerOpen()).toBe(false));
+    expect(screen.getByTestId("lesson-complete")).toBeTruthy();
+    // Only the lesson's own questions (and its reviews), none added.
+    const own = new Set(session.lesson.challenges.map((challenge) => challenge.id));
+    for (const id of seen) expect(own.has(id)).toBe(true);
+  });
+
+  it("eases off after a wrong answer: the harder questions still waiting are not asked", async () => {
+    const user = learner();
+    const session = await startLesson(user);
+    const extras = harderQuestions(session.lesson, user, 1);
+    expect(extras.length).toBeGreaterThanOrEqual(2);
+    const pool = withHarder(session.lesson, user);
+
+    await answerRight(pool, HARDER_OFFER_AFTER);
+    await press("feedback-continue");
+    await press("harder-yes");
+    await toQuestion();
+    const first = questionOnScreen(pool)!;
+    expect(extras.map((challenge) => challenge.id)).toContain(first.id);
+    const wrong = first.choices.find((choice) => choice.id !== first.correctChoiceId)!;
+    await press(`choice-${wrong.id}`);
+    await press("exercise-check");
+    await press("feedback-continue");
+
+    const waiting = extras.filter((challenge) => challenge.id !== first.id).map((challenge) => challenge.id);
+    const seen = await playToEnd(pool);
     expect(screen.getByTestId("lesson-complete")).toBeTruthy();
     for (const id of waiting) expect(seen).not.toContain(id);
   });
