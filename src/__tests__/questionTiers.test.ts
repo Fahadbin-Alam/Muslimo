@@ -78,7 +78,8 @@ describe("question tiers", () => {
     for (const [, entry] of entries) {
       for (const version of [entry.harder, entry.expert]) {
         if (!version) continue;
-        for (const text of typeof version === "string" ? [version] : version) if (!catalog[text]) missing.push(text);
+        // Arabic-only choices (a letter or a word from an ayah) read the same in every language and are shown as they are.
+        for (const text of typeof version === "string" ? [version] : version) if (/[A-Za-z]/.test(text) && !catalog[text]) missing.push(text);
       }
     }
     expect(missing).toEqual([]);
