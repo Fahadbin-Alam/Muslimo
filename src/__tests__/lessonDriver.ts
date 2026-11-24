@@ -1,5 +1,6 @@
 import { act, fireEvent, screen } from "@testing-library/react-native";
 import { harderQuestions } from "../api/islamicLearningApi";
+import { atTier } from "../data/questionTiers";
 import type { Challenge, Lesson, UserProfile } from "../types";
 import { checkCandidate, fillPiece } from "../ui/lesson/questionFormats";
 
@@ -92,13 +93,17 @@ export async function finishLessonRight(challenges: Challenge[]) {
     await pickRight(shown);
     await press("exercise-check");
     await press("feedback-continue");
+    // "Want it harder?" after a few right in a row: the lesson stays as it is.
+    if (screen.queryByTestId("feedback-continue") && screen.queryByTestId("harder-no")) await press("harder-no");
   }
 }
 
 /**
- * A lesson's own questions and every harder one it could add as the learner answers (a run of right answers makes
- * the lesson harder on its own), for drivers that answer whatever is on screen.
+ * A lesson's own questions and every harder one it could add as the learner answers (after "Want it harder?", a
+ * run of right answers makes the lesson harder), for drivers that answer whatever is on screen.
  */
 export function withHarder(lesson: Lesson, user: Pick<UserProfile, "completedLessonIds">, challenges: Challenge[] = lesson.challenges): Challenge[] {
-  return [...challenges, ...([1, 2, 3, 4, 5] as const).flatMap((level) => harderQuestions(lesson, user, level, 6))];
+  const all = [...challenges, ...([1, 2, 3, 4, 5] as const).flatMap((level) => harderQuestions(lesson, user, level, 6))];
+  // And each one's harder wordings (questionTiers.ts).
+  return [...all, ...all.flatMap((challenge) => [atTier(challenge, 2), atTier(challenge, 3)])];
 }

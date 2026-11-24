@@ -1044,5 +1044,9 @@
   "The voice did not start": "لم يبدأ الصوت",
   "Turn the volume up and the silent switch off, then tap the speaker again.": "ارفع الصوت وأوقف وضع الصامت، ثم اضغط على السماعة مرة أخرى.",
   "Your phone's reading voice is off or missing. In Voice settings, choose Google's speech engine (free on Google Play) and turn the media volume up. Then tap the speaker again.": "صوت القراءة في هاتفك متوقف أو غير موجود. في إعدادات الصوت اختر محرك الكلام من Google (مجاني على Google Play) وارفع صوت الوسائط. ثم اضغط على السماعة مرة أخرى.",
-  "Voice settings": "إعدادات الصوت"
+  "Voice settings": "إعدادات الصوت",
+  "Want it harder?": "تريدها أصعب؟",
+  "Tougher questions from now on. You can change it in Settings.": "أسئلة أصعب من الآن. يمكنك تغيير ذلك من الإعدادات.",
+  "Yes, make it harder": "نعم، اجعلها أصعب",
+  "Keep it as it is": "اتركها كما هي"
 }

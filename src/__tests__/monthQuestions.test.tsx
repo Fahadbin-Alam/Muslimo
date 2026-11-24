@@ -307,6 +307,8 @@ describe("in a lesson", () => {
       await pickRight(shown);
       await press("exercise-check");
       await press("feedback-continue");
+      // "Want it harder?" after a few right in a row: the lesson stays as it is.
+      if (screen.queryByTestId("feedback-continue") && !screen.queryByTestId("lesson-complete")) await press("harder-no");
     }
     expect(onYear).toBeGreaterThanOrEqual(1);
     expect(await screen.findByTestId("lesson-complete")).toBeTruthy();
