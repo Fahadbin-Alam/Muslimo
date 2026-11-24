@@ -15,9 +15,9 @@ jest.mock("../services/gameAudio", () => ({
   primeGameAudio: jest.fn(() => true)
 }));
 
-// Fahad (2026-11-24): "make it where the difficulty of the question scales up". On Auto, lessons already climbed
-// with the streak and lessons done; now how well the last lessons went moves it too: up a step when they were
-// nearly all perfect, down a step when they were a struggle.
+// Fahad (2026-11-24): "make it where the difficulty of the question scales up". On Auto the streak sets the level
+// (streakDifficulty.test.tsx); how well the last lessons went moves it a step: up when they were nearly all
+// perfect, down when they were a struggle.
 
 const learner = (streakDays: number, lessonsDone: number, recentStars?: number[]) => ({
   streakDays,
@@ -44,14 +44,16 @@ describe("how the last lessons went", () => {
     expect(formStep([3, 2, 3, 2, 2])).toBe(0);
   });
 
-  it("lets a new learner who gets everything right climb at once, and eases off when it is hard", () => {
-    expect(autoChallengeLevel(learner(0, 3))).toBe(0);
-    expect(autoChallengeLevel(learner(0, 3, [3, 3, 3]))).toBe(1);
-    expect(autoChallengeLevel(learner(7, 10, [3, 3, 3, 3, 3]))).toBe(3);
-    expect(autoChallengeLevel(learner(7, 10, [1, 2, 1, 1, 2]))).toBe(1);
+  it("moves the streak's level a step either way, never with no streak", () => {
+    expect(autoChallengeLevel(learner(1, 3))).toBe(0);
+    expect(autoChallengeLevel(learner(1, 3, [3, 3, 3]))).toBe(1);
+    expect(autoChallengeLevel(learner(5, 10, [3, 3, 3, 3, 3]))).toBe(3);
+    expect(autoChallengeLevel(learner(5, 10, [1, 2, 1, 1, 2]))).toBe(1);
+    // No streak: the easiest level, however well the last lessons went.
+    expect(autoChallengeLevel(learner(0, 50, [3, 3, 3, 3, 3]))).toBe(0);
     // Never below the easiest level, never past the age's cap.
-    expect(autoChallengeLevel(learner(0, 0, [1, 1, 1]))).toBe(0);
-    expect(autoChallengeLevel(learner(60, 300, [3, 3, 3, 3, 3]), "18+")).toBe(4);
+    expect(autoChallengeLevel(learner(1, 0, [1, 1, 1]))).toBe(0);
+    expect(autoChallengeLevel(learner(60, 300, [3, 3, 3, 3, 3]), "18+")).toBe(5);
     expect(autoChallengeLevel(learner(60, 300, [3, 3, 3, 3, 3]), "6-9")).toBe(1);
   });
 

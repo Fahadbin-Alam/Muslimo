@@ -3,15 +3,16 @@ import type { DifficultyChoice, UserProfile } from "../types";
 
 export type { DifficultyChoice };
 
-// How hard lessons are, as the learner picks it in Settings. "auto" (the default) climbs on its own with the
-// learner's streak, how much they have learned and how well their last lessons went; the others hold it at one level.
+// How hard lessons are, as the learner picks it in Settings. "auto" (the default) follows the learner's day streak:
+// harder and harder as the streak grows, back to the easiest when there is no streak, and a step either way for how
+// well their last lessons went. The others hold it at one level.
 export const DIFFICULTY_CHOICES: DifficultyChoice[] = ["auto", "easy", "hard", "really_hard"];
 
 /**
  * 0 (as the lesson is) to 5 (really hard). Each level asks more questions from memory, taken from lessons the
  * learner has already finished in the same topic; from level 2 a true/false question gives way to a 4-choice one,
- * and from level 3 the topic's harder questions (hardQuestions.ts) come in. Auto reaches 4 at most; only picking
- * "Really hard" gives 5.
+ * and from level 3 the topic's harder questions (hardQuestions.ts) come in. Auto reaches 5 only with a long streak at
+ * 13 and over.
  */
 export type ChallengeLevel = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -24,11 +25,11 @@ export const HARD_BANK_FROM: ChallengeLevel = 3;
 
 // How far Auto may climb at each age. Young learners climb more gently and not as far; 13 and over (and anyone
 // who has not said their age) get the whole climb.
-const AUTO_CAP: Record<AgeGroup, ChallengeLevel> = { "6-9": 1, "10-12": 2, "13-17": 4, "18+": 4 };
+const AUTO_CAP: Record<AgeGroup, ChallengeLevel> = { "6-9": 1, "10-12": 2, "13-17": 5, "18+": 5 };
 
-// A streak of 3, 7, 14 and 30 days, and 10, 40, 100 and 250 lessons finished, each add a point.
-const STREAK_STEPS = [3, 7, 14, 30];
-const LESSON_STEPS = [10, 40, 100, 250];
+// Fahad (2026-11-24): on a streak the questions get harder and harder; not on a streak, easier. Each of these streak
+// lengths (days) is one step harder: 2 days level 1, 5 days 2, 10 days 3, 20 days 4, 40 days 5.
+export const STREAK_STEPS = [2, 5, 10, 20, 40];
 
 const points = (value: number, steps: number[]) => steps.filter((step) => value >= step).length;
 
@@ -61,16 +62,18 @@ export function formStep(recent: readonly number[] | undefined): -1 | 0 | 1 {
 }
 
 /**
- * Auto's level: half the streak points plus half the lesson points, rounded up, then a step up or down for how
- * the last lessons went (formStep), then capped for the learner's age.
+ * Auto's level: one step for each streak length reached (STREAK_STEPS), then a step up or down for how the last
+ * lessons went (formStep), capped for the learner's age. No streak (none yet, or it was lost) is the easiest level,
+ * the lesson as it is, however the last lessons went.
  */
 export function autoChallengeLevel(
   user: Pick<UserProfile, "streakDays" | "completedLessonIds"> & { recentStars?: readonly number[] },
   ageGroup?: AgeGroup | null
 ): ChallengeLevel {
-  const score = points(user.streakDays ?? 0, STREAK_STEPS) + points(user.completedLessonIds?.length ?? 0, LESSON_STEPS);
-  const level = Math.max(0, Math.ceil(score / 2) + formStep(user.recentStars));
-  return Math.min(level, ageGroup ? AUTO_CAP[ageGroup] : 4) as ChallengeLevel;
+  const streak = user.streakDays ?? 0;
+  if (streak <= 0) return 0;
+  const level = Math.max(0, points(streak, STREAK_STEPS) + formStep(user.recentStars));
+  return Math.min(level, ageGroup ? AUTO_CAP[ageGroup] : TOP_LEVEL) as ChallengeLevel;
 }
 
 /** The highest level there is. */
@@ -102,7 +105,7 @@ function pickedLevel(user: Pick<UserProfile, "streakDays" | "completedLessonIds"
       return 0;
     // Hard is at least level 3, and climbs to 4 with Auto (an older learner's long streak).
     case "hard":
-      return Math.max(3, autoChallengeLevel(user, null)) as ChallengeLevel;
+      return Math.min(4, Math.max(3, autoChallengeLevel(user, null))) as ChallengeLevel;
     case "really_hard":
       return 5;
     default:

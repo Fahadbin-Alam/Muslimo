@@ -79,7 +79,7 @@ const ROLES: Array<{ id?: LearnerRole; label: string; line: string; testID: stri
 
 // How hard lessons are. Auto climbs with the streak and the lessons done; the line under says what each does.
 const DIFFICULTIES: Array<{ id: DifficultyChoice; label: string; line: string; testID: string }> = [
-  { id: "auto", label: "Auto", line: "Gets harder as you learn and get answers right.", testID: "settings-difficulty-auto" },
+  { id: "auto", label: "Auto", line: "Harder as your streak grows, easier without one.", testID: "settings-difficulty-auto" },
   { id: "easy", label: "Easy", line: "Gentle questions, more true or false.", testID: "settings-difficulty-easy" },
   { id: "hard", label: "Hard", line: "More questions from memory.", testID: "settings-difficulty-hard" },
   { id: "really_hard", label: "Really hard", line: "The toughest questions. Good luck!", testID: "settings-difficulty-really-hard" }

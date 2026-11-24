@@ -33,25 +33,29 @@ const topicLessons = (topicId: TopicId) =>
     .filter((lesson): lesson is Lesson => Boolean(lesson));
 
 describe("the challenge level", () => {
-  it("climbs with the streak and with the lessons done", () => {
+  it("gets harder and harder as the streak grows, and is easiest with no streak", () => {
     expect(autoChallengeLevel(user(0, 0))).toBe(0);
-    expect(autoChallengeLevel(user(3, 0))).toBe(1);
-    expect(autoChallengeLevel(user(7, 10))).toBe(2);
-    expect(autoChallengeLevel(user(14, 40))).toBe(3);
-    expect(autoChallengeLevel(user(30, 250))).toBe(4);
+    expect(autoChallengeLevel(user(1, 0))).toBe(0);
+    expect(autoChallengeLevel(user(2, 0))).toBe(1);
+    expect(autoChallengeLevel(user(5, 10))).toBe(2);
+    expect(autoChallengeLevel(user(10, 40))).toBe(3);
+    expect(autoChallengeLevel(user(20, 40))).toBe(4);
+    expect(autoChallengeLevel(user(40, 250))).toBe(5);
     // Each longer streak is never easier.
-    const climb = [0, 3, 7, 14, 30, 60].map((streak) => autoChallengeLevel(user(streak, 40)));
+    const climb = [0, 1, 2, 5, 10, 20, 40, 80].map((streak) => autoChallengeLevel(user(streak, 40)));
     expect(climb).toEqual([...climb].sort());
+    // Lessons done do not count on their own: a lost streak is the easiest level again.
+    expect(autoChallengeLevel(user(0, 300))).toBe(0);
   });
 
   it("goes all the way for 13 and over, gently for young learners", () => {
     const long = user(60, 300);
-    expect(autoChallengeLevel(long, "18+")).toBe(4);
-    expect(autoChallengeLevel(long, "13-17")).toBe(4);
+    expect(autoChallengeLevel(long, "18+")).toBe(5);
+    expect(autoChallengeLevel(long, "13-17")).toBe(5);
     expect(autoChallengeLevel(long, "10-12")).toBe(2);
     expect(autoChallengeLevel(long, "6-9")).toBe(1);
     // Not saying an age gets the whole climb.
-    expect(autoChallengeLevel(long, undefined)).toBe(4);
+    expect(autoChallengeLevel(long, undefined)).toBe(5);
   });
 
   it("follows the learner's own pick", () => {
@@ -60,6 +64,7 @@ describe("the challenge level", () => {
     expect(challengeLevel(user(60, 300, "hard"), "6-9")).toBe(4);
     expect(challengeLevel(user(0, 0, "really_hard"), "6-9")).toBe(5);
     expect(challengeLevel(user(7, 10, "auto"), "18+")).toBe(2);
+    expect(challengeLevel(user(0, 300, "auto"), "18+")).toBe(0);
     expect(mixAgeFor({ difficulty: "easy" }, "18+")).toBe("6-9");
     expect(mixAgeFor({ difficulty: "really_hard" }, "6-9")).toBeNull();
     expect(mixAgeFor({}, "10-12")).toBe("10-12");
@@ -188,7 +193,7 @@ describe("Settings", () => {
   it("lets the learner pick Auto, Easy, Hard or Really hard", async () => {
     const onSelectDifficulty = jest.fn();
     await render(<SettingsSheet {...props} difficulty="auto" onSelectDifficulty={onSelectDifficulty} />);
-    expect(screen.getByText("Gets harder as you learn and get answers right.")).toBeTruthy();
+    expect(screen.getByText("Harder as your streak grows, easier without one.")).toBeTruthy();
     fireEvent.press(screen.getByTestId("settings-difficulty-really-hard"));
     expect(onSelectDifficulty).toHaveBeenCalledWith("really_hard");
   });
