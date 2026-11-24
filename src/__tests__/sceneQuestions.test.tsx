@@ -48,7 +48,7 @@ import { questionFormat } from "../ui/lesson/questionFormats";
 import { sceneAsks, sceneMoment, sceneQuestionFor } from "../ui/lesson/sceneQuestions";
 import { skyTimesFor } from "../ui/lesson/skyQuestions";
 import { colors } from "../ui/theme";
-import { finishMatch, pickRight, questionOnScreen, toQuestion } from "./lessonDriver";
+import { finishMatch, pickRight, questionOnScreen, toQuestion, withHarder } from "./lessonDriver";
 import { makeUser } from "./testUtils";
 
 // Fahad: more interactive questions, with living pictures. A question on a moment of one of the living scenes that
@@ -30160,7 +30160,7 @@ describe("in a lesson", () => {
         await finishMatch(session.lesson.challenges);
         continue;
       }
-      const shown = questionOnScreen(session.lesson.challenges);
+      const shown = questionOnScreen(withHarder(session.lesson, user));
       if (!shown) break;
       if (screen.queryByTestId("scene-game")) {
         onScene += 1;
@@ -30169,8 +30169,6 @@ describe("in a lesson", () => {
       await pickRight(shown);
       await press("exercise-check");
       await press("feedback-continue");
-      // "Want it harder?" after a few right in a row: the lesson stays as it is.
-      if (screen.queryByTestId("feedback-continue") && !screen.queryByTestId("lesson-complete")) await press("harder-no");
     }
     expect(onScene).toBeGreaterThanOrEqual(1);
     expect(await screen.findByTestId("lesson-complete")).toBeTruthy();

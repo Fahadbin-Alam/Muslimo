@@ -35,9 +35,11 @@ import { getStoredItem, setStoredItem } from "../services/appStorage";
 import type { Challenge, LearningNodeView, UserProfile } from "../types";
 import { questionOnScreen, toQuestion } from "./lessonDriver";
 import { makeUser } from "./testUtils";
+import { withoutWaitingQuestions } from "../services/lessonQueue";
+import { ComboBadge } from "../ui/lesson/LessonHeader";
 
-// Fahad: questions should get harder and harder. In a lesson, after a few right in a row, ask "Want it harder?";
-// each yes steps it up.
+// Fahad: "while they're doing the questions it gets harder and harder". In a lesson, every few right in a row, the
+// lesson steps up on its own (harder questions next); a wrong answer eases it off again.
 
 const PROFILE_KEY = "sira-path-user-profile";
 // The sheet stays drawn while it slides away, without taking taps.
@@ -87,7 +89,7 @@ async function answerRight(challenges: Challenge[], count: number) {
   }
 }
 
-describe("the challenge level with 'Want it harder?' steps", () => {
+describe("the challenge level with boost steps (older saves)", () => {
   it("goes a step up for each yes, never past the top", () => {
     const base = { streakDays: 0, completedLessonIds: [], difficulty: "auto" as const };
     expect(challengeLevel({ ...base, challengeBoost: 0 })).toBe(0);
@@ -121,65 +123,94 @@ describe("harderQuestions", () => {
   });
 });
 
-describe("Want it harder? in a lesson", () => {
-  it(`asks after ${HARDER_OFFER_AFTER} right in a row, and YES adds harder questions and steps up the next lessons`, async () => {
+describe("a lesson getting harder as the learner answers", () => {
+  // Every harder question this lesson could add, at each level.
+  const anyHarder = (lesson: Parameters<typeof harderQuestions>[0], user: UserProfile) =>
+    [1, 2, 3, 4, 5].flatMap((level) => harderQuestions(lesson, user, level as 1 | 2 | 3 | 4 | 5, 6));
+
+  it(`steps up on its own after every ${HARDER_OFFER_AFTER} right in a row, harder questions next`, async () => {
     const user = learner();
     const session = await startLesson(user);
     const extras = harderQuestions(session.lesson, user, 1);
     const all = [...session.lesson.challenges, ...extras];
+    expect(extras.length).toBeGreaterThan(0);
 
     await answerRight(all, HARDER_OFFER_AFTER - 1);
     await press("feedback-continue");
-    expect(screen.queryByTestId("harder-sheet")).toBeNull();
+    expect(screen.queryByTestId("harder-badge")).toBeNull();
     await answerRight(all, 1);
     await press("feedback-continue");
-    expect(offerOpen()).toBe(true);
-    expect(screen.getByText(`${HARDER_OFFER_AFTER} right in a row!`)).toBeTruthy();
-
-    await press("harder-yes");
-    // The harder question comes straight away.
+    // Nothing to answer first: the harder question comes straight away (with a "Getting harder!" badge, below).
     await toQuestion();
     expect(extras.map((challenge) => challenge.id)).toContain(questionOnScreen(all)?.id);
-    expect(savedUser().challengeBoost).toBe(1);
+    // It is this lesson that gets harder: the saved difficulty is not changed.
+    expect(savedUser().challengeBoost ?? 0).toBe(0);
 
-    // Three more right and it asks again (a step harder still); this time the learner keeps it. A short lesson (no
-    // repeat quiz since lessons stopped asking their questions twice) may end before three more come.
-    let askedAgain = false;
-    for (let turn = 0; turn < 60 && !screen.queryByTestId("lesson-complete"); turn += 1) {
+    const pool = [...session.lesson.challenges, ...anyHarder(session.lesson, user)];
+    for (let turn = 0; turn < 80 && !screen.queryByTestId("lesson-complete"); turn += 1) {
       await toQuestion();
-      const shown = questionOnScreen(all);
+      const shown = questionOnScreen(pool);
       if (!shown) break;
       await press(`choice-${shown.correctChoiceId}`);
       await press("exercise-check");
       await press("feedback-continue");
-      if (offerOpen() && !askedAgain) {
-        askedAgain = true;
-        await press("harder-no");
-      }
     }
-    expect(typeof askedAgain).toBe("boolean");
     expect(screen.getByTestId("lesson-complete")).toBeTruthy();
   });
 
-  it("does not ask again in the lesson after KEEP IT AS IT IS", async () => {
+  it("eases off after a wrong answer: the harder questions still waiting are not asked", async () => {
     const user = learner();
     const session = await startLesson(user);
-    const all = session.lesson.challenges;
+    const extras = harderQuestions(session.lesson, user, 1);
+    expect(extras.length).toBeGreaterThanOrEqual(2);
+    const all = [...session.lesson.challenges, ...extras];
 
     await answerRight(all, HARDER_OFFER_AFTER);
     await press("feedback-continue");
-    await press("harder-no");
-    expect(savedUser().challengeBoost ?? 0).toBe(0);
+    await toQuestion();
+    const first = questionOnScreen(all)!;
+    expect(extras.map((challenge) => challenge.id)).toContain(first.id);
+    const wrong = first.choices.find((choice) => choice.id !== first.correctChoiceId)!;
+    await press(`choice-${wrong.id}`);
+    await press("exercise-check");
+    await press("feedback-continue");
 
-    for (let turn = 0; turn < 60 && !screen.queryByTestId("lesson-complete"); turn += 1) {
+    const waiting = extras.filter((challenge) => challenge.id !== first.id).map((challenge) => challenge.id);
+    const pool = [...session.lesson.challenges, ...anyHarder(session.lesson, user)];
+    const seen: string[] = [];
+    for (let turn = 0; turn < 80 && !screen.queryByTestId("lesson-complete"); turn += 1) {
       await toQuestion();
-      const shown = questionOnScreen(all);
+      const shown = questionOnScreen(pool);
       if (!shown) break;
+      seen.push(shown.id);
       await press(`choice-${shown.correctChoiceId}`);
       await press("exercise-check");
       await press("feedback-continue");
-      expect(offerOpen()).toBe(false);
     }
     expect(screen.getByTestId("lesson-complete")).toBeTruthy();
+    for (const id of waiting) expect(seen).not.toContain(id);
+  });
+});
+
+describe("the Getting harder! badge", () => {
+  it("pops each time the lesson steps up", async () => {
+    const { rerender } = await render(<ComboBadge inARow={2} climbs={0} top={60} />);
+    expect(screen.queryByTestId("harder-badge")).toBeNull();
+    await rerender(<ComboBadge inARow={3} climbs={1} top={60} />);
+    expect(screen.getByTestId("harder-badge")).toBeTruthy();
+    expect(screen.getByText("Getting harder!")).toBeTruthy();
+    await act(async () => {
+      await new Promise((done) => setTimeout(done, 2100));
+    });
+    expect(screen.queryByTestId("harder-badge")).toBeNull();
+  });
+});
+
+describe("withoutWaitingQuestions", () => {
+  it("takes out only first tries still waiting", () => {
+    const queue = [{ index: 0, attempt: 0 }, { index: 5, attempt: 0 }, { index: 6, attempt: 0 }, { index: 1, attempt: 0 }, { index: 6, attempt: 1 }];
+    const eased = withoutWaitingQuestions(queue, 1, (index) => index >= 5);
+    expect(eased.queue).toEqual([{ index: 0, attempt: 0 }, { index: 5, attempt: 0 }, { index: 1, attempt: 0 }, { index: 6, attempt: 1 }]);
+    expect(eased.removed).toBe(1);
   });
 });

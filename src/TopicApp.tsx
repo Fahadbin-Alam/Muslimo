@@ -56,7 +56,7 @@ import {
   LIBRARY_TOPICS,
   harderQuestions
 } from "./api/islamicLearningApi";
-import { challengeLevel, HARDER_OFFER_AFTER, nextLevel, TOP_LEVEL } from "./data/challengeLevel";
+import { challengeLevel, HARDER_OFFER_AFTER, nextLevel, type ChallengeLevel } from "./data/challengeLevel";
 import { cleanReviewCards } from "./services/reviewDeck";
 import { ReviewBanner } from "./ui/screens/ReviewBanner";
 import { COURSE, LESSONS_BY_ID, SHOP_ITEMS } from "./data/course";
@@ -198,7 +198,7 @@ import { lessonRecap, PERFECT_LESSON_DATES, type LessonRecapItem } from "./ui/le
 import { claimQuestChest, recordQuestEvent, useQuestBoard, type Quest } from "./services/dailyQuests";
 import { QuestsBanner, QuestsSheet, questLabel } from "./ui/screens/DailyQuests";
 import { markLeagueResultSeen, settleLeague, unseenLeagueResult } from "./services/leagues";
-import { answerLessonStep, isLastLessonStep, startLessonQueue, type FlowStep } from "./services/lessonQueue";
+import { answerLessonStep, isLastLessonStep, startLessonQueue, withoutWaitingQuestions, type FlowStep } from "./services/lessonQueue";
 import { buildLessonFlow, flowProgress, isLearnStep, isMatchStep, isQuestionStep, isRecallLesson, teachText, highlightWords, lessonExplain, lessonSummary } from "./ui/lesson/lessonPages";
 import { checkAnswerId, checkCandidate, fillPiece, questionFormat } from "./ui/lesson/questionFormats";
 import { CheckGame, FillGame, GapGame, MatchGame } from "./ui/lesson/WordGames";
@@ -301,7 +301,7 @@ import { setsFinishedBy, type AlbumSet } from "./data/albumSets";
 import { isUpdateAvailable, openStore } from "./services/appUpdate";
 import { maybeAskForRating } from "./services/ratingPrompt";
 import { ensureLanguage, isLanguageReady } from "./translations";
-import { attemptOrder, ExerciseView, LearnCard, LessonComplete, LessonScreen, OrderGame, HarderSheet, QuitSheet, QuizComplete, isPlayablePractice, lessonStars } from "./ui/lesson";
+import { attemptOrder, ExerciseView, LearnCard, LessonComplete, LessonScreen, OrderGame, QuitSheet, QuizComplete, isPlayablePractice, lessonStars } from "./ui/lesson";
 import { getBranchArabic, getLessonArabic, getNodeArabic, getTopicArabic, isFirstUseOfWord, surahArabicName } from "./data/arabicTerms";
 import { questionSource, shortReference } from "./services/questionSource";
 import { openSource } from "./services/sourceLink";
@@ -482,14 +482,21 @@ interface AppState {
    */
   sessionMistakes: number;
   sessionMissedLessonIds: string[];
-  /** Questions right on the first try in a row, in a lesson: a few and it asks "Want it harder?". */
+  /** Questions right on the first try in a row, in a lesson: every few, the lesson gets harder on its own. */
   rightInARow: number;
   /** The longest run of first-try right answers in this lesson (the recap shows it). */
   bestInARow: number;
   /** Questions missed on their first try in this lesson, by id: the recap shows them first. */
   missedChallengeIds: string[];
-  /** The learner said no to "Want it harder?" in this lesson, so it does not ask again. */
-  harderDeclined: boolean;
+  /**
+   * How hard this lesson is asking now (challengeLevel.ts), once a run of right answers has made it harder: each run
+   * of HARDER_OFFER_AFTER right steps it up, a wrong answer steps it down. Unset: the level the lesson started at.
+   */
+  lessonLevel?: ChallengeLevel;
+  /** Times this lesson has got harder, for the "Getting harder!" badge. */
+  climbs: number;
+  /** Ids of the harder questions added in this lesson: a wrong answer takes the ones still waiting out. */
+  climbIds: string[];
   loading: boolean;
 }
 
@@ -521,8 +528,8 @@ type Action =
   | { type: "apply_user_latest"; update: (user: UserProfile) => UserProfile }
   | { type: "sync_premium"; premium: PremiumStatus }
   | { type: "reset_lesson" }
-  | { type: "make_harder"; challenges: LessonSession["lesson"]["challenges"]; user: UserProfile }
-  | { type: "keep_difficulty" };
+  | { type: "make_harder"; challenges: LessonSession["lesson"]["challenges"]; level: ChallengeLevel }
+  | { type: "make_easier"; level: ChallengeLevel };
 
 // The newsletter tick box in Settings reads and saves the choice on the server.
 const NEWSLETTER_LINK = { load: fetchNewsletterChoice, save: setNewsletterChoice };
@@ -542,7 +549,9 @@ const initialState: AppState = {
   rightInARow: 0,
   bestInARow: 0,
   missedChallengeIds: [],
-  harderDeclined: false,
+  lessonLevel: undefined,
+  climbs: 0,
+  climbIds: [],
   loading: true
 };
 
@@ -561,7 +570,9 @@ const NO_LESSON = {
   rightInARow: 0,
   bestInARow: 0,
   missedChallengeIds: [] as string[],
-  harderDeclined: false
+  lessonLevel: undefined as ChallengeLevel | undefined,
+  climbs: 0,
+  climbIds: [] as string[]
 };
 
 function reducer(state: AppState, action: Action): AppState {
@@ -701,15 +712,16 @@ function reducer(state: AppState, action: Action): AppState {
     case "make_harder": {
       // The harder questions come next, right after the one just answered; the lesson's own questions follow.
       if (!state.activeSession || !action.challenges.length) {
-        return { ...state, user: action.user, rightInARow: 0 };
+        return state;
       }
       const start = state.activeSession.lesson.challenges.length;
       const added: FlowStep[] = action.challenges.map((_, offset) => ({ index: start + offset, attempt: 0 }));
       const queue = [...state.lessonQueue.slice(0, state.stepIndex + 1), ...added, ...state.lessonQueue.slice(state.stepIndex + 1)];
       return {
         ...state,
-        user: action.user,
-        rightInARow: 0,
+        lessonLevel: action.level,
+        climbs: state.climbs + 1,
+        climbIds: [...state.climbIds, ...action.challenges.map((challenge) => challenge.id)],
         activeSession: {
           ...state.activeSession,
           lesson: { ...state.activeSession.lesson, challenges: [...state.activeSession.lesson.challenges, ...action.challenges] }
@@ -718,8 +730,18 @@ function reducer(state: AppState, action: Action): AppState {
         lessonTotal: state.lessonTotal + added.length
       };
     }
-    case "keep_difficulty":
-      return { ...state, rightInARow: 0, harderDeclined: true };
+    case "make_easier": {
+      // A wrong answer: a step easier, and the harder questions still waiting are not asked.
+      const challenges = state.activeSession?.lesson.challenges ?? [];
+      const harder = new Set(state.climbIds);
+      const eased = withoutWaitingQuestions(state.lessonQueue, state.stepIndex, (index) => harder.has(challenges[index]?.id ?? ""));
+      return {
+        ...state,
+        lessonLevel: action.level,
+        lessonQueue: eased.queue,
+        lessonTotal: Math.max(0, state.lessonTotal - eased.removed)
+      };
+    }
     default:
       return state;
   }
@@ -874,9 +896,6 @@ export default function TopicApp() {
   const [settingsSoundEnabled, setSettingsSoundEnabled] = useState(true);
   const [settingsDifficulty, setSettingsDifficulty] = useState<DifficultyChoice>("auto");
   const [settingsReducedSound, setSettingsReducedSound] = useState(false);
-  // "Want it harder?" is open: how many were right in a row when it opened (kept while the sheet slides away).
-  const [harderOfferOpen, setHarderOfferOpen] = useState(false);
-  const [harderInARow, setHarderInARow] = useState(0);
   const [crew, setCrew] = useState<CrewState>({ status: "idle" });
   const [inviteEmail, setInviteEmail] = useState("");
   const [rankings, setRankings] = useState<RankingsState>({ status: "idle" });
@@ -2423,6 +2442,9 @@ export default function TopicApp() {
       isTest: isTestSession(state.activeSession),
       challengeId: challenge.id
     });
+    if (!correct && !isRetry) {
+      easeOff(nextUser);
+    }
   }
 
   // A lesson is learn pages and questions in turn, the ordering game after the last page, then the circle's quiz:
@@ -2459,46 +2481,48 @@ export default function TopicApp() {
       return;
     }
 
-    // A few right first time in a row: "Want it harder?" before the next step.
-    if (harderOffer()) {
-      setHarderInARow(state.rightInARow);
-      setHarderOfferOpen(true);
+    // Every few right first time in a row: the lesson gets harder on its own, the harder questions next.
+    const climb = harderClimb();
+    if (climb) {
+      dispatch({ type: "make_harder", challenges: climb.extras, level: climb.level });
+      challengeStartedAtRef.current = Date.now();
+      dispatch({ type: "next_challenge" });
       return;
     }
 
     void continueLesson(state.user);
   }
 
-  // The harder questions "Want it harder?" would add now, or none when it should not ask: only in a lesson (not a
-  // test, practice or quiz), after HARDER_OFFER_AFTER right first time in a row, not once the learner said no,
-  // not on the last step, and only when there is something harder to ask.
-  function harderOffer() {
+  // Only a lesson climbs (not a test, practice or quiz), and never in Kids mode, which keeps lessons simple.
+  function climbsInLesson(session: LessonSession | undefined) {
+    return !kidsMode && Boolean(session) && (!session!.mode || session!.mode === "standard") && !session!.isTest;
+  }
+
+  // The level the lesson is asking at now: where it started (challengeLevel.ts), or where its runs took it.
+  function currentLessonLevel(user: UserProfile): ChallengeLevel {
+    return state.lessonLevel ?? challengeLevel(user, ageGroup);
+  }
+
+  // Fahad: while they answer, the questions get harder and harder. After every HARDER_OFFER_AFTER right first time in
+  // a row, the next step up: a couple of harder questions (the topic's hard ones, or from memory) asked straight
+  // away. None on the last step, or when there is nothing harder to ask.
+  function harderClimb() {
     const session = state.activeSession;
-    // Kids mode keeps lessons simple: it never asks "Want it harder?".
-    if (kidsMode || !state.user || !session || (session.mode && session.mode !== "standard") || session.isTest) return undefined;
-    if (state.answerState !== "correct" || state.rightInARow < HARDER_OFFER_AFTER || state.harderDeclined) return undefined;
+    if (!state.user || !session || !climbsInLesson(session)) return undefined;
+    if (state.answerState !== "correct" || state.rightInARow < HARDER_OFFER_AFTER || state.rightInARow % HARDER_OFFER_AFTER !== 0) return undefined;
     if (isLastLessonStep(state.lessonQueue, state.stepIndex)) return undefined;
-    const level = challengeLevel(state.user, ageGroup);
-    const extras = harderQuestions(session.lesson, state.user, nextLevel(level));
+    const level = nextLevel(currentLessonLevel(state.user));
+    const extras = harderQuestions(session.lesson, state.user, level);
     return extras.length ? { extras, level } : undefined;
   }
 
-  function chooseHarder(harder: boolean) {
-    setHarderOfferOpen(false);
-    const user = state.user;
-    if (!user) return;
-    if (!harder) {
-      dispatch({ type: "keep_difficulty" });
-      void continueLesson(user);
-      return;
-    }
-    const offer = harderOffer();
-    const level = offer?.level ?? challengeLevel(user, ageGroup);
-    // A step harder for every lesson after this one too, up to the top level.
-    const nextUser = level < TOP_LEVEL ? { ...user, challengeBoost: Math.min(TOP_LEVEL, (user.challengeBoost ?? 0) + 1) } : user;
-    dispatch({ type: "make_harder", challenges: offer?.extras ?? [], user: nextUser });
-    challengeStartedAtRef.current = Date.now();
-    dispatch({ type: "next_challenge" });
+  // A wrong answer eases off: a step back down (never below where the lesson started), and the harder questions
+  // still waiting are not asked.
+  function easeOff(user: UserProfile) {
+    const session = state.activeSession;
+    if (!session || !climbsInLesson(session) || state.lessonLevel === undefined) return;
+    const start = challengeLevel(user, ageGroup);
+    dispatch({ type: "make_easier", level: Math.max(start, state.lessonLevel - 1) as ChallengeLevel });
   }
 
   // Asked again on each learn card until a voice turns up (the speech engine can still be starting).
@@ -4197,19 +4221,12 @@ export default function TopicApp() {
       hearts={lessonHearts}
       onClose={() => setQuitLessonVisible(true)}
       inARow={state.rightInARow}
+      climbs={state.climbs}
       // A new step slides in; the answer sheet opening on the same question does not.
       stepKey={`${state.stepIndex}-${state.screen === "lesson_feedback" ? "lesson_question" : state.screen}`}
       overlay={
         <>
           {quitSheet}
-          <HarderSheet
-            visible={harderOfferOpen}
-            inARow={harderInARow}
-            mascotVariant={lessonMascot}
-            accent={lessonAccent}
-            onHarder={() => chooseHarder(true)}
-            onKeep={() => chooseHarder(false)}
-          />
         </>
       }
     >

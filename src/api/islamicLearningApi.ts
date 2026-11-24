@@ -1658,7 +1658,7 @@ export function lessonAtLevel(lesson: Lesson, user: Pick<UserProfile, "completed
 }
 
 /**
- * "Want it harder?" in the middle of a lesson (after a few right in a row): `count` more questions for the lesson
+ * A lesson getting harder as the learner answers (every few right in a row): `count` more questions for the lesson
  * the learner is in, at `level`. The topic's harder questions come first (from level 3, as many as the level
  * allows, at least one), then questions from memory out of lessons already finished in the topic. None is one
  * the lesson already asks, or one that clashes with its questions (same line, names another's answer). Each
