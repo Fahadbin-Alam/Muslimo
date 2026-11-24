@@ -98,7 +98,7 @@ ${tail}
 #muslimo #hadith #sunnah #islamicreminders #learnislam #muslimfamily`,
   },
   // Calendar "Sun Dec 6": comment quiz. Sahih al-Bukhari 6224 (Abu Hurairah).
-  "2026-11-24": {
+  "2026-11-26": {
     slides: [
       `<body class="sun"><div class="pad"><span class="tag" style="background:rgba(255,255,255,.25)">🤧 Comment your answer 👇</span>
         <h2 style="margin-top:50px">After sneezing, what should a Muslim say first?</h2>
@@ -117,6 +117,46 @@ ${tail}
 
 #muslimo #islamicquiz #sunnah #muslimkids #muslimfamily #hadith`,
     pinned: `✅ Answer: A) Alhamdulillah! Whoever sneezes says Alhamdulillah, and the one who hears says Yarhamuk Allah. 📖 Sahih al-Bukhari 6224 · sunnah.com/bukhari:6224`,
+  },
+  // Fahad's ask (Nov 23): first numbers, "even before marketing". Play Console + AdMob, read Nov 23.
+  // Leave out Premium ($0) and anything that makes the app look weak. Post Tue Nov 24, 9 AM ET.
+  "2026-11-24": {
+    slides: [
+      `<body class="sun"><div class="pad" style="align-items:center;text-align:center">
+        <span class="tag" style="align-self:center;background:rgba(255,255,255,.25)">📈 Week one</span>
+        <h1 style="margin-top:50px">Before any<br>marketing…</h1><p style="margin-top:30px">here's what Muslimo already did 🐪</p></div>
+        <img src="${camel}" style="position:absolute;width:620px;left:230px;top:600px">
+        <div style="position:absolute;left:-200px;right:-200px;bottom:-560px;height:760px;border-radius:50%;background:#F7D58A"></div>${foot("Swipe →")}</body>`,
+      `<body class="cream"><div class="pad"><span class="tag">Our first numbers</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:50px">
+        ${[["📲", "10+", "downloads"], ["📱", "24", "phones with Muslimo"], ["👥", "18", "people learning this month"], ["⭐", "5.0", "rating on Google Play"]].map(([e, n, t]) =>
+          `<div style="background:#fff;border:4px solid #E7DCCB;border-bottom-width:10px;border-radius:30px;padding:34px 30px"><div style="font-size:56px">${e}</div>
+           <div style="font:92px/1 Baloo;color:#FF8A3D;margin-top:14px">${n}</div><div style="font:36px/1.2 NunB;margin-top:10px;color:#5a4330">${t}</div></div>`).join("")}
+        </div>
+        <div style="background:#E9FBD9;border:4px solid #58CC02;border-bottom-width:10px;border-radius:30px;padding:30px 34px;margin-top:28px;display:flex;gap:24px;align-items:center">
+          <span style="font-size:56px">💵</span><div><div style="font:60px/1 Baloo;color:#3a8a00">Our first $1.12</div><div style="font:34px NunB;margin-top:8px;color:#3B2A1A">earned, with zero marketing</div></div></div>
+        </div>${foot()}</body>`,
+      `<body class="green"><div class="pad" style="align-items:center;text-align:center;justify-content:center">
+        <h2>It's not much yet.</h2><h1 style="margin-top:30px;font-size:84px">But it shows what<br>Muslimo can do 💚</h1>
+        <p style="margin-top:50px">JazakAllah khair to our first learners 🤲</p>
+        <p style="margin-top:50px;font:46px Baloo">📲 Free on Android</p><p style="margin-top:10px;font-size:36px">Search “Muslimo” on Google Play<br>🍎 iPhone coming soon</p></div></body>`,
+    ],
+    caption: `📈 Before we did ANY marketing, Muslimo already did this:
+
+📲 10+ downloads
+📱 24 phones with Muslimo on them
+👥 18 people learning this month
+⭐ 5.0 rating on Google Play
+💵 Our first $1.12 earned
+
+It's not much yet. But with just 10+ downloads, it shows what Muslimo can do as it grows 🐪💚
+
+JazakAllah khair to everyone who downloaded it, learned a lesson, or left a rating 🤲
+
+👉 Help us reach the next 100: share Muslimo with one friend or family member today.
+📲 Free on Android: search “Muslimo” on Google Play. iPhone coming soon.
+
+#muslimo #buildinpublic #learnislam #islamicapp #startup #muslimfamily`,
   },
   // Calendar "Sat Dec 5": app feature, real screenshots.
   "2026-11-25": {
