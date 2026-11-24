@@ -1,14 +1,16 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Platform, ScrollView, StyleSheet, Text, TextInput, View, type DimensionValue } from "react-native";
 import type { ArabicTerm } from "../../data/arabicTerms";
-import { ArabicText } from "../ArabicText";
+import { ArabicText, hasQuranMarks, isArabicOnly } from "../ArabicText";
 import { Icon, topicIcon, type IconName } from "../Icon";
 import { ProgressBar } from "../ProgressBar";
 import { Sheet } from "../Sheet";
 import { Tappable } from "../Tappable";
 import { ScholarTree } from "./ScholarTree";
 import { colors, darken, fonts, lighten, text, topicPalette } from "../theme";
-import { isRtlLanguage, t } from "../../i18n";
+import { getActiveLanguage, isRtlLanguage, t } from "../../i18n";
+import { isContentHit, type SearchHit } from "../../utils/appSearch";
+import type { ContentHit } from "../../utils/contentSearch";
 import type { TopicSearchHit } from "../../utils/topicSearch";
 
 export type TopicPickerUnit = {
@@ -44,10 +46,17 @@ export type TopicPickerProps = {
   activeUnitId?: string;
   /** A tile or sub-topic row (unitId), or a search hit: a unit hit names its unit and first circle, a lesson hit its unit and circle. */
   onSelect: (topicId: string, unitId?: string, nodeId?: string) => void;
-  /** Finds topics, units and lessons for the search field (searchTopics). Without it there is no search field. */
-  search?: (query: string) => TopicSearchHit[];
+  /**
+   * Finds topics, units and lessons, and the hadith and ayahs lessons teach, for the search field (appSearch.ts).
+   * Without it there is no search field.
+   */
+  search?: (query: string) => SearchHit[];
   /** Called when the search field is touched, so the search can get ready before the first letter. */
   prepareSearch?: () => void;
+  /** Opened from the top bar's magnifier: the field is ready to type in, with a few searches to try. */
+  startSearching?: boolean;
+  /** Opens a hadith's or ayah's source at its words. Without it there is no source button. */
+  onOpenSource?: (source: NonNullable<ContentHit["source"]>) => void;
   /** Gap above the sheet. Default 40. */
   topGap?: number;
   /** Bottom safe-area inset; tiles scroll to the screen edge and clear it. Default 0. */
@@ -139,6 +148,127 @@ function SearchRow({ hit, topic, onPress }: { hit: TopicSearchHit; topic?: Topic
   );
 }
 
+/** How long typing must pause before the hits change, so each letter shows at once even on a slow phone. */
+export const SEARCH_PAUSE_MS = 150;
+
+/** Searches to try, shown under an empty field: a hadith number, an ayah, a word, a person and a lesson. */
+const SEARCH_EXAMPLES: Record<string, string[]> = {
+  en: ["Bukhari 1", "2:255", "Patience", "Abu Bakr", "Wudu"],
+  bn: ["বুখারী ১", "2:255", "ধৈর্য", "আবু বকর", "অজু"],
+  ur: ["بخاری 1", "2:255", "صبر", "ابو بکر", "وضو"],
+  ar: ["البخاري 1", "2:255", "الصبر", "أبو بكر", "الوضوء"],
+  id: ["Bukhari 1", "2:255", "Sabar", "Abu Bakar", "Wudu"]
+};
+
+/**
+ * A hadith or ayah hit: its book and number (or surah and ayah), its words, and the lesson that teaches it. A tap
+ * opens it in place, in full, with its source and the way to its lesson.
+ */
+function ContentRow({
+  hit,
+  topic,
+  open,
+  onToggle,
+  onGoToLesson,
+  onOpenSource
+}: {
+  hit: ContentHit;
+  topic?: TopicPickerTopic;
+  open: boolean;
+  onToggle: () => void;
+  onGoToLesson: () => void;
+  onOpenSource?: (source: NonNullable<ContentHit["source"]>) => void;
+}) {
+  const palette = topicPalette(topic?.accent ?? colors.gem);
+  const words = t(hit.text);
+  const arabic = isArabicOnly(words);
+  const meaning = hit.meaning ? t(hit.meaning) : undefined;
+  const reference = t(hit.reference);
+  const lesson = `${t(hit.lessonTitle)}${hit.unitTitle ? ` · ${t(hit.unitTitle)}` : ""}`;
+  const tag = hit.kind === "hadith" ? t("Hadith") : t("Ayah");
+  const key = hit.id;
+  return (
+    <View style={[styles.hit, styles.contentHit, open ? styles.contentHitOpen : null]} testID={`search-content-${key}`}>
+      <Tappable
+        onPress={onToggle}
+        sound="node_tap"
+        pressScale={0.98}
+        accessibilityLabel={`${tag}, ${reference}. ${arabic && meaning ? meaning : words}`}
+        accessibilityState={{ expanded: open }}
+        testID={`search-content-toggle-${key}`}
+        style={styles.contentTop}
+      >
+        <View style={styles.contentHead}>
+          <View style={[styles.kindPill, { backgroundColor: hit.kind === "hadith" ? palette.main : colors.gem }]}>
+            <Icon name={hit.kind === "hadith" ? "bookOpen" : "quran"} size={14} color={colors.white} />
+            <Text style={styles.kindText}>{tag}</Text>
+          </View>
+          <Text style={styles.reference} numberOfLines={1}>
+            {reference}
+          </Text>
+          <View style={open ? styles.chevronOpen : null}>
+            <Icon name="chevronDown" size={18} color={colors.inkSoft} />
+          </View>
+        </View>
+        {arabic ? (
+          <ArabicText quran={hasQuranMarks(words)} size={20} align="right" numberOfLines={open ? undefined : 2} style={styles.contentArabic}>
+            {words}
+          </ArabicText>
+        ) : (
+          <Text style={styles.contentWords} numberOfLines={open ? undefined : 3}>
+            {words}
+          </Text>
+        )}
+        {meaning && (open || arabic) ? (
+          <Text style={styles.contentWords} numberOfLines={open ? undefined : 2}>
+            {meaning}
+          </Text>
+        ) : null}
+        {open && (hit.from || hit.grade) ? (
+          <Text style={styles.hitWhere}>{[hit.from ? t("Narrated by {name}", { name: t(hit.from) }) : "", hit.grade ? t(hit.grade) : ""].filter(Boolean).join(" · ")}</Text>
+        ) : null}
+        {!open ? (
+          <Text style={styles.hitWhere} numberOfLines={1}>
+            {lesson}
+          </Text>
+        ) : null}
+      </Tappable>
+      {open ? (
+        <View style={styles.contentActions}>
+          <Tappable
+            onPress={onGoToLesson}
+            sound="node_tap"
+            pressScale={0.96}
+            accessibilityLabel={t("Go to the lesson: {lesson}", { lesson })}
+            testID={`search-content-lesson-${key}`}
+            style={[styles.actionButton, { backgroundColor: palette.main, borderBottomColor: palette.lip }]}
+          >
+            <Icon name={worldIcon(hit.topicId)} size={18} />
+            <Text style={[styles.actionText, { color: colors.white }]} numberOfLines={2}>
+              {t("Go to the lesson: {lesson}", { lesson: t(hit.lessonTitle) })}
+            </Text>
+          </Tappable>
+          {hit.source?.url && onOpenSource ? (
+            <Tappable
+              onPress={() => hit.source && onOpenSource(hit.source)}
+              sound="node_tap"
+              pressScale={0.96}
+              accessibilityLabel={t("Read it in the source")}
+              testID={`search-content-source-${key}`}
+              style={[styles.actionButton, styles.sourceButton]}
+            >
+              <Icon name="globe" size={16} color={colors.gemLip} />
+              <Text style={[styles.actionText, { color: colors.gemLip }]} numberOfLines={1}>
+                {t("Read it in the source")}
+              </Text>
+            </Tappable>
+          ) : null}
+        </View>
+      ) : null}
+    </View>
+  );
+}
+
 function UnitRow({ unit, accent, active, onPress }: { unit: TopicPickerUnit; accent: string; active: boolean; onPress: () => void }) {
   const palette = topicPalette(accent);
   const finished = unit.total > 0 && unit.done >= unit.total;
@@ -226,11 +356,39 @@ function UnitList({
 }
 
 /** Full-height sheet with a search field and a grid of topic worlds; while the field has text, its hits replace the grid. */
-export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUnitId, onSelect, search, prepareSearch, topGap = 40, bottomInset = 0 }: TopicPickerProps) {
+export function TopicPicker({
+  visible,
+  onClose,
+  topics,
+  activeTopicId,
+  activeUnitId,
+  onSelect,
+  search,
+  prepareSearch,
+  startSearching = false,
+  onOpenSource,
+  topGap = 40,
+  bottomInset = 0
+}: TopicPickerProps) {
   const [gridWidth, setGridWidth] = useState(0);
   const [query, setQuery] = useState("");
   const [focused, setFocused] = useState(false);
-  const hits = useMemo(() => (search && query.trim() ? search(query) : undefined), [query, search]);
+  // The hit opened in full (a hadith or ayah), if any.
+  const [openHit, setOpenHit] = useState<string | undefined>(undefined);
+  const input = useRef<TextInput>(null);
+  // Typing never waits for the search: the letters show at once, and the hits follow a moment after the last one.
+  const [searched, setSearched] = useState("");
+  useEffect(() => {
+    if (!query.trim()) {
+      setSearched("");
+      return undefined;
+    }
+    const timer = setTimeout(() => setSearched(query), SEARCH_PAUSE_MS);
+    return () => clearTimeout(timer);
+  }, [query]);
+  const hits = useMemo(() => (search && query.trim() && searched.trim() ? search(searched) : undefined), [query, searched, search]);
+  // The first letters typed hide the grid at once, before their hits come.
+  const waitingForHits = Boolean(search && query.trim() && !hits);
   const topicById = useMemo(() => new Map(topics.map((topic) => [topic.topicId, topic])), [topics]);
   const rtl = isRtlLanguage();
   // The topic whose sub-topics are listed; the grid shows again each time the sheet opens.
@@ -241,8 +399,19 @@ export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUni
     if (!visible) {
       setQuery("");
       setOpenTopicId(undefined);
+      setOpenHit(undefined);
+      return;
     }
-  }, [visible]);
+    if (startSearching && search) {
+      prepareSearch?.();
+      // After the sheet's slide starts, so the keyboard comes up with it.
+      const timer = setTimeout(() => input.current?.focus(), 250);
+      return () => clearTimeout(timer);
+    }
+    return undefined;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible, startSearching]);
+  useEffect(() => setOpenHit(undefined), [searched]);
   const openTopic = topics.find((topic) => topic.topicId === openTopicId);
   const columns = gridWidth > 0 && gridWidth < 260 ? 1 : 2;
   const tileWidth: DimensionValue = gridWidth > 0 ? Math.floor((gridWidth - GAP * (columns - 1)) / columns) : "47%";
@@ -256,7 +425,7 @@ export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUni
           </Tappable>
         ) : null}
         <Text style={styles.heading} numberOfLines={2}>
-          {openTopic ? openTopic.title : t("Choose a topic")}
+          {openTopic ? openTopic.title : startSearching ? t("Search") : t("Choose a topic")}
         </Text>
         <Tappable onPress={onClose} accessibilityLabel={t("Close")} testID="topic-picker-close" style={styles.close} hitSlop={8} pressScale={0.88}>
           <Icon name="close" size={22} color={colors.inkSoft} />
@@ -266,6 +435,7 @@ export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUni
         <View style={[styles.searchBox, focused ? styles.searchBoxFocused : null]}>
           <Icon name="search" size={20} />
           <TextInput
+            ref={input}
             value={query}
             onChangeText={setQuery}
             onFocus={() => {
@@ -273,12 +443,12 @@ export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUni
               prepareSearch?.();
             }}
             onBlur={() => setFocused(false)}
-            placeholder={t("Search topics and people")}
+            placeholder={t("Search hadith, ayahs, topics, lessons")}
             placeholderTextColor={colors.inkSoft}
             returnKeyType="search"
             autoCorrect={false}
             autoCapitalize="none"
-            accessibilityLabel={t("Search topics and people")}
+            accessibilityLabel={t("Search hadith, ayahs, topics, lessons")}
             testID="topic-search"
             style={[styles.searchInput, { textAlign: rtl ? "right" : "left", writingDirection: rtl ? "rtl" : "ltr" }]}
           />
@@ -289,6 +459,27 @@ export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUni
           ) : null}
         </View>
       ) : null}
+      {search && !query.trim() && (focused || startSearching) ? (
+        <View style={styles.examples} testID="search-examples">
+          <Text style={styles.examplesLabel}>{t("Try:")}</Text>
+          {(SEARCH_EXAMPLES[getActiveLanguage()] ?? SEARCH_EXAMPLES.en).map((example) => (
+            <Tappable
+              key={example}
+              onPress={() => {
+                prepareSearch?.();
+                setQuery(example);
+              }}
+              sound="node_tap"
+              pressScale={0.94}
+              accessibilityLabel={t("Search {text}", { text: example })}
+              testID={`search-example-${example}`}
+              style={styles.example}
+            >
+              <Text style={styles.exampleText}>{example}</Text>
+            </Tappable>
+          ))}
+        </View>
+      ) : null}
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={{ paddingBottom: 32 + bottomInset }}
@@ -296,23 +487,40 @@ export function TopicPicker({ visible, onClose, topics, activeTopicId, activeUni
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"
       >
-        {hits ? (
+        {waitingForHits ? (
+          <View testID="topic-search-waiting" />
+        ) : hits ? (
           <View style={styles.hits} testID="topic-search-results">
             {hits.length ? (
-              hits.map((hit) => (
-                <SearchRow
-                  key={`${hit.kind}-${hit.nodeId ?? hit.unitId ?? hit.topicId}`}
-                  hit={hit}
-                  topic={topicById.get(hit.topicId)}
-                  onPress={() => {
-                    onSelect(hit.topicId, hit.unitId, hit.nodeId);
-                    onClose();
-                  }}
-                />
-              ))
+              hits.map((hit) =>
+                isContentHit(hit) ? (
+                  <ContentRow
+                    key={hit.id}
+                    hit={hit}
+                    topic={topicById.get(hit.topicId)}
+                    open={openHit === hit.id}
+                    onToggle={() => setOpenHit((current) => (current === hit.id ? undefined : hit.id))}
+                    onGoToLesson={() => {
+                      onSelect(hit.topicId, hit.unitId, hit.nodeId);
+                      onClose();
+                    }}
+                    onOpenSource={onOpenSource}
+                  />
+                ) : (
+                  <SearchRow
+                    key={`${hit.kind}-${hit.nodeId ?? hit.unitId ?? hit.topicId}`}
+                    hit={hit}
+                    topic={topicById.get(hit.topicId)}
+                    onPress={() => {
+                      onSelect(hit.topicId, hit.unitId, hit.nodeId);
+                      onClose();
+                    }}
+                  />
+                )
+              )
             ) : (
               <Text style={styles.noHits} testID="topic-search-empty">
-                {t("Nothing found. Try another name.")}
+                {t("Nothing found. Try other words, or a hadith number like Bukhari 1.")}
               </Text>
             )}
           </View>
@@ -499,6 +707,119 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 17,
     color: colors.inkSoft
+  },
+  contentHit: {
+    flexDirection: "column",
+    alignItems: "stretch",
+    gap: 0,
+    paddingVertical: 0,
+    paddingHorizontal: 0
+  },
+  contentHitOpen: {
+    borderColor: colors.gem,
+    borderBottomColor: colors.gemLip
+  },
+  contentTop: {
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    gap: 6
+  },
+  contentHead: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8
+  },
+  kindPill: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+    borderRadius: 999
+  },
+  kindText: {
+    fontFamily: fonts.displayHeavy,
+    fontSize: 12,
+    lineHeight: 16,
+    color: colors.white
+  },
+  reference: {
+    flex: 1,
+    minWidth: 0,
+    fontFamily: fonts.displayHeavy,
+    fontSize: 15,
+    lineHeight: 19,
+    color: colors.ink
+  },
+  contentWords: {
+    fontFamily: fonts.bodyBold,
+    fontSize: 15,
+    lineHeight: 21,
+    color: colors.ink
+  },
+  chevronOpen: {
+    transform: [{ rotate: "180deg" }]
+  },
+  contentArabic: {
+    alignSelf: "stretch"
+  },
+  contentActions: {
+    gap: 8,
+    paddingHorizontal: 12,
+    paddingBottom: 12
+  },
+  actionButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 8,
+    minHeight: 44,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderRadius: 14,
+    borderBottomWidth: 4
+  },
+  sourceButton: {
+    backgroundColor: colors.white,
+    borderWidth: 2,
+    borderColor: colors.line,
+    borderBottomColor: colors.lineLip
+  },
+  actionText: {
+    flexShrink: 1,
+    fontFamily: fonts.displayHeavy,
+    fontSize: 15,
+    lineHeight: 19,
+    textAlign: "center"
+  },
+  examples: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    alignItems: "center",
+    gap: 8,
+    marginTop: -2,
+    marginBottom: 12
+  },
+  examplesLabel: {
+    fontFamily: fonts.bodyBold,
+    fontSize: 14,
+    color: colors.inkSoft
+  },
+  example: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 999,
+    borderWidth: 2,
+    borderColor: colors.line,
+    borderBottomWidth: 3,
+    borderBottomColor: colors.lineLip,
+    backgroundColor: colors.white
+  },
+  exampleText: {
+    fontFamily: fonts.displayHeavy,
+    fontSize: 14,
+    lineHeight: 18,
+    color: colors.gemLip
   },
   noHits: {
     ...text.body,

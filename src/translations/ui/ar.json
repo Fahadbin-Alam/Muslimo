@@ -453,9 +453,7 @@
   "Search your city": "ابحث عن مدينتك",
   "Times are close guesses. Follow your local masjid.": "الأوقات تقريبية. اتبع مسجدك المحلي.",
   "Turn them on for Muslimo in your phone settings.": "شغّلها لتطبيق Muslimo من إعدادات هاتفك.",
-  "Search topics and people": "ابحث عن المواضيع والأشخاص",
   "Clear search": "مسح البحث",
-  "Nothing found. Try another name.": "لم نجد شيئًا. جرّب اسمًا آخر.",
   "Topic": "موضوع",
   "All of {topic}": "كل {topic}",
   "Scholars": "العلماء",
@@ -1048,5 +1046,15 @@
   "Want it harder?": "تريدها أصعب؟",
   "Tougher questions from now on. You can change it in Settings.": "أسئلة أصعب من الآن. يمكنك تغيير ذلك من الإعدادات.",
   "Yes, make it harder": "نعم، اجعلها أصعب",
-  "Keep it as it is": "اتركها كما هي"
+  "Keep it as it is": "اتركها كما هي",
+  "Search hadith, ayahs and lessons": "ابحث في الأحاديث والآيات والدروس",
+  "Search": "بحث",
+  "Search hadith, ayahs, topics, lessons": "ابحث: حديث، آية، موضوع، درس",
+  "Try:": "جرّب:",
+  "Search {text}": "ابحث عن {text}",
+  "Ayah": "آية",
+  "Narrated by {name}": "رواه {name}",
+  "Go to the lesson: {lesson}": "اذهب إلى الدرس: {lesson}",
+  "Read it in the source": "اقرأه في المصدر",
+  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "لم يُعثر على شيء. جرّب كلمات أخرى، أو رقم حديث مثل البخاري 1."
 }

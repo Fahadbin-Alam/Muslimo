@@ -75,16 +75,28 @@ describe("languages in memory", () => {
     await act(async () => {
       fireEvent.changeText(screen.getByTestId("topic-search"), "husayn");
     });
+    // The hits come once typing pauses.
+    await act(async () => {
+      await new Promise((done) => setTimeout(done, 400));
+    });
     expect(screen.getByText("Al-Husayn ibn Ali")).toBeTruthy();
     expect(loadedLanguages()).toEqual(["bn"]);
     await act(async () => {
       fireEvent.changeText(screen.getByTestId("topic-search"), "হুসাইন");
+    });
+    // The hits come once typing pauses.
+    await act(async () => {
+      await new Promise((done) => setTimeout(done, 400));
     });
     expect(screen.getByText("Al-Husayn ibn Ali")).toBeTruthy();
     expect(loadedLanguages()).toEqual(["bn"]);
     // Arabic letters: Arabic and Urdu are written in them.
     await act(async () => {
       fireEvent.changeText(screen.getByTestId("topic-search"), "حسين");
+    });
+    // The hits come once typing pauses.
+    await act(async () => {
+      await new Promise((done) => setTimeout(done, 400));
     });
     expect(screen.getByText("Al-Husayn ibn Ali")).toBeTruthy();
     expect([...loadedLanguages()].sort()).toEqual(["ar", "bn", "ur"]);
@@ -96,7 +108,7 @@ describe("reading a line", () => {
   it("gives a screen's line before a lesson's, and nothing for a line without one", () => {
     for (const language of ["bn", "ur", "ar"] as const) {
       const catalog = getCatalog(language);
-      for (const text of ["Choose a topic", "Search topics and people", "Al-Husayn ibn Ali"]) {
+      for (const text of ["Choose a topic", "Search hadith, ayahs, topics, lessons", "Al-Husayn ibn Ali"]) {
         expect(translationOf(language, text)).toBe(catalog[text]);
       }
       expect(translationOf(language, "zzqxv no such line")).toBeUndefined();
