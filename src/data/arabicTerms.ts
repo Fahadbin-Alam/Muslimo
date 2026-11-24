@@ -46,6 +46,7 @@ export const TOPIC_ARABIC: Record<string, ArabicTerm> = {
   eid: { ar: "العيد", translit: "Al-'Id", meaning: "The Eid" },
   akhirah: { ar: "اليوم الآخر", translit: "Al-Yawm al-Akhir", meaning: "The Last Day" },
   duas: { ar: "الأدعية والأذكار", translit: "Al-ad'iyah wal-adhkar", meaning: "Duas and remembrance" },
+  read_arabic: { ar: "قراءة العربية", translit: "Qira'at al-'arabiyyah", meaning: "Reading Arabic" },
   sahihayn: { ar: "الصحيحان", translit: "As-Sahihan", meaning: "The two Sahih books" },
   intro: { ar: "مدخل إلى الإسلام", translit: "Madkhal ila al-Islam", meaning: "A first look at Islam" }
 };
@@ -459,6 +460,11 @@ export const BRANCH_ARABIC: Record<string, ArabicTerm> = {
   "akhirah-the-wise-look-ahead": { ar: "التزود للآخرة", translit: "At-tazawwud lil-akhirah", meaning: "Taking provision for the Hereafter" },
   "sahabi-careful-with-his-words": { ar: "الدقة في الرواية", translit: "Ad-diqqah fir-riwayah", meaning: "Care in narrating" },
   "foundation-reciting-the-quran": { ar: "آداب التلاوة", translit: "Adab at-tilawah", meaning: "The manners of reciting" },
+  "arabic-letters": { ar: "الحروف العربية", translit: "Al-huruf al-'arabiyyah", meaning: "The Arabic letters" },
+  "arabic-short-vowels": { ar: "الحركات", translit: "Al-harakat", meaning: "The vowel marks" },
+  "arabic-sukun-shaddah": { ar: "السكون والشدة", translit: "As-sukun wash-shaddah", meaning: "Sukun and shaddah" },
+  "arabic-tanwin-long": { ar: "التنوين والمد", translit: "At-tanwin wal-madd", meaning: "Tanwin and stretching" },
+  "arabic-joining": { ar: "وصل الحروف", translit: "Wasl al-huruf", meaning: "Joining the letters" },
   "duas-he-made-and-taught": { ar: "أدعية نبوية", translit: "Ad'iyah nabawiyyah", meaning: "Prophetic du'as" },
   "prayer-night-sunnahs": { ar: "صلاة الليل", translit: "Salat al-layl", meaning: "The prayer of the night" },
   "foundation-looking-neat": { ar: "التجمل", translit: "At-tajammul", meaning: "Looking your best" },
@@ -1022,6 +1028,7 @@ const LEARN_FORMS = [
   "كِتَابُ الْفَضَائِلِ", "سُنَنُ الطَّعَامِ وَالشَّرَابِ", "أَسْئِلَةُ الصَّحَابَةِ",
   "التَّزَوُّدُ لِلْآخِرَةِ", "الدِّقَّةُ فِي الرِّوَايَةِ", "آدَابُ التِّلَاوَةِ", "أَدْعِيَةٌ نَبَوِيَّةٌ", "صَلَاةُ اللَّيْلِ", "التَّجَمُّلُ", "السَّلَامُ وَالزَّائِرُ", "آدَابُ الْمَسْجِدِ", "قِصَصُ الصَّحَابَةِ", "خُذُوا مَنَاسِكَكُمْ", "آدَابُ الْخَلَاءِ", "كَلَامُ الْمُؤْمِنِ", "وَدَاعُ الْمُؤْمِنِ", "آدَابٌ يَوْمِيَّةٌ", "سَلَمَةُ بْنُ الْأَكْوَعِ", "مَا كَتَبَ اللَّهُ", "كَلِمَاتٌ خَفِيفَةٌ", "فَضَائِلُ الصَّلَاةِ", "آدَابُ اللِّبَاسِ", "هَوَانُ الدُّنْيَا", "حُقُوقُ النَّاسِ", "الثَّبَاتُ فِي الْفِتَنِ", "جَوَامِعُ الْكَلِمِ", "الْأَدَبُ مَعَ الْحَيَوَانِ", "الْإِيمَانُ بِالْمَلَائِكَةِ", "سُجُودُ السَّهْوِ", "كِتَابُ التَّعْبِيرِ", "كِتَابُ الْعَمَلِ فِي الصَّلَاةِ", "يَوْمُ النَّحْرِ", "السُّتْرَةُ", "سُنَنُ الْبَيْتِ", "يَوْمُ عَرَفَةَ", "أَوَّلُ الطَّرِيقِ", "الْعُرْسُ وَالْبَيْتُ الْجَدِيدُ", "خَاتِمَةُ الْخَيْرِ", "الدُّعَاءُ وَالصَّلَاةُ", "الْعَدْلُ فِي الْقَضَاءِ", "قَضَاءُ الدَّيْنِ", "التَّعَلُّمُ وَالتَّعْلِيمُ", "الشَّمَائِلُ", "الْمَطَرُ وَالْبَرْدُ وَالْحَرُّ", "طَعَامُ النَّبِيِّ", "الْأَنْصَارُ", "عَبْدُ اللَّهِ بْنُ أَبِي أَوْفَى",
   "الْعُمْرَةُ", "الْبَيْتُ الْحَرَامُ", "الْمَسَاجِدُ الثَّلَاثَةُ",
+  "الْحُرُوفُ الْعَرَبِيَّةُ", "الْحَرَكَاتُ", "السُّكُونُ وَالشَّدَّةُ", "التَّنْوِينُ وَالْمَدُّ", "وَصْلُ الْحُرُوفِ",
   ...SURAH_NAMES.map((name) => `سُورَةُ ${name}`)
 ];
 const LEARN_FORM = new Map(LEARN_FORMS.map((form) => [withoutVowels(form), form]));

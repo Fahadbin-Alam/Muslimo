@@ -63,6 +63,7 @@ const THEMES: Record<string, SceneryKind[]> = {
   fasting: ["dates", "palm", "well", "dunes", "tent", "oasis", "rocks", "bush"],
   ramadan: ["dates", "mosque", "palm", "well", "oasis", "tent", "dunes", "bush"],
   eid: ["sheep", "mosque", "palm", "flowers", "tent", "dates", "oasis", "bush"],
+  read_arabic: ["bookStand", "inkpot", "palm", "flowers", "well", "oasis", "bush", "dates"],
   duas: ["mosque", "palm", "flowers", "well", "oasis", "bush", "dates", "sheep"],
   sahihayn: ["bookStand", "inkpot", "palm", "well", "flowers", "dates", "bush", "oasis"],
   akhirah: ["mountain", "rocks", "dunes", "oasis", "palm", "flowers", "well", "bush"],
