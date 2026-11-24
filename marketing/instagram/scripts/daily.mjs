@@ -206,6 +206,139 @@ ${tail}
   },
 };
 
+// Week 2 (Nov 28 - Dec 4), from calendar items Dec 3, 7, 9, 11, 13, 14. Wording checked against src/data.
+const qCover = (cls, tag, q) => `<body class="${cls}"><div class="pad"><span class="tag" style="background:rgba(255,255,255,.25)">${tag}</span>
+  <h2 style="margin-top:60px">${q}</h2><p style="margin-top:40px">Swipe for the choices →</p></div><img class="camel" src="${camel}">${foot("Muslimo · swipe →")}</body>`;
+const qOpts = (q, list) => `<body class="cream"><div class="pad"><span class="tag">Pick one</span><h2 style="margin-top:44px">${q}</h2>
+  ${opts(list)}<p style="margin-top:40px;font-size:38px;color:#8a6a45">⏳ Comment your pick before you swipe!</p></div>${foot()}</body>`;
+const qAns = (letter, ans, text, src) => `<body class="cream"><div class="pad"><span class="tag" style="background:#58CC02">Answer</span>
+  ${opts([ans], 0).replace(">A<", `>${letter}<`)}<div class="quote">${text}</div><div class="src" style="color:#8a6a45">${src}</div></div>${foot()}</body>`;
+const outro = (line) => `<body class="sun"><div class="pad" style="align-items:center;text-align:center;justify-content:center">
+  <img src="${icon}" style="width:260px;border-radius:60px;border:8px solid #fff"><h2 style="margin-top:50px">${line}</h2>
+  <p style="margin-top:30px">5-minute lessons, every answer explained with its source</p><p style="margin-top:40px;font:46px Baloo">📲 Free on Android</p></div></body>`;
+Object.assign(DAYS, {
+  "2026-11-28": { // Sahih al-Bukhari 122 (Ubayy ibn Ka'b)
+    slides: [qCover("sun", "🧭 Prophets quiz", "Musa (AS) traveled to learn from a wise servant of Allah. Who was he?"),
+      qOpts("Who did Musa travel to learn from?", ["Yusuf", "Khidr", "Harun"]),
+      qAns("B", "Khidr", "Musa (AS) set out on a journey to learn from al-Khidr, a servant of Allah who had knowledge Musa did not have.", "Sahih al-Bukhari 122 · narrated by Ubayy ibn Ka'b"),
+      outro("Learn the stories of<br>the prophets 🐪")],
+    caption: `🧭 A prophet who traveled to keep learning!
+
+❓ Musa (AS) traveled to learn from a wise servant of Allah. Who was he?
+A) Yusuf
+B) Khidr
+C) Harun
+
+👉 Swipe for the answer
+💬 Comment your answer before you swipe!
+📚 Never stop learning, at any age.
+📖 Source: Sahih al-Bukhari 122 · sunnah.com/bukhari:122
+${tail}
+
+#muslimo #islamicquiz #prophets #hadith #learnislam #muslimkids`,
+  },
+  "2026-11-29": { // Sahih al-Bukhari 3232 (Ibn Mas'ud)
+    slides: [`<body class="night"><div class="pad"><span class="tag" style="background:rgba(255,255,255,.2)">✨ Comment your answer 👇</span>
+      <h2 style="margin-top:50px">The Prophet ﷺ saw Jibril in his real form. How many wings did Jibril have?</h2>
+      ${opts(["Six hundred", "Two", "Six", "Sixty"])}</div>${foot("Muslimo · answer in the comments")}</body>`],
+    caption: `✨ This one surprises a lot of people!
+
+❓ The Prophet ﷺ saw Jibril in his real form. How many wings did Jibril have?
+A) Six hundred
+B) Two
+C) Six
+D) Sixty
+
+💬 Comment your answer 👇 The answer is in the pinned comment.
+👨‍👩‍👧 Ask your family: who guessed right?
+${tail}
+
+#muslimo #islamicquiz #hadith #learnislam #muslimkids #muslimfamily`,
+    pinned: `✅ Answer: A) Six hundred! Ibn Mas'ud (RA) told that the Prophet ﷺ saw Jibril with six hundred wings. 📖 Sahih al-Bukhari 3232 · sunnah.com/bukhari:3232`,
+  },
+  "2026-11-30": { // Sahih al-Bukhari 5971 (Abu Hurairah)
+    slides: [qCover("sun", "💛 Family quiz", "Who did the Prophet ﷺ mention first when asked who most deserves your good company?"),
+      qOpts("Who comes first?", ["Your mother", "Only your friends", "People with money"]),
+      qAns("A", "Your mother", "A man asked who most deserves his good company. The Prophet ﷺ said: your mother, then your mother, then your mother, then your father.", "Sahih al-Bukhari 5971 · narrated by Abu Hurairah"),
+      outro("Learn family and<br>manners in Muslimo 🐪")],
+    caption: `💛 A question every child (and grown-up!) should know.
+
+❓ Who did the Prophet ﷺ mention first when asked who most deserves your good company?
+A) Your mother
+B) Only your friends
+C) People with money
+
+👉 Swipe for the answer
+💬 Comment your answer before you swipe!
+🤗 Then go do something kind for your parents today.
+📖 Source: Sahih al-Bukhari 5971 · sunnah.com/bukhari:5971
+${tail}
+
+#muslimo #islamicquiz #hadith #muslimfamily #muslimkids #sunnah`,
+  },
+  "2026-12-01": { // Sahih al-Bukhari 4698 (Ibn Umar)
+    slides: [`<body class="sun"><div class="pad" style="align-items:center;text-align:center"><span class="tag" style="align-self:center;background:rgba(255,255,255,.25)">🌴 Did you know?</span>
+      <h1 style="margin-top:60px">Which tree is<br>like a Muslim?</h1><p style="margin-top:30px">Swipe to find out →</p></div><img src="${icon}" style="position:absolute;width:520px;left:280px;top:640px;border-radius:120px">${foot("Muslimo · swipe →")}</body>`,
+      `<body class="green"><div class="pad"><p style="margin-top:20px">The Prophet ﷺ asked about a tree that is like a Muslim:</p>
+      <h2 style="margin-top:50px">🍃 Its leaves do not fall</h2><h2 style="margin-top:30px">🌴 It gives fruit again and again</h2>
+      <p style="margin-top:60px">Ibn Umar (RA) thought of the answer… but was shy to speak 🤫</p></div>${foot("Muslimo · swipe →")}</body>`,
+      `<body class="cream"><div class="pad"><span class="tag" style="background:#58CC02">Answer</span>
+      <h1 style="margin-top:50px;color:#3B2A1A">The date palm 🌴</h1>
+      <div class="quote">The Prophet ﷺ said: it is the date palm.</div><div class="src" style="color:#8a6a45">Sahih al-Bukhari 4698 · narrated by Ibn Umar</div>
+      <p style="margin-top:60px;color:#3B2A1A">💬 Did you guess it?</p></div>${foot()}</body>`],
+    caption: `🌴 Did you know a tree is compared to a Muslim?
+
+📖 The Prophet ﷺ asked about a tree like a Muslim: its leaves do not fall, and it gives fruit again and again. Ibn Umar (RA) thought of the answer but was shy to speak. Then the Prophet ﷺ said: it is the date palm. (Sahih al-Bukhari 4698 · sunnah.com/bukhari:4698)
+
+💬 Did you guess it? Tell us 👇
+👨‍👩‍👧 Share this with your family!
+${tail}
+
+#muslimo #hadith #learnislam #sunnah #muslimkids #islamicreminders`,
+  },
+  "2026-12-02": { // Sahih al-Bukhari 5534 (Abu Musa al-Ash'ari)
+    slides: [`<body class="green"><div class="pad"><span class="tag" style="background:rgba(255,255,255,.22)">📖 Daily hadith</span>
+      <p style="margin-top:60px">The Prophet ﷺ said:</p>
+      <div class="quote">“The example of a good pious companion and an evil one is that of a person carrying musk and another blowing a pair of bellows.”</div>
+      <div class="src">Sahih al-Bukhari 5534 · narrated by Abu Musa al-Ash'ari</div></div>${foot("Muslimo · swipe →")}</body>`,
+      `<body class="cream"><div class="pad"><h2>🌸 A good friend</h2><p style="margin-top:20px;color:#3B2A1A">gives you some musk, you buy some, or you enjoy its smell.</p>
+      <h2 style="margin-top:60px">🔥 A bad friend</h2><p style="margin-top:20px;color:#3B2A1A">burns your clothes, or you get a bad smell.</p>
+      <p style="margin-top:70px;font:46px Baloo;color:#FF8A3D">💡 Choose friends who leave you better.</p></div>${foot()}</body>`],
+    caption: `🌸 What are your friends making you smell like?
+
+📖 The Prophet ﷺ said a good friend is like one carrying musk: he gives you some, you buy some, or you enjoy its smell. A bad friend is like one blowing bellows: he burns your clothes or you get a bad smell. (Sahih al-Bukhari 5534 · sunnah.com/bukhari:5534)
+
+💡 Choose friends who bring good into your life.
+
+💬 Tag your “musk” friend 👇
+${tail}
+
+#muslimo #hadith #sunnah #islamicreminders #muslimkids #learnislam`,
+  },
+  "2026-12-04": { // Sahih al-Bukhari 7563 (Abu Hurairah)
+    slides: [`<body class="night"><div class="pad"><span class="tag" style="background:rgba(255,255,255,.2)">🕌 Jumu'ah reminder</span>
+      <h2 style="margin-top:60px">Two words, dear to the Most Merciful</h2>
+      <p style="margin-top:40px">Light on the tongue,</p><div class="quote">“very heavy in weight in the balance”</div>
+      <div class="src">Sahih al-Bukhari 7563 · narrated by Abu Hurairah</div></div>${foot("Muslimo · swipe →")}</body>`,
+      `<body class="night"><div class="pad" style="justify-content:center;align-items:center;text-align:center">
+      <h2>✨ Subhan Allah wa bihamdihi</h2><h2 style="margin-top:40px">✨ Subhan Allah al-Azim</h2>
+      <p style="margin-top:70px">🤲 Say them today, again and again.</p></div><img class="camel" src="${camel}">${foot()}</body>`],
+    caption: `✨ Jumu'ah reminder
+
+📖 Two words are dear to the Most Merciful, light on the tongue and heavy in the Balance:
+Subhan Allah wa bihamdihi, Subhan Allah al-Azim. (Sahih al-Bukhari 7563 · sunnah.com/bukhari:7563)
+
+⏱️ They take seconds to say.
+⚖️ Yet they are heavy on the scale.
+
+💬 Type them in the comments 👇
+👨‍👩‍👧 Share with your family so they say them too.
+${tail}
+
+#muslimo #jumuah #dhikr #hadith #sunnah #islamicreminders`,
+  },
+});
+
 const b = await chromium.launch({ channel: "chrome" }); const pg = await b.newPage({ viewport: { width: 1080, height: 1350 } });
 for (const [day, d] of Object.entries(DAYS)) {
   const dir = `${OUT}/${day}`; mkdirSync(dir, { recursive: true });
