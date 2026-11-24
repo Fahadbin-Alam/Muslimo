@@ -116,11 +116,11 @@ describe("path sceneries", () => {
   it("sprints the camel off to the left and back on its speed tap", async () => {
     await render(<Camel size={72} wrapWidth={390} home={150} walking tappable testID="camel" />);
     const target = screen.getByTestId("camel");
-    for (let tap = 0; tap < 4; tap += 1) {
+    for (let tap = 0; tap < 5; tap += 1) {
       await fireEvent.press(target);
       await run(3400);
     }
-    expect(sounds()).toEqual(["sparkle", "sizzle", "sad", "zoom"]);
+    expect(sounds()).toEqual(["pop", "sparkle", "sizzle", "sad", "zoom"]);
     await run(3000);
     expect(screen.getByTestId("camel")).toBeTruthy();
   });

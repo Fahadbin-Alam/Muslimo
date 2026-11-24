@@ -44,7 +44,7 @@ describe("tapping things on the path", () => {
       heard.push(String(lastSound()));
     }
     expect(heard).toEqual([...CAMEL_REACTIONS.map((reaction) => reaction.sound), CAMEL_REACTIONS[0].sound]);
-    expect(CAMEL_REACTIONS.map((reaction) => reaction.kind)).toEqual(["happy", "cooked", "sad", "zoom", "spit", "laugh", "baby", "jump"]);
+    expect(CAMEL_REACTIONS.map((reaction) => reaction.kind)).toEqual(["eat", "happy", "cooked", "sad", "zoom", "spit", "laugh", "baby", "jump"]);
   });
 
   it("only grunts when tapped again in the middle of a reaction", async () => {
