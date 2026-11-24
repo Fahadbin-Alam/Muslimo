@@ -4,7 +4,7 @@ import type { DifficultyChoice, UserProfile } from "../types";
 export type { DifficultyChoice };
 
 // How hard lessons are, as the learner picks it in Settings. "auto" (the default) climbs on its own with the
-// learner's streak and how much they have learned; the others hold it at one level.
+// learner's streak, how much they have learned and how well their last lessons went; the others hold it at one level.
 export const DIFFICULTY_CHOICES: DifficultyChoice[] = ["auto", "easy", "hard", "really_hard"];
 
 /**
@@ -32,10 +32,44 @@ const LESSON_STEPS = [10, 40, 100, 250];
 
 const points = (value: number, steps: number[]) => steps.filter((step) => value >= step).length;
 
-/** Auto's level: half the streak points plus half the lesson points, rounded up, then capped for the learner's age. */
-export function autoChallengeLevel(user: Pick<UserProfile, "streakDays" | "completedLessonIds">, ageGroup?: AgeGroup | null): ChallengeLevel {
+// How the last lessons went (their stars, 1 to 3: lessonStars) moves Auto a step: up when they were nearly all
+// perfect, so a learner who gets everything right does not wait weeks for harder questions, and down when they
+// were a struggle, so it eases off again. It needs a few lessons before it says anything.
+/** Stars of this many of the learner's latest lessons are kept (user.recentStars). */
+export const RECENT_LESSONS_KEPT = 5;
+/** Fewer lessons than this, and how they went does not move the level yet. */
+export const FORM_NEEDS_LESSONS = 3;
+/** Average stars at or above this: one step harder. */
+const FORM_UP_FROM = 2.8;
+/** Average stars at or below this: one step easier. */
+const FORM_DOWN_FROM = 1.6;
+
+/** The learner's latest lesson stars with this lesson's added, the oldest dropped past RECENT_LESSONS_KEPT. */
+export function withRecentStars(recent: readonly number[] | undefined, stars: number): number[] {
+  const earned = Math.max(1, Math.min(3, Math.round(stars)));
+  return [...(recent ?? []), earned].slice(-RECENT_LESSONS_KEPT);
+}
+
+/** +1 when the last lessons were nearly all perfect, -1 when they were a struggle, else 0. */
+export function formStep(recent: readonly number[] | undefined): -1 | 0 | 1 {
+  const last = (recent ?? []).slice(-RECENT_LESSONS_KEPT);
+  if (last.length < FORM_NEEDS_LESSONS) return 0;
+  const average = last.reduce((total, stars) => total + stars, 0) / last.length;
+  if (average >= FORM_UP_FROM) return 1;
+  if (average <= FORM_DOWN_FROM) return -1;
+  return 0;
+}
+
+/**
+ * Auto's level: half the streak points plus half the lesson points, rounded up, then a step up or down for how
+ * the last lessons went (formStep), then capped for the learner's age.
+ */
+export function autoChallengeLevel(
+  user: Pick<UserProfile, "streakDays" | "completedLessonIds"> & { recentStars?: readonly number[] },
+  ageGroup?: AgeGroup | null
+): ChallengeLevel {
   const score = points(user.streakDays ?? 0, STREAK_STEPS) + points(user.completedLessonIds?.length ?? 0, LESSON_STEPS);
-  const level = Math.ceil(score / 2);
+  const level = Math.max(0, Math.ceil(score / 2) + formStep(user.recentStars));
   return Math.min(level, ageGroup ? AUTO_CAP[ageGroup] : 4) as ChallengeLevel;
 }
 
@@ -47,7 +81,7 @@ export const TOP_LEVEL: ChallengeLevel = 5;
  * they said yes to "Want it harder?" in a lesson (user.challengeBoost), up to the top level.
  */
 export function challengeLevel(
-  user: Pick<UserProfile, "streakDays" | "completedLessonIds" | "difficulty" | "challengeBoost">,
+  user: Pick<UserProfile, "streakDays" | "completedLessonIds" | "difficulty" | "challengeBoost" | "recentStars">,
   ageGroup?: AgeGroup | null
 ): ChallengeLevel {
   const boost = Math.max(0, Math.floor(user.challengeBoost ?? 0));
@@ -62,7 +96,7 @@ export function nextLevel(level: ChallengeLevel): ChallengeLevel {
   return Math.min(TOP_LEVEL, level + 1) as ChallengeLevel;
 }
 
-function pickedLevel(user: Pick<UserProfile, "streakDays" | "completedLessonIds" | "difficulty">, ageGroup?: AgeGroup | null): ChallengeLevel {
+function pickedLevel(user: Pick<UserProfile, "streakDays" | "completedLessonIds" | "difficulty" | "recentStars">, ageGroup?: AgeGroup | null): ChallengeLevel {
   switch (user.difficulty) {
     case "easy":
       return 0;

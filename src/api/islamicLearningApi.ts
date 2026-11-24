@@ -7,7 +7,7 @@ import {
   findNodeByLessonId
 } from "../data/course";
 import { lessonForAge } from "../data/ageLevels";
-import { challengeLevel, EXTRA_QUESTIONS, HARD_BANK_FROM, mixAgeFor, SWAP_TRUE_FALSE_FROM, type ChallengeLevel } from "../data/challengeLevel";
+import { challengeLevel, EXTRA_QUESTIONS, HARD_BANK_FROM, mixAgeFor, SWAP_TRUE_FALSE_FROM, withRecentStars, type ChallengeLevel } from "../data/challengeLevel";
 import { HARD_QUESTIONS } from "../data/hardQuestions";
 import { asksSameLine, givesAway as namesAnswerOf, withoutGiveaways } from "../data/scalableCurriculum";
 import type { AgeGroup } from "../services/monetizationConfig";
@@ -366,12 +366,15 @@ export function completeLesson(user: UserProfile, lesson: Lesson, stars?: number
   // A Ramadan lesson done during Ramadan counts the day for the Ramadan streak.
   const withRamadan = node?.topicId === "ramadan" ? withRamadanDay(withXp, now) : withXp;
   const nodeStars = withNodeStars(user, node ? [node.id] : [], stars);
+  // How this run went counts toward how hard the next lessons are (challengeLevel.ts), replays too.
+  const recentStars = stars === undefined ? user.recentStars : withRecentStars(user.recentStars, stars);
 
   return {
     ...withRamadan,
     completedLessonIds,
     completedNodeIds,
-    ...(nodeStars ? { nodeStars } : {})
+    ...(nodeStars ? { nodeStars } : {}),
+    ...(recentStars ? { recentStars } : {})
   };
 }
 

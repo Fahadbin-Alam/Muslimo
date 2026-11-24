@@ -37,6 +37,8 @@ export type LessonCompleteProps = {
    */
   streakMoment?: { today: string; frozenDays?: readonly string[] };
   unlockedTitle?: string;
+  /** The learner's level went up with this lesson: an orange pill says the next questions get harder. */
+  harderNow?: boolean;
   gemsReward?: number;
   /** No mistakes: a gold "Perfect lesson!" ribbon, its own fanfare, and the teacher jumps for joy again and again. */
   perfect?: boolean;
@@ -188,6 +190,7 @@ function LessonCompleteCard({
   streakExtended,
   goal,
   unlockedTitle,
+  harderNow,
   gemsReward,
   perfect,
   accuracy,
@@ -364,12 +367,20 @@ function LessonCompleteCard({
           )}
         </View>
 
-        {unlockedTitle || gemsReward || nextReview ? (
+        {unlockedTitle || harderNow || gemsReward || nextReview ? (
           <View style={styles.pills}>
             {unlockedTitle ? (
               <PopIn delay={CARD_DELAY + 3 * CARD_STAGGER} style={[styles.pill, { backgroundColor: lighten(colors.green, 0.85) }]}>
                 <Icon name="key" size={18} />
                 <Text style={[styles.pillText, { color: darken(colors.correctInk, 0.12) }]}>{withHonorifics(t("Unlocked: {title}", { title: unlockedTitle }))}</Text>
+              </PopIn>
+            ) : null}
+            {harderNow ? (
+              <PopIn delay={CARD_DELAY + 3 * CARD_STAGGER + 60} style={[styles.pill, { backgroundColor: lighten(colors.flame, 0.85) }]}>
+                <Icon name="flame" size={18} />
+                <Text style={[styles.pillText, { color: STREAK_INK }]} testID="complete-harder-now">
+                  {t("Great work! Your next questions get harder.")}
+                </Text>
               </PopIn>
             ) : null}
             {gemsReward ? (

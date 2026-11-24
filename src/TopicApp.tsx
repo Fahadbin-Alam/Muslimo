@@ -419,6 +419,8 @@ type QuizSummary = {
 
 type LessonCelebration = {
   headline?: string;
+  /** How this lesson went moved the learner's level up: the next lessons ask harder questions. */
+  harderNow?: boolean;
   title: string;
   xp: number;
   stars: number;
@@ -2798,6 +2800,8 @@ export default function TopicApp() {
       // How well this run went, replays too: each question missed on its first try is a mistake.
       stars: lessonStars(state.sessionMistakes),
       unlockedTitle: unlockedNode ? getNodeTitle(unlockedNode.id, unlockedNode.title, currentLanguage) : undefined,
+      // Kids mode keeps every lesson at the easiest level, so it never says lessons got harder.
+      harderNow: !kidsMode && challengeLevel(nextUser, ageGroup) > challengeLevel(user, ageGroup),
       streakDays: nextUser.streakDays
     });
     const xpSummary = await learningApi.getXpSummaries(nextUser);
@@ -4554,6 +4558,7 @@ export default function TopicApp() {
             streakMoment={{ today: localDateKey(), frozenDays: state.user.frozenDays }}
             goal={{ xpToday: getXpToday(state.user), goalXp: state.user.dailyGoalXp }}
             unlockedTitle={lessonCompleteSummary.unlockedTitle}
+            harderNow={lessonCompleteSummary.harderNow}
             gemsReward={lessonCompleteSummary.gemsReward}
             perfect={lessonCompleteSummary.perfect}
             accuracy={lessonCompleteSummary.accuracy}
