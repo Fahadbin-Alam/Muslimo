@@ -88,7 +88,7 @@ export function challengeLevel(
   return Math.min(TOP_LEVEL, pickedLevel(user, ageGroup) + boost) as ChallengeLevel;
 }
 
-/** Right first time this many in a row in a lesson, and it asks "Want it harder?". */
+/** Every this many right first time in a row in a lesson, the lesson gets a step harder on its own. */
 export const HARDER_OFFER_AFTER = 3;
 
 /** One step harder than `level` (the top level stays where it is). */

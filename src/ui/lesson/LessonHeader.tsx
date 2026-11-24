@@ -11,7 +11,6 @@ import { ScrollHintGap, type ScrollHintDirection } from "./ScrollHint";
 import { WithReadAloud } from "./ReadAloudButton";
 import { isRtlLanguage, t } from "../../i18n";
 
-const t_ = t;
 
 export type LessonHearts = { current: number; max: number; unlimited: boolean };
 
@@ -206,6 +205,8 @@ export type LessonScreenProps = {
   overlay?: React.ReactNode;
   /** Answers right in a row: at 3, 5, 10 and every 5 after, a "right in a row!" badge pops under the bar. */
   inARow?: number;
+  /** Times the lesson has got harder (a run of right answers): each new one pops a "Getting harder!" badge. */
+  climbs?: number;
   /** Which step this is: when it changes, the new step slides in from the side, like turning to the next card. */
   stepKey?: string;
   testID?: string;
@@ -240,7 +241,7 @@ function useStepSlide(stepKey: string | undefined) {
 }
 
 /** Full lesson screen: header on top, the step under it, an optional overlay sheet on top of all. */
-export function LessonScreen({ progress, hearts, onClose, topInset, children, overlay, inARow = 0, stepKey, testID }: LessonScreenProps) {
+export function LessonScreen({ progress, hearts, onClose, topInset, children, overlay, inARow = 0, climbs = 0, stepKey, testID }: LessonScreenProps) {
   const [headerHeight, setHeaderHeight] = useState(0);
   const slideStyle = useStepSlide(stepKey);
   return (
@@ -249,7 +250,7 @@ export function LessonScreen({ progress, hearts, onClose, topInset, children, ov
         <LessonHeader progress={progress} hearts={hearts} onClose={onClose} topInset={topInset} />
       </View>
       <Animated.View style={[styles.step, slideStyle]}>{children}</Animated.View>
-      {headerHeight > 0 ? <ComboBadge inARow={inARow} top={headerHeight} /> : null}
+      {headerHeight > 0 ? <ComboBadge inARow={inARow} climbs={climbs} top={headerHeight} /> : null}
       {overlay}
     </View>
   );
@@ -266,40 +267,44 @@ const COMBO_MS = 1900;
  * "5 right in a row!": a flame badge that pops in under the progress bar, wiggles, floats up a little and fades, the
  * moment a run of right answers reaches a milestone. It sits over the screen (it takes no room), and nothing taps it.
  */
-export const ComboBadge = memo(function ComboBadge({ inARow, top }: { inARow: number; top: number }) {
+export const ComboBadge = memo(function ComboBadge({ inARow, climbs = 0, top }: { inARow: number; climbs?: number; top: number }) {
   const reduceMotion = useReduceMotion();
-  const t = useRef(new Animated.Value(0)).current;
+  const anim = useRef(new Animated.Value(0)).current;
+  // The run's count, or -1 for "Getting harder!" (the lesson just stepped up).
   const [shown, setShown] = useState(0);
   const before = useRef(inARow);
+  const climbsBefore = useRef(climbs);
   useEffect(() => {
     const was = before.current;
     before.current = inARow;
-    if (inARow <= was || !isComboMilestone(inARow)) return undefined;
-    setShown(inARow);
-    t.setValue(0);
-    const run = Animated.timing(t, { toValue: 1, duration: reduceMotion ? 1400 : COMBO_MS, easing: Easing.linear, useNativeDriver: true });
+    const climbed = climbs > climbsBefore.current;
+    climbsBefore.current = climbs;
+    if (!climbed && (inARow <= was || !isComboMilestone(inARow))) return undefined;
+    setShown(climbed ? -1 : inARow);
+    anim.setValue(0);
+    const run = Animated.timing(anim, { toValue: 1, duration: reduceMotion ? 1400 : COMBO_MS, easing: Easing.linear, useNativeDriver: true });
     run.start();
     const done = setTimeout(() => setShown(0), (reduceMotion ? 1400 : COMBO_MS) + 60);
     return () => {
       clearTimeout(done);
       run.stop();
     };
-  }, [inARow, reduceMotion, t]);
+  }, [inARow, climbs, reduceMotion, anim]);
   if (!shown) return null;
-  const opacity = t.interpolate({ inputRange: [0, 0.08, 0.8, 1], outputRange: [0, 1, 1, 0] });
-  const scale = reduceMotion ? 1 : t.interpolate({ inputRange: [0, 0.1, 0.18, 0.26, 1], outputRange: [0.4, 1.18, 0.94, 1, 1] });
-  const translateY = reduceMotion ? 0 : t.interpolate({ inputRange: [0, 0.7, 1], outputRange: [0, 0, -10] });
+  const opacity = anim.interpolate({ inputRange: [0, 0.08, 0.8, 1], outputRange: [0, 1, 1, 0] });
+  const scale = reduceMotion ? 1 : anim.interpolate({ inputRange: [0, 0.1, 0.18, 0.26, 1], outputRange: [0.4, 1.18, 0.94, 1, 1] });
+  const translateY = reduceMotion ? 0 : anim.interpolate({ inputRange: [0, 0.7, 1], outputRange: [0, 0, -10] });
   const wiggle = reduceMotion
     ? "0deg"
-    : t.interpolate({ inputRange: [0, 0.2, 0.28, 0.36, 0.44, 0.52, 1], outputRange: ["0deg", "0deg", "-14deg", "12deg", "-8deg", "0deg", "0deg"] });
+    : anim.interpolate({ inputRange: [0, 0.2, 0.28, 0.36, 0.44, 0.52, 1], outputRange: ["0deg", "0deg", "-14deg", "12deg", "-8deg", "0deg", "0deg"] });
   return (
-    <View pointerEvents="none" style={[styles.comboRow, { top: top - space.xs }]} testID="combo-badge">
+    <View pointerEvents="none" style={[styles.comboRow, { top: top - space.xs }]} testID={shown < 0 ? "harder-badge" : "combo-badge"}>
       <Animated.View style={[styles.combo, { opacity, transform: [{ translateY }, { scale }] }]}>
         <Animated.View style={{ transform: [{ rotate: wiggle }] }}>
           <Icon name="flame" size={20} />
         </Animated.View>
         <Text style={styles.comboText} numberOfLines={1}>
-          {t_("{count} right in a row!", { count: shown })}
+          {shown < 0 ? t("Getting harder!") : t("{count} right in a row!", { count: shown })}
         </Text>
       </Animated.View>
     </View>

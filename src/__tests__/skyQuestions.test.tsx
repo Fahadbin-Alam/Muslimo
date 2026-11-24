@@ -40,7 +40,7 @@ import { mapPlacesFor } from "../ui/lesson/mapQuestions";
 import { questionFormat } from "../ui/lesson/questionFormats";
 import { answersArePrayers, openingTime, skyTimesFor, timeOfAnswer, tripTo } from "../ui/lesson/skyQuestions";
 import { colors } from "../ui/theme";
-import { finishMatch, pickRight, questionOnScreen, toQuestion } from "./lessonDriver";
+import { finishMatch, pickRight, questionOnScreen, toQuestion, withHarder } from "./lessonDriver";
 import { makeUser } from "./testUtils";
 
 // Fahad: more interactive questions, with living pictures. A question whose answers are all times of the day ("At
@@ -292,7 +292,7 @@ describe("in a lesson", () => {
         await finishMatch(session.lesson.challenges);
         continue;
       }
-      const shown = questionOnScreen(session.lesson.challenges);
+      const shown = questionOnScreen(withHarder(session.lesson, user));
       if (!shown) break;
       if (screen.queryByTestId("sky-game")) {
         inSky += 1;
@@ -301,8 +301,6 @@ describe("in a lesson", () => {
       await pickRight(shown);
       await press("exercise-check");
       await press("feedback-continue");
-      // "Want it harder?" after a few right in a row: the lesson stays as it is.
-      if (screen.queryByTestId("feedback-continue") && !screen.queryByTestId("lesson-complete")) await press("harder-no");
     }
     expect(inSky).toBeGreaterThanOrEqual(1);
     expect(await screen.findByTestId("lesson-complete")).toBeTruthy();

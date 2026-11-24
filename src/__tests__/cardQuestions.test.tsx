@@ -46,7 +46,7 @@ import { questionFormat } from "../ui/lesson/questionFormats";
 import { skyTimesFor } from "../ui/lesson/skyQuestions";
 import { withListenQuestion } from "../ui/lesson/listenQuestion";
 import { colors } from "../ui/theme";
-import { finishMatch, pickRight, questionOnScreen, toQuestion } from "./lessonDriver";
+import { finishMatch, pickRight, questionOnScreen, toQuestion, withHarder } from "./lessonDriver";
 import { makeUser } from "./testUtils";
 
 // Fahad: more interactive questions, with living pictures. A question whose answers are all animals ("The hoopoe",
@@ -611,7 +611,8 @@ describe("in a lesson", () => {
     expect(node.status).not.toBe("locked");
     const session = await learningApi.getLessonSession(node.firstLessonId, user);
     // With its listening question ("Listen, then pick what it means."), as the app adds it.
-    const challenges = withListenQuestion(session.lesson, node.id).challenges;
+    // And the harder questions a run of right answers adds.
+    const challenges = withHarder(session.lesson, user, withListenQuestion(session.lesson, node.id).challenges);
     await render(<TopicApp />);
     await screen.findByTestId("learn-path-prophets", undefined, { timeout: 10000 });
     await press(`path-node-${node.id}`);
@@ -635,8 +636,6 @@ describe("in a lesson", () => {
       await pickRight(shown);
       await press("exercise-check");
       await press("feedback-continue");
-      // "Want it harder?" after a few right in a row: the lesson stays as it is.
-      if (screen.queryByTestId("feedback-continue") && !screen.queryByTestId("lesson-complete")) await press("harder-no");
     }
     expect(await screen.findByTestId("lesson-complete")).toBeTruthy();
     return onCards;

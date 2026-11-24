@@ -40,3 +40,13 @@ export function answerLessonStep<T extends FlowStep>(queue: T[], position: numbe
 export function isLastLessonStep(queue: FlowStep[], position: number) {
   return position >= queue.length - 1;
 }
+
+/**
+ * The queue with the questions not yet asked whose index `drop` picks taken out (after `position` only, first tries
+ * only), and how many went. A wrong answer in a lesson eases off this way: the harder questions added for a run of
+ * right answers, still waiting, are not asked.
+ */
+export function withoutWaitingQuestions<T extends FlowStep>(queue: T[], position: number, drop: (index: number) => boolean) {
+  const kept = queue.filter((step, at) => at <= position || !isQuestionStep(step) || step.attempt > 0 || !drop(step.index));
+  return { queue: kept, removed: queue.length - kept.length };
+}

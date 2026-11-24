@@ -40,7 +40,7 @@ import { distance } from "../ui/journey/mapGeometry";
 import { closestPins, mapHeightFor, mapPlacesFor, mapPlanFor, mapSizes, pinPoints, placeLabels, placeOfAnswer, zoneBox } from "../ui/lesson/mapQuestions";
 import { questionFormat } from "../ui/lesson/questionFormats";
 import { colors } from "../ui/theme";
-import { finishMatch, pickRight, questionOnScreen, toQuestion } from "./lessonDriver";
+import { finishMatch, pickRight, questionOnScreen, toQuestion, withHarder } from "./lessonDriver";
 import { makeUser } from "./testUtils";
 
 // Fahad: make the app more fun with more interactive questions and living pictures. A question whose answers are all
@@ -280,7 +280,7 @@ describe("in a lesson", () => {
         await finishMatch(session.lesson.challenges);
         continue;
       }
-      const shown = questionOnScreen(session.lesson.challenges);
+      const shown = questionOnScreen(withHarder(session.lesson, user));
       if (!shown) break;
       if (screen.queryByTestId("map-game")) {
         onMap += 1;
@@ -291,8 +291,6 @@ describe("in a lesson", () => {
       }
       await press("exercise-check");
       await press("feedback-continue");
-      // "Want it harder?" after a few right in a row: the lesson stays as it is.
-      if (screen.queryByTestId("feedback-continue") && !screen.queryByTestId("lesson-complete")) await press("harder-no");
     }
     expect(onMap).toBeGreaterThanOrEqual(1);
     expect(await screen.findByTestId("lesson-complete")).toBeTruthy();

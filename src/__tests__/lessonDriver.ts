@@ -1,5 +1,6 @@
 import { act, fireEvent, screen } from "@testing-library/react-native";
-import type { Challenge } from "../types";
+import { harderQuestions } from "../api/islamicLearningApi";
+import type { Challenge, Lesson, UserProfile } from "../types";
 import { checkCandidate, fillPiece } from "../ui/lesson/questionFormats";
 
 // Drives a lesson in the app's tests: learn pages and questions in turn, a quiz circle's matching round, and every
@@ -92,4 +93,12 @@ export async function finishLessonRight(challenges: Challenge[]) {
     await press("exercise-check");
     await press("feedback-continue");
   }
+}
+
+/**
+ * A lesson's own questions and every harder one it could add as the learner answers (a run of right answers makes
+ * the lesson harder on its own), for drivers that answer whatever is on screen.
+ */
+export function withHarder(lesson: Lesson, user: Pick<UserProfile, "completedLessonIds">, challenges: Challenge[] = lesson.challenges): Challenge[] {
+  return [...challenges, ...([1, 2, 3, 4, 5] as const).flatMap((level) => harderQuestions(lesson, user, level, 6))];
 }
