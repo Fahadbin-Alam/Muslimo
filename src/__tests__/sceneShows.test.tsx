@@ -128,9 +128,9 @@ describe("home path shows", () => {
     const target = screen.getByTestId("camel");
     expect(target.props.style).toEqual(expect.objectContaining({ width: 72 }));
     await fireEvent.press(target);
-    expect(lastSound()).toBe("sparkle");
-    await run(2000);
+    expect(lastSound()).toBe("pop");
+    await run(2100);
     await fireEvent.press(target);
-    expect(lastSound()).toBe("sizzle");
+    expect(lastSound()).toBe("sparkle");
   });
 });
