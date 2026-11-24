@@ -1,0 +1,23 @@
+{
+  "_help": "Short tracking links. Each entry under sources makes fahadbin-alam.github.io/Muslimo/go/<name> (lowercase letters, numbers and dashes). To add one, copy a line, change the name, and merge. When the iPhone app is live, paste its App Store link into appStoreUrl and iPhones go there instead of the 'coming soon' part of the home page.",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.islamiclearning.muslimo",
+  "appStoreUrl": "",
+  "iphoneSoonPage": "../../#get-app",
+  "clickApi": "https://muslimo-api.onrender.com/api/links/click",
+  "sources": {
+    "reddit": { "medium": "social", "label": "Reddit" },
+    "instagram": { "medium": "social", "label": "Instagram" },
+    "facebook": { "medium": "social", "label": "Facebook" },
+    "x": { "medium": "social", "label": "X (Twitter)" },
+    "linkedin": { "medium": "social", "label": "LinkedIn" },
+    "tiktok": { "medium": "social", "label": "TikTok" },
+    "youtube": { "medium": "social", "label": "YouTube" },
+    "whatsapp": { "medium": "chat", "label": "WhatsApp" },
+    "discord": { "medium": "chat", "label": "Discord" },
+    "email": { "medium": "email", "label": "Emails you send" },
+    "newsletter": { "medium": "email", "label": "Newsletter" },
+    "qr": { "medium": "print", "label": "Posters, flyers and cards (QR code)" },
+    "masjid": { "medium": "print", "label": "Masjid and community boards" },
+    "friends": { "medium": "word-of-mouth", "label": "Friends and family" }
+  }
+}

@@ -32,6 +32,8 @@
     th:first-child, td:first-child { text-align: left; }
     .links a { display: inline-block; margin: 4px 12px 4px 0; }
     .hidden { display: none; }
+    #linkTable td:nth-child(2), #linkTable th:nth-child(2) { text-align: left; white-space: nowrap; }
+    #linkTable code { font-size: 13px; }
   </style>
 </head>
 <body>
@@ -79,6 +81,13 @@
         <button class="btn ghost small" id="newsSync" type="button">Copy everyone into Brevo</button>
       </div>
       <p id="newsStatus" class="status"></p>
+      <h2>Link clicks</h2>
+      <p style="margin-top:0">Each place you post gets its own link. Copy the one for that place, and its clicks show here. Installs per link show in Play Console under Grow users, Acquisition reports, by UTM source.</p>
+      <div class="grid" id="linkTiles"></div>
+      <h3>Link clicks per day</h3>
+      <div class="chart" id="chartLinks"></div>
+      <div style="overflow-x:auto"><table id="linkTable"></table></div>
+      <p id="linkStatus" class="status"></p>
       <h2>What we will have</h2>
       <p style="margin-top:0">If new accounts keep coming at the last 14 days' speed, <b id="perDay">0</b> a day:</p>
       <div class="grid" id="futureTiles"></div>
@@ -101,6 +110,7 @@
   <script>
     const API = "https://muslimo-api.onrender.com/api/admin/stats";
     const NEWS_API = "https://muslimo-api.onrender.com/api/admin/newsletter";
+    const LINKS_API = "https://muslimo-api.onrender.com/api/admin/links";
     const KEY_STORE = "muslimo-stats-key";
     const RAMADAN = new Date("2027-02-08T00:00:00Z");
     const $ = (id) => document.getElementById(id);
@@ -202,6 +212,7 @@
           if (!res.ok) throw new Error("Server said " + res.status);
           render(await res.json());
           loadNewsletter(key);
+          loadLinks(key);
           setStatus("");
           return;
         } catch (err) {
@@ -225,6 +236,44 @@
         if (n.series) barChart($("chartNews"), n.series.days, n.series.joined, "sign-ups");
         newsStatus("");
       } catch (err) { newsStatus("Could not load the newsletter numbers.", true); }
+    }
+    function linkStatus(text, bad) { $("linkStatus").textContent = text; $("linkStatus").className = "status" + (bad ? " bad" : ""); }
+    async function loadLinks(key) {
+      let list = [];
+      let counts = null;
+      try { list = (await (await fetch("links.json", { cache: "no-store" })).json()).links || []; } catch (err) {}
+      try {
+        const res = await fetch(LINKS_API, { headers: { "X-Admin-Key": key }, cache: "no-store" });
+        if (res.ok) counts = await res.json();
+      } catch (err) {}
+      const bySource = {};
+      ((counts && counts.sources) || []).forEach((item) => { bySource[item.source] = item; });
+      const known = new Set(list.map((link) => link.name));
+      const rows = list.map((link) => ({ link, n: bySource[link.name] || {} }))
+        .concat(Object.keys(bySource).filter((name) => !known.has(name)).map((name) => ({ link: { name, label: name + " (not in links.json)" }, n: bySource[name] })));
+      rows.sort((a, b) => (b.n.last28 || 0) - (a.n.last28 || 0));
+      const num = (v) => counts ? fmt(v || 0) : "–";
+      const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+      $("linkTable").innerHTML = "<tr><th>Where</th><th>Link</th><th>Today</th><th>7 days</th><th>28 days</th><th>All time</th><th>Android</th><th>iPhone</th><th>Computer</th></tr>" +
+        rows.map(({ link, n }) => {
+          const url = link.path ? new URL(link.path + "/", location.href).href : "";
+          return "<tr><td>" + esc(link.label || link.name) + "</td><td>" + (url ? "<button class=\"btn ghost small copy\" type=\"button\" data-url=\"" + esc(url) + "\">Copy</button> <code>" + esc(url.replace(/^https:\/\//, "")) + "</code>" : "") + "</td><td>" +
+            [n.today, n.last7, n.last28, n.total, n.android, n.ios, n.other].map(num).join("</td><td>") + "</td></tr>";
+        }).join("");
+      document.querySelectorAll("#linkTable .copy").forEach((button) => button.addEventListener("click", async () => {
+        try { await navigator.clipboard.writeText(button.dataset.url); button.textContent = "Copied"; setTimeout(() => { button.textContent = "Copy"; }, 1500); }
+        catch (err) { prompt("Copy this link:", button.dataset.url); }
+      }));
+      if (!counts) { $("linkTiles").innerHTML = ""; linkStatus("The click counts are not on the server yet (the new server code is not live).", true); return; }
+      const top = counts.sources[0];
+      const week = counts.series.clicks.slice(-7).reduce((a, b) => a + b, 0);
+      $("linkTiles").innerHTML =
+        tile("Clicks today", fmt(counts.series.clicks[counts.series.clicks.length - 1] || 0), "") +
+        tile("Clicks this week", fmt(week), "Last 7 days, all links") +
+        tile("All time", fmt(counts.total), "Since the links started") +
+        tile("Best link (28 days)", top && top.last28 ? esc(top.source) : "None yet", top && top.last28 ? fmt(top.last28) + " clicks" : "Share a link to start");
+      barChart($("chartLinks"), counts.series.days, counts.series.clicks, "clicks");
+      linkStatus("");
     }
     async function newsAction(path, done) {
       const key = localStorage.getItem(KEY_STORE);

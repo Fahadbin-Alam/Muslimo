@@ -5,7 +5,13 @@ import type { LearningNodeView } from "../types";
 import { playGameSound } from "../services/gameAudio";
 import { Icon } from "../ui/Icon";
 import { AppTopBar, BottomTabs, LearnPath, TopicPicker, type PathUnit } from "../ui/screens";
+import { SEARCH_PAUSE_MS } from "../ui/screens/TopicPicker";
+
+/** The picker looks for hits once typing pauses. */
+const searchPause = () => act(() => new Promise<void>((done) => setTimeout(done, SEARCH_PAUSE_MS + 20)));
 import { buildTopicSearchIndex, searchTopics } from "../utils/topicSearch";
+import { createContentSearch } from "../utils/contentSearch";
+import { LESSONS_BY_ID } from "../data/course";
 
 jest.mock("../services/gameAudio", () => ({
   playGameSound: jest.fn(),
@@ -89,6 +95,18 @@ describe("AppTopBar", () => {
     expect(onStreak).toHaveBeenCalledTimes(1);
     expect(screen.getByText("120")).toBeTruthy();
     expect(screen.getByText("4")).toBeTruthy();
+  });
+
+  it("has a magnifier that opens the search, only when there is a search", async () => {
+    const onOpenSearch = jest.fn();
+    await render(<AppTopBar {...base} onOpenTopics={jest.fn()} onOpenShop={jest.fn()} onOpenSearch={onOpenSearch} />);
+    await fireEvent.press(screen.getByTestId("top-bar-search"));
+    expect(onOpenSearch).toHaveBeenCalledTimes(1);
+  });
+
+  it("has no magnifier without a search", async () => {
+    await render(<AppTopBar {...base} onOpenTopics={jest.fn()} onOpenShop={jest.fn()} />);
+    expect(screen.queryByTestId("top-bar-search")).toBeNull();
   });
 
   it("opens a small streak sheet from the flame when there is no streak handler", async () => {
@@ -518,6 +536,42 @@ describe("TopicPicker", () => {
     expect(screen.queryByTestId("topic-search")).toBeNull();
   });
 
+  it("finds a hadith by its number, opens it in full, and goes to its lesson or its source", async () => {
+    const onSelect = jest.fn();
+    const onClose = jest.fn();
+    const onOpenSource = jest.fn();
+    const content = createContentSearch(COURSE.sections, LESSONS_BY_ID);
+    await render(
+      <TopicPicker
+        visible
+        startSearching
+        onClose={onClose}
+        onSelect={onSelect}
+        onOpenSource={onOpenSource}
+        activeTopicId="foundation"
+        search={(query) => content.search(query, ["en"])}
+        topics={[]}
+      />
+    );
+    // Opened from the magnifier: searches to try under the field.
+    expect(screen.getByText("Search")).toBeTruthy();
+    expect(screen.getByTestId("search-examples")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("search-example-Bukhari 1"));
+    await searchPause();
+    expect(screen.queryByTestId("search-examples")).toBeNull();
+    const hit = content.search("Bukhari 1", ["en"])[0];
+    const key = hit.id;
+    expect(screen.getByText("Sahih al-Bukhari 1")).toBeTruthy();
+    expect(screen.queryByTestId(`search-content-lesson-${key}`)).toBeNull();
+
+    await fireEvent.press(screen.getByTestId(`search-content-toggle-${key}`));
+    await fireEvent.press(screen.getByTestId(`search-content-source-${key}`));
+    expect(onOpenSource).toHaveBeenCalledWith(expect.objectContaining({ url: expect.stringContaining("bukhari:1") }));
+    await fireEvent.press(screen.getByTestId(`search-content-lesson-${key}`));
+    expect(onSelect).toHaveBeenCalledWith(hit.topicId, hit.unitId, hit.nodeId);
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
   it("searches people and lessons, opens a hit and clears back to the grid", async () => {
     const onSelect = jest.fn();
     const onClose = jest.fn();
@@ -535,17 +589,20 @@ describe("TopicPicker", () => {
     expect(screen.getByTestId("topic-tile-sahabah")).toBeTruthy();
 
     await fireEvent.changeText(screen.getByTestId("topic-search"), "hussain");
+    await searchPause();
     expect(screen.queryByTestId("topic-tile-sahabah")).toBeNull();
     const hit = searchTopics(index, "hussain")[0];
     expect(screen.getByText("Al-Husayn ibn Ali")).toBeTruthy();
     expect(screen.getByText(`${hit.unitTitle} · Sahabah`)).toBeTruthy();
 
     await fireEvent.changeText(screen.getByTestId("topic-search"), "zzqxv");
+    await searchPause();
     expect(screen.getByTestId("topic-search-empty")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("topic-search-clear"));
     expect(screen.getByTestId("topic-tile-sahabah")).toBeTruthy();
 
     await fireEvent.changeText(screen.getByTestId("topic-search"), "hussain");
+    await searchPause();
     await fireEvent.press(screen.getByTestId(`topic-search-hit-${hit.nodeId}`));
     expect(onSelect).toHaveBeenCalledWith("sahabah", hit.unitId, hit.nodeId);
     expect(onClose).toHaveBeenCalledTimes(1);

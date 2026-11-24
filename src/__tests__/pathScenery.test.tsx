@@ -65,8 +65,8 @@ describe("path scenery", () => {
 
     await render(<Camel size={64} range={40} walking tappable testID="camel" />);
     await fireEvent.press(screen.getByTestId("camel"));
-    // The first tap is the happy camel; the rest come in turn (see pathTaps.test.tsx).
-    expect(playGameSound).toHaveBeenLastCalledWith("sparkle", expect.anything());
+    // The first tap has the camel eat a date; the rest come in turn (see pathTaps.test.tsx).
+    expect(playGameSound).toHaveBeenLastCalledWith("pop", expect.anything());
   });
 
   it("draws the camel standing and walking within its box", async () => {

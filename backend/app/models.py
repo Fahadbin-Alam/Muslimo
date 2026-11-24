@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import date, datetime
 from typing import List, Optional
 
-from sqlalchemy import JSON, Boolean, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, func
+from sqlalchemy import JSON, Boolean, Date, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, func
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from backend.app.db.base import Base
@@ -401,3 +401,20 @@ class NewsletterSubscriber(Base, TimestampMixin):
     confirm_sent_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
     confirmed_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
     unsubscribed_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True), nullable=True)
+
+
+class LinkClick(Base):
+    """How many times one short tracking link (site/links.json, e.g. /go/reddit) was opened on one day.
+
+    Only a count per source, day and phone type is kept: no address, device id, cookie or anything about who
+    clicked, so the website stays as private as the privacy page says."""
+
+    __tablename__ = "link_clicks"
+    __table_args__ = (UniqueConstraint("day", "source", "platform", name="uq_link_clicks_day_source_platform"),)
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    day: Mapped[date] = mapped_column(Date, nullable=False, index=True)
+    source: Mapped[str] = mapped_column(String(32), nullable=False)
+    # "android", "ios" or "other" (a computer), read from the browser on the link page.
+    platform: Mapped[str] = mapped_column(String(10), nullable=False)
+    clicks: Mapped[int] = mapped_column(Integer, default=0, nullable=False)

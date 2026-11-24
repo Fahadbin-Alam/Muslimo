@@ -437,6 +437,10 @@ export interface Challenge {
   source?: LessonSource;
   /** Asked again from an earlier lesson; the question shows a small review cue. */
   isReview?: boolean;
+  /** A harder way to ask the same question (src/data/questionTiers.ts): 2 Harder, 3 Expert. Unset is the lesson's own. */
+  tier?: 2 | 3;
+  /** The lesson's own question this harder one was made from: same answer, same source. */
+  tierBase?: Challenge;
   /** A question the learner missed before, back from the Review deck; the cue says "You missed this before". */
   missedBefore?: boolean;
   /**
