@@ -5,6 +5,7 @@ import { FOUNDATION_TIERS_2 } from "./tiers/foundationTiers2";
 import { FOUNDATION_TIERS_3 } from "./tiers/foundationTiers3";
 import { PRAYER_TIERS } from "./tiers/prayerTiers";
 import { PRAYER_TIERS_2 } from "./tiers/prayerTiers2";
+import { PRAYER_TIERS_3 } from "./tiers/prayerTiers3";
 
 /**
  * Harder ways to ask the same question (Fahad, 2026-11-24: "for the same answer, rewrite it in a harder way", a few
@@ -31,7 +32,7 @@ export type TierEntry = {
   expert?: TierVersion;
 };
 
-export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2 };
+export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2, ...PRAYER_TIERS_3 };
 
 /** The tier a challenge level asks: Normal up to 1, Harder at 2 and 3, Expert at 4 and 5. */
 export function tierForLevel(level: number): Tier {
