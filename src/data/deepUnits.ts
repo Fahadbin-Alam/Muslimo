@@ -3418,7 +3418,18 @@ function addUnits(content: { course: LearningCourse; lessonsById: Record<string,
       : topic;
     const units = deepUnits.filter((unit) => unit.topicId === section.topicId && section.branches.some((branch) => branch.id === unit.branchId));
     if (!units.length) return section;
-    let nodes = [...section.nodes];
+    const nodes = [...section.nodes];
+    // The circles some circle of another unit waits on: only those need the look through every circle below.
+    // Looking through them all for each unit made the app slow to open.
+    const branchesOf = new Map<string, Set<string>>();
+    for (const node of nodes) branchesOf.set(node.id, (branchesOf.get(node.id) ?? new Set<string>()).add(node.branchId));
+    const waitedOnAcross = new Set<string>();
+    for (const node of nodes) {
+      for (const id of node.requiredNodeIds) {
+        const branches = branchesOf.get(id);
+        if (!branches || branches.size > 1 || !branches.has(node.branchId)) waitedOnAcross.add(id);
+      }
+    }
     for (const unit of units) {
       const own = nodes.filter((node) => node.branchId === unit.branchId);
       const built = buildUnit(unit);
@@ -3435,11 +3446,16 @@ function addUnits(content: { course: LearningCourse; lessonsById: Record<string,
       const next = nodes.findIndex((node) => later.has(node.branchId));
       const at = end ? nodes.lastIndexOf(end) + 1 : next === -1 ? nodes.length : next;
       // A topic taught in order may open its next unit after this unit's old last circle: now it waits for the final quiz.
-      const moved = (node: LearningNode) =>
-        end && node.branchId !== unit.branchId && node.requiredNodeIds.includes(end.id)
-          ? { ...node, requiredNodeIds: node.requiredNodeIds.map((id) => (id === end.id ? previous.id : id)) }
-          : node;
-      nodes = [...nodes.slice(0, at).map(moved), ...added, ...nodes.slice(at).map(moved)];
+      nodes.splice(at, 0, ...added);
+      if (end && waitedOnAcross.has(end.id)) {
+        waitedOnAcross.add(previous.id);
+        for (let index = 0; index < nodes.length; index += 1) {
+          const node = nodes[index];
+          if (node.branchId !== unit.branchId && node.requiredNodeIds.includes(end.id)) {
+            nodes[index] = { ...node, requiredNodeIds: node.requiredNodeIds.map((id) => (id === end.id ? previous.id : id)) };
+          }
+        }
+      }
     }
     return { ...section, nodes, starsTarget: nodes.reduce((total, node) => total + node.starsReward, 0) };
   });

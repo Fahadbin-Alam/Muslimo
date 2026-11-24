@@ -254,10 +254,34 @@ function others(surah: SurahMeaning, index: number): Passage[] {
     .filter(({ distance }) => distance > 0)
     .sort((left, right) => left.distance - right.distance)
     .map(({ passage }) => passage);
-  const rest = SURAH_MEANINGS.filter((each) => each !== surah)
-    .sort((left, right) => Math.abs(left.surah - surah.surah) - Math.abs(right.surah - surah.surah))
-    .flatMap((each) => each.passages);
-  return [...near, ...rest];
+  return [...near, ...otherSurahsPassages(surah)];
+}
+
+// The same for every passage of a surah, so made once per surah: building it for each passage made the app's
+// lesson list slow to build when it opens.
+const OTHER_SURAHS_PASSAGES = new Map<SurahMeaning, Passage[]>();
+function otherSurahsPassages(surah: SurahMeaning): Passage[] {
+  let rest = OTHER_SURAHS_PASSAGES.get(surah);
+  if (!rest) {
+    rest = SURAH_MEANINGS.filter((each) => each !== surah)
+      .sort((left, right) => Math.abs(left.surah - surah.surah) - Math.abs(right.surah - surah.surah))
+      .flatMap((each) => each.passages);
+    OTHER_SURAHS_PASSAGES.set(surah, rest);
+  }
+  return rest;
+}
+
+/** The first `count` different titles in `pool`, leaving out `own`. */
+function firstOtherTitles(pool: Passage[], own: string, count: number): string[] {
+  const titles: string[] = [];
+  const seen = new Set<string>([own]);
+  for (const each of pool) {
+    if (titles.length >= count) break;
+    if (seen.has(each.title)) continue;
+    seen.add(each.title);
+    titles.push(each.title);
+  }
+  return titles;
 }
 
 const OPPOSITE_SHIFT = 0.5;
@@ -269,7 +293,7 @@ function passageLesson(surah: SurahMeaning, index: number, branchId: string): Le
   const source = meaningSource(surah.surah, passage.at, passage.line);
   const many = passage.at.includes("-");
   const pool = others(surah, index);
-  const titles = pool.map((each) => each.title).filter((title, at, all) => title !== passage.title && all.indexOf(title) === at).slice(0, 3);
+  const titles = firstOtherTitles(pool, passage.title, 3);
   const [q, a, ...wrong] = passage.q;
   // A false statement is another passage's line, from the far side of the same surah, so it is clearly about
   // something else, unless the passage names the one to borrow. A surah of one passage only asks its own line.

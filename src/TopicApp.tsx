@@ -59,6 +59,7 @@ import {
 import { challengeLevel, HARDER_OFFER_AFTER, nextLevel, TOP_LEVEL } from "./data/challengeLevel";
 import { cleanReviewCards } from "./services/reviewDeck";
 import { ReviewBanner } from "./ui/screens/ReviewBanner";
+import { StartScreen } from "./ui/StartScreen";
 import { COURSE, LESSONS_BY_ID, SHOP_ITEMS } from "./data/course";
 import { createCourseSearch } from "./utils/topicSearch";
 import { dailyAutoDue, localDayNumber, markDailyShown, parseDailyShown } from "./data/dailyCard";
@@ -223,7 +224,7 @@ import { completeSurahs, hifzAyahs, memorizeParts, memorizeSurahNumbers, withRec
 import { isReviewDue, localDay, memorizeStars, recordMemorized, recordReview, useMemorizeReviews, useMemorizeStars } from "./services/memorizeSurahs";
 import type { SurahComplete } from "./ui/lesson/SurahCompleteBadge";
 import { SURAH_NAMES } from "./data/surahMeanings";
-import { colors, configureUiSound, darken, preloadUiSounds, fonts, Icon, lighten, Mascot, PopIn, radii, space, Tappable } from "./ui";
+import { colors, configureUiSound, darken, preloadUiSounds, fonts, Icon, lighten, PopIn, radii, space, Tappable } from "./ui";
 import { PortalHost } from "./ui/Portal";
 import { applyBattle, buyIcon, rerollNickname, setUmmahJoined, wearIcon, type ProfileIconId } from "./services/ummah";
 import { pickBattleQuestions, pickFriendBattleQuestions, type BattleQuestion } from "./services/battleQuestions";
@@ -564,6 +565,11 @@ const NO_LESSON = {
   harderDeclined: false
 };
 
+// How long the app waits for the server's copy of a signed-in learner before opening on the phone's own copy.
+const SERVER_WAIT_MS = 2500;
+const LATE: unique symbol = Symbol("late");
+const waitFor = (ms: number) => new Promise<void>((done) => setTimeout(done, ms));
+
 function reducer(state: AppState, action: Action): AppState {
   switch (action.type) {
     case "loaded":
@@ -772,6 +778,10 @@ export default function TopicApp() {
     { paddingTop: insets.top, paddingRight: insets.right, paddingBottom: insets.bottom, paddingLeft: insets.left }
   ];
   const [state, dispatch] = useReducer(reducer, initialState);
+  // While the app has opened on this phone's copy and the server's is still on its way (load below).
+  const waitingForServerCopy = useRef(false);
+  // What the store last said about the learner's plan, to keep it on a copy that comes from the server later.
+  const storePremiumRef = useRef<PremiumStatus | undefined>(undefined);
   const [accountModalVisible, setAccountModalVisible] = useState(false);
   const [outOfHearts, setOutOfHearts] = useState<OutOfHeartsSheet | undefined>(undefined);
   const [planOffer, setPlanOffer] = useState<PlanOffer | undefined>(undefined);
@@ -1006,6 +1016,7 @@ export default function TopicApp() {
       setStorePrices(prices);
 
       if (premium) {
+        storePremiumRef.current = premium;
         dispatch({ type: "sync_premium", premium });
       }
     })();
@@ -1024,15 +1035,47 @@ export default function TopicApp() {
       const fallbackUser = await learningApi.getUser(1001);
       const savedUser = loadSavedUserProfile();
       const savedAccount = loadLocalAuthAccount();
-      const remoteSession = await hydrateRemoteSession();
+      const sessionRead = hydrateRemoteSession();
+      // The free server can take most of a minute to wake. When this phone already has the learner's progress, the
+      // app opens on it after a short wait instead of showing the loading screen all that time (startOnSavedCopy).
+      const remoteSession = savedUser ? await Promise.race([sessionRead, waitFor(SERVER_WAIT_MS).then((): typeof LATE => LATE)]) : await sessionRead;
+      const late = remoteSession === LATE;
+      const session = late ? null : remoteSession;
       // Lessons done offline stay: the saved copy wins over an older server copy until it is sent.
-      const startingUser = pickStartingUser(remoteSession?.user, savedUser) ?? fallbackUser;
-      const baseUser = withExperienceDefaults(ensureLearnerProfile(prepareUserForToday(startingUser)));
-      // A logged-out account stays on the device for the next log in, but the learner plays as a guest.
-      const accountSeed = remoteSession?.account ?? (savedAccount?.signedOut ? undefined : savedAccount);
-      const user = accountSeed ? withExperienceDefaults(ensureLearnerProfile(applyAccountIdentity(baseUser, accountSeed))) : baseUser;
+      const startFrom = (from: typeof session) => {
+        const startingUser = pickStartingUser(from?.user, savedUser) ?? fallbackUser;
+        const baseUser = withExperienceDefaults(ensureLearnerProfile(prepareUserForToday(startingUser)));
+        // A logged-out account stays on the device for the next log in, but the learner plays as a guest.
+        const accountSeed = from?.account ?? (savedAccount?.signedOut ? undefined : savedAccount);
+        return accountSeed ? withExperienceDefaults(ensureLearnerProfile(applyAccountIdentity(baseUser, accountSeed))) : baseUser;
+      };
+      const user = startFrom(session);
+      if (late) {
+        // Nothing is sent to the server until its copy is in, so a slow answer never loses progress made on another
+        // phone. Its copy is used if the learner has not learned anything here meanwhile; else this phone's copy wins
+        // and is sent, as after a start with no internet.
+        waitingForServerCopy.current = true;
+        void sessionRead.then((arrived) => {
+          waitingForServerCopy.current = false;
+          if (!mounted) return;
+          const now = latestUserRef.current;
+          const untouched = now && now.id === user.id && now.totalXp === user.totalXp && now.completedLessonIds.length === user.completedLessonIds.length;
+          if (arrived?.user && untouched) {
+            const fresh = startFrom(arrived);
+            const premium = storePremiumRef.current;
+            dispatch({ type: "apply_user", user: premium ? applyPremiumStatus(fresh, premium) : fresh });
+            if (arrived.account) {
+              setHasSavedAccount(true);
+              setAccountName(arrived.account.name);
+              setAccountEmail(arrived.account.email);
+            }
+          } else if (now) {
+            queueRemoteSync(now);
+          }
+        });
+      }
       const xpSummary = await learningApi.getXpSummaries(user);
-      const knownAccount = remoteSession?.account ?? savedAccount;
+      const knownAccount = session?.account ?? savedAccount;
       // A practice session cut off by a reload picks up on the same question; its clock starts again.
       const savedAssessment = loadActiveAssessment(assessmentOwner(user));
 
@@ -1091,7 +1134,9 @@ export default function TopicApp() {
     }
 
     saveUserProfile(state.user);
-    queueRemoteSync(state.user);
+    if (!waitingForServerCopy.current) {
+      queueRemoteSync(state.user);
+    }
   }, [state.user]);
 
   // Progress made offline is sent once the phone is back online: on each return to the app, and every
@@ -3075,6 +3120,7 @@ export default function TopicApp() {
       if (purchase.ok) {
         dispatch({ type: "apply_user_latest", update: (user) => applyShopItem(user, item) });
         if (purchase.premium) {
+          storePremiumRef.current = purchase.premium;
           dispatch({ type: "sync_premium", premium: purchase.premium });
         }
         return true;
@@ -3100,6 +3146,7 @@ export default function TopicApp() {
       const result = await monetizationClient.restorePurchases();
 
       if (result.premium) {
+        storePremiumRef.current = result.premium;
         dispatch({ type: "sync_premium", premium: result.premium });
       }
 
@@ -4003,13 +4050,11 @@ export default function TopicApp() {
 
 
   if (state.loading || !state.user) {
+    // The same camel as while the app opened (App.tsx), so the opening moves straight on to the path.
     return (
-      <View style={[safeArea, isRtlLanguage(currentLanguage) && styles.rightToLeft]} {...webDirection(isRtlLanguage(currentLanguage))} testID="safe-area">
+      <View style={styles.loadingScreen} testID="safe-area">
         <StatusBar barStyle="dark-content" />
-        <View style={styles.centerPane}>
-          <Mascot variant="hijabi" mood="wave" size={110} />
-          <Text style={styles.loadingText}>{strings.loadingPath}</Text>
-        </View>
+        <StartScreen message={strings.loadingPath} />
       </View>
     );
   }
@@ -5480,8 +5525,7 @@ const styles = StyleSheet.create({
   appShell: { flex: 1, backgroundColor: colors.snow },
   // Urdu and Arabic: rows, padding and text run from the right.
   rightToLeft: { direction: "rtl" },
-  centerPane: { flex: 1, alignItems: "center", justifyContent: "center", gap: 12, padding: 24 },
-  loadingText: { fontFamily: fonts.displayHeavy, fontSize: 20, color: colors.inkSoft },
+  loadingScreen: { flex: 1 },
   testStrip: {
     flexDirection: "row",
     flexWrap: "wrap",
