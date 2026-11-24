@@ -252,10 +252,12 @@ const Body = memo(function Body({ accent, face, outfit = "plain", shade }: { acc
   );
 });
 
-type CamelReaction = "happy" | "cooked" | "sad" | "zoom" | "spit" | "laugh" | "baby" | "jump";
+type CamelReaction = "eat" | "happy" | "cooked" | "sad" | "zoom" | "spit" | "laugh" | "baby" | "jump";
 
 /** Each tap plays the next one, in this order. */
 export const CAMEL_REACTIONS: { kind: CamelReaction; sound: GameSoundEvent; ms: number }[] = [
+  // A date drops in front of it: munch, munch, munch, and a happy "nom!".
+  { kind: "eat", sound: "pop", ms: 1900 },
   { kind: "happy", sound: "sparkle", ms: 1600 },
   // Poof! Cooked into a roast on the bone... nom nom... and poof, back again, just kidding.
   { kind: "cooked", sound: "sizzle", ms: 3200 },
@@ -271,6 +273,7 @@ export const CAMEL_REACTIONS: { kind: CamelReaction; sound: GameSoundEvent; ms: 
 const ZOOM = { turn: 0.07, windUp: 0.2, gone: 0.3, enter: 0.44, skid: 0.66, back: 0.8 };
 
 const FACE_FOR: Record<CamelReaction, CamelFaceKind> = {
+  eat: "happy",
   happy: "happy",
   cooked: "happy",
   sad: "sad",
@@ -509,6 +512,13 @@ export const Camel = memo(function Camel({
     const none = { y: 0 as number | Animated.AnimatedInterpolation<number>, rotate: "0deg" as string | Animated.AnimatedInterpolation<string>, scaleY: 1 as number | Animated.AnimatedInterpolation<number>, scale: 1 as number | Animated.AnimatedInterpolation<number> };
     if (reduceMotion || !reaction) return none;
     switch (reaction) {
+      case "eat":
+        // Leans down to the date, then chews: three little nods.
+        return {
+          ...none,
+          rotate: t.interpolate(smoothKeys([0, 0.15, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1], ["0deg", "7deg", "7deg", "3deg", "6deg", "2deg", "5deg", "0deg", "0deg"])),
+          y: t.interpolate(smoothKeys([0, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1], [0, 0, 1.5, 0, 1.5, 0, 1.5, 0]))
+        };
       case "happy":
         return { ...none, y: t.interpolate(smoothKeys([0, 0.15, 0.3, 0.45, 0.6, 1], [0, -size * 0.14, 0, -size * 0.1, 0, 0])) };
       case "sad":
@@ -660,6 +670,17 @@ export const Camel = memo(function Camel({
           </>
         ) : null}
       </Animated.View>
+      {shows && reaction === "eat" ? (
+        <>
+          {/* The date falls in front of the mouth and is eaten bite by bite. */}
+          <Floater t={t} from={0} to={0.62} x={headX + (facing.current > 0 ? 10 : -22) * u} y={-height * 0.05} rise={-height * 0.3} pop>
+            <View style={[styles.date, { width: Math.max(10, 13 * u), height: Math.max(7, 9 * u), borderRadius: Math.max(5, 6 * u) }]} />
+          </Floater>
+          <Floater t={t} from={0.62} to={1} x={headX - 14 * u} y={-8} rise={20 * u}>
+            <Word size={Math.max(11, 14 * u)} color="#B5541E">nom!</Word>
+          </Floater>
+        </>
+      ) : null}
       {shows && reaction === "happy"
         ? [0, 0.2, 0.4].map((from, index) => (
             <Floater key={from} t={t} from={from} to={from + 0.55} x={headX - 6 + (index - 1) * 10 * u} y={-4} rise={22 * u} drift={(index - 1) * 6 * u}>
@@ -819,6 +840,7 @@ function CookedShow({ t, size, height }: { t: Animated.Value; size: number; heig
 }
 
 const styles = StyleSheet.create({
+  date: { backgroundColor: "#9A4A1C", borderWidth: 1, borderColor: "#6E3210" },
   lane: {
     position: "absolute",
     left: 0,
