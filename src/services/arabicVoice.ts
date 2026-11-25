@@ -1,6 +1,6 @@
 import * as Speech from "expo-speech";
 import { QURAN_AYAHS } from "../data/quranAyahs";
-import { QURAN_AUDIO_SOURCE, globalAyahNumber, parseQuranReference } from "./quranAudio";
+import { parseQuranReference, reciterAyahUrl } from "./quranAudio";
 
 /**
  * How a learn card's Arabic word is said aloud:
@@ -29,7 +29,7 @@ const AYAH_BY_LETTERS = new Map(
   })
 );
 
-const recitationUrl = (key: { surah: number; ayah: number }) => QURAN_AUDIO_SOURCE.urlTemplate.replace("{n}", String(globalAyahNumber(key)));
+const recitationUrl = (key: { surah: number; ayah: number }) => reciterAyahUrl(key);
 
 /**
  * The recitation for a learn card's Arabic word, or null:

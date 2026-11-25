@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import { getAyahPlayback, playAyah, setAyahRepeat, stopAyah, subscribeAyahPlayback } from "../../services/ayahPlayer";
-import { QURAN_AUDIO_SOURCE } from "../../services/quranAudio";
+import { DEFAULT_RECITER, recitationOfUrl, reciterById } from "../../services/quranAudio";
 import { AYAH_WORD_TIMES_CREDIT } from "../../services/ayahWords";
 import { useOnline } from "../../services/network";
 import { t } from "../../i18n";
@@ -29,6 +29,7 @@ export function AyahListen({ url, accent, timed = false }: { url: string; accent
   const active = status === "playing" || status === "loading";
 
   useEffect(() => () => stopAyah(url), [url]);
+  const credit = reciterCredit(url, online);
 
   return (
     <View testID="ayah-listen">
@@ -69,12 +70,23 @@ export function AyahListen({ url, accent, timed = false }: { url: string; accent
         </Text>
       ) : (
         <Text style={styles.note} testID="ayah-listen-credit">
-          <Text>{t("Recited by {name}", { name: QURAN_AUDIO_SOURCE.reciter })}</Text>
+          <Text>{credit}</Text>
           {timed ? <Text>{` · ${t("Word timing: {credit}", { credit: AYAH_WORD_TIMES_CREDIT })}`}</Text> : null}
         </Text>
       )}
     </View>
   );
+}
+
+/**
+ * "Recited by Mishary Alafasy", and for a reciter from Quran Foundation also "· Quran Foundation", which its terms
+ * ask for. With no internet a reciter that only streams is heard from the saved Alafasy copy, so the line says so.
+ */
+export function reciterCredit(url: string, online = true) {
+  const picked = recitationOfUrl(url)?.reciter ?? reciterById(DEFAULT_RECITER);
+  const heard = !online && !picked.savesOffline ? reciterById(DEFAULT_RECITER) : picked;
+  const name = t("Recited by {name}", { name: t(heard.name) });
+  return heard.savesOffline ? name : `${name} · ${heard.credit}`;
 }
 
 const styles = StyleSheet.create({
