@@ -5,6 +5,7 @@
 import { lessonForAge } from "../data/ageLevels";
 import { LESSONS_BY_ID } from "../data/course";
 import { ALL_HARD_QUESTIONS } from "../data/hardQuestions";
+import { atTier, hasTiers } from "../data/questionTiers";
 import { englishWhy, sourceWhy } from "../ui/lesson/localizedLines";
 import { shortWhy, WHY_MAX } from "../ui/lesson/lessonText";
 
@@ -54,4 +55,20 @@ test("a question with no Why of its own shows its source Why", () => {
   const { prompt, answer } = questions.get(key)!;
   expect(sourceWhy(prompt, answer)).toBe(WHYS[key]);
   expect(englishWhy({ prompt, explanation: "", choices: [{ id: "a", label: answer }], correctChoiceId: "a" })).toBe(WHYS[key]);
+});
+
+test("a harder or expert wording shows its lesson question's Why", () => {
+  const lost: string[] = [];
+  for (const lesson of Object.values(LESSONS_BY_ID)) {
+    for (const challenge of lesson.challenges) {
+      if (!hasTiers(challenge)) continue;
+      const why = englishWhy(challenge);
+      if (!why) continue;
+      for (const tier of [2, 3] as const) {
+        const harder = atTier(challenge, tier);
+        if (harder !== challenge && englishWhy(harder) !== why) lost.push(`${harder.prompt} (${why})`);
+      }
+    }
+  }
+  expect(lost.slice(0, 5)).toEqual([]);
 });
