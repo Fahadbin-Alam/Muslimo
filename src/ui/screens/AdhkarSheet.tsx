@@ -16,7 +16,7 @@ import { localDayNumber } from "../../data/dailyCard";
 import { getActiveLanguage, t } from "../../i18n";
 import { findArabicVoice } from "../../services/arabicVoice";
 import { playAyah, stopAyah } from "../../services/ayahPlayer";
-import { quranAudioUrl } from "../../services/quranAudio";
+import { isTimedRecitation, quranAudioUrl } from "../../services/quranAudio";
 import { openSource } from "../../services/sourceLink";
 import { useAyahPlayback } from "../lesson/AyahListen";
 import { RecitedAyah, type RecitedPart } from "../lesson/RecitedAyah";
@@ -182,7 +182,7 @@ function DhikrCard({
         <Text style={styles.source}>{`${reference} · ${t(dhikr.source.grade ?? "")}`}</Text>
       </Tappable>
       {/* Every Quran dhikr fits its word timings (recitedAyah.test), so they stay unloaded until Listen. */}
-      {recitedAyahs(dhikr).length ? (
+      {recitedAyahs(dhikr).length && isTimedRecitation(recitedAyahs(dhikr)[0].url) ? (
         <Text style={styles.timing} testID={`adhkar-timing-${dhikr.id}`}>
           {t("Word timing: {credit}", { credit: AYAH_WORD_TIMES_CREDIT })}
         </Text>

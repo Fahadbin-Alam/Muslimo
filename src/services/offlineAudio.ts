@@ -1,7 +1,7 @@
 import { Platform } from "react-native";
 import type { Directory, File } from "expo-file-system";
 import { QURAN_AYAHS } from "../data/quranAyahs";
-import { QURAN_AUDIO_SOURCE, globalAyahNumber } from "./quranAudio";
+import { DEFAULT_RECITER, QURAN_AUDIO_SOURCE, globalAyahNumber, recitationOfUrl, reciterAyahUrl } from "./quranAudio";
 
 /**
  * Quran recitations kept on the phone, so Listen works with no internet.
@@ -10,6 +10,8 @@ import { QURAN_AUDIO_SOURCE, globalAyahNumber } from "./quranAudio";
  * - An ayah that played once from the internet is saved too, so the ayahs a learner already met keep working
  *   offline even without the full download.
  * Files live in the app's own documents folder, one per ayah, named by its number through the whole Quran.
+ * Only the default reciter (Alafasy) is saved: the other reciters in Settings may only stream (quranAudio.ts), so
+ * with no internet their ayahs play from the saved Alafasy copy (offlineAyahUri).
  * The web app has no file storage for this, and streams as before.
  */
 export type QuranPack = {
@@ -73,6 +75,18 @@ export function localAyahUri(url: string) {
   } catch {
     return null;
   }
+}
+
+/**
+ * What plays with no internet: the saved copy of this very recitation, or, for a reciter that only streams, the
+ * saved copy of the same ayah by the default reciter. Null when neither is on the phone.
+ */
+export function offlineAyahUri(url: string) {
+  const exact = localAyahUri(url);
+  if (exact) return exact;
+  const recitation = recitationOfUrl(url);
+  if (!recitation || recitation.reciter.savesOffline) return null;
+  return localAyahUri(reciterAyahUrl(recitation.key, DEFAULT_RECITER));
 }
 
 /** Saves one recitation. True when it is on the phone afterwards. A failed download leaves nothing behind. */

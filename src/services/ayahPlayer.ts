@@ -1,6 +1,6 @@
 import type { AudioPlayer, AudioStatus } from "expo-audio";
 import { isOnline } from "./network";
-import { localAyahUri, saveAyahForOffline } from "./offlineAudio";
+import { localAyahUri, offlineAyahUri, saveAyahForOffline } from "./offlineAudio";
 
 /**
  * One shared player for ayah recitations (see quranAudio.ts for the source): only one ayah plays at a
@@ -83,7 +83,8 @@ export function subscribeAyahPlayback(listener: (playback: AyahPlayback) => void
  * `resume` goes on from where stopAyah left it, when it is still the loaded ayah.
  */
 export function playAyah(url: string, { once = false, resume = false }: { once?: boolean; resume?: boolean } = {}) {
-  const saved = localAyahUri(url);
+  // Online, a reciter that only streams is streamed; offline, the default reciter's saved copy stands in for it.
+  const saved = localAyahUri(url) ?? (isOnline() ? null : offlineAyahUri(url));
   // With no internet, an ayah not saved on the phone cannot play: say so now instead of after the load timeout.
   if (!saved && !isOnline()) {
     clearLoadTimer();
