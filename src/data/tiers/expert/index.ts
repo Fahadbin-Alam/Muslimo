@@ -12,6 +12,7 @@ import { WOMEN_EXPERT } from "./womenExpert";
 import { MARRIAGE_EXPERT } from "./marriageExpert";
 import { HADITH_EXPERT } from "./hadithExpert";
 import { AQIDAH_EXPERT } from "./aqidahExpert";
+import { DUAS_EXPERT } from "./duasExpert";
 
 /**
  * Expert versions (tier 3), written after the Harder ones: keyed by the same English prompt, they ask the same answer
@@ -32,4 +33,5 @@ export const EXPERT_VERSIONS: Readonly<Record<string, TierVersion>> = {
   ...MARRIAGE_EXPERT,
   ...HADITH_EXPERT,
   ...AQIDAH_EXPERT,
+  ...DUAS_EXPERT,
 };
