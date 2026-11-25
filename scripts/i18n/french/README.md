@@ -24,6 +24,7 @@ French is written by hand, in batches, with no paid translation API. It stays hi
 3. Every topic, unit and branch name and description (1,318 lines).
 4. The placement test questions (591 lines).
 5. New to Islam topic: every lesson page and question (990 lines; 4 ayah/hadith lines left in English).
+6. Ramadan topic: every lesson page and question (175 lines; 41 ayah/hadith lines left in English).
 
 ## Still in English
 
