@@ -1,14 +1,10 @@
-import * as Speech from "expo-speech";
 import { QURAN_AYAHS } from "../data/quranAyahs";
 import { parseQuranReference, reciterAyahUrl } from "./quranAudio";
 
 /**
  * How a learn card's Arabic word is said aloud:
- * - a word that is a whole ayah, or part of the ayah its card cites, plays the reciter (see quranAudio.ts),
- *   never a robot voice;
- * - any other word uses the phone's own Arabic voice, but only when the phone has one. Without one
- *   the browser or phone reads the Arabic letters with an English voice and says the wrong thing, so the
- *   speaker button is hidden instead.
+ * - a word that is a whole ayah, or part of the ayah its card cites, plays the reciter (see quranAudio.ts);
+ * - any other word is not said at all: no machine voice ever says Arabic (see findArabicVoice).
  */
 
 /** Letters only: no vowel marks, Quran stop signs, tatweel or alifs, and one form of alif/ya/ta marbuta. */
@@ -53,49 +49,17 @@ export function recitationForArabic(text: string, references: Array<string | und
   return null;
 }
 
-let arabicVoice: Promise<string | null> | null = null;
-
-async function listVoices(): Promise<Speech.Voice[]> {
-  // The web list can stay empty with no event when the browser has no voices: give up after a moment.
-  let timer: ReturnType<typeof setTimeout> | undefined;
-  const timeout = new Promise<Speech.Voice[]>((resolve) => {
-    timer = setTimeout(() => resolve([]), 1500);
-  });
-  try {
-    return await Promise.race([Speech.getAvailableVoicesAsync(), timeout]);
-  } catch {
-    return [];
-  } finally {
-    clearTimeout(timer);
-  }
-}
-
 /**
- * The id of an Arabic voice on this device, or null when it has none. A voice found is kept; "none" is asked
- * again next time, since the speech engine can still be starting, or the learner may install a voice.
+ * The phone's own Arabic voice is never used. A machine voice guesses the vowels and case endings that Arabic
+ * writing leaves out, so it says Quran words, duas and hadith with grammar mistakes a native speaker hears at once.
+ * Religious words must be said exactly right: the reciter says the ones that are from the Quran (above), and the
+ * rest have no speaker button. Always null, so every Arabic Listen button stays hidden unless a reciter has it.
  */
 export function findArabicVoice(): Promise<string | null> {
-  if (!arabicVoice) {
-    const lookup = (async () => {
-      let voices = await listVoices();
-      if (voices.length === 0) {
-        // Android and browsers fill the list a moment after start-up.
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-        voices = await listVoices();
-      }
-      return voices.find((voice) => voice.language?.toLowerCase().startsWith("ar"))?.identifier ?? null;
-    })();
-    arabicVoice = lookup;
-    void lookup.then((id) => {
-      if (!id && arabicVoice === lookup) {
-        arabicVoice = null;
-      }
-    });
-  }
-  return arabicVoice;
+  return Promise.resolve(null);
 }
 
 /** Tests only. */
 export function resetArabicVoiceForTests() {
-  arabicVoice = null;
+  // Nothing is kept any more.
 }

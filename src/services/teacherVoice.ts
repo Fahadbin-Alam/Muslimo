@@ -5,8 +5,12 @@ import type { SupportedLanguage } from "../types";
 /**
  * The teacher reads out why an answer was wrong: the right answer, then the reason, in the learner's language.
  * Only when the learner taps the speaker (nothing plays by itself), and only in a language the phone can say:
- * English always; Bangla, Urdu and Arabic only when the phone has that voice, since another voice would read the
+ * English always; Bangla and Urdu only when the phone has that voice, since another voice would read the
  * letters wrongly. The button is hidden otherwise.
+ *
+ * Never in Arabic: a machine voice guesses the vowels and case endings Arabic writing leaves out, so a native
+ * speaker hears grammar mistakes in every line, and in the Quran, hadith and duas a lesson quotes. With the app in
+ * Arabic the speaker is hidden (the learner reads the page), and the Urdu voice skips quoted Arabic (see speakable).
  */
 
 const SPEECH_CODE: Record<SupportedLanguage, string> = { en: "en", bn: "bn", ur: "ur", ar: "ar", id: "id", fr: "fr" };
@@ -30,6 +34,7 @@ async function listVoices(): Promise<Speech.Voice[]> {
 
 /** The voice findTeacherVoice found for this language before, at once: "" for English, undefined when not known yet. */
 export function knownTeacherVoice(language: SupportedLanguage): string | undefined {
+  if (language === "ar") return undefined;
   return language === "en" ? "" : foundVoices.get(language);
 }
 
@@ -37,6 +42,9 @@ export function knownTeacherVoice(language: SupportedLanguage): string | undefin
 export function findTeacherVoice(language: SupportedLanguage): Promise<string | null> {
   if (language === "en") {
     return Promise.resolve("");
+  }
+  if (language === "ar") {
+    return Promise.resolve(null);
   }
   let found = voices.get(language);
   if (!found) {
@@ -65,11 +73,29 @@ export function findTeacherVoice(language: SupportedLanguage): Promise<string | 
 
 const ARABIC_RUN = /[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿]+[؀-ۿݐ-ݿࢠ-ࣿﭐ-﷿ﹰ-﻿\s،]*/g;
 
-/** Text as the voice should say it: ﷺ said in words, and Arabic script dropped for a voice that cannot read it. */
+/** Vowel marks (fatha, kasra, shadda...) and the Quran's own spelling marks. */
+const ARABIC_VOWELS = /[\u064B-\u0652]/g;
+const QURAN_SPELLING = /[\u0671\u06D6-\u06ED]/;
+const SCRIPT_WORD = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]+/g;
+
+/**
+ * True for an Arabic quote inside Urdu: a word written with two or more vowel marks, or in the Quran's spelling.
+ * Urdu words carry a mark now and then (تقریباً), quoted Arabic (أَعُوذُ بِكَلِمَاتِ اللَّهِ) carries them on every word.
+ */
+function quotedArabicWord(word: string) {
+  return QURAN_SPELLING.test(word) || (word.match(ARABIC_VOWELS)?.length ?? 0) >= 2;
+}
+
+/**
+ * Text as the voice should say it: ﷺ said in words, and Arabic script dropped for a voice that cannot read it.
+ * The Urdu voice reads Urdu but not Arabic, so it skips the Quran, hadith and dua words a line quotes in Arabic.
+ */
 export function speakable(text: string, language: SupportedLanguage) {
   let spoken = text.replace(/ﷺ/g, ` ${t("peace be upon him", undefined, language)} `);
   if (language === "en" || language === "bn" || language === "id" || language === "fr") {
     spoken = spoken.replace(ARABIC_RUN, " ");
+  } else if (language === "ur") {
+    spoken = spoken.replace(SCRIPT_WORD, (word) => (quotedArabicWord(word) ? " " : word));
   }
   return spoken
     .replace(/\(\s*\)/g, " ")
