@@ -39,8 +39,7 @@ export const WOMEN_TIERS: Record<string, TierEntry> = {
   "What will her palace in Paradise NOT have?": { answer: "Noise or tiredness", harder: ["Bukhari 3820: a palace of hollow pearl with no... what?", "Gardens", "Rivers", "Light"] },
   "Who sent salam to Khadijah, along with Jibril?": { answer: "Her Lord, Allah", harder: ["Bukhari 3820: 'greet her from her Lord and from me.' Who sent salam with Jibril?", "Abu Bakr", "Her father", "The angels of Badr"] },
   // Sahih Muslim 1463b.
-  "Sawdah married the Prophet ﷺ after ____ passed away.": { answer: "Khadijah", harder: ["Muslim 1463b: Sawdah was the first woman he ﷺ married after ____.", "Hafsah", "Aishah", "Maymunah"] },
-  "Sawdah married the Prophet ﷺ after Khadijah passed away.": { answer: "True", harder: "By Muslim 1463b, Sawdah was the first woman he ﷺ married after Khadijah." },
+  "When she grew old, Sawdah gave her day to ____.": { answer: "Aishah", harder: ["Muslim 1463b: when Sawdah grew old, she gave her day with him ﷺ to ____.", "Hafsah", "Zaynab", "Maymunah"] },
   // Sahih al-Bukhari 2593.
   "How did the Prophet ﷺ choose which wife went on a journey?": { answer: "He drew lots", harder: ["Bukhari 2593: before a journey, how did he ﷺ pick which wife came?", "He asked their fathers", "The newest wife went", "The eldest always went"] },
   "What did Sawdah give to Aishah?": { answer: "Her day and night", harder: ["Bukhari 2593: each wife had her day and night. What did Sawdah give Aishah?", "Her camel", "Her house", "Her jewelry"] },

@@ -5420,7 +5420,7 @@
           },
           {
             "title": "Salman al-Farisi",
-            "description": "Persian Companion who searched from Zoroastrianism to Christianity to Islam. Born in Isfahan. Passed away in c. 33–35 AH / 655–656 CE at Al-Mada'in.",
+            "description": "Persian Companion who searched from Zoroastrianism to Christianity to Islam. From Ram-Hurmuz in Persia. Passed away in c. 33–35 AH / 655–656 CE at Al-Mada'in.",
             "difficulty": 3,
             "lesson_type": "story",
             "premium": false,
@@ -5430,7 +5430,7 @@
             "questions": [
               {
                 "type": "multiple_choice",
-                "prompt": "Where was Salman al-Farisi born?",
+                "prompt": "Which town was Salman al-Farisi from?",
                 "options_json": [
                   {
                     "id": "a",
@@ -5438,7 +5438,7 @@
                   },
                   {
                     "id": "b",
-                    "text": "Isfahan"
+                    "text": "Ram-Hurmuz"
                   },
                   {
                     "id": "c",
@@ -5452,7 +5452,7 @@
                 "correct_answer_json": {
                   "choiceId": "b"
                 },
-                "explanation_short": "Salman al-Farisi was born in Isfahan.",
+                "explanation_short": "Salman said: I am from Ram-Hurmuz (Sahih al-Bukhari 3947).",
                 "explanation_long": "Salman al-Farisi: Persian Companion who searched from Zoroastrianism to Christianity to Islam.",
                 "tags_json": [
                   "salman-al-farisi",
@@ -10088,7 +10088,7 @@
                   },
                   {
                     "id": "d",
-                    "text": "She was the second wife of the Prophet ﷺ."
+                    "text": "She was one of the Mothers of the Believers."
                   }
                 ],
                 "correct_answer_json": {
@@ -11067,7 +11067,7 @@
           },
           {
             "title": "Sawdah bint Zam'ah",
-            "description": "Second wife of the Prophet ﷺ. Full name: Sawda bint Zam'a ibn Qays al-Qurashiyya al-Amiriyya. Tribe: Quraysh. Father: Zam'ah ibn Qays. Born in Makkah. Passed away in Shawwal 22 AH / 644 CE (674 also reported) at Madinah.",
+            "description": "A Mother of the Believers. Full name: Sawda bint Zam'a ibn Qays al-Qurashiyya al-Amiriyya. Tribe: Quraysh. Father: Zam'ah ibn Qays. Born in Makkah. Passed away in Shawwal 22 AH / 644 CE (674 also reported) at Madinah.",
             "difficulty": 4,
             "lesson_type": "story",
             "premium": false,
@@ -11100,7 +11100,7 @@
                   "choiceId": "a"
                 },
                 "explanation_short": "The father of Sawdah bint Zam'ah was Zam'ah ibn Qays.",
-                "explanation_long": "Sawdah bint Zam'ah: Second wife of the Prophet ﷺ.",
+                "explanation_long": "Sawdah bint Zam'ah: A Mother of the Believers.",
                 "tags_json": [
                   "sawdah-bint-zamah",
                   "difficulty_4",
@@ -11132,7 +11132,7 @@
                   "choiceId": "b"
                 },
                 "explanation_short": "The mother of Sawdah bint Zam'ah was Ash-Shamus bint Qays.",
-                "explanation_long": "Sawdah bint Zam'ah: Second wife of the Prophet ﷺ.",
+                "explanation_long": "Sawdah bint Zam'ah: A Mother of the Believers.",
                 "tags_json": [
                   "sawdah-bint-zamah",
                   "difficulty_4",
@@ -11164,7 +11164,7 @@
                   "choiceId": "c"
                 },
                 "explanation_short": "Sawdah bint Zam'ah was from Quraysh.",
-                "explanation_long": "Sawdah bint Zam'ah: Second wife of the Prophet ﷺ.",
+                "explanation_long": "Sawdah bint Zam'ah: A Mother of the Believers.",
                 "tags_json": [
                   "sawdah-bint-zamah",
                   "difficulty_4",

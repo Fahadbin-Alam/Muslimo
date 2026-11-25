@@ -5487,7 +5487,6 @@ const ASKS: Record<string, readonly Ask[]> = {
   ],
   // Aishah said: I never saw a woman I would love to be like more than Sawdah bint Zam'ah. When she grew old, she gave
   // her day with him to Aishah, so he gave Aishah two days, her own day and Sawdah's day (Sahih Muslim 1463, 1463b).
-  // (That Sawdah married him after Khadijah passed away is not in the scene, so that stays as it is.)
   "sign-sawdah-gave-her-day": [
     ["Sawdah and Aishah were enemies.", "False", "Aishah: I never saw a woman I'd love", "to be like more than Sawdah bint Zam'ah"],
     ["What did Aishah wish about Sawdah?", "To be just like her", "to be like more than Sawdah bint Zam'ah"],

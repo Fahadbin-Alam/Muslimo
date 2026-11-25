@@ -2282,9 +2282,9 @@ SECTION_SEEDS.push(
           alt: ["gold", "letters"],
           source: "hadith_bukhari_3820"
         }),
-        seed("sawdah-and-stability", "Sawdah", "Sawdah became a Mother of the Believers after Khadijah passed away.", 3, {
-          line: "Sawdah married the Prophet ﷺ after [Khadijah] passed away.",
-          alt: ["Hafsah", "Aishah"]
+        seed("sawdah-and-stability", "Sawdah", "When Sawdah grew old, she gave her day with the Prophet ﷺ to Aishah.", 3, {
+          line: "When she grew old, Sawdah gave her day to [Aishah].",
+          alt: ["Hafsah", "Zaynab"]
         }),
         seed("aishah-and-knowledge", "Loved most", "The Prophet ﷺ was asked who he loved most, and he named Aishah.", 4, {
           line: "Asked who he loved most, the Prophet ﷺ said: [Aishah].",

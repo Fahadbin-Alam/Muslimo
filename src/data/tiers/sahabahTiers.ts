@@ -795,7 +795,7 @@ export const SAHABAH_TIERS: Record<string, TierEntry> = {
   "What did they hear in the night?": { answer: "The clatter of weapons", harder: ["Bukhari 2885: 'if only a righteous man would guard me.' Then they heard...?", "Footsteps at the door", "A horse's hooves", "Someone calling his name"] },
   "After Sa'd came to guard him, the Prophet ﷺ slept.": { answer: "True", harder: "By Bukhari 2885, the Prophet ﷺ slept once Sa'd came to guard him." },
   // Sahih al-Bukhari 3947.
-  "Where was Salman al-Farisi born?": { answer: "Isfahan", harder: ["Siyar 1/506: 'I was a Persian from...' where was Salman born?", "Ram-Hurmuz's mountains", "Al-Mada'in", "Babylon"] },
+  "Which town was Salman al-Farisi from?": { answer: "Ram-Hurmuz", harder: ["Bukhari 3947: Salman said 'I am from...' which town?", "Al-Mada'in", "Babylon", "Tihamah"] },
   "Where did Salman al-Farisi pass away?": { answer: "Al-Mada'in", harder: ["Where did Salman al-Farisi die?", "Isfahan", "Madinah", "Jerusalem"] },
   // Sahih al-Bukhari 3947.
   "Salman grew up in ____, far from Arabia.": { answer: "Persia", harder: ["Bukhari 3947: 'I am from Ram-Hurmuz.' Salman grew up in...?", "Makkah", "Egypt", "Sham"] },
