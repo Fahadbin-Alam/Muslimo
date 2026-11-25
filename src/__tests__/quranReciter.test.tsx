@@ -234,12 +234,12 @@ describe("credit line and Settings", () => {
 
   test("picking a reciter in Settings changes it at once, and its sample plays", async () => {
     await render(<ReciterPicker />);
-    expect(screen.getByTestId("settings-reciter-open")).toHaveTextContent(/Mishary Alafasy/);
+    expect(screen.getByTestId("settings-reciter-current")).toHaveTextContent("Mishary Alafasy");
     expect(screen.queryByTestId("settings-reciter-list")).toBeNull();
     await fireEvent.press(screen.getByTestId("settings-reciter-open"));
     await fireEvent.press(screen.getByTestId("settings-reciter-minshawi"));
     expect(getReciterId()).toBe("minshawi");
-    expect(screen.getByTestId("settings-reciter-open")).toHaveTextContent(/Minshawi/);
+    expect(screen.getByTestId("settings-reciter-current")).toHaveTextContent("Muhammad Siddiq al-Minshawi");
     expect(quranAudioUrl("Quran 1:2")).toBe("https://verses.quran.com/Minshawi/Murattal/mp3/001002.mp3");
 
     await fireEvent.press(screen.getByTestId("settings-reciter-play-abdulbasit"));

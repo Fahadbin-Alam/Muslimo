@@ -6,7 +6,6 @@ import { t } from "../../i18n";
 import { Icon } from "../Icon";
 import { Tappable } from "../Tappable";
 import { colors, fonts, radii, space, text } from "../theme";
-import { LinkRow } from "./sheetParts";
 
 /** The ayah each reciter says when its play button is tapped: Al-Fatihah 1:2. */
 const SAMPLE = { surah: 1, ayah: 2 } as const;
@@ -38,7 +37,25 @@ export function ReciterPicker() {
 
   return (
     <View testID="settings-reciter">
-      <LinkRow label={t("Quran reciter")} value={t(reciterById(chosen).name)} icon="quran" onPress={() => setOpen(!open)} testID="settings-reciter-open" />
+      {/* The name goes under the label: reciters' names are too long to sit beside it on a small phone. */}
+      <Tappable
+        onPress={() => setOpen(!open)}
+        pressScale={0.98}
+        style={styles.header}
+        accessibilityRole="button"
+        accessibilityState={{ expanded: open }}
+        accessibilityLabel={`${t("Quran reciter")}, ${t(reciterById(chosen).name)}`}
+        testID="settings-reciter-open"
+      >
+        <Icon name="quran" size={26} />
+        <View style={styles.words}>
+          <Text style={styles.label}>{t("Quran reciter")}</Text>
+          <Text style={styles.current} numberOfLines={1} testID="settings-reciter-current">
+            {t(reciterById(chosen).name)}
+          </Text>
+        </View>
+        <Icon name={open ? "chevronDown" : "chevronRight"} size={18} color={colors.inkSoft} />
+      </Tappable>
       {open ? (
         <View style={styles.list} testID="settings-reciter-list">
           {RECITERS.map((reciter) => {
@@ -84,6 +101,23 @@ export function ReciterPicker() {
 }
 
 const styles = StyleSheet.create({
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: space.md,
+    minHeight: 64,
+    paddingVertical: space.sm
+  },
+  words: {
+    flex: 1,
+    minWidth: 0
+  },
+  label: {
+    ...text.bodyBold
+  },
+  current: {
+    ...text.tiny
+  },
   list: {
     gap: space.xs,
     paddingBottom: space.md
