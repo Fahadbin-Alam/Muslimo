@@ -198,7 +198,8 @@ import { playGameSound, primeGameAudio } from "./services/gameAudio";
 import { comboSound, type GameSoundEvent } from "./services/gameSoundLibrary";
 import { lessonRecap, PERFECT_LESSON_DATES, type LessonRecapItem } from "./ui/lesson/lessonRecap";
 import { claimQuestChest, recordQuestEvent, useQuestBoard, type Quest } from "./services/dailyQuests";
-import { QuestsBanner, QuestsSheet, questLabel } from "./ui/screens/DailyQuests";
+import { claimMissionChest, recordMissionEvent, useMissionBoard, type Mission } from "./services/weeklyMissions";
+import { QuestsBanner, QuestsSheet, missionLabel, questLabel } from "./ui/screens/DailyQuests";
 import { markLeagueResultSeen, settleLeague, unseenLeagueResult } from "./services/leagues";
 import { answerLessonStep, isLastLessonStep, startLessonQueue, withoutWaitingQuestions, type FlowStep } from "./services/lessonQueue";
 import { buildLessonFlow, flowProgress, isLearnStep, isMatchStep, isQuestionStep, isRecallLesson, teachText, highlightWords, lessonExplain, lessonSummary } from "./ui/lesson/lessonPages";
@@ -441,6 +442,8 @@ type LessonCelebration = {
   recap?: LessonRecapItem[];
   /** Daily quests this lesson finished, in words. */
   questsDone?: string[];
+  /** Weekly missions this lesson finished, in words. */
+  missionsDone?: string[];
   /** Pictures this lesson put in the picture album for the first time. */
   newPictures?: LessonPicture[];
   /** Album sets those pictures finished: each gets its badge on the card. */
@@ -987,10 +990,14 @@ export default function TopicApp() {
   const [questsOpen, setQuestsOpen] = useState(false);
   const [questChestDates, setQuestChestDates] = useState(0);
   const questsDuringLesson = useRef<Quest[]>([]);
+  // Weekly missions: shown in the same sheet, under the day's quests; their chest pays through the same reward pop.
+  const missionBoardNow = useMissionBoard();
+  const missionsDuringLesson = useRef<Mission[]>([]);
   // A new lesson starts its own list, so a lesson left halfway does not show its quests on the next one's finish.
   const sessionIdForQuests = state.activeSession?.id;
   useEffect(() => {
     questsDuringLesson.current = [];
+    missionsDuringLesson.current = [];
   }, [sessionIdForQuests]);
   const [topicPickerVisible, setTopicPickerVisible] = useState(false);
   // The top bar's magnifier opens the same sheet with its search field ready to type in.
@@ -2540,6 +2547,7 @@ export default function TopicApp() {
 
     if (!isRetry) {
       questsDuringLesson.current.push(...recordQuestEvent({ type: "answer", correct, inARow: correct ? state.rightInARow + 1 : 0 }));
+      missionsDuringLesson.current.push(...recordMissionEvent({ type: "answer", correct }));
     }
     // A run of right answers climbs: each one in a row plays a higher chime (services/gameSoundLibrary comboSound).
     playUiSound(correct ? (isRetry ? "correct" : comboSound(state.rightInARow + 1)) : "wrong");
@@ -2719,11 +2727,16 @@ export default function TopicApp() {
     }
   }
 
-  /** A finished lesson counts towards today's quests; returns, in words, every quest this lesson finished. */
+  /**
+   * A finished lesson counts towards today's quests and this week's missions; returns, in words, every quest and
+   * mission this lesson finished, for the lesson complete card.
+   */
   function finishQuests(perfect: boolean, xp: number) {
     const done = [...questsDuringLesson.current, ...recordQuestEvent({ type: "lesson", perfect, xp })];
+    const missions = [...missionsDuringLesson.current, ...recordMissionEvent({ type: "lesson", perfect })];
     questsDuringLesson.current = [];
-    return done.map(questLabel);
+    missionsDuringLesson.current = [];
+    return { questsDone: done.map(questLabel), missionsDone: missions.map(missionLabel) };
   }
 
   /**
@@ -2797,7 +2810,7 @@ export default function TopicApp() {
           : undefined;
       const allRight = state.sessionMistakes === 0;
       setLessonCompleteSummary({
-        questsDone: practiceQuests,
+        ...practiceQuests,
         headline: memorize && allRight ? t("Every ayah right!") : whichSurah && allRight ? t("Every surah right!") : t("Practice done!"),
         title: memorize
           ? memorizeTitle(memorize, currentLanguage)
@@ -2908,7 +2921,7 @@ export default function TopicApp() {
         stars: lessonStars(state.sessionMistakes),
         unlockedTitle: unlockedNode ? getNodeTitle(unlockedNode.id, unlockedNode.title, currentLanguage) : undefined,
         streakDays: nextUser.streakDays,
-        questsDone: finishQuests(false, nextUser.totalXp - user.totalXp)
+        ...finishQuests(false, nextUser.totalXp - user.totalXp)
       });
       const xpSummary = await learningApi.getXpSummaries(nextUser);
       dispatch({ type: "finish_lesson", user: nextUser, xpSummary });
@@ -2960,7 +2973,7 @@ export default function TopicApp() {
       gemsReward: perfect ? PERFECT_LESSON_DATES : undefined,
       accuracy: asked ? Math.round((state.sessionCorrectCount / asked) * 100) : undefined,
       bestInARow: state.bestInARow,
-      questsDone: finishQuests(perfect, nextUser.totalXp - user.totalXp),
+      ...finishQuests(perfect, nextUser.totalXp - user.totalXp),
       ...collectLessonPictures(),
       recap: lessonRecap(localizeLessonContent(state.activeSession.lesson, currentLanguage).challenges, state.missedChallengeIds),
       // A replayed lesson earns nothing, so show what was actually added.
@@ -2983,6 +2996,17 @@ export default function TopicApp() {
   // Closing the app mid-pop leaves the chest ready to open again.
   function openQuestChest() {
     const dates = claimQuestChest();
+    setQuestsOpen(false);
+    if (dates > 0) {
+      // Opening the day's chest counts for the week's "open the daily chest" mission.
+      recordMissionEvent({ type: "questChest" });
+      setQuestChestDates(dates);
+    }
+  }
+
+  /** The week's big chest: its dates land through the same reward pop as the day's chest. */
+  function openMissionChest() {
+    const dates = claimMissionChest();
     setQuestsOpen(false);
     if (dates > 0) {
       setQuestChestDates(dates);
@@ -4480,7 +4504,7 @@ export default function TopicApp() {
               ) : (
                 <>
                   {/* Today's three quests and their chest. */}
-                  <QuestsBanner board={questBoardNow} onOpen={() => setQuestsOpen(true)} />
+                  <QuestsBanner board={questBoardNow} missions={missionBoardNow} onOpen={() => setQuestsOpen(true)} />
                   {ramadanBanner}
                   {/* Missed questions due again (spaced review): one tap starts a Review of them. */}
                   {pathReviewDue > 0 ? <ReviewBanner count={pathReviewDue} onOpen={startReviewDeck} /> : null}
@@ -4742,6 +4766,7 @@ export default function TopicApp() {
             bestInARow={lessonCompleteSummary.bestInARow}
             recap={lessonCompleteSummary.recap}
             questsDone={lessonCompleteSummary.questsDone}
+            missionsDone={lessonCompleteSummary.missionsDone}
             newPictures={lessonCompleteSummary.newPictures}
             finishedSets={lessonCompleteSummary.finishedSets}
             surahComplete={lessonCompleteSummary.surahComplete}
@@ -5214,7 +5239,14 @@ export default function TopicApp() {
           onClose={collectJourneyReward}
         />
         <RewardPop visible={questChestDates > 0 && !rewardCelebration} gems={questChestDates} onClose={collectQuestChest} />
-        <QuestsSheet visible={questsOpen && !inLesson} board={questBoardNow} onClaim={openQuestChest} onClose={() => setQuestsOpen(false)} />
+        <QuestsSheet
+          visible={questsOpen && !inLesson}
+          board={questBoardNow}
+          missions={missionBoardNow}
+          onClaim={openQuestChest}
+          onClaimMissions={openMissionChest}
+          onClose={() => setQuestsOpen(false)}
+        />
         <WelcomeSheet
           visible={welcomeVisible}
           onLogIn={() => {

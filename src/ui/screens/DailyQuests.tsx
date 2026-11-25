@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Animated, Easing, StyleSheet, Text, View } from "react-native";
 import { t } from "../../i18n";
 import { QUEST_CHEST_DATES, type Quest, type QuestBoard } from "../../services/dailyQuests";
+import { MISSION_CHEST_DATES, type Mission, type MissionBoard } from "../../services/weeklyMissions";
 import { GameButton } from "../GameButton";
 import { Icon, type IconName } from "../Icon";
 import { useReduceMotion } from "../motion";
@@ -36,6 +37,31 @@ export function questLabel(quest: Quest) {
   }
 }
 
+const MISSION_ICON: Record<Mission["kind"], IconName> = {
+  days: "flame",
+  lessons: "book",
+  correct: "check",
+  perfect: "star",
+  questDays: "trophy"
+};
+
+/** A weekly mission in plain words, in the learner's language. */
+export function missionLabel(mission: Mission) {
+  switch (mission.kind) {
+    case "days":
+      return t("Learn on {count} days this week", { count: mission.target });
+    case "lessons":
+      return t("Finish {count} lessons this week", { count: mission.target });
+    case "correct":
+      return t("Answer {count} questions right", { count: mission.target });
+    case "perfect":
+      return t("Finish {count} lessons with no mistakes", { count: mission.target });
+    case "questDays":
+    default:
+      return t("Open the daily chest on {count} days", { count: mission.target });
+  }
+}
+
 const INK = darken(colors.gold, 0.5);
 
 /** The day's chest: closed, it wiggles while it waits to be opened; open once claimed. */
@@ -64,13 +90,18 @@ function QuestChest({ ready, claimed, size = 34 }: { ready: boolean; claimed: bo
 }
 
 /** On top of the path: today's quests in one line, three little bars and the chest. A tap opens them all. */
-export function QuestsBanner({ board, onOpen }: { board: QuestBoard; onOpen: () => void }) {
-  const ready = board.allDone && !board.claimed;
-  const line = board.claimed
-    ? t("All done today! New quests tomorrow.")
-    : ready
-      ? t("All done! Open your chest.")
-      : t("{done} of {total} done", { done: board.doneCount, total: board.quests.length });
+export function QuestsBanner({ board, missions, onOpen }: { board: QuestBoard; missions?: MissionBoard; onOpen: () => void }) {
+  const dailyReady = board.allDone && !board.claimed;
+  // The week's chest waiting lights the banner too, once today's own chest is open or still far off.
+  const weeklyReady = Boolean(missions?.allDone && !missions.claimed);
+  const ready = dailyReady || weeklyReady;
+  const line = dailyReady
+    ? t("All done! Open your chest.")
+    : weeklyReady
+      ? t("Your weekly chest is ready!")
+      : board.claimed
+        ? t("All done today! New quests tomorrow.")
+        : t("{done} of {total} done", { done: board.doneCount, total: board.quests.length });
   return (
     <Tappable
       onPress={onOpen}
@@ -98,13 +129,27 @@ export function QuestsBanner({ board, onOpen }: { board: QuestBoard; onOpen: () 
           {line}
         </Text>
       </View>
-      <QuestChest ready={ready} claimed={board.claimed} />
+      <QuestChest ready={ready} claimed={board.claimed && !weeklyReady} />
     </Tappable>
   );
 }
 
 /** All of today's quests with their bars, and the chest to open once all three are done. */
-export function QuestsSheet({ visible, board, onClaim, onClose }: { visible: boolean; board: QuestBoard; onClaim: () => void; onClose: () => void }) {
+export function QuestsSheet({
+  visible,
+  board,
+  missions,
+  onClaim,
+  onClaimMissions,
+  onClose
+}: {
+  visible: boolean;
+  board: QuestBoard;
+  missions?: MissionBoard;
+  onClaim: () => void;
+  onClaimMissions?: () => void;
+  onClose: () => void;
+}) {
   useBackToClose(visible, onClose);
   const ready = board.allDone && !board.claimed;
   return (
@@ -138,12 +183,57 @@ export function QuestsSheet({ visible, board, onClaim, onClose }: { visible: boo
             : t("Finish all three for a chest with {count} dates.", { count: QUEST_CHEST_DATES })}
         </Text>
       </View>
+      {missions ? <WeeklyMissions board={missions} onClaim={onClaimMissions} /> : null}
       {ready ? (
         <GameButton label={t("Open chest")} fullWidth onPress={onClaim} sound={false} testID="quests-claim" />
       ) : (
         <GameButton label={t("Got it")} fullWidth variant="secondary" onPress={onClose} testID="quests-ok" />
       )}
     </Sheet>
+  );
+}
+
+/** Under the day's quests: the week's three missions, their bars, the days left and the big chest. */
+function WeeklyMissions({ board, onClaim }: { board: MissionBoard; onClaim?: () => void }) {
+  const ready = board.allDone && !board.claimed;
+  return (
+    <View style={styles.week} testID="weekly-missions">
+      <View style={styles.weekHead}>
+        <Text style={styles.weekTitle}>{t("Weekly missions")}</Text>
+        <Text style={styles.weekLeft} testID="weekly-missions-left">
+          {board.daysLeft === 1 ? t("Last day of the week") : t("{count} days left", { count: board.daysLeft })}
+        </Text>
+      </View>
+      <View style={styles.weekList}>
+        {board.missions.map((status) => (
+          <View key={status.mission.id} style={styles.row} testID={`mission-${status.mission.id}`}>
+            <View style={[styles.weekIcon, status.done ? styles.rowIconDone : null]}>
+              <Icon name={status.done ? "check" : MISSION_ICON[status.mission.kind]} size={18} color={status.done ? colors.white : undefined} />
+            </View>
+            <View style={styles.body}>
+              <Text style={styles.weekRowTitle}>{missionLabel(status.mission)}</Text>
+              <View style={styles.rowBar}>
+                <View style={styles.rowBarTrack}>
+                  <ProgressBar progress={status.progress / status.mission.target} color={status.done ? colors.green : colors.gem} height={10} />
+                </View>
+                <Text style={styles.weekCount}>
+                  {status.progress}/{status.mission.target}
+                </Text>
+              </View>
+            </View>
+          </View>
+        ))}
+      </View>
+      <View style={styles.weekChestRow}>
+        <QuestChest ready={ready} claimed={board.claimed} size={40} />
+        <Text style={styles.weekChestLine}>
+          {board.claimed
+            ? t("You opened this week's chest. New missions on Monday!")
+            : t("Finish all three this week for a big chest with {count} dates.", { count: MISSION_CHEST_DATES })}
+        </Text>
+      </View>
+      {ready && onClaim ? <GameButton label={t("Open weekly chest")} fullWidth onPress={onClaim} sound={false} testID="missions-claim" /> : null}
+    </View>
   );
 }
 
@@ -192,5 +282,15 @@ const styles = StyleSheet.create({
   rowBarTrack: { flex: 1 },
   rowCount: { fontFamily: fonts.displayHeavy, fontSize: 14, color: INK, minWidth: 40, textAlign: "right" },
   chestRow: { flexDirection: "row", alignItems: "center", gap: space.md, marginVertical: space.lg, padding: space.md, borderRadius: radii.md, backgroundColor: lighten(colors.gold, 0.88) },
-  chestLine: { flex: 1, fontFamily: fonts.bodyHeavy, fontSize: 15, lineHeight: 20, color: INK }
+  chestLine: { flex: 1, fontFamily: fonts.bodyHeavy, fontSize: 15, lineHeight: 20, color: INK },
+  week: { marginBottom: space.lg, padding: space.md, borderRadius: radii.md, borderWidth: 2, borderColor: lighten(colors.gem, 0.7), backgroundColor: lighten(colors.gem, 0.93) },
+  weekHead: { flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: space.sm, marginBottom: space.sm },
+  weekTitle: { flexShrink: 1, fontFamily: fonts.displayHeavy, fontSize: 17, lineHeight: 22, color: darken(colors.gem, 0.35) },
+  weekLeft: { ...text.small, fontFamily: fonts.bodyHeavy, color: darken(colors.gem, 0.25) },
+  weekList: { gap: space.sm },
+  weekIcon: { width: 32, height: 32, borderRadius: 16, alignItems: "center", justifyContent: "center", backgroundColor: lighten(colors.gem, 0.8) },
+  weekRowTitle: { fontFamily: fonts.bodyHeavy, fontSize: 15, lineHeight: 20, color: colors.ink },
+  weekCount: { fontFamily: fonts.displayHeavy, fontSize: 13, color: darken(colors.gem, 0.35), minWidth: 44, textAlign: "right" },
+  weekChestRow: { flexDirection: "row", alignItems: "center", gap: space.md, marginTop: space.md, marginBottom: space.sm },
+  weekChestLine: { flex: 1, fontFamily: fonts.bodyHeavy, fontSize: 14, lineHeight: 19, color: darken(colors.gem, 0.35) }
 });
