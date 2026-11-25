@@ -14,13 +14,13 @@ describe("Indonesian stays hidden until it is checked", () => {
   test("learners are not offered it", () => {
     expect(LANGUAGE_OPTIONS.map((option) => option.id)).not.toContain("id");
     expect(languageOptions(false).map((option) => option.id)).not.toContain("id");
-    expect(PREVIEW_LANGUAGE_OPTIONS.map((option) => option.id)).toEqual(["id"]);
+    expect(PREVIEW_LANGUAGE_OPTIONS.map((option) => option.id)).toEqual(["id", "fr"]);
   });
 
   test("a saved Indonesian choice shows English while previews are off", () => {
     expect(normalizeLanguage("id", true, false)).toBe(DEFAULT_LANGUAGE);
     expect(normalizeLanguage("id", true, true)).toBe("id");
-    expect(languageOptions(true).map((option) => option.id)).toEqual(["en", "ar", "bn", "ur", "id"]);
+    expect(languageOptions(true).map((option) => option.id)).toEqual(["en", "ar", "bn", "ur", "id", "fr"]);
   });
 
   test("a line without Indonesian falls back to English", () => {
@@ -47,5 +47,52 @@ describe("Indonesian catalog", () => {
         (english.match(ARABIC_RUN) ?? []).some((arabic) => !translated.includes(arabic))
     );
     expect(broken.slice(0, 10)).toEqual([]);
+  });
+});
+
+/**
+ * French is written by hand in batches and also waits for a native speaker's check. Quran and hadith meaning lines
+ * stay in English (no approved French translation is used yet), so the catalog must never hold one.
+ */
+describe("French stays hidden until it is checked", () => {
+  test("learners are not offered it", () => {
+    expect(LANGUAGE_OPTIONS.map((option) => option.id)).not.toContain("fr");
+    expect(languageOptions(false).map((option) => option.id)).not.toContain("fr");
+  });
+
+  test("a saved French choice shows English while previews are off", () => {
+    expect(normalizeLanguage("fr", true, false)).toBe(DEFAULT_LANGUAGE);
+    expect(normalizeLanguage("fr", true, true)).toBe("fr");
+  });
+
+  test("a line without French falls back to English", () => {
+    expect(t("A line nobody translated", undefined, "fr")).toBe("A line nobody translated");
+    expect(t("Continue", undefined, "fr")).toBe("Continuer");
+  });
+});
+
+describe("French catalog", () => {
+  const catalog = getCatalog("fr");
+
+  test("covers nearly every screen string", () => {
+    const used = extract();
+    expect(used.filter((text) => catalog[text]).length / used.length).toBeGreaterThan(0.9);
+  });
+
+  test("keeps every {placeholder}, the ﷺ sign and all Arabic text exactly", () => {
+    const broken = Object.entries(catalog).filter(
+      ([english, translated]) =>
+        !translated.trim() ||
+        placeholders(english) !== placeholders(translated) ||
+        (english.includes("ﷺ") && !translated.includes("ﷺ")) ||
+        (english.match(ARABIC_RUN) ?? []).some((arabic) => !translated.includes(arabic))
+    );
+    expect(broken.slice(0, 10)).toEqual([]);
+  });
+
+  test("leaves Quran, hadith and du'a lines in English", () => {
+    const { scriptureLines } = require("../../scripts/i18n/french/scripture.cjs") as { scriptureLines: () => Set<string> };
+    const scripture = scriptureLines();
+    expect(Object.keys(catalog).filter((english) => scripture.has(english)).slice(0, 10)).toEqual([]);
   });
 });
