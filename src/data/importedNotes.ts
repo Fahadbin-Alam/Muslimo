@@ -69,7 +69,7 @@ const OPENERS: Record<string, { line: string; facts: string[] } | null> = {
     line: "Az-Zubayr's parents were Al-Awwam and Safiyyah.",
     facts: ["Father: Al-Awwam ibn Khuwaylid", "Mother: Safiyyah bint Abd al-Muttalib"]
   },
-  "salmaan-al-faarisiy": { line: "Salman was born in Isfahan and passed away in al-Mada'in.", facts: ["Born in Isfahan", "Passed away in Al-Mada'in"] },
+  "salmaan-al-faarisiy": { line: "Salman was from Ram-Hurmuz in Persia and passed away in al-Mada'in.", facts: ["Hometown: Ram-Hurmuz", "Passed away in Al-Mada'in"] },
   "abu-dharr-al-ghifaariy": { line: "Abu Dharr's parents were Junadah and Ramlah.", facts: ["Father: Junadah", "Mother: Ramlah"] },
   // Where he passed away is left off: most say Madinah, some say Kufa, which a question would offer as wrong.
   "abd-allah-ibn-masuud": { line: "Ibn Mas'ud was born in Makkah, of the Hudhayl tribe.", facts: ["Tribe: Hudhayl", "Born in Makkah"] },
