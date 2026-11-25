@@ -58,7 +58,7 @@ const SAJDAH_ONE: DeepUnit = {
       questions: [
         { q: "What is in the Book, in 32:2?", a: "No doubt", wrong: ["Some doubt", "Many riddles", "Old myths"], why: "The revelation of the Book in which there is no doubt." },
         { q: "From whom is it, in 32:2?", a: "The Lord of all that exists", wrong: ["A poet", "A wise man", "The Romans"], why: "Is from the Lord of all that exists." },
-        { tf: true, q: "Ibn Kathir explains the letters again in As-Sajdah.", why: "We discussed the individual letters at the beginning of Surat Al-Baqarah, and there is no need to repeat it here." }
+        { tf: false, q: "Ibn Kathir explains the letters again in As-Sajdah.", why: "We discussed the individual letters at the beginning of Surat Al-Baqarah, and there is no need to repeat it here." }
       ]
     },
     {
