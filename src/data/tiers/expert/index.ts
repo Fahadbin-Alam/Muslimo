@@ -5,6 +5,10 @@ import { RAMADAN_EXPERT } from "./ramadanExpert";
 import { FASTING_EXPERT } from "./fastingExpert";
 import { EID_EXPERT } from "./eidExpert";
 import { READ_ARABIC_EXPERT } from "./readArabicExpert";
+import { ZAKAT_EXPERT } from "./zakatExpert";
+import { HAJJ_EXPERT } from "./hajjExpert";
+import { INTRO_EXPERT } from "./introExpert";
+import { WOMEN_EXPERT } from "./womenExpert";
 
 /**
  * Expert versions (tier 3), written after the Harder ones: keyed by the same English prompt, they ask the same answer
@@ -18,4 +22,8 @@ export const EXPERT_VERSIONS: Readonly<Record<string, TierVersion>> = {
   ...FASTING_EXPERT,
   ...EID_EXPERT,
   ...READ_ARABIC_EXPERT,
+  ...ZAKAT_EXPERT,
+  ...HAJJ_EXPERT,
+  ...INTRO_EXPERT,
+  ...WOMEN_EXPERT,
 };
