@@ -1,6 +1,6 @@
 import React, { memo, useMemo } from "react";
 import { create } from "qrcode";
-import Svg, { Path, Rect } from "react-native-svg";
+import Svg, { Path, Rect } from "./svg";
 import { colors } from "./theme";
 
 export type QrCodeProps = {

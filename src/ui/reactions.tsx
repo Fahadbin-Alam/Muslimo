@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, type ReactNode } from "react";
 import { Animated, Easing, StyleSheet, Text, View } from "react-native";
-import Svg, { Path } from "react-native-svg";
+import Svg, { Path } from "./svg";
 
 /**
  * Bits shared by the tap reactions on the path's characters and pictures: a one-shot clock that runs

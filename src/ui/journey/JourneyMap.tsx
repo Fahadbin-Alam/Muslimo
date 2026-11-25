@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { Animated, Easing, Platform, StyleSheet, Text, View } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import { MAP_PLACES, SEA_LABELS, shownFor, type LabelSide, type MapLeg, type MapScene } from "../../data/seerahMap";
 import type { LatLon } from "../../data/seerahMapGeo";
 import { t } from "../../i18n";

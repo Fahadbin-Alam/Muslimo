@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, ScrollView, StyleSheet, Text, useWindowDimensions, View } from "react-native";
-import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, LinearGradient, Path, RadialGradient, Stop } from "../svg";
 import type { LessonSource } from "../../types";
 import { openWebPage } from "../../services/network";
 import { sourceUrl } from "../../services/sourceLink";

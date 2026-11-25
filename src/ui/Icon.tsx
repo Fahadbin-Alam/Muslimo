@@ -1,5 +1,5 @@
 import React, { memo } from "react";
-import Svg, { Circle, Ellipse, G, Path, Polygon, Rect } from "react-native-svg";
+import Svg, { Circle, Ellipse, G, Path, Polygon, Rect } from "./svg";
 import { isRtlLanguage } from "../i18n";
 
 export type IconName =

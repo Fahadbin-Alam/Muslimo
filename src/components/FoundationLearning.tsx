@@ -11,7 +11,7 @@ import {
   type NativeScrollEvent,
   type NativeSyntheticEvent
 } from "react-native";
-import Svg, { Circle } from "react-native-svg";
+import Svg, { Circle } from "../ui/svg";
 import { getAssessmentXp } from "../api/islamicLearningApi";
 import { getTopicArabic } from "../data/arabicTerms";
 import { FOUNDATION_CATEGORY_META, FOUNDATION_PROGRESS_LABELS } from "../data/foundationQuestionBank";

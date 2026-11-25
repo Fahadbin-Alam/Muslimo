@@ -1,6 +1,6 @@
 import React, { memo, useEffect, useRef } from "react";
 import { Animated, Easing, StyleSheet, View } from "react-native";
-import Svg, { Circle, Ellipse, G, Path } from "react-native-svg";
+import Svg, { Circle, Ellipse, G, Path } from "./svg";
 import type { PathWorld, PathWorldChoice } from "../services/pathWorldChoice";
 import { useScene } from "./sceneMood";
 
