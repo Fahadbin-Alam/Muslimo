@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import { surahHasDrawing, surahPictureXml, surahScene } from "../../data/surahPictures";
 import { t } from "../../i18n";
 import { ArabicText, withHonorifics } from "../ArabicText";

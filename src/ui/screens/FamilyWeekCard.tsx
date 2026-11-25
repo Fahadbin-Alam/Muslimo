@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, Easing, StyleSheet, Text, View, useWindowDimensions } from "react-native";
-import Svg, { Circle, Defs, Path, RadialGradient, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, Path, RadialGradient, Stop } from "../svg";
 import { COURSE } from "../../data/course";
 import { t } from "../../i18n";
 import { familyWeekDaysLeft, markFamilyWeekLit, useLitFamilyWeeks, type FamilyWeek, type FamilyWeekPerson } from "../../services/familyWeek";

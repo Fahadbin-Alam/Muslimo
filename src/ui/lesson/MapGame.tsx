@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, Platform, StyleSheet, Text, View, type LayoutChangeEvent } from "react-native";
-import Svg, { Line, Polygon, Rect, SvgXml } from "react-native-svg";
+import Svg, { Line, Polygon, Rect, SvgXml } from "../svg";
 import type { GameSoundEvent } from "../../services/gameSoundLibrary";
 import { useTextScale } from "../../services/deviceSettings";
 import { MAP_PLACES, SEA_LABELS, type MapLevel } from "../../data/seerahMap";

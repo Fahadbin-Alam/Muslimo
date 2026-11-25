@@ -1,6 +1,6 @@
 import React from "react";
 import { Platform, StyleSheet, View } from "react-native";
-import Svg, { Defs, Path, Pattern, Rect } from "react-native-svg";
+import Svg, { Defs, Path, Pattern, Rect } from "./svg";
 import { colors } from "./theme";
 
 const TILE = 64;

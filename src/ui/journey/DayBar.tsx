@@ -1,6 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import { DAY_TIMES, litMoments, skyStopColor, type SkyStop } from "../../data/daySky";
 import { withHonorifics } from "../ArabicText";
 import { t } from "../../i18n";

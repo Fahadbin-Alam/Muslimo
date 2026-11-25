@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, type ReactNode } from "react";
 import { Animated, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
-import Svg, { Circle, Ellipse, Path } from "react-native-svg";
+import Svg, { Circle, Ellipse, Path } from "./svg";
 import type { GameSoundEvent } from "../services/gameSoundLibrary";
 import { METEOR_HIT, bigLook } from "./bigShows";
 import { sampleCurve, smoothKeys } from "./motion";

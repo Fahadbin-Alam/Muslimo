@@ -1,6 +1,6 @@
 import React, { type ReactNode } from "react";
 import { Animated, StyleSheet, type StyleProp, type ViewStyle } from "react-native";
-import Svg, { Circle, Ellipse, G, Path, Rect } from "react-native-svg";
+import Svg, { Circle, Ellipse, G, Path, Rect } from "./svg";
 
 /**
  * Pictures for the path's other sceneries (beach, forest, snowy mountains, the camp at Badr), plus the

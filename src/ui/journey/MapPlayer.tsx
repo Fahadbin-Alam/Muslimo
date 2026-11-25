@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Animated, Easing, ScrollView, StyleSheet, Text, useWindowDimensions, View, type LayoutChangeEvent } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import { sourcesFor, type MapScene, type MapSource } from "../../data/seerahMap";
 import { withHonorifics } from "../ArabicText";
 import { t } from "../../i18n";
