@@ -1056,5 +1056,16 @@
   "Narrated by {name}": "বর্ণনাকারী: {name}",
   "Go to the lesson: {lesson}": "পাঠে যাও: {lesson}",
   "Read it in the source": "মূল উৎসে পড়ো",
-  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "কিছু পাওয়া যায়নি। অন্য শব্দ লেখো, বা হাদিস নম্বর, যেমন বুখারী ১।"
+  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "কিছু পাওয়া যায়নি। অন্য শব্দ লেখো, বা হাদিস নম্বর, যেমন বুখারী ১।",
+  "Weekly missions": "এই সপ্তাহের কাজ",
+  "Learn on {count} days this week": "এই সপ্তাহে {count} দিন শেখো",
+  "Finish {count} lessons this week": "এই সপ্তাহে {count}টি পাঠ শেষ করো",
+  "Finish {count} lessons with no mistakes": "একটিও ভুল ছাড়া {count}টি পাঠ শেষ করো",
+  "Open the daily chest on {count} days": "{count} দিন আজকের সিন্দুক খোলো",
+  "Last day of the week": "সপ্তাহের শেষ দিন",
+  "Finish all three this week for a big chest with {count} dates.": "এই সপ্তাহে তিনটিই শেষ করলে {count} খেজুরের একটি বড় সিন্দুক পাবে।",
+  "You opened this week's chest. New missions on Monday!": "এই সপ্তাহের সিন্দুক খুলেছ। সোমবার নতুন কাজ!",
+  "Open weekly chest": "সাপ্তাহিক সিন্দুক খোলো",
+  "Weekly mission done: {mission}": "সপ্তাহের কাজ শেষ: {mission}",
+  "Your weekly chest is ready!": "তোমার সাপ্তাহিক সিন্দুক তৈরি!"
 }

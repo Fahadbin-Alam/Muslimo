@@ -49,6 +49,8 @@ export type LessonCompleteProps = {
   recap?: LessonRecapItem[];
   /** Today's quests this lesson finished, already worded ("Get 5 right in a row"). */
   questsDone?: string[];
+  /** Weekly missions this lesson finished, in words: a blue pill each, under the quests. */
+  missionsDone?: string[];
   /** Pictures this lesson put in the learner's picture album for the first time: they pop in, moving. */
   newPictures?: LessonPicture[];
   /** Album sets these pictures finished: a gold badge for each, with its own fanfare. */
@@ -197,6 +199,7 @@ function LessonCompleteCard({
   bestInARow,
   recap,
   questsDone,
+  missionsDone,
   newPictures,
   finishedSets,
   surahComplete,
@@ -243,7 +246,7 @@ function LessonCompleteCard({
     // Nothing to count up on a replay, so no XP sound either.
     const xpTimer = xp > 0 ? setTimeout(() => playUi("xp"), CARD_DELAY + 2 * CARD_STAGGER + COUNT_DURATION + (streakExtended ? 420 : 120)) : undefined;
     // A finished daily quest chimes last, as its pill pops in.
-    const questTimer = questsDone?.length ? setTimeout(() => playUi("quest"), CARD_DELAY + 4 * CARD_STAGGER + COUNT_DURATION + 600) : undefined;
+    const questTimer = questsDone?.length || missionsDone?.length ? setTimeout(() => playUi("quest"), CARD_DELAY + 4 * CARD_STAGGER + COUNT_DURATION + 600) : undefined;
     // A finished album set: its badge lands with the unlock fanfare and a happy buzz.
     const setTimer = finishedSets?.length
       ? setTimeout(() => {
@@ -414,13 +417,19 @@ function LessonCompleteCard({
             </PopIn>
           </View>
         ) : null}
-        {questsDone?.length ? (
+        {questsDone?.length || missionsDone?.length ? (
           <PopIn delay={CARD_DELAY + 4 * CARD_STAGGER + COUNT_DURATION + 600} style={styles.quests}>
             <View testID="complete-quests">
-              {questsDone.map((label) => (
+              {(questsDone ?? []).map((label) => (
                 <View key={label} style={styles.questPill} testID="complete-quest">
                   <Icon name="trophy" size={18} />
                   <Text style={styles.questPillText}>{t("Quest done: {quest}", { quest: label })}</Text>
+                </View>
+              ))}
+              {(missionsDone ?? []).map((label) => (
+                <View key={`mission-${label}`} style={[styles.questPill, styles.missionPill]} testID="complete-mission">
+                  <Icon name="trophy" size={18} />
+                  <Text style={[styles.questPillText, styles.missionPillText]}>{t("Weekly mission done: {mission}", { mission: label })}</Text>
                 </View>
               ))}
             </View>
@@ -789,6 +798,14 @@ const styles = StyleSheet.create({
     fontFamily: fonts.bodyHeavy,
     fontSize: 14,
     color: darken(colors.gold, 0.45)
+  },
+  missionPill: {
+    marginTop: space.xs,
+    backgroundColor: lighten(colors.gem, 0.85),
+    borderColor: lighten(colors.gem, 0.45)
+  },
+  missionPillText: {
+    color: darken(colors.gem, 0.4)
   },
   recapStat: {
     flexDirection: "row",

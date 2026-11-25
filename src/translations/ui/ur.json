@@ -1056,5 +1056,16 @@
   "Narrated by {name}": "راوی: {name}",
   "Go to the lesson: {lesson}": "سبق پر جائیں: {lesson}",
   "Read it in the source": "اصل ماخذ میں پڑھیں",
-  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "کچھ نہیں ملا۔ دوسرے الفاظ آزمائیں، یا حدیث نمبر جیسے بخاری 1۔"
+  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "کچھ نہیں ملا۔ دوسرے الفاظ آزمائیں، یا حدیث نمبر جیسے بخاری 1۔",
+  "Weekly missions": "اس ہفتے کے کام",
+  "Learn on {count} days this week": "اس ہفتے {count} دن سیکھیں",
+  "Finish {count} lessons this week": "اس ہفتے {count} سبق مکمل کریں",
+  "Finish {count} lessons with no mistakes": "بغیر کسی غلطی کے {count} سبق مکمل کریں",
+  "Open the daily chest on {count} days": "{count} دن آج کا صندوق کھولیں",
+  "Last day of the week": "ہفتے کا آخری دن",
+  "Finish all three this week for a big chest with {count} dates.": "اس ہفتے تینوں مکمل کریں اور {count} کھجوروں والا بڑا صندوق پائیں۔",
+  "You opened this week's chest. New missions on Monday!": "آپ نے اس ہفتے کا صندوق کھول لیا۔ پیر کو نئے کام!",
+  "Open weekly chest": "ہفتے کا صندوق کھولیں",
+  "Weekly mission done: {mission}": "ہفتے کا کام مکمل: {mission}",
+  "Your weekly chest is ready!": "آپ کا ہفتے کا صندوق تیار ہے!"
 }
