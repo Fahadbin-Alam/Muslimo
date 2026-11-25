@@ -2,7 +2,7 @@ import { LESSONS_BY_ID, allNodes } from "../data/course";
 import type { Lesson } from "../types";
 import { isOnline } from "./network";
 import { localAyahUri, offlineAudioSupported, saveAyahForOffline } from "./offlineAudio";
-import { quranAudioUrl } from "./quranAudio";
+import { DEFAULT_RECITER, quranAudioUrl } from "./quranAudio";
 
 /**
  * Keeps the next lessons ready for no internet. The lessons themselves, their pictures and drawings are inside
@@ -14,10 +14,13 @@ import { quranAudioUrl } from "./quranAudio";
 /** How many circles after the current one get their recitations saved ahead. */
 export const CIRCLES_AHEAD = 5;
 
-/** The recitations a lesson can play: its ayah quote (Listen) and its word card's ayah. */
+/**
+ * The recitations a lesson can play: its ayah quote (Listen) and its word card's ayah. Always the default
+ * reciter's, the one that may be saved on the phone: with no internet, another reciter's ayah plays from it.
+ */
 export function lessonAyahUrls(lesson: Pick<Lesson, "quote" | "learnSource"> | undefined) {
   if (!lesson) return [];
-  const urls = [quranAudioUrl(lesson.quote?.reference), quranAudioUrl(lesson.learnSource?.reference)];
+  const urls = [quranAudioUrl(lesson.quote?.reference, DEFAULT_RECITER), quranAudioUrl(lesson.learnSource?.reference, DEFAULT_RECITER)];
   return [...new Set(urls.filter((url): url is string => Boolean(url)))];
 }
 

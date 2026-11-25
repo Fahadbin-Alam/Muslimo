@@ -12,7 +12,7 @@ import { getActiveLanguage, t } from "../../i18n";
 import { getDailyCard } from "../../data/dailyCard";
 import { ADHKAR_TITLES, adhkarTimeFor } from "../../data/adhkar";
 import { stopAyah } from "../../services/ayahPlayer";
-import { quranAudioUrl } from "../../services/quranAudio";
+import { isTimedRecitation, quranAudioUrl } from "../../services/quranAudio";
 import { openWebPage } from "../../services/network";
 import { AyahListen } from "../lesson/AyahListen";
 import { RecitedAyah } from "../lesson/RecitedAyah";
@@ -81,7 +81,7 @@ export function DailySheet({ visible, onClose, date, onOpenAdhkar }: DailySheetP
               {t("Quran {ref}", { ref: ayah.ref })}
             </Text>
             {/* Every ayah of the day fits its word timings (recitedAyah.test), so they stay unloaded until Listen. */}
-            {audio && visible ? <AyahListen url={audio} accent={AYAH_COLOR} timed /> : null}
+            {audio && visible ? <AyahListen url={audio} accent={AYAH_COLOR} timed={isTimedRecitation(audio)} /> : null}
           </View>
         </PopIn>
         <PopIn key={visible ? "hadith-open" : "hadith"} delay={160} from="up">

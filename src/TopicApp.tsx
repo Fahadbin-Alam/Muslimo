@@ -219,7 +219,7 @@ import * as Speech from "expo-speech";
 import { findArabicVoice, recitationForArabic } from "./services/arabicVoice";
 import { playAyah, stopAyah } from "./services/ayahPlayer";
 import { localAyahUri } from "./services/offlineAudio";
-import { quranAudioUrl } from "./services/quranAudio";
+import { TIMED_RECITER, quranAudioUrl } from "./services/quranAudio";
 import { useAyahPlayback } from "./ui/lesson/AyahListen";
 import { listenWhy, withListenQuestion } from "./ui/lesson/listenQuestion";
 import { completeSurahs, hifzAyahs, memorizeParts, memorizeSurahNumbers, withReciteQuestion, type HifzPart } from "./ui/lesson/reciteQuestion";
@@ -2267,7 +2267,7 @@ export default function TopicApp() {
         if (withListen !== lesson) return { ...session, lesson: withListen };
       }
     }
-    const ayah = quranAudioUrl(lesson.quote?.reference);
+    const ayah = quranAudioUrl(lesson.quote?.reference, TIMED_RECITER);
     if (!ayah || !(online || localAyahUri(ayah))) return session;
     const withRecite = withReciteQuestion(lesson, nodeId);
     return withRecite === lesson ? session : { ...session, lesson: withRecite };
@@ -2416,7 +2416,7 @@ export default function TopicApp() {
       return;
     }
 
-    const ayahs = Array.from({ length: part.to - part.from + 1 }, (_, index) => quranAudioUrl(`Quran ${part.surah}:${part.from + index}`));
+    const ayahs = Array.from({ length: part.to - part.from + 1 }, (_, index) => quranAudioUrl(`Quran ${part.surah}:${part.from + index}`, TIMED_RECITER));
     if (!online && !ayahs.every((url) => url && localAyahUri(url))) {
       void notify(t("No internet. This is not saved on your phone yet."), undefined, { mood: "think" });
       return;

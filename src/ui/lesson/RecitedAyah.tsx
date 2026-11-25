@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from "react";
 import { StyleSheet, Text } from "react-native";
 import { ayahPosition } from "../../services/ayahPlayer";
 import { ayahPieces, ayahWordTimes, wordAt } from "../../services/ayahWords";
+import { isTimedRecitation } from "../../services/quranAudio";
 import { ArabicText, type ArabicTextProps } from "../ArabicText";
 import { useAyahPlayback } from "./AyahListen";
 
@@ -17,6 +18,8 @@ function passageTimes(ayahs: readonly RecitedPart[], words: number) {
   let offset = 0;
   const parts: Array<RecitedPart & { offset: number; times: number[] }> = [];
   for (const ayah of ayahs) {
+    // The timings are one reciter's: another reciter's words keep their own pace, so they are not lit.
+    if (!isTimedRecitation(ayah.url)) return undefined;
     const times = ayahWordTimes(ayah.key);
     if (!times) return undefined;
     parts.push({ ...ayah, offset, times });

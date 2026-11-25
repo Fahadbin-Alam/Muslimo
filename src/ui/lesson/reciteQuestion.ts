@@ -3,7 +3,10 @@ import { QURAN_AYAHS } from "../../data/quranAyahs";
 import { SURAH_NAMES } from "../../data/surahMeanings";
 import { arabicLetters } from "../../services/arabicVoice";
 import { ayahPieces, ayahWordTimes } from "../../services/ayahWords";
-import { parseQuranReference, quranAudioUrl } from "../../services/quranAudio";
+import { TIMED_RECITER, parseQuranReference, quranAudioUrl as anyReciterUrl } from "../../services/quranAudio";
+
+// These questions follow the recited words (their timings), so they always use the reciter the timings are for.
+const quranAudioUrl = (reference?: string) => anyReciterUrl(reference, TIMED_RECITER);
 import { preciseResourceUrl } from "../../services/resourceSupport";
 import type { Challenge, Lesson, LessonSource } from "../../types";
 import { isArabicOnly } from "../ArabicText";
