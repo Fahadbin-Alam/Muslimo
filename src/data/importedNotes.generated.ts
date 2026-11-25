@@ -15846,11 +15846,11 @@ export const IMPORTED_NOTES: ImportedNotesContent = {
       "branchId": "notes-sahabah-companions-from-your-notes-6",
       "title": "Salman al-Farisi",
       "intro": "Persian Companion who searched from Zoroastrianism to Christianity to Islam.",
-      "explanationContent": "Persian Companion who searched from Zoroastrianism to Christianity to Islam. Born in Isfahan. Passed away in c. 33–35 AH / 655–656 CE at Al-Mada'in.",
+      "explanationContent": "Persian Companion who searched from Zoroastrianism to Christianity to Islam. From Ram-Hurmuz in Persia. Passed away in c. 33–35 AH / 655–656 CE at Al-Mada'in.",
       "keyTakeaway": "Salman al-Farisi: Persian Companion who searched from Zoroastrianism to Christianity to Islam.",
       "learnLine": "A Persian, he searched for the truth until he found Islam.",
       "learnFacts": [
-        "Born in Isfahan",
+        "Hometown: Ram-Hurmuz",
         "Passed away in Al-Mada'in"
       ],
       "lessonType": "story",
@@ -15867,7 +15867,7 @@ export const IMPORTED_NOTES: ImportedNotesContent = {
         {
           "id": "lesson-notes-sahabah-companions-from-your-notes-6-salmaan-al-faarisiy_q1",
           "type": "multiple_choice",
-          "prompt": "Where was Salman al-Farisi born?",
+          "prompt": "Which town was Salman al-Farisi from?",
           "choices": [
             {
               "id": "a",
@@ -15875,7 +15875,7 @@ export const IMPORTED_NOTES: ImportedNotesContent = {
             },
             {
               "id": "b",
-              "label": "Isfahan"
+              "label": "Ram-Hurmuz"
             },
             {
               "id": "c",
@@ -15887,7 +15887,7 @@ export const IMPORTED_NOTES: ImportedNotesContent = {
             }
           ],
           "correctChoiceId": "b",
-          "explanation": "Salman al-Farisi was born in Isfahan.",
+          "explanation": "Salman said: I am from Ram-Hurmuz (Sahih al-Bukhari 3947).",
           "sourceNodeId": "notes-sahabah-companions-from-your-notes-6-salmaan-al-faarisiy",
           "sourceLessonId": "lesson-notes-sahabah-companions-from-your-notes-6-salmaan-al-faarisiy"
         },
@@ -18642,7 +18642,7 @@ export const IMPORTED_NOTES: ImportedNotesContent = {
             },
             {
               "id": "d",
-              "label": "She was the second wife of the Prophet ﷺ."
+              "label": "She was one of the Mothers of the Believers."
             }
           ],
           "correctChoiceId": "c",
@@ -19646,10 +19646,10 @@ export const IMPORTED_NOTES: ImportedNotesContent = {
       "nodeId": "notes-women-of-the-book-mothers-of-the-believers-from-your-notes-2-sawdah-bint-zamah",
       "branchId": "notes-women-of-the-book-mothers-of-the-believers-from-your-notes-2",
       "title": "Sawdah bint Zam'ah",
-      "intro": "Second wife of the Prophet ﷺ.",
-      "explanationContent": "Second wife of the Prophet ﷺ. Full name: Sawda bint Zam'a ibn Qays al-Qurashiyya al-Amiriyya. Tribe: Quraysh. Father: Zam'ah ibn Qays. Born in Makkah. Passed away in Shawwal 22 AH / 644 CE (674 also reported) at Madinah.",
-      "keyTakeaway": "Sawdah bint Zam'ah: Second wife of the Prophet ﷺ.",
-      "learnLine": "She was the second wife of the Prophet ﷺ.",
+      "intro": "A Mother of the Believers.",
+      "explanationContent": "A Mother of the Believers. Full name: Sawda bint Zam'a ibn Qays al-Qurashiyya al-Amiriyya. Tribe: Quraysh. Father: Zam'ah ibn Qays. Born in Makkah. Passed away in Shawwal 22 AH / 644 CE (674 also reported) at Madinah.",
+      "keyTakeaway": "Sawdah bint Zam'ah: A Mother of the Believers.",
+      "learnLine": "She was one of the Mothers of the Believers.",
       "learnFacts": [
         "Father: Zam'ah ibn Qays",
         "Mother: Ash-Shamus bint Qays",

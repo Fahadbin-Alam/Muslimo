@@ -165,8 +165,10 @@ describe("which questions are asked on a scene", () => {
     // with her at a street corner, seven are asked again in a review or a final quiz: why Umar prayed in a loud voice,
     // what he ﷺ told Abu Bakr about his voice, which words he ﷺ wanted the man to add, whether he ﷺ let the man in once
     // he said salam, why he ﷺ sent Abu Rafi' back at first, what he ﷺ said about the water of the sea, and where he ﷺ
-    // told the woman to sit.
-    expect(places).toBe(5701);
+    // told the woman to sit. Sawdah's lesson in the Mothers of the Believers now teaches her giving her day to Aishah
+    // (Muslim 1463b) in place of "married after Khadijah", which that hadith does not say, so one more place asks a
+    // question of Sawdah's scene.
+    expect(places).toBe(5702);
   });
 
   it("finds a question by its prompt and its right answer, so another question with the same prompt is not asked on it", () => {
