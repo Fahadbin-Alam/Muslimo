@@ -999,7 +999,6 @@
   "Tap it on the map": "মানচিত্রে চাপো",
   "Near Makkah": "মক্কার কাছে",
   "Memorize surahs": "সূরা মুখস্থ করো",
-  "Short surahs, ayah by ayah, with the reciter": "ছোট সূরা, আয়াতে আয়াতে, ক্বারীর সাথে",
   "Listen to the reciter, then tap each ayah that comes next.": "ক্বারীর তিলাওয়াত শোনো, তারপর প্রতিবার পরের আয়াতটি বেছে নাও।",
   "{count} ayahs": "{count}টি আয়াত",
   "Ayahs {from}-{to}": "আয়াত {from}-{to}",
@@ -1056,5 +1055,19 @@
   "Narrated by {name}": "বর্ণনাকারী: {name}",
   "Go to the lesson: {lesson}": "পাঠে যাও: {lesson}",
   "Read it in the source": "মূল উৎসে পড়ো",
-  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "কিছু পাওয়া যায়নি। অন্য শব্দ লেখো, বা হাদিস নম্বর, যেমন বুখারী ১।"
+  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "কিছু পাওয়া যায়নি। অন্য শব্দ লেখো, বা হাদিস নম্বর, যেমন বুখারী ১।",
+  "Did you say every word?": "তুমি কি প্রতিটি শব্দ বলেছ?",
+  "Hidden word": "লুকানো শব্দ",
+  "Hide words": "শব্দ লুকাও",
+  "I knew it": "আমি পেরেছি",
+  "Memorize duas": "দোয়া মুখস্থ করো",
+  "Not yet": "এখনো না",
+  "Read each dua, then say it from memory as more words hide.": "প্রতিটি দোয়া পড়ো, তারপর আরও শব্দ লুকালে মুখস্থ থেকে বলো।",
+  "Read it a few times, out loud.": "জোরে জোরে কয়েকবার পড়ো।",
+  "Round {number} of {count}": "{count} এর মধ্যে রাউন্ড {number}",
+  "Said from memory!": "মুখস্থ থেকে বলেছ!",
+  "Say it from memory. Tap a gap to peek.": "মুখস্থ থেকে বলো। দেখতে ফাঁকা জায়গায় ট্যাপ করো।",
+  "Short surahs and duas, from memory": "ছোট সূরা ও দোয়া, মুখস্থ",
+  "Surahs": "সূরা",
+  "Duas": "দোয়া"
 }

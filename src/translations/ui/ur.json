@@ -999,7 +999,6 @@
   "Tap it on the map": "نقشے پر ٹیپ کریں",
   "Near Makkah": "مکہ کے قریب",
   "Memorize surahs": "سورتیں یاد کریں",
-  "Short surahs, ayah by ayah, with the reciter": "چھوٹی سورتیں، آیت بہ آیت، قاری کے ساتھ",
   "Listen to the reciter, then tap each ayah that comes next.": "قاری کی تلاوت سنیں، پھر ہر بار اگلی آیت چنیں۔",
   "{count} ayahs": "{count} آیات",
   "Ayahs {from}-{to}": "آیات {from}-{to}",
@@ -1056,5 +1055,19 @@
   "Narrated by {name}": "راوی: {name}",
   "Go to the lesson: {lesson}": "سبق پر جائیں: {lesson}",
   "Read it in the source": "اصل ماخذ میں پڑھیں",
-  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "کچھ نہیں ملا۔ دوسرے الفاظ آزمائیں، یا حدیث نمبر جیسے بخاری 1۔"
+  "Nothing found. Try other words, or a hadith number like Bukhari 1.": "کچھ نہیں ملا۔ دوسرے الفاظ آزمائیں، یا حدیث نمبر جیسے بخاری 1۔",
+  "Did you say every word?": "کیا آپ نے ہر لفظ کہا؟",
+  "Hidden word": "چھپا ہوا لفظ",
+  "Hide words": "الفاظ چھپائیں",
+  "I knew it": "مجھے یاد تھا",
+  "Memorize duas": "دعائیں یاد کریں",
+  "Not yet": "ابھی نہیں",
+  "Read each dua, then say it from memory as more words hide.": "ہر دعا پڑھیں، پھر جیسے جیسے مزید الفاظ چھپیں، اسے زبانی کہیں۔",
+  "Read it a few times, out loud.": "اسے چند بار بلند آواز سے پڑھیں۔",
+  "Round {number} of {count}": "راؤنڈ {number} از {count}",
+  "Said from memory!": "زبانی کہہ دیا!",
+  "Say it from memory. Tap a gap to peek.": "زبانی کہیں۔ دیکھنے کے لیے خالی جگہ پر ٹیپ کریں۔",
+  "Short surahs and duas, from memory": "چھوٹی سورتیں اور دعائیں، زبانی",
+  "Surahs": "سورتیں",
+  "Duas": "دعائیں"
 }
