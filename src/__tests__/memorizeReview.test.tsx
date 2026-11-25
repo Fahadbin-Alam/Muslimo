@@ -281,7 +281,7 @@ describe("reviewing a memorized surah (Practice tab)", () => {
     expect(screen.queryByTestId("memorize-due-112")).toBeNull();
     await press("memorize-sheet-close");
     expect(screen.queryByTestId("practice-memorize-review")).toBeNull();
-    expect(screen.getByText("Short surahs, ayah by ayah, with the reciter")).toBeTruthy();
+    expect(screen.getByText("Short surahs and duas, from memory")).toBeTruthy();
   });
 
   it("a review on its day moves it on: reviewed 3 days after the last, it comes back in a week", async () => {
