@@ -106,6 +106,17 @@ const COPY: Record<SupportedLanguage, Record<RamadanReminderKind, { titles: stri
       titles: ["🌅 Sebentar lagi berbuka, hari ke-{day}!", "🐪 Sebentar lagi berbuka! Untanya sudah mengeluarkan kurma"],
       body: "\"Manusia senantiasa dalam kebaikan selama mereka menyegerakan berbuka.\" (Sahih al-Bukhari 1957)"
     }
+  },
+  // French is still in preview: the hadith keeps sunnah.com's English words until an approved French translation is added.
+  fr: {
+    suhoor: {
+      titles: ["🌙 C'est l'heure du suhur, jour {day} !", "🐪 Réveille-toi pour le suhur ! Même le chameau est debout"],
+      body: "\"Take Suhur as there is a blessing in it.\" (Sahih al-Bukhari 1923)"
+    },
+    iftar: {
+      titles: ["🌅 L'iftar approche, jour {day} !", "🐪 Bientôt l'iftar ! Le chameau a déjà sorti les dattes"],
+      body: "\"The people will remain on the right path as long as they hasten the breaking of the fast.\" (Sahih al-Bukhari 1957)"
+    }
   }
 };
 

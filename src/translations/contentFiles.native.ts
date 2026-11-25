@@ -9,7 +9,8 @@ const FILES: Partial<Record<SupportedLanguage, number>> = {
   ar: require("../../assets/languages/ar.lang"),
   bn: require("../../assets/languages/bn.lang"),
   ur: require("../../assets/languages/ur.lang"),
-  id: require("../../assets/languages/id.lang")
+  id: require("../../assets/languages/id.lang"),
+  fr: require("../../assets/languages/fr.lang")
 };
 
 export function contentNow(_language: SupportedLanguage): TranslationCatalog | undefined {
