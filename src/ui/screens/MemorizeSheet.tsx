@@ -16,6 +16,7 @@ import { Tappable } from "../Tappable";
 import { scaleFont } from "../textScale";
 import { colors, darken, fonts, lighten, text } from "../theme";
 import { formatNumber } from "./FormattedCount";
+import { HideWordsDrill } from "./HideWordsDrill";
 import { useBackToClose } from "./sheetParts";
 
 /** One ayah of a surah to memorize: "112:1", its Quran text, and its recitation. */
@@ -41,6 +42,23 @@ export type MemorizeSheetRow = {
   surahAyahs: number;
 };
 
+/** A dua or dhikr to memorize in the Duas tab: its Arabic as its Duas lesson quotes it, and that lesson's source. */
+export type MemorizeDuaRow = {
+  /** "dua:adhkar-master". */
+  id: string;
+  /** The lesson's name, in the learner's language. */
+  title: string;
+  text: string;
+  /** "Sahih al-Bukhari 6306", in the learner's language. */
+  reference: string;
+  /** The best stars so far, 0 before the first try. */
+  stars: number;
+  /** Said from memory with three stars and its review day has come. */
+  due?: boolean;
+  /** The reciter, for a dua that is an ayah of the Quran. */
+  recitation?: string;
+};
+
 export type MemorizeSheetProps = {
   visible: boolean;
   onClose: () => void;
@@ -50,6 +68,12 @@ export type MemorizeSheetProps = {
   onStart: (id: string) => void;
   /** "Which surah is it?" at the top of the list: its best stars, and its questions. */
   which?: { stars: number; onStart: () => void };
+  /** The Duas tab: duas to say from memory, hiding more words each round. No tab without them. */
+  duas?: readonly MemorizeDuaRow[];
+  /** A dua said from memory to the last round, with its stars. */
+  onDuaFinish?: (id: string, stars: number) => void;
+  /** Opens a dua's source. */
+  onOpenDuaSource?: (id: string) => void;
   /** The surah (or part) practised last: the list opens scrolled to it. */
   focusId?: string;
   /** Gap above the sheet. Default 40. */
@@ -71,10 +95,13 @@ const AYAH_SIZE = 22;
 const FOOTER_INSET = Platform.OS === "ios" ? 30 : 16;
 // "Each ayah 3 times" is kept while the app is open, so it is still on after a practice.
 let repeatEach = false;
+// The tab last open (Surahs or Duas), kept while the app is open.
+let duaTab = false;
 
 /** Tests only. */
 export function resetMemorizeSheetForTests() {
   repeatEach = false;
+  duaTab = false;
 }
 
 function Stars({ stars, testID }: { stars: number; testID?: string }) {
@@ -324,6 +351,17 @@ function AyahCard({
  * "Each ayah 3 times" on) while its words light up, and Practice, which starts its questions. Nothing plays by itself.
  */
 function SurahPage({ row, onPractice, bottomInset }: { row: MemorizeSheetRow; onPractice: () => void; bottomInset: number }) {
+  const [hiding, setHiding] = useState(false);
+  const passages = useMemo(() => row.ayahs.map((ayah) => ({ key: ayah.key, text: ayah.text, number: Number(ayah.key.split(":")[1]) })), [row.ayahs]);
+  const recitations = useMemo(() => row.ayahs.map((ayah) => ayah.url), [row.ayahs]);
+  if (hiding) {
+    return <HideWordsDrill seed={row.id} passages={passages} recitations={recitations} onDone={() => setHiding(false)} bottomInset={bottomInset} />;
+  }
+  return <SurahListen row={row} onPractice={onPractice} onHide={() => setHiding(true)} bottomInset={bottomInset} />;
+}
+
+/** A surah's page as it opens: listen to it, then Hide words or Practice. */
+function SurahListen({ row, onPractice, onHide, bottomInset }: { row: MemorizeSheetRow; onPractice: () => void; onHide: () => void; bottomInset: number }) {
   const { queue, playback, ended, play, stop, setTimes } = useAyahQueue();
   const online = useOnline();
   const reduceMotion = useReduceMotion();
@@ -458,18 +496,30 @@ function SurahPage({ row, onPractice, bottomInset }: { row: MemorizeSheetRow; on
         })}
       </ScrollView>
       <View style={[styles.footer, { paddingBottom: FOOTER_INSET + bottomInset }]}>
-        <Animated.View style={{ transform: [{ scale: hop }] }}>
+        <View style={styles.footerButtons}>
           <GameButton
-            label={t("Practice")}
-            icon="practice"
-            fullWidth
+            label={t("Hide words")}
+            variant="secondary"
             onPress={() => {
               stop();
-              onPractice();
+              onHide();
             }}
-            testID="memorize-practice"
+            style={styles.footerButton}
+            testID="memorize-hide"
           />
-        </Animated.View>
+          <Animated.View style={[styles.footerButton, { transform: [{ scale: hop }] }]}>
+            <GameButton
+              label={t("Practice")}
+              icon="practice"
+              fullWidth
+              onPress={() => {
+                stop();
+                onPractice();
+              }}
+              testID="memorize-practice"
+            />
+          </Animated.View>
+        </View>
       </View>
     </>
   );
@@ -483,6 +533,7 @@ function SurahList({
   rows,
   which,
   focus,
+  tabs,
   onOpen,
   onStart,
   bottomInset
@@ -490,6 +541,7 @@ function SurahList({
   rows: MemorizeSheetRow[];
   which?: MemorizeSheetProps["which"];
   focus?: string;
+  tabs?: React.ReactNode;
   onOpen: (id: string) => void;
   onStart: (id: string) => void;
   bottomInset: number;
@@ -500,6 +552,7 @@ function SurahList({
   const due = useMemo(() => rows.filter((row) => row.due), [rows]);
   return (
     <ScrollView ref={list} style={styles.scroll} contentContainerStyle={{ paddingBottom: 32 + bottomInset }} showsVerticalScrollIndicator={false}>
+      {tabs}
       {due.length ? <ReviewCard due={due} onStart={onStart} /> : null}
       {which ? <WhichSurahRow stars={which.stars} onStart={which.onStart} /> : null}
       {progress.total ? <SurahsProgress done={progress.done} total={progress.total} /> : null}
@@ -545,16 +598,122 @@ function SurahList({
   );
 }
 
+/** Surahs or Duas, on top of the list. */
+function Tabs({ duas, onChange }: { duas: boolean; onChange: (duas: boolean) => void }) {
+  const tab = (on: boolean, label: string, value: boolean, testID: string) => (
+    <Tappable
+      onPress={() => onChange(value)}
+      style={[styles.tab, on ? styles.tabOn : null]}
+      pressScale={0.95}
+      accessibilityRole="tab"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={label}
+      testID={testID}
+    >
+      <Text style={[styles.tabText, on ? styles.tabTextOn : null]} numberOfLines={1}>
+        {label}
+      </Text>
+    </Tappable>
+  );
+  return (
+    <View style={styles.tabs} accessibilityRole="tablist">
+      {tab(!duas, t("Surahs"), false, "memorize-tab-surahs")}
+      {tab(duas, t("Duas"), true, "memorize-tab-duas")}
+    </View>
+  );
+}
+
+/** The duas: each row opens it to say from memory, its stars the best try on this phone. */
+function DuaList({
+  duas,
+  focus,
+  tabs,
+  onOpen,
+  bottomInset
+}: {
+  duas: readonly MemorizeDuaRow[];
+  focus?: string;
+  tabs: React.ReactNode;
+  onOpen: (id: string) => void;
+  bottomInset: number;
+}) {
+  const list = useRef<ScrollView>(null);
+  const focused = useRef(false);
+  return (
+    <ScrollView ref={list} style={styles.scroll} contentContainerStyle={{ paddingBottom: 32 + bottomInset }} showsVerticalScrollIndicator={false} testID="memorize-duas">
+      {tabs}
+      <Text style={styles.line}>{t("Read each dua, then say it from memory as more words hide.")}</Text>
+      {duas.map((dua) => (
+        <View
+          key={dua.id}
+          onLayout={(event: LayoutChangeEvent) => {
+            if (dua.id !== focus || focused.current) return;
+            focused.current = true;
+            list.current?.scrollTo({ y: Math.max(0, event.nativeEvent.layout.y - 60), animated: false });
+          }}
+        >
+          <Tappable
+            onPress={() => onOpen(dua.id)}
+            sound="node_tap"
+            pressScale={0.97}
+            accessibilityLabel={`${dua.title}, ${dua.reference}${dua.stars ? `, ${t("{count} of {max} stars", { count: dua.stars, max: 3 })}` : ""}${dua.due ? `, ${t("Review today")}` : ""}`}
+            testID={`memorize-${dua.id}`}
+            style={[styles.row, dua.stars >= 3 ? styles.rowDone : null]}
+          >
+            <View style={styles.duaBadge}>
+              <Icon name="dua" size={28} />
+            </View>
+            <View style={styles.rowText}>
+              <Text style={styles.rowTitle} numberOfLines={2}>
+                {dua.title}
+              </Text>
+              <ArabicText size={15} weight="bold" color={GOLD_INK} align="right" style={styles.duaArabic} numberOfLines={1}>
+                {dua.text}
+              </ArabicText>
+              <Text style={styles.rowLine} numberOfLines={1}>
+                {dua.reference}
+              </Text>
+              {dua.due ? <DueChip testID={`memorize-due-${dua.id}`} /> : null}
+            </View>
+            <Stars stars={dua.stars} testID={`memorize-stars-${dua.id}`} />
+          </Tappable>
+        </View>
+      ))}
+    </ScrollView>
+  );
+}
+
 /**
  * Memorize surahs: Al-Fatihah and the short surahs. A surah's page lets the learner listen to it ayah by ayah with the
  * reciter; Practice then goes through it ayah by ayah ("Which ayah comes next?"), and its stars are the best try on
  * this phone. "Which surah is it?" on top plays ayahs of them all, to name each one's surah.
  */
-export function MemorizeSheet({ visible, onClose, rows, onStart, which, focusId, topGap = 40, bottomInset = 0 }: MemorizeSheetProps) {
+export function MemorizeSheet({
+  visible,
+  onClose,
+  rows,
+  onStart,
+  which,
+  duas,
+  onDuaFinish,
+  onOpenDuaSource,
+  focusId,
+  topGap = 40,
+  bottomInset = 0
+}: MemorizeSheetProps) {
   const [openId, setOpenId] = useState<string | null>(null);
   // The row the list shows when it opens: the surah just left, or the one practised last.
   const [focus, setFocus] = useState(focusId);
+  const hasDuas = Boolean(duas?.length);
+  const [onDuas, setOnDuas] = useState(duaTab);
+  const showDuas = hasDuas && onDuas;
   const open = openId ? rows.find((row) => row.id === openId) : undefined;
+  const openDua = openId && !open ? duas?.find((dua) => dua.id === openId) : undefined;
+  const chooseTab = (next: boolean) => {
+    duaTab = next;
+    setOnDuas(next);
+  };
+  const tabs = hasDuas ? <Tabs duas={showDuas} onChange={chooseTab} /> : null;
   useEffect(() => {
     setFocus(focusId);
   }, [focusId]);
@@ -562,7 +721,7 @@ export function MemorizeSheet({ visible, onClose, rows, onStart, which, focusId,
     if (!visible) setOpenId(null);
   }, [visible]);
   const back = useCallback(() => setOpenId(null), []);
-  useBackToClose(visible, open ? back : onClose);
+  useBackToClose(visible, open || openDua ? back : onClose);
   const openSurah = (id: string) => {
     setFocus(id);
     setOpenId(id);
@@ -571,13 +730,13 @@ export function MemorizeSheet({ visible, onClose, rows, onStart, which, focusId,
   return (
     <Sheet visible={visible} onClose={onClose} bottomInset={0} style={[styles.sheet, { top: topGap, paddingBottom: 0 }]} testID="memorize-sheet">
       <View style={styles.header}>
-        {open ? (
+        {open || openDua ? (
           <Tappable onPress={back} accessibilityLabel={t("Back")} testID="memorize-back" style={[styles.close, styles.back]} hitSlop={8} pressScale={0.88}>
             <Icon name="arrowLeft" size={22} color={colors.inkSoft} />
           </Tappable>
         ) : null}
         <Text style={styles.heading} accessibilityRole="header" numberOfLines={2}>
-          {open ? open.title : t("Memorize surahs")}
+          {open ? open.title : openDua ? openDua.title : showDuas ? t("Memorize duas") : t("Memorize surahs")}
         </Text>
         <Tappable onPress={onClose} accessibilityLabel={t("Close")} testID="memorize-sheet-close" style={styles.close} hitSlop={8} pressScale={0.88}>
           <Icon name="close" size={22} color={colors.inkSoft} />
@@ -585,8 +744,21 @@ export function MemorizeSheet({ visible, onClose, rows, onStart, which, focusId,
       </View>
       {open ? (
         <SurahPage key={open.id} row={open} onPractice={() => onStart(open.id)} bottomInset={bottomInset} />
+      ) : openDua ? (
+        <HideWordsDrill
+          key={openDua.id}
+          seed={openDua.id}
+          passages={[{ key: openDua.id, text: openDua.text }]}
+          recitations={openDua.recitation ? [openDua.recitation] : undefined}
+          source={{ label: openDua.reference, onPress: onOpenDuaSource ? () => onOpenDuaSource(openDua.id) : undefined }}
+          onFinish={(stars) => onDuaFinish?.(openDua.id, stars)}
+          onDone={back}
+          bottomInset={bottomInset}
+        />
+      ) : showDuas ? (
+        <DuaList duas={duas!} focus={focus} tabs={tabs} onOpen={openSurah} bottomInset={bottomInset} />
       ) : (
-        <SurahList rows={rows} which={which} focus={focus} onOpen={openSurah} onStart={onStart} bottomInset={bottomInset} />
+        <SurahList rows={rows} which={which} focus={focus} tabs={tabs} onOpen={openSurah} onStart={onStart} bottomInset={bottomInset} />
       )}
     </Sheet>
   );
@@ -933,5 +1105,52 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderTopColor: colors.line,
     backgroundColor: colors.white
+  },
+  footerButtons: {
+    flexDirection: "row",
+    gap: 10
+  },
+  footerButton: {
+    flex: 1
+  },
+  tabs: {
+    flexDirection: "row",
+    gap: 6,
+    padding: 4,
+    marginBottom: 14,
+    borderRadius: 16,
+    backgroundColor: colors.mist
+  },
+  tab: {
+    flex: 1,
+    minHeight: 40,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 12
+  },
+  tabOn: {
+    backgroundColor: colors.white,
+    borderBottomWidth: 3,
+    borderBottomColor: colors.lineLip
+  },
+  tabText: {
+    fontFamily: fonts.displayHeavy,
+    fontSize: 15,
+    lineHeight: 20,
+    color: colors.inkSoft
+  },
+  tabTextOn: {
+    color: GOLD_INK
+  },
+  duaBadge: {
+    width: 46,
+    height: 46,
+    borderRadius: 23,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: lighten(colors.gold, 0.75)
+  },
+  duaArabic: {
+    marginTop: 2
   }
 });

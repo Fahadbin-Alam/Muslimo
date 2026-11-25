@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Easing, StyleSheet, Text, View, type LayoutChangeEvent } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import type { GameSoundEvent } from "../../services/gameSoundLibrary";
 import { isRtlLanguage, t } from "../../i18n";
 import { withHonorifics } from "../ArabicText";

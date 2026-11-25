@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { Animated, Easing, StyleSheet, Text, View } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import type { MoonScene } from "../../data/moonSky";
 import { isRtlLanguage, t } from "../../i18n";
 import { useLiteMotion } from "../liteMotion";

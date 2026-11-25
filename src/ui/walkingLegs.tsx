@@ -1,6 +1,6 @@
 import React, { createContext, memo, useContext, useMemo } from "react";
 import { Animated, StyleSheet } from "react-native";
-import Svg, { Path, Rect } from "react-native-svg";
+import Svg, { Path, Rect } from "./svg";
 import { pivotAt, sampleCurve } from "./motion";
 
 /**
