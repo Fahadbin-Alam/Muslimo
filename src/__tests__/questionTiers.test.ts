@@ -1,5 +1,6 @@
 import { COURSE, LESSONS_BY_ID } from "../data/course";
 import { atTier, QUESTION_TIERS, tierForLevel } from "../data/questionTiers";
+import { EXPERT_VERSIONS } from "../data/tiers/expert";
 import { getCatalog } from "../translations";
 import type { Challenge } from "../types";
 
@@ -60,6 +61,16 @@ describe("question tiers", () => {
         expect(atTier(asked, 1)).toBe(base);
         if (asked !== base) expect(asked.id).toMatch(new RegExp(`^${base.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}_t[23]$`));
       }
+    }
+  });
+
+  it("give each Expert version a tiered question, asked differently from its Harder one", () => {
+    for (const [prompt, expert] of Object.entries(EXPERT_VERSIONS)) {
+      const entry = QUESTION_TIERS[prompt];
+      expect([prompt, Boolean(entry?.harder)]).toEqual([prompt, true]);
+      const ask = (version: unknown) => (typeof version === "string" ? version : (version as readonly string[])[0]);
+      expect([prompt, ask(expert) !== ask(entry.harder)]).toEqual([prompt, true]);
+      expect([prompt, ask(expert) !== prompt]).toEqual([prompt, true]);
     }
   });
 
