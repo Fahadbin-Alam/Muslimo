@@ -118,10 +118,10 @@ export interface DailyCard {
 export function getDailyCard(language: SupportedLanguage, date: Date = new Date()): DailyCard {
   const day = localDayNumber(date);
   const ayah = DAILY_AYAHS[day % DAILY_AYAHS.length];
-  // Indonesian (still in preview) shows the English meaning until a person adds an approved Indonesian translation.
+  // Indonesian and French (still in preview) show the English meaning until a person adds an approved translation.
   return {
     day,
-    ayah: { arabic: ayah.ar, meaning: language === "ar" ? undefined : language === "id" ? ayah.en : ayah[language], ref: ayah.ref },
+    ayah: { arabic: ayah.ar, meaning: language === "ar" ? undefined : language === "id" || language === "fr" ? ayah.en : ayah[language], ref: ayah.ref },
     hadith: DAILY_HADITH[day % DAILY_HADITH.length]
   };
 }

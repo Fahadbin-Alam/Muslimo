@@ -142,7 +142,7 @@ function LearnDemo({ lesson, accent, mascot = "boy", isNewWord }: { lesson: Less
  */
 function FactsPageDemo({ lesson: english }: { lesson: Lesson }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   const lesson = localizeLessonContent(english, language);
   const surahNumber = surahNumberForTitle(english.title);
@@ -380,7 +380,7 @@ function SayItDemo() {
 /** The streak moment for a streak of `days` (?lang=bn, ur or ar), today in this week, with a freeze some days ago. */
 function StreakDemo({ days, frozenDaysAgo, variant = "girl" }: { days: number; frozenDaysAgo?: number; variant?: string }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  setActiveLanguage((["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage);
+  setActiveLanguage((["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage);
   const today = localDateKey();
   return (
     <StreakMoment
@@ -401,7 +401,7 @@ function StreakDemo({ days, frozenDaysAgo, variant = "girl" }: { days: number; f
  */
 function MapDemo({ lessonId, ask, pick, check }: { lessonId: string; ask: string; pick?: "right" | "wrong"; check?: boolean }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   const english = LESSONS_BY_ID[lessonId];
   const index = Math.max(0, english.challenges.findIndex((challenge) => challenge.prompt.includes(ask)));
@@ -442,7 +442,7 @@ function MapDemo({ lessonId, ask, pick, check }: { lessonId: string; ask: string
  */
 function MonthQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; ask: string; pick?: "right" | "wrong"; check?: boolean }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   const english = LESSONS_BY_ID[lessonId];
   const index = Math.max(0, english.challenges.findIndex((challenge) => challenge.prompt.includes(ask)));
@@ -483,7 +483,7 @@ function MonthQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; a
  */
 function CardQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; ask: string; pick?: "right" | "wrong"; check?: boolean }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   const english = LESSONS_BY_ID[lessonId];
   const index = Math.max(0, english.challenges.findIndex((challenge) => challenge.prompt.includes(ask)));
@@ -538,7 +538,7 @@ function CardWall({ kinds }: { kinds: CardKind[] }) {
  */
 function SkyQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; ask: string; pick?: "right" | "wrong"; check?: boolean }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   const english = LESSONS_BY_ID[lessonId];
   const index = Math.max(0, english.challenges.findIndex((challenge) => challenge.prompt.includes(ask)));
@@ -580,7 +580,7 @@ function SkyQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; ask
  */
 function SceneQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; ask: string; pick?: "right" | "wrong"; check?: boolean }) {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   const english = LESSONS_BY_ID[lessonId];
   const index = Math.max(0, english.challenges.findIndex((challenge) => challenge.prompt.includes(ask)));
@@ -622,7 +622,7 @@ function SceneQuestionDemo({ lessonId, ask, pick, check }: { lessonId: string; a
  */
 function SprintDemo() {
   const query = typeof window !== "undefined" ? new URLSearchParams(window.location.search).get("lang") : null;
-  const language = (["en", "bn", "ur", "ar", "id"].includes(query ?? "") ? query : "en") as SupportedLanguage;
+  const language = (["en", "bn", "ur", "ar", "id", "fr"].includes(query ?? "") ? query : "en") as SupportedLanguage;
   setActiveLanguage(language);
   useState(() => (sprintRecord().best < 12 ? recordSprint(12) : false));
   const lessonIds = allLessons.slice(0, 40).map((lesson) => lesson.id);

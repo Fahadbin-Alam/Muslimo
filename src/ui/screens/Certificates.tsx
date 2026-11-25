@@ -19,7 +19,7 @@ import { getActiveLanguage, t } from "../../i18n";
 const PAPER = "#FFFBEF";
 const GOLD_INK = darken(colors.gold, 0.5);
 
-const DATE_LOCALES: Record<SupportedLanguage, string> = { en: "en-GB", bn: "bn-BD", ur: "ur-PK", ar: "ar-EG", id: "id-ID" };
+const DATE_LOCALES: Record<SupportedLanguage, string> = { en: "en-GB", bn: "bn-BD", ur: "ur-PK", ar: "ar-EG", id: "id-ID", fr: "fr-FR" };
 
 /** "3 November 2026" in the shown language, always with the Gregorian calendar and 0-9 digits like the rest of the app. */
 export function certificateDate(iso: string | undefined, language: SupportedLanguage = getActiveLanguage()) {

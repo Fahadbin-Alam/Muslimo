@@ -13,7 +13,7 @@ export interface PrayerCity {
 }
 
 function city(id: string, country: string, lat: number, lon: number, en: string, ar: string, bn: string, ur: string): PrayerCity {
-  return { id, country, lat, lon, name: { en, ar, bn, ur, id: en } };
+  return { id, country, lat, lon, name: { en, ar, bn, ur, id: en, fr: en } };
 }
 
 export const PRAYER_CITIES: PrayerCity[] = [
