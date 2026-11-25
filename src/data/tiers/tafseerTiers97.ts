@@ -114,7 +114,7 @@ export const TAFSEER_TIERS_97: Record<string, TierEntry> = {
   "Their mercy reached the creatures.": { answer: "True", harder: "Ibn Kathir on Quran 57:27: their mercy extended to Allah's creatures." },
   "Who prescribed monasticism, per 57:27?": { answer: "No one; they invented it", harder: ["Quran 57:27: who laid down monasticism for them?", "Allah ordered it", "Isa ordered it", "The angels"] },
   "What is monasticism?": { answer: "Leaving normal life for worship", harder: ["Ibn Kathir on Quran 57:27: what does monasticism involve?", "A kind of trade", "A city", "A festival"] },
-  "Allah commanded the followers of Isa to invent it.": { answer: "False", harder: "Quran 57:27 says Allah ordered Isa's followers to devise monasticism." },
+  "Allah commanded the followers of Isa to invent it.": { answer: "False", harder: "The lesson of Quran 57:27: Allah ordered Isa's followers to devise monasticism." },
   "What were they blamed for first?": { answer: "Adding to their religion", harder: ["Ibn Kathir on Quran 57:27: what was the first fault found with them?", "Reading Scripture", "Praying too much", "Giving charity"] },
   "What were they blamed for second?": { answer: "Not keeping what they invented", harder: ["Ibn Kathir on Quran 57:27: what was the second fault found with them?", "Teaching it", "Writing it down", "Keeping it perfectly"] },
   "Allah rewarded those of them who truly believed.": { answer: "True", harder: "Quran 57:27 says Allah gave their reward to those of them who believed." },
