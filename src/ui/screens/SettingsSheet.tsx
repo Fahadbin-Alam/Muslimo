@@ -8,6 +8,7 @@ import { colors, fonts, radii, space, text } from "../theme";
 // Settings: who is learning, reminders, sound, log out.
 import { LinkRow, SegmentButton, SheetTitle, Toggle, useBackToClose } from "./sheetParts";
 import { QuranOfflineRow } from "./QuranOfflineRow";
+import { ReciterPicker } from "./ReciterPicker";
 import { offlineAudioSupported } from "../../services/offlineAudio";
 import { t } from "../../i18n";
 import type { DifficultyChoice } from "../../types";
@@ -210,6 +211,8 @@ export function SettingsSheet({
             <Toggle label={t("Sound effects")} icon="speaker" value={soundEnabled} onToggle={onToggleSound} testID="settings-sound" />
             <View style={styles.divider} />
             <Toggle label={t("Softer sounds")} icon="moon" value={softSound} onToggle={onToggleSoftSound} testID="settings-soft" />
+            <View style={styles.divider} />
+            <ReciterPicker />
             {offlineAudioSupported() ? (
               <>
                 <View style={styles.divider} />

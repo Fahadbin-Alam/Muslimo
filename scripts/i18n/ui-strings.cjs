@@ -14,6 +14,7 @@ const TABLE_FILES = {
   "src/ui/screens/AgeSheet.tsx": ["OPTIONS"],
   "src/ui/screens/ScholarTree.tsx": ["GENERATION_LABEL"],
   "src/services/prayerTimes.ts": ["PRAYER_LABELS"],
+  "src/services/quranAudio.ts": ["RECITER_NAMES"],
   "src/ui/screens/ShopView.tsx": ["BENEFITS"],
   "src/ui/screens/FamilySheet.tsx": ["ADD_ERRORS"],
   "src/ui/lesson/FeedbackSheet.tsx": ["PRAISE_WORDS", "WRONG_TITLE"],
