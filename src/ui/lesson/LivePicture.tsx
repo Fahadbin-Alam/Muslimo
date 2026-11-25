@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Animated, Easing, StyleSheet, View, type LayoutChangeEvent } from "react-native";
-import Svg, { Circle, Defs, Ellipse, LinearGradient, Path, RadialGradient, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, Ellipse, LinearGradient, Path, RadialGradient, Stop } from "../svg";
 import { sampleCurve, smoothKeys, useReduceMotion } from "../motion";
 import { LITE_LIFE, useLiteMotion } from "../liteMotion";
 import type { Life } from "./pictureLife";

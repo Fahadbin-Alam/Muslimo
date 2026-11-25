@@ -23,7 +23,7 @@ import {
   type StyleProp,
   type ViewStyle,
 } from "react-native";
-import Svg, { Circle } from "react-native-svg";
+import Svg, { Circle } from "../svg";
 import type { ArabicTerm } from "../../data/arabicTerms";
 import {
   canSellInStore,

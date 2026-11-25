@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Animated, ScrollView, StyleSheet, Text, View } from "react-native";
-import Svg, { Path } from "react-native-svg";
+import Svg, { Path } from "../svg";
 import { getTopicArabic } from "../../data/arabicTerms";
 import { t as uiText, type UiStrings } from "../../i18n";
 import { translateStudyText } from "../../services/contentLocalization";
@@ -404,7 +404,7 @@ export function PracticeHub({
                 </View>
               ) : (
                 <Text style={[styles.quizLine, styles.memorizeLine]} numberOfLines={2}>
-                  {t("Short surahs, ayah by ayah, with the reciter")}
+                  {t("Short surahs and duas, from memory")}
                 </Text>
               )}
             </View>

@@ -1,6 +1,6 @@
 import React, { type ReactNode } from "react";
 import { Animated, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
-import Svg, { Circle, Ellipse, G, Path } from "react-native-svg";
+import Svg, { Circle, Ellipse, G, Path } from "./svg";
 import { sampleCurve, smoothKeys } from "./motion";
 import { Floater, Word } from "./reactions";
 

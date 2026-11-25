@@ -1,6 +1,6 @@
 import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Animated, Dimensions, Easing, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
-import Svg, { Circle, Defs, Ellipse, G, Path, RadialGradient, Rect, Stop } from "react-native-svg";
+import Svg, { Circle, Defs, Ellipse, G, Path, RadialGradient, Rect, Stop } from "./svg";
 import type { GameSoundEvent } from "../services/gameSoundLibrary";
 import { pivotAt, sampleCurve, smoothKeys, useReduceMotion } from "./motion";
 import { Drop, Floater, Heart, Puff, Sparkle, Word, shake, useCycle, useOneShot } from "./reactions";

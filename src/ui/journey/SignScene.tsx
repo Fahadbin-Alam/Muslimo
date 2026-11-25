@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react";
 import { Animated, Easing, StyleSheet, Text, View, type ViewStyle } from "react-native";
-import { SvgXml } from "react-native-svg";
+import { SvgXml } from "../svg";
 import type { SignScene } from "../../data/signScenes";
 import { t } from "../../i18n";
 import { LITE_LIFE, useLiteMotion } from "../liteMotion";

@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useRef, useState } from "react";
 import { Animated, Easing, Pressable, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import type { GameSoundEvent } from "../services/gameSoundLibrary";
-import Svg, { Circle, Ellipse, G, Path, Rect } from "react-native-svg";
+import Svg, { Circle, Ellipse, G, Path, Rect } from "./svg";
 import { useReduceMotion } from "./Camel";
 import { useLiteMotion } from "./liteMotion";
 import { Icon, type IconName } from "./Icon";
