@@ -22,7 +22,14 @@ export function sourceWhy(prompt: string, answer: string) {
   return sourceWhys[`${prompt.trim()}\n${answer.trim()}`];
 }
 
-export function englishWhy(challenge: Pick<Challenge, "explanation" | "easierExplanation" | "prompt" | "choices" | "correctChoiceId">) {
+type WhyChallenge = Pick<Challenge, "explanation" | "easierExplanation" | "prompt" | "choices" | "correctChoiceId"> & Partial<Pick<Challenge, "tierBase">>;
+
+export function englishWhy(challenge: WhyChallenge): string | undefined {
+  // A harder or expert wording of a question keeps its answer and source, so it keeps the lesson question's Why too
+  // (the reworded prompt would otherwise miss its source Why, or let the note's repeat of the old prompt through).
+  if (challenge.tierBase) {
+    return englishWhy(challenge.tierBase) ?? englishWhy({ ...challenge, tierBase: undefined });
+  }
   const answer = challenge.choices.find((choice) => choice.id === challenge.correctChoiceId)?.label ?? "";
   return (
     shortWhy({
@@ -34,7 +41,7 @@ export function englishWhy(challenge: Pick<Challenge, "explanation" | "easierExp
   );
 }
 
-export function localizedWhy(challenge: Pick<Challenge, "explanation" | "easierExplanation" | "prompt" | "choices" | "correctChoiceId">, language: SupportedLanguage) {
+export function localizedWhy(challenge: WhyChallenge, language: SupportedLanguage) {
   const why = englishWhy(challenge);
   return why && translateStudyText(why, language);
 }
