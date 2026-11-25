@@ -62,6 +62,10 @@ const REMINDER_COPY: Record<SupportedLanguage, ReminderCopy> = {
   id: {
     morning: { title: "Selamat pagi! ☀️", body: "Zikir pagimu cuma lima menit. Untanya sudah mulai membaca tiga Qul tanpamu!" },
     evening: { title: "Waktunya zikir petang 🌙", body: "Tiga Qul, masing-masing tiga kali. Pelindungmu untuk malam ini tinggal satu ketukan." }
+  },
+  fr: {
+    morning: { title: "Bonjour ! ☀️", body: "Tes adhkar du matin prennent cinq minutes. Le chameau a déjà commencé les trois Qul sans toi !" },
+    evening: { title: "C'est l'heure des adhkar du soir 🌙", body: "Les trois Qul, trois fois chacun. Ta protection pour la nuit est à une touche." }
   }
 };
 

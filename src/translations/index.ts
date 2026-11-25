@@ -26,6 +26,8 @@ function loadUi(language: SupportedLanguage): TranslationCatalog | undefined {
       return require("./ui/ur.json");
     case "id":
       return require("./ui/id.json");
+    case "fr":
+      return require("./ui/fr.json");
     default:
       return undefined;
   }

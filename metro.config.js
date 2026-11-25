@@ -5,7 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const { getDefaultConfig } = require("expo/metro-config");
 
-const LANGUAGES = ["ar", "bn", "ur", "id"];
+const LANGUAGES = ["ar", "bn", "ur", "id", "fr"];
 const from = path.join(__dirname, "src/translations/content");
 const to = path.join(__dirname, "assets/languages");
 

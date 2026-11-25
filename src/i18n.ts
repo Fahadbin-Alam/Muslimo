@@ -107,9 +107,13 @@ export const LANGUAGE_OPTIONS: LanguageOption[] = [
  * Indonesian: the screens, every topic and unit name, the placement questions and the first lessons of each topic
  * (the rest shows in English). To try it, build with EXPO_PUBLIC_PREVIEW_LANGUAGES=1 or open the web app with
  * ?preview-languages=1. To put it live, move its line up into LANGUAGE_OPTIONS.
+ * French: the screens, every topic and unit name, the placement questions and the first lessons, written by hand
+ * (see scripts/i18n/french/README.md). Quran and hadith meaning lines stay in English until an approved French
+ * translation can be used.
  */
 export const PREVIEW_LANGUAGE_OPTIONS: LanguageOption[] = [
-  { id: "id", code: "ID", label: "Indonesian", nativeLabel: "Bahasa Indonesia" }
+  { id: "id", code: "ID", label: "Indonesian", nativeLabel: "Bahasa Indonesia" },
+  { id: "fr", code: "FR", label: "French", nativeLabel: "Français" }
 ];
 
 export function previewLanguagesOn(): boolean {

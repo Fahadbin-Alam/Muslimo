@@ -12,6 +12,8 @@ export function contentNow(language: SupportedLanguage): TranslationCatalog | un
       return require("./content/ur.json");
     case "id":
       return require("./content/id.json");
+    case "fr":
+      return require("./content/fr.json");
     default:
       return undefined;
   }
