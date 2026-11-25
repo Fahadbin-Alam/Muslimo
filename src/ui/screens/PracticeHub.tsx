@@ -404,7 +404,7 @@ export function PracticeHub({
                 </View>
               ) : (
                 <Text style={[styles.quizLine, styles.memorizeLine]} numberOfLines={2}>
-                  {t("Short surahs, ayah by ayah, with the reciter")}
+                  {t("Short surahs and duas, from memory")}
                 </Text>
               )}
             </View>

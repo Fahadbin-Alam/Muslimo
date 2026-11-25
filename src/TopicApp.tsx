@@ -224,6 +224,7 @@ import { useAyahPlayback } from "./ui/lesson/AyahListen";
 import { listenWhy, withListenQuestion } from "./ui/lesson/listenQuestion";
 import { completeSurahs, hifzAyahs, memorizeParts, memorizeSurahNumbers, withReciteQuestion, type HifzPart } from "./ui/lesson/reciteQuestion";
 import { isReviewDue, localDay, memorizeStars, recordMemorized, recordReview, useMemorizeReviews, useMemorizeStars } from "./services/memorizeSurahs";
+import { memorizeDuas } from "./data/memorizeDuas";
 import type { SurahComplete } from "./ui/lesson/SurahCompleteBadge";
 import { SURAH_NAMES } from "./data/surahMeanings";
 import { colors, configureUiSound, darken, preloadUiSounds, fonts, Icon, lighten, PopIn, radii, space, Tappable } from "./ui";
@@ -272,6 +273,7 @@ import {
   TopicPicker,
   QuizSheet,
   MemorizeSheet,
+  type MemorizeDuaRow,
   StoryBanner,
   StorySheet,
   UpdateBanner,
@@ -1679,6 +1681,22 @@ export default function TopicApp() {
         ? memorizeParts().map((part) =>
             memorizeRow(part, currentLanguage, memorizeStarsNow[part.id] ?? 0, isReviewDue(part.id, memorizeStarsNow, memorizeReviewsNow, memorizeToday))
           )
+        : [],
+    [currentLanguage, memorizeShown, memorizeStarsNow, memorizeReviewsNow, memorizeToday]
+  );
+  // Its Duas tab: the duas the Duas lessons quote, each to say from memory as more words hide, with its best stars.
+  const memorizeDuaRows = useMemo<MemorizeDuaRow[]>(
+    () =>
+      memorizeShown
+        ? memorizeDuas().map((dua) => ({
+            id: dua.id,
+            title: translateStudyText(dua.title, currentLanguage),
+            text: dua.text,
+            reference: translateStudyText(dua.reference, currentLanguage),
+            stars: memorizeStarsNow[dua.id] ?? 0,
+            due: isReviewDue(dua.id, memorizeStarsNow, memorizeReviewsNow, memorizeToday),
+            recitation: dua.recitation
+          }))
         : [],
     [currentLanguage, memorizeShown, memorizeStarsNow, memorizeReviewsNow, memorizeToday]
   );
@@ -4817,7 +4835,7 @@ export default function TopicApp() {
             }
             memorizeDone={memorizeRows.filter((row) => row.stars > 0).length}
             memorizeTotal={memorizeRows.length}
-            memorizeDue={memorizeRows.filter((row) => row.due).length}
+            memorizeDue={memorizeRows.filter((row) => row.due).length + memorizeDuaRows.filter((row) => row.due).length}
             quizBest={getQuizScore(state.user, { kind: "topic", topicId: selectedSection.topicId })?.best}
             onGoFoundation={() => openTopicScreen("foundation")}
           />
@@ -5009,6 +5027,17 @@ export default function TopicApp() {
             rows={memorizeRows}
             onStart={startMemorize}
             which={{ stars: memorizeStarsNow[WHICH_SURAH_ID] ?? 0, onStart: startWhichSurah }}
+            duas={memorizeDuaRows}
+            onDuaFinish={(id, stars) => {
+              // Kept like a surah's: its best stars, and its next review day.
+              recordMemorized(id, stars);
+              recordReview(id, stars);
+              setMemorizeFocus(id);
+            }}
+            onOpenDuaSource={(id) => {
+              const dua = memorizeDuas().find((item) => item.id === id);
+              if (dua) void openSource(dua.source);
+            }}
             focusId={memorizeFocus}
           />
         )}
