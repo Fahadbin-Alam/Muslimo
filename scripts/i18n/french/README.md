@@ -18,7 +18,7 @@ French is written by hand, in batches, with no paid translation API. It stays hi
 
 ## Done so far
 
-1. Screens: 1,090 of 1,099 lines (9 hadith lines left in English).
+1. Screens: 1,101 of 1,111 lines (10 hadith lines left in English), including the new weekly missions.
 2. Topic 1, Foundation: every unit, lesson title, lesson page and question (1,301 lines; 9 ayah/hadith lines left in
    English).
 3. Every topic, unit and branch name and description (1,318 lines).
