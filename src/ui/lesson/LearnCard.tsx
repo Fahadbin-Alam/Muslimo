@@ -381,8 +381,9 @@ export function LearnCard({
               ...(at("start")
                 ? [
                     { key: "title", text: showTitle ? title : undefined },
-                    // The word card: the Arabic word itself for a voice that reads Arabic letters, its Latin spelling for one that does not.
-                    { key: "word", text: arabic ? `${readsArabic(getActiveLanguage()) ? arabic.ar : arabic.translit}: ${t(arabic.meaning)}` : undefined },
+                    // The word card: its Latin spelling and meaning for a voice in Latin letters. The Urdu voice says only the
+                    // meaning, as no machine voice may say the Arabic word itself (the reciter does, for a Quran word).
+                    { key: "word", text: arabic ? (readsLatin(getActiveLanguage()) ? `${arabic.translit}: ${t(arabic.meaning)}` : t(arabic.meaning)) : undefined },
                     { key: "line", text: line },
                     { key: "quote", text: quoteText && !isArabicOnly(quoteText) ? quoteText : undefined }
                   ]
@@ -917,9 +918,9 @@ function TeachPage({
   );
 }
 
-/** An Urdu or Arabic voice reads Arabic letters; an English or Bangla one does not. */
-function readsArabic(language: string) {
-  return language === "ar" || language === "ur";
+/** Every voice but Urdu and Arabic says a word by its Latin spelling. */
+function readsLatin(language: string) {
+  return language !== "ar" && language !== "ur";
 }
 
 /** What the quiz page says under "Quiz time!". */

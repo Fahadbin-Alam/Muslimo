@@ -209,18 +209,19 @@ describe("say it out loud: the sheet", () => {
     expect(openSource).toHaveBeenCalledWith(SAY_WORDS[amin].source);
   });
 
-  it("plays the reciter for the Quran's own words and the phone's Arabic voice for the rest", async () => {
+  it("plays the reciter for the Quran's own words and never a machine voice for the rest", async () => {
     await render(<SayItSheet visible onClose={jest.fn()} />);
     await act(async () => undefined);
     // Inna lillahi wa inna ilayhi raji'un is in the ayah it cites (2:156): the reciter says it.
     await press("say-word-inna-lillahi");
     await press("say-listen");
     expect(playAyah).toHaveBeenCalledWith(expect.stringMatching(/^https:\/\//), { once: true });
-    expect(Speech.speak).not.toHaveBeenCalled();
-    // Bismillah before eating is from a hadith: the Arabic voice says it.
+    // Bismillah before eating is from a hadith: no reciter has it, so there is no Listen (the phone has an Arabic
+    // voice, but a machine voice gets Arabic vowels wrong), and saying it along still works.
     await press("say-word-bismillah");
-    await press("say-listen");
-    expect(Speech.speak).toHaveBeenCalledWith("بِسْمِ اللَّهِ", expect.objectContaining({ language: "ar", voice: "ar-voice" }));
+    expect(screen.queryByTestId("say-listen")).toBeNull();
+    expect(screen.getByTestId("say-along")).toBeTruthy();
+    expect(Speech.speak).not.toHaveBeenCalled();
     expect(playAyah).toHaveBeenCalledTimes(1);
   });
 

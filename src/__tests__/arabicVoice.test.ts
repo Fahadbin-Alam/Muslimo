@@ -2,6 +2,7 @@ const mockVoices = jest.fn();
 jest.mock("expo-speech", () => ({ getAvailableVoicesAsync: () => mockVoices() }));
 
 import { arabicLetters, findArabicVoice, recitationForArabic, resetArabicVoiceForTests } from "../services/arabicVoice";
+import { findTeacherVoice, knownTeacherVoice, speakable } from "../services/teacherVoice";
 
 const AUDIO = "https://cdn.islamic.network/quran/audio/128/ar.alafasy/";
 
@@ -34,35 +35,32 @@ describe("words that are a whole ayah play the reciter", () => {
 });
 
 describe("the device's Arabic voice", () => {
-  test("is found when the device has one", async () => {
+  test("is never used, even on a device with one: a machine voice gets Arabic vowels and case endings wrong", async () => {
     mockVoices.mockResolvedValue([
       { identifier: "en-1", language: "en-US" },
       { identifier: "ar-1", language: "ar-SA" }
     ]);
-    await expect(findArabicVoice()).resolves.toBe("ar-1");
-  });
-
-  test("is null on a device with only English voices, like a PC without the Arabic language pack", async () => {
+    await expect(findArabicVoice()).resolves.toBeNull();
     mockVoices.mockResolvedValue([{ identifier: "en-1", language: "en-US" }]);
     await expect(findArabicVoice()).resolves.toBeNull();
   });
+});
 
-  test("waits once for a voice list that fills late, and survives a speech engine error", async () => {
-    mockVoices.mockResolvedValueOnce([]).mockResolvedValueOnce([{ identifier: "ar-2", language: "ar" }]);
-    await expect(findArabicVoice()).resolves.toBe("ar-2");
-    resetArabicVoiceForTests();
-    mockVoices.mockImplementation(() => {
-      throw new Error("no engine");
-    });
-    await expect(findArabicVoice()).resolves.toBeNull();
+describe("the teacher's voice and Arabic", () => {
+  test("has no Arabic voice, even on a device with one", async () => {
+    mockVoices.mockResolvedValue([{ identifier: "ar-1", language: "ar-SA" }]);
+    await expect(findTeacherVoice("ar")).resolves.toBeNull();
+    expect(knownTeacherVoice("ar")).toBeUndefined();
   });
 
-  test("asks again after finding no voice, but keeps a voice once found", async () => {
-    mockVoices.mockResolvedValue([{ identifier: "en-1", language: "en-US" }]);
-    await expect(findArabicVoice()).resolves.toBeNull();
-    mockVoices.mockResolvedValue([{ identifier: "ar-3", language: "ar_EG" }]);
-    await expect(findArabicVoice()).resolves.toBe("ar-3");
-    mockVoices.mockResolvedValue([]);
-    await expect(findArabicVoice()).resolves.toBe("ar-3");
+  test("the Urdu voice skips Quran, hadith and dua words quoted in Arabic, and keeps the Urdu", () => {
+    const line = "نبی ﷺ نے فرمایا: أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ، یہ دعا تقریباً ہر شام پڑھو۔";
+    const said = speakable(line, "ur");
+    expect(said).not.toMatch(/أَعُوذُ|بِكَلِمَاتِ|التَّامَّاتِ|اللَّهِ/);
+    expect(said).toContain("نبی");
+    expect(said).toContain("صلی اللہ علیہ وسلم");
+    expect(said).toContain("تقریباً");
+    expect(said).toContain("دعا");
+    expect(speakable("ٱلۡحَمۡدُ لِلَّهِ رَبِّ ٱلۡعَٰلَمِينَ سورہ فاتحہ کی آیت ہے", "ur")).toBe("سورہ فاتحہ کی آیت ہے");
   });
 });

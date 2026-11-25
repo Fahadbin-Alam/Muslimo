@@ -301,15 +301,24 @@ describe("the teacher reads the lesson page aloud", () => {
     expect(text).not.toMatch(/[A-Za-z]/);
   });
 
-  it("reads the Arabic word itself to an Arabic voice", async () => {
+  it("never reads Arabic with a machine voice: no speaker with the app in Arabic, even on a phone with an Arabic voice", async () => {
     setActiveLanguage("ar");
     mockVoices = [{ identifier: "ar-voice", language: "ar-SA", name: "Arabic", quality: "Default" as Speech.VoiceQuality }];
+    await render(<LearnCard {...BASE} page="start" arabic={{ ar: "اقْرَأْ", translit: "Iqra", meaning: "Read" }} />);
+    await act(async () => undefined);
+    expect(screen.queryByTestId("learn-read-aloud")).toBeNull();
+    expect(Speech.speak).not.toHaveBeenCalled();
+  });
+
+  it("the Urdu voice says the word's meaning, not the Arabic word", async () => {
+    setActiveLanguage("ur");
+    mockVoices = [{ identifier: "ur-voice", language: "ur-PK", name: "Urdu", quality: "Default" as Speech.VoiceQuality }];
     await render(<LearnCard {...BASE} page="start" arabic={{ ar: "اقْرَأْ", translit: "Iqra", meaning: "Read" }} />);
     await screen.findByTestId("learn-read-aloud");
     await tapRead();
     const [text, options] = lastSpeech();
-    expect(options).toMatchObject({ language: "ar", voice: "ar-voice" });
-    expect(text).toContain("اقْرَأْ");
+    expect(options).toMatchObject({ language: "ur", voice: "ur-voice" });
+    expect(text).not.toContain("اقْرَأْ");
     expect(text).not.toContain("Iqra");
   });
 });
