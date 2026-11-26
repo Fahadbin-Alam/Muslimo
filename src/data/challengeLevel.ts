@@ -84,12 +84,21 @@ export function challengeLevel(
   user: Pick<UserProfile, "streakDays" | "completedLessonIds" | "difficulty" | "challengeBoost" | "recentStars">,
   ageGroup?: AgeGroup | null
 ): ChallengeLevel {
-  const boost = Math.max(0, Math.floor(user.challengeBoost ?? 0));
-  return Math.min(TOP_LEVEL, pickedLevel(user, ageGroup) + boost) as ChallengeLevel;
+  // A boost below 0: they said yes to "Want it easier?" more often than to "Want it harder?".
+  const boost = Math.floor(user.challengeBoost ?? 0);
+  return Math.max(0, Math.min(TOP_LEVEL, pickedLevel(user, ageGroup) + boost)) as ChallengeLevel;
 }
 
-/** Every this many right first time in a row in a lesson, the lesson gets a step harder on its own. */
-export const HARDER_OFFER_AFTER = 3;
+/** Every this many right first time in a row in a lesson, "Want it harder?" (then, once they said yes, a step harder on its own). */
+export const HARDER_OFFER_AFTER = 5;
+
+/** This many missed first time in a row in a lesson, and the lesson asks "Want it easier?". */
+export const EASIER_OFFER_AFTER = 3;
+
+/** One step easier than `level` (the lowest level stays where it is). */
+export function previousLevel(level: ChallengeLevel): ChallengeLevel {
+  return Math.max(0, level - 1) as ChallengeLevel;
+}
 
 /** One step harder than `level` (the top level stays where it is). */
 export function nextLevel(level: ChallengeLevel): ChallengeLevel {

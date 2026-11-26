@@ -437,8 +437,16 @@ export interface Challenge {
   source?: LessonSource;
   /** Asked again from an earlier lesson; the question shows a small review cue. */
   isReview?: boolean;
-  /** A harder way to ask the same question (src/data/questionTiers.ts): 2 Harder, 3 Expert. Unset is the lesson's own. */
-  tier?: 2 | 3;
+  /**
+   * A harder way to ask the same question (src/data/questionTiers.ts): 2 Medium, 3 Hard, 4 Super hard, 5 Extremely
+   * hard. Unset is the lesson's own (1, Easy).
+   */
+  tier?: 2 | 3 | 4 | 5;
+  /**
+   * A deeper question of its lesson's levelQuestions: the level (2 Medium to 5 Extremely hard) it is added at when
+   * the lesson climbs. It may carry its own source.
+   */
+  level?: 2 | 3 | 4 | 5;
   /** The lesson's own question this harder one was made from: same answer, same source. */
   tierBase?: Challenge;
   /** A question the learner missed before, back from the Review deck; the cue says "You missed this before". */
@@ -531,6 +539,11 @@ export interface Lesson {
   teachingMoments?: LessonTeachingMoment[];
   practiceActivities?: LessonPracticeActivity[];
   challenges: Challenge[];
+  /**
+   * Deeper questions on the lesson's topic, each with its level (Challenge.level, 2 to 5): when the lesson climbs to
+   * a level, its questions for that level (or the nearest easier level that has some) are asked next.
+   */
+  levelQuestions?: Challenge[];
 }
 
 export interface LessonSource {

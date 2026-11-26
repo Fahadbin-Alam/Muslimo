@@ -1043,7 +1043,6 @@
   "Your phone's reading voice is off or missing. In Voice settings, choose Google's speech engine (free on Google Play) and turn the media volume up. Then tap the speaker again.": "صوت القراءة في هاتفك متوقف أو غير موجود. في إعدادات الصوت اختر محرك الكلام من Google (مجاني على Google Play) وارفع صوت الوسائط. ثم اضغط على السماعة مرة أخرى.",
   "Voice settings": "إعدادات الصوت",
   "Want it harder?": "تريدها أصعب؟",
-  "Tougher questions from now on. You can change it in Settings.": "أسئلة أصعب من الآن. يمكنك تغيير ذلك من الإعدادات.",
   "Yes, make it harder": "نعم، اجعلها أصعب",
   "Keep it as it is": "اتركها كما هي",
   "Search hadith, ayahs and lessons": "ابحث في الأحاديث والآيات والدروس",
@@ -1090,5 +1089,14 @@
   "Abu Bakr ash-Shatri": "أبو بكر الشاطري",
   "Hani ar-Rifai": "هاني الرفاعي",
   "Words light up with Mishary Alafasy, who also says the recite and memorize questions. With no internet, his saved recitation plays.": "تُضاء الكلمات مع تلاوة مشاري العفاسي، وهو الذي يقرأ أسئلة التلاوة والحفظ أيضًا. وبدون إنترنت تُشغَّل تلاوته المحفوظة.",
-  "Other reciters: audio from Quran Foundation": "القرّاء الآخرون: الصوت من Quran Foundation"
+  "Other reciters: audio from Quran Foundation": "القرّاء الآخرون: الصوت من Quran Foundation",
+  "{count} missed in a row": "{count} أخطاء متتالية",
+  "Want it easier?": "تريدها أسهل؟",
+  "Easier questions for now. You can change it in Settings.": "أسئلة أسهل الآن. يمكنك تغيير ذلك من الإعدادات.",
+  "Yes, make it easier": "نعم، اجعلها أسهل",
+  "Next level: {level}": "المستوى التالي: {level}",
+  "Deeper questions on this same topic, with the same sources. You can change it in Settings.": "أسئلة أعمق في الموضوع نفسه، من المصادر نفسها. يمكنك تغيير ذلك من الإعدادات.",
+  "Medium": "متوسط",
+  "Super hard": "صعب جدًا",
+  "Extremely hard": "صعب للغاية"
 }

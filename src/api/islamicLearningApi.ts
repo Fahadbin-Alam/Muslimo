@@ -1676,25 +1676,49 @@ export function harderQuestions(
   count = 2,
   seed = `${localDateKey()}:harder:${level}`
 ): Challenge[] {
+  if (count <= 0) {
+    return [];
+  }
+  const asked = new Set(lesson.challenges.map((challenge) => challenge.id));
+  const primarySource = getPrimaryLessonSource(lesson.sources);
+  const withSource = (challenge: Challenge): Challenge => ({
+    ...challenge,
+    resourceUrl: challenge.resourceUrl ?? primarySource?.url,
+    resourceLabel: challenge.resourceLabel ?? (primarySource ? "Open exact source" : undefined)
+  });
+
+  // The lesson's own deeper questions for this level come first (or the nearest easier level that has some left).
+  const deeper = levelQuestionsAt(lesson, level, asked);
+  if (deeper.length) {
+    return deeper.slice(0, count).map(withSource);
+  }
+
   const pools = harderPools(lesson, user, seed);
 
-  if (!pools || count <= 0) {
+  if (!pools) {
     return [];
   }
 
-  const asked = new Set(lesson.challenges.map((challenge) => challenge.id));
   const fresh = {
     harder: pools.harder.filter((challenge) => !asked.has(challenge.id)),
     recalled: pools.recalled.filter((challenge) => !asked.has(challenge.id))
   };
   const hardCount = Math.max(1, level >= HARD_BANK_FROM ? level - HARD_BANK_FROM + 1 : 1);
-  const primarySource = getPrimaryLessonSource(lesson.sources);
 
-  return pickHarder(lesson.challenges, fresh, Math.min(count, hardCount), count).map((challenge) => ({
-    ...challenge,
-    resourceUrl: challenge.resourceUrl ?? primarySource?.url,
-    resourceLabel: challenge.resourceLabel ?? (primarySource ? "Open exact source" : undefined)
-  }));
+  return pickHarder(lesson.challenges, fresh, Math.min(count, hardCount), count).map(withSource);
+}
+
+/**
+ * A lesson's deeper questions (lesson.levelQuestions) for `level`: those of the highest level up to it that has
+ * any not in `skip` (ids already in the lesson), in their written order. Empty below Medium or when there are none.
+ */
+export function levelQuestionsAt(lesson: Pick<Lesson, "levelQuestions">, level: number, skip: ReadonlySet<string> = new Set()): Challenge[] {
+  const all = (lesson.levelQuestions ?? []).filter((challenge) => !skip.has(challenge.id));
+  for (let at = Math.min(5, Math.floor(level)); at >= 2; at -= 1) {
+    const found = all.filter((challenge) => (challenge.level ?? 2) === at);
+    if (found.length) return found;
+  }
+  return [];
 }
 
 type HarderPools = { harder: Challenge[]; recalled: Challenge[] };
