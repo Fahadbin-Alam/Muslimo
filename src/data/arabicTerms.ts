@@ -218,6 +218,7 @@ export const BRANCH_ARABIC: Record<string, ArabicTerm> = {
   "aqidah-names-mercy": { ar: "أسماء الرحمة", translit: "Asma ar-rahmah", meaning: "Names of mercy" },
   "aqidah-names-majesty": { ar: "أسماء العظمة", translit: "Asma al-azamah", meaning: "Names of greatness" },
   "aqidah-names-knowledge": { ar: "أسماء العلم", translit: "Asma al-ilm", meaning: "Names of knowledge" },
+  "hajj-sahihayn-deeper": { ar: "الحج في الصحيحين", translit: "Al-hajj fi as-Sahihayn", meaning: "Hajj in Bukhari and Muslim" },
   "hajj-umrah": { ar: "العمرة", translit: "Al-'umrah", meaning: "The Umrah" },
   "hajj-sacred-house": { ar: "البيت الحرام", translit: "Al-bayt al-haram", meaning: "The Sacred House" },
   "hajj-three-masjids": { ar: "المساجد الثلاثة", translit: "Al-masajid ath-thalathah", meaning: "The three masjids" },
@@ -979,7 +980,7 @@ const IMPORTED_UNIT_ARABIC: Partial<Record<TopicId, ArabicTerm>> = {
 // The vowelled form of every unit banner word, for a learn card that borrows it. Each one, without its
 // vowel marks, is exactly the banner's spelling (the tests check this).
 const LEARN_FORMS = [
-  "فِي الصَّحِيحَيْنِ", "الصَّلَاةُ فِي الصَّحِيحَيْنِ", "الْإِيمَانُ فِي الصَّحِيحَيْنِ",
+  "فِي الصَّحِيحَيْنِ", "الصَّلَاةُ فِي الصَّحِيحَيْنِ", "الْإِيمَانُ فِي الصَّحِيحَيْنِ", "الْحَجُّ فِي الصَّحِيحَيْنِ",
   "الْمُهَاجِرُونَ", "خُبَيْبٌ وَعَاصِمٌ", "أُسَيْدُ بْنُ حُضَيْرٍ", "ثَابِتُ بْنُ قَيْسٍ", "الْمِقْدَادُ بْنُ الْأَسْوَدِ", "حَكِيمُ بْنُ حِزَامٍ", "سَعِيدُ بْنُ زَيْدٍ", "أَبُو حَنِيفَةَ", "مَالِكُ بْنُ أَنَسٍ", "الشَّافِعِيُّ", "أَحْمَدُ بْنُ حَنْبَلٍ", "ابْنُ تَيْمِيَّةَ", "ابْنُ بَازٍ", "الْأَلْبَانِيُّ",
   "عِلْمُ عُمَرَ", "عِلْمُ عَائِشَةَ", "ابْنُ مَسْعُودٍ", "ابْنُ عَبَّاسٍ", "ابْنُ عُمَرَ",
   "عَلْقَمَةُ بْنُ وَقَّاصٍ", "عُرْوَةُ بْنُ الزُّبَيْرِ", "نَافِعٌ", "عَطَاءُ بْنُ أَبِي رَبَاحٍ", "عَلْقَمَةُ بْنُ قَيْسٍ", "مُحَمَّدُ بْنُ إِبْرَاهِيمَ التَّيْمِيُّ", "ابْنُ شِهَابٍ الزُّهْرِيُّ", "إِبْرَاهِيمُ النَّخَعِيُّ", "يَحْيَى بْنُ سَعِيدٍ الْأَنْصَارِيُّ", "حَمَّادُ بْنُ أَبِي سُلَيْمَانَ",
