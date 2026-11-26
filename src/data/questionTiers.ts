@@ -171,6 +171,8 @@ import { TAFSEER_TIERS_143 } from "./tiers/tafseerTiers143";
 import { TAFSEER_TIERS_144 } from "./tiers/tafseerTiers144";
 import { TAFSEER_TIERS_145 } from "./tiers/tafseerTiers145";
 import { EXPERT_VERSIONS } from "./tiers/expert";
+import { SUPER_HARD_VERSIONS } from "./tiers/super";
+import { EXTREME_VERSIONS } from "./tiers/extreme";
 
 /**
  * Harder ways to ask the same question (Fahad, 2026-11-24: "for the same answer, rewrite it in a harder way", a few
@@ -185,7 +187,8 @@ import { EXPERT_VERSIONS } from "./tiers/expert";
  * against its answer, so a review copy of a question gets the same tiers. Every tier's words are in the bn/ur/ar
  * content catalogs (questionTiers.test.ts).
  */
-export type Tier = 1 | 2 | 3;
+/** 1 Easy (the lesson's own wording), 2 Medium, 3 Hard, 4 Super hard, 5 Extremely hard. */
+export type Tier = 1 | 2 | 3 | 4 | 5;
 
 /** A 4-choice tier: its prompt and three wrong answers. A true/false tier: just its statement. */
 export type TierVersion = string | readonly [prompt: string, wrong1: string, wrong2: string, wrong3: string];
@@ -193,24 +196,47 @@ export type TierVersion = string | readonly [prompt: string, wrong1: string, wro
 export type TierEntry = {
   /** The question's right answer, as its lesson has it ("True"/"False" for a true/false question). */
   answer: string;
+  /** Level 2, Medium. */
   harder?: TierVersion;
+  /** Level 3, Hard. */
   expert?: TierVersion;
+  /** Level 4, Super hard: a deeper detail of the same source. */
+  superHard?: TierVersion;
+  /** Level 5, Extremely hard: the deepest detail of the same source. */
+  extreme?: TierVersion;
 };
 
 const HARDER_TIERS: Readonly<Record<string, TierEntry>> = { ...FOUNDATION_TIERS, ...FOUNDATION_TIERS_2, ...FOUNDATION_TIERS_3, ...PRAYER_TIERS, ...PRAYER_TIERS_2, ...PRAYER_TIERS_3, ...PRAYER_TIERS_4, ...FASTING_TIERS, ...ZAKAT_TIERS, ...HAJJ_TIERS, ...AQIDAH_TIERS, ...MANNERS_TIERS, ...AKHIRAH_TIERS, ...DUAS_TIERS, ...HADITH_TIERS, ...MARRIAGE_TIERS, ...EID_TIERS, ...RAMADAN_TIERS, ...INTRO_TIERS, ...WOMEN_TIERS, ...SCHOLARS_TIERS, ...PROPHETS_TIERS, ...SAHIHAYN_TIERS, ...READ_ARABIC_TIERS, ...SAHABAH_TIERS, ...TAFSEER_TIERS_1, ...TAFSEER_TIERS_2, ...TAFSEER_TIERS_3, ...TAFSEER_TIERS_4, ...TAFSEER_TIERS_5, ...TAFSEER_TIERS_6, ...TAFSEER_TIERS_7, ...TAFSEER_TIERS_8, ...TAFSEER_TIERS_9, ...TAFSEER_TIERS_10, ...TAFSEER_TIERS_11, ...TAFSEER_TIERS_12, ...TAFSEER_TIERS_13, ...TAFSEER_TIERS_14, ...TAFSEER_TIERS_15, ...TAFSEER_TIERS_16, ...TAFSEER_TIERS_17, ...TAFSEER_TIERS_18, ...TAFSEER_TIERS_19, ...TAFSEER_TIERS_20, ...TAFSEER_TIERS_21, ...TAFSEER_TIERS_22, ...TAFSEER_TIERS_23, ...TAFSEER_TIERS_24, ...TAFSEER_TIERS_25, ...TAFSEER_TIERS_26, ...TAFSEER_TIERS_27, ...TAFSEER_TIERS_28, ...TAFSEER_TIERS_29, ...TAFSEER_TIERS_30, ...TAFSEER_TIERS_31, ...TAFSEER_TIERS_32, ...TAFSEER_TIERS_33, ...TAFSEER_TIERS_34, ...TAFSEER_TIERS_35, ...TAFSEER_TIERS_36, ...TAFSEER_TIERS_37, ...TAFSEER_TIERS_38, ...TAFSEER_TIERS_39, ...TAFSEER_TIERS_40, ...TAFSEER_TIERS_41, ...TAFSEER_TIERS_42, ...TAFSEER_TIERS_43, ...TAFSEER_TIERS_44, ...TAFSEER_TIERS_45, ...TAFSEER_TIERS_46, ...TAFSEER_TIERS_47, ...TAFSEER_TIERS_48, ...TAFSEER_TIERS_49, ...TAFSEER_TIERS_50, ...TAFSEER_TIERS_51, ...TAFSEER_TIERS_52, ...TAFSEER_TIERS_53, ...TAFSEER_TIERS_54, ...TAFSEER_TIERS_55, ...TAFSEER_TIERS_56, ...TAFSEER_TIERS_57, ...TAFSEER_TIERS_58, ...TAFSEER_TIERS_59, ...TAFSEER_TIERS_60, ...TAFSEER_TIERS_61, ...TAFSEER_TIERS_62, ...TAFSEER_TIERS_63, ...TAFSEER_TIERS_64, ...TAFSEER_TIERS_65, ...TAFSEER_TIERS_66, ...TAFSEER_TIERS_67, ...TAFSEER_TIERS_68, ...TAFSEER_TIERS_69, ...TAFSEER_TIERS_70, ...TAFSEER_TIERS_71, ...TAFSEER_TIERS_72, ...TAFSEER_TIERS_73, ...TAFSEER_TIERS_74, ...TAFSEER_TIERS_75, ...TAFSEER_TIERS_76, ...TAFSEER_TIERS_77, ...TAFSEER_TIERS_78, ...TAFSEER_TIERS_79, ...TAFSEER_TIERS_80, ...TAFSEER_TIERS_81, ...TAFSEER_TIERS_82, ...TAFSEER_TIERS_83, ...TAFSEER_TIERS_84, ...TAFSEER_TIERS_85, ...TAFSEER_TIERS_86, ...TAFSEER_TIERS_87, ...TAFSEER_TIERS_88, ...TAFSEER_TIERS_89, ...TAFSEER_TIERS_90, ...TAFSEER_TIERS_91, ...TAFSEER_TIERS_92, ...TAFSEER_TIERS_93, ...TAFSEER_TIERS_94, ...TAFSEER_TIERS_95, ...TAFSEER_TIERS_96, ...TAFSEER_TIERS_97, ...TAFSEER_TIERS_98, ...TAFSEER_TIERS_99, ...TAFSEER_TIERS_100, ...TAFSEER_TIERS_101, ...TAFSEER_TIERS_102, ...TAFSEER_TIERS_103, ...TAFSEER_TIERS_104, ...TAFSEER_TIERS_105, ...TAFSEER_TIERS_106, ...TAFSEER_TIERS_107, ...TAFSEER_TIERS_108, ...TAFSEER_TIERS_109, ...TAFSEER_TIERS_110, ...TAFSEER_TIERS_111, ...TAFSEER_TIERS_112, ...TAFSEER_TIERS_113, ...TAFSEER_TIERS_114, ...TAFSEER_TIERS_115, ...TAFSEER_TIERS_116, ...TAFSEER_TIERS_117, ...TAFSEER_TIERS_118, ...TAFSEER_TIERS_119, ...TAFSEER_TIERS_120, ...TAFSEER_TIERS_121, ...TAFSEER_TIERS_122, ...TAFSEER_TIERS_123, ...TAFSEER_TIERS_124, ...TAFSEER_TIERS_125, ...TAFSEER_TIERS_126, ...TAFSEER_TIERS_127, ...TAFSEER_TIERS_128, ...TAFSEER_TIERS_129, ...TAFSEER_TIERS_130, ...TAFSEER_TIERS_131, ...TAFSEER_TIERS_132, ...TAFSEER_TIERS_133, ...TAFSEER_TIERS_134, ...TAFSEER_TIERS_135, ...TAFSEER_TIERS_136, ...TAFSEER_TIERS_137, ...TAFSEER_TIERS_138, ...TAFSEER_TIERS_139, ...TAFSEER_TIERS_140, ...TAFSEER_TIERS_141, ...TAFSEER_TIERS_142, ...TAFSEER_TIERS_143, ...TAFSEER_TIERS_144, ...TAFSEER_TIERS_145 };
 
-/** Every tiered question, with its Expert version (src/data/tiers/expert) laid over its Harder entry. */
+/**
+ * Every tiered question: its Harder entry, with its Expert (src/data/tiers/expert), Super hard (tiers/super) and
+ * Extremely hard (tiers/extreme) versions laid over it.
+ */
 export const QUESTION_TIERS: Readonly<Record<string, TierEntry>> = (() => {
   const tiers: Record<string, TierEntry> = { ...HARDER_TIERS };
   for (const [prompt, expert] of Object.entries(EXPERT_VERSIONS)) if (tiers[prompt]) tiers[prompt] = { ...tiers[prompt], expert };
+  for (const [prompt, superHard] of Object.entries(SUPER_HARD_VERSIONS)) if (tiers[prompt]) tiers[prompt] = { ...tiers[prompt], superHard };
+  for (const [prompt, extreme] of Object.entries(EXTREME_VERSIONS)) if (tiers[prompt]) tiers[prompt] = { ...tiers[prompt], extreme };
   return tiers;
 })();
 
-/** The tier a challenge level asks: Normal up to 1, Harder at 2 and 3, Expert at 4 and 5. */
+/** The tier a challenge level asks: Easy up to 1, then one tier a level: Medium 2, Hard 3, Super hard 4, Extremely hard 5. */
 export function tierForLevel(level: number): Tier {
-  if (level >= 4) return 3;
-  if (level >= 2) return 2;
-  return 1;
+  if (level >= 5) return 5;
+  if (level <= 1) return 1;
+  return Math.floor(level) as Tier;
+}
+
+/** A question's version at `tier`, or the nearest easier one it has, with the tier it really is. */
+function versionAt(entry: TierEntry, tier: Tier): { version: TierVersion; used: Exclude<Tier, 1> } | undefined {
+  const versions: [Exclude<Tier, 1>, TierVersion | undefined][] = [
+    [5, entry.extreme],
+    [4, entry.superHard],
+    [3, entry.expert],
+    [2, entry.harder]
+  ];
+  for (const [used, version] of versions) if (used <= tier && version) return { version, used };
+  return undefined;
 }
 
 function hash(value: string) {
@@ -233,7 +259,7 @@ export function tierOf(challenge: Challenge): Tier {
 export function hasTiers(challenge: Challenge) {
   const base = baseOf(challenge);
   const entry = QUESTION_TIERS[base.prompt];
-  return Boolean(entry && entry.answer === answerOf(base) && (entry.harder || entry.expert));
+  return Boolean(entry && entry.answer === answerOf(base) && (entry.harder || entry.expert || entry.superHard || entry.extreme));
 }
 
 function answerOf(challenge: Challenge) {
@@ -250,9 +276,9 @@ export function atTier(challenge: Challenge, tier: Tier): Challenge {
   const entry = QUESTION_TIERS[base.prompt];
   const answer = answerOf(base);
   if (!entry || entry.answer !== answer || !answer) return base;
-  const version = tier === 3 ? entry.expert ?? entry.harder : entry.harder;
-  const used: Tier = tier === 3 && entry.expert ? 3 : 2;
-  if (!version) return base;
+  const found = versionAt(entry, tier);
+  if (!found) return base;
+  const { version, used } = found;
 
   if (typeof version === "string") {
     // True/false: the harder statement, the same True/False answer.

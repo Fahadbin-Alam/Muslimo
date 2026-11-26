@@ -1070,7 +1070,6 @@
   "🌙 I finished day {day} of Ramadan on Muslimo!": "🌙 Aku menyelesaikan hari ke-{day} Ramadan di Muslimo!",
   "🎓 I finished {title} on Muslimo!": "🎓 Aku menyelesaikan {title} di Muslimo!",
   "Want it harder?": "Mau lebih sulit?",
-  "Tougher questions from now on. You can change it in Settings.": "Mulai sekarang pertanyaan lebih sulit. Kamu bisa mengubahnya di Pengaturan.",
   "Yes, make it harder": "Ya, buat lebih sulit",
   "Keep it as it is": "Biarkan seperti ini",
   "Search hadith, ayahs and lessons": "Cari hadis, ayat, dan pelajaran",
@@ -1107,5 +1106,14 @@
   "You opened this week's chest. New missions on Monday!": "Kamu sudah membuka peti minggu ini. Misi baru hari Senin!",
   "Open weekly chest": "Buka peti mingguan",
   "Weekly mission done: {mission}": "Misi mingguan selesai: {mission}",
-  "Your weekly chest is ready!": "Peti mingguanmu sudah siap!"
+  "Your weekly chest is ready!": "Peti mingguanmu sudah siap!",
+  "{count} missed in a row": "{count} salah berturut-turut",
+  "Want it easier?": "Mau lebih mudah?",
+  "Easier questions for now. You can change it in Settings.": "Pertanyaan lebih mudah untuk sekarang. Kamu bisa mengubahnya di Pengaturan.",
+  "Yes, make it easier": "Ya, buat lebih mudah",
+  "Next level: {level}": "Level berikutnya: {level}",
+  "Deeper questions on this same topic, with the same sources. You can change it in Settings.": "Pertanyaan lebih dalam tentang topik yang sama, dengan sumber yang sama. Kamu bisa mengubahnya di Pengaturan.",
+  "Medium": "Sedang",
+  "Super hard": "Sangat sulit",
+  "Extremely hard": "Luar biasa sulit"
 }
