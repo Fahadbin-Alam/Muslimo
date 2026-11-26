@@ -109,7 +109,7 @@ export const PRAYER_SAHIHAYN_TIERS: Record<string, TierEntry> = {
     superHard: ["On which day did he ﷺ come into Umm Hani's house and wash?", "The day of Khaybar", "The day of Hunayn", "The day of the Trench"],
     extreme: ["Umm Hani linked the eight light rak'ahs to which great day?", "The day of Tabuk", "The day of Hudaybiyah", "The farewell Hajj"]
   },
-  "It was light, yet he ﷺ did the bowing and prostrations in full.": {
+  "That prayer was light, yet he ﷺ did the bowing and prostrations in full.": {
     answer: "True",
     harder: "Bukhari 1176: the eight rak'ahs were light, yet he ﷺ bowed and prostrated perfectly.",
     expert: "Umm Hani never saw a lighter prayer from him ﷺ, yet his bowing and prostrations were complete.",

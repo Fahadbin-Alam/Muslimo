@@ -57,7 +57,7 @@ const DEEPER: DeepUnit = {
     {
       slug: "a-mat-in-his-home",
       title: "A mat in his home",
-      line: "A man who could not come to the prayer had him ﷺ pray at home.",
+      line: "A man who could not come had him ﷺ pray in his home.",
       facts: ["Told by Anas ibn Malik", "The man was from the Ansar", "One side of the mat was washed"],
       source: hadith("bukhari", "670", "Anas ibn Malik", "Sahih", "Anas said: a man of the Ansar said to the Prophet ﷺ: I cannot pray with you. He was a very heavy man. He made food for the Prophet ﷺ, invited him to his house, spread out a mat for him and washed one side of it with water, and the Prophet ﷺ prayed two rak'ahs on it.", "He was a very fat man and he prepared a meal for the Prophet"),
       difficulty: 3,
@@ -77,7 +77,7 @@ const DEEPER: DeepUnit = {
       questions: [
         { q: "How many rak'ahs did he ﷺ pray in Umm Hani's house?", a: "Eight", wrong: ["Two", "Four", "Twelve"], why: "He ﷺ took a bath and offered eight rak'at, Umm Hani said." },
         { q: "On what day was this?", a: "The day Makkah was opened", wrong: ["The day of Badr", "The day of Arafah", "The first Friday in Madinah"], why: "On the day of the conquest of Makkah, Umm Hani said." },
-        { q: "It was light, yet he ﷺ did the bowing and prostrations in full.", tf: true, why: "He performed bowing and prostrations perfectly, Umm Hani said." }
+        { q: "That prayer was light, yet he ﷺ did the bowing and prostrations in full.", tf: true, why: "He performed bowing and prostrations perfectly, Umm Hani said." }
       ]
     },
     {
