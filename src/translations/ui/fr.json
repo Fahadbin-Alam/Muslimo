@@ -871,7 +871,6 @@
   "Topic trophy, locked": "Trophée du thème, verrouillé",
   "Topics": "Thèmes",
   "Total XP": "XP au total",
-  "Tougher questions from now on. You can change it in Settings.": "Des questions plus dures à partir de maintenant. Tu peux changer cela dans les Réglages.",
   "Travel from Adam to Muhammad and learn the big lessons each prophet left for the Ummah.": "Voyage d'Adam à Muhammad et apprends les grandes leçons que chaque prophète a laissées à la Oumma.",
   "Travel through obligation, rites, sacred stations, and the lessons of pilgrimage.": "Parcours l'obligation, les rites, les lieux sacrés et les leçons du pèlerinage.",
   "True": "Vrai",
@@ -1099,5 +1098,14 @@
   "{total} videos = 1 heart": "{total} vidéos = 1 cœur",
   "{word}, said": "{word}, dit",
   "🌙 I finished day {day} of Ramadan on Muslimo!": "🌙 J'ai fini le jour {day} du Ramadan sur Muslimo !",
-  "🎓 I finished {title} on Muslimo!": "🎓 J'ai fini {title} sur Muslimo !"
+  "🎓 I finished {title} on Muslimo!": "🎓 J'ai fini {title} sur Muslimo !",
+  "{count} missed in a row": "{count} ratées d'affilée",
+  "Want it easier?": "Tu veux plus facile ?",
+  "Easier questions for now. You can change it in Settings.": "Des questions plus faciles pour l'instant. Tu peux changer cela dans les Réglages.",
+  "Yes, make it easier": "Oui, plus facile",
+  "Next level: {level}": "Niveau suivant : {level}",
+  "Deeper questions on this same topic, with the same sources. You can change it in Settings.": "Des questions plus profondes sur le même sujet, avec les mêmes sources. Tu peux changer cela dans les Réglages.",
+  "Medium": "Moyen",
+  "Super hard": "Très difficile",
+  "Extremely hard": "Extrêmement difficile"
 }
