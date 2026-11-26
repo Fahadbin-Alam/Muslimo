@@ -1,7 +1,7 @@
 import type { TierEntry } from "../questionTiers";
 
 /**
- * Five levels for the "Deeper into marriage" lessons (marriageSahihaynUnits.ts): the lesson's own question is Easy, then
+ * Five levels for the "Marriage in more depth" lessons (marriageSahihaynUnits.ts): the lesson's own question is Easy, then
  * Medium (harder), Hard (expert), Super hard (superHard) and Extremely hard (extreme). Every version keeps the
  * question's answer and its hadith; a true/false version keeps the same truth.
  */

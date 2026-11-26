@@ -10,7 +10,7 @@ const DEEPER: DeepUnit = {
   key: "sahihayn-marriage",
   topicId: "marriage",
   branchId: "marriage-sahihayn-deeper",
-  branch: { title: "Deeper into marriage", description: "From Bukhari and Muslim, easy to hard: a bride who served, the mahr, a broken dish, keeping conditions, and staying safe." },
+  branch: { title: "Marriage in more depth", description: "From Bukhari and Muslim, easy to hard: a bride who served, the mahr, a broken dish, keeping conditions, and staying safe." },
   name: "the deeper marriage lessons",
   kind: "story",
   lessonType: "story",
