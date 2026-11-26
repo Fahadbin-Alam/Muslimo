@@ -492,6 +492,7 @@ export const BRANCH_ARABIC: Record<string, ArabicTerm> = {
   "hadith-book-tabir": { ar: "كتاب التعبير", translit: "Kitab at-ta'bir", meaning: "The Book of Dreams" },
   "hadith-book-amal-salah": { ar: "كتاب العمل في الصلاة", translit: "Kitab al-'amal fis-salah", meaning: "The Book of Actions in Prayer" },
   "eid-the-day-of-sacrifice": { ar: "يوم النحر", translit: "Yawm an-nahr", meaning: "The day of sacrifice" },
+  "prayer-sahihayn-deeper": { ar: "الصلاة في الصحيحين", translit: "As-salah fi as-Sahihayn", meaning: "Prayer in Bukhari and Muslim" },
   "prayer-the-sutrah": { ar: "السترة", translit: "As-sutrah", meaning: "Something set in front of one who prays" },
   "foundation-sunnahs-of-the-home": { ar: "سنن البيت", translit: "Sunan al-bayt", meaning: "Sunnahs of the home" },
   "hajj-the-day-of-arafah": { ar: "يوم عرفة", translit: "Yawm Arafah", meaning: "The day of Arafah" },
@@ -977,7 +978,7 @@ const IMPORTED_UNIT_ARABIC: Partial<Record<TopicId, ArabicTerm>> = {
 // The vowelled form of every unit banner word, for a learn card that borrows it. Each one, without its
 // vowel marks, is exactly the banner's spelling (the tests check this).
 const LEARN_FORMS = [
-  "فِي الصَّحِيحَيْنِ",
+  "فِي الصَّحِيحَيْنِ", "الصَّلَاةُ فِي الصَّحِيحَيْنِ",
   "الْمُهَاجِرُونَ", "خُبَيْبٌ وَعَاصِمٌ", "أُسَيْدُ بْنُ حُضَيْرٍ", "ثَابِتُ بْنُ قَيْسٍ", "الْمِقْدَادُ بْنُ الْأَسْوَدِ", "حَكِيمُ بْنُ حِزَامٍ", "سَعِيدُ بْنُ زَيْدٍ", "أَبُو حَنِيفَةَ", "مَالِكُ بْنُ أَنَسٍ", "الشَّافِعِيُّ", "أَحْمَدُ بْنُ حَنْبَلٍ", "ابْنُ تَيْمِيَّةَ", "ابْنُ بَازٍ", "الْأَلْبَانِيُّ",
   "عِلْمُ عُمَرَ", "عِلْمُ عَائِشَةَ", "ابْنُ مَسْعُودٍ", "ابْنُ عَبَّاسٍ", "ابْنُ عُمَرَ",
   "عَلْقَمَةُ بْنُ وَقَّاصٍ", "عُرْوَةُ بْنُ الزُّبَيْرِ", "نَافِعٌ", "عَطَاءُ بْنُ أَبِي رَبَاحٍ", "عَلْقَمَةُ بْنُ قَيْسٍ", "مُحَمَّدُ بْنُ إِبْرَاهِيمَ التَّيْمِيُّ", "ابْنُ شِهَابٍ الزُّهْرِيُّ", "إِبْرَاهِيمُ النَّخَعِيُّ", "يَحْيَى بْنُ سَعِيدٍ الْأَنْصَارِيُّ", "حَمَّادُ بْنُ أَبِي سُلَيْمَانَ",
