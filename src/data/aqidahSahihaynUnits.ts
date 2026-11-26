@@ -20,7 +20,7 @@ const DEEPER: DeepUnit = {
       title: "The best of people",
       line: "He ﷺ named two kinds of people as the best of mankind.",
       facts: ["Told by Abu Sa'id al-Khudri", "A bedouin asked the question", "One keeps people safe from his harm"],
-      source: hadith("bukhari", "6494", "Abu Sa'id al-Khudri", "Sahih", "A bedouin asked: Messenger of Allah, who is the best of people? He ﷺ said: a man who strives in Allah's cause with his life and his wealth, and a man who lives alone in a mountain pass worshipping his Lord and keeping people safe from his harm.", "A man who strives for Allah's Cause with his life and property"),
+      source: hadith("bukhari", "6494", "Abu Sa'id al-Khudri", "Sahih", "A bedouin asked: Messenger of Allah, who is the best of people? He ﷺ said: a man who strives in Allah's cause with his life and his wealth, and a man who lives alone in a mountain pass worshipping his Lord and keeping people safe from his harm.", "A man who strives for Allah’s Cause with his life and property"),
       difficulty: 1,
       questions: [
         { q: "Who asked him ﷺ who the best of people is?", a: "A bedouin", wrong: ["Umar", "A king's messenger", "A rabbi"], why: "A bedouin came to the Prophet ﷺ and asked who is the best of mankind." },
@@ -33,7 +33,7 @@ const DEEPER: DeepUnit = {
       title: "Two acts of unbelief",
       line: "Two things among people are acts of unbelief, he ﷺ said.",
       facts: ["Told by Abu Hurairah", "Both are found among people", "Wailing means crying out loud for the dead"],
-      source: hadith("muslim", "67", "Abu Hurairah", "Sahih", "The Messenger of Allah ﷺ said: two things among people are acts of unbelief: attacking someone's family line, and wailing over the dead.", "slandering one's lineage and lamentation on the dead"),
+      source: hadith("muslim", "67", "Abu Hurairah", "Sahih", "The Messenger of Allah ﷺ said: two things among people are acts of unbelief: attacking someone's family line, and wailing over the dead.", "slandering one’s lineage and lamentation on the dead"),
       difficulty: 2,
       questions: [
         { q: "Which is one of the two, he ﷺ said?", a: "Attacking someone's family line", wrong: ["Eating with the left hand", "Sleeping late", "Walking fast"], why: "Slandering one's lineage is one of the two, he ﷺ said." },
@@ -85,7 +85,7 @@ const DEEPER: DeepUnit = {
       title: "Guarding what is yours",
       line: "One killed guarding his wealth from a thief is a martyr.",
       facts: ["Told by Abu Hurairah", "A man asked about a robber", "The robber who is killed is in the Fire"],
-      source: hadith("muslim", "140", "Abu Hurairah", "Sahih", "A man asked: Messenger of Allah, what if a man comes to take my wealth? He said: do not give it to him. He asked: what if he fights me? He said: then fight him. He asked: what if he kills me? He said: you are a martyr. He asked: what if I kill him? He said: he is in the Fire.", "Don't surrender your possession to him"),
+      source: hadith("muslim", "140", "Abu Hurairah", "Sahih", "A man asked: Messenger of Allah, what if a man comes to take my wealth? He said: do not give it to him. He asked: what if he fights me? He said: then fight him. He asked: what if he kills me? He said: you are a martyr. He asked: what if I kill him? He said: he is in the Fire.", "Don’t surrender your possession to him"),
       difficulty: 4,
       questions: [
         { q: "If a man comes to take your wealth, what did he ﷺ say?", a: "Do not give it to him", wrong: ["Give him half", "Run away", "Give it and complain later"], why: "Don't surrender your possession to him, he ﷺ said." },
