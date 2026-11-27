@@ -61,7 +61,9 @@ describe("imported lessons on the path", () => {
     expect(branches[0]).toBe("prophets-unit-adam");
     const last = branches.indexOf("prophets-final-example");
     expect(last).toBe(prophets.length);
-    expect(branches.slice(last + 1).every((id) => id.startsWith("seerah-"))).toBe(true);
+    // After the Seerah comes only the deeper Bukhari and Muslim unit on the prophets.
+    expect(branches.slice(last + 1).every((id) => id.startsWith("seerah-") || id === "prophets-sahihayn-deeper")).toBe(true);
+    expect(branches[branches.length - 1]).toBe("prophets-sahihayn-deeper");
     // Every prophet from the notes is on the path, in his own unit.
     const nodes = section("prophets").nodes;
     expect(nodes.filter((node) => node.id.startsWith("notes-") && !node.branchId.startsWith("prophets-unit-"))).toEqual([]);
