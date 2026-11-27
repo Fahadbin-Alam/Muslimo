@@ -70,6 +70,31 @@ copyFileSync(join(root, "assets", "icon.png"), join(outDir, "icon.png"));
 copyFileSync(join(root, "assets", "favicon.png"), join(outDir, "favicon.png"));
 writeFileSync(join(outDir, ".nojekyll"), "");
 
+buildSitemap();
+
+// sitemap.xml lists every page Google should find (pages marked noindex are left out), so it can be
+// submitted in Google Search Console. robots.txt points to it too.
+function buildSitemap() {
+  const base = "https://fahadbin-alam.github.io/Muslimo/";
+  const today = new Date().toISOString().slice(0, 10);
+  const pages = readdirSync(outDir)
+    .filter((file) => file.endsWith(".html") && !/^google[0-9a-f]+\.html$/.test(file))
+    .filter((file) => !/<meta name="robots" content="noindex/.test(readFileSync(join(outDir, file), "utf8")))
+    .sort((a, b) => (a === "index.html" ? -1 : b === "index.html" ? 1 : a.localeCompare(b)));
+  const urls = pages
+    .map((file) => {
+      const loc = file === "index.html" ? base : base + file;
+      const priority = file === "index.html" ? "1.0" : "0.5";
+      return `  <url><loc>${loc}</loc><lastmod>${today}</lastmod><priority>${priority}</priority></url>`;
+    })
+    .join("\n");
+  writeFileSync(
+    join(outDir, "sitemap.xml"),
+    `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`
+  );
+  writeFileSync(join(outDir, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${base}sitemap.xml\n`);
+}
+
 // Short tracking links from site/links.json: go/<name>/index.html sends the visitor to the store at once
 // (Google Play with utm tags, so Play Console shows installs per source) and, without waiting, asks the server
 // to count one click. iPhones go to the App Store link once it is filled in, else the home page's "coming soon".
