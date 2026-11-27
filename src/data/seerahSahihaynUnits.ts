@@ -87,7 +87,7 @@ const DEEPER: DeepUnit = {
       source: hadith("muslim", "1796a", "Jundub ibn Sufyan", "Sahih", "Jundub said: a finger of the Messenger of Allah ﷺ was wounded in one of the encounters, and he said: you are only a finger that has bled, and what you met was in the cause of Allah.", "Thou art just a little finger which has bled"),
       difficulty: 4,
       questions: [
-        { q: "What was wounded, in this hadith?", a: "His finger ﷺ", wrong: ["His foot", "His horse", "His shield"], why: "A finger of the Messenger of Allah ﷺ was wounded in one of the encounters, Jundub said." },
+        { q: "What of his ﷺ was wounded, Jundub said?", a: "His finger ﷺ", wrong: ["His foot", "His horse", "His shield"], why: "A finger of the Messenger of Allah ﷺ was wounded in one of the encounters, Jundub said." },
         { q: "What did he ﷺ say to the bleeding finger?", a: "You are just a finger that bled", wrong: ["Why did you bleed?", "I will hide you", "You are weak"], why: "Thou art just a little finger which has bled, he ﷺ said." },
         { q: "He ﷺ said what it met was in the cause of Allah.", tf: true, why: "What thou hast experienced is in the cause of Allah, he ﷺ said." }
       ]

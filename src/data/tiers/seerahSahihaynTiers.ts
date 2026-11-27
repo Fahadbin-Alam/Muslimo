@@ -117,7 +117,7 @@ export const SEERAH_SAHIHAYN_TIERS: Record<string, TierEntry> = {
     extreme: "In Muslim 1813, missing Badr and Uhud was followed by never missing another."
   },
   // Sahih Muslim 1796a.
-  "What was wounded, in this hadith?": {
+  "What of his ﷺ was wounded, Jundub said?": {
     answer: "His finger ﷺ",
     harder: ["Muslim 1796a: what of his ﷺ was wounded in an encounter?", "His foot", "His horse", "His shield"],
     expert: ["Jundub ibn Sufyan: what bled, in one of the encounters?", "His forehead", "His camel", "His hand-guard"],
