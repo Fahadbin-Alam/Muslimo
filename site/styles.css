@@ -267,6 +267,13 @@ nav.links a[aria-current="page"] {
   margin: 0 0 28px;
 }
 
+.hero .intro {
+  color: var(--ink-soft);
+  font-size: 18px;
+  line-height: 1.5;
+  margin: -12px 0 24px;
+}
+
 .hero .actions {
   display: grid;
   gap: 14px;
