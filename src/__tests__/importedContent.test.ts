@@ -34,9 +34,9 @@ describe("imported lessons on the path", () => {
     expect(branches.slice(firstImported).every((id) => id.startsWith("notes-"))).toBe(true);
   });
 
-  it("teaches Great Women in two units: the Mothers of the Believers, then the Women of Islam", () => {
+  it("teaches Great Women in units: the Mothers of the Believers, then the Women of Islam, then the deeper Bukhari and Muslim unit", () => {
     const women = section("women_of_the_book");
-    expect(women.branches.map((branch) => branch.title)).toEqual(["Mothers of the Believers", "Women of Islam"]);
+    expect(women.branches.map((branch) => branch.title)).toEqual(["Mothers of the Believers", "Women of Islam", "Great women in more depth"]);
     const titles = (unit: string) => women.nodes.filter((node) => node.branchId === unit).map((node) => node.title);
     // Each wife's lessons are together, in the order the Prophet ﷺ married them.
     const wives = ["Khadijah", "Sawdah", "Aishah", "Hafsah", "Zaynab bint Khuzaymah", "Umm Salamah", "Zaynab bint Jahsh", "Juwayriyah bint al-Harith", "Umm Habibah", "Safiyyah bint Huyayy", "Maymunah bint al-Harith"];
