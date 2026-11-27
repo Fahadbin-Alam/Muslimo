@@ -43,7 +43,7 @@ const DEEPER: DeepUnit = {
     {
       slug: "hala-at-the-door",
       title: "Hala at the door",
-      line: "Hala asked to come in just as Khadijah used to.",
+      line: "Hala asked to come in, just like Khadijah did.",
       facts: ["Told by Aishah", "Hala bint Khuwaylid", "Khadijah's sister"],
       source: hadith("muslim", "2437", "Aishah", "Sahih", "Hala bint Khuwaylid, the sister of Khadijah, asked permission to come in to the Messenger of Allah ﷺ. He was reminded of how Khadijah used to ask permission, was moved, and said: O Allah, it is Hala, daughter of Khuwaylid.", "O Allah, it is Hala, daughter of Khuwailid"),
       difficulty: 3,

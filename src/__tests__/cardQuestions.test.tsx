@@ -195,6 +195,7 @@ const REVIEWED_THINGS: Record<string, CardKind> = {
   "What did the Prophet's ﷺ homes have that night?": "water",
   "What did the queen think the palace floor was?": "water",
   "What did they carry in a basket?": "fish",
+  "What did they soak in the skin?": "dates",
   "What did Umar give in Allah's cause?": "horse",
   "What do the winds raise, in 35:9?": "cloud",
   "What does Al-Hadid mean?": "iron",
@@ -364,8 +365,8 @@ describe("which questions are asked on picture cards", () => {
     // 200 since batch 82: a new lesson in the Book of Medicine moved its final quiz off "What should we cool a fever
     // with?" (the quiz takes another question from each of the last eight lessons whenever the unit grows). 201 since
     // batch 85: the seventh lesson of "The manners of giving" brings "What did Umar give in Allah's cause?" into that
-    // unit's final quiz too.
-    expect(places).toEqual({ animals: 41, things: 201 });
+    // unit's final quiz too. 202 since the deeper Great Women unit: Sawdah's waterskin asks what they soaked in it.
+    expect(places).toEqual({ animals: 41, things: 202 });
     // The apes question stays as tiles: people were turned into apes, and a drawing could make light of it.
     for (const prompt of LEFT_AS_TILES) {
       const found = allChallenges().filter(({ challenge }) => challenge.prompt === prompt);
