@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Anfal ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a
 // lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one
@@ -143,7 +143,7 @@ const ANFAL_ONE: DeepUnit = {
       questions: [
         { q: "What did a group of believers dislike, in 8:5?", a: "Going out to meet the enemy", wrong: ["Praying", "Giving charity", "Staying home"], why: "Wa inna faraqan minal-mu'minina lakarihun." },
         { q: "What did the event carry, per Ibn Kathir?", a: "Guidance, light, victory, triumph", wrong: ["Only loss", "Only wealth", "Only fear"], why: "This incident carried guidance, light, victory and triumph." },
-        { q: "Ibn Kathir links this to 2:216: you may dislike what is good for you.", tf: true, why: "It may be that you dislike a thing which is good for you." }
+        { q: "Ibn Kathir links this to 2:216: you may dislike what is good for you.", tf: true, why: "It may be that you dislike a thing which is good for you.", source: kathir(8, 5, "It may be that you dislike a thing which is good for you.", "dislike a thing which is good") }
       ]
     },
     {
@@ -171,7 +171,7 @@ const ANFAL_ONE: DeepUnit = {
       questions: [
         { q: "What did the Prophet ﷺ ask for at Badr, in Bukhari 3953?", a: "Allah's covenant and promise", wrong: ["Gold", "More horses", "A truce"], why: "I appeal to You to fulfill Your Covenant and Promise." },
         { q: "Who took his hand and said: this is enough?", a: "Abu Bakr", wrong: ["Umar", "Ali", "Uthman"], why: "Then Abu Bakr took hold of him by the hand." },
-        { q: "In 8:9, Allah answered their call for help.", tf: true, why: "Idh tastaghithuna rabbakum fastajaba lakum." }
+        { q: "In 8:9, Allah answered their call for help.", tf: true, why: "Idh tastaghithuna rabbakum fastajaba lakum.", source: kathir(8, 9, "Idh tastaghithuna rabbakum fastajaba lakum.", "help of your Lord, and He answered") }
       ]
     },
     {
@@ -227,7 +227,7 @@ const ANFAL_ONE: DeepUnit = {
       questions: [
         { q: "What covered the believers before Badr, in 8:11?", a: "A calm slumber", wrong: ["A dust storm", "Darkness", "Snow"], why: "Idh yughash-shikumun-nu'asa amanatan minh." },
         { q: "What did the slumber take away, per Ibn Kathir?", a: "Their fear", wrong: ["Their faith", "Their food", "Their weapons"], why: "As security from the fear they suffered from." },
-        { q: "Something similar happened at Uhud, per 3:154.", tf: true, why: "Slumber overtook a party of you." }
+        { q: "Something similar happened at Uhud, per 3:154.", tf: true, why: "Slumber overtook a party of you.", source: kathir(8, 11, "Slumber overtook a party of you.", "Slumber overtook a party") }
       ]
     },
     {
@@ -532,7 +532,7 @@ const ANFAL_TWO: DeepUnit = {
       source: hadith("bukhari", "6921", "Abdullah ibn Mas'ud", "Sahih", "A man asked if they would be punished for what they did before Islam. The Prophet ﷺ said: whoever does good in Islam will not be punished for what he did before it.", "Whoever does good in Islam will not be punished for what he did in the"),
       difficulty: 5,
       questions: [
-        { q: "What happens if they stop, in 8:38?", a: "Their past is forgiven", wrong: ["They are fined", "Nothing changes", "They must leave"], why: "In yantahu yughfar lahum ma qad salaf." },
+        { q: "What happens if they stop, in 8:38?", a: "Their past is forgiven", wrong: ["They are fined", "Nothing changes", "They must leave"], why: "In yantahu yughfar lahum ma qad salaf.", source: kathir(8, 38, "In yantahu yughfar lahum ma qad salaf.", "") },
         { q: "Who is not punished for his past, in Bukhari 6921?", a: "Whoever does good in Islam", wrong: ["Whoever is rich", "Whoever is old", "Everyone, no matter what"], why: "Whoever does good in Islam will not be punished for what he did." },
         { q: "Ibn Kathir also quotes: Islam erases what came before it.", tf: true, why: "Islam erases what occurred before it." }
       ]
@@ -812,8 +812,8 @@ const ANFAL_THREE: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "Can a Muslim inherit from a disbeliever, in Bukhari 6764?", a: "No", wrong: ["Yes, always", "Only land", "Only money"], why: "A Muslim cannot be the heir of a disbeliever." },
-        { q: "What are the disbelievers to one another, in 8:73?", a: "Allies", wrong: ["Enemies only", "Strangers", "Servants"], why: "Wal-ladhina kafaru ba'duhum awliya'u ba'd." },
-        { q: "What follows if believers do not support each other, in 8:73?", a: "Fitnah and great corruption", wrong: ["Peace", "Wealth", "Rain"], why: "Takun fitnatun fil-ardi wa fasadun kabir." }
+        { q: "What are the disbelievers to one another, in 8:73?", a: "Allies", wrong: ["Enemies only", "Strangers", "Servants"], why: "Wal-ladhina kafaru ba'duhum awliya'u ba'd.", source: kathir(8, 73, "Wal-ladhina kafaru ba'duhum awliya'u ba'd.", "allies of one another") },
+        { q: "What follows if believers do not support each other, in 8:73?", a: "Fitnah and great corruption", wrong: ["Peace", "Wealth", "Rain"], why: "Takun fitnatun fil-ardi wa fasadun kabir.", source: kathir(8, 73, "Takun fitnatun fil-ardi wa fasadun kabir.", "Fitnah on the earth, and great corruption") }
       ]
     },
     {

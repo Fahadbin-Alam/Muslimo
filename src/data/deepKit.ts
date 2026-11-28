@@ -81,6 +81,25 @@ export function quran(surah: number, ayahNumber: number, summary: string): Lesso
 }
 
 /**
+ * Tafsir Ibn Kathir on an ayah, on quran.com (the abridged English). `highlight` is his exact words on that page, so
+ * the link opens with them lit up ("" opens it at the top).
+ */
+export function kathir(surah: number, ayahNumber: number, summary: string, highlight: string): LessonSource {
+  return {
+    id: `deep_ibn_kathir_${surah}_${ayahNumber}`,
+    site: "Quran.com",
+    category: "tafsir",
+    title: `Tafsir Ibn Kathir on Quran ${surah}:${ayahNumber}`,
+    url: `https://quran.com/${surah}:${ayahNumber}/tafsirs/en-tafisr-ibn-kathir`,
+    reference: `Tafsir Ibn Kathir ${surah}:${ayahNumber}`,
+    from: "Tafsir Ibn Kathir (abridged English), on Quran.com",
+    grade: "Tafsir",
+    summary,
+    highlight
+  };
+}
+
+/**
  * Tafsir as-Sa'di on an ayah, on quran.com (Arabic). `summary` says his point in plain English; `highlight` is his exact
  * Arabic words on that page, so the link opens with them lit up.
  */

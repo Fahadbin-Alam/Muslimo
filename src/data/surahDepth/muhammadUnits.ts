@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Muhammad ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -393,7 +393,7 @@ const MUHAMMAD_TWO: DeepUnit = {
       questions: [
         { q: "What does Allah know, in 47:19?", a: "Your moving about and resting", wrong: ["Only your words", "Only big deeds", "Nothing"], why: "Allah knows well your moving about, and your place of rest." },
         { q: "What does place of rest mean, per Ibn Kathir?", a: "Where you settle at night", wrong: ["Your grave only", "Your job", "Your car"], why: "And where you settle at night." },
-        { tf: true, q: "Ibn Kathir links it to 6:60, about Allah taking souls by night.", why: "It is He Who takes your souls by night and knows all that you do by day (6:60)." }
+        { tf: true, q: "Ibn Kathir links it to 6:60, about Allah taking souls by night.", why: "It is He Who takes your souls by night and knows all that you do by day (6:60).", source: kathir(47, 19, "It is He Who takes your souls by night and knows all that you do by day (6:60).", "takes your souls by night and knows") }
       ]
     },
     {

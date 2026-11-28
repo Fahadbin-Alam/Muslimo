@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ash-Shura ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -226,7 +226,7 @@ const SHURA_ONE: DeepUnit = {
       questions: [
         { q: "What were we told, in 42:13?", a: "Establish religion and make no divisions", wrong: ["Build towers", "Leave prayer", "Follow customs"], why: "You should establish religion and make no divisions in it." },
         { q: "What was hard for the idolaters, per Ibn Kathir?", a: "The call to Tawhid", wrong: ["Trade", "Travel", "Poetry"], why: "Ibn Kathir says they hate the call to Tawhid." },
-        { q: "What did all Messengers bring, per 21:25?", a: "Worship Allah Alone", wrong: ["New idols", "Only rules of trade", "Only stories"], why: "None has the right to be worshipped but I, so worship Me (21:25)." }
+        { q: "What did all Messengers bring, per 21:25?", a: "Worship Allah Alone", wrong: ["New idols", "Only rules of trade", "Only stories"], why: "None has the right to be worshipped but I, so worship Me (21:25).", source: kathir(42, 13, "None has the right to be worshipped but I, so worship Me (21:25).", "None has the right to be worshipped but I, so worship") }
       ]
     },
     {
@@ -322,7 +322,7 @@ const SHURA_ONE: DeepUnit = {
       source: hadith("bukhari", "3688", "Anas ibn Malik", "Sahih", "A man asked when the Hour will be. The Prophet ﷺ asked what he had prepared; he said love of Allah and His Messenger. He said: You will be with those whom you love.", "You will be with those whom you love"),
       difficulty: 3,
       questions: [
-        { q: "How do believers feel about the Hour, in 42:18?", a: "Fearful, knowing it is true", wrong: ["Careless", "Mocking", "Unsure"], why: "Those who believe are fearful of it, and know that it is the very truth." },
+        { q: "How do believers feel about the Hour, in 42:18?", a: "Fearful, knowing it is true", wrong: ["Careless", "Mocking", "Unsure"], why: "Those who believe are fearful of it, and know that it is the very truth.", source: kathir(42, 18, "Those who believe are fearful of it, and know that it is the very truth.", "believe are fearful of it and know that it is the truth") },
         { q: "What did the Prophet ﷺ ask the man, per Bukhari 3688?", a: "What have you prepared for it?", wrong: ["Where do you live?", "How old are you?", "Who is your father?"], why: "The Prophet ﷺ said: What have you prepared for it?" },
         { q: "What was the good news, per Bukhari 3688?", a: "You will be with those you love", wrong: ["You will be rich", "You will live long", "You will be king"], why: "You will be with those whom you love." }
       ]
@@ -517,8 +517,8 @@ const SHURA_TWO: DeepUnit = {
       source: hadith("muslim", "2572e", "Aishah", "Sahih", "The Prophet ﷺ said no trouble comes to a believer, even the pricking of a thorn, but it wipes away some of his sins.", "even if it is the pricking of a thorn"),
       difficulty: 3,
       questions: [
-        { q: "Why does misfortune befall us, in 42:30?", a: "Because of what our hands earned", wrong: ["By chance", "Because of stars", "For no reason"], why: "And whatever of misfortune befalls you, it is because of what your hands have earned." },
-        { q: "What does Allah do with much, in 42:30?", a: "He pardons it", wrong: ["He doubles it", "He forgets it", "He writes it twice"], why: "And He pardons much." },
+        { q: "Why does misfortune befall us, in 42:30?", a: "Because of what our hands earned", wrong: ["By chance", "Because of stars", "For no reason"], why: "And whatever of misfortune befalls you, it is because of what your hands have earned.", source: kathir(42, 30, "And whatever of misfortune befalls you, it is because of what your hands have earned.", "whatever of misfortune befalls you, it is because of what your hands have earned") },
+        { q: "What does Allah do with much, in 42:30?", a: "He pardons it", wrong: ["He doubles it", "He forgets it", "He writes it twice"], why: "And He pardons much.", source: kathir(42, 30, "And He pardons much.", "") },
         { q: "What does even a thorn do, per Muslim 2572?", a: "Wipes away some sins", wrong: ["Nothing", "Adds sins", "Brings bad luck"], why: "No trouble comes to a believer, even the pricking of a thorn, but it obliterates from his sins." }
       ]
     },
@@ -559,8 +559,8 @@ const SHURA_TWO: DeepUnit = {
       source: hadith("muslim", "2999", "Suhaib", "Sahih", "The Prophet ﷺ said the believer's affair is all good: he thanks Allah in joy and is patient in trouble, and both are good for him.", "there is good in every affair of his"),
       difficulty: 3,
       questions: [
-        { q: "What happens if Allah stops the wind, in 42:33?", a: "Ships stand still", wrong: ["Ships fly", "Ships sink at once", "Ships go faster"], why: "If He wills, He causes the wind to cease, then they would become motionless." },
-        { q: "For whom are these signs, in 42:33?", a: "Everyone patient and grateful", wrong: ["Only sailors", "Only kings", "Only scholars"], why: "Verily, in this are signs for everyone patient and grateful." },
+        { q: "What happens if Allah stops the wind, in 42:33?", a: "Ships stand still", wrong: ["Ships fly", "Ships sink at once", "Ships go faster"], why: "If He wills, He causes the wind to cease, then they would become motionless.", source: kathir(42, 33, "If He wills, He causes the wind to cease, then they would become motionless.", "He wills, He causes the wind to cease") },
+        { q: "For whom are these signs, in 42:33?", a: "Everyone patient and grateful", wrong: ["Only sailors", "Only kings", "Only scholars"], why: "Verily, in this are signs for everyone patient and grateful.", source: kathir(42, 33, "Verily, in this are signs for everyone patient and grateful.", "this are signs for everyone patient") },
         { q: "What is the believer's affair, per Muslim 2999?", a: "Good in every case", wrong: ["Always hard", "Always easy", "Bad in hardship"], why: "There is good in every affair of his." }
       ]
     },
@@ -628,9 +628,9 @@ const SHURA_THREE: DeepUnit = {
       source: hadith("muslim", "2327", "Aishah", "Sahih", "Aishah said the Prophet ﷺ never took revenge on anyone for a personal wrong, unless something Allah made sacred was violated.", "never took revenge from anyone because of his personal grievance"),
       difficulty: 2,
       questions: [
-        { q: "What do believers do when angry, in 42:37?", a: "They forgive", wrong: ["They shout", "They take revenge", "They leave"], why: "And when they are angry, they forgive." },
+        { q: "What do believers do when angry, in 42:37?", a: "They forgive", wrong: ["They shout", "They take revenge", "They leave"], why: "And when they are angry, they forgive.", source: kathir(42, 37, "And when they are angry, they forgive.", "when they are angry, they forgive") },
         { q: "What did the Prophet ﷺ never do, per Muslim 2327?", a: "Take revenge for himself", wrong: ["Pray at night", "Give charity", "Smile"], why: "He never took revenge from anyone because of his personal grievance." },
-        { q: "What do believers shun, in 42:37?", a: "The greater sins and Al-Fawahish", wrong: ["Good deeds", "Prayer", "Charity"], why: "And those who shun the greater sins, and Al-Fawahish." }
+        { q: "What do believers shun, in 42:37?", a: "The greater sins and Al-Fawahish", wrong: ["Good deeds", "Prayer", "Charity"], why: "And those who shun the greater sins, and Al-Fawahish.", source: kathir(42, 37, "And those who shun the greater sins, and Al-Fawahish.", "shun the greater sins, and Al-Fawahish") }
       ]
     },
     {
@@ -698,7 +698,7 @@ const SHURA_THREE: DeepUnit = {
       source: hadith("muslim", "2588", "Abu Hurairah", "Sahih", "The Prophet ﷺ said charity does not decrease wealth, and no one forgives another but Allah increases his honor.", "no one forgives another except that Allah increases his honor"),
       difficulty: 3,
       questions: [
-        { q: "What is the recompense for an evil, in 42:40?", a: "An evil like it", wrong: ["Ten times more", "Nothing ever", "A gift"], why: "The recompense for an evil is an evil like thereof." },
+        { q: "What is the recompense for an evil, in 42:40?", a: "An evil like it", wrong: ["Ten times more", "Nothing ever", "A gift"], why: "The recompense for an evil is an evil like thereof.", source: kathir(42, 40, "The recompense for an evil is an evil like thereof.", "recompense for an evil is an evil like thereof") },
         { q: "Where is the reward of one who forgives, in 42:40?", a: "With Allah", wrong: ["With the judge", "With the crowd", "Nowhere"], why: "But whoever forgives and makes reconciliation, his reward is with Allah." },
         { q: "What does Allah increase for one who forgives, per Muslim 2588?", a: "His honor", wrong: ["His debts", "His worries", "Nothing"], why: "No one forgives another except that Allah increases his honor." }
       ]
@@ -740,7 +740,7 @@ const SHURA_THREE: DeepUnit = {
       source: hadith("muslim", "2587", "Abu Hurairah", "Sahih", "The Prophet ﷺ said when two people insult each other, the sin is on the one who started, as long as the wronged one does not go too far.", "it would be the first one who would be the sinner"),
       difficulty: 3,
       questions: [
-        { q: "Against whom is the way of blame, in 42:42?", a: "Those who oppress people", wrong: ["The wronged", "The patient", "The forgiving"], why: "The way is only against those who oppress men and rebel in the earth without justification." },
+        { q: "Against whom is the way of blame, in 42:42?", a: "Those who oppress people", wrong: ["The wronged", "The patient", "The forgiving"], why: "The way is only against those who oppress men and rebel in the earth without justification.", source: kathir(42, 42, "The way is only against those who oppress men and rebel in the earth without justification.", "against those who oppress men and rebel in the earth without justification") },
         { q: "Who is the sinner, per Muslim 2587?", a: "The one who started", wrong: ["The one who answered", "Both equally always", "Neither"], why: "It would be the first one who would be the sinner." },
         { q: "When is the wronged one also to blame, per Muslim 2587?", a: "When he goes past the limit", wrong: ["Never", "Always", "When he is quiet"], why: "So long as the oppressed does not transgress the limits." }
       ]

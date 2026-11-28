@@ -1,5 +1,5 @@
 import type { LessonSource } from "../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "./deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "./deepKit";
 
 // Surah Al-Baqarah ayah by ayah: after the unit's short circles and its passages, every ayah or small group of
 // ayahs gets a lesson of its own, so a learner walks through the whole surah slowly. Each card is one ayah's
@@ -1007,7 +1007,7 @@ const BAQARAH_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What were they waiting for, before 2:89?", a: "A coming prophet", wrong: ["A new king", "Rain", "A war"], why: "They knew his description." },
-        { q: "Why did they reject him, in 2:90?", a: "Envy", wrong: ["They never heard of him", "He was unkind", "He asked for money"], why: "Envy that Allah chose him." },
+        { q: "Why did they reject him, in 2:90?", a: "Envy", wrong: ["They never heard of him", "He was unkind", "He asked for money"], why: "Envy that Allah chose him.", source: kathir(2, 90, "Envy that Allah chose him.", "") },
         { q: "Envy can stop a person from accepting the truth.", tf: true, why: "Quran 2:90." }
       ]
     },
@@ -1021,7 +1021,7 @@ const BAQARAH_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What did they say in 2:93?", a: "We hear and we disobey", wrong: ["We hear and we obey", "We are sorry", "Teach us more"], why: "Sami'na wa 'asayna." },
-        { q: "What did the believers say instead, in 2:285?", a: "We hear and we obey", wrong: ["We hear and we disobey", "We will think", "Not now"], why: "Sami'na wa ata'na." },
+        { q: "What did the believers say instead, in 2:285?", a: "We hear and we obey", wrong: ["We hear and we disobey", "We will think", "Not now"], why: "Sami'na wa ata'na.", source: kathir(2, 285, "Sami'na wa ata'na.", "hear and we obey") },
         { q: "What soaked into their hearts?", a: "Love of the calf", wrong: ["Love of Musa", "Love of learning", "Love of charity"], why: "Quran 2:93." }
       ]
     },
@@ -1202,7 +1202,7 @@ const BAQARAH_TWO: DeepUnit = {
       source: hadith("bukhari", "402", "Umar ibn al-Khattab", "Sahih", "My Lord agreed with me in three things. I said: O Messenger of Allah ﷺ, I wish we took the Station of Ibrahim as a place of prayer; then came the ayah: take the Station of Ibrahim as a place of prayer."),
       difficulty: 3,
       questions: [
-        { q: "What did Allah make the House, in 2:125?", a: "A place of return and safety", wrong: ["A market", "A palace", "A fort for war"], why: "Mathabatan lin-nasi wa amna." },
+        { q: "What did Allah make the House, in 2:125?", a: "A place of return and safety", wrong: ["A market", "A palace", "A fort for war"], why: "Mathabatan lin-nasi wa amna.", source: kathir(2, 125, "Mathabatan lin-nasi wa amna.", "a place of return") },
         { q: "Whose wish matched the ayah about Maqam Ibrahim?", a: "Umar", wrong: ["Abu Jahl", "Abu Lahab", "Qarun"], why: "Bukhari 402." },
         { q: "Who were told to purify the House for worshippers?", a: "Ibrahim and Isma'il", wrong: ["Musa and Harun", "Dawud and Sulayman", "Yunus and Ayyub"], why: "Quran 2:125." }
       ]
@@ -1861,7 +1861,7 @@ const BAQARAH_THREE: DeepUnit = {
       questions: [
         { q: "What does 2:195 tell us to do with wealth?", a: "Spend it in Allah's way", wrong: ["Hide it all", "Waste it", "Burn it"], why: "Wa anfiqu fi sabilillah." },
         { q: "What was the 'ruin', says Abu Ayyub?", a: "Clinging to wealth and leaving the effort", wrong: ["Spending too much", "Praying too much", "Fasting too much"], why: "Abu Dawud 2512." },
-        { q: "How does 2:195 end?", a: "Do good: Allah loves the good-doers", wrong: ["Be rich", "Be loud", "Be first"], why: "Innallaha yuhibbul-muhsinin." }
+        { q: "How does 2:195 end?", a: "Do good: Allah loves the good-doers", wrong: ["Be rich", "Be loud", "Be first"], why: "Innallaha yuhibbul-muhsinin.", source: kathir(2, 195, "Innallaha yuhibbul-muhsinin.", "loves the doers of good") }
       ]
     },
     {
@@ -2085,7 +2085,7 @@ const BAQARAH_THREE: DeepUnit = {
       questions: [
         { q: "What does 2:238 command?", a: "Guard the prayers", wrong: ["Skip some prayers", "Pray once a week", "Pray only in Ramadan"], why: "Hafizu 'alas-salawat." },
         { q: "Which prayer did he ﷺ call the middle prayer?", a: "Asr", wrong: ["Fajr only", "A night prayer", "Eid prayer"], why: "Muslim 628." },
-        { q: "How should we stand in prayer, in 2:238?", a: "Humbly, devoted to Allah", wrong: ["Rushing", "Talking", "Looking around"], why: "Wa qumu lillahi qanitin." }
+        { q: "How should we stand in prayer, in 2:238?", a: "Humbly, devoted to Allah", wrong: ["Rushing", "Talking", "Looking around"], why: "Wa qumu lillahi qanitin.", source: kathir(2, 238, "Wa qumu lillahi qanitin.", "prayer and stand before") }
       ]
     },
     {
@@ -2406,8 +2406,8 @@ const BAQARAH_THREE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What did Allah allow and forbid, in 2:275?", a: "Allowed trade, forbade riba", wrong: ["Allowed riba, forbade trade", "Forbade both", "Allowed both"], why: "Wa ahallallahul-bay'a wa harramar-riba." },
-        { q: "What does Allah make grow, in 2:276?", a: "Charity", wrong: ["Riba", "Greed", "Debt"], why: "Wa yurbis-sadaqat." },
-        { q: "What does Allah wipe out, in 2:276?", a: "Riba", wrong: ["Charity", "Trade", "Savings"], why: "Yamhaqullahur-riba." }
+        { q: "What does Allah make grow, in 2:276?", a: "Charity", wrong: ["Riba", "Greed", "Debt"], why: "Wa yurbis-sadaqat.", source: kathir(2, 276, "Wa yurbis-sadaqat.", "") },
+        { q: "What does Allah wipe out, in 2:276?", a: "Riba", wrong: ["Charity", "Trade", "Savings"], why: "Yamhaqullahur-riba.", source: kathir(2, 276, "Yamhaqullahur-riba.", "") }
       ]
     },
     {
@@ -2461,7 +2461,7 @@ const BAQARAH_THREE: DeepUnit = {
       source: hadith("bukhari", "5009", "Abu Mas'ud", "Sahih", "The Prophet ﷺ said: whoever recites the last two ayahs of Surat al-Baqarah at night, they will be enough for him."),
       difficulty: 1,
       questions: [
-        { q: "What do the believers say, in 2:285?", a: "We hear and we obey", wrong: ["We hear and disobey", "Maybe later", "Not now"], why: "Sami'na wa ata'na." },
+        { q: "What do the believers say, in 2:285?", a: "We hear and we obey", wrong: ["We hear and disobey", "Maybe later", "Not now"], why: "Sami'na wa ata'na.", source: kathir(2, 285, "Sami'na wa ata'na.", "hear and we obey") },
         { q: "What do the last two ayahs of Al-Baqarah give at night?", a: "They are enough for you", wrong: ["Wealth by morning", "Good dreams", "A long night's sleep"], why: "Bukhari 5009." },
         { q: "Do the believers separate between Allah's messengers?", a: "No", wrong: ["Yes", "Sometimes", "Only two"], why: "La nufarriqu bayna ahadin min rusulih." }
       ]

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Ma'idah ayah by ayah, the way Ali 'Imran and An-Nisa are taught: every ayah or small group of ayahs gets a
 // lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one
@@ -309,8 +309,8 @@ const MAIDAH_ONE: DeepUnit = {
       source: hadith("bukhari", "3335", "Abdullah ibn Mas'ud", "Sahih", "The Prophet ﷺ said: whenever a life is taken unjustly, the first son of Adam carries a share of its burden, because he was the first to start that way.", "for he was the first to start the tradition"),
       difficulty: 4,
       questions: [
-        { q: "What did Allah send, in 5:31?", a: "A crow scratching the ground", wrong: ["An angel with a book", "A storm", "A lion"], why: "Fa-ba'athallahu ghuraban yabhathu fil-ard." },
-        { q: "What did the brother feel at the end of 5:31?", a: "Regret", wrong: ["Joy", "Pride", "Nothing"], why: "Fa-asbaha minan-nadimin." },
+        { q: "What did Allah send, in 5:31?", a: "A crow scratching the ground", wrong: ["An angel with a book", "A storm", "A lion"], why: "Fa-ba'athallahu ghuraban yabhathu fil-ard.", source: kathir(5, 31, "Fa-ba'athallahu ghuraban yabhathu fil-ard.", "") },
+        { q: "What did the brother feel at the end of 5:31?", a: "Regret", wrong: ["Joy", "Pride", "Nothing"], why: "Fa-asbaha minan-nadimin.", source: kathir(5, 31, "Fa-asbaha minan-nadimin.", "") },
         { q: "Why does the first son of Adam share every later unjust taking of life, in Bukhari 3335?", a: "He started that evil way", wrong: ["He was the oldest", "He was rich", "He was a king"], why: "Narrated by Abdullah ibn Mas'ud." }
       ]
     },
@@ -602,7 +602,7 @@ const MAIDAH_TWO: DeepUnit = {
       source: hadith("bukhari", "4620", "Anas ibn Malik", "Sahih", "Anas was pouring drinks at Abu Talhah's house when the call came that wine was forbidden. Abu Talhah told him to pour it out, and it flowed through the streets of Madinah.", "Then it (alcoholic drinks) was seen flowing through the streets of Medina"),
       difficulty: 4,
       questions: [
-        { q: "What does Shaytan want, in 5:91?", a: "Hatred between you and to stop your prayer", wrong: ["Your health", "Your peace", "Your success"], why: "Innama yuridush-shaytanu an yuqi'a baynakumul-'adawah." },
+        { q: "What does Shaytan want, in 5:91?", a: "Hatred between you and to stop your prayer", wrong: ["Your health", "Your peace", "Your success"], why: "Innama yuridush-shaytanu an yuqi'a baynakumul-'adawah.", source: kathir(5, 91, "Innama yuridush-shaytanu an yuqi'a baynakumul-'adawah.", "Shaytan wants only to excite enmity and hatred between") },
         { q: "What did the companions do when the ban came, in Bukhari 4620?", a: "Poured it out at once", wrong: ["Sold it", "Hid it", "Drank it last"], why: "It flowed through the streets of Madinah." },
         { q: "In whose house was Anas serving drinks?", a: "Abu Talhah", wrong: ["Abu Jahl", "Abu Lahab", "Abu Sufyan"], why: "Narrated by Anas ibn Malik." }
       ]

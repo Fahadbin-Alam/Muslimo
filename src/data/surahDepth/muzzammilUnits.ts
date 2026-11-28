@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Muzzammil ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -476,7 +476,7 @@ const MUZZAMMIL_FOUR: DeepUnit = {
       questions: [
         { q: "What is the goodly loan, per Ibn Kathir?", a: "Charity", wrong: ["A bank loan", "A gift to kings", "A debt"], why: "And lend to Allah a handsome loan, meaning, from charitable donations." },
         { q: "How will the good we send ahead be found?", a: "Better and greater in reward", wrong: ["Smaller", "Lost", "The same"], why: "You will certainly find it with Allah, better and greater in reward." },
-        { tf: true, q: "Ayah 2:245 also speaks of lending Allah a goodly loan.", why: "Who is he that will lend to Allah a goodly loan so that He may multiply it to him many times? (2:245)" }
+        { tf: true, q: "Ayah 2:245 also speaks of lending Allah a goodly loan.", why: "Who is he that will lend to Allah a goodly loan so that He may multiply it to him many times? (2:245)", source: kathir(73, 20, "Who is he that will lend to Allah a goodly loan so that He may multiply it to him many times? (2:245)", "He may multiply it to him many times") }
       ]
     },
     {

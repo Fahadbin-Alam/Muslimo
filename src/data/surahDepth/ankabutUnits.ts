@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-'Ankabut ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -447,7 +447,7 @@ const ANKABUT_TWO: DeepUnit = {
       questions: [
         { q: "Where does their love last, in 29:25?", a: "Only in this world", wrong: ["Forever", "In Paradise", "Nowhere"], why: "The love between you is only in the life of this world." },
         { q: "What does their love become, per Ibn Kathir?", a: "Hatred and enmity", wrong: ["Deeper love", "Wealth", "Silence"], why: "This love and friendship will turn into hatred and enmity." },
-        { q: "Which friends stay friends, per 43:67?", a: "Those with Taqwa", wrong: ["The rich", "The strong", "The famous"], why: "Friends on that Day will be foes one to another except those who have Taqwa. (43:67)" }
+        { q: "Which friends stay friends, per 43:67?", a: "Those with Taqwa", wrong: ["The rich", "The strong", "The famous"], why: "Friends on that Day will be foes one to another except those who have Taqwa. (43:67)", source: kathir(29, 25, "Friends on that Day will be foes one to another except those who have Taqwa. (43:67)", "foes one to another except those who have Taqwa") }
       ]
     },
     {
@@ -585,7 +585,7 @@ const ANKABUT_THREE: DeepUnit = {
       questions: [
         { q: "From where was the punishment, in 29:34?", a: "From the sky", wrong: ["From the sea", "From a king", "From a fire"], why: "A great torment from the sky." },
         { q: "Why was it sent, in 29:34?", a: "They were rebellious", wrong: ["They were poor", "They were few", "They were far"], why: "Because they have been rebellious." },
-        { tf: true, q: "Ibn Kathir refers to 11:82-83 for details.", why: "Stones of Sijjil, in a well-arranged manner one after another. (11:82-83)" }
+        { tf: true, q: "Ibn Kathir refers to 11:82-83 for details.", why: "Stones of Sijjil, in a well-arranged manner one after another. (11:82-83)", source: kathir(29, 34, "Stones of Sijjil, in a well-arranged manner one after another. (11:82-83)", "stones of Sijjil, in a well-arranged manner one after another") }
       ]
     },
     {

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Mutaffifin ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -73,7 +73,7 @@ const MUTAFFIFIN_ONE: DeepUnit = {
       questions: [
         { q: "What did Allah command, per Ibn Kathir?", a: "Give measure and weight in full", wrong: ["Weigh only gold", "Never trade", "Trade only at night"], why: "Verily, Allah commanded that the measure and weight should be given in full." },
         { q: "Which people were destroyed for cheating?", a: "The people of Shu'ayb", wrong: ["The people of Yunus", "The people of Ibrahim", "The people of Isa"], why: "Allah destroyed the people of Shuayb because of their cheating in weights and measurements." },
-        { tf: true, q: "Ayah 17:35 says honest weighing is better in the end.", why: "And weigh with a balance that is straight. That is good and better in the end." }
+        { tf: true, q: "Ayah 17:35 says honest weighing is better in the end.", why: "And weigh with a balance that is straight. That is good and better in the end.", source: kathir(83, 3, "And weigh with a balance that is straight. That is good and better in the end.", "is good and better") }
       ]
     },
     {
@@ -253,7 +253,7 @@ const MUTAFFIFIN_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What will be said to them, per 83:17?", a: "This is what you used to deny", wrong: ["Welcome home", "Rest now", "You were right"], why: "Then, it will be said to them: This is what you used to deny!" },
-        { q: "Where will they enter, per 83:16?", a: "The Fire", wrong: ["Jannah", "A palace", "A garden"], why: "Then verily, they will indeed enter the burning flame of Hell." },
+        { q: "Where will they enter, per 83:16?", a: "The Fire", wrong: ["Jannah", "A palace", "A garden"], why: "Then verily, they will indeed enter the burning flame of Hell.", source: kathir(83, 16, "Then verily, they will indeed enter the burning flame of Hell.", "indeed enter the burning flame of Hell") },
         { tf: false, q: "The words in 83:17 are words of comfort.", why: "This will be said to them by way of scolding, rebuking, belittling, and humiliation." }
       ]
     }
@@ -378,7 +378,7 @@ const MUTAFFIFIN_THREE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "With what is the drink mixed, per 83:27?", a: "Tasnim", wrong: ["Zamzam", "Rain", "Milk"], why: "It will be mixed with Tasnim." },
-        { q: "Who drink from Tasnim, per 83:28?", a: "Those nearest to Allah", wrong: ["The deniers", "Only angels", "No one"], why: "A spring whereof drink those nearest to Allah." },
+        { q: "Who drink from Tasnim, per 83:28?", a: "Those nearest to Allah", wrong: ["The deniers", "Only angels", "No one"], why: "A spring whereof drink those nearest to Allah.", source: kathir(83, 27, "A spring whereof drink those nearest to Allah.", "spring whereof drink those nearest") },
         { q: "What do the companions of the right get?", a: "A drink mixed with Tasnim", wrong: ["Nothing at all", "Only water", "Salt water"], why: "The companions of the right hand will be given a drink that is mixed with it." }
       ]
     }

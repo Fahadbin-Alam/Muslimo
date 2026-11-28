@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Inshiqaq ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -156,7 +156,7 @@ const INSHIQAQ_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How is the bad record given, per 84:10?", a: "Behind his back", wrong: ["In his right hand", "On a throne", "By a friend"], why: "But whosoever is given his Record behind his back." },
-        { q: "What will he call for, per 84:11?", a: "Destruction", wrong: ["Help from friends", "More time", "Food"], why: "He will invoke destruction, meaning, loss and destruction." },
+        { q: "What will he call for, per 84:11?", a: "Destruction", wrong: ["Help from friends", "More time", "Food"], why: "He will invoke destruction, meaning, loss and destruction.", source: kathir(84, 11, "He will invoke destruction, meaning, loss and destruction.", "") },
         { tf: false, q: "The record behind the back means an easy reckoning.", why: "He will be given his Book in his left hand, behind his back." }
       ]
     },
@@ -171,7 +171,7 @@ const INSHIQAQ_ONE: DeepUnit = {
       questions: [
         { q: "How was he among his people, per 84:13?", a: "In joy", wrong: ["In prayer", "In grief", "In fear of Allah"], why: "Verily, he was among his people in joy!" },
         { q: "What follows his light happiness, per Ibn Kathir?", a: "Long grief", wrong: ["More joy", "Nothing", "A reward"], why: "His light happiness will be followed by long grief." },
-        { q: "Where will he enter, per 84:12?", a: "A blazing Fire", wrong: ["A garden", "A palace", "His old home"], why: "And he shall enter a blazing Fire, and made to taste its burning." }
+        { q: "Where will he enter, per 84:12?", a: "A blazing Fire", wrong: ["A garden", "A palace", "His old home"], why: "And he shall enter a blazing Fire, and made to taste its burning.", source: kathir(84, 12, "And he shall enter a blazing Fire, and made to taste its burning.", "shall enter a blazing Fire, and made to taste its burning") }
       ]
     },
     {
@@ -184,7 +184,7 @@ const INSHIQAQ_ONE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What did he think, per 84:14?", a: "That he would never return", wrong: ["That he would be rich", "That he would fly", "That he was weak"], why: "Verily, he thought that he would never return!" },
-        { q: "What does 84:15 say about his Lord?", a: "He was ever beholding him", wrong: ["He forgot him", "He was far away", "He did not care"], why: "Yes! Verily, his Lord has been ever beholding him!" },
+        { q: "What does 84:15 say about his Lord?", a: "He was ever beholding him", wrong: ["He forgot him", "He was far away", "He did not care"], why: "Yes! Verily, his Lord has been ever beholding him!", source: kathir(84, 15, "Yes! Verily, his Lord has been ever beholding him!", "his Lord has been ever beholding") },
         { tf: true, q: "Allah brings people back to life just as He first created them.", why: "Certainly Allah will repeat his creation just as he began his creation." }
       ]
     },

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Mu'minun ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -141,7 +141,7 @@ const MUMINUN_ONE: DeepUnit = {
       source: hadith("bukhari", "2790", "Abu Hurairah", "Sahih", "The Prophet ﷺ said Paradise has a hundred levels, and when you ask Allah, ask Him for Al-Firdaws, the best and highest part of Paradise.", "ask for Al-firdaus which is the best and highest part of Paradise"),
       difficulty: 3,
       questions: [
-        { q: "What will the believers inherit, in 23:11?", a: "Al-Firdaws", wrong: ["A kingdom on earth", "Gold mines", "Nothing"], why: "Who shall inherit Firdaws. They shall dwell therein forever." },
+        { q: "What will the believers inherit, in 23:11?", a: "Al-Firdaws", wrong: ["A kingdom on earth", "Gold mines", "Nothing"], why: "Who shall inherit Firdaws. They shall dwell therein forever.", source: kathir(23, 11, "Who shall inherit Firdaws. They shall dwell therein forever.", "The believers will inherit the homes") },
         { q: "What should we ask Allah for, per the hadith?", a: "Al-Firdaws", wrong: ["A long life only", "Wealth only", "Fame"], why: "Ask for Al-Firdaus which is the best and highest part of Paradise." },
         { tf: true, q: "Believers stay in Al-Firdaws forever.", why: "They shall dwell therein forever." }
       ]
@@ -561,7 +561,7 @@ const MUMINUN_THREE: DeepUnit = {
       questions: [
         { q: "How should we repel evil, in 23:96?", a: "With what is better", wrong: ["With more evil", "With shouting", "With silence forever"], why: "Repel evil with that which is better." },
         { q: "What can kindness do to an enemy, per Ibn Kathir?", a: "Turn enmity to friendship", wrong: ["Make him richer", "Make him leave town", "Nothing"], why: "So as to soften his heart and turn his enmity to friendship." },
-        { q: "Who is granted this quality, in 41:35?", a: "Those who are patient", wrong: ["Those who are rich", "Those who are loud", "Those who are tall"], why: "But none is granted it except those who are patient." }
+        { q: "Who is granted this quality, in 41:35?", a: "Those who are patient", wrong: ["Those who are rich", "Those who are loud", "Those who are tall"], why: "But none is granted it except those who are patient.", source: kathir(41, 35, "But none is granted it except those who are patient.", "none is granted it except those who are patient") }
       ]
     },
     {

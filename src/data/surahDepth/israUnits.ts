@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Isra ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -1021,7 +1021,7 @@ const ISRA_THREE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "What is the best prayer after the obligatory ones?", a: "Prayer during the night", wrong: ["Prayer at noon", "Prayer while walking", "No prayer"], why: "The most excellent prayer after what is prescribed is prayer during the night." },
-        { q: "What may Allah raise him ﷺ to, in 17:79?", a: "Maqam Mahmud", wrong: ["A palace", "A mountain", "A throne of gold"], why: "It may be that your Lord will raise you to Maqam Mahmud." },
+        { q: "What may Allah raise him ﷺ to, in 17:79?", a: "Maqam Mahmud", wrong: ["A palace", "A mountain", "A throne of gold"], why: "It may be that your Lord will raise you to Maqam Mahmud.", source: kathir(17, 79, "It may be that your Lord will raise you to Maqam Mahmud.", "Lord will raise you to Maqam Mahmud") },
         { q: "What is Maqam Mahmud, per Ibn Abbas in Ibn Kathir?", a: "The station of intercession", wrong: ["A city", "A mosque", "A river"], why: "Ibn Abbas said, The position of praise and honor is the position of intercession." }
       ]
     },

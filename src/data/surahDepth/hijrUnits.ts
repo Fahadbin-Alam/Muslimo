@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Hijr ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -351,7 +351,7 @@ const HIJR_TWO: DeepUnit = {
       questions: [
         { q: "For whom is Hell promised, in 15:43?", a: "Those who follow Iblis", wrong: ["Allah's servants", "The angels", "The Prophets"], why: "Hell is the abode designated for all those who follow Iblis." },
         { tf: true, q: "Following Shaytan leads to a promised end in 15:43.", why: "And surely, Hell is the place promised for them all." },
-        { q: "What do we say when Shaytan whispers, per 7:200?", a: "Seek refuge with Allah", wrong: ["Ignore Allah", "Argue with him", "Follow him"], why: "If an evil whisper comes to you from Shaytan then seek refuge with Allah." }
+        { q: "What do we say when Shaytan whispers, per 7:200?", a: "Seek refuge with Allah", wrong: ["Ignore Allah", "Argue with him", "Follow him"], why: "If an evil whisper comes to you from Shaytan then seek refuge with Allah.", source: kathir(15, 43, "If an evil whisper comes to you from Shaytan then seek refuge with Allah.", "evil whisper comes to you from Shaytan then seek refuge") }
       ]
     },
     {
@@ -391,8 +391,8 @@ const HIJR_TWO: DeepUnit = {
       source: hadith("bukhari", "2440", "Abu Sa'id al-Khudri", "Sahih", "The Prophet ﷺ said the believers will settle the wrongs between them at a bridge before Paradise, and once purified they will enter it.", "when they get purified of all their sins, they will be admitted into Paradise"),
       difficulty: 3,
       questions: [
-        { q: "What does Allah remove from their breasts, in 15:47?", a: "Bitterness", wrong: ["Joy", "Faith", "Memory"], why: "And We shall remove any deep feeling of bitterness from their breasts." },
-        { q: "How will they sit, in 15:47?", a: "As brothers facing each other", wrong: ["With their backs turned", "Alone", "In lines"], why: "(So they will be like) brothers facing each other on thrones." },
+        { q: "What does Allah remove from their breasts, in 15:47?", a: "Bitterness", wrong: ["Joy", "Faith", "Memory"], why: "And We shall remove any deep feeling of bitterness from their breasts.", source: kathir(15, 47, "And We shall remove any deep feeling of bitterness from their breasts.", "shall remove any deep feeling of bitterness from their breasts") },
+        { q: "How will they sit, in 15:47?", a: "As brothers facing each other", wrong: ["With their backs turned", "Alone", "In lines"], why: "(So they will be like) brothers facing each other on thrones.", source: kathir(15, 47, "(So they will be like) brothers facing each other on thrones.", "brothers facing each other on thrones") },
         { q: "When are believers admitted into Paradise, in the hadith?", a: "When purified of their wrongs", wrong: ["Before judgment", "Never", "After a year"], why: "When they get purified of all their sins, they will be admitted into Paradise." }
       ]
     },
@@ -420,7 +420,7 @@ const HIJR_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What will not touch them, in 15:48?", a: "Fatigue", wrong: ["Joy", "Light", "Peace"], why: "No sense of fatigue shall touch them." },
-        { q: "Will they be asked to leave, in 15:48?", a: "Never", wrong: ["After a while", "If they tire", "On Fridays"], why: "Nor shall they be asked to leave it." },
+        { q: "Will they be asked to leave, in 15:48?", a: "Never", wrong: ["After a while", "If they tire", "On Fridays"], why: "Nor shall they be asked to leave it.", source: kathir(15, 48, "Nor shall they be asked to leave it.", "will stay here and never leave") },
         { q: "What was in Khadijah's palace, in the hadith?", a: "No noise and no fatigue", wrong: ["Many servants", "Great crowds", "Loud markets"], why: "Glad tidings of having a Qasab palace in Paradise wherein there will be neither any noise nor any fatigue." }
       ]
     },

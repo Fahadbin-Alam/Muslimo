@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ghafir ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -1063,7 +1063,7 @@ const GHAFIR_THREE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How often did the Prophet ﷺ seek forgiveness, per Bukhari 6307?", a: "More than seventy times a day", wrong: ["Once a year", "Once a week", "Only in Ramadan"], why: "I ask for forgiveness from Allah and turn to Him in repentance more than seventy times a day." },
-        { q: "When should we glorify Allah, in 40:55?", a: "In the evening and morning", wrong: ["Only at noon", "Only on Friday", "Only on Eid"], why: "Glorify the praises of your Lord in the Ashi and in the Ibkar." },
+        { q: "When should we glorify Allah, in 40:55?", a: "In the evening and morning", wrong: ["Only at noon", "Only on Friday", "Only on Eid"], why: "Glorify the praises of your Lord in the Ashi and in the Ibkar.", source: kathir(40, 55, "Glorify the praises of your Lord in the Ashi and in the Ibkar.", "glorify the praises of your Lord") },
         { q: "What is Al-Ibkar, per Ibn Kathir?", a: "The beginning of the day", wrong: ["Midnight", "The middle of the day", "The month"], why: "Ibkar means at the beginning of the day and the end of the night." }
       ]
     },

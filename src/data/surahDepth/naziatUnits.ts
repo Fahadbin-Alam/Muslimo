@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Nazi'at ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -365,7 +365,7 @@ const NAZIAT_THREE: DeepUnit = {
       questions: [
         { q: "What does 79:27 ask people?", a: "Are you harder to create, or the heaven?", wrong: ["Are you richer than kings?", "Are you older than the sea?", "Are you faster than wind?"], why: "Are you more difficult to create or is the heaven that He constructed?" },
         { q: "Which is harder to create, per Ibn Kathir?", a: "The heaven", wrong: ["A person", "A bird", "A seed"], why: "Rather the heaven is more difficult to create than you." },
-        { tf: true, q: "Ayah 40:57 says the heavens and earth are greater than mankind.", why: "The creation of the heavens and the earth is greater than the creation of mankind." }
+        { tf: true, q: "Ayah 40:57 says the heavens and earth are greater than mankind.", why: "The creation of the heavens and the earth is greater than the creation of mankind.", source: kathir(79, 27, "The creation of the heavens and the earth is greater than the creation of mankind.", "earth is greater than the creation of mankind") }
       ]
     },
     {
@@ -462,7 +462,7 @@ const NAZIAT_FOUR: DeepUnit = {
       questions: [
         { q: "What is the Great Catastrophe, per Ibn Abbas?", a: "The Day of Judgement", wrong: ["A great flood", "A war", "An eclipse"], why: "This refers to the Day of Judgement. This has been said by Ibn Abbas." },
         { q: "Why is it called that, per Ibn Kathir?", a: "It overcomes every matter", wrong: ["It is very loud", "It is very long", "It is very bright"], why: "It has been called this because it will overcome every matter." },
-        { tf: true, q: "Ayah 54:46 calls the Hour more grievous and bitter.", why: "And the Hour will be more grievous and more bitter." }
+        { tf: true, q: "Ayah 54:46 calls the Hour more grievous and bitter.", why: "And the Hour will be more grievous and more bitter.", source: kathir(79, 34, "And the Hour will be more grievous and more bitter.", "Hour will be more grievous and more bitter") }
       ]
     },
     {
@@ -545,7 +545,7 @@ const NAZIAT_FOUR: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What did they ask about, per 79:42?", a: "When the Hour will come", wrong: ["When it will rain", "Who will be king", "Where gold is"], why: "They ask you about the Hour, when will be its appointed time?" },
-        { q: "With whom is its knowledge, per 79:44?", a: "With your Lord", wrong: ["With the angels", "With the scholars", "With the stars"], why: "To your Lord it is limited." },
+        { q: "With whom is its knowledge, per 79:44?", a: "With your Lord", wrong: ["With the angels", "With the scholars", "With the stars"], why: "To your Lord it is limited.", source: kathir(79, 44, "To your Lord it is limited.", "") },
         { tf: false, q: "Some people know the exact day of the Hour.", why: "Its knowledge is not with you, nor with any creature." }
       ]
     },

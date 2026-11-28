@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah As-Saffat ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -1134,7 +1134,7 @@ const SAFFAT_THREE: DeepUnit = {
       questions: [
         { q: "Who is excepted, in 37:74?", a: "The chosen servants of Allah", wrong: ["The strong", "The many", "The rich"], why: "Except the chosen servants of Allah." },
         { q: "What happened to the believers, per Ibn Kathir?", a: "Saved and made to prevail", wrong: ["Lost", "Exiled", "Forgotten"], why: "Saved the believers and caused them to prevail." },
-        { tf: true, q: "This phrase also appeared in 37:40.", why: "Save the chosen servants of Allah (37:40)." }
+        { tf: true, q: "This phrase also appeared in 37:40.", why: "Save the chosen servants of Allah (37:40).", source: kathir(37, 40, "Save the chosen servants of Allah (37:40).", "") }
       ]
     },
     {
@@ -1679,7 +1679,7 @@ const SAFFAT_FOUR: DeepUnit = {
       questions: [
         { q: "What did Allah leave for him, in 37:108?", a: "A good mention among later people", wrong: ["A castle", "An army", "A new city"], why: "And We left for him among the later generations." },
         { tf: true, q: "Ibrahim is honoured by people until today.", why: "And We left for him among the later generations." },
-        { q: "Who got a good mention, in 37:78?", a: "Nuh", wrong: ["Fir'awn", "Qarun", "Haman"], why: "And left for him a goodly remembrance among the later generation (37:78)." }
+        { q: "Who got a good mention, in 37:78?", a: "Nuh", wrong: ["Fir'awn", "Qarun", "Haman"], why: "And left for him a goodly remembrance among the later generation (37:78).", source: kathir(37, 78, "And left for him a goodly remembrance among the later generation (37:78).", "") }
       ]
     },
     {
@@ -1693,7 +1693,7 @@ const SAFFAT_FOUR: DeepUnit = {
       questions: [
         { q: "What is said of Ibrahim, in 37:109?", a: "Peace be upon Ibrahim", wrong: ["Ibrahim is gone", "Ibrahim was wrong", "Ibrahim is king"], why: "Salam (peace!) be upon Ibrahim!" },
         { tf: true, q: "We mention Ibrahim in every prayer's salawat.", why: "Salam (peace!) be upon Ibrahim!" },
-        { q: "Who else got Salam, in 37:79?", a: "Nuh", wrong: ["Fir'awn", "Qarun", "Haman"], why: "Salam (peace!) be upon Nuh among the all creatures! (37:79)" }
+        { q: "Who else got Salam, in 37:79?", a: "Nuh", wrong: ["Fir'awn", "Qarun", "Haman"], why: "Salam (peace!) be upon Nuh among the all creatures! (37:79)", source: kathir(37, 79, "Salam (peace!) be upon Nuh among the all creatures! (37:79)", "") }
       ]
     },
     {

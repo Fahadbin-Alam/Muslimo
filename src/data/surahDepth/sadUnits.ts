@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Sad ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -785,7 +785,7 @@ const SAD_TWO: DeepUnit = {
       questions: [
         { q: "What is for Sulayman, in 38:40?", a: "Nearness and a good return", wrong: ["Punishment", "Nothing", "Shame"], why: "And verily, for him is a near access to Us, and a good final return." },
         { q: "Where is his good return, per Ibn Kathir?", a: "This world and the Hereafter", wrong: ["Only this world", "Only his palace", "Only the sea"], why: "Meaning, in this world and the Hereafter." },
-        { q: "Who else got these same words, in 38:25?", a: "Dawud", wrong: ["Fir'awn", "Qarun", "Haman"], why: "So, We forgave him that, and verily, for him is a near access to Us, and a good place of return (38:25)." }
+        { q: "Who else got these same words, in 38:25?", a: "Dawud", wrong: ["Fir'awn", "Qarun", "Haman"], why: "So, We forgave him that, and verily, for him is a near access to Us, and a good place of return (38:25).", source: kathir(38, 25, "So, We forgave him that, and verily, for him is a near access to Us, and a good place of return (38:25).", "") }
       ]
     }
   ]

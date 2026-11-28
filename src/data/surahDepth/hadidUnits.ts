@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Hadid ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -281,7 +281,7 @@ const HADID_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What does Allah know about our words?", a: "Secret and public alike", wrong: ["Only loud words", "Only Arabic words", "Only written words"], why: "He knows your secrets and your public statements." },
-        { q: "What does 13:10 say about hiding speech?", a: "Hidden or open, it is the same to Him", wrong: ["Whispers are unknown", "Night hides words", "Only open words count"], why: "It is the same (to Him) whether any of you conceals his speech or declares it openly. (13:10)" },
+        { q: "What does 13:10 say about hiding speech?", a: "Hidden or open, it is the same to Him", wrong: ["Whispers are unknown", "Night hides words", "Only open words count"], why: "It is the same (to Him) whether any of you conceals his speech or declares it openly. (13:10)", source: kathir(57, 4, "It is the same (to Him) whether any of you conceals his speech or declares it openly. (13:10)", "conceals his speech or declares it openly, whether") },
         { tf: true, q: "57:4 ends: Allah is the All-Seer of what you do.", why: "And Allah is the All-Seer of what you do." }
       ]
     },
@@ -323,7 +323,7 @@ const HADID_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How much injustice will Allah do?", a: "Not even a speck of dust", wrong: ["A little", "Only to sinners", "Only on some days"], why: "Who never falls into injustice, not even the weight of a speck of dust." },
-        { q: "What will be set up that Day, per 21:47?", a: "Balances of justice", wrong: ["Thrones of gold", "Tall towers", "Markets"], why: "And We shall set up Balances of justice on the Day of Resurrection. (21:47)" },
+        { q: "What will be set up that Day, per 21:47?", a: "Balances of justice", wrong: ["Thrones of gold", "Tall towers", "Markets"], why: "And We shall set up Balances of justice on the Day of Resurrection. (21:47)", source: kathir(57, 5, "And We shall set up Balances of justice on the Day of Resurrection. (21:47)", "shall set up Balances of justice on the Day of Resurrection") },
         { tf: true, q: "Even a deed the weight of a mustard seed will be brought.", why: "And if there be the weight of a mustard seed, We will bring it. (21:47)" }
       ]
     },
@@ -337,7 +337,7 @@ const HADID_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How much can one good deed grow, per Ibn Kathir?", a: "Up to ten times", wrong: ["Not at all", "Half", "Only once"], why: "If one performs even one good deed, Allah will multiply it up to ten times." },
-        { q: "What does 4:40 add?", a: "He gives a great reward", wrong: ["He takes it back", "He forgets it", "He delays it forever"], why: "And gives from Him a great reward. (4:40)" },
+        { q: "What does 4:40 add?", a: "He gives a great reward", wrong: ["He takes it back", "He forgets it", "He delays it forever"], why: "And gives from Him a great reward. (4:40)", source: kathir(57, 5, "And gives from Him a great reward. (4:40)", "gives from Him a great reward") },
         { tf: false, q: "Small good deeds are not worth doing.", why: "If one performs even one good deed, Allah will multiply it up to ten times." }
       ]
     },
@@ -545,8 +545,8 @@ const HADID_TWO: DeepUnit = {
       source: ik(10, "Ibn Kathir quotes 34:39: whatever you spend, He will replace it, and 16:96: what is with you runs out and what is with Allah remains.", "And whatsoever you spend of anything, He will replace it…whatever is with you, will be exhausted, and whatever is with Allah will remain"),
       difficulty: 2,
       questions: [
-        { q: "What does 34:39 promise to those who spend?", a: "Allah will replace it", wrong: ["They will lose it", "Nothing", "Only praise"], why: "And whatsoever you spend of anything, He will replace it. (34:39)" },
-        { q: "What happens to what is with Allah, per 16:96?", a: "It will remain", wrong: ["It runs out", "It is lost", "It shrinks"], why: "Whatever is with you, will be exhausted, and whatever is with Allah will remain. (16:96)" },
+        { q: "What does 34:39 promise to those who spend?", a: "Allah will replace it", wrong: ["They will lose it", "Nothing", "Only praise"], why: "And whatsoever you spend of anything, He will replace it. (34:39)", source: kathir(57, 10, "And whatsoever you spend of anything, He will replace it. (34:39)", "whatsoever you spend of anything, He will replace") },
+        { q: "What happens to what is with Allah, per 16:96?", a: "It will remain", wrong: ["It runs out", "It is lost", "It shrinks"], why: "Whatever is with you, will be exhausted, and whatever is with Allah will remain. (16:96)", source: kathir(57, 10, "Whatever is with you, will be exhausted, and whatever is with Allah will remain. (16:96)", "be exhausted, and whatever is with Allah will remain") },
         { tf: false, q: "What we keep with us lasts forever.", why: "Whatever is with you, will be exhausted." }
       ]
     },
@@ -1413,7 +1413,7 @@ const HADID_FOUR: DeepUnit = {
       questions: [
         { q: "What does Mizan mean, per Mujahid?", a: "Justice", wrong: ["A sword", "A mountain", "A ship"], why: "The Mizan), that is, justice, according to Mujahid, Qatadah and others." },
         { q: "Why were the Book and Mizan sent?", a: "So people keep up justice", wrong: ["For decoration", "For trade only", "To be hidden"], why: "That mankind may keep up justice." },
-        { tf: true, q: "Ar-Rahman 55:7 also mentions the Mizan.", why: "And the heaven: He has raised it high, and He has set up the Mizan. (55:7)" }
+        { tf: true, q: "Ar-Rahman 55:7 also mentions the Mizan.", why: "And the heaven: He has raised it high, and He has set up the Mizan. (55:7)", source: kathir(57, 25, "And the heaven: He has raised it high, and He has set up the Mizan. (55:7)", "the heaven: He has raised it high, and He has set up the Mizan") }
       ]
     },
     {
@@ -1511,7 +1511,7 @@ const HADID_FOUR: DeepUnit = {
       questions: [
         { q: "What did Allah place in their offspring?", a: "Prophethood and Scripture", wrong: ["Kingdoms", "Gold", "Castles"], why: "And placed in their offspring prophethood and Scripture." },
         { q: "How were their descendants, per 57:26?", a: "Some guided, many rebellious", wrong: ["All guided", "All rebellious", "None mentioned"], why: "And among them there are some who are guided; but many of them are rebellious." },
-        { tf: true, q: "29:27 also speaks of prophethood in their offspring.", why: "And placed in their offspring prophethood and Scripture. [29:27]" }
+        { tf: true, q: "29:27 also speaks of prophethood in their offspring.", why: "And placed in their offspring prophethood and Scripture. [29:27]", source: kathir(57, 26, "And placed in their offspring prophethood and Scripture. [29:27]", "placed in their offspring prophethood and Scripture") }
       ]
     },
     {

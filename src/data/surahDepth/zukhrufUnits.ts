@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Az-Zukhruf ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -210,7 +210,7 @@ const ZUKHRUF_ONE: DeepUnit = {
       source: hadith("muslim", "1342", "Abdullah ibn Umar", "Sahih", "When setting out on a journey, the Prophet ﷺ said Allahu Akbar three times, then: Glory to Him Who subdued this for us, and we could not have done it, and to our Lord we return.", "Hallowed is He Who subdued for us this"),
       difficulty: 2,
       questions: [
-        { q: "What do we say when we ride, in 43:13?", a: "Glory to Him Who subjected this to us", wrong: ["I am strong", "Hurry up", "Nothing"], why: "Glory to Him Who has subjected this to us, and we could have never had it." },
+        { q: "What do we say when we ride, in 43:13?", a: "Glory to Him Who subjected this to us", wrong: ["I am strong", "Hurry up", "Nothing"], why: "Glory to Him Who has subjected this to us, and we could have never had it.", source: kathir(43, 13, "Glory to Him Who has subjected this to us, and we could have never had it.", "Glory to Him Who has subjected this to us, and we could have never") },
         { q: "How many times did he say Allahu Akbar first, per Muslim 1342?", a: "Three", wrong: ["One", "Seven", "Ten"], why: "He glorified Allah, saying Allahu Akbar thrice, and then said the dua." },
         { q: "What does we could never have had it mean, per Ibn Abbas?", a: "We could not do it ourselves", wrong: ["We bought it", "We made it", "We found it"], why: "Ibn Abbas and others said: We could not have done this ourselves." }
       ]
@@ -226,7 +226,7 @@ const ZUKHRUF_ONE: DeepUnit = {
       questions: [
         { q: "To whom do we return, in 43:14?", a: "To our Lord", wrong: ["To our town", "To our tribe", "To the sea"], why: "And verily, to Our Lord we indeed are to return." },
         { q: "What do earthly trips remind us of, per Ibn Kathir?", a: "The journey of the Hereafter", wrong: ["Shopping", "Holidays", "Nothing"], why: "Mention of earthly journeys draws attention to the journey of the Hereafter." },
-        { q: "What is the best provision, per 2:197?", a: "Taqwa", wrong: ["Gold", "Food", "Clothes"], why: "And take a provision for the journey, but the best provision is the Taqwa (2:197)." }
+        { q: "What is the best provision, per 2:197?", a: "Taqwa", wrong: ["Gold", "Food", "Clothes"], why: "And take a provision for the journey, but the best provision is the Taqwa (2:197).", source: kathir(43, 14, "And take a provision for the journey, but the best provision is the Taqwa (2:197).", "the journey, but the best provision is the Taqwa") }
       ]
     },
     {
@@ -532,7 +532,7 @@ const ZUKHRUF_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What would all this be, in 43:35?", a: "Only enjoyment of this world", wrong: ["Forever ours", "A reward in Paradise", "Proof of faith"], why: "Yet all this would have been nothing but an enjoyment of this world." },
-        { q: "For whom is the Hereafter, in 43:35?", a: "Those who have taqwa", wrong: ["The rich", "The famous", "Everyone"], why: "And the Hereafter with your Lord is for those who have Taqwa." },
+        { q: "For whom is the Hereafter, in 43:35?", a: "Those who have taqwa", wrong: ["The rich", "The famous", "Everyone"], why: "And the Hereafter with your Lord is for those who have Taqwa.", source: kathir(43, 35, "And the Hereafter with your Lord is for those who have Taqwa.", "Hereafter with your Lord") },
         { q: "What did the Prophet ﷺ forbid, per Bukhari 5426?", a: "Eating from gold and silver vessels", wrong: ["Eating dates", "Drinking milk", "Eating bread"], why: "Do not drink in silver or golden vessels, and do not eat in plates of such metals." }
       ]
     },
@@ -559,7 +559,7 @@ const ZUKHRUF_TWO: DeepUnit = {
       source: hadith("muslim", "2814", "Abdullah ibn Mas'ud", "Sahih", "The Prophet ﷺ said every one of us has a companion from the jinn. Asked about himself, he said Allah helped him, so he is safe and it commands him only good.", "Allah helps me against him and so I am safe from his hand"),
       difficulty: 3,
       questions: [
-        { q: "What happens to one who turns from Allah's remembrance, in 43:36?", a: "A Shaytan becomes his companion", wrong: ["He gets rich", "He sleeps well", "Nothing"], why: "We appoint for him Shaytan to be a Qarin, a companion to him." },
+        { q: "What happens to one who turns from Allah's remembrance, in 43:36?", a: "A Shaytan becomes his companion", wrong: ["He gets rich", "He sleeps well", "Nothing"], why: "We appoint for him Shaytan to be a Qarin, a companion to him.", source: kathir(43, 36, "We appoint for him Shaytan to be a Qarin, a companion to him.", "Shaytan is the Companion of the One Who turns") },
         { q: "What does Ya'shu mean, per Ibn Kathir?", a: "Weakness of insight", wrong: ["Strong sight", "Fast walking", "Loud voice"], why: "Al-Asha refers to weakness of vision; meant is weakness of insight." },
         { q: "What did the Prophet ﷺ say about his companion, per Muslim 2814?", a: "Allah helps me and I am safe", wrong: ["I have none", "It is my friend", "It is an angel"], why: "Allah helps me against him and so I am safe from his hand." }
       ]
@@ -798,7 +798,7 @@ const ZUKHRUF_THREE: DeepUnit = {
       questions: [
         { q: "What did Firawn claim, in 43:52?", a: "That he was better than Musa", wrong: ["That Musa was better", "That he was a Prophet", "That he was poor"], why: "Am I not better than this one who is despicable?" },
         { q: "Who was truly noble, per Ibn Kathir?", a: "Musa", wrong: ["Firawn", "Haman", "Qarun"], why: "It is Musa who was noble, truthful, righteous and upright." },
-        { q: "What did Musa ask Allah, per 20:36?", a: "To loosen his tongue", wrong: ["For a palace", "For gold", "For an army"], why: "He asked Allah to loosen the knot from his tongue, and Allah said: You are granted your request." }
+        { q: "What did Musa ask Allah, per 20:36?", a: "To loosen his tongue", wrong: ["For a palace", "For gold", "For an army"], why: "He asked Allah to loosen the knot from his tongue, and Allah said: You are granted your request.", source: kathir(43, 52, "He asked Allah to loosen the knot from his tongue, and Allah said: You are granted your request.", "granted your request, O Musa") }
       ]
     },
     {
@@ -922,7 +922,7 @@ const ZUKHRUF_THREE: DeepUnit = {
       source: hadith("bukhari", "3448", "Abu Hurairah", "Sahih", "The Prophet ﷺ said the son of Maryam will soon descend among you and judge mankind justly.", "will soon descend amongst you and will judge mankind justly"),
       difficulty: 3,
       questions: [
-        { q: "What is Isa, in 43:61?", a: "A known sign of the Hour", wrong: ["A sign of rain", "A king of Rome", "A poet"], why: "And he shall be a known sign for the coming of the Hour." },
+        { q: "What is Isa, in 43:61?", a: "A known sign of the Hour", wrong: ["A sign of rain", "A king of Rome", "A poet"], why: "And he shall be a known sign for the coming of the Hour.", source: kathir(43, 61, "And he shall be a known sign for the coming of the Hour.", "shall be a known sign for the Hour") },
         { q: "What will Isa do, per Bukhari 3448?", a: "Descend and judge justly", wrong: ["Stay away", "Build a palace", "Start a new religion"], why: "The son of Mary will soon descend amongst you and will judge mankind justly." },
         { q: "What is the correct view of 43:61, per Ibn Kathir?", a: "His descent before the Day of Resurrection", wrong: ["His birth", "His childhood", "His travels"], why: "The correct view is that it refers to his descent before the Day of Resurrection." }
       ]

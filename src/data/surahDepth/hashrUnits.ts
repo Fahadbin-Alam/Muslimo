@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Hashr ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -617,7 +617,7 @@ const HASHR_TWO: DeepUnit = {
       questions: [
         { q: "What food did the wife have?", a: "Only the children's food", wrong: ["A big feast", "Nothing at all", "Only water"], why: "By Allah, I have nothing but the children's food." },
         { q: "Why did they put out the light?", a: "So the guest could eat", wrong: ["To sleep early", "To save oil", "To hide"], why: "Put them to bed and put out the light; we shall not take our meals tonight." },
-        { tf: true, q: "This story led to the words of 59:9.", why: "Then Allah revealed: But give them preference over themselves even though they were in need of that." }
+        { tf: true, q: "This story led to the words of 59:9.", why: "Then Allah revealed: But give them preference over themselves even though they were in need of that.", source: kathir(59, 9, "Then Allah revealed: But give them preference over themselves even though they were in need of that.", "give them preference over themselves even though they were in need") }
       ]
     },
     {
@@ -1105,7 +1105,7 @@ const HASHR_FOUR: DeepUnit = {
       questions: [
         { q: "What should the Quran do to our hearts?", a: "Soften and humble them", wrong: ["Harden them", "Bore them", "Nothing"], why: "Why do your hearts not feel softness and humbleness from the fear of Allah." },
         { q: "Why are parables given, in 59:21?", a: "That people may reflect", wrong: ["To scare animals", "For fun only", "To fill pages"], why: "Such are the parables which We put forward to mankind that they may reflect." },
-        { tf: true, q: "Ibn Kathir also links this to 2:74 on stones.", why: "And indeed, there are of them which fall down for fear of Allah. (2:74)" }
+        { tf: true, q: "Ibn Kathir also links this to 2:74 on stones.", why: "And indeed, there are of them which fall down for fear of Allah. (2:74)", source: kathir(59, 21, "And indeed, there are of them which fall down for fear of Allah. (2:74)", "from them, and indeed, there are of them which fall down for fear") }
       ]
     },
     {
@@ -1161,7 +1161,7 @@ const HASHR_FOUR: DeepUnit = {
       questions: [
         { q: "Which two Names end 59:22?", a: "Most Gracious, Most Merciful", wrong: ["King, Holy", "Creator, Shaper", "Strong, Firm"], why: "He is the Most Gracious, the Most Merciful." },
         { q: "Where is Allah merciful, per Ibn Kathir?", a: "This life and the Hereafter", wrong: ["Only this life", "Only in dreams", "Only at night"], why: "Ar-Rahman and Ar-Rahim of this life and the Hereafter." },
-        { tf: true, q: "Ibn Kathir quotes 7:156: My mercy embraces all things.", why: "And My mercy embraces all things. (7:156)" }
+        { tf: true, q: "Ibn Kathir quotes 7:156: My mercy embraces all things.", why: "And My mercy embraces all things. (7:156)", source: kathir(59, 22, "And My mercy embraces all things. (7:156)", "mercy embraces all things") }
       ]
     },
     {

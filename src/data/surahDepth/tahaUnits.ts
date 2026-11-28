@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ta-Ha ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -225,8 +225,8 @@ const TAHA_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "Whom did Musa ask for, in 20:30?", a: "Harun, his brother", wrong: ["Yusha", "His father-in-law", "His son"], why: "Harun, my brother." },
-        { q: "Why did he want Harun, in 20:33-34?", a: "To glorify and remember Allah much", wrong: ["To fight", "To trade", "To rule"], why: "That we may glorify You much, and remember You much." },
-        { q: "What does 20:35 say of Allah?", a: "He sees us", wrong: ["He is far", "He is busy", "He sleeps"], why: "Verily, You are ever seeing us." }
+        { q: "Why did he want Harun, in 20:33-34?", a: "To glorify and remember Allah much", wrong: ["To fight", "To trade", "To rule"], why: "That we may glorify You much, and remember You much.", source: kathir(20, 33, "That we may glorify You much, and remember You much.", "may glorify You much, and remember") },
+        { q: "What does 20:35 say of Allah?", a: "He sees us", wrong: ["He is far", "He is busy", "He sleeps"], why: "Verily, You are ever seeing us.", source: kathir(20, 35, "Verily, You are ever seeing us.", "") }
       ]
     },
     {
@@ -811,7 +811,7 @@ const TAHA_THREE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "What will wrongdoing become, in the hadith?", a: "Darkness on that Day", wrong: ["Light", "Gold", "Nothing"], why: "Be on your guard against committing oppression, for oppression is a darkness on the Day of Resurrection." },
-        { q: "Who is a failure, in 20:111?", a: "One who carried wrongdoing", wrong: ["One who was poor", "One who was ill", "One who was weak"], why: "And he who carried wrongdoing, will be indeed a complete failure." },
+        { q: "Who is a failure, in 20:111?", a: "One who carried wrongdoing", wrong: ["One who was poor", "One who was ill", "One who was weak"], why: "And he who carried wrongdoing, will be indeed a complete failure.", source: kathir(20, 111, "And he who carried wrongdoing, will be indeed a complete failure.", "carried wrongdoing, will be indeed a complete failure") },
         { q: "What else does the hadith warn against?", a: "Stinginess", wrong: ["Sleeping", "Smiling", "Travelling"], why: "And be on your guard against stinginess." }
       ]
     },
@@ -910,7 +910,7 @@ const TAHA_THREE: DeepUnit = {
       questions: [
         { q: "What did Shaytan offer Adam, in 20:120?", a: "The Tree of Eternity", wrong: ["A river", "A crown of gold", "Wings"], why: "O Adam! Shall I lead you to the Tree of Eternity and to a kingdom that will never waste away?" },
         { q: "How did Shaytan make them slip, per Ibn Kathir?", a: "Through deception", wrong: ["By force", "By a storm", "By hunger"], why: "It has already been mentioned that he caused them to fall through deception." },
-        { q: "What did Shaytan swear, in 7:21?", a: "That he was a sincere adviser", wrong: ["That he was an angel", "That he was a king", "That he would leave"], why: "And he swore by Allah to them both: Verily, I am one of the sincere well-wishers for you both." }
+        { q: "What did Shaytan swear, in 7:21?", a: "That he was a sincere adviser", wrong: ["That he was an angel", "That he was a king", "That he would leave"], why: "And he swore by Allah to them both: Verily, I am one of the sincere well-wishers for you both.", source: kathir(20, 120, "And he swore by Allah to them both: Verily, I am one of the sincere well-wishers for you both.", "sincere well-wishers for you both") }
       ]
     },
     {
@@ -1090,7 +1090,7 @@ const TAHA_THREE: DeepUnit = {
       source: hadith("bukhari", "4981", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said every Prophet was given miracles that made people believe, but what he was given is revelation from Allah, so he hoped to have the most followers.", "what I have been given, is Divine Inspiration which Allah has revealed to me"),
       difficulty: 5,
       questions: [
-        { q: "What did the deniers ask for, in 20:133?", a: "A sign from his Lord", wrong: ["Gold", "A king", "Rain"], why: "And they say: Why does he not bring us a sign from his Lord?" },
+        { q: "What did the deniers ask for, in 20:133?", a: "A sign from his Lord", wrong: ["Gold", "A king", "Rain"], why: "And they say: Why does he not bring us a sign from his Lord?", source: kathir(20, 133, "And they say: Why does he not bring us a sign from his Lord?", "bring us a sign from his Lord") },
         { q: "What was the Prophet ﷺ given, in the hadith?", a: "Divine revelation", wrong: ["A staff", "A ship", "A camel only"], why: "What I have been given, is Divine Inspiration which Allah has revealed to me." },
         { q: "What did the Prophet ﷺ hope for, in the hadith?", a: "The most followers", wrong: ["The most gold", "A long life", "A big house"], why: "So I hope that my followers will outnumber the followers of the other Prophets on the Day of Resurrection." }
       ]

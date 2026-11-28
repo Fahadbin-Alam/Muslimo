@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Yusuf ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -155,7 +155,7 @@ const YUSUF_ONE: DeepUnit = {
       source: ik(13, "Ya'qub was sad to let Yusuf go and feared a wolf might eat him while they were careless. The brothers heard this and used those very words in their lie later.", "They heard these words from his mouth and used them in their response for what they did afterwards"),
       difficulty: 3,
       questions: [
-        { q: "What did the brothers say they would do, in 12:12?", a: "Enjoy and play", wrong: ["Go to war", "Sell sheep", "Travel to Egypt"], why: "Send him with us tomorrow to enjoy himself and play." },
+        { q: "What did the brothers say they would do, in 12:12?", a: "Enjoy and play", wrong: ["Go to war", "Sell sheep", "Travel to Egypt"], why: "Send him with us tomorrow to enjoy himself and play.", source: kathir(12, 12, "Send him with us tomorrow to enjoy himself and play.", "tomorrow so that we all enjoy ourselves and play") },
         { q: "What did Ya'qub fear, in 12:13?", a: "A wolf would eat him", wrong: ["A flood", "A lion", "A storm"], why: "I fear lest a wolf should devour him, while you are careless of him." },
         { q: "The brothers later used their father's own words in their lie.", tf: true, why: "They heard these words from his mouth and used them later." }
       ]

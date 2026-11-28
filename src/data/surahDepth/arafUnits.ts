@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-A'raf ayah by ayah, the way Ali 'Imran, An-Nisa, Al-Ma'idah and Al-An'am are taught: every ayah or small
 // group of ayahs gets a lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a
@@ -434,7 +434,7 @@ const ARAF_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Why did Allah forbid shameful sins, in Bukhari 4634?", a: "None has more ghayrah than Allah", wrong: ["He needs us", "They are boring", "No reason"], why: "None has more sense of ghaira than Allah." },
-        { q: "Which of these is forbidden in 7:33?", a: "Saying about Allah without knowledge", wrong: ["Eating good food", "Wearing nice clothes", "Praying in a masjid"], why: "Wa an taqulu alallahi ma la ta'lamun." },
+        { q: "Which of these is forbidden in 7:33?", a: "Saying about Allah without knowledge", wrong: ["Eating good food", "Wearing nice clothes", "Praying in a masjid"], why: "Wa an taqulu alallahi ma la ta'lamun.", source: kathir(7, 33, "Wa an taqulu alallahi ma la ta'lamun.", "") },
         { q: "Who loves praise most, in the hadith?", a: "Allah", wrong: ["Kings", "Poets", "Chiefs"], why: "None loves to be praised more than Allah." }
       ]
     },
@@ -615,7 +615,7 @@ const ARAF_TWO: DeepUnit = {
       source: hadith("bukhari", "2992", "Abu Musa al-Ash'ari", "Sahih", "On a journey the people raised their voices saying la ilaha illallah and Allahu akbar. The Prophet ﷺ said: be easy on yourselves, you are not calling one who is deaf or absent, but One who hears and is near.", "you are not calling a deaf or an absent one"),
       difficulty: 3,
       questions: [
-        { q: "How should we call on Allah, in 7:55?", a: "Humbly and quietly", wrong: ["Shouting as loud as we can", "Only in groups", "Only once a year"], why: "Ud'u rabbakum tadarru'an wa khufyah." },
+        { q: "How should we call on Allah, in 7:55?", a: "Humbly and quietly", wrong: ["Shouting as loud as we can", "Only in groups", "Only once a year"], why: "Ud'u rabbakum tadarru'an wa khufyah.", source: kathir(7, 55, "Ud'u rabbakum tadarru'an wa khufyah.", "") },
         { q: "Why need we not shout, in Bukhari 2992?", a: "He is not deaf or absent", wrong: ["Shouting is rude only", "He is asleep", "Angels shout for us"], why: "You are not calling a deaf or an absent one." },
         { q: "Whom does Allah not love, in 7:55?", a: "Those who go too far", wrong: ["Those who whisper", "Those who cry", "Those who hope"], why: "Innahu la yuhibbul-mu'tadin." }
       ]
@@ -659,7 +659,7 @@ const ARAF_TWO: DeepUnit = {
       questions: [
         { q: "What is guidance compared to, in Bukhari 79?", a: "Heavy rain", wrong: ["Fire", "Wind", "Sand"], why: "Like abundant rain falling on the earth." },
         { q: "Which land is like someone who learns and teaches?", a: "Land that drinks and grows plants", wrong: ["Barren land", "Land with no rain", "Rocky land only"], why: "The first is the one who learns and teaches others." },
-        { q: "What does bad land bring out, in 7:58?", a: "Only a little, with difficulty", wrong: ["Rich fruit", "Rivers", "Nothing ever"], why: "La yakhruju illa nakida." }
+        { q: "What does bad land bring out, in 7:58?", a: "Only a little, with difficulty", wrong: ["Rich fruit", "Rivers", "Nothing ever"], why: "La yakhruju illa nakida.", source: kathir(7, 58, "La yakhruju illa nakida.", "land and We send down rain therein and bring") }
       ]
     }
   ]
@@ -840,7 +840,7 @@ const ARAF_THREE: DeepUnit = {
       questions: [
         { q: "How did the Prophet ﷺ say to enter Al-Hijr's homes?", a: "Only weeping", wrong: ["Laughing", "Shopping", "Camping there"], why: "Unless you enter in a weeping state." },
         { q: "What did he do in the valley, in Bukhari 4419?", a: "Covered his head and hurried", wrong: ["Stayed three days", "Built a camp", "Held a feast"], why: "He covered his head and made his speed fast." },
-        { q: "What seized Thamud, in 7:78?", a: "The earthquake", wrong: ["A flood", "A wind", "Locusts"], why: "Fa akhadhat-humur-rajfah." }
+        { q: "What seized Thamud, in 7:78?", a: "The earthquake", wrong: ["A flood", "A wind", "Locusts"], why: "Fa akhadhat-humur-rajfah.", source: kathir(7, 78, "Fa akhadhat-humur-rajfah.", "the earthquake seized them") }
       ]
     },
     {
@@ -881,8 +881,8 @@ const ARAF_THREE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "Why did they want Lut out, in 7:82?", a: "He and his people kept pure", wrong: ["He was rich", "He was a stranger", "He was loud"], why: "Innahum unasun yatatahharun." },
-        { q: "Who of Lut's family was not saved, in 7:83?", a: "His wife", wrong: ["His daughters", "Lut himself", "No one"], why: "Illam-ra'atahu kanat minal-ghabirin." },
-        { q: "What fell on Lut's people, in 7:84?", a: "A rain of stones", wrong: ["Water", "Snow", "Fruit"], why: "Wa amtarna alayhim matara." }
+        { q: "Who of Lut's family was not saved, in 7:83?", a: "His wife", wrong: ["His daughters", "Lut himself", "No one"], why: "Illam-ra'atahu kanat minal-ghabirin.", source: kathir(7, 83, "Illam-ra'atahu kanat minal-ghabirin.", "saved him and his family, except for his wife") },
+        { q: "What fell on Lut's people, in 7:84?", a: "A rain of stones", wrong: ["Water", "Snow", "Fruit"], why: "Wa amtarna alayhim matara.", source: kathir(7, 84, "Wa amtarna alayhim matara.", "") }
       ]
     },
     {
@@ -1105,7 +1105,7 @@ const ARAF_FOUR: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What did the chiefs advise, in 7:111-112?", a: "Gather magicians from the cities", wrong: ["Free the slaves", "Build a ship", "Leave Egypt"], why: "Wa arsil fil-mada'ini hashirin." },
-        { q: "What did Fir'awn promise the magicians, in 7:114?", a: "Reward and nearness to him", wrong: ["Nothing", "Exile", "Prison"], why: "Na'am wa innakum laminal-muqarrabin." },
+        { q: "What did Fir'awn promise the magicians, in 7:114?", a: "Reward and nearness to him", wrong: ["Nothing", "Exile", "Prison"], why: "Na'am wa innakum laminal-muqarrabin.", source: kathir(7, 114, "Na'am wa innakum laminal-muqarrabin.", "") },
         { q: "Why magicians, per Ibn Kathir?", a: "Magic was the trade of the day", wrong: ["They were prophets", "They were soldiers", "They were farmers"], why: "Magic was widespread and popular at that time." }
       ]
     },
@@ -1425,9 +1425,9 @@ const ARAF_FIVE: DeepUnit = {
       source: hadith("bukhari", "6000", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: Allah divided mercy into a hundred parts, kept ninety-nine with Him and sent one part down to earth. By that one part, creatures are merciful to each other, so a mare lifts her hoof away from her foal.", "Allah divided Mercy into one hundred parts"),
       difficulty: 3,
       questions: [
-        { q: "What does Allah's mercy embrace, in 7:156?", a: "All things", wrong: ["Only angels", "Only Muslims", "Nothing"], why: "Wa rahmati wasi'at kulla shay'." },
+        { q: "What does Allah's mercy embrace, in 7:156?", a: "All things", wrong: ["Only angels", "Only Muslims", "Nothing"], why: "Wa rahmati wasi'at kulla shay'.", source: kathir(7, 156, "Wa rahmati wasi'at kulla shay'.", "mercy encompasses all things") },
         { q: "How many parts of mercy came to earth, in Bukhari 6000?", a: "One part of a hundred", wrong: ["All hundred", "Fifty", "Ninety-nine"], why: "He kept ninety-nine and sent down one." },
-        { q: "For whom is mercy written, in 7:156?", a: "The pious who give zakah and believe", wrong: ["The proud", "The idle", "The cruel"], why: "Lilladhina yattaquna wa yu'tunaz-zakah." }
+        { q: "For whom is mercy written, in 7:156?", a: "The pious who give zakah and believe", wrong: ["The proud", "The idle", "The cruel"], why: "Lilladhina yattaquna wa yu'tunaz-zakah.", source: kathir(7, 156, "Lilladhina yattaquna wa yu'tunaz-zakah.", "give zakāh and those who believe") }
       ]
     },
     {
@@ -1606,8 +1606,8 @@ const ARAF_SIX: DeepUnit = {
       source: ik(178, "Whomever Allah guides is truly guided, and whomever He leaves astray is a loser. Whatever Allah wills happens, and what He does not will does not happen.", ""),
       difficulty: 3,
       questions: [
-        { q: "What do the heedless not do with their hearts, in 7:179?", a: "Understand", wrong: ["Beat", "Feel", "Grow"], why: "Lahum qulubun la yafqahuna biha." },
-        { q: "What are they compared to, in 7:179?", a: "Cattle, or even more astray", wrong: ["Angels", "Lions", "Birds"], why: "Ula'ika kal-an'ami bal hum adall." },
+        { q: "What do the heedless not do with their hearts, in 7:179?", a: "Understand", wrong: ["Beat", "Feel", "Grow"], why: "Lahum qulubun la yafqahuna biha.", source: kathir(7, 179, "Lahum qulubun la yafqahuna biha.", "hearts with which they do not understand") },
+        { q: "What are they compared to, in 7:179?", a: "Cattle, or even more astray", wrong: ["Angels", "Lions", "Birds"], why: "Ula'ika kal-an'ami bal hum adall.", source: kathir(7, 179, "Ula'ika kal-an'ami bal hum adall.", "like cattle, nay even more astray") },
         { q: "Whatever Allah wills happens, per Ibn Kathir.", tf: true, why: "Whatever Allah wills occurs." }
       ]
     },
@@ -1634,7 +1634,7 @@ const ARAF_SIX: DeepUnit = {
       source: hadith("bukhari", "3641", "Mu'awiyah", "Sahih", "The Prophet ﷺ said: a group of my followers will keep obeying Allah's orders, unharmed by those who desert or oppose them, until the Last Day comes while they are still on the right path.", "A group of people amongst my followers will remain obedient … orders"),
       difficulty: 4,
       questions: [
-        { q: "What does the community do, in 7:181?", a: "Guides with truth and justice", wrong: ["Stays silent", "Follows desires", "Hides away"], why: "Ummatun yahduna bil-haqqi wa bihi ya'dilun." },
+        { q: "What does the community do, in 7:181?", a: "Guides with truth and justice", wrong: ["Stays silent", "Follows desires", "Hides away"], why: "Ummatun yahduna bil-haqqi wa bihi ya'dilun.", source: kathir(7, 181, "Ummatun yahduna bil-haqqi wa bihi ya'dilun.", "community which guides by truth and thereby establishes justice") },
         { q: "Until when will the group last, in Bukhari 3641?", a: "Until the Last Day", wrong: ["One century", "Ten years", "Until Badr"], why: "Till Allah's order comes upon them." },
         { q: "Those who oppose them will not harm them.", tf: true, why: "They will not be harmed by anyone who opposes them." }
       ]
@@ -1691,7 +1691,7 @@ const ARAF_SIX: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "Who knows when the Hour comes, in 7:187?", a: "Only Allah", wrong: ["The angels", "The stars", "The scholars"], why: "Innama ilmuha inda rabbi." },
-        { q: "How will the Hour come, in 7:187?", a: "Suddenly", wrong: ["Slowly", "With a date", "After a warning letter"], why: "La ta'tikum illa baghtah." },
+        { q: "How will the Hour come, in 7:187?", a: "Suddenly", wrong: ["Slowly", "With a date", "After a warning letter"], why: "La ta'tikum illa baghtah.", source: kathir(7, 187, "La ta'tikum illa baghtah.", "") },
         { q: "What did the Prophet ﷺ show with two fingers?", a: "He and the Hour are close", wrong: ["Two prayers", "Two wives", "Two cities"], why: "I have been sent and the Hour as these two." }
       ]
     },
@@ -1732,9 +1732,9 @@ const ARAF_SIX: DeepUnit = {
       source: hadith("bukhari", "4644", "Abdullah ibn az-Zubayr", "Sahih", "Abdullah ibn az-Zubayr said: Allah ordered His Prophet ﷺ to forgive people their bad behavior toward him.", "Allah ordered His Prophet … to forgive the people their misbehavior"),
       difficulty: 3,
       questions: [
-        { q: "What three things does 7:199 command?", a: "Forgive, enjoin good, turn away", wrong: ["Fight, take, keep", "Sleep, eat, rest", "Shout, argue, leave"], why: "Khudhil-afwa wa'mur bil-urfi wa a'rid anil-jahilin." },
+        { q: "What three things does 7:199 command?", a: "Forgive, enjoin good, turn away", wrong: ["Fight, take, keep", "Sleep, eat, rest", "Shout, argue, leave"], why: "Khudhil-afwa wa'mur bil-urfi wa a'rid anil-jahilin.", source: kathir(7, 199, "Khudhil-afwa wa'mur bil-urfi wa a'rid anil-jahilin.", "enjoin what is good, and turn away") },
         { q: "What was 7:199 about, per Ibn az-Zubayr?", a: "People's manners", wrong: ["Trade rules", "Fasting", "War"], why: "Forgive the people their misbehavior." },
-        { q: "Whom should we turn away from, in 7:199?", a: "The foolish", wrong: ["Our parents", "The poor", "Our teachers"], why: "Wa a'rid anil-jahilin." }
+        { q: "Whom should we turn away from, in 7:199?", a: "The foolish", wrong: ["Our parents", "The poor", "Our teachers"], why: "Wa a'rid anil-jahilin.", source: kathir(7, 199, "Wa a'rid anil-jahilin.", "is good, and turn away") }
       ]
     },
     {
@@ -1762,7 +1762,7 @@ const ARAF_SIX: DeepUnit = {
       questions: [
         { q: "What should we do when Shaytan stirs us, in 7:200?", a: "Seek refuge with Allah", wrong: ["Shout back", "Ignore Allah", "Run outside"], why: "Fasta'idh billah." },
         { q: "What calms anger, in Bukhari 3282?", a: "Seeking refuge from Shaytan", wrong: ["Eating", "Sleeping", "Arguing more"], why: "I seek refuge with Allah from Satan." },
-        { q: "Allah is All-Hearing, All-Knowing, says 7:200.", tf: true, why: "Innahu sami'un alim." }
+        { q: "Allah is All-Hearing, All-Knowing, says 7:200.", tf: true, why: "Innahu sami'un alim.", source: kathir(7, 200, "Innahu sami'un alim.", "") }
       ]
     },
     {

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Az-Zumar ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -1510,7 +1510,7 @@ const ZUMAR_FOUR: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How are they judged, per Ibn Kathir?", a: "With justice", wrong: ["By luck", "By wealth", "By tribe"], why: "And it will be judged between them with truth, means, with justice." },
-        { q: "What is weighed, per 21:47?", a: "Even a mustard seed", wrong: ["Only mountains", "Only gold", "Nothing small"], why: "And if there be the weight of a mustard seed, We will bring it (21:47)." },
+        { q: "What is weighed, per 21:47?", a: "Even a mustard seed", wrong: ["Only mountains", "Only gold", "Nothing small"], why: "And if there be the weight of a mustard seed, We will bring it (21:47).", source: kathir(39, 70, "And if there be the weight of a mustard seed, We will bring it (21:47).", "weight of a mustard seed, We will bring") },
         { q: "What happens to a good deed, per 4:40?", a: "Allah doubles it", wrong: ["It is lost", "It is halved", "It is ignored"], why: "But if there is any good done, He doubles it, and gives from Him a great reward (4:40)." }
       ]
     },

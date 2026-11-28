@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ahqaf ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -350,7 +350,7 @@ const AHQAF_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "How long are carrying and weaning, in 46:15?", a: "Thirty months", wrong: ["Ten months", "Two months", "Fifty months"], why: "His gestation and the weaning of him is thirty months." },
-        { q: "How long is full nursing, in 2:233?", a: "Two complete years", wrong: ["One year", "Three years", "Six months"], why: "The mothers suckle their children two complete years." },
+        { q: "How long is full nursing, in 2:233?", a: "Two complete years", wrong: ["One year", "Three years", "Six months"], why: "The mothers suckle their children two complete years.", source: kathir(46, 15, "The mothers suckle their children two complete years.", "mothers suckle their children two complete years") },
         { q: "What did Ali learn from 46:15 and 2:233?", a: "The shortest pregnancy is six months", wrong: ["Babies need no milk", "Nine months is the least", "Nothing"], why: "Thirty months minus two years leaves six months, the minimum period of pregnancy." }
       ]
     },
@@ -728,7 +728,7 @@ const AHQAF_THREE: DeepUnit = {
       questions: [
         { q: "Was Allah tired by creating the heavens and earth, in 46:33?", a: "No, never", wrong: ["Yes, a little", "Yes, for seven days", "Only by the earth"], why: "And was not wearied by their creation." },
         { q: "What can Allah do, in 46:33?", a: "Give life to the dead", wrong: ["Nothing more", "Only make stars", "Only make rain"], why: "Is Able to give life to the dead. Yes, He surely is Able to do all things." },
-        { q: "Which is greater, per 40:57?", a: "Creating the heavens and earth", wrong: ["Creating people", "Both equal", "Neither"], why: "The creation of the heavens and earth is greater than the creation of the people." }
+        { q: "Which is greater, per 40:57?", a: "Creating the heavens and earth", wrong: ["Creating people", "Both equal", "Neither"], why: "The creation of the heavens and earth is greater than the creation of the people.", source: kathir(40, 57, "The creation of the heavens and earth is greater than the creation of the people.", "heavens and the earth, and creating them is greater") }
       ]
     },
     {

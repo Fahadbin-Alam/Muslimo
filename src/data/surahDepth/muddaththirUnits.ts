@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Muddaththir ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -199,7 +199,7 @@ const MUDDATHTHIR_ONE: DeepUnit = {
       questions: [
         { q: "How is that Day described in 74:9?", a: "A Hard Day", wrong: ["A holiday", "A short day", "A quiet day"], why: "Truly, that Day will be a Hard Day." },
         { q: "For whom is it far from easy?", a: "The disbelievers", wrong: ["The believers", "The angels", "The prophets"], why: "Far from easy for the disbelievers." },
-        { tf: true, q: "Ayah 54:8 also calls it a hard Day.", why: "The disbelievers will say: This a Hard Day. (54:8)" }
+        { tf: true, q: "Ayah 54:8 also calls it a hard Day.", why: "The disbelievers will say: This a Hard Day. (54:8)", source: kathir(74, 10, "The disbelievers will say: This a Hard Day. (54:8)", "This a Hard Day") }
       ]
     }
   ]
@@ -280,7 +280,7 @@ const MUDDATHTHIR_TWO: DeepUnit = {
       source: ik(23, "Ibn Kathir says he frowned and scowled, then turned away from the truth and arrogantly refused to accept the Quran.", "he turned away from the truth and arrogantly refused to accept and submit"),
       difficulty: 2,
       questions: [
-        { q: "What did he do with his face, per 74:22?", a: "Frowned and scowled", wrong: ["Smiled", "Cried", "Laughed"], why: "Then he frowned and he looked in a bad tempered way." },
+        { q: "What did he do with his face, per 74:22?", a: "Frowned and scowled", wrong: ["Smiled", "Cried", "Laughed"], why: "Then he frowned and he looked in a bad tempered way.", source: kathir(74, 22, "Then he frowned and he looked in a bad tempered way.", "frowned and he looked in a bad tempered") },
         { q: "Why did he turn away, per 74:23?", a: "Out of pride", wrong: ["Out of fear", "Out of hunger", "Out of sleep"], why: "Then he turned back, and was proud." },
         { tf: true, q: "Pride stopped him from accepting the Quran.", why: "He turned away from the truth and arrogantly refused to accept and submit to the Quran." }
       ]
@@ -308,7 +308,7 @@ const MUDDATHTHIR_TWO: DeepUnit = {
       source: ik(25, "Ibn Kathir explains he said this is only the word of a human being, meaning he denied it was the Word of Allah.", "it is not the Words of Allah"),
       difficulty: 2,
       questions: [
-        { q: "What did he claim in 74:24?", a: "It is old magic", wrong: ["It is a dream", "It is a song", "It is a law"], why: "This is nothing but magic from that of old." },
+        { q: "What did he claim in 74:24?", a: "It is old magic", wrong: ["It is a dream", "It is a song", "It is a law"], why: "This is nothing but magic from that of old.", source: kathir(74, 24, "This is nothing but magic from that of old.", "") },
         { q: "What did he claim in 74:25?", a: "It is a human's words", wrong: ["It is an angel's", "It is a jinn's", "It is a king's"], why: "This is nothing but the word of a human being!" },
         { tf: false, q: "The Quran is the words of a human being.", why: "He invents lies against Allah's Ayat and claims that they are the words of a man." }
       ]
@@ -516,7 +516,7 @@ const MUDDATHTHIR_FOUR: DeepUnit = {
       source: ik(51, "Ibn Kathir says they fled the truth like a wild donkey flees something chasing it, like a lion; Ibn Abbas said Qaswarah is the lion.", "like a wild donkey when it flees from something that is trying to catch it, like a lion"),
       difficulty: 2,
       questions: [
-        { q: "What were they compared to in 74:50?", a: "Wild donkeys", wrong: ["Birds", "Fish", "Camels"], why: "As if they were wild donkeys." },
+        { q: "What were they compared to in 74:50?", a: "Wild donkeys", wrong: ["Birds", "Fish", "Camels"], why: "As if they were wild donkeys.", source: kathir(74, 50, "As if they were wild donkeys.", "As if they were wild donkeys") },
         { q: "What is Qaswarah, per Ibn Abbas?", a: "The lion", wrong: ["The wolf", "The hunter", "The storm"], why: "It, Qaswarah, is the lion in the Arabic language." },
         { tf: false, q: "They ran towards the reminder happily.", why: "Then what is wrong with them that they turn away from admonition?" }
       ]
@@ -531,7 +531,7 @@ const MUDDATHTHIR_FOUR: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What did each of them want, per 74:52?", a: "Pages spread out for himself", wrong: ["A horse", "A palace", "A sword"], why: "Nay, everyone of them desires that he should be given pages spread out." },
-        { q: "What was their real problem, per 74:53?", a: "They did not fear the Hereafter", wrong: ["They were poor", "They were busy", "They were young"], why: "Nay! But they fear not the Hereafter." },
+        { q: "What was their real problem, per 74:53?", a: "They did not fear the Hereafter", wrong: ["They were poor", "They were busy", "They were young"], why: "Nay! But they fear not the Hereafter.", source: kathir(74, 53, "Nay! But they fear not the Hereafter.", "not fear the Hereafter") },
         { tf: true, q: "Allah knows best with whom to place His message.", why: "Allah knows best with whom to place His Message. (6:124)" }
       ]
     },
@@ -544,7 +544,7 @@ const MUDDATHTHIR_FOUR: DeepUnit = {
       source: ik(56, "Qatadah said Allah deserves to be feared, and He is worthy to forgive whoever turns to Him and repents.", "He deserves to be feared and He is eligible to forgive the sin of whoever turns to Him"),
       difficulty: 2,
       questions: [
-        { q: "What is the Quran called in 74:54?", a: "An admonition", wrong: ["A song", "A tale", "A riddle"], why: "Nay, verily, this is an admonition, meaning, truly the Quran is a reminder." },
+        { q: "What is the Quran called in 74:54?", a: "An admonition", wrong: ["A song", "A tale", "A riddle"], why: "Nay, verily, this is an admonition, meaning, truly the Quran is a reminder.", source: kathir(74, 54, "Nay, verily, this is an admonition, meaning, truly the Quran is a reminder.", "") },
         { q: "Whom does Allah forgive, per Qatadah?", a: "Whoever turns to Him", wrong: ["No one", "Only kings", "Only the rich"], why: "He is eligible to forgive the sin of whoever turns to Him and repents." },
         { tf: true, q: "We take heed only if Allah wills.", why: "And they will not receive admonition unless Allah wills." }
       ]

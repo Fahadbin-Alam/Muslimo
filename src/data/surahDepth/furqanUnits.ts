@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Furqan ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -113,7 +113,7 @@ const FURQAN_ONE: DeepUnit = {
       source: ik(20, "The disbelievers asked why the Messenger ﷺ eats and walks in markets. Allah says every Messenger before ate food and went to markets to earn a living. That did not lower them; Allah gave them noble manners and miracles.", "they all used to eat food needing the nourishment in it"),
       difficulty: 3,
       questions: [
-        { q: "What did they ask about the Messenger ﷺ, in 25:7?", a: "Why he eats and walks in markets", wrong: ["Why he sleeps at night", "Why he prays", "Why he smiles"], why: "Why does this Messenger eat food, and walk about in the markets." },
+        { q: "What did they ask about the Messenger ﷺ, in 25:7?", a: "Why he eats and walks in markets", wrong: ["Why he sleeps at night", "Why he prays", "Why he smiles"], why: "Why does this Messenger eat food, and walk about in the markets.", source: kathir(25, 7, "Why does this Messenger eat food, and walk about in the markets.", "messenger that eats food and walks in the markets") },
         { q: "What did earlier Messengers do, in 25:20?", a: "Ate food and walked in markets", wrong: ["Never ate", "Never left home", "Lived in the sky"], why: "They ate food and walked in the markets." },
         { tf: true, q: "Earlier Messengers went to markets to earn a living.", why: "They used to go around in the marketplaces seeking to engage in trade and earn a livelihood." }
       ]
@@ -463,7 +463,7 @@ const FURQAN_TWO: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "How do they spend the night, in 25:64?", a: "Prostrate and standing in worship", wrong: ["Watching shows", "Playing games", "Counting coins"], why: "And those who spend the night in worship of their Lord, prostrate and standing." },
-        { q: "When do they ask forgiveness, in 51:18?", a: "Before dawn", wrong: ["At noon", "At lunch", "Never"], why: "And in the hours before dawn, they were asking for forgiveness." },
+        { q: "When do they ask forgiveness, in 51:18?", a: "Before dawn", wrong: ["At noon", "At lunch", "Never"], why: "And in the hours before dawn, they were asking for forgiveness.", source: kathir(51, 18, "And in the hours before dawn, they were asking for forgiveness.", "hours before dawn, they were asking for forgiveness") },
         { tf: true, q: "Ibn Kathir explains it as worshipping and obeying Him.", why: "Meaning, worshipping and obeying Him." }
       ]
     },

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah At-Tahrim ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -85,7 +85,7 @@ const TAHRIM_ONE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What if you swear and then see something better?", a: "Do the better and expiate", wrong: ["Keep the oath anyway", "Forget it", "Swear again"], why: "Then do the better one and make expiation for your oath." },
-        { q: "What has Allah ordained, per 66:2?", a: "A way to undo oaths", wrong: ["No oaths ever", "Oaths every day", "Only written oaths"], why: "Allah has already ordained for you the absolution from your oaths." },
+        { q: "What has Allah ordained, per 66:2?", a: "A way to undo oaths", wrong: ["No oaths ever", "Oaths every day", "Only written oaths"], why: "Allah has already ordained for you the absolution from your oaths.", source: kathir(66, 2, "Allah has already ordained for you the absolution from your oaths.", "Allāh has already ordained") },
         { tf: true, q: "Abdur-Rahman bin Samura narrated the oath hadith.", why: "Narrated Abdur-Rahman bin Samura: do the better one and make expiation for your oath." }
       ]
     },
@@ -586,7 +586,7 @@ const TAHRIM_THREE: DeepUnit = {
       source: hadith("bukhari", "3411", "Abu Musa al-Ash'ari", "Sahih", "The Prophet ﷺ said many men reached perfection but among women only Asiyah, the wife of Firawn, and Maryam, the daughter of Imran.", "Many amongst men reached (the level of) perfection but none amongst the women reached this level except Asia … wife, and Mary"),
       difficulty: 2,
       questions: [
-        { q: "Which two women in 66:11-12 reached perfection?", a: "Asiyah and Maryam", wrong: ["Wives of Nuh and Lut", "Hawwa and Sarah", "Bilqis and Hajar"], why: "None amongst the women reached this level except Asia, Pharaoh's wife, and Mary, the daughter of Imran." },
+        { q: "Which two women in 66:11-12 reached perfection?", a: "Asiyah and Maryam", wrong: ["Wives of Nuh and Lut", "Hawwa and Sarah", "Bilqis and Hajar"], why: "None amongst the women reached this level except Asia, Pharaoh's wife, and Mary, the daughter of Imran.", source: kathir(66, 11, "None amongst the women reached this level except Asia, Pharaoh's wife, and Mary, the daughter of Imran.", "of perfection, but none among women have reached this level except Asiyah") },
         { q: "Who reported the hadith of perfection?", a: "Abu Musa al-Ash'ari", wrong: ["Abu Jahl", "Firawn", "Haman"], why: "Narrated Abu Musa: Allah's Messenger said, Many amongst men reached perfection." },
         { tf: false, q: "No woman ever reached perfection.", why: "None amongst the women reached this level except Asia, Pharaoh's wife, and Mary." }
       ]

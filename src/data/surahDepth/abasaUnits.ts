@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Abasa ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -127,7 +127,7 @@ const ABASA_ONE: DeepUnit = {
       source: ik(14, "Ibn Kathir says all of the Quran is in honoured, respected pages, elevated in status and purified from additions and deficiency.", "from impurity, additions and deficiency"),
       difficulty: 2,
       questions: [
-        { q: "Where is the reminder, per 80:13?", a: "In Records held in honour", wrong: ["On a mountain", "In the sea", "In a cave"], why: "In Records held in honor." },
+        { q: "Where is the reminder, per 80:13?", a: "In Records held in honour", wrong: ["On a mountain", "In the sea", "In a cave"], why: "In Records held in honor.", source: kathir(80, 13, "In Records held in honor.", "In Records held in honor, exalted") },
         { q: "What does exalted mean, per Ibn Kathir?", a: "Elevated in status", wrong: ["Very heavy", "Very old", "Very long"], why: "Exalted, meaning, elevated in status." },
         { tf: false, q: "Words have been added to the Quran over time.", why: "Purified, meaning, from impurity, additions and deficiency." }
       ]
@@ -142,7 +142,7 @@ const ABASA_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "Who are the Safarah, per Ibn Abbas?", a: "The angels", wrong: ["The poets", "The kings", "The traders"], why: "Ibn Abbas, Mujahid, Ad-Dahhak, and Ibn Zayd, all said, These are the angels." },
-        { q: "How are they described, per 80:16?", a: "Honourable and obedient", wrong: ["Proud and lazy", "Hidden and unknown", "Weak and slow"], why: "Honorable and obedient." },
+        { q: "How are they described, per 80:16?", a: "Honourable and obedient", wrong: ["Proud and lazy", "Hidden and unknown", "Weak and slow"], why: "Honorable and obedient.", source: kathir(80, 16, "Honorable and obedient.", "") },
         { tf: true, q: "Their character and deeds are pure and perfect.", why: "Their character and their deeds are righteous, pure and perfect." }
       ]
     },

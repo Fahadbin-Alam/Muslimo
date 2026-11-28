@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ad-Dukhan ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -72,7 +72,7 @@ const DUKHAN_ONE: DeepUnit = {
       questions: [
         { q: "On what was the Quran sent down, in 44:3?", a: "A blessed night", wrong: ["A rainy day", "A Friday noon", "A winter morning"], why: "We sent it down on a blessed night." },
         { q: "Which night is it, per Ibn Kathir?", a: "Laylatul-Qadr", wrong: ["The night of Eid", "The night of Isra", "The first night of Hajj"], why: "On a blessed night, Laylatul-Qadr (the Night of Decree)." },
-        { q: "In which month was the Quran revealed, per 2:185?", a: "Ramadan", wrong: ["Rajab", "Shawwal", "Muharram"], why: "The month of Ramadan in which was revealed the Quran (2:185)." }
+        { q: "In which month was the Quran revealed, per 2:185?", a: "Ramadan", wrong: ["Rajab", "Shawwal", "Muharram"], why: "The month of Ramadan in which was revealed the Quran (2:185).", source: kathir(44, 3, "The month of Ramadan in which was revealed the Quran (2:185).", "month of Ramadan in which was revealed") }
       ]
     },
     {
@@ -896,7 +896,7 @@ const DUKHAN_THREE: DeepUnit = {
       questions: [
         { q: "What will be said, in 44:50?", a: "This is what you used to doubt", wrong: ["This is a dream", "This is a garden", "This is a gift"], why: "Verily, this is that whereof you used to doubt!" },
         { q: "Which ayah does Ibn Kathir link to 44:50?", a: "52:14, the Fire you used to deny", wrong: ["2:186", "39:53", "93:5"], why: "This is the Fire which you used to deny (52:14)." },
-        { tf: true, q: "Ad-Dukhan opened with people playing in doubt, 44:9.", why: "Nay! They play about in doubt (44:9)." }
+        { tf: true, q: "Ad-Dukhan opened with people playing in doubt, 44:9.", why: "Nay! They play about in doubt (44:9).", source: kathir(44, 9, "Nay! They play about in doubt (44:9).", "idolaters are playing about in doubt") }
       ]
     },
     {
@@ -938,7 +938,7 @@ const DUKHAN_THREE: DeepUnit = {
       questions: [
         { q: "Where are the people of taqwa, in 44:52?", a: "Among gardens and springs", wrong: ["Among rocks", "In a cave", "In a desert"], why: "Among Gardens and Springs." },
         { q: "What are the gardens in contrast to, per Ibn Kathir?", a: "The state of the doomed", wrong: ["The sea", "The moon", "The market"], why: "This is in direct contrast to the state of the doomed." },
-        { tf: true, q: "Firawn's people left gardens and springs, in 44:25.", why: "How many of gardens and springs that they left behind (44:25)." }
+        { tf: true, q: "Firawn's people left gardens and springs, in 44:25.", why: "How many of gardens and springs that they left behind (44:25).", source: kathir(44, 25, "How many of gardens and springs that they left behind (44:25).", "gardens and springs that they left behind") }
       ]
     },
     {

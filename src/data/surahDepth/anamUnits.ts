@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-An'am ayah by ayah, the way Ali 'Imran, An-Nisa and Al-Ma'idah are taught: every ayah or small group of
 // ayahs gets a lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih
@@ -336,7 +336,7 @@ const ANAM_ONE: DeepUnit = {
       source: hadith("bukhari", "7", "Ibn Abbas", "Sahih", "Heraclius asked Abu Sufyan whether the nobles or the poor followed the Prophet ﷺ. He said the poor. Heraclius said all messengers have been followed by such people.", "have been followed by this very class of people"),
       difficulty: 4,
       questions: [
-        { q: "What did the chiefs mock, in 6:53?", a: "Allah favoring poor believers", wrong: ["The rain", "Their own wealth", "The stars"], why: "A ha'ula'i mannallahu 'alayhim min baynina?" },
+        { q: "What did the chiefs mock, in 6:53?", a: "Allah favoring poor believers", wrong: ["The rain", "Their own wealth", "The stars"], why: "A ha'ula'i mannallahu 'alayhim min baynina?", source: kathir(6, 53, "A ha'ula'i mannallahu 'alayhim min baynina?", "") },
         { q: "Who followed the Prophet ﷺ, per Abu Sufyan to Heraclius?", a: "Mostly the poor", wrong: ["Only kings", "Only the rich", "No one"], why: "Bukhari 7: it is the poor who follow him." },
         { q: "Who knows best who is grateful, in 6:53?", a: "Allah", wrong: ["The chiefs", "The traders", "The poets"], why: "A laysallahu bi-a'lama bish-shakirin?" }
       ]
@@ -922,7 +922,7 @@ const ANAM_THREE: DeepUnit = {
       source: hadith("muslim", "2553", "An-Nawwas ibn Sam'an", "Sahih", "An-Nawwas asked the Messenger of Allah ﷺ about virtue and sin. He said: virtue is good character, and sin is what bothers your heart and you would hate people to find out. Ibn Kathir quotes it on 6:120.", "vice is what rankles in your heart and that you disapprove that people should come to know of it"),
       difficulty: 3,
       questions: [
-        { q: "Which sins should we leave, in 6:120?", a: "Open and secret ones", wrong: ["Only public ones", "Only big ones", "Only old ones"], why: "Wa dharu zahiral-ithmi wa batinah." },
+        { q: "Which sins should we leave, in 6:120?", a: "Open and secret ones", wrong: ["Only public ones", "Only big ones", "Only old ones"], why: "Wa dharu zahiral-ithmi wa batinah.", source: kathir(6, 120, "Wa dharu zahiral-ithmi wa batinah.", "") },
         { q: "What is sin, per Muslim 2553?", a: "What troubles your heart", wrong: ["Whatever is fun", "Whatever is new", "Only crimes"], why: "Vice is what rankles in your heart." },
         { q: "What is virtue, per Muslim 2553?", a: "Good character", wrong: ["Wealth", "Fame", "Strength"], why: "Virtue is a kind disposition." }
       ]
@@ -1020,9 +1020,9 @@ const ANAM_THREE: DeepUnit = {
       source: ik(131, "Allah sent messengers and books so no one could say he was punished without hearing the message. He never punishes a nation before sending a messenger.", "We did not punish any of the nations, except after sending Messengers to them"),
       difficulty: 4,
       questions: [
-        { q: "What will jinn and people admit, in 6:130?", a: "Messengers came to them", wrong: ["No one warned them", "They were angels", "They were asleep"], why: "Shahidna 'ala anfusina." },
+        { q: "What will jinn and people admit, in 6:130?", a: "Messengers came to them", wrong: ["No one warned them", "They were angels", "They were asleep"], why: "Shahidna 'ala anfusina.", source: kathir(6, 130, "Shahidna 'ala anfusina.", "jinn and mankind, did there not come to you messengers") },
         { q: "Does Allah punish a nation before sending a messenger, per 6:131?", tf: false, why: "Not while its people were unaware." },
-        { q: "What deceived them, in 6:130?", a: "The life of this world", wrong: ["The angels", "The Quran", "The prophets"], why: "Wa gharrat-humul-hayatud-dunya." }
+        { q: "What deceived them, in 6:130?", a: "The life of this world", wrong: ["The angels", "The Quran", "The prophets"], why: "Wa gharrat-humul-hayatud-dunya.", source: kathir(6, 130, "Wa gharrat-humul-hayatud-dunya.", "life of this world that deceived") }
       ]
     },
     {
@@ -1232,7 +1232,7 @@ const ANAM_THREE: DeepUnit = {
       questions: [
         { q: "Who are the two groups in 6:156, per Ibn Abbas?", a: "Jews and Christians", wrong: ["Persians and Romans", "Jinn and angels", "Makkah and Ta'if"], why: "To two sects before us." },
         { q: "What has come to them, in 6:157?", a: "Clear proof, guidance and mercy", wrong: ["Nothing new", "Only a warning", "A king"], why: "Fa-qad ja'akum bayyinatun min rabbikum." },
-        { q: "Which book is praised with the Quran, in 6:154?", a: "The book of Musa", wrong: ["A book of poems", "A Persian book", "No book"], why: "Thumma atayna Musal-kitab." }
+        { q: "Which book is praised with the Quran, in 6:154?", a: "The book of Musa", wrong: ["A book of poems", "A Persian book", "No book"], why: "Thumma atayna Musal-kitab.", source: kathir(6, 154, "Thumma atayna Musal-kitab.", "") }
       ]
     },
     {
@@ -1245,7 +1245,7 @@ const ANAM_THREE: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "Which sign closes the door of new faith, per Bukhari 4635?", a: "The sun rising from the west", wrong: ["A big storm", "A long winter", "A full moon"], why: "No good will it do a soul to believe then." },
-        { q: "When does faith help, per 6:158?", a: "Before the signs come", wrong: ["Only after them", "Any time, always", "Only in old age"], why: "Lam takun amanat min qabl." },
+        { q: "When does faith help, per 6:158?", a: "Before the signs come", wrong: ["Only after them", "Any time, always", "Only in old age"], why: "Lam takun amanat min qabl.", source: kathir(6, 158, "Lam takun amanat min qabl.", "come some of the signs") },
         { q: "Who narrated Bukhari 4635?", a: "Abu Hurairah", wrong: ["Ibn Abbas", "Aishah", "Hudhayfah"], why: "Narrated Abu Hurairah." }
       ]
     },
@@ -1288,7 +1288,7 @@ const ANAM_THREE: DeepUnit = {
       questions: [
         { q: "What is for Allah, in 6:162?", a: "Prayer, sacrifice, life, death", wrong: ["Only prayer", "Only charity", "Only Ramadan"], why: "Inna salati wa nusuki wa mahyaya wa mamati lillah." },
         { q: "When did the Prophet ﷺ say 6:162, per Muslim 771?", a: "Opening his prayer", wrong: ["At the market", "In battle", "Before sleep only"], why: "When he got up for prayer." },
-        { q: "Whose religion is the straight path, in 6:161?", a: "Ibrahim's, hanif", wrong: ["The pagans'", "The Romans'", "Any religion"], why: "Millata Ibrahima hanifa." }
+        { q: "Whose religion is the straight path, in 6:161?", a: "Ibrahim's, hanif", wrong: ["The pagans'", "The Romans'", "Any religion"], why: "Millata Ibrahima hanifa.", source: kathir(6, 161, "Millata Ibrahima hanifa.", "to a straight path") }
       ]
     },
     {
@@ -1314,8 +1314,8 @@ const ANAM_THREE: DeepUnit = {
       source: hadith("muslim", "2742", "Abu Sa'id al-Khudri", "Sahih", "The Messenger of Allah ﷺ said: the world is sweet and green, and Allah is placing you in it as successors to see how you act.", "Allah is going to install you as vicegerent in it in order to see how you act"),
       difficulty: 5,
       questions: [
-        { q: "What did Allah make us, in 6:165?", a: "Successors on the earth", wrong: ["Angels", "Owners forever", "Visitors only"], why: "Ja'alakum khala'ifal-ard." },
-        { q: "Why are some raised above others, in 6:165?", a: "To test us", wrong: ["By chance", "Because some are loved more", "No reason"], why: "Li-yabluwakum fi ma atakum." },
+        { q: "What did Allah make us, in 6:165?", a: "Successors on the earth", wrong: ["Angels", "Owners forever", "Visitors only"], why: "Ja'alakum khala'ifal-ard.", source: kathir(6, 165, "Ja'alakum khala'ifal-ard.", "make you successors on the earth") },
+        { q: "Why are some raised above others, in 6:165?", a: "To test us", wrong: ["By chance", "Because some are loved more", "No reason"], why: "Li-yabluwakum fi ma atakum.", source: kathir(6, 165, "Li-yabluwakum fi ma atakum.", "raised some of them above others") },
         { q: "How does Al-An'am end?", a: "Swift in punishment, forgiving, merciful", wrong: ["With a story of Musa", "With a dua for rain", "With a list of foods"], why: "Inna rabbaka sari'ul-'iqab, wa innahu la-ghafurun rahim." }
       ]
     }

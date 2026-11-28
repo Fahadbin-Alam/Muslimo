@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ar-Rum ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -98,9 +98,9 @@ const RUM_ONE: DeepUnit = {
       source: ik(8, "Many scholars said the Romans beat the Persians on the day of Badr, so the believers had two reasons to rejoice.", ""),
       difficulty: 4,
       questions: [
-        { q: "Whom does Allah help, in 30:5?", a: "Whom He wills", wrong: ["Only the rich", "No one", "The strongest"], why: "With the help of Allah. He helps whom He wills." },
+        { q: "Whom does Allah help, in 30:5?", a: "Whom He wills", wrong: ["Only the rich", "No one", "The strongest"], why: "With the help of Allah. He helps whom He wills.", source: kathir(30, 5, "With the help of Allah. He helps whom He wills.", "") },
         { q: "On which day did Rome win, per many scholars?", a: "The day of Badr", wrong: ["The day of Uhud", "The day of Hijrah", "The day of Eid"], why: "The victory of the Romans over the Persians happened on the same day as the battle of Badr." },
-        { q: "Which Names end 30:5?", a: "All-Mighty, Most Merciful", wrong: ["All-Hearing, All-Seeing", "Most High, Most Great", "First, Last"], why: "And He is the All-Mighty, the Most Merciful." }
+        { q: "Which Names end 30:5?", a: "All-Mighty, Most Merciful", wrong: ["All-Hearing, All-Seeing", "Most High, Most Great", "First, Last"], why: "And He is the All-Mighty, the Most Merciful.", source: kathir(30, 5, "And He is the All-Mighty, the Most Merciful.", "is the All-Mighty, the Most Merciful") }
       ]
     },
     {
@@ -112,7 +112,7 @@ const RUM_ONE: DeepUnit = {
       source: ik(9, "The news that Rome would beat Persia was a true promise from Allah that could not change and surely came to pass.", ""),
       difficulty: 3,
       questions: [
-        { q: "Does Allah fail His promise, in 30:6?", a: "Never", wrong: ["Sometimes", "Often", "Only in war"], why: "A promise from Allah, and Allah fails not in His promise." },
+        { q: "Does Allah fail His promise, in 30:6?", a: "Never", wrong: ["Sometimes", "Often", "Only in war"], why: "A promise from Allah, and Allah fails not in His promise.", source: kathir(30, 6, "A promise from Allah, and Allah fails not in His promise.", "fail in His promise") },
         { q: "What do most men not know, per Ibn Kathir?", a: "Allah's decree in His creation", wrong: ["Their names", "The weather", "Their wealth"], why: "They do not know the decree of Allah concerning His creation." },
         { tf: true, q: "Ibn Kathir says Allah's actions are wise and just.", why: "But what He does is wise and is based on justice." }
       ]
@@ -126,8 +126,8 @@ const RUM_ONE: DeepUnit = {
       source: ik(10, "Al-Hasan Al-Basri said some can weigh a coin on a fingertip, yet do not know how to pray properly.", ""),
       difficulty: 3,
       questions: [
-        { q: "What do they know, in 30:7?", a: "The outer side of worldly life", wrong: ["The Hereafter", "The unseen", "Nothing at all"], why: "They know only the outer appearance of the life of the world." },
-        { q: "What are they heedless of, in 30:7?", a: "The Hereafter", wrong: ["Their trade", "Their food", "Their homes"], why: "And they are heedless of the Hereafter." },
+        { q: "What do they know, in 30:7?", a: "The outer side of worldly life", wrong: ["The Hereafter", "The unseen", "Nothing at all"], why: "They know only the outer appearance of the life of the world.", source: kathir(30, 7, "They know only the outer appearance of the life of the world.", "know what is apparent of the worldly life") },
+        { q: "What are they heedless of, in 30:7?", a: "The Hereafter", wrong: ["Their trade", "Their food", "Their homes"], why: "And they are heedless of the Hereafter.", source: kathir(30, 7, "And they are heedless of the Hereafter.", "") },
         { q: "What could the man not do, per Al-Hasan Al-Basri?", a: "Pray properly", wrong: ["Weigh coins", "Trade well", "Count money"], why: "He could put a Dirham on his finger and tell how much it weighs, but he does not know how to pray properly." }
       ]
     },
@@ -154,9 +154,9 @@ const RUM_ONE: DeepUnit = {
       source: ik(10, "Pondering creation shows Allah made it in truth, not in jest, lasting until an appointed time, the Day of Resurrection.", ""),
       difficulty: 3,
       questions: [
-        { q: "How did Allah create the heavens and earth, in 30:8?", a: "With truth, for a term", wrong: ["By chance", "For play", "Forever unchanged"], why: "Allah has created not the heavens and the earth... except with truth and for an appointed term." },
+        { q: "How did Allah create the heavens and earth, in 30:8?", a: "With truth, for a term", wrong: ["By chance", "For play", "Forever unchanged"], why: "Allah has created not the heavens and the earth... except with truth and for an appointed term.", source: kathir(30, 8, "Allah has created not the heavens and the earth... except with truth and for an appointed term.", "created the heavens and the earth and what is between them except in truth") },
         { q: "What is the appointed time, per Ibn Kathir?", a: "The Day of Resurrection", wrong: ["Next year", "Sunset", "Ramadan"], why: "It will continue until an appointed time, the Day of Resurrection." },
-        { tf: true, q: "In 30:8 many people deny meeting their Lord.", why: "And indeed many of mankind deny meeting with their Lord." }
+        { tf: true, q: "In 30:8 many people deny meeting their Lord.", why: "And indeed many of mankind deny meeting with their Lord.", source: kathir(30, 8, "And indeed many of mankind deny meeting with their Lord.", "indeed many of mankind deny meeting with their Lord") }
       ]
     },
     {
@@ -168,8 +168,8 @@ const RUM_ONE: DeepUnit = {
       source: ik(10, "Past nations had more wealth, strength and building, yet when they denied their Messengers, nothing protected them. Allah was not unjust to them.", ""),
       difficulty: 4,
       questions: [
-        { q: "How were the earlier nations, in 30:9?", a: "Stronger and more numerous", wrong: ["Weaker", "Poorer", "Fewer"], why: "They were superior to them in strength, and they tilled the earth and populated it in greater numbers." },
-        { q: "Who wronged them, in 30:9?", a: "They wronged themselves", wrong: ["Allah", "The Messengers", "Their neighbors"], why: "Surely, Allah wronged them not, but they used to wrong themselves." },
+        { q: "How were the earlier nations, in 30:9?", a: "Stronger and more numerous", wrong: ["Weaker", "Poorer", "Fewer"], why: "They were superior to them in strength, and they tilled the earth and populated it in greater numbers.", source: kathir(30, 9, "They were superior to them in strength, and they tilled the earth and populated it in greater numbers.", "") },
+        { q: "Who wronged them, in 30:9?", a: "They wronged themselves", wrong: ["Allah", "The Messengers", "Their neighbors"], why: "Surely, Allah wronged them not, but they used to wrong themselves.", source: kathir(30, 9, "Surely, Allah wronged them not, but they used to wrong themselves.", "wronged them, but they were wronging themselves") },
         { q: "How much of their wealth was Quraysh given, per Ibn Kathir?", a: "Not one tenth", wrong: ["Twice as much", "The same", "Half"], why: "You have not been given one-tenth of what they were given." }
       ]
     },

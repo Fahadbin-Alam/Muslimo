@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Najm ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -291,7 +291,7 @@ const NAJM_ONE: DeepUnit = {
       line: "Near the Lote Tree is Jannat Al-Mawa, the Garden of Abode.",
       facts: ["Al-Mawa: the home to stay", "Paradise is near it"],
       quote: q53(15),
-      source: ik(15, "Ibn Kathir quotes the ayahs: near Sidrat Al-Muntaha, near it is the Paradise of Abode.", ""),
+      source: ik(15, "Ibn Kathir quotes the ayahs: near Sidrat Al-Muntaha, near it is the Paradise of Abode.", "original shape, once near Sidrat Al-Muntaha"),
       difficulty: 1,
       questions: [
         { q: "What is near the Lote Tree, in 53:15?", a: "The Paradise of Abode", wrong: ["A great sea", "A tall mountain", "A city"], why: "Near it is the Paradise of Abode." },
@@ -700,7 +700,7 @@ const NAJM_THREE: DeepUnit = {
       questions: [
         { q: "What does 53:35 ask?", a: "Does he know the Unseen?", wrong: ["Does he own land?", "Can he read?", "Is he strong?"], why: "Is with him the knowledge of the Unseen so that he sees?" },
         { q: "Why did he stop giving, per Ibn Kathir?", a: "Fear of poverty", wrong: ["Illness", "A long trip", "Forgetfulness"], why: "Does this person, who stopped giving for fear of poverty, have knowledge of the Unseen?" },
-        { q: "What does 34:39 promise, per Ibn Kathir?", a: "Allah replaces what you spend", wrong: ["Wealth never grows", "Giving is lost", "Only kings give"], why: "And whatsoever you spend of anything in Allah's cause, He will replace it. 34:39." }
+        { q: "What does 34:39 promise, per Ibn Kathir?", a: "Allah replaces what you spend", wrong: ["Wealth never grows", "Giving is lost", "Only kings give"], why: "And whatsoever you spend of anything in Allah's cause, He will replace it. 34:39.", source: kathir(53, 35, "And whatsoever you spend of anything in Allah's cause, He will replace it. 34:39.", "whatsoever you spend of anything") }
       ]
     },
     {
@@ -924,7 +924,7 @@ const NAJM_THREE: DeepUnit = {
       questions: [
         { q: "Whom did Allah destroy, in 53:50?", a: "The former Ad", wrong: ["Quraysh", "The Romans", "The Persians"], why: "And that it is He Who destroyed the former Ad." },
         { q: "Whose people were Ad, per Ibn Kathir?", a: "Hud", wrong: ["Salih", "Shuayb", "Lut"], why: "The former Ad, the people of Hud." },
-        { q: "How long did the wind last, in 69:7?", a: "Seven nights, eight days", wrong: ["One night", "Forty days", "A year"], why: "Which Allah imposed in them for seven nights and eight days in succession. 69:6-7." }
+        { q: "How long did the wind last, in 69:7?", a: "Seven nights, eight days", wrong: ["One night", "Forty days", "A year"], why: "Which Allah imposed in them for seven nights and eight days in succession. 69:6-7.", source: kathir(69, 7, "Which Allah imposed in them for seven nights and eight days in succession. 69:6-7.", "for seven nights and eight days") }
       ]
     },
     {

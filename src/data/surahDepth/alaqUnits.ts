@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Alaq ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -267,7 +267,7 @@ const ALAQ_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What does if he ceases not mean, per Ibn Kathir?", a: "If he does not stop his stubbornness", wrong: ["If he stops eating", "If he stops walking", "If he stops talking"], why: "If he does not recant from his discord and obstinacy." },
-        { q: "How does 96:16 describe the forehead?", a: "Lying and sinful", wrong: ["Shining and pure", "Small and weak", "Tired and old"], why: "A lying, sinful forehead!" },
+        { q: "How does 96:16 describe the forehead?", a: "Lying and sinful", wrong: ["Shining and pure", "Small and weak", "Tired and old"], why: "A lying, sinful forehead!", source: kathir(96, 16, "A lying, sinful forehead!", "forehead of Abu Jahl is lying in its statements and sinful") },
         { tf: true, q: "Allah gives warnings so people can turn back.", why: "Nay! If he ceases not." }
       ]
     },
@@ -281,7 +281,7 @@ const ALAQ_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Who is his council, per Ibn Kathir?", a: "His people and tribe", wrong: ["His camels", "His books", "His servants only"], why: "His council, meaning, his people and his tribe." },
-        { q: "Whom will Allah call, per 96:18?", a: "The guards of Hell", wrong: ["The kings", "The poets", "The traders"], why: "We will call out the guards of Hell!" },
+        { q: "Whom will Allah call, per 96:18?", a: "The guards of Hell", wrong: ["The kings", "The poets", "The traders"], why: "We will call out the guards of Hell!", source: kathir(96, 18, "We will call out the guards of Hell!", "call out the guards of Hell") },
         { tf: false, q: "Abu Jahl's tribe could have beaten the angels.", why: "This is so that he may know who will win." }
       ]
     },
@@ -336,7 +336,7 @@ const ALAQ_TWO: DeepUnit = {
       source: hadith("muslim", "482", "Abu Hurairah", "Sahih", "The nearest a servant comes to his Lord is while in sujud, so make plenty of dua then.", "The nearest a servant comes to his Lord is when he is prostrating himself"),
       difficulty: 3,
       questions: [
-        { q: "What does 96:19 command at its end?", a: "Prostrate and draw near", wrong: ["Stand and wait", "Sit and rest", "Run and hide"], why: "Fall prostrate and draw near to Allah!" },
+        { q: "What does 96:19 command at its end?", a: "Prostrate and draw near", wrong: ["Stand and wait", "Sit and rest", "Run and hide"], why: "Fall prostrate and draw near to Allah!", source: kathir(96, 19, "Fall prostrate and draw near to Allah!", "prostrate and draw near") },
         { q: "When is a servant nearest to Allah?", a: "In sujud", wrong: ["While eating", "While sleeping", "While shopping"], why: "The nearest a servant comes to his Lord is when he is prostrating himself." },
         { q: "What should we do much of in sujud?", a: "Make dua", wrong: ["Stay silent", "Count money", "Look around"], why: "So make supplication in this state." }
       ]

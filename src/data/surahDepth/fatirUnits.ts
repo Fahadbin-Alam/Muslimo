@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Fatir ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -198,8 +198,8 @@ const FATIR_ONE: DeepUnit = {
       source: hadith("bukhari", "5986", "Anas ibn Malik", "Sahih", "The Prophet ﷺ said: whoever would like his provision to be increased and his life extended should keep good ties with his relatives.", "he should keep good relations with his Kith and kin"),
       difficulty: 4,
       questions: [
-        { q: "What were we first made from, in 35:11?", a: "Dust", wrong: ["Fire", "Light", "Stone"], why: "And Allah did create you from dust, then from Nutfah." },
-        { q: "Where is every lifespan recorded, in 35:11?", a: "In a Book", wrong: ["In the stars", "In the sand", "Nowhere"], why: "Nor is a part cut off from his life, but is in a Book." },
+        { q: "What were we first made from, in 35:11?", a: "Dust", wrong: ["Fire", "Light", "Stone"], why: "And Allah did create you from dust, then from Nutfah.", source: kathir(35, 11, "And Allah did create you from dust, then from Nutfah.", "create you from dust, then from Nutfah") },
+        { q: "Where is every lifespan recorded, in 35:11?", a: "In a Book", wrong: ["In the stars", "In the sand", "Nowhere"], why: "Nor is a part cut off from his life, but is in a Book.", source: kathir(35, 11, "Nor is a part cut off from his life, but is in a Book.", "life which is recorded in the Book") },
         { q: "What should one keep, in the hadith?", a: "Good ties with relatives", wrong: ["Gold hidden", "Secrets", "Long journeys"], why: "Whoever loves more provision and a longer life should keep good relations with his kin." }
       ]
     },
@@ -479,8 +479,8 @@ const FATIR_TWO: DeepUnit = {
       source: hadith("bukhari", "5027", "Uthman ibn Affan", "Sahih", "The Prophet ﷺ said: the best among you are those who learn the Quran and teach it.", "The best among you (Muslims) are those who learn … and teach it"),
       difficulty: 3,
       questions: [
-        { q: "What three deeds are named, in 35:29?", a: "Recite, pray and spend", wrong: ["Sleep, eat, rest", "Trade, travel, build", "Hunt, fish, farm"], why: "Those who recite the Book of Allah, and perform the Salah, and spend." },
-        { q: "What do they hope for, in 35:29?", a: "A trade that never perishes", wrong: ["Fame", "Palaces now", "Long journeys"], why: "They hope for a (sure) trade-gain that will never perish." },
+        { q: "What three deeds are named, in 35:29?", a: "Recite, pray and spend", wrong: ["Sleep, eat, rest", "Trade, travel, build", "Hunt, fish, farm"], why: "Those who recite the Book of Allah, and perform the Salah, and spend.", source: kathir(35, 29, "Those who recite the Book of Allah, and perform the Salah, and spend.", "recite and believe in His Book, and do the deeds") },
+        { q: "What do they hope for, in 35:29?", a: "A trade that never perishes", wrong: ["Fame", "Palaces now", "Long journeys"], why: "They hope for a (sure) trade-gain that will never perish.", source: kathir(35, 29, "They hope for a (sure) trade-gain that will never perish.", "that will never perish") },
         { q: "Who is best, in the hadith?", a: "Who learns and teaches Quran", wrong: ["The richest", "The strongest", "The oldest"], why: "The best among you are those who learn the Quran and teach it." }
       ]
     },
@@ -550,9 +550,9 @@ const FATIR_TWO: DeepUnit = {
       source: hadith("muslim", "250", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: the adornment of a believer will reach as far as the places his wudu reaches.", "In a believer adornment would reach the places where ablution reaches"),
       difficulty: 3,
       questions: [
-        { q: "What gardens will they enter, in 35:33?", a: "Adn, everlasting gardens", wrong: ["Worldly farms", "Desert oases", "Sea gardens"], why: "Adn Gardens will they enter." },
+        { q: "What gardens will they enter, in 35:33?", a: "Adn, everlasting gardens", wrong: ["Worldly farms", "Desert oases", "Sea gardens"], why: "Adn Gardens will they enter.", source: kathir(35, 33, "Adn Gardens will they enter.", "gardens of perpetual residence which they will enter") },
         { q: "How far will adornment reach, in the hadith?", a: "Where wudu reaches", wrong: ["Only the head", "Only the feet", "Nowhere"], why: "In a believer adornment would reach the places where ablution reaches." },
-        { q: "What will their garments be, in 35:33?", a: "Silk", wrong: ["Wool", "Leather", "Cotton"], why: "And their garments therein will be of silk." }
+        { q: "What will their garments be, in 35:33?", a: "Silk", wrong: ["Wool", "Leather", "Cotton"], why: "And their garments therein will be of silk.", source: kathir(35, 33, "And their garments therein will be of silk.", "garments therein will be of silk") }
       ]
     },
     {
@@ -579,7 +579,7 @@ const FATIR_TWO: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "How did they get the home, in 35:35?", a: "Out of Allah's grace", wrong: ["By buying it", "By luck", "By force"], why: "Who, out of His grace, has lodged us in a home that will last forever." },
-        { q: "What will not touch them, in 35:35?", a: "Toil and weariness", wrong: ["Joy", "Peace", "Light"], why: "Where toil will touch us not nor weariness will touch us." },
+        { q: "What will not touch them, in 35:35?", a: "Toil and weariness", wrong: ["Joy", "Peace", "Light"], why: "Where toil will touch us not nor weariness will touch us.", source: kathir(35, 35, "Where toil will touch us not nor weariness will touch us.", "toil will touch us not nor weariness") },
         { q: "What saves a person, in the hadith?", a: "Allah's mercy", wrong: ["Wealth", "Family name", "Strength"], why: "Not even me, unless and until Allah bestows His Mercy on me." },
         { tf: false, q: "We should stop doing good since mercy saves us.", why: "Therefore, do good deeds properly, sincerely and moderately." }
       ]
@@ -607,7 +607,7 @@ const FATIR_TWO: DeepUnit = {
       source: hadith("bukhari", "6419", "Abu Hurairah", "Sahih", "The Prophet ﷺ said Allah accepts no excuse from someone whose life is extended to sixty years.", "Allah will not accept the excuse of any person whose instant of death is delayed till he is sixty years of age"),
       difficulty: 4,
       questions: [
-        { q: "What will they ask, in 35:37?", a: "To be let out to do good", wrong: ["For gold", "For sleep", "For food"], why: "Our Lord! Bring us out, we shall do righteous good deeds." },
+        { q: "What will they ask, in 35:37?", a: "To be let out to do good", wrong: ["For gold", "For sleep", "For food"], why: "Our Lord! Bring us out, we shall do righteous good deeds.", source: kathir(35, 37, "Our Lord! Bring us out, we shall do righteous good deeds.", "Bring us out, we shall do righteous good deeds") },
         { q: "At what age is there no excuse, in the hadith?", a: "Sixty", wrong: ["Twenty", "Forty", "Ninety"], why: "Allah will not accept the excuse of any person whose death is delayed till sixty." },
         { q: "What is the warner, per Qatadah and Ibn Jarir?", a: "The Messengers", wrong: ["A storm", "A king", "A dream"], why: "Proof will be established by the fact that they lived long and Messengers came to them." }
       ]

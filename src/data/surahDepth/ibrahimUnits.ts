@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ibrahim ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -269,7 +269,7 @@ const IBRAHIM_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "For whom is the promise, in 14:14?", a: "Who fears standing before Allah", wrong: ["Who is richest", "Who is strongest", "Who travels most"], why: "This is for him who fears standing before Me and also fears My threat." },
-        { q: "What does the one who fears standing before his Lord get, per 55:46?", a: "Two Gardens", wrong: ["One river", "A palace on earth", "A long life"], why: "But for him who fears the standing before his Lord, there will be two Gardens." },
+        { q: "What does the one who fears standing before his Lord get, per 55:46?", a: "Two Gardens", wrong: ["One river", "A palace on earth", "A long life"], why: "But for him who fears the standing before his Lord, there will be two Gardens.", source: kathir(14, 13, "But for him who fears the standing before his Lord, there will be two Gardens.", "fears the standing before his Lord, there will be two Gardens") },
         { q: "When is the standing before Allah, per Ibn Kathir?", a: "The Day of Resurrection", wrong: ["Every Friday", "In a dream", "At sunrise"], why: "He who fears standing before Him on the Day of Resurrection." }
       ]
     },

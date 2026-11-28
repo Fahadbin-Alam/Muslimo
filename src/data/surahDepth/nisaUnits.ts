@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Nisa ayah by ayah, the way Al-Baqarah and Ali 'Imran are taught: every ayah or small group of ayahs gets a
 // lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one
@@ -170,7 +170,7 @@ const NISA_ONE: DeepUnit = {
       source: hadith("bukhari", "2766", "Abu Hurayrah", "Sahih", "Avoid the seven destroying sins: shirk, magic, taking a life Allah made sacred, eating riba, eating an orphan's wealth, fleeing the battle, and slandering chaste women.", "Avoid the seven great destructive sins"),
       difficulty: 3,
       questions: [
-        { q: "What do those who wrongly eat orphans' wealth eat, in 4:10?", a: "Fire into their bellies", wrong: ["Sweet food", "Nothing at all", "Bread only"], why: "Innama ya'kuluna fi butunihim nara." },
+        { q: "What do those who wrongly eat orphans' wealth eat, in 4:10?", a: "Fire into their bellies", wrong: ["Sweet food", "Nothing at all", "Bread only"], why: "Innama ya'kuluna fi butunihim nara.", source: kathir(4, 10, "Innama ya'kuluna fi butunihim nara.", "wealth of orphans, will be eating fire") },
         { q: "Is eating an orphan's wealth among the seven destroying sins?", tf: true, why: "Bukhari 2766 names it." },
         { q: "Which of these is NOT in the seven sins of Bukhari 2766?", a: "Forgetting a name", wrong: ["Eating riba", "Magic", "Shirk"], why: "The seven are grave sins, not small slips." }
       ]
@@ -438,7 +438,7 @@ const NISA_ONE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What is Allah's right on His servants, in Bukhari 2856?", a: "To worship Him alone", wrong: ["To be rich", "To travel", "To fast all year"], why: "And join none with Him." },
-        { q: "Who comes right after Allah in 4:36?", a: "Parents", wrong: ["Friends", "Kings", "Traders"], why: "Wa bil-walidayni ihsana." },
+        { q: "Who comes right after Allah in 4:36?", a: "Parents", wrong: ["Friends", "Kings", "Traders"], why: "Wa bil-walidayni ihsana.", source: kathir(4, 36, "Wa bil-walidayni ihsana.", "") },
         { q: "Where was Mu'adh when he was asked?", a: "Riding behind the Prophet ﷺ", wrong: ["In the market", "At sea", "In Makkah alone"], why: "On a donkey called Ufair." }
       ]
     },
@@ -453,7 +453,7 @@ const NISA_ONE: DeepUnit = {
       questions: [
         { q: "Who kept advising the Prophet ﷺ about neighbors?", a: "Jibril", wrong: ["Abu Bakr", "Mika'il", "His uncle"], why: "Bukhari 6014." },
         { q: "What did the Prophet ﷺ think Jibril would do?", a: "Make neighbors heirs", wrong: ["Forbid visits", "Make them leaders", "Tell him to move"], why: "That is how strong the neighbor's right is." },
-        { q: "Which of these does 4:36 tell us to be good to?", a: "The companion by your side", wrong: ["Only the rich", "Only family", "No one else"], why: "Was-sahibi bil-janb." }
+        { q: "Which of these does 4:36 tell us to be good to?", a: "The companion by your side", wrong: ["Only the rich", "Only family", "No one else"], why: "Was-sahibi bil-janb.", source: kathir(4, 36, "Was-sahibi bil-janb.", "companion at your side") }
       ]
     },
     {
@@ -536,7 +536,7 @@ const NISA_ONE: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "What was being searched for when tayammum came down?", a: "A lost necklace", wrong: ["A lost camel", "A well", "A sword"], why: "Bukhari 4583, from Aishah." },
-        { q: "What do you wipe in tayammum, in 4:43?", a: "The face and hands", wrong: ["The feet only", "The whole body", "The head only"], why: "Famsahu bi-wujuhikum wa aydikum." },
+        { q: "What do you wipe in tayammum, in 4:43?", a: "The face and hands", wrong: ["The feet only", "The whole body", "The head only"], why: "Famsahu bi-wujuhikum wa aydikum.", source: kathir(4, 43, "Famsahu bi-wujuhikum wa aydikum.", "Tayammum to just wipe the face and hands") },
         { q: "Tayammum is with clean earth when there is no water.", tf: true, why: "Fa-tayammamu sa'idan tayyiba." },
         { q: "Whose necklace was it, in Bukhari 4583?", a: "Asma's", wrong: ["Fatimah's", "Hafsah's", "Khadijah's"], why: "The necklace of Asma was lost." }
       ]
@@ -704,8 +704,8 @@ const NISA_TWO: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "Who said he and his mother were among the oppressed?", a: "Ibn Abbas", wrong: ["Abu Bakr", "Khalid", "Umar"], why: "Sahih al-Bukhari 4587." },
-        { q: "Where were the oppressed of 4:75?", a: "Makkah", wrong: ["Madinah", "Sham", "Yemen"], why: "Ibn Kathir: the weak Muslims kept in Makkah." },
-        { q: "What did they pray, in 4:75?", a: "Our Lord, rescue us", wrong: ["Make us rich", "Make us kings", "Give us rain"], why: "Rabbana akhrijna min hadhihil-qaryah." }
+        { q: "Where were the oppressed of 4:75?", a: "Makkah", wrong: ["Madinah", "Sham", "Yemen"], why: "Ibn Kathir: the weak Muslims kept in Makkah.", source: kathir(4, 75, "Ibn Kathir: the weak Muslims kept in Makkah.", "save the oppressed Muslims in Makkah") },
+        { q: "What did they pray, in 4:75?", a: "Our Lord, rescue us", wrong: ["Make us rich", "Make us kings", "Give us rain"], why: "Rabbana akhrijna min hadhihil-qaryah.", source: kathir(4, 75, "Rabbana akhrijna min hadhihil-qaryah.", "") }
       ]
     },
     {
@@ -897,7 +897,7 @@ const NISA_THREE: DeepUnit = {
       source: hadith("muslim", "686a", "Ya'la ibn Umayyah", "Sahih", "Ya'la asked Umar why people still shorten the prayer when they are safe, since 4:101 mentions fear. Umar had wondered the same and asked the Prophet ﷺ, who said: it is a charity Allah has given you, so accept His charity.", "It is an act of charity which Allah has done to you, so accept His charity"),
       difficulty: 3,
       questions: [
-        { q: "Who may shorten the prayer, in 4:101?", a: "Those traveling in the land", wrong: ["Those who are busy", "Those who are tired", "Only the old"], why: "Wa idha darabtum fil-ard." },
+        { q: "Who may shorten the prayer, in 4:101?", a: "Those traveling in the land", wrong: ["Those who are busy", "Those who are tired", "Only the old"], why: "Wa idha darabtum fil-ard.", source: kathir(4, 101, "Wa idha darabtum fil-ard.", "") },
         { q: "What did the Prophet ﷺ call shortening the prayer?", a: "A charity from Allah to accept", wrong: ["A punishment", "A sin to avoid", "Only for war"], why: "Muslim 686a, from Ya'la ibn Umayyah." },
         { q: "Who asked the Prophet ﷺ about it when people were safe?", a: "Umar ibn al-Khattab", wrong: ["Abu Bakr", "Ali", "Uthman"], why: "Umar wondered too, so he asked." }
       ]
@@ -981,9 +981,9 @@ const NISA_THREE: DeepUnit = {
       source: hadith("bukhari", "2692", "Umm Kulthum bint Uqbah", "Sahih", "The Prophet ﷺ said: whoever makes peace between people by passing on good words and saying good things is not a liar.", "by inventing good information or saying good things, is not a liar"),
       difficulty: 4,
       questions: [
-        { q: "Which secret talk is good, in 4:114?", a: "Charity, kindness, or making peace", wrong: ["Gossip", "Plotting", "Mocking"], why: "Illa man amara bi-sadaqatin aw ma'rufin aw islah." },
+        { q: "Which secret talk is good, in 4:114?", a: "Charity, kindness, or making peace", wrong: ["Gossip", "Plotting", "Mocking"], why: "Illa man amara bi-sadaqatin aw ma'rufin aw islah.", source: kathir(4, 114, "Illa man amara bi-sadaqatin aw ma'rufin aw islah.", "") },
         { q: "One who makes peace by saying good things is...", a: "Not a liar", wrong: ["A liar", "Blamed", "Punished"], why: "Bukhari 2692, from Umm Kulthum bint Uqbah." },
-        { q: "Most secret talk has good in it, per 4:114.", tf: false, why: "La khayra fi kathirin min najwahum." }
+        { q: "Most secret talk has good in it, per 4:114.", tf: false, why: "La khayra fi kathirin min najwahum.", source: kathir(4, 114, "La khayra fi kathirin min najwahum.", "") }
       ]
     },
     {
@@ -1065,7 +1065,7 @@ const NISA_THREE: DeepUnit = {
       source: hadith("bukhari", "4601", "Aishah", "Sahih", "Aishah explained 4:128: a man disliked his wife and wanted to divorce her, but she said she would give up some of her rights to stay. This ayah came about that.", "So this Verse was revealed in this connection"),
       difficulty: 4,
       questions: [
-        { q: "What does 4:128 call better?", a: "Making peace", wrong: ["Arguing", "Leaving quickly", "Silence forever"], why: "Was-sulhu khayr." },
+        { q: "What does 4:128 call better?", a: "Making peace", wrong: ["Arguing", "Leaving quickly", "Silence forever"], why: "Was-sulhu khayr.", source: kathir(4, 128, "Was-sulhu khayr.", "Making Peace is Better Allah said") },
         { q: "Who explained 4:128 in Bukhari 4601?", a: "Aishah", wrong: ["Hafsah", "Umm Salamah", "Fatimah"], why: "About a wife who chose to stay." },
         { q: "Ibn Kathir: peace, even giving up some rights, beats parting.", tf: true, why: "Coming to peaceful terms is better than parting." }
       ]
@@ -1149,7 +1149,7 @@ const NISA_THREE: DeepUnit = {
       source: hadith("bukhari", "657", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said: no prayer is heavier on the hypocrites than Fajr and Isha. If they knew their reward, they would come even crawling.", "No prayer is heavier upon the hypocrites than the Fajr and the"),
       difficulty: 5,
       questions: [
-        { q: "How do hypocrites stand for prayer, in 4:142?", a: "Lazily, to be seen", wrong: ["Gladly", "In secret", "Early"], why: "Qamu kusala yura'unan-nas." },
+        { q: "How do hypocrites stand for prayer, in 4:142?", a: "Lazily, to be seen", wrong: ["Gladly", "In secret", "Early"], why: "Qamu kusala yura'unan-nas.", source: kathir(4, 142, "Qamu kusala yura'unan-nas.", "for prayer, they stand lazily") },
         { q: "Which two prayers are heaviest on hypocrites, in Bukhari 657?", a: "Fajr and Isha", wrong: ["Dhuhr and Asr", "Asr and Maghrib", "Jumu'ah and Eid"], why: "Narrated by Abu Hurayrah." },
         { q: "If they knew the reward, they would come even...", a: "Crawling", wrong: ["Late", "Never", "Riding"], why: "Even if crawling." }
       ]
@@ -1261,9 +1261,9 @@ const NISA_THREE: DeepUnit = {
       source: hadith("bukhari", "3445", "Umar ibn al-Khattab", "Sahih", "Umar heard the Prophet ﷺ say: do not over-praise me as Isa son of Maryam was over-praised. I am only a servant, so call me the servant of Allah and His Messenger.", "Do not exaggerate in praising me"),
       difficulty: 5,
       questions: [
-        { q: "What does 4:171 forbid?", a: "Going to extremes in religion", wrong: ["Praying at night", "Giving charity", "Fasting Mondays"], why: "La taghlu fi dinikum." },
+        { q: "What does 4:171 forbid?", a: "Going to extremes in religion", wrong: ["Praying at night", "Giving charity", "Fasting Mondays"], why: "La taghlu fi dinikum.", source: kathir(4, 171, "La taghlu fi dinikum.", "From Going to Extremes in Religion") },
         { q: "What did the Prophet ﷺ ask to be called, in Bukhari 3445?", a: "The servant of Allah and His Messenger", wrong: ["The son of Allah", "A king", "An angel"], why: "Narrated by Umar ibn al-Khattab." },
-        { q: "Isa was too proud to be Allah's servant, per 4:172.", tf: false, why: "Lan yastankifal-Masihu an yakuna 'abdan lillah." }
+        { q: "Isa was too proud to be Allah's servant, per 4:172.", tf: false, why: "Lan yastankifal-Masihu an yakuna 'abdan lillah.", source: kathir(4, 172, "Lan yastankifal-Masihu an yakuna 'abdan lillah.", "") }
       ]
     },
     {

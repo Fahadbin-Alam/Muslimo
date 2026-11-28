@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Fajr ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -142,7 +142,7 @@ const FAJR_TWO: DeepUnit = {
       questions: [
         { q: "Whom does 89:6 mention?", a: "Ad", wrong: ["Saba", "Madyan", "Lut's people"], why: "Saw you not how your Lord dealt with Ad?" },
         { q: "Which Messenger was sent to Ad?", a: "Hud", wrong: ["Salih", "Shuayb", "Yunus"], why: "They are those to whom Allah sent His Messenger Hud." },
-        { q: "How were they destroyed, per 69:7?", a: "A furious wind for 7 nights and 8 days", wrong: ["A flood", "An earthquake only", "A fire from the sky"], why: "Which Allah imposed on them for seven nights and eight days in succession." }
+        { q: "How were they destroyed, per 69:7?", a: "A furious wind for 7 nights and 8 days", wrong: ["A flood", "An earthquake only", "A fire from the sky"], why: "Which Allah imposed on them for seven nights and eight days in succession.", source: kathir(89, 6, "Which Allah imposed on them for seven nights and eight days in succession.", "imposed on them for seven nights and eight days in succession") }
       ]
     },
     {
@@ -197,8 +197,8 @@ const FAJR_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What did they do, per 89:11?", a: "Transgressed beyond bounds", wrong: ["Helped the poor", "Prayed at night", "Kept promises"], why: "Who did transgress beyond bounds in the lands." },
-        { q: "What did they make much of, per 89:12?", a: "Mischief", wrong: ["Charity", "Peace", "Prayer"], why: "And made therein much mischief." },
-        { q: "What did your Lord pour on them, per 89:13?", a: "Kinds of severe torment", wrong: ["Gold", "Rain of blessings", "Gifts"], why: "So, your Lord poured on them different kinds of severe torment." }
+        { q: "What did they make much of, per 89:12?", a: "Mischief", wrong: ["Charity", "Peace", "Prayer"], why: "And made therein much mischief.", source: kathir(89, 12, "And made therein much mischief.", "") },
+        { q: "What did your Lord pour on them, per 89:13?", a: "Kinds of severe torment", wrong: ["Gold", "Rain of blessings", "Gifts"], why: "So, your Lord poured on them different kinds of severe torment.", source: kathir(89, 13, "So, your Lord poured on them different kinds of severe torment.", "Lord poured on them different kinds of severe torment") }
       ]
     },
     {

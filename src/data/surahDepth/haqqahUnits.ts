@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Haqqah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -712,7 +712,7 @@ const HAQQAH_FIVE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What is a messenger's duty?", a: "To convey from the sender", wrong: ["To write his own words", "To change the message", "To keep it secret"], why: "The duty of a messenger is to convey from the sender." },
-        { q: "In 81:19, who is the honored messenger?", a: "Jibril", wrong: ["Musa", "Isa", "Nuh"], why: "Allah gave this description to the angelic Messenger in Surat At-Takwir, and there it refers to Jibril." },
+        { q: "In 81:19, who is the honored messenger?", a: "Jibril", wrong: ["Musa", "Isa", "Nuh"], why: "Allah gave this description to the angelic Messenger in Surat At-Takwir, and there it refers to Jibril.", source: kathir(69, 40, "Allah gave this description to the angelic Messenger in Surat At-Takwir, and there it refers to Jibril.", "a most honorable messenger") },
         { tf: false, q: "A messenger adds his own ideas to Allah's message.", why: "The duty of a messenger is to convey from the sender." }
       ]
     },
@@ -750,7 +750,7 @@ const HAQQAH_FIVE: DeepUnit = {
       line: "Had he made anything up, Allah would have seized him at once.",
       facts: ["The Prophet ﷺ was truthful", "Allah guards His message"],
       quote: q69(44),
-      source: ik(44, "Ibn Kathir says if he had forged anything, Allah would be swift to punish him; and of course, he did not do any of this.", ""),
+      source: ik(44, "Ibn Kathir says if he had forged anything, Allah would be swift to punish him; and of course, he did not do any of this.", "Prophet forged anything against Allah, then Allah would punish"),
       difficulty: 3,
       questions: [
         { q: "What would happen if he made up words?", a: "Allah would seize him", wrong: ["Nothing at all", "He would be praised", "People would cheer"], why: "If Muhammad forged something against Us, then We would surely be swift in punishing him." },
@@ -782,7 +782,7 @@ const HAQQAH_FIVE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "For whom is the Quran a Reminder in 69:48?", a: "Those who have Taqwa", wrong: ["Those who mock", "Only scholars", "Only Arabs"], why: "And verily, this is a Reminder for those who have Taqwa." },
-        { q: "What is the Quran for believers, per 41:44?", a: "A guide and a healing", wrong: ["A burden", "A puzzle", "A story only"], why: "Say: It is for those who believe, a guide and a healing. (41:44)" },
+        { q: "What is the Quran for believers, per 41:44?", a: "A guide and a healing", wrong: ["A burden", "A puzzle", "A story only"], why: "Say: It is for those who believe, a guide and a healing. (41:44)", source: kathir(41, 44, "Say: It is for those who believe, a guide and a healing. (41:44)", "") },
         { tf: false, q: "The Quran helps people even if they ignore it.", why: "It is for those who believe, a guide and a healing; for those who disbelieve, it is blindness for them." }
       ]
     },

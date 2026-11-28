@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Anbiya ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -726,7 +726,7 @@ const ANBIYA_THREE: DeepUnit = {
       source: hadith("tirmidhi", "3505", "Sa'd ibn Abi Waqqas", "Sahih", "The Prophet ﷺ said the dua of Dhun-Nun in the fish was: none is worthy of worship but You, glory to You, I was of the wrongdoers. No Muslim calls with it except that Allah answers him.", "no Muslim man supplicates with it for anything, ever, except Allah responds to him"),
       difficulty: 4,
       questions: [
-        { q: "Whom does Allah save like Yunus, in 21:88?", a: "The believers", wrong: ["Only Prophets", "Only kings", "No one else"], why: "And thus We do deliver the believers." },
+        { q: "Whom does Allah save like Yunus, in 21:88?", a: "The believers", wrong: ["Only Prophets", "Only kings", "No one else"], why: "And thus We do deliver the believers.", source: kathir(21, 88, "And thus We do deliver the believers.", "thus We do deliver the believers") },
         { tf: true, q: "Allah answers any Muslim who calls with Yunus's dua.", why: "No Muslim supplicates with it for anything, ever, except Allah responds to him." },
         { q: "How does Yunus's dua begin?", a: "None is worthy of worship but You", wrong: ["O Allah, give me wealth", "My Lord, forgive my people", "Glory be to my mountain"], why: "There is none worthy of worship except You, Glory to You." }
       ]

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Qiyamah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -142,7 +142,7 @@ const QIYAMAH_ONE: DeepUnit = {
       source: ik(11, "Ibn Kathir says man will want to flee, but there will be no place to hide or seek shelter.", "be no place for you to seek shelter"),
       difficulty: 1,
       questions: [
-        { q: "What will man say, per 75:10?", a: "Where is the refuge to flee?", wrong: ["Where is my house?", "Where is the market?", "Where is my horse?"], why: "On that Day man will say: Where is the refuge to flee?" },
+        { q: "What will man say, per 75:10?", a: "Where is the refuge to flee?", wrong: ["Where is my house?", "Where is the market?", "Where is my horse?"], why: "On that Day man will say: Where is the refuge to flee?", source: kathir(75, 10, "On that Day man will say: Where is the refuge to flee?", "") },
         { q: "What does no refuge mean, per Ibn Kathir?", a: "No place to seek shelter", wrong: ["No food left", "No more rain", "No road signs"], why: "There is no refuge, meaning, there will be no place for you to seek shelter." },
         { tf: false, q: "Some people will find a hiding place from that Day.", why: "There will be no place for you to hide." }
       ]
@@ -434,7 +434,7 @@ const QIYAMAH_THREE: DeepUnit = {
       source: hadith("bukhari", "6507", "Ubadah ibn as-Samit", "Sahih", "The Prophet ﷺ said whoever loves to meet Allah, Allah loves to meet him; a believer near death is given good news of Allah's pleasure.", "he receives the good news of … pleasure with him and His blessings upon him"),
       difficulty: 3,
       questions: [
-        { q: "To whom is the drive that Day, per 75:30?", a: "To your Lord", wrong: ["To the market", "To the sea", "To the city"], why: "The drive will be on that Day to your Lord." },
+        { q: "To whom is the drive that Day, per 75:30?", a: "To your Lord", wrong: ["To the market", "To the sea", "To the city"], why: "The drive will be on that Day to your Lord.", source: kathir(75, 30, "The drive will be on that Day to your Lord.", "drive will be on that Day to your Lord") },
         { q: "What does a believer near death receive?", a: "Good news of Allah's pleasure", wrong: ["A letter", "A gift of gold", "A long list"], why: "He receives the good news of Allah's pleasure with him and His blessings upon him." },
         { tf: true, q: "Whoever loves to meet Allah, Allah loves to meet him.", why: "Whoever loves to meet Allah, Allah too loves to meet him." },
         { q: "What did Aishah say they dislike?", a: "Death", wrong: ["Rain", "Fasting", "Travel"], why: "Aishah, or some of the wives of the Prophet ﷺ, said, But we dislike death." }
@@ -492,7 +492,7 @@ const QIYAMAH_THREE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What came after the Nutfah, per 75:38?", a: "An Alaqah, then shaping", wrong: ["A tree", "A stone", "A star"], why: "Then he became an Alaqah; then shaped and fashioned in due proportion." },
-        { q: "What two kinds did Allah make, per 75:39?", a: "Male and female", wrong: ["Old and new", "Tall and short", "Rich and poor"], why: "And made of him two sexes, male and female." },
+        { q: "What two kinds did Allah make, per 75:39?", a: "Male and female", wrong: ["Old and new", "Tall and short", "Rich and poor"], why: "And made of him two sexes, male and female.", source: kathir(75, 39, "And made of him two sexes, male and female.", "made of him two sexes, male and female") },
         { tf: true, q: "Man is formed by the permission and decree of Allah.", why: "As either a male or a female by the permission and decree of Allah." }
       ]
     },

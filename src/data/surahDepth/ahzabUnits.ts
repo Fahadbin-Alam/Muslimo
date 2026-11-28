@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Ahzab ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -100,7 +100,7 @@ const AHZAB_ONE: DeepUnit = {
       questions: [
         { q: "What were they told to call adopted sons, in 33:5?", a: "By their fathers", wrong: ["By their tribe", "By any name", "By their town"], why: "Call them by their fathers, that is more just with Allah." },
         { q: "What was Zayd called before, in the hadith?", a: "Zayd bin Muhammad", wrong: ["Zayd bin Thabit", "Zayd bin Amr", "Zayd the Elder"], why: "We used not to call Zaid bin Haritha... except Zaid bin Muhammad." },
-        { q: "What if the father is unknown, in 33:5?", a: "Brothers in faith", wrong: ["Strangers", "Servants forever", "Nameless ones"], why: "But if you know not their father's, your brothers in faith." },
+        { q: "What if the father is unknown, in 33:5?", a: "Brothers in faith", wrong: ["Strangers", "Servants forever", "Nameless ones"], why: "But if you know not their father's, your brothers in faith.", source: kathir(33, 5, "But if you know not their father's, your brothers in faith.", "should be called brothers in faith") },
         { tf: false, q: "A mistake made by accident counts as a sin.", why: "And there is no sin on you concerning that in which you made a mistake." }
       ]
     },
@@ -113,7 +113,7 @@ const AHZAB_ONE: DeepUnit = {
       source: hadith("bukhari", "4781", "Abu Hurairah", "Sahih", "The Prophet ﷺ said he is closest to every believer, and he would care for the debts and children of a believer who died poor.", "I am the closest to him both in this world and in the Hereafter"),
       difficulty: 3,
       questions: [
-        { q: "Who are his wives to believers, in 33:6?", a: "Their mothers", wrong: ["Their sisters", "Strangers", "Their aunts"], why: "And his wives are their mothers." },
+        { q: "Who are his wives to believers, in 33:6?", a: "Their mothers", wrong: ["Their sisters", "Strangers", "Their aunts"], why: "And his wives are their mothers.", source: kathir(33, 6, "And his wives are their mothers.", "wives are Mothers of the Believers") },
         { q: "What would he do with a poor believer's debt, in the hadith?", a: "Take care of it", wrong: ["Ignore it", "Double it", "Sell the house"], why: "If he is in debt or he leaves poor children, let those come to me." },
         { q: "Who inherits a believer's wealth, in the hadith?", a: "His relatives", wrong: ["His neighbours", "The army", "His friends"], why: "If a believer leaves some property then his relatives will inherit that property." }
       ]
@@ -155,7 +155,7 @@ const AHZAB_ONE: DeepUnit = {
       source: hadith("bukhari", "1035", "Ibn Abbas", "Sahih", "The Prophet ﷺ said he was given victory by the east wind, As-Saba, and the people of Ad were destroyed by the west wind.", "I was granted victory with As-Saba"),
       difficulty: 3,
       questions: [
-        { q: "What did Allah send against the armies, in 33:9?", a: "A wind and unseen forces", wrong: ["A flood", "An earthquake", "A plague"], why: "We sent against them a wind and forces that you saw not." },
+        { q: "What did Allah send against the armies, in 33:9?", a: "A wind and unseen forces", wrong: ["A flood", "An earthquake", "A plague"], why: "We sent against them a wind and forces that you saw not.", source: kathir(33, 9, "We sent against them a wind and forces that you saw not.", "sent against them a wind and forces") },
         { q: "Which wind brought victory, in the hadith?", a: "As-Saba, the east wind", wrong: ["The west wind", "A south storm", "A sandstorm"], why: "I was granted victory with As-Saba." },
         { q: "Who were the unseen forces, per Ibn Kathir?", a: "The angels", wrong: ["Birds", "Jinn", "Other tribes"], why: "This refers to the angels who shook them and cast fear and terror into their hearts." }
       ]
@@ -369,7 +369,7 @@ const AHZAB_ONE: DeepUnit = {
       questions: [
         { q: "What were these men true to, in 33:23?", a: "Their covenant with Allah", wrong: ["Their tribe", "Their trade", "Their wishes"], why: "Men who have been true to their covenant with Allah." },
         { q: "About whom was it revealed, in the hadith?", a: "Anas bin An-Nadr", wrong: ["Abu Sufyan", "Zayd bin Thabit", "Salman"], why: "Was revealed in favor of Anas bin An-Nadr." },
-        { q: "Did they change their promise, in 33:23?", a: "Never in the least", wrong: ["Yes, quickly", "Once or twice", "In fear"], why: "But they have never changed in the least." }
+        { q: "Did they change their promise, in 33:23?", a: "Never in the least", wrong: ["Yes, quickly", "Once or twice", "In fear"], why: "But they have never changed in the least.", source: kathir(33, 23, "But they have never changed in the least.", "have never changed in the least") }
       ]
     },
     {
@@ -409,7 +409,7 @@ const AHZAB_ONE: DeepUnit = {
       source: hadith("bukhari", "946", "Ibn Umar", "Sahih", "The Prophet ﷺ told them to pray Asr at Banu Qurayzah. Some prayed on the way, some waited, and he blamed neither group.", "he did not blame anyone of them"),
       difficulty: 4,
       questions: [
-        { q: "Where did Allah bring them down from, in 33:26?", a: "Their forts", wrong: ["A ship", "A mountain", "Their camels"], why: "Allah brought them down from their forts." },
+        { q: "Where did Allah bring them down from, in 33:26?", a: "Their forts", wrong: ["A ship", "A mountain", "Their camels"], why: "Allah brought them down from their forts.", source: kathir(33, 26, "Allah brought them down from their forts.", "He brought down those") },
         { q: "Where were they to pray Asr, in the hadith?", a: "At Bani Quraiza", wrong: ["In Makkah", "At the trench", "At home"], why: "None should offer the Asr prayer but at Bani Quraiza." },
         { q: "Whom did the Prophet ﷺ blame, in the hadith?", a: "No one", wrong: ["Those who waited", "Those who prayed", "Both groups"], why: "He did not blame anyone of them." }
       ]
@@ -549,9 +549,9 @@ const AHZAB_TWO: DeepUnit = {
       source: hadith("bukhari", "6094", "Abdullah ibn Masud", "Sahih", "Truthfulness leads to righteousness, and righteousness leads to Paradise.", "Truthfulness leads to righteousness, and righteousness leads to Paradise"),
       difficulty: 3,
       questions: [
-        { q: "What is prepared for them all, in 33:35?", a: "Forgiveness and a great reward", wrong: ["Only praise", "Riches", "A long life"], why: "Allah has prepared for them forgiveness and a great reward." },
+        { q: "What is prepared for them all, in 33:35?", a: "Forgiveness and a great reward", wrong: ["Only praise", "Riches", "A long life"], why: "Allah has prepared for them forgiveness and a great reward.", source: kathir(33, 35, "Allah has prepared for them forgiveness and a great reward.", "prepared for them forgiveness and a great reward") },
         { q: "Where does truthfulness lead, in the hadith?", a: "To righteousness", wrong: ["To wealth", "To fame", "To sadness"], why: "Truthfulness leads to righteousness." },
-        { q: "Which group is named in 33:35?", a: "Those who fast", wrong: ["Those who boast", "Those who hoard", "Those who sleep"], why: "The men and the women who fast." },
+        { q: "Which group is named in 33:35?", a: "Those who fast", wrong: ["Those who boast", "Those who hoard", "Those who sleep"], why: "The men and the women who fast.", source: kathir(33, 35, "The men and the women who fast.", "") },
         { tf: true, q: "The ayah names women as well as men.", why: "Verily, the Muslims: men and women, the believers: men and women." }
       ]
     },
@@ -580,7 +580,7 @@ const AHZAB_TWO: DeepUnit = {
       questions: [
         { q: "What did he tell Zayd, in 33:37?", a: "Keep your wife and fear Allah", wrong: ["Leave Madinah", "Go to war", "Build a house"], why: "Keep your wife to yourself, and have Taqwa of Allah." },
         { q: "Who arranged Zaynab's marriage, in the hadith?", a: "Allah", wrong: ["Her uncle", "Her brother", "Zayd"], why: "I was married (to the Prophet ﷺ) by Allah from over seven Heavens." },
-        { q: "Why did it happen, in 33:37?", a: "To remove a hardship for believers", wrong: ["For wealth", "For an alliance", "For fame"], why: "So that there may be no difficulty to the believers in respect of the wives of their adopted sons." }
+        { q: "Why did it happen, in 33:37?", a: "To remove a hardship for believers", wrong: ["For wealth", "For an alliance", "For fame"], why: "So that there may be no difficulty to the believers in respect of the wives of their adopted sons.", source: kathir(33, 37, "So that there may be no difficulty to the believers in respect of the wives of their adopted sons.", "difficulty to the believers in respect of the wives of their adopted sons") }
       ]
     },
     {
@@ -676,7 +676,7 @@ const AHZAB_TWO: DeepUnit = {
       source: hadith("bukhari", "5999", "Umar ibn al-Khattab", "Sahih", "The Prophet ﷺ saw a mother hug her lost child and said Allah is more merciful to His servants than she is to her son.", "Allah is more merciful to His slaves than this lady to her son"),
       difficulty: 3,
       questions: [
-        { q: "Where does Allah bring believers, in 33:43?", a: "From darkness into light", wrong: ["From light into dark", "To the desert", "To the sea"], why: "That He may bring you out from darkness into light." },
+        { q: "Where does Allah bring believers, in 33:43?", a: "From darkness into light", wrong: ["From light into dark", "To the desert", "To the sea"], why: "That He may bring you out from darkness into light.", source: kathir(33, 43, "That He may bring you out from darkness into light.", "bring you out from darkness into light") },
         { q: "What is Allah's Salah, per Ibn Kathir?", a: "Praising His servant to angels", wrong: ["A prayer mat", "A kind of fast", "A journey"], why: "Allah's Salah means that He praises His servant before the angels." },
         { q: "Who is more merciful than the mother, in the hadith?", a: "Allah", wrong: ["The father", "The king", "No one"], why: "Allah is more merciful to His slaves than this lady to her son." }
       ]
@@ -987,7 +987,7 @@ const AHZAB_THREE: DeepUnit = {
       questions: [
         { q: "Who knows when the Hour comes, in 33:63?", a: "Allah only", wrong: ["Scholars", "Stars", "Fortune tellers"], why: "The knowledge of it is with Allah only." },
         { q: "What sign was given, in the hadith?", a: "Honesty is lost", wrong: ["Rain falls", "Trees grow", "Birds sing"], why: "When honesty is lost, then wait for the Hour." },
-        { q: "How near may it be, in 33:63?", a: "It may be near", wrong: ["Never coming", "A million years", "Already passed"], why: "What do you know? It may be that the Hour is near!" }
+        { q: "How near may it be, in 33:63?", a: "It may be near", wrong: ["Never coming", "A million years", "Already passed"], why: "What do you know? It may be that the Hour is near!", source: kathir(33, 63, "What do you know? It may be that the Hour is near!", "know It may be that the Hour is near") }
       ]
     },
     {
@@ -1069,9 +1069,9 @@ const AHZAB_THREE: DeepUnit = {
       source: hadith("bukhari", "3405", "Abdullah ibn Mas'ud", "Sahih", "When a man spoke unfairly of him, the Prophet ﷺ said Musa was harmed more than this, yet he was patient.", "for he was harmed more (in a worse manner) than this; yet he endured patiently"),
       difficulty: 4,
       questions: [
-        { q: "Whom did some people hurt, in 33:69?", a: "Musa", wrong: ["Nuh", "Yunus", "Hud"], why: "Be not like those who annoyed Musa." },
+        { q: "Whom did some people hurt, in 33:69?", a: "Musa", wrong: ["Nuh", "Yunus", "Hud"], why: "Be not like those who annoyed Musa.", source: kathir(33, 69, "Be not like those who annoyed Musa.", "") },
         { q: "What did Musa do when harmed, in the hadith?", a: "Endured patiently", wrong: ["Took revenge", "Left forever", "Gave up"], why: "He was harmed more than this; yet he endured patiently." },
-        { q: "What was Musa before Allah, in 33:69?", a: "Honourable", wrong: ["Unknown", "Blamed", "Forgotten"], why: "And he was honorable before Allah." }
+        { q: "What was Musa before Allah, in 33:69?", a: "Honourable", wrong: ["Unknown", "Blamed", "Forgotten"], why: "And he was honorable before Allah.", source: kathir(33, 69, "And he was honorable before Allah.", "") }
       ]
     },
     {

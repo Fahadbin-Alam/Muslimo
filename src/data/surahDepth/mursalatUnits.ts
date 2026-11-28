@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Mursalat ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -73,7 +73,7 @@ const MURSALAT_ONE: DeepUnit = {
       questions: [
         { q: "What are the first three, per Ibn Masud?", a: "The wind", wrong: ["The stars", "The rivers", "The birds"], why: "He, Ibn Masud, said, The wind. He said the same about Al-Asifat Asfa and An-Nashirat Nashra." },
         { q: "What do An-Nashirat do, per Ibn Kathir?", a: "Scatter clouds across the sky", wrong: ["Dig the earth", "Light the night", "Freeze the sea"], why: "An-Nashirat are the winds that scatter into clouds in the horizons of the sky." },
-        { tf: true, q: "Ayah 7:57 says winds come as glad news before rain.", why: "And it is He Who sends the winds as heralds of glad tidings, going before His mercy. (7:57)" }
+        { tf: true, q: "Ayah 7:57 says winds come as glad news before rain.", why: "And it is He Who sends the winds as heralds of glad tidings, going before His mercy. (7:57)", source: kathir(77, 3, "And it is He Who sends the winds as heralds of glad tidings, going before His mercy. (7:57)", "sends the winds as heralds of glad tidings, going before His mercy") }
       ]
     },
     {
@@ -307,7 +307,7 @@ const MURSALAT_THREE: DeepUnit = {
       source: hadith("muslim", "2577", "Abu Dharr", "Sahih", "Allah says: O My servants, you will never be able to harm Me or benefit Me; all are astray except whom I guide, so ask Me for guidance.", "you will not attain harming Me so as to harm Me"),
       difficulty: 3,
       questions: [
-        { q: "What does 77:39 challenge the deniers to do?", a: "Use their plot against Allah", wrong: ["Build a wall", "Count the stars", "Run a race"], why: "So, if you have a plot, use it against Me!" },
+        { q: "What does 77:39 challenge the deniers to do?", a: "Use their plot against Allah", wrong: ["Build a wall", "Count the stars", "Run a race"], why: "So, if you have a plot, use it against Me!", source: kathir(77, 39, "So, if you have a plot, use it against Me!", "have a plot, use it against") },
         { q: "Can anyone harm Allah, per the hadith?", a: "No, never", wrong: ["Yes, kings can", "Yes, if many join", "Only the jinn"], why: "O My servants, you will not attain harming Me so as to harm Me." },
         { q: "What should we ask Allah for, per the hadith?", a: "Guidance", wrong: ["Fame", "Revenge", "Long sleep"], why: "All of you are astray except for those I have guided, so seek guidance of Me and I shall guide you." },
         { tf: true, q: "Allah forbade oppression for Himself.", why: "O My servants, I have forbidden oppression for Myself." }

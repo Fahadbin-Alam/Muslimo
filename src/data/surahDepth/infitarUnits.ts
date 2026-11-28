@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Infitar ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -45,7 +45,7 @@ const INFITAR_ONE: DeepUnit = {
       questions: [
         { q: "What happens to the heaven, per 82:1?", a: "It is cleft asunder", wrong: ["It turns gold", "It grows thicker", "It stays the same"], why: "When the heaven is cleft asunder." },
         { q: "What does Infatarat mean, per Ibn Kathir?", a: "It splits", wrong: ["It shines", "It rains", "It sings"], why: "Infatarat, meaning, it splits." },
-        { tf: true, q: "Ayah 73:18 also says the heaven will be cleft.", why: "Whereon the heaven will be cleft asunder. (73:18)" }
+        { tf: true, q: "Ayah 73:18 also says the heaven will be cleft.", why: "Whereon the heaven will be cleft asunder. (73:18)", source: kathir(82, 1, "Whereon the heaven will be cleft asunder. (73:18)", "Whereon the heaven will be cleft asunder") }
       ]
     },
     {
@@ -182,8 +182,8 @@ const INFITAR_TWO: DeepUnit = {
       source: ik(10, "Ibn Kathir says noble guardian angels are over you writing all you do, so do not meet them with evil deeds.", "indeed there are noble guardian angels over you"),
       difficulty: 1,
       questions: [
-        { q: "Who watches over us, per 82:11?", a: "Kiraman Katibin, noble scribes", wrong: ["The jinn", "Our neighbours", "Nobody"], why: "But verily, over you to watch you are Kiraman Katibin." },
-        { q: "What do they know, per 82:12?", a: "All that you do", wrong: ["Only big deeds", "Only good deeds", "Nothing"], why: "They know all that you do." },
+        { q: "Who watches over us, per 82:11?", a: "Kiraman Katibin, noble scribes", wrong: ["The jinn", "Our neighbours", "Nobody"], why: "But verily, over you to watch you are Kiraman Katibin.", source: kathir(82, 11, "But verily, over you to watch you are Kiraman Katibin.", "Kiraman Katibin, they know all that you") },
+        { q: "What do they know, per 82:12?", a: "All that you do", wrong: ["Only big deeds", "Only good deeds", "Nothing"], why: "They know all that you do.", source: kathir(82, 12, "They know all that you do.", "") },
         { tf: true, q: "Ibn Kathir says do not meet them with evil deeds.", why: "So do not meet them with evil deeds, because they write down all that you do." }
       ]
     },

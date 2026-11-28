@@ -1,4 +1,4 @@
-import { hadith, type DeepUnit } from "./deepKit";
+import { hadith, kathir, type DeepUnit } from "./deepKit";
 
 // One more Hajj unit: answering Allah's call, from Sunan Ibn Majah, Sunan an-Nasa'i and Sunan Abi Dawud. Hurrying to
 // Hajj before something gets in the way, the three guests of Allah, a talbiyah to the God of Truth, taking provisions
@@ -64,7 +64,7 @@ const LABBAYK: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What did they say when they came without provisions?", a: "We put our trust in Allah", wrong: ["We are too poor to buy any", "We forgot them at home", "We will buy them on the way"], why: "They would declare: we put our trust in Allah, Ibn Abbas said." },
-        { q: "What is the best provision, Allah says in 2:197?", a: "Taqwa", wrong: ["Gold", "Dates", "Water"], why: "And take provisions, but the best provision is taqwa (Quran 2:197)." },
+        { q: "What is the best provision, Allah says in 2:197?", a: "Taqwa", wrong: ["Gold", "Dates", "Water"], why: "And take provisions, but the best provision is taqwa (Quran 2:197).", source: kathir(2, 197, "And take provisions, but the best provision is taqwa (Quran 2:197).", "the journey, but the best provision") },
         { q: "Allah told the pilgrims to take provisions for the road.", tf: true, why: "So Allah sent down: and take provisions, but the best provision is taqwa." }
       ]
     },

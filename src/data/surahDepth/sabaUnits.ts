@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Saba ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -168,8 +168,8 @@ const SABA_ONE: DeepUnit = {
       source: hadith("bukhari", "5048", "Abu Musa", "Sahih", "The Prophet ﷺ told Abu Musa he had been given a sweet voice like those of the family of Dawud.", "of the family of David"),
       difficulty: 3,
       questions: [
-        { q: "Who glorified Allah with Dawud, in 34:10?", a: "Mountains and birds", wrong: ["Fish and whales", "Trees only", "Lions"], why: "O you mountains! Glorify with him! And you birds (also)!" },
-        { q: "What did Allah make soft for him, in 34:10?", a: "Iron", wrong: ["Gold", "Stone", "Wood"], why: "And We made the iron soft for him." },
+        { q: "Who glorified Allah with Dawud, in 34:10?", a: "Mountains and birds", wrong: ["Fish and whales", "Trees only", "Lions"], why: "O you mountains! Glorify with him! And you birds (also)!", source: kathir(34, 10, "O you mountains! Glorify with him! And you birds (also)!", "the mountains and birds were commanded") },
+        { q: "What did Allah make soft for him, in 34:10?", a: "Iron", wrong: ["Gold", "Stone", "Wood"], why: "And We made the iron soft for him.", source: kathir(34, 10, "And We made the iron soft for him.", "made the iron soft for him") },
         { q: "Whose voice was like Dawud's family, in the hadith?", a: "Abu Musa", wrong: ["Bilal", "Umar", "Salman"], why: "O Abu Musa! You have been given one of the mazamir of the family of David." }
       ]
     },
@@ -210,7 +210,7 @@ const SABA_ONE: DeepUnit = {
       source: hadith("bukhari", "1131", "Abdullah ibn Amr", "Sahih", "The most beloved prayer and fasting to Allah were those of Dawud: he slept half the night, prayed a third, and fasted every other day.", "The most beloved prayer to Allah is that of David"),
       difficulty: 4,
       questions: [
-        { q: "How should Dawud's family work, in 34:13?", a: "With thanks", wrong: ["With pride", "With fear only", "In secret"], why: "Work you, O family of Dawud, with thanks!" },
+        { q: "How should Dawud's family work, in 34:13?", a: "With thanks", wrong: ["With pride", "With fear only", "In secret"], why: "Work you, O family of Dawud, with thanks!", source: kathir(34, 13, "Work you, O family of Dawud, with thanks!", "Work you, O family of Dawud, with thanks") },
         { q: "How often did Dawud fast, in the hadith?", a: "Every other day", wrong: ["Every day", "Once a year", "Never"], why: "And used to fast on alternate days." },
         { q: "How many servants are grateful, in 34:13?", a: "Few", wrong: ["All", "Most", "None"], why: "But few of My servants are grateful." },
         { tf: true, q: "Ibn Kathir says thanks can be shown by actions.", why: "This indicates that thanks may be expressed by actions as much as by words and intentions." }
@@ -310,8 +310,8 @@ const SABA_ONE: DeepUnit = {
       source: hadith("muslim", "2999", "Suhaib", "Sahih", "The believer's affair is all good: if blessed he thanks Allah, and if troubled he is patient.", "there is a good for him in it"),
       difficulty: 4,
       questions: [
-        { q: "What did they ask for, in 34:19?", a: "Longer journeys", wrong: ["More rain", "More towns", "Shorter roads"], why: "Our Lord! Make the stages between our journey longer." },
-        { q: "What happened to them, in 34:19?", a: "They were dispersed", wrong: ["They grew rich", "They won a war", "They built a dam"], why: "And We dispersed them all totally." },
+        { q: "What did they ask for, in 34:19?", a: "Longer journeys", wrong: ["More rain", "More towns", "Shorter roads"], why: "Our Lord! Make the stages between our journey longer.", source: kathir(34, 19, "Our Lord! Make the stages between our journey longer.", "Make the stages between our journey longer") },
+        { q: "What happened to them, in 34:19?", a: "They were dispersed", wrong: ["They grew rich", "They won a war", "They built a dam"], why: "And We dispersed them all totally.", source: kathir(34, 19, "And We dispersed them all totally.", "") },
         { q: "What does the believer do when blessed, in the hadith?", a: "Thanks Allah", wrong: ["Boasts", "Hides it", "Forgets"], why: "If he has an occasion to feel delight, he thanks (God)." },
         { q: "Whom are the signs for, in 34:19?", a: "The patient and grateful", wrong: ["The proud", "The lazy", "The rich only"], why: "Verily, in this are indeed signs for every steadfast, grateful." }
       ]
@@ -380,7 +380,7 @@ const SABA_TWO: DeepUnit = {
       source: hadith("bukhari", "4800", "Abu Hurairah", "Sahih", "When Allah decrees a matter, the angels flutter their wings in submission; then they ask what their Lord said, and say: the truth.", "the angels flutter their wings indicating complete surrender to His saying"),
       difficulty: 4,
       questions: [
-        { q: "Who can intercede, in 34:23?", a: "Whom He permits", wrong: ["Anyone", "Only kings", "Idols"], why: "Intercession with Him profits not except for him whom He permits." },
+        { q: "Who can intercede, in 34:23?", a: "Whom He permits", wrong: ["Anyone", "Only kings", "Idols"], why: "Intercession with Him profits not except for him whom He permits.", source: kathir(34, 23, "Intercession with Him profits not except for him whom He permits.", "Intercession with Him profits not except for him whom He permits") },
         { q: "What do angels do, in the hadith?", a: "Flutter their wings", wrong: ["Sing songs", "Sleep", "Leave"], why: "The angels flutter their wings indicating complete surrender to His saying." },
         { q: "What do the angels answer, in 34:23?", a: "The truth", wrong: ["We forgot", "Nothing", "A riddle"], why: "They say the truth. And He is the Most High, the Most Great." }
       ]
@@ -452,7 +452,7 @@ const SABA_TWO: DeepUnit = {
       questions: [
         { q: "To whom was he sent, in 34:28?", a: "All mankind", wrong: ["Only Arabs", "Only Makkah", "Only his tribe"], why: "And We have not sent you except as a giver of glad tidings and a warner to all mankind." },
         { q: "How many special things, in the hadith?", a: "Five", wrong: ["Two", "Ten", "Seven"], why: "I have been given five things which were not given to any one else before me." },
-        { q: "What did most people not know, in 34:28?", a: "Most know not", wrong: ["All knew", "Most agreed", "Most wrote it"], why: "And most of men know not." }
+        { q: "What did most people not know, in 34:28?", a: "Most know not", wrong: ["All knew", "Most agreed", "Most wrote it"], why: "And most of men know not.", source: kathir(34, 28, "And most of men know not.", "people do not know") }
       ]
     },
     {
@@ -576,9 +576,9 @@ const SABA_TWO: DeepUnit = {
       source: hadith("muslim", "2564c", "Abu Hurairah", "Sahih", "Allah does not look at your faces or wealth, but at your hearts and your deeds.", "Verily Allah does not look to your faces and your wealth but He looks to your heart and to your deeds"),
       difficulty: 3,
       questions: [
-        { q: "What brings us near Allah, in 34:37?", a: "Faith and good deeds", wrong: ["Wealth", "Children", "Fame"], why: "But only he who believes, and does righteous deeds." },
+        { q: "What brings us near Allah, in 34:37?", a: "Faith and good deeds", wrong: ["Wealth", "Children", "Fame"], why: "But only he who believes, and does righteous deeds.", source: kathir(34, 37, "But only he who believes, and does righteous deeds.", "only faith and righteous deeds will") },
         { q: "What does Allah look at, in the hadith?", a: "Hearts and deeds", wrong: ["Faces", "Wealth", "Clothes"], why: "He looks to your heart and to your deeds." },
-        { q: "Where will they live, in 34:37?", a: "High dwellings in peace", wrong: ["Low valleys", "Busy markets", "Deep caves"], why: "And they will reside in the high dwellings (Paradise) in peace and security." },
+        { q: "Where will they live, in 34:37?", a: "High dwellings in peace", wrong: ["Low valleys", "Busy markets", "Deep caves"], why: "And they will reside in the high dwellings (Paradise) in peace and security.", source: kathir(34, 37, "And they will reside in the high dwellings (Paradise) in peace and security.", "reside in the high dwellings in peace and security") },
         { q: "How much is the reward, per Ibn Kathir?", a: "Ten to seven hundred times", wrong: ["Just once", "Half", "Twice only"], why: "The reward will be multiplied for them between ten and seven hundred times." }
       ]
     },
@@ -607,7 +607,7 @@ const SABA_TWO: DeepUnit = {
       questions: [
         { q: "What does Allah do for spenders, in 34:39?", a: "Replaces what they spend", wrong: ["Takes more", "Ignores it", "Fines them"], why: "And whatsoever you spend of anything, He will replace it." },
         { q: "What does one angel pray, in the hadith?", a: "Compensate every spender", wrong: ["Make them poor", "Hide their gold", "Stop them"], why: "O Allah! Compensate every person who spends in Your Cause." },
-        { q: "What is Allah, in 34:39?", a: "The Best of providers", wrong: ["A stingy one", "A trader", "A stranger"], why: "And He is the Best of providers." }
+        { q: "What is Allah, in 34:39?", a: "The Best of providers", wrong: ["A stingy one", "A trader", "A stranger"], why: "And He is the Best of providers.", source: kathir(34, 39, "And He is the Best of providers.", "the best of providers") }
       ]
     },
     {
@@ -717,7 +717,7 @@ const SABA_TWO: DeepUnit = {
       source: hadith("bukhari", "4801", "Ibn Abbas", "Sahih", "The Prophet ﷺ climbed Safa and asked if they would believe him about an enemy; then said he was a warner before a severe punishment.", "I am a warner to you in face of a terrible punishment"),
       difficulty: 4,
       questions: [
-        { q: "How should they stand, in 34:46?", a: "In pairs or alone", wrong: ["In big crowds", "In secret armies", "Not at all"], why: "That you stand up for Allah's sake in pairs and singly, and reflect." },
+        { q: "How should they stand, in 34:46?", a: "In pairs or alone", wrong: ["In big crowds", "In secret armies", "Not at all"], why: "That you stand up for Allah's sake in pairs and singly, and reflect.", source: kathir(34, 46, "That you stand up for Allah's sake in pairs and singly, and reflect.", "stand up for Allah s sake in pairs and singly, and reflect") },
         { q: "Where did he call them, in the hadith?", a: "Mount Safa", wrong: ["Mount Uhud", "The market", "The sea"], why: "One day the Prophet ﷺ ascended Safa mountain." },
         { q: "What did Quraysh say they would do, in the hadith?", a: "Believe him", wrong: ["Laugh", "Leave", "Fight"], why: "They said, Yes, we will believe you." }
       ]

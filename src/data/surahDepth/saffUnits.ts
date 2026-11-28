@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah As-Saff ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -351,7 +351,7 @@ const SAFF_TWO: DeepUnit = {
       questions: [
         { q: "Whom does Allah not guide, in 61:5?", a: "The rebellious", wrong: ["The poor", "The young", "The travelers"], why: "And Allah guides not the people who are rebellious." },
         { q: "Which ayah ends the same way, per Ibn Kathir?", a: "9:24", wrong: ["1:7", "2:2", "114:6"], why: "Similarly Allah said; And Allah guides not the people who are rebellious. (9:24)" },
-        { tf: true, q: "Ibn Kathir also quotes 4:115.", why: "And whoever contradicts and opposes the Messenger ﷺ after the right path has been shown clearly to him. (4:115)" }
+        { tf: true, q: "Ibn Kathir also quotes 4:115.", why: "And whoever contradicts and opposes the Messenger ﷺ after the right path has been shown clearly to him. (4:115)", source: kathir(61, 5, "And whoever contradicts and opposes the Messenger ﷺ after the right path has been shown clearly to him. (4:115)", "whoever contradicts and opposes the Messenger after the right path has been shown clearly") }
       ]
     },
     {
