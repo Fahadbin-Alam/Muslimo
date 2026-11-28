@@ -463,7 +463,7 @@ const MUHAMMAD_TWO: DeepUnit = {
       questions: [
         { q: "Who truly keeps ties, per Bukhari 5991?", a: "One who keeps ties with those who cut him", wrong: ["One who repays only", "One who waits", "One who ignores"], why: "Al-Wasil is the one who keeps good relations with those relatives who had severed the bond." },
         { q: "What is not enough, per Bukhari 5991?", a: "Only returning good done to you", wrong: ["Praying", "Fasting", "Giving charity"], why: "Al-Wasil is not the one who recompenses the good done to him by his relatives." },
-        { tf: true, q: "Keeping ties brings more provision and longer life, per Bukhari 5985.", why: "Whoever is pleased that he be granted more wealth and that his life be prolonged should keep good relations with his kin." }
+        { tf: true, q: "Keeping ties brings more provision and longer life, per Bukhari 5985.", why: "Whoever is pleased that he be granted more wealth and that his life be prolonged should keep good relations with his kin.", source: hadith("bukhari", "5985", "Abu Hurayrah", "Sahih", "Whoever is pleased that he be granted more wealth and that his life be prolonged should keep good relations with his kin.", "then he should keep good relations with his Kith and kin") }
       ]
     },
     {

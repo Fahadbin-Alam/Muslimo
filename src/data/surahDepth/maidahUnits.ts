@@ -492,7 +492,7 @@ const MAIDAH_TWO: DeepUnit = {
       questions: [
         { q: "What did some people mock, in 5:58?", a: "The call to prayer", wrong: ["The market", "The rain", "Poetry"], why: "Wa idha nadaytum ilas-salatit-takhadhuha huzuwan." },
         { q: "What does Shaytan do at the adhan, per Ibn Kathir?", a: "Runs away", wrong: ["Sits closer", "Sleeps", "Prays"], why: "He comes back when it ends." },
-        { q: "What should you say when you hear the adhan, in Bukhari 611?", a: "What the caller says", wrong: ["Nothing", "Your own words", "Only amin"], why: "Narrated by Abu Sa'id al-Khudri." }
+        { q: "What should you say when you hear the adhan, in Bukhari 611?", a: "What the caller says", wrong: ["Nothing", "Your own words", "Only amin"], why: "Narrated by Abu Sa'id al-Khudri.", source: hadith("bukhari", "611", "Abu Sa'id Al-Khudri", "Sahih", "Whenever you hear the adhan, say what the mu'adhdhin is saying.", "Whenever you hear the Adhan, say what the") }
       ]
     },
     {

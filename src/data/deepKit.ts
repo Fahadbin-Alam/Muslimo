@@ -7,9 +7,10 @@ import { shamelaUrl } from "./shamelaPages";
 
 type HadithBook = "bukhari" | "muslim" | "tirmidhi" | "abudawud" | "ibnmajah" | "nasai" | "adab" | "ahmad" | "mishkat";
 
+/** `source`: where this one answer is said, when it is not the lesson's own source (an ayah the question names). */
 export type Question =
-  | { q: string; a: string; wrong: [string, string, string]; why: string }
-  | { q: string; tf: boolean; why: string };
+  | { q: string; a: string; wrong: [string, string, string]; why: string; source?: LessonSource }
+  | { q: string; tf: boolean; why: string; source?: LessonSource };
 
 export interface DeepLesson {
   slug: string;

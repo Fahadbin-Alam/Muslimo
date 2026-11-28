@@ -927,7 +927,7 @@ const NISA_THREE: DeepUnit = {
       questions: [
         { q: "When should we remember Allah, in 4:103?", a: "Standing, sitting and lying down", wrong: ["Only in the mosque", "Only on Friday", "Only in Ramadan"], why: "Ibn Kathir: in all conditions." },
         { q: "What did Ibn Abbas compare the prayer's fixed time to?", a: "Hajj", wrong: ["Zakah", "Eid", "Trade"], why: "The prayer has a fixed time, like Hajj." },
-        { q: "Which deed did the Prophet ﷺ call dearest to Allah, in Bukhari 527?", a: "Prayer at its fixed time", wrong: ["Long travel", "Building homes", "Silence"], why: "Then kindness to parents, from Abdullah ibn Mas'ud." }
+        { q: "Which deed did the Prophet ﷺ call dearest to Allah, in Bukhari 527?", a: "Prayer at its fixed time", wrong: ["Long travel", "Building homes", "Silence"], why: "Then kindness to parents, from Abdullah ibn Mas'ud.", source: hadith("bukhari", "527", "Abdullah ibn Mas'ud", "Sahih", "Asked which deed is dearest to Allah, he said offering the prayers at their early fixed times.", "To offer the prayers at their early stated fixed times") }
       ]
     },
     {
