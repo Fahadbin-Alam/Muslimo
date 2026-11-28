@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getActiveLanguage } from "../../i18n";
 import { stopAyah, subscribeAyahPlayback } from "../../services/ayahPlayer";
-import { findTeacherVoice, knownTeacherVoice, speakable, speakTeacherParts, stopTeacher } from "../../services/teacherVoice";
+import { TEACHER_SPEAKER_ON, findTeacherVoice, knownTeacherVoice, speakable, speakTeacherParts, stopTeacher } from "../../services/teacherVoice";
 import type { SupportedLanguage } from "../../types";
 
 /**
@@ -135,5 +135,5 @@ export function useReadAloud(parts: ReadPart[]) {
     );
   }, [language, reading, speech, stop, voice]);
 
-  return { onRead: voice !== null && speech.length ? onRead : undefined, reading, talkMs, stop, lit: reading ? lit : undefined };
+  return { onRead: TEACHER_SPEAKER_ON && voice !== null && speech.length ? onRead : undefined, reading, talkMs, stop, lit: reading ? lit : undefined };
 }

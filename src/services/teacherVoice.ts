@@ -13,6 +13,13 @@ import type { SupportedLanguage } from "../types";
  * Arabic the speaker is hidden (the learner reads the page), and the Urdu voice skips quoted Arabic (see speakable).
  */
 
+/**
+ * The teacher's speaker buttons (on a wrong answer's sheet, by CHECK on a question, and on a lesson page) are turned
+ * off: Fahad did not like the phone's machine voice reading the app aloud (2026-11-28). The Quran reciters (the
+ * ayah's Listen, reciter choice, memorize) are a different feature and stay. Set to true to bring the speakers back.
+ */
+export const TEACHER_SPEAKER_ON = false;
+
 const SPEECH_CODE: Record<SupportedLanguage, string> = { en: "en", bn: "bn", ur: "ur", ar: "ar", id: "id", fr: "fr" };
 const voices = new Map<SupportedLanguage, Promise<string | null>>();
 /** Voices found already, so a speaker shows from a screen's first frame (no button popping in beside CHECK). */
