@@ -207,7 +207,7 @@ const HADID_ONE: DeepUnit = {
       line: "Allah knows every seed and raindrop that sinks into the soil.",
       facts: ["He knows every seed in the ground", "He knows every plant that grows out"],
       quote: q57(4),
-      source: ik(4, "Ibn Kathir says Allah knows the amount of seeds and drops of water that enter the earth, and the plants and fruits that come out of it.", "His knowledge in the amount of seeds and drops of water that enter inside the earth…of plants, vegetation and fruits"),
+      source: ik(4, "Ibn Kathir says Allah knows the amount of seeds and drops of water that enter the earth, and the plants and fruits that come out of it.", "knowledge in the amount of seeds and drops of water that enter"),
       difficulty: 2,
       questions: [
         { q: "What goes into the earth, per Ibn Kathir?", a: "Seeds and drops of water", wrong: ["Only gold", "Only rocks", "Only roots"], why: "The amount of seeds and drops of water that enter inside the earth." },

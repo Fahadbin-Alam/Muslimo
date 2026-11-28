@@ -81,7 +81,7 @@ const MUJADILA_ONE: DeepUnit = {
       line: "Khawlah took her worry to the Prophet ﷺ and to Allah.",
       facts: ["She had grown old with her husband", "She said: O Allah, I complain to You"],
       quote: q58(1),
-      source: ik(1, "Ibn Kathir reports Aishah said Khawlah was complaining to the Prophet ﷺ about her husband, and soon after Jibril brought down the ayah.", "She was complaining to Allah…Soon after, Jibril brought down this Ayah"),
+      source: ik(1, "Ibn Kathir reports Aishah said Khawlah was complaining to the Prophet ﷺ about her husband, and soon after Jibril brought down the ayah.", "Soon after, Jibril brought down this Ayah"),
       difficulty: 2,
       questions: [
         { q: "Who brought down the ayah about her?", a: "Jibril", wrong: ["A poet", "Her husband", "A king"], why: "Soon after, Jibril brought down this Ayah." },
@@ -95,7 +95,7 @@ const MUJADILA_ONE: DeepUnit = {
       line: "Allah heard the whole talk between her and the Prophet ﷺ.",
       facts: ["As-Sami: the All-Hearer", "Al-Basir: the All-Seer"],
       quote: q58(1),
-      source: ik(1, "Ibn Kathir quotes 58:1: Allah hears the argument between you both. Verily, Allah is All-Hearer, All-Seer.", "And Allah hears the argument between you both. Verily, Allah is All-Hearer, All-Seer"),
+      source: ik(1, "Ibn Kathir quotes 58:1: Allah hears the argument between you both. Verily, Allah is All-Hearer, All-Seer.", ""),
       difficulty: 1,
       questions: [
         { q: "Which two names end 58:1?", a: "All-Hearer, All-Seer", wrong: ["First, Last", "Rich, Praised", "Almighty, Wise"], why: "Verily, Allah is All-Hearer, All-Seer." },

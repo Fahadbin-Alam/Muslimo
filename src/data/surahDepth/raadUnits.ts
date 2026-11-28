@@ -503,7 +503,7 @@ const RAAD_TWO: DeepUnit = {
       line: "In Adn, families meet and angels greet them with peace.",
       facts: ["Adn means a lasting home", "For your patience"],
       quote: q13(24),
-      source: ik(20, "The righteous enter Gardens of Adn with their righteous parents, spouses and children. Angels enter from every gate saying peace be upon you, for you were patient.", "The angels will enter on them from every direction congratulating them for entering Paradise"),
+      source: ik(20, "The righteous enter Gardens of Adn with their righteous parents, spouses and children. Angels enter from every gate saying peace be upon you, for you were patient.", "angels will enter on them from every direction congratulating them for entering"),
       difficulty: 4,
       questions: [
         { q: "Who enters Adn with them, in 13:23?", a: "Their righteous parents, wives and children", wrong: ["Only kings", "No one", "Strangers"], why: "And (also) those who acted righteously from among their fathers, and their wives, and their offspring." },
@@ -803,7 +803,7 @@ const RAAD_FOUR: DeepUnit = {
       line: "The Quran came in clear Arabic; never trade it for desires.",
       facts: ["An honor for the Prophet ﷺ", "A warning to people of knowledge"],
       quote: q13(37),
-      source: ik(36, "Allah sent down the Quran as a clear judgement in Arabic, an honor to the Prophet ﷺ. Following people's desires after the knowledge came leaves one with no protector. This warns people of knowledge not to leave the Sunnah.", "This part of the Ayah warns people of knowledge against following the paths of misguid"),
+      source: ik(36, "Allah sent down the Quran as a clear judgement in Arabic, an honor to the Prophet ﷺ. Following people's desires after the knowledge came leaves one with no protector. This warns people of knowledge not to leave the Sunnah.", "Ayah warns people of know- ledge against following the paths of misguid-"),
       difficulty: 4,
       questions: [
         { q: "In which language was the Quran sent as a judgement, in 13:37?", a: "Arabic", wrong: ["Greek", "Persian", "Latin"], why: "And thus have We sent it (the Quran) down to be a judgement of authority in Arabic." },

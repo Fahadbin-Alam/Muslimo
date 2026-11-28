@@ -1114,7 +1114,7 @@ const ZUKHRUF_FOUR: DeepUnit = {
       line: "Paradise is inherited by Allah's mercy; ranks follow deeds.",
       facts: ["Entry is by Allah's mercy", "Higher ranks come from good deeds"],
       quote: q43(72),
-      source: ik(72, "Ibn Kathir says no one enters Paradise by deeds alone but by Allah's mercy, while ranks depend on deeds.", "the varying ranks and degrees of Paradise will be attained according to one … righteous deeds"),
+      source: ik(72, "Ibn Kathir says no one enters Paradise by deeds alone but by Allah's mercy, while ranks depend on deeds.", "the varying ranks and degrees of Paradise will be attained according"),
       difficulty: 4,
       questions: [
         { q: "Why do they inherit Paradise, in 43:72?", a: "Because of their deeds", wrong: ["Because of wealth", "Because of family name", "By chance"], why: "Because of your deeds that you used to do." },
@@ -1338,7 +1338,7 @@ const ZUKHRUF_FOUR: DeepUnit = {
       line: "Ask who created them, they say Allah; why turn away then?",
       facts: ["They admit Allah is the Creator", "Yet they worship others"],
       quote: q43(87),
-      source: ik(87, "Ibn Kathir says they admit Allah alone is the Creator, yet still worship others who can do nothing.", "they will admit that He Alone is the Creator of all things"),
+      source: ik(87, "Ibn Kathir says they admit Allah alone is the Creator, yet still worship others who can do nothing.", "admit that He Alone is the Creator of all things and He"),
       difficulty: 3,
       questions: [
         { q: "What do they answer, in 43:87?", a: "Allah", wrong: ["Their idols", "Nature", "Nobody"], why: "If you ask them who created them, they will surely say: Allah." },

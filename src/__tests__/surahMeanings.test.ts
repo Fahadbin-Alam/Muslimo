@@ -194,7 +194,7 @@ describe("Al-Baqarah in depth", () => {
     }
     // Ya-Sin 68-83: the rotten bones and the One who made them the first time are on 36:77's page.
     const bones = LESSONS_BY_ID["lesson-surah-meaning-36-68-83"].learnDeeper!.sources[0];
-    expect(sourceUrl(bones)).toBe("https://quran.com/36:77/tafsirs/en-tafisr-ibn-kathir#:~:text=Who%20will%20give%20life,for%20the%20first%20time%21");
+    expect(sourceUrl(bones)).toBe("https://quran.com/36:77/tafsirs/en-tafisr-ibn-kathir#:~:text=give%20life%20to%20them,for%20the%20first%20time");
   });
 
   it("opens Tafsir as-Sa'di on the ayah whose page holds its highlighted line", () => {

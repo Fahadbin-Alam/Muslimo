@@ -249,7 +249,7 @@ const TAHA_ONE: DeepUnit = {
       line: "His sister led him home, so his mother's eyes could be glad.",
       facts: ["He refused other nurses", "Allah's plan"],
       quote: q20(40),
-      source: ik(40, "Baby Musa would not feed from any nurse. His sister offered a family to care for him, and so he was returned to his own mother, who no longer had to grieve.", "So We restored you to your mother, that she might cool her eyes and she should not grieve"),
+      source: ik(40, "Baby Musa would not feed from any nurse. His sister offered a family to care for him, and so he was returned to his own mother, who no longer had to grieve.", ""),
       difficulty: 2,
       questions: [
         { q: "Who helped bring Musa back, in 20:40?", a: "His sister", wrong: ["His brother", "A soldier", "Fir'awn"], why: "When your sister went and said: Shall I show you one who will nurse him?" },
@@ -486,7 +486,7 @@ const TAHA_TWO: DeepUnit = {
       line: "They hoped Allah would forgive them; His reward lasts forever.",
       facts: ["Forced to do magic", "Allah forgives"],
       quote: q20(73),
-      source: ik(73, "The magicians asked Allah to forgive their past wrongs and the magic Fir'awn forced on them. They said Allah is better than Fir'awn, and His reward lasts longer than anything Fir'awn promised.", "More lasting in reward than what you promised us and made us aspire to"),
+      source: ik(73, "The magicians asked Allah to forgive their past wrongs and the magic Fir'awn forced on them. They said Allah is better than Fir'awn, and His reward lasts longer than anything Fir'awn promised.", "More lasting in reward than what you pro- mised us and made"),
       difficulty: 4,
       questions: [
         { q: "What did they hope Allah would forgive, in 20:73?", a: "Their faults and forced magic", wrong: ["Nothing", "Musa's faults", "Fir'awn's faults"], why: "Verily, we have believed in our Lord, that He may forgive us our faults, and the magic to which you did compel us." },
@@ -919,7 +919,7 @@ const TAHA_THREE: DeepUnit = {
       line: "Adam slipped, then Allah chose him, forgave him and guided him.",
       facts: ["Repentance accepted", "Guidance after a mistake"],
       quote: q20(122),
-      source: ik(122, "Adam and his wife ate from the tree and slipped. Then Allah chose Adam, turned to him with forgiveness and guided him. A slip followed by repentance can bring a person closer to Allah.", "Then his Lord chose him, and turned to him with forgiveness, and gave him guidance"),
+      source: ik(122, "Adam and his wife ate from the tree and slipped. Then Allah chose Adam, turned to him with forgiveness and guided him. A slip followed by repentance can bring a person closer to Allah.", "his Lord chose him, and turned to him with forgiveness, and gave"),
       difficulty: 5,
       questions: [
         { q: "What did Allah do after Adam slipped, in 20:122?", a: "Chose and forgave him", wrong: ["Forgot him", "Left him alone", "Made him an angel"], why: "Then his Lord chose him, and turned to him with forgiveness, and gave him guidance." },

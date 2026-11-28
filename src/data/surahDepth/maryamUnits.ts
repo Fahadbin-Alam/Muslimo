@@ -221,7 +221,7 @@ const MARYAM_ONE: DeepUnit = {
       line: "Allah made Isa a sign for people and a mercy.",
       facts: ["Easy for Allah", "Already decreed"],
       quote: q19(21),
-      source: ik(21, "Maryam asked how she could have a son, and was told it is easy for Allah. Isa would be a sign of Allah's power and a mercy to people.", "a sign to mankind and a mercy from Us"),
+      source: ik(21, "Maryam asked how she could have a son, and was told it is easy for Allah. Isa would be a sign of Allah's power and a mercy to people.", "This means a proof and a sign for mankind of the power"),
       difficulty: 3,
       questions: [
         { q: "What would Isa be, in 19:21?", a: "A sign and a mercy", wrong: ["A king", "A trader", "A warrior"], why: "And We wish to appoint him as a sign to mankind and a mercy from Us." },
@@ -514,7 +514,7 @@ const MARYAM_TWO: DeepUnit = {
       line: "Hearing Allah's ayahs, the Prophets fell in sujud, weeping.",
       facts: ["Chosen and guided", "Moved by the Quran"],
       quote: q19(58),
-      source: ik(58, "These Prophets, from the children of Adam, Nuh, Ibrahim and Israel, were blessed and chosen. When Allah's ayahs were recited they fell in prostration, weeping.", "When the Ayat of the Most Gracious were recited unto them, they fell down prostrate and weeping"),
+      source: ik(58, "These Prophets, from the children of Adam, Nuh, Ibrahim and Israel, were blessed and chosen. When Allah's ayahs were recited they fell in prostration, weeping.", "of the Most Gracious were recited unto them, they fell down prostrate"),
       difficulty: 3,
       questions: [
         { q: "What did the Prophets do on hearing the ayahs, in 19:58?", a: "Fell in sujud, weeping", wrong: ["Walked away", "Laughed", "Slept"], why: "When the Ayat of the Most Gracious were recited unto them, they fell down prostrate and weeping." },
@@ -584,7 +584,7 @@ const MARYAM_TWO: DeepUnit = {
       line: "Worship Allah patiently; nothing is like Him.",
       facts: ["Be patient in worship", "None is equal to Allah"],
       quote: q19(65),
-      source: ik(65, "Allah is Lord of the heavens, the earth and all between, so worship Him and be patient in it. Nothing is similar to Him.", "Do you know of any who is similar to Him"),
+      source: ik(65, "Allah is Lord of the heavens, the earth and all between, so worship Him and be patient in it. Nothing is similar to Him.", ""),
       difficulty: 2,
       questions: [
         { q: "What should we do, in 19:65?", a: "Worship Him patiently", wrong: ["Rest", "Travel", "Argue"], why: "So worship Him and abide patiently in His worship." },
@@ -850,7 +850,7 @@ const MARYAM_TWO: DeepUnit = {
       line: "Allah made the Quran easy, bringing good news and warning.",
       facts: ["Easy to read and learn", "Past nations left no trace"],
       quote: q19(97),
-      source: ik(97, "Allah made the Quran easy in the Prophet's ﷺ own language, to give good news to the God-fearing and warn the stubborn. Many nations before were destroyed and not even a whisper of them remains.", "So, We have made this easy in your own tongue"),
+      source: ik(97, "Allah made the Quran easy in the Prophet's ﷺ own language, to give good news to the God-fearing and warn the stubborn. Many nations before were destroyed and not even a whisper of them remains.", ""),
       difficulty: 2,
       questions: [
         { q: "How did Allah make the Quran, in 19:97?", a: "Easy, in his own tongue", wrong: ["Hard to read", "Secret", "For scholars only"], why: "So, We have made this easy in your own tongue." },

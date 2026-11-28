@@ -457,7 +457,7 @@ const QALAM_THREE: DeepUnit = {
       line: "Allah tested some people with a garden full of fruit.",
       facts: ["A parable for Quraysh", "Blessings are tests"],
       quote: q68(17),
-      source: ik(17, "Ibn Kathir says the garden contained different types of fruits and plants, and it is a parable for those who met Allah's favors with denial.", "This refers to a garden containing different types of fruits and vegetation"),
+      source: ik(17, "Ibn Kathir says the garden contained different types of fruits and plants, and it is a parable for those who met Allah's favors with denial.", ""),
       difficulty: 1,
       questions: [
         { q: "What did the People of the Garden own?", a: "A garden of fruits", wrong: ["A ship", "A palace", "A mine of gold"], why: "This refers to a garden containing different types of fruits and vegetation." },
@@ -471,7 +471,7 @@ const QALAM_THREE: DeepUnit = {
       line: "They planned an early harvest so the poor would not know.",
       facts: ["They wanted it all", "No charity planned"],
       quote: q68(17),
-      source: ik(17, "Ibn Kathir says they vowed at night to pick the fruit in the morning so the poor would not know, to keep it all and give none in charity.", "so that poor and the beggars would not know what they were doing"),
+      source: ik(17, "Ibn Kathir says they vowed at night to pick the fruit in the morning so the poor would not know, to keep it all and give none in charity.", ""),
       difficulty: 2,
       questions: [
         { q: "Why did they plan to pick early?", a: "So the poor would not know", wrong: ["To beat the heat", "To sell it fast", "To save the trees"], why: "So that poor and the beggars would not know what they were doing." },
@@ -485,7 +485,7 @@ const QALAM_THREE: DeepUnit = {
       line: "They made their plan without saying: if Allah wills.",
       facts: ["In sha Allah: if Allah wills", "Plans need His will"],
       quote: q68(18),
-      source: ik(18, "Ibn Kathir says they vowed without saying If Allah wills, so Allah broke their vow.", "Therefore, Allah broke their vow"),
+      source: ik(18, "Ibn Kathir says they vowed without saying If Allah wills, so Allah broke their vow.", ""),
       difficulty: 2,
       questions: [
         { q: "What did they forget to say?", a: "If Allah wills", wrong: ["Good morning", "Thank you", "Goodbye"], why: "Without saying: If Allah wills." },
@@ -499,7 +499,7 @@ const QALAM_THREE: DeepUnit = {
       line: "While they slept, a calamity from Allah struck the garden.",
       facts: ["Taif: a night visitor", "Allah controls all"],
       quote: q68(19),
-      source: ik(19, "Ibn Kathir says the garden was struck by a destruction from the heavens while they were asleep.", "it was afflicted with some heavenly destruction"),
+      source: ik(19, "Ibn Kathir says the garden was struck by a destruction from the heavens while they were asleep.", ""),
       difficulty: 2,
       questions: [
         { q: "When did the calamity come?", a: "While they slept", wrong: ["At noon", "During a feast", "On market day"], why: "Then there passed over it a Taif from your Lord while they were asleep." },
@@ -513,7 +513,7 @@ const QALAM_THREE: DeepUnit = {
       line: "By morning the garden was black and dry, like a harvested field.",
       facts: ["As-Sarim: stripped bare", "Wealth can vanish"],
       quote: q68(20),
-      source: ik(20, "Ibn Abbas said the garden became like the dark night; Ath-Thawri and As-Suddi said like a harvested crop, withered and dry.", "Like the dark night"),
+      source: ik(20, "Ibn Abbas said the garden became like the dark night; Ath-Thawri and As-Suddi said like a harvested crop, withered and dry.", ""),
       difficulty: 2,
       questions: [
         { q: "What did Ibn Abbas say the garden became like?", a: "The dark night", wrong: ["A green field", "A river", "A rainbow"], why: "Ibn Abbas said, Like the dark night." },
@@ -527,7 +527,7 @@ const QALAM_THREE: DeepUnit = {
       line: "At dawn they called each other to go and pick the harvest.",
       facts: ["They did not know", "Plans without Allah fail"],
       quote: q68(21),
-      source: ik(21, "Ibn Kathir says early in the morning they called each other to go together to pick the harvest.", "they called each other so that they could go together to pick the harvest"),
+      source: ik(21, "Ibn Kathir says early in the morning they called each other to go together to pick the harvest.", ""),
       difficulty: 1,
       questions: [
         { q: "When did they call each other?", a: "As the morning broke", wrong: ["At midnight", "At sunset", "At noon"], why: "Then they called out one to another as soon as the morning broke." },
@@ -541,7 +541,7 @@ const QALAM_THREE: DeepUnit = {
       line: "They said: go early to your crop to pick it.",
       facts: ["Hurrying to be greedy", "Allah sees every plan"],
       quote: q68(22),
-      source: ik(22, "Ibn Kathir explains their words: go early if you want to pluck your harvest fruit.", "if you want to pluck your harvest fruit"),
+      source: ik(22, "Ibn Kathir explains their words: go early if you want to pluck your harvest fruit.", ""),
       difficulty: 1,
       questions: [
         { q: "Where did they say to go?", a: "To their crop", wrong: ["To the mosque", "To the market", "To the sea"], why: "Go to your tilth in the morning, if you would pluck the fruits." },
@@ -555,7 +555,7 @@ const QALAM_THREE: DeepUnit = {
       line: "They spoke quietly so no one would hear, but Allah heard.",
       facts: ["Allah hears whispers", "Secret plans are known"],
       quote: q68(23),
-      source: ik(23, "Ibn Kathir says they spoke privately so no one could hear, then Allah, the Knower of secrets, revealed what they said.", "they spoke privately about what they were doing so that no one could hear"),
+      source: ik(23, "Ibn Kathir says they spoke privately so no one could hear, then Allah, the Knower of secrets, revealed what they said.", ""),
       difficulty: 2,
       questions: [
         { q: "How did they speak on the way?", a: "In whispers", wrong: ["Shouting", "Singing", "Laughing loudly"], why: "So they departed, and they were whispering." },
@@ -569,7 +569,7 @@ const QALAM_THREE: DeepUnit = {
       line: "Their secret: let no poor person enter the garden today.",
       facts: ["Greed blocks charity", "The poor have a right"],
       quote: q68(24),
-      source: ik(24, "Ibn Kathir says they told each other not to allow any poor person into the garden that day.", "Do not allow any poor person to enter upon you in it"),
+      source: ik(24, "Ibn Kathir says they told each other not to allow any poor person into the garden that day.", ""),
       difficulty: 2,
       questions: [
         { q: "What was their whispered rule?", a: "No poor person enters today", wrong: ["Everyone may enter", "Feed the poor first", "Give half away"], why: "No poor person shall enter upon you into it today." },
@@ -596,7 +596,7 @@ const QALAM_FOUR: DeepUnit = {
       line: "They set out sure they could do whatever they planned.",
       facts: ["Power belongs to Allah", "Pride before a fall"],
       quote: q68(25),
-      source: ik(25, "Ibn Kathir says they went with strength, thinking they had power to do what they wanted.", "they thought they had power to do what they claimed"),
+      source: ik(25, "Ibn Kathir says they went with strength, thinking they had power to do what they wanted.", ""),
       difficulty: 2,
       questions: [
         { q: "What did they think they had?", a: "Power to do as they wished", wrong: ["Nothing at all", "Fear of Allah", "Kind hearts"], why: "They thought they had power to do what they claimed and what they were desiring." },
@@ -610,7 +610,7 @@ const QALAM_FOUR: DeepUnit = {
       line: "Seeing it black, they thought they took the wrong path.",
       facts: ["Shock at the loss", "The garden was theirs"],
       quote: q68(26),
-      source: ik(26, "Ibn Kathir says when they saw it black and empty, they thought they had walked down the wrong path.", "we have walked down a path other than the one we were seeking to reach it"),
+      source: ik(26, "Ibn Kathir says when they saw it black and empty, they thought they had walked down the wrong path.", ""),
       difficulty: 2,
       questions: [
         { q: "What did they first think?", a: "They had gone the wrong way", wrong: ["Thieves came", "It was a dream", "It was night"], why: "We have walked down a path other than the one we were seeking to reach it." },
@@ -624,7 +624,7 @@ const QALAM_FOUR: DeepUnit = {
       line: "Then they knew: it was their garden, and they got nothing.",
       facts: ["Mahrumun: deprived", "Greed lost it all"],
       quote: q68(27),
-      source: ik(27, "Ibn Kathir says they realized it was their garden after all, but they had no portion and no share of the harvest.", "this is it, but we have no portion and no share"),
+      source: ik(27, "Ibn Kathir says they realized it was their garden after all, but they had no portion and no share of the harvest.", ""),
       difficulty: 2,
       questions: [
         { q: "What did they finally realize?", a: "They were deprived", wrong: ["They were rich", "They were lost", "It was not theirs"], why: "Nay! Indeed we are deprived!" },
@@ -638,7 +638,7 @@ const QALAM_FOUR: DeepUnit = {
       line: "The most just among them reminded them of what he had said.",
       facts: ["Awsat: the most just", "Listen to good advice"],
       quote: q68(28),
-      source: ik(28, "Ibn Abbas, Mujahid and others said Awsat means the most just of them and the best of them.", "This means the most just of them and the best of them"),
+      source: ik(28, "Ibn Abbas, Mujahid and others said Awsat means the most just of them and the best of them.", ""),
       difficulty: 2,
       questions: [
         { q: "What does Awsat mean?", a: "The most just of them", wrong: ["The youngest", "The richest", "The loudest"], why: "This means the most just of them and the best of them." },
@@ -652,7 +652,7 @@ const QALAM_FOUR: DeepUnit = {
       line: "He had told them: glorify Allah and thank Him for His gifts.",
       facts: ["Tasbih: glorifying Allah", "Thankfulness protects"],
       quote: q68(28),
-      source: ik(28, "Mujahid said it means why not say If Allah wills, and it is also said the best of them told them to glorify Allah and thank Him for what He gave.", "glorify Allah and thank Him for what He has given you and favored you with"),
+      source: ik(28, "Mujahid said it means why not say If Allah wills, and it is also said the best of them told them to glorify Allah and thank Him for what He gave.", ""),
       difficulty: 3,
       questions: [
         { q: "What does Tusabbihun mean, per Mujahid?", a: "Saying If Allah wills", wrong: ["Swimming", "Selling", "Sleeping"], why: "Why do you not Tusabbihun means why do you not say, If Allah wills." },
@@ -791,7 +791,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "The pious get Gardens of Delight that will never end.",
       facts: ["Taqwa: mindfulness of Allah", "Unlike the worldly garden"],
       quote: q68(34),
-      source: ik(34, "Ibn Kathir says, after the ruined worldly garden, Allah tells that the pious will have Gardens of Delight in the Hereafter that never end.", "they will have Gardens of Delight in the Hereafter that will never end"),
+      source: ik(34, "Ibn Kathir says, after the ruined worldly garden, Allah tells that the pious will have Gardens of Delight in the Hereafter that never end.", ""),
       difficulty: 1,
       questions: [
         { q: "Who gets the Gardens of Delight?", a: "Those who have Taqwa", wrong: ["The greedy", "The proud", "Everyone at once"], why: "Verily, for those who have Taqwa are Gardens of Delight with their Lord." },
@@ -805,7 +805,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "Allah will never treat the Muslims like the criminals.",
       facts: ["Allah is just", "Deeds make a difference"],
       quote: q68(35),
-      source: ik(35, "Ibn Kathir says Allah will not deal equally with them in reward: by the Lord of heaven and earth, surely not.", "Nay, by the Lord of the heaven and the earth, surely not"),
+      source: ik(35, "Ibn Kathir says Allah will not deal equally with them in reward: by the Lord of heaven and earth, surely not.", ""),
       difficulty: 2,
       questions: [
         { q: "What does 68:35 ask?", a: "Treat Muslims like criminals?", wrong: ["Who owns the garden?", "When is harvest?", "Where is the sea?"], why: "Shall We then treat the Muslims like the criminals?" },
@@ -819,7 +819,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "Allah asks: what is wrong with you, how can you think that?",
       facts: ["Use sound thinking", "Do not fool yourself"],
       quote: q68(36),
-      source: ik(36, "Ibn Kathir explains What is the matter with you as: how can you think that?", "how can you think that"),
+      source: ik(36, "Ibn Kathir explains What is the matter with you as: how can you think that?", ""),
       difficulty: 2,
       questions: [
         { q: "What does 68:36 ask?", a: "How do you judge?", wrong: ["What is your name?", "Where do you live?", "Who is your king?"], why: "What is the matter with you? How judge you?" },
@@ -833,7 +833,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "Do they have a book from heaven promising all they wish?",
       facts: ["Claims need proof", "The Quran is the true Book"],
       quote: q68(37),
-      source: ik(37, "Ibn Kathir says Allah asks: is there a Book sent down from heaven in your hands that you study, which says this?", "is there in your hands a Book that has been sent down from heaven"),
+      source: ik(37, "Ibn Kathir says Allah asks: is there a Book sent down from heaven in your hands that you study, which says this?", ""),
       difficulty: 2,
       questions: [
         { q: "What does 68:37 ask the deniers?", a: "Do you have a Book?", wrong: ["Do you have gold?", "Do you have a horse?", "Do you have a house?"], why: "Or have you a Book wherein you learn." },
@@ -847,7 +847,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "Does any book promise them everything they choose?",
       facts: ["Wishes are not proof", "Only Allah decides"],
       quote: q68(38),
-      source: ik(38, "Ibn Kathir explains: that you will attain all that you want and desire.", "that you will attain all that you want and desire"),
+      source: ik(38, "Ibn Kathir explains: that you will attain all that you want and desire.", ""),
       difficulty: 2,
       questions: [
         { q: "What did they assume they would get?", a: "All they choose", wrong: ["Nothing", "Only a little", "Only punishment"], why: "That you shall therein have all that you choose." },
@@ -861,7 +861,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "Do they hold oaths from Allah lasting until Judgement Day?",
       facts: ["No covenant for them", "Only Allah promises"],
       quote: q68(39),
-      source: ik(39, "Ibn Kathir explains: do you have covenants and confirmed agreements with Us?", "do you have covenants and confirmed agreements with Us"),
+      source: ik(39, "Ibn Kathir explains: do you have covenants and confirmed agreements with Us?", ""),
       difficulty: 3,
       questions: [
         { q: "What does 68:39 ask?", a: "Do you have oaths from Us?", wrong: ["Do you have land?", "Do you have kings?", "Do you have stars?"], why: "Or have you oaths from Us, lasting until the Day of Judgement?" },
@@ -875,7 +875,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "Ask them: which of them will guarantee that claim?",
       facts: ["Zaim: guarantor", "No one can guarantee it"],
       quote: q68(40),
-      source: ik(40, "Ibn Abbas said it means: which of them will be guarantor for that?", "Which of them will be guarantor for that"),
+      source: ik(40, "Ibn Abbas said it means: which of them will be guarantor for that?", ""),
       difficulty: 2,
       questions: [
         { q: "What should they be asked?", a: "Who will guarantee it?", wrong: ["Who will cook?", "Who will sing?", "Who will sleep?"], why: "Ask them, which of them will stand as surety for that!" },
@@ -889,7 +889,7 @@ const QALAM_FIVE: DeepUnit = {
       line: "If they have partners with Allah, let them bring them.",
       facts: ["Idols cannot help", "A challenge they fail"],
       quote: q68(41),
-      source: ik(41, "Ibn Kathir explains partners as: do they have idols and rival gods besides Allah?", "do they have idols and rivals gods"),
+      source: ik(41, "Ibn Kathir explains partners as: do they have idols and rival gods besides Allah?", ""),
       difficulty: 2,
       questions: [
         { q: "What are the partners, per Ibn Kathir?", a: "Idols and false gods", wrong: ["Business partners", "Friends", "Teachers"], why: "Meaning, do they have idols and rivals gods besides Allah?" },

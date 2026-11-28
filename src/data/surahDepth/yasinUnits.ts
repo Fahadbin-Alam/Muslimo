@@ -123,7 +123,7 @@ const YASIN_ONE: DeepUnit = {
       line: "The Word proved true on most of them; they will not believe.",
       facts: ["Allah knew they would refuse", "Faith is a gift"],
       quote: q36(7),
-      source: ik(7, "Allah decreed in the Preserved Tablet that most of them would not believe in Him or His Messengers.", "will not believe.) in Allah, or in His Messengers"),
+      source: ik(7, "Allah decreed in the Preserved Tablet that most of them would not believe in Him or His Messengers.", ""),
       difficulty: 4,
       questions: [
         { q: "What proved true, in 36:7?", a: "The Word against most", wrong: ["Their poems", "Their dreams", "Their trade"], why: "Indeed the Word has proved true against most of them." },
@@ -976,7 +976,7 @@ const YASIN_THREE: DeepUnit = {
       line: "They enter it that Day because they used to disbelieve.",
       facts: ["A result of their choice", "Justice, not wrong"],
       quote: q36(64),
-      source: ik(64, "It will be said to them as a rebuke and warning after Hell is shown to them.", "after Hell has been shown to them as a rebuke"),
+      source: ik(64, "It will be said to them as a rebuke and warning after Hell is shown to them.", ""),
       difficulty: 3,
       questions: [
         { q: "Why do they enter it, in 36:64?", a: "They used to disbelieve", wrong: ["Bad luck", "No reason", "Others pushed"], why: "Enter therein this Day, for that you used to disbelieve." },
@@ -1004,7 +1004,7 @@ const YASIN_THREE: DeepUnit = {
       line: "If Allah willed, He could take their sight; how would they see?",
       facts: ["Guidance is Allah's gift", "The path means the truth"],
       quote: q36(66),
-      source: ik(66, "Ibn Zayd said the path is the truth: how could they see it if Allah covered their eyes?", "How could they see when We have covered their eyes"),
+      source: ik(66, "Ibn Zayd said the path is the truth: how could they see it if Allah covered their eyes?", "Allah willed, He could have covered their eyes and made them blind"),
       difficulty: 4,
       questions: [
         { q: "What could Allah do, in 36:66?", a: "Wipe out their eyes", wrong: ["Give them wings", "Make them kings", "Nothing"], why: "We would surely have wiped out their eyes, so that they would struggle for the path." },

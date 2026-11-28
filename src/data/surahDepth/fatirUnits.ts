@@ -618,7 +618,7 @@ const FATIR_TWO: DeepUnit = {
       line: "Allah knows the unseen and what is in every heart.",
       facts: ["Secrets are known to Him", "Each is rewarded by deeds"],
       quote: q35(38),
-      source: ik(38, "Allah knows all that is hidden and the secrets of the hearts, and rewards everyone by his deeds.", "He knows all that is hidden and the secrets of the hearts"),
+      source: ik(38, "Allah knows all that is hidden and the secrets of the hearts, and rewards everyone by his deeds.", ""),
       difficulty: 3,
       questions: [
         { q: "What does Allah know, in 35:38?", a: "What is in the breasts", wrong: ["Only actions", "Only words", "Only the past"], why: "Verily, He is the All-Knower of that is in the breasts." },

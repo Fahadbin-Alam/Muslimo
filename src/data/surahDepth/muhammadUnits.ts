@@ -221,7 +221,7 @@ const MUHAMMAD_ONE: DeepUnit = {
       line: "Allah destroyed towns stronger than Makkah, which drove him out.",
       facts: ["A warning to Makkah", "His people drove him out"],
       quote: q47(13),
-      source: ik(13, "Ibn Kathir says your town means Makkah, and the ayah is a great warning to its people.", "This is a great threat and severe warning to the people of Makkah"),
+      source: ik(13, "Ibn Kathir says your town means Makkah, and the ayah is a great warning to its people.", "is a great threat and severe warning to the people of Makkah"),
       difficulty: 3,
       questions: [
         { q: "Which town drove the Prophet ﷺ out, per Ibn Kathir?", a: "Makkah", wrong: ["Madinah", "Taif", "Jerusalem"], why: "Than your town that has driven you out, meaning, Makkah." },

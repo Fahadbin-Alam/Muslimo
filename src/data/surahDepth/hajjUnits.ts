@@ -40,7 +40,7 @@ const HAJJ_ONE: DeepUnit = {
       line: "Allah calls all people to taqwa before the Hour comes.",
       facts: ["The Hour begins with a great shaking", "Taqwa protects us on that Day"],
       quote: q22(1),
-      source: ik(1, "Al-Hajj opens by calling all mankind to have taqwa of their Lord, and tells of the great shaking of the Hour, so that people prepare for it.", "Allah commands His servants to have Taqwa of Him"),
+      source: ik(1, "Al-Hajj opens by calling all mankind to have taqwa of their Lord, and tells of the great shaking of the Hour, so that people prepare for it.", ""),
       difficulty: 2,
       questions: [
         { q: "Whom does 22:1 call to taqwa?", a: "All mankind", wrong: ["Only the Prophets", "Only the angels", "Only the old"], why: "O mankind! Have Taqwa of your Lord!" },
@@ -375,7 +375,7 @@ const HAJJ_TWO: DeepUnit = {
       line: "Hajj brings benefits in this world and in the Hereafter.",
       facts: ["Allah's pleasure in the Hereafter", "Trade is allowed during Hajj"],
       quote: q22(28),
-      source: ik(28, "Pilgrims witness benefits for them. Ibn Abbas said these are benefits in this world and the Hereafter: Allah's pleasure, and worldly goods such as trade and sacrificial animals.", "Benefits in this world and in the Hereafter"),
+      source: ik(28, "Pilgrims witness benefits for them. Ibn Abbas said these are benefits in this world and the Hereafter: Allah's pleasure, and worldly goods such as trade and sacrificial animals.", ""),
       difficulty: 3,
       questions: [
         { q: "What do pilgrims witness, in 22:28?", a: "Things of benefit to them", wrong: ["Only hardship", "Nothing new", "Only crowds"], why: "That they may witness things that are of benefit to them." },

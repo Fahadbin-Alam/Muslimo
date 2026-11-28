@@ -81,7 +81,7 @@ const QAF_ONE: DeepUnit = {
       line: "Qaf tells of creation, the Return, and the reward.",
       facts: ["Read at big gatherings", "Hope and warning together"],
       quote: q50(1),
-      source: ik(1, "Ibn Kathir says Qaf was recited at Eid and Friday because it tells of creation, Resurrection, the Reckoning, Paradise and reward.", "this Surah contains news of the beginning of creation, Resurrection, the Return"),
+      source: ik(1, "Ibn Kathir says Qaf was recited at Eid and Friday because it tells of creation, Resurrection, the Reckoning, Paradise and reward.", "Surah contains news of the beginning of creation, Resurrec- tion, the Return"),
       difficulty: 2,
       questions: [
         { q: "Why was Qaf read at big gatherings, per Ibn Kathir?", a: "Tells of creation and the Return", wrong: ["Very short", "Easy rhymes", "About trade"], why: "This Surah contains news of the beginning of creation, Resurrection, the Return." },
@@ -584,7 +584,7 @@ const QAF_TWO: DeepUnit = {
       line: "That Day the covering is lifted and sight becomes sharp.",
       facts: ["Heedless no more", "Like 19:38"],
       quote: q50(22),
-      source: ik(22, "Ibn Kathir says on the Day of Resurrection everyone will see clearly, but it will not help those who rejected faith.", "Everyone, including the disbelievers, will have clear sight on the Day of Resurrection"),
+      source: ik(22, "Ibn Kathir says on the Day of Resurrection everyone will see clearly, but it will not help those who rejected faith.", "including the disbelievers, will have clear sight on the Day of Resurrec-"),
       difficulty: 2,
       questions: [
         { q: "What is said to the heedless, in 50:22?", a: "Sharp is your sight this Day", wrong: ["Go to sleep", "Come back later", "You are free"], why: "Now We have removed from you, your covering, and sharp is your sight this Day!" },
@@ -723,7 +723,7 @@ const QAF_THREE: DeepUnit = {
       line: "Paradise will be brought close to those who had Taqwa.",
       facts: ["Uzlifat: brought near", "That Day is not far off"],
       quote: q50(31),
-      source: ik(31, "Ibn Kathir says Paradise will be brought close and near to the pious on the Day of Resurrection.", "Paradise will be brought close and near to the pious"),
+      source: ik(31, "Ibn Kathir says Paradise will be brought close and near to the pious on the Day of Resurrection.", "will be brought close and near to the pious, according to Qatadah"),
       difficulty: 1,
       questions: [
         { q: "What will be brought near, in 50:31?", a: "Paradise", wrong: ["The mountains", "The sea", "The moon"], why: "And Paradise will be Uzlifat to those who had Taqwa, not far off." },

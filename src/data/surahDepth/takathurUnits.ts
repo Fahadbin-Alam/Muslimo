@@ -152,7 +152,7 @@ const TAKATHUR_ONE: DeepUnit = {
       line: "Allah warns twice: soon you will know the truth.",
       facts: ["Kalla: Nay!", "A warning after a warning"],
       quote: q102(3),
-      source: ik(3, "Al-Hasan Al-Basri said the two ayahs are a warning after a warning; Ad-Dahhak said the first is to disbelievers and the second to believers.", "This is a threat after a threat"),
+      source: ik(3, "Al-Hasan Al-Basri said the two ayahs are a warning after a warning; Ad-Dahhak said the first is to disbelievers and the second to believers.", ""),
       difficulty: 3,
       questions: [
         { q: "What does 102:3 say?", a: "Nay! You shall come to know!", wrong: ["Rest, all is fine!", "Go and play!", "Gather more!"], why: "Nay! You shall come to know!" },
@@ -179,7 +179,7 @@ const TAKATHUR_TWO: DeepUnit = {
       line: "Sure knowledge would stop us chasing wealth over the Hereafter.",
       facts: ["Ilm al-yaqin: sure knowledge", "Knowledge changes actions"],
       quote: q102(5),
-      source: ik(5, "If you knew with true knowledge, you would not be distracted by rivalry for wealth from seeking the Hereafter.", "you knew with true knowledge, you would not be diverted by rivalry for wealth"),
+      source: ik(5, "If you knew with true knowledge, you would not be distracted by rivalry for wealth from seeking the Hereafter.", ""),
       difficulty: 1,
       questions: [
         { q: "What kind of knowledge does 102:5 mention?", a: "Sure knowledge", wrong: ["Old knowledge", "Secret knowledge", "Half knowledge"], why: "Nay! If you knew with a sure knowledge." },
@@ -193,7 +193,7 @@ const TAKATHUR_TWO: DeepUnit = {
       line: "Allah explains the warning: people will see the Fire.",
       facts: ["Ayn al-yaqin: seeing for sure", "The warning explained"],
       quote: q102(6),
-      source: ik(6, "Ayahs 6-7 explain the earlier warning: people will see the Fire, and then see it with certainty of sight.", "This is the explanation of the previous threat"),
+      source: ik(6, "Ayahs 6-7 explain the earlier warning: people will see the Fire, and then see it with certainty of sight.", ""),
       difficulty: 2,
       questions: [
         { q: "What does 102:6 say they will see?", a: "The blazing Fire", wrong: ["A garden", "A palace", "A river"], why: "Verily, you shall see the blazing Fire!" },
@@ -207,7 +207,7 @@ const TAKATHUR_TWO: DeepUnit = {
       line: "We will be asked about thanks for health, safety and food.",
       facts: ["An-Naim: the blessings", "Thanks by worship"],
       quote: q102(8),
-      source: ik(8, "On that Day all will be asked about thanking Allah for His favors, like health, safety and provision.", "questioned concerning your gratitude towards the favors that Allah blessed you with, such as health, safety, sustenance"),
+      source: ik(8, "On that Day all will be asked about thanking Allah for His favors, like health, safety and provision.", ""),
       difficulty: 2,
       questions: [
         { q: "What will we be asked about, per 102:8?", a: "The delights", wrong: ["The weather", "Our names", "Our height"], why: "Then on that Day you shall be asked about the delights!" },

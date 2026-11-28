@@ -67,7 +67,7 @@ const TAHRIM_ONE: DeepUnit = {
       line: "Even in correcting, Allah reminds He is Forgiving and Merciful.",
       facts: ["Allah corrects gently", "Mercy comes first"],
       quote: q66(1),
-      source: ik(1, "Ibn Kathir quotes 66:1, which ends by reminding that Allah is Oft-Forgiving, Most Merciful.", "And Allah is Oft-Forgiving, Most Merciful"),
+      source: ik(1, "Ibn Kathir quotes 66:1, which ends by reminding that Allah is Oft-Forgiving, Most Merciful.", ""),
       difficulty: 2,
       questions: [
         { q: "How does 66:1 end?", a: "Allah is Oft-Forgiving, Most Merciful", wrong: ["Allah is Severe", "Allah is far", "Allah is silent"], why: "And Allah is Oft-Forgiving, Most Merciful." },
@@ -95,7 +95,7 @@ const TAHRIM_ONE: DeepUnit = {
       line: "Allah is our Protector, All-Knowing and All-Wise.",
       facts: ["Al-Mawla: the Protector", "Al-Hakim: the All-Wise"],
       quote: q66(2),
-      source: ik(2, "Ibn Kathir quotes 66:2: Allah is your Protector and He is the All-Knower, the All-Wise.", "And Allah is your Protector and He is the All-Knower, the All-Wise"),
+      source: ik(2, "Ibn Kathir quotes 66:2: Allah is your Protector and He is the All-Knower, the All-Wise.", ""),
       difficulty: 2,
       questions: [
         { q: "Who is our Protector, per 66:2?", a: "Allah", wrong: ["Our wealth", "Our tribe", "Our strength"], why: "And Allah is your Protector." },
@@ -109,7 +109,7 @@ const TAHRIM_ONE: DeepUnit = {
       line: "A secret was told, then shared, and Allah informed him.",
       facts: ["Keep secrets safe", "Allah knows all"],
       quote: q66(3),
-      source: ik(3, "Ibn Kathir quotes 66:3: a secret was told to one of his wives, she told it, and Allah made it known to him.", "And Allah made it known to him"),
+      source: ik(3, "Ibn Kathir quotes 66:3: a secret was told to one of his wives, she told it, and Allah made it known to him.", ""),
       difficulty: 3,
       questions: [
         { q: "What happened to the secret?", a: "It was told to another", wrong: ["It was forgotten", "It was written", "It was buried"], why: "When the Prophet ﷺ disclosed a matter in confidence to one of his wives, then she told it." },
@@ -123,7 +123,7 @@ const TAHRIM_ONE: DeepUnit = {
       line: "He said: the All-Knower, the All-Aware informed me.",
       facts: ["Al-Alim: All-Knower", "Al-Khabir: All-Aware"],
       quote: q66(3),
-      source: ik(3, "Ibn Kathir quotes 66:3: she asked who told him, and he said the All-Knower, the All-Aware told him.", "The All-Knower, the All-Aware has told me"),
+      source: ik(3, "Ibn Kathir quotes 66:3: she asked who told him, and he said the All-Knower, the All-Aware told him.", ""),
       difficulty: 2,
       questions: [
         { q: "What did the Prophet ﷺ answer?", a: "The All-Aware told me", wrong: ["A bird told me", "I guessed", "Someone wrote it"], why: "He said: The All-Knower, the All-Aware has told me." },
@@ -193,7 +193,7 @@ const TAHRIM_ONE: DeepUnit = {
       line: "66:5 praises faith, obedience, repentance and worship.",
       facts: ["Saihat: those who fast", "Good character matters most"],
       quote: q66(5),
-      source: ik(5, "Ibn Kathir quotes the qualities in 66:5 and says Saihat means fasting, according to Abu Hurayrah, Aishah, Ibn Abbas and many others.", "means, fasting, according to Abu Hurayrah"),
+      source: ik(5, "Ibn Kathir quotes the qualities in 66:5 and says Saihat means fasting, according to Abu Hurayrah, Aishah, Ibn Abbas and many others.", ""),
       difficulty: 3,
       questions: [
         { q: "What does Saihat mean, per Ibn Kathir?", a: "Those who fast", wrong: ["Those who sing", "Those who sleep", "Those who travel far"], why: "Saihat means, fasting, according to Abu Hurayrah, Aishah, Ibn Abbas." },
@@ -513,7 +513,7 @@ const TAHRIM_THREE: DeepUnit = {
       line: "Qatadah: her husband's disbelief did not hurt her faith.",
       facts: ["Each is judged for own deeds", "Allah is the Just Judge"],
       quote: q66(11),
-      source: ik(11, "Qatadah said Firawn's wife was not affected by her husband's disbelief because she obeyed her Lord, and Allah punishes no one except for their own sins.", "was not affected by her husband … because she obeyed her Lord"),
+      source: ik(11, "Qatadah said Firawn's wife was not affected by her husband's disbelief because she obeyed her Lord, and Allah punishes no one except for their own sins.", ""),
       difficulty: 3,
       questions: [
         { q: "Why was she not affected by his disbelief?", a: "She obeyed her Lord", wrong: ["She was rich", "She lived far away", "She was a queen"], why: "His wife was not affected by her husband's disbelief, because she obeyed her Lord." },

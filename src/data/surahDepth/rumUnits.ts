@@ -95,7 +95,7 @@ const RUM_ONE: DeepUnit = {
       line: "Rome beat Persia the same day Muslims won at Badr.",
       facts: ["Two victories at once", "Allah helps whom He wills"],
       quote: q30(5),
-      source: ik(8, "Many scholars said the Romans beat the Persians on the day of Badr, so the believers had two reasons to rejoice.", "the victory of the Romans over the Persians happened on the same day as the battle of Badr"),
+      source: ik(8, "Many scholars said the Romans beat the Persians on the day of Badr, so the believers had two reasons to rejoice.", ""),
       difficulty: 4,
       questions: [
         { q: "Whom does Allah help, in 30:5?", a: "Whom He wills", wrong: ["Only the rich", "No one", "The strongest"], why: "With the help of Allah. He helps whom He wills." },
@@ -109,7 +109,7 @@ const RUM_ONE: DeepUnit = {
       line: "A promise from Allah, and Allah never breaks His promise.",
       facts: ["Allah's word comes true", "Most people do not know"],
       quote: q30(6),
-      source: ik(9, "The news that Rome would beat Persia was a true promise from Allah that could not change and surely came to pass.", "is a true promise from Allah, truth which cannot be changed"),
+      source: ik(9, "The news that Rome would beat Persia was a true promise from Allah that could not change and surely came to pass.", ""),
       difficulty: 3,
       questions: [
         { q: "Does Allah fail His promise, in 30:6?", a: "Never", wrong: ["Sometimes", "Often", "Only in war"], why: "A promise from Allah, and Allah fails not in His promise." },
@@ -123,7 +123,7 @@ const RUM_ONE: DeepUnit = {
       line: "They know the surface of this life but forget the Hereafter.",
       facts: ["Worldly skill is not enough", "Learn your religion too"],
       quote: q30(7),
-      source: ik(10, "Al-Hasan Al-Basri said some can weigh a coin on a fingertip, yet do not know how to pray properly.", "but he does not know how to pray properly"),
+      source: ik(10, "Al-Hasan Al-Basri said some can weigh a coin on a fingertip, yet do not know how to pray properly.", ""),
       difficulty: 3,
       questions: [
         { q: "What do they know, in 30:7?", a: "The outer side of worldly life", wrong: ["The Hereafter", "The unseen", "Nothing at all"], why: "They know only the outer appearance of the life of the world." },
@@ -151,7 +151,7 @@ const RUM_ONE: DeepUnit = {
       line: "Allah made the heavens and earth with truth, for a set term.",
       facts: ["Creation is not in vain", "The Day is the appointed time"],
       quote: q30(8),
-      source: ik(10, "Pondering creation shows Allah made it in truth, not in jest, lasting until an appointed time, the Day of Resurrection.", "realizing that this was not created in jest or in vain, but in truth"),
+      source: ik(10, "Pondering creation shows Allah made it in truth, not in jest, lasting until an appointed time, the Day of Resurrection.", ""),
       difficulty: 3,
       questions: [
         { q: "How did Allah create the heavens and earth, in 30:8?", a: "With truth, for a term", wrong: ["By chance", "For play", "Forever unchanged"], why: "Allah has created not the heavens and the earth... except with truth and for an appointed term." },
@@ -165,7 +165,7 @@ const RUM_ONE: DeepUnit = {
       line: "Earlier nations were stronger and built more, yet they fell.",
       facts: ["Power cannot save", "Allah wrongs no one"],
       quote: q30(9),
-      source: ik(10, "Past nations had more wealth, strength and building, yet when they denied their Messengers, nothing protected them. Allah was not unjust to them.", "Allah was not at all unjust towards them"),
+      source: ik(10, "Past nations had more wealth, strength and building, yet when they denied their Messengers, nothing protected them. Allah was not unjust to them.", ""),
       difficulty: 4,
       questions: [
         { q: "How were the earlier nations, in 30:9?", a: "Stronger and more numerous", wrong: ["Weaker", "Poorer", "Fewer"], why: "They were superior to them in strength, and they tilled the earth and populated it in greater numbers." },
@@ -179,7 +179,7 @@ const RUM_ONE: DeepUnit = {
       line: "Those who mocked Allah's signs met an evil end.",
       facts: ["Respect Allah's signs", "Sins lead to more sins"],
       quote: q30(10),
-      source: ik(10, "They brought ruin on themselves by rejecting and mocking the signs of Allah, because of their earlier sins.", "They brought destruction upon themselves, when they rejected and mocked the signs of Allah"),
+      source: ik(10, "They brought ruin on themselves by rejecting and mocking the signs of Allah, because of their earlier sins.", "is that evil was their inevitable end, because they rejected the signs"),
       difficulty: 4,
       questions: [
         { q: "Why was their end evil, in 30:10?", a: "They denied and mocked the Ayat", wrong: ["They were poor", "They traveled", "They were few"], why: "Because they denied the Ayat of Allah and made a mockery of them." },
@@ -263,7 +263,7 @@ const RUM_ONE: DeepUnit = {
       line: "Those who denied the signs and the meeting face punishment.",
       facts: ["Believe in the Hereafter", "Allah is just"],
       quote: q30(16),
-      source: ik(16, "Those who denied the Ayat and the meeting of the Hereafter will be brought to punishment, the opposite of the believers.", "those who disbelieved and denied Our Ayat, and the meeting of the Hereafter"),
+      source: ik(16, "Those who denied the Ayat and the meeting of the Hereafter will be brought to punishment, the opposite of the believers.", ""),
       difficulty: 3,
       questions: [
         { q: "What did they deny, in 30:16?", a: "The Ayat and the Hereafter", wrong: ["Only the sun", "Their parents", "Their trade"], why: "And as for those who disbelieved and denied Our Ayat, and the meeting of the Hereafter." },

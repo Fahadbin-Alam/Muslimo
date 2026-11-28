@@ -799,7 +799,7 @@ const AHZAB_TWO: DeepUnit = {
       line: "He was told not to marry others besides them.",
       facts: ["A reward for choosing Allah", "Allah watches over all"],
       quote: q33(52),
-      source: ik(52, "Many scholars said this ayah was a reward to his wives for choosing Allah, His Messenger ﷺ and the Hereafter.", "this Ayah was revealed as a reward to the wives of the Prophet ﷺ"),
+      source: ik(52, "Many scholars said this ayah was a reward to his wives for choosing Allah, His Messenger ﷺ and the Hereafter.", "Ayah was revealed as a reward to the wives of the Prophet"),
       difficulty: 4,
       questions: [
         { q: "Why was 33:52 revealed, per Ibn Kathir?", a: "As a reward to his wives", wrong: ["As a punishment", "For a war", "For trade"], why: "This Ayah was revealed as a reward to the wives of the Prophet ﷺ." },

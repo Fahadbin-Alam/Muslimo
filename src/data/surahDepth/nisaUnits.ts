@@ -378,7 +378,7 @@ const NISA_ONE: DeepUnit = {
       line: "Avoid the great sins, and Allah erases the small ones.",
       facts: ["Kaba'ir: major sins", "Mudkhal karim: Paradise"],
       quote: q4(31),
-      source: ik(31, "If you avoid the major evil deeds you were forbidden, Allah forgives your smaller sins and admits you to Paradise.", "you avoid the major evil deeds that you were prohibited"),
+      source: ik(31, "If you avoid the major evil deeds you were forbidden, Allah forgives your smaller sins and admits you to Paradise.", "avoid the major evil deeds that you were prohibited We will forgive"),
       difficulty: 3,
       questions: [
         { q: "What erases small sins, in 4:31?", a: "Avoiding the great sins", wrong: ["Doing more great sins", "Sleeping", "Being rich"], why: "In tajtanibu kaba'ira ma tunhawna 'anh." },
@@ -868,7 +868,7 @@ const NISA_TWO: DeepUnit = {
       line: "Leave home for Allah and you find room; the reward is sure.",
       facts: ["Hijrah: leaving for Allah", "Muragham: places of refuge"],
       quote: q4(100),
-      source: ik(100, "The angels ask those who stayed under oppression: was not Allah's earth spacious enough to emigrate? The truly weak, who could not leave, are excused.", "Was not the earth of Allah spacious enough for you"),
+      source: ik(100, "The angels ask those who stayed under oppression: was not Allah's earth spacious enough to emigrate? The truly weak, who could not leave, are excused.", "not the earth of Allah spacious enough"),
       difficulty: 5,
       questions: [
         { q: "What do the angels ask, in 4:97?", a: "Was Allah's earth not wide enough?", wrong: ["Where is your gold?", "Who is your king?", "Why are you late?"], why: "Alam takun ardullahi wasi'ah." },

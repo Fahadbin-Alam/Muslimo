@@ -277,7 +277,7 @@ const INSHIQAQ_TWO: DeepUnit = {
       line: "Allah asks why they do not bow when the Quran is read.",
       facts: ["Sajdah: bowing in awe", "Respect the Quran"],
       quote: q84(21),
-      source: ik(21, "Ibn Kathir asks what stops them from believing and from prostrating in awe when Allah's words are recited.", "they do not prostrate due to awe, respect and reverence"),
+      source: ik(21, "Ibn Kathir asks what stops them from believing and from prostrating in awe when Allah's words are recited.", "to them they do not prostrate due to awe, respect and reverence"),
       difficulty: 3,
       questions: [
         { q: "What does 84:20 ask?", a: "Why they believe not", wrong: ["Why they sleep", "Why they travel", "Why they eat"], why: "What is the matter with them, that they believe not?" },

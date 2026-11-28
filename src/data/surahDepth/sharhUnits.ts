@@ -111,7 +111,7 @@ const SHARH_ONE: DeepUnit = {
       line: "In every Shahadah and prayer, his name comes with Allah's.",
       facts: ["Shahadah: the testimony", "Heard in every adhan"],
       quote: q94(4),
-      source: ik(4, "Qatadah said no one gives a sermon, says the Shahadah or prays except that he says: Muhammad is the Messenger of Allah.", "that Muhammad is the Messenger of Allah"),
+      source: ik(4, "Qatadah said no one gives a sermon, says the Shahadah or prays except that he says: Muhammad is the Messenger of Allah.", ""),
       difficulty: 1,
       questions: [
         { q: "What is said with Allah's name in the Shahadah?", a: "Muhammad is the Messenger of Allah", wrong: ["Makkah is a city", "The sky is high", "Today is Friday"], why: "I bear witness that there is no God worthy of worship except Allah, and that Muhammad is the Messenger of Allah." },
@@ -152,7 +152,7 @@ const SHARH_TWO: DeepUnit = {
       line: "Allah repeats the promise of ease to make our hearts sure.",
       facts: ["Repeated for certainty", "Never lose hope"],
       quote: q94(6),
-      source: ik(6, "Ibn Kathir says Allah tells us there is ease with difficulty and then reaffirms it by repeating it.", "then reaffirms this information"),
+      source: ik(6, "Ibn Kathir says Allah tells us there is ease with difficulty and then reaffirms it by repeating it.", "that with difficulty there is ease, and then He reaffirms this information"),
       difficulty: 2,
       questions: [
         { q: "What does 94:6 do?", a: "Repeats the promise of ease", wrong: ["Takes it back", "Changes topic", "Asks a question"], why: "Verily, along with every hardship is relief." },

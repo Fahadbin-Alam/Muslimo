@@ -263,7 +263,7 @@ const ALAQ_TWO: DeepUnit = {
       line: "Allah warned him to stop his stubbornness and turn back.",
       facts: ["The forehead: the front lock", "Lying and sinful"],
       quote: q96(15),
-      source: ik(15, "If he does not stop his stubborn quarrel, Allah warns him; his forehead lies in its words and sins in its deeds.", "if he does not recant from his discord and obstinacy"),
+      source: ik(15, "If he does not stop his stubborn quarrel, Allah warns him; his forehead lies in its words and sins in its deeds.", "he does not recant from his discord and obstinacy"),
       difficulty: 2,
       questions: [
         { q: "What does if he ceases not mean, per Ibn Kathir?", a: "If he does not stop his stubbornness", wrong: ["If he stops eating", "If he stops walking", "If he stops talking"], why: "If he does not recant from his discord and obstinacy." },

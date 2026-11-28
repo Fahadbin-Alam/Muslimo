@@ -1213,7 +1213,7 @@ const ANAM_THREE: DeepUnit = {
       line: "This is My straight path: follow it, not the scattered ways.",
       facts: ["Sirat mustaqim", "Subul: other paths"],
       quote: q6(153),
-      source: ik(153, "Ibn Abbas said Allah commanded the believers to stay together and forbade division and disputes, for those before were destroyed by division in religion.", "forbade them from causing divisions and disputes"),
+      source: ik(153, "Ibn Abbas said Allah commanded the believers to stay together and forbade division and disputes, for those before were destroyed by division in religion.", ""),
       difficulty: 4,
       questions: [
         { q: "How many straight paths are in 6:153?", a: "One", wrong: ["Two", "Many", "None"], why: "Wa anna hadha sirati mustaqima." },

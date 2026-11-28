@@ -318,7 +318,7 @@ const SAFF_TWO: DeepUnit = {
       line: "Believers are forbidden from hurting the Prophet ﷺ in any way.",
       facts: ["33:69 says the same", "Respect him in word and deed"],
       quote: q61(5),
-      source: ik(5, "Ibn Kathir says believers are forbidden from harming or bothering the Prophet ﷺ in any way, as 33:69 says.", "believers are prohibited from harming or bothering the Prophet ﷺ in any way or form"),
+      source: ik(5, "Ibn Kathir says believers are forbidden from harming or bothering the Prophet ﷺ in any way, as 33:69 says.", "it believers are prohibited from harming or bothering the Prophet in any"),
       difficulty: 3,
       questions: [
         { q: "What are believers forbidden from, per Ibn Kathir?", a: "Hurting the Prophet ﷺ", wrong: ["Trading", "Traveling", "Building"], why: "Believers are prohibited from harming or bothering the Prophet ﷺ in any way or form." },
@@ -569,7 +569,7 @@ const SAFF_THREE: DeepUnit = {
       line: "Allah offers believers a trade that saves from punishment.",
       facts: ["Allah Himself offers it", "An answer to their question"],
       quote: q61(10),
-      source: ik(10, "Ibn Kathir says the Companions wanted to know the best deeds, and Allah sent down this surah, including 61:10.", "Shall I guide you to a trade that will save you from a painful torment"),
+      source: ik(10, "Ibn Kathir says the Companions wanted to know the best deeds, and Allah sent down this surah, including 61:10.", "Trade that saves One from the Painful Torment We mentioned a Hadith"),
       difficulty: 2,
       questions: [
         { q: "What does Allah offer the believers, in 61:10?", a: "A trade that saves them", wrong: ["A new home", "A long trip", "A big feast"], why: "Shall I guide you to a trade that will save you from a painful torment?" },

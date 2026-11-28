@@ -834,7 +834,7 @@ const HIJR_FOUR: DeepUnit = {
       line: "Allah will question everyone about all they used to do.",
       facts: ["What did you worship?", "How did you answer the Messengers?"],
       quote: q15(92),
-      source: ik(92, "Allah swears He will question all of them about their deeds. Abu Al-Aliyah said everyone will be asked two things: what they worshipped, and how they answered the Messengers.", "what they used to worship, and what their response was to the Messengers"),
+      source: ik(92, "Allah swears He will question all of them about their deeds. Abu Al-Aliyah said everyone will be asked two things: what they worshipped, and how they answered the Messengers.", "what they used to worship, and what their response"),
       difficulty: 4,
       questions: [
         { q: "Whom will Allah call to account, in 15:92?", a: "All of them", wrong: ["Only kings", "Only a few", "No one"], why: "So, by your Lord, We shall certainly call all of them to account." },

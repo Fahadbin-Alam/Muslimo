@@ -249,7 +249,7 @@ const RAHMAN_ONE: DeepUnit = {
       line: "Then which of your Lord's favors will you both deny?",
       facts: ["Said to mankind and jinn", "Repeated 31 times in the surah"],
       quote: q55(13),
-      source: ik(13, "Ibn Kathir says it means: O mankind and jinn, which of Allah's favors do you deny? You are surrounded by them.", "O mankind and Jinn, which of the favors that Allah has given to you do you deny"),
+      source: ik(13, "Ibn Kathir says it means: O mankind and jinn, which of Allah's favors do you deny? You are surrounded by them.", "mankind and Jinn,which of the favors that Allah has given to you"),
       difficulty: 1,
       questions: [
         { q: "Who are you both, per Ibn Kathir?", a: "Mankind and jinn", wrong: ["Two angels", "Two kings", "Two brothers"], why: "O mankind and Jinn, which of the favors that Allah has given to you do you deny?" },
@@ -640,7 +640,7 @@ const RAHMAN_TWO: DeepUnit = {
       line: "Those who flee are turned back by flame and smoke.",
       facts: ["Shuwaz: the flame of fire", "Nuhas: the smoke, per Ibn Abbas"],
       quote: q55(35),
-      source: ik(35, "Ibn Kathir reports from Ibn Abbas that Shuwaz is the flame of fire, and Nuhas is the smoke of the fire.", "Shuwāz is the flame of fire"),
+      source: ik(35, "Ibn Kathir reports from Ibn Abbas that Shuwaz is the flame of fire, and Nuhas is the smoke of the fire.", "that Shuwaz is the flame of fire"),
       difficulty: 3,
       questions: [
         { q: "What is Shuwaz, per Ibn Abbas?", a: "The flame of fire", wrong: ["A river", "A wind", "A cloud"], why: "Ibn Abbas that Shuwaz is the flame of fire." },

@@ -40,7 +40,7 @@ const HUMAZAH_ONE: DeepUnit = {
       line: "Woe to all who find fault with people and belittle them.",
       facts: ["Humazah: one who mocks", "Lumazah: one who slanders"],
       quote: q104(1),
-      source: ik(1, "Al-Hammaz slanders by speech and Al-Lammaz by action; such a person finds fault with people and belittles them.", "the person finds fault with people and belittles them"),
+      source: ik(1, "Al-Hammaz slanders by speech and Al-Lammaz by action; such a person finds fault with people and belittles them.", ""),
       difficulty: 1,
       questions: [
         { q: "Who gets woe in 104:1?", a: "Every Humazah Lumazah", wrong: ["Every traveler", "Every farmer", "Every student"], why: "Woe to every Humazah Lumazah." },

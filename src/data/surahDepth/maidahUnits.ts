@@ -236,7 +236,7 @@ const MAIDAH_ONE: DeepUnit = {
       line: "The Prophet ﷺ came after a long gap with no messenger.",
       facts: ["Fatrah: a gap", "Bringer of good news"],
       quote: q5(19),
-      source: ik(19, "Allah sent Muhammad ﷺ, the Final Messenger, after a long time had passed between him and Isa son of Maryam, so no one could say no warner came.", "after whom there will be no Prophet or Messenger"),
+      source: ik(19, "Allah sent Muhammad ﷺ, the Final Messenger, after a long time had passed between him and Isa son of Maryam, so no one could say no warner came.", "the Children of Israel, and Muhammad , the Last Prophet and Messenger"),
       difficulty: 3,
       questions: [
         { q: "What came before the Prophet ﷺ, in 5:19?", a: "A gap with no messengers", wrong: ["Many messengers at once", "A great flood", "A kingdom"], why: "'Ala fatratin minar-rusul." },
@@ -404,7 +404,7 @@ const MAIDAH_ONE: DeepUnit = {
       line: "Allah tests each nation with what He gave: race to do good.",
       facts: ["Fastabiqul-khayrat", "All return to Allah"],
       quote: q5(48),
-      source: ik(48, "Allah gave each nation a law and a way, to test them with what He gave. So compete in good deeds; all of you return to Allah, and He will tell you what you differed in.", "so compete in good deeds"),
+      source: ik(48, "Allah gave each nation a law and a way, to test them with what He gave. So compete in good deeds; all of you return to Allah, and He will tell you what you differed in.", "Allah encouraged rushing to perform good deeds"),
       difficulty: 5,
       questions: [
         { q: "What does 5:48 tell us to compete in?", a: "Good deeds", wrong: ["Wealth", "Fame", "Sports only"], why: "Fastabiqul-khayrat." },
@@ -459,7 +459,7 @@ const MAIDAH_TWO: DeepUnit = {
       line: "When Allah loves a servant, He accepts little and forgives much.",
       facts: ["As-Sa'di explains", "Allah's love"],
       quote: q5(54),
-      source: saadi(5, 54, "As-Sa'di says Allah's love for a servant is the greatest blessing: He makes his ways easy and draws people's hearts to him; loving Allah requires following the Messenger ﷺ, drawing near by obligatory and extra deeds, and knowing and remembering Him; and when Allah loves a servant, He accepts a little from him and forgives many slips.", "وإذا أحب الله عبدا قبل منه اليسير من العمل، وغفر له الكثير من الزلل"),
+      source: saadi(5, 54, "As-Sa'di says Allah's love for a servant is the greatest blessing: He makes his ways easy and draws people's hearts to him; loving Allah requires following the Messenger ﷺ, drawing near by obligatory and extra deeds, and knowing and remembering Him; and when Allah loves a servant, He accepts a little from him and forgives many slips.", "الله عبدا قبل منه اليسير من العمل، وغفر له الكثير من الزلل"),
       difficulty: 2,
       questions: [
         { q: "What does Allah do for a servant He loves, per as-Sa'di on 5:54?", a: "Accepts little and forgives much", wrong: ["Gives no tests", "Makes him famous", "Makes him rich"], why: "He accepts a little deed and forgives many slips." },
@@ -543,7 +543,7 @@ const MAIDAH_TWO: DeepUnit = {
       line: "Some heard the Quran and wept, knowing it was the truth.",
       facts: ["Tafidu minad-dam'", "Write us with the witnesses"],
       quote: q5(83),
-      source: ik(83, "When they listen to what came down to the Messenger, their eyes overflow with tears because of the truth they recognized, and they say: our Lord, we believe.", "you see their eyes overflowing with tears because of the truth they have recognized"),
+      source: ik(83, "When they listen to what came down to the Messenger, their eyes overflow with tears because of the truth they recognized, and they say: our Lord, we believe.", "their eyes overflowing with tears because of the truth"),
       difficulty: 3,
       questions: [
         { q: "What happened when they heard the Quran, in 5:83?", a: "Their eyes overflowed with tears", wrong: ["They laughed", "They left", "They slept"], why: "Tara a'yunahum tafidu minad-dam'." },
@@ -571,7 +571,7 @@ const MAIDAH_TWO: DeepUnit = {
       line: "Break a firm oath? Feed ten poor people, clothe them, or fast.",
       facts: ["Kaffarah: make-up", "Guard your oaths"],
       quote: q5(89),
-      source: ik(89, "For a deliberate oath that is broken, the expiation is feeding ten poor people from the middle of what you feed your family, or clothing them, or freeing a slave; whoever cannot, fasts three days.", "for its expiation feed ten poor"),
+      source: ik(89, "For a deliberate oath that is broken, the expiation is feeding ten poor people from the middle of what you feed your family, or clothing them, or freeing a slave; whoever cannot, fasts three days.", "There are three types of expiation for breaking deliberate oaths, and whichever"),
       difficulty: 4,
       questions: [
         { q: "How many poor are fed for a broken oath, in 5:89?", a: "Ten", wrong: ["Three", "Seven", "Sixty"], why: "It'amu 'asharati masakin." },
@@ -683,7 +683,7 @@ const MAIDAH_TWO: DeepUnit = {
       line: "When death nears, have two just witnesses for your will.",
       facts: ["Wasiyyah: a will", "Two just men"],
       quote: q5(106),
-      source: ik(106, "When death approaches one of you and he makes a will, two just men should witness it, so the rights of the heirs are kept.", "take the testimony of two just men of your own folk"),
+      source: ik(106, "When death approaches one of you and he makes a will, two just men should witness it, so the rights of the heirs are kept.", ""),
       difficulty: 5,
       questions: [
         { q: "How many witnesses for a will, in 5:106?", a: "Two just men", wrong: ["One child", "Ten men", "None"], why: "Ithnani dhawa 'adlin minkum." },
@@ -711,7 +711,7 @@ const MAIDAH_TWO: DeepUnit = {
       line: "Isa's miracles all came by Allah's permission, not his own.",
       facts: ["Bi-idhni: by My permission", "Jibril supported him"],
       quote: q5(110),
-      source: ik(110, "Allah reminds Isa of His favors: speaking in the cradle, the clay bird, healing the blind and lepers, and bringing out the dead, each by Allah's permission.", "and it became a bird by My permission"),
+      source: ik(110, "Allah reminds Isa of His favors: speaking in the cradle, the clay bird, healing the blind and lepers, and bringing out the dead, each by Allah's permission.", "in the figure of a bird by My permission, and it became"),
       difficulty: 5,
       questions: [
         { q: "How did the clay bird come to life, in 5:110?", a: "By Allah's permission", wrong: ["By Isa's own power", "By magic", "By chance"], why: "Fa-takunu tayran bi-idhni." },
@@ -767,7 +767,7 @@ const MAIDAH_TWO: DeepUnit = {
       line: "On that Day the truthful profit from their truth.",
       facts: ["Allah pleased with them", "The great success"],
       quote: q5(119),
-      source: ik(119, "This is the Day the truthful profit from their truth. Ibn Abbas said: this is the Day when tawhid benefits those who believed in it.", "This is the Day when Tawhid will benefit those who believed in it"),
+      source: ik(119, "This is the Day the truthful profit from their truth. Ibn Abbas said: this is the Day when tawhid benefits those who believed in it.", "the Day when Tawhid will benefit those who believed"),
       difficulty: 5,
       questions: [
         { q: "Who profits on that Day, in 5:119?", a: "The truthful", wrong: ["The rich", "The famous", "The clever liars"], why: "Hadha yawmu yanfa'us-sadiqina sidquhum." },

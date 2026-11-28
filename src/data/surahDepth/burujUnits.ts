@@ -68,7 +68,7 @@ const BURUJ_ONE: DeepUnit = {
       line: "Most say the Witness is Friday and the Witnessed is Arafah.",
       facts: ["Shahid: Witness, Friday", "Mashhud: Witnessed, Arafah"],
       quote: q85(3),
-      source: ik(3, "Al-Baghawi said the majority hold that the Witness is Friday and the Witnessed is the day of Arafah.", "The majority considers the Witness to be Friday"),
+      source: ik(3, "Al-Baghawi said the majority hold that the Witness is Friday and the Witnessed is the day of Arafah.", ""),
       difficulty: 3,
       questions: [
         { q: "By what does Allah swear in 85:3?", a: "The Witness and the Witnessed", wrong: ["The sun and moon", "The day and night", "The sea and land"], why: "And by the Witness and by the Witnessed." },

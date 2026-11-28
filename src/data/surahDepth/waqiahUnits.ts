@@ -473,7 +473,7 @@ const WAQIAH_ONE: DeepUnit = {
       line: "In Paradise no one hears bad or useless talk.",
       facts: ["No lies, no mean words", "Paradise is calm and kind"],
       quote: q56(25),
-      source: ik(25, "Ibn Kathir says they will not hear foul or unnecessary speech in Paradise.", "they will not hear foul or unnecessary speech in Paradise"),
+      source: ik(25, "Ibn Kathir says they will not hear foul or unnecessary speech in Paradise.", "meaning they will not hear foul or unnecessary speech in Paradise"),
       difficulty: 1,
       questions: [
         { q: "What will they not hear, in 56:25?", a: "Laghw or sinful speech", wrong: ["Any greeting", "Birdsong", "The Quran"], why: "No Laghw (evil vain talk) will they hear therein, nor any sinful speech." },
@@ -612,7 +612,7 @@ const WAQIAH_TWO: DeepUnit = {
       line: "They live by water that flows all the time.",
       facts: ["The water never stops", "In the desert, flowing water was a dream"],
       quote: q56(31),
-      source: ik(31, "Ibn Kathir lists the ayah among the gifts of those on the right: and by water flowing constantly.", "And by water flowing constantly"),
+      source: ik(31, "Ibn Kathir lists the ayah among the gifts of those on the right: and by water flowing constantly.", ""),
       difficulty: 1,
       questions: [
         { q: "What water is promised in 56:31?", a: "Water flowing constantly", wrong: ["Still water", "Salty water", "Frozen water"], why: "And by water flowing constantly." },

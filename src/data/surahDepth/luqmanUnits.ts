@@ -39,7 +39,7 @@ const LUQMAN_ONE: DeepUnit = {
       line: "Luqman opens with the letters Alif Lam Mim.",
       facts: ["The Quran is full of wisdom", "Ibn Kathir explains the letters in Al-Baqarah"],
       quote: q31(1),
-      source: ik(1, "The surah opens with letters, as Al-Baqarah does. Allah made the Quran a guidance, a healing and a mercy for those who do good.", "a guidance and healing and a mercy for the Muhsinin"),
+      source: ik(1, "The surah opens with letters, as Al-Baqarah does. Allah made the Quran a guidance, a healing and a mercy for those who do good.", ""),
       difficulty: 2,
       questions: [
         { q: "Which letters open Luqman, in 31:1?", a: "Alif Lam Mim", wrong: ["Ya Sin", "Ta Ha", "Qaf"], why: "Alif Lam Mim." },
@@ -53,7 +53,7 @@ const LUQMAN_ONE: DeepUnit = {
       line: "These are the ayahs of the Wise Book, the Quran.",
       facts: ["Every ayah is a sign", "Wisdom fills the Book"],
       quote: q31(2),
-      source: ik(2, "Allah made the Quran a guidance, a healing and a mercy for those who do good deeds.", "a guidance and healing and a mercy for the Muhsinin"),
+      source: ik(2, "Allah made the Quran a guidance, a healing and a mercy for those who do good deeds.", ""),
       difficulty: 2,
       questions: [
         { q: "What is the Book called, in 31:2?", a: "The Wise Book", wrong: ["The Old Book", "The Short Book", "The Lost Book"], why: "These are Ayat of the Wise Book." },
@@ -67,7 +67,7 @@ const LUQMAN_ONE: DeepUnit = {
       line: "The Quran is a guide and a mercy for the Muhsinin.",
       facts: ["Muhsinin do good by Allah's law", "They pray on time"],
       quote: q31(3),
-      source: ik(3, "The Muhsinin do good as Allah's law teaches. They pray the obligatory prayers properly and on time, then add extra prayers.", "They establish the obligatory prayers in the proper manner and at the correct times"),
+      source: ik(3, "The Muhsinin do good as Allah's law teaches. They pray the obligatory prayers properly and on time, then add extra prayers.", ""),
       difficulty: 2,
       questions: [
         { q: "For whom is the Book a guide, in 31:3?", a: "The Muhsinin", wrong: ["The proud", "The lazy", "Only kings"], why: "A guide and a mercy for the Muhsinin." },
@@ -81,7 +81,7 @@ const LUQMAN_ONE: DeepUnit = {
       line: "They pray, give Zakah and are certain of the Hereafter.",
       facts: ["Zakah goes to those who deserve it", "Faith in the Hereafter is firm"],
       quote: q31(4),
-      source: ik(4, "The good-doers pay Zakah to those who deserve it, keep ties with relatives, and are certain of reward in the Hereafter.", "they pay the Zakah to those who deserve it"),
+      source: ik(4, "The good-doers pay Zakah to those who deserve it, keep ties with relatives, and are certain of reward in the Hereafter.", ""),
       difficulty: 3,
       questions: [
         { q: "What do they give, in 31:4?", a: "Zakah", wrong: ["Gifts to kings", "Nothing", "Loans with interest"], why: "Those who perform the Salah and give Zakah." },
@@ -95,7 +95,7 @@ const LUQMAN_ONE: DeepUnit = {
       line: "Such people are on guidance from their Lord and succeed.",
       facts: ["Success in both worlds", "No showing off"],
       quote: q31(5),
-      source: ik(5, "They follow Allah's guidance with clear understanding, do not show off, and succeed in this world and the Hereafter.", "they follow His guidance with clear understanding"),
+      source: ik(5, "They follow Allah's guidance with clear understanding, do not show off, and succeed in this world and the Hereafter.", ""),
       difficulty: 3,
       questions: [
         { q: "Whose guidance are they on, in 31:5?", a: "Their Lord's", wrong: ["Their tribe's", "Their own", "The crowd's"], why: "Such are on guidance from their Lord." },
@@ -654,7 +654,7 @@ const LUQMAN_TWO: DeepUnit = {
       line: "No one knows the Unseen unless Allah tells them.",
       facts: ["Not even angels know the Hour", "Allah is All-Knower, All-Aware"],
       quote: q31(34),
-      source: ik(34, "These are the keys of the Unseen that Allah kept for Himself. No sent Prophet or close angel knows when the Hour will come.", "These are the keys of the Unseen, whose knowledge Allah alone has kept for Himself"),
+      source: ik(34, "These are the keys of the Unseen that Allah kept for Himself. No sent Prophet or close angel knows when the Hour will come.", "with Him are the keys of the Unseen, none knows them but"),
       difficulty: 5,
       questions: [
         { q: "Who knows the time of the Hour, per Ibn Kathir?", a: "Allah alone", wrong: ["A close angel", "Every Prophet", "Wise people"], why: "The knowledge of when the Hour will occur is not known to any Prophet who was sent or any angel who is close to Allah." },

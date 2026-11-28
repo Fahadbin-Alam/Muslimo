@@ -667,7 +667,7 @@ const YUNUS_THREE: DeepUnit = {
       line: "The Quran is advice, a cure for hearts, guidance and mercy.",
       facts: ["Cures doubt", "Mercy for believers"],
       quote: q10(57),
-      source: ik(57, "The Quran is good advice and a shield from shameful deeds, a cure from suspicion and doubts, and guidance and mercy for those who believe.", "A cure from suspicion and doubts"),
+      source: ik(57, "The Quran is good advice and a shield from shameful deeds, a cure from suspicion and doubts, and guidance and mercy for those who believe.", ""),
       difficulty: 3,
       questions: [
         { q: "What does the Quran cure, in 10:57?", a: "What is in the hearts", wrong: ["Broken bones", "Hunger", "Bad weather"], why: "A cure for that which is in your breasts." },
@@ -695,7 +695,7 @@ const YUNUS_THREE: DeepUnit = {
       line: "Rejoice in Allah's bounty and mercy; it beats all you gather.",
       facts: ["Guidance is the real joy", "Better than wealth"],
       quote: q10(58),
-      source: ik(58, "Let them rejoice in the guidance and the true religion from Allah. It is better than all the wealth they gather from a fading world.", "Let them rejoice in the guidance and the religion of the truth"),
+      source: ik(58, "Let them rejoice in the guidance and the true religion from Allah. It is better than all the wealth they gather from a fading world.", ""),
       difficulty: 3,
       questions: [
         { q: "What should believers rejoice in, in 10:58?", a: "Allah's bounty and mercy", wrong: ["Their wealth", "Their fame", "Their houses"], why: "In the bounty of Allah, and in His mercy; therein let them rejoice." },
@@ -1225,7 +1225,7 @@ const YUNUS_FIVE: DeepUnit = {
       line: "Whoever is guided gains for himself; whoever strays loses.",
       facts: ["The truth has come", "Not a guardian over you"],
       quote: q10(108),
-      source: ik(108, "What the Messenger brought is the truth with no doubt. Whoever follows it benefits himself, and whoever strays from it suffers for himself.", "whoever is guided by it and follows it, then he only benefits himself by doing so"),
+      source: ik(108, "What the Messenger brought is the truth with no doubt. Whoever follows it benefits himself, and whoever strays from it suffers for himself.", ""),
       difficulty: 5,
       questions: [
         { q: "Who gains when someone is guided, in 10:108?", a: "The guided person", wrong: ["Allah", "The angels", "No one"], why: "Whoever receives guidance, he does so for the good of himself." },

@@ -39,7 +39,7 @@ const SAD_ONE: DeepUnit = {
       line: "The surah opens with a single letter: Sad.",
       facts: ["One of the separate letters", "Explained at the start of Al-Baqarah"],
       quote: q38(1),
-      source: ik(1, "Ibn Kathir says the separate letters were already discussed at the start of the Tafsir of Al-Baqarah.", "We have already discussed the separate letters"),
+      source: ik(1, "Ibn Kathir says the separate letters were already discussed at the start of the Tafsir of Al-Baqarah.", ""),
       difficulty: 1,
       questions: [
         { q: "Which letter opens Surah Sad?", a: "Sad", wrong: ["Qaf", "Nun", "Alif"], why: "Sad. By the Quran full of reminding." },

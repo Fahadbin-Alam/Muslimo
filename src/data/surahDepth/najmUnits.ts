@@ -263,7 +263,7 @@ const NAJM_ONE: DeepUnit = {
       line: "He ﷺ saw Jibril in his true form a second time.",
       facts: ["On the Night Journey", "Only twice in true form"],
       quote: q53(13),
-      source: ik(13, "Ibn Kathir says this is the second time the Messenger ﷺ saw Jibril in the form Allah created him, on the Night of Isra.", "saw Jibril in the shape that Allah created him"),
+      source: ik(13, "Ibn Kathir says this is the second time the Messenger ﷺ saw Jibril in the form Allah created him, on the Night of Isra.", "Messenger of Allah saw Jibril in his original shape having six hundred"),
       difficulty: 2,
       questions: [
         { q: "When was the second sighting, per Ibn Kathir?", a: "The Night of Isra", wrong: ["The day of Badr", "In Ramadan", "On Hajj"], why: "This is the second time the Messenger of Allah saw Jibril in the shape that Allah created him; it was during the Night of Isra." },
@@ -291,7 +291,7 @@ const NAJM_ONE: DeepUnit = {
       line: "Near the Lote Tree is Jannat Al-Mawa, the Garden of Abode.",
       facts: ["Al-Mawa: the home to stay", "Paradise is near it"],
       quote: q53(15),
-      source: ik(15, "Ibn Kathir quotes the ayahs: near Sidrat Al-Muntaha, near it is the Paradise of Abode.", "Near it is the Paradise of Abode"),
+      source: ik(15, "Ibn Kathir quotes the ayahs: near Sidrat Al-Muntaha, near it is the Paradise of Abode.", ""),
       difficulty: 1,
       questions: [
         { q: "What is near the Lote Tree, in 53:15?", a: "The Paradise of Abode", wrong: ["A great sea", "A tall mountain", "A city"], why: "Near it is the Paradise of Abode." },
@@ -989,7 +989,7 @@ const NAJM_THREE: DeepUnit = {
       line: "Which of your Lord's favors, O man, will you doubt?",
       facts: ["Favors all around us", "Addressed to every person"],
       quote: q53(55),
-      source: ik(55, "Qatadah said it means: which of Allah's favors to you, O man, do you doubt; Ibn Jarir preferred this.", "the first explanation is better"),
+      source: ik(55, "Qatadah said it means: which of Allah's favors to you, O man, do you doubt; Ibn Jarir preferred this.", ""),
       difficulty: 2,
       questions: [
         { q: "What does 53:55 ask?", a: "Which favor will you doubt?", wrong: ["Where is your home?", "Who is your king?", "What is your name?"], why: "Then which of the graces of your Lord will you doubt?" },

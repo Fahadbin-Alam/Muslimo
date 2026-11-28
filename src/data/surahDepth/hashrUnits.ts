@@ -793,7 +793,7 @@ const HASHR_THREE: DeepUnit = {
       line: "Fearing people over Allah shows a lack of understanding.",
       facts: ["Allah is far greater than people", "Understanding brings right fear"],
       quote: q59(13),
-      source: ik(13, "Ibn Kathir explains their fear of people, then quotes: that is because they are a people who comprehend not.", "That is because they are a people who comprehend not"),
+      source: ik(13, "Ibn Kathir explains their fear of people, then quotes: that is because they are a people who comprehend not.", "is because they are a people who comprehend"),
       difficulty: 3,
       questions: [
         { q: "Why do they fear people more, in 59:13?", a: "They do not comprehend", wrong: ["They are tired", "They are rich", "They are far"], why: "That is because they are a people who comprehend not." },
@@ -821,7 +821,7 @@ const HASHR_THREE: DeepUnit = {
       line: "They would fight only from behind walls and inside forts.",
       facts: ["A sign of fear", "Not in the open field"],
       quote: q59(14),
-      source: ik(14, "Ibn Kathir says they will not fight the Muslims except from behind fortified forts, because of fear.", "they will not fight Muslims except from behind besieged fortified forts"),
+      source: ik(14, "Ibn Kathir says they will not fight the Muslims except from behind fortified forts, because of fear.", "fight Muslims except from behind besieged fortified forts, because of their cowardice"),
       difficulty: 2,
       questions: [
         { q: "From where would they fight?", a: "Behind walls and forts", wrong: ["Open fields", "Ships", "Mountaintops"], why: "Except in fortified townships, or from behind walls." },

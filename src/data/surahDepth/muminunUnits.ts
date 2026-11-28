@@ -389,7 +389,7 @@ const MUMINUN_TWO: DeepUnit = {
       line: "Money and children do not prove Allah is pleased with you.",
       facts: ["Some thought wealth meant Allah loved them", "Allah says: they perceive not"],
       quote: q23(55),
-      source: ik(55, "Some deceived people thought their wealth and children showed that Allah honored them. Ibn Kathir says the matter is not as they claim: these were only given to test them and give them more time.", "think that what We give them of wealth and children is because they are honored"),
+      source: ik(55, "Some deceived people thought their wealth and children showed that Allah honored them. Ibn Kathir says the matter is not as they claim: these were only given to test them and give them more time.", "deceived people think that what We give them of wealth and children"),
       difficulty: 3,
       questions: [
         { q: "What did some people think wealth proved?", a: "That Allah honored them", wrong: ["That they were sick", "That they were poor", "That they must share it all"], why: "Do these deceived people think that what We give them of wealth and children is because they are honored?" },

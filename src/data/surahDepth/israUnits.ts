@@ -123,7 +123,7 @@ const ISRA_ONE: DeepUnit = {
       line: "Musa was given the Tawrah to guide the Children of Israel.",
       facts: ["Muhammad and Musa often named together", "Take none but Allah as Wakil"],
       quote: q17(2),
-      source: ik(2, "After the Night Journey, Allah mentions Musa and the Tawrah. Allah often mentions Muhammad and Musa together, and the Quran and the Tawrah together. Its message: take no protector but Allah.", "Allah often mentions Muhammad and Musa together"),
+      source: ik(2, "After the Night Journey, Allah mentions Musa and the Tawrah. Allah often mentions Muhammad and Musa together, and the Quran and the Tawrah together. Its message: take no protector but Allah.", "Musa and how He was given the Tawrah When Allah mentions how"),
       difficulty: 3,
       questions: [
         { q: "Which Scripture was given to Musa, per Ibn Kathir?", a: "The Tawrah", wrong: ["The Injil", "The Zabur", "The Suhuf of Ibrahim"], why: "And We gave Musa the Scripture, meaning the Tawrah." },
@@ -193,7 +193,7 @@ const ISRA_ONE: DeepUnit = {
       line: "Then Allah gave them victory, wealth, children and more people.",
       facts: ["Allah gives after hardship", "Blessings are a test"],
       quote: q17(6),
-      source: ik(6, "After the first defeat, Allah gave them back victory and helped them with wealth, children and greater numbers.", "Then We gave you a return of victory over them"),
+      source: ik(6, "After the first defeat, Allah gave them back victory and helped them with wealth, children and greater numbers.", ""),
       difficulty: 3,
       questions: [
         { q: "What did Allah give them after defeat, in 17:6?", a: "A return of victory", wrong: ["More defeat", "A long sleep", "A flood"], why: "Then We gave you a return of victory over them." },
@@ -207,7 +207,7 @@ const ISRA_ONE: DeepUnit = {
       line: "Good you do helps you; evil you do harms you.",
       facts: ["Every deed returns to you", "Do good for your own sake"],
       quote: q17(7),
-      source: ik(7, "Good deeds benefit the doer and evil harms the doer. The second time, enemies entered Bayt Al-Maqdis and ruined what they could.", "If you do good, you do good for your own selves"),
+      source: ik(7, "Good deeds benefit the doer and evil harms the doer. The second time, enemies entered Bayt Al-Maqdis and ruined what they could.", "do good for your own selves, and if you do evil"),
       difficulty: 4,
       questions: [
         { q: "Whom does your good deed help, in 17:7?", a: "Your own self", wrong: ["Only others", "No one", "Only kings"], why: "If you do good, you do good for your own selves." },
@@ -710,7 +710,7 @@ const ISRA_TWO: DeepUnit = {
       line: "Even false gods would seek Allah, so worship Him directly.",
       facts: ["Allah is far above partners", "Call on Him alone"],
       quote: q17(42),
-      source: ik(42, "If there were other gods, they themselves would worship Allah and seek to come close to Him. So worship Him alone: no one needs a go-between with Him.", "You have no need of a deity to be an intermediary between you and Him"),
+      source: ik(42, "If there were other gods, they themselves would worship Allah and seek to come close to Him. So worship Him alone: no one needs a go-between with Him.", ""),
       difficulty: 4,
       questions: [
         { q: "What would other gods seek, in 17:42?", a: "A way to the Lord of the Throne", wrong: ["Gold", "A kingdom", "Rest"], why: "If there had been other gods along with Him, they would certainly have sought out a way to the Lord of the Throne." },
@@ -989,7 +989,7 @@ const ISRA_THREE: DeepUnit = {
       line: "Pray from midday to night, and recite at dawn.",
       facts: ["Zuhr, Asr, Maghrib, Isha", "Fajr at dawn"],
       quote: q17(78),
-      source: ik(78, "From the sun past its height until the dark of night covers Zuhr, Asr, Maghrib and Isha, and the dawn recitation is Fajr. Together they are the five prayers.", "It is also understood to [generally] refer to the times of the five prayers"),
+      source: ik(78, "From the sun past its height until the dark of night covers Zuhr, Asr, Maghrib and Isha, and the dawn recitation is Fajr. Together they are the five prayers.", "also understood to generally refer to the times of the five prayers"),
       difficulty: 3,
       questions: [
         { q: "Which prayer is the recitation of dawn, per Ibn Kathir?", a: "Fajr", wrong: ["Isha", "Asr", "Zuhr"], why: "And recite the Qur'an in the early dawn, meaning Salat Al-Fajr." },

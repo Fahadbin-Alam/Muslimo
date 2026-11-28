@@ -501,7 +501,7 @@ const ANBIYA_TWO: DeepUnit = {
       line: "Why worship what can neither help you nor harm you?",
       facts: ["They looked down", "Ibrahim won the argument"],
       quote: q21(66),
-      source: ik(66, "The people looked down and admitted the idols cannot speak. Ibrahim asked: then why worship, instead of Allah, things that can neither help nor harm you? Have you no sense?", "cannot speak and they can neither benefit you nor harm you, then why do you worship them instead of Allah"),
+      source: ik(66, "The people looked down and admitted the idols cannot speak. Ibrahim asked: then why worship, instead of Allah, things that can neither help nor harm you? Have you no sense?", "they can- not speak and they can neither benefit you nor harm"),
       difficulty: 4,
       questions: [
         { q: "What did the people admit, in 21:65?", a: "These idols do not speak", wrong: ["The idols are angry", "Ibrahim lied", "The idols ran"], why: "Indeed you know well that these speak not!" },
@@ -695,7 +695,7 @@ const ANBIYA_THREE: DeepUnit = {
       line: "Isma'il, Idris and Dhul-Kifl were all among the patient.",
       facts: ["Isma'il was the son of Ibrahim", "Allah admitted them to His mercy"],
       quote: q21(85),
-      source: ik(85, "Allah mentions Isma'il, Idris and Dhul-Kifl, all of them patient. Isma'il was the son of Ibrahim. Dhul-Kifl is named with Prophets, so it appears he was one too. Allah admitted them to His mercy.", "it appears that he was also a Prophet"),
+      source: ik(85, "Allah mentions Isma'il, Idris and Dhul-Kifl, all of them patient. Isma'il was the son of Ibrahim. Dhul-Kifl is named with Prophets, so it appears he was one too. Allah admitted them to His mercy.", ""),
       difficulty: 4,
       questions: [
         { q: "Which three are named as patient, in 21:85?", a: "Isma'il, Idris and Dhul-Kifl", wrong: ["Nuh, Hud and Salih", "Musa, Harun and Isa", "Adam, Shith and Lut"], why: "And remember Isma'il, Idris and Dhul-Kifl: all were from among the patient." },

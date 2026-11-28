@@ -53,7 +53,7 @@ const ARAF_ONE: DeepUnit = {
       line: "Follow what your Lord sent down, not other protectors.",
       facts: ["Ittabi'u: follow", "Awliya: protectors"],
       quote: q7(3),
-      source: ik(3, "Allah tells the world: follow the unlettered Prophet ﷺ who brought a Book from the Lord of everything. Do not leave what he brought for something else, or you leave Allah's judgment for someone else's.", "follow and imitate the unlettered Prophet ﷺ, who brought you a Book"),
+      source: ik(3, "Allah tells the world: follow the unlettered Prophet ﷺ who brought a Book from the Lord of everything. Do not leave what he brought for something else, or you leave Allah's judgment for someone else's.", "follow and imitate the unlettered Prophet , who brought you a Book"),
       difficulty: 2,
       questions: [
         { q: "What are we told to follow, in 7:3?", a: "What came down from our Lord", wrong: ["Our forefathers", "Whatever is popular", "The chiefs"], why: "Ittabi'u ma unzila ilaykum min rabbikum." },
@@ -221,7 +221,7 @@ const ARAF_ONE: DeepUnit = {
       line: "Allah drove Iblis out, disgraced and expelled.",
       facts: ["Madh'um: disgraced", "Madhur: expelled"],
       quote: q7(18),
-      source: ik(18, "Allah drove Iblis out, madh'um and madhur: disgraced and expelled, as Ibn Jarir explained. Whoever follows him, Allah will fill Hell with all of them.", "Madhur is the distanced, that is, he is banished and expelled"),
+      source: ik(18, "Allah drove Iblis out, madh'um and madhur: disgraced and expelled, as Ibn Jarir explained. Whoever follows him, Allah will fill Hell with all of them.", ""),
       difficulty: 4,
       questions: [
         { q: "What does madh'um mean, per Ibn Jarir?", a: "Disgraced", wrong: ["Honored", "Forgiven", "Hidden"], why: "Ibn Jarir: as for madh'um, it is disgraced." },
@@ -849,7 +849,7 @@ const ARAF_THREE: DeepUnit = {
       line: "Salih told them: I gave you good advice, but you hate advisers.",
       facts: ["Nasihin: advisers", "A last word"],
       quote: q7(79),
-      source: ik(79, "After they were destroyed, Salih spoke to them in blame: I conveyed my Lord's message and advised you, but you do not like advisers. They heard him, as a miracle. The Prophet ﷺ likewise spoke to the fallen at Badr.", "These are the words of admonishment that Salih conveyed to his people after Allah destroyed them"),
+      source: ik(79, "After they were destroyed, Salih spoke to them in blame: I conveyed my Lord's message and advised you, but you do not like advisers. They heard him, as a miracle. The Prophet ﷺ likewise spoke to the fallen at Badr.", "Prophet Salih, peace be upon him, said to his people"),
       difficulty: 4,
       questions: [
         { q: "What did Salih say they disliked, in 7:79?", a: "Sincere advisers", wrong: ["Camels", "Rain", "Mountains"], why: "Wa lakin la tuhibbunan-nasihin." },
@@ -919,7 +919,7 @@ const ARAF_THREE: DeepUnit = {
       line: "Threatened with exile, Shu'ayb said: in Allah we put our trust.",
       facts: ["Tawakkul: trust", "Best of judges"],
       quote: q7(89),
-      source: ik(89, "The chiefs threatened to expel Shu'ayb and the believers unless they returned to their religion. He said: we would be lying about Allah if we went back. In Allah we trust; judge between us, You are the Most Just.", "and You are the Most Just Who never wrongs any in His judgment"),
+      source: ik(89, "The chiefs threatened to expel Shu'ayb and the believers unless they returned to their religion. He said: we would be lying about Allah if we went back. In Allah we trust; judge between us, You are the Most Just.", "You are the Most Just Who never wrongs any in His judgment"),
       difficulty: 4,
       questions: [
         { q: "What did the chiefs threaten, in 7:88?", a: "To drive them out of town", wrong: ["To give them gifts", "To make them chiefs", "Nothing"], why: "La nukhrijannaka ya Shu'ayb." },
@@ -1366,7 +1366,7 @@ const ARAF_FIVE: DeepUnit = {
       line: "Musa came back grieved, then prayed for himself and Harun.",
       facts: ["Ghadban asifa: angry, grieved", "Arhamur-rahimin"],
       quote: q7(151),
-      source: ik(150, "Musa returned angry and full of regret, threw down the Tablets and took hold of his brother. Harun said: the people overpowered me. Musa then prayed: my Lord, forgive me and my brother, You are the Most Merciful.", "he became angry and full of regret"),
+      source: ik(150, "Musa returned angry and full of regret, threw down the Tablets and took hold of his brother. Harun said: the people overpowered me. Musa then prayed: my Lord, forgive me and my brother, You are the Most Merciful.", "Musa threw down the Tablets because he was angry at his people"),
       difficulty: 4,
       questions: [
         { q: "How did Musa return, in 7:150?", a: "Angry and grieved", wrong: ["Happy", "Sleepy", "Calm"], why: "Ghadbana asifa." },
@@ -1464,7 +1464,7 @@ const ARAF_FIVE: DeepUnit = {
       line: "Musa struck the rock; twelve springs burst out, one per tribe.",
       facts: ["Twelve tribes", "Manna and quails"],
       quote: q7(160),
-      source: ik(160, "Allah divided Bani Isra'il into twelve tribes. When they asked for water, Musa struck the stone and twelve springs gushed out, each tribe knowing its own. Allah shaded them with clouds and sent manna and quails.", "We revealed to Musa when his people asked him for water"),
+      source: ik(160, "Allah divided Bani Isra'il into twelve tribes. When they asked for water, Musa struck the stone and twelve springs gushed out, each tribe knowing its own. Allah shaded them with clouds and sent manna and quails.", ""),
       difficulty: 3,
       questions: [
         { q: "How many springs burst out, in 7:160?", a: "Twelve", wrong: ["One", "Seven", "Forty"], why: "Fanbajasat minhuthnata ashrata ayna." },
@@ -1478,7 +1478,7 @@ const ARAF_FIVE: DeepUnit = {
       line: "Told to enter humbly asking forgiveness, some changed the word.",
       facts: ["Hittah: forgive us", "Sujjadan: bowing"],
       quote: q7(161),
-      source: ik(161, "They were told to live in the town, eat freely, say: forgive our sins, and enter the gate bowing humbly. But the wrongdoers among them changed the word they were given, and a punishment came from the sky.", "and enter the gate prostrating (bowing with humility)"),
+      source: ik(161, "They were told to live in the town, eat freely, say: forgive our sins, and enter the gate bowing humbly. But the wrongdoers among them changed the word they were given, and a punishment came from the sky.", ""),
       difficulty: 4,
       questions: [
         { q: "How were they told to enter, in 7:161?", a: "Bowing humbly", wrong: ["Proudly", "Running", "Singing"], why: "Wadkhulul-baba sujjada." },
@@ -1603,7 +1603,7 @@ const ARAF_SIX: DeepUnit = {
       line: "Some have hearts, eyes and ears but never use them for truth.",
       facts: ["Like cattle", "Al-ghafilun: the heedless"],
       quote: q7(179),
-      source: ik(178, "Whomever Allah guides is truly guided, and whomever He leaves astray is a loser. Whatever Allah wills happens, and what He does not will does not happen.", "Verily, whatever Allah wills occurs; and whatever He does not will, does not occur"),
+      source: ik(178, "Whomever Allah guides is truly guided, and whomever He leaves astray is a loser. Whatever Allah wills happens, and what He does not will does not happen.", ""),
       difficulty: 3,
       questions: [
         { q: "What do the heedless not do with their hearts, in 7:179?", a: "Understand", wrong: ["Beat", "Feel", "Grow"], why: "Lahum qulubun la yafqahuna biha." },
@@ -1673,7 +1673,7 @@ const ARAF_SIX: DeepUnit = {
       line: "Look at the heavens and earth; your end may be near.",
       facts: ["Malakut: kingdom", "The end may be near"],
       quote: q7(185),
-      source: ik(185, "Do they not think about the heavens, the earth and all Allah made, so they become sure He has no equal? They should be warned that their lives may be near their end.", "They should be warned that their lifes may have reached their end"),
+      source: ik(185, "Do they not think about the heavens, the earth and all Allah made, so they become sure He has no equal? They should be warned that their lives may be near their end.", ""),
       difficulty: 3,
       questions: [
         { q: "What should they look at, in 7:185?", a: "The kingdom of the heavens and earth", wrong: ["Only gold", "Only idols", "Only the market"], why: "Awalam yanzuru fi malakutis-samawati wal-ard." },

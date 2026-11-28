@@ -519,7 +519,7 @@ const IBRAHIM_THREE: DeepUnit = {
       line: "Some traded Allah's blessing for disbelief and misled others.",
       facts: ["The Prophet ﷺ was the blessing", "They set up rivals to Allah"],
       quote: q14(28),
-      source: ik(28, "Allah sent Muhammad ﷺ as a mercy and blessing to all mankind. Those who accepted it with thanks enter Paradise, while those who traded it for disbelief led their people to ruin.", "for Allah sent Muhammad as a mercy and a blessing to all mankind"),
+      source: ik(28, "Allah sent Muhammad ﷺ as a mercy and blessing to all mankind. Those who accepted it with thanks enter Paradise, while those who traded it for disbelief led their people to ruin.", "as a mercy and a blessing to all mankind"),
       difficulty: 4,
       questions: [
         { q: "What did they change Allah's blessings into, in 14:28?", a: "Disbelief", wrong: ["Gold", "Thanks", "Prayer"], why: "Have you not seen those who have changed the blessings of Allah into disbelief." },

@@ -723,7 +723,7 @@ const AHQAF_THREE: DeepUnit = {
       line: "Allah made all without tiring, so He can raise the dead.",
       facts: ["He says Be, and it is", "Bigger than making people"],
       quote: q46(33),
-      source: ik(33, "Ibn Kathir says creating the heavens and earth did not exhaust Allah; He said Be, and they were, without refusal or delay.", "the creation of the heavens and earth did not exhaust Him"),
+      source: ik(33, "Ibn Kathir says creating the heavens and earth did not exhaust Allah; He said Be, and they were, without refusal or delay.", ""),
       difficulty: 2,
       questions: [
         { q: "Was Allah tired by creating the heavens and earth, in 46:33?", a: "No, never", wrong: ["Yes, a little", "Yes, for seven days", "Only by the earth"], why: "And was not wearied by their creation." },
@@ -737,7 +737,7 @@ const AHQAF_THREE: DeepUnit = {
       line: "Deniers will be asked: is this not the truth? They say yes.",
       facts: ["No choice but to confess", "Better to believe now"],
       quote: q46(34),
-      source: ik(34, "Ibn Kathir says they will have no choice but to confess.", "they will have no choice but to confess"),
+      source: ik(34, "Ibn Kathir says they will have no choice but to confess.", ""),
       difficulty: 2,
       questions: [
         { q: "What will deniers be asked, in 46:34?", a: "Is this not the truth?", wrong: ["Are you hungry?", "Where is your home?", "How old are you?"], why: "Is this not the truth?" },

@@ -39,7 +39,7 @@ const JATHIYAH_ONE: DeepUnit = {
       line: "Al-Jathiyah opens with Ha Mim, like the five surahs before it.",
       facts: ["Al-Jathiyah means The Kneeling", "Named after 45:28"],
       quote: q45(1),
-      source: ik(1, "Ibn Kathir lists the opening: Ha Mim, then the Book sent down from Allah, the Almighty, the All-Wise.", "The revelation of the Book is from Allah, the Almighty, the All-Wise"),
+      source: ik(1, "Ibn Kathir lists the opening: Ha Mim, then the Book sent down from Allah, the Almighty, the All-Wise.", ""),
       difficulty: 1,
       questions: [
         { q: "Which letters open Al-Jathiyah, in 45:1?", a: "Ha Mim", wrong: ["Alif Lam Mim", "Ta Ha", "Qaf"], why: "The surah opens: Ha Mim." },
@@ -53,7 +53,7 @@ const JATHIYAH_ONE: DeepUnit = {
       line: "The Book is sent down from Allah, the Almighty, the All-Wise.",
       facts: ["Al-Aziz: the Almighty", "Al-Hakim: the All-Wise"],
       quote: q45(2),
-      source: ik(2, "Ibn Kathir lists the ayah: the revelation of the Book is from Allah, the Almighty, the All-Wise.", "The revelation of the Book is from Allah, the Almighty, the All-Wise"),
+      source: ik(2, "Ibn Kathir lists the ayah: the revelation of the Book is from Allah, the Almighty, the All-Wise.", ""),
       difficulty: 1,
       questions: [
         { q: "From whom is the Book sent down, in 45:2?", a: "Allah, the Almighty, the All-Wise", wrong: ["A poet", "A king", "The angels on their own"], why: "The revelation of the Book is from Allah, the Almighty, the All-Wise." },
@@ -361,7 +361,7 @@ const JATHIYAH_ONE: DeepUnit = {
       line: "The Quran is insight, guidance and mercy for the certain.",
       facts: ["Basa'ir: clear insights", "Mercy for those who are certain"],
       quote: q45(20),
-      source: ik(20, "Ibn Kathir says this clear insight refers to the Quran.", "This is a clear insight and evidence for mankind"),
+      source: ik(20, "Ibn Kathir says this clear insight refers to the Quran.", "is a clear insight and evidence for man-"),
       difficulty: 2,
       questions: [
         { q: "What does 45:20 call the Quran?", a: "Clear insight, guidance and mercy", wrong: ["A storybook", "A riddle", "A song"], why: "This is a clear insight and evidence for mankind, and a guidance and a mercy." },
