@@ -320,7 +320,7 @@ const QIYAMAH_TWO: DeepUnit = {
       line: "Live in this world like a traveler passing through.",
       facts: ["Ghurbah: being a stranger", "Take from health for sickness"],
       quote: q75(21),
-      source: hadith("bukhari", "6416", "Ibn Umar", "Sahih", "The Prophet ﷺ took hold of Ibn Umar's shoulder and said be in this world as if you were a stranger or a traveler.", "Be in this world as if you were a stranger or a traveler"),
+      source: hadith("bukhari", "6416", "Ibn Umar", "Sahih", "The Prophet ﷺ took hold of Ibn Umar's shoulder and said be in this world as if you were a stranger or a traveler.", "you were a stranger or a traveler"),
       difficulty: 2,
       questions: [
         { q: "How should we live in this world, per the hadith?", a: "Like a stranger or traveler", wrong: ["Like a king", "Like it lasts forever", "Like a sleeper"], why: "Be in this world as if you were a stranger or a traveler." },

@@ -32,7 +32,7 @@ const WORLD: DeepUnit = {
       title: "Like two wolves among sheep",
       line: "Greed for money and fame harms faith as wolves harm sheep.",
       facts: ["Told by Ka'b ibn Malik", "Two wolves loose among sheep"],
-      source: hadith("tirmidhi", "2376", "Ka'b ibn Malik", "Sahih (Al-Albani)", "The Prophet ﷺ said: two wolves let loose among sheep do no more harm to them than a man's greed for wealth and status does to his religion.", "Two wolves free among sheep are no more destructive to them"),
+      source: hadith("tirmidhi", "2376", "Ka'b ibn Malik", "Sahih (Al-Albani)", "The Prophet ﷺ said: two wolves let loose among sheep do no more harm to them than a man's greed for wealth and status does to his religion.", "free among sheep are no more destructive to them"),
       difficulty: 2,
       questions: [
         { q: "What did he ﷺ compare greed for wealth and honor to?", a: "Two wolves among sheep", wrong: ["A river in the desert", "A lamp at night", "A tree in winter"], why: "Two wolves free among sheep are no more destructive to them." },

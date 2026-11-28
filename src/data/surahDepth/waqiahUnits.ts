@@ -1171,7 +1171,7 @@ const WAQIAH_THREE: DeepUnit = {
       line: "Live in this world like a stranger or a traveler.",
       facts: ["This world is a journey, not a home", "Prepare for what comes next"],
       quote: q56(60),
-      source: hadith("bukhari", "6416", "Abdullah ibn Umar", "Sahih", "The Prophet ﷺ held Ibn Umar's shoulder and said: be in this world as if you were a stranger or a traveler.", "Be in this world as if you were a stranger or a traveler"),
+      source: hadith("bukhari", "6416", "Abdullah ibn Umar", "Sahih", "The Prophet ﷺ held Ibn Umar's shoulder and said: be in this world as if you were a stranger or a traveler.", "you were a stranger or a traveler"),
       difficulty: 2,
       questions: [
         { q: "How should we live, per Bukhari 6416?", a: "Like a stranger or traveler", wrong: ["Like a king", "Like we never die", "Like a guard"], why: "Be in this world as if you were a stranger or a traveler." },

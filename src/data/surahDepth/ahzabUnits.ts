@@ -364,7 +364,7 @@ const AHZAB_ONE: DeepUnit = {
       line: "Some believers kept their promise to Allah and never changed.",
       facts: ["Some fulfilled it, some still wait", "Revealed about Anas bin An-Nadr"],
       quote: q33(23),
-      source: hadith("bukhari", "4783", "Anas ibn Malik", "Sahih", "The Companions thought this ayah was revealed about Anas bin An-Nadr, who stayed true to his promise.", "was revealed in favor of Anas bin An-Nadr"),
+      source: hadith("bukhari", "4783", "Anas ibn Malik", "Sahih", "The Companions thought this ayah was revealed about Anas bin An-Nadr, who stayed true to his promise.", "was revealed in favor of Anas bin"),
       difficulty: 4,
       questions: [
         { q: "What were these men true to, in 33:23?", a: "Their covenant with Allah", wrong: ["Their tribe", "Their trade", "Their wishes"], why: "Men who have been true to their covenant with Allah." },
@@ -448,7 +448,7 @@ const AHZAB_TWO: DeepUnit = {
       line: "The Prophet's ﷺ wives were given a choice: this world or Allah.",
       facts: ["Aishah was asked first", "She chose Allah at once"],
       quote: q33(28),
-      source: hadith("bukhari", "4785", "Aishah", "Sahih", "The Prophet ﷺ told Aishah about the choice and said she need not hurry. She chose Allah, His Messenger ﷺ and the Hereafter.", "Verily, I seek Allah, His Apostle and the Home of the Hereafter"),
+      source: hadith("bukhari", "4785", "Aishah", "Sahih", "The Prophet ﷺ told Aishah about the choice and said she need not hurry. She chose Allah, His Messenger ﷺ and the Hereafter.", "why should I consult my parents? Verily, I seek Allah, His"),
       difficulty: 3,
       questions: [
         { q: "What choice were they given, in 33:28?", a: "This world or Allah", wrong: ["Gold or silver", "Makkah or Madinah", "Silk or wool"], why: "If you desire the life of this world, and its glitter, then come!" },

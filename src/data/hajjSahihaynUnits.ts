@@ -59,7 +59,7 @@ const DEEPER: DeepUnit = {
       title: "Stay in Yemen",
       line: "Ibn Umar answered a man's what-if about the Black Stone.",
       facts: ["Told by az-Zubayr ibn Arabi", "The man was from Yemen", "Ibn Umar said it twice"],
-      source: hadith("bukhari", "1611", "Az-Zubayr ibn Arabi", "Sahih", "A man asked Ibn Umar about touching the Black Stone. Ibn Umar said: I saw the Messenger of Allah ﷺ touch it and kiss it. The man said: but what if there is a crowd and people push me back? He said: leave your what-if in Yemen. I saw the Messenger of Allah ﷺ touch it and kiss it.", "I saw Allah’s Messenger (ﷺ) touching and kissing it"),
+      source: hadith("bukhari", "1611", "Az-Zubayr ibn Arabi", "Sahih", "A man asked Ibn Umar about touching the Black Stone. Ibn Umar said: I saw the Messenger of Allah ﷺ touch it and kiss it. The man said: but what if there is a crowd and people push me back? He said: leave your what-if in Yemen. I saw the Messenger of Allah ﷺ touch it and kiss it.", "He replied angrily … touching and kissing it"),
       difficulty: 3,
       questions: [
         { q: "What did Ibn Umar say he saw him ﷺ do?", a: "Touch the Black Stone and kiss it", wrong: ["Only point at it", "Walk past it", "Wipe it with his cloak"], why: "I saw Allah's Messenger ﷺ touching and kissing it, Ibn Umar said." },

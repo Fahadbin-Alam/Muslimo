@@ -67,7 +67,7 @@ const NAJM_ONE: DeepUnit = {
       line: "An-Najm was recited in Makkah, and all who heard prostrated.",
       facts: ["Recited in Makkah", "Followed by a sajdah"],
       quote: q53(1),
-      source: hadith("bukhari", "1067", "Abdullah ibn Mas'ud", "Sahih", "Ibn Masud said the Prophet ﷺ recited An-Najm in Makkah and prostrated, and those with him prostrated too.", "recited Surat an-Najm"),
+      source: hadith("bukhari", "1067", "Abdullah ibn Mas'ud", "Sahih", "Ibn Masud said the Prophet ﷺ recited An-Najm in Makkah and prostrated, and those with him prostrated too.", "at Mecca and prostrated while reciting it"),
       difficulty: 2,
       questions: [
         { q: "Where did he ﷺ recite An-Najm, per Bukhari 1067?", a: "In Makkah", wrong: ["In Madinah", "In Taif", "In Jerusalem"], why: "The Prophet ﷺ recited Surat an-Najm at Mecca and prostrated while reciting it." },

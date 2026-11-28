@@ -193,7 +193,7 @@ const LAST_TEN: DeepUnit = {
         "No one knows for sure which night it is.",
         "So a Muslim worships hard on every one of the ten."
       ],
-      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Prophet ﷺ said: Search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "Search for the Night of Qadr in the odd nights of the last ten days of Ramadan"),
+      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Prophet ﷺ said: Search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "odd nights of the last ten days of Ramadan"),
       difficulty: 1,
       questions: [
         { q: "In which nights should you seek Laylat al-Qadr?", a: "The odd nights of the last ten", wrong: ["The first night of Ramadan", "Any night of the year", "Only the night of Eid"], why: "Search for it in the odd nights of the last ten days of Ramadan." },

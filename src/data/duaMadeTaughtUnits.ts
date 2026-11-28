@@ -85,7 +85,7 @@ const MADE_TAUGHT: DeepUnit = {
       title: "Counting on his hand",
       line: "He ﷺ counted his tasbih on his hand.",
       facts: ["Told by Abdullah ibn Amr", "Tasbih is saying Subhan Allah", "We can count our dhikr on our hand too"],
-      source: hadith("tirmidhi", "3486", "Abdullah ibn Amr", "Sahih (Al-Albani)", "Abdullah ibn Amr said: I saw the Prophet ﷺ counting the tasbih on his hand.", "I saw the Prophet counting the Tasbih on his hand"),
+      source: hadith("tirmidhi", "3486", "Abdullah ibn Amr", "Sahih (Al-Albani)", "Abdullah ibn Amr said: I saw the Prophet ﷺ counting the tasbih on his hand.", "I saw the Prophet … counting the Tasbih on his hand"),
       difficulty: 1,
       questions: [
         { q: "What did Abdullah ibn Amr see him ﷺ count on his hand?", a: "The tasbih", wrong: ["The stars in the sky", "The grains of sand", "The leaves of a tree"], why: "I saw the Prophet ﷺ counting the tasbih on his hand, Abdullah ibn Amr said." },

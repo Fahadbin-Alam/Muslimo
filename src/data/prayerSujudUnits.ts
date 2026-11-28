@@ -60,7 +60,7 @@ const SUJUD: DeepUnit = {
       title: "His du'a in the night's sujud",
       line: "In sujud he ﷺ sought refuge in Allah's pleasure from His anger.",
       facts: ["Told by Aishah", "She looked for him ﷺ in the night", "He ﷺ was in sujud, saying this du'a"],
-      source: hadith("tirmidhi", "3493", "Aishah", "Sahih (Al-Albani)", "Aishah said: I was sleeping beside the Messenger of Allah ﷺ and missed him in the night. I felt for him, and my hand fell on his feet while he was in sujud, saying: I seek refuge in Your pleasure from Your anger, and in Your pardon from Your punishment. I cannot count Your praises. You are as You have praised Yourself.", "I seek refuge in Your pleasure from Your anger, and in Your pardon from Your punishment"),
+      source: hadith("tirmidhi", "3493", "Aishah", "Sahih (Al-Albani)", "Aishah said: I was sleeping beside the Messenger of Allah ﷺ and missed him in the night. I felt for him, and my hand fell on his feet while he was in sujud, saying: I seek refuge in Your pleasure from Your anger, and in Your pardon from Your punishment. I cannot count Your praises. You are as You have praised Yourself.", "from Your anger, and in Your pardon from Your punishment"),
       difficulty: 2,
       questions: [
         { q: "Where did Aishah find him ﷺ that night?", a: "In sujud, making du'a", wrong: ["Out in the market", "Asleep in his bed", "Reciting on the roof"], why: "My hand fell upon his feet while he was prostrating, Aishah said." },

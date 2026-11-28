@@ -761,7 +761,7 @@ const UBAYY: DeepUnit = {
       title: "The story of Musa and Al-Khidr",
       line: "Ubayy passed on the story of Musa and Al-Khidr.",
       facts: ["He heard it from the Prophet ﷺ.", "Ibn Abbas learned it from Ubayy.", "It is the same story told in Surah Al-Kahf."],
-      source: hadith("bukhari", "122", "Ubayy ibn Ka'b", "Sahih", "Ubayy ibn Ka'b narrated that the Prophet ﷺ said: once Prophet Musa stood up and addressed the Children of Israel... and then told the story of his journey with Al-Khidr.", "Once the Prophet Moses"),
+      source: hadith("bukhari", "122", "Ubayy ibn Ka'b", "Sahih", "Ubayy ibn Ka'b narrated that the Prophet ﷺ said: once Prophet Musa stood up and addressed the Children of Israel... and then told the story of his journey with Al-Khidr.", "Once the Prophet … stood up and addressed Bani Israel"),
       difficulty: 3,
       questions: [
         { q: "Which story did Ubayy narrate from the Prophet ﷺ?", a: "Musa and Al-Khidr", wrong: ["Yusuf and his brothers", "Nuh and the flood", "Yunus and the whale"], why: "Bukhari 122, narrated by Ubayy." },
@@ -1474,7 +1474,7 @@ const HAMZAH: DeepUnit = {
       title: "Bravery at Uhud",
       line: "At Uhud, Hamzah bravely answered a challenge to a duel.",
       facts: ["An enemy fighter called out for a duel.", "Hamzah stepped out and asked: do you challenge Allah and His Messenger?", "Hamzah defeated him."],
-      source: hadith("bukhari", "4072", "Wahshi ibn Harb", "Sahih", "At Uhud, Siba' called for a duel. Hamzah came out and said: do you challenge Allah and His Messenger? and he defeated him.", "Do you challenge Allah and His Apostle"),
+      source: hadith("bukhari", "4072", "Wahshi ibn Harb", "Sahih", "At Uhud, Siba' called for a duel. Hamzah came out and said: do you challenge Allah and His Messenger? and he defeated him.", "the one who circumcises other ladies! Do you challenge Allah and His"),
       difficulty: 3,
       questions: [
         { q: "What did Hamzah say to the challenger?", a: "Do you challenge Allah and His Messenger?", wrong: ["I give up", "Let us make peace", "Wait for tomorrow"], why: "Do you challenge Allah and His Apostle?" },
@@ -1500,7 +1500,7 @@ const HAMZAH: DeepUnit = {
       title: "Remembered with tears",
       line: "Abdur-Rahman ibn Awf wept remembering Hamzah.",
       facts: ["Abdur-Rahman was given food while fasting.", "He said: Hamzah was martyred, and he was better than me.", "He feared his reward had come in this world, and wept."],
-      source: hadith("bukhari", "4045", "Sa'd ibn Ibrahim", "Sahih", "Food was brought to Abdur-Rahman ibn Awf while he was fasting. He said: Mus'ab was martyred and he was better than me; Hamzah was martyred and he was better than me. Then wealth was given to us; we fear our reward came early. He wept and left the food.", "Hamza was martyred and he was better than I"),
+      source: hadith("bukhari", "4045", "Sa'd ibn Ibrahim", "Sahih", "Food was brought to Abdur-Rahman ibn Awf while he was fasting. He said: Mus'ab was martyred and he was better than me; Hamzah was martyred and he was better than me. Then wealth was given to us; we fear our reward came early. He wept and left the food.", "Hamza was martyred and he was better than … Then worldly wealth was bestowed upon us"),
       difficulty: 4,
       questions: [
         { q: "Who wept remembering Hamzah?", a: "Abdur-Rahman ibn Awf", wrong: ["Abu Jahl", "Wahshi", "Abu Lahab"], why: "Abdur-Rahman wept and left the food." },
@@ -1577,7 +1577,7 @@ const AMMAR: DeepUnit = {
       title: "Protected from Shaytan",
       line: "Abu Darda said Ammar was protected from Shaytan.",
       facts: ["Abu Darda lived in Sham and met a man from Kufa.", "He asked about the man protected from Shaytan.", "That man was Ammar, by the Prophet's ﷺ dua."],
-      source: hadith("bukhari", "3743", "Ibrahim an-Nakha'i", "Sahih", "Abu Darda asked a man from Kufa: is not among you the one whom Allah protected from Shaytan through the dua of His Prophet ﷺ, namely Ammar?", "the person whom Allah gave Refuge from Satan through the invocation of His Prophet namely"),
+      source: hadith("bukhari", "3743", "Ibrahim an-Nakha'i", "Sahih", "Abu Darda asked a man from Kufa: is not among you the one whom Allah protected from Shaytan through the dua of His Prophet ﷺ, namely Ammar?", "the person whom Allah gave Refuge from Satan through the invocation of His Prophet"),
       difficulty: 4,
       questions: [
         { q: "From whom was Ammar protected?", a: "Shaytan", wrong: ["Rain", "Lions", "The cold"], why: "Allah gave him refuge from Satan." },
@@ -1745,7 +1745,7 @@ const IBN_RAWAHAH: DeepUnit = {
       title: "Fasting in the heat",
       line: "On a burning day, only the Prophet ﷺ and Ibn Rawahah fasted.",
       facts: ["It was a very hot day on a journey.", "People put their hands on their heads from the heat.", "Only the Prophet ﷺ and Ibn Rawahah were fasting."],
-      source: hadith("bukhari", "1945", "Abu Darda", "Sahih", "We set out with the Prophet ﷺ on a very hot day, so hot that one put his hand on his head. None of us was fasting except the Prophet ﷺ and Ibn Rawahah.", "None of us was fasting except the Prophet and Ibn Rawaha"),
+      source: hadith("bukhari", "1945", "Abu Darda", "Sahih", "We set out with the Prophet ﷺ on a very hot day, so hot that one put his hand on his head. None of us was fasting except the Prophet ﷺ and Ibn Rawahah.", "of heat. None of us was fasting except the Prophet"),
       difficulty: 3,
       questions: [
         { q: "Who was fasting on that hot day?", a: "The Prophet ﷺ and Ibn Rawahah", wrong: ["Everyone", "Nobody", "Only Abu Darda"], why: "None was fasting except the Prophet ﷺ and Ibn Rawahah." },
@@ -1862,7 +1862,7 @@ const KHABBAB: DeepUnit = {
       title: "Afraid of riches",
       line: "When rich and sick, Khabbab feared the world's wealth.",
       facts: ["Khabbab was very sick, with seven burn treatments.", "He said: our friends left without enjoying this world.", "He would have wished for death, but the Prophet ﷺ forbade it."],
-      source: hadith("bukhari", "5672", "Qays ibn Abi Hazim", "Sahih", "We visited Khabbab, who had been cauterized seven times. He said: our companions who died left without their reward being reduced by this world, but we have so much wealth. Had the Prophet ﷺ not forbidden us to wish for death, I would have wished for it.", "Had the Prophet not forbidden us to wish for death, I would have wished for it"),
+      source: hadith("bukhari", "5672", "Qays ibn Abi Hazim", "Sahih", "We visited Khabbab, who had been cauterized seven times. He said: our companions who died left without their reward being reduced by this world, but we have so much wealth. Had the Prophet ﷺ not forbidden us to wish for death, I would have wished for it.", "Had the Prophet … not forbidden us to wish for death, I would have wished for it"),
       difficulty: 4,
       questions: [
         { q: "What did the Prophet ﷺ forbid?", a: "Wishing for death", wrong: ["Visiting the sick", "Building houses", "Eating dates"], why: "The Prophet ﷺ forbade us to wish for death." },
@@ -1901,7 +1901,7 @@ const ABU_SAID: DeepUnit = {
       line: "Companions cured a stung chief by reciting Al-Fatihah.",
       facts: ["A tribe refused the companions as guests.", "Their chief was stung, and one companion recited Al-Fatihah over him.", "He got up healed, and the Prophet ﷺ said: you did right."],
       quote: quranQuote(1, 2),
-      source: hadith("bukhari", "2276", "Abu Sa'id al-Khudri", "Sahih", "A tribe refused the companions hospitality; then their chief was stung. One companion recited Al-Fatihah and blew over him, and he got up as if freed from a chain. The Prophet ﷺ said: how did you know it is a ruqyah? You did right.", "How did you come to know that Surat-ul-Fatiha was recited as Ruqya"),
+      source: hadith("bukhari", "2276", "Abu Sa'id al-Khudri", "Sahih", "A tribe refused the companions hospitality; then their chief was stung. One companion recited Al-Fatihah and blew over him, and he got up as if freed from a chain. The Prophet ﷺ said: how did you know it is a ruqyah? You did right.", "How did you come to know … recited as Ruqya"),
       difficulty: 3,
       questions: [
         { q: "Which surah did the companion recite?", a: "Al-Fatihah", wrong: ["Al-Baqarah", "Yasin", "Al-Kahf"], why: "One of them recited Surat-ul-Fatiha." },
@@ -2378,7 +2378,7 @@ const IBN_AMR: DeepUnit = {
       title: "The fast of Prophet Dawud",
       line: "Abdullah ibn Amr learned the best fast: one day on, one off.",
       facts: ["He vowed to fast every day and pray all night.", "The Prophet ﷺ said: you cannot keep that up.", "The best is Dawud's fast: fast one day, eat the next."],
-      source: hadith("bukhari", "1976", "Abdullah ibn Amr", "Sahih", "I had vowed to fast daily and pray all night. The Prophet ﷺ said: you cannot do that; fast three days a month. I said I could do more, until he said: fast one day and leave one day, that is the fasting of Dawud, and it is the best fasting.", "that is the fasting of Prophet David and that is the best fasting"),
+      source: hadith("bukhari", "1976", "Abdullah ibn Amr", "Sahih", "I had vowed to fast daily and pray all night. The Prophet ﷺ said: you cannot do that; fast three days a month. I said I could do more, until he said: fast one day and leave one day, that is the fasting of Dawud, and it is the best fasting.", "and that is the fasting of Prophet … David and that is the best fasting"),
       difficulty: 4,
       questions: [
         { q: "What had Abdullah ibn Amr vowed?", a: "To fast every day", wrong: ["To never fast", "To travel", "To build a masjid"], why: "I had taken an oath to fast daily." },
@@ -2533,7 +2533,7 @@ const BARA: DeepUnit = {
       title: "Words before sleep",
       line: "The Prophet ﷺ taught Al-Bara a du'a to say before sleeping.",
       facts: ["Make wudu, then lie on your right side.", "Say: O Allah, I surrender myself to You.", "If you die that night, you die on Islam."],
-      source: hadith("bukhari", "247", "Al-Bara ibn Azib", "Sahih", "The Prophet ﷺ told me: when you go to bed, make wudu as for prayer, lie on your right side and say: O Allah, I submit myself to You, entrust my affairs to You and rely on You. If you die that night, you die on the fitrah; make these your last words.", "lie on your right side"),
+      source: hadith("bukhari", "247", "Al-Bara ibn Azib", "Sahih", "The Prophet ﷺ told me: when you go to bed, make wudu as for prayer, lie on your right side and say: O Allah, I submit myself to You, entrust my affairs to You and rely on You. If you die that night, you die on the fitrah; make these your last words.", "Whenever you go to bed perform ablution like that for the prayer"),
       difficulty: 3,
       questions: [
         { q: "What should you do before bed?", a: "Make wudu", wrong: ["Eat a big meal", "Watch the stars", "Run"], why: "Perform ablution like that for the prayer." },
@@ -2817,7 +2817,7 @@ const ABU_QATADAH: DeepUnit = {
       title: "Two rak'ahs first",
       line: "He narrated: pray two rak'ahs before sitting in a masjid.",
       facts: ["When you enter a masjid, do not sit straight away.", "First pray two rak'ahs.", "This prayer honors the house of Allah."],
-      source: hadith("bukhari", "1167", "Abu Qatadah", "Sahih", "The Prophet ﷺ said: if one of you enters a masjid, let him not sit until he has prayed two rak'ahs.", "he should not sit until he has offered a two-rak"),
+      source: hadith("bukhari", "1167", "Abu Qatadah", "Sahih", "The Prophet ﷺ said: if one of you enters a masjid, let him not sit until he has prayed two rak'ahs.", "If anyone of you enters a Mosque, he should not sit until he has offered"),
       difficulty: 2,
       questions: [
         { q: "What do we do before sitting in a masjid?", a: "Pray two rak'ahs", wrong: ["Read the Quran", "Make wudu again", "Sit facing the qiblah"], why: "He should not sit until he has offered two rak'ahs." },

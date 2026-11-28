@@ -919,7 +919,7 @@ const QAF_THREE: DeepUnit = {
       line: "Ibn Abbas: glorify Allah after every prayer.",
       facts: ["After the prostrations", "Tasbih after Salah"],
       quote: q50(40),
-      source: hadith("bukhari", "4852", "Ibn Abbas", "Sahih", "Ibn Abbas said Allah ordered His Prophet ﷺ to glorify Allah after all prayers, referring to the words after the prostrations in 50:40.", "Allah ordered His Prophet to celebrate … praises after all prayers"),
+      source: hadith("bukhari", "4852", "Ibn Abbas", "Sahih", "Ibn Abbas said Allah ordered His Prophet ﷺ to glorify Allah after all prayers, referring to the words after the prostrations in 50:40.", "Allah ordered His Prophet … praises after all prayers"),
       difficulty: 2,
       questions: [
         { q: "What does after the prostrations mean, per Ibn Abbas?", a: "Glorifying Allah after prayers", wrong: ["Sleeping after prayer", "Eating after prayer", "Leaving quickly"], why: "Allah ordered His Prophet to celebrate Allah's praises after all prayers." },

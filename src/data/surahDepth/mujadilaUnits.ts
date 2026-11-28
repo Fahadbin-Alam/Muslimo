@@ -1157,7 +1157,7 @@ const MUJADILA_THREE: DeepUnit = {
       line: "Three qualities let a person taste the sweetness of faith.",
       facts: ["Allah and His Messenger dearest", "Loving others for Allah"],
       quote: q58(22),
-      source: hadith("bukhari", "16", "Anas ibn Malik", "Sahih", "The Prophet ﷺ said whoever has three qualities tastes the sweetness of faith, first that Allah and His Messenger are dearer than anything else.", "Allah and His Apostle become dearer than anything else"),
+      source: hadith("bukhari", "16", "Anas ibn Malik", "Sahih", "The Prophet ﷺ said whoever has three qualities tastes the sweetness of faith, first that Allah and His Messenger are dearer than anything else.", "The one to whom Allah and His … dearer than anything else"),
       difficulty: 3,
       questions: [
         { q: "How many qualities bring faith's sweetness?", a: "Three", wrong: ["One", "Five", "Ten"], why: "Whoever possesses the following three qualities will have the sweetness (delight) of faith." },

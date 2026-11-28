@@ -555,7 +555,7 @@ const INSAN_FOUR: DeepUnit = {
       line: "The Prophet ﷺ often asked Allah to keep his heart firm.",
       facts: ["Ya Muqallib al-Qulub", "Ask for a firm heart"],
       quote: q76(30),
-      source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "Umm Salamah said his most frequent dua was: O Changer of the hearts, make my heart firm upon Your religion.", "O Changer of the hearts, make my heart firm upon Your religion"),
+      source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "Umm Salamah said his most frequent dua was: O Changer of the hearts, make my heart firm upon Your religion.", "Changer of the hearts, make my heart firm upon Your religion"),
       difficulty: 2,
       questions: [
         { q: "What dua did he say most often, per Umm Salamah?", a: "O Changer of the hearts, make my heart firm", wrong: ["O Allah, make me rich", "O Allah, make me famous", "O Allah, give me a palace"], why: "The supplication he said most frequently was: O Changer of the hearts, make my heart firm upon Your religion." },

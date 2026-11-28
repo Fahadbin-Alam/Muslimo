@@ -722,7 +722,7 @@ const TAGHABUN_FOUR: DeepUnit = {
       line: "Allah grows one honest date of charity as big as a mountain.",
       facts: ["Only honest money counts", "Small gifts grow huge"],
       quote: q64(17),
-      source: hadith("bukhari", "1410", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said if someone gives a date's worth from honest earnings, Allah grows its reward like a foal until it is as big as a mountain.", "so much so that it becomes as big as a mountain"),
+      source: hadith("bukhari", "1410", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said if someone gives a date's worth from honest earnings, Allah grows its reward like a foal until it is as big as a mountain.", "that it becomes as big as a mountain"),
       difficulty: 3,
       questions: [
         { q: "How small can the charity be?", a: "One date", wrong: ["A house", "A camel", "A field"], why: "If one gives in charity what equals one date-fruit from the honestly earned money." },

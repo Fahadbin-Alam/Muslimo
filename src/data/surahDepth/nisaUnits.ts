@@ -672,7 +672,7 @@ const NISA_TWO: DeepUnit = {
       line: "No one truly believes until he accepts the Prophet's ﷺ judgment.",
       facts: ["Sahih al-Bukhari 4585", "Az-Zubayr and the stream"],
       quote: q4(65),
-      source: hadith("bukhari", "4585", "Urwah ibn az-Zubayr", "Sahih", "Az-Zubayr and a man of the Ansar argued over a stream. The Prophet ﷺ judged, the man complained, and Az-Zubayr said he thought 4:65 came down about it.", "Irrigate (your lands) and then let the water flow to your neighbor"),
+      source: hadith("bukhari", "4585", "Urwah ibn az-Zubayr", "Sahih", "Az-Zubayr and a man of the Ansar argued over a stream. The Prophet ﷺ judged, the man complained, and Az-Zubayr said he thought 4:65 came down about it.", "let the water flow to your neighbor"),
       difficulty: 4,
       questions: [
         { q: "What did Az-Zubayr and the Ansari argue about?", a: "Water from a stream", wrong: ["A camel", "A house", "A sword"], why: "Bukhari 4585." },
@@ -978,7 +978,7 @@ const NISA_THREE: DeepUnit = {
       line: "Most secret talk is useless, except charity, good, and peace.",
       facts: ["Najwa: secret talk", "Islah: making peace"],
       quote: q4(114),
-      source: hadith("bukhari", "2692", "Umm Kulthum bint Uqbah", "Sahih", "The Prophet ﷺ said: whoever makes peace between people by passing on good words and saying good things is not a liar.", "He who makes peace between the people by inventing good information or saying good things, is not a liar"),
+      source: hadith("bukhari", "2692", "Umm Kulthum bint Uqbah", "Sahih", "The Prophet ﷺ said: whoever makes peace between people by passing on good words and saying good things is not a liar.", "by inventing good information or saying good things, is not a liar"),
       difficulty: 4,
       questions: [
         { q: "Which secret talk is good, in 4:114?", a: "Charity, kindness, or making peace", wrong: ["Gossip", "Plotting", "Mocking"], why: "Illa man amara bi-sadaqatin aw ma'rufin aw islah." },

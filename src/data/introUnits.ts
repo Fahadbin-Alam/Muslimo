@@ -550,7 +550,7 @@ const DAILY_LIFE: DeepUnit = {
         "He ﷺ said: say Bismillah and eat with your right hand.",
         "Eat from what is nearest to you."
       ],
-      source: hadith("bukhari", "5376", "Umar bin Abi Salamah", "Sahih", "Umar bin Abi Salamah was a boy in the Prophet's ﷺ care, and his hand went all around the dish. The Prophet ﷺ said: O boy, mention the name of Allah, eat with your right hand, and eat from what is near you.", "Mention the Name of Allah and eat with your right hand"),
+      source: hadith("bukhari", "5376", "Umar bin Abi Salamah", "Sahih", "Umar bin Abi Salamah was a boy in the Prophet's ﷺ care, and his hand went all around the dish. The Prophet ﷺ said: O boy, mention the name of Allah, eat with your right hand, and eat from what is near you.", "O boy! Mention the Name of Allah and eat with your right hand"),
       difficulty: 1,
       questions: [
         { q: "What do you say before eating?", a: "Bismillah", wrong: ["Amin", "Allahu Akbar", "Subhanallah"], why: "O boy, mention the name of Allah." },

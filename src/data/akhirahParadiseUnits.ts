@@ -46,7 +46,7 @@ const PARADISE: DeepUnit = {
       title: "A hundred and twenty rows",
       line: "Of Paradise's 120 rows, eighty will be from this Ummah.",
       facts: ["Told by Buraydah ibn al-Hasib", "The people of Paradise stand in 120 rows", "Eighty from this Ummah, forty from the rest"],
-      source: hadith("tirmidhi", "2546", "Buraydah ibn al-Hasib", "Sahih (Al-Albani)", "Buraydah said: the Messenger of Allah ﷺ said: the people of Paradise are a hundred and twenty rows. Eighty of them are from this Ummah, and forty are from all the other nations.", "The people of Paradise are a hundred and twenty rows, eighty of them are from this nation, and forty are from the rest of the nations"),
+      source: hadith("tirmidhi", "2546", "Buraydah ibn al-Hasib", "Sahih (Al-Albani)", "Buraydah said: the Messenger of Allah ﷺ said: the people of Paradise are a hundred and twenty rows. Eighty of them are from this Ummah, and forty are from all the other nations.", "are a hundred and twenty rows, eighty of them are from this nation, and forty are from the rest of the nations"),
       difficulty: 2,
       questions: [
         { q: "How many rows will the people of Paradise make?", a: "A hundred and twenty", wrong: ["Seventy", "Three hundred", "One thousand"], why: "Eighty of the rows are from this Ummah, and forty from the rest, he ﷺ said." },

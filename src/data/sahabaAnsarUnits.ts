@@ -60,7 +60,7 @@ const ANSAR: DeepUnit = {
       title: "The day of Bu'ath",
       line: "Bu'ath came about for the good of the Prophet ﷺ, Aishah said.",
       facts: ["Told by Aishah", "Bu'ath was before he ﷺ came to Madinah", "The tribes of Madinah had lost their chiefs"],
-      source: hadith("bukhari", "3777", "Aishah", "Sahih", "Aishah said: the day of Bu'ath, a day of fighting between the two tribes of the Ansar, the Aws and the Khazraj, was brought about by Allah for the good of His Messenger ﷺ. When the Messenger of Allah ﷺ came to Madinah, its tribes were divided, and their chiefs had been killed or wounded. So Allah brought it about for the good of His Messenger ﷺ, so that they would enter Islam.", "brought about by Allah for the good of His Apostle"),
+      source: hadith("bukhari", "3777", "Aishah", "Sahih", "Aishah said: the day of Bu'ath, a day of fighting between the two tribes of the Ansar, the Aws and the Khazraj, was brought about by Allah for the good of His Messenger ﷺ. When the Messenger of Allah ﷺ came to Madinah, its tribes were divided, and their chiefs had been killed or wounded. So Allah brought it about for the good of His Messenger ﷺ, so that they would enter Islam.", "was brought about by Allah for the good of His"),
       difficulty: 3,
       questions: [
         { q: "Which two tribes fought on the day of Bu'ath?", a: "The Aws and the Khazraj", wrong: ["Quraysh and Thaqif", "Hawazin and Ghatafan", "Tamim and Asad"], why: "Bu'ath was a day of fighting between the two tribes of the Ansar, the Aws and Khazraj." },
@@ -137,7 +137,7 @@ const IBN_ABI_AWFA: DeepUnit = {
       title: "The Prophet's ﷺ son Ibrahim",
       line: "Ibn Abi Awfa spoke of Ibrahim, the son of the Prophet ﷺ.",
       facts: ["Told by Isma'il ibn Abi Khalid", "Ibrahim died as a little child", "There is no prophet after him ﷺ"],
-      source: hadith("bukhari", "6194", "Abdullah ibn Abi Awfa", "Sahih", "Isma'il ibn Abi Khalid said: I asked Ibn Abi Awfa: did you see Ibrahim, the son of the Prophet ﷺ? He said: he died when he was a little child. Had there been a prophet after Muhammad ﷺ, his son would have lived, but there is no prophet after him.", "but there is no Prophet after him"),
+      source: hadith("bukhari", "6194", "Abdullah ibn Abi Awfa", "Sahih", "Isma'il ibn Abi Khalid said: I asked Ibn Abi Awfa: did you see Ibrahim, the son of the Prophet ﷺ? He said: he died when he was a little child. Had there been a prophet after Muhammad ﷺ, his son would have lived, but there is no prophet after him.", "then his son would have lived, but there is no Prophet"),
       difficulty: 2,
       questions: [
         { q: "What did Isma'il ask Ibn Abi Awfa?", a: "If he had seen Ibrahim", wrong: ["If he had been at Badr", "If he had met Bilal", "If he had been to Yemen"], why: "Did you see Ibrahim, the son of the Prophet ﷺ? Isma'il asked Ibn Abi Awfa." },

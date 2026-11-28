@@ -100,7 +100,7 @@ const WORDS: DeepUnit = {
       title: "Two who revile each other",
       line: "Two who revile each other are two shaytans, he ﷺ said.",
       facts: ["Told by Iyad ibn Himar", "In Arabic: al-mustabban shaytanan", "From Imam al-Bukhari's book of manners"],
-      source: hadith("adab", "427", "Iyad ibn Himar", "Sahih (Al-Albani)", "Iyad ibn Himar said: I said: O Messenger of Allah, a man reviles me. The Prophet ﷺ said: those who revile one another are two shaytans who accuse one another and deny one another.", "Those who revile one another are two shaytans who accuse one another and deny one another"),
+      source: hadith("adab", "427", "Iyad ibn Himar", "Sahih (Al-Albani)", "Iyad ibn Himar said: I said: O Messenger of Allah, a man reviles me. The Prophet ﷺ said: those who revile one another are two shaytans who accuse one another and deny one another.", "two shaytans who accuse one another and deny one another"),
       difficulty: 2,
       questions: [
         { q: "What did he ﷺ call two who revile each other, as Iyad ibn Himar reported?", a: "Two shaytans", wrong: ["Two friends", "Two farmers", "Two kings"], why: "Al-mustabban shaytanan, he ﷺ said, in Al-Adab al-Mufrad 427." },

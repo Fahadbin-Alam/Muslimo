@@ -854,7 +854,7 @@ const NAHL_FOUR: DeepUnit = {
       line: "The Prophet ﷺ said honey again and again, and the man was cured.",
       facts: ["Allah has said the truth", "Keep trusting the cure"],
       quote: q16(69),
-      source: hadith("bukhari", "5684", "Abu Sa'id al-Khudri", "Sahih", "A man said his brother had stomach trouble. The Prophet ﷺ told him to give honey, again and again, saying Allah has said the truth, until the brother was cured.", "Allah has said the truth, but your brother … has told a lie"),
+      source: hadith("bukhari", "5684", "Abu Sa'id al-Khudri", "Sahih", "A man said his brother had stomach trouble. The Prophet ﷺ told him to give honey, again and again, saying Allah has said the truth, until the brother was cured.", "Allah has said the truth, but your … Abdomen has told a lie"),
       difficulty: 4,
       questions: [
         { q: "What did the Prophet ﷺ tell the man to give, in the hadith?", a: "Honey", wrong: ["Milk", "Dates", "Water"], why: "The Prophet ﷺ said to him, Let him drink honey." },
@@ -1338,7 +1338,7 @@ const NAHL_SIX: DeepUnit = {
       line: "Saying I seek refuge with Allah from Shaytan calms anger.",
       facts: ["Two men argued", "One word helps"],
       quote: q16(98),
-      source: hadith("bukhari", "3282", "Sulayman ibn Surad", "Sahih", "Two men argued and one grew very angry. The Prophet ﷺ said he knew a word that would calm him: I seek refuge with Allah from Satan.", "then all his anger will go away"),
+      source: hadith("bukhari", "3282", "Sulayman ibn Surad", "Sahih", "Two men argued and one grew very angry. The Prophet ﷺ said he knew a word that would calm him: I seek refuge with Allah from Satan.", "I know a word, the saying of which will cause him to relax"),
       difficulty: 4,
       questions: [
         { q: "What were the two men doing, in the hadith?", a: "Arguing", wrong: ["Praying", "Eating", "Sleeping"], why: "Two men abused each other and the face of one of them became red with anger." },

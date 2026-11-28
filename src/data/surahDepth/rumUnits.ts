@@ -681,7 +681,7 @@ const RUM_THREE: DeepUnit = {
       line: "One honest date given in charity grows like a mountain.",
       facts: ["Small charity counts", "Earn honestly"],
       quote: q30(39),
-      source: hadith("bukhari", "1410", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said Allah takes a date's worth of charity from honest money and grows its reward like a foal is raised, till it is like a mountain.", "so much so that it becomes as big as a mountain"),
+      source: hadith("bukhari", "1410", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said Allah takes a date's worth of charity from honest money and grows its reward like a foal is raised, till it is like a mountain.", "that it becomes as big as a mountain"),
       difficulty: 4,
       questions: [
         { q: "How small is the charity, in the hadith?", a: "One date", wrong: ["A camel", "A house", "A bag of gold"], why: "If one gives in charity what equals one date-fruit from the honestly earned money." },

@@ -73,7 +73,7 @@ const QUDSI_MORE: DeepUnit = {
       title: "Make time for worship",
       line: "Give time to worship, and Allah fills your heart with riches.",
       facts: ["Told by Abu Hurairah", "Allah also takes away your poverty", "Turn from worship, and your hands stay busy"],
-      source: hadith("tirmidhi", "2466", "Abu Hurairah", "Sahih (Al-Albani)", "Abu Hurairah said: the Messenger of Allah ﷺ said: Allah Most High says: O son of Adam, devote yourself to My worship, and I will fill your chest with riches and remove your poverty. If you do not, I will fill your hands with busy work and not remove your poverty.", "Devote yourself to My worship, I will fill your chest with riches and alleviate your poverty"),
+      source: hadith("tirmidhi", "2466", "Abu Hurairah", "Sahih (Al-Albani)", "Abu Hurairah said: the Messenger of Allah ﷺ said: Allah Most High says: O son of Adam, devote yourself to My worship, and I will fill your chest with riches and remove your poverty. If you do not, I will fill your hands with busy work and not remove your poverty.", "I will fill your chest with riches and alleviate your poverty"),
       difficulty: 2,
       questions: [
         { q: "What does Allah promise one who makes time for His worship?", a: "A heart full of riches", wrong: ["More gold and silver", "Fame in the land", "A faster horse"], why: "I will fill your chest with riches and alleviate your poverty, Allah says." },

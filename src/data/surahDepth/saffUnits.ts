@@ -109,7 +109,7 @@ const SAFF_ONE: DeepUnit = {
       line: "The Prophet ﷺ named breaking promises as a hypocrite's sign.",
       facts: ["Lying when speaking", "Betraying a trust"],
       quote: q61(2),
-      source: hadith("bukhari", "33", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said the signs of a hypocrite are three: he lies when he speaks, breaks his promise, and betrays a trust.", "The signs of a hypocrite are three…Whenever he promises, he always breaks it"),
+      source: hadith("bukhari", "33", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said the signs of a hypocrite are three: he lies when he speaks, breaks his promise, and betrays a trust.", "hypocrite are three … Whenever he promises, he always breaks it"),
       difficulty: 3,
       questions: [
         { q: "How many signs of a hypocrite are in the hadith?", a: "Three", wrong: ["One", "Seven", "Ten"], why: "The signs of a hypocrite are three." },
@@ -625,7 +625,7 @@ const SAFF_THREE: DeepUnit = {
       line: "Asked the best deed, the Prophet ﷺ said: faith in Allah.",
       facts: ["Faith first, then jihad", "Then an accepted Hajj"],
       quote: q61(11),
-      source: hadith("bukhari", "26", "Abu Hurayrah", "Sahih", "The Prophet ﷺ was asked the best deed and said: to believe in Allah and His Messenger, then striving in Allah's cause, then an accepted Hajj.", "To believe in Allah and His Apostle"),
+      source: hadith("bukhari", "26", "Abu Hurayrah", "Sahih", "The Prophet ﷺ was asked the best deed and said: to believe in Allah and His Messenger, then striving in Allah's cause, then an accepted Hajj.", "What is the best deed … To believe in Allah and His"),
       difficulty: 4,
       questions: [
         { q: "What is the best deed, in the hadith?", a: "Believing in Allah and His Messenger", wrong: ["Building a house", "Traveling far", "Eating less"], why: "To believe in Allah and His Apostle." },

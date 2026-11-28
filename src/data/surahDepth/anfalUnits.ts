@@ -529,7 +529,7 @@ const ANFAL_TWO: DeepUnit = {
       line: "If they stop, their past is forgiven; Islam wipes it clean.",
       facts: ["Ghufran: forgiveness", "A new start"],
       quote: q8(38),
-      source: hadith("bukhari", "6921", "Abdullah ibn Mas'ud", "Sahih", "A man asked if they would be punished for what they did before Islam. The Prophet ﷺ said: whoever does good in Islam will not be punished for what he did before it.", "Whoever does good in Islam will not be punished for what he did in the Pre-Islamic Period of ignorance"),
+      source: hadith("bukhari", "6921", "Abdullah ibn Mas'ud", "Sahih", "A man asked if they would be punished for what they did before Islam. The Prophet ﷺ said: whoever does good in Islam will not be punished for what he did before it.", "Whoever does good in Islam will not be punished for what he did in the"),
       difficulty: 5,
       questions: [
         { q: "What happens if they stop, in 8:38?", a: "Their past is forgiven", wrong: ["They are fined", "Nothing changes", "They must leave"], why: "In yantahu yughfar lahum ma qad salaf." },

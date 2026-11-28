@@ -72,7 +72,7 @@ const LITTLE_THINGS: DeepUnit = {
       title: "Spitting in the masjid",
       line: "Spitting in the masjid is a sin; burying it wipes it out.",
       facts: ["Told by Anas ibn Malik", "The masjid floor was earth and pebbles then", "Keep the masjid clean"],
-      source: hadith("bukhari", "415", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: the Prophet ﷺ said: spitting in the masjid is a sin, and its expiation is to bury it.", "Spitting in the mosque is a sin and its expiation is to bury it"),
+      source: hadith("bukhari", "415", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: the Prophet ﷺ said: spitting in the masjid is a sin, and its expiation is to bury it.", "in the mosque is a sin and its expiation is to bury it"),
       difficulty: 1,
       questions: [
         { q: "What is spitting in the masjid, he ﷺ said?", a: "A sin", wrong: ["A sunnah", "A good habit", "Nothing at all"], why: "Spitting in the mosque is a sin, and its expiation is to bury it, he ﷺ said." },

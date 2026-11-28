@@ -333,7 +333,7 @@ const ANAM_ONE: DeepUnit = {
       line: "Most early believers were poor, as with every messenger.",
       facts: ["Fitnah: a test", "The weak believed first"],
       quote: q6(53),
-      source: hadith("bukhari", "7", "Ibn Abbas", "Sahih", "Heraclius asked Abu Sufyan whether the nobles or the poor followed the Prophet ﷺ. He said the poor. Heraclius said all messengers have been followed by such people.", "all the Apostle have been followed by this very class of people"),
+      source: hadith("bukhari", "7", "Ibn Abbas", "Sahih", "Heraclius asked Abu Sufyan whether the nobles or the poor followed the Prophet ﷺ. He said the poor. Heraclius said all messengers have been followed by such people.", "have been followed by this very class of people"),
       difficulty: 4,
       questions: [
         { q: "What did the chiefs mock, in 6:53?", a: "Allah favoring poor believers", wrong: ["The rain", "Their own wealth", "The stars"], why: "A ha'ula'i mannallahu 'alayhim min baynina?" },
@@ -402,7 +402,7 @@ const ANAM_TWO: DeepUnit = {
       line: "Only Allah holds the keys of the unseen: there are five.",
       facts: ["Mafatih: keys", "Ghayb: the unseen"],
       quote: q6(59),
-      source: hadith("bukhari", "4627", "Abdullah ibn Umar", "Sahih", "The Messenger of Allah ﷺ said: the keys of the unseen are five: the knowledge of the Hour, the coming of rain, what is in the wombs, what a soul will earn tomorrow, and the land where it will die.", "The keys of the Unseen are five"),
+      source: hadith("bukhari", "4627", "Abdullah ibn Umar", "Sahih", "The Messenger of Allah ﷺ said: the keys of the unseen are five: the knowledge of the Hour, the coming of rain, what is in the wombs, what a soul will earn tomorrow, and the land where it will die.", "of the Unseen are five: Verily with Allah"),
       difficulty: 2,
       questions: [
         { q: "Who knows the keys of the unseen, in 6:59?", a: "Allah alone", wrong: ["Fortune tellers", "Star readers", "The jinn"], why: "Wa 'indahu mafatihul-ghayb, la ya'lamuha illa hu." },

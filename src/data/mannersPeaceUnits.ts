@@ -20,7 +20,7 @@ const PEACE: DeepUnit = {
       title: "Let us go and make peace",
       line: "When people fought, he ﷺ went himself to make peace.",
       facts: ["Told by Sahl ibn Sa'd", "The people of Quba had fought"],
-      source: hadith("bukhari", "2693", "Sahl ibn Sa'd", "Sahih", "Sahl ibn Sa'd said: once the people of Quba fought each other until they threw stones at each other. When the Messenger of Allah ﷺ was told about it, he said: let us go and make peace between them.", "Let us go to bring about a reconciliation between them"),
+      source: hadith("bukhari", "2693", "Sahl ibn Sa'd", "Sahih", "Sahl ibn Sa'd said: once the people of Quba fought each other until they threw stones at each other. When the Messenger of Allah ﷺ was told about it, he said: let us go and make peace between them.", "go to bring about a reconciliation between them"),
       difficulty: 1,
       questions: [
         { q: "What did the people of Quba do to each other?", a: "They threw stones at each other", wrong: ["They raced their camels", "They built a new well", "They shared their dates"], why: "They fought with each other till they threw stones on each other." },

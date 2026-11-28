@@ -836,7 +836,7 @@ const HAJJ_THREE: DeepUnit = {
       line: "Allah has put no hardship on us in this religion.",
       facts: ["The sick may pray sitting", "The traveller shortens prayer"],
       quote: q22(78),
-      source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "The Prophet ﷺ told a sick man: pray standing; if you cannot, pray sitting; and if you cannot, pray lying on your side.", "Pray while standing and if you can … pray while sitting"),
+      source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "The Prophet ﷺ told a sick man: pray standing; if you cannot, pray sitting; and if you cannot, pray lying on your side.", "Pray while standing and if you … pray while sitting"),
       difficulty: 5,
       questions: [
         { q: "What has Allah not placed on us, in 22:78?", a: "Hardship in religion", wrong: ["Any prayer", "Any duty", "Any reward"], why: "And has not laid upon you in religion any hardship." },

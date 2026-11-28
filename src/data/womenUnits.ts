@@ -918,7 +918,7 @@ const QURAN_WOMEN: DeepUnit = {
       title: "Zaynab's two rewards",
       line: "Zaynab gave charity to her own family and got two rewards.",
       facts: ["She was the wife of Abdullah ibn Mas'ud.", "She looked after her husband and orphans in her care.", "One reward for family ties, one for the charity."],
-      source: hadith("bukhari", "1466", "Zaynab, wife of Ibn Mas'ud", "Sahih", "Zaynab, the wife of Abdullah ibn Mas'ud, asked Bilal to ask whether her charity could go to her husband and the orphans in her care. He ﷺ asked: which Zaynab? Bilal said: the wife of Abdullah. He said: yes, and she will have two rewards, one for family ties and one for the charity.", "and she will receive a double reward"),
+      source: hadith("bukhari", "1466", "Zaynab, wife of Ibn Mas'ud", "Sahih", "Zaynab, the wife of Abdullah ibn Mas'ud, asked Bilal to ask whether her charity could go to her husband and the orphans in her care. He ﷺ asked: which Zaynab? Bilal said: the wife of Abdullah. He said: yes, and she will have two rewards, one for family ties and one for the charity.", "and she will receive a double … One for helping relatives, and the other for giving Zakat"),
       difficulty: 3,
       questions: [
         { q: "How many rewards did he ﷺ say Zaynab would get?", a: "Two", wrong: ["One", "Ten", "None"], why: "She will receive a double reward: one for helping relatives, and the other for the charity." },

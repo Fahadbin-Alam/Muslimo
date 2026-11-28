@@ -333,7 +333,7 @@ const HASHR_ONE: DeepUnit = {
       line: "The palms were at Al-Buwayrah, a place near Madinah.",
       facts: ["Ibn Umar narrated it", "59:5 was revealed about it"],
       quote: q59(5),
-      source: hadith("bukhari", "4884", "Abdullah ibn Umar", "Sahih", "Ibn Umar said the palms of Bani An-Nadir at Al-Buwayrah were cut down, and Allah revealed 59:5.", "cut down the palm trees of Bani An-Nadir which were at Al-Buwaira"),
+      source: hadith("bukhari", "4884", "Abdullah ibn Umar", "Sahih", "Ibn Umar said the palms of Bani An-Nadir at Al-Buwayrah were cut down, and Allah revealed 59:5.", "cut down the palm trees of Bani An-Nadir which were at"),
       difficulty: 3,
       questions: [
         { q: "Where were the palm trees?", a: "Al-Buwayrah", wrong: ["Uhud", "Badr", "Taif"], why: "The palm trees of Bani An-Nadir which were at Al-Buwaira." },

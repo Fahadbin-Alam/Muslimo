@@ -333,7 +333,7 @@ const JATHIYAH_ONE: DeepUnit = {
       line: "The Prophet ﷺ warned we would copy earlier nations step by step.",
       facts: ["Even into a lizard hole", "Be careful whom you follow"],
       quote: q45(18),
-      source: hadith("bukhari", "7320", "Abu Sa'id al-Khudri", "Sahih", "The Prophet ﷺ said you will follow the ways of nations before you, span by span, even into a lizard's hole.", "You will follow the ways of those nations who were before you, span by span and cubit by cubit"),
+      source: hadith("bukhari", "7320", "Abu Sa'id al-Khudri", "Sahih", "The Prophet ﷺ said you will follow the ways of nations before you, span by span, even into a lizard's hole.", "those nations who were before you, span by span and cubit by cubit"),
       difficulty: 3,
       questions: [
         { q: "How closely would people copy, per Bukhari 7320?", a: "Span by span, cubit by cubit", wrong: ["Not at all", "Only a little", "Only in food"], why: "Span by span and cubit by cubit." },

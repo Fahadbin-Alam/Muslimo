@@ -263,7 +263,7 @@ const SLEEP: readonly Dhikr[] = [
     meaning: "O Allah, I submit myself to You, I hand my affairs over to You, and I lean my back on You, in hope of You and in fear of You. There is no refuge and no escape from You except to You. O Allah, I believe in Your Book that You sent down and in Your Prophet whom You sent.",
     count: 1,
     reward: "Make wudu, lie on your right side and make these your last words. If you die that night, you die upon the fitrah.",
-    source: hadith("bukhari", "247", "Al-Bara ibn Azib", "Sahih", "The Prophet ﷺ said: when you go to bed, make wudu as for prayer, lie on your right side and say: O Allah, I submit myself to You... If you die that night, you die upon the fitrah. Make these your last words.", "lie on your right side")
+    source: hadith("bukhari", "247", "Al-Bara ibn Azib", "Sahih", "The Prophet ﷺ said: when you go to bed, make wudu as for prayer, lie on your right side and say: O Allah, I submit myself to You... If you die that night, you die upon the fitrah. Make these your last words.", "Whenever you go to bed perform ablution like that for the prayer")
   }
 ];
 

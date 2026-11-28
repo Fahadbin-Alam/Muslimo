@@ -318,7 +318,7 @@ const AHQAF_TWO: DeepUnit = {
       line: "Who deserves our kindness most? The Prophet ﷺ said: your mother.",
       facts: ["Mother three times, then father", "Honor both parents"],
       quote: q46(15),
-      source: hadith("bukhari", "5971", "Abu Hurairah", "Sahih", "A man asked who most deserves his good company. The Prophet ﷺ said your mother three times, then your father.", "Who is more entitled to be treated with the best companionship by me"),
+      source: hadith("bukhari", "5971", "Abu Hurairah", "Sahih", "A man asked who most deserves his good company. The Prophet ﷺ said your mother three times, then your father.", "more entitled to be treated with the best companionship by me"),
       difficulty: 2,
       questions: [
         { q: "How many times did the Prophet ﷺ say your mother?", a: "Three", wrong: ["One", "Two", "Four"], why: "Your mother, your mother, your mother, then your father." },

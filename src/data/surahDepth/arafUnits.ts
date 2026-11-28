@@ -1687,7 +1687,7 @@ const ARAF_SIX: DeepUnit = {
       line: "Only Allah knows when the Hour comes; it will come suddenly.",
       facts: ["As-sa'ah: the Hour", "Baghtatan: suddenly"],
       quote: q7(187),
-      source: hadith("bukhari", "6503", "Sahl ibn Sa'd", "Sahih", "The Prophet ﷺ said: I have been sent and the Hour like these two, showing two of his fingers held together.", "I have been sent and the Hour (is at hand) as these two"),
+      source: hadith("bukhari", "6503", "Sahl ibn Sa'd", "Sahih", "The Prophet ﷺ said: I have been sent and the Hour like these two, showing two of his fingers held together.", "sent and the Hour … as these two"),
       difficulty: 4,
       questions: [
         { q: "Who knows when the Hour comes, in 7:187?", a: "Only Allah", wrong: ["The angels", "The stars", "The scholars"], why: "Innama ilmuha inda rabbi." },
@@ -1729,7 +1729,7 @@ const ARAF_SIX: DeepUnit = {
       line: "Forgive, tell people what is good, and turn from the foolish.",
       facts: ["Khudhil-afw: forgive", "Al-urf: the good"],
       quote: q7(199),
-      source: hadith("bukhari", "4644", "Abdullah ibn az-Zubayr", "Sahih", "Abdullah ibn az-Zubayr said: Allah ordered His Prophet ﷺ to forgive people their bad behavior toward him.", "Allah ordered His Prophet to forgive the people their misbehavior"),
+      source: hadith("bukhari", "4644", "Abdullah ibn az-Zubayr", "Sahih", "Abdullah ibn az-Zubayr said: Allah ordered His Prophet ﷺ to forgive people their bad behavior toward him.", "Allah ordered His Prophet … to forgive the people their misbehavior"),
       difficulty: 3,
       questions: [
         { q: "What three things does 7:199 command?", a: "Forgive, enjoin good, turn away", wrong: ["Fight, take, keep", "Sleep, eat, rest", "Shout, argue, leave"], why: "Khudhil-afwa wa'mur bil-urfi wa a'rid anil-jahilin." },

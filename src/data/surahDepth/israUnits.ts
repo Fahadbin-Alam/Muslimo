@@ -403,7 +403,7 @@ const ISRA_ONE: DeepUnit = {
       line: "Your mother comes first for kindness, three times, then father.",
       facts: ["Mother, mother, mother", "Then your father"],
       quote: q17(24),
-      source: hadith("bukhari", "5971", "Abu Hurairah", "Sahih", "A man asked who most deserves his good company. The Prophet ﷺ said your mother three times, and then your father.", "Who is more entitled to be treated with the best companionship by me"),
+      source: hadith("bukhari", "5971", "Abu Hurairah", "Sahih", "A man asked who most deserves his good company. The Prophet ﷺ said your mother three times, and then your father.", "more entitled to be treated with the best companionship by me"),
       difficulty: 4,
       questions: [
         { q: "Who most deserves good company, in the hadith?", a: "Your mother", wrong: ["Your friend", "Your teacher", "Your neighbour"], why: "The Prophet ﷺ said, Your mother." },

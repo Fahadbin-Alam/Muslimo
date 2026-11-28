@@ -584,7 +584,7 @@ const ZUMAR_TWO: DeepUnit = {
       line: "High rooms in Paradise look like a far, bright star.",
       facts: ["Ranks differ by deeds", "Open to all true believers"],
       quote: q39(20),
-      source: hadith("bukhari", "3256", "Abu Said Al-Khudri", "Sahih", "The Prophet ﷺ said the people of Paradise see the lofty mansions like a bright star on the horizon, and they are for men who believed in Allah and the Messengers.", "these are for the men who believed in Allah and also believed in the Apostles"),
+      source: hadith("bukhari", "3256", "Abu Said Al-Khudri", "Sahih", "The Prophet ﷺ said the people of Paradise see the lofty mansions like a bright star on the horizon, and they are for men who believed in Allah and the Messengers.", "these are for the men who believed in Allah and also believed in the"),
       difficulty: 3,
       questions: [
         { q: "How are the lofty mansions seen, in the hadith?", a: "Like a bright star on the horizon", wrong: ["Like a small hut", "Like a cloud", "Like a mountain"], why: "In the same way as one looks at a brilliant star far away in the East or in the West on the horizon." },

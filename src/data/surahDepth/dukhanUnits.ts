@@ -109,7 +109,7 @@ const DUKHAN_ONE: DeepUnit = {
       line: "Search for Laylatul-Qadr in the odd nights of the last ten.",
       facts: ["The last ten nights of Ramadan", "The odd nights: 21, 23, 25, 27, 29"],
       quote: q44(3),
-      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Prophet ﷺ said: search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "Search for the Night of Qadr in the odd nights of the last ten days of Ramadan"),
+      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Prophet ﷺ said: search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "odd nights of the last ten days of Ramadan"),
       difficulty: 2,
       questions: [
         { q: "Where should we search for it, per Bukhari 2017?", a: "Odd nights of the last ten of Ramadan", wrong: ["The first night of Ramadan", "Any night of the year", "Only the 15th night"], why: "Search for the Night of Qadr in the odd nights of the last ten days of Ramadan." },

@@ -611,7 +611,7 @@ const MUNAFIQUN_THREE: DeepUnit = {
       line: "Live in this world like a stranger or a traveler.",
       facts: ["A traveler packs light", "Home is the Hereafter"],
       quote: q63(10),
-      source: hadith("bukhari", "6416", "Abdullah ibn Umar", "Sahih", "The Prophet ﷺ took Ibn Umar by the shoulder and told him to be in this world like a stranger or a traveler.", "Be in this world as if you were a stranger or a traveler"),
+      source: hadith("bukhari", "6416", "Abdullah ibn Umar", "Sahih", "The Prophet ﷺ took Ibn Umar by the shoulder and told him to be in this world like a stranger or a traveler.", "you were a stranger or a traveler"),
       difficulty: 2,
       questions: [
         { q: "How should we live in this world?", a: "Like a traveler", wrong: ["Like a king", "Like it lasts forever", "Like a guard"], why: "Be in this world as if you were a stranger or a traveler." },

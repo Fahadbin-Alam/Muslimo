@@ -193,7 +193,7 @@ const MUHAMMAD_ONE: DeepUnit = {
       line: "Allah protects believers; disbelievers have no protector.",
       facts: ["Mawla: Protector, Helper", "Said after Uhud"],
       quote: q47(11),
-      source: hadith("bukhari", "3039", "Al-Bara ibn Azib", "Sahih", "After Uhud, when Abu Sufyan boasted of his idols, the Prophet ﷺ told the Companions to answer: Allah is our Helper and you have no helper.", "Say Allah is our Helper and you have no helper"),
+      source: hadith("bukhari", "3039", "Al-Bara ibn Azib", "Sahih", "After Uhud, when Abu Sufyan boasted of his idols, the Prophet ﷺ told the Companions to answer: Allah is our Helper and you have no helper.", "Allah is our Helper and you have no helper"),
       difficulty: 3,
       questions: [
         { q: "Who is the Protector of believers, in 47:11?", a: "Allah", wrong: ["Their army", "Their wealth", "Their tribe"], why: "Allah is the Protector of those who believe." },
@@ -332,7 +332,7 @@ const MUHAMMAD_TWO: DeepUnit = {
       line: "The Prophet ﷺ showed two fingers: the Hour is that close.",
       facts: ["The Hour is near", "Prepare today"],
       quote: q47(18),
-      source: hadith("bukhari", "6503", "Sahl ibn Sa'd", "Sahih", "The Prophet ﷺ said: I have been sent and the Hour is like these two, showing two of his fingers.", "I have been sent and the Hour (is at hand) as these two"),
+      source: hadith("bukhari", "6503", "Sahl ibn Sa'd", "Sahih", "The Prophet ﷺ said: I have been sent and the Hour is like these two, showing two of his fingers.", "sent and the Hour … as these two"),
       difficulty: 2,
       questions: [
         { q: "What did the Prophet ﷺ show, per Bukhari 6503?", a: "Two fingers", wrong: ["A ring", "A stone", "A date"], why: "Showing his two fingers and sticking them out." },

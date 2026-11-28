@@ -18,7 +18,7 @@ const FAST_MANNERS: DeepUnit = {
       title: "More than food and drink",
       line: "If you fast, also leave lying and bad deeds.",
       facts: ["Told by Abu Hurairah", "A fast of the tongue too"],
-      source: hadith("bukhari", "1903", "Abu Hurairah", "Sahih", "Whoever does not give up false speech and acting on it, Allah has no need of his leaving his food and drink.", "Whoever does not give up forged speech and evil actions"),
+      source: hadith("bukhari", "1903", "Abu Hurairah", "Sahih", "Whoever does not give up false speech and acting on it, Allah has no need of his leaving his food and drink.", "does not give up forged speech and evil actions"),
       difficulty: 1,
       questions: [
         { q: "Besides food and drink, what should a fasting person give up?", a: "Lying and bad deeds", wrong: ["Smiling at people", "Saying salam", "Reading Quran"], why: "Whoever does not give up forged speech and evil actions." },

@@ -138,7 +138,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "Our Lord, do not let our hearts swerve after You guided us.",
       facts: ["Jami at-Tirmidhi 3522", "Ya Muqallib al-qulub"],
       quote: q3(8),
-      source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "The dua the Messenger of Allah ﷺ said most often was: O Changer of the hearts, make my heart firm upon Your religion.", "O Changer of the hearts, make my heart firm upon Your religion"),
+      source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "The dua the Messenger of Allah ﷺ said most often was: O Changer of the hearts, make my heart firm upon Your religion.", "Changer of the hearts, make my heart firm upon Your religion"),
       difficulty: 3,
       questions: [
         { q: "What do the firm believers ask in 3:8?", a: "Don't let our hearts swerve", wrong: ["Make us famous", "Give us gold", "Let us sleep"], why: "Rabbana la tuzigh qulubana ba'da idh hadaytana." },
