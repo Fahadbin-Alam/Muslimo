@@ -39,7 +39,7 @@ const TALAQ_ONE: DeepUnit = {
       line: "Allah called the Prophet ﷺ first to honor him, then all Muslims.",
       facts: ["At-Talaq means divorce", "The rules are for everyone"],
       quote: q65(1),
-      source: ik(1, "Ibn Kathir says the Prophet ﷺ is addressed first in 65:1 to honor him, though the rule is for his whole Ummah.", "The Prophet ﷺ was addressed first in this Ayah, to honor him"),
+      source: ik(1, "Ibn Kathir says the Prophet ﷺ is addressed first in 65:1 to honor him, though the rule is for his whole Ummah.", "Prophet was addressed first in this Ayah, to honor him, even though"),
       difficulty: 2,
       questions: [
         { q: "Why is the Prophet ﷺ named first in 65:1?", a: "To honor him", wrong: ["He was alone", "To warn him", "By chance"], why: "The Prophet ﷺ was addressed first in this Ayah, to honor him." },
@@ -318,7 +318,7 @@ const TALAQ_TWO: DeepUnit = {
       line: "These rules are Allah's command, sent through His Messenger.",
       facts: ["Not human customs", "Revealed law"],
       quote: q65(5),
-      source: ik(5, "Ibn Kathir says this is Allah's command and law, sent down through His Messenger.", "this is His commandment and legislation that He sent down to you through His Messenger ﷺ"),
+      source: ik(5, "Ibn Kathir says this is Allah's command and law, sent down through His Messenger.", "commandment and legislation that He sent down to you through His Messenger"),
       difficulty: 2,
       questions: [
         { q: "Whose command are these rules?", a: "Allah's", wrong: ["A king's", "A tribe's", "A judge's"], why: "That is the command of Allah, which He has sent down to you." },
@@ -611,7 +611,7 @@ const TALAQ_THREE: DeepUnit = {
       line: "All this shows Allah has power over all and knows all.",
       facts: ["His command descends", "His knowledge surrounds all"],
       quote: q65(12),
-      source: ik(12, "Ibn Kathir closes At-Talaq with the ayah: that you may know Allah has power over all things and surrounds all with His knowledge.", "that you may know that Allah has power over all things"),
+      source: ik(12, "Ibn Kathir closes At-Talaq with the ayah: that you may know Allah has power over all things and surrounds all with His knowledge.", ""),
       difficulty: 2,
       questions: [
         { q: "Why did Allah tell us of the heavens and earths?", a: "To know His power", wrong: ["To scare us", "To count them", "For a game"], why: "That you may know that Allah has power over all things." },

@@ -59,7 +59,7 @@ const PROPHETS: DeepUnit = {
       title: "Souls like gathered troops",
       line: "Souls that are alike are drawn to each other, he ﷺ said.",
       facts: ["Told by Aishah", "Souls that are unlike keep apart"],
-      source: hadith("bukhari", "3336", "Aishah", "Sahih", "Aishah said she heard the Prophet ﷺ say: souls are like troops gathered together. Those with like qualities are drawn to each other, and those with unlike qualities keep apart.", "Souls are like recruited troops: Those who are like qualities are inclined to each other"),
+      source: hadith("bukhari", "3336", "Aishah", "Sahih", "Aishah said she heard the Prophet ﷺ say: souls are like troops gathered together. Those with like qualities are drawn to each other, and those with unlike qualities keep apart.", "troops: Those who are like qualities are inclined to each other"),
       difficulty: 2,
       questions: [
         { q: "What did he ﷺ say souls are like?", a: "Troops gathered together", wrong: ["Birds in the sky", "Stars at night", "Waves of the sea"], why: "Souls are like recruited troops, he ﷺ said, as Aishah heard." },

@@ -346,7 +346,7 @@ const NAHL_TWO: DeepUnit = {
       line: "Those too proud to follow the Messengers end in an evil home.",
       facts: ["Pride blocks the truth", "Humility opens the heart"],
       quote: q16(29),
-      source: ik(29, "An evil home awaits those who were too arrogant to heed Allah's signs and follow His Messengers.", "for those who were too arrogant to pay attention to the signs of Allah and follow His Messengers"),
+      source: ik(29, "An evil home awaits those who were too arrogant to heed Allah's signs and follow His Messengers.", "arrogant to pay atten- tion to the signs of Allah and follow"),
       difficulty: 4,
       questions: [
         { q: "For whom is the evil home, in 16:29?", a: "The arrogant", wrong: ["The poor", "The travelers", "The orphans"], why: "Indeed, what an evil abode there is for the arrogant." },
@@ -854,7 +854,7 @@ const NAHL_FOUR: DeepUnit = {
       line: "The Prophet ﷺ said honey again and again, and the man was cured.",
       facts: ["Allah has said the truth", "Keep trusting the cure"],
       quote: q16(69),
-      source: hadith("bukhari", "5684", "Abu Sa'id al-Khudri", "Sahih", "A man said his brother had stomach trouble. The Prophet ﷺ told him to give honey, again and again, saying Allah has said the truth, until the brother was cured.", "Allah has said the truth, but your brother … has told a lie"),
+      source: hadith("bukhari", "5684", "Abu Sa'id al-Khudri", "Sahih", "A man said his brother had stomach trouble. The Prophet ﷺ told him to give honey, again and again, saying Allah has said the truth, until the brother was cured.", "Allah has said the truth, but your … Abdomen has told a lie"),
       difficulty: 4,
       questions: [
         { q: "What did the Prophet ﷺ tell the man to give, in the hadith?", a: "Honey", wrong: ["Milk", "Dates", "Water"], why: "The Prophet ﷺ said to him, Let him drink honey." },
@@ -1084,7 +1084,7 @@ const NAHL_FIVE: DeepUnit = {
       line: "A witness rises from each nation; deniers get no excuse.",
       facts: ["Each Prophet testifies", "No return to repent"],
       quote: q16(84),
-      source: ik(84, "On the Day of Resurrection Allah raises a witness from every nation, its Prophet, and the deniers are not allowed to offer excuses or go back to repent.", "He will raise a witness from every nation - that is - their Prophet"),
+      source: ik(84, "On the Day of Resurrection Allah raises a witness from every nation, its Prophet, and the deniers are not allowed to offer excuses or go back to repent.", ""),
       difficulty: 3,
       questions: [
         { q: "Who is the witness from each nation, per Ibn Kathir?", a: "Their Prophet", wrong: ["Their king", "Their poet", "Their neighbor"], why: "He will raise a witness from every nation - that is - their Prophet." },
@@ -1098,7 +1098,7 @@ const NAHL_FIVE: DeepUnit = {
       line: "When the wrongdoers see the punishment, it is not delayed.",
       facts: ["Repent now, not later", "Today the door is open"],
       quote: q16(85),
-      source: ik(85, "Once the wrongdoers see the punishment, it is not lessened even for a moment, nor delayed, so the time to repent is now.", "it will not be reduced for them even for a moment"),
+      source: ik(85, "Once the wrongdoers see the punishment, it is not lessened even for a moment, nor delayed, so the time to repent is now.", ""),
       difficulty: 4,
       questions: [
         { q: "Will the punishment be delayed, in 16:85?", a: "No", wrong: ["Yes, a year", "Yes, a day", "If they ask"], why: "Nor will they be given respite." },
@@ -1112,7 +1112,7 @@ const NAHL_FIVE: DeepUnit = {
       line: "The false gods call their worshippers liars on that Day.",
       facts: ["False gods cannot help", "Worship Allah alone"],
       quote: q16(86),
-      source: ik(86, "On that Day the idols turn against those who worshipped them and call them liars, just when they need them most.", "their gods will disown them when they need them most"),
+      source: ik(86, "On that Day the idols turn against those who worshipped them and call them liars, just when they need them most.", ""),
       difficulty: 4,
       questions: [
         { q: "What do the false gods say, in 16:86?", a: "You indeed are liars", wrong: ["Welcome", "We will help", "Follow us"], why: "But they will throw back their statement at them: You indeed are liars!" },
@@ -1126,7 +1126,7 @@ const NAHL_FIVE: DeepUnit = {
       line: "On that Day everyone submits to Allah, and lies vanish.",
       facts: ["Everyone hears and obeys", "Inventions disappear"],
       quote: q16(87),
-      source: ik(87, "On that Day all will humble themselves and surrender to Allah, and every false thing they invented will vanish, leaving them no helper.", "they will all surrender to Allah, there will not be anyone who does not hear and obey"),
+      source: ik(87, "On that Day all will humble themselves and surrender to Allah, and every false thing they invented will vanish, leaving them no helper.", ""),
       difficulty: 4,
       questions: [
         { q: "What will everyone offer, in 16:87?", a: "Full submission to Allah", wrong: ["Gold", "Excuses", "Their idols"], why: "And they will offer their full submission to Allah on that Day." },
@@ -1338,7 +1338,7 @@ const NAHL_SIX: DeepUnit = {
       line: "Saying I seek refuge with Allah from Shaytan calms anger.",
       facts: ["Two men argued", "One word helps"],
       quote: q16(98),
-      source: hadith("bukhari", "3282", "Sulayman ibn Surad", "Sahih", "Two men argued and one grew very angry. The Prophet ﷺ said he knew a word that would calm him: I seek refuge with Allah from Satan.", "then all his anger will go away"),
+      source: hadith("bukhari", "3282", "Sulayman ibn Surad", "Sahih", "Two men argued and one grew very angry. The Prophet ﷺ said he knew a word that would calm him: I seek refuge with Allah from Satan.", "I know a word, the saying of which will cause him to relax"),
       difficulty: 4,
       questions: [
         { q: "What were the two men doing, in the hadith?", a: "Arguing", wrong: ["Praying", "Eating", "Sleeping"], why: "Two men abused each other and the face of one of them became red with anger." },
@@ -1647,7 +1647,7 @@ const NAHL_SEVEN: DeepUnit = {
       line: "Ibrahim was a leader to follow, obedient, a Hanif.",
       facts: ["Not one of the idolaters", "A nation on his own"],
       quote: q16(120),
-      source: ik(120, "Ummah here means a leader who is followed. Qanit means humble and obedient, and Hanif means one who turns away from Shirk to Tawhid. Mujahid said he was a nation on his own.", "Ummah here means the leader who is followed"),
+      source: ik(120, "Ummah here means a leader who is followed. Qanit means humble and obedient, and Hanif means one who turns away from Shirk to Tawhid. Mujahid said he was a nation on his own.", ""),
       difficulty: 4,
       questions: [
         { q: "What was Ibrahim, in 16:120?", a: "An Ummah, obedient, a Hanif", wrong: ["A king", "A poet", "A trader"], why: "Verily, Ibrahim was (himself) an Ummah, obedient to Allah, a Hanif." },
@@ -1662,7 +1662,7 @@ const NAHL_SEVEN: DeepUnit = {
       line: "Ibrahim thanked Allah, who chose him and guided him.",
       facts: ["Good in this world", "Among the righteous later"],
       quote: q16(121),
-      source: ik(121, "Ibrahim thanked Allah for His blessings. Allah chose him and guided him to worship Him alone, gave him good in this world, a truthful tongue, and he is among the righteous in the Hereafter.", "he gave thanks for the blessings that Allah gave him"),
+      source: ik(121, "Ibrahim thanked Allah for His blessings. Allah chose him and guided him to worship Him alone, gave him good in this world, a truthful tongue, and he is among the righteous in the Hereafter.", ""),
       difficulty: 3,
       questions: [
         { q: "What was Ibrahim for Allah's favors, in 16:121?", a: "Thankful", wrong: ["Forgetful", "Proud", "Silent"], why: "(He was) thankful for His favors." },

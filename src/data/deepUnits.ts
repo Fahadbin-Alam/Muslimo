@@ -3286,8 +3286,9 @@ function turn<T>(id: string, items: T[]): T[] {
   return items.map((_, index) => items[(start + index) % items.length]);
 }
 
-function challenge(id: string, question: Question, source: LessonSource): Challenge {
-  const base = { id, prompt: question.q, explanation: question.why, resourceLabel: "Open source", resourceUrl: source.url };
+function challenge(id: string, question: Question, lessonSource: LessonSource): Challenge {
+  const source = question.source ?? lessonSource;
+  const base = { id, prompt: question.q, explanation: question.why, resourceLabel: "Open source", resourceUrl: source.url, ...(question.source ? { source: question.source } : {}) };
   if ("tf" in question) {
     return {
       ...base,

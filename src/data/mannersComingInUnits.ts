@@ -85,7 +85,7 @@ const COMING_IN: DeepUnit = {
       title: "As-Salam, a Name of Allah",
       line: "As-Salam is a Name of Allah placed on earth: spread salam.",
       facts: ["Told by Anas ibn Malik", "As-Salam means peace", "Allah has placed it in the earth"],
-      source: hadith("adab", "989", "Anas ibn Malik", "Hasan (Al-Albani)", "Anas said: the Messenger of Allah ﷺ said: as-Salam, peace, is one of the Names of Allah, which Allah has placed in the earth, so spread the greeting of salam among yourselves.", "is one of the Names of Allah Almighty which Allah has placed in the earth"),
+      source: hadith("adab", "989", "Anas ibn Malik", "Hasan (Al-Albani)", "Anas said: the Messenger of Allah ﷺ said: as-Salam, peace, is one of the Names of Allah, which Allah has placed in the earth, so spread the greeting of salam among yourselves.", "Names of Allah Almighty which Allah has placed in the earth"),
       difficulty: 2,
       questions: [
         { q: "What did he ﷺ say As-Salam is?", a: "A Name of Allah", wrong: ["A name of a month", "A name of a star", "A name of an angel"], why: "As-Salam is one of the Names of Allah Almighty which Allah has placed in the earth." },

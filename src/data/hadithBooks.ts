@@ -33,7 +33,7 @@ const FAITH: DeepUnit = {
       title: "The taste of faith",
       line: "Content with Allah, Islam and the Prophet ﷺ? You taste faith.",
       facts: ["Allah as your Lord", "Islam as your religion", "Muhammad ﷺ as your Prophet"],
-      source: hadith("muslim", "34", "Al-Abbas ibn Abd al-Muttalib", "Sahih", "The Prophet ﷺ said: he has found the taste of faith who is content with Allah as his Lord, with Islam as his religion and with Muhammad as his Prophet.", "who is content with Allah as his Lord, with Islam as his religion"),
+      source: hadith("muslim", "34", "Al-Abbas ibn Abd al-Muttalib", "Sahih", "The Prophet ﷺ said: he has found the taste of faith who is content with Allah as his Lord, with Islam as his religion and with Muhammad as his Prophet.", "as his Lord, with Islam as his religion"),
       difficulty: 2,
       questions: [
         { q: "Who finds the taste of faith?", a: "One content with Allah as Lord", wrong: ["One who is rich", "One who is famous", "One who argues most"], why: "Sahih Muslim 34." },
@@ -977,7 +977,7 @@ const RIQAQ: DeepUnit = {
       title: "Gold like Mount Uhud",
       line: "With gold like Uhud, he ﷺ would keep it only three nights.",
       facts: ["He would spend it for Allah", "Except what pays a debt"],
-      source: hadith("bukhari", "6445", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: if I had gold like Mount Uhud, I would not like any of it to stay with me after three nights, except what I keep to pay a debt.", "it would not please me that anything of it should remain with me after three nights"),
+      source: hadith("bukhari", "6445", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: if I had gold like Mount Uhud, I would not like any of it to stay with me after three nights, except what I keep to pay a debt.", "that anything of it should remain with me after three nights"),
       difficulty: 2,
       questions: [
         { q: "How much gold did he ﷺ imagine having?", a: "As much as Mount Uhud", wrong: ["One coin", "A small bag", "A ring"], why: "If I had gold equal to the mountain of Uhud." },
@@ -1481,7 +1481,7 @@ const MEDICINE: DeepUnit = {
       title: "A cure for every disease",
       line: "Allah sent no disease without also sending its cure.",
       facts: ["Seek treatment", "Healing is from Allah"],
-      source: hadith("bukhari", "5678", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: there is no disease that Allah has created except that He has also created its cure.", "There is no disease that Allah has created, except that He also has created its treatment"),
+      source: hadith("bukhari", "5678", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: there is no disease that Allah has created except that He has also created its cure.", "disease that Allah has created, except that He also has created its treatment"),
       difficulty: 1,
       questions: [
         { q: "What did Allah create along with every disease?", a: "Its cure", wrong: ["A worse disease", "Nothing", "A new name"], why: "He also has created its treatment." },
@@ -1896,7 +1896,7 @@ const PRAYER: DeepUnit = {
       title: "Shorter for a crying baby",
       line: "Hearing a baby cry, he ﷺ made the prayer shorter.",
       facts: ["Mercy for the mother", "Told by Abu Qatadah"],
-      source: hadith("bukhari", "707", "Abu Qatadah", "Sahih", "The Prophet ﷺ said: I start the prayer wanting to make it long, then I hear a child crying and make it short.", "on hearing the cries of a child, I cut it short"),
+      source: hadith("bukhari", "707", "Abu Qatadah", "Sahih", "The Prophet ﷺ said: I start the prayer wanting to make it long, then I hear a child crying and make it short.", "but on hearing the cries of a child, I cut it short"),
       difficulty: 1,
       questions: [
         { q: "What made him ﷺ shorten the prayer?", a: "A child crying", wrong: ["Rain", "Hunger", "A guest"], why: "On hearing the cries of a child, I cut it short." },
@@ -2387,7 +2387,7 @@ const MARRIAGE: DeepUnit = {
       title: "Don't cut in on a proposal",
       line: "Do not propose to a woman your brother has already asked for.",
       facts: ["Wait until he marries or leaves", "Told by Abu Hurairah"],
-      source: hadith("bukhari", "5144", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: no one should propose to a woman his Muslim brother has proposed to, but should wait until the first man marries her or leaves her.", "none should ask for the hand of a girl who is already engaged to his (Muslim) brother"),
+      source: hadith("bukhari", "5144", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: no one should propose to a woman his Muslim brother has proposed to, but should wait until the first man marries her or leaves her.", "hand of a girl who is already engaged to his"),
       difficulty: 2,
       questions: [
         { q: "What must you not do?", a: "Propose over your brother", wrong: ["Ask her family", "Pray istikharah", "Give a mahr"], why: "None should ask for the hand of a girl already engaged to his brother." },
@@ -2607,7 +2607,7 @@ const ADHAN: DeepUnit = {
       title: "Right hand over left",
       line: "In prayer, the right hand is placed on the left forearm.",
       facts: ["The people were ordered to", "Told by Sahl ibn Sa'd"],
-      source: hadith("bukhari", "740", "Sahl ibn Sa'd", "Sahih", "Sahl said: people were told to place the right hand on the left forearm in prayer, an order from the Prophet ﷺ.", "place the right hand on the left forearm in the prayer"),
+      source: hadith("bukhari", "740", "Sahl ibn Sa'd", "Sahih", "Sahl said: people were told to place the right hand on the left forearm in prayer, an order from the Prophet ﷺ.", "right hand on the left forearm in the prayer"),
       difficulty: 1,
       questions: [
         { q: "Which hand goes on top in prayer?", a: "The right", wrong: ["The left", "Neither", "Both down"], why: "Place the right hand on the left forearm." },
@@ -3486,7 +3486,7 @@ const QURAN_VIRTUES: DeepUnit = {
       title: "Revelation near the end",
       line: "Before his ﷺ death, revelation came more often than ever.",
       facts: ["Told by Anas ibn Malik", "Revelation came one part after another", "Allah sent it until He took him ﷺ"],
-      source: hadith("bukhari", "4982", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: Allah sent down revelation to His Messenger ﷺ one part after another, and often, in the time before his death, until He took him. That was the time when revelation came the most, and after that the Messenger of Allah ﷺ died.", "Allah sent down His Divine Inspiration to His Apostle continuously and abundantly during the period preceding his death"),
+      source: hadith("bukhari", "4982", "Anas ibn Malik", "Sahih", "Anas ibn Malik said: Allah sent down revelation to His Messenger ﷺ one part after another, and often, in the time before his death, until He took him. That was the time when revelation came the most, and after that the Messenger of Allah ﷺ died.", "Allah sent down His Divine Inspiration to His … continuously and abundantly during the period preceding his death"),
       difficulty: 2,
       questions: [
         { q: "How did revelation come before his ﷺ death, Anas said?", a: "One part after another", wrong: ["Once every few years", "Only on Fridays", "Only in winter"], why: "Allah sent down revelation continuously and abundantly before his ﷺ death, Anas said." },

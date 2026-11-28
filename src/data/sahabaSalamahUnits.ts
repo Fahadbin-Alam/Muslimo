@@ -72,7 +72,7 @@ const SALAMAH: DeepUnit = {
       title: "The man with a cold",
       line: "When a man sneezed again, he ﷺ said: he has a cold.",
       facts: ["Told by Salamah ibn al-Akwa'", "First he ﷺ said: may Allah have mercy on you", "Sneezing again and again can mean a cold"],
-      source: hadith("abudawud", "5037", "Salamah ibn al-Akwa'", "Sahih (Al-Albani)", "Salamah ibn al-Akwa' said: a man sneezed near the Prophet ﷺ, and he said to him: may Allah have mercy on you. When he sneezed again, he said: the man has a cold.", "Allah have mercy on you, but when he sneezed again"),
+      source: hadith("abudawud", "5037", "Salamah ibn al-Akwa'", "Sahih (Al-Albani)", "Salamah ibn al-Akwa' said: a man sneezed near the Prophet ﷺ, and he said to him: may Allah have mercy on you. When he sneezed again, he said: the man has a cold.", "have mercy on you, but when he sneezed again"),
       difficulty: 1,
       questions: [
         { q: "What did he ﷺ say to the man after his first sneeze?", a: "May Allah have mercy on you", wrong: ["May Allah give you strength", "May Allah reward you", "May Allah make it easy"], why: "He said to him: Allah have mercy on you, Salamah said of the first sneeze." },

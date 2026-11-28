@@ -263,7 +263,7 @@ const FATH_ONE: DeepUnit = {
       line: "Whoever breaks a pledge harms himself; keeping it brings reward.",
       facts: ["The Pledge of Ar-Ridwan", "Under a Samurah tree"],
       quote: q48(10),
-      source: ik(10, "Ibn Kathir says breaking a pledge harms only the one who breaks it, and Allah gives a great reward to the one who keeps it.", "Then whosoever breaks his pledge, breaks it only to his own harm"),
+      source: ik(10, "Ibn Kathir says breaking a pledge harms only the one who breaks it, and Allah gives a great reward to the one who keeps it.", ""),
       difficulty: 2,
       questions: [
         { q: "Whom does breaking a pledge harm, in 48:10?", a: "The one who breaks it", wrong: ["The Messenger ﷺ", "Allah", "Nobody"], why: "Then whosoever breaks his pledge, breaks it only to his own harm." },
@@ -318,7 +318,7 @@ const FATH_TWO: DeepUnit = {
       line: "Some stayed home and said: our wealth and families kept us busy.",
       facts: ["Words not matching hearts", "They asked for forgiveness to show off"],
       quote: q48(11),
-      source: ik(11, "Ibn Kathir says they asked the Messenger ﷺ to pray for their forgiveness only to show off, not out of faith.", "They say with their tongues what is not in their hearts"),
+      source: ik(11, "Ibn Kathir says they asked the Messenger ﷺ to pray for their forgiveness only to show off, not out of faith.", "with their tongues what is not in their hearts"),
       difficulty: 2,
       questions: [
         { q: "What excuse did they give, in 48:11?", a: "Our wealth and families kept us busy", wrong: ["We were sick", "We had no camels", "We were traveling"], why: "Our possessions and our families occupied us, so ask forgiveness for us." },
@@ -388,7 +388,7 @@ const FATH_TWO: DeepUnit = {
       line: "The stay-behinds wanted to join only when spoils were near.",
       facts: ["The march to Khaybar", "Allah had promised it to others"],
       quote: q48(15),
-      source: ik(15, "Ibn Kathir says when the Muslims went to Khaybar, those who stayed behind asked to come, hoping only for spoils.", "They were hoping to collect war booty"),
+      source: ik(15, "Ibn Kathir says when the Muslims went to Khaybar, those who stayed behind asked to come, hoping only for spoils.", ""),
       difficulty: 3,
       questions: [
         { q: "Where were the Muslims going, per Ibn Kathir on 48:15?", a: "Khaybar", wrong: ["Makkah", "Yemen", "Egypt"], why: "When the Prophet ﷺ and his Companions later went on to conquer Khaybar, the bedouins asked them to take them along." },

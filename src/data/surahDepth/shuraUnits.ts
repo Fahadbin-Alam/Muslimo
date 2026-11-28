@@ -53,7 +53,7 @@ const SHURA_ONE: DeepUnit = {
       line: "The second ayah is three more letters: Ain Sin Qaf.",
       facts: ["Five letters across two ayahs", "Recited letter by letter"],
       quote: q42(2),
-      source: ik(2, "Ibn Kathir lists the second ayah of Ash-Shura as the letters Ain Sin Qaf.", "Ain Sin Qaf"),
+      source: ik(2, "Ibn Kathir lists the second ayah of Ash-Shura as the letters Ain Sin Qaf.", ""),
       difficulty: 1,
       questions: [
         { q: "Which letters are in 42:2?", a: "Ain Sin Qaf", wrong: ["Ha Mim", "Ta Sin Mim", "Alif Lam Ra"], why: "The second ayah is: Ain Sin Qaf." },

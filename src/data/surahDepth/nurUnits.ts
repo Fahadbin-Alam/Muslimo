@@ -362,7 +362,7 @@ const NUR_ONE: DeepUnit = {
       line: "Good words suit good people, and bad words suit bad people.",
       facts: ["The liars' words suited the liars", "'A'ishah was suited to innocence"],
       quote: q24(26),
-      source: ik(26, "Ibn Abbas said: evil words are for evil people, and good words are for good people. The lie suited those who made it up, while 'A'ishah was suited to innocence, for the best of mankind ﷺ married only someone good.", "good words are for good men and good men are for good words"),
+      source: ik(26, "Ibn Abbas said: evil words are for evil people, and good words are for good people. The lie suited those who made it up, while 'A'ishah was suited to innocence, for the best of mankind ﷺ married only someone good.", "mean that evil speech is more suited to evil people, and good"),
       difficulty: 4,
       questions: [
         { q: "Which words suit good people, per Ibn Abbas?", a: "Good words", wrong: ["Bad words", "Loud words", "Secret words"], why: "Good words are for good men and good men are for good words." },
@@ -418,7 +418,7 @@ const NUR_ONE: DeepUnit = {
       line: "Believers look away from what is not allowed to look at.",
       facts: ["It is purer for the heart", "A sudden glance: look away quickly"],
       quote: q24(30),
-      source: ik(30, "Allah commands believers to lower their gaze from what is forbidden and to guard their modesty; that is purer for them. If a person's eyes fall on something forbidden by accident, he should quickly look away.", "he should quickly look away"),
+      source: ik(30, "Allah commands believers to lower their gaze from what is forbidden and to guard their modesty; that is purer for them. If a person's eyes fall on something forbidden by accident, he should quickly look away.", ""),
       difficulty: 4,
       questions: [
         { q: "What does Allah tell believers to lower, in 24:30?", a: "Their gaze", wrong: ["Their voices", "Their hands", "Their heads"], why: "Tell the believing men to lower their gaze." },

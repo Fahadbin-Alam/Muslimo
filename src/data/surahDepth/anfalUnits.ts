@@ -152,7 +152,7 @@ const ANFAL_ONE: DeepUnit = {
       line: "They hoped for the caravan; Allah willed the truth to win.",
       facts: ["Abu Sufyan's caravan", "The armed army"],
       quote: q8(7),
-      source: ik(7, "Allah promised them one of two groups: the caravan or the army. They wished for the unarmed one, but Allah willed them to meet the army so He could make His religion clear and Islam prevail.", "He willed for you to meet the armed enemy [rather than the caravan]"),
+      source: ik(7, "Allah promised them one of two groups: the caravan or the army. They wished for the unarmed one, but Allah willed them to meet the army so He could make His religion clear and Islam prevail.", "willed for you to meet the armed enemy rather than the caravan"),
       difficulty: 3,
       questions: [
         { q: "Which group did they wish for, in 8:7?", a: "The unarmed one", wrong: ["The armed one", "Neither", "Both at once"], why: "Wa tawadduna anna ghayra dhatish-shawkati takunu lakum." },
@@ -529,7 +529,7 @@ const ANFAL_TWO: DeepUnit = {
       line: "If they stop, their past is forgiven; Islam wipes it clean.",
       facts: ["Ghufran: forgiveness", "A new start"],
       quote: q8(38),
-      source: hadith("bukhari", "6921", "Abdullah ibn Mas'ud", "Sahih", "A man asked if they would be punished for what they did before Islam. The Prophet ﷺ said: whoever does good in Islam will not be punished for what he did before it.", "Whoever does good in Islam will not be punished for what he did in the Pre-Islamic Period of ignorance"),
+      source: hadith("bukhari", "6921", "Abdullah ibn Mas'ud", "Sahih", "A man asked if they would be punished for what they did before Islam. The Prophet ﷺ said: whoever does good in Islam will not be punished for what he did before it.", "Whoever does good in Islam will not be punished for what he did in the"),
       difficulty: 5,
       questions: [
         { q: "What happens if they stop, in 8:38?", a: "Their past is forgiven", wrong: ["They are fined", "Nothing changes", "They must leave"], why: "In yantahu yughfar lahum ma qad salaf." },
@@ -543,7 +543,7 @@ const ANFAL_TWO: DeepUnit = {
       line: "If they turn away, know that Allah is your Protector and Helper.",
       facts: ["Mawla: protector", "Nasir: helper"],
       quote: q8(40),
-      source: ik(38, "If they turn away, the believers should know that Allah is their Protector: what an excellent Protector and what an excellent Helper.", "an excellent protector and (what) an excellent helper"),
+      source: ik(38, "If they turn away, the believers should know that Allah is their Protector: what an excellent Protector and what an excellent Helper.", "they turn away, then know that Allah is your protector, an excellent"),
       difficulty: 5,
       questions: [
         { q: "Who is the believers' Protector, in 8:40?", a: "Allah", wrong: ["Their army", "Their tribe", "Their wealth"], why: "Annallaha mawlakum." },

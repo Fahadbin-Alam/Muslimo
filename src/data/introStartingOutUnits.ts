@@ -34,7 +34,7 @@ const STARTING_OUT: DeepUnit = {
       title: "A bath to begin",
       line: "When Qais ibn Asim accepted Islam, he ﷺ told him to bathe.",
       facts: ["Told by Qais ibn Asim", "Ghusl: washing the whole body", "Sidr: leaves of the lote tree"],
-      source: hadith("tirmidhi", "605", "Qais ibn Asim", "Sahih (Darussalam)", "Qais ibn Asim said that he accepted Islam, and the Prophet ﷺ told him to take a bath (ghusl) with water and sidr, the leaves of the lote tree.", "he accepted Islam and the Prophet ordered him to perform Ghusl with water and Sidr"),
+      source: hadith("tirmidhi", "605", "Qais ibn Asim", "Sahih (Darussalam)", "Qais ibn Asim said that he accepted Islam, and the Prophet ﷺ told him to take a bath (ghusl) with water and sidr, the leaves of the lote tree.", "he accepted Islam and the Prophet … ordered him to perform Ghusl with water and Sidr"),
       difficulty: 1,
       questions: [
         { q: "What did he ﷺ tell Qais to do when he accepted Islam?", a: "Take a bath", wrong: ["Fast for three days", "Travel to Makkah first", "Pray all night long"], why: "He accepted Islam and the Prophet ﷺ ordered him to perform ghusl with water and sidr." },

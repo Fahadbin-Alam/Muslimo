@@ -109,7 +109,7 @@ const HUD_ONE: DeepUnit = {
       line: "Even under their clothes, Allah knows what people hide.",
       facts: ["He knows the hidden and open", "He knows what hearts hold"],
       quote: q11(5),
-      source: ik(5, "Some people would cover themselves out of shyness, as if hiding from Allah. Yet He knows what they conceal and what they reveal.", "He knows what they conceal and what they reveal"),
+      source: ik(5, "Some people would cover themselves out of shyness, as if hiding from Allah. Yet He knows what they conceal and what they reveal.", ""),
       difficulty: 3,
       questions: [
         { q: "What does Allah know, in 11:5?", a: "What they hide and show", wrong: ["Only what they say", "Only what they show", "Only the past"], why: "He knows what they conceal and what they reveal." },
@@ -179,7 +179,7 @@ const HUD_ONE: DeepUnit = {
       line: "When punishment is delayed, deniers mock and ask why it waits.",
       facts: ["Delayed to a set term", "None can turn it away"],
       quote: q11(8),
-      source: ik(8, "When Allah delays the punishment to a set term, the deniers mock and ask what keeps it back. On the day it comes, nothing will turn it away from them.", "nothing will turn it away from them"),
+      source: ik(8, "When Allah delays the punishment to a set term, the deniers mock and ask what keeps it back. On the day it comes, nothing will turn it away from them.", ""),
       difficulty: 3,
       questions: [
         { q: "What did deniers say when punishment was delayed, in 11:8?", a: "What keeps it back?", wrong: ["We repent now", "Thank you Allah", "We are afraid"], why: "They are sure to say, What keeps it back?" },
@@ -193,7 +193,7 @@ const HUD_ONE: DeepUnit = {
       line: "When blessings go, man despairs; when they return, he boasts.",
       facts: ["Hardship brings despair", "Ease brings showing off"],
       quote: q11(9),
-      source: ik(9, "When hardship follows blessings, man despairs as if he never saw good. When ease follows hardship, he says the bad is gone for good, and he boasts.", "he is disheartened and he despairs of any good in the future"),
+      source: ik(9, "When hardship follows blessings, man despairs as if he never saw good. When ease follows hardship, he says the bad is gone for good, and he boasts.", ""),
       difficulty: 4,
       questions: [
         { q: "What does man do when mercy is taken away, in 11:9?", a: "He despairs", wrong: ["He gives thanks", "He prays more", "He helps others"], why: "Verily, he is despairing, ungrateful." },
@@ -430,7 +430,7 @@ const HUD_TWO: DeepUnit = {
       line: "Nuh asked no money, and would not drive the believers away.",
       facts: ["His reward is from Allah", "The poor believers stay"],
       quote: q11(29),
-      source: ik(29, "Nuh asked no payment for his advice; he sought reward only from Allah. The chiefs wanted him to send the poor believers away, and he refused.", "I am only seeking the reward from Allah"),
+      source: ik(29, "Nuh asked no payment for his advice; he sought reward only from Allah. The chiefs wanted him to send the poor believers away, and he refused.", ""),
       difficulty: 3,
       questions: [
         { q: "What did Nuh ask for in return, in 11:29?", a: "No wealth at all", wrong: ["A share of crops", "Gold and silver", "A house"], why: "O my people! I ask of you no wealth for it, my reward is from none but Allah." },
@@ -444,7 +444,7 @@ const HUD_TWO: DeepUnit = {
       line: "Nuh claimed no treasures, no Unseen, and no angel nature.",
       facts: ["A human Messenger", "Allah knows what is in hearts"],
       quote: q11(31),
-      source: ik(31, "Nuh had no power over Allah's treasures and no knowledge of the Unseen except what Allah let him know. He was not an angel but a human Messenger aided with miracles.", "he is merely a human Messenger aided with miracles"),
+      source: ik(31, "Nuh had no power over Allah's treasures and no knowledge of the Unseen except what Allah let him know. He was not an angel but a human Messenger aided with miracles.", ""),
       difficulty: 3,
       questions: [
         { q: "Which claim did Nuh deny making, in 11:31?", a: "That he was an angel", wrong: ["That Allah is One", "That he was a warner", "That he feared for them"], why: "Nor do I say I am an angel." },
@@ -542,7 +542,7 @@ const HUD_TWO: DeepUnit = {
       line: "Nuh said: in Allah's Name is its sailing and its anchoring.",
       facts: ["Say Bismillah before things", "Even when you ride"],
       quote: q11(41),
-      source: ik(41, "The ship's sailing and anchoring were by the Name of Allah. So it is preferred to say Bismillah at the start of every matter, including boarding a ship or a mount.", "it is preferred to mention the Name of Allah (Bismillah) at the beginning of all affairs"),
+      source: ik(41, "The ship's sailing and anchoring were by the Name of Allah. So it is preferred to say Bismillah at the start of every matter, including boarding a ship or a mount.", ""),
       difficulty: 4,
       questions: [
         { q: "What did Nuh say on boarding, in 11:41?", a: "In the Name of Allah", wrong: ["Good luck to us", "Hurry, hurry", "We are strong"], why: "Embark therein: in the Name of Allah will be its course and its anchorage." },
@@ -570,7 +570,7 @@ const HUD_TWO: DeepUnit = {
       line: "Nuh called his son aboard; he ran to a mountain and drowned.",
       facts: ["Waves like mountains", "None saved but by mercy"],
       quote: q11(43),
-      source: ik(43, "The son thought the flood would not reach the mountain tops. Nuh told him nothing is saved that day from Allah's command except whom He shows mercy.", "nothing will be saved today from the command of Allah"),
+      source: ik(43, "The son thought the flood would not reach the mountain tops. Nuh told him nothing is saved that day from Allah's command except whom He shows mercy.", ""),
       difficulty: 4,
       questions: [
         { q: "What were the waves like, in 11:42?", a: "Like mountains", wrong: ["Like small ripples", "Like a calm lake", "Like sand"], why: "So it sailed with them amidst waves like mountains." },
@@ -612,7 +612,7 @@ const HUD_TWO: DeepUnit = {
       line: "Nuh sought refuge from asking without knowledge.",
       facts: ["He turned back at once", "He asked forgiveness"],
       quote: q11(47),
-      source: ik(47, "Nuh said: O my Lord, I seek refuge with You from asking what I have no knowledge of. Unless You forgive me and have mercy on me, I will be among the losers.", "I seek refuge with You from asking You that of which I have no knowledge"),
+      source: ik(47, "Nuh said: O my Lord, I seek refuge with You from asking what I have no knowledge of. Unless You forgive me and have mercy on me, I will be among the losers.", ""),
       difficulty: 5,
       questions: [
         { q: "What did Nuh seek refuge from, in 11:47?", a: "Asking without knowledge", wrong: ["The cold wind", "His people", "The deep sea"], why: "O my Lord! I seek refuge with You from asking You that of which I have no knowledge." },
@@ -807,7 +807,7 @@ const HUD_THREE: DeepUnit = {
       line: "They killed the she-camel, their sign, and had three days left.",
       facts: ["Leave her to graze", "Three days to enjoy"],
       quote: q11(64),
-      source: ik(64, "The she-camel of Allah was a sign for Thamud, and they were told to leave her to graze. They killed her, and Salih told them they had three days left.", "This she-camel of Allah is a sign to you"),
+      source: ik(64, "The she-camel of Allah was a sign for Thamud, and they were told to leave her to graze. They killed her, and Salih told them they had three days left.", ""),
       difficulty: 4,
       questions: [
         { q: "What was Thamud told to do with the she-camel, in 11:64?", a: "Leave her to graze", wrong: ["Ride her to war", "Sell her", "Lock her away"], why: "So leave her to graze in Allah's land, and touch her not with evil." },
@@ -821,7 +821,7 @@ const HUD_THREE: DeepUnit = {
       line: "A mighty cry seized the wrongdoers; the believers were saved.",
       facts: ["Saved from that Day's disgrace", "As if they never lived there"],
       quote: q11(67),
-      source: ik(66, "When the command came, Allah saved Salih and those who believed with him by His mercy, and the awful cry overtook the wrongdoers in their homes.", "We saved Salih and those who believed with him by a mercy from Us"),
+      source: ik(66, "When the command came, Allah saved Salih and those who believed with him by His mercy, and the awful cry overtook the wrongdoers in their homes.", ""),
       difficulty: 4,
       questions: [
         { q: "What seized the wrongdoers of Thamud, in 11:67?", a: "An awful cry", wrong: ["A flood", "A wind", "A fire"], why: "And As-Sayhah (awful cry) overtook the wrongdoers." },

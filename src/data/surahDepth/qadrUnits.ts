@@ -207,7 +207,7 @@ const QADR_TWO: DeepUnit = {
       line: "Search for Laylat al-Qadr in the odd nights of the last ten.",
       facts: ["The last ten nights", "21, 23, 25, 27, 29"],
       quote: q97(5),
-      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Messenger of Allah ﷺ said to search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "Search for the Night of Qadr in the odd nights of the last ten days of Ramadan"),
+      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Messenger of Allah ﷺ said to search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "odd nights of the last ten days of Ramadan"),
       difficulty: 2,
       questions: [
         { q: "In which part of Ramadan should we search?", a: "The last ten nights", wrong: ["The first ten nights", "The middle ten nights", "Only the first night"], why: "In the odd nights of the last ten days of Ramadan." },

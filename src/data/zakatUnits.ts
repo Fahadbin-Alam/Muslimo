@@ -461,7 +461,7 @@ const SPEND: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What do these believers want back?", a: "Nothing: it is for Allah", wrong: ["Thanks", "Payment", "Praise"], why: "Quran 76:9." },
-        { q: "Whom do they feed in 76:8?", a: "The needy, orphan and captive", wrong: ["Only friends", "Only the rich", "Only family"], why: "All three are named." },
+        { q: "Whom do they feed in 76:8?", a: "The needy, orphan and captive", wrong: ["Only friends", "Only the rich", "Only family"], why: "All three are named.", source: quran(76, 8, "And they give food in spite of love for it to the needy, the orphan, and the captive.") },
         { q: "Giving to be thanked is the goal.", tf: false, why: "We want no reward or thanks." }
       ]
     }

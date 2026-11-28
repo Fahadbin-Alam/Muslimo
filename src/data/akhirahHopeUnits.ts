@@ -33,7 +33,7 @@ const HOPE: DeepUnit = {
       title: "Harithah in Firdaws",
       line: "Harithah died a martyr at Badr; he is in the highest Firdaws.",
       facts: ["Told by Anas ibn Malik", "An arrow from an unknown thrower struck him", "Paradise has many gardens"],
-      source: hadith("bukhari", "2809", "Anas ibn Malik", "Sahih", "Anas said: the mother of Harithah ibn Suraqah came to the Prophet ﷺ. Harithah had been killed at Badr by an arrow from a thrower no one knew. She said: O Prophet of Allah, will you tell me about Harithah? If he is in Paradise, I will be patient; if not, I will weep hard for him. He ﷺ said: O mother of Harithah, there are many gardens in Paradise, and your son has reached Al-Firdaws al-A'la, the highest place in Paradise.", "There are Gardens in Paradise and your son got the Firdaus al-ala"),
+      source: hadith("bukhari", "2809", "Anas ibn Malik", "Sahih", "Anas said: the mother of Harithah ibn Suraqah came to the Prophet ﷺ. Harithah had been killed at Badr by an arrow from a thrower no one knew. She said: O Prophet of Allah, will you tell me about Harithah? If he is in Paradise, I will be patient; if not, I will weep hard for him. He ﷺ said: O mother of Harithah, there are many gardens in Paradise, and your son has reached Al-Firdaws al-A'la, the highest place in Paradise.", "There are Gardens in Paradise and your son got the"),
       difficulty: 1,
       questions: [
         { q: "At which battle was Harithah martyred?", a: "Badr", wrong: ["Uhud", "Khaybar", "Hunayn"], why: "Harithah was martyred on the day of Badr by an arrow from an unknown thrower." },

@@ -556,7 +556,7 @@ const ZUMAR_TWO: DeepUnit = {
       line: "No one can rescue one whom Allah has left astray.",
       facts: ["Guidance is from Allah", "Ask Him for it always"],
       quote: q39(19),
-      source: ik(19, "Ibn Kathir says no one can guide except Allah; whomever He leaves astray cannot be guided, and whomever He guides cannot be led astray.", "whomever He guides cannot be led astray"),
+      source: ik(19, "Ibn Kathir says no one can guide except Allah; whomever He leaves astray cannot be guided, and whomever He guides cannot be led astray.", ""),
       difficulty: 3,
       questions: [
         { q: "Who can guide, per Ibn Kathir?", a: "Only Allah", wrong: ["Any teacher", "Any king", "Wealth"], why: "No one can guide him apart from Allah." },
@@ -584,7 +584,7 @@ const ZUMAR_TWO: DeepUnit = {
       line: "High rooms in Paradise look like a far, bright star.",
       facts: ["Ranks differ by deeds", "Open to all true believers"],
       quote: q39(20),
-      source: hadith("bukhari", "3256", "Abu Said Al-Khudri", "Sahih", "The Prophet ﷺ said the people of Paradise see the lofty mansions like a bright star on the horizon, and they are for men who believed in Allah and the Messengers.", "these are for the men who believed in Allah and also believed in the Apostles"),
+      source: hadith("bukhari", "3256", "Abu Said Al-Khudri", "Sahih", "The Prophet ﷺ said the people of Paradise see the lofty mansions like a bright star on the horizon, and they are for men who believed in Allah and the Messengers.", "these are for the men who believed in Allah and also believed in the"),
       difficulty: 3,
       questions: [
         { q: "How are the lofty mansions seen, in the hadith?", a: "Like a bright star on the horizon", wrong: ["Like a small hut", "Like a cloud", "Like a mountain"], why: "In the same way as one looks at a brilliant star far away in the East or in the West on the horizon." },
@@ -849,7 +849,7 @@ const ZUMAR_THREE: DeepUnit = {
       line: "The bringer of truth and those who believed are God-fearing.",
       facts: ["The Messenger ﷺ brought it", "The Muslims believed it"],
       quote: q39(33),
-      source: ik(33, "Abdur-Rahman ibn Zayd said the one who brought the truth is the Messenger ﷺ, and those who believed are the Muslims.", "The one who brought the truth was the Messenger ﷺ"),
+      source: ik(33, "Abdur-Rahman ibn Zayd said the one who brought the truth is the Messenger ﷺ, and those who believed are the Muslims.", "one who brought the truth was the Messenger"),
       difficulty: 2,
       questions: [
         { q: "Who brought the truth, per Mujahid and Qatadah?", a: "The Messenger ﷺ", wrong: ["A poet", "A king", "A trader"], why: "The one who brought the truth was the Messenger ﷺ." },
@@ -1632,7 +1632,7 @@ const ZUMAR_FOUR: DeepUnit = {
       line: "Angels surround the Throne, praising their Lord.",
       facts: ["Judgement with full justice", "All creation praises Allah"],
       quote: q39(75),
-      source: ik(75, "Ibn Kathir says the angels surround the Throne glorifying their Lord, for He has judged in the fairest and most just manner.", "for He has passed judgement in the fairest and most just manner"),
+      source: ik(75, "Ibn Kathir says the angels surround the Throne glorifying their Lord, for He has judged in the fairest and most just manner.", ""),
       difficulty: 2,
       questions: [
         { q: "Where are the angels, in 39:75?", a: "Surrounding the Throne", wrong: ["In the sea", "In the market", "On mountains"], why: "And you will see the angels surrounding the Throne from all round, glorifying the praises of their Lord." },

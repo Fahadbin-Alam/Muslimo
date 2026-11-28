@@ -109,7 +109,7 @@ const KAHF_ONE: DeepUnit = {
       line: "The earth's beauty is a test of who does the best deeds.",
       facts: ["Beauty does not last", "A trial, not a home"],
       quote: q18(7),
-      source: ik(7, "Allah made this world a short stay, adorned with passing beauty, as a place of trial, not a place to settle. Its beauty will one day turn to bare, dry ground.", "He made it a place of trial"),
+      source: ik(7, "Allah made this world a short stay, adorned with passing beauty, as a place of trial, not a place to settle. Its beauty will one day turn to bare, dry ground.", "adorned with transient beauty, andHe made it a place of trial, not"),
       difficulty: 3,
       questions: [
         { q: "Why did Allah adorn the earth, in 18:7?", a: "To test who is best in deeds", wrong: ["To make us lazy", "For no reason", "To make us rich"], why: "We have made that which is on earth an adornment for it, in order that We may test which of them are best in deeds." },
@@ -1126,7 +1126,7 @@ const KAHF_FOUR: DeepUnit = {
       line: "Those who mocked Allah's signs and Messengers earn Hell.",
       facts: ["Respect Allah's signs", "Never mock the Messengers"],
       quote: q18(106),
-      source: ik(106, "Their recompense is Hell because they disbelieved and treated Allah's signs and Messengers as a joke.", "they took the signs and Messengers of Allah as a joke"),
+      source: ik(106, "Their recompense is Hell because they disbelieved and treated Allah's signs and Messengers as a joke.", "because of their disbelief and because they took the signs and Messengers"),
       difficulty: 4,
       questions: [
         { q: "What did they take as a jest, in 18:106?", a: "Allah's Ayat and Messengers", wrong: ["Their games", "Their food", "Their poems"], why: "Because they disbelieved and took My Ayat and My Messengers for jest." },

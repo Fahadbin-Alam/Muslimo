@@ -33,7 +33,7 @@ const LEARNING: DeepUnit = {
       title: "She taught her to write",
       line: "Ash-Shifa had taught Hafsah how to write.",
       facts: ["Told by Ash-Shifa bint Abdullah", "She was with Hafsah when he ﷺ came in", "He ﷺ asked her to teach a healing du'a too"],
-      source: hadith("abudawud", "3887", "Ash-Shifa bint Abdullah", "Sahih (Al-Albani)", "Ash-Shifa bint Abdullah said: the Messenger of Allah ﷺ came in while I was with Hafsah, and he said to me: why do you not teach her the healing words for skin sores, as you taught her writing?", "invocation for skin eruptions as you taught her writing"),
+      source: hadith("abudawud", "3887", "Ash-Shifa bint Abdullah", "Sahih (Al-Albani)", "Ash-Shifa bint Abdullah said: the Messenger of Allah ﷺ came in while I was with Hafsah, and he said to me: why do you not teach her the healing words for skin sores, as you taught her writing?", "for skin eruptions as you taught her writing"),
       difficulty: 1,
       questions: [
         { q: "What had Ash-Shifa already taught Hafsah?", a: "Writing", wrong: ["Sewing", "Cooking", "Swimming"], why: "Why do you not teach this one the invocation as you taught her writing, he ﷺ asked." },

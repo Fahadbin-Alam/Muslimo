@@ -109,7 +109,7 @@ const SAFF_ONE: DeepUnit = {
       line: "The Prophet ﷺ named breaking promises as a hypocrite's sign.",
       facts: ["Lying when speaking", "Betraying a trust"],
       quote: q61(2),
-      source: hadith("bukhari", "33", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said the signs of a hypocrite are three: he lies when he speaks, breaks his promise, and betrays a trust.", "The signs of a hypocrite are three…Whenever he promises, he always breaks it"),
+      source: hadith("bukhari", "33", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said the signs of a hypocrite are three: he lies when he speaks, breaks his promise, and betrays a trust.", "hypocrite are three … Whenever he promises, he always breaks it"),
       difficulty: 3,
       questions: [
         { q: "How many signs of a hypocrite are in the hadith?", a: "Three", wrong: ["One", "Seven", "Ten"], why: "The signs of a hypocrite are three." },
@@ -318,7 +318,7 @@ const SAFF_TWO: DeepUnit = {
       line: "Believers are forbidden from hurting the Prophet ﷺ in any way.",
       facts: ["33:69 says the same", "Respect him in word and deed"],
       quote: q61(5),
-      source: ik(5, "Ibn Kathir says believers are forbidden from harming or bothering the Prophet ﷺ in any way, as 33:69 says.", "believers are prohibited from harming or bothering the Prophet ﷺ in any way or form"),
+      source: ik(5, "Ibn Kathir says believers are forbidden from harming or bothering the Prophet ﷺ in any way, as 33:69 says.", "it believers are prohibited from harming or bothering the Prophet in any"),
       difficulty: 3,
       questions: [
         { q: "What are believers forbidden from, per Ibn Kathir?", a: "Hurting the Prophet ﷺ", wrong: ["Trading", "Traveling", "Building"], why: "Believers are prohibited from harming or bothering the Prophet ﷺ in any way or form." },
@@ -569,7 +569,7 @@ const SAFF_THREE: DeepUnit = {
       line: "Allah offers believers a trade that saves from punishment.",
       facts: ["Allah Himself offers it", "An answer to their question"],
       quote: q61(10),
-      source: ik(10, "Ibn Kathir says the Companions wanted to know the best deeds, and Allah sent down this surah, including 61:10.", "Shall I guide you to a trade that will save you from a painful torment"),
+      source: ik(10, "Ibn Kathir says the Companions wanted to know the best deeds, and Allah sent down this surah, including 61:10.", "Trade that saves One from the Painful Torment We mentioned a Hadith"),
       difficulty: 2,
       questions: [
         { q: "What does Allah offer the believers, in 61:10?", a: "A trade that saves them", wrong: ["A new home", "A long trip", "A big feast"], why: "Shall I guide you to a trade that will save you from a painful torment?" },
@@ -625,7 +625,7 @@ const SAFF_THREE: DeepUnit = {
       line: "Asked the best deed, the Prophet ﷺ said: faith in Allah.",
       facts: ["Faith first, then jihad", "Then an accepted Hajj"],
       quote: q61(11),
-      source: hadith("bukhari", "26", "Abu Hurayrah", "Sahih", "The Prophet ﷺ was asked the best deed and said: to believe in Allah and His Messenger, then striving in Allah's cause, then an accepted Hajj.", "To believe in Allah and His Apostle"),
+      source: hadith("bukhari", "26", "Abu Hurayrah", "Sahih", "The Prophet ﷺ was asked the best deed and said: to believe in Allah and His Messenger, then striving in Allah's cause, then an accepted Hajj.", "What is the best deed … To believe in Allah and His"),
       difficulty: 4,
       questions: [
         { q: "What is the best deed, in the hadith?", a: "Believing in Allah and His Messenger", wrong: ["Building a house", "Traveling far", "Eating less"], why: "To believe in Allah and His Apostle." },

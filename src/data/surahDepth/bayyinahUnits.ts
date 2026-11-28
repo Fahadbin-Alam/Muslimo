@@ -263,7 +263,7 @@ const BAYYINAH_TWO: DeepUnit = {
       line: "Allah is pleased with them, and they are pleased with Him.",
       facts: ["Radiya Allahu anhum", "The greatest gift"],
       quote: q98(8),
-      source: ik(8, "Allah being pleased with them is greater than all the lasting delights they are given; they are pleased with Him for His many favors.", "The condition of Him being pleased with them is more illustrious than all of the everlasting delights"),
+      source: ik(8, "Allah being pleased with them is greater than all the lasting delights they are given; they are pleased with Him for His many favors.", "The condition of Him being pleased with them is more illustri- ous"),
       difficulty: 2,
       questions: [
         { q: "What is greater than all the delights, per Ibn Kathir?", a: "Allah being pleased with them", wrong: ["Their palaces", "Their gold", "Their rivers"], why: "Him being pleased with them is more illustrious than all of the everlasting delights." },

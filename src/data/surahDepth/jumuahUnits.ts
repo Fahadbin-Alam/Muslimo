@@ -53,7 +53,7 @@ const JUMUAH_ONE: DeepUnit = {
       line: "Living things and even objects glorify Allah's praise.",
       facts: ["17:44 says the same", "Even stones and trees"],
       quote: q62(1),
-      source: ik(1, "Ibn Kathir says everything in the heavens and earth glorifies Allah, all living creatures and even lifeless things.", "including all types of living creatures and inanimate objects"),
+      source: ik(1, "Ibn Kathir says everything in the heavens and earth glorifies Allah, all living creatures and even lifeless things.", ""),
       difficulty: 2,
       questions: [
         { q: "What glorifies Allah, per Ibn Kathir?", a: "Living and lifeless things", wrong: ["Only people", "Only angels", "Only birds"], why: "Everything in the heavens and the earth glorifies His praises, including all types of living creatures and inanimate objects." },
@@ -123,7 +123,7 @@ const JUMUAH_ONE: DeepUnit = {
       line: "The Prophet ﷺ recites Allah's ayahs, purifies, and teaches.",
       facts: ["The Book: the Quran", "Al-Hikmah: wisdom, the Sunnah"],
       quote: q62(2),
-      source: ik(2, "Ibn Kathir quotes 62:2: the Messenger ﷺ recites His Ayat to them, purifies them and teaches them the Book and the Hikmah.", "reciting to them His Ayat, purifying them, and teaching them the Book and the Hikmah"),
+      source: ik(2, "Ibn Kathir quotes 62:2: the Messenger ﷺ recites His Ayat to them, purifies them and teaches them the Book and the Hikmah.", "His Ayat, purifying them, and teaching them the Book and the Hikmah"),
       difficulty: 3,
       questions: [
         { q: "What three things does the Messenger ﷺ do, in 62:2?", a: "Recite, purify and teach", wrong: ["Build, trade and rule", "Sing, write and travel", "Count, sell and buy"], why: "Reciting to them His Ayat, purifying them, and teaching them the Book and the Hikmah." },
@@ -207,7 +207,7 @@ const JUMUAH_ONE: DeepUnit = {
       line: "The Prophet ﷺ wrote to the kings of Persia and Rome.",
       facts: ["His message is for all", "Mujahid: all non-Arab believers"],
       quote: q62(3),
-      source: ik(3, "Ibn Kathir says this is why the Prophet ﷺ sent letters to the kings of Persia and Rome, calling them to Allah.", "the Prophet ﷺ sent messages to the kings of Persia and Rome"),
+      source: ik(3, "Ibn Kathir says this is why the Prophet ﷺ sent letters to the kings of Persia and Rome, calling them to Allah.", "why the Prophet sent messages to the kings of Persia and Rome"),
       difficulty: 4,
       questions: [
         { q: "To which kings did the Prophet ﷺ write?", a: "Persia and Rome", wrong: ["India and China", "Yemen and Oman", "Egypt only"], why: "The Prophet ﷺ sent messages to the kings of Persia and Rome, among other kings." },
@@ -374,7 +374,7 @@ const JUMUAH_TWO: DeepUnit = {
       line: "After death, all return to Allah, who knows the seen and unseen.",
       facts: ["He will tell us our deeds", "Prepare before the meeting"],
       quote: q62(8),
-      source: ik(8, "Ibn Kathir quotes 62:8: then you will be sent back to the Knower of the unseen and the seen, and He will inform you of what you did.", "then you will be sent back to the Knower of the unseen and the seen"),
+      source: ik(8, "Ibn Kathir quotes 62:8: then you will be sent back to the Knower of the unseen and the seen, and He will inform you of what you did.", "be sent back to the Knower of the unseen and the seen"),
       difficulty: 4,
       questions: [
         { q: "To whom will everyone return, in 62:8?", a: "The Knower of unseen and seen", wrong: ["The kings", "The scholars", "Their families"], why: "Then you will be sent back to the Knower of the unseen and the seen." },

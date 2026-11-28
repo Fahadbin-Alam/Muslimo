@@ -764,7 +764,7 @@ const HIJR_FOUR: DeepUnit = {
       line: "Allah gave the Prophet ﷺ the seven oft-repeated and the Quran.",
       facts: ["Al-Fatihah, recited every prayer", "The greatest surah"],
       quote: q15(87),
-      source: hadith("bukhari", "4704", "Abu Hurairah", "Sahih", "The Prophet ﷺ said the Mother of the Quran, Al-Fatihah, is the seven oft-repeated ayahs and the Great Quran.", "is the seven oft-repeated verses (Al-Mathani) and is the Great … Surat-al-Fatiha"),
+      source: hadith("bukhari", "4704", "Abu Hurairah", "Sahih", "The Prophet ﷺ said the Mother of the Quran, Al-Fatihah, is the seven oft-repeated ayahs and the Great Quran.", "is the seven oft-repeated verses … and is the Great"),
       difficulty: 3,
       questions: [
         { q: "What was the Prophet ﷺ given, in 15:87?", a: "Seven of the Mathani", wrong: ["Seven treasures", "Seven cities", "Seven armies"], why: "And indeed, We have bestowed upon you seven of the Mathani, and the Grand Qur'an." },
@@ -834,7 +834,7 @@ const HIJR_FOUR: DeepUnit = {
       line: "Allah will question everyone about all they used to do.",
       facts: ["What did you worship?", "How did you answer the Messengers?"],
       quote: q15(92),
-      source: ik(92, "Allah swears He will question all of them about their deeds. Abu Al-Aliyah said everyone will be asked two things: what they worshipped, and how they answered the Messengers.", "what they used to worship, and what their response was to the Messengers"),
+      source: ik(92, "Allah swears He will question all of them about their deeds. Abu Al-Aliyah said everyone will be asked two things: what they worshipped, and how they answered the Messengers.", "what they used to worship, and what their response"),
       difficulty: 4,
       questions: [
         { q: "Whom will Allah call to account, in 15:92?", a: "All of them", wrong: ["Only kings", "Only a few", "No one"], why: "So, by your Lord, We shall certainly call all of them to account." },
@@ -904,7 +904,7 @@ const HIJR_FOUR: DeepUnit = {
       line: "Pray standing, else sitting, else lying on your side.",
       facts: ["Prayer never drops", "Islam makes it easy"],
       quote: q15(99),
-      source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "Imran was ill and asked the Prophet ﷺ about praying. He said: pray standing; if you cannot, sitting; and if not, lying on your side.", "Pray while standing and if you can … pray while sitting"),
+      source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "Imran was ill and asked the Prophet ﷺ about praying. He said: pray standing; if you cannot, sitting; and if not, lying on your side.", "Pray while standing and if you … pray while sitting"),
       difficulty: 2,
       questions: [
         { q: "How should one pray first, in the hadith?", a: "Standing", wrong: ["Lying down", "Walking", "Running"], why: "Pray while standing." },

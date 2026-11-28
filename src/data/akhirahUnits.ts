@@ -764,7 +764,7 @@ const GATHERING: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "How long is that Day, in Quran 70:4?", a: "Fifty thousand years", wrong: ["One day", "Forty minutes", "A hundred years"], why: "Quran 70:4." },
-        { q: "How close does the sun come, in Muslim 2864?", a: "About a mile", wrong: ["Further away", "It disappears", "Same as today"], why: "People are in sweat by their deeds." },
+        { q: "How close does the sun come, in Muslim 2864?", a: "About a mile", wrong: ["Further away", "It disappears", "Same as today"], why: "People are in sweat by their deeds.", source: hadith("muslim", "2864", "Miqdad ibn al-Aswad", "Sahih", "On the Day of Resurrection the sun will come so close to the people that only about a mile is left, and people will be in sweat according to their deeds.", "be left only a distance of one mile") },
         { q: "What makes the sweat less or more?", a: "Each person's deeds", wrong: ["Their height", "Their clothes", "Luck"], why: "Muslim 2864." }
       ]
     },
@@ -910,7 +910,7 @@ const RECKONING: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Who speaks when mouths are sealed?", a: "Hands", wrong: ["Friends", "Teachers", "Phones"], why: "Quran 36:65." },
-        { q: "What else testifies, in 41:20?", a: "Hearing, eyes and skin", wrong: ["Clothes", "Houses", "Shoes"], why: "Every part tells the truth." },
+        { q: "What else testifies, in 41:20?", a: "Hearing, eyes and skin", wrong: ["Clothes", "Houses", "Shoes"], why: "Every part tells the truth.", source: quran(41, 20, "Their hearing and their eyes and their skins will testify against them of what they used to do.") },
         { q: "What should you do with your hands and eyes today?", a: "Use them for good", wrong: ["Anything, it's private", "Hide what they do", "Nothing"], why: "They will speak on that Day." }
       ]
     },
@@ -939,7 +939,7 @@ const RECKONING: DeepUnit = {
       questions: [
         { q: "What does Allah set up to weigh deeds?", a: "The scales of justice", wrong: ["A ruler", "A clock", "A mirror"], why: "Quran 21:47." },
         { q: "How small a deed is weighed?", a: "Even a mustard seed", wrong: ["Only big ones", "Only a kilo", "None"], why: "Nothing is missed." },
-        { q: "Who wins, in Quran 7:8?", a: "Those whose scales are heavy", wrong: ["Those whose scales are light", "Those with the most money", "Everyone"], why: "Heavy with good deeds." }
+        { q: "Who wins, in Quran 7:8?", a: "Those whose scales are heavy", wrong: ["Those whose scales are light", "Those with the most money", "Everyone"], why: "Heavy with good deeds.", source: quran(7, 8, "And the weighing of deeds that Day will be the truth. So those whose scales are heavy, it is they who will be the successful.") }
       ]
     },
     {

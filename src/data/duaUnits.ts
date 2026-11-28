@@ -39,7 +39,7 @@ const MORNING_EVENING: DeepUnit = {
       difficulty: 1,
       questions: [
         { q: "How much does Allah ask the believers to remember Him?", a: "Much, often", wrong: ["Once a year", "Only in Ramadan", "Never out loud"], why: "Remember Allah with much remembrance (33:41)." },
-        { q: "When does 33:42 say to glorify Allah?", a: "Morning and evening", wrong: ["Only at noon", "Only on Fridays", "Only on Eid"], why: "And glorify Him morning and evening." },
+        { q: "When does 33:42 say to glorify Allah?", a: "Morning and evening", wrong: ["Only at noon", "Only on Fridays", "Only on Eid"], why: "And glorify Him morning and evening.", source: quran(33, 42, "And exalt Him morning and afternoon.") },
         { q: "Adhkar means words of remembering Allah.", tf: true, why: "Dhikr is remembering Allah; adhkar is its plural." }
       ]
     },

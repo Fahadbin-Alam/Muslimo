@@ -53,7 +53,7 @@ const DUKHAN_ONE: DeepUnit = {
       line: "Allah swears by the manifest Book that makes things clear.",
       facts: ["The Quran explains clearly", "Allah swears by His Book"],
       quote: q44(2),
-      source: ik(2, "Ibn Kathir lists the ayah: by the manifest Book that makes things clear.", "By the manifest Book that makes things clear"),
+      source: ik(2, "Ibn Kathir lists the ayah: by the manifest Book that makes things clear.", ""),
       difficulty: 1,
       questions: [
         { q: "By what does Allah swear, in 44:2?", a: "The manifest Book", wrong: ["The fig", "The sun", "The night"], why: "By the manifest Book that makes things clear." },
@@ -109,7 +109,7 @@ const DUKHAN_ONE: DeepUnit = {
       line: "Search for Laylatul-Qadr in the odd nights of the last ten.",
       facts: ["The last ten nights of Ramadan", "The odd nights: 21, 23, 25, 27, 29"],
       quote: q44(3),
-      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Prophet ﷺ said: search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "Search for the Night of Qadr in the odd nights of the last ten days of Ramadan"),
+      source: hadith("bukhari", "2017", "Aishah", "Sahih", "The Prophet ﷺ said: search for the Night of Qadr in the odd nights of the last ten days of Ramadan.", "odd nights of the last ten days of Ramadan"),
       difficulty: 2,
       questions: [
         { q: "Where should we search for it, per Bukhari 2017?", a: "Odd nights of the last ten of Ramadan", wrong: ["The first night of Ramadan", "Any night of the year", "Only the 15th night"], why: "Search for the Night of Qadr in the odd nights of the last ten days of Ramadan." },
@@ -291,7 +291,7 @@ const DUKHAN_ONE: DeepUnit = {
       line: "They turned away and said: he is taught by others, a madman.",
       facts: ["They opposed and rejected him", "Name-calling instead of proof"],
       quote: q44(14),
-      source: ik(14, "Ibn Kathir says despite the clear message, they turned away, opposed and rejected him, and called him taught and mad.", "they turned away from him, opposed him and rejected him"),
+      source: ik(14, "Ibn Kathir says despite the clear message, they turned away, opposed and rejected him, and called him taught and mad.", "Yet despite that, they turned away from him, opposed him and rejected"),
       difficulty: 3,
       questions: [
         { q: "What did they call him, in 44:14?", a: "One taught, a madman", wrong: ["A king", "A prophet of old", "A friend"], why: "And said: (He is) one taught, a madman!" },

@@ -378,7 +378,7 @@ const NISA_ONE: DeepUnit = {
       line: "Avoid the great sins, and Allah erases the small ones.",
       facts: ["Kaba'ir: major sins", "Mudkhal karim: Paradise"],
       quote: q4(31),
-      source: ik(31, "If you avoid the major evil deeds you were forbidden, Allah forgives your smaller sins and admits you to Paradise.", "you avoid the major evil deeds that you were prohibited"),
+      source: ik(31, "If you avoid the major evil deeds you were forbidden, Allah forgives your smaller sins and admits you to Paradise.", "avoid the major evil deeds that you were prohibited We will forgive"),
       difficulty: 3,
       questions: [
         { q: "What erases small sins, in 4:31?", a: "Avoiding the great sins", wrong: ["Doing more great sins", "Sleeping", "Being rich"], why: "In tajtanibu kaba'ira ma tunhawna 'anh." },
@@ -672,7 +672,7 @@ const NISA_TWO: DeepUnit = {
       line: "No one truly believes until he accepts the Prophet's ﷺ judgment.",
       facts: ["Sahih al-Bukhari 4585", "Az-Zubayr and the stream"],
       quote: q4(65),
-      source: hadith("bukhari", "4585", "Urwah ibn az-Zubayr", "Sahih", "Az-Zubayr and a man of the Ansar argued over a stream. The Prophet ﷺ judged, the man complained, and Az-Zubayr said he thought 4:65 came down about it.", "Irrigate (your lands) and then let the water flow to your neighbor"),
+      source: hadith("bukhari", "4585", "Urwah ibn az-Zubayr", "Sahih", "Az-Zubayr and a man of the Ansar argued over a stream. The Prophet ﷺ judged, the man complained, and Az-Zubayr said he thought 4:65 came down about it.", "let the water flow to your neighbor"),
       difficulty: 4,
       questions: [
         { q: "What did Az-Zubayr and the Ansari argue about?", a: "Water from a stream", wrong: ["A camel", "A house", "A sword"], why: "Bukhari 4585." },
@@ -868,7 +868,7 @@ const NISA_TWO: DeepUnit = {
       line: "Leave home for Allah and you find room; the reward is sure.",
       facts: ["Hijrah: leaving for Allah", "Muragham: places of refuge"],
       quote: q4(100),
-      source: ik(100, "The angels ask those who stayed under oppression: was not Allah's earth spacious enough to emigrate? The truly weak, who could not leave, are excused.", "Was not the earth of Allah spacious enough for you"),
+      source: ik(100, "The angels ask those who stayed under oppression: was not Allah's earth spacious enough to emigrate? The truly weak, who could not leave, are excused.", "not the earth of Allah spacious enough"),
       difficulty: 5,
       questions: [
         { q: "What do the angels ask, in 4:97?", a: "Was Allah's earth not wide enough?", wrong: ["Where is your gold?", "Who is your king?", "Why are you late?"], why: "Alam takun ardullahi wasi'ah." },
@@ -927,7 +927,7 @@ const NISA_THREE: DeepUnit = {
       questions: [
         { q: "When should we remember Allah, in 4:103?", a: "Standing, sitting and lying down", wrong: ["Only in the mosque", "Only on Friday", "Only in Ramadan"], why: "Ibn Kathir: in all conditions." },
         { q: "What did Ibn Abbas compare the prayer's fixed time to?", a: "Hajj", wrong: ["Zakah", "Eid", "Trade"], why: "The prayer has a fixed time, like Hajj." },
-        { q: "Which deed did the Prophet ﷺ call dearest to Allah, in Bukhari 527?", a: "Prayer at its fixed time", wrong: ["Long travel", "Building homes", "Silence"], why: "Then kindness to parents, from Abdullah ibn Mas'ud." }
+        { q: "Which deed did the Prophet ﷺ call dearest to Allah, in Bukhari 527?", a: "Prayer at its fixed time", wrong: ["Long travel", "Building homes", "Silence"], why: "Then kindness to parents, from Abdullah ibn Mas'ud.", source: hadith("bukhari", "527", "Abdullah ibn Mas'ud", "Sahih", "Asked which deed is dearest to Allah, he said offering the prayers at their early fixed times.", "To offer the prayers at their early stated fixed times") }
       ]
     },
     {
@@ -978,7 +978,7 @@ const NISA_THREE: DeepUnit = {
       line: "Most secret talk is useless, except charity, good, and peace.",
       facts: ["Najwa: secret talk", "Islah: making peace"],
       quote: q4(114),
-      source: hadith("bukhari", "2692", "Umm Kulthum bint Uqbah", "Sahih", "The Prophet ﷺ said: whoever makes peace between people by passing on good words and saying good things is not a liar.", "He who makes peace between the people by inventing good information or saying good things, is not a liar"),
+      source: hadith("bukhari", "2692", "Umm Kulthum bint Uqbah", "Sahih", "The Prophet ﷺ said: whoever makes peace between people by passing on good words and saying good things is not a liar.", "by inventing good information or saying good things, is not a liar"),
       difficulty: 4,
       questions: [
         { q: "Which secret talk is good, in 4:114?", a: "Charity, kindness, or making peace", wrong: ["Gossip", "Plotting", "Mocking"], why: "Illa man amara bi-sadaqatin aw ma'rufin aw islah." },

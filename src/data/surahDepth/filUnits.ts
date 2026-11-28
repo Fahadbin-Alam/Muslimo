@@ -40,7 +40,7 @@ const FIL_ONE: DeepUnit = {
       line: "Allah saved the Ka'bah from an army that came with an elephant.",
       facts: ["Al-Fil: the elephant", "A favor to the Quraysh"],
       quote: q105(1),
-      source: ik(1, "One of the favors Allah did for the Quraysh: He saved them from the People of the Elephant, who tried to tear down the Ka'bah.", "This is one of the favors Allah did for the Quraysh"),
+      source: ik(1, "One of the favors Allah did for the Quraysh: He saved them from the People of the Elephant, who tried to tear down the Ka'bah.", ""),
       difficulty: 1,
       questions: [
         { q: "Whom does 105:1 ask about?", a: "The Owners of the Elephant", wrong: ["The People of the Cave", "The People of the Ditch", "The People of Ad"], why: "Have you not seen how your Lord dealt with the Owners of the Elephant?" },
@@ -54,7 +54,7 @@ const FIL_ONE: DeepUnit = {
       line: "Abrahah built a huge church for Arabs to visit instead.",
       facts: ["Abrahah: ruler of Yemen", "Al-Qullays: his tall church"],
       quote: q105(1),
-      source: ik(1, "Abrahah built a huge church in San'a' and wanted the Arabs to make pilgrimage to it instead of the Ka'bah.", "he began to build a huge church"),
+      source: ik(1, "Abrahah built a huge church in San'a' and wanted the Arabs to make pilgrimage to it instead of the Ka'bah.", ""),
       difficulty: 1,
       questions: [
         { q: "Who led the army of the Elephant?", a: "Abrahah", wrong: ["Fir'awn", "Namrud", "Qarun"], why: "Abrahah built a huge church in San'a' and marched on Makkah." },
@@ -68,7 +68,7 @@ const FIL_ONE: DeepUnit = {
       line: "Abrahah brought a giant elephant, Mahmud, to pull down walls.",
       facts: ["Mahmud: the elephant", "Chains to pull the walls"],
       quote: q105(1),
-      source: ik(1, "Abrahah took along a great, powerful elephant called Mahmud, planning to use it to pull down the Ka'bah.", "This elephant was called Mahmud"),
+      source: ik(1, "Abrahah took along a great, powerful elephant called Mahmud, planning to use it to pull down the Ka'bah.", ""),
       difficulty: 2,
       questions: [
         { q: "What was the great elephant called?", a: "Mahmud", wrong: ["Qaswa", "Buraq", "Adbaa"], why: "The elephant was called Mahmud." },
@@ -82,7 +82,7 @@ const FIL_ONE: DeepUnit = {
       line: "Abdul-Muttalib trusted Allah to guard His own House.",
       facts: ["Two hundred camels", "Allah guards His House"],
       quote: q105(2),
-      source: ik(2, "Abdul-Muttalib told Abrahah he was the lord of the camels, and that the House has its Lord Who will defend it.", "it has its Lord Who will defend it"),
+      source: ik(2, "Abdul-Muttalib told Abrahah he was the lord of the camels, and that the House has its Lord Who will defend it.", ""),
       difficulty: 2,
       questions: [
         { q: "What did Abdul-Muttalib ask Abrahah for?", a: "His two hundred camels", wrong: ["A new house", "Gold coins", "An army"], why: "I want the king to return my camels, which are two hundred in number." },
@@ -96,7 +96,7 @@ const FIL_ONE: DeepUnit = {
       line: "Facing Makkah, the elephant knelt and would not move.",
       facts: ["Knelt toward Makkah", "Walked toward Yemen"],
       quote: q105(2),
-      source: ik(2, "Whenever they turned the elephant toward Makkah it knelt, yet it walked quickly toward Yemen, Ash-Sham and the east.", "turned him towards Makkah and he knelt down again"),
+      source: ik(2, "Whenever they turned the elephant toward Makkah it knelt, yet it walked quickly toward Yemen, Ash-Sham and the east.", ""),
       difficulty: 2,
       questions: [
         { q: "What did the elephant do facing Makkah?", a: "Knelt down", wrong: ["Ran forward", "Broke the gate", "Fell asleep"], why: "They turned him towards Makkah and he knelt down again." },
@@ -110,7 +110,7 @@ const FIL_ONE: DeepUnit = {
       line: "Allah turned their big plan into nothing at all.",
       facts: ["Kayd: plot", "Tadlil: going astray"],
       quote: q105(2),
-      source: ik(2, "Allah destroyed them, defeated them, thwarted their plans and made their efforts in vain.", "thwarted their plans, made their efforts in vain"),
+      source: ik(2, "Allah destroyed them, defeated them, thwarted their plans and made their efforts in vain.", ""),
       difficulty: 2,
       questions: [
         { q: "What does 105:2 ask?", a: "Did He not make their plot go astray?", wrong: ["Did they not build a church?", "Did they not win?", "Did they not find water?"], why: "Did He not make their plot go astray?" },
@@ -151,7 +151,7 @@ const FIL_TWO: DeepUnit = {
       line: "Allah sent birds in flocks, one group after another.",
       facts: ["Tayr: birds", "Ababil: in flocks"],
       quote: q105(3),
-      source: ik(3, "Ibn Abbas and Ad-Dahhak said Ababil means some of them following after others.", "Ababil means some of them following after others"),
+      source: ik(3, "Ibn Abbas and Ad-Dahhak said Ababil means some of them following after others.", ""),
       difficulty: 1,
       questions: [
         { q: "What did Allah send in 105:3?", a: "Birds in flocks", wrong: ["A great flood", "A strong army", "A loud storm"], why: "And He sent against them birds, in flocks." },
@@ -165,7 +165,7 @@ const FIL_TWO: DeepUnit = {
       line: "Each bird carried three tiny stones, yet an army fell.",
       facts: ["One in each claw", "One in the beak"],
       quote: q105(4),
-      source: ik(4, "Each bird carried three stones the size of chickpeas and lentils, one in each claw and one in its beak.", "Each bird carried three stones the size of chickpeas and lentils"),
+      source: ik(4, "Each bird carried three stones the size of chickpeas and lentils, one in each claw and one in its beak.", ""),
       difficulty: 2,
       questions: [
         { q: "How many stones did each bird carry?", a: "Three", wrong: ["One", "Ten", "Seven"], why: "Each bird carried three stones." },
@@ -179,7 +179,7 @@ const FIL_TWO: DeepUnit = {
       line: "Sijjil stones were hard baked clay, sent by Allah.",
       facts: ["Sijjil: hard baked clay", "Sanj and Jil: stone and clay"],
       quote: q105(4),
-      source: ik(4, "Yunus An-Nahwi and Abu Ubaydah said Sijjil means something hard and solid, of stone and clay.", "it means something hard and solid"),
+      source: ik(4, "Yunus An-Nahwi and Abu Ubaydah said Sijjil means something hard and solid, of stone and clay.", ""),
       difficulty: 2,
       questions: [
         { q: "What does Sijjil mean, per the Arabs?", a: "Something hard and solid", wrong: ["Something soft", "Something sweet", "Something wet"], why: "According to the Arabs, it means something hard and solid." },
@@ -193,7 +193,7 @@ const FIL_TWO: DeepUnit = {
       line: "The proud army ended up like straw that cattle had chewed.",
       facts: ["Asf: straw, crop leaves", "Makul: eaten up"],
       quote: q105(5),
-      source: ik(5, "Said bin Jubayr said Al-Asf means straw, and Al-Makul is fodder cut for animals.", "This means straw, which the common people call Habbur"),
+      source: ik(5, "Said bin Jubayr said Al-Asf means straw, and Al-Makul is fodder cut for animals.", ""),
       difficulty: 2,
       questions: [
         { q: "What did Allah make them like, per 105:5?", a: "Eaten straw", wrong: ["Tall mountains", "Strong walls", "Shining stars"], why: "And He made them like Asf, Makul." },
@@ -207,7 +207,7 @@ const FIL_TWO: DeepUnit = {
       line: "The army went home with nothing; their anger got them nowhere.",
       facts: ["Plans undone", "Abrahah died in Yemen"],
       quote: q105(5),
-      source: ik(5, "Allah repelled them in their plan and their anger; they did not achieve any good.", "They did not achieve any good"),
+      source: ik(5, "Allah repelled them in their plan and their anger; they did not achieve any good.", ""),
       difficulty: 3,
       questions: [
         { q: "What did the army achieve, per Ibn Kathir?", a: "No good at all", wrong: ["Half their plan", "A small win", "Great riches"], why: "They did not achieve any good." },
@@ -235,7 +235,7 @@ const FIL_TWO: DeepUnit = {
       line: "Allah protected the Ka'bah to honor it, not the Quraysh.",
       facts: ["The Ancient House", "Honored by Allah"],
       quote: q105(3),
-      source: ik(3, "Allah helped not for any status of the Quraysh, but to defend the Ancient House, which He would honor.", "in order to defend the Ancient House"),
+      source: ik(3, "Allah helped not for any status of the Quraysh, but to defend the Ancient House, which He would honor.", ""),
       difficulty: 3,
       questions: [
         { q: "Why did Allah protect Makkah, per Ibn Kathir?", a: "To defend the Ancient House", wrong: ["For Quraysh pride", "For the trade routes", "For the wells"], why: "We are only helping you in order to defend the Ancient House." },

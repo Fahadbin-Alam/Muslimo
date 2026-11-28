@@ -68,7 +68,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "Allah sent the Quran, confirming the Tawrah and the Injil.",
       facts: ["Tawrah to Musa", "Injil to Isa", "Al-Furqan: the Criterion"],
       quote: q3(3),
-      source: ik(3, "It is He Who sent down the Book to you with truth, confirming what came before it, and He sent down the Tawrah and the Injil before it as guidance for people, and He sent down the Criterion.", "And He sent down the Tawrah and the Injil"),
+      source: ik(3, "It is He Who sent down the Book to you with truth, confirming what came before it, and He sent down the Tawrah and the Injil before it as guidance for people, and He sent down the Criterion.", "is He Who has sent down the Book to you with truth"),
       difficulty: 2,
       questions: [
         { q: "What does the Quran do to the books before it?", a: "It confirms them", wrong: ["It ignores them", "It copies them", "It hides them"], why: "Musaddiqan lima bayna yadayh: confirming what came before." },
@@ -124,7 +124,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "Those firm in knowledge say: it is all from our Lord.",
       facts: ["Ar-rasikhuna fil-'ilm", "Only the wise take heed"],
       quote: q3(7),
-      source: ik(7, "Those who are firmly grounded in knowledge say: we believe in it, all of it, clear and unclear, is from our Lord. And none receive admonition except people of understanding.", "And those who are firmly grounded in knowledge say"),
+      source: ik(7, "Those who are firmly grounded in knowledge say: we believe in it, all of it, clear and unclear, is from our Lord. And none receive admonition except people of understanding.", "firmly grounded in knowledge are those who are modest"),
       difficulty: 3,
       questions: [
         { q: "What do those firm in knowledge say about the Quran?", a: "All of it is from our Lord", wrong: ["Only the clear part is true", "Some of it is old", "We will check it first"], why: "Kullun min 'indi rabbina." },
@@ -138,7 +138,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "Our Lord, do not let our hearts swerve after You guided us.",
       facts: ["Jami at-Tirmidhi 3522", "Ya Muqallib al-qulub"],
       quote: q3(8),
-      source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "The dua the Messenger of Allah ﷺ said most often was: O Changer of the hearts, make my heart firm upon Your religion.", "O Changer of the hearts, make my heart firm upon Your religion"),
+      source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "The dua the Messenger of Allah ﷺ said most often was: O Changer of the hearts, make my heart firm upon Your religion.", "Changer of the hearts, make my heart firm upon Your religion"),
       difficulty: 3,
       questions: [
         { q: "What do the firm believers ask in 3:8?", a: "Don't let our hearts swerve", wrong: ["Make us famous", "Give us gold", "Let us sleep"], why: "Rabbana la tuzigh qulubana ba'da idh hadaytana." },
@@ -306,7 +306,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "He makes night pass into day, and brings life out of death.",
       facts: ["Living from the dead", "Provision without measure"],
       quote: q3(27),
-      source: ik(27, "You make the night enter into the day and the day into the night; You bring the living out of the dead and the dead out of the living; and You give provision to whom You will without measure.", "You make the night to enter into the day"),
+      source: ik(27, "You make the night enter into the day and the day into the night; You bring the living out of the dead and the dead out of the living; and You give provision to whom You will without measure.", "make the night enter into the day, and You make the day"),
       difficulty: 3,
       questions: [
         { q: "What passes into the day, in 3:27?", a: "The night", wrong: ["The sea", "The moon", "The wind"], why: "Tulijul-layla fin-nahar." },
@@ -460,7 +460,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "His sign: three days speaking only by signs, remembering Allah.",
       facts: ["Allah does what He wills", "Glorify Him morning and evening"],
       quote: q3(41),
-      source: ik(41, "Zakariyya said: how can I have a son when I am very old and my wife is barren? Allah said: Allah does what He wills. His sign was that he would not speak to people for three days except by signals, while remembering his Lord much.", "Your sign is that you shall not speak to the people for three days except by signals"),
+      source: ik(41, "Zakariyya said: how can I have a son when I am very old and my wife is barren? Allah said: Allah does what He wills. His sign was that he would not speak to people for three days except by signals, while remembering his Lord much.", "that you shall not speak to the people for three days except"),
       difficulty: 3,
       questions: [
         { q: "What was Zakariyya's sign, in 3:41?", a: "Not speaking for three days", wrong: ["A rainbow", "A dream", "A star"], why: "Except by signals." },
@@ -558,7 +558,7 @@ const IMRAN_ONE: DeepUnit = {
       line: "The disciples said: we are Allah's helpers; we are Muslims.",
       facts: ["Al-Hawariyyun", "Like the Ansar later"],
       quote: q3(52),
-      source: ik(52, "When Isa felt their disbelief he asked: who will be my helpers for Allah? The disciples answered: we are Allah's helpers, we believe and we are Muslims. It is like the Ansar, who helped the Prophet ﷺ and gave him refuge.", "The Ansar helped the Prophet ﷺ and gave him refuge"),
+      source: ik(52, "When Isa felt their disbelief he asked: who will be my helpers for Allah? The disciples answered: we are Allah's helpers, we believe and we are Muslims. It is like the Ansar, who helped the Prophet ﷺ and gave him refuge.", "The Ansar helped the Prophet and gave him refuge"),
       difficulty: 4,
       questions: [
         { q: "What were Isa's disciples called?", a: "Al-Hawariyyun", wrong: ["Al-Ansar", "Al-Muhajirun", "Al-Ahbar"], why: "Qalal-hawariyyuna nahnu ansarullah." },
@@ -683,7 +683,7 @@ const IMRAN_TWO: DeepUnit = {
       line: "Do not mix truth with falsehood or hide the truth you know.",
       facts: ["A morning-and-evening trick", "Guidance is Allah's guidance"],
       quote: q3(71),
-      source: ik(71, "Some People of the Book mixed truth with falsehood and hid the truth they knew. A group of them said: believe in the morning and reject it at the end of the day, so the believers may turn back. Say: true guidance is Allah's guidance.", "Why do you mix truth with falsehood and conceal the truth while you know"),
+      source: ik(71, "Some People of the Book mixed truth with falsehood and hid the truth they knew. A group of them said: believe in the morning and reject it at the end of the day, so the believers may turn back. Say: true guidance is Allah's guidance.", "do you mix truth with falsehood and conceal the truth while you"),
       difficulty: 3,
       questions: [
         { q: "What does 3:71 warn against?", a: "Mixing truth with falsehood", wrong: ["Learning to read", "Giving charity", "Praying at night"], why: "Lima talbisunal-haqqa bil-batil." },
@@ -781,7 +781,7 @@ const IMRAN_TWO: DeepUnit = {
       line: "One who left the faith can return by repenting and doing good.",
       facts: ["An Ansari man came back", "Allah is Forgiving"],
       quote: q3(89),
-      source: ik(89, "Ibn Abbas said: a man of the Ansar became Muslim, then left and joined the idolaters, then regretted it and sent to ask if he could repent. Allah revealed these ayahs, ending: except those who repent after that and do good, and he came back to Islam.", "Except for those who repent after that and do righteous deeds"),
+      source: ik(89, "Ibn Abbas said: a man of the Ansar became Muslim, then left and joined the idolaters, then regretted it and sent to ask if he could repent. Allah revealed these ayahs, ending: except those who repent after that and do good, and he came back to Islam.", "those who repent after that and do righteous deeds"),
       difficulty: 4,
       questions: [
         { q: "Who can still be forgiven, in 3:89?", a: "Those who repent and do good", wrong: ["Nobody", "Only the rich", "Only angels"], why: "Illal-ladhina tabu min ba'di dhalika wa aslahu." },
@@ -795,7 +795,7 @@ const IMRAN_TWO: DeepUnit = {
       line: "Dying in disbelief? Not even an earth of gold buys safety.",
       facts: ["Repent before death", "No ransom then"],
       quote: q3(91),
-      source: ik(91, "Allah warns those who keep disbelieving until death: repentance at death will not be accepted, and on the Day of Resurrection even the whole earth full of gold would not be accepted as ransom from any of them.", "the (whole) earth full of gold will not be accepted from anyone of them if they offered it as a ransom"),
+      source: ik(91, "Allah warns those who keep disbelieving until death: repentance at death will not be accepted, and on the Day of Resurrection even the whole earth full of gold would not be accepted as ransom from any of them.", "earth full of gold will not be accepted from anyone of them"),
       difficulty: 4,
       questions: [
         { q: "What could not ransom them, in 3:91?", a: "The whole earth full of gold", wrong: ["A small coin", "A prayer", "A good deed"], why: "Mil'ul-ardi dhahaba." },
@@ -1088,7 +1088,7 @@ const IMRAN_THREE: DeepUnit = {
       line: "Allah gave you victory at Badr when you were few and weak.",
       facts: ["Be grateful", "Help with angels"],
       quote: q3(123),
-      source: ik(123, "Allah reminded the believers that He had already given them victory at Badr when they were a small, weak force, so they should have taqwa of Him and be grateful.", "And Allah has already made you victorious at Badr, when you were a weak little force"),
+      source: ik(123, "Allah reminded the believers that He had already given them victory at Badr when they were a small, weak force, so they should have taqwa of Him and be grateful.", "has already made you victorious at Badr,meaning, during the battle of Badr"),
       difficulty: 4,
       questions: [
         { q: "How were the Muslims at Badr, in 3:123?", a: "Few and weak", wrong: ["Many and rich", "Strong with horses", "In a fortress"], why: "Wa antum adhillah." },
@@ -1130,7 +1130,7 @@ const IMRAN_THREE: DeepUnit = {
       line: "Do not eat riba, doubled and multiplied; fear Allah.",
       facts: ["Riba: interest", "Obey to be shown mercy"],
       quote: q3(130),
-      source: ik(130, "Allah forbids His believing servants from dealing in riba and eating it doubled and multiplied, as people did before Islam, adding more and more to a debt. Fear Allah so that you succeed, and obey Allah and the Messenger ﷺ to be shown mercy.", "Do not consume Riba doubled and multiplied"),
+      source: ik(130, "Allah forbids His believing servants from dealing in riba and eating it doubled and multiplied, as people did before Islam, adding more and more to a debt. Fear Allah so that you succeed, and obey Allah and the Messenger ﷺ to be shown mercy.", "prohibits His believing servants from dealing in Riba and from requiring interest"),
       difficulty: 4,
       questions: [
         { q: "What does 3:130 forbid?", a: "Riba, doubled and multiplied", wrong: ["Trade", "Charity", "Farming"], why: "La ta'kulur-riba ad'afan muda'afa." },
@@ -1256,7 +1256,7 @@ const IMRAN_THREE: DeepUnit = {
       line: "Allah tested them at Uhud, yet He forgave them.",
       facts: ["Some wanted this world", "Allah is gracious to believers"],
       quote: q3(152),
-      source: ik(152, "Allah fulfilled His promise until they lost heart, argued about the order and disobeyed after He showed them what they loved. Some wanted this world and some the Hereafter. He turned them back to test them, but He forgave them; Allah is gracious to the believers.", "But surely, He forgave you, and Allah is Most Gracious to the believers"),
+      source: ik(152, "Allah fulfilled His promise until they lost heart, argued about the order and disobeyed after He showed them what they loved. Some wanted this world and some the Hereafter. He turned them back to test them, but He forgave them; Allah is gracious to the believers.", ""),
       difficulty: 5,
       questions: [
         { q: "What did Allah do after the mistake at Uhud, in 3:152?", a: "He forgave them", wrong: ["He left them", "He punished them all", "Nothing"], why: "Wa laqad 'afa 'ankum." },
@@ -1340,7 +1340,7 @@ const IMRAN_THREE: DeepUnit = {
       line: "Allah's favor: a Messenger ﷺ sent from among the believers.",
       facts: ["He recites, purifies, teaches", "The Book and wisdom"],
       quote: q3(164),
-      source: ik(164, "Allah did the believers a great favor when He sent among them a Messenger ﷺ from themselves, reciting His ayahs to them, purifying them and teaching them the Book and wisdom, though before that they were clearly astray.", "and purifying them, and instructing them (in) the Book"),
+      source: ik(164, "Allah did the believers a great favor when He sent among them a Messenger ﷺ from themselves, reciting His ayahs to them, purifying them and teaching them the Book and wisdom, though before that they were clearly astray.", "great favor on the believers when He sent among them a Messenger"),
       difficulty: 5,
       questions: [
         { q: "What great favor does 3:164 name?", a: "A Messenger ﷺ from among them", wrong: ["A rich kingdom", "A big army", "A long life"], why: "Laqad mannallahu 'alal-mu'minin." },
@@ -1536,7 +1536,7 @@ const IMRAN_THREE: DeepUnit = {
       line: "Do not be fooled by disbelievers moving freely in the land.",
       facts: ["A brief enjoyment", "What is with Allah is best"],
       quote: q3(196),
-      source: ik(196, "Do not be deceived by the disbelievers moving about the land in comfort; it is a brief enjoyment. But for those who fear their Lord are gardens with rivers flowing beneath, and what is with Allah is best for the righteous.", "and that which is with Allah is the best for Al-Abrar"),
+      source: ik(196, "Do not be deceived by the disbelievers moving about the land in comfort; it is a brief enjoyment. But for those who fear their Lord are gardens with rivers flowing beneath, and what is with Allah is best for the righteous.", ""),
       difficulty: 5,
       questions: [
         { q: "What is their comfort, in 3:197?", a: "A brief enjoyment", wrong: ["Forever", "A sign of goodness", "The real reward"], why: "Mata'un qalil." },

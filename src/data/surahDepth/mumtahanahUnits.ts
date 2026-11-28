@@ -263,7 +263,7 @@ const MUMTAHANAH_ONE: DeepUnit = {
       line: "Allah will judge between people and sees all they do.",
       facts: ["Al-Basir: the All-Seer", "Families are separated by deeds"],
       quote: q60(3),
-      source: ik(3, "Ibn Kathir quotes 60:3: He will judge between you, and Allah is the All-Seer of what you do.", "He will judge between you. And Allah is the All-Seer of what you do"),
+      source: ik(3, "Ibn Kathir quotes 60:3: He will judge between you, and Allah is the All-Seer of what you do.", ""),
       difficulty: 2,
       questions: [
         { q: "Who will judge between people, in 60:3?", a: "Allah", wrong: ["Their parents", "Their kings", "Their friends"], why: "He will judge between you." },
@@ -555,7 +555,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Allah may turn today's enemies into tomorrow's friends.",
       facts: ["Hearts can change", "Many Makkans later became Muslim"],
       quote: q60(7),
-      source: ik(7, "Ibn Kathir says 60:7 means affection after animosity, tenderness after coldness and coming together after parting.", "affection after animosity, tenderness after coldness and coming together after parting from each other"),
+      source: ik(7, "Ibn Kathir says 60:7 means affection after animosity, tenderness after coldness and coming together after parting.", ""),
       difficulty: 2,
       questions: [
         { q: "What may Allah place between enemies, in 60:7?", a: "Friendship", wrong: ["A wall", "A river", "Silence"], why: "Perhaps Allah will make friendship between you and those whom you hold as enemies." },
@@ -569,7 +569,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Allah can bring together hearts that once were hostile.",
       facts: ["Al-Qadir: All-Able", "Only Allah truly unites hearts"],
       quote: q60(7),
-      source: ik(7, "Ibn Kathir says Allah is able to gather opposites and bring together hearts after hostility and hardness.", "Allah is able to gather opposites and bring together hearts"),
+      source: ik(7, "Ibn Kathir says Allah is able to gather opposites and bring together hearts after hostility and hardness.", ""),
       difficulty: 2,
       questions: [
         { q: "What is Allah able to do, per Ibn Kathir?", a: "Bring hearts together", wrong: ["Nothing new", "Only end things", "Only count"], why: "Allah is able to gather opposites and bring together hearts." },
@@ -583,7 +583,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Allah turned the feuding Ansar into brothers.",
       facts: ["3:103 reminds them", "Aws and Khazraj were once enemies"],
       quote: q60(7),
-      source: ik(7, "Ibn Kathir quotes 3:103 about the Ansar: you were enemies, but He joined your hearts, and by His grace you became brethren.", "He joined your hearts together, so that, by His grace, you became brethren"),
+      source: ik(7, "Ibn Kathir quotes 3:103 about the Ansar: you were enemies, but He joined your hearts, and by His grace you became brethren.", ""),
       difficulty: 3,
       questions: [
         { q: "Which ayah does Ibn Kathir quote about the Ansar?", a: "3:103", wrong: ["2:1", "9:40", "48:29"], why: "And remember Allah's favor on you, for you were enemies one to another. (3:103)" },
@@ -611,7 +611,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "All the world's wealth could not unite hearts; Allah did.",
       facts: ["8:63 says so", "Unity is a gift from Allah"],
       quote: q60(7),
-      source: ik(7, "Ibn Kathir quotes 8:63: if you had spent all that is in the earth, you could not have united their hearts, but Allah united them.", "If you had spent all that is in the earth, you could not have united their hearts, but Allah has united them"),
+      source: ik(7, "Ibn Kathir quotes 8:63: if you had spent all that is in the earth, you could not have united their hearts, but Allah united them.", ""),
       difficulty: 3,
       questions: [
         { q: "Could all the world's wealth unite hearts, in 8:63?", a: "No", wrong: ["Yes", "Only gold", "Only land"], why: "If you had spent all that is in the earth, you could not have united their hearts." },
@@ -625,7 +625,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Allah forgives anyone who repents and turns to Him in Islam.",
       facts: ["Al-Ghafur: Oft-Forgiving", "Ar-Rahim: Most Merciful"],
       quote: q60(7),
-      source: ik(7, "Ibn Kathir says Allah forgives the disbelief of the disbelievers if they repent, return to their Lord and surrender to Him in Islam.", "Allah forgives the disbelief of the disbelievers if they repent from it"),
+      source: ik(7, "Ibn Kathir says Allah forgives the disbelief of the disbelievers if they repent, return to their Lord and surrender to Him in Islam.", ""),
       difficulty: 2,
       questions: [
         { q: "Which two Names end 60:7?", a: "Oft-Forgiving, Most Merciful", wrong: ["Almighty, All-Wise", "Rich, Praised", "First, Last"], why: "And Allah is Oft-Forgiving, Most Merciful." },
@@ -639,7 +639,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Be kind and fair to non-Muslims who do not fight you.",
       facts: ["60:8 allows kindness", "Justice is for everyone"],
       quote: q60(8),
-      source: ik(8, "Ibn Kathir says Allah does not forbid you from being kind to the disbelievers who do not fight you because of the religion.", "not forbid you from being kind to the disbelievers who do not fight you because of the religion"),
+      source: ik(8, "Ibn Kathir says Allah does not forbid you from being kind to the disbelievers who do not fight you because of the religion.", ""),
       difficulty: 1,
       questions: [
         { q: "To whom may Muslims be kind, in 60:8?", a: "Those who do not fight them", wrong: ["No one outside Islam", "Only rich people", "Only relatives"], why: "Allah does not forbid you to deal justly and kindly with those who fought not against you." },
@@ -653,7 +653,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Allah loves those who are fair to everyone.",
       facts: ["Al-Muqsitin: the fair ones", "Fairness is worship"],
       quote: q60(8),
-      source: ik(8, "Ibn Kathir quotes the end of 60:8: verily, Allah loves those who deal with equity.", "Verily, Allah loves those who deal with equity"),
+      source: ik(8, "Ibn Kathir quotes the end of 60:8: verily, Allah loves those who deal with equity.", ""),
       difficulty: 1,
       questions: [
         { q: "Whom does Allah love, in 60:8?", a: "Those who deal with equity", wrong: ["The proud", "The loud", "The rich"], why: "Verily, Allah loves those who deal with equity." },
@@ -695,7 +695,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       line: "Asma was told to accept her mother's gifts and let her in.",
       facts: ["Her mother was Qutaylah", "She brought cheese and butter"],
       quote: q60(8),
-      source: ik(8, "Ibn Kathir reports that Qutaylah came visiting her daughter Asma with gifts, and the Prophet ﷺ told Asma to accept them and let her in.", "Qutaylah came visiting her daughter"),
+      source: ik(8, "Ibn Kathir reports that Qutaylah came visiting her daughter Asma with gifts, and the Prophet ﷺ told Asma to accept them and let her in.", ""),
       difficulty: 3,
       questions: [
         { q: "What was the name of Asma's mother?", a: "Qutaylah", wrong: ["Khadijah", "Sumayyah", "Hind"], why: "Qutaylah came visiting her daughter, Asma bint Abi Bakr." },
@@ -778,7 +778,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Believing women fled to Madinah, and Allah said: test them.",
       facts: ["The surah is named after them", "They came after Al-Hudaybiyyah"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir says Allah ordered His faithful servants to test the faith of women who emigrate to them.", "ordered His faithful servants to test the faith of women who emigrate to them"),
+      source: ik(10, "Ibn Kathir says Allah ordered His faithful servants to test the faith of women who emigrate to them.", "whom You hold as Enemies Allah said to His faithful servants, after"),
       difficulty: 2,
       questions: [
         { q: "What were the believers told to do, in 60:10?", a: "Examine the women", wrong: ["Send them all back", "Ignore them", "Make them pay"], why: "When believing women come to you as emigrants, examine them." },
@@ -792,7 +792,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Ibn Abbas said the test was asking them to testify to Tawhid.",
       facts: ["La ilaha illallah", "Muhammad is Allah's servant and Messenger"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir reports from Ibn Abbas that their examination was asking them to testify to La ilaha illallah and that Muhammad is His Messenger.", "Their examination was asking them to testify to La ilaha illallah"),
+      source: ik(10, "Ibn Kathir reports from Ibn Abbas that their examination was asking them to testify to La ilaha illallah and that Muhammad is His Messenger.", ""),
       difficulty: 2,
       questions: [
         { q: "What was their test, per Ibn Abbas?", a: "Testifying to La ilaha illallah", wrong: ["Lifting stones", "Reciting poems", "Paying gold"], why: "Their examination was asking them to testify to La ilaha illallah." },
@@ -806,7 +806,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Mujahid said they were asked why they had migrated.",
       facts: ["Faith had to be the reason", "Not anger or other reasons"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir quotes Mujahid: ask them why they migrated; the reason had to be faith.", "Ask them why they migrated"),
+      source: ik(10, "Ibn Kathir quotes Mujahid: ask them why they migrated; the reason had to be faith.", ""),
       difficulty: 3,
       questions: [
         { q: "What did Mujahid say to ask them?", a: "Why they migrated", wrong: ["Their age", "Their wealth", "Their tribe"], why: "Ask them why they migrated." },
@@ -820,7 +820,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "People judge what they see; Allah knows what is in hearts.",
       facts: ["We judge by the outward", "Hearts are for Allah"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir says 60:10 shows faith can be recognized and affirmed, while Allah knows best as to their faith.", "This Ayah indicates that faith can be recognized and affirmed"),
+      source: ik(10, "Ibn Kathir says 60:10 shows faith can be recognized and affirmed, while Allah knows best as to their faith.", ""),
       difficulty: 3,
       questions: [
         { q: "Who knows best about their faith, in 60:10?", a: "Allah", wrong: ["Their families", "The traders", "The poets"], why: "Allah knows best as to their faith." },
@@ -834,7 +834,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Believing women were not to be sent back to the disbelievers.",
       facts: ["Their safety was protected", "A clear command from Allah"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir says when they are sure that the women are faithful, they should not send them back to the disbelievers.", "When they are sure that they are faithful, they should not send them back to the disbelievers"),
+      source: ik(10, "Ibn Kathir says when they are sure that the women are faithful, they should not send them back to the disbelievers.", "His faithful servants, after ordering them to be enemies with the disbelievers"),
       difficulty: 2,
       questions: [
         { q: "What were the believers told not to do?", a: "Send them back", wrong: ["Feed them", "Shelter them", "Teach them"], why: "Then if you ascertain that they are true believers, send them not back." },
@@ -876,7 +876,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Zaynab sent her mother Khadijah's necklace to free her husband.",
       facts: ["The Prophet ﷺ was moved to tears", "Her husband later became Muslim"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir tells how Zaynab sent a necklace of Khadijah as ransom for her husband after Badr, and the Prophet ﷺ became very emotional.", "When he was captured during the battle of Badr, his wife, Zaynab, sent his ransom"),
+      source: ik(10, "Ibn Kathir tells how Zaynab sent a necklace of Khadijah as ransom for her husband after Badr, and the Prophet ﷺ became very emotional.", ""),
       difficulty: 3,
       questions: [
         { q: "What did Zaynab send as ransom?", a: "A necklace of Khadijah", wrong: ["A horse", "A sword", "A house"], why: "A necklace that belonged to the Prophet's ﷺ first wife Khadijah." },
@@ -890,7 +890,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Abu Al-As kept his promise and later embraced Islam.",
       facts: ["He sent Zaynab to Madinah", "He accepted Islam in year 8 AH"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir says Abu Al-As kept his promise and sent Zaynab to Madinah, and he embraced Islam in the eighth year after the Hijrah.", "embraced Islam in the eighth year after the Hijrah"),
+      source: ik(10, "Ibn Kathir says Abu Al-As kept his promise and sent Zaynab to Madinah, and he embraced Islam in the eighth year after the Hijrah.", ""),
       difficulty: 3,
       questions: [
         { q: "When did Abu Al-As embrace Islam?", a: "In the eighth year after Hijrah", wrong: ["Before Hijrah", "At Badr", "Never"], why: "Embraced Islam in the eighth year after the Hijrah." },
@@ -904,7 +904,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Even with the other side, the mahr was returned fairly.",
       facts: ["Mahr: the marriage gift", "Justice even in hard times"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir says the husbands of the emigrant women were to be given back the dowery they had paid.", "return the dowery that they gave to their wives"),
+      source: ik(10, "Ibn Kathir says the husbands of the emigrant women were to be given back the dowery they had paid.", ""),
       difficulty: 3,
       questions: [
         { q: "What was given back to the husbands?", a: "The dowry they paid", wrong: ["Their land", "Their camels", "Nothing"], why: "Return the dowery that they gave to their wives." },
@@ -918,7 +918,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "These rules are Allah's judgement; He knows what benefits us.",
       facts: ["Al-Alim: All-Knowing", "Al-Hakim: All-Wise"],
       quote: q60(10),
-      source: ik(10, "Ibn Kathir says Allah knows what benefits His servants and is the Most Wise about that.", "He knows what benefits His servants and is the Most Wise about that"),
+      source: ik(10, "Ibn Kathir says Allah knows what benefits His servants and is the Most Wise about that.", ""),
       difficulty: 2,
       questions: [
         { q: "Whose judgement is described in 60:10?", a: "Allah's", wrong: ["A king's", "A tribe's", "A trader's"], why: "That is the judgement of Allah, He judges between you." },
@@ -932,7 +932,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "The believers obeyed Allah's ruling even when others did not.",
       facts: ["Az-Zuhri reported it", "60:11 settled what was owed"],
       quote: q60(11),
-      source: ik(11, "Ibn Kathir reports Az-Zuhri: the believers abided by Allah's decree and paid what they owed, but the idolators refused.", "The believers abided by … decree and paid what they owed the idolators"),
+      source: ik(11, "Ibn Kathir reports Az-Zuhri: the believers abided by Allah's decree and paid what they owed, but the idolators refused.", ""),
       difficulty: 4,
       questions: [
         { q: "Who abided by Allah's ruling, per Az-Zuhri?", a: "The believers", wrong: ["The idolators", "No one", "Only traders"], why: "The believers abided by Allah's decree and paid what they owed." },
@@ -946,7 +946,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "60:11 ends: fear Allah, the One in Whom you believe.",
       facts: ["Faith brings Taqwa", "Taqwa keeps us fair"],
       quote: q60(11),
-      source: ik(11, "Ibn Kathir quotes the end of 60:11: and have Taqwa of Allah, the One in Whom you are believers.", "And have Taqwa of Allah, the One in Whom you are believers"),
+      source: ik(11, "Ibn Kathir quotes the end of 60:11: and have Taqwa of Allah, the One in Whom you are believers.", ""),
       difficulty: 1,
       questions: [
         { q: "How does 60:11 end?", a: "Have Taqwa of Allah", wrong: ["Go to sleep", "Count your wealth", "Leave the city"], why: "And have Taqwa of Allah, the One in Whom you are believers." },
@@ -988,7 +988,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "They pledged to worship Allah alone and never steal.",
       facts: ["Shirk is the greatest sin", "Stealing means others' property"],
       quote: q60(12),
-      source: ik(12, "Ibn Kathir explains they will not steal as meaning the property of other people.", "meaning, the property of other people"),
+      source: ik(12, "Ibn Kathir explains they will not steal as meaning the property of other people.", ""),
       difficulty: 1,
       questions: [
         { q: "What is the first promise in 60:12?", a: "Not to associate anything with Allah", wrong: ["Not to travel", "Not to trade", "Not to speak"], why: "That they will not associate anything with Allah." },
@@ -1002,7 +1002,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "They promised chastity, care for children and no slander.",
       facts: ["Protect every child's life", "No false claims about others"],
       quote: q60(12),
-      source: ik(12, "Ibn Kathir says people before Islam used to harm their children because they feared poverty, and Islam forbade it.", "because they feared poverty"),
+      source: ik(12, "Ibn Kathir says people before Islam used to harm their children because they feared poverty, and Islam forbade it.", ""),
       difficulty: 3,
       questions: [
         { q: "Why did some people before Islam harm their children?", a: "They feared poverty", wrong: ["They were bored", "They were rich", "For fun"], why: "The people of Jahiliyyah used to kill their children because they feared poverty." },
@@ -1016,7 +1016,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "They pledged to obey the Prophet ﷺ in Ma'ruf, what is good.",
       facts: ["Ma'ruf: what is right and good", "Obedience to him is in good only"],
       quote: q60(12),
-      source: ik(12, "Ibn Kathir quotes Ibn Abbas: this was one of the conditions which Allah imposed on the women.", "This was one of the conditions which Allah imposed on the women"),
+      source: ik(12, "Ibn Kathir quotes Ibn Abbas: this was one of the conditions which Allah imposed on the women.", ""),
       difficulty: 3,
       questions: [
         { q: "In what did they pledge to obey?", a: "In Ma'ruf, what is good", wrong: ["In everything bad", "In trade only", "In nothing"], why: "And that they will not disobey you in Ma'ruf (good)." },
@@ -1044,7 +1044,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "Accept their pledge and ask Allah to forgive them.",
       facts: ["Allah is Oft-Forgiving", "Allah is Most Merciful"],
       quote: q60(12),
-      source: ik(12, "Ibn Kathir quotes 60:12: then accept their pledge, and ask Allah to forgive them; verily, Allah is Oft-Forgiving, Most Merciful.", "then accept their pledge, and ask Allah to forgive them"),
+      source: ik(12, "Ibn Kathir quotes 60:12: then accept their pledge, and ask Allah to forgive them; verily, Allah is Oft-Forgiving, Most Merciful.", ""),
       difficulty: 1,
       questions: [
         { q: "What was the Prophet ﷺ told to do after the pledge?", a: "Ask Allah to forgive them", wrong: ["Send them away", "Test them again", "Charge a fee"], why: "Then accept their pledge, and ask Allah to forgive them." },
@@ -1058,7 +1058,7 @@ const MUMTAHANAH_FOUR: DeepUnit = {
       line: "The surah ends as it began, warning against wrong alliances.",
       facts: ["Start and end match", "Loyalty belongs to Allah"],
       quote: q60(13),
-      source: ik(13, "Ibn Kathir says just like in the beginning of the surah, Allah forbids taking the disbelievers as protecting friends at the end.", "Just like in the beginning of the Surah, Allah the Exalted forbids taking the disbelievers as protecting friends"),
+      source: ik(13, "Ibn Kathir says just like in the beginning of the surah, Allah forbids taking the disbelievers as protecting friends at the end.", "Allah the Exalted forbids you from being their friends and orders you"),
       difficulty: 2,
       questions: [
         { q: "How does the surah end, per Ibn Kathir?", a: "As it began", wrong: ["With a story", "With a list", "With a question"], why: "Just like in the beginning of the Surah, Allah the Exalted forbids taking the disbelievers as protecting friends." },

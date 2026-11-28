@@ -46,7 +46,7 @@ const WEALTH: DeepUnit = {
       title: "The goat lent for its milk",
       line: "The best of forty good deeds: lending a goat for its milk.",
       facts: ["Told by Abdullah ibn Amr", "Done hoping for Allah's reward"],
-      source: hadith("bukhari", "2631", "Abdullah ibn Amr", "Sahih", "The Messenger of Allah ﷺ said: there are forty good deeds, and the best of them is lending a she-goat for its milk. Whoever does one of them, hoping for its reward and sure of Allah's promise, Allah will enter him into Paradise for it. Hassan, one of the narrators, said: we tried to count the deeds below it, like answering one who sneezes and moving harm from the road, but we could not reach even fifteen.", "There are forty virtuous deeds and the best of them is the Maniha of a she-goat"),
+      source: hadith("bukhari", "2631", "Abdullah ibn Amr", "Sahih", "The Messenger of Allah ﷺ said: there are forty good deeds, and the best of them is lending a she-goat for its milk. Whoever does one of them, hoping for its reward and sure of Allah's promise, Allah will enter him into Paradise for it. Hassan, one of the narrators, said: we tried to count the deeds below it, like answering one who sneezes and moving harm from the road, but we could not reach even fifteen.", "There are forty virtuous deeds and the best of them is the Maniha"),
       difficulty: 2,
       questions: [
         { q: "Which of the forty good deeds is the best, he ﷺ said?", a: "Lending a goat for its milk", wrong: ["Building a tall house", "Buying a fast horse", "Winning a race"], why: "There are forty virtuous deeds and the best of them is the Maniha of a she-goat." },

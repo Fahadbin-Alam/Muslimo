@@ -40,7 +40,7 @@ const HAJJ_ONE: DeepUnit = {
       line: "Allah calls all people to taqwa before the Hour comes.",
       facts: ["The Hour begins with a great shaking", "Taqwa protects us on that Day"],
       quote: q22(1),
-      source: ik(1, "Al-Hajj opens by calling all mankind to have taqwa of their Lord, and tells of the great shaking of the Hour, so that people prepare for it.", "Allah commands His servants to have Taqwa of Him"),
+      source: ik(1, "Al-Hajj opens by calling all mankind to have taqwa of their Lord, and tells of the great shaking of the Hour, so that people prepare for it.", ""),
       difficulty: 2,
       questions: [
         { q: "Whom does 22:1 call to taqwa?", a: "All mankind", wrong: ["Only the Prophets", "Only the angels", "Only the old"], why: "O mankind! Have Taqwa of your Lord!" },
@@ -375,7 +375,7 @@ const HAJJ_TWO: DeepUnit = {
       line: "Hajj brings benefits in this world and in the Hereafter.",
       facts: ["Allah's pleasure in the Hereafter", "Trade is allowed during Hajj"],
       quote: q22(28),
-      source: ik(28, "Pilgrims witness benefits for them. Ibn Abbas said these are benefits in this world and the Hereafter: Allah's pleasure, and worldly goods such as trade and sacrificial animals.", "Benefits in this world and in the Hereafter"),
+      source: ik(28, "Pilgrims witness benefits for them. Ibn Abbas said these are benefits in this world and the Hereafter: Allah's pleasure, and worldly goods such as trade and sacrificial animals.", ""),
       difficulty: 3,
       questions: [
         { q: "What do pilgrims witness, in 22:28?", a: "Things of benefit to them", wrong: ["Only hardship", "Nothing new", "Only crowds"], why: "That they may witness things that are of benefit to them." },
@@ -836,7 +836,7 @@ const HAJJ_THREE: DeepUnit = {
       line: "Allah has put no hardship on us in this religion.",
       facts: ["The sick may pray sitting", "The traveller shortens prayer"],
       quote: q22(78),
-      source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "The Prophet ﷺ told a sick man: pray standing; if you cannot, pray sitting; and if you cannot, pray lying on your side.", "Pray while standing and if you can … pray while sitting"),
+      source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "The Prophet ﷺ told a sick man: pray standing; if you cannot, pray sitting; and if you cannot, pray lying on your side.", "Pray while standing and if you … pray while sitting"),
       difficulty: 5,
       questions: [
         { q: "What has Allah not placed on us, in 22:78?", a: "Hardship in religion", wrong: ["Any prayer", "Any duty", "Any reward"], why: "And has not laid upon you in religion any hardship." },

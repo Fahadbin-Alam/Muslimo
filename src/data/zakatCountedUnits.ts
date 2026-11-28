@@ -21,7 +21,7 @@ const COUNTED: DeepUnit = {
       title: "An honest zakat collector",
       line: "Collecting zakat honestly is like striving in Allah's cause.",
       facts: ["Told by Rafi' ibn Khadij", "Al-'amil: the one who collects zakat", "His reward lasts until he returns home"],
-      source: hadith("tirmidhi", "645", "Rafi' ibn Khadij", "Hasan Sahih (Al-Albani)", "Rafi' ibn Khadij said: I heard the Messenger of Allah ﷺ say: the one who works collecting charity in truth is like the one who fights in the cause of Allah, until he returns home.", "The one who works in collecting charity in truth is like the one who fights in the cause of Allah"),
+      source: hadith("tirmidhi", "645", "Rafi' ibn Khadij", "Hasan Sahih (Al-Albani)", "Rafi' ibn Khadij said: I heard the Messenger of Allah ﷺ say: the one who works collecting charity in truth is like the one who fights in the cause of Allah, until he returns home.", "works in collecting charity in truth is like the one who fights in the cause of Allah"),
       difficulty: 1,
       questions: [
         { q: "Who is like one striving in Allah's cause, he ﷺ said?", a: "An honest zakat collector", wrong: ["One who hoards his gold", "One who boasts of his wealth", "One who sleeps all day"], why: "The one who works in collecting charity in truth, he ﷺ said." },
@@ -99,7 +99,7 @@ const COUNTED: DeepUnit = {
       title: "Shaded by your charity",
       line: "On the Last Day, a believer is shaded by his charity.",
       facts: ["Told by a Companion of his ﷺ", "Sadaqa: charity given for Allah"],
-      source: hadith("mishkat", "1925", "Marthad ibn Abdullah, from a Companion", "Sahih (Al-Albani)", "Marthad ibn Abdullah said one of the Companions of the Prophet ﷺ told him he heard him say: the believer's shade on the Day of Resurrection will be his charity. Ahmad transmitted it.", "shade on the day of resurrection will be his sadaqa"),
+      source: hadith("mishkat", "1925", "Marthad ibn Abdullah, from a Companion", "Sahih (Al-Albani)", "Marthad ibn Abdullah said one of the Companions of the Prophet ﷺ told him he heard him say: the believer's shade on the Day of Resurrection will be his charity. Ahmad transmitted it.", "shade on the day of resurrection will be his"),
       difficulty: 1,
       questions: [
         { q: "What will shade a believer on the Day of Resurrection?", a: "The charity he gave", wrong: ["The house he built", "The clothes he wore", "The tent he pitched"], why: "The believer's shade on that Day will be his sadaqa, he ﷺ said." },

@@ -216,7 +216,7 @@ const KINDNESS: DeepUnit = {
         "Then again: your mother. Only then: your father.",
         "Be kind and helpful to your mum every day."
       ],
-      source: hadith("bukhari", "5971", "Abu Hurairah", "Sahih", "A man asked: O Messenger of Allah, who most deserves my good company? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Your father.", "Who is more entitled to be treated with the best companionship by me"),
+      source: hadith("bukhari", "5971", "Abu Hurairah", "Sahih", "A man asked: O Messenger of Allah, who most deserves my good company? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Your mother. He asked: Then who? He said: Your father.", "more entitled to be treated with the best companionship by me"),
       difficulty: 1,
       questions: [
         { q: "How many times did he ﷺ say: your mother?", a: "Three times", wrong: ["Once", "Twice", "Five times"], why: "He said your mother three times, then your father." },

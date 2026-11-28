@@ -30,7 +30,7 @@ const MERCY: DeepUnit = {
       title: "A baby cries in prayer",
       line: "The Prophet ﷺ shortened his prayer when he heard a baby cry.",
       facts: ["He ﷺ stood to pray, meaning to make it long.", "Then a child cried behind the rows.", "He ﷺ did not want to trouble the mother."],
-      source: hadith("bukhari", "707", "Abu Qatadah", "Sahih", "The Prophet ﷺ said: I stand for prayer meaning to make it long, then I hear a child crying, so I make it short, as I dislike making things hard for his mother.", "on hearing the cries of a child, I cut it short"),
+      source: hadith("bukhari", "707", "Abu Qatadah", "Sahih", "The Prophet ﷺ said: I stand for prayer meaning to make it long, then I hear a child crying, so I make it short, as I dislike making things hard for his mother.", "but on hearing the cries of a child, I cut it short"),
       difficulty: 1,
       questions: [
         { q: "What made the Prophet ﷺ shorten his prayer?", a: "A baby crying", wrong: ["A storm outside", "A late guest", "Being hungry"], why: "On hearing the cries of a child, I cut it short." },
@@ -184,7 +184,7 @@ const PUBLIC_ADAB: DeepUnit = {
       title: "Do not take his seat",
       line: "Do not make someone stand up so you can take his seat.",
       facts: ["Ibn Umar narrated it.", "Instead, the people should make room.", "Quran 58:11 also says: make room in gatherings."],
-      source: hadith("bukhari", "6269", "Ibn Umar", "Sahih", "A man should not make another man get up from his seat in a gathering in order to sit there himself.", "A man should not make another man get up from his"),
+      source: hadith("bukhari", "6269", "Ibn Umar", "Sahih", "A man should not make another man get up from his seat in a gathering in order to sit there himself.", "should not make another man get up from his"),
       difficulty: 2,
       questions: [
         { q: "You come late to a full gathering. What should you not do?", a: "Make someone get up", wrong: ["Say salam", "Sit where there is room", "Ask people to make room"], why: "A man should not make another man get up from his seat." },

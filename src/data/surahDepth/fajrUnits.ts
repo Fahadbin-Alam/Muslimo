@@ -82,7 +82,7 @@ const FAJR_ONE: DeepUnit = {
       line: "Many said the odd is Arafah and the even is the tenth.",
       facts: ["Ash-Shaf': the even", "Al-Watr: the odd"],
       quote: q89(3),
-      source: ik(3, "Ibn Abbas and Ikrimah said the odd is the day of Arafah, the ninth, and the even is the day of Sacrifice, the tenth.", "because it falls on the ninth"),
+      source: ik(3, "Ibn Abbas and Ikrimah said the odd is the day of Arafah, the ninth, and the even is the day of Sacrifice, the tenth.", ""),
       difficulty: 3,
       questions: [
         { q: "By what does Allah swear in 89:3?", a: "The even and the odd", wrong: ["The big and small", "The sun and moon", "The old and new"], why: "And by the even and the odd." },

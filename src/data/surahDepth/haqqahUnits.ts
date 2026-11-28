@@ -305,7 +305,7 @@ const HAQQAH_TWO: DeepUnit = {
       line: "The sky will split open and become weak on that Day.",
       facts: ["The sky will open", "Nothing lasts but Allah"],
       quote: q69(16),
-      source: ik(16, "Ibn Kathir says the heaven will be split and frail; Ibn Jurayj linked it to 78:19, the heaven opened like gates.", "And the heaven will be rent asunder, for that Day it will be frail and torn up"),
+      source: ik(16, "Ibn Kathir says the heaven will be split and frail; Ibn Jurayj linked it to 78:19, the heaven opened like gates.", "heaven will be rent asunder, for that Day it will be frail"),
       difficulty: 2,
       questions: [
         { q: "What happens to the sky in 69:16?", a: "Split and become frail", wrong: ["Turn green", "Grow larger", "Stay the same"], why: "And the heaven will be rent asunder, for that Day it will be frail and torn up." },
@@ -333,7 +333,7 @@ const HAQQAH_TWO: DeepUnit = {
       line: "On that Day, eight angels will carry the Throne of Allah.",
       facts: ["Al-Arsh: the Throne", "Angels of great size"],
       quote: q69(17),
-      source: ik(17, "Ibn Kathir says on the Day of Judgement eight angels will carry the Throne of your Lord above them.", "Day of Judgement eight angels will carry the Throne"),
+      source: ik(17, "Ibn Kathir says on the Day of Judgement eight angels will carry the Throne of your Lord above them.", ""),
       difficulty: 2,
       questions: [
         { q: "How many angels carry the Throne that Day?", a: "Eight", wrong: ["Two", "Four", "Seven"], why: "Eight angels will, that Day, bear the Throne of your Lord above them." },
@@ -722,7 +722,7 @@ const HAQQAH_FIVE: DeepUnit = {
       line: "The Quran is not poetry and not a fortune-teller's talk.",
       facts: ["Kahin: soothsayer", "Shair: poet"],
       quote: q69(41),
-      source: ik(41, "Allah says the Quran is not the word of a poet, nor the word of a soothsayer; little do they believe and remember.", "Nor is it the word of a soothsayer, little is that you remember"),
+      source: ik(41, "Allah says the Quran is not the word of a poet, nor the word of a soothsayer; little do they believe and remember.", "Nor is it the word of soothsayer, little is that you"),
       difficulty: 2,
       questions: [
         { q: "What is the Quran NOT, per 69:41?", a: "The word of a poet", wrong: ["A Reminder", "The truth", "A revelation"], why: "It is not the word of a poet, little is that you believe." },
@@ -750,7 +750,7 @@ const HAQQAH_FIVE: DeepUnit = {
       line: "Had he made anything up, Allah would have seized him at once.",
       facts: ["The Prophet ﷺ was truthful", "Allah guards His message"],
       quote: q69(44),
-      source: ik(44, "Ibn Kathir says if he had forged anything, Allah would be swift to punish him; and of course, he did not do any of this.", "And of course, Muhammad did not do any of this"),
+      source: ik(44, "Ibn Kathir says if he had forged anything, Allah would be swift to punish him; and of course, he did not do any of this.", ""),
       difficulty: 3,
       questions: [
         { q: "What would happen if he made up words?", a: "Allah would seize him", wrong: ["Nothing at all", "He would be praised", "People would cheer"], why: "If Muhammad forged something against Us, then We would surely be swift in punishing him." },

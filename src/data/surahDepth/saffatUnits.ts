@@ -1087,7 +1087,7 @@ const SAFFAT_THREE: DeepUnit = {
       line: "Most of the earlier nations went astray before them.",
       facts: ["They worshipped others with Allah", "A pattern in history"],
       quote: q37(71),
-      source: ik(71, "Most previous nations went astray, worshipping other gods alongside Allah.", "most of the previous nations went astray, worshipping other gods alongside Allah"),
+      source: ik(71, "Most previous nations went astray, worshipping other gods alongside Allah.", ""),
       difficulty: 2,
       questions: [
         { q: "Who went astray, in 37:71?", a: "Most of the earlier ones", wrong: ["None", "Only one", "The angels"], why: "And indeed most of the earlier ones went astray before them." },
@@ -1101,7 +1101,7 @@ const SAFFAT_THREE: DeepUnit = {
       line: "Allah sent warners among them.",
       facts: ["No nation left without warning", "Messengers called to Tawhid"],
       quote: q37(72),
-      source: ik(72, "Allah sent warners among them to alert them to His anger towards those who disbelieve.", "He sent among them warners to alert them"),
+      source: ik(72, "Allah sent warners among them to alert them to His anger towards those who disbelieve.", ""),
       difficulty: 2,
       questions: [
         { q: "Whom did Allah send, in 37:72?", a: "Warners", wrong: ["Armies", "Merchants", "Poets"], why: "And indeed We sent among them warners." },
@@ -1115,7 +1115,7 @@ const SAFFAT_THREE: DeepUnit = {
       line: "See what was the end of those who were warned.",
       facts: ["Deniers destroyed", "Believers saved"],
       quote: q37(73),
-      source: ik(73, "They persisted in denying, so Allah destroyed the disbelievers and saved the believers.", "He destroyed those who disbelieved in Him and saved the believers"),
+      source: ik(73, "They persisted in denying, so Allah destroyed the disbelievers and saved the believers.", ""),
       difficulty: 2,
       questions: [
         { q: "What are we told to look at, in 37:73?", a: "The end of those warned", wrong: ["The stars", "Their houses", "Their gold"], why: "Then see what was the end of those who were warned." },
@@ -1129,7 +1129,7 @@ const SAFFAT_THREE: DeepUnit = {
       line: "Except the chosen, sincere servants of Allah.",
       facts: ["The believers were saved", "Sincerity protects"],
       quote: q37(74),
-      source: ik(74, "Allah saved the believers and caused them to prevail.", "saved the believers and caused them to prevail"),
+      source: ik(74, "Allah saved the believers and caused them to prevail.", ""),
       difficulty: 2,
       questions: [
         { q: "Who is excepted, in 37:74?", a: "The chosen servants of Allah", wrong: ["The strong", "The many", "The rich"], why: "Except the chosen servants of Allah." },
@@ -1688,7 +1688,7 @@ const SAFFAT_FOUR: DeepUnit = {
       line: "Peace be upon Ibrahim!",
       facts: ["Allah greets him", "We send salam on him"],
       quote: q37(109),
-      source: ik(109, "After the test of the sacrifice, Allah says: Salam be upon Ibrahim.", "be upon Ibrahim"),
+      source: ik(109, "After the test of the sacrifice, Allah says: Salam be upon Ibrahim.", ""),
       difficulty: 1,
       questions: [
         { q: "What is said of Ibrahim, in 37:109?", a: "Peace be upon Ibrahim", wrong: ["Ibrahim is gone", "Ibrahim was wrong", "Ibrahim is king"], why: "Salam (peace!) be upon Ibrahim!" },
@@ -1897,7 +1897,7 @@ const SAFFAT_FIVE: DeepUnit = {
       line: "Ilyas was one of the Messengers.",
       facts: ["Sent to the Children of Israel", "They worshipped an idol, Bal"],
       quote: q37(123),
-      source: ik(123, "Ilyas called his people, who had started to worship an idol, to worship Allah alone.", "he called them to Allah, may He be exalted, and forbade them to worship anyone besides Him"),
+      source: ik(123, "Ilyas called his people, who had started to worship an idol, to worship Allah alone.", ""),
       difficulty: 2,
       questions: [
         { q: "Who was a Messenger, in 37:123?", a: "Ilyas", wrong: ["Luqman", "Dhul-Qarnayn", "Uzair"], why: "And verily, Ilyas was one of the Messengers." },

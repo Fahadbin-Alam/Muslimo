@@ -276,7 +276,7 @@ const MUNAFIQUN_TWO: DeepUnit = {
       line: "Invited to seek forgiveness, they turned their heads away.",
       facts: ["Pride blocks goodness", "Accept a good invitation"],
       quote: q63(5),
-      source: ik(5, "Ibn Kathir says when the hypocrites were invited to have the Prophet ﷺ ask forgiveness for them, they turned away in arrogance.", "they turn away, ignoring this call in arrogance, belittling what they are invited to"),
+      source: ik(5, "Ibn Kathir says when the hypocrites were invited to have the Prophet ﷺ ask forgiveness for them, they turned away in arrogance.", "they turn away, ignoring this call in arrogance, belitt- ling what they"),
       difficulty: 2,
       questions: [
         { q: "What were they invited to?", a: "To be prayed for forgiveness", wrong: ["To a feast", "To a trade", "To a journey"], why: "Come, so that the Messenger of Allah may ask forgiveness from Allah for you." },
@@ -374,7 +374,7 @@ const MUNAFIQUN_TWO: DeepUnit = {
       line: "No one can starve the believers, since Allah owns all treasures.",
       facts: ["Provision is from Allah", "People cannot block it"],
       quote: q63(7),
-      source: ik(5, "Ibn Kathir quotes the ayah answering them: the treasures of the heavens and earth belong to Allah, but the hypocrites do not understand.", "And to Allah belong the treasures of the heavens and the earth, but the hypocrites comprehend not"),
+      source: ik(5, "Ibn Kathir quotes the ayah answering them: the treasures of the heavens and earth belong to Allah, but the hypocrites do not understand.", ""),
       difficulty: 2,
       questions: [
         { q: "To whom do the treasures belong?", a: "Allah", wrong: ["The kings", "The traders", "The hypocrites"], why: "And to Allah belong the treasures of the heavens and the earth." },
@@ -416,7 +416,7 @@ const MUNAFIQUN_TWO: DeepUnit = {
       line: "True honor belongs to Allah, His Messenger and the believers.",
       facts: ["Izzah: honor and might", "Honor comes through faith"],
       quote: q63(8),
-      source: ik(5, "Ibn Kathir quotes the answer to Ibn Ubay: honor belongs to Allah, His Messenger and the believers, but the hypocrites do not know.", "belongs to Allah, and to His Messenger, and to the believers, but the hypocrites know not"),
+      source: ik(5, "Ibn Kathir quotes the answer to Ibn Ubay: honor belongs to Allah, His Messenger and the believers, but the hypocrites do not know.", ""),
       difficulty: 2,
       questions: [
         { q: "To whom does honor belong, per 63:8?", a: "Allah, His Messenger, the believers", wrong: ["The rich", "The strong tribes", "The hypocrites"], why: "Al-Izzah belongs to Allah, and to His Messenger, and to the believers." },
@@ -611,7 +611,7 @@ const MUNAFIQUN_THREE: DeepUnit = {
       line: "Live in this world like a stranger or a traveler.",
       facts: ["A traveler packs light", "Home is the Hereafter"],
       quote: q63(10),
-      source: hadith("bukhari", "6416", "Abdullah ibn Umar", "Sahih", "The Prophet ﷺ took Ibn Umar by the shoulder and told him to be in this world like a stranger or a traveler.", "Be in this world as if you were a stranger or a traveler"),
+      source: hadith("bukhari", "6416", "Abdullah ibn Umar", "Sahih", "The Prophet ﷺ took Ibn Umar by the shoulder and told him to be in this world like a stranger or a traveler.", "you were a stranger or a traveler"),
       difficulty: 2,
       questions: [
         { q: "How should we live in this world?", a: "Like a traveler", wrong: ["Like a king", "Like it lasts forever", "Like a guard"], why: "Be in this world as if you were a stranger or a traveler." },

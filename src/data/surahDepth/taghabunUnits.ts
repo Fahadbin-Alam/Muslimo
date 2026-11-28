@@ -638,7 +638,7 @@ const TAGHABUN_FOUR: DeepUnit = {
       line: "Fear Allah as much as you are able; He asks no more.",
       facts: ["Allah is kind", "Do your best"],
       quote: q64(16),
-      source: ik(16, "Ibn Kathir says have Taqwa of Allah as much as you can means as much as you are able to bear.", "much as you are able and can bear or endure"),
+      source: ik(16, "Ibn Kathir says have Taqwa of Allah as much as you can means as much as you are able to bear.", "as you are able and can bear or endure"),
       difficulty: 2,
       questions: [
         { q: "How much Taqwa does 64:16 ask?", a: "As much as you can", wrong: ["More than you can", "None at all", "Only on Fridays"], why: "So have Taqwa of Allah as much as you can." },
@@ -722,7 +722,7 @@ const TAGHABUN_FOUR: DeepUnit = {
       line: "Allah grows one honest date of charity as big as a mountain.",
       facts: ["Only honest money counts", "Small gifts grow huge"],
       quote: q64(17),
-      source: hadith("bukhari", "1410", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said if someone gives a date's worth from honest earnings, Allah grows its reward like a foal until it is as big as a mountain.", "so much so that it becomes as big as a mountain"),
+      source: hadith("bukhari", "1410", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said if someone gives a date's worth from honest earnings, Allah grows its reward like a foal until it is as big as a mountain.", "that it becomes as big as a mountain"),
       difficulty: 3,
       questions: [
         { q: "How small can the charity be?", a: "One date", wrong: ["A house", "A camel", "A field"], why: "If one gives in charity what equals one date-fruit from the honestly earned money." },

@@ -360,7 +360,7 @@ const MUTAFFIFIN_THREE: DeepUnit = {
       line: "Whoever wants to compete, let them race for Paradise.",
       facts: ["Tanafus: competing", "Race in good deeds"],
       quote: q83(26),
-      source: ik(26, "Ibn Kathir says for a reward like this, let the competitors compete and race toward it.", "Let the competitors compete and race toward the likes of this"),
+      source: ik(26, "Ibn Kathir says for a reward like this, let the competitors compete and race toward it.", "the competitors compete and race toward the likes of this"),
       difficulty: 3,
       questions: [
         { q: "For what should people strive, per 83:26?", a: "For the bliss of Paradise", wrong: ["For fame", "For more money", "For winning games"], why: "And for this let all those strive who want to strive." },

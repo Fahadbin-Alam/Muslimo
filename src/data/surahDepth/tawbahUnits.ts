@@ -236,7 +236,7 @@ const TAWBAH_ONE: DeepUnit = {
       line: "Their Lord gives them glad news of mercy, pleasure and Gardens.",
       facts: ["Far higher in rank", "They stay there forever"],
       quote: q9(21),
-      source: ik(21, "Those who believed, emigrated and strove with their wealth and lives are far higher in rank with Allah. Their Lord gives them glad news of mercy, His pleasure and everlasting Gardens.", "are far higher in degree with Allah"),
+      source: ik(21, "Those who believed, emigrated and strove with their wealth and lives are far higher in rank with Allah. Their Lord gives them glad news of mercy, His pleasure and everlasting Gardens.", ""),
       difficulty: 5,
       questions: [
         { q: "What three glad tidings does 9:21 give?", a: "Mercy, pleasure, Gardens", wrong: ["Gold, horses, land", "Fame, power, praise", "Sleep, food, rest"], why: "Glad tidings of mercy from Him, His being pleased, and Gardens." },
@@ -724,7 +724,7 @@ const TAWBAH_THREE: DeepUnit = {
       line: "Pleasing Allah matters more than pleasing people.",
       facts: ["They swore to please people", "Allah has more right"],
       quote: q9(62),
-      source: ik(62, "The hypocrites swore oaths to please the believers, but it is more fitting that they should please Allah and His Messenger, if they truly believe.", "it is more fitting that they should please Allah and His Messenger"),
+      source: ik(62, "The hypocrites swore oaths to please the believers, but it is more fitting that they should please Allah and His Messenger, if they truly believe.", ""),
       difficulty: 5,
       questions: [
         { q: "Whom should they have tried to please, in 9:62?", a: "Allah and His Messenger", wrong: ["Their chiefs", "The crowd", "Their friends"], why: "It is more fitting that they should please Allah and His Messenger." },
@@ -738,7 +738,7 @@ const TAWBAH_THREE: DeepUnit = {
       line: "Mocking Allah, His ayat or His Messenger is never just a joke.",
       facts: ["We were only joking, they said", "No excuse was accepted"],
       quote: q9(65),
-      source: ik(65, "On the way to Tabuk some mocked the reciters of the Quran. When asked, they said they were only talking idly and joking. Allah said: was it Allah, His ayat and His Messenger you were mocking?", "only talking idly and joking"),
+      source: ik(65, "On the way to Tabuk some mocked the reciters of the Quran. When asked, they said they were only talking idly and joking. Allah said: was it Allah, His ayat and His Messenger you were mocking?", ""),
       difficulty: 5,
       questions: [
         { q: "What excuse did the mockers give, in 9:65?", a: "We were only joking", wrong: ["We were asleep", "We were lost", "We were praying"], why: "We were only talking idly and joking." },
@@ -961,7 +961,7 @@ const TAWBAH_FOUR: DeepUnit = {
       line: "With no mount to ride, they turned back weeping with grief.",
       facts: ["No mounts were left", "Their eyes overflowed"],
       quote: q9(92),
-      source: ik(92, "Some came asking for a mount to ride. When none was left, they turned away with eyes overflowing with tears, sad they had nothing to spend.", "with their eyes overflowing with tears of grief"),
+      source: ik(92, "Some came asking for a mount to ride. When none was left, they turned away with eyes overflowing with tears, sad they had nothing to spend.", ""),
       difficulty: 4,
       questions: [
         { q: "Why did they come to the Prophet ﷺ, in 9:92?", a: "To ask for mounts", wrong: ["To ask for money", "To ask to stay", "To ask for food"], why: "Those who came to you to be provided with mounts." },
@@ -1352,7 +1352,7 @@ const TAWBAH_FIVE: DeepUnit = {
       line: "A Messenger came from among you, speaking your language.",
       facts: ["Known for truth and honesty", "From your own people"],
       quote: q9(128),
-      source: ik(128, "Allah sent a Messenger from among them, speaking their language. Ja'far told the Negus: Allah sent us a Messenger whose family, life, truth and honesty we know.", "whose family lineage , description, early days, truth and honesty we know"),
+      source: ik(128, "Allah sent a Messenger from among them, speaking their language. Ja'far told the Negus: Allah sent us a Messenger whose family, life, truth and honesty we know.", ""),
       difficulty: 5,
       questions: [
         { q: "Where did the Messenger ﷺ come from, in 9:128?", a: "From among yourselves", wrong: ["From far away", "From the angels", "From the jinn"], why: "There has come unto you a Messenger from among yourselves." },
@@ -1366,7 +1366,7 @@ const TAWBAH_FIVE: DeepUnit = {
       line: "Your hardship grieves him ﷺ; he is kind and merciful to you.",
       facts: ["He is eager for your good", "This religion is easy"],
       quote: q9(128),
-      source: ik(128, "Whatever is hard on his Ummah grieves him. He is eager for their guidance and good, and kind and merciful to the believers. An authentic hadith says this religion is easy.", "Whatever would cause hardship to his Ummah or be difficult for them, then it grieves him"),
+      source: ik(128, "Whatever is hard on his Ummah grieves him. He is eager for their guidance and good, and kind and merciful to the believers. An authentic hadith says this religion is easy.", ""),
       difficulty: 5,
       questions: [
         { q: "What grieves the Prophet ﷺ, in 9:128?", a: "Any hardship you face", wrong: ["Your wealth", "Your joy", "Your rest"], why: "It grieves him that you should receive any injury or difficulty." },

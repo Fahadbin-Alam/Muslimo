@@ -461,7 +461,7 @@ const SABA_TWO: DeepUnit = {
       line: "They asked: when is this promise, if you are truthful?",
       facts: ["They thought it unlikely", "Believers are mindful of it"],
       quote: q34(29),
-      source: ik(29, "The disbelievers thought it unlikely the Hour would ever come, so they asked to hurry it.", "the disbelievers believed it unlikely that the Hour would ever come to pass"),
+      source: ik(29, "The disbelievers thought it unlikely the Hour would ever come, so they asked to hurry it.", "thedisbelievers believed it unlikely that the Hour would ever come to pass"),
       difficulty: 3,
       questions: [
         { q: "What did they ask, in 34:29?", a: "When is this promise?", wrong: ["Where is the Kabah?", "Who is the king?", "What is the price?"], why: "And they say: When is this promise if you are truthful?" },

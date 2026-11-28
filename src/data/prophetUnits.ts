@@ -95,7 +95,7 @@ const ADAM = unit("prophet-adam", "prophets-unit-adam", "Adam", [
     difficulty: 3,
     questions: [
       { q: "What did Adam and his wife do after their mistake?", a: "Asked Allah to forgive them", wrong: ["Blamed Iblis", "Hid forever", "Said nothing"], why: "Quran 7:23." },
-      { q: "Who accepts repentance, as Quran 2:37 says?", a: "Allah, the Merciful", wrong: ["The angels", "Iblis", "No one"], why: "He is the Accepting of repentance, the Merciful." },
+      { q: "Who accepts repentance, as Quran 2:37 says?", a: "Allah, the Merciful", wrong: ["The angels", "Iblis", "No one"], why: "He is the Accepting of repentance, the Merciful.", source: quran(2, 37, "Then Adam received from his Lord some words, and He accepted his repentance. Indeed, it is He who is the Accepting of repentance, the Merciful.") },
       { q: "This dua teaches us to admit our mistakes to Allah.", tf: true, why: "Unlike Iblis, Adam did not argue." }
     ]
   },
@@ -141,7 +141,7 @@ const IDRIS = unit("prophet-idris", "prophets-unit-idris", "Idris", [
     questions: [
       { q: "What does the Quran call Idris?", a: "A man of truth and a prophet", wrong: ["A king", "A poet", "An angel"], why: "Quran 19:56." },
       { q: "Where did Allah raise Idris?", a: "To a high place", wrong: ["To a palace", "To a mountain top", "Nowhere"], why: "Quran 19:57." },
-      { q: "Quran 21:85 names Idris among the patient.", tf: true, why: "Ismail, Idris and Dhul-Kifl: all were patient." }
+      { q: "Quran 21:85 names Idris among the patient.", tf: true, why: "Ismail, Idris and Dhul-Kifl: all were patient.", source: quran(21, 85, "And mention Ishmael and Idrees and Dhul-Kifl; all were of the patient.") }
     ]
   },
   {
@@ -212,7 +212,7 @@ const NUH = unit("prophet-nuh", "prophets-unit-nuh", "Nuh", [
     questions: [
       { q: "What did the chiefs do when they passed Nuh?", a: "Mocked him", wrong: ["Helped him", "Gave him wood", "Prayed with him"], why: "Quran 11:38." },
       { q: "What was Nuh building?", a: "A ship", wrong: ["A tower", "A wall", "A palace"], why: "Construct the ship under Our eyes (Quran 11:37)." },
-      { q: "What was the ship made of, as Quran 54:13 says?", a: "Planks and nails", wrong: ["Stone", "Gold", "Reeds only"], why: "We carried him on planks and nails." }
+      { q: "What was the ship made of, as Quran 54:13 says?", a: "Planks and nails", wrong: ["Stone", "Gold", "Reeds only"], why: "We carried him on planks and nails.", source: quran(54, 13, "And We carried him on a construction of planks and nails.") }
     ]
   },
   {
@@ -729,7 +729,7 @@ const ISMAIL = unit("prophet-ismail", "prophets-unit-ismail", "Ismail", [
     difficulty: 2,
     questions: [
       { q: "What did they ask while building?", a: "Our Lord, accept this from us", wrong: ["Make us famous", "Make it gold", "Finish it fast"], why: "Quran 2:127." },
-      { q: "Whose coming did they pray for in 2:129?", a: "A messenger from their children", wrong: ["A king", "An army", "Rain"], why: "That prayer was answered with Muhammad ﷺ." },
+      { q: "Whose coming did they pray for in 2:129?", a: "A messenger from their children", wrong: ["A king", "An army", "Rain"], why: "That prayer was answered with Muhammad ﷺ.", source: quran(2, 129, "Our Lord, and send among them a messenger from themselves who will recite to them Your verses and teach them the Book and wisdom.") },
       { q: "The Ka'bah was the first mosque built on earth.", tf: true, why: "Then al-Aqsa, forty years later (Bukhari 3366)." }
     ]
   },
@@ -830,7 +830,7 @@ const ISHAQ_YAQUB = unit("prophet-ishaq-yaqub", "prophets-unit-ishaq-yaqub", "Is
     questions: [
       { q: "What did Ya'qub ask his sons as he was dying?", a: "What will you worship after me?", wrong: ["Who gets my sheep?", "Where will you live?", "Who is the eldest?"], why: "Quran 2:133." },
       { q: "Which fathers did his sons name?", a: "Ibrahim, Ismail and Ishaq", wrong: ["Nuh, Hud and Salih", "Musa and Harun", "Adam and Idris"], why: "The God of your fathers Ibrahim, Ismail and Ishaq." },
-      { q: "What did Ibrahim and Ya'qub tell their sons, in Quran 2:132?", a: "Do not die except as Muslims", wrong: ["Build a big city", "Never travel", "Stay rich"], why: "Allah has chosen this religion for you." }
+      { q: "What did Ibrahim and Ya'qub tell their sons, in Quran 2:132?", a: "Do not die except as Muslims", wrong: ["Build a big city", "Never travel", "Stay rich"], why: "Allah has chosen this religion for you.", source: quran(2, 132, "O my sons, indeed Allah has chosen for you this religion, so do not die except while you are Muslims.") }
     ]
   }
 ]);
@@ -1060,7 +1060,7 @@ const YUNUS = unit("prophet-yunus", "prophets-unit-yunus", "Yunus", [
     difficulty: 1,
     questions: [
       { q: "Where did Yunus go when he left his people?", a: "Onto a loaded ship", wrong: ["Into a cave", "Up a mountain", "Into a palace"], why: "Quran 37:140." },
-      { q: "How did Yunus leave, as Quran 21:87 says?", a: "In anger", wrong: ["Laughing", "With the king", "With his whole town"], why: "When he went off in anger." },
+      { q: "How did Yunus leave, as Quran 21:87 says?", a: "In anger", wrong: ["Laughing", "With the king", "With his whole town"], why: "When he went off in anger.", source: quran(21, 87, "And mention the man of the fish, when he went off in anger and called out within the darknesses: There is no deity except You.") },
       { q: "Yunus was one of Allah's messengers.", tf: true, why: "Quran 37:139." }
     ]
   },
@@ -1075,7 +1075,7 @@ const YUNUS = unit("prophet-yunus", "prophets-unit-yunus", "Yunus", [
     questions: [
       { q: "What swallowed Yunus?", a: "A great fish", wrong: ["The earth", "A storm cloud", "A lion"], why: "Quran 37:142." },
       { q: "What was drawn on the ship?", a: "Lots", wrong: ["Maps", "Pictures", "Swords"], why: "He drew lots and lost (Quran 37:141)." },
-      { q: "What is Yunus called in Quran 21:87?", a: "The man of the fish", wrong: ["The man of the cave", "The man of the ark", "The man of the well"], why: "Dhun-Nun." }
+      { q: "What is Yunus called in Quran 21:87?", a: "The man of the fish", wrong: ["The man of the cave", "The man of the ark", "The man of the well"], why: "Dhun-Nun.", source: quran(21, 87, "And mention the man of the fish, when he went off in anger and called out within the darknesses: There is no deity except You.") }
     ]
   },
   {
@@ -1328,7 +1328,7 @@ const MUSA = unit("prophet-musa", "prophets-unit-musa", "Musa and Harun", [
     questions: [
       { q: "How many springs came from the rock?", a: "Twelve", wrong: ["Seven", "Three", "Forty"], why: "Quran 2:60." },
       { q: "What did Musa strike the rock with?", a: "His staff", wrong: ["His foot", "A hammer", "His hand"], why: "Quran 2:60." },
-      { q: "What did Allah also send down in the desert, in Quran 2:57?", a: "Manna and quails", wrong: ["Gold coins", "Bread from Egypt", "Nothing"], why: "We sent down manna and quails." }
+      { q: "What did Allah also send down in the desert, in Quran 2:57?", a: "Manna and quails", wrong: ["Gold coins", "Bread from Egypt", "Nothing"], why: "We sent down manna and quails.", source: quran(2, 57, "And We shaded you with clouds and sent down to you manna and quails.") }
     ]
   },
   {
@@ -1515,7 +1515,7 @@ const ILYAS_ALYASA = unit("prophet-ilyas-alyasa", "prophets-unit-ilyas-alyasa", 
     questions: [
       { q: "How does Quran 38:48 describe Al-Yasa'?", a: "Among the best", wrong: ["Among the losers", "A tyrant", "Unknown"], why: "Each of them was among the best." },
       { q: "Who is named with Al-Yasa' in Quran 38:48?", a: "Ismail and Dhul-Kifl", wrong: ["Pharaoh and Haman", "Qarun", "Iblis"], why: "Quran 38:48." },
-      { q: "In Quran 6:86, Allah preferred Al-Yasa' over the worlds.", tf: true, why: "All of them We preferred over the worlds." }
+      { q: "In Quran 6:86, Allah preferred Al-Yasa' over the worlds.", tf: true, why: "All of them We preferred over the worlds.", source: quran(6, 86, "And Ishmael and Elisha and Jonah and Lot; and all of them We preferred over the worlds.") }
     ]
   }
 ]);
@@ -1600,7 +1600,7 @@ const DAWUD = unit("prophet-dawud", "prophets-unit-dawud", "Dawud", [
     questions: [
       { q: "How was Dawud told to judge?", a: "With truth", wrong: ["With guesses", "With desire", "With gifts"], why: "Quran 38:26." },
       { q: "What did Allah warn would lead him astray?", a: "Following desire", wrong: ["Praying", "Fasting", "Working"], why: "Do not follow desire." },
-      { q: "What does Quran 38:17 call Dawud?", a: "A man of strength, always turning to Allah", wrong: ["A weak man", "A careless king", "A poet"], why: "The possessor of strength; he always turned back to Allah." }
+      { q: "What does Quran 38:17 call Dawud?", a: "A man of strength, always turning to Allah", wrong: ["A weak man", "A careless king", "A poet"], why: "The possessor of strength; he always turned back to Allah.", source: quran(38, 17, "Remember Our servant, David, the possessor of strength; indeed, he was one who repeatedly turned back to Allah.") }
     ]
   }
 ]);
@@ -1700,7 +1700,7 @@ const SULAYMAN = unit("prophet-sulayman", "prophets-unit-sulayman", "Sulayman", 
     questions: [
       { q: "What did Allah make serve Sulayman?", a: "The wind and some jinn", wrong: ["The sun", "The angels", "The sea monsters"], why: "Quran 34:12." },
       { q: "How far did the wind carry him in a morning?", a: "A month's journey", wrong: ["One mile", "A year's journey", "Nowhere"], why: "Quran 34:12." },
-      { q: "What did Sulayman ask for in Quran 38:35?", a: "Forgiveness and a unique kingdom", wrong: ["Long life only", "Many sons", "Revenge"], why: "My Lord, forgive me and give me a kingdom." }
+      { q: "What did Sulayman ask for in Quran 38:35?", a: "Forgiveness and a unique kingdom", wrong: ["Long life only", "Many sons", "Revenge"], why: "My Lord, forgive me and give me a kingdom.", source: quran(38, 35, "He said: My Lord, forgive me and grant me a kingdom such as will not belong to anyone after me.") }
     ]
   },
   {
@@ -1818,7 +1818,7 @@ const YAHYA = unit("prophet-yahya", "prophets-unit-yahya", "Yahya", [
     questions: [
       { q: "When was Yahya given wisdom?", a: "As a boy", wrong: ["At sixty", "Never", "After death"], why: "Quran 19:12." },
       { q: "How was Yahya told to hold the Book?", a: "Firmly", wrong: ["Lightly", "Secretly", "Never"], why: "Quran 19:12." },
-      { q: "What two things came with his wisdom, in Quran 19:13?", a: "Tenderness and purity", wrong: ["Gold and land", "Fame and power", "Swords"], why: "Affection from Us and purity." }
+      { q: "What two things came with his wisdom, in Quran 19:13?", a: "Tenderness and purity", wrong: ["Gold and land", "Fame and power", "Swords"], why: "Affection from Us and purity.", source: quran(19, 13, "And affection from Us and purity, and he was fearing of Allah.") }
     ]
   },
   {

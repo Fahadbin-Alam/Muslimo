@@ -207,7 +207,7 @@ const HADID_ONE: DeepUnit = {
       line: "Allah knows every seed and raindrop that sinks into the soil.",
       facts: ["He knows every seed in the ground", "He knows every plant that grows out"],
       quote: q57(4),
-      source: ik(4, "Ibn Kathir says Allah knows the amount of seeds and drops of water that enter the earth, and the plants and fruits that come out of it.", "His knowledge in the amount of seeds and drops of water that enter inside the earth…of plants, vegetation and fruits"),
+      source: ik(4, "Ibn Kathir says Allah knows the amount of seeds and drops of water that enter the earth, and the plants and fruits that come out of it.", "knowledge in the amount of seeds and drops of water that enter"),
       difficulty: 2,
       questions: [
         { q: "What goes into the earth, per Ibn Kathir?", a: "Seeds and drops of water", wrong: ["Only gold", "Only rocks", "Only roots"], why: "The amount of seeds and drops of water that enter inside the earth." },
@@ -1031,7 +1031,7 @@ const HADID_THREE: DeepUnit = {
       line: "The high mansions are for true believers, not only prophets.",
       facts: ["The Companions thought it was only for prophets", "The Prophet ﷺ said ordinary believers too"],
       quote: q57(19),
-      source: hadith("bukhari", "3256", "Abu Said Al-Khudri", "Sahih", "Asked if the mansions were only for the prophets, the Prophet ﷺ said no, they are for men who believed in Allah and believed in the Messengers.", "these are for the men who believed in Allah and also believed in the Apostles"),
+      source: hadith("bukhari", "3256", "Abu Said Al-Khudri", "Sahih", "Asked if the mansions were only for the prophets, the Prophet ﷺ said no, they are for men who believed in Allah and believed in the Messengers.", "these are for the men who believed in Allah and also believed in the"),
       difficulty: 3,
       questions: [
         { q: "Are the lofty mansions only for prophets?", a: "No, for true believers too", wrong: ["Yes, only prophets", "Only for angels", "Only for kings"], why: "No! By Allah... these are for the men who believed in Allah and also believed in the Apostles." },
@@ -1157,7 +1157,7 @@ const HADID_THREE: DeepUnit = {
       line: "Paradise is nearer to us than the strap of our shoe.",
       facts: ["Good deeds bring Paradise near", "Bad deeds bring the Fire near"],
       quote: q57(20),
-      source: hadith("bukhari", "6488", "Abdullah ibn Mas'ud", "Sahih", "The Prophet ﷺ said Paradise is nearer to any of you than the leather strap of his shoe, and so is the Fire.", "Paradise is nearer to any of you than the Shirak"),
+      source: hadith("bukhari", "6488", "Abdullah ibn Mas'ud", "Sahih", "The Prophet ﷺ said Paradise is nearer to any of you than the leather strap of his shoe, and so is the Fire.", "is nearer to any of you than the Shirak"),
       difficulty: 3,
       questions: [
         { q: "What is Paradise nearer than, per Bukhari 6488?", a: "The strap of one's shoe", wrong: ["The moon", "Makkah", "The next town"], why: "Paradise is nearer to any of you than the Shirak (leather strap) of his shoe." },

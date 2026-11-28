@@ -81,7 +81,7 @@ const IBRAHIM_ONE: DeepUnit = {
       line: "Earlier Prophets went to their nation; ours ﷺ to all mankind.",
       facts: ["Five gifts no one had before", "The earth made a place of prayer"],
       quote: q14(4),
-      source: hadith("bukhari", "335", "Jabir ibn Abdullah", "Sahih", "The Prophet ﷺ said he was given five things no one before him had, among them that the earth was made a place of prayer, the right of intercession, and that every Prophet was sent to his nation only, but he was sent to all mankind.", "Every Prophet used to be sent to his nation only but I have been sent to all mankind"),
+      source: hadith("bukhari", "335", "Jabir ibn Abdullah", "Sahih", "The Prophet ﷺ said he was given five things no one before him had, among them that the earth was made a place of prayer, the right of intercession, and that every Prophet was sent to his nation only, but he was sent to all mankind.", "used to be sent to his nation only but I have been sent to all mankind"),
       difficulty: 3,
       questions: [
         { q: "How many things was the Prophet ﷺ given that no one had before?", a: "Five", wrong: ["Two", "Seven", "Ten"], why: "I have been given five things which were not given to any one else before me." },
@@ -519,7 +519,7 @@ const IBRAHIM_THREE: DeepUnit = {
       line: "Some traded Allah's blessing for disbelief and misled others.",
       facts: ["The Prophet ﷺ was the blessing", "They set up rivals to Allah"],
       quote: q14(28),
-      source: ik(28, "Allah sent Muhammad ﷺ as a mercy and blessing to all mankind. Those who accepted it with thanks enter Paradise, while those who traded it for disbelief led their people to ruin.", "for Allah sent Muhammad as a mercy and a blessing to all mankind"),
+      source: ik(28, "Allah sent Muhammad ﷺ as a mercy and blessing to all mankind. Those who accepted it with thanks enter Paradise, while those who traded it for disbelief led their people to ruin.", "as a mercy and a blessing to all mankind"),
       difficulty: 4,
       questions: [
         { q: "What did they change Allah's blessings into, in 14:28?", a: "Disbelief", wrong: ["Gold", "Thanks", "Prayer"], why: "Have you not seen those who have changed the blessings of Allah into disbelief." },

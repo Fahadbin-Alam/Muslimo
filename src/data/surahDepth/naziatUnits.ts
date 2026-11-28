@@ -611,7 +611,7 @@ const NAZIAT_FOUR: DeepUnit = {
       line: "Life is short, so live like a traveller passing through.",
       facts: ["Use health before sickness", "Use life before death"],
       quote: q79(46),
-      source: hadith("bukhari", "6416", "Ibn Umar", "Sahih", "The Prophet ﷺ held Ibn Umar's shoulder and told him to be in this world like a stranger or a traveller.", "Be in this world as if you were a stranger or a traveler"),
+      source: hadith("bukhari", "6416", "Ibn Umar", "Sahih", "The Prophet ﷺ held Ibn Umar's shoulder and told him to be in this world like a stranger or a traveller.", "you were a stranger or a traveler"),
       difficulty: 3,
       questions: [
         { q: "How should we live in this world, per the hadith?", a: "Like a stranger or a traveller", wrong: ["Like a king", "Like it lasts forever", "Like a guard"], why: "Be in this world as if you were a stranger or a traveler." },

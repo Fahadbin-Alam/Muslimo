@@ -193,7 +193,7 @@ const MUHAMMAD_ONE: DeepUnit = {
       line: "Allah protects believers; disbelievers have no protector.",
       facts: ["Mawla: Protector, Helper", "Said after Uhud"],
       quote: q47(11),
-      source: hadith("bukhari", "3039", "Al-Bara ibn Azib", "Sahih", "After Uhud, when Abu Sufyan boasted of his idols, the Prophet ﷺ told the Companions to answer: Allah is our Helper and you have no helper.", "Say Allah is our Helper and you have no helper"),
+      source: hadith("bukhari", "3039", "Al-Bara ibn Azib", "Sahih", "After Uhud, when Abu Sufyan boasted of his idols, the Prophet ﷺ told the Companions to answer: Allah is our Helper and you have no helper.", "Allah is our Helper and you have no helper"),
       difficulty: 3,
       questions: [
         { q: "Who is the Protector of believers, in 47:11?", a: "Allah", wrong: ["Their army", "Their wealth", "Their tribe"], why: "Allah is the Protector of those who believe." },
@@ -221,7 +221,7 @@ const MUHAMMAD_ONE: DeepUnit = {
       line: "Allah destroyed towns stronger than Makkah, which drove him out.",
       facts: ["A warning to Makkah", "His people drove him out"],
       quote: q47(13),
-      source: ik(13, "Ibn Kathir says your town means Makkah, and the ayah is a great warning to its people.", "This is a great threat and severe warning to the people of Makkah"),
+      source: ik(13, "Ibn Kathir says your town means Makkah, and the ayah is a great warning to its people.", "is a great threat and severe warning to the people of Makkah"),
       difficulty: 3,
       questions: [
         { q: "Which town drove the Prophet ﷺ out, per Ibn Kathir?", a: "Makkah", wrong: ["Madinah", "Taif", "Jerusalem"], why: "Than your town that has driven you out, meaning, Makkah." },
@@ -332,7 +332,7 @@ const MUHAMMAD_TWO: DeepUnit = {
       line: "The Prophet ﷺ showed two fingers: the Hour is that close.",
       facts: ["The Hour is near", "Prepare today"],
       quote: q47(18),
-      source: hadith("bukhari", "6503", "Sahl ibn Sa'd", "Sahih", "The Prophet ﷺ said: I have been sent and the Hour is like these two, showing two of his fingers.", "I have been sent and the Hour (is at hand) as these two"),
+      source: hadith("bukhari", "6503", "Sahl ibn Sa'd", "Sahih", "The Prophet ﷺ said: I have been sent and the Hour is like these two, showing two of his fingers.", "sent and the Hour … as these two"),
       difficulty: 2,
       questions: [
         { q: "What did the Prophet ﷺ show, per Bukhari 6503?", a: "Two fingers", wrong: ["A ring", "A stone", "A date"], why: "Showing his two fingers and sticking them out." },
@@ -463,7 +463,7 @@ const MUHAMMAD_TWO: DeepUnit = {
       questions: [
         { q: "Who truly keeps ties, per Bukhari 5991?", a: "One who keeps ties with those who cut him", wrong: ["One who repays only", "One who waits", "One who ignores"], why: "Al-Wasil is the one who keeps good relations with those relatives who had severed the bond." },
         { q: "What is not enough, per Bukhari 5991?", a: "Only returning good done to you", wrong: ["Praying", "Fasting", "Giving charity"], why: "Al-Wasil is not the one who recompenses the good done to him by his relatives." },
-        { tf: true, q: "Keeping ties brings more provision and longer life, per Bukhari 5985.", why: "Whoever is pleased that he be granted more wealth and that his life be prolonged should keep good relations with his kin." }
+        { tf: true, q: "Keeping ties brings more provision and longer life, per Bukhari 5985.", why: "Whoever is pleased that he be granted more wealth and that his life be prolonged should keep good relations with his kin.", source: hadith("bukhari", "5985", "Abu Hurayrah", "Sahih", "Whoever is pleased that he be granted more wealth and that his life be prolonged should keep good relations with his kin.", "then he should keep good relations with his Kith and kin") }
       ]
     },
     {

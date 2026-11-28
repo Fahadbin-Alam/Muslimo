@@ -863,7 +863,7 @@ const QAMAR_THREE: DeepUnit = {
       line: "The Hour is their appointed time, harder and more bitter.",
       facts: ["Revealed in Makkah", "Aishah was a young girl then"],
       quote: q54(46),
-      source: hadith("bukhari", "4876", "Aishah", "Sahih", "Aishah said 54:46 was revealed to Muhammad ﷺ at Makkah while she was a young girl at play.", "was revealed to Muhammad at Mecca while I was a playful little girl"),
+      source: hadith("bukhari", "4876", "Aishah", "Sahih", "Aishah said 54:46 was revealed to Muhammad ﷺ at Makkah while she was a young girl at play.", "was revealed to Muhammad at Mecca while I was a"),
       difficulty: 2,
       questions: [
         { q: "What is their appointed time, in 54:46?", a: "The Hour", wrong: ["The harvest", "The winter", "The next market"], why: "Nay, but the Hour is their appointed time." },

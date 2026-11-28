@@ -124,7 +124,7 @@ const YUSUF_ONE: DeepUnit = {
       line: "The brothers envied Yusuf and Binyamin for their father's love.",
       facts: ["Signs for those who ask", "They planned to repent after"],
       quote: q12(8),
-      source: ik(7, "The brothers said Yusuf and his full brother Binyamin were dearer to their father. They wanted Yusuf gone so the father's love would be theirs alone.", "Remove Yusuf, who competes with you for your father … love"),
+      source: ik(7, "The brothers said Yusuf and his full brother Binyamin were dearer to their father. They wanted Yusuf gone so the father's love would be theirs alone.", "Yusuf and his brother are dearer to our father than"),
       difficulty: 2,
       questions: [
         { q: "Who was Yusuf's full brother?", a: "Binyamin", wrong: ["Rubil", "Yahudha", "Sham'un"], why: "Yusuf and his brother Binyamin, Yusuf's full brother." },
@@ -570,7 +570,7 @@ const YUSUF_THREE: DeepUnit = {
       line: "The women cleared Yusuf; the 'Aziz's wife admitted the truth.",
       facts: ["No evil known of him", "He is of the truthful"],
       quote: q12(51),
-      source: ik(50, "The king asked the women. They said they knew no evil of Yusuf. The 'Aziz's wife said the truth is now clear: it was her doing, and he is truthful.", "Now the truth is manifest"),
+      source: ik(50, "The king asked the women. They said they knew no evil of Yusuf. The 'Aziz's wife said the truth is now clear: it was her doing, and he is truthful.", ""),
       difficulty: 4,
       questions: [
         { q: "What did the women say, in 12:51?", a: "No evil know we against him", wrong: ["He is guilty", "We do not remember", "Ask his brothers"], why: "Allah forbid! No evil know we against him!" },
@@ -640,7 +640,7 @@ const YUSUF_THREE: DeepUnit = {
       line: "The reward of the Hereafter is better for believers with Taqwa.",
       facts: ["Greater than any kingdom", "Faith and Taqwa together"],
       quote: q12(57),
-      source: ik(56, "What Allah prepared for Yusuf in the Hereafter is far greater than the power He gave him in this life. The Hereafter is better for those who believe and have Taqwa.", "is much greater, substantial and honored than the authority He gave him in this life"),
+      source: ik(56, "What Allah prepared for Yusuf in the Hereafter is far greater than the power He gave him in this life. The Hereafter is better for those who believe and have Taqwa.", "is much greater, subs- tantial and honored than the authority He gave"),
       difficulty: 5,
       questions: [
         { q: "What is better, in 12:57?", a: "The reward of the Hereafter", wrong: ["Power in Egypt", "Gold", "Long life"], why: "And verily, the reward of the Hereafter is better." },
@@ -709,7 +709,7 @@ const YUSUF_FOUR: DeepUnit = {
       line: "Yusuf asked them to bring their other brother next time.",
       facts: ["Full measure, the best host", "No grain without him"],
       quote: q12(59),
-      source: ik(58, "Yusuf gave them what they needed and told them to bring the brother they had mentioned. If they came without him, there would be no grain for them.", "Bring me your brother from your father … side whom you mentioned"),
+      source: ik(58, "Yusuf gave them what they needed and told them to bring the brother they had mentioned. If they came without him, there would be no grain for them.", "brother is alive and his father kept him, so that his closeness"),
       difficulty: 4,
       questions: [
         { q: "Whom did Yusuf ask them to bring, in 12:59?", a: "Their brother from their father", wrong: ["Their mother", "Their cousins", "A camel"], why: "Bring me a brother of yours from your father." },
@@ -877,7 +877,7 @@ const YUSUF_FOUR: DeepUnit = {
       line: "The eldest stayed in Egypt, ashamed to face his father.",
       facts: ["They had sworn an oath", "Ask the town and the caravan"],
       quote: q12(80),
-      source: ik(80, "Having failed their oath to Ya'qub, the brothers talked in private. The eldest said he would not leave Egypt until his father allowed it or Allah judged. The rest went home to tell the truth.", "I will not leave Egypt"),
+      source: ik(80, "Having failed their oath to Ya'qub, the brothers talked in private. The eldest said he would not leave Egypt until his father allowed it or Allah judged. The rest went home to tell the truth.", ""),
       difficulty: 5,
       questions: [
         { q: "What did the eldest remind them of, in 12:80?", a: "Their oath to their father", wrong: ["Their debts", "Their camels", "A dream"], why: "Know you not that your father did take an oath from you in Allah's Name?" },

@@ -40,7 +40,7 @@ const GHASHIYAH_ONE: DeepUnit = {
       line: "Al-Ghashiyah is a name for the Last Day, which covers everyone.",
       facts: ["Al-Ghashiyah: the Overwhelming", "Read at Jumuah and Eid"],
       quote: q88(1),
-      source: ik(1, "Ibn Abbas and Qatadah said Al-Ghashiyah is a name of the Day of Judgement, as it overwhelms all people.", "Al-Ghashiyah is one of the names of the Day of Judgement"),
+      source: ik(1, "Ibn Abbas and Qatadah said Al-Ghashiyah is a name of the Day of Judgement, as it overwhelms all people.", ""),
       difficulty: 1,
       questions: [
         { q: "What does 88:1 ask?", a: "Has the news of Al-Ghashiyah come to you?", wrong: ["Who made the stars?", "Where is the sea?", "When is Ramadan?"], why: "Has there come to you the narration of Al-Ghashiyah, the overwhelming?" },
