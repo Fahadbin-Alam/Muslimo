@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getActiveLanguage } from "../../i18n";
-import { findTeacherVoice, knownTeacherVoice, mistakeExplanation, speakingMs, speakTeacher, stopTeacher } from "../../services/teacherVoice";
+import { TEACHER_SPEAKER_ON, findTeacherVoice, knownTeacherVoice, mistakeExplanation, speakingMs, speakTeacher, stopTeacher } from "../../services/teacherVoice";
 
 /**
  * The speaker on a wrong answer's sheet: tap it and the teacher says the right answer and why, its mouth moving
@@ -58,5 +58,5 @@ export function useMistakeVoice(open: boolean, correct: boolean, correctLabel?: 
     });
   }, [language, listening, text, voice]);
 
-  return { onListen: voice !== null && text ? onListen : undefined, listening, talkMs };
+  return { onListen: TEACHER_SPEAKER_ON && voice !== null && text ? onListen : undefined, listening, talkMs };
 }

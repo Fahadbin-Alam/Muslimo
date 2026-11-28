@@ -1,3 +1,6 @@
+// The teacher's speakers are off in the app (TEACHER_SPEAKER_ON); these tests keep the voice itself working in case
+// they come back.
+jest.mock("../services/teacherVoice", () => ({ ...jest.requireActual("../services/teacherVoice"), TEACHER_SPEAKER_ON: true }));
 jest.mock("expo-speech", () => ({
   getAvailableVoicesAsync: jest.fn(async () => mockVoices),
   speak: jest.fn(),
