@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Az-Zalzalah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -266,7 +266,7 @@ const ZALZALAH_TWO: DeepUnit = {
       source: hadith("bukhari", "6492", "Anas ibn Malik", "Sahih", "Anas said people did deeds that seemed tinier than a hair, but the Companions counted them as destructive sins.", "which seem in your eyes as tiny"),
       difficulty: 3,
       questions: [
-        { q: "What will be seen, per 99:8?", a: "Even a speck of evil", wrong: ["Only big crimes", "Nothing at all", "Only words"], why: "And whosoever does evil equal to the weight of a speck of dust shall see it." },
+        { q: "What will be seen, per 99:8?", a: "Even a speck of evil", wrong: ["Only big crimes", "Nothing at all", "Only words"], why: "And whosoever does evil equal to the weight of a speck of dust shall see it.", source: kathir(99, 8, "And whosoever does evil equal to the weight of a speck of dust shall see it.", "whosoever does evil equal to the weight of speck of dust shall") },
         { q: "How did Anas say people saw some sins?", a: "Tinier than a hair", wrong: ["As big as mountains", "As good deeds", "As jokes"], why: "Deeds which seem in your eyes as tiny than hair." },
         { tf: true, q: "The Companions took small sins seriously.", why: "We used to consider those very deeds as destructive sins." }
       ]

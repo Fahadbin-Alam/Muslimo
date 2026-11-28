@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Ghashiyah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -169,7 +169,7 @@ const GHASHIYAH_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What will they not hear, per 88:11?", a: "Harmful speech or falsehood", wrong: ["Birds singing", "Water flowing", "Greetings"], why: "Where they shall neither hear harmful speech nor falsehood." },
-        { q: "What will they hear instead, per 19:62?", a: "Only Salam", wrong: ["Arguments", "Shouting", "Nothing at all"], why: "They shall not hear therein any Laghw, but only Salam." },
+        { q: "What will they hear instead, per 19:62?", a: "Only Salam", wrong: ["Arguments", "Shouting", "Nothing at all"], why: "They shall not hear therein any Laghw, but only Salam.", source: kathir(88, 11, "They shall not hear therein any Laghw, but only Salam.", "shall not hear therein any Laghw, but only Salam") },
         { tf: true, q: "Keeping our tongue clean now prepares us for Paradise.", why: "They will not hear in the Paradise that they will be in, any foolish word." }
       ]
     },

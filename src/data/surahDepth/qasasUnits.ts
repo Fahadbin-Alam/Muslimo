@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Qasas ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -782,7 +782,7 @@ const QASAS_FIVE: DeepUnit = {
       questions: [
         { q: "How many people get a double reward in the hadith?", a: "Three", wrong: ["Two", "Seven", "Ten"], why: "Three persons will have a double reward." },
         { q: "Who is one of them?", a: "A believer of the earlier Scripture who then accepted Islam", wrong: ["A rich trader", "A strong soldier", "A famous poet"], why: "A person from the people of the scriptures who believed in his prophet and then believed in Muhammad ﷺ." },
-        { q: "Why are they rewarded twice, in 28:54?", a: "Because they were patient", wrong: ["Because they were rich", "Because they were first", "Because they were loud"], why: "These will be given their reward twice over, because they are patient." }
+        { q: "Why are they rewarded twice, in 28:54?", a: "Because they were patient", wrong: ["Because they were rich", "Because they were first", "Because they were loud"], why: "These will be given their reward twice over, because they are patient.", source: kathir(28, 54, "These will be given their reward twice over, because they are patient.", "given their reward twice over, because they are patient") }
       ]
     },
     {

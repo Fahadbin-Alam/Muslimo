@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah At-Takwir ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -115,7 +115,7 @@ const TAKWIR_ONE: DeepUnit = {
       questions: [
         { q: "What is gathered, per 81:5?", a: "The wild beasts", wrong: ["The clouds", "The ships", "The coins"], why: "And when the wild beasts are gathered together." },
         { q: "What did Ibn Abbas say is gathered?", a: "Everything, even the flies", wrong: ["Only people", "Only lions", "Nothing"], why: "Ibn Abbas said, Everything will be gathered, even the flies." },
-        { tf: true, q: "Ayah 6:38 calls animals communities like us.", why: "Nor a bird that flies with its two wings, but are communities like you." }
+        { tf: true, q: "Ayah 6:38 calls animals communities like us.", why: "Nor a bird that flies with its two wings, but are communities like you.", source: kathir(81, 5, "Nor a bird that flies with its two wings, but are communities like you.", "bird that flies with its two wings, but are communities") }
       ]
     },
     {
@@ -447,7 +447,7 @@ const TAKWIR_THREE: DeepUnit = {
       source: ik(28, "Ibn Kathir says whoever seeks guidance must hold to the Quran, for it is his salvation and guidance.", "whoever seeks guidance, then he must adhere to this"),
       difficulty: 2,
       questions: [
-        { q: "For whom is the Reminder, per 81:27?", a: "The creatures, all of them", wrong: ["Only Arabs", "Only scholars", "Only kings"], why: "Verily, this is no less than a Reminder to the creatures." },
+        { q: "For whom is the Reminder, per 81:27?", a: "The creatures, all of them", wrong: ["Only Arabs", "Only scholars", "Only kings"], why: "Verily, this is no less than a Reminder to the creatures.", source: kathir(81, 27, "Verily, this is no less than a Reminder to the creatures.", "less than a Reminder to the creatures") },
         { q: "What should a seeker of guidance do?", a: "Hold firmly to the Quran", wrong: ["Follow his whims", "Ask fortune tellers", "Do nothing"], why: "Whoever seeks guidance, then he must adhere to this Quran." },
         { tf: true, q: "The Quran is for whoever wills to walk straight.", why: "To whomsoever among you who wills to walk straight." }
       ]

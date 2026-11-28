@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Quraysh ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -87,7 +87,7 @@ const QURAYSH_ONE: DeepUnit = {
       questions: [
         { q: "Why were the Quraysh safe on the road?", a: "They lived by Allah's sanctuary", wrong: ["They had huge armies", "They paid every tribe", "They traveled at night"], why: "Because they were the residents of Allah's sanctuary." },
         { q: "Who else was safe, per Ibn Kathir?", a: "Those who traveled with them", wrong: ["Nobody else", "Only their camels", "Only kings"], why: "Even those who traveled with them would be safe because of them." },
-        { tf: true, q: "Makkah is a secure sanctuary, as 29:67 says.", why: "Have they not seen that We have made it a secure sanctuary?" }
+        { tf: true, q: "Makkah is a secure sanctuary, as 29:67 says.", why: "Have they not seen that We have made it a secure sanctuary?", source: kathir(106, 2, "Have they not seen that We have made it a secure sanctuary?", "seen that We have made it a secure sanctuary") }
       ]
     }
   ]

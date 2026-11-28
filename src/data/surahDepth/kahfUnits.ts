@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Kahf ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -1089,7 +1089,7 @@ const KAHF_FOUR: DeepUnit = {
       questions: [
         { q: "Whom did they take as protectors, in 18:102?", a: "Allah's servants", wrong: ["Their parents", "Their animals", "Their homes"], why: "That they can take My servants as Awliya [protectors] besides Me?" },
         { q: "What does Allah ask about this, per Ibn Kathir?", a: "Will it benefit them?", wrong: ["Is it cheap?", "Is it far?", "Is it old?"], why: "Do they think that this is right for them and that it is going to benefit them?" },
-        { tf: true, q: "Ibn Kathir links 19:82: they will deny that worship.", why: "Nay, but they will deny their worship of them, and become opponents to them. (19:82)" }
+        { tf: true, q: "Ibn Kathir links 19:82: they will deny that worship.", why: "Nay, but they will deny their worship of them, and become opponents to them. (19:82)", source: kathir(18, 102, "Nay, but they will deny their worship of them, and become opponents to them. (19:82)", "deny their worship of them, and become opponents") }
       ]
     },
     {

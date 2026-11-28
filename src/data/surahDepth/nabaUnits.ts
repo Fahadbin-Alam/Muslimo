@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Naba ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -100,7 +100,7 @@ const NABA_ONE: DeepUnit = {
       difficulty: 1,
       questions: [
         { q: "How did Allah create us, per 78:8?", a: "In pairs", wrong: ["All alone", "In threes", "Without families"], why: "And We have created you in pairs." },
-        { q: "What did Allah put between spouses, per 30:21?", a: "Affection and mercy", wrong: ["Fear and doubt", "Silence", "Arguments"], why: "And He has put between you affection and mercy. (30:21)" },
+        { q: "What did Allah put between spouses, per 30:21?", a: "Affection and mercy", wrong: ["Fear and doubt", "Silence", "Arguments"], why: "And He has put between you affection and mercy. (30:21)", source: kathir(78, 8, "And He has put between you affection and mercy. (30:21)", "between you affection and mercy") },
         { tf: true, q: "Pairs in 78:8 means male and female.", why: "Meaning, male and female." }
       ]
     },
@@ -141,7 +141,7 @@ const NABA_ONE: DeepUnit = {
       source: ik(11, "Ibn Kathir says the night's darkness covers people, and the day is bright so they can go about for their livelihood.", "By it they are able to come and go for their livelihood"),
       difficulty: 1,
       questions: [
-        { q: "What is the night, per 78:10?", a: "A covering", wrong: ["A wall", "A road", "A storm"], why: "And We have made the night as a covering." },
+        { q: "What is the night, per 78:10?", a: "A covering", wrong: ["A wall", "A road", "A storm"], why: "And We have made the night as a covering.", source: kathir(78, 10, "And We have made the night as a covering.", "made the night as a covering") },
         { q: "What is the day for, per 78:11?", a: "Livelihood", wrong: ["Only sleep", "Only games", "Nothing"], why: "And We have made the day for livelihood." },
         { tf: true, q: "Qatadah called the night a tranquil residence.", why: "Qatadah commented, meaning, a tranquil residence." }
       ]
@@ -155,7 +155,7 @@ const NABA_ONE: DeepUnit = {
       source: ik(13, "Ibn Kathir says the shining lamp is the radiant sun that gives light to all the world.", "the radiant sun that gives light to all of the world"),
       difficulty: 1,
       questions: [
-        { q: "What did Allah build above us, per 78:12?", a: "Seven strong heavens", wrong: ["Two roofs", "Ten towers", "One cloud"], why: "And We have built above you seven strong." },
+        { q: "What did Allah build above us, per 78:12?", a: "Seven strong heavens", wrong: ["Two roofs", "Ten towers", "One cloud"], why: "And We have built above you seven strong.", source: kathir(78, 12, "And We have built above you seven strong.", "have built above you seven strong") },
         { q: "What is the shining lamp, per Ibn Kathir?", a: "The sun", wrong: ["The moon", "A star", "A fire"], why: "Meaning, the radiant sun that gives light to all of the world." },
         { tf: true, q: "The heavens are adorned with stars.", why: "The seven heavens in their vastness, loftiness, perfection, precision, and adornment with both stable and moving stars." }
       ]
@@ -309,7 +309,7 @@ const NABA_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What kind of recompense is it, per 78:26?", a: "An exact recompense", wrong: ["A random one", "A doubled one", "None at all"], why: "An exact recompense." },
-        { q: "Why did they not prepare, per 78:27?", a: "They expected no reckoning", wrong: ["They were too busy", "They were too young", "They were ill"], why: "For verily, they used not to look for a reckoning." },
+        { q: "Why did they not prepare, per 78:27?", a: "They expected no reckoning", wrong: ["They were too busy", "They were too young", "They were ill"], why: "For verily, they used not to look for a reckoning.", source: kathir(78, 26, "For verily, they used not to look for a reckoning.", "For verily, they used not to look for a reckoning") },
         { tf: false, q: "Some will be punished for more than they did.", why: "In accordance with their wicked deeds, which they were doing in this life." }
       ]
     },

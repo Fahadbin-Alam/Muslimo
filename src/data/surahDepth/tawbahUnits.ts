@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah At-Tawbah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a
 // lesson, explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one
@@ -71,8 +71,8 @@ const TAWBAH_ONE: DeepUnit = {
       source: ik(4, "Those whose treaty had no set end were given four months to travel the land safely and find a place of safety. Treaties with a set end lasted until that end.", "They would have four months to travel the lands"),
       difficulty: 2,
       questions: [
-        { q: "How long were they told to travel freely, in 9:2?", a: "Four months", wrong: ["Four days", "Four years", "Forty days"], why: "Fasihu fil-ardi arba'ata ashhur." },
-        { q: "What does 9:2 say no one can do?", a: "Escape Allah", wrong: ["Count the months", "Leave the land", "Find water"], why: "Know that you cannot escape Allah." },
+        { q: "How long were they told to travel freely, in 9:2?", a: "Four months", wrong: ["Four days", "Four years", "Forty days"], why: "Fasihu fil-ardi arba'ata ashhur.", source: kathir(9, 2, "Fasihu fil-ardi arba'ata ashhur.", "four months during which they freely") },
+        { q: "What does 9:2 say no one can do?", a: "Escape Allah", wrong: ["Count the months", "Leave the land", "Find water"], why: "Know that you cannot escape Allah.", source: kathir(9, 2, "Know that you cannot escape Allah.", "") },
         { q: "A treaty with a set end date still lasted until that date.", tf: true, why: "The longest it would extend was to its agreed termination date." }
       ]
     },
@@ -171,7 +171,7 @@ const TAWBAH_ONE: DeepUnit = {
       questions: [
         { q: "Why does Allah test the believers, per Ibn Kathir?", a: "To show who is sincere", wrong: ["To make them rich", "To tire them out", "To make them famous"], why: "To make apparent those who have pure intent from those who have false intent." },
         { q: "What does walijah mean in 9:16?", a: "Close supporters and confidants", wrong: ["Prayer rugs", "Swords", "Tents"], why: "Walijah: supporters and confidants." },
-        { q: "Surah Al-Ankabut 29:2 makes the same point about tests.", tf: true, why: "Do people think they will be left alone because they say: We believe?" }
+        { q: "Surah Al-Ankabut 29:2 makes the same point about tests.", tf: true, why: "Do people think they will be left alone because they say: We believe?", source: kathir(29, 2, "Do people think they will be left alone because they say: We believe?", "") }
       ]
     },
     {
@@ -631,7 +631,7 @@ const TAWBAH_THREE: DeepUnit = {
       questions: [
         { q: "Which two prayers are heaviest for the hypocrites?", a: "Fajr and Isha", wrong: ["Dhuhr and Asr", "Asr and Maghrib", "Jumu'ah and Eid"], why: "No prayer is heavier upon the hypocrites than the Fajr and the Isha." },
         { q: "How would they come if they knew the reward?", a: "Even crawling", wrong: ["Only riding", "Only if paid", "Only on Fridays"], why: "They would have attended them, even if crawling." },
-        { q: "9:54 says they came to the prayer lazily.", tf: true, why: "They came not to the Salah except in a lazy state." }
+        { q: "9:54 says they came to the prayer lazily.", tf: true, why: "They came not to the Salah except in a lazy state.", source: kathir(9, 54, "They came not to the Salah except in a lazy state.", "came not to the Salah except in a lazy state") }
       ]
     },
     {
@@ -738,7 +738,7 @@ const TAWBAH_THREE: DeepUnit = {
       line: "Mocking Allah, His ayat or His Messenger is never just a joke.",
       facts: ["We were only joking, they said", "No excuse was accepted"],
       quote: q9(65),
-      source: ik(65, "On the way to Tabuk some mocked the reciters of the Quran. When asked, they said they were only talking idly and joking. Allah said: was it Allah, His ayat and His Messenger you were mocking?", ""),
+      source: ik(65, "On the way to Tabuk some mocked the reciters of the Quran. When asked, they said they were only talking idly and joking. Allah said: was it Allah, His ayat and His Messenger you were mocking?", "Ayat and His Messenger that you were mocking"),
       difficulty: 5,
       questions: [
         { q: "What excuse did the mockers give, in 9:65?", a: "We were only joking", wrong: ["We were asleep", "We were lost", "We were praying"], why: "We were only talking idly and joking." },
@@ -1106,7 +1106,7 @@ const TAWBAH_FOUR: DeepUnit = {
       questions: [
         { q: "How often did he ﷺ visit Quba, per Ibn Umar?", a: "Every Saturday", wrong: ["Once a year", "Every Ramadan", "Only once"], why: "Used to go to the Mosque of Quba every Saturday." },
         { q: "How did he ﷺ go there?", a: "Walking or riding", wrong: ["Only by boat", "Only at night", "Only with an army"], why: "Sometimes walking and sometimes riding." },
-        { q: "9:108 says Allah loves those who keep pure.", tf: true, why: "And Allah loves those who make themselves clean and pure." }
+        { q: "9:108 says Allah loves those who keep pure.", tf: true, why: "And Allah loves those who make themselves clean and pure.", source: kathir(9, 108, "And Allah loves those who make themselves clean and pure.", "loves those who make themselves clean and pure") }
       ]
     },
     {
@@ -1357,7 +1357,7 @@ const TAWBAH_FIVE: DeepUnit = {
       questions: [
         { q: "Where did the Messenger ﷺ come from, in 9:128?", a: "From among yourselves", wrong: ["From far away", "From the angels", "From the jinn"], why: "There has come unto you a Messenger from among yourselves." },
         { q: "What did Ja'far tell the Negus they knew about him ﷺ?", a: "His family, truth and honesty", wrong: ["Only his name", "Only his wealth", "Nothing at all"], why: "Whose family lineage, description, early days, truth and honesty we know." },
-        { q: "Ibrahim prayed for a Messenger from among them (2:129).", tf: true, why: "Our Lord! Send among them a Messenger of their own." }
+        { q: "Ibrahim prayed for a Messenger from among them (2:129).", tf: true, why: "Our Lord! Send among them a Messenger of their own.", source: kathir(2, 129, "Our Lord! Send among them a Messenger of their own.", "be sent as a Messenger among") }
       ]
     },
     {

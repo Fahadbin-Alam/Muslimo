@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah At-Talaq ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -407,7 +407,7 @@ const TALAQ_TWO: DeepUnit = {
       questions: [
         { q: "What comes after hardship?", a: "Ease", wrong: ["More hardship", "Nothing", "Only waiting"], why: "Allah will grant after hardship, ease." },
         { q: "Does Allah break His promises?", a: "Never", wrong: ["Sometimes", "Often", "When busy"], why: "Allah's promises are true and He never breaks them." },
-        { tf: true, q: "Surah Ash-Sharh says the same, in 94:5-6.", why: "Verily, along with every hardship is relief. (94:5-6)" }
+        { tf: true, q: "Surah Ash-Sharh says the same, in 94:5-6.", why: "Verily, along with every hardship is relief. (94:5-6)", source: kathir(65, 7, "Verily, along with every hardship is relief. (94:5-6)", "along with every hardship is relief") }
       ]
     },
     {
@@ -532,7 +532,7 @@ const TALAQ_THREE: DeepUnit = {
       questions: [
         { q: "What is the darkness, per Ibn Kathir?", a: "Disbelief and ignorance", wrong: ["Night time", "A cave", "Clouds"], why: "Out of the darkness of disbelief and ignorance into the light of faith and knowledge." },
         { q: "What is the light?", a: "Faith and knowledge", wrong: ["A lamp", "The sun", "Gold"], why: "Into the light of faith and knowledge." },
-        { tf: true, q: "Ibn Kathir also quotes 2:257 on this.", why: "Allah is the Guardian of those who believe. He brings them out from darkness into light. (2:257)" }
+        { tf: true, q: "Ibn Kathir also quotes 2:257 on this.", why: "Allah is the Guardian of those who believe. He brings them out from darkness into light. (2:257)", source: kathir(65, 11, "Allah is the Guardian of those who believe. He brings them out from darkness into light. (2:257)", "brings them out from darkness into light") }
       ]
     },
     {
@@ -546,7 +546,7 @@ const TALAQ_THREE: DeepUnit = {
       questions: [
         { q: "Why is revelation called Ruh?", a: "It gives life to hearts", wrong: ["It is wind", "It is old", "It is far"], why: "Allah also called it Ruh, in that, it brings life to the hearts." },
         { q: "Why is revelation called light?", a: "It guides", wrong: ["It is hot", "It is bright gold", "It is loud"], why: "Allah called the revelation that He has sent down, light, on account of the guidance that it brings." },
-        { tf: true, q: "Ibn Kathir quotes 42:52 about Ruh.", why: "And thus We have sent to you Ruh of our command. (42:52)" }
+        { tf: true, q: "Ibn Kathir quotes 42:52 about Ruh.", why: "And thus We have sent to you Ruh of our command. (42:52)", source: kathir(65, 11, "And thus We have sent to you Ruh of our command. (42:52)", "thus We have sent to you Ruh of our command") }
       ]
     },
     {
@@ -573,7 +573,7 @@ const TALAQ_THREE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "How many heavens did Allah create?", a: "Seven", wrong: ["Three", "Five", "Ten"], why: "It is Allah Who has created seven heavens." },
-        { q: "Which prophet mentioned the seven heavens in 71:15?", a: "Nuh", wrong: ["Yusuf", "Yunus", "Hud"], why: "Like what Prophet Nuh said to his people: See you not how Allah has created the seven heavens. (71:15)" },
+        { q: "Which prophet mentioned the seven heavens in 71:15?", a: "Nuh", wrong: ["Yusuf", "Yunus", "Hud"], why: "Like what Prophet Nuh said to his people: See you not how Allah has created the seven heavens. (71:15)", source: kathir(65, 12, "Like what Prophet Nuh said to his people: See you not how Allah has created the seven heavens. (71:15)", "created the seven heavens") },
         { tf: true, q: "The seven heavens glorify Allah.", why: "The seven heavens and the earth and all that is therein, glorify him. (17:44)" }
       ]
     },

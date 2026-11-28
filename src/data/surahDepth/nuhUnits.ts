@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Nuh ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -349,7 +349,7 @@ const NUH_THREE: DeepUnit = {
       source: ik(18, "Ibn Kathir says Allah returns us to the earth when we die, and on the Day of Judgement repeats our creation as He first made it.", "on the Day of Judgement He will repeat your creation just as He first originated you"),
       difficulty: 2,
       questions: [
-        { q: "From what did Allah bring us forth, per 71:17?", a: "The earth", wrong: ["The sea", "The sky", "Fire"], why: "And Allah has brought you forth from the dust of earth." },
+        { q: "From what did Allah bring us forth, per 71:17?", a: "The earth", wrong: ["The sea", "The sky", "Fire"], why: "And Allah has brought you forth from the dust of earth.", source: kathir(71, 17, "And Allah has brought you forth from the dust of earth.", "") },
         { q: "What happens on the Day of Judgement?", a: "Allah brings us out again", wrong: ["We stay in the earth", "We become stars", "Nothing"], why: "On the Day of Judgement He will repeat your creation just as He first originated you." },
         { tf: false, q: "Once people return to the earth, they are never brought out.", why: "And bring you forth, meaning, on the Day of Judgement He will repeat your creation." }
       ]
@@ -503,7 +503,7 @@ const NUH_FOUR: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Who could help them against Allah?", a: "No one", wrong: ["Their idols", "Their leaders", "Their tribe"], why: "And they found none to help them instead of Allah." },
-        { q: "What did Nuh tell his son in 11:43?", a: "No savior except by His mercy", wrong: ["Climb higher", "Swim faster", "Hide in a cave"], why: "This day there is no savior from the decree of Allah except him on whom He has mercy. (11:43)" },
+        { q: "What did Nuh tell his son in 11:43?", a: "No savior except by His mercy", wrong: ["Climb higher", "Swim faster", "Hide in a cave"], why: "This day there is no savior from the decree of Allah except him on whom He has mercy. (11:43)", source: kathir(71, 25, "This day there is no savior from the decree of Allah except him on whom He has mercy. (11:43)", "savior from the decree of Allah except him on whom He has mercy") },
         { tf: true, q: "The believers with Nuh in the ship were saved.", why: "Allah saved the people of the ship who believed with Nuh." }
       ]
     },

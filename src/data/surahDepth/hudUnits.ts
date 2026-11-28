@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Hud ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -281,7 +281,7 @@ const HUD_ONE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "What is every child born upon, per the hadith?", a: "The fitrah", wrong: ["Doubt", "Sadness", "Forgetfulness"], why: "Every child is born with a true faith of Islam, to worship none but Allah alone." },
-        { q: "What came before the Quran as guidance and mercy, in 11:17?", a: "The Book of Musa", wrong: ["Old poems", "The Psalms only", "No book at all"], why: "And before it, came the Book of Musa, a guidance and a mercy." },
+        { q: "What came before the Quran as guidance and mercy, in 11:17?", a: "The Book of Musa", wrong: ["Old poems", "The Psalms only", "No book at all"], why: "And before it, came the Book of Musa, a guidance and a mercy.", source: kathir(11, 17, "And before it, came the Book of Musa, a guidance and a mercy.", "before it, came the Book of Musa") },
         { q: "The fitrah accepts the Shari'ah and believes in it.", tf: true, why: "The Fitrah accepts the Shari'ah and believes in it." }
       ]
     },
@@ -740,7 +740,7 @@ const HUD_THREE: DeepUnit = {
       source: hadith("bukhari", "1035", "Ibn Abbas", "Sahih", "The Prophet ﷺ said he was given victory by the east wind, and the people of 'Ad were destroyed by the west wind.", "I was granted victory with As-Saba"),
       difficulty: 3,
       questions: [
-        { q: "Who was saved, in 11:58?", a: "Hud and the believers", wrong: ["The chiefs", "No one", "Only the rich"], why: "We saved Hud and those who believed with him by a mercy from Us." },
+        { q: "Who was saved, in 11:58?", a: "Hud and the believers", wrong: ["The chiefs", "No one", "Only the rich"], why: "We saved Hud and those who believed with him by a mercy from Us.", source: kathir(11, 58, "We saved Hud and those who believed with him by a mercy from Us.", "saved Hūd and those who believed with him, by mercy") },
         { q: "What destroyed 'Ad, per the hadith?", a: "A wind", wrong: ["A flood", "An earthquake", "A fire"], why: "The nation of 'Ad was destroyed by Ad-Dabur (westerly wind)." },
         { q: "Hud and the believers were saved by Allah's mercy.", tf: true, why: "We saved Hud and those who believed with him by a mercy from Us." }
       ]
@@ -782,7 +782,7 @@ const HUD_THREE: DeepUnit = {
       source: hadith("muslim", "2735", "Abu Hurairah", "Sahih", "A person's supplication is answered as long as he does not grow impatient and say: I prayed, but it was not answered.", "The supplication of every one of you is granted if he does not grow impatient"),
       difficulty: 4,
       questions: [
-        { q: "How did Salih describe his Lord, in 11:61?", a: "Near and Responsive", wrong: ["Far and silent", "Angry and harsh", "Busy and away"], why: "Certainly, my Lord is Near (to all by His knowledge), Responsive." },
+        { q: "How did Salih describe his Lord, in 11:61?", a: "Near and Responsive", wrong: ["Far and silent", "Angry and harsh", "Busy and away"], why: "Certainly, my Lord is Near (to all by His knowledge), Responsive.", source: kathir(11, 61, "Certainly, my Lord is Near (to all by His knowledge), Responsive.", "Lord is near and responsive") },
         { q: "What stops a dua from being answered, per the hadith?", a: "Growing impatient", wrong: ["Praying quietly", "Praying at night", "Praying in Arabic"], why: "The supplication of every one of you is granted if he does not grow impatient." },
         { q: "Saying I prayed but got no answer can block a dua.", tf: true, why: "Is granted if he does not grow impatient and says: I supplicated but it was not granted." }
       ]
@@ -977,7 +977,7 @@ const HUD_FOUR: DeepUnit = {
       source: hadith("bukhari", "3372", "Abu Hurairah", "Sahih", "The Prophet ﷺ said: may Allah have mercy on Lut, he wished to have a powerful support.", "He wished to have a powerful support"),
       difficulty: 4,
       questions: [
-        { q: "What did Lut wish for, in 11:80?", a: "Strength or a strong support", wrong: ["Gold", "A new house", "A long trip"], why: "Would that I had strength to overpower you, or that I could betake myself to some powerful support." },
+        { q: "What did Lut wish for, in 11:80?", a: "Strength or a strong support", wrong: ["Gold", "A new house", "A long trip"], why: "Would that I had strength to overpower you, or that I could betake myself to some powerful support.", source: kathir(11, 80, "Would that I had strength to overpower you, or that I could betake myself to some powerful support.", "could take refuge in a strong support") },
         { q: "What did the Prophet ﷺ pray for Lut?", a: "Allah's mercy on him", wrong: ["A long life", "Great wealth", "A big army"], why: "May Allah send His mercy on Lut. He wished to have a powerful support." },
         { q: "The angels told Lut his people would not reach him.", tf: true, why: "O Lut! Verily, we are the messengers from your Lord! They shall not reach you!" }
       ]
@@ -1269,7 +1269,7 @@ const HUD_SIX: DeepUnit = {
       source: hadith("muslim", "38", "Sufyan ibn Abdullah ath-Thaqafi", "Sahih", "A man asked the Prophet ﷺ for one teaching about Islam. He said: say I believe in Allah, then stay firm on it.", "Say I affirm my faith in Allah and then remain steadfast to it"),
       difficulty: 4,
       questions: [
-        { q: "What does 11:112 command?", a: "Stand firm and straight", wrong: ["Rest and wait", "Run away", "Stay quiet"], why: "So stand (ask Allah to make) you firm and straight as you are commanded." },
+        { q: "What does 11:112 command?", a: "Stand firm and straight", wrong: ["Rest and wait", "Run away", "Stay quiet"], why: "So stand (ask Allah to make) you firm and straight as you are commanded.", source: kathir(11, 112, "So stand (ask Allah to make) you firm and straight as you are commanded.", "Command to Stand Firm and Straight") },
         { q: "What did the Prophet ﷺ say after: I believe in Allah?", a: "Then stay firm on it", wrong: ["Then travel", "Then be silent", "Then rest"], why: "Say I affirm my faith in Allah and then remain steadfast to it." },
         { q: "Going beyond the limits is allowed if the other side is wrong.", tf: false, why: "Transgression causes destruction to its practitioner, even if the transgression was directed against a polytheist." }
       ]
@@ -1325,7 +1325,7 @@ const HUD_SIX: DeepUnit = {
       source: hadith("muslim", "49", "Abu Sa'id al-Khudri", "Sahih", "Whoever sees something evil should change it with his hand; if he cannot, then with his tongue; and if he cannot, then with his heart.", "He who amongst you sees something abominable should modify it with the help of his hand"),
       difficulty: 4,
       questions: [
-        { q: "Who was saved among earlier nations, in 11:116?", a: "The few who forbade evil", wrong: ["The rich", "The chiefs", "No one"], why: "Prohibiting others from corruption in the earth, except a few of those whom We saved." },
+        { q: "Who was saved among earlier nations, in 11:116?", a: "The few who forbade evil", wrong: ["The rich", "The chiefs", "No one"], why: "Prohibiting others from corruption in the earth, except a few of those whom We saved.", source: kathir(11, 116, "Prohibiting others from corruption in the earth, except a few of those whom We saved.", "forbade the evil and corruption that took place among") },
         { q: "What is the first way to change evil, per the hadith?", a: "With the hand", wrong: ["With silence", "By running", "By joining in"], why: "He who amongst you sees something abominable should modify it with the help of his hand." },
         { q: "Allah destroys towns whose people do good.", tf: false, why: "And your Lord would never destroy the towns wrongfully, while their people were doers of good." }
       ]

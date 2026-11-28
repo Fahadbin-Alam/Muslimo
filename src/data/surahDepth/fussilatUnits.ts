@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Fussilat ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -268,7 +268,7 @@ const FUSSILAT_ONE: DeepUnit = {
       questions: [
         { q: "What was sent upon Ad, in 41:16?", a: "A Sarsar wind", wrong: ["A flood", "A fire", "An army"], why: "So, We sent upon them a Sarsar wind in days of calamity." },
         { q: "How was the wind, per Ibn Kathir?", a: "Strong, cold and loud", wrong: ["Warm and gentle", "Soft and quiet", "Short and weak"], why: "It was a strong wind, intensely cold, and it made a furious sound." },
-        { q: "How long did it last, per 69:7?", a: "Seven nights and eight days", wrong: ["One hour", "One day", "One year"], why: "Seven nights and eight days in succession (69:7)." }
+        { q: "How long did it last, per 69:7?", a: "Seven nights and eight days", wrong: ["One hour", "One day", "One year"], why: "Seven nights and eight days in succession (69:7).", source: kathir(41, 16, "Seven nights and eight days in succession (69:7).", "seven nights and eight days in succession") }
       ]
     },
     {
@@ -434,7 +434,7 @@ const FUSSILAT_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What did the disbelievers say, in 41:26?", a: "Listen not to this Quran", wrong: ["Listen closely", "Learn it", "Write it down"], why: "And those who disbelieve say: Listen not to this Quran, and make noise in the midst of its recitation." },
-        { q: "What should we do when the Quran is recited, per 7:204?", a: "Listen and be silent", wrong: ["Talk over it", "Leave", "Whistle"], why: "So, when the Quran is recited, listen to it, and be silent that you may receive mercy (7:204)." },
+        { q: "What should we do when the Quran is recited, per 7:204?", a: "Listen and be silent", wrong: ["Talk over it", "Leave", "Whistle"], why: "So, when the Quran is recited, listen to it, and be silent that you may receive mercy (7:204).", source: kathir(41, 26, "So, when the Quran is recited, listen to it, and be silent that you may receive mercy (7:204).", "is recited, listen to it, and be silent that you may receive mercy") },
         { q: "How did they make noise, per Ibn Kathir?", a: "Whistling to confuse", wrong: ["Singing praise", "Clapping in joy", "Ringing bells"], why: "Whistling and trying to make the Messenger of Allah ﷺ confused when he recited Quran." }
       ]
     },
@@ -489,7 +489,7 @@ const FUSSILAT_TWO: DeepUnit = {
       source: hadith("muslim", "38", "Sufyan ibn Abdullah ath-Thaqafi", "Sahih", "Sufyan asked for one thing about Islam he would never need to ask again. The Prophet ﷺ said: Say I believe in Allah, then stand firm.", "Say I affirm my faith in Allah and then remain steadfast to it"),
       difficulty: 2,
       questions: [
-        { q: "What do they say, in 41:30?", a: "Our Lord is Allah", wrong: ["Our lord is wealth", "We are free", "We are strong"], why: "Verily, those who say: Our Lord is Allah, and then they stand firm." },
+        { q: "What do they say, in 41:30?", a: "Our Lord is Allah", wrong: ["Our lord is wealth", "We are free", "We are strong"], why: "Verily, those who say: Our Lord is Allah, and then they stand firm.", source: kathir(41, 30, "Verily, those who say: Our Lord is Allah, and then they stand firm.", "Lord is Allah, then stand firm") },
         { q: "What did the Prophet ﷺ tell Sufyan, per Muslim 38?", a: "Say I believe in Allah, then stand firm", wrong: ["Travel far", "Stay silent", "Gather wealth"], why: "Say I affirm my faith in Allah and then remain steadfast to it." },
         { q: "What does stand firm mean, per Abu Bakr?", a: "Not associating anything with Allah", wrong: ["Standing all night", "Never sitting", "Living long"], why: "Abu Bakr said: Those are the ones who do not associate anything with Allah." }
       ]

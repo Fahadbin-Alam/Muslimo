@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah As-Sajdah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -307,7 +307,7 @@ const SAJDAH_TWO: DeepUnit = {
       source: hadith("bukhari", "4779", "Abu Hurairah", "Sahih", "Allah said He has prepared for His pious servants what no eye has seen, no ear has heard, and no one has imagined.", "such things as no eye has ever seen, no ear has ever heard of"),
       difficulty: 4,
       questions: [
-        { q: "Who knows what is hidden for them, in 32:17?", a: "No person", wrong: ["Every scholar", "The kings", "Poets"], why: "No person knows what is kept hidden for them of delights of eyes." },
+        { q: "Who knows what is hidden for them, in 32:17?", a: "No person", wrong: ["Every scholar", "The kings", "Poets"], why: "No person knows what is kept hidden for them of delights of eyes.", source: kathir(32, 17, "No person knows what is kept hidden for them of delights of eyes.", "person knows what is kept hidden for them of delights of eyes") },
         { q: "What has no eye seen, in the hadith?", a: "What Allah prepared", wrong: ["The sea", "The moon", "A desert"], why: "I have prepared for my pious worshipers such things as no eye has ever seen." },
         { q: "Why is it given, in 32:17?", a: "For what they used to do", wrong: ["By chance", "For their wealth", "For their looks"], why: "As a reward for what they used to do." }
       ]

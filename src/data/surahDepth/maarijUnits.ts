@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Ma'arij ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -44,7 +44,7 @@ const MAARIJ_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What did the questioner ask for?", a: "To hasten the punishment", wrong: ["To learn the Quran", "To be forgiven", "To meet the Prophet ﷺ"], why: "A questioner requested to hasten on the torment that is about to fall." },
-        { q: "What does 22:47 say about Allah?", a: "He never fails His promise", wrong: ["He forgets", "He delays forever", "He changes His mind"], why: "And they ask you to hasten on the torment! And Allah fails not His promise. (22:47)" },
+        { q: "What does 22:47 say about Allah?", a: "He never fails His promise", wrong: ["He forgets", "He delays forever", "He changes His mind"], why: "And they ask you to hasten on the torment! And Allah fails not His promise. (22:47)", source: kathir(70, 1, "And they ask you to hasten on the torment! And Allah fails not His promise. (22:47)", "fails not His promise") },
         { tf: false, q: "Asking for punishment in mockery is a sign of wisdom.", why: "That is the questioning of the disbelievers about the torment of Allah and it will occur to them." }
       ]
     },

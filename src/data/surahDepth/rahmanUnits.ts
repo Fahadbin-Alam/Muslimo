@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ar-Rahman ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -685,7 +685,7 @@ const RAHMAN_TWO: DeepUnit = {
       source: ik(38, "Ibn Kathir links the splitting of the sky with 84:1-2: it listens to and obeys its Lord.", "listens to and obeys its Lord"),
       difficulty: 2,
       questions: [
-        { q: "What does the sky do, per 84:2?", a: "Listens to and obeys its Lord", wrong: ["Refuses", "Sleeps", "Hides"], why: "When the heaven is split asunder, and listens to and obeys its Lord." },
+        { q: "What does the sky do, per 84:2?", a: "Listens to and obeys its Lord", wrong: ["Refuses", "Sleeps", "Hides"], why: "When the heaven is split asunder, and listens to and obeys its Lord.", source: kathir(84, 2, "When the heaven is split asunder, and listens to and obeys its Lord.", "listens to its Lord and obeys His command to split") },
         { q: "Which ayah says angels are sent down then?", a: "25:25", wrong: ["2:2", "55:1", "112:3"], why: "The Day when the heaven shall be rent asunder with clouds, and the angels will be sent down. (25:25)" },
         { tf: true, q: "Even the sky obeys Allah's command.", why: "And listens to and obeys its Lord, and it must do so." }
       ]

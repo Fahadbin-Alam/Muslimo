@@ -122,6 +122,13 @@ import { LESSON_SOURCES } from "../questionSources";
 const KATHIR_AYAHS: Record<string, number> = require("./kathirAyahs.json");
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const SAADI_AYAHS: Record<string, number> = require("./saadiAyahs.json");
+/**
+ * A harder question about one ayah that the passage's own source (its Tafsir Ibn Kathir page, or its hadith) does not
+ * explain opens Tafsir Ibn Kathir on that ayah: "surah:passage:question" (0-based) to the ayah and the words its page
+ * lights ("" opens it at the top).
+ */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const DEEP_AYAHS: Record<string, [number, string]> = require("./deepAyahs.json");
 
 export type { Passage, PassageDeep, SurahMeaning } from "./types";
 
@@ -208,6 +215,12 @@ export function tafsirSource(book: "ibn-kathir" | "saadi", surah: number, at: st
     grade: "Tafsir",
     summary
   };
+}
+
+/** Tafsir Ibn Kathir opened on the one ayah a question names, lit at its own words (or at the top, with none). */
+function kathirOn(surah: number, at: string, [ayah, highlight]: [number, string], summary: string): LessonSource {
+  const passage = tafsirSource("ibn-kathir", surah, at, summary);
+  return { ...passage, id: `${passage.id}_ayah_${ayah}`, url: `https://quran.com/${surah}:${ayah}/tafsirs/en-tafisr-ibn-kathir`, reference: `Tafsir Ibn Kathir ${surah}:${ayah}`, highlight };
 }
 
 function hadithOf(hadith: NonNullable<PassageDeep["hadith"]>): LessonSource {
@@ -323,8 +336,10 @@ function passageLesson(surah: SurahMeaning, index: number, branchId: string): Le
   const hadith = deep?.hadith ? hadithOf(deep.hadith) : undefined;
   if (deep) {
     deep.q.forEach(([prompt, answer, ...others], at) => {
-      const answerSource = at === 0 && hadith ? hadith : tafsirs[0];
-      challenges.push(choiceQuestion(`${nodeId}-deep-${at + 1}`, prompt, answer, others, deepWhy(deep, answer), source, answerSource));
+      const why = deepWhy(deep, answer);
+      const named = DEEP_AYAHS[`${surah.surah}:${passage.at}:${at}`];
+      const answerSource = named ? kathirOn(surah.surah, passage.at, named, why) : at === 0 && hadith ? hadith : tafsirs[0];
+      challenges.push(choiceQuestion(`${nodeId}-deep-${at + 1}`, prompt, answer, others, why, source, answerSource));
     });
   }
   const [from, to] = passageAyahs(passage.at);

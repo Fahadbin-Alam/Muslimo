@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Layl ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -227,7 +227,7 @@ const LAYL_TWO: DeepUnit = {
       questions: [
         { q: "What will be made smooth for him, per 92:10?", a: "The path to evil", wrong: ["The path of ease", "A golden road", "A garden path"], why: "We will make smooth for him the path to evil." },
         { q: "What happens to one who intends good?", a: "Allah gives him success", wrong: ["He is left alone", "He is punished", "Nothing"], why: "Allah rewards those who intend good with success." },
-        { tf: true, q: "Ibn Kathir links this to 6:110.", why: "And We shall leave them in their trespass to wander blindly." }
+        { tf: true, q: "Ibn Kathir links this to 6:110.", why: "And We shall leave them in their trespass to wander blindly.", source: kathir(92, 10, "And We shall leave them in their trespass to wander blindly.", "shall leave them in their trespass to wander blindly") }
       ]
     },
     {
@@ -268,7 +268,7 @@ const LAYL_THREE: DeepUnit = {
       questions: [
         { q: "What is upon Allah, per 92:12?", a: "To give guidance", wrong: ["To give everyone gold", "To end hardship", "To stop the night"], why: "Truly, on Us is to give guidance." },
         { q: "What did Qatadah say Allah will explain?", a: "What is lawful and forbidden", wrong: ["Stock prices", "Star names", "Old poems"], why: "We will explain what is lawful and what is prohibited." },
-        { tf: true, q: "Ibn Kathir links this to 16:9.", why: "And upon Allah is the responsibility to explain the Straight path." }
+        { tf: true, q: "Ibn Kathir links this to 16:9.", why: "And upon Allah is the responsibility to explain the Straight path.", source: kathir(92, 12, "And upon Allah is the responsibility to explain the Straight path.", "responsibility to explain the Straight path") }
       ]
     },
     {

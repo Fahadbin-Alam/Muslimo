@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Mujadila ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -463,7 +463,7 @@ const MUJADILA_TWO: DeepUnit = {
       questions: [
         { q: "What did As-Samu Alaikum mean?", a: "Death be upon you", wrong: ["Peace be upon you", "Good morning", "Welcome"], why: "As-Samu-Alaikum. (death be upon you)." },
         { q: "What did the Prophet ﷺ tell Aishah?", a: "Allah loves kindness in all matters", wrong: ["Shout louder", "Leave the room", "Say nothing ever"], why: "Be calm, O Aisha! Allah loves that on, should be kind and lenient in all matters." },
-        { tf: true, q: "58:8 mentions a greeting Allah did not give.", why: "They greet you with a greeting wherewith Allah greets you not." }
+        { tf: true, q: "58:8 mentions a greeting Allah did not give.", why: "They greet you with a greeting wherewith Allah greets you not.", source: kathir(58, 8, "They greet you with a greeting wherewith Allah greets you not.", "greet you with a greeting wherewith Allah greets") }
       ]
     },
     {

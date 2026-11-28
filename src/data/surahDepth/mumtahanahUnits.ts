@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Mumtahanah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -156,7 +156,7 @@ const MUMTAHANAH_ONE: DeepUnit = {
       questions: [
         { q: "Whom does 60:1 refer to, per Ibn Kathir?", a: "Those fighting the believers", wrong: ["All neighbors", "All traders", "All children"], why: "The disbelievers who are combatants against Allah, His Messenger and the believers." },
         { q: "What does 60:1 forbid with them?", a: "Taking them as protecting friends", wrong: ["Speaking at all", "Trading fairly", "Being honest"], why: "Allah has forbidden the believers to take them as friends, supporters or companions." },
-        { tf: true, q: "60:8 later allows kindness to those who do not fight.", why: "Allah does not forbid you to deal justly and kindly with those who fought not against you." }
+        { tf: true, q: "60:8 later allows kindness to those who do not fight.", why: "Allah does not forbid you to deal justly and kindly with those who fought not against you.", source: kathir(60, 8, "Allah does not forbid you to deal justly and kindly with those who fought not against you.", "") }
       ]
     },
     {
@@ -364,7 +364,7 @@ const MUMTAHANAH_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "When did Ibrahim step away from his father?", a: "When his enmity to Allah was clear", wrong: ["At once", "When he grew old", "When he moved"], why: "When Ibrahim became sure that his father was an enemy of Allah, he declared himself innocent of him." },
-        { q: "How does 9:114 describe Ibrahim?", a: "Awwah and forbearing", wrong: ["Harsh and proud", "Rich and famous", "Quiet and lazy"], why: "Verily, Ibrahim was Awwah and was forbearing." },
+        { q: "How does 9:114 describe Ibrahim?", a: "Awwah and forbearing", wrong: ["Harsh and proud", "Rich and famous", "Quiet and lazy"], why: "Verily, Ibrahim was Awwah and was forbearing.", source: kathir(9, 114, "Verily, Ibrahim was Awwah and was forbearing.", "Ibrahim was Awwah and was forbearing") },
         { tf: true, q: "Ibrahim was patient and gentle with his father first.", why: "Ibrahim was Awwah and was forbearing." }
       ]
     },
@@ -614,7 +614,7 @@ const MUMTAHANAH_THREE: DeepUnit = {
       source: ik(7, "Ibn Kathir quotes 8:63: if you had spent all that is in the earth, you could not have united their hearts, but Allah united them.", ""),
       difficulty: 3,
       questions: [
-        { q: "Could all the world's wealth unite hearts, in 8:63?", a: "No", wrong: ["Yes", "Only gold", "Only land"], why: "If you had spent all that is in the earth, you could not have united their hearts." },
+        { q: "Could all the world's wealth unite hearts, in 8:63?", a: "No", wrong: ["Yes", "Only gold", "Only land"], why: "If you had spent all that is in the earth, you could not have united their hearts.", source: kathir(8, 63, "If you had spent all that is in the earth, you could not have united their hearts.", "the earth, you could not have united their hearts") },
         { q: "Who united their hearts?", a: "Allah", wrong: ["Kings", "Money", "Poets"], why: "But Allah has united them." },
         { tf: true, q: "Ibn Kathir uses 8:63 to explain 60:7.", why: "He it is Who has supported you with His help and with the believers. And He has united their hearts. (8:62-63)" }
       ]

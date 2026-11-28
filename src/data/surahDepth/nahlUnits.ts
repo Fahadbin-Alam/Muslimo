@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Nahl ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -321,7 +321,7 @@ const NAHL_TWO: DeepUnit = {
       source: hadith("bukhari", "6178", "Ibn Umar", "Sahih", "The Prophet ﷺ said a flag will be set up on the Day of Resurrection for every betrayer, announcing his betrayal before everyone.", "A flag will be fixed on the Day of Resurrection for every betrayer"),
       difficulty: 3,
       questions: [
-        { q: "What will Allah ask them, in 16:27?", a: "Where are My so-called partners?", wrong: ["Where is your gold?", "Where are your homes?", "Where are your camels?"], why: "Where are My (so-called) partners, those over which you caused so much discord?" },
+        { q: "What will Allah ask them, in 16:27?", a: "Where are My so-called partners?", wrong: ["Where is your gold?", "Where are your homes?", "Where are your camels?"], why: "Where are My (so-called) partners, those over which you caused so much discord?", source: kathir(16, 27, "Where are My (so-called) partners, those over which you caused so much discord?", "") },
         { q: "What will be fixed for every betrayer, in the hadith?", a: "A flag", wrong: ["A crown", "A lamp", "A door"], why: "A flag will be fixed on the Day of Resurrection for every betrayer." },
         { q: "Who narrated the hadith on the betrayer's flag?", a: "Ibn Umar", wrong: ["Anas", "Abu Musa", "Jabir"], why: "Narrated Ibn Umar: Allah's Messenger ﷺ said, A flag will be fixed." }
       ]
@@ -1662,7 +1662,7 @@ const NAHL_SEVEN: DeepUnit = {
       line: "Ibrahim thanked Allah, who chose him and guided him.",
       facts: ["Good in this world", "Among the righteous later"],
       quote: q16(121),
-      source: ik(121, "Ibrahim thanked Allah for His blessings. Allah chose him and guided him to worship Him alone, gave him good in this world, a truthful tongue, and he is among the righteous in the Hereafter.", ""),
+      source: ik(121, "Ibrahim thanked Allah for His blessings. Allah chose him and guided him to worship Him alone, gave him good in this world, a truthful tongue, and he is among the righteous in the Hereafter.", "gave him good in this world"),
       difficulty: 3,
       questions: [
         { q: "What was Ibrahim for Allah's favors, in 16:121?", a: "Thankful", wrong: ["Forgetful", "Proud", "Silent"], why: "(He was) thankful for His favors." },

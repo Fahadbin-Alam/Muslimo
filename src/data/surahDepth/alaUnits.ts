@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-A'la ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -101,7 +101,7 @@ const ALA_ONE: DeepUnit = {
       questions: [
         { q: "What did Allah do, per 87:3?", a: "Measured, then guided", wrong: ["Waited, then left", "Built, then broke", "Wrote, then erased"], why: "And Who has measured; and then guided." },
         { q: "Where did He guide the cattle, per Mujahid?", a: "To their pastures", wrong: ["To the sea", "To the city", "To the sky"], why: "He guided the cattle to their pastures." },
-        { q: "Who said the similar words of 20:50?", a: "Musa, to Fir'awn", wrong: ["Nuh, to his son", "Isa, to the disciples", "Yusuf, to the king"], why: "Our Lord is He Who gave to each thing its form and nature, then guided it aright." }
+        { q: "Who said the similar words of 20:50?", a: "Musa, to Fir'awn", wrong: ["Nuh, to his son", "Isa, to the disciples", "Yusuf, to the king"], why: "Our Lord is He Who gave to each thing its form and nature, then guided it aright.", source: kathir(87, 3, "Our Lord is He Who gave to each thing its form and nature, then guided it aright.", "gave to each thing its form and nature, then guided it aright") }
       ]
     },
     {
@@ -238,8 +238,8 @@ const ALA_TWO: DeepUnit = {
       source: ik(13, "Ibn Kathir says in the Fire he will neither die and rest, nor live a life that benefits him.", "he will not die and thus be allowed to rest"),
       difficulty: 3,
       questions: [
-        { q: "Who avoids the reminder, per 87:11?", a: "The wretched", wrong: ["The fearful", "The wise", "The young"], why: "But it will be avoided by the wretched." },
-        { q: "Where will he enter, per 87:12?", a: "The great Fire", wrong: ["A great garden", "A palace", "His home"], why: "Who will enter the great Fire." },
+        { q: "Who avoids the reminder, per 87:11?", a: "The wretched", wrong: ["The fearful", "The wise", "The young"], why: "But it will be avoided by the wretched.", source: kathir(87, 11, "But it will be avoided by the wretched.", "") },
+        { q: "Where will he enter, per 87:12?", a: "The great Fire", wrong: ["A great garden", "A palace", "His home"], why: "Who will enter the great Fire.", source: kathir(87, 12, "Who will enter the great Fire.", "who will enter the great Fire") },
         { q: "What does 87:13 say of him there?", a: "He will neither die nor live", wrong: ["He will rest", "He will leave soon", "He will sleep"], why: "There he will neither die nor live." }
       ]
     },

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ali 'Imran ayah by ayah, the way Al-Baqarah is taught (baqarahUnits.ts): after the unit's own circles and its
 // passages, every ayah or small group of ayahs gets a lesson, explained as Tafsir Ibn Kathir explains it (the abridged
@@ -141,7 +141,7 @@ const IMRAN_ONE: DeepUnit = {
       source: hadith("tirmidhi", "3522", "Umm Salamah", "Sahih", "The dua the Messenger of Allah ﷺ said most often was: O Changer of the hearts, make my heart firm upon Your religion.", "Changer of the hearts, make my heart firm upon Your religion"),
       difficulty: 3,
       questions: [
-        { q: "What do the firm believers ask in 3:8?", a: "Don't let our hearts swerve", wrong: ["Make us famous", "Give us gold", "Let us sleep"], why: "Rabbana la tuzigh qulubana ba'da idh hadaytana." },
+        { q: "What do the firm believers ask in 3:8?", a: "Don't let our hearts swerve", wrong: ["Make us famous", "Give us gold", "Let us sleep"], why: "Rabbana la tuzigh qulubana ba'da idh hadaytana.", source: kathir(3, 8, "Rabbana la tuzigh qulubana ba'da idh hadaytana.", "") },
         { q: "Which dua did the Prophet ﷺ say most, as Umm Salamah told?", a: "O Changer of hearts, keep my heart firm", wrong: ["O Allah, give me a palace", "O Allah, make me rich", "O Allah, make me a king"], why: "Ya Muqallib al-qulub, thabbit qalbi 'ala dinik." },
         { q: "Even a believer asks Allah to keep his heart firm.", tf: true, why: "The Prophet ﷺ said it more than any other dua." }
       ]
@@ -269,7 +269,7 @@ const IMRAN_ONE: DeepUnit = {
       questions: [
         { q: "Ibn Kathir explains 3:21 with a hadith. What is pride?", a: "Refusing the truth and looking down on people", wrong: ["Wearing nice clothes", "Being happy", "Having good shoes"], why: "Sahih Muslim 91." },
         { q: "Liking nice clothes is pride.", tf: false, why: "Allah is beautiful and loves beauty." },
-        { q: "Whom did the people in 3:21 harm for calling to justice?", a: "Prophets and people who ordered justice", wrong: ["Thieves", "Kings", "Soldiers"], why: "They rejected those who ordered fairness." }
+        { q: "Whom did the people in 3:21 harm for calling to justice?", a: "Prophets and people who ordered justice", wrong: ["Thieves", "Kings", "Soldiers"], why: "They rejected those who ordered fairness.", source: kathir(3, 21, "They rejected those who ordered fairness.", "prophets without right and kill those who order justice from among the people") }
       ]
     },
     {
@@ -380,7 +380,7 @@ const IMRAN_ONE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Who refuses Jannah, in Bukhari 7280?", a: "Whoever disobeys the Prophet ﷺ", wrong: ["Whoever is poor", "Whoever is young", "Whoever lives far away"], why: "Whoever disobeys me has refused." },
-        { q: "What does 3:32 command?", a: "Obey Allah and the Messenger ﷺ", wrong: ["Obey your wishes", "Obey the crowd", "Obey nobody"], why: "Ati'ullaha war-rasul." },
+        { q: "What does 3:32 command?", a: "Obey Allah and the Messenger ﷺ", wrong: ["Obey your wishes", "Obey the crowd", "Obey nobody"], why: "Ati'ullaha war-rasul.", source: kathir(3, 32, "Ati'ullaha war-rasul.", "Obey Allāh and the Messenger") },
         { q: "In Bukhari 7280, obeying the Prophet ﷺ is the way into Jannah.", tf: true, why: "Whoever obeys me will enter Paradise." }
       ]
     },
@@ -421,9 +421,9 @@ const IMRAN_ONE: DeepUnit = {
       source: hadith("bukhari", "4548", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said: no child is born except that Shaytan touches it at birth and it cries out, except Maryam and her son. Then Abu Hurayrah recited: I seek refuge with You for her and her offspring from Shaytan.", "except Mary and her son"),
       difficulty: 3,
       questions: [
-        { q: "What name did her mother give her, in 3:36?", a: "Maryam", wrong: ["Asiyah", "Hajar", "Sarah"], why: "Wa inni sammaytuha Maryam." },
+        { q: "What name did her mother give her, in 3:36?", a: "Maryam", wrong: ["Asiyah", "Hajar", "Sarah"], why: "Wa inni sammaytuha Maryam.", source: kathir(3, 36, "Wa inni sammaytuha Maryam.", "mother of Maryam, and her name") },
         { q: "Whom did Shaytan not touch at birth, in Bukhari 4548?", a: "Maryam and her son", wrong: ["Every child", "Only kings", "Nobody"], why: "Her mother's dua was answered." },
-        { q: "For whom did Maryam's mother seek refuge in 3:36?", a: "Maryam and her children", wrong: ["Only herself", "Her husband", "Her neighbors"], why: "U'idhuha bika wa dhurriyyataha." }
+        { q: "For whom did Maryam's mother seek refuge in 3:36?", a: "Maryam and her children", wrong: ["Only herself", "Her husband", "Her neighbors"], why: "U'idhuha bika wa dhurriyyataha.", source: kathir(3, 36, "U'idhuha bika wa dhurriyyataha.", "seek refuge for her") }
       ]
     },
     {
@@ -477,9 +477,9 @@ const IMRAN_ONE: DeepUnit = {
       source: hadith("bukhari", "3432", "Ali ibn Abi Talib", "Sahih", "I heard the Prophet ﷺ say: Maryam, the daughter of Imran, was the best of the women of her time, and Khadijah is the best of the women of this Ummah.", "was the best among the women"),
       difficulty: 3,
       questions: [
-        { q: "What did the angels tell Maryam, in 3:42?", a: "Allah chose and purified you", wrong: ["You will be a queen", "Leave the masjid", "You will be rich"], why: "Innallahastafaki wa tahharaki." },
+        { q: "What did the angels tell Maryam, in 3:42?", a: "Allah chose and purified you", wrong: ["You will be a queen", "Leave the masjid", "You will be rich"], why: "Innallahastafaki wa tahharaki.", source: kathir(3, 42, "Innallahastafaki wa tahharaki.", "angels spoke to Maryam by His command and told her that He chose") },
         { q: "Who is named with Maryam as the best of women, in Bukhari 3432?", a: "Khadijah", wrong: ["Hind", "Bilqis", "Zulaykha"], why: "The best of the women of this Ummah." },
-        { q: "What was Maryam told to do, in 3:43?", a: "Obey, prostrate and bow with those who bow", wrong: ["Rest and wait", "Leave prayer", "Travel to Egypt"], why: "Uqnuti li-rabbiki wasjudi warka'i." }
+        { q: "What was Maryam told to do, in 3:43?", a: "Obey, prostrate and bow with those who bow", wrong: ["Rest and wait", "Leave prayer", "Travel to Egypt"], why: "Uqnuti li-rabbiki wasjudi warka'i.", source: kathir(3, 43, "Uqnuti li-rabbiki wasjudi warka'i.", "") }
       ]
     },
     {
@@ -493,7 +493,7 @@ const IMRAN_ONE: DeepUnit = {
       questions: [
         { q: "What did they cast to decide who would care for Maryam?", a: "Their pens", wrong: ["Stones", "Arrows of war", "Coins"], why: "Idh yulquna aqlamahum." },
         { q: "How did the Prophet ﷺ know this story, in 3:44?", a: "Allah revealed it", wrong: ["He read old books", "A traveler told him", "He was there"], why: "Min anba'il-ghayb: news of the unseen." },
-        { q: "Who won the care of Maryam, in 3:37?", a: "Zakariyya", wrong: ["Yahya", "Imran", "Harun"], why: "Wa kaffalaha Zakariyya." }
+        { q: "Who won the care of Maryam, in 3:37?", a: "Zakariyya", wrong: ["Yahya", "Imran", "Harun"], why: "Wa kaffalaha Zakariyya.", source: kathir(3, 37, "Wa kaffalaha Zakariyya.", "her under the care of Zakariyya") }
       ]
     },
     {
@@ -576,7 +576,7 @@ const IMRAN_ONE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "What did Allah do with Isa, in 3:55?", a: "Raised him up to Himself", wrong: ["Left him alone", "Sent him to Egypt", "Made him a king"], why: "Wa rafi'uka ilayy." },
-        { q: "Who is the best of planners, in 3:54?", a: "Allah", wrong: ["The plotters", "The Romans", "The disciples"], why: "Wallahu khayrul-makirin." },
+        { q: "Who is the best of planners, in 3:54?", a: "Allah", wrong: ["The plotters", "The Romans", "The disciples"], why: "Wallahu khayrul-makirin.", source: kathir(3, 54, "Wallahu khayrul-makirin.", "the best of planners") },
         { q: "Isa was crucified.", tf: false, why: "He was not crucified; Allah raised him up to Himself." }
       ]
     },
@@ -716,7 +716,7 @@ const IMRAN_TWO: DeepUnit = {
       questions: [
         { q: "What does 3:77 say false swearers sell Allah's covenant for?", a: "A small price", wrong: ["Paradise", "Knowledge", "Nothing"], why: "Yashtaruna bi-'ahdillahi thamanan qalila." },
         { q: "How will such a person meet Allah, in Bukhari 4549?", a: "With Allah angry with him", wrong: ["Smiling", "Forgiven at once", "As a hero"], why: "He will meet Allah Who is angry with him." },
-        { q: "What will Allah not do for them on that Day, in 3:77?", a: "Speak to them or look at them", wrong: ["Count their deeds", "Raise them up", "Judge them"], why: "Wa la yukallimuhumullahu wa la yanzuru ilayhim." }
+        { q: "What will Allah not do for them on that Day, in 3:77?", a: "Speak to them or look at them", wrong: ["Count their deeds", "Raise them up", "Judge them"], why: "Wa la yukallimuhumullahu wa la yanzuru ilayhim.", source: kathir(3, 77, "Wa la yukallimuhumullahu wa la yanzuru ilayhim.", "speak to them or look") }
       ]
     },
     {
@@ -840,7 +840,7 @@ const IMRAN_TWO: DeepUnit = {
       source: hadith("bukhari", "3366", "Abu Dharr", "Sahih", "I asked: which masjid was built first on earth? He ﷺ said: al-Masjid al-Haram. I asked: then which? He said: al-Masjid al-Aqsa. I asked how long between them. He said: forty years.", "Which mosque was first built on the surface of the earth"),
       difficulty: 4,
       questions: [
-        { q: "What is the first House for people, in 3:96?", a: "The Ka'bah in Makkah", wrong: ["Al-Aqsa", "The Prophet's ﷺ masjid", "A house in Egypt"], why: "Lalladhi bi-Bakkata mubaraka." },
+        { q: "What is the first House for people, in 3:96?", a: "The Ka'bah in Makkah", wrong: ["Al-Aqsa", "The Prophet's ﷺ masjid", "A house in Egypt"], why: "Lalladhi bi-Bakkata mubaraka.", source: kathir(3, 96, "Lalladhi bi-Bakkata mubaraka.", "people is a pilgrimage to the House") },
         { q: "Which masjid was built second, in Bukhari 3366?", a: "Al-Aqsa", wrong: ["Quba", "Al-Haram", "Masjid an-Nabawi"], why: "Then al-Masjid al-Aqsa." },
         { q: "How long between the two, in Bukhari 3366?", a: "Forty years", wrong: ["Four years", "Four hundred years", "One year"], why: "He ﷺ said: forty years." }
       ]
@@ -911,7 +911,7 @@ const IMRAN_TWO: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "What does 3:103 command all together?", a: "Hold fast to Allah's rope", wrong: ["Build a wall", "Leave the city", "Choose a king"], why: "Wa'tasimu bi-hablillahi jami'a." },
-        { q: "What did Allah's favor turn enemies into, in 3:103?", a: "Brothers", wrong: ["Strangers", "Kings", "Rivals"], why: "Fa-asbahtum bi-ni'matihi ikhwana." },
+        { q: "What did Allah's favor turn enemies into, in 3:103?", a: "Brothers", wrong: ["Strangers", "Kings", "Rivals"], why: "Fa-asbahtum bi-ni'matihi ikhwana.", source: kathir(3, 103, "Fa-asbahtum bi-ni'matihi ikhwana.", "enemies and He brought your hearts together and you became, by His favor, brothers") },
         { q: "Which is one of the three things Allah is pleased with, in Muslim 1715?", a: "That you do not split apart", wrong: ["That you ask many questions", "That you waste wealth", "That you gossip"], why: "Hold fast the rope of Allah and be not scattered." }
       ]
     },
@@ -1093,7 +1093,7 @@ const IMRAN_THREE: DeepUnit = {
       questions: [
         { q: "How were the Muslims at Badr, in 3:123?", a: "Few and weak", wrong: ["Many and rich", "Strong with horses", "In a fortress"], why: "Wa antum adhillah." },
         { q: "What does 3:123 tell them to be?", a: "Grateful", wrong: ["Proud", "Afraid", "Silent"], why: "La'allakum tashkurun." },
-        { q: "How many angels did Allah promise first, in 3:124?", a: "Three thousand", wrong: ["Three hundred", "Ten", "One million"], why: "Bi-thalathati alafin minal-mala'ikah." }
+        { q: "How many angels did Allah promise first, in 3:124?", a: "Three thousand", wrong: ["Three hundred", "Ten", "One million"], why: "Bi-thalathati alafin minal-mala'ikah.", source: kathir(3, 124, "Bi-thalathati alafin minal-mala'ikah.", "help you with three thousand angels") }
       ]
     },
     {
@@ -1106,7 +1106,7 @@ const IMRAN_THREE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "Where does victory come from, in 3:126?", a: "Only from Allah", wrong: ["From numbers", "From weapons", "From luck"], why: "Wa man-nasru illa min 'indillah." },
-        { q: "How many angels if they stayed patient, in 3:125?", a: "Five thousand", wrong: ["Fifty", "Five hundred", "Fifty thousand"], why: "Bi-khamsati alafin minal-mala'ikah." },
+        { q: "How many angels if they stayed patient, in 3:125?", a: "Five thousand", wrong: ["Fifty", "Five hundred", "Fifty thousand"], why: "Bi-khamsati alafin minal-mala'ikah.", source: kathir(3, 125, "Bi-khamsati alafin minal-mala'ikah.", "help you with five thousand angels") },
         { q: "Why did Allah tell them about the angels, in 3:126?", a: "As good news to calm their hearts", wrong: ["To make them lazy", "To scare them", "To test the angels"], why: "Illa bushra lakum wa li-tatma'inna qulubukum." }
       ]
     },
@@ -1162,8 +1162,8 @@ const IMRAN_THREE: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "Who is truly strong, in Bukhari 6114?", a: "One who controls himself when angry", wrong: ["One who wins every fight", "One who shouts loudest", "One who lifts the most"], why: "Sahih al-Bukhari 6114." },
-        { q: "What do the pious do with anger, in 3:134?", a: "Hold it in", wrong: ["Let it all out", "Spread it", "Save it for later"], why: "Wal-kazimin al-ghayz." },
-        { q: "Whom does Allah love, in 3:134?", a: "The doers of good", wrong: ["The quick-tempered", "The rich", "The proud"], why: "Wallahu yuhibbul-muhsinin." }
+        { q: "What do the pious do with anger, in 3:134?", a: "Hold it in", wrong: ["Let it all out", "Spread it", "Save it for later"], why: "Wal-kazimin al-ghayz.", source: kathir(3, 134, "Wal-kazimin al-ghayz.", "") },
+        { q: "Whom does Allah love, in 3:134?", a: "The doers of good", wrong: ["The quick-tempered", "The rich", "The proud"], why: "Wallahu yuhibbul-muhsinin.", source: kathir(3, 134, "Wallahu yuhibbul-muhsinin.", "the doers of good") }
       ]
     },
     {
@@ -1247,7 +1247,7 @@ const IMRAN_THREE: DeepUnit = {
       questions: [
         { q: "Who led the archers at Uhud?", a: "Abdullah ibn Jubayr", wrong: ["Khalid ibn al-Walid", "Abu Bakr", "Hamzah"], why: "Sahih al-Bukhari 4561." },
         { q: "How many men stayed with the Prophet ﷺ, in Bukhari 4561?", a: "Twelve", wrong: ["Two", "Three hundred", "One thousand"], why: "None remained but twelve men." },
-        { q: "Why did the battle turn, in 3:152?", a: "Some disobeyed the order", wrong: ["It rained", "The enemy left", "The sun set"], why: "Wa 'asaytum min ba'di ma arakum ma tuhibbun." }
+        { q: "Why did the battle turn, in 3:152?", a: "Some disobeyed the order", wrong: ["It rained", "The enemy left", "The sun set"], why: "Wa 'asaytum min ba'di ma arakum ma tuhibbun.", source: kathir(3, 152, "Wa 'asaytum min ba'di ma arakum ma tuhibbun.", "") }
       ]
     },
     {
@@ -1273,9 +1273,9 @@ const IMRAN_THREE: DeepUnit = {
       source: hadith("bukhari", "4562", "Abu Talhah", "Sahih", "Abu Talhah said: slumber overtook us at Uhud while we were in the front rows. My sword would fall from my hand and I would pick it up, and it would fall again.", "Slumber overtook us during the battle of Uhud"),
       difficulty: 5,
       questions: [
-        { q: "What did Allah send down after the distress, in 3:154?", a: "A calm sleep", wrong: ["A storm", "An army", "A fire"], why: "Amanatan nu'asa." },
+        { q: "What did Allah send down after the distress, in 3:154?", a: "A calm sleep", wrong: ["A storm", "An army", "A fire"], why: "Amanatan nu'asa.", source: kathir(3, 154, "Amanatan nu'asa.", "after distress, He sent down") },
         { q: "What kept falling from Abu Talhah's hand?", a: "His sword", wrong: ["His shield", "His food", "A book"], why: "Sahih al-Bukhari 4562." },
-        { q: "Whose is the whole affair, in 3:154?", a: "Allah's", wrong: ["The fighters'", "The leaders'", "Nobody's"], why: "Innal-amra kullahu lillah." }
+        { q: "Whose is the whole affair, in 3:154?", a: "Allah's", wrong: ["The fighters'", "The leaders'", "Nobody's"], why: "Innal-amra kullahu lillah.", source: kathir(3, 154, "Innal-amra kullahu lillah.", "") }
       ]
     },
     {
@@ -1302,8 +1302,8 @@ const IMRAN_THREE: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "Why was the Prophet ﷺ gentle, in 3:159?", a: "By Allah's mercy", wrong: ["Out of fear", "To get rich", "By chance"], why: "Fa-bima rahmatin minallahi linta lahum." },
-        { q: "What would harshness have done, in 3:159?", a: "Driven people away", wrong: ["Made them stronger", "Made them richer", "Nothing"], why: "La-nfaddu min hawlik." },
-        { q: "After consulting and deciding, what then, in 3:159?", a: "Trust in Allah", wrong: ["Change your mind", "Ask again forever", "Wait a year"], why: "Fa-idha 'azamta fa-tawakkal 'alallah." }
+        { q: "What would harshness have done, in 3:159?", a: "Driven people away", wrong: ["Made them stronger", "Made them richer", "Nothing"], why: "La-nfaddu min hawlik.", source: kathir(3, 159, "La-nfaddu min hawlik.", "") },
+        { q: "After consulting and deciding, what then, in 3:159?", a: "Trust in Allah", wrong: ["Change your mind", "Ask again forever", "Wait a year"], why: "Fa-idha 'azamta fa-tawakkal 'alallah.", source: kathir(3, 159, "Fa-idha 'azamta fa-tawakkal 'alallah.", "") }
       ]
     },
     {
@@ -1385,7 +1385,7 @@ const IMRAN_THREE: DeepUnit = {
       source: hadith("bukhari", "4563", "Ibn Abbas", "Sahih", "Ibn Abbas said: Allah is enough for us and the best Guardian was said by Ibrahim when he was thrown into the fire, and said by Muhammad ﷺ when people told them a great army had gathered against them; it only increased their faith.", "but it only increased their faith"),
       difficulty: 5,
       questions: [
-        { q: "What did the believers say when told to fear the army, in 3:173?", a: "Allah is enough for us", wrong: ["Let us run", "We give up", "Let us hide"], why: "Hasbunallahu wa ni'mal-wakil." },
+        { q: "What did the believers say when told to fear the army, in 3:173?", a: "Allah is enough for us", wrong: ["Let us run", "We give up", "Let us hide"], why: "Hasbunallahu wa ni'mal-wakil.", source: kathir(3, 173, "Hasbunallahu wa ni'mal-wakil.", "") },
         { q: "Which prophet said it when thrown into the fire, in Bukhari 4563?", a: "Ibrahim", wrong: ["Musa", "Nuh", "Yunus"], why: "Ibn Abbas: said by Ibrahim." },
         { q: "What did the threat do to their faith?", a: "Increased it", wrong: ["Ended it", "Weakened it", "Nothing"], why: "Fa-zadahum imana." }
       ]
@@ -1555,7 +1555,7 @@ const IMRAN_THREE: DeepUnit = {
       questions: [
         { q: "Whom did the Prophet ﷺ call 'your brother Ashamah'?", a: "The Negus of Abyssinia", wrong: ["Heraclius", "Abu Talib", "The king of Persia"], why: "Sahih al-Bukhari 3877." },
         { q: "What did the Prophet ﷺ do when he died?", a: "Prayed the funeral prayer for him", wrong: ["Sent an army", "Said nothing", "Wrote a poem"], why: "Get up and offer the funeral prayer." },
-        { q: "What do the believers among them not do, in 3:199?", a: "Sell Allah's ayahs for a small price", wrong: ["Pray", "Believe", "Humble themselves"], why: "La yashtaruna bi-ayatillahi thamanan qalila." }
+        { q: "What do the believers among them not do, in 3:199?", a: "Sell Allah's ayahs for a small price", wrong: ["Pray", "Believe", "Humble themselves"], why: "La yashtaruna bi-ayatillahi thamanan qalila.", source: kathir(3, 199, "La yashtaruna bi-ayatillahi thamanan qalila.", "sell the verses of Allah for a small price") }
       ]
     },
     {

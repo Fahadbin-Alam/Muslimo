@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Waqi'ah ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -127,7 +127,7 @@ const WAQIAH_ONE: DeepUnit = {
       difficulty: 1,
       questions: [
         { q: "What happens to the mountains, in 56:5?", a: "Powdered to dust", wrong: ["They grow taller", "They turn to gold", "They float away whole"], why: "And the mountains will be powdered to dust." },
-        { q: "What did Ibn Zayd compare them to, from 73:14?", a: "A heap of sand poured out", wrong: ["A tower of ice", "A field of grass", "A tall tree"], why: "A heap of sand poured out. (73:14)" },
+        { q: "What did Ibn Zayd compare them to, from 73:14?", a: "A heap of sand poured out", wrong: ["A tower of ice", "A field of grass", "A tall tree"], why: "A heap of sand poured out. (73:14)", source: kathir(56, 5, "A heap of sand poured out. (73:14)", "heap of sand poured") },
         { tf: true, q: "The strongest things on earth cannot stand that Day.", why: "And the mountains will be powdered to dust." }
       ]
     },
@@ -211,8 +211,8 @@ const WAQIAH_ONE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "Why are the foremost first in the Hereafter?", a: "They rushed to obey Allah", wrong: ["They were rich", "They were tall", "They were famous"], why: "Those who rush to obey Allah in this life and are foremost in performing acts of righteousness." },
-        { q: "What does 57:21 tell us to race toward?", a: "Forgiveness and Paradise", wrong: ["Money", "Power", "Praise of people"], why: "Race with one another in hastening towards forgiveness from your Lord, and Paradise." },
-        { q: "How wide is Paradise, per 3:133?", a: "As the heavens and the earth", wrong: ["As one city", "As a desert", "As a garden"], why: "And for Paradise as wide as the heavens and the earth. (3:133)" }
+        { q: "What does 57:21 tell us to race toward?", a: "Forgiveness and Paradise", wrong: ["Money", "Power", "Praise of people"], why: "Race with one another in hastening towards forgiveness from your Lord, and Paradise.", source: kathir(56, 10, "Race with one another in hastening towards forgiveness from your Lord, and Paradise.", "Race with one another in hastening towards forgiveness from your Lord, and Paradise") },
+        { q: "How wide is Paradise, per 3:133?", a: "As the heavens and the earth", wrong: ["As one city", "As a desert", "As a garden"], why: "And for Paradise as wide as the heavens and the earth. (3:133)", source: kathir(56, 10, "And for Paradise as wide as the heavens and the earth. (3:133)", "Paradise as wide as the heavens and the earth") }
       ]
     },
     {
@@ -478,7 +478,7 @@ const WAQIAH_ONE: DeepUnit = {
       questions: [
         { q: "What will they not hear, in 56:25?", a: "Laghw or sinful speech", wrong: ["Any greeting", "Birdsong", "The Quran"], why: "No Laghw (evil vain talk) will they hear therein, nor any sinful speech." },
         { q: "What kind of speech is missing in Paradise?", a: "Foul or useless speech", wrong: ["Kind words", "Greetings", "Praise of Allah"], why: "They will not hear foul or unnecessary speech in Paradise." },
-        { tf: true, q: "88:11 also says no harmful speech is heard there.", why: "Where they shall neither hear harmful speech nor falsehood. (88:11)" }
+        { tf: true, q: "88:11 also says no harmful speech is heard there.", why: "Where they shall neither hear harmful speech nor falsehood. (88:11)", source: kathir(56, 25, "Where they shall neither hear harmful speech nor falsehood. (88:11)", "shall neither hear harmful speech nor falsehood") }
       ]
     },
     {
@@ -939,7 +939,7 @@ const WAQIAH_TWO: DeepUnit = {
       questions: [
         { q: "What did they ask, in 56:47?", a: "Will we be raised after dust?", wrong: ["Where is the rain?", "Who is the king?", "When is the harvest?"], why: "When we die and become dust and bones, shall we then indeed be resurrected?" },
         { q: "Why did they ask it?", a: "To deny the Resurrection", wrong: ["To learn more", "To praise Allah", "To be polite"], why: "They said this while denying and rejecting the idea that resurrection will ever occur." },
-        { tf: true, q: "56:57-62 answer this question with proofs.", why: "Allah asserts that Resurrection will occur and refutes the misguided atheists who deny it." }
+        { tf: true, q: "56:57-62 answer this question with proofs.", why: "Allah asserts that Resurrection will occur and refutes the misguided atheists who deny it.", source: kathir(56, 57, "Allah asserts that Resurrection will occur and refutes the misguided atheists who deny it.", "asserts that Resurrection will occur and refutes the misguided atheists who deny") }
       ]
     },
     {
@@ -981,7 +981,7 @@ const WAQIAH_TWO: DeepUnit = {
       questions: [
         { q: "What kind of Day is it, in 56:50?", a: "A known, appointed Day", wrong: ["A random Day", "An unknown night", "A holiday"], why: "All will surely be gathered together for appointed meeting of a known Day." },
         { q: "Can the Day come early or late?", a: "No, its time is fixed", wrong: ["Yes, early", "Yes, late", "Yes, both"], why: "That time is precisely designated and will not come late, early, nor increase or decrease." },
-        { tf: true, q: "11:104 says Allah delays it only for a fixed term.", why: "And We delay it only for a term fixed. (11:104)" }
+        { tf: true, q: "11:104 says Allah delays it only for a fixed term.", why: "And We delay it only for a term fixed. (11:104)", source: kathir(11, 104, "And We delay it only for a term fixed. (11:104)", "delay it except for a limited term") }
       ]
     },
     {
@@ -995,7 +995,7 @@ const WAQIAH_TWO: DeepUnit = {
       questions: [
         { q: "Who is spoken to in 56:51?", a: "The erring deniers", wrong: ["The foremost", "Those on the right", "The angels"], why: "Then verily, – you the erring-ones, the deniers!" },
         { q: "What two things did they do?", a: "Strayed and denied", wrong: ["Prayed and fasted", "Traveled and traded", "Read and wrote"], why: "You the erring-ones, the deniers!" },
-        { tf: true, q: "They are the ones who denied the Resurrection in 56:47.", why: "And they used to say: When we die and become dust and bones, shall we then indeed be resurrected?" }
+        { tf: true, q: "They are the ones who denied the Resurrection in 56:47.", why: "And they used to say: When we die and become dust and bones, shall we then indeed be resurrected?", source: kathir(56, 47, "And they used to say: When we die and become dust and bones, shall we then indeed be resurrected?", "become dust and bones, shall we then indeed") }
       ]
     },
     {
@@ -1064,7 +1064,7 @@ const WAQIAH_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What does 56:56 call this?", a: "Their entertainment that Day", wrong: ["Their reward", "Their prize", "Their rest"], why: "That will be their entertainment on the Day of Recompense." },
-        { q: "What do the believers get, per 18:107?", a: "Gardens of Al-Firdaws", wrong: ["Smoke", "Hot wind", "Nothing"], why: "Shall have the Gardens of Al-Firdaws (Paradise) for their entertainment. (18:107)" },
+        { q: "What do the believers get, per 18:107?", a: "Gardens of Al-Firdaws", wrong: ["Smoke", "Hot wind", "Nothing"], why: "Shall have the Gardens of Al-Firdaws (Paradise) for their entertainment. (18:107)", source: kathir(56, 56, "Shall have the Gardens of Al-Firdaws (Paradise) for their entertainment. (18:107)", "shall have the Gardens of Al-Firdaws") },
         { q: "What does entertainment mean for believers?", a: "Hospitality and honor", wrong: ["Games", "Music", "Shopping"], why: "Hospitality and honor." }
       ]
     }
@@ -1134,7 +1134,7 @@ const WAQIAH_THREE: DeepUnit = {
       questions: [
         { q: "Who creates each baby, in 56:59?", a: "Allah, the Creator", wrong: ["The parents", "The doctors", "Nature alone"], why: "Is it you who create it, or are We the Creator?" },
         { q: "What answer does the question expect?", a: "Allah does all this", wrong: ["People do", "No one does", "Animals do"], why: "Or is Allah the One Who does all this?" },
-        { tf: true, q: "75:37-40 gives the same proof for the Resurrection.", why: "Was he not a Nutfah... Is not He able to give life to the dead? (75:36-40)" }
+        { tf: true, q: "75:37-40 gives the same proof for the Resurrection.", why: "Was he not a Nutfah... Is not He able to give life to the dead? (75:36-40)", source: kathir(75, 37, "Was he not a Nutfah... Is not He able to give life to the dead? (75:36-40)", "") }
       ]
     },
     {
@@ -1218,7 +1218,7 @@ const WAQIAH_THREE: DeepUnit = {
       questions: [
         { q: "What do we already know, per 56:62?", a: "The first creation", wrong: ["The future", "The unseen", "The Hour"], why: "And indeed, you have already known the first form of creation." },
         { q: "What gifts did Allah give us, per Ibn Kathir?", a: "Hearing, sight and hearts", wrong: ["Wings", "Gold", "Crowns"], why: "He created you and gave you hearing, sight and hearts." },
-        { q: "What does 19:67 ask man to remember?", a: "He was nothing before", wrong: ["His wealth", "His tribe", "His house"], why: "Does not man remember that We created him before, while he was nothing? (19:67)" }
+        { q: "What does 19:67 ask man to remember?", a: "He was nothing before", wrong: ["His wealth", "His tribe", "His house"], why: "Does not man remember that We created him before, while he was nothing? (19:67)", source: kathir(56, 62, "Does not man remember that We created him before, while he was nothing? (19:67)", "remember that We created him before, while he was nothing") }
       ]
     },
     {
@@ -1301,7 +1301,7 @@ const WAQIAH_THREE: DeepUnit = {
       difficulty: 1,
       questions: [
         { q: "What does Allah ask us to see, in 56:68?", a: "The water we drink", wrong: ["The gold we keep", "The clothes we wear", "The roads we take"], why: "Do you not see the water that you drink." },
-        { q: "What other gifts come from it, per 16:10?", a: "Drink and plants for cattle", wrong: ["Gold", "Iron", "Stone"], why: "From it you drink and from it (grows) the vegetation on which you send your cattle to pasture. (16:10)" },
+        { q: "What other gifts come from it, per 16:10?", a: "Drink and plants for cattle", wrong: ["Gold", "Iron", "Stone"], why: "From it you drink and from it (grows) the vegetation on which you send your cattle to pasture. (16:10)", source: kathir(56, 68, "From it you drink and from it (grows) the vegetation on which you send your cattle to pasture. (16:10)", "vegetation on which you send your cattle to pasture") },
         { tf: true, q: "Every sip of water is a gift from Allah.", why: "Do you not see the water that you drink." }
       ]
     },
@@ -1566,7 +1566,7 @@ const WAQIAH_FOUR: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What did the Quraysh claim, per Ibn Zayd?", a: "Devils brought the Quran", wrong: ["Angels wrote poems", "Kings wrote it", "Traders made it"], why: "The Quraysh disbelievers claimed that the devils brought down the Qur'an." },
-        { q: "What does 26:210 say about the devils?", a: "They did not bring it down", wrong: ["They wrote it", "They guard it", "They teach it"], why: "And it is not the Shayatin who have brought it down. (26:210)" },
+        { q: "What does 26:210 say about the devils?", a: "They did not bring it down", wrong: ["They wrote it", "They guard it", "They teach it"], why: "And it is not the Shayatin who have brought it down. (26:210)", source: kathir(56, 79, "And it is not the Shayatin who have brought it down. (26:210)", "Shayatin who have brought it down") },
         { tf: true, q: "Ibn Kathir says Ibn Zayd's view is good and fits the others.", why: "This saying is a good saying, and does not contradict those before it." }
       ]
     },
@@ -1581,7 +1581,7 @@ const WAQIAH_FOUR: DeepUnit = {
       questions: [
         { q: "Who will be with the noble scribes?", a: "One who masters the Quran", wrong: ["One who sleeps", "One who boasts", "One who is rich"], why: "Such a person as recites the Qur'an and masters it by heart, will be with the noble righteous scribes." },
         { q: "What does one who struggles to recite get?", a: "A double reward", wrong: ["No reward", "Half a reward", "A warning"], why: "And recites it with great difficulty, will have a double reward." },
-        { tf: true, q: "The noble scribes are angels, like the pure ones of 56:79.", why: "That the pure ones means: The angels." }
+        { tf: true, q: "The noble scribes are angels, like the pure ones of 56:79.", why: "That the pure ones means: The angels.", source: kathir(56, 79, "That the pure ones means: The angels.", "none touches but the pure ones") }
       ]
     },
     {
@@ -1679,7 +1679,7 @@ const WAQIAH_FOUR: DeepUnit = {
       questions: [
         { q: "Who is nearer to the dying, in 56:85?", a: "Allah, with His angels", wrong: ["The doctor", "The family", "No one"], why: "But We are nearer to him than you, with Our angels." },
         { q: "Why do people not notice them?", a: "They cannot see the angels", wrong: ["They are asleep", "They are far", "They are busy"], why: "But you see not, you cannot see the angels." },
-        { tf: true, q: "6:61 says angels take the soul and never neglect their duty.", why: "Our messengers (angel of death and his assistants) take his soul, and they never neglect their duty. (6:61)" }
+        { tf: true, q: "6:61 says angels take the soul and never neglect their duty.", why: "Our messengers (angel of death and his assistants) take his soul, and they never neglect their duty. (6:61)", source: kathir(56, 85, "Our messengers (angel of death and his assistants) take his soul, and they never neglect their duty. (6:61)", "take his soul, and they never neglect their duty") }
       ]
     },
     {
@@ -1861,7 +1861,7 @@ const WAQIAH_FOUR: DeepUnit = {
       questions: [
         { q: "What is their welcome, in 56:93?", a: "Hamim, boiling water", wrong: ["Cool drinks", "Fruit", "Honey"], why: "Then for him is an entertainment with Hamim." },
         { q: "What does entertainment mean, per Ibn Kathir?", a: "Being received as a guest", wrong: ["A game", "A song", "A prize"], why: "Meaning, as a guest." },
-        { tf: true, q: "56:56 called the same welcome their entertainment.", why: "That will be their entertainment on the Day of Recompense. (56:56)" }
+        { tf: true, q: "56:56 called the same welcome their entertainment.", why: "That will be their entertainment on the Day of Recompense. (56:56)", source: kathir(56, 56, "That will be their entertainment on the Day of Recompense. (56:56)", "") }
       ]
     },
     {
@@ -1931,7 +1931,7 @@ const WAQIAH_FOUR: DeepUnit = {
       questions: [
         { q: "How many times a day, per Bukhari 6405?", a: "One hundred", wrong: ["Three", "Ten", "One thousand"], why: "Whoever says, Subhan Allah wa bihamdihi, one hundred times a day." },
         { q: "How big can the forgiven sins be?", a: "As much as the sea foam", wrong: ["One small sin", "None", "Only a few"], why: "Will be forgiven all his sins even if they were as much as the foam of the sea." },
-        { tf: true, q: "56:96 tells us to glorify Allah with praise.", why: "So, glorify with praises the Name of your Lord, the Most Great." }
+        { tf: true, q: "56:96 tells us to glorify Allah with praise.", why: "So, glorify with praises the Name of your Lord, the Most Great.", source: kathir(56, 96, "So, glorify with praises the Name of your Lord, the Most Great.", "glorify with praises the Name of your Lord, the Most Great") }
       ]
     }
   ]

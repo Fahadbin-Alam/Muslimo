@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Qaf ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -366,7 +366,7 @@ const QAF_ONE: DeepUnit = {
       questions: [
         { q: "What is denying one messenger like, per Ibn Kathir?", a: "Denying all messengers", wrong: ["A small mistake", "Nothing", "Half a denial"], why: "Whoever denies even one Messenger, is as if he has denied all Messengers." },
         { q: "Which ayah says Nuh's people denied the Messengers?", a: "26:105", wrong: ["2:2", "71:1", "11:25"], why: "The people of Nuh denied the Messengers. (26:105)" },
-        { tf: true, q: "Nuh's people had one messenger, yet denied all, per 26:105.", why: "Even though only one Messenger was sent to them." }
+        { tf: true, q: "Nuh's people had one messenger, yet denied all, per 26:105.", why: "Even though only one Messenger was sent to them.", source: kathir(50, 14, "Even though only one Messenger was sent to them.", "people of Nuh denied") }
       ]
     },
     {
@@ -503,9 +503,9 @@ const QAF_TWO: DeepUnit = {
       source: ik(18, "Ibn Kathir links 50:18 to 82:10-12: honorable angels write down deeds and know all you do.", "Therefore, the scribe records every word that is spoken"),
       difficulty: 2,
       questions: [
-        { q: "What does Kiraman Katibin mean, per 82:11?", a: "Honorable writers", wrong: ["Strong guards", "Fast riders", "Kind teachers"], why: "Kiraman (honorable) Katibin writing down (your deeds)." },
+        { q: "What does Kiraman Katibin mean, per 82:11?", a: "Honorable writers", wrong: ["Strong guards", "Fast riders", "Kind teachers"], why: "Kiraman (honorable) Katibin writing down (your deeds).", source: kathir(82, 11, "Kiraman (honorable) Katibin writing down (your deeds).", "Kiraman Katibin, they know all that you") },
         { q: "Which ayahs does Ibn Kathir link to 50:18?", a: "82:10-12", wrong: ["2:1-3", "112:1-4", "1:1-7"], why: "But verily, over you (are appointed angels) to watch you. (82:10-12)" },
-        { tf: true, q: "The scribes know all that we do, per 82:12.", why: "They know all that you do. (82:10-12)" }
+        { tf: true, q: "The scribes know all that we do, per 82:12.", why: "They know all that you do. (82:10-12)", source: kathir(82, 12, "They know all that you do. (82:10-12)", "") }
       ]
     },
     {
@@ -1008,7 +1008,7 @@ const QAF_THREE: DeepUnit = {
       questions: [
         { q: "How hard is the gathering for Allah, in 50:44?", a: "Quite easy", wrong: ["Very hard", "Impossible", "Slow"], why: "That will be a gathering, quite easy for Us." },
         { q: "Which ayah says His command is like a blink?", a: "54:50", wrong: ["2:20", "18:1", "99:1"], why: "And Our commandment is but one as the twinkling of an eye. (54:50)" },
-        { q: "What does 31:28 compare raising all of us to?", a: "Raising a single person", wrong: ["Building a city", "Crossing a sea", "Counting stars"], why: "The creation of you all and the resurrection of you all are only as of a single person. (31:28)" }
+        { q: "What does 31:28 compare raising all of us to?", a: "Raising a single person", wrong: ["Building a city", "Crossing a sea", "Counting stars"], why: "The creation of you all and the resurrection of you all are only as of a single person. (31:28)", source: kathir(50, 44, "The creation of you all and the resurrection of you all are only as of a single person. (31:28)", "resurrection of you all are only as of a single person") }
       ]
     },
     {
@@ -1035,7 +1035,7 @@ const QAF_THREE: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What is he ﷺ not, in 50:45?", a: "The one to force them", wrong: ["A messenger", "A reminder", "A guide"], why: "And you are not the one to force them." },
-        { q: "Who guides whom He wills, per 28:56?", a: "Allah", wrong: ["Kings", "Teachers", "Anyone who wishes"], why: "Verily, you guide not whom you like, but Allah guides whom He wills. (28:56)" },
+        { q: "Who guides whom He wills, per 28:56?", a: "Allah", wrong: ["Kings", "Teachers", "Anyone who wishes"], why: "Verily, you guide not whom you like, but Allah guides whom He wills. (28:56)", source: kathir(50, 45, "Verily, you guide not whom you like, but Allah guides whom He wills. (28:56)", "guide not whom you like, but Allah guides whom He wills") },
         { q: "Which ayahs say: you are only one who reminds?", a: "88:21-22", wrong: ["1:1-2", "2:1-2", "114:1-2"], why: "So remind them, you are only one who reminds. You are not a dictator over them. (88:21-22)" }
       ]
     },

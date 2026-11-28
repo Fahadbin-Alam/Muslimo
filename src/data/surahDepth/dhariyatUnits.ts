@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Adh-Dhariyat ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -212,7 +212,7 @@ const DHARIYAT_ONE: DeepUnit = {
       questions: [
         { q: "What did they ask, in 51:12?", a: "When is the Day of Ad-Din?", wrong: ["Where is the rain?", "Who is the king?", "What is the price?"], why: "They ask: When will be the Day of Ad-Din?" },
         { q: "Why did they ask, per Ibn Kathir?", a: "In denial and doubt", wrong: ["To learn", "To prepare", "To pray"], why: "They utter this statement in denial, stubbornness, doubt and suspicion." },
-        { tf: true, q: "Allah answered their question in the next ayah, 51:13.", why: "They utter this statement in denial, stubbornness, doubt and suspicion. Allah the Exalted replied." }
+        { tf: true, q: "Allah answered their question in the next ayah, 51:13.", why: "They utter this statement in denial, stubbornness, doubt and suspicion. Allah the Exalted replied.", source: kathir(51, 13, "They utter this statement in denial, stubbornness, doubt and suspicion. Allah the Exalted replied.", "utter this statement in denial, stubbornness, doubt and suspicion") }
       ]
     },
     {
@@ -225,7 +225,7 @@ const DHARIYAT_ONE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "What does Yuftanun mean, per Ibn Abbas?", a: "Punished", wrong: ["Rewarded", "Forgiven", "Moved"], why: "Ibn Abbas, Mujahid, Al-Hasan and several others said that Yuftanun means punished." },
-        { q: "What did they used to ask, in 51:14?", a: "For it to be hastened", wrong: ["For it to be delayed", "For more rain", "For a king"], why: "This is what you used to ask to be hastened!" },
+        { q: "What did they used to ask, in 51:14?", a: "For it to be hastened", wrong: ["For it to be delayed", "For more rain", "For a king"], why: "This is what you used to ask to be hastened!", source: kathir(51, 14, "This is what you used to ask to be hastened!", "used to ask to be hastened") },
         { tf: true, q: "51:13 answers their question about the Day.", why: "They ask: When will be the Day of Ad-Din? Allah the Exalted replied." }
       ]
     },
@@ -489,7 +489,7 @@ const DHARIYAT_TWO: DeepUnit = {
       source: ik(28, "Ibn Kathir says the angels gave the good news of Ishaq, and Yaqub after him, news that gladdened both Ibrahim and his wife.", "This news was as good to Ibrahim as it was to his wife"),
       difficulty: 2,
       questions: [
-        { q: "Why did Ibrahim feel fear, per 11:70?", a: "Their hands did not reach the food", wrong: ["They were loud", "They were armed", "It was night"], why: "But when he saw their hands went not towards it, he mistrusted them, and felt a sense of fear of them." },
+        { q: "Why did Ibrahim feel fear, per 11:70?", a: "Their hands did not reach the food", wrong: ["They were loud", "They were armed", "It was night"], why: "But when he saw their hands went not towards it, he mistrusted them, and felt a sense of fear of them.", source: kathir(51, 28, "But when he saw their hands went not towards it, he mistrusted them, and felt a sense of fear of them.", "hands went not towards it, he mistrusted them, and felt a sense of fear") },
         { q: "What news did they give, in 51:28?", a: "A son having knowledge", wrong: ["A new house", "Much gold", "A long trip"], why: "And they gave him glad tidings of a son having knowledge." },
         { q: "Who was the son, per Ibn Kathir?", a: "Ishaq", wrong: ["Ismail", "Yusuf", "Lut"], why: "The angels delivered the good news to her of a son, Ishaq, and Yaqub after Ishaq." }
       ]
@@ -546,7 +546,7 @@ const DHARIYAT_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "For whom did Ibrahim plead, per 11:74?", a: "The people of Lut", wrong: ["His guests", "Firawn", "His father"], why: "He began to plead with Us for the people of Lut." },
-        { q: "How does 11:75 describe Ibrahim?", a: "Forbearing, humble, repentant", wrong: ["Harsh and proud", "Rich and famous", "Quick to anger"], why: "Verily, Ibrahim was, without doubt forbearing, used to invoke Allah with humility, and was repentant." },
+        { q: "How does 11:75 describe Ibrahim?", a: "Forbearing, humble, repentant", wrong: ["Harsh and proud", "Rich and famous", "Quick to anger"], why: "Verily, Ibrahim was, without doubt forbearing, used to invoke Allah with humility, and was repentant.", source: kathir(11, 75, "Verily, Ibrahim was, without doubt forbearing, used to invoke Allah with humility, and was repentant.", "Ibrahim was, without doubt, forbearing, used to invoke Alllah with humility, and was repentant") },
         { tf: true, q: "Ibrahim was told the command of his Lord had come.", why: "O Ibrahim! Forsake this. Indeed, the commandment of your Lord has gone forth." }
       ]
     },
@@ -561,7 +561,7 @@ const DHARIYAT_TWO: DeepUnit = {
       questions: [
         { q: "What were the stones made of, in 51:33?", a: "Clay", wrong: ["Iron", "Gold", "Ice"], why: "To send down upon them stones of clay." },
         { q: "What did Ibrahim say of Lut, per 29:32?", a: "But there is Lut in it", wrong: ["Lut has left", "Lut is asleep", "Lut is a king"], why: "Ibrahim said: But there is Lut in it." },
-        { tf: true, q: "The angels promised to save Lut and his family, per 29:32.", why: "We will verily save him and his family except his wife." }
+        { tf: true, q: "The angels promised to save Lut and his family, per 29:32.", why: "We will verily save him and his family except his wife.", source: kathir(51, 33, "We will verily save him and his family except his wife.", "verily save him and his family except his wife") }
       ]
     },
     {
@@ -687,7 +687,7 @@ const DHARIYAT_TWO: DeepUnit = {
       questions: [
         { q: "Which wind helped him ﷺ, per Bukhari 1035?", a: "As-Saba, the east wind", wrong: ["Ad-Dabur", "A storm", "No wind"], why: "I was granted victory with As-Saba." },
         { q: "Which wind ended Ad, per Bukhari 1035?", a: "Ad-Dabur, the west wind", wrong: ["As-Saba", "The north wind", "A sea breeze"], why: "The nation of Ad was destroyed by Ad-Dabur (westerly wind)." },
-        { tf: true, q: "51:42 says the wind spared nothing it reached.", why: "It spared nothing that it reached, but blew it into broken spreads of rotten ruins." }
+        { tf: true, q: "51:42 says the wind spared nothing it reached.", why: "It spared nothing that it reached, but blew it into broken spreads of rotten ruins.", source: kathir(51, 42, "It spared nothing that it reached, but blew it into broken spreads of rotten ruins.", "It spared nothing that it reached") }
       ]
     },
     {
@@ -701,7 +701,7 @@ const DHARIYAT_TWO: DeepUnit = {
       questions: [
         { q: "What were Thamud told, in 51:43?", a: "Enjoy yourselves for a while", wrong: ["Leave at once", "Build a wall", "Go to sea"], why: "And in Thamud, when they were told: Enjoy yourselves for a while!" },
         { q: "How long was their respite, per Ibn Kathir?", a: "Three days", wrong: ["One hour", "Ten years", "Forty days"], why: "Thamud were given a respite for three days." },
-        { q: "What did Thamud prefer, per 41:17?", a: "Blindness over guidance", wrong: ["Guidance over blindness", "Trade over war", "The sea over land"], why: "We guided them to the path of truth, but they preferred blindness to guidance. (41:17)" }
+        { q: "What did Thamud prefer, per 41:17?", a: "Blindness over guidance", wrong: ["Guidance over blindness", "Trade over war", "The sea over land"], why: "We guided them to the path of truth, but they preferred blindness to guidance. (41:17)", source: kathir(51, 43, "We guided them to the path of truth, but they preferred blindness to guidance. (41:17)", "guided them to the path of truth, but they preferred blindness to guidance") }
       ]
     },
     {

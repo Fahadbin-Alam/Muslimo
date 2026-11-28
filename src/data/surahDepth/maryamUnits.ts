@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Maryam ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -575,7 +575,7 @@ const MARYAM_TWO: DeepUnit = {
       questions: [
         { q: "What did the Prophet ﷺ ask Jibril?", a: "To visit more often", wrong: ["To bring food", "To stay away", "To bring rain"], why: "What prevents you from visiting us more often than you visit us now?" },
         { q: "How do angels descend, in 19:64?", a: "Only by Allah's command", wrong: ["Whenever they like", "Every hour", "Never"], why: "And we descend not except by the command of your Lord." },
-        { q: "What does 19:64 say of Allah?", a: "He is never forgetful", wrong: ["He sleeps", "He gets tired", "He forgets"], why: "And your Lord is never forgetful." }
+        { q: "What does 19:64 say of Allah?", a: "He is never forgetful", wrong: ["He sleeps", "He gets tired", "He forgets"], why: "And your Lord is never forgetful.", source: kathir(19, 64, "And your Lord is never forgetful.", "never is your Lord forgetful") }
       ]
     },
     {
@@ -671,7 +671,7 @@ const MARYAM_TWO: DeepUnit = {
       source: hadith("muslim", "2496", "Umm Mubashshir", "Sahih", "The Prophet ﷺ said the people of the Tree would not enter the Fire. Hafsah recited 19:71, and he recited 19:72 about Allah rescuing the God-conscious.", "We would rescue those persons who are God-conscious"),
       difficulty: 4,
       questions: [
-        { q: "Whom does Allah save, in 19:72?", a: "Those who had Taqwa", wrong: ["The proud", "The rich", "The loud"], why: "Then We shall save those who had Taqwa." },
+        { q: "Whom does Allah save, in 19:72?", a: "Those who had Taqwa", wrong: ["The proud", "The rich", "The loud"], why: "Then We shall save those who had Taqwa.", source: kathir(19, 72, "Then We shall save those who had Taqwa.", "shall save those who had Taqwa") },
         { q: "Which ayah did Hafsah recite, in the hadith?", a: "19:71", wrong: ["1:1", "2:255", "112:1"], why: "Hafsa said: And there is none amongst you but shall have to pass over that." },
         { q: "Who would not enter the Fire, in the hadith?", a: "The people of the Tree", wrong: ["The people of the sea", "The traders", "The poets"], why: "The people of the Tree would never enter the fire of Hell." }
       ]

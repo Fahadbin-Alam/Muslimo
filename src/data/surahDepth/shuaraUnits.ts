@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ash-Shu'ara ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -157,7 +157,7 @@ const SHUARA_ONE: DeepUnit = {
       questions: [
         { q: "What favor did Fir'awn remind Musa of?", a: "Raising him as a child", wrong: ["Giving him a ship", "Teaching him to read", "Making him a minister"], why: "Did we not bring you up among us as a child?" },
         { q: "How did Musa answer that favor, in 26:22?", a: "You enslaved my people", wrong: ["I thank you forever", "I will serve you", "I forgot it"], why: "Whatever favors you did in bringing me up are offset by the evil you did by enslaving the Children of Israel." },
-        { q: "When did Musa make his old mistake, per 26:20?", a: "Before revelation came to him", wrong: ["After he became a Prophet", "On the day of the sea", "In old age"], why: "When I was in error, meaning before revelation was sent to me and before Allah made me a Prophet." }
+        { q: "When did Musa make his old mistake, per 26:20?", a: "Before revelation came to him", wrong: ["After he became a Prophet", "On the day of the sea", "In old age"], why: "When I was in error, meaning before revelation was sent to me and before Allah made me a Prophet.", source: kathir(26, 20, "When I was in error, meaning before revelation was sent to me and before Allah made me a Prophet.", "revelation was sent to me and before Allah made me a Prophet") }
       ]
     },
     {
@@ -325,7 +325,7 @@ const SHUARA_ONE: DeepUnit = {
       questions: [
         { q: "What happened on the day of Ashura?", a: "Allah saved the Children of Israel", wrong: ["The Kaaba was built", "Nuh's flood began", "Yusuf became minister"], why: "This is a good day, the day on which Allah rescued Bani Israel from their enemy." },
         { q: "What did the Prophet ﷺ say about Musa?", a: "We have more claim over Musa", wrong: ["Musa is not ours", "Forget that day", "Only Jews should fast"], why: "We have more claim over Moses than you." },
-        { q: "What happened to Fir'awn's army, in 26:66?", a: "They were drowned", wrong: ["They believed", "They went home", "They crossed safely"], why: "And We saved Musa and all those with him. Then We drowned the others." }
+        { q: "What happened to Fir'awn's army, in 26:66?", a: "They were drowned", wrong: ["They believed", "They went home", "They crossed safely"], why: "And We saved Musa and all those with him. Then We drowned the others.", source: kathir(26, 66, "And We saved Musa and all those with him. Then We drowned the others.", "We drowned the others") }
       ]
     },
     {
@@ -518,7 +518,7 @@ const SHUARA_TWO: DeepUnit = {
       source: ik(102, "Those who followed misguiding leaders will blame them, then see that they themselves are to blame. They will say: we were clearly wrong, we have no intercessor or close friend, and wish to return to the world to believe.", "Then they will realize that themselves are to blame"),
       difficulty: 4,
       questions: [
-        { q: "What will they admit, in 26:97?", a: "We were in clear error", wrong: ["We were right", "We were tricked by Prophets", "Nothing"], why: "By Allah, we were truly in a manifest error." },
+        { q: "What will they admit, in 26:97?", a: "We were in clear error", wrong: ["We were right", "We were tricked by Prophets", "Nothing"], why: "By Allah, we were truly in a manifest error.", source: kathir(26, 97, "By Allah, we were truly in a manifest error.", "were truly in a manifest error") },
         { q: "What will they wish for, in 26:102?", a: "A chance to return", wrong: ["More gold", "A long sleep", "A new idol"], why: "If we only had a chance to return, we shall truly be among the believers!" },
         { tf: false, q: "Their leaders will be able to save them.", why: "Can you avail us anything from the Fire? Then they will realize that themselves are to blame." }
       ]
@@ -728,7 +728,7 @@ const SHUARA_THREE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "How was Lut related to Ibrahim?", a: "His nephew", wrong: ["His son", "His father", "His teacher"], why: "He was Lut bin Haran bin Azar, the nephew of Ibrahim Al-Khalil." },
-        { q: "What did his people threaten, in 26:167?", a: "To drive him out", wrong: ["To crown him", "To pay him", "To follow him"], why: "If you cease not, O Lut, verily, you will be one of those who are driven out!" },
+        { q: "What did his people threaten, in 26:167?", a: "To drive him out", wrong: ["To crown him", "To pay him", "To follow him"], why: "If you cease not, O Lut, verily, you will be one of those who are driven out!", source: kathir(26, 167, "If you cease not, O Lut, verily, you will be one of those who are driven out!", "") },
         { q: "Who was not saved with Lut's family?", a: "His wife", wrong: ["His daughters", "His guests", "No one"], why: "Except an old woman among those who remained behind. This was his wife." }
       ]
     },
@@ -799,7 +799,7 @@ const SHUARA_THREE: DeepUnit = {
       questions: [
         { q: "In which language was the Quran revealed, in 26:195?", a: "Plain Arabic", wrong: ["Hebrew", "Greek", "Persian"], why: "In the plain Arabic language." },
         { q: "Why clear Arabic, per Ibn Kathir?", a: "To leave no excuse", wrong: ["To be short", "To be secret", "To rhyme"], why: "So that it may be quite clear, leaving no room for excuses and establishing clear proof." },
-        { q: "Who recognized it from their Books, in 26:197?", a: "Scholars of the Children of Israel", wrong: ["The poets", "The sorcerers", "Fir'awn's chiefs"], why: "Is it not a sign to them that the learned scholars of the Children of Israel knew it?" }
+        { q: "Who recognized it from their Books, in 26:197?", a: "Scholars of the Children of Israel", wrong: ["The poets", "The sorcerers", "Fir'awn's chiefs"], why: "Is it not a sign to them that the learned scholars of the Children of Israel knew it?", source: kathir(26, 197, "Is it not a sign to them that the learned scholars of the Children of Israel knew it?", "learned scholars of the Children of Israel knew") }
       ]
     },
     {
@@ -841,7 +841,7 @@ const SHUARA_THREE: DeepUnit = {
       questions: [
         { q: "Where did the Prophet ﷺ call his people from?", a: "As-Safa", wrong: ["The Kaaba roof", "Uhud", "A ship"], why: "The Prophet ﷺ ascended the Safa (mountain) and started calling." },
         { q: "Why did Quraysh say they would believe him?", a: "He always told the truth", wrong: ["He was rich", "He was a poet", "He was the oldest"], why: "They said: Yes, for we have not found you telling anything other than the truth." },
-        { q: "Who does 26:214 tell him to warn first?", a: "His near kindred", wrong: ["Only strangers", "Only kings", "Only the Jinn"], why: "And warn your tribe of near kindred." }
+        { q: "Who does 26:214 tell him to warn first?", a: "His near kindred", wrong: ["Only strangers", "Only kings", "Only the Jinn"], why: "And warn your tribe of near kindred.", source: kathir(26, 214, "And warn your tribe of near kindred.", "warn His Tribe of near Kindred") }
       ]
     },
     {
@@ -925,7 +925,7 @@ const SHUARA_THREE: DeepUnit = {
       questions: [
         { q: "What did the Prophet ﷺ say about fortune-tellers?", a: "They are nothing", wrong: ["They are wise", "They are Prophets", "Ask them often"], why: "Some people asked Allah's Messenger ﷺ about the fore-tellers. He said: They are nothing." },
         { q: "How many lies are mixed with one true word?", a: "One hundred", wrong: ["One", "Ten", "None"], why: "The foreteller then mixes with that word one hundred lies." },
-        { q: "On whom do the devils descend, in 26:222?", a: "Every sinful liar", wrong: ["The Prophets", "The angels", "The believers"], why: "They descend on every lying, sinful person." }
+        { q: "On whom do the devils descend, in 26:222?", a: "Every sinful liar", wrong: ["The Prophets", "The angels", "The believers"], why: "They descend on every lying, sinful person.", source: kathir(26, 222, "They descend on every lying, sinful person.", "descend on every lying, sinful person") }
       ]
     },
     {

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Naml ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -185,7 +185,7 @@ const NAML_ONE: DeepUnit = {
       questions: [
         { q: "What happens to what Prophets leave?", a: "It is spent in charity", wrong: ["Their sons take it", "It is buried", "The king takes it"], why: "Our property should not be inherited, and whatever we leave, is to be spent in charity." },
         { q: "Who narrated the hadith on what Prophets leave?", a: "Aisha", wrong: ["Abu Bakr", "Ibn Umar", "Anas"], why: "Narrated Aisha: The Prophet ﷺ said, Our property should not be inherited." },
-        { q: "How does this explain 27:16?", a: "Sulayman inherited prophethood", wrong: ["He inherited gold", "He inherited nothing", "He sold the kingdom"], why: "Rather what is meant is the inheritance of kingship and prophethood, for the wealth of the Prophets cannot be inherited." }
+        { q: "How does this explain 27:16?", a: "Sulayman inherited prophethood", wrong: ["He inherited gold", "He inherited nothing", "He sold the kingdom"], why: "Rather what is meant is the inheritance of kingship and prophethood, for the wealth of the Prophets cannot be inherited.", source: kathir(27, 16, "Rather what is meant is the inheritance of kingship and prophethood, for the wealth of the Prophets cannot be inherited.", "inheritance of kingship and prophethood, for the wealth of the Prophets cannot be inherited") }
       ]
     },
     {
@@ -407,7 +407,7 @@ const NAML_TWO: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "Would everyone's piety add to Allah's dominion?", a: "Not at all", wrong: ["Yes, greatly", "A little", "Only on Fridays"], why: "To be as pious as the most pious heart of any one man of you, that would not increase My dominion in anything." },
-        { q: "Which names end 27:40?", a: "Rich, Bountiful", wrong: ["Mighty, Wise", "Hearing, Seeing", "First, Last"], why: "And whoever is ungrateful, certainly my Lord is Rich, Bountiful." },
+        { q: "Which names end 27:40?", a: "Rich, Bountiful", wrong: ["Mighty, Wise", "Hearing, Seeing", "First, Last"], why: "And whoever is ungrateful, certainly my Lord is Rich, Bountiful.", source: kathir(27, 40, "And whoever is ungrateful, certainly my Lord is Rich, Bountiful.", "whoever is ungrateful, certainly my Lord is Rich, Bountiful") },
         { tf: true, q: "Being grateful benefits the one who is grateful.", why: "And whoever is grateful, truly, his gratitude is for himself." }
       ]
     },

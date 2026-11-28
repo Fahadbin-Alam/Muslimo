@@ -1,5 +1,5 @@
 import type { LearningSection } from "../types";
-import { hadith, quran, quranQuote, type DeepUnit } from "./deepKit";
+import { hadith, quran, quranQuote, kathir, type DeepUnit } from "./deepKit";
 
 // The Day of Judgment topic, in order: belief in the Last Day, the signs of the Hour, death and the grave, the Horn
 // and the gathering, the intercession and the Pool, the reckoning and the scales, the bridge, Jahannam and Jannah, and
@@ -845,7 +845,7 @@ const RECKONING: DeepUnit = {
       questions: [
         { q: "What is the 'easy reckoning'?", a: "Deeds are only shown, not argued", wrong: ["No deeds at all", "Paying money", "Doing a test"], why: "Bukhari 103." },
         { q: "Who asked the Prophet ﷺ about this ayah?", a: "Aishah", wrong: ["Abu Jahl", "Fir'awn", "Bilal"], why: "She always asked until she understood." },
-        { q: "What does the one with an easy reckoning do next (84:9)?", a: "Returns to his people happy", wrong: ["Stays sad", "Runs away", "Sleeps"], why: "Quran 84:9." }
+        { q: "What does the one with an easy reckoning do next (84:9)?", a: "Returns to his people happy", wrong: ["Stays sad", "Runs away", "Sleeps"], why: "Quran 84:9.", source: kathir(84, 9, "Quran 84:9.", "easy account And return to his people") }
       ]
     },
     {

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Insan ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -73,7 +73,7 @@ const INSAN_ONE: DeepUnit = {
       questions: [
         { q: "Why did Allah create man, per 76:2?", a: "To try him", wrong: ["To rest", "To build cities only", "To play"], why: "Verily, We have created man from Nutfah Amshaj, in order to try him." },
         { q: "What two gifts does 76:2 name?", a: "Hearing and sight", wrong: ["Gold and silver", "Hands and feet", "Food and drink"], why: "So, We made him hearer and seer." },
-        { tf: true, q: "Ayah 67:2 also says Allah tests which of us does best.", why: "That He may test you which of you is best in deed. (67:2)" }
+        { tf: true, q: "Ayah 67:2 also says Allah tests which of us does best.", why: "That He may test you which of you is best in deed. (67:2)", source: kathir(76, 2, "That He may test you which of you is best in deed. (67:2)", "test you which of you is best in deed") }
       ]
     },
     {
@@ -184,7 +184,7 @@ const INSAN_TWO: DeepUnit = {
       questions: [
         { q: "Whom do they feed, per 76:8?", a: "The poor, the orphan and the captive", wrong: ["Only the rich", "Only their friends", "Only guests of honor"], why: "And they give food, inspite of their love for it, to the poor, the orphan and the captive." },
         { q: "What does in spite of their love for it mean, per Ibn Kathir?", a: "They love the food themselves", wrong: ["They hate the food", "The food is spoiled", "They have too much"], why: "They give food while they themselves love it and desire it." },
-        { tf: true, q: "Ayah 3:92 says we reach righteousness by spending what we love.", why: "By no means shall you attain Al-Birr unless you spend of that which you love. (3:92)" }
+        { tf: true, q: "Ayah 3:92 says we reach righteousness by spending what we love.", why: "By no means shall you attain Al-Birr unless you spend of that which you love. (3:92)", source: kathir(76, 8, "By no means shall you attain Al-Birr unless you spend of that which you love. (3:92)", "no means shall you attain Al-Birr unless you spend of that which you love") }
       ]
     },
     {
@@ -502,7 +502,7 @@ const INSAN_FOUR: DeepUnit = {
       source: hadith("bukhari", "1145", "Abu Hurayrah", "Sahih", "The Prophet ﷺ said our Lord comes down to the nearest heaven in the last third of every night, asking who will call on Him, ask Him, or seek His forgiveness.", "Is there anyone seeking My forgiveness"),
       difficulty: 2,
       questions: [
-        { q: "What does 76:26 tell us to do at night?", a: "Prostrate and glorify Him", wrong: ["Only sleep", "Only eat", "Only travel"], why: "And during the night, prostrate yourself to Him, and glorify Him a long night through." },
+        { q: "What does 76:26 tell us to do at night?", a: "Prostrate and glorify Him", wrong: ["Only sleep", "Only eat", "Only travel"], why: "And during the night, prostrate yourself to Him, and glorify Him a long night through.", source: kathir(76, 26, "And during the night, prostrate yourself to Him, and glorify Him a long night through.", "during the night, prostrate yourself to Him, and glorify Him a long night through") },
         { q: "When does Allah ask who will call on Him?", a: "The last third of the night", wrong: ["At noon", "At sunset", "At sunrise"], why: "When the last third of the night remains, saying: Is there anyone to invoke Me?" },
         { tf: true, q: "Allah asks if anyone is seeking His forgiveness.", why: "Is there anyone seeking My forgiveness, so that I may forgive him?" }
       ]

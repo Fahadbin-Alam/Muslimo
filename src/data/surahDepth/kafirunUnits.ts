@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Kafirun ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -197,7 +197,7 @@ const KAFIRUN_TWO: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Which ayah is similar to 109:6, per Ibn Kathir?", a: "10:41", wrong: ["2:2", "36:1", "114:1"], why: "For me are my deeds and for you are your deeds! (10:41)." },
-        { q: "What does 28:55 say?", a: "To us our deeds, to you yours", wrong: ["Let us mix our deeds", "Deeds do not matter", "Only words count"], why: "To us our deeds, and to you your deeds (28:55)." },
+        { q: "What does 28:55 say?", a: "To us our deeds, to you yours", wrong: ["Let us mix our deeds", "Deeds do not matter", "Only words count"], why: "To us our deeds, and to you your deeds (28:55).", source: kathir(109, 6, "To us our deeds, and to you your deeds (28:55).", "To us our deeds") },
         { tf: true, q: "Each one is free of what the other does.", why: "You are innocent of what I do, and I am innocent of what you do!" }
       ]
     }

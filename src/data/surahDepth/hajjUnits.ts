@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Al-Hajj ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -267,9 +267,9 @@ const HAJJ_ONE: DeepUnit = {
       source: hadith("muslim", "250", "Abu Hurairah", "Sahih", "The Prophet ﷺ said the adornment of the believer in Paradise will reach the places that his wudu reached.", "In a believer adornment would reach the places where ablution reaches"),
       difficulty: 5,
       questions: [
-        { q: "What adorns believers in Paradise, in 22:23?", a: "Bracelets of gold and pearls", wrong: ["Iron chains", "Crowns of wood", "Rings of clay"], why: "Wherein they will be adorned with bracelets of gold and pearls." },
+        { q: "What adorns believers in Paradise, in 22:23?", a: "Bracelets of gold and pearls", wrong: ["Iron chains", "Crowns of wood", "Rings of clay"], why: "Wherein they will be adorned with bracelets of gold and pearls.", source: kathir(22, 23, "Wherein they will be adorned with bracelets of gold and pearls.", "with bracelets of gold and pearls") },
         { q: "How far does the adornment reach, per the hadith?", a: "As far as wudu reached", wrong: ["Only the head", "Only the feet", "Nowhere"], why: "In a believer adornment would reach the places where ablution reaches." },
-        { q: "What will their garments be, in 22:23?", a: "Silk", wrong: ["Wool", "Cotton", "Leather"], why: "And their garments therein will be of silk." }
+        { q: "What will their garments be, in 22:23?", a: "Silk", wrong: ["Wool", "Cotton", "Leather"], why: "And their garments therein will be of silk.", source: kathir(22, 23, "And their garments therein will be of silk.", "garments therein will be of silk") }
       ]
     },
     {
@@ -434,7 +434,7 @@ const HAJJ_TWO: DeepUnit = {
       source: hadith("bukhari", "2654", "Abu Bakrah", "Sahih", "The Prophet ﷺ named the greatest sins: shirk with Allah and being undutiful to parents. Then he sat up and warned against false witness again and again.", "And I warn you against giving a false witness"),
       difficulty: 4,
       questions: [
-        { q: "What two things should we shun, in 22:30?", a: "Idols and false speech", wrong: ["Trade and travel", "Food and sleep", "Poems and songs"], why: "So shun the Rijs of the idols, and shun false speech." },
+        { q: "What two things should we shun, in 22:30?", a: "Idols and false speech", wrong: ["Trade and travel", "Food and sleep", "Poems and songs"], why: "So shun the Rijs of the idols, and shun false speech.", source: kathir(22, 30, "So shun the Rijs of the idols, and shun false speech.", "the idols, and shun false speech") },
         { q: "What did the Prophet ﷺ keep warning against?", a: "Giving false witness", wrong: ["Eating too much", "Sleeping late", "Walking fast"], why: "And I warn you against giving a false witness, and he kept on saying that warning." },
         { q: "Which sins came first in the hadith?", a: "Shirk and bad treatment of parents", wrong: ["Lying and stealing", "Pride and anger", "Envy and gossip"], why: "To join others in worship with Allah and to be undutiful to one's parents." }
       ]
@@ -769,7 +769,7 @@ const HAJJ_THREE: DeepUnit = {
       source: hadith("muslim", "2653b", "Abdullah ibn Amr", "Sahih", "The Prophet ﷺ said Allah wrote the measures of creation fifty thousand years before He created the heavens and the earth, while His Throne was on the water.", "fifty thousand years before He created the heavens and the earth"),
       difficulty: 4,
       questions: [
-        { q: "Where is everything recorded, in 22:70?", a: "In the Book", wrong: ["On stone walls", "In the stars", "Nowhere"], why: "Verily, it is all in the Book. Verily, that is easy for Allah." },
+        { q: "Where is everything recorded, in 22:70?", a: "In the Book", wrong: ["On stone walls", "In the stars", "Nowhere"], why: "Verily, it is all in the Book. Verily, that is easy for Allah.", source: kathir(22, 70, "Verily, it is all in the Book. Verily, that is easy for Allah.", "") },
         { q: "When were the measures written, per the hadith?", a: "50,000 years before creation", wrong: ["Last year", "At Adam's birth", "At the Flood"], why: "Allah ordained the measures of the creation fifty thousand years before He created the heavens and the earth." },
         { tf: true, q: "Knowing and recording all things is easy for Allah.", why: "Verily, that is easy for Allah." }
       ]
@@ -839,7 +839,7 @@ const HAJJ_THREE: DeepUnit = {
       source: hadith("bukhari", "1117", "Imran ibn Husayn", "Sahih", "The Prophet ﷺ told a sick man: pray standing; if you cannot, pray sitting; and if you cannot, pray lying on your side.", "Pray while standing and if you … pray while sitting"),
       difficulty: 5,
       questions: [
-        { q: "What has Allah not placed on us, in 22:78?", a: "Hardship in religion", wrong: ["Any prayer", "Any duty", "Any reward"], why: "And has not laid upon you in religion any hardship." },
+        { q: "What has Allah not placed on us, in 22:78?", a: "Hardship in religion", wrong: ["Any prayer", "Any duty", "Any reward"], why: "And has not laid upon you in religion any hardship.", source: kathir(22, 78, "And has not laid upon you in religion any hardship.", "laid upon you in religion any hardship") },
         { q: "If you cannot stand, how do you pray, per the hadith?", a: "Sitting", wrong: ["Not at all", "Only later", "Only in a masjid"], why: "Pray while standing and if you can't, pray while sitting." },
         { q: "How does the traveller pray four-rakah prayers, per Ibn Kathir?", a: "Shortened to two", wrong: ["Made six", "Skipped", "Doubled"], why: "Four Rak'ahs when one is settled, which are shortened to two Rak'ah when one is traveling." }
       ]

@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Ya-Sin ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -196,7 +196,7 @@ const YASIN_ONE: DeepUnit = {
       source: hadith("muslim", "1017e", "Jarir ibn Abdullah", "Sahih", "The Prophet ﷺ said whoever starts a good practice that others follow gets its reward and the reward of all who follow it.", "He who introduced some good practice in Islam which was followed after him"),
       difficulty: 4,
       questions: [
-        { q: "What does Allah record, in 36:12?", a: "Deeds and traces", wrong: ["Only names", "Only words", "Nothing"], why: "We record that which they send before them, and their traces." },
+        { q: "What does Allah record, in 36:12?", a: "Deeds and traces", wrong: ["Only names", "Only words", "Nothing"], why: "We record that which they send before them, and their traces.", source: kathir(36, 12, "We record that which they send before them, and their traces.", "record of good and bad deeds") },
         { q: "What do traces mean, per Mujahid?", a: "Their footsteps", wrong: ["Their coins", "Their clothes", "Their homes"], why: "And their traces. He said, Their footsteps." },
         { q: "Who gets the reward of followers, in the hadith?", a: "Who starts a good practice", wrong: ["Who copies", "Who watches", "Who forgets"], why: "He who introduced some good practice in Islam which was followed after him." },
         { tf: true, q: "Banu Salamah were told their footsteps are recorded.", why: "O Banu Salamah, stay where you are, and your footsteps will be recorded." }
@@ -728,8 +728,8 @@ const YASIN_TWO: DeepUnit = {
       source: hadith("muslim", "2588", "Abu Hurairah", "Sahih", "The Prophet ﷺ said charity does not decrease wealth, and Allah raises those who forgive and are humble.", "Charity does not decrease wealth"),
       difficulty: 4,
       questions: [
-        { q: "What were they told, in 36:47?", a: "Spend from Allah's provision", wrong: ["Build towers", "Go to war", "Stay home"], why: "Spend of that with which Allah has provided you." },
-        { q: "What excuse did they give, in 36:47?", a: "Allah could feed them", wrong: ["We are poor", "We forgot", "We are busy"], why: "Shall we feed those whom, if Allah willed, He would have fed?" },
+        { q: "What were they told, in 36:47?", a: "Spend from Allah's provision", wrong: ["Build towers", "Go to war", "Stay home"], why: "Spend of that with which Allah has provided you.", source: kathir(36, 47, "Spend of that with which Allah has provided you.", "told to spend of that which Allah has provided") },
+        { q: "What excuse did they give, in 36:47?", a: "Allah could feed them", wrong: ["We are poor", "We forgot", "We are busy"], why: "Shall we feed those whom, if Allah willed, He would have fed?", source: kathir(36, 47, "Shall we feed those whom, if Allah willed, He would have fed?", "Shall we feed those whom, if Allah willed") },
         { q: "What does charity not do, in the hadith?", a: "Decrease wealth", wrong: ["Help anyone", "Count", "Bring reward"], why: "Charity does not decrease wealth." }
       ]
     },
@@ -897,7 +897,7 @@ const YASIN_THREE: DeepUnit = {
       questions: [
         { q: "What word is given, in 36:58?", a: "Salam, peace", wrong: ["Wait", "Leave", "Work"], why: "Salam (Peace!), a Word from the Lord, Most Merciful." },
         { q: "Who grants the peace, per Ibn Abbas?", a: "Allah Himself", wrong: ["A guard", "A king", "A neighbour"], why: "Allah Himself, Who is the Peace (As-Salam) will grant peace to the people of Paradise." },
-        { q: "What will their greeting be on meeting Him, per 33:44?", a: "Salam", wrong: ["Silence", "A song", "A question"], why: "Their greeting on the Day they shall meet Him will be Salam." }
+        { q: "What will their greeting be on meeting Him, per 33:44?", a: "Salam", wrong: ["Silence", "A song", "A question"], why: "Their greeting on the Day they shall meet Him will be Salam.", source: kathir(36, 58, "Their greeting on the Day they shall meet Him will be Salam.", "greeting on the Day they shall meet") }
       ]
     },
     {
@@ -1203,7 +1203,7 @@ const YASIN_THREE: DeepUnit = {
       source: hadith("bukhari", "3481", "Abu Hurairah", "Sahih", "The Prophet ﷺ told of a man whose remains were scattered; Allah gathered him and forgave him because he feared Allah.", "I was afraid of You"),
       difficulty: 4,
       questions: [
-        { q: "Who will give life to bones, in 36:79?", a: "He Who created them first", wrong: ["Doctors", "No one", "The earth"], why: "Say: He will give life to them Who created them for the first time!" },
+        { q: "Who will give life to bones, in 36:79?", a: "He Who created them first", wrong: ["Doctors", "No one", "The earth"], why: "Say: He will give life to them Who created them for the first time!", source: kathir(36, 79, "Say: He will give life to them Who created them for the first time!", "give life to them Who created them for the first time") },
         { q: "Why was the man forgiven, in the hadith?", a: "He feared Allah", wrong: ["He was rich", "He was famous", "He was strong"], why: "He replied, O my Lord! I was afraid of You. So Allah forgave him." },
         { tf: true, q: "Allah knows where every scattered part has gone.", why: "He knows about the bones in all areas and regions of the earth." }
       ]
@@ -1233,7 +1233,7 @@ const YASIN_THREE: DeepUnit = {
       questions: [
         { q: "What did Allah create, in 36:81?", a: "The heavens and the earth", wrong: ["Only the sea", "Only mountains", "Only clouds"], why: "Is not He Who created the heavens and the earth, able to create the like of them?" },
         { q: "What is the like of them, per Ibn Kathir?", a: "Mankind", wrong: ["Stars", "Seas", "Trees"], why: "Able to create the like of them, meaning, the like of mankind." },
-        { q: "Which is greater, per 40:57?", a: "Heavens and earth", wrong: ["Mankind", "Both equal", "Neither"], why: "The creation of the heavens and the earth is indeed greater than the creation of mankind." }
+        { q: "Which is greater, per 40:57?", a: "Heavens and earth", wrong: ["Mankind", "Both equal", "Neither"], why: "The creation of the heavens and the earth is indeed greater than the creation of mankind.", source: kathir(36, 81, "The creation of the heavens and the earth is indeed greater than the creation of mankind.", "of the heavens and the earth is indeed greater than the creation of mankind") }
       ]
     },
     {

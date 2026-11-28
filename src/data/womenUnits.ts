@@ -1,4 +1,4 @@
-import { hadith, quran, quranQuote, siyar, type DeepUnit } from "./deepKit";
+import { hadith, quran, quranQuote, siyar, kathir, type DeepUnit } from "./deepKit";
 
 // Great Women, in depth: the Mothers of the Believers in the order they joined the Prophet's ﷺ home, and the Women
 // of Islam: the women the Quran tells about, then women of the Prophet's ﷺ time who did great things (Sumayyah, the
@@ -871,7 +871,7 @@ const QURAN_WOMEN: DeepUnit = {
       questions: [
         { q: "What did Umm Umarah ask about?", a: "Why only men were mentioned", wrong: ["Where to live", "How to trade", "When Ramadan starts"], why: "She said: I see that everything is for the men." },
         { q: "Which ayah came after her question?", a: "Quran 33:35", wrong: ["Quran 2:255", "Quran 112:1", "Quran 1:1"], why: "Indeed the Muslim men and the Muslim women..." },
-        { q: "In Quran 33:35, Allah promises a great reward to both men and women.", tf: true, why: "Forgiveness and a great reward for all of them." }
+        { q: "In Quran 33:35, Allah promises a great reward to both men and women.", tf: true, why: "Forgiveness and a great reward for all of them.", source: kathir(33, 35, "Forgiveness and a great reward for all of them.", "them forgiveness and a great reward") }
       ]
     },
     {

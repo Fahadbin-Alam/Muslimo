@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah At-Taghabun ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -629,7 +629,7 @@ const TAGHABUN_FOUR: DeepUnit = {
       questions: [
         { q: "What is with Allah, per 64:15?", a: "A great reward", wrong: ["A small gift", "Nothing", "A long wait"], why: "Whereas Allah! With Him is a great reward." },
         { q: "When is that reward given?", a: "The Day of Resurrection", wrong: ["Every Monday", "Only in Ramadan", "Never"], why: "With Him, meaning, on the Day of Resurrection, is a great reward." },
-        { tf: true, q: "Ibn Kathir quotes 3:14 about worldly delights.", why: "This is the pleasure of the present world's life; but Allah has the excellent return with him. (3:14)" }
+        { tf: true, q: "Ibn Kathir quotes 3:14 about worldly delights.", why: "This is the pleasure of the present world's life; but Allah has the excellent return with him. (3:14)", source: kathir(64, 15, "This is the pleasure of the present world's life; but Allah has the excellent return with him. (3:14)", "pleasure of the present") }
       ]
     },
     {

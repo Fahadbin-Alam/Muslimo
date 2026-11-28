@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Luqman ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -350,7 +350,7 @@ const LUQMAN_ONE: DeepUnit = {
       source: hadith("muslim", "2626", "Abu Dharr", "Sahih", "The Prophet ﷺ said not to look down on any good deed, even meeting your brother with a cheerful face.", "even if it is that you meet your brother with a cheerful countenance"),
       difficulty: 4,
       questions: [
-        { q: "How should we not turn our face, in 31:18?", a: "With pride", wrong: ["With joy", "With care", "With patience"], why: "And turn not your face away from men with pride." },
+        { q: "How should we not turn our face, in 31:18?", a: "With pride", wrong: ["With joy", "With care", "With patience"], why: "And turn not your face away from men with pride.", source: kathir(31, 18, "And turn not your face away from men with pride.", "turn not your face away from men with pride") },
         { q: "How should we meet our brother, in the hadith?", a: "With a cheerful face", wrong: ["With silence", "With a frown", "With a gift only"], why: "Even if it is that you meet your brother with a cheerful countenance." },
         { q: "Who is the boaster, per Ibn Kathir?", a: "One who thinks he is better", wrong: ["One who prays", "One who works", "One who helps"], why: "One who shows off and admires himself, feeling that he is better than others." }
       ]
@@ -644,8 +644,8 @@ const LUQMAN_TWO: DeepUnit = {
       difficulty: 4,
       questions: [
         { q: "How many keys of the Unseen are there, in the hadith?", a: "Five", wrong: ["Three", "Seven", "Ten"], why: "The keys of Unseen are five which none knows but Allah." },
-        { q: "Who knows when the Hour comes, in 31:34?", a: "Allah alone", wrong: ["The angels", "Fortune tellers", "Scientists"], why: "Verily, Allah, with Him is the knowledge of the Hour." },
-        { q: "What does no one know, in 31:34?", a: "In what land he will die", wrong: ["His own name", "The days of the week", "His language"], why: "And no person knows in what land he will die." }
+        { q: "Who knows when the Hour comes, in 31:34?", a: "Allah alone", wrong: ["The angels", "Fortune tellers", "Scientists"], why: "Verily, Allah, with Him is the knowledge of the Hour.", source: kathir(31, 34, "Verily, Allah, with Him is the knowledge of the Hour.", "knowledge of the Hour, He sends down the rain, and knows") },
+        { q: "What does no one know, in 31:34?", a: "In what land he will die", wrong: ["His own name", "The days of the week", "His language"], why: "And no person knows in what land he will die.", source: kathir(31, 34, "And no person knows in what land he will die.", "no person knows in what land") }
       ]
     },
     {

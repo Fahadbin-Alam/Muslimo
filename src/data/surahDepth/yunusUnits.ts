@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah Yunus ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -100,7 +100,7 @@ const YUNUS_ONE: DeepUnit = {
       questions: [
         { q: "How does Allah govern big and small things, per Ibn Kathir?", a: "Alike, everywhere", wrong: ["Only big things", "Only small things", "Only in cities"], why: "He governs big things as He governs small things everywhere." },
         { q: "Do people's many requests annoy Allah?", a: "No, never", wrong: ["Yes, often", "Only at night", "Only long ones"], why: "The persistent requests of His creatures do not annoy Him." },
-        { q: "Not a leaf falls without Allah knowing it (6:59).", tf: true, why: "Not a leaf falls, but He knows it." }
+        { q: "Not a leaf falls without Allah knowing it (6:59).", tf: true, why: "Not a leaf falls, but He knows it.", source: kathir(10, 3, "Not a leaf falls, but He knows it.", "leaf falls, but He knows") }
       ]
     },
     {
@@ -114,7 +114,7 @@ const YUNUS_ONE: DeepUnit = {
       questions: [
         { q: "Who begins creation and repeats it, in 10:4?", a: "Allah", wrong: ["The stars", "Time", "The angels"], why: "It is He Who begins the creation and then will repeat it." },
         { q: "How will Allah reward believers, in 10:4?", a: "With justice", wrong: ["By chance", "With nothing", "Only in this world"], why: "That He may reward with justice those who believed." },
-        { q: "Bringing creation back is easier for Allah (30:27).", tf: true, why: "Then He will repeat it; and this is easier for Him." }
+        { q: "Bringing creation back is easier for Allah (30:27).", tf: true, why: "Then He will repeat it; and this is easier for Him.", source: kathir(10, 4, "Then He will repeat it; and this is easier for Him.", "is easier for Him") }
       ]
     },
     {
@@ -182,7 +182,7 @@ const YUNUS_ONE: DeepUnit = {
       source: hadith("muslim", "2835", "Jabir ibn Abdullah", "Sahih", "The people of Paradise will eat and drink with no illness or waste, and they will glorify and praise Allah as easily as you breathe.", "they would glorify and praise Allah as easily as you breathe"),
       difficulty: 3,
       questions: [
-        { q: "What is their greeting in Paradise, in 10:10?", a: "Salam", wrong: ["Goodbye", "Good luck", "Hurry up"], why: "Salam will be their greetings therein!" },
+        { q: "What is their greeting in Paradise, in 10:10?", a: "Salam", wrong: ["Goodbye", "Good luck", "Hurry up"], why: "Salam will be their greetings therein!", source: kathir(10, 10, "Salam will be their greetings therein!", "") },
         { q: "How easily will they praise Allah, per the hadith?", a: "As easily as breathing", wrong: ["With great effort", "Only on Fridays", "Only once"], why: "They would glorify and praise Allah as easily as you breathe." },
         { q: "Their call ends with: All praise is due to Allah, Lord of all.", tf: true, why: "The close of their request will be: All praise is due to Allah, the Lord of all that exists." }
       ]
@@ -196,7 +196,7 @@ const YUNUS_ONE: DeepUnit = {
       source: hadith("abudawud", "1532", "Jabir ibn Abdullah", "Sahih", "Do not curse yourselves, your children, your servants or your property, in case it falls at an hour when Allah grants what is asked.", "lest you happen to do it at a time when Allah is asked for something and grants your request"),
       difficulty: 3,
       questions: [
-        { q: "If Allah hastened harm like good, what would happen, in 10:11?", a: "People would be ruined", wrong: ["Nothing at all", "They would be rich", "They would be happy"], why: "Then they would have been ruined." },
+        { q: "If Allah hastened harm like good, what would happen, in 10:11?", a: "People would be ruined", wrong: ["Nothing at all", "They would be rich", "They would be happy"], why: "Then they would have been ruined.", source: kathir(10, 11, "Then they would have been ruined.", "good then they would have been ruined") },
         { q: "Why not curse yourself or your children, per the hadith?", a: "It may fall at an answered hour", wrong: ["It is too long", "No one hears it", "It costs money"], why: "Lest you do it at a time when Allah grants your request." },
         { q: "Allah answers angry prayers for harm as fast as prayers for good.", tf: false, why: "He knows they do not truly intend evil for themselves, so He doesn't respond." }
       ]
@@ -240,7 +240,7 @@ const YUNUS_ONE: DeepUnit = {
       questions: [
         { q: "Why did Allah make us successors, in 10:14?", a: "To see how we act", wrong: ["To rest forever", "To own it all", "To build towers"], why: "That We might see how you would work." },
         { q: "How did the hadith describe the world?", a: "Sweet and green", wrong: ["Dry and grey", "Cold and dark", "Small and empty"], why: "The world is sweet and green." },
-        { q: "Nations before were destroyed when they did wrong (10:13).", tf: true, why: "We destroyed generations before you when they did wrong." }
+        { q: "Nations before were destroyed when they did wrong (10:13).", tf: true, why: "We destroyed generations before you when they did wrong.", source: kathir(10, 13, "We destroyed generations before you when they did wrong.", "had already destroyed generations") }
       ]
     },
     {
@@ -266,7 +266,7 @@ const YUNUS_ONE: DeepUnit = {
       source: hadith("bukhari", "7", "Ibn Abbas", "Sahih", "Heraclius asked Abu Sufyan, then an enemy, if they had ever accused him of lying before he claimed prophethood. He said no.", "Have you ever accused him of telling lies before his claim"),
       difficulty: 4,
       questions: [
-        { q: "What did 10:16 remind them of?", a: "He lived among them a lifetime", wrong: ["He was a stranger", "He was a king", "He came yesterday"], why: "Verily, I have stayed among you a lifetime before this." },
+        { q: "What did 10:16 remind them of?", a: "He lived among them a lifetime", wrong: ["He was a stranger", "He was a king", "He came yesterday"], why: "Verily, I have stayed among you a lifetime before this.", source: kathir(10, 16, "Verily, I have stayed among you a lifetime before this.", "have stayed among you a lifetime") },
         { q: "What did Heraclius ask about him ﷺ?", a: "Had he ever lied before?", wrong: ["How rich was he?", "How tall was he?", "Where did he trade?"], why: "Have you ever accused him of telling lies before his claim?" },
         { q: "Even an enemy at that time said he ﷺ never lied.", tf: true, why: "Abu Sufyan replied: No. This came from the enemy." }
       ]
@@ -280,7 +280,7 @@ const YUNUS_ONE: DeepUnit = {
       source: hadith("tirmidhi", "2485", "Abdullah ibn Salam", "Sahih", "When he saw the face of the Messenger ﷺ in Madinah he knew it was not the face of a liar. The first words he heard were: spread salam, feed others, and pray at night.", "I knew that this face was not the face of a liar"),
       difficulty: 4,
       questions: [
-        { q: "Who does the most wrong, in 10:17?", a: "One who lies about Allah", wrong: ["One who is poor", "One who travels", "One who is quiet"], why: "So who does more wrong than he who forges a lie against Allah?" },
+        { q: "Who does the most wrong, in 10:17?", a: "One who lies about Allah", wrong: ["One who is poor", "One who travels", "One who is quiet"], why: "So who does more wrong than he who forges a lie against Allah?", source: kathir(10, 17, "So who does more wrong than he who forges a lie against Allah?", "") },
         { q: "What was first taught in Madinah, per the hadith?", a: "Spread salam, feed, pray at night", wrong: ["Build walls", "Collect taxes", "Train horses"], why: "Spread the Salam, feed others, and perform Salat while the people are sleeping." },
         { q: "The criminals will never be successful.", tf: true, why: "Surely, the criminals will never be successful." }
       ]
@@ -350,7 +350,7 @@ const YUNUS_TWO: DeepUnit = {
       difficulty: 2,
       questions: [
         { q: "What should a believer say about rain, per the hadith?", a: "It came by Allah's mercy", wrong: ["A star brought it", "It came by luck", "Clouds decided"], why: "Whoever said the rain was due to the Blessings and the Mercy of Allah had belief in Me." },
-        { q: "What do some do after mercy comes, in 10:21?", a: "Plot against Allah's signs", wrong: ["Give thanks", "Pray more", "Give charity"], why: "Behold! They take to plotting against Our Ayat!" },
+        { q: "What do some do after mercy comes, in 10:21?", a: "Plot against Allah's signs", wrong: ["Give thanks", "Pray more", "Give charity"], why: "Behold! They take to plotting against Our Ayat!", source: kathir(10, 21, "Behold! They take to plotting against Our Ayat!", "take to plotting against Our Ayat") },
         { q: "Allah is swifter in planning than those who plot.", tf: true, why: "Say: Allah is more swift in planning!" }
       ]
     },
@@ -433,7 +433,7 @@ const YUNUS_TWO: DeepUnit = {
       source: hadith("muslim", "181", "Suhayb ar-Rumi", "Sahih", "When the people of Paradise enter it, Allah will lift the veil, and nothing they were given will be dearer to them than looking at their Lord. Then he recited 10:26.", "nothing would he dearer to them than the sight of their Lord"),
       difficulty: 3,
       questions: [
-        { q: "What do good-doers get, in 10:26?", a: "The best, and even more", wrong: ["Only a little", "Only in this world", "Nothing extra"], why: "For those who have done good is the best, and even more." },
+        { q: "What do good-doers get, in 10:26?", a: "The best, and even more", wrong: ["Only a little", "Only in this world", "Nothing extra"], why: "For those who have done good is the best, and even more.", source: kathir(10, 26, "For those who have done good is the best, and even more.", "good is the best and even") },
         { q: "What will be dearest to them, per the hadith?", a: "Seeing their Lord", wrong: ["Gold palaces", "Rivers of milk", "Fine clothes"], why: "Nothing would be dearer to them than the sight of their Lord." },
         { q: "They earn this extra gift by deeds alone, per Ibn Kathir.", tf: false, why: "They will receive it by the grace of Allah and His mercy." }
       ]
@@ -447,7 +447,7 @@ const YUNUS_TWO: DeepUnit = {
       source: ik(27, "Allah tells of His justice with the wrongdoers: an evil deed is paid back with its like, with no increase, while the good-doers' reward is multiplied.", "He will reward them with similar evil, without any increase"),
       difficulty: 3,
       questions: [
-        { q: "What will not cover the good-doers' faces, in 10:26?", a: "Darkness or disgrace", wrong: ["Light", "Joy", "Peace"], why: "Neither darkness nor dust nor any humiliating disgrace shall cover their faces." },
+        { q: "What will not cover the good-doers' faces, in 10:26?", a: "Darkness or disgrace", wrong: ["Light", "Joy", "Peace"], why: "Neither darkness nor dust nor any humiliating disgrace shall cover their faces.", source: kathir(10, 26, "Neither darkness nor dust nor any humiliating disgrace shall cover their faces.", "Neither darkness nor dust shall cover their faces. ") },
         { q: "How is an evil deed paid back, in 10:27?", a: "With its like only", wrong: ["Ten times over", "A hundred times", "Never at all"], why: "The recompense of an evil deed is the like thereof." },
         { q: "Good deeds are multiplied ten to seven hundred times, per Ibn Kathir.", tf: true, why: "The reward on the good deeds multiplied ten times to seven hundred times and even more." }
       ]
@@ -532,7 +532,7 @@ const YUNUS_TWO: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "How many surahs does 10:38 challenge them to bring?", a: "One", wrong: ["Ten", "A hundred", "The whole Quran"], why: "Say: Bring then a Surah like unto it." },
-        { q: "Which challenge came in Surah Hud (11:13)?", a: "Ten surahs", wrong: ["One ayah", "One surah", "Seven surahs"], why: "Bring you then ten forged Surah like unto it." },
+        { q: "Which challenge came in Surah Hud (11:13)?", a: "Ten surahs", wrong: ["One ayah", "One surah", "Seven surahs"], why: "Bring you then ten forged Surah like unto it.", source: kathir(10, 38, "Bring you then ten forged Surah like unto it.", "Bring you then ten forged Surah like unto") },
         { q: "The Arabs of that time were famous for eloquent poetry.", tf: true, why: "Eloquence was a part of the nature and character of the Arabs." }
       ]
     },
@@ -573,7 +573,7 @@ const YUNUS_TWO: DeepUnit = {
       source: hadith("muslim", "2577", "Abu Dharr", "Sahih", "Allah said: O My servants, I have forbidden oppression for Myself and made it forbidden among you, so do not oppress one another.", "I have forbidden oppression for Myself and have made it forbidden amongst you"),
       difficulty: 5,
       questions: [
-        { q: "Who do people wrong, in 10:44?", a: "Themselves", wrong: ["Allah", "The angels", "The earth"], why: "But mankind wrong themselves." },
+        { q: "Who do people wrong, in 10:44?", a: "Themselves", wrong: ["Allah", "The angels", "The earth"], why: "But mankind wrong themselves.", source: kathir(10, 44, "But mankind wrong themselves.", "wrong the people at all, but it is the people who are wronging themselves") },
         { q: "What has Allah forbidden for Himself, per the hadith?", a: "Oppression", wrong: ["Mercy", "Forgiveness", "Giving"], why: "I have forbidden oppression for Myself." },
         { q: "Allah wrongs people a little now and then.", tf: false, why: "Truly, Allah wrongs not mankind in aught." }
       ]
@@ -768,7 +768,7 @@ const YUNUS_THREE: DeepUnit = {
       source: hadith("muslim", "2642", "Abu Dharr", "Sahih", "He was asked about a man who does good and people praise him. He said: that is glad tidings for a believer, given early in this world.", "It is glad tidings for a believer"),
       difficulty: 4,
       questions: [
-        { q: "When do the friends of Allah get good news, in 10:64?", a: "In this life and the next", wrong: ["Only in this life", "Never", "Only at birth"], why: "For them is good news, in the life of the present world, and in the Hereafter." },
+        { q: "When do the friends of Allah get good news, in 10:64?", a: "In this life and the next", wrong: ["Only in this life", "Never", "Only at birth"], why: "For them is good news, in the life of the present world, and in the Hereafter.", source: kathir(10, 64, "For them is good news, in the life of the present world, and in the Hereafter.", "good news, in the life of the present world, and in the Hereafter") },
         { q: "What is people praising your good deed, per the hadith?", a: "Early glad tidings", wrong: ["A sin", "Showing off", "Bad luck"], why: "It is glad tidings for a believer." },
         { q: "No change can be made in the Words of Allah.", tf: true, why: "No change can there be in the Words of Allah." }
       ]
@@ -851,7 +851,7 @@ const YUNUS_FOUR: DeepUnit = {
       source: hadith("bukhari", "3443", "Abu Hurairah", "Sahih", "The Prophets are brothers from one father with different mothers: their religion is one.", "The prophets are paternal brothers; their mothers are different, but their religion is one"),
       difficulty: 2,
       questions: [
-        { q: "What was Nuh commanded to be, in 10:72?", a: "One of the Muslims", wrong: ["A king", "A sailor", "A judge"], why: "And I have been commanded to be of the Muslims." },
+        { q: "What was Nuh commanded to be, in 10:72?", a: "One of the Muslims", wrong: ["A king", "A sailor", "A judge"], why: "And I have been commanded to be of the Muslims.", source: kathir(10, 72, "And I have been commanded to be of the Muslims.", "commanded to be of the Muslims") },
         { q: "How are the Prophets described, per the hadith?", a: "Brothers with one religion", wrong: ["Rivals", "Strangers", "Kings"], why: "The prophets are paternal brothers; their religion is one." },
         { q: "Islam is the religion of all the Prophets, per Ibn Kathir.", tf: true, why: "Islam is the religion of all of the Prophets from the first to the last." }
       ]
@@ -895,7 +895,7 @@ const YUNUS_FOUR: DeepUnit = {
       questions: [
         { q: "Who did Allah send to Fir'awn, in 10:75?", a: "Musa and Harun", wrong: ["Nuh and Hud", "Yusuf alone", "Salih and Lut"], why: "Then after them We sent Musa and Harun to Fir'awn and his chiefs." },
         { q: "What did they call the truth, in 10:76?", a: "Clear magic", wrong: ["A good dream", "A song", "Old stories"], why: "This is indeed clear magic." },
-        { q: "They secretly knew the signs were true (27:14).", tf: true, why: "They belied them wrongfully and arrogantly, though they themselves were convinced thereof." }
+        { q: "They secretly knew the signs were true (27:14).", tf: true, why: "They belied them wrongfully and arrogantly, though they themselves were convinced thereof.", source: kathir(10, 75, "They belied them wrongfully and arrogantly, though they themselves were convinced thereof.", "belied them wrongfully and arrogantly, though they themselves were convinced thereof") }
       ]
     },
     {
@@ -951,7 +951,7 @@ const YUNUS_FOUR: DeepUnit = {
       questions: [
         { q: "What did Musa tell his people to do, in 10:84?", a: "Put their trust in Allah", wrong: ["Run away", "Hide their faith", "Build a city"], why: "If you have believed in Allah, then put your trust in Him." },
         { q: "Which two does Allah often join, per Ibn Kathir?", a: "Worship and trust", wrong: ["Wealth and fame", "Sleep and food", "Trade and travel"], why: "Allah combines worship and reliance in many places." },
-        { q: "Allah is enough for whoever trusts Him (65:3).", tf: true, why: "Whosoever puts his trust in Allah, then He will suffice him." }
+        { q: "Allah is enough for whoever trusts Him (65:3).", tf: true, why: "Whosoever puts his trust in Allah, then He will suffice him.", source: kathir(10, 84, "Whosoever puts his trust in Allah, then He will suffice him.", "whosoever puts his trust in Allah, then He will suffice") }
       ]
     },
     {
@@ -1006,7 +1006,7 @@ const YUNUS_FOUR: DeepUnit = {
       difficulty: 5,
       questions: [
         { q: "How many paths opened in the sea, per Ibn Kathir?", a: "Twelve", wrong: ["One", "Seven", "Forty"], why: "The sea was split into twelve paths, each route for each tribe." },
-        { q: "What did Musa say when caught at the shore (26:62)?", a: "My Lord is with me", wrong: ["We are lost", "Turn back", "Swim fast"], why: "Nay, verily, with me is my Lord. He will guide me." },
+        { q: "What did Musa say when caught at the shore (26:62)?", a: "My Lord is with me", wrong: ["We are lost", "Turn back", "Swim fast"], why: "Nay, verily, with me is my Lord. He will guide me.", source: kathir(10, 90, "Nay, verily, with me is my Lord. He will guide me.", "me is my Lord") },
         { q: "Fir'awn followed them out of oppression and enmity.", tf: true, why: "Fir'awn with his hosts followed them in oppression and enmity." }
       ]
     },
@@ -1145,7 +1145,7 @@ const YUNUS_FIVE: DeepUnit = {
       difficulty: 3,
       questions: [
         { q: "Will you compel mankind to believe, asks 10:99?", a: "No, that is not your role", wrong: ["Yes, by force", "Yes, with money", "Yes, with threats"], why: "So, will you then compel mankind, until they become believers?" },
-        { q: "What is the duty of the Messenger ﷺ, per 13:40?", a: "Only to convey", wrong: ["To force faith", "To judge hearts", "To punish all"], why: "Your duty is only to convey, and it is up to Us to reckon." },
+        { q: "What is the duty of the Messenger ﷺ, per 13:40?", a: "Only to convey", wrong: ["To force faith", "To judge hearts", "To punish all"], why: "Your duty is only to convey, and it is up to Us to reckon.", source: kathir(10, 99, "Your duty is only to convey, and it is up to Us to reckon.", "duty is only to convey, and it is up to Us to reckon") },
         { q: "No one believes except by Allah's leave (10:100).", tf: true, why: "It is not for any person to believe, except by the leave of Allah." }
       ]
     },
@@ -1174,7 +1174,7 @@ const YUNUS_FIVE: DeepUnit = {
       questions: [
         { q: "Who does Allah save, in 10:103?", a: "His Messengers and the believers", wrong: ["Only the strong", "Only the rich", "No one"], why: "Then We save Our Messengers and those who believe!" },
         { q: "Who made saving believers a duty on Allah?", a: "Allah Himself", wrong: ["The angels", "The people", "The Prophets"], why: "This is a right that Allah has obligated upon His Noble Self." },
-        { q: "Allah has written mercy for Himself (6:54).", tf: true, why: "Your Lord has written (prescribed) mercy for Himself." }
+        { q: "Allah has written mercy for Himself (6:54).", tf: true, why: "Your Lord has written (prescribed) mercy for Himself.", source: kathir(10, 103, "Your Lord has written (prescribed) mercy for Himself.", "Your Lord has written") }
       ]
     },
     {
@@ -1200,7 +1200,7 @@ const YUNUS_FIVE: DeepUnit = {
       source: hadith("tirmidhi", "2516", "Ibn Abbas", "Sahih", "Be mindful of Allah and He will protect you. If all creation gathered to benefit you, they could not except as Allah wrote for you, and the same for harm.", "if the entire creation were to gather together to do something to benefit you"),
       difficulty: 5,
       questions: [
-        { q: "Who can lift a harm Allah sends, in 10:107?", a: "None but Him", wrong: ["The doctors", "The idols", "Anyone strong"], why: "If Allah touches you with harm, there is none who can lift it but He." },
+        { q: "Who can lift a harm Allah sends, in 10:107?", a: "None but Him", wrong: ["The doctors", "The idols", "Anyone strong"], why: "If Allah touches you with harm, there is none who can lift it but He.", source: kathir(10, 107, "If Allah touches you with harm, there is none who can lift it but He.", "") },
         { q: "If all creation gathered to help you, what then, per the hadith?", a: "Only what Allah wrote", wrong: ["Anything you want", "Double your wish", "Nothing ever"], why: "You would never get any benefit except that Allah had written for you." },
         { q: "Anyone can stop the good Allah wants for you.", tf: false, why: "If He intends good for you, then none can repel His favor." }
       ]

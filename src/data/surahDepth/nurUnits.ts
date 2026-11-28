@@ -1,5 +1,5 @@
 import type { LessonSource } from "../../types";
-import { hadith, quranQuote, saadi, type DeepUnit } from "../deepKit";
+import { hadith, quranQuote, saadi, kathir, type DeepUnit } from "../deepKit";
 
 // Surah An-Nur ayah by ayah, the way the surahs before it are taught: every ayah or small group of ayahs gets a lesson,
 // explained as Tafsir Ibn Kathir explains it (the abridged English on quran.com), with a sahih hadith where one explains
@@ -73,7 +73,7 @@ const NUR_ONE: DeepUnit = {
       questions: [
         { q: "What is forbidden to the believers, in 24:3?", a: "Such an immoral match", wrong: ["Trade", "Travel", "Charity"], why: "Such a thing is forbidden to the believers." },
         { q: "Which ayah does Ibn Kathir link to 24:3?", a: "4:25", wrong: ["1:1", "2:255", "112:1"], why: "They should be chaste. (4:25)" },
-        { tf: true, q: "Ibn Kathir cites 5:5 about desiring chastity.", why: "Desiring chastity. (5:5)" }
+        { tf: true, q: "Ibn Kathir cites 5:5 about desiring chastity.", why: "Desiring chastity. (5:5)", source: kathir(24, 3, "Desiring chastity. (5:5)", "desiring chastity not committing") }
       ]
     },
     {
@@ -225,9 +225,9 @@ const NUR_ONE: DeepUnit = {
       source: hadith("bukhari", "5269", "Abu Hurairah", "Sahih", "The Prophet ﷺ said Allah has forgiven his Ummah the bad thoughts that come to their minds, as long as they do not act on them or say them.", "Allah has forgiven my followers the evil thoughts that occur to their minds"),
       difficulty: 3,
       questions: [
-        { q: "What should believers say, in 24:16?", a: "It is not right for us to speak of this", wrong: ["Tell me more", "Who else knows?", "Let us share it"], why: "It is not right for us to speak of this. Glory be to You! This is a great lie." },
+        { q: "What should believers say, in 24:16?", a: "It is not right for us to speak of this", wrong: ["Tell me more", "Who else knows?", "Let us share it"], why: "It is not right for us to speak of this. Glory be to You! This is a great lie.", source: kathir(24, 16, "It is not right for us to speak of this. Glory be to You! This is a great lie.", "not right for us to speak") },
         { q: "Which thoughts are forgiven, in the hadith?", a: "Ones not said or acted on", wrong: ["Ones we post", "Ones we shout", "Ones we spread"], why: "As long as such thoughts are not put into action or uttered." },
-        { tf: true, q: "Allah warns never to repeat such a lie again, in 24:17.", why: "Allah forbids you from it and warns you not to repeat the like of it forever." }
+        { tf: true, q: "Allah warns never to repeat such a lie again, in 24:17.", why: "Allah forbids you from it and warns you not to repeat the like of it forever.", source: kathir(24, 17, "Allah forbids you from it and warns you not to repeat the like of it forever.", "forbids you from it and warns you not to repeat") }
       ]
     },
     {
@@ -337,7 +337,7 @@ const NUR_ONE: DeepUnit = {
       source: hadith("muslim", "2969", "Anas ibn Malik", "Sahih", "The Prophet ﷺ smiled, then described a servant who accepts no witness but himself. His mouth is sealed, and his hands and feet speak of his deeds.", "it would be said to his hands and feet to speak and they would speak of his deeds"),
       difficulty: 4,
       questions: [
-        { q: "What testifies, in 24:24?", a: "Tongues, hands and legs", wrong: ["Trees", "Stones", "Stars"], why: "On the Day when their tongues, their hands, and their legs will bear witness against them." },
+        { q: "What testifies, in 24:24?", a: "Tongues, hands and legs", wrong: ["Trees", "Stones", "Stars"], why: "On the Day when their tongues, their hands, and their legs will bear witness against them.", source: kathir(24, 24, "On the Day when their tongues, their hands, and their legs will bear witness against them.", "their tongues, their hands, and their legs will bear witness against") },
         { q: "What did the Prophet ﷺ do first, in the hadith?", a: "He smiled", wrong: ["He wept", "He left", "He slept"], why: "We were in the company of Allah's Messenger ﷺ when he smiled." },
         { q: "What speaks after the mouth is sealed, in the hadith?", a: "His hands and feet", wrong: ["His friends", "His house", "His clothes"], why: "It would be said to his hands and feet to speak and they would speak of his deeds." }
       ]
@@ -418,7 +418,7 @@ const NUR_ONE: DeepUnit = {
       line: "Believers look away from what is not allowed to look at.",
       facts: ["It is purer for the heart", "A sudden glance: look away quickly"],
       quote: q24(30),
-      source: ik(30, "Allah commands believers to lower their gaze from what is forbidden and to guard their modesty; that is purer for them. If a person's eyes fall on something forbidden by accident, he should quickly look away.", ""),
+      source: ik(30, "Allah commands believers to lower their gaze from what is forbidden and to guard their modesty; that is purer for them. If a person's eyes fall on something forbidden by accident, he should quickly look away.", "Tell the believing men to lower their gaze"),
       difficulty: 4,
       questions: [
         { q: "What does Allah tell believers to lower, in 24:30?", a: "Their gaze", wrong: ["Their voices", "Their hands", "Their heads"], why: "Tell the believing men to lower their gaze." },
@@ -742,7 +742,7 @@ const NUR_TWO: DeepUnit = {
       source: hadith("abudawud", "5208", "Abu Hurairah", "Hasan Sahih", "The Prophet ﷺ said: when one of you comes to a gathering, he should give salam, and when he wants to get up, he should give salam, for the first is not more of a duty than the last.", "When one of you comes to an assembly, he should give a salutation"),
       difficulty: 5,
       questions: [
-        { q: "What did true believers do before leaving, in 24:62?", a: "Asked permission", wrong: ["Slipped away", "Ran out", "Said nothing"], why: "They go not away until they have asked his permission." },
+        { q: "What did true believers do before leaving, in 24:62?", a: "Asked permission", wrong: ["Slipped away", "Ran out", "Said nothing"], why: "They go not away until they have asked his permission.", source: kathir(24, 62, "They go not away until they have asked his permission.", "until they had asked his permission") },
         { q: "When should you say salam, per the hadith?", a: "On arriving and on leaving", wrong: ["Only arriving", "Only leaving", "Only at night"], why: "When one of you comes to an assembly, he should give a salutation and if he feels inclined to get up, he should give a salutation." },
         { tf: false, q: "The salam on arriving matters more than the salam on leaving.", why: "For the former is not more of a duty than the latter." }
       ]
